@@ -14,6 +14,7 @@ import { parse } from '../../lib/calendar/vcal';
 import { getIcalMethod } from '../../lib/calendar/vcalHelper';
 import { omit } from '../../lib/helpers/object';
 import {
+    VcalCalendarComponentWithErrors,
     VcalDateTimeProperty,
     VcalVcalendar,
     VcalVeventComponent,
@@ -1387,6 +1388,115 @@ END:VCALENDAR`;
             xWrTimezone: undefined,
             components: [expectedVtimezone, expectedVevent],
         });
+    });
+
+    it('should parse an ics with errors in some events', async () => {
+        const icsString = `BEGIN:VCALENDAR
+PRODID:-//github.com/rianjs/ical.net//NONSGML ical.net 4.0//EN
+BEGIN:VTIMEZONE
+TZID:UTC
+X-LIC-LOCATION:UTC
+BEGIN:STANDARD
+DTSTART:20200101T000000
+RRULE:FREQ=YEARLY;BYDAY=1WE;BYMONTH=1
+TZNAME:UTC
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CN=Ham Burger;RSVP=TRUE:mailto:hamburgerc@pm.me
+CLASS:PUBLIC
+DESCRIPTION:\\nHi there\\,\\nThis is a very weird description
+  with tabs and \\n\t\t\tline
+ jumps\\n\t\t\ta few\\n\t\t\tjumps\\n\t\t\tyaaay
+DTEND:20210430T203000
+DTSTAMP:20210429T171519Z
+DTSTART:20210430T183000
+ORGANIZER;CN=:mailto:belzebu@evil.com
+SEQUENCE:0
+SUMMARY:Another one bites the dust
+UID:81383944-3775313411-20210429T131519@howdyhow.com
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:We can't recover from the bad DTSTART
+DTSTAMP:20210429T171519Z
+DTSTART:20210430T18:35:00
+SUMMARY:I'm broken
+UID:oh-no@howdyhow.com
+END:VEVENT
+END:VCALENDAR`;
+        const ics = new File([new Blob([icsString])], 'invite.ics');
+        const expectedVtimezone = {
+            component: 'vtimezone',
+            components: [
+                {
+                    component: 'standard',
+                    dtstart: {
+                        value: { year: 2020, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: false },
+                    },
+                    rrule: { value: { freq: 'YEARLY', byday: '1WE', bymonth: 1 } },
+                    tzname: [{ value: 'UTC' }],
+                    tzoffsetfrom: [{ value: '+00:00' }],
+                    tzoffsetto: [{ value: '+00:00' }],
+                },
+            ],
+            tzid: { value: 'UTC' },
+            'x-lic-location': [{ value: 'UTC' }],
+        } as VcalVtimezoneComponent;
+        const expectedVevent = {
+            component: 'vevent',
+            uid: { value: '81383944-3775313411-20210429T131519@howdyhow.com' },
+            class: { value: 'PUBLIC' },
+            dtstamp: {
+                value: { year: 2021, month: 4, day: 29, hours: 17, minutes: 15, seconds: 19, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2021, month: 4, day: 30, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+            },
+            dtend: {
+                value: { year: 2021, month: 4, day: 30, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+            },
+            summary: {
+                value: 'Another one bites the dust',
+            },
+            description: {
+                value: '\nHi there,\nThis is a very weird description with tabs and \n\t\t\tlinejumps\n\t\t\ta few\n\t\t\tjumps\n\t\t\tyaaay',
+            },
+            sequence: { value: 0 },
+            organizer: {
+                value: 'mailto:belzebu@evil.com',
+                parameters: { cn: '' },
+            },
+            attendee: [
+                {
+                    value: 'mailto:hamburgerc@pm.me',
+                    parameters: { cn: 'Ham Burger', rsvp: 'TRUE' },
+                },
+            ],
+            components: [
+                {
+                    component: 'valarm',
+                    action: { value: 'DISPLAY' },
+                    description: { value: 'Reminder' },
+                    trigger: { value: { weeks: 0, days: 0, hours: 1, minutes: 0, seconds: 0, isNegative: true } },
+                },
+            ],
+        };
+
+        const { method, calscale, xWrTimezone, components } = await parseIcs(ics);
+        expect(method).toEqual(ICAL_METHOD.PUBLISH);
+        expect(calscale).toEqual(ICAL_CALSCALE.GREGORIAN);
+        expect(xWrTimezone).toBe(undefined);
+        expect(components[0]).toEqual(expectedVtimezone);
+        expect(components[1]).toEqual(expectedVevent);
+        expect((components[2] as VcalCalendarComponentWithErrors).error).toBeDefined();
+        expect((components[2] as VcalCalendarComponentWithErrors).icalComponent).toBeDefined();
     });
 
     it('should trim calscale and method', async () => {
