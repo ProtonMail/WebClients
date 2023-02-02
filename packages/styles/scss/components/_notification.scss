@@ -1,9 +1,10 @@
 .notifications-container {
 	position: fixed;
-	inset-block-start: 1em;
+	inset-block-end: calc(em(24) + env(safe-area-inset-bottom));
 	inset-inline-start: 50%;
 	z-index: $layer-notifications;
 	transform: translateX(-50%);
+	filter: drop-shadow(var(--shadow-lifted));
 
 	@at-root {
 		[dir='rtl'] & {
@@ -11,46 +12,133 @@
 		}
 	}
 
-	@include media('<=small') {
-		text-align: center;
+	&--shifted {
+		inset-block-end: calc(var(--shift-custom-y) + env(safe-area-inset-bottom));
 	}
-
-	@include media('<=xsmall') {
-		[class*='notification-'] {
-			transform: none;
-			inset-inline: 1em;
-			inline-size: calc(100% - 2em);
-		}
-	}
-}
-
-[class*='notification-'] {
-	display: block;
-	overflow: hidden;
-	border-radius: var(--border-radius-lg);
-	box-shadow: var(--shadow-lifted);
 }
 
 .notification {
+	position: absolute;
+	display: flex;
+	inset-block-end: var(--top-custom);
+	align-items: center;
+	overflow: hidden;
+	border-radius: var(--border-radius-lg);
+	background-color: var(--background-invert);
+	color: var(--text-invert);
+	inline-size: max-content;
+	max-inline-size: min(#{em(400)}, calc(100vw - 2em));
+	padding-block: em(8);
+	padding-inline: em(12) em(4);
+	transform: translateX(-50%);
+	transition: inset-block-end 0.35s easing(ease-out-quad);
+
+	@at-root {
+		[dir='rtl'] & {
+			transform: translateX(50%);
+		}
+	}
+
+	.button {
+		--button-default-text-color: inherit;
+		--button-hover-text-color: inherit;
+		--button-active-text-color: inherit;
+
+		margin-block: em(-6);
+	}
+
+	.link {
+		color: inherit;
+	}
+
+	&__icon {
+		margin-inline: 0 em(8);
+		flex-shrink: 0;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		padding-inline-end: em(8);
+		word-break: break-word;
+		hyphens: auto;
+
+		> span {
+			word-break: break-word;
+			hyphens: auto;
+		}
+
+		.notification__button {
+			white-space: nowrap;
+			align-self: center;
+			margin-inline-start: em(8);
+			margin-inline-end: em(-6);
+			flex-shrink: 0;
+
+			// spacing between two buttons
+			& + & {
+				margin-inline-start: em(2);
+			}
+		}
+
+		.circle-loader {
+			// make sure the loader is the last child
+			// 2nd to last because it automatically adds a "loading" text for screen readers
+
+			flex-shrink: 0;
+
+			&:nth-last-child(2) {
+				margin-inline-start: em(8);
+			}
+		}
+
+		.notification__button + .circle-loader {
+			margin-inline-start: em(16);
+		}
+	}
+
+	&:not(#{&}--has-close-button) &__content {
+		.button {
+			margin-inline-end: em(-8);
+		}
+	}
+
+	&__close-button {
+		flex-shrink: 0;
+	}
+
 	&--in {
-		animation-duration: 1s;
-		animation-fill-mode: forwards;
-		animation-timing-function: ease;
+		animation-duration: 0.35s;
+		animation-fill-mode: both;
+		animation-timing-function: easing(ease-in-out);
 		animation-name: anime-notification-in;
 	}
 
 	&--out {
-		animation-duration: 1s;
-		animation-fill-mode: forwards;
-		animation-timing-function: ease;
+		animation-duration: 0.3s;
+		animation-fill-mode: both;
+		animation-timing-function: easing(ease-in-out);
 		animation-name: anime-notification-out;
+	}
+
+	&--out-duplicate {
+		animation-duration: 0.3s;
+		animation-fill-mode: both;
+		animation-timing-function: easing(ease-in-out);
+		animation-name: anime-notification-out-duplicate;
+	}
+
+	&--error,
+	&--warning {
+		background-color: var(--signal-danger);
+		color: var(--signal-danger-contrast);
 	}
 }
 
 @keyframes anime-notification-in {
 	0% {
 		opacity: 0;
-		transform: translateY(-50px);
+		transform: translateY(60%);
 	}
 
 	100% {
@@ -62,15 +150,24 @@
 @keyframes anime-notification-out {
 	0% {
 		opacity: 1;
-		transform: scale(1);
+		transform: translateY(0);
 	}
 
 	100% {
 		opacity: 0;
-		transform: scale(0);
-		max-block-size: 0;
-		padding: 0;
-		margin-block-end: 0;
+		transform: translateY(-20%);
+	}
+}
+
+@keyframes anime-notification-out-duplicate {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(0);
 	}
 }
 

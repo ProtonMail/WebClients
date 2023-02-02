@@ -111,6 +111,7 @@ export const useSendMessage = () => {
                         />
                     ),
                     expiration: -1,
+                    showCloseButton: false,
                 });
                 const startTime = performance.now();
                 try {

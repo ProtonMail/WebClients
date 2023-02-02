@@ -23,7 +23,9 @@ const NotificationsHijack: FC<NotificationsHijackProps> = ({ children, onCreate 
         createNotification: hijackedCreateNotification,
         removeNotification: noop,
         hideNotification: noop,
+        removeDuplicate: noop,
         clearNotifications: noop,
+        setOffset: noop,
     };
 
     return <NotificationsContext.Provider value={context}>{children}</NotificationsContext.Provider>;
