@@ -117,7 +117,7 @@ const SubscriptionCheckout = ({
     const isFreePlanSelected = !hasPlanIDs(planIDs);
     const isVPNPlanSelected = !!planIDs?.[PLANS.VPN];
 
-    const proration = Math.abs(checkResult.Proration || 0);
+    const proration = checkResult.Proration ?? 0;
     const credit = Math.abs(checkResult.Credit || 0);
     const amount = checkResult.Amount || 0;
     const amountDue = checkResult.AmountDue || 0;
@@ -174,7 +174,7 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            {showProration && proration > 0 && (
+            {showProration && proration !== 0 && (
                 <CheckoutRow
                     title={
                         <span className="inline-flex flex-align-items-center">
@@ -189,7 +189,7 @@ const SubscriptionCheckout = ({
                             />
                         </span>
                     }
-                    amount={-proration}
+                    amount={proration}
                     currency={currency}
                 />
             )}
