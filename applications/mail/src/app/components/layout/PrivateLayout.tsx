@@ -1,21 +1,9 @@
-import { ReactNode, Ref, forwardRef, useCallback, useEffect, useRef, useState } from 'react';
+import { MutableRefObject, ReactElement, ReactNode, Ref, forwardRef, useCallback, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import {
-    CalendarDrawerAppButton,
-    ContactDrawerAppButton,
-    DrawerApp,
-    DrawerSidebar,
-    FeatureCode,
-    PrivateAppContainer,
-    TopBanners,
-    useDrawer,
-    useFeature,
-} from '@proton/components';
+import { DrawerApp, DrawerSidebar, PrivateAppContainer, TopBanners } from '@proton/components';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
-import isTruthy from '@proton/utils/isTruthy';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
@@ -30,23 +18,28 @@ interface Props {
     labelID: string;
     elementID: string | undefined;
     isBlurred?: boolean;
+    drawerSidebarButtons: ReactElement[];
+    drawerSpotlightSeenRef: MutableRefObject<boolean>;
+    showDrawerSidebar?: boolean;
 }
 
-const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }: Props, ref: Ref<HTMLDivElement>) => {
+const PrivateLayout = (
+    {
+        children,
+        breakpoints,
+        labelID,
+        elementID,
+        isBlurred,
+        drawerSidebarButtons,
+        drawerSpotlightSeenRef,
+        showDrawerSidebar,
+    }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     const location = useLocation();
     const [expanded, setExpand] = useState(false);
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
-    const { showDrawerSidebar } = useDrawer();
-
-    const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
-
-    const drawerSpotlightSeenRef = useRef(false);
-    const markSpotlightAsSeen = () => {
-        if (drawerSpotlightSeenRef) {
-            drawerSpotlightSeenRef.current = true;
-        }
-    };
 
     const handleToggleExpand = useCallback(() => setExpand((expanded) => !expanded), []);
 
@@ -73,11 +66,6 @@ const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }:
             onToggleExpand={handleToggleExpand}
         />
     );
-
-    const drawerSidebarButtons = [
-        drawerFeature?.Value.ContactsInMail && <ContactDrawerAppButton onClick={markSpotlightAsSeen} />,
-        drawerFeature?.Value.CalendarInMail && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
-    ].filter(isTruthy);
 
     const sidebar = (
         <MailSidebar
