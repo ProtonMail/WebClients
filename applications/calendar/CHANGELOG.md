@@ -1,3 +1,14 @@
+## Release: 5.0.8 — February 15, 2023
+
+### Improvements
+
+-   Allow import of events where seconds are not specified in time information
+-   Redesign of app growler
+
+### Fixes
+
+-   Small bug fixes
+
 ## Release: 5.0.7 — January 25, 2023
 
 ### Improvements
