@@ -10,7 +10,7 @@ import {
 } from '@proton/shared/lib/calendar/alarms/notificationDefaults';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { CALENDAR_TYPE, DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
-import { ACCENT_COLORS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
     CalendarErrors,

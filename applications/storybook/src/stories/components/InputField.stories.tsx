@@ -317,13 +317,7 @@ export const CustomElements = () => {
                 onChange={() => setToggleChecked(!toggleChecked)}
             />
             <InputFieldTwo as={Checkbox} label="Checkbox" checked={checked} onChange={() => setChecked(!checked)} />
-            <InputFieldTwo
-                as={ColorPicker}
-                label="Color picker"
-                placeholder="Placeholder"
-                color={color}
-                onChange={setColor}
-            />
+            <InputFieldTwo as={ColorPicker} label="Color picker" color={color} onChange={setColor} />
 
             <div style={{ maxWidth: 250 }}>
                 <InputFieldTwo as={TotpInput} label="TOTP input" length={6} value={totp} onValue={setTotp} />
