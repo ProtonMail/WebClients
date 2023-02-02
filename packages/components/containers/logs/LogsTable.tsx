@@ -51,11 +51,12 @@ const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
                 <tr>
                     <TableCell type="header">{c('Header').t`Event`}</TableCell>
                     {logAuth === ADVANCED && <TableCell type="header">{logAuth === ADVANCED ? 'IP' : ''}</TableCell>}
+                    <TableCell className="text-right" type="header">{c('Header').t`App version`}</TableCell>
                     <TableCell className="text-right" type="header">{c('Header').t`Time`}</TableCell>
                 </tr>
             </TableHeader>
             <TableBody loading={loading} colSpan={3}>
-                {logs.map(({ Time: time, Event, Description, IP }, index) => {
+                {logs.map(({ Time: time, AppVersion, Event, Description, IP }, index) => {
                     const key = index.toString();
 
                     return (
@@ -71,6 +72,9 @@ const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
                                     <code>{IP || '-'}</code>
                                 </TableCell>
                             )}
+                            <TableCell label={c('Header').t`App version`} className="on-tablet-text-left text-right">
+                                <span className="flex-item-fluid">{AppVersion}</span>
+                            </TableCell>
                             <TableCell label={c('Header').t`Time`} className="on-tablet-text-left text-right">
                                 <Time key={key} format="PPp">
                                     {time}
