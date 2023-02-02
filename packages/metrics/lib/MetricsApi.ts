@@ -38,6 +38,7 @@ class MetricsApi implements IMetricsApi {
             headers: {
                 ...requestInit?.headers,
                 'content-type': 'application/json',
+                priority: 'u=6',
                 ...this._authHeaders,
                 ...this._versionHeaders,
             },

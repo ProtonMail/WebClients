@@ -22,6 +22,16 @@ describe('MetricsApi', () => {
         expect(getHeader(content?.headers, 'content-type')).toBe('application/json');
     });
 
+    it('sets priority header to u=6', async () => {
+        const metricsApi = new MetricsApi();
+
+        await metricsApi.fetch('/route');
+        const content = fetchMock.mock.lastCall[1];
+
+        expect(fetchMock).toHaveBeenCalledTimes(1);
+        expect(getHeader(content?.headers, 'priority')).toBe('u=6');
+    });
+
     describe('constructor', () => {
         describe('auth headers', () => {
             it('sets auth headers when uid is defined', async () => {
