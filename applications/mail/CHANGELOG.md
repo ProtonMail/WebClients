@@ -1,30 +1,52 @@
+## Release 5.0.17.0 — February 15th, 2023
+
+### New features
+
+-   Unlimited plan subscribers can now invite their contacts to join Proton and enjoy 1 month for Mail Plus for free
+-   Free plan subscribers can now schedule emails to be sent later
+
+### Improvements
+
+-   Improve loading of emails with many images
+-   Automatically enable encryption and signature setting on contact key upload or WKD key pinning
+-   Add support for disabling email encryption for contacts with WKD keys
+-   Redesign of app growlers
+-   Remove Move all to trash action from the schedules messages folder
+-   Add auto-focus on search when contacts is opened from the side bar
+ 
+
+### Bug fixes
+
+-   Render correctly images when they include comments
+-   Other small fixes
+
 ## Release 5.0.16.0 — January 25th, 2023
 
 ### New features
 
-_   Enabled SMTP submission setting for Mail Business plans
+-   Enable SMTP submission setting for Mail Business plans
 
 ### Improvements
 
--   Added fallback fonts in the composer when not supported by the OS
+-   Add fallback fonts in the composer when not supported by the OS
 
 ### Bug fixes
 
--   Fixed deleted drafts that are opened from the encrypted search results
-_   Fix port number missing in link confirmation
-_   Other small bug fixes
+-   Fix deleted drafts that are opened from the encrypted search results
+-   Fix port number missing in link confirmation
+-   Other small bug fixes
 
 ## Release 5.0.15.0 — January 18th, 2023
 
 ### New features
 
--   Added a right-hand side panel giving users the ability to use Proton Mail and view upcoming Proton Calendar events or contacts in parallel
+-   Add a right-hand side panel giving users the ability to use Proton Mail and view upcoming Proton Calendar events or contacts in parallel
 
 ### Bug fixes
 
--   Removed block domain option to match the app capability
-_   Fixed ordered list display when the font size is big in the composer
-_   Other small bug fixes
+-   Remove block domain option to match the app capability
+-   Fix ordered list display when the font size is big in the composer
+-   Other small bug fixes
 
 ## Release 5.0.14.0 — December 14th, 2022
 
@@ -36,27 +58,27 @@ _   Other small bug fixes
 
 ### Improvements
 
--   Added the ability to edit or delete a folder from the side menu
--   Added the ability to edit or delete a label from the side menu
+-   Add the ability to edit or delete a folder from the side menu
+-   Add the ability to edit or delete a label from the side menu
 
 ### Bug fixes
 
--   Fixed an issue in which recipients in CC were not displayed in the original message that gets forwarded or replied to
--   Fixed an issue in which a draft was still displayed in a conversation after clicking on undo
--   Fixed an issue in which the focus on the composer could disappear
--   Fixed an issue in which Twitter emails were not displayed properly
+-   Fix an issue in which recipients in CC were not displayed in the original message that gets forwarded or replied to
+-   Fix an issue in which a draft was still displayed in a conversation after clicking on undo
+-   Fix an issue in which the focus on the composer could disappear
+-   Fix an issue in which Twitter emails were not displayed properly
 
 ## Release 5.0.12 - November 16, 2022
 
 ### Bug fixes
 
--   Fixed an issue in which the message view container was too tall
+-   Fix an issue in which the message view container was too tall
 
 ## Release 5.0.11 - October 26, 2022
 
 ### Improvements
 
--   Added the ability to block a sender on right click
+-   Add the ability to block a sender on right click
 -   We now load images by default and block senders from tracking you. This can be changed in the settings
 -   Hover actions redesigned in the mail list
 
@@ -68,97 +90,97 @@ _   Other small bug fixes
 
 ### Improvements
 
--   Added the ability to block a sender
--   Added the ability to hide/show system folder in the More section of the sidebar
+-   Add the ability to block a sender
+-   Add the ability to hide/show system folder in the More section of the sidebar
 
 ### Bug fixes
 
--   Fixed an issue in which labels in compact view were not aligned with the subject of the email
+-   Fix an issue in which labels in compact view were not aligned with the subject of the email
 
 ## Release 5.0.9 - October 6, 2022
 
 ### Bug fixes
 
--   Fixed an issue in which the title of the email was not scrolling
--   Fixed an issue in which the keyboard focus would be displayed without any keyboard input
+-   Fix an issue in which the title of the email was not scrolling
+-   Fix an issue in which the keyboard focus would be displayed without any keyboard input
 
 ## Release 5.0.8 - September 21, 2022
 
 ### Improvements
 
--   Added the ability to automatically assign a label to a sender
--   Added the ability to automatically assign a folder to a sender
+-   Add the ability to automatically assign a label to a sender
+-   Add the ability to automatically assign a folder to a sender
 
 ### Bug fixes
 
--   Fixed an issue where imported contacts were not properly displayed
--   Fixed an issue where the expiration date was not displayed in some cases
--   Fixed an issue in which selecting text in the search field did not open the search
--   Fixed a bug in which Safari would freeze while an email is being composed
+-   Fix an issue where imported contacts were not properly displayed
+-   Fix an issue where the expiration date was not displayed in some cases
+-   Fix an issue in which selecting text in the search field did not open the search
+-   Fix a bug in which Safari would freeze while an email is being composed
 
 ## Release 5.0.7 - September 7, 2022
 
 ### Improvements
 
--   Added the ability to quickly take actions from the list view
--   Changed the emoji icon
+-   Add the ability to quickly take actions from the list view
+-   Change the emoji icon
 -   Message list improvements
 
 ### Bug fixes
 
--   Fixed an issue on label/folder name causing Safari to show the autofill
--   Fixed an issue on the composer to avoid triggering shortcuts while a message is being sent
+-   Fix an issue on label/folder name causing Safari to show the autofill
+-   Fix an issue on the composer to avoid triggering shortcuts while a message is being sent
 
 ## Release 5.0.6 - August 17, 2022
 
 ### Improvements
 
--   Added an Emoji picker to the composer
--   Improved the inline attachments count verification
--   Added a modal asking users to unsubscribe from the mailing list when moving a newsletter to SPAM
+-   Add an Emoji picker to the composer
+-   Improve the inline attachments count verification
+-   Add a modal asking users to unsubscribe from the mailing list when moving a newsletter to SPAM
 
 ### Bug fixes
 
--   Fixed an issue where composer crashed when adding a specific recipient
--   Fixed an issue where contacts could not be merged
--   Fixed an issue where attachments were not displayed on print view
+-   Fix an issue where composer crashed when adding a specific recipient
+-   Fix an issue where contacts could not be merged
+-   Fix an issue where attachments were not displayed on print view
 
 ## Release 5.0.5 - July 27, 2022
 
 ### Bug fixes
 
--   Fixed some minor display & alignment issues
+-   Fix some minor display & alignment issues
 
 ## Release 5.0.4 - July 20, 2022
 
 ### improvements
 
--   Added the ability to move every message from a folder to trash
+-   Add the ability to move every message from a folder to trash
 
 ## Release 5.0.3 - July 6, 2022
 
 ### improvements
 
--   Added the ability to view messages from sender
+-   Add the ability to view messages from sender
 
 ## Release 5.0.2 - June 22, 2022
 
 ### Improvements
 
--   Added the ability add contacts to contact groups in bulk
--   Added a Quick action menu when right-clicking on an email
--   Added the ability to insert a link on images in the composer
+-   Add the ability add contacts to contact groups in bulk
+-   Add a Quick action menu when right-clicking on an email
+-   Add the ability to insert a link on images in the composer
 
 ### Bug fixes
 
--   Fixed an issue where downloading a single attachment would create a zip file
--   Fixed an issue where a placeholder was briefly shown when accessing a folder known to be empty
--   Fixed an issue where an incorrect font would be displayed in the composer
--   Fixed an issue with composer keyboard shortcuts
+-   Fix an issue where downloading a single attachment would create a zip file
+-   Fix an issue where a placeholder was briefly shown when accessing a folder known to be empty
+-   Fix an issue where an incorrect font would be displayed in the composer
+-   Fix an issue with composer keyboard shortcuts
 
 ## Release 5.0.1 - May 27, 2022
 
--   Added V4 classic theme
+-   Add V4 classic theme
 
 # Introducing Proton's refreshed look.
 
