@@ -4878,6 +4878,9 @@
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
       ],
+      "Moving messages. This may take a while.": [
+        "正在移動訊息。這可能需要一段時間。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
       ],
@@ -4904,9 +4907,6 @@
       ],
       "No group found": [
         "未找到群組"
-      ],
-      "No imports to display.": [
-        "未有任何匯入可供顯示。"
       ],
       "No label found": [
         "找不到標籤"
@@ -7694,6 +7694,28 @@
         "${ secondsCountLeft } 秒"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } min": [
+        "${ minutes }分鐘"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes }分鐘"
+      ]
+    },
     "Title": {
       "${ emailsCount } members": [
         "${ emailsCount } 位成員"
@@ -8213,23 +8235,6 @@
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "動作"
-      ],
-      "Date": [
-        "日期"
-      ],
-      "Import": [
-        "匯入"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Status": [
-        "狀態"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -2944,9 +2944,9 @@
       ],
       "This file contains an event invitation:": [
         "Этот файл содержит приглашение на событие:",
-        "Этот файл содержит приглашения на событие:",
-        "Этот файл содержит приглашения на событие:",
-        "Этот файл содержит приглашения на событие:"
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:"
       ],
       "This file contains an invitation response:": [
         "Этот файл содержит ответ на приглашение:",
@@ -3363,6 +3363,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Предоставляя полную информацию о подробностях события из этого календаря, вы соглашаетесь предоставить ${ BRAND_NAME } доступ к зашифрованной информации этого календаря."
       ],
+      "Calendar side panel": [
+        "Боковая панель календаря"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
       ],
@@ -3572,9 +3575,6 @@
       ],
       "No group found": [
         "Группа не найдена"
-      ],
-      "No imports to display.": [
-        "Нет импорта для отображения."
       ],
       "No results found": [
         "Результаты не найдены"
@@ -3874,7 +3874,7 @@
         "Ваш адрес отключен. Участникам мероприятия нельзя отправить письмо об отмене. Всё равно хотите удалить все события в этой серии?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Ваш адрес отключен. Сообщение об отмене не может быть отправлено участникам события. Вы все равно хотите удалить это событие?"
+        "Ваш адрес отключён. Сообщение об отмене не может быть отправлено участникам события. Вы всё равно хотите удалить это событие?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт ${ BRAND_NAME }."
@@ -6156,23 +6156,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Выберите количество"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Действия"
-      ],
-      "Date": [
-        "Дата"
-      ],
-      "Import": [
-        "Импорт"
-      ],
-      "Size": [
-        "Размер"
-      ],
-      "Status": [
-        "Состояние"
       ]
     },
     "Title; create calendar modal": {

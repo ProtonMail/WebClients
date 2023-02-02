@@ -2655,6 +2655,10 @@
         "${ canceledCount } ακυρώθηκε",
         "${ canceledCount } ακυρώθηκαν"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } επαφή περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
         "${ contactEmailsLength } Μέλη"
@@ -3153,9 +3157,6 @@
       ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
-      ],
-      "No imports to display.": [
-        "Δεν υπάρχουν εισαγωγές προς εμφάνιση."
       ],
       "No preview available": [
         "Δεν υπάρχει διαθέσιμη προεπισκόπηση"
@@ -5205,23 +5206,6 @@
       ],
       "You’ve got 1 GB of storage": [
         "Έχετε 1 GB αποθηκευτικού χώρου"
-      ]
-    },
-    "Title header": {
-      "Actions": [
-        "Ενέργειες"
-      ],
-      "Date": [
-        "Ημερομηνία"
-      ],
-      "Import": [
-        "Εισαγωγή"
-      ],
-      "Size": [
-        "Μέγεθος"
-      ],
-      "Status": [
-        "Κατάσταση"
       ]
     },
     "Today icon tooltip in mini calendar": {
