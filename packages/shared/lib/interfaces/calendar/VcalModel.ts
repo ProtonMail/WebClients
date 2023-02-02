@@ -225,6 +225,10 @@ export interface VcalAttendeePropertyWithToken extends VcalAttendeeProperty {
 
 export type VcalPmAttendee = VcalAttendeePropertyWithCn & VcalAttendeePropertyWithToken;
 
+export interface VcalCategoryProperty {
+    value: string[];
+}
+
 export interface VcalVeventComponent {
     component: 'vevent';
     components?: VcalValarmComponent[]; // Not complete. Can be other components.
@@ -251,7 +255,7 @@ export interface VcalVeventComponent {
     transp?: VcalStringProperty;
     url?: VcalStringProperty;
     attach?: VcalStringWithParamsProperty[];
-    categories?: VcalStringWithParamsProperty[];
+    categories?: VcalCategoryProperty[];
     comment?: VcalStringWithParamsProperty[];
     contact?: VcalStringWithParamsProperty[];
     'request-status'?: VcalStringArrayProperty[];
@@ -307,6 +311,11 @@ export type VcalCalendarComponent =
     | VcalXOrIanaComponent
     | VcalVcalendar;
 
+export interface VcalCalendarComponentWithErrors {
+    error: Error;
+    icalComponent: any;
+}
+
 export interface VcalVcalendar {
     component: string;
     components?: VcalCalendarComponent[];
@@ -327,4 +336,8 @@ export interface VcalVcalendar {
     color?: VcalStringProperty;
     image?: VcalImageProperty;
     conference?: VcalURIProperty;
+}
+
+export interface VcalVcalendarWithErrors extends Omit<VcalVcalendar, 'components'> {
+    components?: VcalCalendarComponentWithErrors[];
 }
