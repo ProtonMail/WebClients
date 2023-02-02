@@ -15,7 +15,8 @@
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "proton-pack dev-server --appMode=standalone",
-        "test": "jest --runInBand --ci"
+        "test": "jest --runInBand --ci",
+        "test:dev": "jest --watch --coverage=false"
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
