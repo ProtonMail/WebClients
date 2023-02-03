@@ -38,10 +38,10 @@
         "husky": "^8.0.3",
         "lint-staged": "^13.1.0",
         "prettier": "^2.8.3",
-        "sort-package-json": "^2.2.0"
+        "sort-package-json": "^2.4.0"
     },
-    "packageManager": "yarn@3.3.1",
+    "packageManager": "yarn@3.4.1",
     "engines": {
-        "node": ">= v18.13.0"
+        "node": ">= v18.14.0"
     }
 }
