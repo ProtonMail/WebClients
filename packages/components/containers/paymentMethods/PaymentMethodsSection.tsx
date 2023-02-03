@@ -15,14 +15,14 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 const PaymentMethodsSection = () => {
     const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
-    const [{ isManagedByMozilla } = {}, loadingSubscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
 
     if (loadingPaymentMethods || loadingSubscription) {
         return <Loader />;
     }
 
-    if (isManagedByMozilla) {
+    if (subscription?.isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
 
