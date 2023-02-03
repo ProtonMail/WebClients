@@ -34,12 +34,12 @@ const PaymentMethodsSection = () => {
         createModal(<PayPalModal />);
     };
 
-    const hasPayPal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
-
     const learnMoreUrl =
         APP_NAME === APPS.PROTONVPN_SETTINGS
             ? 'https://protonvpn.com/support/payment-options/'
             : getKnowledgeBaseUrl('/payment-options');
+
+    const hasPayPal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
 
     return (
         <SettingsSection>
@@ -52,7 +52,7 @@ const PaymentMethodsSection = () => {
                     {c('Action').t`Add credit / debit card`}
                 </Button>
 
-                {hasPayPal ? null : (
+                {!hasPayPal && (
                     <Button shape="outline" onClick={handlePayPal}>
                         {c('Action').t`Add PayPal`}
                     </Button>
