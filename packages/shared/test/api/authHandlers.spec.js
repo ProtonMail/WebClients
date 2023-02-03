@@ -129,7 +129,7 @@ describe('auth handlers', () => {
         let refreshed = false;
         let refreshCalls = 0;
         const call = jasmine.createSpy('call').and.callFake(async (args) => {
-            if (args.url === 'auth/refresh') {
+            if (args.url === 'core/v4/auth/refresh') {
                 refreshed = true;
                 refreshCalls++;
                 return {
@@ -155,7 +155,7 @@ describe('auth handlers', () => {
 
     it('should refresh once and fail all active calls (if has session)', async () => {
         const call = jasmine.createSpy('call').and.callFake(async (args) => {
-            if (args.url === 'auth/refresh') {
+            if (args.url === 'core/v4/auth/refresh') {
                 throw getApiError({ status: 422, data: args });
             }
             throw getApiError({ status: 401, data: args });

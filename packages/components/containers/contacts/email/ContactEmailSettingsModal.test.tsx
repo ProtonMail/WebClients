@@ -38,7 +38,7 @@ END:VCARD`;
         const saveRequestSpy = jest.fn();
 
         api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'keys') {
+            if (args.url === 'core/v4/keys') {
                 return { Keys: [] };
             }
             if (args.url === 'contacts/v4/contacts') {
@@ -114,7 +114,7 @@ END:VCARD`;
         const saveRequestSpy = jest.fn();
 
         api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'keys') {
+            if (args.url === 'core/v4/keys') {
                 return { Keys: [] };
             }
             if (args.url === 'contacts/v4/contacts') {
@@ -203,7 +203,7 @@ END:VCARD`;
         const saveRequestSpy = jest.fn();
 
         api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'keys') {
+            if (args.url === 'core/v4/keys') {
                 return { Keys: [] };
             }
             if (args.url === 'contacts/v4/contacts') {
@@ -296,7 +296,7 @@ END:VCARD`;
         const saveRequestSpy = jest.fn();
 
         api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'keys') {
+            if (args.url === 'core/v4/keys') {
                 return { Keys: [{ Flags: 3, PublicKey: armoredPublicKey }], recipientType: 2 };
             }
             if (args.url === 'contacts/v4/contacts') {
@@ -394,7 +394,7 @@ END:VCARD`;
         const saveRequestSpy = jest.fn();
 
         api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'keys') {
+            if (args.url === 'core/v4/keys') {
                 return { Keys: [{ Flags: 3, PublicKey: armoredPublicKey }], recipientType: 2 };
             }
             if (args.url === 'contacts/v4/contacts') {
