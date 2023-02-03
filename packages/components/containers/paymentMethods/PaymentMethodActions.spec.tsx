@@ -1,6 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
-import { orderPaymentMethods } from '@proton/shared/lib/api/payments';
+import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { PaymentMethod } from '@proton/shared/lib/interfaces';
 
@@ -234,11 +234,29 @@ describe('PaymentMethodActions', () => {
             let { createModal } = useModals();
             (createModal as jest.Mock).mockReset();
 
+            let api = useApi();
+            (api as jest.Mock).mockReset();
+
+            let { call } = useEventManager();
+            (call as jest.Mock).mockReset();
+
+            let { createNotification } = useNotifications();
+            (createNotification as jest.Mock).mockReset();
+
             let { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
 
             fireEvent.click(await findByTestId('actionIndex-2'));
 
             expect(createModal).toHaveBeenCalled();
+
+            await waitFor(async () => {
+                let onDelete = (createModal as jest.Mock).mock.lastCall[0].props.onConfirm;
+                await onDelete();
+            });
+
+            expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123'));
+            expect(call).toHaveBeenCalled();
+            expect(createNotification).toHaveBeenCalled();
         });
     });
 });
