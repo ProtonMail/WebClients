@@ -36,7 +36,7 @@ const PaymentMethodsSection = () => {
         createModal(<PayPalModal />);
     };
 
-    const hasPayPal = paymentMethods.some((method: any) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
+    const hasPayPal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
 
     const learnMoreUrl =
         APP_NAME === APPS.PROTONVPN_SETTINGS
