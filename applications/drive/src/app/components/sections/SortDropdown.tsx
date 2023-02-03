@@ -86,7 +86,7 @@ export function translateSortField(sortField: string): string {
         metaDataModifyTime: c('Label').t`Modified`,
         linkCreateTime: c('Label').t`Created`,
         linkExpireTime: c('Label').t`Expires`,
-        numAccesses: c('Label').t`# of accesses`,
+        numAccesses: c('Label').t`# of downloads`,
         trashed: c('Label').t`Deleted`,
     };
     return translations[sortField];
