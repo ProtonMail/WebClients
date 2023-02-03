@@ -76,7 +76,7 @@ describe('ContactGroupEditModal', () => {
         const unlabelSpy = jest.fn();
 
         api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === `v4/labels/${group.ID}`) {
+            if (args.url === `core/v4/labels/${group.ID}`) {
                 updateSpy(args.data);
                 return { Label: { ID: group.ID } };
             }

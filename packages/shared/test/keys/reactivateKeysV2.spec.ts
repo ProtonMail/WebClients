@@ -280,7 +280,7 @@ describe('reactivate keys', () => {
         ]);
         const keyReactivationCall = api.calls.argsFor(0)[0];
         expect(keyReactivationCall).toEqual({
-            url: 'keys/user/2',
+            url: 'core/v4/keys/user/2',
             method: 'put',
             data: jasmine.objectContaining({
                 PrivateKey: jasmine.any(String),
@@ -324,7 +324,7 @@ describe('reactivate keys', () => {
         expect(api.calls.count()).toEqual(3);
 
         expect(api.calls.argsFor(0)[0]).toEqual({
-            url: 'keys/user/2',
+            url: 'core/v4/keys/user/2',
             method: 'put',
             data: jasmine.objectContaining({
                 PrivateKey: jasmine.any(String),
@@ -343,7 +343,7 @@ describe('reactivate keys', () => {
         });
 
         expect(api.calls.argsFor(1)[0]).toEqual({
-            url: 'keys/address/c1',
+            url: 'core/v4/keys/address/c1',
             method: 'put',
             data: {
                 Token: jasmine.any(String),
@@ -357,7 +357,7 @@ describe('reactivate keys', () => {
         });
 
         expect(api.calls.argsFor(2)[0]).toEqual({
-            url: 'keys/address/c2',
+            url: 'core/v4/keys/address/c2',
             method: 'put',
             data: {
                 Token: jasmine.any(String),
@@ -395,7 +395,7 @@ describe('reactivate keys', () => {
         expect(api.calls.count()).toEqual(1);
 
         expect(api.calls.argsFor(0)[0]).toEqual({
-            url: 'keys/user/2',
+            url: 'core/v4/keys/user/2',
             method: 'put',
             data: jasmine.objectContaining({
                 PrivateKey: jasmine.any(String),
