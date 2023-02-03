@@ -256,7 +256,7 @@ export function useLinksListingProvider() {
             abortSignal
         );
 
-        // Enhance links with shareURL so we can set # of accesses to the cached link.
+        // Enhance links with shareURL so we can set # of downloads to the cached link.
         const shareUrls = ShareURLs.reduce((obj, shareUrl) => {
             obj[shareUrl.ShareURLID] = shareUrl;
             return obj;

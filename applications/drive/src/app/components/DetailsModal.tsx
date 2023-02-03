@@ -118,7 +118,7 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
                 )}
                 <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
                 {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
-                    <DetailsRow label={c('Title').t`# of accesses`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
+                    <DetailsRow label={c('Title').t`# of downloads`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
                 )}
             </ModalTwoContent>
         );
