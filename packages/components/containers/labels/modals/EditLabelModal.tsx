@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -123,7 +123,8 @@ const EditLabelModal = ({
         handleClose();
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: FormEvent) => {
+        e.stopPropagation();
         if (!onFormSubmit()) {
             return;
         }
