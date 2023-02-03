@@ -1,7 +1,7 @@
-import { SECOND } from '@proton/shared/lib/constants';
+import { HTTP_STATUS_CODE, SECOND } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS } from '../constants';
+import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS, METRICS_REQUEST_TIMEOUT_SECONDS } from '../constants';
 import MetricsApi from '../lib/MetricsApi';
 
 jest.mock('@proton/shared/lib/helpers/promise');
@@ -12,24 +12,8 @@ function getHeader(headers: HeadersInit | undefined, headerName: string) {
 }
 
 describe('MetricsApi', () => {
-    it('sets content-type header to application/json', async () => {
-        const metricsApi = new MetricsApi();
-
-        await metricsApi.fetch('/route');
-        const content = fetchMock.mock.lastCall[1];
-
-        expect(fetchMock).toHaveBeenCalledTimes(1);
-        expect(getHeader(content?.headers, 'content-type')).toBe('application/json');
-    });
-
-    it('sets priority header to u=6', async () => {
-        const metricsApi = new MetricsApi();
-
-        await metricsApi.fetch('/route');
-        const content = fetchMock.mock.lastCall[1];
-
-        expect(fetchMock).toHaveBeenCalledTimes(1);
-        expect(getHeader(content?.headers, 'priority')).toBe('u=6');
+    beforeEach(() => {
+        fetchMock.resetMocks();
     });
 
     describe('constructor', () => {
@@ -166,6 +150,35 @@ describe('MetricsApi', () => {
     });
 
     describe('fetch', () => {
+        it('throws if fetch rejects', async () => {
+            fetchMock.mockResponseOnce(() => Promise.reject(new Error('asd')));
+            const metricsApi = new MetricsApi();
+
+            await expect(async () => {
+                await metricsApi.fetch('/route');
+            }).rejects.toThrow();
+        });
+
+        it('sets content-type header to application/json', async () => {
+            const metricsApi = new MetricsApi();
+
+            await metricsApi.fetch('/route');
+            const content = fetchMock.mock.lastCall[1];
+
+            expect(fetchMock).toHaveBeenCalledTimes(1);
+            expect(getHeader(content?.headers, 'content-type')).toBe('application/json');
+        });
+
+        it('sets priority header to u=6', async () => {
+            const metricsApi = new MetricsApi();
+
+            await metricsApi.fetch('/route');
+            const content = fetchMock.mock.lastCall[1];
+
+            expect(fetchMock).toHaveBeenCalledTimes(1);
+            expect(getHeader(content?.headers, 'priority')).toBe('u=6');
+        });
+
         it('forwards request info', async () => {
             const route = '/route';
             const metricsApi = new MetricsApi();
@@ -196,87 +209,155 @@ describe('MetricsApi', () => {
             expect(content?.body).toBe(body);
             expect(getHeader(content?.headers, 'foo')).toBe('bar');
         });
-    });
 
-    describe('retry', () => {
-        const getRetryImplementation = (url: string, retrySeconds: string) => async (req: Request) => {
-            if (req.url === url) {
-                return {
-                    status: 429,
-                    headers: {
-                        'retry-after': retrySeconds,
-                    },
-                };
-            }
+        describe('retry', () => {
+            const getRetryImplementation = (url: string, retrySeconds?: string) => async (req: Request) => {
+                if (req.url === url) {
+                    return retrySeconds === undefined
+                        ? { status: HTTP_STATUS_CODE.TOO_MANY_REQUESTS }
+                        : {
+                              status: HTTP_STATUS_CODE.TOO_MANY_REQUESTS,
+                              headers: {
+                                  'retry-after': retrySeconds,
+                              },
+                          };
+                }
 
-            return '';
-        };
+                return '';
+            };
 
-        it('retries request if response contains retry-after header', async () => {
-            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '1'));
-            const metricsApi = new MetricsApi();
+            it('retries request if response contains retry-after header', async () => {
+                fetchMock.mockResponseOnce(getRetryImplementation('/retry', '1'));
+                const metricsApi = new MetricsApi();
 
-            await metricsApi.fetch('/retry');
+                await metricsApi.fetch('/retry');
 
-            expect(fetchMock).toHaveBeenCalledTimes(2);
+                expect(fetchMock).toHaveBeenCalledTimes(2);
+            });
+
+            it('respects the time the retry header contains', async () => {
+                fetchMock.mockResponseOnce(getRetryImplementation('/retry', '1'));
+                fetchMock.mockResponseOnce(getRetryImplementation('/retry', '2'));
+                fetchMock.mockResponseOnce(getRetryImplementation('/retry', '3'));
+                const metricsApi = new MetricsApi();
+
+                await metricsApi.fetch('/retry');
+
+                expect(wait).toHaveBeenNthCalledWith(1, 1 * SECOND);
+                expect(wait).toHaveBeenNthCalledWith(2, 2 * SECOND);
+                expect(wait).toHaveBeenNthCalledWith(3, 3 * SECOND);
+            });
+
+            it(`retires a maximum of ${METRICS_MAX_ATTEMPTS} times`, async () => {
+                fetchMock.mockResponse(getRetryImplementation('/retry', '1'));
+                const metricsApi = new MetricsApi();
+
+                await metricsApi.fetch('/retry');
+
+                expect(fetchMock).toHaveBeenCalledTimes(METRICS_MAX_ATTEMPTS);
+            });
+
+            it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is 0`, async () => {
+                fetchMock.mockResponseOnce(getRetryImplementation('/retry', '0'));
+                const metricsApi = new MetricsApi();
+
+                await metricsApi.fetch('/retry');
+
+                expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
+            });
+
+            it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is NaN`, async () => {
+                fetchMock.mockResponseOnce(getRetryImplementation('/retry', 'hello'));
+                const metricsApi = new MetricsApi();
+
+                await metricsApi.fetch('/retry');
+
+                expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
+            });
+
+            it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is negative`, async () => {
+                fetchMock.mockResponseOnce(getRetryImplementation('/retry', '-1'));
+                const metricsApi = new MetricsApi();
+
+                await metricsApi.fetch('/retry');
+
+                expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
+            });
+
+            it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is not defined`, async () => {
+                fetchMock.mockResponseOnce(getRetryImplementation('/retry'));
+                const metricsApi = new MetricsApi();
+
+                await metricsApi.fetch('/retry');
+
+                expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
+            });
+
+            it('floors non integer values', async () => {
+                fetchMock.mockResponseOnce(getRetryImplementation('/retry', '2.5'));
+                const metricsApi = new MetricsApi();
+
+                await metricsApi.fetch('/retry');
+
+                expect(wait).toHaveBeenCalledWith(2 * SECOND);
+            });
         });
 
-        it('respects the time the retry header contains', async () => {
-            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '1'));
-            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '2'));
-            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '3'));
-            const metricsApi = new MetricsApi();
+        describe('timeout', () => {
+            beforeAll(() => {
+                jest.useFakeTimers();
+            });
 
-            await metricsApi.fetch('/retry');
+            beforeEach(() => {
+                jest.clearAllTimers();
+            });
 
-            expect(wait).toHaveBeenNthCalledWith(1, 1 * SECOND);
-            expect(wait).toHaveBeenNthCalledWith(2, 2 * SECOND);
-            expect(wait).toHaveBeenNthCalledWith(3, 3 * SECOND);
-        });
+            afterAll(() => {
+                jest.useRealTimers();
+            });
 
-        it(`only retires a maximum of ${METRICS_MAX_ATTEMPTS} times`, async () => {
-            fetchMock.mockResponse(getRetryImplementation('/retry', '1'));
-            const metricsApi = new MetricsApi();
+            const timeoutRequestMock = () =>
+                new Promise<{ body: string }>((resolve) => {
+                    setTimeout(() => resolve({ body: 'ok' }), METRICS_REQUEST_TIMEOUT_SECONDS * SECOND + 1);
+                    jest.advanceTimersByTime(METRICS_REQUEST_TIMEOUT_SECONDS * SECOND + 1);
+                });
 
-            await metricsApi.fetch('/retry');
+            it('retries request if request aborts', async () => {
+                fetchMock.mockAbort();
+                const metricsApi = new MetricsApi();
 
-            expect(fetchMock).toHaveBeenCalledTimes(METRICS_MAX_ATTEMPTS);
-        });
+                await metricsApi.fetch('/route');
 
-        it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is 0`, async () => {
-            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '0'));
-            const metricsApi = new MetricsApi();
+                expect(fetchMock).toHaveBeenCalledTimes(METRICS_MAX_ATTEMPTS);
+                await expect(fetchMock).rejects.toThrow('The operation was aborted.');
+            });
 
-            await metricsApi.fetch('/retry');
+            it(`retries request if response takes longer than ${METRICS_REQUEST_TIMEOUT_SECONDS} seconds`, async () => {
+                fetchMock.mockResponseOnce(timeoutRequestMock);
+                const metricsApi = new MetricsApi();
 
-            expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
-        });
+                await metricsApi.fetch('/route');
 
-        it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is NaN`, async () => {
-            fetchMock.mockResponseOnce(getRetryImplementation('/retry', 'hello'));
-            const metricsApi = new MetricsApi();
+                expect(fetchMock).toHaveBeenCalledTimes(2);
+            });
 
-            await metricsApi.fetch('/retry');
+            it(`waits ${METRICS_DEFAULT_RETRY_SECONDS} seconds before retrying`, async () => {
+                fetchMock.mockResponseOnce(timeoutRequestMock);
+                const metricsApi = new MetricsApi();
 
-            expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
-        });
+                await metricsApi.fetch('/route');
 
-        it(`uses default retry of ${METRICS_DEFAULT_RETRY_SECONDS} if retry is negative`, async () => {
-            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '-1'));
-            const metricsApi = new MetricsApi();
+                expect(wait).toHaveBeenNthCalledWith(1, METRICS_DEFAULT_RETRY_SECONDS * SECOND);
+            });
 
-            await metricsApi.fetch('/retry');
+            it(`retires a maximum of ${METRICS_MAX_ATTEMPTS} times`, async () => {
+                fetchMock.mockResponse(timeoutRequestMock);
+                const metricsApi = new MetricsApi();
 
-            expect(wait).toHaveBeenCalledWith(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
-        });
+                await metricsApi.fetch('/route');
 
-        it('floors non integer values', async () => {
-            fetchMock.mockResponseOnce(getRetryImplementation('/retry', '2.5'));
-            const metricsApi = new MetricsApi();
-
-            await metricsApi.fetch('/retry');
-
-            expect(wait).toHaveBeenCalledWith(2 * SECOND);
+                expect(fetchMock).toHaveBeenCalledTimes(METRICS_MAX_ATTEMPTS);
+            });
         });
     });
 });
