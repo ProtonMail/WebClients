@@ -5,7 +5,7 @@ import { APPS, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Loader } from '../../components';
-import { useConfig, useModals, usePaymentMethods, useSubscription } from '../../hooks';
+import { useConfig, useModals, useMozillaCheck, usePaymentMethods } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import EditCardModal from '../payments/EditCardModal';
@@ -15,14 +15,14 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 const PaymentMethodsSection = () => {
     const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
-    const [subscription, loadingSubscription] = useSubscription();
+    const [isManagedByMozilla, loadingCheck] = useMozillaCheck();
     const { createModal } = useModals();
 
-    if (loadingPaymentMethods || loadingSubscription) {
+    if (loadingPaymentMethods || loadingCheck) {
         return <Loader />;
     }
 
-    if (subscription?.isManagedByMozilla) {
+    if (isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
 
@@ -58,7 +58,7 @@ const PaymentMethodsSection = () => {
                     </Button>
                 )}
             </div>
-            <PaymentMethodsTable loading={loadingPaymentMethods || loadingSubscription} methods={paymentMethods} />
+            <PaymentMethodsTable loading={false} methods={paymentMethods} />
         </SettingsSection>
     );
 };

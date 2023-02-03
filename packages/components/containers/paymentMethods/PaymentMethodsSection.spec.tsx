@@ -10,6 +10,7 @@ import {
     useModals,
     usePaymentMethods,
     useSubscription,
+    useTypedSubscription,
 } from '../..';
 
 jest.mock('../../hooks/useConfig', () => () => ({
@@ -29,6 +30,7 @@ describe('PaymentMethodsSection', () => {
         jest.resetAllMocks();
         jest.mocked(usePaymentMethods).mockReturnValue([[], false, undefined as any]);
         jest.mocked(useSubscription).mockReturnValue([{} as any, false, undefined as any]);
+        jest.mocked(useTypedSubscription).mockReturnValue([{}, false]);
         jest.mocked(useModals).mockReturnValue({
             createModal: jest.fn(),
         } as any);
@@ -48,7 +50,7 @@ describe('PaymentMethodsSection', () => {
     });
 
     it('should render <Loading> if subscriptions are loading', () => {
-        jest.mocked(useSubscription).mockReturnValue([undefined as any, true, undefined as any]);
+        jest.mocked(useTypedSubscription).mockReturnValue([undefined, true]);
 
         let { container } = render(<PaymentMethodsSection />);
 
@@ -56,7 +58,7 @@ describe('PaymentMethodsSection', () => {
     });
 
     it('should render <MozillaInfoPanel> if subscription is managed by mozilla', () => {
-        jest.mocked(useSubscription).mockReturnValue([{ isManagedByMozilla: true } as any, false, undefined as any]);
+        jest.mocked(useTypedSubscription).mockReturnValue([{ isManagedByMozilla: true } as any, false]);
 
         let { container } = render(<PaymentMethodsSection />);
 
