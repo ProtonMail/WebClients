@@ -11,6 +11,17 @@ export interface PaymentMethodStatus {
 export interface PayPalDetails {
     BillingAgreementID: string;
     PayerID: string;
+    Payer: string;
+}
+
+export function isPaypalDetails(obj: any): obj is PayPalDetails {
+    if (!obj) {
+        return false;
+    }
+
+    const props: (keyof PayPalDetails)[] = ['BillingAgreementID', 'PayerID'];
+
+    return props.every((prop) => typeof obj[prop] === 'string');
 }
 
 export interface CardDetails {
@@ -21,6 +32,16 @@ export interface CardDetails {
     Country: string;
     Last4: string;
     Brand: string;
+}
+
+export function isCardDetails(obj: any): obj is CardDetails {
+    if (!obj) {
+        return false;
+    }
+
+    const props: (keyof CardDetails)[] = ['Name', 'ExpMonth', 'ExpYear', 'ZIP', 'Country', 'Last4', 'Brand'];
+
+    return props.every((prop) => typeof obj[prop] === 'string');
 }
 
 export type PaymentMethod =
