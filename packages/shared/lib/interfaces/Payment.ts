@@ -44,19 +44,21 @@ export function isCardDetails(obj: any): obj is CardDetails {
     return props.every((prop) => typeof obj[prop] === 'string');
 }
 
-export type PaymentMethod =
-    | {
-          Order: number;
-          ID: string;
-          Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
-          Details: PayPalDetails;
-      }
-    | {
-          Order: number;
-          ID: string;
-          Type: PAYMENT_METHOD_TYPES.CARD;
-          Details: CardDetails;
-      };
+export type PaymentMethodCardDetails = {
+    Order: number;
+    ID: string;
+    Type: PAYMENT_METHOD_TYPES.CARD;
+    Details: CardDetails;
+};
+
+export type PaymentMethodPaypal = {
+    Order: number;
+    ID: string;
+    Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
+    Details: PayPalDetails;
+};
+
+export type PaymentMethod = PaymentMethodPaypal | PaymentMethodCardDetails;
 
 export interface LatestSubscription {
     LastSubscriptionEnd: number;
