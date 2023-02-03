@@ -15,7 +15,7 @@ import toDetails from './toDetails';
 import useCard from './useCard';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
-    card: CardModel;
+    card?: CardModel;
 }
 
 const EditCardModal = ({ card: existingCard, ...rest }: Props) => {

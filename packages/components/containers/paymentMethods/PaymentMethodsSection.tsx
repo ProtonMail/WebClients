@@ -15,7 +15,6 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 const PaymentMethodsSection = () => {
     const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
-    // @ts-ignore
     const [{ isManagedByMozilla } = {}, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
 
@@ -28,8 +27,7 @@ const PaymentMethodsSection = () => {
     }
 
     const handleCard = () => {
-        const UntypedEditCardModal: any = EditCardModal;
-        createModal(<UntypedEditCardModal />);
+        createModal(<EditCardModal />);
     };
 
     const handlePayPal = () => {
