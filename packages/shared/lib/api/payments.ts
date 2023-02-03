@@ -118,7 +118,7 @@ export const queryPaymentMethodStatus = () => ({
     method: 'get',
 });
 
-export const orderPaymentMethods = (PaymentMethodIDs: any) => ({
+export const orderPaymentMethods = (PaymentMethodIDs: string[]) => ({
     url: 'payments/methods/order',
     method: 'put',
     data: { PaymentMethodIDs },
