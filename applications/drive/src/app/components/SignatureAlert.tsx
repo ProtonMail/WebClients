@@ -9,17 +9,32 @@ import { SignatureIssueLocation, SignatureIssues } from '../store';
 type Props = {
     loading: boolean;
     signatureIssues: SignatureIssues | undefined;
+    signatureNetworkError?: boolean;
     signatureAddress: string | undefined;
     isFile: boolean;
     name: string;
     className?: string;
 };
 
-export default function SignatureAlert({ loading, signatureIssues, className, ...props }: Props) {
+export default function SignatureAlert({
+    loading,
+    signatureIssues,
+    signatureNetworkError,
+    className,
+    ...props
+}: Props) {
     if (loading) {
         return (
             <Alert type="info" className={className}>
                 <TextLoader className="m0">{c('Info').t`Checking signatures`}</TextLoader>
+            </Alert>
+        );
+    }
+
+    if (signatureNetworkError) {
+        return (
+            <Alert type="warning" className={className}>
+                <span>{c('Info').t`Signature cannot be validated due to network error, please try again later.`}</span>
             </Alert>
         );
     }
