@@ -2,7 +2,7 @@ import { HTTP_STATUS_CODE, SECOND } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS } from './../constants';
+import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS, METRICS_REQUEST_TIMEOUT_SECONDS } from './../constants';
 
 export interface IMetricsApi {
     setAuthHeaders: (uid: string) => void;
@@ -28,45 +28,72 @@ class MetricsApi implements IMetricsApi {
         this._versionHeaders = this.getVersionHeaders(clientID, appVersion);
     }
 
+    private async _fetchWithTimeout(requestInfo: RequestInfo | URL, requestInit: RequestInit) {
+        const abortController = new AbortController();
+
+        const timeoutId = setTimeout(() => {
+            abortController.abort();
+        }, METRICS_REQUEST_TIMEOUT_SECONDS * SECOND);
+
+        return fetch(requestInfo, {
+            signal: abortController.signal,
+            ...requestInit,
+        }).finally(() => {
+            clearTimeout(timeoutId);
+        });
+    }
+
     public async fetch(
         requestInfo: RequestInfo | URL,
-        requestInit?: RequestInit,
+        requestInit: RequestInit = {},
         attempt: number = 1
     ): Promise<Response | undefined> {
-        const response = await fetch(requestInfo, {
-            ...requestInit,
-            headers: {
-                ...requestInit?.headers,
-                'content-type': 'application/json',
-                priority: 'u=6',
-                ...this._authHeaders,
-                ...this._versionHeaders,
-            },
-        });
+        try {
+            const response = await this._fetchWithTimeout(requestInfo, {
+                ...requestInit,
+                headers: {
+                    ...requestInit?.headers,
+                    'content-type': 'application/json',
+                    priority: 'u=6',
+                    ...this._authHeaders,
+                    ...this._versionHeaders,
+                },
+            });
 
-        if (attempt >= METRICS_MAX_ATTEMPTS) {
-            return;
+            if (attempt >= METRICS_MAX_ATTEMPTS) {
+                return;
+            }
+
+            if (response.status === HTTP_STATUS_CODE.TOO_MANY_REQUESTS) {
+                const retryAfterSeconds = (() => {
+                    const retryHeader = response?.headers?.get('retry-after') || '';
+
+                    const parsedInt = parseInt(retryHeader, 10);
+
+                    if (parsedInt <= 0 || isNaN(parsedInt)) {
+                        return METRICS_DEFAULT_RETRY_SECONDS;
+                    }
+
+                    return parsedInt;
+                })();
+
+                await wait(retryAfterSeconds * SECOND);
+                return await this.fetch(requestInfo, requestInit, attempt + 1);
+            }
+
+            return response;
+        } catch (error: any) {
+            if (error.name !== 'AbortError') {
+                throw error;
+            }
+
+            if (attempt >= METRICS_MAX_ATTEMPTS) {
+                return;
+            }
+
+            await wait(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
+            return await this.fetch(requestInfo, requestInit, attempt + 1);
         }
-
-        if (response.status === HTTP_STATUS_CODE.TOO_MANY_REQUESTS) {
-            const retryAfterSeconds = (() => {
-                const retryHeader = response?.headers?.get('retry-after') || '';
-
-                const parsedInt = parseInt(retryHeader, 10);
-
-                if (parsedInt <= 0 || isNaN(parsedInt)) {
-                    return METRICS_DEFAULT_RETRY_SECONDS;
-                }
-
-                return parsedInt;
-            })();
-
-            await wait(retryAfterSeconds * SECOND);
-
-            return this.fetch(requestInfo, requestInit, attempt + 1);
-        }
-
-        return response;
     }
 
     private getAuthHeaders(uid?: string) {
