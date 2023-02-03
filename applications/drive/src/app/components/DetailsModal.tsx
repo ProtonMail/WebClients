@@ -45,6 +45,7 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
         error,
         link,
         signatureIssues,
+        signatureNetworkError,
         numberOfAccesses,
     } = useLinkDetailsView(shareId, linkId);
 
@@ -70,6 +71,7 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
                 <SignatureAlert
                     loading={isSignatureIssuesLoading}
                     signatureIssues={signatureIssues}
+                    signatureNetworkError={signatureNetworkError}
                     signatureAddress={link.signatureAddress}
                     isFile={link.isFile}
                     name={link.name}
