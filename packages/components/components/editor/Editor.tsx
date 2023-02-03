@@ -187,13 +187,20 @@ const Editor = ({
                     />
                 )}
             </div>
-            {modalDefaultFont.render && metadata.supportDefaultFontSelector && (
-                <DefaultFontModal {...modalDefaultFont.props} {...modalDefaultFont.modalsStateProps} />
-            )}
-            {modalImage.render && <InsertImageModal {...modalImage.props} {...modalImage.modalsStateProps} />}
-            {modalLink.render && modalLink.props && (
-                <InsertLinkModal {...modalLink.props} modalStateProps={modalLink.modalsStateProps} />
-            )}
+
+            <div
+                onSubmit={(e) => {
+                    e.stopPropagation();
+                }}
+            >
+                {modalDefaultFont.render && metadata.supportDefaultFontSelector && (
+                    <DefaultFontModal {...modalDefaultFont.props} {...modalDefaultFont.modalsStateProps} />
+                )}
+                {modalImage.render && <InsertImageModal {...modalImage.props} {...modalImage.modalsStateProps} />}
+                {modalLink.render && modalLink.props && (
+                    <InsertLinkModal {...modalLink.props} modalStateProps={modalLink.modalsStateProps} />
+                )}
+            </div>
         </>
     );
 };
