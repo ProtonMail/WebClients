@@ -201,9 +201,8 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                                 ref={imageRef}
                                 onLoad={fitToContainer}
                                 onError={handleBrokenImage}
-                                className={classnames(['file-preview-image', ready && 'hide'])}
+                                className={classnames(['file-preview-image w100', ready && 'hide'])}
                                 style={{
-                                    ...scaledDimensions,
                                     // Blurring an image this way leads to its edges to become transparent.
                                     // To compensate this, we apply scale transformation.
                                     filter: 'blur(3px)',
