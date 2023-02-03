@@ -3999,7 +3999,7 @@ __metadata:
     stylelint: ^14.16.1
     stylelint-config-prettier-scss: ^0.0.1
     stylelint-config-standard-scss: ^5.0.0
-    stylelint-use-logical-spec: ^4.1.0
+    stylelint-use-logical-spec: ^5.0.0
   languageName: unknown
   linkType: soft
 
@@ -4014,7 +4014,7 @@ __metadata:
     stylelint: ^14.16.1
     stylelint-config-prettier-scss: ^0.0.1
     stylelint-config-standard-scss: ^5.0.0
-    stylelint-use-logical-spec: ^4.1.0
+    stylelint-use-logical-spec: ^5.0.0
     svgo: ^3.0.2
   languageName: unknown
   linkType: soft
@@ -27242,7 +27242,7 @@ fsevents@^1.2.7:
     lint-staged: ^13.1.0
     prettier: ^2.8.3
     sort-package-json: ^2.4.0
-    stylelint-use-logical-spec: ^4.1.0
+    stylelint-use-logical-spec: ^5.0.0
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -28979,12 +28979,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"stylelint-use-logical-spec@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "stylelint-use-logical-spec@npm:4.1.0"
+"stylelint-use-logical-spec@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "stylelint-use-logical-spec@npm:5.0.0"
   peerDependencies:
     stylelint: ">=13"
-  checksum: 87ab8648d39e4bb7572866e410a4cc494e822fb4c72cabae43ac8acea8987ff7f841dcee0c2ae100dfd940c1212cb928f11ea48cff952d5ab6f98bbe35540a29
+  checksum: 354e411eb26cce21e15d0e713d6ca8a5ba96d7e9ffc027a6abee06c2d5b3aed32ad1bf088eb6e7ed81cf2c1ec8e1f46d1e4df6c759c818ae12f6fb47f5c1254c
   languageName: node
   linkType: hard
 
