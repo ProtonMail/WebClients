@@ -12,7 +12,7 @@
         "test": "karma start test/karma.conf.js"
     },
     "dependencies": {
-        "comlink": "^4.3.1",
+        "comlink": "^4.4.1",
         "pmcrypto-v7": "npm:@protontech/pmcrypto@^7.4.1"
     },
     "devDependencies": {
