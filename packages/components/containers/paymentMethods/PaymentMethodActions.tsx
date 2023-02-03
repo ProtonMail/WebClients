@@ -13,7 +13,7 @@ import { useApi, useEventManager, useModals, useNotifications } from '../../hook
 import EditCardModal from '../payments/EditCardModal';
 import { CardModel } from '../payments/interface';
 
-const toCard = ({ Details }: PaymentMethodCardDetails): CardModel => {
+const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
     return {
         fullname: Details.Name,
         month: `${Details.ExpMonth}`, // ExpMonth is a number
@@ -60,7 +60,7 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
         const result: DropdownActionProps[] = [];
 
         if (isCard) {
-            const card: CardModel = toCard(method);
+            const card: CardModel = toCardModel(method);
 
             result.push({
                 text: c('Action').t`Edit`,
