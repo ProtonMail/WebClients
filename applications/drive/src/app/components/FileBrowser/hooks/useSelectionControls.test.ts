@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { useSelectionControls } from './useSelectionControls';
+import { SelectionState, useSelectionControls } from './useSelectionControls';
 
 const ALL_IDS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
@@ -68,17 +68,22 @@ describe('useSelection', () => {
         expect(hook.current.isSelected('1')).toBe(false);
     });
 
-    it('isIndeterminate', () => {
+    it('selectionState', () => {
         act(() => {
             hook.current.selectItem('2');
             hook.current.selectItem('1');
         });
 
-        expect(hook.current.isIndeterminate).toBe(true);
+        expect(hook.current.selectionState).toBe(SelectionState.SOME);
 
         act(() => {
             hook.current.toggleAllSelected();
         });
-        expect(hook.current.isIndeterminate).toBe(false);
+        expect(hook.current.selectionState).toBe(SelectionState.ALL);
+
+        act(() => {
+            hook.current.toggleAllSelected();
+        });
+        expect(hook.current.selectionState).toBe(SelectionState.NONE);
     });
 });
