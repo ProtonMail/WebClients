@@ -2,6 +2,7 @@
 	@extend .notifications-container;
 
 	position: absolute;
+	z-index: $layer-upper;
 	inset-block-start: em(160);
 	inset-block-end: unset;
 	inset-inline-start: 50%;
