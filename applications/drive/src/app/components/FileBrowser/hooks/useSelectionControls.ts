@@ -2,14 +2,24 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { BrowserItemId } from '../interface';
 
+export enum SelectionState {
+    NONE,
+    ALL,
+    SOME,
+}
 export function useSelectionControls({ itemIds }: { itemIds: BrowserItemId[] }) {
     const [selectedItemIds, setSelectedItems] = useState<BrowserItemId[]>([]);
     const [multiSelectStartId, setMultiSelectStartId] = useState<BrowserItemId>();
 
-    const isIndeterminate = useMemo(
-        () => selectedItemIds.length > 0 && selectedItemIds.length !== itemIds.length,
-        [selectedItemIds, itemIds]
-    );
+    const selectionState = useMemo(() => {
+        if (selectedItemIds.length === 0) {
+            return SelectionState.NONE;
+        }
+        if (selectedItemIds.length !== itemIds.length) {
+            return SelectionState.SOME;
+        }
+        return SelectionState.ALL;
+    }, [selectedItemIds, itemIds]);
 
     useEffect(() => {
         const isItemInFolder = (itemId: BrowserItemId) => itemIds.some((folderItemIds) => folderItemIds === itemId);
@@ -95,6 +105,6 @@ export function useSelectionControls({ itemIds }: { itemIds: BrowserItemId[] }) 
         clearSelections,
         toggleRange,
         isSelected,
-        isIndeterminate,
+        selectionState,
     };
 }
