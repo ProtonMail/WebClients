@@ -23,6 +23,7 @@
         "@types/react-dom": "^17.0.18",
         "client-zip@2.3.0": "patch:client-zip@npm:2.3.0#.yarn/patches/client-zip-npm-2.3.0-366ca56ce9.patch",
         "memfs": "^3.4.13",
+        "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1"
     },
     "dependencies": {

@@ -27046,12 +27046,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"rfc2047@npm:^2.0.1":
+"rfc2047@npm:2.0.1":
   version: 2.0.1
   resolution: "rfc2047@npm:2.0.1"
   dependencies:
     iconv-lite: 0.4.5
   checksum: e1159bf5658678aee2cafa03c9ab7ed9d325cef73d3fd9cb2d02667365c10e42ebc866e04aac85cfb1469ee5871554f68babbd47c525389737b37f60c8a98be1
+  languageName: node
+  linkType: hard
+
+"rfc2047@patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch::locator=root%40workspace%3A.":
+  version: 2.0.1
+  resolution: "rfc2047@patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch::version=2.0.1&hash=93883d&locator=root%40workspace%3A."
+  dependencies:
+    iconv-lite: 0.4.5
+  checksum: 86fc6ddb21e9a0fd69a55e373228ff4e0c70cdb80581f9244ad3160c0a953b90cdb22c6c4fb334a37310066cbdf3e790e5a45a68d33be0b4480f2d050c23d6c0
   languageName: node
   linkType: hard
 
