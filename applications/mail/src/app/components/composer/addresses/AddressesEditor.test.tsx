@@ -15,9 +15,11 @@ import AddressesEditor from './AddressesEditor';
 const email1 = 'test@test.com';
 const email2 = 'test2@test.com';
 const email3 = 'test3@test.com';
+const email4 = 'test4@test.com';
 
 const email1Name = 'email1Name';
 const email2Name = 'email2Name';
+const email3Name = 'email3Name';
 
 const contact1ID = '1';
 const contact2ID = '2';
@@ -92,30 +94,41 @@ describe('AddressesEditor', () => {
         expect(remainingAddresses.length).toEqual(1);
     });
 
-    it('should add an address', async () => {
-        addApiMock('core/v4/keys', () => ({}));
+    it.each`
+        input                                     | expectedArray
+        ${email3}                                 | ${[{ Name: email3, Address: email3 }]}
+        ${`${email3}, ${email4}`}                 | ${[{ Name: email3, Address: email3 }, { Name: email4, Address: email4 }]}
+        ${`${email3} ${email4}`}                  | ${[{ Name: email3, Address: email3 }, { Name: email4, Address: email4 }]}
+        ${`${email3Name} <${email3}>`}            | ${[{ Name: email3Name, Address: email3 }]}
+        ${`${email3Name} <${email3}>, ${email4}`} | ${[{ Name: email3Name, Address: email3 }, { Name: email4, Address: email4 }]}
+        ${`${email3Name} <${email3}> ${email4}`}  | ${[{ Name: email3Name, Address: email3 }]}
+    `(
+        'should add correct addresses with the input "$input"',
+        async ({ input, expectedArray }: { input: string; expectedArray: Recipient[] }) => {
+            addApiMock('core/v4/keys', () => ({}));
 
-        const { getAllByTestId, getByTestId, rerender } = await render(<AddressesEditor {...props} />);
+            const { getAllByTestId, getByTestId, rerender } = await render(<AddressesEditor {...props} />);
 
-        const displayedAddresses = getAllByTestId('composer-addresses-item');
+            const displayedAddresses = getAllByTestId('composer-addresses-item');
 
-        expect(displayedAddresses.length).toEqual(2);
+            expect(displayedAddresses.length).toEqual(2);
 
-        const addressesInput = getByTestId('composer:to');
+            const addressesInput = getByTestId('composer:to');
 
-        fireEvent.change(addressesInput, { target: { value: email3 } });
-        fireEvent.keyDown(addressesInput, { key: 'Enter' });
+            fireEvent.change(addressesInput, { target: { value: input } });
+            fireEvent.keyDown(addressesInput, { key: 'Enter' });
 
-        const expectedChange = { data: { ToList: [recipient1, recipient2, { Address: email3, Name: email3 }] } };
-        expect(props.onChange).toHaveBeenCalledWith(expectedChange);
+            const expectedChange = { data: { ToList: [recipient1, recipient2, ...expectedArray] } };
+            expect(props.onChange).toHaveBeenCalledWith(expectedChange);
 
-        const updatedMessage = mergeMessages(message, expectedChange);
+            const updatedMessage = mergeMessages(message, expectedChange);
 
-        await rerender(<AddressesEditor {...props} message={updatedMessage} />);
+            await rerender(<AddressesEditor {...props} message={updatedMessage} />);
 
-        const newAddresses = getAllByTestId('composer-addresses-item');
-        expect(newAddresses.length).toEqual(3);
-    });
+            const newAddresses = getAllByTestId('composer-addresses-item');
+            expect(newAddresses.length).toEqual(2 + expectedArray.length);
+        }
+    );
 
     it('should edit an address on double click', async () => {
         const { getAllByTestId } = await render(<AddressesEditor {...props} />);
