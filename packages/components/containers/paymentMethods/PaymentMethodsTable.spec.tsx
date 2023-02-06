@@ -13,17 +13,17 @@ jest.mock('./PaymentMethodActions', () => jest.fn().mockReturnValue(null));
 
 describe('PaymentMethodsTable', () => {
     it('should render message that user has no payment methods', () => {
-        let { container } = render(<PaymentMethodsTable loading={false} methods={[]} />);
+        const { container } = render(<PaymentMethodsTable loading={false} methods={[]} />);
 
         expect(container).toHaveTextContent('You have no saved payment methods.');
     });
 
     it('should render <TableBody> with loading flag', () => {
-        let TableBodyMock: jest.Mock = TableBody as any;
+        const TableBodyMock: jest.Mock = TableBody as any;
         TableBodyMock.mockReset();
         TableBodyMock.mockReturnValue(<span>Table Body</span>);
 
-        let { container } = render(<PaymentMethodsTable loading={true} methods={[]} />);
+        const { container } = render(<PaymentMethodsTable loading={true} methods={[]} />);
 
         expect(TableBodyMock).toHaveBeenCalled();
         expect(TableBodyMock.mock.calls[0][0].loading).toEqual(true);
@@ -32,7 +32,7 @@ describe('PaymentMethodsTable', () => {
     });
 
     it('should render Card method', () => {
-        let Details: CardDetails = {
+        const Details: CardDetails = {
             Name: 'John Smith',
             ExpMonth: '01',
             ExpYear: '2034',
@@ -42,18 +42,18 @@ describe('PaymentMethodsTable', () => {
             Brand: 'Visa',
         };
 
-        let cardPaymentMethod: PaymentMethod = {
+        const cardPaymentMethod: PaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.CARD,
             Details,
             Order: 1,
             ID: 'id123',
         };
 
-        let TableBodyMock: jest.Mock = TableBody as any;
+        const TableBodyMock: jest.Mock = TableBody as any;
         TableBodyMock.mockReset();
         TableBodyMock.mockImplementation(({ children }) => children);
 
-        let TableRowMock: jest.Mock = TableRow as any;
+        const TableRowMock: jest.Mock = TableRow as any;
         TableRowMock.mockReset();
         TableRowMock.mockImplementation(({ cells }) => (
             <>
@@ -62,31 +62,31 @@ describe('PaymentMethodsTable', () => {
             </>
         ));
 
-        let { container } = render(<PaymentMethodsTable methods={[cardPaymentMethod]} loading={false} />);
+        const { container } = render(<PaymentMethodsTable methods={[cardPaymentMethod]} loading={false} />);
 
         expect(container).toHaveTextContent(Details.Brand);
         expect(container).toHaveTextContent(Details.Last4);
     });
 
     it('should render Paypal method', () => {
-        let Details: PayPalDetails & { Payer: string } = {
+        const Details: PayPalDetails & { Payer: string } = {
             BillingAgreementID: 'agreement-id-123',
             PayerID: 'payer-id-123',
             Payer: 'John Smith',
         };
 
-        let paypalMethod: PaymentMethod = {
+        const paypalMethod: PaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.PAYPAL,
             Details,
             Order: 1,
             ID: 'id123',
         };
 
-        let TableBodyMock: jest.Mock = TableBody as any;
+        const TableBodyMock: jest.Mock = TableBody as any;
         TableBodyMock.mockReset();
         TableBodyMock.mockImplementation(({ children }) => children);
 
-        let TableRowMock: jest.Mock = TableRow as any;
+        const TableRowMock: jest.Mock = TableRow as any;
         TableRowMock.mockReset();
         TableRowMock.mockImplementation(({ cells }) => (
             <>
@@ -95,14 +95,14 @@ describe('PaymentMethodsTable', () => {
             </>
         ));
 
-        let { container } = render(<PaymentMethodsTable methods={[paypalMethod]} loading={false} />);
+        const { container } = render(<PaymentMethodsTable methods={[paypalMethod]} loading={false} />);
 
         expect(container).toHaveTextContent('PayPal');
         expect(container).toHaveTextContent('John Smith');
     });
 
     it('should display multiple payment methods', () => {
-        let Details1: CardDetails = {
+        const Details1: CardDetails = {
             Name: 'John Smith',
             ExpMonth: '01',
             ExpYear: '2034',
@@ -112,14 +112,14 @@ describe('PaymentMethodsTable', () => {
             Brand: 'Visa',
         };
 
-        let cardPaymentMethod1: PaymentMethod = {
+        const cardPaymentMethod1: PaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.CARD,
             Details: Details1,
             Order: 1,
             ID: 'id-visa',
         };
 
-        let Details2: CardDetails = {
+        const Details2: CardDetails = {
             Name: 'John Smith',
             ExpMonth: '01',
             ExpYear: '2038',
@@ -129,14 +129,14 @@ describe('PaymentMethodsTable', () => {
             Brand: 'Mastercard',
         };
 
-        let cardPaymentMethod2: PaymentMethod = {
+        const cardPaymentMethod2: PaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.CARD,
             Details: Details2,
             Order: 2,
             ID: 'id-mastercard',
         };
 
-        let paypalMethod: PaymentMethod = {
+        const paypalMethod: PaymentMethod = {
             Type: PAYMENT_METHOD_TYPES.PAYPAL,
             Details: {
                 BillingAgreementID: 'agreement-id-123',
@@ -147,11 +147,11 @@ describe('PaymentMethodsTable', () => {
             ID: 'id-paypal',
         };
 
-        let TableBodyMock: jest.Mock = TableBody as any;
+        const TableBodyMock: jest.Mock = TableBody as any;
         TableBodyMock.mockReset();
         TableBodyMock.mockImplementation(({ children }) => children);
 
-        let TableRowMock: jest.Mock = TableRow as any;
+        const TableRowMock: jest.Mock = TableRow as any;
         TableRowMock.mockReset();
         TableRowMock.mockImplementation(({ cells }) => (
             <>
@@ -160,7 +160,7 @@ describe('PaymentMethodsTable', () => {
             </>
         ));
 
-        let { container } = render(
+        const { container } = render(
             <PaymentMethodsTable methods={[cardPaymentMethod1, cardPaymentMethod2, paypalMethod]} loading={false} />
         );
 
