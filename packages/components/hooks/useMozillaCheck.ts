@@ -1,4 +1,4 @@
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { isFreeSubscription } from '@proton/shared/lib/constants';
 
 import { useTypedSubscription } from './useSubscription';
 
@@ -6,8 +6,8 @@ const useMozillaCheck = (): [isManagedByMozilla: boolean, loading: boolean] => {
     const [subscription, loading] = useTypedSubscription();
 
     let isManagedByMozilla = false;
-    if (!loading) {
-        isManagedByMozilla = !!(subscription as SubscriptionModel).isManagedByMozilla;
+    if (!loading && !isFreeSubscription(subscription)) {
+        isManagedByMozilla = subscription.isManagedByMozilla;
     }
 
     return [isManagedByMozilla, loading];
