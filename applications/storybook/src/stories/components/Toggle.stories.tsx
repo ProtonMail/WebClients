@@ -29,6 +29,23 @@ export const Basic = () => {
     );
 };
 
+export const Label = () => {
+    const [isChecked, setIsChecked] = useState(true);
+    return (
+        <>
+            <Toggle
+                id="toggle-label"
+                checked={isChecked}
+                onChange={() => {
+                    setIsChecked(!isChecked);
+                }}
+            >
+                This is a label
+            </Toggle>
+        </>
+    );
+};
+
 export const Loading = () => {
     const [isChecked, setIsChecked] = useState(false);
     const [loading, withLoading] = useLoading(false);
