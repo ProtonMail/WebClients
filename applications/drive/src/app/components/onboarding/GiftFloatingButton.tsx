@@ -11,6 +11,7 @@ import {
     Spotlight,
     classnames,
     useActiveBreakpoint,
+    useAuthentication,
     useLocalState,
 } from '@proton/components';
 import { useDrawerWidth } from '@proton/components/hooks/useDrawerWidth';
@@ -193,6 +194,7 @@ function WelcomeActions({
         handleClick,
         handleChange: handleFileChange,
     } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
+    const { getLocalID } = useAuthentication();
 
     const { openFileSharing } = useOpenModal();
 
@@ -233,7 +235,7 @@ function WelcomeActions({
                 action={() => {
                     const slug = getSlugFromApp(APPS.PROTONDRIVE);
                     const url = `/${slug}/recovery`;
-                    window.open(getAppHref(url, APPS.PROTONACCOUNT));
+                    window.open(getAppHref(url, APPS.PROTONACCOUNT, getLocalID()));
                     onActionDone();
                 }}
             />
