@@ -30,7 +30,9 @@ export const NewActionButton = ({ disabled, className }: PropsWithChildren<Props
                 onClick={toggle}
             >
                 <Icon className="mr0-5" name="plus" />
-                {c('Action').t`New`}
+                {
+                // translator: this string is used on Proton Drive to open a drop-down with 3 actions: Upload file, folder and new folder
+                c('Action').t`New`}
             </SidebarPrimaryButton>
             <Dropdown
                 size={{ width: DropdownSizeUnit.Anchor, height: DropdownSizeUnit.Dynamic }}
