@@ -20,6 +20,8 @@ interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
     isLoaded?: boolean;
     className?: string;
     children?: ReactNode;
+    isEventPartLessThanAnHour?: boolean;
+    isEventPartAnHour?: boolean;
 }
 export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps>(function PartDayEventViewComponent(
     {
@@ -31,6 +33,8 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
         isLoaded,
         className,
         children,
+        isEventPartLessThanAnHour,
+        isEventPartAnHour,
         ...rest
     }: PartDayEventViewProps,
     ref: Ref<HTMLDivElement>
@@ -47,6 +51,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
                 isUnanswered && 'isUnanswered',
                 isCancelled && 'isCancelled',
                 size && `calendar-eventcell--${size}`,
+                (isEventPartLessThanAnHour || isEventPartAnHour) && 'calendar-eventcell--less-one-hour',
                 className,
             ])}
             ref={ref}
@@ -67,6 +72,7 @@ interface Props {
     eventRef?: Ref<HTMLDivElement>;
     tzid: string;
     isEventPartLessThanAnHour: boolean;
+    isEventPartAnHour: boolean;
 }
 const PartDayEvent = ({
     size,
@@ -78,6 +84,7 @@ const PartDayEvent = ({
     eventRef,
     tzid,
     isEventPartLessThanAnHour,
+    isEventPartAnHour,
 }: Props) => {
     const { start, end, data: targetEventData } = event;
     const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
@@ -151,6 +158,8 @@ const PartDayEvent = ({
             isCancelled={isCancelled}
             ref={eventRef}
             title={expandableTitleString}
+            isEventPartLessThanAnHour={isEventPartLessThanAnHour}
+            isEventPartAnHour={isEventPartAnHour}
         >
             {content}
         </PartDayEventView>
