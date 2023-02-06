@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
 import {
     Loader,
@@ -30,7 +30,7 @@ describe('PaymentMethodsSection', () => {
         jest.resetAllMocks();
         jest.mocked(usePaymentMethods).mockReturnValue([[], false, undefined as any]);
         jest.mocked(useSubscription).mockReturnValue([{} as any, false, undefined as any]);
-        jest.mocked(useTypedSubscription).mockReturnValue([{}, false]);
+        jest.mocked(useTypedSubscription).mockReturnValue([FREE_SUBSCRIPTION, false]);
         jest.mocked(useModals).mockReturnValue({
             createModal: jest.fn(),
         } as any);
