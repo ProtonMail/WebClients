@@ -5,7 +5,7 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
+import { findRecipientsWithSpaceSeparator, inputToRecipient } from '@proton/shared/lib/mail/recipient';
 
 import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '../autocomplete';
 import Icon from '../icon/Icon';
@@ -146,9 +146,20 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
 
             const values = newValue.split(/[,;]/).map((value) => value.trim());
             if (values.length > 1) {
-                onAddRecipients(values.slice(0, -1).map(inputToRecipient));
-                setInput(values[values.length - 1]);
+                onAddRecipients(values.map(inputToRecipient));
+                setInput('');
                 return;
+            }
+
+            const valuesWithSpaceBar = newValue.split(' ').map((value) => value.trim());
+            if (valuesWithSpaceBar.length > 0) {
+                const recipientsWithSpaceSeparator = findRecipientsWithSpaceSeparator(newValue);
+
+                if (recipientsWithSpaceSeparator.length > 0) {
+                    onAddRecipients(recipientsWithSpaceSeparator.map(inputToRecipient));
+                    setInput('');
+                    return;
+                }
             }
 
             setInput(newValue);
