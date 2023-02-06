@@ -31,6 +31,27 @@ const getIsEventPartLessThanAnHour = ({ start, end, colEnd }: { start: Date; end
 };
 
 /**
+ * Splits 2-day events into parts that represent the actual length in the UI
+ * and determines whether those parts do equal an hour in length or not
+ */
+const getIsEventPartAnHour = ({ start, end, colEnd }: { start: Date; end: Date; colEnd: number }) => {
+    const eventPartEnd = new Date(end);
+    const eventPartStart = new Date(start);
+
+    if (isNextDay(start, end)) {
+        // The event part ends at the end of the day
+        if (colEnd === 24 * 60) {
+            eventPartEnd.setUTCHours(0, 0, 0, 0);
+        } else {
+            eventPartStart.setUTCDate(end.getUTCDate());
+            eventPartStart.setUTCHours(0, 0, 0, 0);
+        }
+    }
+
+    return +eventPartEnd - +eventPartStart === HOUR;
+};
+
+/**
  * Returns a size flag only for small sizes, meaning below 30 minutes events
  * to decrease font size
  */
@@ -116,6 +137,7 @@ const DayEvents = ({
         const eventRef = isThisSelected ? targetEventRef : undefined;
 
         const isEventPartLessThanAnHour = getIsEventPartLessThanAnHour({ start, end, colEnd });
+        const isEventPartAnHour = getIsEventPartAnHour({ start, end, colEnd });
         const isBeforeNow = getIsBeforeNow(event, now);
 
         const lineNumber =
@@ -129,6 +151,7 @@ const DayEvents = ({
         return (
             <PartDayEvent
                 isEventPartLessThanAnHour={isEventPartLessThanAnHour}
+                isEventPartAnHour={isEventPartAnHour}
                 event={event}
                 style={{
                     ...style,
