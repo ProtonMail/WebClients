@@ -41,10 +41,10 @@ describe('PaymentMethodsSection', () => {
     });
 
     it('should render <Loading> if payment methods are loading', () => {
-        let usePaymentMethodsMock = jest.mocked(usePaymentMethods);
+        const usePaymentMethodsMock = jest.mocked(usePaymentMethods);
         usePaymentMethodsMock.mockReturnValue([[], true, undefined as any]);
 
-        let { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSection />);
 
         expect(container).toHaveTextContent('Loader');
     });
@@ -52,7 +52,7 @@ describe('PaymentMethodsSection', () => {
     it('should render <Loading> if subscriptions are loading', () => {
         jest.mocked(useTypedSubscription).mockReturnValue([undefined, true]);
 
-        let { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSection />);
 
         expect(container).toHaveTextContent('Loader');
     });
@@ -60,19 +60,19 @@ describe('PaymentMethodsSection', () => {
     it('should render <MozillaInfoPanel> if subscription is managed by mozilla', () => {
         jest.mocked(useTypedSubscription).mockReturnValue([{ isManagedByMozilla: true } as any, false]);
 
-        let { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSection />);
 
         expect(container).toHaveTextContent('MozillaInfoPanel');
     });
 
     it('should render the main contanet otherwise', () => {
-        let { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSection />);
 
         expect(container).toHaveTextContent('PaymentMethodsTable');
     });
 
     it('should show the paypal button only if there is not paypal payment yet', () => {
-        let { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSection />);
         expect(container).toHaveTextContent('Add PayPal');
     });
 
@@ -94,7 +94,7 @@ describe('PaymentMethodsSection', () => {
             undefined as any,
         ]);
 
-        let { container } = render(<PaymentMethodsSection />);
+        const { container } = render(<PaymentMethodsSection />);
         expect(container).not.toHaveTextContent('Add PayPal');
     });
 });
