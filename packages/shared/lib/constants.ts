@@ -529,7 +529,7 @@ export const PRODUCT_PAYER = {
     END: new Date(Date.UTC(2020, 11, 15, 6)),
 };
 
-export const MIN_PAYPAL_AMOUNT = 500;
+export const MIN_PAYPAL_AMOUNT = 499;
 export const MAX_PAYPAL_AMOUNT = 99999900;
 
 export enum NEWS {
