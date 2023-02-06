@@ -7,6 +7,7 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
 import SortDropdown from '../../sections/SortDropdown';
+import { SelectionState } from '../hooks/useSelectionControls';
 import { SortParams } from '../interface';
 import { useSelection } from '../state/useSelection';
 
@@ -57,12 +58,14 @@ export const GridHeader = <T extends string>({
                 <TableHeaderCell className="file-browser-header-checkbox-cell">
                     <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                         <Checkbox
-                            indeterminate={selection?.isIndeterminate}
+                            indeterminate={selection?.selectionState === SelectionState.SOME}
                             className="increase-click-surface"
                             disabled={!itemCount}
-                            checked={selectedCount === itemCount}
+                            checked={selection?.selectionState !== SelectionState.NONE}
                             onChange={
-                                selection?.isIndeterminate ? selection?.clearSelections : selection?.toggleAllSelected
+                                selection?.selectionState === SelectionState.SOME
+                                    ? selection?.clearSelections
+                                    : selection?.toggleAllSelected
                             }
                         >
                             {selectedCount ? (
@@ -71,7 +74,7 @@ export const GridHeader = <T extends string>({
                         </Checkbox>
                     </div>
                 </TableHeaderCell>
-                {!selectedCount && sortFields?.length && sortField && (
+                {selection?.selectionState === SelectionState.NONE && sortFields?.length && sortField && (
                     <>
                         <TableHeaderCell
                             className="w10e"
