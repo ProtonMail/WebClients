@@ -43,7 +43,7 @@ jest.mock('../../components/modal/Confirm', () =>
 
 describe('PaymentMethodActions', () => {
     it('should show only delete button if paypal is the first method', () => {
-        let method: PaymentMethod = {
+        const method: PaymentMethod = {
             Order: 1,
             ID: 'id-123',
             Type: PAYMENT_METHOD_TYPES.PAYPAL,
@@ -54,7 +54,7 @@ describe('PaymentMethodActions', () => {
             },
         };
 
-        let { container } = render(<PaymentMethodActions method={method} methods={[method]} index={0} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={0} />);
 
         expect(container).not.toHaveTextContent('Edit');
         expect(container).not.toHaveTextContent('Mark as default');
@@ -62,7 +62,7 @@ describe('PaymentMethodActions', () => {
     });
 
     it('should show "delete" and "mark as default" button if paypal is not the first', () => {
-        let method: PaymentMethod = {
+        const method: PaymentMethod = {
             Order: 1,
             ID: 'id-123',
             Type: PAYMENT_METHOD_TYPES.PAYPAL,
@@ -73,7 +73,7 @@ describe('PaymentMethodActions', () => {
             },
         };
 
-        let { container } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
 
         expect(container).not.toHaveTextContent('Edit');
         expect(container).toHaveTextContent('Mark as default');
@@ -81,7 +81,7 @@ describe('PaymentMethodActions', () => {
     });
 
     it('should show Edit, Default and Delete buttons for non-first card', () => {
-        let method: PaymentMethod = {
+        const method: PaymentMethod = {
             Order: 1,
             ID: 'id-123',
             Type: PAYMENT_METHOD_TYPES.CARD,
@@ -96,7 +96,7 @@ describe('PaymentMethodActions', () => {
             },
         };
 
-        let { container } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
 
         expect(container).toHaveTextContent('Edit');
         expect(container).toHaveTextContent('Mark as default');
@@ -104,7 +104,7 @@ describe('PaymentMethodActions', () => {
     });
 
     it('should show Edit and Delete buttons for first card', () => {
-        let method: PaymentMethod = {
+        const method: PaymentMethod = {
             Order: 1,
             ID: 'id-123',
             Type: PAYMENT_METHOD_TYPES.CARD,
@@ -119,7 +119,7 @@ describe('PaymentMethodActions', () => {
             },
         };
 
-        let { container } = render(<PaymentMethodActions method={method} methods={[method]} index={0} />);
+        const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={0} />);
 
         expect(container).toHaveTextContent('Edit');
         expect(container).not.toHaveTextContent('Mark as default');
@@ -128,7 +128,7 @@ describe('PaymentMethodActions', () => {
 
     describe('action handlers', () => {
         beforeEach(() => {
-            let DropdownActionsMock: jest.Mock = DropdownActions as any;
+            const DropdownActionsMock: jest.Mock = DropdownActions as any;
             DropdownActionsMock.mockReset().mockImplementation(({ list }: { list: any[] }) =>
                 list.map(({ text, onClick }, actionIndex) => (
                     <button onClick={onClick} data-testid={`actionIndex-${actionIndex}`}>
@@ -139,7 +139,7 @@ describe('PaymentMethodActions', () => {
         });
 
         it('should open EditCardModal on Edit', async () => {
-            let method: PaymentMethod = {
+            const method: PaymentMethod = {
                 Order: 1,
                 ID: 'id-123',
                 Type: PAYMENT_METHOD_TYPES.CARD,
@@ -153,10 +153,10 @@ describe('PaymentMethodActions', () => {
                     Brand: 'Mastercard',
                 },
             };
-            let { createModal } = useModals();
+            const { createModal } = useModals();
             (createModal as jest.Mock).mockReset();
 
-            let { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
+            const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
 
             fireEvent.click(await findByTestId('actionIndex-0'));
 
@@ -164,7 +164,7 @@ describe('PaymentMethodActions', () => {
         });
 
         it('should make an API call on Mark as Default', async () => {
-            let method0: PaymentMethod = {
+            const method0: PaymentMethod = {
                 Order: 0,
                 ID: 'id-000',
                 Type: PAYMENT_METHOD_TYPES.CARD,
@@ -179,7 +179,7 @@ describe('PaymentMethodActions', () => {
                 },
             };
 
-            let method1: PaymentMethod = {
+            const method1: PaymentMethod = {
                 Order: 1,
                 ID: 'id-123',
                 Type: PAYMENT_METHOD_TYPES.CARD,
@@ -194,16 +194,16 @@ describe('PaymentMethodActions', () => {
                 },
             };
 
-            let api = useApi();
+            const api = useApi();
             (api as jest.Mock).mockReset();
 
-            let { call } = useEventManager();
+            const { call } = useEventManager();
             (call as jest.Mock).mockReset();
 
-            let { createNotification } = useNotifications();
+            const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
 
-            let { findByTestId } = render(
+            const { findByTestId } = render(
                 <PaymentMethodActions method={method1} methods={[method0, method1]} index={1} />
             );
 
@@ -217,7 +217,7 @@ describe('PaymentMethodActions', () => {
         });
 
         it('should open ConfirmModal on Delete', async () => {
-            let method: PaymentMethod = {
+            const method: PaymentMethod = {
                 Order: 1,
                 ID: 'id-123',
                 Type: PAYMENT_METHOD_TYPES.CARD,
@@ -231,26 +231,26 @@ describe('PaymentMethodActions', () => {
                     Brand: 'Mastercard',
                 },
             };
-            let { createModal } = useModals();
+            const { createModal } = useModals();
             (createModal as jest.Mock).mockReset();
 
-            let api = useApi();
+            const api = useApi();
             (api as jest.Mock).mockReset();
 
-            let { call } = useEventManager();
+            const { call } = useEventManager();
             (call as jest.Mock).mockReset();
 
-            let { createNotification } = useNotifications();
+            const { createNotification } = useNotifications();
             (createNotification as jest.Mock).mockReset();
 
-            let { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
+            const { findByTestId } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
 
             fireEvent.click(await findByTestId('actionIndex-2'));
 
             expect(createModal).toHaveBeenCalled();
 
             await waitFor(async () => {
-                let onDelete = (createModal as jest.Mock).mock.lastCall[0].props.onConfirm;
+                const onDelete = (createModal as jest.Mock).mock.lastCall[0].props.onConfirm;
                 await onDelete();
             });
 

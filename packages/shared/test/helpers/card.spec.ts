@@ -3,10 +3,10 @@ import { CardDetails } from '@proton/shared/lib/interfaces';
 
 describe('card helpers', () => {
     it('should return false if card not expired', () => {
-        let currentYear = new Date().getFullYear();
-        let ExpYear = '' + (currentYear + 10);
+        const currentYear = new Date().getFullYear();
+        const ExpYear = '' + (currentYear + 10);
 
-        let cardDetails: CardDetails = {
+        const cardDetails: CardDetails = {
             Name: 'Arthur Morgan',
             ExpMonth: '01',
             ExpYear,
@@ -20,10 +20,10 @@ describe('card helpers', () => {
     });
 
     it('should return true if card expired', () => {
-        let currentYear = new Date().getFullYear();
-        let ExpYear = '' + (currentYear - 1);
+        const currentYear = new Date().getFullYear();
+        const ExpYear = '' + (currentYear - 1);
 
-        let cardDetails: CardDetails = {
+        const cardDetails: CardDetails = {
             Name: 'Arthur Morgan',
             ExpMonth: '01',
             ExpYear,
