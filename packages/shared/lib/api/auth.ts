@@ -37,7 +37,8 @@ interface RefreshArgs {
 export const setRefreshCookies = (data?: RefreshArgs) => {
     const config = {
         method: 'post',
-        url: 'core/v4/auth/refresh',
+        // WARNING: The refresh cookie is set with `path=/api/auth/refresh;`
+        url: 'auth/refresh',
     };
     if (!data) {
         return config;
