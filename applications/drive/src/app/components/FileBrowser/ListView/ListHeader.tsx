@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, TableHeaderCell, TableRowSticky } from '@proton/components';
+import { Checkbox, Loader, TableHeaderCell, TableRowSticky } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
@@ -45,7 +45,7 @@ const HeaderCell = <T,>({
                 <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                     <Checkbox
                         indeterminate={selection.selectionState === SelectionState.SOME}
-                        className="increase-click-surface"
+                        className="increase-click-surface mr0-25"
                         disabled={!itemCount}
                         checked={selection?.selectionState !== SelectionState.NONE}
                         onChange={
@@ -54,8 +54,13 @@ const HeaderCell = <T,>({
                                 : selection.toggleAllSelected
                         }
                     >
-                        {selectedCount ? <span className="ml1">{c('Info').jt`${selectedCount} selected`}</span> : null}
+                        {selection?.selectionState !== SelectionState.NONE ? (
+                            <span className="ml1">{c('Info').jt`${selectedCount} selected`}</span>
+                        ) : null}
                     </Checkbox>
+                    {selection?.selectionState !== SelectionState.NONE && isLoading ? (
+                        <Loader className="flex flex-item-noshrink" />
+                    ) : null}
                 </div>
             </TableHeaderCell>
         );
