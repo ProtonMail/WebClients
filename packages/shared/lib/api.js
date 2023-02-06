@@ -1,6 +1,6 @@
 import { getAppVersionHeaders, getUIDHeaders } from './fetch/headers';
 
-const ADD_CLIENT_SECRET = ['auth', 'auth/info'];
+const ADD_CLIENT_SECRET = ['core/v4/auth', 'core/v4/auth/info'];
 
 /**
  * Create a function that can call the API with the correct parameters.
