@@ -1,8 +1,20 @@
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+
 import { Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
 import { unescapeFromString } from '../sanitize/escape';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
+
+export const findRecipientsWithSpaceSeparator = (input: string) => {
+    const emails = input.split(' ');
+
+    const clearedEmails = emails.map((email) => email.trim()).filter((email) => email.length > 0);
+
+    const isValid = clearedEmails.every((email) => validateEmailAddress(email));
+
+    return isValid ? clearedEmails : [];
+};
 
 export const inputToRecipient = (input: string) => {
     // Remove potential unwanted HTML entities such as '&shy;' from the string
