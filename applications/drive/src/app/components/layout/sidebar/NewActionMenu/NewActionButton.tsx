@@ -31,18 +31,21 @@ export const NewActionButton = ({ disabled, className }: PropsWithChildren<Props
             >
                 <Icon className="mr0-5" name="plus" />
                 {
-                // translator: this string is used on Proton Drive to open a drop-down with 3 actions: Upload file, folder and new folder
-                c('Action').t`New`}
+                    // translator: this string is used on Proton Drive to open a drop-down with 3 actions: Upload file, folder and new folder
+                    c('Action').t`New`
+                }
             </SidebarPrimaryButton>
             <Dropdown
                 size={{ width: DropdownSizeUnit.Anchor, height: DropdownSizeUnit.Dynamic }}
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
+                // Here we don't autoClose the dropdown because the input elements will get dismounted
+                autoClose={false}
             >
                 <DropdownMenu className="mt0-25 mb0-25">
-                    <UploadFileButton />
-                    <UploadFolderButton />
+                    <UploadFileButton onUploadStarted={close} />
+                    <UploadFolderButton onUploadStarted={close} />
                     <hr className="mt0-5 mb0-5" />
                     <CreateNewFolderButton />
                 </DropdownMenu>

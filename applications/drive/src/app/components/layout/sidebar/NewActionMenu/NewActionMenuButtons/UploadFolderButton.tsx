@@ -1,3 +1,5 @@
+import { ChangeEventHandler } from 'react';
+
 import { c } from 'ttag';
 
 import { DropdownMenuButton, Icon } from '@proton/components';
@@ -5,13 +7,22 @@ import { DropdownMenuButton, Icon } from '@proton/components';
 import useActiveShare from '../../../../../hooks/drive/useActiveShare';
 import { useFolderUploadInput } from '../../../../../store';
 
-const UploadFolderButton = () => {
+interface Props {
+    onUploadStarted: () => void;
+}
+
+const UploadFolderButton = ({ onUploadStarted }: Props) => {
     const { activeFolder } = useActiveShare();
     const {
         inputRef: fileInput,
         handleClick: handleUploadFolder,
-        handleChange,
+        handleChange: handleFileChange,
     } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
+
+    const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+        handleFileChange(e);
+        onUploadStarted();
+    };
 
     return (
         <>
