@@ -37,6 +37,11 @@ export const computeLeftPosition = (index: number, count: number, windowWidth: n
         rightPosition = COMPOSER_GUTTER + share * index;
     }
 
+    // Prevent negative position
+    if (rightPosition < 0) {
+        rightPosition = COMPOSER_GUTTER;
+    }
+
     return windowWidth - COMPOSER_WIDTH - rightPosition;
 };
 
