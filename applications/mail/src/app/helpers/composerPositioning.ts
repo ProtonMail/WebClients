@@ -23,7 +23,9 @@ const COMPOSER_NARROW_STYLES = {
     '--width-custom': 'auto',
 };
 
-export const computeLeftPosition = (index: number, count: number, windowWidth: number) => {
+export const computeLeftPosition = (index: number, count: number) => {
+    // Use window.innerWidth instead of useWindowSize to avoid composer cut off issue (CLIENT-4854)
+    const windowWidth = window.innerWidth;
     const neededWidth = COMPOSER_WIDTH * count + COMPOSER_GUTTER * (count + 1);
 
     let rightPosition: number;
@@ -37,7 +39,7 @@ export const computeLeftPosition = (index: number, count: number, windowWidth: n
         rightPosition = COMPOSER_GUTTER + share * index;
     }
 
-    // Prevent negative position
+    // Prevent negative value
     if (rightPosition < 0) {
         rightPosition = COMPOSER_GUTTER;
     }
@@ -77,7 +79,7 @@ export const computeComposerStyle = ({
     windowHeight,
 }: ComputeComposerStyleOptions): ComputeComposerStyleReturns => {
     let style: Record<string, string | number> = {
-        '--left-custom': `${computeLeftPosition(index, count, windowWidth)}px`,
+        '--left-custom': `${computeLeftPosition(index, count)}px`,
         computeHeight: `${computeHeight(windowHeight)}px`,
     };
 
