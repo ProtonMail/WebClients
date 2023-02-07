@@ -86,6 +86,9 @@
       "Archive": [
         "Archiwizuj"
       ],
+      "As Scheduled": [
+        "Zgodnie z planem"
+      ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Utwórz nową wiadomość"
+      ],
+      "Custom": [
+        "Niestandardowo"
       ],
       "Customize": [
         "Dostosuj"
@@ -602,6 +608,9 @@
       "Minimize composer": [
         "Minimalizuj edytor"
       ],
+      "Monday": [
+        "Poniedziałek"
+      ],
       "More": [
         "Więcej"
       ],
@@ -848,9 +857,6 @@
       "Schedule message": [
         "Zaplanuj wiadomość"
       ],
-      "Schedule send": [
-        "Zaplanuj wysyłanie"
-      ],
       "Search": [
         "Szukaj"
       ],
@@ -988,6 +994,9 @@
       ],
       "This message contains remote content.": [
         "Ta wiadomość zawiera zawartość zdalną."
+      ],
+      "Tomorrow": [
+        "Jutro"
       ],
       "Trust": [
         "Zaufaj"
@@ -1363,30 +1372,30 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        "Będziesz uczestniczył?"
+        "Będziesz uczestniczyć?"
       ]
     },
     "Calendar invite info": {
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie i zaproponował nową godzinę."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę."
       ],
       "${ participantName } accepted your invitation and proposed a new time for this event.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie i zaproponował nową godzinę."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } accepted your invitation.": [
         "Uczestnik ${ participantName } zaakceptował zaproszenie."
@@ -1404,82 +1413,82 @@
         "Uczestnik ${ participantName } poprosił o najnowsze szczegóły wydarzenia. Zweryfikuj je w kalendarzu."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie i zaproponował nową godzinę."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } declined an invitation to this event.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę."
       ],
       "${ participantName } declined your invitation and proposed a new time for this event.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie i zaproponował nową godzinę."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } declined your invitation.": [
         "Uczestnik ${ participantName } odrzucił zaproszenie."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } zaakceptował zaproszenie na wydarzenie i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } odrzucił zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } poprzednim razem zaakceptował zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } poprzednim razem zaakceptował zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } had previously accepted your invitation.": [
         "Uczestnik ${ participantName } poprzednim razem zaakceptował zaproszenie."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } poprzednim razem odrzucił zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } poprzednim razem odrzucił zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } had previously declined your invitation.": [
-        "Uczestnik ${ participantName } poprzednim razem odrzucił zaproszenie do wydarzenia."
+        "Uczestnik ${ participantName } poprzednim razem odrzucił zaproszenie na wydarzenie."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } poprzednim razem wstępnie zaakceptował zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } poprzednim razem wstępnie zaakceptował zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        "Uczestnik ${ participantName } poprzednim razem wstępnie zaakceptował zaproszenie do wydarzenia."
+        "Uczestnik ${ participantName } poprzednim razem wstępnie zaakceptował zaproszenie na wydarzenie."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
         "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia w tej serii, ale propozycja jest nieaktualna."
@@ -1500,22 +1509,22 @@
         "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia, ale propozycja jest nieaktualna. Nie masz kalendarzy."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
       ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } nie znajduje się na liście uczestników."
@@ -1527,25 +1536,25 @@
         "Uczestnik ${ participantName } zaproponował nową godzinę wydarzenia."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie i zaproponował nową godzinę."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie w tej serii i zaproponował nową godzinę."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia i zaproponował nową godzinę."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie i zaproponował nową godzinę."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie do wydarzenia w tej serii."
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie w tej serii."
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie."
@@ -2896,14 +2905,23 @@
       "No labels": [
         "Brak etykiet"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail i znak plusa"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
         "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
         "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
         "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Ulepsz plan, aby odblokować niestandardowe planowanie wiadomości i inne bonusy."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
+      ],
+      "When do you want your message to be sent?": [
+        "Kiedy chcesz wysłać wiadomość?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Możesz importować wydarzenia w formacie iCal (plik ICS). Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
@@ -2958,7 +2976,7 @@
         "Wydarzenie ${ eventTitle } zostało zaktualizowane.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Zaproszenie do wydarzenia ${ eventTitle }\n${ eventDetailsText }"
+        "Zaproszenie na wydarzenie ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2979,13 +2997,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
+        "Uczestnik ${ emailAddress } zaakceptował zaproszenie na wydarzenie ${ eventTitle }"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } odrzucił zaproszenie do wydarzenia ${ eventTitle }"
+        "Uczestnik ${ emailAddress } odrzucił zaproszenie na wydarzenie ${ eventTitle }"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
+        "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie na wydarzenie ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -3034,10 +3052,10 @@
         "Anulowanie wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Zaproszenie do wydarzenia w dniu: ${ formattedStart }"
+        "Zaproszenie na wydarzenie w dniu: ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Zaproszenie do wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
+        "Zaproszenie na wydarzenie rozpoczynające się w dniu: ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Aktualizacja wydarzenia w dniu: ${ formattedStart }"
@@ -3090,6 +3108,9 @@
       ],
       "Contact could not be saved": [
         "Kontakt nie mógł zostać zapisany"
+      ],
+      "Contact name is too long": [
+        "Nazwa kontaktu jest zbyt długa"
       ],
       "Contact signature could not be verified": [
         "Podpis kontaktu nie może zostać zweryfikowany"
@@ -4137,10 +4158,10 @@
         "Zaimportowane zaproszenia pojawiają się w ${ CALENDAR_APP_NAME } jako zwykłe wydarzenia bez szczegółów organizatora i uczestników. Aby otrzymywać aktualizacje wydarzeń i zobaczyć listę uczestników, poproś organizatorów o zaproszenie, używając swojego adresu e-mail ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
-        "Plik zawiera zaproszenie do wydarzenia:",
-        "Plik zawiera zaproszenia do wydarzeń:",
-        "Plik zawiera zaproszenia do wydarzeń:",
-        "Plik zawiera zaproszenia do wydarzeń:"
+        "Plik zawiera zaproszenie na wydarzenie:",
+        "Plik zawiera zaproszenia na wydarzenia:",
+        "Plik zawiera zaproszenia na wydarzenia:",
+        "Plik zawiera zaproszenia na wydarzenia:"
       ],
       "This file contains an invitation response:": [
         "Plik zawiera odpowiedź na zaproszenie:",
@@ -6232,14 +6253,14 @@
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
       ],
+      "Colors": [
+        "Kolory"
+      ],
       "Coming soon": [
         "Wkrótce"
       ],
       "Conditions": [
         "Warunki"
-      ],
-      "Confirm password": [
-        "Potwierdź hasło"
       ],
       "Contacts": [
         "Kontakty"
@@ -7151,6 +7172,42 @@
         "Przełącz lub dodaj konto"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Niestandardowe domeny"
+      ],
+      "Hide My Email aliases": [
+        "Aliasy Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Zaplanuj wiadomości w dowolnym momencie"
+      ],
+      "Search message content": [
+        "Wyszukiwanie zawartości wiadomości"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Up to 15 email addresses": [
+        "Do 15 adresów e-mail"
+      ],
+      "Up to 500 GB of storage": [
+        "Do 500 GB przestrzeni dyskowej"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Uzyskaj nieograniczoną liczby aliasów SimpleLogin przez ${ BRAND_NAME }"
+      ],
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Opowiedz nam o swoich wrażeniach. (opcjonalnie)"
@@ -7314,9 +7371,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Preferowana metoda kontaktu"
-      ],
-      "Confirm password": [
-        "Potwierdź hasło"
       ],
       "E.g., ": [
         "Np. "
@@ -7941,9 +7995,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Dysk ${ DRIVE_APP_NAME } wyszedł z wersji beta! Zapewnij swoim plikom takie samo bezpieczeństwo, jak poczcie e-mail."
-      ],
       "Email tracking protection": [
         "Ochrona przed śledzeniem wiadomości"
       ],
@@ -7958,9 +8009,6 @@
       ],
       "Schedule send": [
         "Zaplanuj wysyłanie"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Wypróbuj ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Od teraz domyślnie ładujemy obrazy i blokujemy śledzenie w wiadomościach. Możesz to zmienić w ${ settingsLink }."
@@ -8901,6 +8949,9 @@
       ],
       "Sending original message": [
         "Wysyłanie oryginalnej wiadomości"
+      ],
+      "Set your own schedule": [
+        "Ustaw własny harmonogram"
       ],
       "Settings": [
         "Ustawienia"

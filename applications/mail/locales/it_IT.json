@@ -86,6 +86,9 @@
       "Archive": [
         "Archivio"
       ],
+      "As Scheduled": [
+        "Come Programmato"
+      ],
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Crea un nuovo messaggio"
+      ],
+      "Custom": [
+        "Personalizzato"
       ],
       "Customize": [
         "Personalizza"
@@ -596,6 +602,9 @@
       "Minimize composer": [
         "Minimizza il compositore"
       ],
+      "Monday": [
+        "Lunedì"
+      ],
       "More": [
         "Altro"
       ],
@@ -842,9 +851,6 @@
       "Schedule message": [
         "Pianifica messaggio"
       ],
-      "Schedule send": [
-        "Pianifica invio"
-      ],
       "Search": [
         "Cerca"
       ],
@@ -982,6 +988,9 @@
       ],
       "This message contains remote content.": [
         "Questo messaggio contiene contenuto remoto."
+      ],
+      "Tomorrow": [
+        "Domani"
       ],
       "Trust": [
         "Attendibile"
@@ -2876,12 +2885,21 @@
       "No labels": [
         "Nessuna etichetta"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail e un segno più"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Sblocca i messaggi programmati personalizzati e altri benefici effettuando l'upgrade del tuo piano."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilizza il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
+      ],
+      "When do you want your message to be sent?": [
+        "Quando vuoi che il messaggio venga inviato?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "È possibile importare eventi con il formato iCal (file ICS). Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il file è più grande, dividilo in file più piccoli."
@@ -3064,6 +3082,9 @@
       ],
       "Contact could not be saved": [
         "Il contatto non può essere salvato"
+      ],
+      "Contact name is too long": [
+        "Il nome del contatto è troppo lungo"
       ],
       "Contact signature could not be verified": [
         "La firma del contatto non può essere verificata"
@@ -6016,14 +6037,14 @@
       "Code is 6 digits without spaces": [
         "Il codice è di 6 cifre senza spazi"
       ],
+      "Colors": [
+        "Colori"
+      ],
       "Coming soon": [
         "In arrivo"
       ],
       "Conditions": [
         "Condizioni"
-      ],
-      "Confirm password": [
-        "Conferma password"
       ],
       "Contacts": [
         "Contatti"
@@ -6921,6 +6942,42 @@
         "Cambia o aggiungi un account"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domini email personalizzati"
+      ],
+      "Hide My Email aliases": [
+        "Alias Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Programma i messaggi per qualsiasi momento"
+      ],
+      "Search message content": [
+        "Cerca il contenuto del messaggio"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Up to 15 email addresses": [
+        "Fino a 15 indirizzi email"
+      ],
+      "Up to 500 GB of storage": [
+        "Fino a 500 GB di spazio di archiviazione"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
+      ],
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Parlaci della tua esperienza. (Facoltativo)"
@@ -7084,9 +7141,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Un modo per contattarti"
-      ],
-      "Confirm password": [
-        "Confermare password"
       ],
       "E.g., ": [
         "Ad es "
@@ -7675,9 +7729,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } è uscito dalla fase beta! Garantite ai vostri file la stessa sicurezza delle vostre e-mail."
-      ],
       "Email tracking protection": [
         "Protezione dal tracciamento email"
       ],
@@ -7692,9 +7743,6 @@
       ],
       "Schedule send": [
         "Pianifica invio"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Prova ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Ora, in maniera predefinita, carichiamo le immagini e blocchiamo i mittenti dal poterti tracciare.\nCiò può essere cambiato in ${ settingsLink }."
@@ -8549,6 +8597,9 @@
       ],
       "Sending original message": [
         "Invio messaggio originale"
+      ],
+      "Set your own schedule": [
+        "Imposta la tua programmazione"
       ],
       "Settings": [
         "Impostazioni"

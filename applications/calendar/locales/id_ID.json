@@ -121,6 +121,9 @@
       "Continue import": [
         "Lanjutkan impor"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Lanjut ke ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Lanjutkan dengan Google"
       ],
@@ -231,6 +234,9 @@
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
+      ],
+      "Hide affected calendars": [
+        "Sembunyikan kalender yang terpengaruh"
       ],
       "Hide folders": [
         "Sembunyikan folder"
@@ -343,6 +349,9 @@
       "Open navigation": [
         "Buka navigasi"
       ],
+      "Open settings": [
+        "Buka pengaturan"
+      ],
       "Preview contact": [
         "Pratinjau kontak"
       ],
@@ -435,6 +444,9 @@
       ],
       "Show advanced PGP settings": [
         "Tampilkan pengaturan PGP lanjutan"
+      ],
+      "Show affected calendars": [
+        "Tampilkan kalender yang terpengaruh"
       ],
       "Show folders": [
         "Tampilkan folder"
@@ -2114,6 +2126,9 @@
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
       ],
+      "Contact name is too long": [
+        "Nama kontak terlalu panjang"
+      ],
       "Contact signature could not be verified": [
         "Tanda tangan kontak tidak dapat diverifikasi"
       ],
@@ -3636,9 +3651,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Kunci Anda telah diaktivasi ulang. Acara yang tersambung ke kalender-kalender ini dapat didekripsi."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Karena Anda telah mengatur ulang kata sandi, seluruh acara yang terhubung dengan kalender berikut tidak dapat didekripsi.\nSeluruh kalender yang telah Anda buat sebelumnya tidak akan lagi dapat digunakan.\nSeluruh kalender aktif yang Anda langgan akan kembali disinkronkan dalam beberapa menit."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anda sebelumnya telah menolak undangan ini. Silakan minta pemilik kalender untuk kembali mengundang Anda"
       ],
@@ -3715,6 +3727,34 @@
     "Info on errors": {
       "Click for details": [
         "Klik untuk rincian"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Sebagian kalender Anda tidak akan menampilkan rincian acara yang telah dibuat sebelumnya."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Kalender Anda tidak akan menampilkan rincian acara yang telah dibuat sebelumnya."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Hal ini dikarenakan kata sandi Anda baru-baru ini diubah tanpa menggunakan metode pemulihan."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Anda dapat memulihkan data terenkripsi Anda dengan menggunakan berkas pemulihan, frasa pemulihan, atau kata sandi lama Anda."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Pembagian kalender dinonaktifkan seiring dengan pengaturan ulang kata sandi Anda."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Anda dapat membagikan ulang kalender Anda melalui menu pengaturan."
       ]
     },
     "Input label": {
@@ -3815,6 +3855,9 @@
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
       "Color": [
+        "Warna"
+      ],
+      "Colors": [
         "Warna"
       ],
       "Coming soon": [
@@ -4157,6 +4200,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Buka di ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Apa itu metode pemulihan?"
       ]
     },
     "Loading info": {
@@ -4904,9 +4952,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
-      ],
       "Easily accept invites": [
         "Terima undangan dengan mudah"
       ],
@@ -4921,9 +4966,6 @@
       ],
       "Subscribe to other calendars": [
         "Langgan kalender lain"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Coba ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Anda dapat berlangganan ke kalender eksternal dan melihat acara yang tertera di dalamnya."
@@ -5338,6 +5380,9 @@
       "Email settings": [
         "Pengaturan email"
       ],
+      "Encrypted event": [
+        "Acara terenkripsi"
+      ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
@@ -5443,8 +5488,8 @@
       "Request new code": [
         "Minta kode baru"
       ],
-      "Reset calendar keys": [
-        "Atur ulang kunci kalender"
+      "Reshare your calendars": [
+        "Bagikan ulang kalender Anda"
       ],
       "Save changes": [
         "Simpan perubahan"
@@ -5547,6 +5592,12 @@
       ],
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Kami telah mengunci sebagian kalender yang ada untuk melindungi data Anda"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Kami telah mengunci kalender Anda untuk melindungi data Anda"
       ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"

@@ -3898,6 +3898,9 @@
       "Actions": [
         "Åtgärder"
       ],
+      "App version": [
+        "App-version"
+      ],
       "Event": [
         "Händelse"
       ],
@@ -4756,6 +4759,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
       ],
+      "Credits earned": [
+        "Intjänade krediter"
+      ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "För närvarande är allt tillgängligt lagringsutrymme allokerat till administratörkontot. Minska allokeringen hos administratörkontot för att frigöra plats för ytterligare användare. Du kan när som helst öka det totala lagringsutrymmet genom att uppgradera ditt konto."
       ],
@@ -5193,6 +5199,9 @@
       ],
       "Merged": [
         "Sammanslagna"
+      ],
+      "MM/YY": [
+        "MM/YY"
       ],
       "Monthly ${ onDayString }": [
         "En gång i månaden ${ onDayString }"
@@ -6673,6 +6682,9 @@
       ],
       "Color": [
         "Färg"
+      ],
+      "Colors": [
+        "Färger"
       ],
       "Coming soon": [
         "Kommer snart"
@@ -8176,6 +8188,26 @@
         "Teamhantering"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gör integritet till din standard för säkerhetskopiering, lagring, delning och hämtning."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Uppgradera till företagspaketet med åtkomst till alla ${ BRAND_NAME } premiumtjänster."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Uppgradera till det ultimata integritetspaketet och få tillgång till alla premium ${ BRAND_NAME }-tjänster."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din provperiod slutar ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -8245,26 +8277,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på din nuvarande prenumeration. Om du nedgraderar ditt konto så förlorar du kampanjpriset och det kommer inte vara tillgängligt om du prövar att prenumerera igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gör integritet till din standard för säkerhetskopiering, lagring, delning och hämtning."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till företagspaketet med åtkomst till alla ${ BRAND_NAME } premiumtjänster."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till det ultimata integritetspaketet och få tillgång till alla premium ${ BRAND_NAME }-tjänster."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din provperiod slutar ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9399,17 +9411,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } är slut som beta! Ge dina filer samma säkerhet som dina e-postmeddelanden får."
-      ],
       "Get up to ${ credits } in credits.": [
         "Få upp till ${ credits } i krediter."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Bjud in vänner till ${ BRAND_NAME }"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Prova ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -10902,9 +10908,6 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Ställer in följande sidfot för e-posten du skickar: ${ signature } Länken pekar på din refereringslänk. Sidfoten kommer att synas under din signatur. Du kan närsomhelst anpassa din signatur i inställningarna."
-      ],
-      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
-        "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte är tillgängligt."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer skapade med den här nyckeln behandlas som ogiltiga, och den här nyckeln kan inte användas för kryptering"

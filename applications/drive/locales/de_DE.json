@@ -1918,6 +1918,9 @@
       "Contact could not be saved": [
         "Der Kontakt konnte nicht gespeichert werden"
       ],
+      "Contact name is too long": [
+        "Name des Kontakts ist zu lang"
+      ],
       "Contact signature not verified": [
         "Kontaktsignatur nicht bestätigt"
       ],
@@ -3579,6 +3582,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Die verschlüsselten Daten sind aufgrund des Overheads der Verschlüsselung und der Signaturen, die die Sicherheit deiner Daten gewährleisten, etwas größer."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Folgendes könnte manipuliert worden sein: ${ items }. Öffne es nur, wenn du es für vertrauenswürdig hältst."
       ],
@@ -3950,6 +3956,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
+      ],
+      "Colors": [
+        "Farben"
       ],
       "Coming soon": [
         "Demnächst verfügbar"
@@ -5177,9 +5186,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } ist aus der Beta-Phase heraus! Biete deinen Dateien die gleiche Sicherheit wie deinen E-Mails."
-      ],
       "Encrypted search is here": [
         "Die verschlüsselte Suche ist da"
       ],
@@ -5191,9 +5197,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Jetzt kannst du Drive-Dateien ganz einfach durchsuchen und gleichzeitig deine Daten schützen."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } ausprobieren"
       ]
     },
     "Storage": {
@@ -5656,6 +5659,9 @@
       ],
       "Open settings menu": [
         "Einstellungsmenü öffnen"
+      ],
+      "Original size": [
+        "Originalgröße"
       ],
       "Other information": [
         "Weitere Informationen"

@@ -121,6 +121,9 @@
       "Continue import": [
         "Продолжить импорт"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Продолжить с ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Продолжить с Google"
       ],
@@ -238,6 +241,9 @@
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
       ],
+      "Hide affected calendars": [
+        "Скрыть затронутые календари"
+      ],
       "Hide folders": [
         "Скрыть папки"
       ],
@@ -349,6 +355,9 @@
       "Open navigation": [
         "Открыть панель навигации"
       ],
+      "Open settings": [
+        "Открыть настройки"
+      ],
       "Preview contact": [
         "Предпросмотр контакта"
       ],
@@ -441,6 +450,9 @@
       ],
       "Show advanced PGP settings": [
         "Показать расширенные настройки PGP"
+      ],
+      "Show affected calendars": [
+        "Показать затронутые календари"
       ],
       "Show folders": [
         "Показать папки"
@@ -2171,6 +2183,9 @@
       "Contact could not be saved": [
         "Невозможно сохранить контакт"
       ],
+      "Contact name is too long": [
+        "Имя контакта слишком длинное"
+      ],
       "Contact signature could not be verified": [
         "Подпись контакта не может быть проверена"
       ],
@@ -3822,9 +3837,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Вы повторно активировали свои ключи, и события, связанные со следующими календарями, теперь могут быть расшифрованы."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Вы сбросили пароль, и события, связанные со следующими календарями, не могут быть расшифрованы.\nВсе созданные ранее ссылки на общие календари больше не будут работать.\nВсе активные подписанные календари снова синхронизируются через несколько минут."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Вы ранее отклонили это приглашение. Попросите владельца повторно пригласить вас"
       ],
@@ -3901,6 +3913,34 @@
     "Info on errors": {
       "Click for details": [
         "Нажмите, чтобы узнать подробности"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "В некоторых календарях не будет отображаться информация о ранее созданных событиях."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "В ваших календарях не будет отображаться информация о ранее созданных событиях."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Это произошло потому, что ваш пароль был недавно сброшен без использования способа восстановления."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Вы можете восстановить зашифрованные данные с помощью файла восстановления, фразы восстановления или старого пароля."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Общий доступ к календарю был отключен после недавнего сброса пароля."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Вы можете настроить совместное использования ваших календарей в настройках."
       ]
     },
     "Input label": {
@@ -4002,6 +4042,9 @@
       ],
       "Color": [
         "Цвет"
+      ],
+      "Colors": [
+        "Цвета"
       ],
       "Coming soon": [
         "Скоро появится"
@@ -4346,6 +4389,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Открыть в ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Что такое способ восстановления?"
       ]
     },
     "Loading info": {
@@ -5448,9 +5496,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } вышел из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронной почте."
-      ],
       "Easily accept invites": [
         "Легко принимайте приглашения"
       ],
@@ -5465,9 +5510,6 @@
       ],
       "Subscribe to other calendars": [
         "Подписаться на другие календари"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Попробуйте ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Можно подписаться на внешние календари и читать события из них."
@@ -5924,6 +5966,9 @@
       "Email settings": [
         "Настройки эл. почты"
       ],
+      "Encrypted event": [
+        "Зашифрованное событие"
+      ],
       "Enter your password": [
         "Введите свой пароль"
       ],
@@ -6032,8 +6077,8 @@
       "Request new code": [
         "Запросить новый код"
       ],
-      "Reset calendar keys": [
-        "Сбросить ключи календаря"
+      "Reshare your calendars": [
+        "Cовместное использование ваших календарей"
       ],
       "Save changes": [
         "Сохранить изменения"
@@ -6136,6 +6181,12 @@
       ],
       "Warning: suspected fake website": [
         "Предупреждение: предполагаемый поддельный сайт"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Мы закрыли некоторые календари, чтобы защитить ваши данные"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Мы закрыли ваши календари, чтобы защитить ваши данные"
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"

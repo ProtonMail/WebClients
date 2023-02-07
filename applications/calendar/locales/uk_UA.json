@@ -121,6 +121,9 @@
       "Continue import": [
         "Продовжити імпорт"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Продовжити в ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Продовжити з Google"
       ],
@@ -238,6 +241,9 @@
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
       ],
+      "Hide affected calendars": [
+        "Сховати залучені календарі"
+      ],
       "Hide folders": [
         "Сховати теки"
       ],
@@ -349,6 +355,9 @@
       "Open navigation": [
         "Відкрити панель навігації"
       ],
+      "Open settings": [
+        "Відкрити налаштування"
+      ],
       "Preview contact": [
         "Перегляд контакту"
       ],
@@ -441,6 +450,9 @@
       ],
       "Show advanced PGP settings": [
         "Показати розширені налаштування PGP"
+      ],
+      "Show affected calendars": [
+        "Показати залучені календарі"
       ],
       "Show folders": [
         "Показати теки"
@@ -2171,6 +2183,9 @@
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
       ],
+      "Contact name is too long": [
+        "Ім'я контакту задовге"
+      ],
       "Contact signature could not be verified": [
         "Не вдається перевірити підпис контакту"
       ],
@@ -3822,9 +3837,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Ви повторно активували свої ключі, тому тепер можна розшифрувати події, пов'язані з указаними календарями."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Ви скинули свій пароль, тому неможливо розшифрувати події, пов'язані з цими календарями.\nБудь-які посилання на календарі, якими ви поділились, надалі не працюватимуть.\nБудь-які активні підписні календарі знову синхронізуються за кілька хвилин."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Ви раніше відхилили це запрошення. Зверніться до власника з проханням про повторне запрошення"
       ],
@@ -3901,6 +3913,34 @@
     "Info on errors": {
       "Click for details": [
         "Натисніть для подробиць"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Деякі з ваших календарів не показуватимуть подробиці раніше створених подій."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Ваші календарі не показуватимуть подробиці раніше створених подій."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Це пов'язано з тим, що ваш пароль був нещодавно скинутий без використання способу відновлення."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Ви можете відновити свої зашифровані дані за допомогою файлу відновлення, фрази відновлення або вашого старого пароля."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Поширення календаря було вимкнено після нещодавнього скидання пароля."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Ви можете повторно поширити свої календарі в налаштуваннях."
       ]
     },
     "Input label": {
@@ -4002,6 +4042,9 @@
       ],
       "Color": [
         "Колір"
+      ],
+      "Colors": [
+        "Кольори"
       ],
       "Coming soon": [
         "Незабаром з'явиться"
@@ -4346,6 +4389,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Відкрити в ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Оберіть спосіб відновлення."
       ]
     },
     "Loading info": {
@@ -5201,9 +5249,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
-      ],
       "Easily accept invites": [
         "Легко погоджуйтеся на запрошення"
       ],
@@ -5218,9 +5263,6 @@
       ],
       "Subscribe to other calendars": [
         "Підписатися на інші календарі"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Спробувати ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Ви можете підписатися на зовнішні календарі та переглядати події в них."
@@ -5677,6 +5719,9 @@
       "Email settings": [
         "Налаштування е-пошти"
       ],
+      "Encrypted event": [
+        "Зашифрована подія"
+      ],
       "Enter your password": [
         "Введіть свій пароль"
       ],
@@ -5785,8 +5830,8 @@
       "Request new code": [
         "Запитати новий код"
       ],
-      "Reset calendar keys": [
-        "Скинути ключі календаря"
+      "Reshare your calendars": [
+        "Повторно поділіться своїми календарями"
       ],
       "Save changes": [
         "Зберегти зміни"
@@ -5889,6 +5934,12 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Ми заблокували деякі календарі для захисту ваших даних"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Ми заблокували ваші календарі для захисту даних"
       ],
       "What would you like to import?": [
         "Що ви бажаєте імпортувати?"

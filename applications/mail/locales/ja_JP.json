@@ -839,9 +839,6 @@
       "Schedule message": [
         "メッセージを送信予約"
       ],
-      "Schedule send": [
-        "送信予約"
-      ],
       "Search": [
         "検索"
       ],
@@ -5903,9 +5900,6 @@
       "Conditions": [
         "条件"
       ],
-      "Confirm password": [
-        "パスワードの確認"
-      ],
       "Contacts": [
         "連絡先"
       ],
@@ -6774,6 +6768,31 @@
         "アカウントを追加・切り替え"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "独自メールドメイン"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email エイリアス"
+      ],
+      "Search message content": [
+        "メッセージ内容の検索"
+      ],
+      "Unlimited folders, labels and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
+      ],
+      "Up to 15 email addresses": [
+        "最大 15 件のメールアドレス"
+      ],
+      "Up to 500 GB of storage": [
+        "最大 500 GB のストレージ"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "あなたのご意見をお聞かせください (任意)"
@@ -6937,9 +6956,6 @@
     "Placeholder": {
       "A way to contact you": [
         "連絡手段"
-      ],
-      "Confirm password": [
-        "パスワードの確認"
       ],
       "E.g., ": [
         "例: "
@@ -7287,9 +7303,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
-      ],
       "Email tracking protection": [
         "メールトラッキング防止"
       ],
@@ -7304,9 +7317,6 @@
       ],
       "Schedule send": [
         "送信予約"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } を試す"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "デフォルトで画像を読み込みつつ、送信者があなたをトラッキングするのを防ぎます。これは ${ settingsLink } で変更できます。"

@@ -842,9 +842,6 @@
       "Schedule message": [
         "Bericht plannen"
       ],
-      "Schedule send": [
-        "Ingepland versturen"
-      ],
       "Search": [
         "Zoeken"
       ],
@@ -4965,7 +4962,7 @@
         "Maandelijks ${ onDayString }"
       ],
       "Moving messages. This may take a while.": [
-        "Berichten aan het verplaatsen. Kan even duren."
+        "Berichten aan het verplaatsen. Dit kan even duren."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
@@ -6016,9 +6013,6 @@
       "Conditions": [
         "Voorwaarden"
       ],
-      "Confirm password": [
-        "Bevestig wachtwoord"
-      ],
       "Contacts": [
         "Contacten"
       ],
@@ -6915,6 +6909,19 @@
         "Account toevoegen of wisselen"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Aangepaste e-maildomeinen"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Vertel ons over uw ervaring. (Optioneel)"
@@ -7078,9 +7085,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Een manier om u te contacteren"
-      ],
-      "Confirm password": [
-        "Bevestig wachtwoord"
       ],
       "E.g., ": [
         "Bijv., "
@@ -7660,9 +7664,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
-      ],
       "Email tracking protection": [
         "Bescherming tegen e-mailtracking"
       ],
@@ -7677,9 +7678,6 @@
       ],
       "Schedule send": [
         "Gepland versturen"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Probeer ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "We laden afbeelding nu standaard en blokkeren trackers van afzenders. Dit kan gewijzigd worden via de ${ settingsLink }."
@@ -8616,6 +8614,9 @@
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uw Mail Plus proefversie eindigt op ${ textDate }."
       ]
     },
     "Today icon tooltip in mini calendar": {
