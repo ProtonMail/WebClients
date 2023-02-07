@@ -88,21 +88,21 @@ You can exchange the root element used for the `Modal` with an html `form` tag b
     <Story id="components-modal--with-form-root" />
 </Canvas>
 
-### AlertModal
+### Prompt
 
-The `AlertModal` is a special variant of the `Modal` component. It is not composite, meant not to be too flexible and comes with a comparatively rudimentary props api, allowing only the passing of some templating props.
+The `Prompt` is a special variant of the `Modal` component. It is not composite, meant not to be too flexible and comes with a comparatively rudimentary props api, allowing only the passing of some templating props. The `actions` prop is indented to for one or mutliple `Checkbox` elements.
 
 <Canvas>
-    <Story id="components-modal--alert" />
+    <Story id="components-modal--prompt-basic" />
 </Canvas>
 
 <Canvas>
-    <Story id="components-modal--alert-with-only-one-button" />
+    <Story id="components-modal--prompt-with-only-one-button" />
 </Canvas>
 
 ### BasicModal
 
-Similarly to `AlertModal`, `BasicModal` is a special variant of the `Modal` component. It is not composite, meant not to be too flexible and comes with a comparatively rudimentary props api, allowing only the passing of some templating props.
+Similarly to `Prompt`, `BasicModal` is a special variant of the `Modal` component. It is not composite, meant not to be too flexible and comes with a comparatively rudimentary props api, allowing only the passing of some templating props.
 
 It also uses `useModalState` internally.
 
