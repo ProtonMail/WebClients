@@ -8,6 +8,7 @@ const BABEL_INCLUDE_NODE_MODULES = [
     '@protontech/mutex-browser',
     '@protontech/interval-tree',
     '@protontech/sieve.js',
+    'emoji-mart',
     'idb',
     '@protontech/bip39',
 ];
