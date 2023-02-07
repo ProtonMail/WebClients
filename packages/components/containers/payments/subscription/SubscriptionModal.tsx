@@ -11,6 +11,7 @@ import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getPlanIDs, hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
@@ -21,6 +22,7 @@ import {
     SubscriptionCheckResponse,
     SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
+import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
@@ -389,9 +391,12 @@ const SubscriptionModal = ({
             });
 
             return await handleSubscribe(params);
-        } catch (error: any) {
-            console.error(error);
-            console.error('Could not handle checkout');
+        } catch (e) {
+            const error = getSentryError(e);
+            if (error) {
+                const context = { app, step, cycle, currency, coupon, planIDs, defaultAudience };
+                captureMessage('Could not handle checkout', { level: 'error', extra: { error, context } });
+            }
         }
     };
 
