@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from 'react';
+import { Dispatch, SetStateAction, Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
@@ -14,9 +14,8 @@ import {
 } from '@proton/components/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
-import ToolbarEmojiDropdown from '@proton/components/components/editor/toolbar/ToolbarEmojiDropdown';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useTheme } from '@proton/components/containers';
+import { ErrorBoundary, useTheme } from '@proton/components/containers';
 import { classnames } from '@proton/components/helpers';
 import { useAddresses, useHandler, useMailSettings, useUserSettings } from '@proton/components/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -36,6 +35,8 @@ import NoAttachmentsModal from './NoAttachmentsModal';
 import QuickReplyType from './QuickReplyType';
 
 import './QuickReply.scss';
+
+const ToolbarEmojiDropdown = lazy(() => import('@proton/components/components/editor/toolbar/ToolbarEmojiDropdown'));
 
 interface Props {
     newMessageID: string;
@@ -313,14 +314,18 @@ const QuickReply = ({
                 </div>
                 <div className="quick-reply-buttons absolute bottom right mb0-5 mr0-5 flex">
                     {toolbarConfig && !metadata.isPlainText && (
-                        <ToolbarEmojiDropdown
-                            className={classnames([
-                                'button button-for-icon quick-reply-emoji-button ml0-25',
-                                needsDarkStyle && 'quick-reply-emoji-button-dark-style',
-                            ])}
-                            onInsert={toolbarConfig.emoji.insert}
-                            openRef={openEmojiPickerRef}
-                        />
+                        <ErrorBoundary component={() => null}>
+                            <Suspense fallback={null}>
+                                <ToolbarEmojiDropdown
+                                    className={classnames([
+                                        'button button-for-icon quick-reply-emoji-button ml0-25',
+                                        needsDarkStyle && 'quick-reply-emoji-button-dark-style',
+                                    ])}
+                                    onInsert={toolbarConfig.emoji.insert}
+                                    openRef={openEmojiPickerRef}
+                                />
+                            </Suspense>
+                        </ErrorBoundary>
                     )}
 
                     <Tooltip title={c('Action').t`Send quick reply`}>
