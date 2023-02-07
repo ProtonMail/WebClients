@@ -1918,6 +1918,9 @@
       "Contact could not be saved": [
         "O contato não pôde ser salvo"
       ],
+      "Contact name is too long": [
+        "Nome do contato é muito longo"
+      ],
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
       ],
@@ -3579,6 +3582,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "O aplicativo precisa descriptografar localmente seus contatos antes que eles possam ser exportados. Ao final do processo, um arquivo VCF será gerado e você poderá baixá-lo."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Os dados criptografados são levemente maiores devido à sobrecarga da criptografia e assinaturas, que garantem a segurança dos seus dados."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
       ],
@@ -3950,6 +3956,9 @@
       ],
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
+      ],
+      "Colors": [
+        "Cores"
       ],
       "Coming soon": [
         "Em breve"
@@ -5180,9 +5189,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "O ${ DRIVE_APP_NAME } saiu do beta! Dê aos seus arquivos a mesma segurança que seus e-mails recebem."
-      ],
       "Encrypted search is here": [
         "A pesquisa criptografada está aqui"
       ],
@@ -5194,9 +5200,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Agora você pode facilmente pesquisar os arquivos do Drive enquanto mantém seus dados seguros."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Experimente ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5659,6 +5662,9 @@
       ],
       "Open settings menu": [
         "Abrir o menu de configurações"
+      ],
+      "Original size": [
+        "Tamanho original"
       ],
       "Other information": [
         "Outra informação"

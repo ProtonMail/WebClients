@@ -651,6 +651,9 @@
       "Search settings": [
         "Configuració de cerca"
       ],
+      "See plan features": [
+        "Veure les funcionalitats del pla"
+      ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
@@ -3821,6 +3824,9 @@
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
         "S'ha produït un error xifrant i afegint els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
       ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "S'ha produït un error xifrant i afegint els vostres contactes. No s'ha pogut importar cap contacte."
+      ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Contacte importat. El contacte importat ja apareix a la vostra llista de contactes."
       ],
@@ -6866,6 +6872,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d' ${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importa tots els missatges d'$${ itemsToImportCount } carpetes i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -7356,6 +7366,11 @@
         "Assistència"
       ]
     },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7365,11 +7380,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom de manera predeterminada."
-      ]
-    },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8194,14 +8204,8 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
-      ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Prova ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {

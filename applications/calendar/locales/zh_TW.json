@@ -121,6 +121,9 @@
       "Continue import": [
         "繼續匯入"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "繼續使用 ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "繼續以 Google 帳號登入"
       ],
@@ -231,6 +234,9 @@
       ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
+      ],
+      "Hide affected calendars": [
+        "隱藏受影響的行事曆"
       ],
       "Hide folders": [
         "隱藏資料夾"
@@ -343,6 +349,9 @@
       "Open navigation": [
         "開啟導覽"
       ],
+      "Open settings": [
+        "開啟設定"
+      ],
       "Preview contact": [
         "預覽聯絡人"
       ],
@@ -435,6 +444,9 @@
       ],
       "Show advanced PGP settings": [
         "顯示進階 PGP 設定"
+      ],
+      "Show affected calendars": [
+        "顯示受影響的行事曆"
       ],
       "Show folders": [
         "顯示資料夾"
@@ -2114,6 +2126,9 @@
       "Contact could not be saved": [
         "無法儲存聯絡人"
       ],
+      "Contact name is too long": [
+        "聯絡人名稱太長"
+      ],
       "Contact signature could not be verified": [
         "無法驗證聯絡人簽章"
       ],
@@ -3636,9 +3651,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新啟用您的金鑰，因此連結到下列行事曆中的事件現已能解密。"
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "您已重設您的密碼，因此與下列行事曆連結的事件無法解密。\n任何您先前創建的已分享行事曆連結將不再運作。\n任何使用中已訂購授權的行事曆將於數分鐘後再次同步。"
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "您先前回絕了此邀請。請要求擁有者重新邀請"
       ],
@@ -3715,6 +3727,34 @@
     "Info on errors": {
       "Click for details": [
         "點擊以查看詳細資料"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "您的部份行事曆將不會顯示先前建立事件的詳細資訊。"
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "您的行事曆將不會顯示先前建立事件的詳細資訊。"
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "這是因為您的密碼最近在沒有使用還原方法的情況下被重設。"
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "您也可以使用還原檔案、還原密語或還原密碼還原您的加密資料。"
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "在您最近的密碼重設後，已停用行事曆分享。"
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "您可以在設定中重新分享您的行事曆。"
       ]
     },
     "Input label": {
@@ -3815,6 +3855,9 @@
         "驗證碼為六位數且無空格"
       ],
       "Color": [
+        "色彩"
+      ],
+      "Colors": [
         "色彩"
       ],
       "Coming soon": [
@@ -4157,6 +4200,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "於 ${ CALENDAR_APP_NAME } 開啟"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "有什麼還原方法？"
       ]
     },
     "Loading info": {
@@ -4904,9 +4952,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
-      ],
       "Easily accept invites": [
         "簡單地同意邀請"
       ],
@@ -4921,9 +4966,6 @@
       ],
       "Subscribe to other calendars": [
         "訂閱其他行事曆"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "試試看 ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "您可以訂閱外部行事曆並讀取其活動。"
@@ -5338,6 +5380,9 @@
       "Email settings": [
         "電郵設定"
       ],
+      "Encrypted event": [
+        "已加密的事件"
+      ],
       "Enter your password": [
         "請輸入您的密碼"
       ],
@@ -5443,8 +5488,8 @@
       "Request new code": [
         "重新傳送驗證碼"
       ],
-      "Reset calendar keys": [
-        "重設行事曆金鑰"
+      "Reshare your calendars": [
+        "重新分享您的行事曆"
       ],
       "Save changes": [
         "儲存變更"
@@ -5547,6 +5592,12 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
+      ],
+      "We've locked some calendars to protect your data": [
+        "我們已鎖定部份行事曆以保護您的資料"
+      ],
+      "We've locked your calendars to protect your data": [
+        "我們已鎖定您的行事曆以保護您的資料"
       ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"

@@ -245,6 +245,9 @@
       "Create new message": [
         "创建新邮件"
       ],
+      "Custom": [
+        "其他"
+      ],
       "Customize": [
         "定制"
       ],
@@ -593,6 +596,9 @@
       "Minimize composer": [
         "最小化编辑窗"
       ],
+      "Monday": [
+        "星期一"
+      ],
       "More": [
         "更多"
       ],
@@ -839,9 +845,6 @@
       "Schedule message": [
         "定时邮件"
       ],
-      "Schedule send": [
-        "定时发送"
-      ],
       "Search": [
         "搜索"
       ],
@@ -979,6 +982,9 @@
       ],
       "This message contains remote content.": [
         "此邮件含有外链内容。"
+      ],
+      "Tomorrow": [
+        "明天"
       ],
       "Trust": [
         "信任"
@@ -3052,6 +3058,9 @@
       "Contact could not be saved": [
         "无法保存联系人"
       ],
+      "Contact name is too long": [
+        "联系人名称过长"
+      ],
       "Contact signature could not be verified": [
         "无法验证联系人签名"
       ],
@@ -4485,6 +4494,9 @@
       "Body: ": [
         "正文： "
       ],
+      "Calendar side panel": [
+        "日历侧边栏"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
       ],
@@ -5906,14 +5918,14 @@
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
+      "Colors": [
+        "颜色"
+      ],
       "Coming soon": [
         "即将推出"
       ],
       "Conditions": [
         "条件"
-      ],
-      "Confirm password": [
-        "确认密码"
       ],
       "Contacts": [
         "通讯录"
@@ -6804,6 +6816,30 @@
         "切换或添加账户"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "立即升级账户"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "自有域名"
+      ],
+      "Unlimited folders, labels and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ],
+      "Up to 15 email addresses": [
+        "最多 15 个邮箱地址"
+      ],
+      "Up to 500 GB of storage": [
+        "最高 500 GB 存储空间"
+      ]
+    },
+    "new_plans: feature info": {
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 共用同一存储空间"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "您可以详细叙述您的使用体验。（非必填）"
@@ -6967,9 +7003,6 @@
     "Placeholder": {
       "A way to contact you": [
         "您的联系方式"
-      ],
-      "Confirm password": [
-        "确认密码"
       ],
       "E.g., ": [
         "例如："
@@ -7317,9 +7350,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
-      ],
       "Email tracking protection": [
         "邮件追踪防护"
       ],
@@ -7334,9 +7364,6 @@
       ],
       "Schedule send": [
         "定时发送"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "体验 ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我们现已默认允许外链图片加载，并为您开启发件方追踪防护。这些选项可以在${ settingsLink }中更改。"
@@ -8226,6 +8253,9 @@
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
       ]
     },
     "Today icon tooltip in mini calendar": {

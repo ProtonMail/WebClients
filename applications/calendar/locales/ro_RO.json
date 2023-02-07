@@ -121,6 +121,9 @@
       "Continue import": [
         "Continuare importare"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Continuare cu ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Continuare cu Google"
       ],
@@ -236,6 +239,9 @@
       "Hide advanced PGP settings": [
         "Ascundere setări PGP avansate"
       ],
+      "Hide affected calendars": [
+        "Ascundere calendare afectate"
+      ],
       "Hide folders": [
         "Ascundere foldere"
       ],
@@ -347,6 +353,9 @@
       "Open navigation": [
         "Deschidere navigare"
       ],
+      "Open settings": [
+        "Deschidere setări"
+      ],
       "Preview contact": [
         "Examinare contact"
       ],
@@ -439,6 +448,9 @@
       ],
       "Show advanced PGP settings": [
         "Afișare setări PGP avansate"
+      ],
+      "Show affected calendars": [
+        "Afișare calendare afectate"
       ],
       "Show folders": [
         "Afișare foldere"
@@ -2156,6 +2168,9 @@
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
+      "Contact name is too long": [
+        "Numele de contact este prea lung."
+      ],
       "Contact signature could not be verified": [
         "Semnătura contactului nu a putut fi verificată"
       ],
@@ -3760,9 +3775,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Ați reactivat cheile și evenimentele legate de următoarele calendare se pot decripta acum."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "V-ați resetat parola și evenimentele legate la următoarele calendare nu s-au putut decripta.\nOrice legătură de calendar partajată creată anterior nu va mai funcționa.\nOrice calendar activ abonat se va resincroniza după câteva minute."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anterior ați respins această invitație. Solicitați proprietarului o reinvitare."
       ],
@@ -3839,6 +3851,34 @@
     "Info on errors": {
       "Click for details": [
         "Apăsați pentru detalii"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Câteva calendare nu vor afișa detaliile evenimentelor create anterior."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Calendarele nu vor afișa detaliile evenimentelor create anterior."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Aceasta deoarece parola a fost resetată recent fără folosirea metodei de recuperare."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Puteți recupera datele criptate cu un fișier de recuperare, o frază de recuperare sau cu vechea parolă."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Partajarea calendarelor a fost dezactivată ca urmare a recentei resetări a parolei."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Puteți repartaja calendarele din setări."
       ]
     },
     "Input label": {
@@ -3940,6 +3980,9 @@
       ],
       "Color": [
         "Culoare"
+      ],
+      "Colors": [
+        "Culori"
       ],
       "Coming soon": [
         "În curând"
@@ -4283,6 +4326,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Deschidere în ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Ce este o metodă de recuperare?"
       ]
     },
     "Loading info": {
@@ -5102,9 +5150,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
-      ],
       "Easily accept invites": [
         "Acceptați ușor invitații"
       ],
@@ -5119,9 +5164,6 @@
       ],
       "Subscribe to other calendars": [
         "Abonare la alte calendare"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Încercați ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Vă puteți abona la calendare externe și să le citiți evenimentele."
@@ -5565,6 +5607,9 @@
       "Email settings": [
         "Setări e-mail"
       ],
+      "Encrypted event": [
+        "Eveniment criptat"
+      ],
       "Enter your password": [
         "Introduceţi parola"
       ],
@@ -5672,8 +5717,8 @@
       "Request new code": [
         "Solicitare cod nou"
       ],
-      "Reset calendar keys": [
-        "Resetare chei calendar"
+      "Reshare your calendars": [
+        "Repartajați calendarele"
       ],
       "Save changes": [
         "Salvare modificări"
@@ -5776,6 +5821,12 @@
       ],
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Vi s-au blocat câteva calendare pentru a vă proteja datele"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Vi s-au blocat calendarele pentru a vă proteja datele"
       ],
       "What would you like to import?": [
         "Ce ați dori să importați?"

@@ -118,6 +118,9 @@
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Συνέχεια στο ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
@@ -231,6 +234,9 @@
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
       ],
+      "Hide affected calendars": [
+        "Απόκρυψη επηρεαζόμενων ημερολογίων"
+      ],
       "Hide folders": [
         "Απόκρυψη φακέλων"
       ],
@@ -342,6 +348,9 @@
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
+      "Open settings": [
+        "Άνοιγμα ρυθμίσεων"
+      ],
       "Preview contact": [
         "Προεπισκόπηση Επαφής"
       ],
@@ -434,6 +443,9 @@
       ],
       "Show advanced PGP settings": [
         "Εμφάνιση προηγμένων ρυθμίσεων PGP"
+      ],
+      "Show affected calendars": [
+        "Εμφάνιση επηρεαζόμενων ημερολογίων"
       ],
       "Show folders": [
         "Εμφάνιση φακέλων"
@@ -3457,9 +3469,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Έχετε επανενεργοποιήσει τα κλειδιά και τα συμβάντα που συνδέονται με τα ακόλουθα ημερολόγια μπορούν τώρα να αποκρυπτογραφηθούν."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Εχετε επαναφέρει τον κωδικό πρόσβασης σασ και σαν αποτέλεσμα γεγονότα συνδεδεμένα με τα ακόλουθα ημερολόγια, δε μπορέσανε να αποκρυπτωγραφηθούν.\nΟι συνδέσεις κοινόχρηστου ημερολογίου που δημιουργήσατε προηγουμένως δεν θα λειτουργούν πλέον.\nΟποιαδήποτε ενεργά εγγεγραμμένα ημερολόγια θα συγχρονιστούν ξανά μετά από λίγα λεπτά."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Έχετε προηγουμένως απορρίψει αυτήν την πρόσκληση. Παρακαλώ ρωτήστε τον κάτοχο για μια νέα πρόσκληση"
       ],
@@ -3524,6 +3533,34 @@
     "Info on errors": {
       "Click for details": [
         "Κάντε κλικ για λεπτομέρειες"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Κάποια από τα ημερολόγιά σας δεν θα εμφανίζουν λεπτομέρειες για συμβάντα που δημιουργήθηκαν προηγουμένως."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Τα ημερολόγιά σας δεν θα εμφανίζουν λεπτομέρειες για συμβάντα που δημιουργήθηκαν προηγουμένως."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Αυτό συμβαίνει επειδή έγινε πρόσφατα επαναφορά του κωδικού πρόσβασής σας χωρίς τη χρήση μεθόδου ανάκτησης."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Μπορείτε να ανακτήσετε τα κρυπτογραφημένα δεδομένα σας με ένα αρχείο ανάκτησης, μια φράση ανάκτησης ή τον παλιό σας κωδικό πρόσβασης."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Η κοινή χρήση ημερολογίου απενεργοποιήθηκε μετά την πρόσφατη επαναφορά του κωδικού πρόσβασης."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Μπορείτε να αναδημοσιεύσετε τα ημερολόγιά σας στις ρυθμίσεις."
       ]
     },
     "Input label": {
@@ -3949,6 +3986,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα σε ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Τι είναι η μεθόδος ανάκτησης;"
       ]
     },
     "Loading info": {
@@ -4701,9 +4743,6 @@
       "Subscribe to other calendars": [
         "Εγγραφή σε άλλα ημερολόγια"
       ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Δοκιμή ${ DRIVE_APP_NAME }"
-      ],
       "You can subscribe to external calendars and read their events.": [
         "Μπορείτε να εγγραφείτε σε εξωτερικά ημερολόγια και να διαβάσετε τις εκδηλώσεις τους."
       ]
@@ -5095,6 +5134,9 @@
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
+      "Encrypted event": [
+        "Κρυπτογραφημένο Γεγονός"
+      ],
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
       ],
@@ -5198,8 +5240,8 @@
       "Request new code": [
         "Αίτηση νέου κωδικού"
       ],
-      "Reset calendar keys": [
-        "Επαναφορά κλειδιών ημερολογίου"
+      "Reshare your calendars": [
+        "Αναδημοσίευση των ημερολογίων σας"
       ],
       "Save changes": [
         "Αποθήκευση αλλαγών"
@@ -5302,6 +5344,12 @@
       ],
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία κίβδηλης ιστοσελίδας"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Έχουμε κλειδώσει κάποια από τα ημερολόγιά σας για να προστατεύσουμε τα δεδομένα σας"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Έχουμε κλειδώσει τα ημερολόγιά σας για να προστατεύσουμε τα δεδομένα σας"
       ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"

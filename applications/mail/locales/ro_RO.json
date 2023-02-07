@@ -86,6 +86,9 @@
       "Archive": [
         "Arhivare"
       ],
+      "As Scheduled": [
+        "Ca programare"
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Creare mesaj"
+      ],
+      "Custom": [
+        "Personalizat"
       ],
       "Customize": [
         "Personalizare"
@@ -599,6 +605,9 @@
       "Minimize composer": [
         "Micșorare panou editare"
       ],
+      "Monday": [
+        "Luni"
+      ],
       "More": [
         "Mai multe"
       ],
@@ -845,9 +854,6 @@
       "Schedule message": [
         "Mesaj programat"
       ],
-      "Schedule send": [
-        "Trimitere programată"
-      ],
       "Search": [
         "Căutare"
       ],
@@ -985,6 +991,9 @@
       ],
       "This message contains remote content.": [
         "Acest mesaj conține conținut de la distanță."
+      ],
+      "Tomorrow": [
+        "Mâine"
       ],
       "Trust": [
         "Aprobare"
@@ -2886,13 +2895,22 @@
       "No labels": [
         "Nu sunt etichete."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logo și semnul plus"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Deblocați programarea personalizată a mesajelor și alte avantaje trecând la un plan superior."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
+      ],
+      "When do you want your message to be sent?": [
+        "Când doriți să fie trimis mesajul?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
@@ -3077,6 +3095,9 @@
       ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
+      ],
+      "Contact name is too long": [
+        "Numele de contact este prea lung."
       ],
       "Contact signature could not be verified": [
         "Semnătura contactului nu a putut fi verificată"
@@ -6120,14 +6141,14 @@
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
       ],
+      "Colors": [
+        "Culori"
+      ],
       "Coming soon": [
         "În curând"
       ],
       "Conditions": [
         "Condiții"
-      ],
-      "Confirm password": [
-        "Confirmare parolă"
       ],
       "Contacts": [
         "Contacte"
@@ -7032,6 +7053,42 @@
         "Schimbare sau adăugare cont"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Modernizare"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domenii personale de e-mail"
+      ],
+      "Hide My Email aliases": [
+        "Ascundere aliasuri e-mail"
+      ],
+      "Schedule messages at any time": [
+        "Programați mesajele oricând"
+      ],
+      "Search message content": [
+        "Căutare în conținut mesaj"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Up to 15 email addresses": [
+        "Până la 15 adrese de e-mail"
+      ],
+      "Up to 500 GB of storage": [
+        "Până la 500 GB spațiu de stocare"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
+      ],
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Povestiți-ne despre experiența avută. (opțional)"
@@ -7195,9 +7252,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Modalitate de contactare"
-      ],
-      "Confirm password": [
-        "Confirmare parolă"
       ],
       "E.g., ": [
         "Ex.: "
@@ -7563,9 +7617,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
-      ],
       "Email tracking protection": [
         "Protejare e-mail împotriva urmăririi"
       ],
@@ -7580,9 +7631,6 @@
       ],
       "Schedule send": [
         "Trimitere programată"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Încercați ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
@@ -8480,6 +8528,9 @@
       ],
       "Sending original message": [
         "Se trimite mesajul original"
+      ],
+      "Set your own schedule": [
+        "Setare programare"
       ],
       "Settings": [
         "Setări"

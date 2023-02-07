@@ -86,6 +86,9 @@
       "Archive": [
         "Arşivle"
       ],
+      "As Scheduled": [
+        "Zamanlandığı gibi"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Yeni ileti oluştur"
+      ],
+      "Custom": [
+        "Özel"
       ],
       "Customize": [
         "Özelleştir"
@@ -599,6 +605,9 @@
       "Minimize composer": [
         "Oluşturucuyu küçült"
       ],
+      "Monday": [
+        "Pazartesi"
+      ],
       "More": [
         "Diğer"
       ],
@@ -845,9 +854,6 @@
       "Schedule message": [
         "İletiyi zamanla"
       ],
-      "Schedule send": [
-        "Gönderimi zamanla"
-      ],
       "Search": [
         "Arama"
       ],
@@ -985,6 +991,9 @@
       ],
       "This message contains remote content.": [
         "Bu iletide uzak içerik var."
+      ],
+      "Tomorrow": [
+        "Yarın"
       ],
       "Trust": [
         "Güven"
@@ -2879,12 +2888,21 @@
       "No labels": [
         "Henüz bir etiket yok"
       ],
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail logosu ve bir artı işareti"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Tarifenizi yükselttiğinizde özel ileti zamanlaması ve diğer özelliklere erişebilirsiniz."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
+      ],
+      "When do you want your message to be sent?": [
+        "İletinizin ne zaman gönderilmesini istersiniz?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
@@ -3067,6 +3085,9 @@
       ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
+      ],
+      "Contact name is too long": [
+        "Kişi adı çok uzun"
       ],
       "Contact signature could not be verified": [
         "Kişi imzası doğrulanamadı"
@@ -6019,14 +6040,14 @@
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
+      "Colors": [
+        "Renkler"
+      ],
       "Coming soon": [
         "Çok yakında"
       ],
       "Conditions": [
         "Koşullar"
-      ],
-      "Confirm password": [
-        "Parolayı onayla"
       ],
       "Contacts": [
         "Kişiler"
@@ -6924,6 +6945,42 @@
         "Hesap değiştirin ya da ekleyin"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Hide My Email aliases": [
+        "E-posta kısaltmalarım gizlensin"
+      ],
+      "Schedule messages at any time": [
+        "İletileri istediğiniz zamanda gönderin"
+      ],
+      "Search message content": [
+        "İleti içeriğinde arama"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Up to 15 email addresses": [
+        "15 e-posta adresine kadar"
+      ],
+      "Up to 500 GB of storage": [
+        "500 GB depolama alanına kadar"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
+      ],
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Bize deneyimlerinizi anlatın. (İsteğe bağlı)"
@@ -7087,9 +7144,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
-      ],
-      "Confirm password": [
-        "Parola onayı"
       ],
       "E.g., ": [
         "Örneğin, "
@@ -7446,9 +7500,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
-      ],
       "Email tracking protection": [
         "E-posta izleme koruması"
       ],
@@ -7463,9 +7514,6 @@
       ],
       "Schedule send": [
         "Gönderimi zamanla"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } uygulamasını deneyin"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Artık varsayılan olarak görseller yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
@@ -8320,6 +8368,9 @@
       ],
       "Sending original message": [
         "Özgün ileti gönderiliyor"
+      ],
+      "Set your own schedule": [
+        "Kendi zamanlamanızı yapın"
       ],
       "Settings": [
         "Ayarlar"

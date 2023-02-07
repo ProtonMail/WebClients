@@ -3902,6 +3902,9 @@
       "Actions": [
         "Acciones"
       ],
+      "App version": [
+        "Versión de la app"
+      ],
       "Event": [
         "Evento"
       ],
@@ -6699,6 +6702,9 @@
       "Color": [
         "Color"
       ],
+      "Colors": [
+        "Colores"
+      ],
       "Coming soon": [
         "Próximamente"
       ],
@@ -8207,6 +8213,26 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8276,26 +8302,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9673,17 +9679,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "¡${ DRIVE_APP_NAME } sale de la beta! Brinde a sus archivos la misma seguridad de sus correos electrónicos."
-      ],
       "Get up to ${ credits } in credits.": [
         "Obtenga hasta ${ credits } en créditos."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invite amistades a ${ BRAND_NAME }"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Probar ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -11177,8 +11177,8 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Establece el siguiente pie de página en los correos electrónicos que envía: ${ signature } El enlace apunta a su enlace de referencia. El pie de página aparecerá debajo de su firma. Puede personalizar su firma en cualquier momento en los ajustes."
       ],
-      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
-        "Muestra la imagen de cada remitente en la lista de mensajes. O se mostrará la inicial del remitente si no hay una foto disponible."
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Muestra la imagen de cada remitente en la lista de mensajes. Se mostrarán las iniciales del remitente si no hay una foto disponible."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Las firmas creadas con esta clave son tratadas como inválidas y esta clave no puede usarse para cifrar"
