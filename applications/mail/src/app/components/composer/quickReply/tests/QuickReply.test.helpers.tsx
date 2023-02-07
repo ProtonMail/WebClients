@@ -16,11 +16,6 @@ import { store } from '../../../../logic/store';
 import { addressID, setup } from '../../../message/tests/Message.test.helpers';
 import { data, fromFields, getExpectedDefaultPlainTextContent, getMessage } from './QuickReply.test.data';
 
-// Helper to make testing easier
-export const removeLineBreaks = (text: string) => {
-    return text.replaceAll(/\n/g, '');
-};
-
 export const getStateMessageFromParentID = (parentMessageID: string) => {
     const messagesFromCache = store.getState().messages;
 
