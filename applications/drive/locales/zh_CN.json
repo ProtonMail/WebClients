@@ -1915,6 +1915,9 @@
       "Contact could not be saved": [
         "无法保存联系人"
       ],
+      "Contact name is too long": [
+        "联系人名称过长"
+      ],
       "Contact signature not verified": [
         "未验证联系人签名"
       ],
@@ -2954,6 +2957,9 @@
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "批量上传可能会降低计算机的性能。应考虑上传过程中，限制如串流等内存密集型活动。 或者尝试分批上传。"
       ],
+      "Calendar side panel": [
+        "日历侧边栏"
+      ],
       "Canceled": [
         "已取消"
       ],
@@ -3879,6 +3885,9 @@
       ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
+      ],
+      "Colors": [
+        "颜色"
       ],
       "Coming soon": [
         "即将推出"
@@ -4844,9 +4853,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
-      ],
       "Encrypted search is here": [
         "已推出加密搜索功能"
       ],
@@ -4858,9 +4864,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "现在，您可以保持数据安全，同时轻松搜索网盘文件。"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "体验 ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5485,6 +5488,9 @@
       ],
       "Your changes are not synced yet": [
         "您的改动尚未同步"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
       ],
       "Your welcome actions": [
         "您的新人礼包"

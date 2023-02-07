@@ -4799,9 +4799,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
-      ],
       "Encrypted search is here": [
         "暗号化検索が利用できます"
       ],
@@ -4813,9 +4810,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "データの安全性を保ったまま、Drive内のファイルを検索できるようになりました。"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } を試す"
       ]
     },
     "Storage": {
@@ -5233,6 +5227,9 @@
       ],
       "Name": [
         "名前"
+      ],
+      "No results found": [
+        "結果が見つかりませんでした"
       ],
       "Number of files": [
         "ファイル数"

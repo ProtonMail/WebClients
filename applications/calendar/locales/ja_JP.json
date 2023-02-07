@@ -343,6 +343,9 @@
       "Open navigation": [
         "ナビゲーションを開く"
       ],
+      "Open settings": [
+        "設定を開く"
+      ],
       "Preview contact": [
         "連絡先をプレビュー"
       ],
@@ -1974,6 +1977,11 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "無効なカレンダーの予定です。"
+      ]
+    },
+    "Don't ask to update timezone checkbox label": {
+      "Do not ask again": [
+        "今後表示しない"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3619,9 +3627,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "鍵が復活したため、以下のカレンダーに登録されている予定は復号できるようになりました。"
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "パスワードが変更されたため、以下のカレンダーに登録されていた予定を復号できませんでした。\nパスワードの変更前に共有したリンクにはアクセスできません。\n登録した他人のカレンダーは数分後に同期されます。"
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "一度招待を拒否しているため、主催者からもう一度招待される必要があります。"
       ],
@@ -4128,6 +4133,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } で開く"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "回復手段とは何ですか？"
       ]
     },
     "Loading info": {
@@ -4861,9 +4871,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
-      ],
       "Easily accept invites": [
         "招待を簡単に了承できます"
       ],
@@ -4878,9 +4885,6 @@
       ],
       "Subscribe to other calendars": [
         "他のカレンダーを購読"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } を試す"
       ],
       "You can subscribe to external calendars and read their events.": [
         "外部カレンダーを購読して、イベントを読み込むことができます。"
@@ -5396,9 +5400,6 @@
       ],
       "Request new code": [
         "新しいコードを発行"
-      ],
-      "Reset calendar keys": [
-        "カレンダーの鍵のリセット"
       ],
       "Save changes": [
         "変更を保存"

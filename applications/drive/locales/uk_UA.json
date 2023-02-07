@@ -1924,6 +1924,9 @@
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
       ],
+      "Contact name is too long": [
+        "Ім'я контакту задовге"
+      ],
       "Contact signature not verified": [
         "Підпис для контакту не перевірено"
       ],
@@ -3697,6 +3700,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Програма повинна локально розшифрувати ваші контакти для можливості їх експортування. Після завершення процесу буде згенеровано файл VCF і ви зможете його завантажити."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Зашифровані дані трохи більші через витрату додаткових ресурсів на шифрування та підписи, які забезпечують безпеку ваших даних."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Можливо ці елементи було підроблено: ${ items }. Відкрийте лише якщо довіряєте їм."
       ],
@@ -4070,6 +4076,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
+      ],
+      "Colors": [
+        "Кольори"
       ],
       "Coming soon": [
         "Незабаром з'явиться"
@@ -5116,9 +5125,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
-      ],
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
       ],
@@ -5130,9 +5136,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Тепер ви можете легко шукати файли на Drive, зберігаючи безпеку даних."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Спробувати ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5631,6 +5634,9 @@
       ],
       "Open settings menu": [
         "Відкрити меню налаштувань"
+      ],
+      "Original size": [
+        "Оригінальний розмір"
       ],
       "Other information": [
         "Інша інформація"

@@ -836,9 +836,6 @@
       "Schedule message": [
         "Programar missatge"
       ],
-      "Schedule send": [
-        "Programar enviament"
-      ],
       "Search": [
         "Cerca"
       ],
@@ -850,6 +847,9 @@
       ],
       "Search message content": [
         "Cercar al contingut del missatge"
+      ],
+      "See plan features": [
+        "Veure les funcionalitats del pla"
       ],
       "Select all": [
         "Seleccionar-ho tot"
@@ -4051,6 +4051,9 @@
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
         "S'ha produït un error xifrant i afegint els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
       ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "S'ha produït un error xifrant i afegint els vostres contactes. No s'ha pogut importar cap contacte."
+      ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Contacte importat. El contacte importat ja apareix a la vostra llista de contactes."
       ],
@@ -5936,9 +5939,6 @@
       "Conditions": [
         "Condicions"
       ],
-      "Confirm password": [
-        "Confirmar la contrasenya"
-      ],
       "Contacts": [
         "Contactes"
       ],
@@ -6572,6 +6572,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d' ${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importa tots els missatges d'$${ itemsToImportCount } carpetes i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -6828,6 +6832,19 @@
         "Canvia o afegeix un compte"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Dominis de correu personalitzats"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetes, etiquetes i filtres il·limitats"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Expliqueu-nos la vostra experiència. (Opcional)"
@@ -6975,9 +6992,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Una manera de contactar amb tu"
-      ],
-      "Confirm password": [
-        "Confirmar la contrasenya"
       ],
       "E.g., ": [
         "Ex., "
@@ -7328,9 +7342,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
-      ],
       "Email tracking protection": [
         "Protecció de seguiment de correu electrònic"
       ],
@@ -7342,9 +7353,6 @@
       ],
       "Schedule send": [
         "Programar l'enviament"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Prova ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
