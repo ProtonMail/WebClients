@@ -121,6 +121,9 @@
       "Continue import": [
         "Kontynuuj importowanie"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Przejdź do ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Kontynuuj z Google"
       ],
@@ -238,6 +241,9 @@
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
       ],
+      "Hide affected calendars": [
+        "Ukryj zaszyfrowane kalendarze"
+      ],
       "Hide folders": [
         "Ukryj foldery"
       ],
@@ -349,6 +355,9 @@
       "Open navigation": [
         "Otwórz nawigację"
       ],
+      "Open settings": [
+        "Otwórz ustawienia"
+      ],
       "Preview contact": [
         "Podgląd kontaktu"
       ],
@@ -441,6 +450,9 @@
       ],
       "Show advanced PGP settings": [
         "Pokaż zaawansowane ustawienia PGP"
+      ],
+      "Show affected calendars": [
+        "Pokaż zaszyfrowane kalendarze"
       ],
       "Show folders": [
         "Pokaż foldery"
@@ -771,7 +783,7 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        "Będziesz uczestniczył?"
+        "Będziesz uczestniczyć?"
       ]
     },
     "Calendar invite info": {
@@ -2066,7 +2078,7 @@
         "Wydarzenie ${ eventTitle } zostało zaktualizowane.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Zaproszenie do wydarzenia ${ eventTitle }\n${ eventDetailsText }"
+        "Zaproszenie na wydarzenie ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2087,13 +2099,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
+        "Uczestnik ${ emailAddress } zaakceptował zaproszenie na wydarzenie ${ eventTitle }"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } odrzucił zaproszenie do wydarzenia ${ eventTitle }"
+        "Uczestnik ${ emailAddress } odrzucił zaproszenie na wydarzenie ${ eventTitle }"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
+        "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie na wydarzenie ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -2104,10 +2116,10 @@
         "Anulowanie wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Zaproszenie do wydarzenia w dniu: ${ formattedStart }"
+        "Zaproszenie na wydarzenie w dniu: ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Zaproszenie do wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
+        "Zaproszenie na wydarzenie rozpoczynające się w dniu: ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Aktualizacja wydarzenia w dniu: ${ formattedStart }"
@@ -2170,6 +2182,9 @@
       ],
       "Contact could not be saved": [
         "Kontakt nie mógł zostać zapisany"
+      ],
+      "Contact name is too long": [
+        "Nazwa kontaktu jest zbyt długa"
       ],
       "Contact signature could not be verified": [
         "Podpis kontaktu nie może zostać zweryfikowany"
@@ -2946,10 +2961,10 @@
         "Zaimportowane zaproszenia pojawiają się w ${ CALENDAR_APP_NAME } jako zwykłe wydarzenia bez szczegółów organizatora i uczestników. Aby otrzymywać aktualizacje wydarzeń i zobaczyć listę uczestników, poproś organizatorów o zaproszenie, używając swojego adresu e-mail ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
-        "Plik zawiera zaproszenie do wydarzenia:",
-        "Plik zawiera zaproszenia do wydarzeń:",
-        "Plik zawiera zaproszenia do wydarzeń:",
-        "Plik zawiera zaproszenia do wydarzeń:"
+        "Plik zawiera zaproszenie na wydarzenie:",
+        "Plik zawiera zaproszenia na wydarzenia:",
+        "Plik zawiera zaproszenia na wydarzenia:",
+        "Plik zawiera zaproszenia na wydarzenia:"
       ],
       "This file contains an invitation response:": [
         "Plik zawiera odpowiedź na zaproszenie:",
@@ -3823,10 +3838,7 @@
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Reaktywowano klucze, więc wydarzenia z kalendarzy mogą zostać odszyfrowane."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Zresetowano hasło, więc wydarzenia z kalendarzy nie mogły zostać odszyfrowane.\nWszystkie udostępnione linki kalendarzy przestaną działać.\nZa kilka minut wszystkie subskrybowane kalendarze zostaną ponownie zsynchronizowane."
+        "Reaktywowano klucze, więc wydarzenia z następujących kalendarzy mogą zostać odszyfrowane."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Poprzednie zaproszenie zostało odrzucone. Poproś właściciela o ponowne zaproszenie"
@@ -3904,6 +3916,34 @@
     "Info on errors": {
       "Click for details": [
         "Kliknij po szczegóły"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Niektóre kalendarze nie będą pokazywać szczegółów wcześniej utworzonych wydarzeń."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Kalendarze nie będą pokazywać szczegółów wcześniej utworzonych wydarzeń."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Spowodowane jest to resetowaniem hasła bez użycia metody odzyskiwania."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Możesz odzyskać zaszyfrowane dane za pomocą pliku odzyskiwania, hasła odzyskiwania lub starego hasła."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Udostępnianie kalendarza zostało wyłączone z powodu zresetowania hasła."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Możesz w ustawieniach ponownie udostępnić kalendarze."
       ]
     },
     "Input label": {
@@ -4005,6 +4045,9 @@
       ],
       "Color": [
         "Kolor"
+      ],
+      "Colors": [
+        "Kolory"
       ],
       "Coming soon": [
         "Wkrótce"
@@ -4349,6 +4392,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Otwórz w ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Co to jest metoda odzyskiwania?"
       ]
     },
     "Loading info": {
@@ -5454,9 +5502,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Dysk ${ DRIVE_APP_NAME } wyszedł z wersji beta! Zapewnij swoim plikom takie samo bezpieczeństwo, jak poczcie e-mail."
-      ],
       "Easily accept invites": [
         "Akceptuj zaproszenia"
       ],
@@ -5471,9 +5516,6 @@
       ],
       "Subscribe to other calendars": [
         "Subskrybuj inne kalendarze"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Wypróbuj ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Możesz subskrybować zewnętrzne kalendarze i odczytywać wydarzenia."
@@ -5930,6 +5972,9 @@
       "Email settings": [
         "Ustawienia adresu e-mail"
       ],
+      "Encrypted event": [
+        "Zaszyfrowane wydarzenie"
+      ],
       "Enter your password": [
         "Wpisz hasło"
       ],
@@ -6038,8 +6083,8 @@
       "Request new code": [
         "Poproś o nowy kod"
       ],
-      "Reset calendar keys": [
-        "Resetowanie kluczy kalendarza"
+      "Reshare your calendars": [
+        "Udostępnij ponownie kalendarze"
       ],
       "Save changes": [
         "Zapisz zmiany"
@@ -6142,6 +6187,12 @@
       ],
       "Warning: suspected fake website": [
         "Ostrzeżenie: podejrzana strona internetowa"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Zablokowaliśmy niektóre kalendarze, aby chronić Twoje dane"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Zablokowaliśmy kalendarze, aby chronić Twoje dane"
       ],
       "What would you like to import?": [
         "Jakie dane chcesz zaimportować?"

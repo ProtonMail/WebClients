@@ -821,9 +821,6 @@
       "Schedule message": [
         "Programmer le message"
       ],
-      "Schedule send": [
-        "Programmer l'envoi"
-      ],
       "Search": [
         "Rechercher"
       ],
@@ -5941,9 +5938,6 @@
       "Conditions": [
         "Conditions"
       ],
-      "Confirm password": [
-        "Confirmer le mot de passe"
-      ],
       "Contacts": [
         "Contacts"
       ],
@@ -6824,6 +6818,19 @@
         "Basculez vers ou ajoutez un compte"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Mettre à niveau maintenant"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Dossiers, labels et filtres illimités"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Parlez-nous de votre expérience (optionnel)"
@@ -6987,9 +6994,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Un moyen de vous contacter"
-      ],
-      "Confirm password": [
-        "Confirmer le mot de passe"
       ],
       "E.g., ": [
         "p. ex. "
@@ -7346,9 +7350,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
-      ],
       "Email tracking protection": [
         "Protection contre le suivi des courriels"
       ],
@@ -7363,9 +7364,6 @@
       ],
       "Schedule send": [
         "Programmer l'envoi"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Essayez ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer ceci dans les ${ settingsLink }."

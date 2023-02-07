@@ -2109,6 +2109,9 @@
       "Contact could not be saved": [
         "无法保存联系人"
       ],
+      "Contact name is too long": [
+        "联系人名称过长"
+      ],
       "Contact signature could not be verified": [
         "无法验证联系人签名"
       ],
@@ -3181,6 +3184,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "分享此日历的全部事件详情，即表示您同意授权 ${ BRAND_NAME } 访问此日历的加密信息。"
       ],
+      "Calendar side panel": [
+        "日历侧边栏"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
       ],
@@ -3625,9 +3631,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新激活密钥，可以解密下列分类中的日程了。"
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "您已重置了密码，无法解密链接到以下日历的事件。\n您之前创建的任何共享日历链接将不再有效。\n任何激活的订阅日历将在几分钟后再次同步。"
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "你之前拒绝了这个邀请。请向所有者要求获得重新邀请"
       ],
@@ -3804,6 +3807,9 @@
         "验证码是无空格的六位数"
       ],
       "Color": [
+        "颜色"
+      ],
+      "Colors": [
         "颜色"
       ],
       "Coming soon": [
@@ -4893,9 +4899,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
-      ],
       "Easily accept invites": [
         "轻松接受邀请"
       ],
@@ -4910,9 +4913,6 @@
       ],
       "Subscribe to other calendars": [
         "订阅其他日历"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "体验 ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "您可以通过订阅外部日历来获取其日程。"
@@ -5432,9 +5432,6 @@
       "Request new code": [
         "请求新验证码"
       ],
-      "Reset calendar keys": [
-        "重置日历密钥"
-      ],
       "Save changes": [
         "保存更改"
       ],
@@ -5548,6 +5545,9 @@
       ],
       "Your calendar link": [
         "您的日历链接"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

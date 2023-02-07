@@ -245,6 +245,9 @@
       "Create new message": [
         "Vytvořit novou zprávu"
       ],
+      "Custom": [
+        "Vlastní"
+      ],
       "Customize": [
         "Přizpůsobit"
       ],
@@ -602,6 +605,9 @@
       "Minimize composer": [
         "Minimalizovat editor"
       ],
+      "Monday": [
+        "Pondělí"
+      ],
       "More": [
         "Více"
       ],
@@ -848,9 +854,6 @@
       "Schedule message": [
         "Naplánovat odeslání"
       ],
-      "Schedule send": [
-        "Naplánovat odeslání"
-      ],
       "Search": [
         "Vyhledat"
       ],
@@ -988,6 +991,9 @@
       ],
       "This message contains remote content.": [
         "Tato zpráva obsahuje vzdálený obsah."
+      ],
+      "Tomorrow": [
+        "Zítra"
       ],
       "Trust": [
         "Důvěřovat"
@@ -3090,6 +3096,9 @@
       ],
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
+      ],
+      "Contact name is too long": [
+        "Jméno kontaktu je moc dlouhé"
       ],
       "Contact signature could not be verified": [
         "Podpisu kontaktu nebylo možné ověřit"
@@ -6224,14 +6233,14 @@
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
       ],
+      "Colors": [
+        "Barvy"
+      ],
       "Coming soon": [
         "Již brzy"
       ],
       "Conditions": [
         "Podmínky"
-      ],
-      "Confirm password": [
-        "Potvrdit heslo"
       ],
       "Contacts": [
         "Kontakty"
@@ -7143,6 +7152,25 @@
         "Přepnout nebo přidat účet"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Navýšit nyní"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Vlastní e-mailové domény"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Up to 15 email addresses": [
+        "Až 15 e-mailových adres"
+      ],
+      "Up to 500 GB of storage": [
+        "Až 500 GB úložiště"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Povězte nám o svých zkušenostech. (Nepovinné)"
@@ -7306,9 +7334,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
-      ],
-      "Confirm password": [
-        "Potvrdit heslo"
       ],
       "E.g., ": [
         "Např., "
@@ -7683,9 +7708,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
-      ],
       "Email tracking protection": [
         "Ochrana před sledovacími prvky v e-mailech"
       ],
@@ -7700,9 +7722,6 @@
       ],
       "Schedule send": [
         "Naplánovat odeslání"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Vyzkoušejte ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyní ve výchozím nastavení načítáme obrázky a znemožňujeme odesílatelům, aby vás sledovali. Toto můžete změnit v ${ settingsLink }."
