@@ -535,12 +535,13 @@ export const MIN_PAYPAL_AMOUNT = 499;
 export const MAX_PAYPAL_AMOUNT = 99999900;
 
 export enum NEWS {
-    ANNOUNCEMENTS = 1,
-    FEATURES = 2,
-    NEWSLETTER = 4,
-    BETA = 8,
-    BUSINESS = 16,
-    OFFERS = 32,
+    ANNOUNCEMENTS = 1 << 0,
+    FEATURES = 1 << 1,
+    NEWSLETTER = 1 << 2,
+    BETA = 1 << 3,
+    BUSINESS = 1 << 4,
+    OFFERS = 1 << 5,
+    ONBOARDING = 1 << 7,
 }
 
 export const CONTACT_EMAILS_LIMIT = 1000;
