@@ -1915,6 +1915,9 @@
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
       ],
+      "Contact name is too long": [
+        "Nama kontak terlalu panjang"
+      ],
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
@@ -3520,6 +3523,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon hanya buka berkas/folder apabila Anda mempercayai sumbernya."
       ],
@@ -3890,6 +3896,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
+      "Colors": [
+        "Warna"
       ],
       "Coming soon": [
         "Segera hadir"
@@ -4855,9 +4864,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
-      ],
       "Encrypted search is here": [
         "Pencarian terenkripsi kini telah hadir"
       ],
@@ -4869,9 +4875,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Kini Anda dapat mencari berkas Drive dengan mudah seraya menjaga data Anda tetap aman."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Coba ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5313,6 +5316,9 @@
       ],
       "Open settings menu": [
         "Buka menu pengaturan"
+      ],
+      "Original size": [
+        "Ukuran asli"
       ],
       "Other information": [
         "Informasi lainnya"

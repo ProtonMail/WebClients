@@ -86,6 +86,9 @@
       "Archive": [
         "Arsip"
       ],
+      "As Scheduled": [
+        "Sebagaimana Terjadwal"
+      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Buat pesan baru"
+      ],
+      "Custom": [
+        "Sesuaikan"
       ],
       "Customize": [
         "Atur"
@@ -593,6 +599,9 @@
       "Minimize composer": [
         "Minimalkan komposer"
       ],
+      "Monday": [
+        "Senin"
+      ],
       "More": [
         "Lainnya"
       ],
@@ -839,9 +848,6 @@
       "Schedule message": [
         "Jadwalkan pesan"
       ],
-      "Schedule send": [
-        "Jadwalkan pengiriman"
-      ],
       "Search": [
         "Pencarian"
       ],
@@ -979,6 +985,9 @@
       ],
       "This message contains remote content.": [
         "Pesan ini mengandung remote content."
+      ],
+      "Tomorrow": [
+        "Besok"
       ],
       "Trust": [
         "Percayai"
@@ -2866,11 +2875,20 @@
       "No labels": [
         "Tidak ada label"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo Proton Mail dan tanda plus"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Dapatkan fitur penjadwalan pesan khusus dan berbagai kelebihan lainnya dengan meningkatkan akun Anda."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
+      ],
+      "When do you want your message to be sent?": [
+        "Kapan Anda ingin pesan Anda dikirim?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
@@ -3051,6 +3069,9 @@
       ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
+      ],
+      "Contact name is too long": [
+        "Nama kontak terlalu panjang"
       ],
       "Contact signature could not be verified": [
         "Tanda tangan kontak tidak dapat diverifikasi"
@@ -5917,14 +5938,14 @@
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
+      "Colors": [
+        "Warna"
+      ],
       "Coming soon": [
         "Segera hadir"
       ],
       "Conditions": [
         "Syarat"
-      ],
-      "Confirm password": [
-        "Konfirmasi kata sandi"
       ],
       "Contacts": [
         "Kontak"
@@ -6815,6 +6836,42 @@
         "Pindah atau tambahkan akun"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domain email khusus"
+      ],
+      "Hide My Email aliases": [
+        "Alias Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Jadwalkan pesan sesuai keinginan Anda"
+      ],
+      "Search message content": [
+        "Cari konten pesan"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Tanpa batasan jumlah folder, label, dan filter"
+      ],
+      "Up to 15 email addresses": [
+        "Hingga 15 alamat email"
+      ],
+      "Up to 500 GB of storage": [
+        "Kuota penyimpanan hingga 500 GB"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
+      ],
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Mohon ceritakan pengalaman Anda kepada kami. (Opsional)"
@@ -6978,9 +7035,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Cara menghubungi Anda"
-      ],
-      "Confirm password": [
-        "Konfirmasi kata sandi"
       ],
       "E.g., ": [
         "Misalnya "
@@ -7328,9 +7382,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
-      ],
       "Email tracking protection": [
         "Perlindungan pelacak email"
       ],
@@ -7345,9 +7396,6 @@
       ],
       "Schedule send": [
         "Jadwalkan pengiriman"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Coba ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Kami kini memuat gambar secara default dan memblokir pengirim untuk dapat melacak Anda. Hal ini dapat diubah di ${ settingsLink }."
@@ -8156,6 +8204,9 @@
       ],
       "Sending original message": [
         "Mengirim pesan asli"
+      ],
+      "Set your own schedule": [
+        "Tentukan jadwal Anda sendiri"
       ],
       "Settings": [
         "Pengaturan"

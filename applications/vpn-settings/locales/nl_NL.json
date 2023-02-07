@@ -1914,6 +1914,9 @@
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
       ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey logo"
+      ],
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
@@ -1964,6 +1967,9 @@
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy logo"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Gebruik de OpenVPN / IKEv2 inloggegevens niet in ${ VPN_APP_NAME } applicaties of op het ${ VPN_APP_NAME } dashboard. ${ learnMore }"
@@ -2033,6 +2039,9 @@
       ],
       "expires ${ expirationDate }": [
         "verloopt op ${ expirationDate }"
+      ],
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -2135,6 +2144,12 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ switchButton }."
+      ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode logo"
+      ],
+      "MM/YY": [
+        "MM/JJ"
       ],
       "No credit card required": [
         "Green kredietkaart vereist"
@@ -2390,6 +2405,9 @@
       ],
       "Version ${ version }": [
         "Versie ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure logo"
       ],
       "Warning:": [
         "Waarschuwing:"
@@ -2922,7 +2940,7 @@
         "Gebruik een herstel-e-mailadres"
       ],
       "Use a recovery phone number": [
-        "Gebruik een herstel-telefoonnummer"
+        "Hersteltelefoonnummer gebruiken"
       ],
       "User's new password": [
         "Nieuw wachtwoord van gebruiker"
@@ -2941,6 +2959,9 @@
       ],
       "What happened?": [
         "Wat is er gebeurd?"
+      ],
+      "What is the main reason you are canceling?": [
+        "Wat is de belangrijkste reden dat u wil opzeggen?"
       ],
       "What is the main reason you are deleting your account?": [
         "Wat is de voornaamste reden dat u uw account verwijdert?"
@@ -4189,17 +4210,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
-      ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Probeer ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -4801,6 +4816,9 @@
       ],
       "Your current plan": [
         "Uw huidige abonnement"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uw Mail Plus proefversie eindigt op ${ textDate }."
       ],
       "Your plan": [
         "Uw abonnement"

@@ -1924,6 +1924,9 @@
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
       ],
+      "Contact name is too long": [
+        "Jméno kontaktu je moc dlouhé"
+      ],
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
       ],
@@ -3692,6 +3695,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Šifrovaná data jsou o něco větší kvůli režii šifrování a podpisů, které zajišťují bezpečnost vašich dat."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "S následujícími položkami mohl někdo bez dovolení manipulovat: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
@@ -4065,6 +4071,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
+      ],
+      "Colors": [
+        "Barvy"
       ],
       "Coming soon": [
         "Již brzy"
@@ -5111,9 +5120,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
-      ],
       "Encrypted search is here": [
         "Vyhledávání v šifrovaných datech je zde"
       ],
@@ -5125,9 +5131,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nyní můžete jednoduše vyhledávat soubory na Disku, zatímco jsou vaše data zabezpečena."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Vyzkoušejte ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5626,6 +5629,9 @@
       ],
       "Open settings menu": [
         "Otevřít menu nastavení"
+      ],
+      "Original size": [
+        "Původní velikost"
       ],
       "Other information": [
         "Další informace"

@@ -1915,6 +1915,9 @@
       "Contact could not be saved": [
         "無法儲存聯絡人"
       ],
+      "Contact name is too long": [
+        "聯絡人名稱太長"
+      ],
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
       ],
@@ -3515,6 +3518,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "在可以匯出前，應用程式需要在本機先解密您的聯絡人。過程結束時，將會產生一個 VCF 檔案以供您下載。"
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "因為加密與簽章的開銷，加密後的資料會較大，保證了您資料的安全。"
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
       ],
@@ -3885,6 +3891,9 @@
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
+      ],
+      "Colors": [
+        "色彩"
       ],
       "Coming soon": [
         "敬請期待"
@@ -4850,9 +4859,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
-      ],
       "Encrypted search is here": [
         "經加密搜尋功能現已推出"
       ],
@@ -4864,9 +4870,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "現在您可輕易搜尋 Drive 檔案，同時保持您的資料安全。"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "試試看 ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5308,6 +5311,9 @@
       ],
       "Open settings menu": [
         "開啟設定選單"
+      ],
+      "Original size": [
+        "原始大小"
       ],
       "Other information": [
         "其它資訊"

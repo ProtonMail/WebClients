@@ -1849,7 +1849,7 @@
         "Wydarzenie ${ eventTitle } zostało zaktualizowane.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Zaproszenie do wydarzenia ${ eventTitle }\n${ eventDetailsText }"
+        "Zaproszenie na wydarzenie ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -1870,13 +1870,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
+        "Uczestnik ${ emailAddress } zaakceptował zaproszenie na wydarzenie ${ eventTitle }"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } odrzucił zaproszenie do wydarzenia ${ eventTitle }"
+        "Uczestnik ${ emailAddress } odrzucił zaproszenie na wydarzenie ${ eventTitle }"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie do wydarzenia ${ eventTitle }"
+        "Uczestnik ${ emailAddress } wstępnie zaakceptował zaproszenie na wydarzenie ${ eventTitle }"
       ]
     },
     "Email subject": {
@@ -1887,10 +1887,10 @@
         "Anulowanie wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Zaproszenie do wydarzenia w dniu: ${ formattedStart }"
+        "Zaproszenie na wydarzenie w dniu: ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Zaproszenie do wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
+        "Zaproszenie na wydarzenie rozpoczynające się w dniu: ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
         "Aktualizacja wydarzenia w dniu: ${ formattedStart }"
@@ -1923,6 +1923,9 @@
       ],
       "Contact could not be saved": [
         "Kontakt nie mógł zostać zapisany"
+      ],
+      "Contact name is too long": [
+        "Nazwa kontaktu jest zbyt długa"
       ],
       "Contact signature not verified": [
         "Podpis kontaktu nie został zweryfikowany"
@@ -2635,10 +2638,10 @@
         "Zaimportowane zaproszenia pojawiają się w ${ CALENDAR_APP_NAME } jako zwykłe wydarzenia bez szczegółów organizatora i uczestników. Aby otrzymywać aktualizacje wydarzeń i zobaczyć listę uczestników, poproś organizatorów o zaproszenie, używając swojego adresu e-mail ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
-        "Plik zawiera zaproszenie do wydarzenia:",
-        "Plik zawiera zaproszenia do wydarzeń:",
-        "Plik zawiera zaproszenia do wydarzeń:",
-        "Plik zawiera zaproszenia do wydarzeń:"
+        "Plik zawiera zaproszenie na wydarzenie:",
+        "Plik zawiera zaproszenia na wydarzenia:",
+        "Plik zawiera zaproszenia na wydarzenia:",
+        "Plik zawiera zaproszenia na wydarzenia:"
       ],
       "This file contains an invitation response:": [
         "Plik zawiera odpowiedź na zaproszenie:",
@@ -3700,6 +3703,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Zanim kontakty będą mogły zostać wyeksportowane, aplikacja musi je lokalnie odszyfrować. Pod koniec procesu zostanie wygenerowany plik VCF do pobrania."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Zaszyfrowane dane zajmują więcej miejsca ze względu na proces szyfrowania oraz podpisy zapewniające bezpieczeństwo danych."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
       ],
@@ -4073,6 +4079,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
+      ],
+      "Colors": [
+        "Kolory"
       ],
       "Coming soon": [
         "Wkrótce"
@@ -5369,9 +5378,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Dysk ${ DRIVE_APP_NAME } wyszedł z wersji beta! Zapewnij swoim plikom takie samo bezpieczeństwo, jak poczcie e-mail."
-      ],
       "Encrypted search is here": [
         "Wyszukiwanie zawartości jest tutaj"
       ],
@@ -5383,9 +5389,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Możesz łatwo wyszukiwać pliki, zachowując bezpieczeństwo danych."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Wypróbuj ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5884,6 +5887,9 @@
       ],
       "Open settings menu": [
         "Otwórz ustawienia"
+      ],
+      "Original size": [
+        "Rozmiar oryginalny"
       ],
       "Other information": [
         "Inne informacje"

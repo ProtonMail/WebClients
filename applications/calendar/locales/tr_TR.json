@@ -121,6 +121,9 @@
       "Continue import": [
         "İçe aktarmayı sürdür"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "${ calendarAppBareName } ile ilerle"
+      ],
       "Continue with Google": [
         "Google ile ilerle"
       ],
@@ -234,6 +237,9 @@
       "Hide advanced PGP settings": [
         "Gelişmiş PGP ayarlarını gizle"
       ],
+      "Hide affected calendars": [
+        "Etkilenen takvimleri gizle"
+      ],
       "Hide folders": [
         "Klasörleri gizle"
       ],
@@ -345,6 +351,9 @@
       "Open navigation": [
         "Gezinmeyi aç"
       ],
+      "Open settings": [
+        "Ayarları aç"
+      ],
       "Preview contact": [
         "Kişiyi ön izle"
       ],
@@ -437,6 +446,9 @@
       ],
       "Show advanced PGP settings": [
         "Gelişmiş PGP ayarlarını göster"
+      ],
+      "Show affected calendars": [
+        "Etkilenen takvimleri görüntüle"
       ],
       "Show folders": [
         "Klasörleri göster"
@@ -2141,6 +2153,9 @@
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
+      "Contact name is too long": [
+        "Kişi adı çok uzun"
+      ],
       "Contact signature could not be verified": [
         "Kişi imzası doğrulanamadı"
       ],
@@ -3698,9 +3713,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Anahtarlarınızı yeniden etkinleştirdiniz ve şu takvimlere bağlı etkinliklerin şifresi artık çözülebilir."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Parolanızı sıfırladınız ve şu takvimlere bağlı etkinliklerin şifresi çözülemedi.\nÖnceden oluşturduğunuz paylaşılan takvim bağlantıları artık kullanılamayacak.\nAbone olunmuş etkin takvimler birkaç dakika sonra yeniden eşitlenecek."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Daha önce bu çağrıyı reddetmişsiniz. Yeniden çağırması için sahibi ile görüşün"
       ],
@@ -3777,6 +3789,34 @@
     "Info on errors": {
       "Click for details": [
         "Ayrıntılar için tıklayın"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Bazı takvimlerinizde daha önce oluşturulmuş etkinliklerin ayrıntıları görüntülenmeyecek."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Takvimlerinizde daha önce oluşturulmuş etkinliklerin ayrıntıları görüntülenmeyecek."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Bunun nedeni, parolanızın kısa süre önce bir kurtarma yöntemi kullanılmadan sıfırlanmış olmasıdır."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Şifrelenmiş verilerinizi bir kurtarma dosyası, kurtarma ifadesi ya da eski parolanızı kullanarak kurtarabilirsiniz."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Son parola sıfırlama işleminizin ardından takvim paylaşımı devre dışı bırakıldı."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Takvimlerinizi ayarlar bölümünden yeniden paylaşabilirsiniz."
       ]
     },
     "Input label": {
@@ -3878,6 +3918,9 @@
       ],
       "Color": [
         "Renk"
+      ],
+      "Colors": [
+        "Renkler"
       ],
       "Coming soon": [
         "Çok yakında"
@@ -4220,6 +4263,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } uygulamasında aç"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Bir kurtarma yöntemi nedir?"
       ]
     },
     "Loading info": {
@@ -5003,9 +5051,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
-      ],
       "Easily accept invites": [
         "Davetleri kolayca onaylayın"
       ],
@@ -5020,9 +5065,6 @@
       ],
       "Subscribe to other calendars": [
         "Diğer takvimlere abone ol"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } uygulamasını deneyin"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Dış takvimlere abone olarak etkinliklerini okuyabilirsiniz."
@@ -5453,6 +5495,9 @@
       "Email settings": [
         "E-posta ayarları"
       ],
+      "Encrypted event": [
+        "Şifrelenmiş etkinlik"
+      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -5559,8 +5604,8 @@
       "Request new code": [
         "Yeni kod iste"
       ],
-      "Reset calendar keys": [
-        "Takvim anahtarlarını sıfırla"
+      "Reshare your calendars": [
+        "Takvimlerinizi yeniden paylaşın"
       ],
       "Save changes": [
         "Değişiklikleri kaydet"
@@ -5663,6 +5708,12 @@
       ],
       "Warning: suspected fake website": [
         "Uyarı: Şüpheli sahte web sitesi"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Verilerinizi korumak için bazı takvimleri kilitledik"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Verilerinizi korumak için takvimlerinizi kilitledik"
       ],
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"

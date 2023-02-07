@@ -1918,6 +1918,9 @@
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
+      "Contact name is too long": [
+        "Kişi adı çok uzun"
+      ],
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
       ],
@@ -3574,6 +3577,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Şifrelenmiş veriler, verilerinizin güvenliğini sağlayan şifreleme ve imzaların ek yükü nedeniyle biraz daha büyüktür."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
@@ -3945,6 +3951,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
+      "Colors": [
+        "Renkler"
       ],
       "Coming soon": [
         "Çok yakında"
@@ -4937,9 +4946,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
-      ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
@@ -4951,9 +4957,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } uygulamasını deneyin"
       ]
     },
     "Storage": {
@@ -5416,6 +5419,9 @@
       ],
       "Open settings menu": [
         "Ayarlar menüsünü aç"
+      ],
+      "Original size": [
+        "Özgün boyut"
       ],
       "Other information": [
         "Diğer bilgiler"

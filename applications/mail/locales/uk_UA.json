@@ -86,6 +86,9 @@
       "Archive": [
         "Архівувати"
       ],
+      "As Scheduled": [
+        "Як заплановано"
+      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Створити повідомлення"
+      ],
+      "Custom": [
+        "Власний"
       ],
       "Customize": [
         "Налаштувати"
@@ -465,7 +471,7 @@
         "Hide My Email"
       ],
       "Hide my email": [
-        "Сховати мою е‑адресу"
+        "Hide My Email"
       ],
       "I have a question": [
         "У мене є питання"
@@ -604,6 +610,9 @@
       ],
       "Minimize composer": [
         "Згорнути редактор"
+      ],
+      "Monday": [
+        "Понеділок"
       ],
       "More": [
         "Більше"
@@ -851,9 +860,6 @@
       "Schedule message": [
         "Запланувати повідомлення"
       ],
-      "Schedule send": [
-        "Запланувати надсилання"
-      ],
       "Search": [
         "Пошук"
       ],
@@ -991,6 +997,9 @@
       ],
       "This message contains remote content.": [
         "Це повідомлення містить зовнішній вміст."
+      ],
+      "Tomorrow": [
+        "Завтра"
       ],
       "Trust": [
         "Довіряти"
@@ -2899,14 +2908,23 @@
       "No labels": [
         "Немає міток"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Логотип ProtonMail та знак плюс"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Користуйтеся власним розкладом листування та іншими перевагами після оновлення тарифного плану."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "When do you want your message to be sent?": [
+        "Коли ви хочете надіслати своє повідомлення?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -3093,6 +3111,9 @@
       ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
+      ],
+      "Contact name is too long": [
+        "Ім'я контакту задовге"
       ],
       "Contact signature could not be verified": [
         "Не вдається перевірити підпис контакту"
@@ -6232,14 +6253,14 @@
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
+      "Colors": [
+        "Кольори"
+      ],
       "Coming soon": [
         "Незабаром з'явиться"
       ],
       "Conditions": [
         "Умови"
-      ],
-      "Confirm password": [
-        "Підтвердити пароль"
       ],
       "Contacts": [
         "Контакти"
@@ -7151,6 +7172,42 @@
         "Перемкнути або додати обліковий запис"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Власні домени електронної пошти"
+      ],
+      "Hide My Email aliases": [
+        "Псевдоніми Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Заплануйте надсилання повідомлень в будь-який час"
+      ],
+      "Search message content": [
+        "Пошук вмісту повідомлень"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Up to 15 email addresses": [
+        "До 15 адрес електронної пошти"
+      ],
+      "Up to 500 GB of storage": [
+        "До 500 ГБ сховища"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Отримайте необмежену кількість псевдонімів із SimpleLogin від ${ BRAND_NAME }"
+      ],
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Обсяг сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Розкажіть нам про своє враження. (Необов'язково)"
@@ -7314,9 +7371,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Спосіб зв'язку з вами"
-      ],
-      "Confirm password": [
-        "Підтвердити пароль"
       ],
       "E.g., ": [
         "Наприклад, "
@@ -7691,9 +7745,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
-      ],
       "Email tracking protection": [
         "Захист від стеження електронної пошти"
       ],
@@ -7708,9 +7759,6 @@
       ],
       "Schedule send": [
         "Запланувати надсилання"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Спробувати ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Відтепер ми типово завантажуємо зображення і не даємо відправникам відстежувати вас.\nЦе можна змінити в ${ settingsLink }."
@@ -8651,6 +8699,9 @@
       ],
       "Sending original message": [
         "Надсилання оригінального повідомлення"
+      ],
+      "Set your own schedule": [
+        "Налаштувати власний розклад"
       ],
       "Settings": [
         "Налаштування"

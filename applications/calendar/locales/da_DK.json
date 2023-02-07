@@ -121,6 +121,9 @@
       "Continue import": [
         "Fortsæt import"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Fortsæt til ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Fortsæt med Google"
       ],
@@ -344,6 +347,9 @@
       ],
       "Open navigation": [
         "Åbn navigation"
+      ],
+      "Open settings": [
+        "Åbn Indstillinger"
       ],
       "Preview contact": [
         "Forhåndsvis kontakt"
@@ -3698,9 +3704,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Du har genaktiveret dine nøgler, og begivenheder tilknyttet flg. kalendere kan nu dekrypteres."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Du har nulstillet din adgangskode, og begivenheder tilknyttet følgende kalendere kunne ikke dekrypteres. \nAlle delte kalenderlinks du tidligere har oprettet, vil ikke længere virke. \nAlle aktive, tilmeldte kalendere vil blive synkroniseret igen efter nogle få minutter."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Du har tidligere afvist denne invitation. Bed ejeren om en ny invitation"
       ],
@@ -5003,9 +5006,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
-      ],
       "Easily accept invites": [
         "Let at acceptere invitationer"
       ],
@@ -5020,9 +5020,6 @@
       ],
       "Subscribe to other calendars": [
         "Abonner på andre kalendere"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Prøv ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Du kan abonnere på eksterne kalendere og læse deres begivenheder."
@@ -5558,9 +5555,6 @@
       ],
       "Request new code": [
         "Anmod om ny kode"
-      ],
-      "Reset calendar keys": [
-        "Nulstil kalendernøgler"
       ],
       "Save changes": [
         "Gem ændringer"

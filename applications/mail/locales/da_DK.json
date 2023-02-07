@@ -245,6 +245,9 @@
       "Create new message": [
         "Opret ny besked"
       ],
+      "Custom": [
+        "Tilpasset"
+      ],
       "Customize": [
         "Tilpas"
       ],
@@ -596,6 +599,9 @@
       "Minimize composer": [
         "Minimér skrivevinduet"
       ],
+      "Monday": [
+        "Mandag"
+      ],
       "More": [
         "Flere"
       ],
@@ -842,9 +848,6 @@
       "Schedule message": [
         "Planlæg besked"
       ],
-      "Schedule send": [
-        "Planlæg afsendelse"
-      ],
       "Search": [
         "Søg"
       ],
@@ -982,6 +985,9 @@
       ],
       "This message contains remote content.": [
         "Denne besked indeholder eksternt indhold."
+      ],
+      "Tomorrow": [
+        "I morgen"
       ],
       "Trust": [
         "Hav tillid til"
@@ -2882,6 +2888,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
+      ],
+      "When do you want your message to be sent?": [
+        "Hvornår skal din besked sendes?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
@@ -6022,9 +6031,6 @@
       "Conditions": [
         "Betingelser"
       ],
-      "Confirm password": [
-        "Bekræft adgangskode"
-      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -6921,6 +6927,27 @@
         "Skift eller tilføj konto"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Brugerdefinerede e-maildomæner"
+      ],
+      "Search message content": [
+        "Søg i beskedindhold"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ]
+    },
+    "new_plans: feature info": {
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Fortæl os om dine indtryk. (Valgfrit)"
@@ -7084,9 +7111,6 @@
     "Placeholder": {
       "A way to contact you": [
         "En måde at kontakte dig på"
-      ],
-      "Confirm password": [
-        "Bekræft adgangskode"
       ],
       "E.g., ": [
         "F.eks., "
@@ -7443,9 +7467,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
-      ],
       "Email tracking protection": [
         "Beskyttelse mod sporing af e-mail"
       ],
@@ -7460,9 +7481,6 @@
       ],
       "Schedule send": [
         "Planlæg afsendelse"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Prøv ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi indlæser nu billeder som standard og blokerer afsendere fra at spore dig. Dette kan ændres i ${ settingsLink }."
