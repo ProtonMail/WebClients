@@ -3,6 +3,7 @@ import { MouseEvent, createElement } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Icon, IconName, Tooltip, classnames } from '@proton/components';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { getNumAttachments } from '../../helpers/elements';
 import { Element } from '../../models/element';
@@ -16,6 +17,7 @@ interface Props {
 
 const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paper-clip' }: Props) => {
     const numAttachments = element ? getNumAttachments(element) : 0;
+    const numAttachmentsSize = element ? humanSize(element.Size) : 0;
     const isButton = onClick !== undefined;
 
     if (numAttachments === 0) {
@@ -25,8 +27,8 @@ const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paper-clip' }
     const title = icon.includes('calendar')
         ? c('Calendar attachment tooltip').t`Has a calendar event`
         : c('Info').ngettext(
-              msgid`Has ${numAttachments} attachment`,
-              `Has ${numAttachments} attachments`,
+              msgid`Has ${numAttachments} attachment (${numAttachmentsSize})`,
+              `Has ${numAttachments} attachments (${numAttachmentsSize})`,
               numAttachments
           );
 
