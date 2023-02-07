@@ -121,6 +121,9 @@
       "Continue import": [
         "Pokračovat v importu"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Pokračovat na ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Pokračovat skrze Google"
       ],
@@ -238,6 +241,9 @@
       "Hide advanced PGP settings": [
         "Skrýt pokročilé nastavení PGP"
       ],
+      "Hide affected calendars": [
+        "Skrýt dotčené kalendáře"
+      ],
       "Hide folders": [
         "Skrýt složky"
       ],
@@ -349,6 +355,9 @@
       "Open navigation": [
         "Otevřít menu"
       ],
+      "Open settings": [
+        "Otevřít nastavení"
+      ],
       "Preview contact": [
         "Náhled kontaktu"
       ],
@@ -441,6 +450,9 @@
       ],
       "Show advanced PGP settings": [
         "Zobrazit pokročilé nastavení PGP"
+      ],
+      "Show affected calendars": [
+        "Zobrazit dotčené kalendáře"
       ],
       "Show folders": [
         "Zobrazit složky"
@@ -2171,6 +2183,9 @@
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
       ],
+      "Contact name is too long": [
+        "Jméno kontaktu je moc dlouhé"
+      ],
       "Contact signature could not be verified": [
         "Podpisu kontaktu nebylo možné ověřit"
       ],
@@ -3822,9 +3837,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Znovu jste aktivovali klíče a události spojené s následujícími kalendáři mohou být nyní dešifrovány."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Resetovali jste své heslo a události propojené s následujícími kalendáři nemohly být dešifrovány.\nJakékoliv odkazy sdílených kalendářů, které jste před tím vytvořili, již nebudou fungovat.\nJakékoliv aktivně odebírané kalendáře budou znovu synchronizovány za několik minut."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Tuto pozvánku jste již dříve odmítli. Požádejte majitele o opětovné zaslání pozvánky"
       ],
@@ -4002,6 +4014,9 @@
       ],
       "Color": [
         "Barva"
+      ],
+      "Colors": [
+        "Barvy"
       ],
       "Coming soon": [
         "Již brzy"
@@ -5201,9 +5216,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
-      ],
       "Easily accept invites": [
         "Snadné přijímání pozvánek"
       ],
@@ -5218,9 +5230,6 @@
       ],
       "Subscribe to other calendars": [
         "Přihlásit se k odběru dalších kalendářů"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Vyzkoušejte ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Můžete se přihlásit k odběru externích kalendářů a číst jejich události."
@@ -5677,6 +5686,9 @@
       "Email settings": [
         "Nastavení e-mailu"
       ],
+      "Encrypted event": [
+        "Šifrovaná událost"
+      ],
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
@@ -5785,9 +5797,6 @@
       "Request new code": [
         "Poslat nový kód"
       ],
-      "Reset calendar keys": [
-        "Resetovat klíče kalendáře"
-      ],
       "Save changes": [
         "Uložit změny"
       ],
@@ -5889,6 +5898,12 @@
       ],
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Uzamkli jsme některé vaše kalendáře, abychom ochránili vaše údaje"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Uzamkli jsme vaše kalendáře, abychom ochránili vaše údaje"
       ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"

@@ -121,6 +121,9 @@
       "Continue import": [
         "Continuer l'importation"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Continuer vers ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Continuer avec Google"
       ],
@@ -234,6 +237,9 @@
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
+      "Hide affected calendars": [
+        "Masquer les calendriers concernés"
+      ],
       "Hide folders": [
         "Masquer les dossiers"
       ],
@@ -345,6 +351,9 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
+      "Open settings": [
+        "Ouvrir les paramètres"
+      ],
       "Preview contact": [
         "Aperçu du contact"
       ],
@@ -437,6 +446,9 @@
       ],
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
+      ],
+      "Show affected calendars": [
+        "Afficher les calendriers concernés"
       ],
       "Show folders": [
         "Afficher les dossiers"
@@ -2141,6 +2153,9 @@
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
       ],
+      "Contact name is too long": [
+        "Le nom du contact est trop long."
+      ],
       "Contact signature could not be verified": [
         "La signature du contact n’a pu être vérifiée."
       ],
@@ -3624,7 +3639,7 @@
         "Mettre à jour l’événement récurrent"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Changez d'offre maintenant pour bénéficier des fonctionnalités, produits et espaces de stockage Premium à un tarif spécial"
+        "Passez à la version supérieure pour bénéficier de fonctions, de produits et d'un espace de stockage premium à un tarif avantageux"
       ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons dès que l'importation sera terminée."
@@ -3697,9 +3712,6 @@
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Vous avez réactivé vos clés et les événements liés aux calendriers suivants peuvent être déchiffrés."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Vous avez réinitialisé votre mot de passe et les événements liés aux calendriers suivants n'ont pas pu être déchiffrés.\nLes liens vers les calendriers partagés que vous avez précédemment créés ne fonctionneront plus.\nLes calendriers auxquels vous êtes abonné se synchroniseront de nouveau après quelques minutes."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Vous avez déjà refusé cette invitation. Demandez à l'organisateur de vous réinviter."
@@ -3777,6 +3789,34 @@
     "Info on errors": {
       "Click for details": [
         "Cliquez pour plus de détails."
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Certains de vos calendriers n'afficheront pas les informations des événements précédemment créés."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Vos calendriers n'afficheront pas les informations des événements précédemment créés."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Ceci s'explique par la réinitialisation récente de votre mot de passe sans méthode de récupération."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Vous pouvez récupérer vos données chiffrées avec un fichier de récupération, une phrase de récupération ou votre ancien mot de passe."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Le partage de calendrier a été désactivé suite à votre récente réinitialisation de mot de passe."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Vous pouvez repartager vos calendriers dans les paramètres."
       ]
     },
     "Input label": {
@@ -3878,6 +3918,9 @@
       ],
       "Color": [
         "Couleur"
+      ],
+      "Colors": [
+        "Couleurs"
       ],
       "Coming soon": [
         "Bientôt disponible"
@@ -4220,6 +4263,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Ouvrir dans ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Qu'est-ce qu'une méthode de récupération ?"
       ]
     },
     "Loading info": {
@@ -5238,9 +5286,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
-      ],
       "Easily accept invites": [
         "Acceptez facilement les invitations"
       ],
@@ -5255,9 +5300,6 @@
       ],
       "Subscribe to other calendars": [
         "Abonnez-vous à d'autres calendriers"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Essayez ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Vous pouvez vous abonner à des calendriers externes et voir leurs événements."
@@ -5688,6 +5730,9 @@
       "Email settings": [
         "Paramètres d'adresse électronique"
       ],
+      "Encrypted event": [
+        "Événement chiffré"
+      ],
       "Enter your password": [
         "Saisissez votre mot de passe."
       ],
@@ -5794,8 +5839,8 @@
       "Request new code": [
         "Demander un nouveau code"
       ],
-      "Reset calendar keys": [
-        "Réinitialiser les clés du calendrier"
+      "Reshare your calendars": [
+        "Repartager vos calendriers"
       ],
       "Save changes": [
         "Enregistrer les modifications"
@@ -5899,6 +5944,12 @@
       "Warning: suspected fake website": [
         "Attention : site web suspect/frauduleux"
       ],
+      "We've locked some calendars to protect your data": [
+        "Nous avons verrouillé certains calendriers pour protéger vos données."
+      ],
+      "We've locked your calendars to protect your data": [
+        "Nous avons verrouillé vos calendriers pour protéger vos données."
+      ],
       "What would you like to import?": [
         "Que voulez-vous importer ?"
       ],
@@ -5912,7 +5963,7 @@
         "Lien de votre calendrier"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
-        "Votre essai gratuit Mail Plus finit le ${ textDate }"
+        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

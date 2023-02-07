@@ -89,7 +89,7 @@
         "Limpiar consulta"
       ],
       "Click here.": [
-        "Clic aquí."
+        "Haga clic aquí."
       ],
       "Close": [
         "Cerrar"
@@ -120,6 +120,9 @@
       ],
       "Continue import": [
         "Continuar importación"
+      ],
+      "Continue to ${ calendarAppBareName }": [
+        "Continuar con ${ calendarAppBareName }"
       ],
       "Continue with Google": [
         "Continuar con Google"
@@ -234,6 +237,9 @@
       "Hide advanced PGP settings": [
         "Ocultar ajustes PGP avanzados"
       ],
+      "Hide affected calendars": [
+        "Ocultar calendarios afectados"
+      ],
       "Hide folders": [
         "Ocultar carpetas"
       ],
@@ -345,6 +351,9 @@
       "Open navigation": [
         "Abrir navegación"
       ],
+      "Open settings": [
+        "Abrir los ajustes"
+      ],
       "Preview contact": [
         "Vista previa de contacto"
       ],
@@ -437,6 +446,9 @@
       ],
       "Show advanced PGP settings": [
         "Mostrar ajustes PGP avanzados"
+      ],
+      "Show affected calendars": [
+        "Mostrar calendarios afectados"
       ],
       "Show folders": [
         "Mostrar carpetas"
@@ -2141,6 +2153,9 @@
       "Contact could not be saved": [
         "El contacto no se pudo guardar"
       ],
+      "Contact name is too long": [
+        "El nombre del contacto es muy largo"
+      ],
       "Contact signature could not be verified": [
         "No se pudo verificar la firma del contacto"
       ],
@@ -3698,9 +3713,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Ha reactivado sus claves y los eventos vinculados a los siguientes calendarios ahora se pueden descifrar."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Ha restablecido su contraseña y los eventos vinculados a los siguientes calendarios no se pudieron descifrar.\nCualquier enlace compartido del calendario que haya creado anteriormente ya no funcionará.\nTodos los calendarios suscritos activos se sincronizarán nuevamente después de unos minutos."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Rechazó esta invitación anteriormente. Pregunte al propietario por otra invitación."
       ],
@@ -3777,6 +3789,34 @@
     "Info on errors": {
       "Click for details": [
         "Clic para más detalles"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Algunos de sus calendarios no mostrarán detalles de eventos creados anteriormente."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Sus calendarios no mostrarán detalles de eventos creados anteriormente."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Eso se debe a que su contraseña fue restablecida recientemente sin usar un método de recuperación."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Puede recuperar sus datos cifrados con un archivo de recuperación, frase de recuperación o su contraseña anterior."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Se inhabilitó el uso compartido del calendario luego de que restableciera su contraseña recientemente."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Puede volver a compartir sus calendarios en los ajustes."
       ]
     },
     "Input label": {
@@ -3878,6 +3918,9 @@
       ],
       "Color": [
         "Color"
+      ],
+      "Colors": [
+        "Colores"
       ],
       "Coming soon": [
         "Próximamente"
@@ -4220,6 +4263,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Abrir en ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "¿Qué es un método de recuperación?"
       ]
     },
     "Loading info": {
@@ -5241,9 +5289,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "¡${ DRIVE_APP_NAME } sale de la beta! Brinde a sus archivos la misma seguridad de sus correos electrónicos."
-      ],
       "Easily accept invites": [
         "Aceptar invitaciones fácilmente"
       ],
@@ -5258,9 +5303,6 @@
       ],
       "Subscribe to other calendars": [
         "Suscríbase a otros calendarios"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Probar ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Puede suscribirse a calendarios externos y leer sus eventos."
@@ -5691,6 +5733,9 @@
       "Email settings": [
         "Ajustes del correo"
       ],
+      "Encrypted event": [
+        "Evento cifrado"
+      ],
       "Enter your password": [
         "Ingrese su contraseña"
       ],
@@ -5797,8 +5842,8 @@
       "Request new code": [
         "Solicitar un código nuevo"
       ],
-      "Reset calendar keys": [
-        "Restablecer claves del calendario"
+      "Reshare your calendars": [
+        "Volver a compartir sus calendarios"
       ],
       "Save changes": [
         "Guardar cambios"
@@ -5901,6 +5946,12 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: presunto sitio web falso"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Hemos bloqueado algunos calendarios para proteger sus datos"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Hemos bloqueado sus calendarios para proteger sus datos"
       ],
       "What would you like to import?": [
         "¿Qué desea importar?"

@@ -86,6 +86,9 @@
       "Archive": [
         "Archiver"
       ],
+      "As Scheduled": [
+        "Comme prévu"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Créer un nouveau message"
+      ],
+      "Custom": [
+        "Personnalisé"
       ],
       "Customize": [
         "Personnaliser"
@@ -596,6 +602,9 @@
       "Minimize composer": [
         "Réduire l'éditeur"
       ],
+      "Monday": [
+        "Lundi"
+      ],
       "More": [
         "Plus"
       ],
@@ -842,9 +851,6 @@
       "Schedule message": [
         "Programmer le message"
       ],
-      "Schedule send": [
-        "Programmer l'envoi"
-      ],
       "Search": [
         "Rechercher"
       ],
@@ -982,6 +988,9 @@
       ],
       "This message contains remote content.": [
         "Ce message comporte du contenu distant."
+      ],
+      "Tomorrow": [
+        "Demain"
       ],
       "Trust": [
         "Faire confiance"
@@ -2876,12 +2885,21 @@
       "No labels": [
         "Aucun label"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail et un signe plus"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Activez la personnalisation de l'envoi programmé de messages et d'autres fonctionnalités en passant à un abonnement supérieur."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
+      ],
+      "When do you want your message to be sent?": [
+        "Quand voulez-vous que votre message soit envoyé ?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
@@ -3064,6 +3082,9 @@
       ],
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
+      ],
+      "Contact name is too long": [
+        "Le nom du contact est trop long."
       ],
       "Contact signature could not be verified": [
         "La signature du contact n’a pu être vérifiée."
@@ -5416,7 +5437,7 @@
         "Mise à jour de la recherche dans le contenu des messages..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Changez d'offre maintenant pour bénéficier des fonctionnalités, produits et espaces de stockage Premium à un tarif spécial"
+        "Passez à la version supérieure pour bénéficier de fonctions, de produits et d'un espace de stockage premium à un tarif avantageux"
       ],
       "Upgrade to add more addresses to your account.": [
         "Passez à un abonnement supérieur pour ajouter plus d'adresses à votre compte."
@@ -6016,14 +6037,14 @@
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
       ],
+      "Colors": [
+        "Couleurs"
+      ],
       "Coming soon": [
         "Bientôt disponible"
       ],
       "Conditions": [
         "Conditions"
-      ],
-      "Confirm password": [
-        "Confirmer le mot de passe"
       ],
       "Contacts": [
         "Contacts"
@@ -6921,6 +6942,42 @@
         "Basculez vers ou ajoutez un compte"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Passer à l'offre supérieure maintenant"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Hide My Email aliases": [
+        "Alias Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Planifiez l'envoi de messages quand vous le voulez"
+      ],
+      "Search message content": [
+        "Rechercher dans le contenu des messages"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Dossiers, labels et filtres illimités"
+      ],
+      "Up to 15 email addresses": [
+        "Jusqu'à 15 adresses électroniques"
+      ],
+      "Up to 500 GB of storage": [
+        "Jusqu'à 500 Go d'espace de stockage"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Parlez-nous de votre expérience. (facultatif)"
@@ -7084,9 +7141,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Un moyen de vous contacter"
-      ],
-      "Confirm password": [
-        "Confirmer le mot de passe"
       ],
       "E.g., ": [
         "p. ex., "
@@ -7678,9 +7732,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
-      ],
       "Email tracking protection": [
         "Protection contre le suivi des e-mails"
       ],
@@ -7695,9 +7746,6 @@
       ],
       "Schedule send": [
         "Programmer l'envoi"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Essayez ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."
@@ -8553,6 +8601,9 @@
       "Sending original message": [
         "Envoi du message original"
       ],
+      "Set your own schedule": [
+        "Définissez votre propre horaire"
+      ],
       "Settings": [
         "Paramètres"
       ],
@@ -8636,7 +8687,7 @@
         "Vos modifications ne sont pas encore synchronisées."
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
-        "Votre essai gratuit Mail Plus finit le ${ textDate }"
+        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ]
     },
     "Today icon tooltip in mini calendar": {

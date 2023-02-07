@@ -3799,6 +3799,9 @@
       "Actions": [
         "操作"
       ],
+      "App version": [
+        "アプリのバージョン"
+      ],
       "Event": [
         "予定"
       ],
@@ -4453,6 +4456,9 @@
       "Already used": [
         "すでに使用されています"
       ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey ロゴ"
+      ],
       "Amount below minimum (${ amount }).": [
         "最低金額 (${ amount }) を下回っています。"
       ],
@@ -4639,6 +4645,9 @@
       "Delete link?": [
         "リンクを削除しますか?"
       ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy ロゴ"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "このパスワードを忘れないでください。忘れてしまった場合は、ログインしたり、メッセージを復号することはできません。"
       ],
@@ -4773,6 +4782,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "フィルターは送信したメールと受信したメールを含むすべてのメールで動作します。各フィルターには少なくとも有効な名前、条件、動作が含まれている必要があります。"
+      ],
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Visa、MasterCard、Discover の場合カードの裏に3桁の数字があります。American Express の場合はカードの表に4桁の数字があります。"
       ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
@@ -5013,6 +5025,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "アカウント設定のために、2 要素認証デバイスに手動でこの情報を入力してください。${ switchButton }。"
+      ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode ロゴ"
       ],
       "Member": [
         "メンバー"
@@ -5592,6 +5607,9 @@
       ],
       "Version ${ version }": [
         "バージョン ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure ロゴ"
       ],
       "Warning:": [
         "警告:"
@@ -7886,6 +7904,23 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7943,23 +7978,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8971,17 +8989,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
-      ],
       "Get up to ${ credits } in credits.": [
         "最大${ credits }分のクレジットを獲得できます"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "フレンドを ${ BRAND_NAME } に招待"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } を試す"
       ]
     },
     "State": {
@@ -10435,9 +10447,6 @@
       ],
       "Set the default layout for your Inbox.": [
         "受信トレイの既定のレイアウトを設定します。"
-      ],
-      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
-        "メッセージ一覧で各差出人の画像を表示します。写真が利用できない場合は、送信者のイニシャルが表示されます。"
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "この鍵でされた署名を無効なものとして扱い、暗号化にも使用できなくします"

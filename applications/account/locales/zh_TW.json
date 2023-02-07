@@ -2587,11 +2587,20 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此交談方塊。"
       ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "邀請好友至 ${ BRAND_NAME }，賺取高達 ${ credits } 儲值。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
+      ],
+      "Track the status and activity of your referrals.": [
+        "追蹤您推介的狀態和活動。"
+      ],
+      "You can continue to invite friends, but you wont be able to earn more credits": [
+        "您可繼續邀請好友，惟不會賺取更多儲值"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -3846,6 +3855,9 @@
       "Actions": [
         "動作"
       ],
+      "App version": [
+        "應用程式版本"
+      ],
       "Event": [
         "行程"
       ],
@@ -4509,6 +4521,9 @@
       "Already used": [
         "已使用"
       ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey 標誌"
+      ],
       "Amount below minimum (${ amount }).": [
         "金額低於下限 (${ amount })。"
       ],
@@ -4607,6 +4622,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需建立加密金鑰，才可用來傳送和接收電郵。"
+      ],
+      "Billing cycle: ${ text }": [
+        "帳單週期：${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "比特幣交易可能需時確認 (可能長達 24 小時)。一俟確認，儲值將撥入您的帳號。在交易確認後，您即可使用儲值餘額支付您的帳單。"
@@ -4709,6 +4727,9 @@
       ],
       "Delete link?": [
         "刪除連結？"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy 標誌"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "請切勿忘記此密碼。否則，您將無法登入或解密您的郵件。"
@@ -4851,6 +4872,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
       ],
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Visa、MasterCard 和 Discover 信用卡而言，所指的是卡背的 3 位數字。American Express 信用卡而言，所指的是卡面的 4 位數字。"
+      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -4868,6 +4892,9 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "獲取我的 ${ BRAND_NAME } 電郵位址"
+      ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
+        "為權仗取一個顧名思義的名稱，譬如說會用於甚麼服務，並選取您其一使用中的自訂網域電子郵件地址。僅此電子郵件地址將能夠以此權仗傳送電子郵件。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "把公開金鑰給您的朋友們，或是發佈在網路上，這樣每個人都可以向您寄送端到端加密電郵！"
@@ -5094,6 +5121,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。${ switchButton }。"
       ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode 標誌"
+      ],
       "Member": [
         "成員"
       ],
@@ -5295,6 +5325,9 @@
       "Preview failed to be loaded": [
         "連結載入失敗"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
+      ],
       "Priority support": [
         "優先支援"
       ],
@@ -5405,6 +5438,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "SMTP 允許第三方服務或裝置透過 ${ MAIL_APP_NAME } 傳送電子郵件。這是一項新功能，開放給指定企業使用者。請寄送電子郵件至 ${ emailLink } 以請求存取。"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "SMTP 允許第三方服務或裝置透過 ${ MAIL_APP_NAME } 傳送電子郵件。若要使用此功能，請產生一個新權仗作開始。"
       ],
       "Some keys successfully reactivated": [
         "部份金鑰都已成功重新啟用"
@@ -5595,6 +5634,12 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "為了保護您的網路連線，下載並安裝 ${ VPN_APP_NAME } 軟體到您的裝置上，並連接至伺服器。"
       ],
+      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
+        "以便使用 ${ toAppName } 以及所有 ${ BRAND_NAME } 服務"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "若要使用 ${ toAppName }，您需要一個 ${ MAIL_APP_NAME } 電子郵件地址。"
+      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "正常運作情況下，每一個篩選器必須包含至少一個名稱及一個有效的 Sieve 程序檔。您可查看 ${ link }。"
       ],
@@ -5673,6 +5718,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "當使用非官方程式連接 ${ VPN_APP_NAME } 伺服器時可以使用下列憑證。像是 macOS上的 Tunnelblick 、 GUN/Linux 上的 OpenVPN。"
       ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "將選取的電子郵件地址用作外部服務的 SMTP 使用者名稱、產生的權仗用作 SMTP 密碼。"
+      ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
       ],
@@ -5690,6 +5738,9 @@
       ],
       "Version ${ version }": [
         "版本 ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure 標誌"
       ],
       "Warning:": [
         "警告："
@@ -5873,6 +5924,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "即將重新導向到您的銀行驗證您的付款。"
+      ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "您將需要一個 ${ BRAND_NAME } 電子郵件地址，方可使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "您無法使用此金鑰解密任何郵件、檔案以及其它加密的資料。"
@@ -6555,6 +6609,9 @@
       "Color": [
         "色彩"
       ],
+      "Colors": [
+        "色彩"
+      ],
       "Coming soon": [
         "敬請期待"
       ],
@@ -7155,6 +7212,12 @@
       "URL": [
         "網址"
       ],
+      "Use a recovery email address": [
+        "使用備援電子郵件地址"
+      ],
+      "Use a recovery phone number": [
+        "使用備援電話號碼"
+      ],
       "Use folder colors": [
         "使用資料夾顏色"
       ],
@@ -7181,6 +7244,9 @@
       ],
       "What happened?": [
         "發生了甚麼問題？"
+      ],
+      "What is the main reason you are canceling?": [
+        "您要取消的主要理由是甚麼？"
       ],
       "What is the main reason you are deleting your account?": [
         "請您告訴我們，是什麼原因讓您決定刪除帳號？"
@@ -8019,6 +8085,26 @@
         "團隊管理"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的試用期結束於 ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -8062,11 +8148,23 @@
       "Popular": [
         "熱門"
       ],
+      "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
+        "隱私和保密套裝，專為企業而設，包含所有尊享 ${ BRAND_NAME } 服務。"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "安全的雲端儲存空間，讓您輕鬆安全地貯存、同步和分享檔案。"
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "安全的電子郵件和行事曆，專為專業人士和企業而設。"
+      ],
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "設定自動回覆，可告知來訪者您不在辦公室或暫時無法親自回應。"
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "專屬的 VPN 解決方案，提供安全、不設限、高速的網際網路存取。"
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "完全免費的新手版帳號，旨在提供所有人以隱私權為首要使命的服務。"
@@ -8076,26 +8174,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的試用期結束於 ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8186,8 +8264,14 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "可讓您設定收到電子郵件的自動化回應 (自動回覆)"
       ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "目前並不支援大量推廣或程式化電子郵件傳送。我們建議使用專屬的電子郵件服務提供者作此用途。"
+      ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "管控您共享檔案的存取，可透過加入密碼防護，以及設定連結有效日期"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "為您的線上身份建立多個電子郵件地址，例如 JohnShopper@${ domain } 作購物帳號、JohnNews@${ domain } 作新聞訂閱"
       ],
       "Create up to ${ n } custom calendars.": [
         "創建多達 ${ n } 自訂行事曆。"
@@ -8195,26 +8279,104 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅"
       ],
+      "Easily share your calendars with your colleagues, family, and friends via a link": [
+        "輕鬆與您的同事、家庭和好友以連結分享您的行事曆"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues via a link": [
+        "輕鬆與您的家人、好友或同事以連結分享您的行事曆"
+      ],
       "End-to-end encrypted calendar": [
         "端對端加密行事曆"
       ],
       "End-to-end encrypted file storage": [
         "端到端加密檔案儲存"
       ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "當使用者認證相信已遭洩露時，強制登出使用者的工作階段"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "標籤是簡單的標記，讓您加到郵件上，好以更容易找到或者套用篩選器"
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "管理您的訂閱，包括自訂化您的方案。接受的付款方法包括信用卡、PayPal、加密貨幣及電匯。"
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "凡工作天，於提出請求後 24 小時內取得 ${ BRAND_NAME } 客戶服務團隊的支援"
+      ],
+      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
+        "除此以外，可新增多達 5 個來自同事、組織、家庭和好友的行事曆。"
+      ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "最重要的是，新增多達 5 個來自朋友、家庭、同事與組織的行事曆。"
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "此選項可視作使用者般檢視非私人使用者的收件匣，包括完整郵件和聯絡人詳細資料"
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "組織管理工具可讓管理員新增或移除使用者、分配儲存空間、組態設定網域，以及進行其他工作"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "我們穩固的基礎架構用在一時，確保您在需要時均能存取到您的帳號"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "我們以多層密碼完整加密伺服器上的硬碟，即使硬碟被整顆拔走，您的資料仍具備防護力"
       ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "${ BRAND_NAME } 客戶成功團隊於歐洲辦公時間內，為 6 位或以上使用者的客戶提供電話支援"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "自任何提供者快速轉移您的電子郵件、行事曆或聯絡人"
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "要求輸入發送至行動電話的代碼才可登入。這確保萬一密碼洩露，帳號仍確保安全。"
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "重設使用者密碼以及使用者的兩步驟認證"
+      ],
       "Route your internet traffic through the Tor network with a single click": [
         "一按即可把您的網際網路流量繞經 Tor 網路"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "安全地儲存您的聯絡人詳細資訊，例如電話號碼、地址、生日以及個人備忘。零存取加密，確保即使 ${ BRAND_NAME } 也無法存取。"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "設立篩選器，以便為您的電子郵件自動回覆、排序及/或加上標籤"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "以安全、可分享的連結與任何人分享您的檔案或資料夾"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield 保護您的裝置並透過封鎖廣告、追蹤程式與惡意軟體來加快您的瀏覽速度"
       ],
+      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "一開始享有 ${ freeStorageSize } 並沿途解鎖更多儲存空間。儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。管理員可分配不同儲存空間大小予組織中的使用者"
+      ],
       "Support for file-sharing protocols like BitTorrent": [
         "支援檔案分享協定，例如 BitTorrent"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "使用您擁有的自訂電子郵件網域地址，例如 you@yourname.com"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "我們致力幫助受 HIPAA/HITECH 法規規範的客戶保障受保護的健康資訊 (PHI)。所有 ${ BRAND_NAME } 企業版客戶均可獲取經簽署的商業夥伴協定 (BAA)。"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
+        "傳送至其他 ${ MAIL_APP_NAME } 使用者時，將自動加密。傳送至非 ${ MAIL_APP_NAME } 使用者則需要於傳送前先設定一個密碼。"
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "您可有多於一位管理員。所有管理員可新增並管理使用者，惟僅限主要管理員可控制帳單管理。"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9095,17 +9257,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
-      ],
       "Get up to ${ credits } in credits.": [
         "取得多達 ${ credits } 的積點。"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "揪親朋好友一起用 ${ BRAND_NAME }"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "試試看 ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -10575,7 +10731,7 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "在您傳送的電郵中設定以下註腳：${ signature }當中的連結指向您的推介連結。註腳將置於您的簽名之下。您可隨時在設定中個人化您的簽名。"
       ],
-      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "郵件列表裡顯示每一寄件者的圖像。如無可用圖像，則將顯示寄件者的姓名首字母。"
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
@@ -10822,8 +10978,14 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您裝置上的日期與時間設置未同步。 ${ learnMore }"
       ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "使用此權仗的裝置或服務將不再能夠透過 ${ MAIL_APP_NAME } 傳送電子郵件。"
+      ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "此匯入可能超出您的 ${ BRAND_NAME } 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"
+      ],
+      "This will remove all messages, folders, and labels created during the import.": [
+        "這將會移除匯入時建立的所有郵件、資料夾和標籤。"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"

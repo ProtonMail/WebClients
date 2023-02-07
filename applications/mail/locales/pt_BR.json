@@ -86,6 +86,9 @@
       "Archive": [
         "Arquivar"
       ],
+      "As Scheduled": [
+        "Como Agendado"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Criar nova mensagem"
+      ],
+      "Custom": [
+        "Personalizar"
       ],
       "Customize": [
         "Personalizar"
@@ -599,6 +605,9 @@
       "Minimize composer": [
         "Minimizar compositor"
       ],
+      "Monday": [
+        "Segunda-feira"
+      ],
       "More": [
         "Mais"
       ],
@@ -845,9 +854,6 @@
       "Schedule message": [
         "Agendar mensagem"
       ],
-      "Schedule send": [
-        "Agendar envio"
-      ],
       "Search": [
         "Pesquisar"
       ],
@@ -985,6 +991,9 @@
       ],
       "This message contains remote content.": [
         "Esta mensagem contém conteúdo remoto."
+      ],
+      "Tomorrow": [
+        "Amanhã"
       ],
       "Trust": [
         "Confiar"
@@ -2886,6 +2895,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e solte para classificar a prioridade de mesclagem dos contatos. Desmarque os contatos que você não deseja mesclar."
       ],
+      "When do you want your message to be sent?": [
+        "Quando você deseja que sua mensagem seja enviada?"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, por favor divida-o em arquivos menores."
       ],
@@ -3067,6 +3079,9 @@
       ],
       "Contact could not be saved": [
         "O contato não pôde ser salvo"
+      ],
+      "Contact name is too long": [
+        "Nome do contato é muito longo"
       ],
       "Contact signature could not be verified": [
         "A assinatura do contato não pôde ser verificada"
@@ -6024,14 +6039,14 @@
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
       ],
+      "Colors": [
+        "Cores"
+      ],
       "Coming soon": [
         "Em breve"
       ],
       "Conditions": [
         "Condições"
-      ],
-      "Confirm password": [
-        "Confirmar senha"
       ],
       "Contacts": [
         "Contatos"
@@ -6929,6 +6944,39 @@
         "Mudar ou adicionar conta"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domínios de e-mail personalizados"
+      ],
+      "Hide My Email aliases": [
+        "Alias de Hide My Email"
+      ],
+      "Search message content": [
+        "Pesquisar conteúdo da mensagem"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Up to 15 email addresses": [
+        "Até 15 endereços de e-mail"
+      ],
+      "Up to 500 GB of storage": [
+        "Até 500 GB de armazenamento"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obtenha aliases ilimitados com SimpleLogin do ${ BRAND_NAME }"
+      ],
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Nos conte sobre sua experiência. (Opcional)"
@@ -7092,9 +7140,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Uma maneira de entrar em contato com você"
-      ],
-      "Confirm password": [
-        "Confirmar senha"
       ],
       "E.g., ": [
         "Ex., "
@@ -7689,9 +7734,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "O ${ DRIVE_APP_NAME } saiu do beta! Dê aos seus arquivos a mesma segurança que seus e-mails recebem."
-      ],
       "Email tracking protection": [
         "Proteção de rastreamento de e-mail"
       ],
@@ -7706,9 +7748,6 @@
       ],
       "Schedule send": [
         "Envio agendado"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Experimente ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Agora carregamos imagens por padrão e impedimos que os remetentes rastreiem você. Isso pode ser alterado no ${ settingsLink }."
@@ -7790,8 +7829,8 @@
         "${ elementsCount } conversas marcadas como não lidas."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } conversa movida para ${ folderName } e o remetente adicionado à sua lista de não spam.",
-        "${ elementsCount } conversas movidas para ${ folderName } e os remetentes adicionados à sua lista de não spam."
+        "${ elementsCount } conversa movida para ${ folderName } e remetente adicionado à sua lista de não spam.",
+        "${ elementsCount } conversas movidas para ${ folderName } e remetentes adicionados à sua lista de não spam."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversa movida para ${ folderName }.",
@@ -7822,8 +7861,8 @@
         "${ elementsCount } mensagens marcadas como não lidas."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } mensagem movida para o ${ folderName } e o remetente adicionado à sua lista de permitidos.",
-        "${ elementsCount } mensagens movidas para o ${ folderName } e os remetentes adicionados à sua lista de permitidos."
+        "${ elementsCount } mensagem movida para ${ folderName } e remetente adicionado à sua lista de permitidos.",
+        "${ elementsCount } mensagens movidas para ${ folderName } e remetentes adicionados à sua lista de permitidos."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } mensagem movida para ${ folderName }.",

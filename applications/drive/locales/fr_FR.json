@@ -1918,6 +1918,9 @@
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
       ],
+      "Contact name is too long": [
+        "Le nom du contact est trop long."
+      ],
       "Contact signature not verified": [
         "La signature du contact n'a pas été vérifiée."
       ],
@@ -3574,6 +3577,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Les données chiffrées sont légèrement plus volumineuses en raison du chiffrement et des signatures, qui garantissent la sécurité de vos données."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Les éléments suivants ont peut-être été falsifiés : ${ items }. N'ouvrez que si vous avez confiance."
       ],
@@ -3681,7 +3687,7 @@
         "Actualisation de la recherche dans Drive..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Changez d'offre maintenant pour bénéficier des fonctionnalités, produits et espaces de stockage Premium à un tarif spécial"
+        "Passez à la version supérieure pour bénéficier de fonctions, de produits et d'un espace de stockage premium à un tarif avantageux"
       ],
       "Uploaded": [
         "Importé"
@@ -3945,6 +3951,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
+      ],
+      "Colors": [
+        "Couleurs"
       ],
       "Coming soon": [
         "Bientôt disponible"
@@ -5172,9 +5181,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
-      ],
       "Encrypted search is here": [
         "La recherche chiffrée se trouve ici."
       ],
@@ -5186,9 +5192,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Vous pouvez maintenant facilement rechercher des fichiers Drive tout en gardant vos données en sécurité."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Essayez ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5652,6 +5655,9 @@
       "Open settings menu": [
         "Ouvrir le menu des paramètres"
       ],
+      "Original size": [
+        "Taille d'origine"
+      ],
       "Other information": [
         "Autres informations"
       ],
@@ -5836,7 +5842,7 @@
         "Vos modifications ne sont pas encore synchronisées."
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
-        "Votre essai gratuit Mail Plus finit le ${ textDate }"
+        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ],
       "Your welcome actions": [
         "Vos actions de bienvenue"

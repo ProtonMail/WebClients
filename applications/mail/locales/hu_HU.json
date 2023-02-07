@@ -830,9 +830,6 @@
       "Schedule message": [
         "Üzenet ütemezése"
       ],
-      "Schedule send": [
-        "Ütemezett küldés"
-      ],
       "Search": [
         "Keresés"
       ],
@@ -5901,9 +5898,6 @@
       "Conditions": [
         "Feltételek"
       ],
-      "Confirm password": [
-        "Jelszó megerősítése"
-      ],
       "Contacts": [
         "Névjegyek"
       ],
@@ -6778,6 +6772,19 @@
         "Váltás vagy fiók hozzáadása"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Saját domain nevek"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Küldjön visszajelzést a tapasztalatairól. (Opcionális)"
@@ -6938,9 +6945,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség"
-      ],
-      "Confirm password": [
-        "Jelszó megerősítése"
       ],
       "E.g., ": [
         "Pl., "
@@ -7289,9 +7293,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
-      ],
       "Email tracking protection": [
         "E-mail követési védelem"
       ],
@@ -7306,9 +7307,6 @@
       ],
       "Schedule send": [
         "Küldés ütemezése"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "A képek már alapértelmezetten betöltődnek, a feladók általi követés megakadályozásával. Ez megváltoztatható a ${ settingsLink }."

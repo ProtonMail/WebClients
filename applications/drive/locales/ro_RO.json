@@ -1921,6 +1921,9 @@
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
+      "Contact name is too long": [
+        "Numele de contact este prea lung."
+      ],
       "Contact signature not verified": [
         "Semnătura contactului nu a fost verificată"
       ],
@@ -3633,6 +3636,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Datele criptate ocupă puțin mai mult spațiu datorită criptării și a semnăturilor, ceea ce asigură securitatea acestora."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Este posibil ca următoarele elemente să fi fost falsificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
       ],
@@ -4005,6 +4011,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
+      ],
+      "Colors": [
+        "Culori"
       ],
       "Coming soon": [
         "În curând"
@@ -5024,9 +5033,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
-      ],
       "Encrypted search is here": [
         "Căutarea criptată este aici"
       ],
@@ -5038,9 +5044,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Acum puteți căuta cu ușurință fișierele din unitate, păstrând în același timp datele în siguranță."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Încercați ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5521,6 +5524,9 @@
       ],
       "Open settings menu": [
         "Deschidere meniu setări"
+      ],
+      "Original size": [
+        "Dimensiune originală"
       ],
       "Other information": [
         "Alte informații"

@@ -3518,9 +3518,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Újraaktiválta a titkosítási kulcsait, így a következő naptárakban lévő események ismét visszafejthetőek."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Visszaállította a jelszavát és a következő naptárakhoz tartozó események visszafejtése nem sikerült.\nA korábban létrehozott naptár megosztási hivatkozások nem fognak működni.\nMinden feliratkozott naptár újra szinkronizálásra kerül, pár percen belül."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -4728,9 +4725,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
-      ],
       "Get up to ${ credits } in credits.": [
         "Szerezzen akár ${ credits } kreditet."
       ],
@@ -4739,9 +4733,6 @@
       ],
       "Subscribe to other calendars": [
         "Feliratkozás más naptárakra"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Feliratkozhat külső naptárakra, és elolvashatja azok eseményeit."
@@ -5243,9 +5234,6 @@
       ],
       "Request new code": [
         "Új kód kérése"
-      ],
-      "Reset calendar keys": [
-        "Naptár kulcsok visszaállítása"
       ],
       "Save changes": [
         "Változtatások mentése"

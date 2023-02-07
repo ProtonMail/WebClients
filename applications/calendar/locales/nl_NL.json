@@ -121,6 +121,9 @@
       "Continue import": [
         "Doorgaan met importeren"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Doorgaan naar ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -344,6 +347,9 @@
       ],
       "Open navigation": [
         "Navigatie openen"
+      ],
+      "Open settings": [
+        "Instellingen openen"
       ],
       "Preview contact": [
         "Contact tonen"
@@ -1985,6 +1991,11 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "De afspraak hoort bij een uitgeschakelde agenda."
+      ]
+    },
+    "Don't ask to update timezone checkbox label": {
+      "Do not ask again": [
+        "Niet opnieuw vragen"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -3687,9 +3698,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "U hebt uw sleutels opnieuw geactiveerd. Afspraken gekoppeld aan de volgende kalenders kunnen nu gedecodeerd worden."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "U hebt uw wachtwoord opnieuw ingesteld en afspraken gekoppeld aan de volgende agenda's konden niet worden ontsleuteld.\nAlle gedeelde agendakoppelingen die u eerder hebt gemaakt, werken niet meer.\nAlle actieve geabonneerde agenda's zullen na een paar minuten weer synchroniseren."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "U hebt deze uitnodiging eerder al geweigerd. Vraag de eigenaar naar een nieuwe uitnodiging"
       ],
@@ -5215,9 +5223,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
-      ],
       "Easily accept invites": [
         "Accepteer eenvoudig uitnodigingen"
       ],
@@ -5232,9 +5237,6 @@
       ],
       "Subscribe to other calendars": [
         "Abonneer op andere agenda's"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Probeer ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "U kunt zich abonneren op externe agenda's en de bijbehorende gebeurtenissen lezen."
@@ -5771,9 +5773,6 @@
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
-      "Reset calendar keys": [
-        "Agendasleutels resetten"
-      ],
       "Save changes": [
         "Aanpassingen opslaan"
       ],
@@ -5887,6 +5886,9 @@
       ],
       "Your calendar link": [
         "Uw agendakoppeling"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uw Mail Plus proefversie eindigt op ${ textDate }."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -121,6 +121,9 @@
       "Continue import": [
         "Continuar importació"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "Continua amb ${ calendarAppBareName }"
+      ],
       "Continue with Google": [
         "Continua amb Google"
       ],
@@ -234,6 +237,9 @@
       "Hide advanced PGP settings": [
         "Amagueu la configuració avançada del PGP"
       ],
+      "Hide affected calendars": [
+        "Amaga els calendaris afectats"
+      ],
       "Hide folders": [
         "Amaga les carpetes"
       ],
@@ -339,6 +345,9 @@
       "Open navigation": [
         "Obre la navegació"
       ],
+      "Open settings": [
+        "Obre la configuració"
+      ],
       "Preview contact": [
         "Previsualitzar contacte"
       ],
@@ -408,6 +417,9 @@
       "Search countries": [
         "Cerca països"
       ],
+      "See plan features": [
+        "Veure les funcionalitats del pla"
+      ],
       "Select all": [
         "Seleccionar-ho tot"
       ],
@@ -428,6 +440,9 @@
       ],
       "Show advanced PGP settings": [
         "Mostra la configuració avançada del PGP"
+      ],
+      "Show affected calendars": [
+        "Mostra els calendaris afectats"
       ],
       "Show folders": [
         "Mostra les carpetes"
@@ -808,6 +823,9 @@
       ],
       "Manage members": [
         "Gestionar membres"
+      ],
+      "Unable to create more calendar links": [
+        "No es poden crear més enllaços del calendari."
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
         "Heu assolit el màxim de ${ MAX_CALENDAR_MEMBERS } membre per aquest calendari.\nPer compartir aquest calendari amb altres comptes de ${ BRAND_NAME }, esborreu-ne algun membre.",
@@ -1896,6 +1914,11 @@
         "Utilitzar la configuració predeterminada global (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "Suprimir esdeveniment"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura vençuda"
@@ -1964,6 +1987,11 @@
         "Afegeix calendari"
       ]
     },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "Duplicar esdeveniment"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minuts"
@@ -1986,6 +2014,11 @@
     "Early Access Enabled": {
       "On": [
         "Activat"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "Editar esdeveniment"
       ]
     },
     "Email body for description (description part)": {
@@ -2830,6 +2863,9 @@
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
         "S'ha produït un error xifrant i afegint els vostres contactes. ${ totalImported } de ${ totalToImport } contactes importats."
       ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "S'ha produït un error xifrant i afegint els vostres contactes. No s'ha pogut importar cap contacte."
+      ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Contacte importat. El contacte importat ja apareix a la vostra llista de contactes."
       ],
@@ -3576,9 +3612,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Heu desactivat les vostres claus i els esdeveniments enllaçats amb els calendaris següents ara es poden desxifrar."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Heu restablert la vostra contrasenya i els esdeveniments vinculats als calendaris següents no s'han pogut desxifrar. Qualsevol enllaç de calendari compartit que hàgiu creat prèviament no tornarà a funcionar.\nTots els calendaris subscrits actius es sincronitzaran altra vegada després d'uns minuts."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Heu rebutjat aquesta invitació prèviament. Demaneu al propietari que us torni a convidar"
       ],
@@ -3655,6 +3688,14 @@
     "Info on errors": {
       "Click for details": [
         "Cliqueu per veure'n detalls"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Alguns dels vostres calendaris no mostraran els detalls dels esdeveniments creats prèviament."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Els vostres calendaris no mostraran els detalls dels esdeveniments creats prèviament."
       ]
     },
     "Input label": {
@@ -4124,6 +4165,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importa tots els missatges d' ${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }.",
+        "Importa tots els missatges d'$${ itemsToImportCount } carpetes i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }."
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -4786,6 +4831,11 @@
         "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
       ]
     },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "Recarregar esdeveniment"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Carregar"
@@ -4851,9 +4901,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } ha superat la fase beta! Doneu als vostres fitxers la mateixa seguretat que teniu als correus electrònics."
-      ],
       "Easily accept invites": [
         "Accepteu invitacions fàcilment"
       ],
@@ -4865,9 +4912,6 @@
       ],
       "Subscribe to other calendars": [
         "Subscriure's a altres calendaris"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Prova ${ DRIVE_APP_NAME }"
       ],
       "You can subscribe to external calendars and read their events.": [
         "Podeu subscriure-us a calendaris externs i llegir-ne els esdeveniments."
@@ -5290,6 +5334,9 @@
       "Email settings": [
         "Configuració del correu"
       ],
+      "Encrypted event": [
+        "Esdeveniment encriptat"
+      ],
       "Enter your password": [
         "Introdueix la teva contrasenya"
       ],
@@ -5396,8 +5443,8 @@
       "Request new code": [
         "Demanar un codi nou"
       ],
-      "Reset calendar keys": [
-        "Restaurar claus de calendari"
+      "Reshare your calendars": [
+        "Torneu a compartir els vostres calendaris"
       ],
       "Save changes": [
         "Desa els canvis"
@@ -5500,6 +5547,12 @@
       ],
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Alguns calendaris s'han bloquejat per protegir les vostres dades"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Els vostres calendaris s'han bloquejat per protegir les vostres dades"
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"
