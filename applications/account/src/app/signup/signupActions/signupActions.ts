@@ -11,7 +11,7 @@ import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { CLIENT_TYPES, COUPON_CODES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { withAuthHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
+import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
@@ -78,16 +78,15 @@ export const handleSaveRecovery = async ({
         accountData: { password, signupType },
     } = cache;
 
-    const { authApi } = setupData!;
+    const { api } = setupData!;
 
     await Promise.all([
-        !!recoveryPhone &&
-            srpAuth({ api: authApi, credentials: { password }, config: updatePhone({ Phone: recoveryPhone }) }),
+        !!recoveryPhone && srpAuth({ api, credentials: { password }, config: updatePhone({ Phone: recoveryPhone }) }),
         // Always send an update to the recovery email address when signing up with an external email address because the API sets it by default, so the client
         // needs to reset it to an empty string if the user chooses to not save a recovery email address.
         (!!recoveryEmail || signupType === SignupType.Email) &&
             srpAuth({
-                api: authApi,
+                api,
                 credentials: { password },
                 config: updateEmail({ Email: recoveryEmail || '' }),
             }).catch((e) => {
@@ -120,13 +119,13 @@ export const handleDisplayName = async ({
     const { setupData, accountData, ignoreExplore } = cache;
 
     const {
-        authApi,
+        api,
         addresses: [firstAddress],
     } = setupData!;
 
-    await authApi(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
+    await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
     // Re-fetch the user to get the updated display name
-    const user = await authApi<{ User: User }>(getUser()).then(({ User }) => User);
+    const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
 
     const to = (() => {
         if (accountData.signupType === SignupType.Email) {
@@ -184,14 +183,12 @@ export const handleSetupUser = async ({
             username: userEmail,
             password,
         },
-        config: auth({ Username: userEmail }),
+        config: auth({ Username: userEmail }, persistent),
     }).then((response): Promise<AuthResponse> => response.json());
-
-    const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
 
     // Perform the subscription first to prevent "locked user" while setting up keys.
     if (hasPlanIDs(subscriptionData.planIDs)) {
-        await authApi(
+        await api(
             subscribe(
                 {
                     Plans: subscriptionData.planIDs,
@@ -216,28 +213,28 @@ export const handleSetupUser = async ({
         (async () => {
             // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
             // array, and keys won't be setup.
-            const addresses = await getAllAddresses(authApi);
+            const addresses = await getAllAddresses(api);
 
             const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(api);
 
             const keyPassword = addresses.length
                 ? await handleSetupKeys({
-                      api: authApi,
+                      api,
                       addresses,
                       password,
                       preAuthKTVerify,
                   })
                 : undefined;
 
-            const user = await authApi<{ User: User }>(getUser()).then(({ User }) => User);
+            const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
             await preAuthKTCommit(user.ID);
             return { keyPassword, user, addresses };
         })(),
-        authApi(updateLocale(localeCode)).catch(noop),
+        api(updateLocale(localeCode)).catch(noop),
     ]);
 
     const trusted = false;
-    await persistSession({ ...authResponse, User: user, keyPassword, api: authApi, persistent, trusted });
+    await persistSession({ ...authResponse, User: user, keyPassword, api, persistent, trusted });
 
     const newCache: SignupCacheResult = {
         ...cache,
@@ -247,7 +244,7 @@ export const handleSetupUser = async ({
             keyPassword,
             addresses,
             authResponse,
-            authApi,
+            api,
         },
     };
 

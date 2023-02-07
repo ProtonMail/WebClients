@@ -127,7 +127,7 @@ interface SetupData {
     addresses: Address[];
     keyPassword: string | undefined;
     authResponse: AuthResponse;
-    authApi: Api;
+    api: Api;
 }
 
 export interface UserData {

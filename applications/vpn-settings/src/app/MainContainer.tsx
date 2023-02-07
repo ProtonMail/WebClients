@@ -36,7 +36,7 @@ import {
     ThemesSection,
     TopBanners,
     TopNavbarUpsell,
-    Unauthenticated,
+    UnAuthenticated,
     UserDropdown,
     UsernameSection,
     WireGuardConfigurationSection,
@@ -189,9 +189,9 @@ const MainContainer = () => {
             {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
             <Switch>
                 <Route path="/tv">
-                    <Unauthenticated>
+                    <UnAuthenticated>
                         <TVContainer />
-                    </Unauthenticated>
+                    </UnAuthenticated>
                 </Route>
                 <Route path="*">
                     <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
