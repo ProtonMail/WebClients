@@ -21,7 +21,11 @@ export const FileThresholdModal = ({ onSubmit, onCancel, onClose, open, type = '
 
     return (
         <BasicModal
-            title={c('Title').t`Performance might be affected`}
+            title={
+                type === 'fileNumberTotal'
+                    ? c('Title').t`Performance might be affected`
+                    : c('Title').t`Uploading a large file or folder`
+            }
             isOpen={open === undefined ? true : open}
             onClose={handleCancel}
             footer={
@@ -42,7 +46,7 @@ export const FileThresholdModal = ({ onSubmit, onCancel, onClose, open, type = '
                 {type === 'fileNumberTotal'
                     ? c('Info').t`Uploading hundreds of files at once may have a performance impact.`
                     : c('Info')
-                          .t`Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.`}
+                          .t`For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.`}
             </p>
         </BasicModal>
     );
