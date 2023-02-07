@@ -3,12 +3,13 @@ import {
     clearAll,
     generateKeys,
     releaseCryptoProxy,
+    removeLineBreaks,
     setFeatureFlags,
     setupCryptoProxyForTesting,
 } from '../../../../helpers/test/helper';
 import { messageID } from '../../../message/tests/Message.test.helpers';
 import { data, fromFields, recipients } from './QuickReply.test.data';
-import { getStateMessageFromParentID, removeLineBreaks, setupQuickReplyTests } from './QuickReply.test.helpers';
+import { getStateMessageFromParentID, setupQuickReplyTests } from './QuickReply.test.helpers';
 
 jest.setTimeout(20000);
 
