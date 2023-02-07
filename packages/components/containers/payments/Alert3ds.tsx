@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey-colored.svg';
-import discoverProtectBuyJpg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.jpg';
+import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.svg';
 import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode-colored.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure-colored.svg';
 
@@ -22,12 +22,11 @@ const Alert3ds = () => {
                     style={{ maxHeight: '44px' }}
                     src={mastercardSecurecodeSvg}
                 />
-                {/* Empirically found height for the discover logo */}
                 <img
                     alt={c('Info').t`Discover ProtectBuy logo`}
                     className="mr1"
-                    style={{ maxHeight: '34px' }}
-                    src={discoverProtectBuyJpg}
+                    style={{ maxHeight: '44px' }}
+                    src={discoverProtectBuySvg}
                 />
                 <img
                     alt={c('Info').t`American Express SafeKey logo`}
