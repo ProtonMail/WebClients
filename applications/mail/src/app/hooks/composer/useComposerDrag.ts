@@ -48,7 +48,7 @@ const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, co
     const [mailSettings] = useMailSettings();
     const prevMinimized = useRef(minimized);
     const prevMaximized = useRef(maximized);
-    const composerLeftStyle = computeLeftPosition(composerIndex, totalComposers, windowWidth);
+    const composerLeftStyle = computeLeftPosition(composerIndex, totalComposers);
 
     const [{ isDragging, initialCursorPosition, offset, lastOffset }, dispatch] = useReducer<Reducer<State, Action>>(
         moveReducer,
