@@ -58,6 +58,7 @@ export default function initDownload(
                 })
                 .catch((err) => {
                     callbacks.onError?.(err);
+                    controls.cancel();
                     throw err;
                 });
             if (gotErr) {
