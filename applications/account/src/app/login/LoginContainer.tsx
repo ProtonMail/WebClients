@@ -114,13 +114,10 @@ const LoginContainer = ({
         if (step === AuthStep.LOGIN) {
             return onBack;
         }
-        if (step === AuthStep.SETUP) {
-            return async () => {
-                await cache?.authApi(revoke()).catch(noop);
-                handleCancel();
-            };
-        }
-        return handleCancel;
+        return async () => {
+            await silentApi(revoke()).catch(noop);
+            handleCancel();
+        };
     })();
 
     const children = (

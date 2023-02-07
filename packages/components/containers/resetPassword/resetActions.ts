@@ -11,7 +11,6 @@ import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/in
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { Api, UserSettings, User as tsUser } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
@@ -81,21 +80,20 @@ export const handleNewPassword = async ({
     const authResponse = await srpAuth({
         api,
         credentials: { username, password },
-        config: auth({ Username: username }),
+        config: auth({ Username: username }, persistent),
     }).then((response): Promise<AuthResponse> => response.json());
-    const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
-    let user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    let user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
     let keyPassword = passphrase;
 
     if (user.Keys.length === 0) {
         if (getRequiresPasswordSetup(user, cache.setupVPN)) {
             const [domains, addresses] = await Promise.all([
-                authApi<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
-                await getAllAddresses(authApi),
+                api<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
+                await getAllAddresses(api),
             ]);
 
             keyPassword = await handleSetupAddressKeys({
-                api: authApi,
+                api,
                 username,
                 password,
                 addresses,
@@ -103,15 +101,15 @@ export const handleNewPassword = async ({
                 preAuthKTVerify,
             });
             // Refetch the user to update the keys that got generated
-            user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+            user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
         }
     }
 
     let trusted = false;
     if (hasTrustedDeviceRecovery && keyPassword) {
-        const addresses = await getAllAddresses(authApi);
+        const addresses = await getAllAddresses(api);
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
-            api: authApi,
+            api,
             user,
             addresses,
             keyPassword,
@@ -120,7 +118,7 @@ export const handleNewPassword = async ({
 
         if (numberOfReactivatedKeys !== undefined && numberOfReactivatedKeys > 0) {
             // Refetch user with new reactivated keys
-            user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+            user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
         }
 
         // Store device recovery information
@@ -134,12 +132,12 @@ export const handleNewPassword = async ({
             });
 
             if (isDeviceRecoveryAvailable) {
-                const userSettings = await authApi<{ UserSettings: UserSettings }>(getSettings()).then(
+                const userSettings = await api<{ UserSettings: UserSettings }>(getSettings()).then(
                     ({ UserSettings }) => UserSettings
                 );
 
                 if (userSettings.DeviceRecovery) {
-                    await storeDeviceRecovery({ api: authApi, user, userKeys });
+                    await storeDeviceRecovery({ api, user, userKeys });
                     trusted = true;
                 }
             }
@@ -148,7 +146,7 @@ export const handleNewPassword = async ({
         }
     }
 
-    await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api: authApi });
+    await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api });
 
     await preAuthKTCommit(user.ID);
 
@@ -177,7 +175,7 @@ export const handleNewPasswordMnemonic = async ({
         throw new Error('Missing data');
     }
     const { persistent } = cache;
-    const { authApi, decryptedUserKeys, authResponse } = cache.mnemonicData;
+    const { api, decryptedUserKeys, authResponse } = cache.mnemonicData;
     const keySalt = generateKeySalt();
     const keyPassword = await computeKeyPassword(password, keySalt);
     const reEncryptedUserKeys = await Promise.all(
@@ -193,7 +191,7 @@ export const handleNewPasswordMnemonic = async ({
         })
     );
     await srpVerify({
-        api: authApi,
+        api,
         credentials: { password },
         config: mnemonicReset({
             KeysSalt: keySalt,
@@ -202,8 +200,8 @@ export const handleNewPasswordMnemonic = async ({
     });
 
     const trusted = false;
-    const user = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
-    await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api: authApi });
+    const user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api });
 
     return {
         to: STEPS.DONE,
@@ -235,17 +233,14 @@ const handleMnemonic = async ({
     const authResponse = await srpAuth({
         info,
         api,
-        config: authMnemonic(username),
+        config: authMnemonic(username, cache.persistent),
         credentials: {
             username,
             password: randomBytes,
         },
     }).then((response): Promise<AuthResponse> => response.json());
 
-    const { UID, AccessToken } = authResponse;
-    const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
-
-    const { MnemonicUserKeys } = await authApi<GetMnemonicResetData>(getMnemonicReset());
+    const { MnemonicUserKeys } = await api<GetMnemonicResetData>(getMnemonicReset());
     const decryptedUserKeys = (
         await Promise.all(
             MnemonicUserKeys.map(async ({ ID, PrivateKey, Salt }) => {
@@ -284,7 +279,7 @@ const handleMnemonic = async ({
             value: mnemonic,
             mnemonicData: {
                 decryptedUserKeys,
-                authApi,
+                api,
                 authResponse,
             },
         },

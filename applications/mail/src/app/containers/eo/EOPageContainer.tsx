@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { Unauthenticated } from '@proton/components';
+import { UnAuthenticated } from '@proton/components';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 
 import ViewEOMessage from '../../components/eo/message/ViewEOMessage';
@@ -25,7 +25,7 @@ const PageContainer = () => {
     }, []);
 
     return (
-        <Unauthenticated>
+        <UnAuthenticated>
             <Switch>
                 <Route path={`${EO_MESSAGE_REDIRECT_PATH}/:id?`}>
                     <ViewEOMessage setSessionStorage={set} />
@@ -40,7 +40,7 @@ const PageContainer = () => {
                     <EOUnlock setSessionStorage={set} />
                 </Route>
             </Switch>
-        </Unauthenticated>
+        </UnAuthenticated>
     );
 };
 

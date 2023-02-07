@@ -1,8 +1,9 @@
 import type { MutableRefObject } from 'react';
 
+import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';
 
-import { pullForkSession, pushForkSession, revoke } from '../api/auth';
+import { pullForkSession, pushForkSession, revoke, setCookies } from '../api/auth';
 import { OAuthForkResponse, postOAuthFork } from '../api/oauth';
 import { getUser } from '../api/user';
 import { getAppHref, getClientID } from '../apps/helper';
@@ -349,6 +350,7 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
     };
 
     await persistSession({ api: authApi, ...result });
+    await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
 
     return {
         ...result,
