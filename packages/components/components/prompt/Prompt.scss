@@ -1,12 +1,17 @@
 @import '~@proton/styles/scss/config';
 
-.alert-modal {
+.prompt {
 	&#{&} {
 		--size: #{rem(288)};
 	}
 
 	&-header {
 		margin-block: 1.5em 0.5em;
+		margin-inline: var(--margin);
+	}
+
+	&-actions {
+		margin-block: 0.5em;
 		margin-inline: var(--margin);
 	}
 
