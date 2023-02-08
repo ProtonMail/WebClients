@@ -34,6 +34,7 @@ interface RowProps {
     label: React.ReactNode;
     title?: string;
     children: ReactNode;
+    dataTestId?: string;
 }
 
 export default function DetailsModal({ shareId, linkId, onClose, open }: Props) {
@@ -116,7 +117,9 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
                         )}
                     </>
                 )}
-                <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
+                <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
+                    {isShared}
+                </DetailsRow>
                 {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
                     <DetailsRow label={c('Title').t`# of downloads`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
                 )}
@@ -135,11 +138,11 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
     );
 }
 
-function DetailsRow({ label, title, children }: RowProps) {
+function DetailsRow({ label, title, children, dataTestId }: RowProps) {
     return (
         <Row title={title}>
             <span className="label cursor-default">{label}</span>
-            <div className="pt0-5">
+            <div className="pt0-5" data-testid={dataTestId}>
                 <b>{children}</b>
             </div>
         </Row>
