@@ -1,11 +1,38 @@
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import isTruthy from '@proton/utils/isTruthy';
 
+import { validateEmailAddress } from '../helpers/email';
 import { Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
 import { unescapeFromString } from '../sanitize/escape';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
+const SEPARATOR_REGEX = /[,;]/;
+
+/**
+ * Trim and remove surrounding chevrons
+ */
+export const clearValue = (value: string) => {
+    const trimmed = value.trim();
+    if (trimmed.startsWith('<') && trimmed.endsWith('>')) {
+        return trimmed.slice(1, -1);
+    }
+    return trimmed;
+};
+
+/**
+ * Split input content by comma or semicolon
+ */
+export const splitBySeparator = (input: string) => {
+    return input
+        .split(SEPARATOR_REGEX)
+        .map((value) => clearValue(value))
+        .filter(isTruthy);
+};
+
+/**
+ * Find in a string potential recipients separated by a space
+ */
 export const findRecipientsWithSpaceSeparator = (input: string) => {
     const emails = input.split(' ');
 
@@ -34,6 +61,47 @@ export const inputToRecipient = (input: string) => {
         Address: trimmedInput,
     };
 };
+
+/**
+ *  Used in AddressesAutocomplete and AddressesAutocomplete v2 to detect recipients strings inside the input
+ */
+export const handleRecipientInputChange = (
+    newValue: string,
+    hasEmailPasting: boolean,
+    onAddRecipients: (recipients: Recipient[]) => void,
+    setInput: (val: string) => void
+) => {
+    if (newValue === ';' || newValue === ',') {
+        return;
+    }
+
+    if (!hasEmailPasting) {
+        setInput(newValue);
+        return;
+    }
+
+    const values = splitBySeparator(newValue);
+    if (values.length > 1) {
+        onAddRecipients(values.map(inputToRecipient));
+        setInput('');
+        return;
+    }
+
+    // Try to find recipients with space separator e.g. "address1@pm.me address2@pm.me"
+    const valuesWithSpaceBar = newValue.split(' ').map((val) => val.trim());
+    if (valuesWithSpaceBar.length > 0) {
+        const recipientsWithSpaceSeparator = findRecipientsWithSpaceSeparator(newValue);
+
+        if (recipientsWithSpaceSeparator.length > 0) {
+            onAddRecipients(recipientsWithSpaceSeparator.map(inputToRecipient));
+            setInput('');
+            return;
+        }
+    }
+
+    setInput(newValue);
+};
+
 export const contactToRecipient = (contact: ContactEmail, groupPath?: string) => ({
     Name: contact.Name,
     Address: contact.Email,

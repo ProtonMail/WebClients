@@ -5,7 +5,7 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
+import { handleRecipientInputChange, inputToRecipient, splitBySeparator } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -16,14 +16,13 @@ import {
     getContactsAutocompleteItems,
     getNumberOfMembersText,
     getRecipientFromAutocompleteItem,
-} from '../../addressesAutomplete/helper';
+} from '../../addressesAutocomplete/helper';
 import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '../../autocomplete';
 import Icon from '../../icon/Icon';
 import { Option } from '../../option';
 import { Marks } from '../../text';
 import InputField, { InputFieldProps } from '../field/InputField';
 import Input from '../input/Input';
-import { splitBySeparator } from './AddressesAutocomplete.helper';
 
 interface Props extends Omit<InputFieldProps<typeof Input>, 'value' | 'onChange'> {
     id: string;
@@ -194,23 +193,7 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
         });
 
         const handleInputChange = (newValue: string) => {
-            if (newValue === ';' || newValue === ',') {
-                return;
-            }
-
-            if (!hasEmailPasting) {
-                setInput(newValue);
-                return;
-            }
-
-            const values = splitBySeparator(newValue);
-            if (values.length > 1) {
-                safeAddRecipients(values.slice(0, -1).map(inputToRecipient));
-                setInput(values[values.length - 1]);
-                return;
-            }
-
-            setInput(newValue);
+            handleRecipientInputChange(newValue, hasEmailPasting, onAddRecipients, setInput);
         };
 
         return (
