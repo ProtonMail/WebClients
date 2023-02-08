@@ -2,12 +2,9 @@
 
 ### Improvements
 
--   Allow import of events where seconds are not specified in time information
--   Redesign of app growler
-
-### Fixes
-
--   Small bug fixes
+-   Increase support for importing ICS files with dates that do not follow the RFC 5545 standard (including dates missing seconds and ISO-formatted dates)
+-   Redesign of app notifications
+-   Minor UI improvements
 
 ## Release: 5.0.7 — January 25, 2023
 
