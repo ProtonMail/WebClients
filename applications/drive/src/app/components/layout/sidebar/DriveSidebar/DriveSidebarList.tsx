@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { SidebarList } from '@proton/components';
 
-import { ShareWithKey } from '../../../store';
-import useDevicesFeatureFlag from '../../../store/_devices/useDevicesFeatureFlag';
-import { DriveSectionRouteProps } from '../../sections/Drive/DriveView';
+import { ShareWithKey } from '../../../../store';
+import useDevicesFeatureFlag from '../../../../store/_devices/useDevicesFeatureFlag';
+import { DriveSectionRouteProps } from '../../../sections/Drive/DriveView';
 import SidebarDevices from './DriveSidebarDevices/SidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
 import DriveSidebarListItem from './DriveSidebarListItem';

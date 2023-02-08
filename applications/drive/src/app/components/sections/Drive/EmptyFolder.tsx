@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { EmptyViewContainer, Icon, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
+import { EmptyViewContainer, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
 import uploadSvgMobile from '@proton/styles/assets/img/illustrations/upload-mobile.svg';
 import uploadSvg from '@proton/styles/assets/img/illustrations/upload.svg';
 
+import EmptyFolderUploadButton from './EmptyFolderUploadButton';
 import { FolderContextMenu } from './FolderContextMenu';
-import { UploadButton } from './UploadButton';
 
 const EmptyFolder = ({ shareId }: { shareId: string }) => {
     const { isNarrow } = useActiveBreakpoint();
@@ -53,10 +53,7 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
                     </p>
                     {!isNarrow && (
                         <div className="flex flex-justify-center">
-                            <UploadButton className="w13e">
-                                <Icon name="arrow-up-line" className="mr0-5" />
-                                {c('Action').t`Upload files`}
-                            </UploadButton>
+                            <EmptyFolderUploadButton />
                         </div>
                     )}
                 </EmptyViewContainer>

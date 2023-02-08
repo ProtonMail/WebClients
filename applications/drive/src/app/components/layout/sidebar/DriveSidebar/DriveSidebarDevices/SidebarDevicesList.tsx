@@ -1,4 +1,4 @@
-import { useDevicesListing } from '../../../../store/_devices';
+import { useDevicesListing } from '../../../../../store/_devices';
 import { SidebarDeviceItem } from './SidebarDeviceItem';
 
 export const SidebarDeviceList = ({
