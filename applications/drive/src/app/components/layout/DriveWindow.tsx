@@ -25,8 +25,8 @@ import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import { DriveHeaderPrivate } from './DriveHeader';
 import { getDriveDrawerPermissions } from './drawerPermissions';
+import ActionMenuButton from './sidebar/ActionMenu/ActionMenuButton';
 import DriveSidebar from './sidebar/DriveSidebar';
-import NewActionButton from './sidebar/NewActionMenu/NewActionButton';
 
 interface Props {
     children?: JSX.Element | JSX.Element[];
@@ -75,7 +75,7 @@ const DriveWindow = ({ children }: Props) => {
     const sidebar = (
         <DriveSidebar
             logo={logo}
-            primary={<NewActionButton className="no-mobile" disabled={isNewUploadDisabled} />}
+            primary={<ActionMenuButton className="no-mobile" disabled={isNewUploadDisabled} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />
