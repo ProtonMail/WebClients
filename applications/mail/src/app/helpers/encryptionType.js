@@ -12,62 +12,37 @@ import {
     isSentEncrypted,
 } from '@proton/shared/lib/mail/messages';
 
-const I18N = {
+export const I18N = {
     pm: [
         c('Message encryption status').t`End-to-end encrypted message`,
-        // gettextCatalog.getString('End-to-end encrypted message', null, 'Message encryption status'),
         c('Message encryption status').t`End-to-end encrypted message from verified address`,
-        // gettextCatalog.getString(
-        //     'End-to-end encrypted message from verified address',
-        //     null,
-        //     'Message encryption status'
-        // ),
         c('Message encryption status').t`Sender verification failed`,
-        // gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ],
     pgp: [
         c('Message encryption status').t`PGP-encrypted message`,
-        // gettextCatalog.getString('PGP-encrypted message', null, 'Message encryption status'),
         c('Message encryption status').t`PGP-encrypted message from verified address`,
-        // gettextCatalog.getString('PGP-encrypted message from verified address', null, 'Message encryption status'),
         c('Message encryption status').t`Sender verification failed`,
-        // gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ],
     clear: [
         c('Message encryption status').t`Stored with zero access encryption`,
-        // gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
         c('Message encryption status').t`PGP-signed message from verified address`,
-        // gettextCatalog.getString('PGP-signed message from verified address', null, 'Message encryption status'),
         c('Message encryption status').t`Sender verification failed`,
-        // gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ],
     sentEncrypted: [
         c('Message encryption status').t`Sent by you with end-to-end encryption`,
-        // gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
         c('Message encryption status').t`Sent by you with end-to-end encryption`,
-        // gettextCatalog.getString('Sent by you with end-to-end encryption', null, 'Message encryption status'),
         c('Message encryption status').t`Sender verification failed`,
-        // gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ],
-    auto: [
-        c('Message encryption status').t`Sent by ${MAIL_APP_NAME} with zero access encryption`,
-        // gettextCatalog.getString('Sent by Proton Mail with zero access encryption', null, 'Message encryption status')
-    ],
+    auto: [c('Message encryption status').t`Sent by ${MAIL_APP_NAME} with zero access encryption`],
     sentClear: [
         c('Message encryption status').t`Stored with zero access encryption`,
-        // gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
         c('Message encryption status').t`Stored with zero access encryption`,
-        // gettextCatalog.getString('Stored with zero access encryption', null, 'Message encryption status'),
         c('Message encryption status').t`Sender verification failed`,
-        // gettextCatalog.getString('Sender verification failed', null, 'Message encryption status')
     ],
-    draft: [
-        c('Message encryption status').t`Encrypted message`,
-        // gettextCatalog.getString('Encrypted message', null, 'Message encryption status')
-    ],
+    draft: [c('Message encryption status').t`Encrypted message`],
 };
 
-const getFromType = (message) => {
+export const getFromType = (message) => {
     if (isSentEncrypted(message)) {
         return I18N.sentEncrypted;
     }
