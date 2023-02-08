@@ -1,6 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { VERIFICATION_STATUS } from '@proton/crypto';
+import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -141,8 +143,27 @@ export default function useAction() {
             // we check every single block, so user is still protected.
             checkFirstBlockSignature(abortSignal, shareId, linkId),
         ]).catch((e) => {
-            showErrorNotification(e, <span>{c('Notification').t`Item failed to be verified`}</span>);
-            throw e;
+            // Only network error can be thrown here to indicate the signature
+            // couldn't be checked and user should try again. Any other case
+            // such as a very bad data should be represented as missing
+            // signature (technically the signature is not there - some other
+            // malformed data is).
+            if (getIsConnectionIssue(e)) {
+                throw e;
+            }
+            sendErrorReport(e);
+            return [
+                {
+                    passphrase: VERIFICATION_STATUS.NOT_SIGNED,
+                    name: VERIFICATION_STATUS.NOT_SIGNED,
+                    xattrs: VERIFICATION_STATUS.NOT_SIGNED,
+                },
+                {
+                    contentKeyPacket: VERIFICATION_STATUS.NOT_SIGNED,
+                    blocks: VERIFICATION_STATUS.NOT_SIGNED,
+                    thumbnail: VERIFICATION_STATUS.NOT_SIGNED,
+                },
+            ];
         });
         if (!metaSignatureIssues && !blockSignatureIssue) {
             return;
