@@ -5,6 +5,7 @@ import { Checkbox, FileNameDisplay, Icon, classnames } from '@proton/components'
 
 import { stopPropagation } from '../../../utils/stopPropagation';
 import { useCheckbox, useItemContextMenu, useSelection } from '../../FileBrowser';
+import { SelectionState } from '../../FileBrowser/hooks/useSelectionControls';
 import { DeviceItem } from '../Devices/Devices';
 import { DriveItem } from '../Drive/Drive';
 import { SharedLinkItem } from '../SharedLinks/SharedLinks';
@@ -34,7 +35,7 @@ const GridViewItemBase = ({
             <div
                 className={classnames([
                     'flex file-browser-grid-item--select',
-                    selectionControls?.selectedItemIds.length ? null : 'opacity-on-hover-only-desktop',
+                    selectionControls?.selectionState !== SelectionState.NONE ? null : 'opacity-on-hover-only-desktop',
                 ])}
                 onTouchStart={stopPropagation}
                 onKeyDown={stopPropagation}

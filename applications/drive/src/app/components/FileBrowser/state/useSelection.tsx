@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext } from 'react';
 
-import { useSelectionControls } from '../hooks/useSelectionControls';
+import { SelectionState, useSelectionControls } from '../hooks/useSelectionControls';
 import { BrowserItemId } from '../interface';
 
 export interface Item<T = any> {
@@ -17,6 +17,7 @@ interface SelectionFunctions {
     clearSelections: () => void;
     toggleRange: (selectedBrowserItemId: BrowserItemId) => void;
     isSelected: (linkId: string) => boolean;
+    selectionState: SelectionState;
 }
 
 const SelectionContext = createContext<SelectionFunctions | null>(null);

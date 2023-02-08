@@ -1,10 +1,25 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { BrowserItemId } from '../interface';
 
-export function useSelectionControls({ itemIds }: { itemIds: string[] }) {
+export enum SelectionState {
+    NONE,
+    ALL,
+    SOME,
+}
+export function useSelectionControls({ itemIds }: { itemIds: BrowserItemId[] }) {
     const [selectedItemIds, setSelectedItems] = useState<BrowserItemId[]>([]);
     const [multiSelectStartId, setMultiSelectStartId] = useState<BrowserItemId>();
+
+    const selectionState = useMemo(() => {
+        if (selectedItemIds.length === 0) {
+            return SelectionState.NONE;
+        }
+        if (selectedItemIds.length !== itemIds.length) {
+            return SelectionState.SOME;
+        }
+        return SelectionState.ALL;
+    }, [selectedItemIds, itemIds]);
 
     useEffect(() => {
         const isItemInFolder = (itemId: BrowserItemId) => itemIds.some((folderItemIds) => folderItemIds === itemId);
@@ -80,7 +95,7 @@ export function useSelectionControls({ itemIds }: { itemIds: string[] }) {
         setMultiSelectStartId(undefined);
     }, []);
 
-    const isSelected = (linkId: string) => selectedItemIds.some((id) => id === linkId);
+    const isSelected = (itemId: BrowserItemId) => selectedItemIds.some((id) => id === itemId);
 
     return {
         selectedItemIds,
@@ -90,5 +105,6 @@ export function useSelectionControls({ itemIds }: { itemIds: string[] }) {
         clearSelections,
         toggleRange,
         isSelected,
+        selectionState,
     };
 }
