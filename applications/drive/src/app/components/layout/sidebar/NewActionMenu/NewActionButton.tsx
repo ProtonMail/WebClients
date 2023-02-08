@@ -10,6 +10,7 @@ import {
     SidebarPrimaryButton,
     usePopperAnchor,
 } from '@proton/components';
+import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './NewActionMenuButtons';
@@ -20,6 +21,7 @@ interface Props {
 }
 export const NewActionButton = ({ disabled, className }: PropsWithChildren<Props>) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const isDesktop = !getDevice()?.type;
 
     return (
         <>
@@ -45,7 +47,7 @@ export const NewActionButton = ({ disabled, className }: PropsWithChildren<Props
             >
                 <DropdownMenu className="mt0-25 mb0-25">
                     <UploadFileButton onUploadStarted={close} />
-                    <UploadFolderButton onUploadStarted={close} />
+                    {isDesktop && <UploadFolderButton onUploadStarted={close} />}
                     <hr className="mt0-5 mb0-5" />
                     <CreateNewFolderButton />
                 </DropdownMenu>
