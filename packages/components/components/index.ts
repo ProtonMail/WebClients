@@ -1,5 +1,5 @@
 export * from './actionCard';
-export * from './addressesAutomplete';
+export * from './addressesAutocomplete';
 export * from './addressesInput';
 export * from './alert';
 export * from './prompt';
