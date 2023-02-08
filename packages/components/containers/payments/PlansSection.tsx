@@ -28,7 +28,6 @@ import {
     usePlans,
     useSubscription,
     useUser,
-    useVPNCountriesCount,
     useVPNServersCount,
 } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
@@ -53,7 +52,6 @@ const PlansSection = () => {
     const [plans = [], loadingPlans] = usePlans();
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const [vpnServers] = useVPNServersCount();
-    const [vpnCountries] = useVPNCountriesCount();
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const api = useApi();
@@ -129,7 +127,6 @@ const PlansSection = () => {
                 plans={plans}
                 plansMap={plansMap}
                 vpnServers={vpnServers}
-                vpnCountries={vpnCountries}
                 currency={currency}
                 cycle={cycle}
                 onChangeCycle={setCycle}
