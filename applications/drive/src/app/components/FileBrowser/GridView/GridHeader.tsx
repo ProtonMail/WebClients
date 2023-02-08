@@ -88,7 +88,12 @@ export const GridHeader = <T extends string>({
                             {activeSortingText}
                         </TableHeaderCell>
                         <TableHeaderCell>
-                            <SortDropdown sortFields={sortFields} sortField={sortField} onSort={onSort} />
+                            <SortDropdown
+                                className="file-browser-header-sort-cell"
+                                sortFields={sortFields}
+                                sortField={sortField}
+                                onSort={onSort}
+                            />
                         </TableHeaderCell>
                     </>
                 )}
