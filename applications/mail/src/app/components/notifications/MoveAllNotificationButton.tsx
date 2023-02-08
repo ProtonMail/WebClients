@@ -26,8 +26,13 @@ const getText = (isMessage: boolean, isLabel: boolean) => {
     }
 };
 
-const MoveAllNotificationButton = ({ onMoveAll, isMessage, isLabel, disabled, className }: Props) => (
-    <NotificationButton onClick={onMoveAll} disabled={disabled} className={className}>
+const MoveAllNotificationButton = ({ onMoveAll, isMessage, isLabel, disabled }: Props) => (
+    <NotificationButton
+        onClick={onMoveAll}
+        disabled={disabled}
+        className="ml-custom"
+        style={{ '--margin-left-custom': '-0.8em' }}
+    >
         {getText(isMessage, isLabel)}
     </NotificationButton>
 );
