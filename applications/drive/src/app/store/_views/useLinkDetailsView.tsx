@@ -21,6 +21,7 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
     const [isLinkLoading, withLoadingLink] = useLoading();
 
     const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
+    const [signatureNetworkError, setSignatureNetworkError] = useState<boolean>(false);
     const [isSignatureIssuesLoading, withLoadingSignatureIssues] = useLoading();
 
     const [numberOfAccesses, setNumberOfAccesses] = useState<number>();
@@ -35,7 +36,9 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
                     void withLoadingSignatureIssues(
                         checkLinkSignatures(abortController.signal, shareId, linkId)
                             .then(setSignatureIssues)
-                            .catch(sendErrorReport)
+                            .catch(() => {
+                                setSignatureNetworkError(true);
+                            })
                     );
                     if (link.shareId) {
                         void withLoadingNumberOfAccesses(
@@ -62,6 +65,7 @@ export default function useLinkDetailsView(shareId: string, linkId: string) {
         error,
         link,
         signatureIssues,
+        signatureNetworkError,
         numberOfAccesses,
     };
 }
