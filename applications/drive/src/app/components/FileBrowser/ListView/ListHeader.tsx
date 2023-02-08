@@ -1,9 +1,12 @@
 import * as React from 'react';
 
-import { Checkbox, TableHeaderCell, TableRowSticky } from '@proton/components';
+import { c } from 'ttag';
+
+import { Checkbox, Loader, TableHeaderCell, TableRowSticky } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
+import { SelectionState } from '../hooks/useSelectionControls';
 import { SortParams } from '../interface';
 import { useSelection } from '../state/useSelection';
 
@@ -34,22 +37,37 @@ const HeaderCell = <T,>({
     onSort: (key: T) => void;
     sortParams?: SortParams<T>;
 }) => {
-    const selectionControls = useSelection();
-    if (item.type === HeaderCellsPresets.Checkbox && selectionControls) {
-        const allSelected = Boolean(itemCount && itemCount === selectionControls.selectedItemIds.length);
-
+    const selection = useSelection();
+    const selectedCount = selection?.selectedItemIds.length;
+    if (item.type === HeaderCellsPresets.Checkbox && selection) {
         return (
             <TableHeaderCell className="file-browser-header-checkbox-cell">
                 <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                     <Checkbox
-                        className="increase-click-surface"
+                        indeterminate={selection.selectionState === SelectionState.SOME}
+                        className="increase-click-surface mr0-25"
                         disabled={!itemCount}
-                        checked={allSelected}
-                        onChange={selectionControls.toggleAllSelected}
-                    />
+                        checked={selection?.selectionState !== SelectionState.NONE}
+                        onChange={
+                            selection?.selectionState === SelectionState.SOME
+                                ? selection.clearSelections
+                                : selection.toggleAllSelected
+                        }
+                    >
+                        {selection?.selectionState !== SelectionState.NONE ? (
+                            <span className="ml1">{c('Info').jt`${selectedCount} selected`}</span>
+                        ) : null}
+                    </Checkbox>
+                    {selection?.selectionState !== SelectionState.NONE && isLoading ? (
+                        <Loader className="flex flex-item-noshrink" />
+                    ) : null}
                 </div>
             </TableHeaderCell>
         );
+    }
+
+    if (selection?.selectionState !== SelectionState.NONE) {
+        return null;
     }
 
     if (item.type === HeaderCellsPresets.Placeholder) {

@@ -7,6 +7,10 @@
 	inline-size: calc(#{rem(16)} + 2em);
 }
 
+.file-browser-header-sort-cell {
+	margin: -0.5em;
+}
+
 .file-browser-table .filebrowser-list-header-name-cell,
 .file-browser-table .filebrowser-list-device-name-cell {
 	padding-inline-start: 1em;
@@ -105,5 +109,5 @@
 	-khtml-user-drag: none;
 	-moz-user-drag: none;
 	-o-user-drag: none;
-	user-drag: none;
+	user-drag: none; // stylelint-disable-line property-no-unknown
 }
