@@ -23,7 +23,6 @@ import {
     usePlans,
     useSubscription,
     useUser,
-    useVPNCountriesCount,
     useVPNServersCount,
 } from '../../../hooks';
 import DowngradeModal from '../DowngradeModal';
@@ -46,7 +45,6 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [organization] = useOrganization();
     const [plans, loadingPlans] = usePlans();
-    const [vpnCountries] = useVPNCountriesCount();
     const [vpnServers] = useVPNServersCount();
     const { createNotification, hideNotification } = useNotifications();
     const { createModal } = useModals();
@@ -100,9 +98,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        const shortPlan = currentPlan
-            ? getShortPlan(currentPlan.Name as PLANS, plansMap, vpnCountries, vpnServers)
-            : undefined;
+        const shortPlan = currentPlan ? getShortPlan(currentPlan.Name as PLANS, plansMap, vpnServers) : undefined;
         // We only show the plan downgrade plan modal for plans that are defined with features
         if (shortPlan) {
             await new Promise<void>((resolve, reject) => {

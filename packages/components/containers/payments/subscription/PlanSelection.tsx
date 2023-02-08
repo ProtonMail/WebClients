@@ -11,8 +11,7 @@ import {
     PlanIDs,
     PlansMap,
     Subscription,
-    VPNCountries,
-    VPNServers,
+    VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
@@ -60,8 +59,7 @@ interface Props {
     cycle: Cycle;
     plans: Plan[];
     plansMap: PlansMap;
-    vpnServers: VPNServers;
-    vpnCountries: VPNCountries;
+    vpnServers: VPNServersCountData;
     loading?: boolean;
     mode: 'signup' | 'settings' | 'modal';
     onChangePlanIDs: (newPlanIDs: PlanIDs) => void;
@@ -82,7 +80,6 @@ const PlanSelection = ({
     plans,
     plansMap,
     vpnServers,
-    vpnCountries,
     cycle,
     currency,
     loading,
@@ -114,7 +111,7 @@ const PlanSelection = ({
     ].filter(isTruthy);
 
     const isSignupMode = mode === 'signup';
-    const features = getAllFeatures(plansMap, vpnCountries, vpnServers);
+    const features = getAllFeatures(plansMap, vpnServers);
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
     const recommendedPlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO];
@@ -123,7 +120,7 @@ const PlanSelection = ({
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnCountries, vpnServers);
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnServers);
 
         if (!shortPlan) {
             return null;

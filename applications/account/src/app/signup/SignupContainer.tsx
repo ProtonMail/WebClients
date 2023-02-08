@@ -14,7 +14,6 @@ import {
     useLoading,
     useLocalState,
     useMyLocation,
-    useVPNCountriesCount,
     useVPNServersCount,
 } from '@proton/components/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
@@ -137,7 +136,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
     const [myLocation] = useMyLocation();
-    const [vpnCountries] = useVPNCountriesCount();
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
     const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
@@ -641,7 +639,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     plans={model.plans}
                     upsellPlanName={upsellPlanName}
                     onChangeCurrency={handleChangeCurrency}
-                    vpnCountries={vpnCountries}
                     vpnServers={vpnServers}
                     onPlan={async (planIDs) => {
                         const checkResult = await getSubscriptionPrices(
