@@ -10,7 +10,7 @@ import {
 } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { useDriveEventManager } from '../../../store';
+import { useDriveEventManager } from '../../../../store';
 
 interface Props {
     children: React.ReactNode;

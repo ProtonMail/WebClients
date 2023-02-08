@@ -1,7 +1,7 @@
 import { Loader } from '@proton/components/components';
 
-import { useDevicesListing } from '../../../../store/_devices';
-import { getDevicesSectionName } from '../../../sections/Devices/constants';
+import { useDevicesListing } from '../../../../../store/_devices';
+import { getDevicesSectionName } from '../../../../sections/Devices/constants';
 import ExpandButton from '../DriveSidebarFolders/ExpandButton';
 import DriveSidebarListItem from '../DriveSidebarListItem';
 
