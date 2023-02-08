@@ -13,13 +13,13 @@ import {
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
-import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './NewActionMenuButtons';
+import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 
 interface Props {
     disabled?: boolean;
     className?: string;
 }
-export const NewActionButton = ({ disabled, className }: PropsWithChildren<Props>) => {
+export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Props>) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const isDesktop = !getDevice()?.type;
 
@@ -56,4 +56,4 @@ export const NewActionButton = ({ disabled, className }: PropsWithChildren<Props
     );
 };
 
-export default NewActionButton;
+export default ActionMenuButton;
