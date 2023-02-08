@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 
-import { useNoBFCookie } from '../..';
 import { AppLink, Hamburger, Icon } from '../../components';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
+import { useIsProtonUser, useNoBFCookie } from '../../hooks';
 
 interface Props extends HeaderProps {
     settingsButton?: ReactNode;
@@ -42,6 +42,7 @@ const PrivateHeader = ({
     title,
 }: Props) => {
     useNoBFCookie();
+    useIsProtonUser();
 
     if (backUrl) {
         return (
