@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { TreeItem } from '../../../../store';
+import { TreeItem } from '../../../../../store';
 
 export default function useSubfolderLoading(folder: TreeItem) {
     const [isLoading, setIsLoading] = useState(false);

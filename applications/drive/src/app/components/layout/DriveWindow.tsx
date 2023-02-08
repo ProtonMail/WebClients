@@ -23,10 +23,10 @@ import isTruthy from '@proton/utils/isTruthy';
 import { useIsActiveLinkReadOnly } from '../../store/_views/utils';
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
-import UploadButton from '../sections/Drive/UploadButton';
 import { DriveHeaderPrivate } from './DriveHeader';
-import DriveSidebar from './DriveSidebar/DriveSidebar';
 import { getDriveDrawerPermissions } from './drawerPermissions';
+import ActionMenuButton from './sidebar/ActionMenu/ActionMenuButton';
+import DriveSidebar from './sidebar/DriveSidebar';
 
 interface Props {
     children?: JSX.Element | JSX.Element[];
@@ -75,7 +75,7 @@ const DriveWindow = ({ children }: Props) => {
     const sidebar = (
         <DriveSidebar
             logo={logo}
-            primary={<UploadButton className="no-mobile" disabled={isNewUploadDisabled} />}
+            primary={<ActionMenuButton className="no-mobile" disabled={isNewUploadDisabled} />}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />

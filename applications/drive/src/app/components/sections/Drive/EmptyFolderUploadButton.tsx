@@ -1,19 +1,11 @@
-import { ReactNode } from 'react';
-
 import { c } from 'ttag';
 
-import { SidebarPrimaryButton } from '@proton/components';
+import { Icon, SidebarPrimaryButton } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useFileUploadInput } from '../../../store';
 
-interface Props {
-    className?: string;
-    disabled?: boolean;
-    children?: ReactNode;
-}
-
-export const UploadButton = ({ className, disabled, children = c('Action').t`New upload` }: Props) => {
+const EmptyFolderUploadButton = () => {
     const { activeFolder } = useActiveShare();
     const {
         inputRef: fileInput,
@@ -24,11 +16,12 @@ export const UploadButton = ({ className, disabled, children = c('Action').t`New
     return (
         <>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
-            <SidebarPrimaryButton disabled={disabled} className={className} onClick={handleClick}>
-                {children}
+            <SidebarPrimaryButton className="w13e" onClick={handleClick}>
+                <Icon name="arrow-up-line" className="mr0-5" />
+                {c('Action').t`Upload files`}
             </SidebarPrimaryButton>
         </>
     );
 };
 
-export default UploadButton;
+export default EmptyFolderUploadButton;
