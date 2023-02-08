@@ -191,7 +191,7 @@
 
 	// in this case, we remove 2 lines ellipsis for a simple ellipsis
 	// because it's creating bad truncation of content in some cases
-	&--less-one-hour &-title {
+	&--title-small-fit &-title {
 		display: block;
 		/* stylelint-disable-next-line */
 		-webkit-box-orient: unset;
