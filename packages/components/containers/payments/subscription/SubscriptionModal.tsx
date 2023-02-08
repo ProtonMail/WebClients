@@ -46,7 +46,6 @@ import {
     usePlans,
     useSubscription,
     useUser,
-    useVPNCountriesCount,
     useVPNServersCount,
 } from '../../../hooks';
 import GenericError from '../../error/GenericError';
@@ -165,7 +164,6 @@ const SubscriptionModal = ({
     const [plans = []] = usePlans();
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const [vpnServers] = useVPNServersCount();
-    const [vpnCountries] = useVPNCountriesCount();
     const [organization] = useOrganization();
     const getCalendars = useGetCalendars();
 
@@ -472,7 +470,6 @@ const SubscriptionModal = ({
                         plans={plans}
                         plansMap={plansMap}
                         vpnServers={vpnServers}
-                        vpnCountries={vpnCountries}
                         currency={model.currency}
                         cycle={model.cycle}
                         planIDs={model.planIDs}

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/shared/lib/constants';
 import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import SubscriptionCheckout from './SubscriptionCheckout';
@@ -28,6 +28,8 @@ describe('SubscriptionCheckout', () => {
         };
     });
 
+    const dummyServers = { free: { servers: 0, countries: 0 }, paid: { servers: 0, countries: 0 } };
+
     it('should display Proration if it is available and showProration is true', () => {
         checkResult.Proration = -451;
 
@@ -35,7 +37,7 @@ describe('SubscriptionCheckout', () => {
             <SubscriptionCheckout
                 checkResult={checkResult}
                 plansMap={{}}
-                vpnServers={{ free_vpn: 0, [PLANS.VPN]: 0 }}
+                vpnServers={dummyServers}
                 isOptimistic={true}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -56,7 +58,7 @@ describe('SubscriptionCheckout', () => {
             <SubscriptionCheckout
                 checkResult={checkResult}
                 plansMap={{}}
-                vpnServers={{ free_vpn: 0, [PLANS.VPN]: 0 }}
+                vpnServers={dummyServers}
                 isOptimistic={true}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -76,7 +78,7 @@ describe('SubscriptionCheckout', () => {
             <SubscriptionCheckout
                 checkResult={checkResult}
                 plansMap={{}}
-                vpnServers={{ free_vpn: 0, [PLANS.VPN]: 0 }}
+                vpnServers={dummyServers}
                 isOptimistic={true}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -97,7 +99,7 @@ describe('SubscriptionCheckout', () => {
             <SubscriptionCheckout
                 checkResult={checkResult}
                 plansMap={{}}
-                vpnServers={{ free_vpn: 0, [PLANS.VPN]: 0 }}
+                vpnServers={dummyServers}
                 isOptimistic={true}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}

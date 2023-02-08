@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { BRAND_NAME, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { Plan, PlansMap, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
+import { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
@@ -110,8 +110,8 @@ export const getMailPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getFreeVPNPlan = (vpnCountries: VPNCountries, serversCount: VPNServers): ShortPlan => {
-    const freeServers = getFreeServers(serversCount.free_vpn, vpnCountries.free_vpn.count);
+export const getFreeVPNPlan = (serversCount: VPNServersCountData): ShortPlan => {
+    const freeServers = getFreeServers(serversCount.free.servers, serversCount.free.countries);
     return {
         plan: PLANS.FREE,
         title: PLAN_NAMES[PLANS.FREE],
@@ -135,8 +135,8 @@ export const getFreeDrivePlan = (): ShortPlan => {
     };
 };
 
-export const getVPNPlan = (plan: Plan, vpnCountries: VPNCountries, serversCount: VPNServers): ShortPlan => {
-    const plusServers = getPlusServers(serversCount[PLANS.VPN], vpnCountries[PLANS.VPN].count);
+export const getVPNPlan = (plan: Plan, serversCount: VPNServersCountData): ShortPlan => {
+    const plusServers = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
     return {
         plan: PLANS.VPN,
         title: plan.Title,
@@ -224,8 +224,7 @@ export const getNewVisionaryPlan = (plan: Plan): ShortPlan => {
 export const getShortPlan = (
     plan: PLANS,
     plansMap: PlansMap,
-    vpnCountries: VPNCountries,
-    vpnServers: VPNServers,
+    vpnServers: VPNServersCountData,
     options: { boldStorageSize?: boolean } = {}
 ) => {
     const { boldStorageSize } = options;
@@ -240,7 +239,7 @@ export const getShortPlan = (
         case PLANS.MAIL:
             return getMailPlan(planData);
         case PLANS.VPN:
-            return getVPNPlan(planData, vpnCountries, vpnServers);
+            return getVPNPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
         case PLANS.MAIL_PRO:
