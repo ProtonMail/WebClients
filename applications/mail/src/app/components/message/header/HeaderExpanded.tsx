@@ -18,13 +18,7 @@ import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import {
-    getHasOnlyIcsAttachments,
-    getRecipients,
-    isInternal,
-    isOutbox,
-    isScheduled,
-} from '@proton/shared/lib/mail/messages';
+import { getHasOnlyIcsAttachments, getRecipients, isInternal, isScheduled } from '@proton/shared/lib/mail/messages';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
@@ -96,7 +90,6 @@ const HeaderExpanded = ({
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const isSendingMessage = message.draftFlags?.sending;
-    const isOutboxMessage = isOutbox(message.data);
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
 
     const isScheduledMessage = isScheduled(message.data);
@@ -235,7 +228,7 @@ const HeaderExpanded = ({
                         ) : (
                             <RecipientType label={c('Label Recipient').t`From`}>{from}</RecipientType>
                         )}
-                        {messageLoaded && (isOutboxMessage || isSendingMessage) && !isScheduledMessage && (
+                        {messageLoaded && isSendingMessage && !isScheduledMessage && (
                             <span className="ml0-5 flex-item-noshrink myauto">
                                 <span className="badge-label-primary">{c('Info').t`Sending`}</span>
                             </span>
