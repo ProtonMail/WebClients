@@ -14,7 +14,7 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
-import { ecryptFolderExtendedAttributes } from './extendedAttributes';
+import { encryptFolderExtendedAttributes } from './extendedAttributes';
 import useLink from './useLink';
 import { validateLinkName } from './validation';
 
@@ -61,7 +61,7 @@ export default function useLinkActions() {
 
         const xattr = !modificationTime
             ? undefined
-            : await ecryptFolderExtendedAttributes(modificationTime, privateKey, addressKey);
+            : await encryptFolderExtendedAttributes(modificationTime, privateKey, addressKey);
 
         const { Folder } = await preventLeave(
             debouncedRequest<{ Folder: { ID: string } }>(

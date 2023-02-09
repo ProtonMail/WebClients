@@ -32,7 +32,7 @@ interface ParsedExtendedAttributes {
     };
 }
 
-export async function ecryptFolderExtendedAttributes(
+export async function encryptFolderExtendedAttributes(
     modificationTime: Date,
     nodePrivateKey: PrivateKeyReference,
     addressPrivateKey: PrivateKeyReference
