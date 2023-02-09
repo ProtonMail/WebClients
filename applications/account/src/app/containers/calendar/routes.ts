@@ -46,8 +46,8 @@ export const getCalendarAppRoutes = (showSubscribedCalendars: boolean, showInvit
                         id: CALENDAR_SETTINGS_SECTION_ID.PERSONAL_CALENDARS,
                     },
                     {
-                        text: c('Title').t`Subscribed calendars`,
-                        id: CALENDAR_SETTINGS_SECTION_ID.SUBSCRIBED_CALENDARS,
+                        text: c('Title').t`Other calendars`,
+                        id: CALENDAR_SETTINGS_SECTION_ID.OTHER_CALENDARS,
                         available: showSubscribedCalendars,
                     },
                 ],
