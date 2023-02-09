@@ -130,10 +130,16 @@
 	}
 
 	&-input:checked[disabled] + &-fakecheck,
-	&-input:checked:indeterminate + &-fakecheck {
+	&-input:checked[disabled]:indeterminate + &-fakecheck {
 		border-color: var(--field-disabled);
 		background-color: var(--field-disabled);
 		color: var(--interaction-norm-contrast);
+	}
+
+	&-input:checked:indeterminate + &-fakecheck {
+		border-color: var(--field-norm);
+		background-color: var(--field-background-color);
+		color: var(--field-text-color);
 	}
 
 	&-input:checked + &-fakecheck &-fakecheck-img,
