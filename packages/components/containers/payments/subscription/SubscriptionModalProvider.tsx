@@ -9,12 +9,14 @@ import {
     getIsB2BPlan,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
+    isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
+import { Audience, Currency, Cycle, Nullable, PlanIDs } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useModalState } from '../../../components';
 import { useOrganization, usePlans, useSubscription, useUser } from '../../../hooks';
+import InAppPurchaseModal from './InAppPurchaseModal';
 import SubscriptionModal from './SubscriptionModal';
 import SubscriptionModalDisabled from './SubscriptionModalDisabled';
 import { SUBSCRIPTION_STEPS } from './constants';
@@ -80,24 +82,31 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const plansMap = toMap(plans, 'Name');
     const subscriptionPlanIDs = getPlanIDs(subscription);
 
+    let subscriptionModal: Nullable<JSX.Element> = null;
+    if (render && subscriptionProps.current) {
+        if (isManagedExternally(subscription)) {
+            subscriptionModal = <InAppPurchaseModal subscription={subscription} {...modalState} />;
+        } else if (getHasLegacyPlans(subscription)) {
+            subscriptionModal = <SubscriptionModalDisabled {...modalState} />;
+        } else {
+            subscriptionModal = (
+                <SubscriptionModal
+                    app={app}
+                    {...subscriptionProps.current}
+                    {...modalState}
+                    onClose={() => {
+                        onClose?.();
+                        subscriptionProps?.current?.onClose?.();
+                        modalState.onClose();
+                    }}
+                />
+            );
+        }
+    }
+
     return (
         <>
-            {render &&
-                subscriptionProps.current &&
-                (getHasLegacyPlans(subscription) ? (
-                    <SubscriptionModalDisabled {...modalState} />
-                ) : (
-                    <SubscriptionModal
-                        app={app}
-                        {...subscriptionProps.current}
-                        {...modalState}
-                        onClose={() => {
-                            onClose?.();
-                            subscriptionProps?.current?.onClose?.();
-                            modalState.onClose();
-                        }}
-                    />
-                ))}
+            {subscriptionModal}
             <SubscriptionModalContext.Provider
                 value={[
                     ({

@@ -1,7 +1,7 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import { ADDON_NAMES, APPS, APP_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_SERVICES, PLAN_TYPES } from '../constants';
-import { PlanIDs, PlansMap, Subscription } from '../interfaces';
+import { External, PlanIDs, PlansMap, Subscription } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -48,6 +48,10 @@ export const hasLifetime = (subscription: Subscription | undefined) => {
 
 export const hasMigrationDiscount = (subscription: Subscription) => {
     return subscription?.CouponCode?.startsWith('MIGRATION');
+};
+
+export const isManagedExternally = (subscription: Subscription): boolean => {
+    return subscription.External === External.Android || subscription.External === External.iOS;
 };
 
 export const hasVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, VISIONARY);
