@@ -625,6 +625,9 @@ export const getSupportedEventInvitation = async ({
             legacyUid = await generateVeventHashUID(icsBinaryString, originalUID, true);
         }
         completeVevent.uid = { value: sha1Uid };
+    } else if (!originalUID) {
+        // Invitations without UID should be considered invalid
+        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     } else if (!completeVevent.organizer) {
         // The ORGANIZER field is mandatory in an invitation
         const guessOrganizerEmail = ICAL_METHODS_ATTENDEE.includes(supportedMethod)
