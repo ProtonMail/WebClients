@@ -9,7 +9,6 @@ import {
     hasAttachments,
     isDraft,
     isExpiring,
-    isOutbox,
     isScheduled,
 } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
@@ -60,7 +59,7 @@ const HeaderCollapsed = ({
     };
 
     const isDraftMessage = isDraft(message.data) && !message.draftFlags?.sending;
-    const isOutboxMessage = isOutbox(message.data) || message.draftFlags?.sending;
+    const isOutboxMessage = message.draftFlags?.sending;
     const isScheduledMessage = isScheduled(message.data);
     const isExpiringMessage = isExpiring(message.data);
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
@@ -68,10 +67,11 @@ const HeaderCollapsed = ({
     return (
         <div
             className={classnames([
-                'message-header message-header-collapsed px1-25 flex flex-nowrap flex-align-items-center cursor-pointer',
+                'message-header message-header-collapsed px1-25 flex flex-nowrap flex-align-items-center',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',
                 !messageLoaded && 'is-loading',
+                !message.draftFlags?.sending && 'cursor-pointer',
             ])}
             onClick={handleClick}
             data-testid={`message-header-collapsed:${conversationIndex}`}
