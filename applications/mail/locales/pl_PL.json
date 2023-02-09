@@ -3425,7 +3425,7 @@
         "Wiadomość została wysłana. Nowy szkic został zapisany."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Posiadasz zbyt dużo aktywnych filtrów. Ulepsz do płatnego planu, aby aktywować więcej filtrów."
@@ -3449,7 +3449,7 @@
         "Nie możesz wysłać wiadomości do ponad 100 odbiorców"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Jednocześnie możesz wysłać maksymalnie 10 plików vCard"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Nie możesz otworzyć więcej niż ${ maxActiveComposer } edytor jednocześnie",
@@ -4787,6 +4787,9 @@
       "Copied to clipboard": [
         "Skopiowano do schowka"
       ],
+      "Country code": [
+        "Kod kraju"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Utwórz ${ calendarsToBeCreated } nowy kalendarz",
         "Utwórz ${ calendarsToBeCreated } nowe kalendarze",
@@ -5003,11 +5006,11 @@
       "Group assignment applied": [
         "Grupa została zastosowana"
       ],
-      "Has ${ numAttachments } attachment": [
-        "${ numAttachments } załącznik",
-        "${ numAttachments } załączniki",
-        "${ numAttachments } załączników",
-        "${ numAttachments } załączników"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Posiada załącznik (${ numAttachmentsSize })",
+        "Posiada ${ numAttachments } załączniki (${ numAttachmentsSize })",
+        "Posiada ${ numAttachments } załączników (${ numAttachmentsSize })",
+        "Posiada ${ numAttachments } załączników (${ numAttachmentsSize })"
       ],
       "here": [
         "tutaj"

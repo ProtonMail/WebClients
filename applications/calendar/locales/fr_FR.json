@@ -523,7 +523,7 @@
         "Changer d'abonnement"
       ],
       "Upgrade now": [
-        "Passer à l'abonnement supérieur"
+        "Changer d'abonnement"
       ],
       "Upload picture": [
         "Importer une image"
@@ -2413,7 +2413,7 @@
         "Ce nom de label n'est pas disponible, veuillez en choisir un autre."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi."
@@ -2431,7 +2431,7 @@
         "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
@@ -3274,6 +3274,9 @@
       ],
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
+      ],
+      "Country code": [
+        "Indicatif du pays"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",

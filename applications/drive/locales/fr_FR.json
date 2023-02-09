@@ -602,7 +602,7 @@
         "Changer d'abonnement"
       ],
       "Upgrade now": [
-        "Passer à l'abonnement supérieur"
+        "Changer d'abonnement"
       ],
       "Upload anyway": [
         "Charger quand même"
@@ -2150,7 +2150,7 @@
         "Ce nom de label n'est pas disponible, veuillez en choisir un autre."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
@@ -2162,7 +2162,7 @@
         "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
@@ -3007,9 +3007,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Les chargements en masse peuvent réduire les performances de votre ordinateur. Pendant le chargement, envisagez de limiter les activités gourmandes en mémoire comme le streaming. Vous pouvez aussi essayer de charger par lots."
-      ],
       "Calendar side panel": [
         "Panneau latéral du calendrier"
       ],
@@ -3048,6 +3045,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuer à utiliser ${ DRIVE_APP_NAME } et déverrouiller le disque plus tard"
+      ],
+      "Country code": [
+        "Indicatif du pays"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -3210,6 +3210,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Les dossiers que vous synchronisez depuis votre ordinateur apparaissent ici."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
@@ -3544,6 +3547,9 @@
       "Shared link failed to be loaded": [
         "Le lien partagé n'a pas pu être chargé."
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "La signature ne peut pas être certifiée en raison d'une erreur de réseau, veuillez réessayer plus tard."
+      ],
       "Signature check will be ignored": [
         "La vérification de signature sera ignorée."
       ],
@@ -3877,8 +3883,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Nombre d'accès"
+      "# of downloads": [
+        "# de téléchargements"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
@@ -4618,9 +4624,6 @@
       "File or folder is missing a name": [
         "Il manque un nom au fichier ou au dossier."
       ],
-      "Item failed to be verified": [
-        "L'élément n'a pas pu être vérifié."
-      ],
       "Link failed to be loaded": [
         "Le lien n'a pas pu être chargé."
       ],
@@ -5358,8 +5361,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Nombre d'accès"
+      "# of downloads": [
+        "# de téléchargements"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } membre",
@@ -5807,6 +5810,9 @@
       ],
       "Uploaded by": [
         "Chargé par"
+      ],
+      "Uploading a large file or folder": [
+        "Chargement d'un fichier ou d'un dossier volumineux"
       ],
       "View contacts": [
         "Afficher les contacts"

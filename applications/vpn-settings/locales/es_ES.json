@@ -478,7 +478,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Problema de la aplicación"
+        "Problema con la aplicación"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -1477,13 +1477,13 @@
         "Código incorrecto o no válido"
       ],
       "Domain not available, try again later": [
-        "Dominio no disponible, inténtelo de nuevo más tarde"
+        "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
       "Email is not valid": [
-        "El correo no es válido"
+        "El correo no es válido."
       ],
       "Enter 6 digits": [
-        "Introduce 6 dígitos"
+        "Introduce 6 dígitos."
       ],
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
@@ -1492,7 +1492,7 @@
         "Si el tiempo se ha acabado en tu televisor, haz clic en Actualizar en tu televisor e introduce tu código de nuevo."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciales de acceso incorrectas. Inténtalo de nuevo."
+        "Credenciales de inicio de sesión incorrectas. Inténtalo de nuevo."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Contraseña de buzón incorrecta. Inténtalo de nuevo."
@@ -1522,13 +1522,13 @@
         "El titular de la tarjeta es obligatorio"
       ],
       "Not a valid number": [
-        "No es un número válido"
+        "No es un número válido."
       ],
       "Organization not recognized. Try again.": [
         "Organización no reconocida - inténtalo de nuevo."
       ],
       "Passwords do not match": [
-        "Las contraseñas no coinciden"
+        "Las contraseñas no coinciden."
       ],
       "Payment process cancelled": [
         "El proceso de pago ha sido cancelado"
@@ -1585,7 +1585,7 @@
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is required": [
-        "Este campo es obligatorio"
+        "Este campo es obligatorio."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
@@ -1614,7 +1614,7 @@
         "Error: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Lo sentimos, se ha producido un error."
+        "Se ha producido un error."
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } o verifica tu conexión."
@@ -1623,7 +1623,7 @@
         "Se ha producido un error. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Se ha detectado un problema al conectarte a ${ BRAND_NAME }."
+        "Se ha producido un problema al conectarte a ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "También puedes ${ refresh } o intentarlo de nuevo más tarde."
@@ -1636,7 +1636,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "No se ha seleccionado ninguna imagen"
+        "Ninguna imagen seleccionada"
       ]
     },
     "Feature": {
@@ -1832,7 +1832,7 @@
         "Manual"
       ],
       "No verification method available": [
-        "No hay ningún método de verificación disponible"
+        "No hay ningún método de verificación disponible."
       ],
       "SMS": [
         "SMS"
@@ -1959,6 +1959,9 @@
       "Continue anyway?": [
         "¿Continuar de todos modos?"
       ],
+      "Country code": [
+        "Código de país"
+      ],
       "Creating your account": [
         "Creando tu cuenta"
       ],
@@ -1984,7 +1987,7 @@
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo donde quieras que vayas."
       ],
       "Each code can only be used once": [
-        "Cada código únicamente puede ser usado una vez."
+        "Cada código puede usarse solo una vez."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
@@ -2005,7 +2008,7 @@
         "Introduce la nueva contraseña para ${ userName }."
       ],
       "Enter the code from your authenticator app": [
-        "Introduce el código de tu aplicación de autenticación"
+        "Introduce el código de tu aplicación de autenticación."
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Introduce el código enviado a tu número de teléfono ${ phone }."
@@ -2104,7 +2107,7 @@
         "Instala un archivo de configuración de Servidor para conectarte a un servidor específico en el país de tu elección."
       ],
       "Internet connection lost": [
-        "Se ha perdido la conexión a Internet"
+        "Se ha perdido la conexión a internet."
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
@@ -2128,7 +2131,7 @@
         "Cargando ${ appName }"
       ],
       "Loading preview": [
-        "Cargando previsualización"
+        "Cargando vista previa"
       ],
       "Loading...": [
         "Cargando..."
@@ -2218,7 +2221,7 @@
         "Se requiere suscripción Plus o Visionary"
       ],
       "Preview": [
-        "Previsualizar"
+        "Vista previa"
       ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
@@ -2239,7 +2242,7 @@
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
+        "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
@@ -2260,10 +2263,10 @@
         "Carga del servidor"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos"
+        "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
       ],
       "Session timed out": [
-        "El tiempo de la sesión ha expirado"
+        "El tiempo de la sesión ha expirado."
       ],
       "Setting up your Drive": [
         "Configurando tu Drive"
@@ -2380,10 +2383,10 @@
         "Cambios no guardados"
       ],
       "Unsupported file": [
-        "Fichero no soportado"
+        "Archivo no admitido"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial"
+        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
@@ -2464,7 +2467,7 @@
         "Ya tienes una cuenta gratuita"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualmente está conectado como ${ user.Name } (${ user.Email })."
+        "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Puedes personalizar y descargar tus facturas con fines de contabilidad."
@@ -2730,7 +2733,7 @@
         "Código"
       ],
       "Code is 6 digits without spaces": [
-        "El código es de 6 dígitos sin espacios"
+        "El código es de 6 dígitos sin espacios."
       ],
       "Config to connect to ${ serverName }": [
         "Configurar para conectarse a ${ serverName }"
@@ -3089,7 +3092,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Hay una nueva versión de ${ appName } disponible. ${ reloadButton }."
+        "Una versión nueva de ${ appName } está disponible. ${ reloadButton }."
       ]
     },
     "Monetary unit": {
@@ -3846,7 +3849,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Una forma de contactar contigo"
+        "Una forma de contactarte"
       ],
       "Add gift code": [
         "Añadir código promocional"
@@ -4385,7 +4388,7 @@
         "Fecha final"
       ],
       "Enter your password": [
-        "Introduce tu contraseña"
+        "Introduce tu contraseña."
       ],
       "Error": [
         "Error"
@@ -4436,7 +4439,7 @@
         "No hay ningún método de recuperación"
       ],
       "Open actions dropdown": [
-        "Abrir acciones desplegables"
+        "Abrir lista desplegable de acciones"
       ],
       "Open help menu": [
         "Abrir el menú de ayuda"
@@ -4598,7 +4601,7 @@
         "Tu plan actual"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
-        "Tu prueba gratuita de Mail Plus termina el ${ textDate }"
+        "Tu prueba gratuita de Mail Plus termina el ${ textDate }."
       ],
       "Your plan": [
         "Tu plan"
@@ -4723,13 +4726,13 @@
         "Ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Los informes no están cifrados de extremo a extremo, no envíes ninguna información confidencial."
+        "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "La configuración de la fecha y la hora de tu dispositivo no están sincronizadas. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Desafortunadamente, no estamos en línea en este momento. Complete el siguiente formulario para describir su problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
+        "Desafortunadamente, no estamos en línea en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Tu periodo de prueba gratuito acaba el ${ textDate }. ${ action }"

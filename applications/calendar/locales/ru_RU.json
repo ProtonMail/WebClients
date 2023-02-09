@@ -2457,7 +2457,7 @@
         "Это имя ярлыка недоступно. Пожалуйста, выберите другое имя."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Доверенные ключи недействительны для отправки"
@@ -2475,7 +2475,7 @@
         "Нельзя отправить письмо более чем 100 получателям"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Нельзя отправить визитные карточки более чем 10 контактов"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
@@ -3392,6 +3392,9 @@
       ],
       "Close this screen to exit.": [
         "Закройте этот экран, чтобы выйти."
+      ],
+      "Country code": [
+        "Код страны"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Создать ${ calendarsToBeCreated } новый календарь",

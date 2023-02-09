@@ -2457,7 +2457,7 @@
         "Nazwa etykiety nie jest dostępna. Wpisz inną nazwę."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Zaufane klucze nie są przeznaczone do wysyłania wiadomości"
@@ -2475,7 +2475,7 @@
         "Nie możesz wysłać wiadomości do ponad 100 odbiorców"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Jednocześnie możesz wysłać maksymalnie 10 plików vCard"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Osiągnięto maksymalną liczbę osobistych kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
@@ -3396,6 +3396,9 @@
       "Close this screen to exit.": [
         "Zamknij te okno, aby wyjść."
       ],
+      "Country code": [
+        "Kod kraju"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Utwórz ${ calendarsToBeCreated } nowy kalendarz",
         "Utwórz ${ calendarsToBeCreated } nowe kalendarze",
@@ -3928,7 +3931,7 @@
     },
     "Info; reset calendar keys modal; part 2": {
       "This is because your password was recently reset without using a recovery method.": [
-        "Spowodowane jest to resetowaniem hasła bez użycia metody odzyskiwania."
+        "Spowodowane jest to zresetowaniem hasła bez użycia metody odzyskiwania."
       ]
     },
     "Info; reset calendar keys modal; part 3": {
@@ -3943,7 +3946,7 @@
     },
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
-        "Możesz w ustawieniach ponownie udostępnić kalendarze."
+        "Możesz ponownie udostępnić kalendarze w ustawieniach."
       ]
     },
     "Input label": {

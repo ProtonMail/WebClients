@@ -1054,7 +1054,7 @@
         "Changer d'abonnement"
       ],
       "Upgrade now": [
-        "Passer à l'abonnement supérieur"
+        "Changer d'abonnement"
       ],
       "Upload picture": [
         "Importer une image"
@@ -3383,7 +3383,7 @@
         "Ce message a déjà été envoyé. Un nouveau brouillon a été enregistré."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Trop de filtres sont actifs. Nous vous invitons à passer à un abonnement payant pour activer plus de filtres."
@@ -3407,7 +3407,7 @@
         "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Vous ne pouvez pas ouvrir plus d'${ maxActiveComposer } fenêtre d'éditeur à la fois.",
@@ -4621,6 +4621,9 @@
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
+      "Country code": [
+        "Indicatif du pays"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
         "Créer ${ calendarsToBeCreated } nouveaux calendriers"
@@ -4823,9 +4826,9 @@
       "Group assignment applied": [
         "L'affectation de groupe a été appliquée."
       ],
-      "Has ${ numAttachments } attachment": [
-        "Avec ${ numAttachments } pièce jointe",
-        "Avec ${ numAttachments } pièces jointes"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Contient ${ numAttachments } pièce jointe (${ numAttachmentsSize })",
+        "Contient ${ numAttachments } pièces jointes (${ numAttachmentsSize })"
       ],
       "here": [
         "ici"

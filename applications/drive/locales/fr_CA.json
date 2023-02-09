@@ -2123,7 +2123,7 @@
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes: _ . -"
@@ -2135,7 +2135,7 @@
         "Vous ne pouvez pas envoyer de courrier à plus de 100 destinataires"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
@@ -2949,9 +2949,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
-      ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Les chargements en masse peuvent réduire les performances de votre ordinateur. Pendant le téléversement, envisagez de limiter les activités gourmandes en mémoire comme le streaming. Vous pouvez aussi essayer de téléverser par lots."
       ],
       "Canceled": [
         "Annulé"
@@ -3793,9 +3790,6 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Nb d'accès"
-      ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
@@ -4515,9 +4509,6 @@
       "File or folder is missing a name": [
         "Il manque un nom au fichier ou au dossier"
       ],
-      "Item failed to be verified": [
-        "L'élément n'a pas pu être vérifié"
-      ],
       "Link failed to be loaded": [
         "Le lien n'a pas pu être chargé"
       ],
@@ -4992,9 +4983,6 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Nb d'accès"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } membre",
         "${ emailsCount } membres"

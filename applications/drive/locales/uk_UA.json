@@ -2168,7 +2168,7 @@
         "Назва мітки недоступна. Оберіть іншу назву."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Спробуйте використовувати лише літери, цифри та символи _.-"
@@ -2180,7 +2180,7 @@
         "Ви не можете надіслати лист понад 100 отримувачам"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Ви не можете надіслати vCards для понад 10 контактів"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
@@ -3118,9 +3118,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Масове завантаження може знизити швидкодію комп’ютера. Спробуйте обмежити дії, які потребують значного обсягу пам’яті, як-от потокове передавання під час завантаження. Або спробуйте завантажувати пакетами."
-      ],
       "Calendar side panel": [
         "Бічна панель календаря"
       ],
@@ -3159,6 +3156,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Продовжити користуватися ${ DRIVE_APP_NAME } та розблокувати сховище згодом"
+      ],
+      "Country code": [
+        "Код країни"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
@@ -3327,6 +3327,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Тут з'являться теки, які ви синхронізуєте з комп'ютера."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Щоб досягти найкращих результатів, уникайте потокової передачі даних і дій, що вимагають багато пам'яті, або розбивайте вивантаження на менші частини."
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -3667,6 +3670,9 @@
       "Shared link failed to be loaded": [
         "Не вдалося завантажити спільне посилання"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Підпис не може бути підтверджений через помилку мережі, будь ласка, спробуйте пізніше."
+      ],
       "Signature check will be ignored": [
         "Перевіркою підпису буде знехтувано"
       ],
@@ -4002,8 +4008,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# доступів"
+      "# of downloads": [
+        "# завантажень"
       ],
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
@@ -4777,9 +4783,6 @@
       "File or folder is missing a name": [
         "Файл чи тека не мають назви"
       ],
-      "Item failed to be verified": [
-        "Не вдалося верифікувати елемент"
-      ],
       "Link failed to be loaded": [
         "Не вдалося завантажити посилання"
       ],
@@ -5320,8 +5323,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# доступів"
+      "# of downloads": [
+        "# завантажень"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } учасник",
@@ -5787,6 +5790,9 @@
       ],
       "Uploaded by": [
         "Вивантажено"
+      ],
+      "Uploading a large file or folder": [
+        "Вивантаження великого файлу або теки"
       ],
       "View contacts": [
         "Переглянути контакти"

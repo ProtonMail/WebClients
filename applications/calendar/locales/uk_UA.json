@@ -2457,7 +2457,7 @@
         "Назва мітки недоступна. Оберіть іншу назву."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Довірені ключі недійсні для надсилання"
@@ -2475,7 +2475,7 @@
         "Ви не можете надіслати лист понад 100 отримувачам"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Ви не можете надіслати vCards для понад 10 контактів"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
@@ -3392,6 +3392,9 @@
       ],
       "Close this screen to exit.": [
         "Закрийте це вікно, щоб вийти."
+      ],
+      "Country code": [
+        "Код країни"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
