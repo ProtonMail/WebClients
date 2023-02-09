@@ -79,3 +79,11 @@ export const Colors = () => {
         </Checkbox>
     );
 };
+
+export const Indeterminate = () => {
+    return (
+        <Checkbox id="Indeterminate" indeterminate>
+            I'm Indeterminate
+        </Checkbox>
+    );
+};
