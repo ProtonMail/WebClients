@@ -2168,7 +2168,7 @@
         "Это имя ярлыка недоступно. Пожалуйста, выберите другое имя."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
@@ -2180,7 +2180,7 @@
         "Нельзя отправить письмо более чем 100 получателям"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Нельзя отправить визитные карточки более чем 10 контактов"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
@@ -3113,9 +3113,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Массовая загрузка может снизить производительность вашего компьютера. \nРассмотрите возможность ограничения операций, требующих большого объема памяти, таких как трансляции во время загрузки. Или попробуйте загружать файлы партиями."
-      ],
       "Calendar side panel": [
         "Боковая панель календаря"
       ],
@@ -3154,6 +3151,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Продолжить использование ${ DRIVE_APP_NAME } и разблокировать хранилище позже"
+      ],
+      "Country code": [
+        "Код страны"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Создать ${ calendarsToBeCreated } новый календарь",
@@ -3322,6 +3322,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Здесь появятся папки, синхронизированные с компьютером."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Для достижения наилучших результатов избегайте просмотра трансляций и действий, требующих большого объема памяти, или разделите загрузку на более мелкие пакеты."
       ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
@@ -3662,6 +3665,9 @@
       "Shared link failed to be loaded": [
         "Сбой при загрузке ссылки для распространения"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
+      ],
       "Signature check will be ignored": [
         "Проверка подписи будет проигнорирована"
       ],
@@ -3997,8 +4003,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Количество обращений"
+      "# of downloads": [
+        "# скачиваний"
       ],
       "${ BRAND_NAME } username": [
         "имя пользователя ${ BRAND_NAME }"
@@ -4771,9 +4777,6 @@
       ],
       "File or folder is missing a name": [
         "У папки или файла отсутствует имя"
-      ],
-      "Item failed to be verified": [
-        "Не удалось проверить элемент"
       ],
       "Link failed to be loaded": [
         "Не удалось загрузить ссылку"
@@ -5562,8 +5565,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Количество доступов"
+      "# of downloads": [
+        "# скачиваний"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } участник",
@@ -6029,6 +6032,9 @@
       ],
       "Uploaded by": [
         "Загружено"
+      ],
+      "Uploading a large file or folder": [
+        "Загрузка большого файла или папки"
       ],
       "View contacts": [
         "Просмотр контактов"

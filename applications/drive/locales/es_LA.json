@@ -2150,7 +2150,7 @@
         "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Intente usando solo letras, números y _.-"
@@ -2162,7 +2162,7 @@
         "No puede enviar un correo a más de 100 destinatarios"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "No puede enviar vCards de más de 10 contactos"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Ha alcanzado el número máximo de calendarios personales. Algunos calendarios podrían no importarse."
@@ -3007,9 +3007,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Las cargas masivas pueden reducir el rendimiento de su computadora. Considere la posibilidad de limitar las actividades que consumen mucha memoria, como la transmisión durante la carga. O intente cargar por lotes."
-      ],
       "Calendar side panel": [
         "Panel lateral de calendario"
       ],
@@ -3048,6 +3045,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuar usando ${ DRIVE_APP_NAME } y desbloquear la unidad después"
+      ],
+      "Country code": [
+        "Código de país"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } calendario nuevo",
@@ -3210,6 +3210,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Las carpetas que sincronice de su computadora aparecerán aquí."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Para mejores resultados, evite las actividades de streaming o demandantes de memoria, o divida la carga de archivos en lotes más pequeños."
       ],
       "Free up some space or add more storage space.": [
         "Libere algo de espacio o añada más espacio de almacenamiento."
@@ -3544,6 +3547,9 @@
       "Shared link failed to be loaded": [
         "Error al cargar el enlace compartido"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "No se pudo validar la firma por problemas de red. Intente de nuevo más tarde."
+      ],
       "Signature check will be ignored": [
         "La verificación de la firma será ignorada"
       ],
@@ -3824,7 +3830,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Clic para más detalles"
+        "Haga clic para más detalle."
       ]
     },
     "Item": {
@@ -3877,8 +3883,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "No. de accesos"
+      "# of downloads": [
+        "# de descargas"
       ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
@@ -4618,9 +4624,6 @@
       "File or folder is missing a name": [
         "Falta el nombre del archivo o carpeta"
       ],
-      "Item failed to be verified": [
-        "Error al verificar el elemento"
-      ],
       "Link failed to be loaded": [
         "Error al cargar el enlace"
       ],
@@ -4786,7 +4789,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para la verificar la firma."
+        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para verificar la firma."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede usarse para verificar la firma."
@@ -5361,8 +5364,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "No. de accesos"
+      "# of downloads": [
+        "# de descargas"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } miembro",
@@ -5810,6 +5813,9 @@
       ],
       "Uploaded by": [
         "Cargado por"
+      ],
+      "Uploading a large file or folder": [
+        "Cargando un archivo grande o carpeta"
       ],
       "View contacts": [
         "Ver contactos"

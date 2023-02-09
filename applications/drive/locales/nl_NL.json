@@ -2147,7 +2147,7 @@
         "Deze labelnaam is niet beschikbaar. Kies een andere naam."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
@@ -2159,7 +2159,7 @@
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "U kunt geen vCards van meer dan 10 contacten verzenden"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "U heeft het maximale aantal persoonlijke agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
@@ -3001,9 +3001,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Massa-uploads verminderen mogelijk de prestaties van uw computer. Overweeg om geheugenintensieve activiteiten zoals streaming te beperken tijdens het uploaden of probeer in te uploaden in partijen."
-      ],
       "Canceled": [
         "Geannuleerd"
       ],
@@ -3201,6 +3198,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Mappen die u synchroniseert vanaf uw computer zullen hier verschijnen."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -3535,6 +3535,9 @@
       "Shared link failed to be loaded": [
         "De gedeelde link kon niet worden geladen"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Handtekening kan niet gecontroleerd worden door een netwerk fout, probeer het later opnieuw."
+      ],
       "Signature check will be ignored": [
         "Handtekeningcontrole zal genegeerd worden"
       ],
@@ -3853,8 +3856,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Aantal weergaven"
+      "# of downloads": [
+        "# downloads"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
@@ -3927,6 +3930,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
+      ],
+      "Colors": [
+        "Kleuren"
       ],
       "Coming soon": [
         "Binnenkort beschikbaar"
@@ -4590,9 +4596,6 @@
       ],
       "File or folder is missing a name": [
         "Bestand of map heeft geen naam"
-      ],
-      "Item failed to be verified": [
-        "Item kon niet worden geverifieerd"
       ],
       "Link failed to be loaded": [
         "Link kon niet geladen worden"
@@ -5319,8 +5322,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Aantal weergaven"
+      "# of downloads": [
+        "# downloads"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } lid",
@@ -5765,6 +5768,9 @@
       ],
       "Uploaded by": [
         "Geüpload door"
+      ],
+      "Uploading a large file or folder": [
+        "Groot bestand of map aan het uploaden"
       ],
       "View contacts": [
         "Contacten weergeven"

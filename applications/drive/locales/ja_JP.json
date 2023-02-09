@@ -1912,6 +1912,9 @@
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
       ],
+      "Contact name is too long": [
+        "連絡先の名前が長すぎます"
+      ],
       "Contact signature not verified": [
         "連絡先の署名が検証されていません"
       ],
@@ -2135,7 +2138,7 @@
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "文字・数字・ _.- のみを使用してみてください"
@@ -2147,7 +2150,7 @@
         "100 人以上の受信者にメールを送信することはできません"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "10 件以上の連絡先の vCard を送信することはできません"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
@@ -2938,9 +2941,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
-      ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "多くのアップロードを一度に行うと、コンピューターの動作が重くなる可能性があります。アップロード中はストリーム等のメモリを多く使用するソフトの使用を控えることをご検討ください。もしくは、ファイルを複数回に分けてアップロードしてください。"
       ],
       "Canceled": [
         "キャンセル"
@@ -3781,9 +3781,6 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "アクセス数"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
       ],
@@ -3855,6 +3852,9 @@
       ],
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
+      ],
+      "Colors": [
+        "色"
       ],
       "Coming soon": [
         "まもなく登場"
@@ -4481,9 +4481,6 @@
       "File or folder is missing a name": [
         "ファイルまたはフォルダーに名前がありません"
       ],
-      "Item failed to be verified": [
-        "アイテムの検証に失敗しました"
-      ],
       "Link failed to be loaded": [
         "リンクの読み込みに失敗しました"
       ],
@@ -4964,9 +4961,6 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "アクセス数"
-      ],
       "${ emailsCount } members": [
         "${ emailsCount } メンバー"
       ],

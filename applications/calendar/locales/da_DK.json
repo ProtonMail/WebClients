@@ -237,6 +237,9 @@
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
       ],
+      "Hide affected calendars": [
+        "Skjul påvirkede kalendere"
+      ],
       "Hide folders": [
         "Skjul mapper"
       ],
@@ -443,6 +446,9 @@
       ],
       "Show advanced PGP settings": [
         "Vis avancerede PGP-indstillinger"
+      ],
+      "Show affected calendars": [
+        "Vis påvirkede kalendere"
       ],
       "Show folders": [
         "Vis mapper"
@@ -2147,6 +2153,9 @@
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
       ],
+      "Contact name is too long": [
+        "Kontaktnavn er for langt"
+      ],
       "Contact signature could not be verified": [
         "Kontaktsignatur kunne ikke bekræftes"
       ],
@@ -2404,7 +2413,7 @@
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
@@ -2422,7 +2431,7 @@
         "Du kan ikke sende en mail til mere end 100 modtagere"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Du kan ikke sende vCards med mere end 10 kontakter"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
@@ -3266,6 +3275,9 @@
       "Close this screen to exit.": [
         "Luk denne skærm for at afslutte."
       ],
+      "Country code": [
+        "Landekode"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Opret ${ calendarsToBeCreated } ny kalender",
         "Opret ${ calendarsToBeCreated } nye kalendere"
@@ -3782,6 +3794,34 @@
         "Klik for detaljer"
       ]
     },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Nogle af dine kalendere vil ikke vise detaljer om tidligere oprettede begivenheder."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Dine kalendere vil ikke vise detaljer om tidligere oprettede begivenheder."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Det skyldes, at din adgangskode for nylig er blevet nulstillet uden at bruge en gendannelsesmetode."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Du kan gendanne dine krypterede data med en gendannelsesfil, gendannelsessætning, eller din gamle adgangskode."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Kalenderdeling blev deaktiveret efter din seneste nulstilling af adgangskode."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Du kan gendele dine kalendere i indstillingerne."
+      ]
+    },
     "Input label": {
       "Access": [
         "Adgang"
@@ -3881,6 +3921,9 @@
       ],
       "Color": [
         "Farve"
+      ],
+      "Colors": [
+        "Farver"
       ],
       "Coming soon": [
         "Kommer snart"
@@ -4223,6 +4266,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Åbn i ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Hvad er en gendannelsesmetode?"
       ]
     },
     "Loading info": {
@@ -5450,6 +5498,9 @@
       "Email settings": [
         "E-mail indstillinger"
       ],
+      "Encrypted event": [
+        "Krypteret begivenhed"
+      ],
       "Enter your password": [
         "Indtast din adgangskode"
       ],
@@ -5556,6 +5607,9 @@
       "Request new code": [
         "Anmod om ny kode"
       ],
+      "Reshare your calendars": [
+        "Gendel dine kalendere"
+      ],
       "Save changes": [
         "Gem ændringer"
       ],
@@ -5657,6 +5711,12 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Vi har låst nogle kalendere for at beskytte dine data"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Vi har låst dine kalendere for at beskytte dine data"
       ],
       "What would you like to import?": [
         "Hvad ønsker du at importere?"

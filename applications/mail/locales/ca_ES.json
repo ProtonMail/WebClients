@@ -3338,7 +3338,7 @@
         "Aquest missatge ja s'ha enviat. S'ha guardat un esborrany nou."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el navegador actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Massa filtres actius. Actualitzeu a un pla de pagament per activar més filtres."
@@ -3362,7 +3362,7 @@
         "No podeu enviar un correu a més de 100 destinataris"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "No podeu enviar vcards de més de 10 contactes"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "No podeu obrir més de ${ maxActiveComposer } finestra d'editor a la vegada",
@@ -4727,10 +4727,6 @@
       ],
       "Group assignment applied": [
         "Assignació de grup aplicada"
-      ],
-      "Has ${ numAttachments } attachment": [
-        "Té ${ numAttachments } fitxer adjunt",
-        "Té ${ numAttachments } fitxers adjunts"
       ],
       "here": [
         "aquí"

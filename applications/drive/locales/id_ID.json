@@ -2141,7 +2141,7 @@
         "Nama label ini tidak dapat digunakan. Mohon pilih nama lain."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Pesan ini terindikasi memiliki tautan yang tidak dapat dibuka dengan benar oleh browser Anda."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
@@ -2153,7 +2153,7 @@
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Anda tidak dapat mengirim vCard ke lebih dari 10 kontak"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Anda telah mencapai batas jumlah kalender personal milik Anda. Sebagian kalender tidak dapat diimpor."
@@ -2958,9 +2958,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
-      ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Mengunggah banyak berkas secara bersamaan dapat menurunkan performa komputer Anda. Cobalah untuk membatasi aktivitas yang membutuhkan banyak memori (seperti streaming) selama proses pengunggahan berlangsung, atau bagi unggahan Anda ke dalam beberapa batch."
       ],
       "Calendar side panel": [
         "Panel samping kalender"
@@ -3822,9 +3819,6 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# akses"
-      ],
       "${ BRAND_NAME } username": [
         "Pengguna ${ BRAND_NAME }"
       ],
@@ -4546,9 +4540,6 @@
       "File or folder is missing a name": [
         "Berkas atau folder belum dinamai"
       ],
-      "Item failed to be verified": [
-        "Item gagal diverifikasi"
-      ],
       "Link failed to be loaded": [
         "Gagal memuat tautan"
       ],
@@ -5029,9 +5020,6 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# akses"
-      ],
       "${ emailsCount } members": [
         "${ emailsCount } anggota"
       ],

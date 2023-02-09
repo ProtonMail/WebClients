@@ -3386,7 +3386,7 @@
         "Bu ileti zaten gönderildi. Yeni bir taslak kaydedildi."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Çok fazla süzgeç etkin. Daha fazla süzgeç etkinleştirebilmek için ücretli bir tarifeye geçin."
@@ -3410,7 +3410,7 @@
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Aynı anda en fazla ${ maxActiveComposer } oluşturucu penceresi açabilirsiniz",
@@ -4624,6 +4624,9 @@
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
+      "Country code": [
+        "Ülke kodu"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } yeni takvim ekle",
         "${ calendarsToBeCreated } yeni takvim ekle"
@@ -4826,9 +4829,9 @@
       "Group assignment applied": [
         "Grup ataması uygulandı"
       ],
-      "Has ${ numAttachments } attachment": [
-        "${ numAttachments } ek dosya var",
-        "${ numAttachments } ek dosya var"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "${ numAttachments } ek dosya var (${ numAttachmentsSize })",
+        "${ numAttachments } ek dosya var (${ numAttachmentsSize })"
       ],
       "here": [
         "buraya"

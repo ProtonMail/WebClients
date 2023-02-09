@@ -586,7 +586,7 @@
         "Utiliza otro término para la búsqueda."
       ],
       "You don't have any contacts.": [
-        "No tienes contactos."
+        "No tienes ningún contacto."
       ],
       "You don't have any groups.": [
         "No tienes ningún grupo."
@@ -644,7 +644,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "Al salir ahora, algunos contactos pueden no ser importados"
+        "Al salir ahora, algunos contactos pueden no ser importados."
       ],
       "By leaving now, some events may not be imported": [
         "Si sales ahora, no se puede importar algunos eventos."
@@ -672,10 +672,10 @@
         "Método no válido"
       ],
       "Unsupported calendar component": [
-        "Componente de calendario no compatible"
+        "Componente de calendario no admitido"
       ],
       "Unsupported event": [
-        "Evento no soportado"
+        "Evento no admitido"
       ]
     },
     "Attendee role": {
@@ -698,7 +698,7 @@
     },
     "Bug category": {
       "Application problem": [
-        "Problema de la aplicación"
+        "Problema con la aplicación"
       ],
       "Bridge problem": [
         "Problema con el Bridge"
@@ -884,31 +884,31 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "No se ha podido descifrar el calendario"
+        "No se ha podido descifrar el calendario."
       ],
       "Calendar is syncing": [
-        "El calendario se está sincronizando"
+        "El calendario se está sincronizando."
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
         "El calendario se está sincronizando: puede tardar varios minutos en mostrar todos sus eventos."
       ],
       "Calendar is too big": [
-        "El calendario es demasiado grande"
+        "El calendario es demasiado grande."
       ],
       "Calendar link is not accessible": [
-        "El enlace del calendario no es accesible"
+        "El enlace del calendario no es accesible."
       ],
       "Calendar link is temporarily inaccessible": [
-        "El enlace del calendario no está accesible temporalmente"
+        "El enlace del calendario está temporalmente inaccesible."
       ],
       "Failed to sync calendar": [
         "Error al sincronizar el calendario"
       ],
       "More than 12 hours passed since last update": [
-        "Han pasado más de 12 horas desde la última actualización"
+        "Han pasado más de 12 horas desde la última actualización."
       ],
       "Unsupported calendar format": [
-        "Formato de calendario no compatible"
+        "Formato de calendario no admitido"
       ]
     },
     "Calendar subscription not synced error; long version": {
@@ -916,7 +916,7 @@
         "El enlace al calendario no es accesible desde fuera del ecosistema del proveedor del calendario."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "El enlace al calendario no está accesible temporalmente. Verifica que el enlace del proveedor del calendario aún es válido."
+        "El enlace al calendario está temporalmente inaccesible. Verifica que el enlace del proveedor del calendario aún es válido."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Han pasado más de 12 horas desde la última actualización — ${ CALENDAR_APP_NAME } intentará actualizar el calendario dentro de unas horas."
@@ -1928,7 +1928,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Utilizar global por defecto (${ defaultValueText })"
+        "Utilizar el valor global por defecto (${ defaultValueText })"
       ]
     },
     "Default signing preference": {
@@ -1948,32 +1948,32 @@
     },
     "Description": {
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Descifrando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, podrás descargar el archivo con todos tus contactos exportados."
+        "Descifrando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, podrás descargar el archivo con todos tus contactos exportados."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Borrando contactos... Esto puede tardar unos minutos. Cuando el proceso haya sido completado podrás cerrar esta ventana."
+        "Borrando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se haya completado, puedes cerrar esta ventana."
+        "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puedes cerrar esta ventana."
+        "Combinando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Usa arrastrar y soltar para clasificar la prioridad entre contactos. Desmarca los contactos que no quieres combinar."
+        "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Puedes marcar para eliminar los contactos que no quieres ni combinar ni mantener. La eliminación solo tendrá lugar después de que el botón de combinar sea pulsado"
+        "Puedes marcar los contactos que no quieres ni combinar ni mantener para eliminarlos. Se eliminarán solo después de que pulses el botón."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2124,13 +2124,13 @@
         "Algunos grupos no tienen contactos: ${ list }"
       ],
       "A group with this name already exists": [
-        "Ya existe un grupo con este nombre"
+        "Ya existe un grupo con este nombre."
       ],
       "Account does not exist": [
         "La cuenta no existe"
       ],
       "Address primary private key not found": [
-        "No se ha encontrado la clave primaria de la dirección"
+        "No se ha encontrado la clave primaria de la dirección."
       ],
       "Already a member of this calendar": [
         "Ya eres miembro de este calendario"
@@ -2145,19 +2145,19 @@
         "Error de autenticación."
       ],
       "Calendar limit reached": [
-        "Se ha alcanzado el límite del calendario"
+        "Se ha alcanzado el límite de calendarios."
       ],
       "Cancellation failed to be sent": [
         "Error al enviar la cancelación"
       ],
       "Contact could not be saved": [
-        "No se ha podido guardar el contacto"
+        "No se ha podido guardar el contacto."
       ],
       "Contact name is too long": [
-        "El nombre del contacto es demasiado largo"
+        "El nombre del contacto es demasiado largo."
       ],
       "Contact signature could not be verified": [
-        "La firma del contacto no ha podido ser verificada"
+        "No se ha podido verificar la firma del contacto."
       ],
       "Contact signature not verified": [
         "Firma del contacto no verificada"
@@ -2174,7 +2174,7 @@
         "Anula la selección de al menos ${ calendarToFixCount } calendarios o"
       ],
       "Domain not available, try again later": [
-        "Dominio no disponible, inténtelo de nuevo más tarde"
+        "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
       "Email address disabled": [
         "Dirección de correo electrónico deshabilitada"
@@ -2186,7 +2186,7 @@
         "Dirección de correo electrónico requerida"
       ],
       "Email is not valid": [
-        "El correo no es válido"
+        "El correo no es válido."
       ],
       "Ends on date cannot be empty": [
         "La fecha final no puede estar vacía."
@@ -2195,7 +2195,7 @@
         "La fecha final debe ser después de la hora inicial."
       ],
       "Enter 6 digits": [
-        "Introduce 6 dígitos"
+        "Introduce 6 dígitos."
       ],
       "Error": [
         "Error"
@@ -2216,7 +2216,7 @@
         "Servidor IMAP requerido"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciales de acceso incorrectas. Inténtalo de nuevo."
+        "Credenciales de inicio de sesión incorrectas. Inténtalo de nuevo."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Contraseña de buzón incorrecta. Inténtalo de nuevo."
@@ -2256,37 +2256,37 @@
         "Combinar al menos ${ calendarToFixCount } calendarios con un calendario ${ BRAND_NAME } existente"
       ],
       "Missing key packet": [
-        "Falta el paquete de claves"
+        "Falta el paquete de claves."
       ],
       "Missing signature": [
-        "No se ha encontrado la firma"
+        "Falta la firma."
       ],
       "Name required": [
         "Nombre requerido"
       ],
       "No calendars found to import": [
-        "No se han encontrado calendarios para importar"
+        "No se han encontrado calendarios para importar."
       ],
       "No contacts found to import": [
-        "No se han encontrado contactos para importar"
+        "No se han encontrado contactos para importar."
       ],
       "No emails found to import - the account does not have an inbox": [
-        "No se encontraron correos para importar - la cuenta no tiene una bandeja de entrada"
+        "No se han encontrado correos para importar. La cuenta no tiene una bandeja de entrada."
       ],
       "No public key for ${ BRAND_NAME } address": [
         "No hay clave pública para esta dirección ${ BRAND_NAME }"
       ],
       "No valid address found": [
-        "No se encontró una dirección válida"
+        "No se ha encontrado una dirección válida."
       ],
       "No WKD key retrieved for user is valid for sending": [
-        "Ninguna clave WKD recuperada para el usuario es válida para el envío"
+        "Ninguna clave WKD recuperada para el usuario es válida para el envío."
       ],
       "Not a ${ BRAND_NAME } account": [
         "No es una cuenta ${ BRAND_NAME }"
       ],
       "Not a valid number": [
-        "No es un número válido"
+        "No es un número válido."
       ],
       "Number of occurrences cannot be empty": [
         "El número de ocurrencias no puede estar vacío"
@@ -2303,7 +2303,7 @@
         "Contraseña requerida"
       ],
       "Passwords do not match": [
-        "Las contraseñas no coinciden"
+        "Las contraseñas no coinciden."
       ],
       "Please create an address first.": [
         "Primero crea una dirección."
@@ -2316,16 +2316,16 @@
         "Puerto requerido"
       ],
       "Primary address key is not decrypted": [
-        "La clave principal no está descifrada"
+        "La clave principal no está descifrada."
       ],
       "Primary address key is not decrypted.": [
         "La clave principal no está descifrada."
       ],
       "Primary key is not valid for sending": [
-        "La clave principal no es válida para realizar el envío"
+        "La clave principal no es válida para el envío."
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
-        "La clave principal recuperada para el usuario ${ BRAND_NAME }, no es válida para envíos."
+        "La clave principal recuperada para el usuario ${ BRAND_NAME } no es válida para envíos."
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinatario duplicado eliminado: ${ joinedRecipients }",
@@ -2344,10 +2344,10 @@
         "Error al verificar la firma"
       ],
       "Some contacts could not be deleted": [
-        "Algunos contactos no se pudieron eliminar"
+        "No se han podido eliminar algunos contactos."
       ],
       "Some groups could not be deleted": [
-        "Algunos grupos no pueden ser eliminados"
+        "No se han podido eliminar algunos grupos."
       ],
       "Some of your folder names are reserved. Please customize the import to edit these names.": [
         "Algunos de tus nombres de carpetas están reservados. Personaliza la importación para editar estos nombres."
@@ -2356,7 +2356,7 @@
         "Algunos de tus nombres de carpetas no están disponibles. Personaliza la importación para editar estos nombres."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Algunos de los nombres de sus carpetas superan el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación para editar estos nombres."
+        "Algunos de los nombres de tus carpetas superan el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personaliza la importación para editar estos nombres."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "Algunos de tus nombres de etiquetas están reservados. Personaliza la importación para editar estos nombres."
@@ -2389,7 +2389,7 @@
         "El nombre de la etiqueta es demasiado largo. Elige un nombre diferente."
       ],
       "The sending key is not valid": [
-        "La clave de envío no es válida"
+        "La clave de envío no es válida."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en tu cuenta externa. Personaliza la importación para eliminar algunas carpetas."
@@ -2401,7 +2401,7 @@
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is required": [
-        "Este campo es obligatorio"
+        "Este campo es obligatorio."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
@@ -2413,7 +2413,7 @@
         "Este nombre de etiqueta no está disponible. Elige un nombre diferente."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje podría contener enlaces que no se pueden abrir correctamente en tu navegador actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
@@ -2428,19 +2428,19 @@
         "Error de validación"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "No puedes enviar un correo a más de 100 destinatarios"
+        "No puedes enviar un correo a más de 100 destinatarios."
       ],
       "You can't send vCards of more than 10 contacts": [
-        "No puedes enviar vCards de más de 10 contactos"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Has alcanzado el número máximo de calendarios personales. No se pudieron importar algunos calendarios."
+        "Has alcanzado el número máximo de calendarios personales. No se han podido importar algunos calendarios."
       ],
       "You must set a name": [
-        "Debes establecer un nombre"
+        "Debes establecer un nombre."
       ],
       "Your import will not be processed.": [
-        "Tu importación no será procesada."
+        "No se procesará tu importación."
       ]
     },
     "Error accepting calendar invitation": {
@@ -2497,7 +2497,7 @@
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Se ha producido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf"
+        "Se ha producido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
@@ -2520,7 +2520,7 @@
         "Calendario"
       ],
       "Calendar time zone not supported": [
-        "No se admite la zona horaria del calendario"
+        "Zona horaria del calendario no admitida"
       ],
       "Component with wrong format": [
         "Componente con formato incorrecto"
@@ -2529,7 +2529,7 @@
         "Zona horaria personalizada"
       ],
       "Edited event not supported": [
-        "Evento editado no soportado"
+        "Evento editado no admitido"
       ],
       "Element": [
         "Elemento"
@@ -2550,7 +2550,7 @@
         "Tiempos flotantes no admitidos"
       ],
       "Free-busy time information": [
-        "Información de disponibilidad por Internet"
+        "Información de disponibilidad"
       ],
       "Invalid event": [
         "Evento no válido"
@@ -2559,22 +2559,22 @@
         "Entrada de diario"
       ],
       "Malformed all-day event": [
-        "Evento de todo el día malformado"
+        "Evento todo el día con formato no válido"
       ],
       "Malformed end time": [
-        "Hora final malformada"
+        "Hora final con formato no válido"
       ],
       "Malformed recurring event": [
-        "Evento recurrente malformado"
+        "Evento recurrente con formato no válido"
       ],
       "Malformed start time": [
-        "Hora inicial malformada"
+        "Hora inicial con formato no válido"
       ],
       "Missing start time": [
-        "Falta la hora inicial"
+        "Falta la hora inicial."
       ],
       "No UID, title or start time": [
-        "No hay UID, título, ni hora de inicio"
+        "Sin UID, título ni hora de inicio"
       ],
       "Non-Gregorian": [
         "No gregoriano"
@@ -2583,10 +2583,10 @@
         "Notificación fuera de límites"
       ],
       "Original recurring event could not be found": [
-        "No se pudo encontrar el evento original recurrente"
+        "No se ha podido encontrar el evento original recurrente."
       ],
       "Recurring event has no occurrences": [
-        "El evento recurrente no tiene ocurrencias"
+        "El evento recurrente no tiene ocurrencias."
       ],
       "Recurring rule not supported": [
         "Regla recurrente no admitida"
@@ -2607,7 +2607,7 @@
         "Desconocido"
       ],
       "Unsupported event": [
-        "Evento no soportado"
+        "Evento no admitido"
       ]
     },
     "Error message": {
@@ -2618,7 +2618,7 @@
         "URL no válida"
       ],
       "Oops, something went wrong": [
-        "Lo sentimos, se ha producido un error."
+        "Se ha producido un error."
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } o verifica tu conexión."
@@ -2627,7 +2627,7 @@
         "Se ha producido un error. Actualiza la página o inténtalo de nuevo más tarde."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Se ha detectado un problema al conectarte a ${ BRAND_NAME }."
+        "Se ha producido un problema al conectarte a ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
         "También puedes ${ refresh } o intentarlo de nuevo más tarde."
@@ -2638,12 +2638,12 @@
     },
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
-        "El nombre y apellido no pueden desmarcarse al mismo tiempo"
+        "El nombre y apellido no pueden desmarcarse al mismo tiempo."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "No se ha seleccionado ninguna imagen"
+        "Ninguna imagen seleccionada"
       ]
     },
     "Error notification when score is missing in user feedback form modal": {
@@ -2669,10 +2669,10 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "El archivo ICS adjunto no ha podido ser descifrado"
+        "El archivo ICS adjunto no ha podido ser descifrado."
       ],
       "Attached ICS file could not be read": [
-        "El archivo ICS adjunto no se ha podido leer"
+        "No se ha podido leer el archivo ICS adjunto."
       ],
       "Invalid invitation": [
         "Invitación no válida"
@@ -2684,31 +2684,31 @@
         "No se ha podido añadir el evento a tu calendario. No se ha enviado ninguna respuesta."
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "No se pudo actualizar el evento en tu calendario. No se envió respuesta"
+        "No se ha podido actualizar el evento en tu calendario. No se ha enviado una respuesta."
       ],
       "Unexpected error": [
         "Error inesperado"
       ],
       "Unsupported invitation": [
-        "Invitación no soportada"
+        "Invitación no admitida"
       ],
       "Unsupported response": [
-        "Respuesta no soportada"
+        "Respuesta no admitida"
       ],
       "We could not cancel the event in your calendar": [
-        "No hemos podido cancelar el evento en tu calendario"
+        "No se ha podido cancelar el evento en tu calendario."
       ],
       "We could not retrieve the event from your calendar": [
-        "No hemos podido recuperar el evento de tu calendario"
+        "No se ha podido recuperar el evento de tu calendario."
       ],
       "We could not update the event in your calendar": [
-        "No hemos podido actualizar el evento en tu calendario"
+        "No se ha podido actualizar el evento en tu calendario."
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Tu respuesta ha sido enviada, pero el evento no ha podido ser añadido a tu calendario"
+        "Tu respuesta ha sido enviada, pero el evento no ha podido ser añadido a tu calendario."
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Su respuesta fue enviada, pero el evento no pudo ser actualizado en su calendario"
+        "Tu respuesta ha sido enviada, pero no se ha podido actualizar el evento en tu calendario."
       ]
     },
     "Event popover close button": {
@@ -2833,7 +2833,7 @@
         "Se han encontrado ${ items.length } sugerencias. Utiliza el teclado para navegar."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Enter para confirmar tu elección, o Escape para cerrar el cuadro de sugerencias."
+        "Utiliza las teclas Arriba y Abajo para acceder y navegar por las sugerencias después de la entrada. Pulsa Entrar para confirmar tu elección o Escape para cerrar el cuadro de sugerencias."
       ]
     },
     "Human verification method": {
@@ -2847,7 +2847,7 @@
         "Manual"
       ],
       "No verification method available": [
-        "No hay ningún método de verificación disponible"
+        "No hay ningún método de verificación disponible."
       ],
       "SMS": [
         "SMS"
@@ -3011,7 +3011,7 @@
     },
     "Import error emphasis": {
       "not": [
-        "no"
+        "No"
       ]
     },
     "Import instructions": {
@@ -3107,14 +3107,14 @@
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } de ${ totalContacts } contactos no serán importados. Haz clic para obtener más detalles"
+        "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haz clic para obtener más detalles."
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Despliega para ver los detalles.",
         "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Despliega para ver los detalles."
       ],
       "No contact can be imported. Click for details": [
-        "No se puede importar ningún contacto. Haz clic para obtener detalles"
+        "No se puede importar ningún contacto. Haz clic para obtener detalles."
       ],
       "No event can be imported. Expand for details.": [
         "No se puede importar ningún evento. Despliega para ver los detalles."
@@ -3278,6 +3278,9 @@
       "Close this screen to exit.": [
         "Cierra esta pantalla para salir."
       ],
+      "Country code": [
+        "Código de país"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } calendario nuevo",
         "Crear ${ calendarsToBeCreated } calendarios nuevos"
@@ -3313,7 +3316,7 @@
         "Personalización anual"
       ],
       "Daily": [
-        "Diariamente"
+        "Diario"
       ],
       "Discard changes?": [
         "¿Descartar los cambios?"
@@ -3325,13 +3328,13 @@
         "Clave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código únicamente puede ser usado una vez."
+        "Cada código puede usarse solo una vez."
       ],
       "Emails are automatically signed": [
         "Los correos electrónicos son firmados automáticamente."
       ],
       "Enter the code from your authenticator app": [
-        "Introduce el código de tu aplicación de autenticación"
+        "Introduce el código de tu aplicación de autenticación."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduce las credenciales de la cuenta de correo electrónico desde la que quieres importar."
@@ -3398,13 +3401,13 @@
         "Importa tus correos electrónicos, calendarios y contactos de otro servicio a ${ BRAND_NAME }. Te guiaremos en cada paso del proceso y cifraremos tus datos a medida que se trasladen. Te damos la bienvenida al mundo de la privacidad."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
+        "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
       ],
       "Internet connection lost": [
-        "Se ha perdido la conexión a Internet"
+        "Se ha perdido la conexión a internet."
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Se ha perdido la conexión a Internet. Verifica la conectividad de tu dispositivo."
@@ -3452,7 +3455,7 @@
         "Gestionar calendarios"
       ],
       "Merged": [
-        "Fusionado"
+        "Combinado"
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
@@ -3534,7 +3537,7 @@
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
+        "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
       "Removed participants will be notified.": [
         "Se notificará a los participantes eliminados."
@@ -3546,13 +3549,13 @@
         "Selecciona lo que quieres importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecciona los calendarios que quieres importar. Se creará un nuevo calendario para cada calendario importado hasta el límite de 20 calendarios."
+        "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado hasta el límite de 20 calendarios."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos"
+        "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
       ],
       "Session timed out": [
-        "El tiempo de la sesión ha expirado"
+        "El tiempo de la sesión ha expirado."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "La configuración de PGP te permite enviar correos electrónicos cifrados de extremo a extremo con un usuario que no sea ${ BRAND_NAME } y que utilice un servicio compatible con PGP."
@@ -3642,10 +3645,10 @@
         "Actualizar evento recurrente"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial"
+        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
       ],
       "We'll notify you when the import is done.": [
-        "Le avisaremos cuando la importación esté terminada."
+        "Te avisaremos cuando la importación esté terminada."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un nuevo código de verificación a ${ strong }."
@@ -3699,10 +3702,10 @@
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualmente está conectado como ${ user.Name } (${ user.Email })."
+        "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "También puedes fusionar calendarios importados con calendarios ${ BRAND_NAME } existentes."
+        "También puedes combinar calendarios importados con calendarios ${ BRAND_NAME } existentes."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Puedes comprobar el progreso ${ importProgressLink }."
@@ -3791,7 +3794,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Clic para más detalles"
+        "Haz clic para más detalles."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -3863,7 +3866,7 @@
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(No disponible temporalmente. Vuelva a comprobarlo más tarde.)"
+        "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
       ],
       "Add email address": [
         "Añadir correo electrónico"
@@ -3917,7 +3920,7 @@
         "Ciudad"
       ],
       "Code is 6 digits without spaces": [
-        "El código es de 6 dígitos sin espacios"
+        "El código es de 6 dígitos sin espacios."
       ],
       "Color": [
         "Color"
@@ -4025,7 +4028,7 @@
         "¿Cómo describirías tu experiencia con el nuevo ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
-        "Entiendo el riesgo"
+        "Entiendo el riesgo."
       ],
       "Import all messages": [
         "Importar todos los mensajes"
@@ -4076,7 +4079,7 @@
         "Administrar etiquetas"
       ],
       "Move to Archive": [
-        "Mover al Archivo"
+        "Mover al archivo"
       ],
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
@@ -4275,7 +4278,7 @@
     },
     "Loading info": {
       "Almost there": [
-        "Ya casi está"
+        "¡Ya casi está!"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Cantidad de calendarios creados: ${ createdCalendars } de ${ calendarsToBeCreated }"
@@ -4284,16 +4287,16 @@
         "Conectando con tu proveedor de correo electrónico"
       ],
       "Creating new calendars": [
-        "Creando calendarios nuevos"
+        "Creando calendarios"
       ],
       "Gathering your data": [
-        "Recogida de datos"
+        "Recopilando tus datos"
       ],
       "We're gathering your data from your provider": [
-        "Recogemos los datos de su proveedor"
+        "Estamos recopilando datos de tu proveedor."
       ],
       "Your import is starting": [
-        "Tu importación está empezando"
+        "Tu importación está empezando."
       ]
     },
     "Mail import summary": {
@@ -4327,7 +4330,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Hay una nueva versión de ${ appName } disponible. ${ reloadButton }."
+        "Una versión nueva de ${ appName } está disponible. ${ reloadButton }."
       ]
     },
     "MIME type": {
@@ -4756,7 +4759,7 @@
         "Todos los eventos"
       ],
       "Create new group": [
-        "Crear nuevo grupo"
+        "Crear grupo"
       ],
       "Custom": [
         "Personalizado"
@@ -4788,7 +4791,7 @@
         "Meses"
       ],
       "No parent folder": [
-        "No hay carpeta superior"
+        "No hay carpeta superior."
       ],
       "This and future events": [
         "Este y futuros eventos"
@@ -4830,15 +4833,15 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "Esta clave no se puede utilizar para el cifrado"
+        "No se puede utilizar esta clave para el cifrado."
       ]
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } ha marcado esta clave como comprometida. Esta clave no puede ser usada ni para cifrado ni para verificación de firma."
+        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para verificar la firma."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } ha marcado esta clave como obsoleta. La clave solo puede ser usada para verificación de firma."
+        "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede usarse para verificar la firma."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Te recomendamos que consideres esta clave \"no fiable\"."
@@ -4851,7 +4854,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Una forma de contactar contigo"
+        "Una forma de contactarte"
       ],
       "Add a calendar description": [
         "Añadir una descripción del calendario"
@@ -4872,7 +4875,7 @@
         "Añadir título"
       ],
       "E.g., ": [
-        "Ej., "
+        "P. ej., "
       ],
       "Filter groups": [
         "Filtrar grupos"
@@ -4908,7 +4911,7 @@
         "Seleccionar"
       ],
       "Start typing an email address": [
-        "Comienza a escribir una dirección de correo electrónico"
+        "Comienza a escribir una dirección de correo electrónico."
       ]
     },
     "Placeholder for contact group name": {
@@ -5440,7 +5443,7 @@
         "Crear contacto"
       ],
       "Create new group": [
-        "Crear nuevo grupo"
+        "Crear grupo"
       ],
       "Create public link": [
         "Crear enlace público"
@@ -5452,10 +5455,10 @@
         "Personalizar y confirmar"
       ],
       "Customize calendar import": [
-        "Personaliza la importación del calendario"
+        "Personalizar la importación de tu calendario"
       ],
       "Customize your mail import": [
-        "Personaliza la importación del correo"
+        "Personalizar la importación de tu correo"
       ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
@@ -5502,10 +5505,10 @@
         "Evento cifrado"
       ],
       "Enter your password": [
-        "Introduce tu contraseña"
+        "Introduce tu contraseña."
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Ingresa tu nombre de usuario o tu dirección de correo de ${ MAIL_APP_NAME }"
+        "Introduce tu nombre de usuario o tu dirección de correo de ${ MAIL_APP_NAME }."
       ],
       "Error": [
         "Error"
@@ -5560,7 +5563,7 @@
         "Minicalendario"
       ],
       "Open actions dropdown": [
-        "Abrir acciones desplegables"
+        "Abrir lista desplegable de acciones"
       ],
       "Open help menu": [
         "Abrir el menú de ayuda"
@@ -5620,7 +5623,7 @@
         "Seleccionar un tema"
       ],
       "Select action to take on contact group": [
-        "Selecciona la acción a realizar en el grupo de contactos"
+        "Selecciona la acción a realizar en el grupo de contactos."
       ],
       "Select contact group": [
         "Seleccionar grupo de contactos"
@@ -5680,7 +5683,7 @@
         "Mostrar zonas horarias para las horas inicial y final del evento"
       ],
       "Sign in and grant access": [
-        "Iniciar sesión y otorgar acceso"
+        "Iniciar sesión y permitir acceso"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -5731,7 +5734,7 @@
         "Enlace a tu calendario"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
-        "Tu prueba gratuita de Mail Plus termina el ${ textDate }"
+        "Tu prueba gratuita de Mail Plus termina el ${ textDate }."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5756,19 +5759,19 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automático indica que formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
+        "Automático: indica que formato se utiliza en el editor para enviar a este usuario. Texto plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
       "Customize import to reduce the number of folders": [
-        "Personaliza la importación para reducir el número de carpetas"
+        "Personaliza la importación para reducir el número de carpetas."
       ],
       "Customize import to reduce the number of labels": [
-        "Personaliza la importación para reducir el número de etiquetas"
+        "Personaliza la importación para reducir el número de etiquetas."
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Firmar correos digitalmente ayuda a autenticar que los mensajes son enviados por ti"
+        "Cuando firmas tus correos digitalmente ayuda a autenticar que has enviado esos mensajes."
       ],
       "Each imported email will have this label": [
-        "Cada correo electrónico importado tendrá esta etiqueta"
+        "Cada correo electrónico importado tendrá esta etiqueta."
       ],
       "Edit folder names": [
         "Editar nombres de carpetas"
@@ -5792,7 +5795,7 @@
         "Ocultar panel lateral"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que PGP/Inline obliga a mensajes de texto plano"
+        "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que el formato PGP/Inline te obliga a enviar mensajes de texto plano."
       ],
       "Show side panel": [
         "Mostrar panel lateral"
@@ -5804,10 +5807,10 @@
         "La importación comenzará con los mensajes más recientes."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Sube una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
+        "Carga una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico."
       ],
       "You do not have any contacts to export": [
-        "No tienes ningún contacto para exportar"
+        "No tienes ningún contacto para exportar."
       ]
     },
     "Validation": {
@@ -5822,10 +5825,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        "Haga clic para reproducir el vídeo"
+        "Haz clic para reproducir el vídeo."
       ],
       "Replay video": [
-        "Repetición del vídeo"
+        "Reproducir video"
       ]
     },
     "View event button tooltip": {
@@ -5835,7 +5838,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } fusionará todas las carpetas con el mismo nombre. Para evitarlo, cambia los nombres antes de la importación."
+        "${ BRAND_NAME } combinará todas las carpetas con el mismo nombre. Para evitarlo, cambia los nombres antes de la importación."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tantos datos como sea posible, comenzando con tus mensajes más recientes."
@@ -5858,7 +5861,7 @@
         "¿Estás seguro de que quieres eliminar permanentemente este contacto?"
       ],
       "Contacts could not be merged": [
-        "No se pudieron combinar los contactos"
+        "No se ha podido combinar los contactos."
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recuerdas tu contraseña, es imposible volver a activar tu clave. Podemos ayudarte a desactivar la alerta pero en el proceso perderás permanentemente el acceso a todos los datos cifrados con esa clave."
@@ -5867,13 +5870,13 @@
         "El chat en vivo es una función prémium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Los informes no están cifrados de extremo a extremo, no envíes ninguna información confidencial."
+        "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."
       ],
       "Skip verification?": [
         "¿Omitir verificación?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Algunos de los contactos a combinar tienen errores. Revísalos individualmente"
+        "Algunos de los contactos a combinar tienen errores. Verifícalos individualmente"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Los datos de contacto están dañados y no se pueden mostrar."
@@ -5900,7 +5903,7 @@
         "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Considera la posibilidad de personalizar tu importación."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Desafortunadamente, no estamos en línea en este momento. Complete el siguiente formulario para describir su problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
+        "Desafortunadamente, no estamos en línea en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "No se ha podido verificar el servidor de correo. Si confías en él, puedes omitir esta verificación."

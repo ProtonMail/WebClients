@@ -86,6 +86,9 @@
       "Archive": [
         "Archivovat"
       ],
+      "As Scheduled": [
+        "Dle plánu"
+      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -2902,14 +2905,23 @@
       "No labels": [
         "Bez štítků"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logo a znaménko plus"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Odemkněte si vlastní plánování zpráv a další výhody navýšením tarifu."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
+      ],
+      "When do you want your message to be sent?": [
+        "Kdy chcete, aby byla vaše zpráva odeslána?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
@@ -3413,7 +3425,7 @@
         "Tato zpráva již byla odeslána. Nový koncept byl uložen."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Byl dosažen maximální počet aktivních filtrů. Přejděte prosím na placený tarif, abyste mohli aktivovat více filtrů."
@@ -3437,7 +3449,7 @@
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Není možné odeslat vCard s více než 10 kontakty"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Nelze otevřít více než ${ maxActiveComposer } okno editoru",
@@ -4767,6 +4779,9 @@
       "Copied to clipboard": [
         "Zkopírováno do schránky"
       ],
+      "Country code": [
+        "Kód země"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Vytvořit ${ calendarsToBeCreated } nový kalendář",
         "Vytvořit ${ calendarsToBeCreated } nové kalendáře",
@@ -4983,11 +4998,11 @@
       "Group assignment applied": [
         "Přiřazení skupiny bylo aplikováno"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Má ${ numAttachments } přílohu",
-        "Má ${ numAttachments } přílohy",
-        "Má ${ numAttachments } příloh",
-        "Má ${ numAttachments } příloh"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Obsahuje ${ numAttachments } přílohu (${ numAttachmentsSize })",
+        "Obsahuje ${ numAttachments } přílohy (${ numAttachmentsSize })",
+        "Obsahuje ${ numAttachments } příloh (${ numAttachmentsSize })",
+        "Obsahuje ${ numAttachments } příloh (${ numAttachmentsSize })"
       ],
       "here": [
         "zde"
@@ -7161,6 +7176,15 @@
       "Custom email domains": [
         "Vlastní e-mailové domény"
       ],
+      "Hide My Email aliases": [
+        "Skrýt moje e-mailové adresy"
+      ],
+      "Schedule messages at any time": [
+        "Plánování zpráv v libovolném čase"
+      ],
+      "Search message content": [
+        "Hledat v obsahu zpráv"
+      ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
       ],
@@ -7169,6 +7193,14 @@
       ],
       "Up to 500 GB of storage": [
         "Až 500 GB úložiště"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Získejte neomezený počet aliasů skrze SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -8662,6 +8694,9 @@
       ],
       "Sending original message": [
         "Odesílání původní zprávy"
+      ],
+      "Set your own schedule": [
+        "Nastavte si vlastní plán"
       ],
       "Settings": [
         "Nastavení"
