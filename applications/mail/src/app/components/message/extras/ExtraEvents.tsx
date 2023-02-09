@@ -24,7 +24,7 @@ import {
     getCanCreateCalendar,
     getDefaultCalendar,
     getIsCalendarDisabled,
-    getMaxUserCalendarsDisabled,
+    getWritableCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
 import {
@@ -116,21 +116,30 @@ const ExtraEvents = ({ message }: Props) => {
             }
             const run = async () => {
                 const getCalData = async () => {
+                    const isFreeUser = !user.hasPaidMail;
                     const { calendars, calendarUserSettings } = await getOrCreatePersonalCalendarsAndSettings({
                         api,
                         callEventManager: call,
                         addresses,
+                        isFreeUser,
                         getAddressKeys,
                         getCalendars,
                         getCalendarUserSettings,
                     });
                     const defaultCalendar = getDefaultCalendar(calendars, calendarUserSettings.DefaultCalendarID);
-                    const disabledCalendars = calendars.filter(unary(getIsCalendarDisabled));
-                    const canCreateCalendar = getCanCreateCalendar(calendars, !user.hasPaidMail);
-                    const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, !user.hasPaidMail);
+                    const writableCalendars = getWritableCalendars(calendars);
+                    const disabledCalendars = writableCalendars.filter(unary(getIsCalendarDisabled));
+                    const canCreateCalendar = getCanCreateCalendar({
+                        calendars,
+                        writableCalendars,
+                        disabledCalendars,
+                        isFreeUser,
+                    });
+                    const maxUserCalendarsDisabled =
+                        !canCreateCalendar && writableCalendars.length === disabledCalendars.length;
 
                     return {
-                        calendars,
+                        calendars: writableCalendars,
                         defaultCalendar,
                         canCreateCalendar,
                         maxUserCalendarsDisabled,

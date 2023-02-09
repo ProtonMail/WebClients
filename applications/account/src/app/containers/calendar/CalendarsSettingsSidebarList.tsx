@@ -18,7 +18,7 @@ import {
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
-import { getIsOwnedCalendar, getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getIsCalendarSubpage } from '@proton/shared/lib/calendar/settingsRoutes';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
@@ -40,11 +40,6 @@ const CalendarSettingsSidebarListItem = ({ sectionPath, calendar }: CalendarSett
                     <span title={Name} className="text-ellipsis">
                         {Name}
                     </span>
-                    {!getIsOwnedCalendar(calendar) && (
-                        <div className="flex-item-noshrink ml0-25">
-                            <Icon name="users" />
-                        </div>
-                    )}
                 </SidebarListItemContent>
             </SidebarListItemLink>
         </SidebarListItem>
