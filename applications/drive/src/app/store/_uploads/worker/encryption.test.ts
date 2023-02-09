@@ -31,6 +31,13 @@ describe('block generator', () => {
         };
     };
 
+    // This is obviously not a good or complete mock implementation
+    // but should be sufficient for our implementation
+    const mockHasher: any = {
+        process: noop,
+        finish: () => ({ result: new Uint8Array([1, 2, 3, 4]) }),
+    };
+
     it('should generate all file blocks', async () => {
         const lastBlockSize = 123;
         const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE + lastBlockSize)], 'foo.txt');
@@ -44,7 +51,8 @@ describe('block generator', () => {
             privateKey,
             sessionKey,
             undefined,
-            noop
+            noop,
+            mockHasher
         );
         const blocks = await asyncGeneratorToArray(generator);
         expect(blocks.length).toBe(3);
@@ -68,7 +76,8 @@ describe('block generator', () => {
             privateKey,
             sessionKey,
             undefined,
-            noop
+            noop,
+            mockHasher
         );
         const blocks = await asyncGeneratorToArray(generator);
         expect(blocks.length).toBe(3);
@@ -100,7 +109,8 @@ describe('block generator', () => {
             privateKey,
             sessionKey,
             'alpha',
-            notifySentry
+            notifySentry,
+            mockHasher
         );
         const blocks = asyncGeneratorToArray(generator);
 
@@ -141,7 +151,8 @@ describe('block generator', () => {
             privateKey,
             sessionKey,
             'alpha',
-            notifySentry
+            notifySentry,
+            mockHasher
         );
         const blocks = await asyncGeneratorToArray(generator);
 
@@ -156,5 +167,37 @@ describe('block generator', () => {
         // Make sure we logged the error
         expect(mockCalled).toBe(true);
         expect(notifySentry).toBeCalled();
+    });
+
+    it('should call the hasher correctly', async () => {
+        const hasher: any = {
+            process: jest.fn(),
+            finish: jest.fn(() => {
+                return new Uint8Array([0, 0, 0, 0]);
+            }),
+        };
+
+        const lastBlockSize = 123;
+        const file = new File(['x'.repeat(2 * FILE_CHUNK_SIZE + lastBlockSize)], 'foo.txt');
+        const thumbnailData = undefined;
+        const { addressPrivateKey, privateKey, sessionKey } = await setupPromise();
+
+        const generator = generateBlocks(
+            file,
+            thumbnailData,
+            addressPrivateKey,
+            privateKey,
+            sessionKey,
+            undefined,
+            noop,
+            hasher
+        );
+
+        const blocks = await asyncGeneratorToArray(generator);
+        expect(blocks.length).toBe(3);
+        // it should have processed the same amount as the blocks
+        expect(hasher.process).toHaveBeenCalledTimes(3);
+        // the finish function is called by the worker at a higher level
+        expect(hasher.finish).not.toHaveBeenCalled();
     });
 });
