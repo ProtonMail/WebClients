@@ -1,18 +1,31 @@
 import { c } from 'ttag';
 
+import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
+import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
-import { Info } from '../../../components';
+import { Info, Toggle } from '../../../components';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
-import AutoDetectPrimaryTimezoneToggle from './AutoDetectPrimaryTimezoneToggle';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;
 }
 
 const AutoDetectPrimaryTimezoneSection = ({ calendarUserSettings }: Props) => {
+    const api = useApi();
+    const { call } = useEventManager();
+    const { createNotification } = useNotifications();
+    const [loadingAutoDetect, withLoadingAutoDetect] = useLoading();
+    const checked = !!calendarUserSettings.AutoDetectPrimaryTimezone;
+
+    const handleChange = async (data: Partial<CalendarUserSettings>) => {
+        await api(updateCalendarUserSettings(data));
+        await call();
+        createNotification({ text: c('Success').t`Preference saved` });
+    };
+
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
@@ -29,7 +42,19 @@ const AutoDetectPrimaryTimezoneSection = ({ calendarUserSettings }: Props) => {
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight className="pt0-5 flex flex-align-items-center">
-                <AutoDetectPrimaryTimezoneToggle calendarUserSettings={calendarUserSettings} />
+                <Toggle
+                    id="autodetect-primary-timezone"
+                    aria-describedby="autodetect-primary-timezone"
+                    loading={loadingAutoDetect}
+                    checked={checked}
+                    onChange={({ target }) =>
+                        withLoadingAutoDetect(
+                            handleChange({
+                                AutoDetectPrimaryTimezone: +target.checked,
+                            })
+                        )
+                    }
+                />
             </SettingsLayoutRight>
         </SettingsLayout>
     );
