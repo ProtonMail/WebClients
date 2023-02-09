@@ -1,8 +1,11 @@
+import { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
+
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { Environment } from '@proton/shared/lib/environment/helper';
 import { generateContentKeys, generateNodeKeys, sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
-import { ecryptFileExtendedAttributes } from '../../_links';
+import { encryptFileExtendedAttributes } from '../../_links';
 import { EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
 import { ThumbnailData } from '../thumbnail';
 import { getErrorString } from '../utils';
@@ -70,6 +73,8 @@ async function start(
     sessionKey: SessionKey,
     environment: Environment | undefined
 ) {
+    const hashInstance = new Sha1();
+
     buffer
         .feedEncryptedBlocks(
             generateEncryptedBlocks(
@@ -79,7 +84,8 @@ async function start(
                 privateKey,
                 sessionKey,
                 environment,
-                (e) => uploadWorker.postNotifySentry(e)
+                (e) => uploadWorker.postNotifySentry(e),
+                hashInstance
             )
         )
         .catch((err) => uploadWorker.postError(getErrorString(err)));
@@ -91,9 +97,11 @@ async function start(
     const uploadingBlocksGenerator = buffer.generateUploadingBlocks();
     const finish = async () => {
         const fileHash = buffer.hash;
+        const sha1Digest = hashInstance.finish().result;
+
         const [signature, xattr] = await Promise.all([
             signMessage(fileHash, [addressPrivateKey]),
-            ecryptFileExtendedAttributes(
+            encryptFileExtendedAttributes(
                 file,
                 privateKey,
                 addressPrivateKey,
@@ -101,6 +109,11 @@ async function start(
                     ? {
                           width: thumbnailData.originalWidth,
                           height: thumbnailData.originalHeight,
+                      }
+                    : undefined,
+                sha1Digest
+                    ? {
+                          sha1: arrayToHexString(sha1Digest),
                       }
                     : undefined
             ),

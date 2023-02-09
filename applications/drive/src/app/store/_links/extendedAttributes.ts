@@ -7,6 +7,9 @@ interface ExtendedAttributes {
         ModificationTime?: string;
         Size?: number;
         BlockSizes?: number[];
+        Digests?: {
+            SHA1?: string;
+        };
     };
     Media?: {
         Width: number;
@@ -19,6 +22,9 @@ interface ParsedExtendedAttributes {
         ModificationTime?: number;
         Size?: number;
         BlockSizes?: number[];
+        Digests?: {
+            SHA1?: string;
+        };
     };
     Media?: {
         Width: number;
@@ -43,16 +49,19 @@ export function createFolderExtendedAttributes(modificationTime: Date): Extended
     };
 }
 
-export async function ecryptFileExtendedAttributes(
+export async function encryptFileExtendedAttributes(
     file: File,
     nodePrivateKey: PrivateKeyReference,
     addressPrivateKey: PrivateKeyReference,
     media?: {
         width: number;
         height: number;
+    },
+    digests?: {
+        sha1: string;
     }
 ) {
-    const xattr = createFileExtendedAttributes(file, media);
+    const xattr = createFileExtendedAttributes(file, media, digests);
     return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
 }
 
@@ -61,16 +70,25 @@ export function createFileExtendedAttributes(
     media?: {
         width: number;
         height: number;
+    },
+    digests?: {
+        sha1: string;
     }
 ): ExtendedAttributes {
     const blockSizes = new Array(Math.floor(file.size / FILE_CHUNK_SIZE));
     blockSizes.fill(FILE_CHUNK_SIZE);
     blockSizes.push(file.size % FILE_CHUNK_SIZE);
+
     return {
         Common: {
             ModificationTime: dateToIsoString(new Date(file.lastModified)),
             Size: file.size,
             BlockSizes: blockSizes,
+            Digests: digests
+                ? {
+                      SHA1: digests.sha1,
+                  }
+                : undefined,
         },
         Media: media
             ? {
@@ -112,7 +130,7 @@ export async function decryptExtendedAttributes(
     };
 }
 
-export function parseExtendedAttributes(xattrString: string) {
+export function parseExtendedAttributes(xattrString: string): ParsedExtendedAttributes {
     let xattr = {};
     try {
         xattr = JSON.parse(xattrString);
@@ -124,6 +142,7 @@ export function parseExtendedAttributes(xattrString: string) {
             ModificationTime: parseModificationTime(xattr),
             Size: parseSize(xattr),
             BlockSizes: parseBlockSizes(xattr),
+            Digests: parseDigests(xattr),
         },
         Media: parseMedia(xattr),
     };
@@ -194,6 +213,23 @@ function parseMedia(xattr: any): { Width: number; Height: number } | undefined {
     return {
         Width: width,
         Height: height,
+    };
+}
+
+function parseDigests(xattr: any): { SHA1: string } | undefined {
+    const digests = xattr?.Common?.Digests;
+    if (digests === undefined || digests.SHA1 === undefined) {
+        return undefined;
+    }
+
+    const sha1 = digests.SHA1;
+    if (typeof sha1 !== 'string') {
+        console.warn(`XAttr digest SHA1 "${sha1}" is not valid`);
+        return undefined;
+    }
+
+    return {
+        SHA1: sha1,
     };
 }
 
