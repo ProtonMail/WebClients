@@ -186,6 +186,41 @@ describe('extended attrbiutes', () => {
                     },
                 },
             ],
+            [
+                '{"Common": {"Digests": {}}',
+                {
+                    Common: {
+                        ModificationTime: undefined,
+                        Size: undefined,
+                        BlockSizes: undefined,
+                        Digests: undefined,
+                    },
+                },
+            ],
+            [
+                '{"Common": {"Digests": {"SHA1": null}}}',
+                {
+                    Common: {
+                        ModificationTime: undefined,
+                        Size: undefined,
+                        BlockSizes: undefined,
+                        Digests: undefined,
+                    },
+                },
+            ],
+            [
+                '{"Common": {"Digests": {"SHA1": "abcdef"}}}',
+                {
+                    Common: {
+                        ModificationTime: undefined,
+                        Size: undefined,
+                        BlockSizes: undefined,
+                        Digests: {
+                            SHA1: 'abcdef',
+                        },
+                    },
+                },
+            ],
         ];
         testCases.forEach(([input, expectedAttributes]) => {
             const xattrs = parseExtendedAttributes(input);
