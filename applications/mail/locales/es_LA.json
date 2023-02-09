@@ -3383,7 +3383,7 @@
         "Este mensaje ya fue enviado. Se guardó un borrador nuevo."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Demasiados filtros activos. Actualice a un plan de pago para activar más filtros."
@@ -3407,7 +3407,7 @@
         "No puede enviar un correo a más de 100 destinatarios"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "No puede enviar vCards de más de 10 contactos"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "No puede abrir más de ${ maxActiveComposer } ventana de compositor a la vez",
@@ -4621,6 +4621,9 @@
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
+      "Country code": [
+        "Código de país"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } calendario nuevo",
         "Crear ${ calendarsToBeCreated } calendarios nuevos"
@@ -4823,9 +4826,9 @@
       "Group assignment applied": [
         "Asignación de grupo aplicada"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Tiene ${ numAttachments } adjunto",
-        "Tiene ${ numAttachments } adjuntos"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Tiene ${ numAttachments } adjunto (${ numAttachmentsSize })",
+        "Tiene ${ numAttachments } adjuntos (${ numAttachmentsSize })"
       ],
       "here": [
         "aquí"
@@ -5693,7 +5696,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Clic para más detalles"
+        "Haga clic para más detalle."
       ]
     },
     "Key badge": {
@@ -7124,7 +7127,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para la verificar la firma."
+        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para verificar la firma."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede usarse para verificar la firma."

@@ -3203,7 +3203,7 @@
         "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves confiadas no son válidas para enviar"
@@ -4744,6 +4744,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Al continuar se conectará su cuenta de ${ BRAND_NAME } a ${ name }."
       ],
+      "Country code": [
+        "Código de país"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } calendario nuevo",
         "Crear ${ calendarsToBeCreated } calendarios nuevos"
@@ -6177,7 +6180,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Clic para más detalles"
+        "Haga clic para más detalle."
       ]
     },
     "Info when deleting payment method": {

@@ -2159,7 +2159,7 @@
         "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
@@ -2171,7 +2171,7 @@
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Nu puteți trimite cărți de vizită („vCard”) la mai mult de 10 persoane de contact."
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
@@ -3060,9 +3060,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Încărcările în masă pot reduce performanța computerului. Luați în considerare limitarea activităților cu consum de memorie, cum ar fi redarea transmisiilor în flux în timpul încărcării. Sau încercați să încărcați în mai multe loturi."
-      ],
       "Calendar side panel": [
         "Panou lateral calendar"
       ],
@@ -3101,6 +3098,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuare utilizare ${ DRIVE_APP_NAME } și deblocare unitate mai târziu"
+      ],
+      "Country code": [
+        "Cod țară"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",
@@ -3937,9 +3937,6 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Nr. de accesări"
-      ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
@@ -4695,9 +4692,6 @@
       "File or folder is missing a name": [
         "Fișier sau folder fără nume."
       ],
-      "Item failed to be verified": [
-        "Elementul nu a putut fi verificat."
-      ],
       "Link failed to be loaded": [
         "Legătura nu s-a putut încărca."
       ],
@@ -5219,9 +5213,6 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Nr. de accesări"
-      ],
       "${ emailsCount } member": [
         "Un membru",
         "${ emailsCount } membri",

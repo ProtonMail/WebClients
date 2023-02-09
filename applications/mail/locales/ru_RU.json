@@ -3425,7 +3425,7 @@
         "Это сообщение уже было отправлено. Сохранён новый черновик."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Слишком много активных фильтров. Пожалуйста, улучшите до платного тарифа, чтобы активировать больше фильтров."
@@ -3449,7 +3449,7 @@
         "Нельзя отправить письмо более чем 100 получателям"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Нельзя отправить визитные карточки более чем 10 контактов"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Вы не можете открыть одновременно более ${ maxActiveComposer } окна редактора",
@@ -4779,6 +4779,9 @@
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
       ],
+      "Country code": [
+        "Код страны"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Создать ${ calendarsToBeCreated } новый календарь",
         "Создать ${ calendarsToBeCreated } новых календаря",
@@ -4995,11 +4998,11 @@
       "Group assignment applied": [
         "Группа применена"
       ],
-      "Has ${ numAttachments } attachment": [
-        "${ numAttachments } вложение",
-        "${ numAttachments } вложения",
-        "${ numAttachments } вложений",
-        "${ numAttachments } вложений"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Есть ${ numAttachments } вложение (${ numAttachmentsSize })",
+        "Есть ${ numAttachments } вложения (${ numAttachmentsSize })",
+        "Есть ${ numAttachments } вложений (${ numAttachmentsSize })",
+        "Есть ${ numAttachments } вложений (${ numAttachmentsSize })"
       ],
       "here": [
         "здесь"

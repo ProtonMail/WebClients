@@ -3380,7 +3380,7 @@
         "Esta mensagem já foi enviada. Um novo rascunho foi salvo."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Muitos filtros ativos. Por favor, atualize para um plano pago para ativar mais filtros."
@@ -3404,7 +3404,7 @@
         "Você não pode enviar um e-mail para mais de 100 destinatários"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Você não pode enviar vCards de mais de 10 contatos"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Você não pode abrir mais de ${ maxActiveComposer } janela do compositor por vez",
@@ -4623,6 +4623,9 @@
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
+      "Country code": [
+        "Código do país"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Criar ${ calendarsToBeCreated } novo calendário",
         "Criar ${ calendarsToBeCreated } novos calendários"
@@ -4824,10 +4827,6 @@
       ],
       "Group assignment applied": [
         "Atribuição de grupo aplicada"
-      ],
-      "Has ${ numAttachments } attachment": [
-        "Contém ${ numAttachments } anexo",
-        "Contém ${ numAttachments } anexos"
       ],
       "here": [
         "aqui"

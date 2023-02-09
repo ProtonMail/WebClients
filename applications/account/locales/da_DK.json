@@ -3178,7 +3178,7 @@
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
@@ -3834,6 +3834,9 @@
       ],
       "Actions": [
         "Handlinger"
+      ],
+      "App version": [
+        "App-version"
       ],
       "Event": [
         "Begivenhed"
@@ -4527,8 +4530,14 @@
       "Already used": [
         "Allerede anvendt"
       ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey logo"
+      ],
       "Amount below minimum (${ amount }).": [
         "Beløb under minimum (${ amount })."
+      ],
+      "An error occurred while communicating with the extension": [
+        "En fejl opstod under kommunikationen med udvidelsen"
       ],
       "and": [
         "og"
@@ -4665,6 +4674,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "At fortsætte vil forbinde din ${ BRAND_NAME }-konto til ${ name }."
       ],
+      "Country code": [
+        "Landekode"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Opret ${ calendarsToBeCreated } ny kalender",
         "Opret ${ calendarsToBeCreated } nye kalendere"
@@ -4728,6 +4740,9 @@
       ],
       "Delete link?": [
         "Slet link?"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy logo"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke kunne logge ind eller dekryptere dine beskeder."
@@ -4801,6 +4816,9 @@
       ],
       "Enable this address to join this calendar": [
         "Aktiver denne adresse for at deltage i denne kalender"
+      ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "Aktiver TLS eller SSL på den eksterne service, hvis det er understøttet."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Hvis du aktiverer gendannelse ved hjælp af en sætning igen, genereres der en ny gendannelsessætning."
@@ -5115,6 +5133,9 @@
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Angiv manuelt disse oplysninger i din to-faktor-godkendelsesenhed for at oprette din konto. ${ switchButton }."
+      ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode logo"
       ],
       "Member": [
         "Medlem"
@@ -5434,6 +5455,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "SMTP tillader tredjeparts services eller enheder at sende emails igennem ${ MAIL_APP_NAME }. Det er en funktion tilgængelig for udvalgte virksomhedsbrugere. Send venligst en email til ${ emailLink } for at bede om adgang."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "SMTP tillader tredjeparts services eller enheder at sende emails igennem ${ MAIL_APP_NAME }. For at bruge denne funktion, skal du starte med at generer en ny token."
+      ],
       "Some keys successfully reactivated": [
         "Nogle nøgler er genaktiveret med succes"
       ],
@@ -5626,6 +5653,9 @@
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "for at bruge ${ toAppName } og alle ${ BRAND_NAME }-adresser"
       ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "For at bruge ${ toAppName }, skal du bruge en ${ MAIL_APP_NAME } adresse."
+      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "For at fungere korrekt skal hvert filter som minimum indeholde et navn og et gyldigt Sieve-script. Du kan ${ link }."
       ],
@@ -5704,6 +5734,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Brug følgende legitimationsoplysninger, når du opretter forbindelse til ${ VPN_APP_NAME }-servere uden applikation. Eksempler på brug omfatter: Tunnelblick på macOS, OpenVPN på GNU/Linux."
       ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "Brug den valgte e-mailadresse som SMTP-brugernavn i den eksterne tjeneste, og det genererede token som SMTP-adgangskode."
+      ],
       "Verification can take a few minutes.": [
         "Bekærftelsen kan tage et par minutter."
       ],
@@ -5721,6 +5754,9 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure logo"
       ],
       "Warning:": [
         "Advarsel:"
@@ -5863,6 +5899,9 @@
       ],
       "You have no saved payment methods.": [
         "Du har ingen gemte betalingsmetoder."
+      ],
+      "You may now start using the extension": [
+        "Du kan nu bruge udvidelsen"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
         "Du skal aktivere din organisations private nøgle med den backup-organisationsnøgleadgangskode, som din organisationsadministrator har givet dig."
@@ -6578,6 +6617,9 @@
       "Color": [
         "Farve"
       ],
+      "Colors": [
+        "Farver"
+      ],
       "Coming soon": [
         "Kommer snart"
       ],
@@ -7204,6 +7246,9 @@
       ],
       "What happened?": [
         "Hvad skete der?"
+      ],
+      "What is the main reason you are canceling?": [
+        "Hvad er den primære årsag til, at du annullerer?"
       ],
       "What is the main reason you are deleting your account?": [
         "Hvad er hovedårsagen til, at du sletter din konto?"
@@ -9281,6 +9326,9 @@
       ],
       "Sessions revoked": [
         "Sessioner tilbagekaldt"
+      ],
+      "SMTP token deleted": [
+        "SMTP-token slettet"
       ],
       "SPF value copied to clipboard": [
         "SPF-værdi kopieret til udklipsholder"
