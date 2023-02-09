@@ -7,8 +7,6 @@ import {
     AppsDropdown,
     DropdownMenu,
     DropdownMenuButton,
-    FeatureCode,
-    Href,
     Icon,
     Sidebar,
     SidebarList,
@@ -17,7 +15,6 @@ import {
     SidebarPrimaryButton,
     SimpleDropdown,
     SimpleSidebarListItemHeader,
-    Spotlight,
     Tooltip,
     useApi,
     useCalendarSubscribeFeature,
@@ -25,10 +22,7 @@ import {
     useLoading,
     useModalState,
     useNotifications,
-    useSpotlightOnFeature,
-    useSpotlightShow,
     useUser,
-    useWelcomeFlags,
 } from '@proton/components';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
@@ -41,7 +35,6 @@ import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasU
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import partition from '@proton/utils/partition';
@@ -53,7 +46,6 @@ export interface CalendarSidebarProps {
     addresses: Address[];
     calendars: VisualCalendar[];
     calendarUserSettings: CalendarUserSettings;
-    isNarrow?: boolean;
     expanded?: boolean;
     logo?: ReactNode;
     miniCalendar: ReactNode;
@@ -67,7 +59,6 @@ const CalendarSidebar = ({
     calendars,
     calendarUserSettings,
     logo,
-    isNarrow,
     expanded = false,
     onToggleExpand,
     miniCalendar,
@@ -77,7 +68,6 @@ const CalendarSidebar = ({
     const { call } = useEventManager();
     const api = useApi();
     const [user] = useUser();
-    const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { enabled, unavailable } = useCalendarSubscribeFeature();
 
     const [loadingAction, withLoadingAction] = useLoading();
@@ -98,19 +88,6 @@ const CalendarSidebar = ({
     }, [calendars]);
 
     const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(otherCalendars);
-
-    const canShowSubscribedSpotlights = !isWelcomeFlow && enabled && !unavailable && !isNarrow;
-    const canShowSubscribedCalendarsSpotlight = canShowSubscribedSpotlights && !otherCalendars.length;
-    const {
-        show: showSubscribedCalendars,
-        onDisplayed: onSubscribedCalendarsSpotlightDisplayed,
-        onClose: onCloseSubscribedRemindersSpotlight,
-    } = useSpotlightOnFeature(FeatureCode.SpotlightSubscribedCalendars, canShowSubscribedCalendarsSpotlight, {
-        alpha: Date.UTC(2021, 7, 5, 12),
-        beta: Date.UTC(2021, 7, 5, 12),
-        default: Date.UTC(2022, 9, 5, 12),
-    });
-    const shouldShowSubscribedCalendarsSpotlight = useSpotlightShow(showSubscribedCalendars);
 
     const { isPersonalCalendarsLimitReached, isSubscribedCalendarsLimitReached } = getHasUserReachedCalendarsLimit({
         calendars,
@@ -176,60 +153,39 @@ const CalendarSidebar = ({
                 right={
                     <div className="flex flex-nowrap flex-align-items-center pr0-75">
                         {enabled ? (
-                            <Spotlight
-                                show={shouldShowSubscribedCalendarsSpotlight}
-                                onDisplayed={onSubscribedCalendarsSpotlightDisplayed}
-                                type="new"
-                                content={
-                                    <>
-                                        <div className="text-lg text-bold mb0-25">{c('Spotlight')
-                                            .t`Subscribe to other calendars`}</div>
-                                        <p className="m0">
-                                            {c('Spotlight')
-                                                .t`You can subscribe to external calendars and read their events.`}{' '}
-                                            <Href url={getKnowledgeBaseUrl('/subscribe-to-external-calendar')}>
-                                                {c('Link').t`Learn more`}
-                                            </Href>
-                                        </p>
-                                    </>
-                                }
-                                anchorRef={dropdownRef}
-                            >
-                                <Tooltip title={addCalendarText}>
-                                    <SimpleDropdown
-                                        as="button"
-                                        type="button"
-                                        hasCaret={false}
-                                        className="navigation-link-header-group-control flex"
-                                        content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
-                                        onClick={onCloseSubscribedRemindersSpotlight}
-                                        ref={dropdownRef}
-                                    >
-                                        <DropdownMenu>
-                                            <DropdownMenuButton
-                                                className="text-left"
-                                                onClick={() => handleCreatePersonalCalendar()}
-                                            >
-                                                {c('Action').t`Create calendar`}
-                                            </DropdownMenuButton>
-                                            <DropdownMenuButton
-                                                className="text-left"
-                                                onClick={() =>
-                                                    unavailable
-                                                        ? createNotification({
-                                                              type: 'error',
-                                                              text: c('Subscribed calendar feature unavailable error')
-                                                                  .t`Subscribing to a calendar is unavailable at the moment`,
-                                                          })
-                                                        : handleCreateSubscribedCalendar()
-                                                }
-                                            >
-                                                {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
-                                            </DropdownMenuButton>
-                                        </DropdownMenu>
-                                    </SimpleDropdown>
-                                </Tooltip>
-                            </Spotlight>
+                            <Tooltip title={addCalendarText}>
+                                <SimpleDropdown
+                                    as="button"
+                                    type="button"
+                                    hasCaret={false}
+                                    className="navigation-link-header-group-control flex"
+                                    content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
+                                    ref={dropdownRef}
+                                >
+                                    <DropdownMenu>
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={() => handleCreatePersonalCalendar()}
+                                        >
+                                            {c('Action').t`Create calendar`}
+                                        </DropdownMenuButton>
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={() =>
+                                                unavailable
+                                                    ? createNotification({
+                                                          type: 'error',
+                                                          text: c('Subscribed calendar feature unavailable error')
+                                                              .t`Subscribing to a calendar is unavailable at the moment`,
+                                                      })
+                                                    : handleCreateSubscribedCalendar()
+                                            }
+                                        >
+                                            {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
+                                        </DropdownMenuButton>
+                                    </DropdownMenu>
+                                </SimpleDropdown>
+                            </Tooltip>
                         ) : (
                             <Button
                                 shape="ghost"
