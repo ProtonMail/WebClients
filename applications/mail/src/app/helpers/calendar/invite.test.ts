@@ -870,4 +870,59 @@ END:VCALENDAR`;
             expect(vevent).toEqual(localizedVevent('Asia/Seoul', setup.hashUid));
         });
     });
+
+    describe('getSupportedEventInvitation should throw', () => {
+        const generateVcalSetup = async ({
+            method = ICAL_METHOD.REQUEST,
+            primaryTimezone,
+            uid,
+        }: {
+            method?: ICAL_METHOD;
+            xWrTimezone?: string;
+            vtimezonesTzids?: string[];
+            primaryTimezone: string;
+            uid?: string;
+        }) => {
+            const vcal = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+METHOD:${method}
+BEGIN:VEVENT
+ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
+ S-ACTION;RSVP=TRUE:mailto:testme@pm.me
+ATTENDEE;CN="testKrt";CUTYPE=INDIVIDUAL;EMAIL="aGmailOne@gmail.co
+ m";PARTSTAT=ACCEPTED;ROLE=CHAIR:mailto:aGmailOne@gmail.com
+DTSTART:20200915T090000
+DTEND:20200915T100000
+ORGANIZER;CN="testKrt":mailto:aGmailOne@gmail.com
+${uid ? `UID:${uid}` : ''}
+DTSTAMP:20200821T081914Z
+SEQUENCE:1
+SUMMARY:Testing something
+RRULE:FREQ=DAILY;INTERVAL=2;COUNT=5
+END:VEVENT
+END:VCALENDAR`;
+            const parsedVcal = parse(vcal) as VcalVcalendar;
+
+            return {
+                vcalComponent: parsedVcal,
+                message: { Time: Math.round(Date.now() / 1000) } as Message,
+                icsBinaryString: vcal,
+                icsFileName: 'test.ics',
+                primaryTimezone,
+                hashUid: await generateVeventHashUID(vcal, uid),
+            };
+        };
+
+        test('when invitations do not have UID', async () => {
+            await expect(
+                getSupportedEventInvitation(
+                    await generateVcalSetup({
+                        method: ICAL_METHOD.REQUEST,
+                        primaryTimezone: 'Asia/Seoul',
+                    })
+                )
+            ).rejects.toThrowError('Invalid invitation');
+        });
+    });
 });
