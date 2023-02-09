@@ -1,5 +1,3 @@
-import { PLANS } from '../constants';
-
 export interface MyLocationResponse {
     IP: string;
     Lat: number;
@@ -8,16 +6,37 @@ export interface MyLocationResponse {
     ISP: string;
 }
 
-export interface VPNCountry {
-    count: number;
+export interface VPNServersCount {
+    Capacity: number;
+    Countries: number;
+    Servers: number;
 }
 
-export interface VPNCountries {
-    free_vpn: VPNCountry;
-    [PLANS.VPN]: VPNCountry;
+export interface VPNServersCountData {
+    free: {
+        countries: number;
+        servers: number;
+    };
+    paid: {
+        countries: number;
+        servers: number;
+    };
 }
 
-export interface VPNServers {
-    free_vpn: number;
-    [PLANS.VPN]: number;
+export interface VPNServersCounts {
+    free: VPNServersCount;
+    paid: VPNServersCount;
+}
+
+export interface VPNLogicalsCount {
+    Counts: { 2: number; 0: number };
+}
+
+export interface VPNCountryCount {
+    MaxTier: 0 | 1 | 2;
+    Count: number;
+}
+
+export interface VPNCountriesCount {
+    Counts: VPNCountryCount[];
 }

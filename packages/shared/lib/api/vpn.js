@@ -10,11 +10,6 @@ export const queryVPNLogicalServerLoads = () => ({
     url: 'vpn/loads',
 });
 
-export const queryVPNServerCount = () => ({
-    method: 'get',
-    url: 'vpn/servers-count',
-});
-
 export const queryVPNCountriesCount = () => ({
     method: 'get',
     url: 'vpn/countries/count',
@@ -25,9 +20,22 @@ export const queryVPNLogicalServerInfo = () => ({
     url: 'vpn/logicals',
 });
 
+export const queryVPNLogicalServerInfoCount = () => ({
+    method: 'get',
+    url: 'vpn/logicals/count',
+    params: {
+        GroupBy: 'Tier',
+    },
+});
+
 export const queryVPNServerInfo = () => ({
     method: 'get',
     url: 'vpn/servers',
+});
+
+export const queryVPNServersCount = () => ({
+    method: 'get',
+    url: 'vpn/v1/servers-count',
 });
 
 export const getLocation = () => ({
