@@ -58,7 +58,6 @@ export enum FeatureCode {
     ReferralProgramSpotlight = 'ReferralProgramSpotlight',
     SeenReferralModal = 'SeenReferralModal',
     ReferralExplanationOpened = 'ReferralExplanationOpened',
-    SpotlightSubscribedCalendars = 'SpotlightSubscribedCalendars',
     PaymentsDisabled = 'PaymentsDisabled',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     MailServiceWorker = 'MailServiceWorker',
