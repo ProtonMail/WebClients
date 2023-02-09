@@ -61,7 +61,7 @@ const ContactMergeViewContent = ({ contact, loading: loadingContact, beMergedIDs
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
                 <Button color="norm" disabled={!contact} onClick={onSubmit}>
                     {c('Action').t`Merge`}
                 </Button>
