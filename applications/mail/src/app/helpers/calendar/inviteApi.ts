@@ -21,6 +21,7 @@ import {
     getVisualCalendars,
     getWritableCalendars,
 } from '@proton/shared/lib/calendar/calendar';
+import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import {
     CALENDAR_TYPE,
     ICAL_ATTENDEE_STATUS,
@@ -115,6 +116,7 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
     api,
     callEventManager,
     addresses,
+    isFreeUser,
     getAddressKeys,
     getCalendars,
     getCalendarUserSettings,
@@ -122,6 +124,7 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
     api: Api;
     callEventManager: () => Promise<void>;
     addresses: Address[];
+    isFreeUser: boolean;
     getAddressKeys: GetAddressKeys;
     getCalendars: () => Promise<CalendarWithOwnMembers[] | undefined>;
     getCalendarUserSettings: () => Promise<CalendarUserSettings>;
@@ -131,8 +134,11 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
         getCalendars(),
         getCalendarUserSettings(),
     ]);
-    let calendars = getWritableCalendars(getVisualCalendars(calendarsWithOwnMembers));
-    if (!calendars.length) {
+    let calendars = getVisualCalendars(calendarsWithOwnMembers);
+
+    const { isCalendarsLimitReached } = getHasUserReachedCalendarsLimit(calendars, isFreeUser);
+
+    if (!getWritableCalendars(calendars).length && !isCalendarsLimitReached) {
         // create a calendar automatically
         try {
             const { calendar, updatedCalendarUserSettings } = await setupCalendarHelper({

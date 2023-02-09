@@ -41,7 +41,7 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
 
             {!selectedCalendar && (
                 <Alert className="mb1" type="warning">
-                    {c('Info').t`You have no personal calendars to export.`}
+                    {c('Info').t`You have no calendars to export.`}
                 </Alert>
             )}
 

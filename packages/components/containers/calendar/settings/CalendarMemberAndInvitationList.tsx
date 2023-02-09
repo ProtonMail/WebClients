@@ -57,7 +57,7 @@ const CalendarMemberAndInvitationList = ({
     return (
         <>
             {members.length + invitations.length >= MAX_CALENDAR_MEMBERS && (
-                <Alert type="warning" className="mb0-75">
+                <Alert type="info" className="mb0-75">
                     {c('Maximum shared calendar members reached alert').ngettext(
                         msgid`You have reached the maximum of ${MAX_CALENDAR_MEMBERS} member.`,
                         `You have reached the maximum of ${MAX_CALENDAR_MEMBERS} members.`,

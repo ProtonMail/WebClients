@@ -22,14 +22,12 @@ import { getSectionPath } from '@proton/components/containers/layout/helper';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
-    getIsPersonalCalendar,
+    getPersonalCalendars,
     getVisualCalendars,
-    sortCalendars,
+    groupCalendarsByTaxonomy,
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import partition from '@proton/utils/partition';
 
 import { getCalendarAppRoutes } from './routes';
 
@@ -59,29 +57,34 @@ const CalendarSettingsRouter = ({
 
     const [calendars, loadingCalendars] = useCalendars();
 
-    const { visualCalendars, personalCalendars, otherCalendars, allCalendarIDs } = useMemo(() => {
-        const visualCalendars = sortCalendars(getVisualCalendars(calendars || []));
-        const [personalCalendars, otherCalendars] = partition<VisualCalendar>(
-            visualCalendars || [],
-            getIsPersonalCalendar
-        );
+    const {
+        allCalendarIDs,
+        visualCalendars,
+        personalCalendars,
+        ownedPersonalCalendars: myCalendars,
+        sharedCalendars,
+        subscribedCalendars: subscribedCalendarsWithoutParams,
+        unknownCalendars,
+    } = useMemo(() => {
+        const visualCalendars = getVisualCalendars(calendars || []);
+        const personalCalendars = getPersonalCalendars(visualCalendars);
 
         return {
+            allCalendarIDs: visualCalendars.map(({ ID }) => ID),
             visualCalendars,
             personalCalendars,
-            otherCalendars,
-            allCalendarIDs: visualCalendars.map(({ ID }) => ID),
+            ...groupCalendarsByTaxonomy(visualCalendars),
         };
-    }, [calendars, memoizedAddresses]);
+    }, [calendars]);
     const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(
-        otherCalendars,
+        subscribedCalendarsWithoutParams,
         loadingCalendars || loadingAddresses
     );
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
 
-    const defaultCalendar = getDefaultCalendar(visualCalendars, calendarUserSettings.DefaultCalendarID);
+    const defaultCalendar = getDefaultCalendar(myCalendars, calendarUserSettings.DefaultCalendarID);
 
     useCalendarsInfoListener(allCalendarIDs);
 
@@ -119,8 +122,11 @@ const CalendarSettingsRouter = ({
                     config={calendarsRoute}
                     user={user}
                     addresses={memoizedAddresses}
-                    personalCalendars={personalCalendars}
+                    calendars={visualCalendars}
+                    myCalendars={myCalendars}
                     subscribedCalendars={subscribedCalendars}
+                    sharedCalendars={sharedCalendars}
+                    unknownCalendars={unknownCalendars}
                     defaultCalendar={defaultCalendar}
                     calendarSubscribeUnavailable={calendarSubscribeUnavailable}
                 />

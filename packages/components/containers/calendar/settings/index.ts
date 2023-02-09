@@ -1,7 +1,7 @@
 export { default as CalendarImportSection } from './CalendarImportSection';
 export { default as CalendarExportSection } from './CalendarExportSection';
-export { default as PersonalCalendarsSection } from './PersonalCalendarsSection';
-export { default as SubscribedCalendarsSection } from './SubscribedCalendarsSection';
+export { default as PersonalCalendarsSection } from './MyCalendarsSection';
+export { default as OtherCalendarsSection } from './OtherCalendarsSection';
 export { default as CalendarTimeSection } from './CalendarTimeSection';
 export { default as SecondaryTimezoneSection } from './SecondaryTimezoneSection';
 export { default as CalendarLayoutSection } from './CalendarLayoutSection';

@@ -29,15 +29,13 @@ import { CalendarModal } from '@proton/components/containers/calendar/calendarMo
 import SubscribedCalendarModal from '@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { updateMember } from '@proton/shared/lib/api/calendars';
-import { getIsPersonalCalendar, sortCalendars } from '@proton/shared/lib/calendar/calendar';
-import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
-import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit';
+import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import partition from '@proton/utils/partition';
 
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 import CalendarSidebarVersion from './CalendarSidebarVersion';
@@ -75,24 +73,32 @@ const CalendarSidebar = ({
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
     const [subscribedCalendarModal, setIsSubscribedCalendarModalOpen, renderSubscribedCalendarModal] = useModalState();
-    const [calendarType, setCalendarType] = useState(CALENDAR_TYPE.PERSONAL);
     const [isLimitReachedModal, setIsLimitReachedModalOpen, renderIsLimitReachedModal] = useModalState();
 
     const headerRef = useRef(null);
     const dropdownRef = useRef(null);
 
-    const [personalCalendars, otherCalendars] = useMemo(() => {
-        const [personal, other] = partition<VisualCalendar>(calendars, getIsPersonalCalendar);
-
-        return [sortCalendars(personal), other];
+    const {
+        ownedPersonalCalendars: myCalendars,
+        sharedCalendars,
+        subscribedCalendars: subscribedCalendarsWithoutParams,
+        unknownCalendars,
+    } = useMemo(() => {
+        return groupCalendarsByTaxonomy(calendars);
     }, [calendars]);
+    const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(
+        subscribedCalendarsWithoutParams
+    );
+    const otherCalendars = sortCalendars([
+        ...(loadingSubscribedCalendars ? subscribedCalendarsWithoutParams : subscribedCalendars),
+        ...sharedCalendars,
+        ...unknownCalendars,
+    ]);
 
-    const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(otherCalendars);
-
-    const { isPersonalCalendarsLimitReached, isSubscribedCalendarsLimitReached } = getHasUserReachedCalendarsLimit({
+    const { isCalendarsLimitReached, isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(
         calendars,
-        isFreeUser: !user.hasPaidMail,
-    });
+        !user.hasPaidMail
+    );
 
     const addCalendarText = c('Dropdown action icon tooltip').t`Add calendar`;
 
@@ -104,19 +110,17 @@ const CalendarSidebar = ({
     };
 
     const handleCreatePersonalCalendar = async () => {
-        if (!isPersonalCalendarsLimitReached) {
+        if (!isCalendarsLimitReached) {
             setIsCalendarModalOpen(true);
         } else {
-            setCalendarType(CALENDAR_TYPE.PERSONAL);
             setIsLimitReachedModalOpen(true);
         }
     };
 
     const handleCreateSubscribedCalendar = () => {
-        if (!isSubscribedCalendarsLimitReached) {
+        if (!isOtherCalendarsLimitReached) {
             setIsSubscribedCalendarModalOpen(true);
         } else {
-            setCalendarType(CALENDAR_TYPE.SUBSCRIPTION);
             setIsLimitReachedModalOpen(true);
         }
     };
@@ -130,7 +134,7 @@ const CalendarSidebar = ({
         >{c('Action').t`New event`}</SidebarPrimaryButton>
     );
 
-    const [displayPersonalCalendars, setDisplayPersonalCalendars] = useState(true);
+    const [displayMyCalendars, setDisplayMyCalendars] = useState(true);
     const [displayOtherCalendars, setDisplayOtherCalendars] = useState(true);
 
     const headerButton = (
@@ -145,14 +149,14 @@ const CalendarSidebar = ({
         </Tooltip>
     );
 
-    const personalCalendarsList = (
+    const myCalendarsList = (
         <SidebarList>
             <SimpleSidebarListItemHeader
-                toggle={displayPersonalCalendars}
-                onToggle={() => setDisplayPersonalCalendars((prevState) => !prevState)}
+                toggle={displayMyCalendars}
+                onToggle={() => setDisplayMyCalendars((prevState) => !prevState)}
                 right={
                     <div className="flex flex-nowrap flex-align-items-center pr0-75">
-                        {enabled ? (
+                        {enabled && !isOtherCalendarsLimitReached ? (
                             <Tooltip title={addCalendarText}>
                                 <SimpleDropdown
                                     as="button"
@@ -165,7 +169,7 @@ const CalendarSidebar = ({
                                     <DropdownMenu>
                                         <DropdownMenuButton
                                             className="text-left"
-                                            onClick={() => handleCreatePersonalCalendar()}
+                                            onClick={handleCreatePersonalCalendar}
                                         >
                                             {c('Action').t`Create calendar`}
                                         </DropdownMenuButton>
@@ -196,7 +200,7 @@ const CalendarSidebar = ({
                             >
                                 <Tooltip title={addCalendarText}>
                                     <Icon
-                                        onClick={() => handleCreatePersonalCalendar()}
+                                        onClick={handleCreatePersonalCalendar}
                                         name="plus"
                                         className="navigation-icon"
                                         alt={addCalendarText}
@@ -210,9 +214,9 @@ const CalendarSidebar = ({
                 text={c('Link').t`My calendars`}
                 testId="calendar-sidebar:my-calendars-button"
             />
-            {displayPersonalCalendars && (
+            {displayMyCalendars && (
                 <CalendarSidebarListItems
-                    calendars={personalCalendars}
+                    calendars={myCalendars}
                     onChangeVisibility={(calendarID, value) =>
                         withLoadingAction(handleChangeVisibility(calendarID, value))
                     }
@@ -223,19 +227,19 @@ const CalendarSidebar = ({
         </SidebarList>
     );
 
-    const subscribedCalendarsList = otherCalendars.length ? (
+    const otherCalendarsList = otherCalendars.length ? (
         <SidebarList>
             <SimpleSidebarListItemHeader
                 toggle={displayOtherCalendars}
                 onToggle={() => setDisplayOtherCalendars((prevState) => !prevState)}
-                text={c('Link').t`Subscribed calendars`}
-                testId="calendar-sidebar:subscribed-calendars-button"
+                text={c('Link').t`Other calendars`}
+                testId="calendar-sidebar:other-calendars-button"
                 headerRef={headerRef}
             />
             {displayOtherCalendars && (
                 <CalendarSidebarListItems
                     actionsDisabled={loadingSubscribedCalendars}
-                    calendars={loadingSubscribedCalendars ? otherCalendars : subscribedCalendars}
+                    calendars={otherCalendars}
                     onChangeVisibility={(calendarID, value) =>
                         withLoadingAction(handleChangeVisibility(calendarID, value))
                     }
@@ -258,7 +262,7 @@ const CalendarSidebar = ({
             {renderCalendarModal && (
                 <CalendarModal
                     {...calendarModal}
-                    calendars={personalCalendars}
+                    calendars={calendars}
                     defaultCalendarID={calendarUserSettings.DefaultCalendarID}
                     onCreateCalendar={onCreateCalendar}
                 />
@@ -267,13 +271,13 @@ const CalendarSidebar = ({
                 <SubscribedCalendarModal {...subscribedCalendarModal} onCreateCalendar={onCreateCalendar} />
             )}
             {renderIsLimitReachedModal && (
-                <CalendarLimitReachedModal {...isLimitReachedModal} calendarType={calendarType} />
+                <CalendarLimitReachedModal {...isLimitReachedModal} isFreeUser={!user.hasPaidMail} />
             )}
 
             <SidebarNav data-test-id="calendar-sidebar:calendars-list-area">
                 <div className="flex-item-noshrink">{miniCalendar}</div>
-                {personalCalendarsList}
-                {subscribedCalendarsList}
+                {myCalendarsList}
+                {otherCalendarsList}
             </SidebarNav>
         </Sidebar>
     );

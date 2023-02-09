@@ -159,13 +159,15 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                 {c('Calendar settings link share description')
                     .t`Create a link to your calendar and share it with anyone outside ${BRAND_NAME}. Only you can add or remove events.`}
             </SettingsParagraph>
-            <Button
-                onClick={() => updateModal('shareLinkModal', { isOpen: true })}
-                color="norm"
-                disabled={maxLinksReached || !canShare}
-            >
-                {c('Action').t`Create link`}
-            </Button>
+            {!maxLinksReached && (
+                <Button
+                    onClick={() => updateModal('shareLinkModal', { isOpen: true })}
+                    color="norm"
+                    disabled={!canShare}
+                >
+                    {c('Action').t`Create link`}
+                </Button>
+            )}
         </>
     );
 
@@ -253,7 +255,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                 )}
             </div>
             {maxLinksReached && (
-                <Alert className="mb0-75" type="warning">
+                <Alert className="mb0-75" type="info">
                     {c('Maximum calendar links reached warning').ngettext(
                         msgid`You can create up to ${MAX_LINKS_PER_CALENDAR} link per calendar. To create a new link to this calendar, delete one from the list below.`,
                         `You can create up to ${MAX_LINKS_PER_CALENDAR} links per calendar. To create a new link to this calendar, delete one from the list below.`,

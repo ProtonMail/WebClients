@@ -189,13 +189,6 @@ const CalendarSidebarListItems = ({
                                         &nbsp;({c('Disabled calendar name suffix').t`Disabled`})
                                     </div>
                                 )}
-                                {!isOwnedCalendar && (
-                                    <Tooltip title={c('Calendar sidebar; Calendar info').t`Shared with me`}>
-                                        <div className="flex-item-noshrink ml0-25">
-                                            <Icon name="users" />
-                                        </div>
-                                    </Tooltip>
-                                )}
                             </div>
 
                             <Tooltip title={c('Sidebar calendar edit tooltip').t`Manage calendar`}>
