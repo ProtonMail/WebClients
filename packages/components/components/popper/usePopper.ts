@@ -16,14 +16,7 @@ import {
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { PopperArrow, PopperPlacement, PopperPosition } from './interface';
-import {
-    allPopperPlacements,
-    anchorOffset,
-    arrowOffset,
-    getClickRect,
-    getFallbackPlacements,
-    rtlPlacement,
-} from './utils';
+import { allPopperPlacements, arrowOffset, getClickRect, getFallbackPlacements, rtlPlacement } from './utils';
 
 type ReferenceType = Element | VirtualElement;
 
@@ -119,7 +112,6 @@ const usePopper = ({
         computePosition(referenceEl, floatingEl, {
             placement: originalPlacement,
             middleware: [
-                anchorOffset(relativeReference),
                 offset(offsetPx),
                 flip({ fallbackPlacements }),
                 shift(),
@@ -136,7 +128,18 @@ const usePopper = ({
                           },
                       })
                     : undefined,
-                hide(),
+                hide(
+                    // Due to a bug (I think) in floating-ui 1.2.0, reference elements in iframes
+                    // get incorrectly computed as "hidden", I'm guessing because it gets a mismatch
+                    // between coordinates relative to the iframe and coordinates relative to the boundary.
+                    // Therefore, we switch the boundary to use the "floating" element (which is not in an iframe).
+                    relativeReference?.current
+                        ? {
+                              altBoundary: true,
+                              boundary: relativeReference?.current || undefined,
+                          }
+                        : undefined
+                ),
                 arrowOffset(),
                 rtlPlacement(),
             ],
@@ -147,6 +150,9 @@ const usePopper = ({
             }
             data.middlewareData.availableSize = availableSizeVariables;
             setData((oldData) => {
+                if (relativeReference) {
+                    console.log(data, referenceEl, floatingEl);
+                }
                 if (isDeepEqual(oldData, data)) {
                     return oldData;
                 }

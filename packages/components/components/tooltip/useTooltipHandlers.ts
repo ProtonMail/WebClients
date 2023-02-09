@@ -4,7 +4,7 @@ import usePrevious from '@proton/hooks/usePrevious';
 
 const LONG_TAP_TIMEOUT = 500;
 const OPEN_DELAY_TIMEOUT = 1000;
-const CLOSE_DELAY_TIMEOUT = 250;
+const CLOSE_DELAY_TIMEOUT = 5250;
 
 let visibleTimeout = 0;
 let globalId = 0;
