@@ -2413,7 +2413,7 @@
         "Este nome de marcador não está disponível. Por favor, escolha outro nome."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "As chaves confiáveis não são válidas para o envio"
@@ -2431,7 +2431,7 @@
         "Você não pode enviar um e-mail para mais de 100 destinatários"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Você não pode enviar vCards de mais de 10 contatos"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
@@ -3274,6 +3274,9 @@
       ],
       "Close this screen to exit.": [
         "Feche esta tela para sair."
+      ],
+      "Country code": [
+        "Código do país"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Criar ${ calendarsToBeCreated } novo calendário",

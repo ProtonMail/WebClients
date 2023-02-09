@@ -2150,7 +2150,7 @@
         "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
@@ -2162,7 +2162,7 @@
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Kişisel takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
@@ -3007,9 +3007,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Toplu yüklemeler bilgisayarınızın başarımını düşürebilir. Yükleme sırasında yayın akışı izlemek gibi yoğun bellek kullanan işlemleri sınırlamayı deneyin. Ya da yüklemeleri gruplar halinde yapın."
-      ],
       "Calendar side panel": [
         "Takvim yan panosu"
       ],
@@ -3048,6 +3045,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } kullanmayı sürdür ve sürücünün kilidini daha sonra aç"
+      ],
+      "Country code": [
+        "Ülke kodu"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } yeni takvim ekle",
@@ -3210,6 +3210,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Bilgisayarınız ile eşitlediğiniz klasörler burada görüntülenir."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -3544,6 +3547,9 @@
       "Shared link failed to be loaded": [
         "Paylaşılmış bağlantı yüklenemedi"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Signature check will be ignored": [
         "İmza denetimi yok sayılacak"
       ],
@@ -3877,8 +3883,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "erişilme sayısı"
+      "# of downloads": [
+        "indirme sayısı"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
@@ -4618,9 +4624,6 @@
       "File or folder is missing a name": [
         "Dosya ya da klasörün adı eksik"
       ],
-      "Item failed to be verified": [
-        "Öge doğrulanamadı"
-      ],
       "Link failed to be loaded": [
         "Bağlantı yüklenemedi"
       ],
@@ -5123,8 +5126,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "erişilme sayısı"
+      "# of downloads": [
+        "indirme sayısı"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } üye",
@@ -5572,6 +5575,9 @@
       ],
       "Uploaded by": [
         "Yükleyen"
+      ],
+      "Uploading a large file or folder": [
+        "Büyük bir dosya ya da klasör yükleniyor"
       ],
       "View contacts": [
         "Kişileri görüntüle"

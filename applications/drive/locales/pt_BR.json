@@ -2150,7 +2150,7 @@
         "Este nome de marcador não está disponível. Por favor, escolha outro nome."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -2162,7 +2162,7 @@
         "Você não pode enviar um e-mail para mais de 100 destinatários"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Você não pode enviar vCards de mais de 10 contatos"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
@@ -3012,9 +3012,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Os envios em massa podem reduzir o desempenho do seu computador. Considere limitar atividades com uso intensivo de memória, como streaming durante o envio. Ou tente fazer o envio em lotes."
-      ],
       "Calendar side panel": [
         "Painel lateral de calendário"
       ],
@@ -3053,6 +3050,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continue usando ${ DRIVE_APP_NAME } e desbloqueie o drive depois"
+      ],
+      "Country code": [
+        "Código do país"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Criar ${ calendarsToBeCreated } novo calendário",
@@ -3215,6 +3215,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "As pastas do seu computador que você sincronizar aparecerão aqui."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Para obter melhores resultados, evite streaming e atividades que consomem muita memória ou divida seu carregamento em lotes menores."
       ],
       "Free up some space or add more storage space.": [
         "Libere algum espaço ou adicione mais espaço de armazenamento."
@@ -3549,6 +3552,9 @@
       "Shared link failed to be loaded": [
         "O link compartilhado falhou ao carregar"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "A assinatura não pode ser validada devido a um erro de rede, tente novamente mais tarde."
+      ],
       "Signature check will be ignored": [
         "Verificação de assinatura será ignorada"
       ],
@@ -3882,8 +3888,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# de acessos"
+      "# of downloads": [
+        "# de downloads"
       ],
       "${ BRAND_NAME } username": [
         "Nome de usuário do ${ BRAND_NAME }"
@@ -4622,9 +4628,6 @@
       ],
       "File or folder is missing a name": [
         "Arquivo ou pasta sem nome"
-      ],
-      "Item failed to be verified": [
-        "Item falhou ao ser verificado"
       ],
       "Link failed to be loaded": [
         "Falha ao carregar o link"
@@ -5366,8 +5369,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# de acessos"
+      "# of downloads": [
+        "# de downloads"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } membro",
@@ -5815,6 +5818,9 @@
       ],
       "Uploaded by": [
         "Enviado por"
+      ],
+      "Uploading a large file or folder": [
+        "Carregar um arquivo ou pasta grande"
       ],
       "View contacts": [
         "Ver contatos"

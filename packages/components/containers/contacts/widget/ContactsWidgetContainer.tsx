@@ -141,7 +141,7 @@ const ContactsWidgetContainer = ({
         if (selectedIDs.length > 100) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`You can't send vCards of more than 10 contacts`,
+                text: c('Error').t`You can't send vCard files of more than 10 contacts`,
             });
             return;
         }

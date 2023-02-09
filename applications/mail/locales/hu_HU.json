@@ -3313,7 +3313,7 @@
         "Az üzenet már elküldésre került. Egy új piszkozat került mentésre."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ez az üzenet olyan URL hivatkozásokat tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Túl sok bekapcsolt szűrő. Váltson nagyobb csomagra további szűrők bekapcsolásához."
@@ -3337,7 +3337,7 @@
         "Nem küldhet üzenetet több mint 100 címzettnek"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Egyszerre nem küldhet el több mint 10 vCard névjegyet"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Egyszerre maximum ${ maxActiveComposer } szerkesztő ablakot nyithat meg",
@@ -4713,10 +4713,6 @@
       ],
       "Group assignment applied": [
         "Csoport hozzárendelés alkalmazva"
-      ],
-      "Has ${ numAttachments } attachment": [
-        "${ numAttachments } csatolt fájl van",
-        "${ numAttachments } csatolt fájl van"
       ],
       "here": [
         "ide"

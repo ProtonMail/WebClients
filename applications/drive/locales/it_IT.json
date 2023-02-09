@@ -2150,7 +2150,7 @@
         "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Questo messaggio potrebbe contenere alcuni link URL che potrebbero non essere aperti correttamente dal browser corrente."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
@@ -2162,7 +2162,7 @@
         "Non puoi inviare una mail a più di 100 destinatari"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Non è possibile inviare vCard con più di 10 contatti"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Hai raggiunto il numero massimo di calendari personali. Alcuni calendari non possono essere importati."
@@ -3007,9 +3007,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "I caricamenti in blocco possono ridurre le prestazioni del tuo computer. Prendi in considerazione la possibilità di limitare le attività ad alta intensità di memoria come lo streaming durante il caricamento. Oppure prova a caricare in batch."
-      ],
       "Calendar side panel": [
         "Pannello laterale del calendario"
       ],
@@ -3048,6 +3045,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continua a utilizzare ${ DRIVE_APP_NAME } e sblocca l'unità in un secondo momento"
+      ],
+      "Country code": [
+        "Codice nazione"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crea ${ calendarsToBeCreated } nuovo calendario",
@@ -3210,6 +3210,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Le cartelle che sincronizzi dal tuo computer appariranno qui."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Per ottenere risultati migliori, evita lo streaming e le attività che richiedono molta memoria o suddividi il caricamento in batch più piccoli."
       ],
       "Free up some space or add more storage space.": [
         "Libera dello spazio o aggiungi più spazio di archiviazione."
@@ -3544,6 +3547,9 @@
       "Shared link failed to be loaded": [
         "Impossibile caricare il collegamento condiviso"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "La firma non può essere convalidata a causa di un errore di rete, riprova più tardi."
+      ],
       "Signature check will be ignored": [
         "Il controllo della firma verrà ignorato"
       ],
@@ -3877,8 +3883,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# di accessi"
+      "# of downloads": [
+        "# di download"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } username"
@@ -4618,9 +4624,6 @@
       "File or folder is missing a name": [
         "Al file o alla cartella manca un nome"
       ],
-      "Item failed to be verified": [
-        "Impossibile verificare l'elemento"
-      ],
       "Link failed to be loaded": [
         "Impossibile caricare il collegamento"
       ],
@@ -5355,8 +5358,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# di accessi"
+      "# of downloads": [
+        "# di download"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } membro",
@@ -5804,6 +5807,9 @@
       ],
       "Uploaded by": [
         "Caricato da"
+      ],
+      "Uploading a large file or folder": [
+        "Caricando di un file di grandi dimensioni o di una cartella"
       ],
       "View contacts": [
         "Visualizza contatti"

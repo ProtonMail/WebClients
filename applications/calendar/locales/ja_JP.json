@@ -121,6 +121,9 @@
       "Continue import": [
         "インポートを続行"
       ],
+      "Continue to ${ calendarAppBareName }": [
+        "${ calendarAppBareName } で続行"
+      ],
       "Continue with Google": [
         "Google で続行"
       ],
@@ -2117,6 +2120,9 @@
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
       ],
+      "Contact name is too long": [
+        "連絡先の名前が長すぎます"
+      ],
       "Contact signature could not be verified": [
         "連絡先の署名を確認できませんでした"
       ],
@@ -2379,7 +2385,7 @@
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
@@ -2397,7 +2403,7 @@
         "100 人以上の受信者にメールを送信することはできません"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "10 件以上の連絡先の vCard を送信することはできません"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
@@ -3803,6 +3809,9 @@
         "コードは空白なしの 6 桁の数字です"
       ],
       "Color": [
+        "色"
+      ],
+      "Colors": [
         "色"
       ],
       "Coming soon": [

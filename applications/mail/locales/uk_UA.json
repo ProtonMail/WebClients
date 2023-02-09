@@ -3428,7 +3428,7 @@
         "Це повідомлення вже було надіслане. Нову чернетку збережено."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Забагато активних фільтрів. Перейдіть на платний тарифний план, щоб активувати більше фільтрів."
@@ -3452,7 +3452,7 @@
         "Ви не можете надіслати лист понад 100 отримувачам"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Ви не можете надіслати vCards для понад 10 контактів"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Не можна відкрити понад ${ maxActiveComposer } вікно редактора одночасно",
@@ -4787,6 +4787,9 @@
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
       ],
+      "Country code": [
+        "Код країни"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Створити ${ calendarsToBeCreated } новий календар",
         "Створити ${ calendarsToBeCreated } нові календарі",
@@ -5003,11 +5006,11 @@
       "Group assignment applied": [
         "Призначення групи застосовано"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Має ${ numAttachments } вкладення",
-        "Має ${ numAttachments } вкладення",
-        "Має ${ numAttachments } вкладень",
-        "Має ${ numAttachments } вкладень"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })",
+        "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })",
+        "Містить ${ numAttachments } вкладень (${ numAttachmentsSize })",
+        "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })"
       ],
       "here": [
         "тут"

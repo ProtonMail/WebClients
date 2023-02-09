@@ -2413,7 +2413,7 @@
         "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -2431,7 +2431,7 @@
         "Es können keine Mails an mehr als 100 Empfänger gesendet werden"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Du kannst nicht vCards von mehr als 10 Kontakten verschicken"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Du hast die maximale Anzahl von privaten Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
@@ -2970,7 +2970,7 @@
         "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
+        "Die Zwei-Faktor-Authentifizierung in deinem externen E-Mail-Konto ist aktiviert."
       ],
       "IMAP access is enabled in your external account.": [
         "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
@@ -3000,7 +3000,7 @@
         "Deine E-Mail-Adresse und dein App-Passwort sind korrekt. Verwende ${ boldNot } dein reguläres Passwort."
       ],
       "Your email address and password are correct.": [
-        "Deine E-Mail-Adresse und dein Passwort korrekt sind."
+        "Deine E-Mail-Adresse und dein Passwort sind korrekt."
       ],
       "Your password is correct.": [
         "Dein Passwort ist korrekt."
@@ -3274,6 +3274,9 @@
       ],
       "Close this screen to exit.": [
         "Schließe zum Beenden das Fenster."
+      ],
+      "Country code": [
+        "Ländercode"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } neuen Kalender erstellen",
@@ -3639,7 +3642,7 @@
         "Wiederkehrenden Termin aktualisieren"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Jetzt aktualisieren und Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis erhalten"
+        "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten"
       ],
       "We'll notify you when the import is done.": [
         "Du wirst benachrichtigt, sobald der Datenimport abgeschlossen ist."

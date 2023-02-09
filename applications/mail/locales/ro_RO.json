@@ -3404,7 +3404,7 @@
         "Acest mesaj a fost deja trimis. A fost salvată o ciornă nouă."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Prea multe filtre active. Trebuie să treceți la un plan cu plată pentru a putea activa mai multe filtre."
@@ -3428,7 +3428,7 @@
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Nu puteți trimite cărți de vizită („vCard”) la mai mult de 10 persoane de contact."
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Nu puteți deschide mai mult de o fereastră de compunere.",
@@ -4700,6 +4700,9 @@
       "Copied to clipboard": [
         "Copiat în memorie"
       ],
+      "Country code": [
+        "Cod țară"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",
         "Creare ${ calendarsToBeCreated } calendare",
@@ -4909,10 +4912,10 @@
       "Group assignment applied": [
         "Atribuire grup aplicată"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Are un ataşament",
-        "Are ${ numAttachments } atașamente",
-        "Are ${ numAttachments } de atașamente"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Are un atașament (${ numAttachmentsSize })",
+        "Are ${ numAttachments } atașamente (${ numAttachmentsSize })",
+        "Are ${ numAttachments } de atașamente (${ numAttachmentsSize })"
       ],
       "here": [
         "aici"
