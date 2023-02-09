@@ -12,7 +12,7 @@ import {
 } from '@proton/shared/lib/helpers/checkout';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Currency, Cycle, PlanIDs, PlansMap, VPNServers } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import {
     Badge,
@@ -75,7 +75,7 @@ interface Props {
     submit?: ReactNode;
     loading?: boolean;
     plansMap: PlansMap;
-    vpnServers: VPNServers;
+    vpnServers: VPNServersCountData;
     checkResult: RequiredCheckResponse | undefined;
     currency: Currency;
     cycle: Cycle;

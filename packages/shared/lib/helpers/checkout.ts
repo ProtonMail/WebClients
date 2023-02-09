@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, DEFAULT_CYCLE, MEMBER_PLAN_MAPPING, PLANS, PLAN_TYPES } from '../constants';
-import { Plan, PlanIDs, PlansMap, Subscription, SubscriptionCheckResponse, VPNServers } from '../interfaces';
+import { Plan, PlanIDs, PlansMap, Subscription, SubscriptionCheckResponse, VPNServersCountData } from '../interfaces';
 import { FREE_PLAN } from '../subscription/freePlans';
 import humanSize from './humanSize';
 import { customCycles, getNormalCycleFromCustomCycle } from './subscription';
@@ -156,14 +156,14 @@ export const getWhatsIncluded = ({
 }: {
     planIDs: PlanIDs;
     plansMap: PlansMap;
-    vpnServers: VPNServers;
+    vpnServers: VPNServersCountData;
 }): Included[] => {
     const vpn = planIDs[PLANS.VPN];
     if (vpn !== undefined && vpn > 0) {
         return [
             {
                 type: 'text',
-                text: getVpnServers(vpnServers[PLANS.VPN]),
+                text: getVpnServers(vpnServers.paid.servers),
             },
             {
                 type: 'text',
