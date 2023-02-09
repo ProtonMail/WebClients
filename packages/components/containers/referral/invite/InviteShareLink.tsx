@@ -35,7 +35,7 @@ const InviteShareLink = () => {
 
     return (
         <div>
-            <h3 className="text-bold">{c('Label').t`Your referral link`}</h3>
+            <h2 className="h3 text-bold">{c('Label').t`Your referral link`}</h2>
             <div className="invite-section-share-link flex flex-align-items-stretch flex-gap-0-5">
                 <div
                     className="flex-item-fluid flex flex-align-items-center p0-5 user-select border rounded"
@@ -44,7 +44,7 @@ const InviteShareLink = () => {
                     <span className="text-ellipsis">{referrerLink}</span>
                 </div>
                 <div className="flex flex-gap-0-5 flex-nowrap flex-justify-end">
-                    <Button color="norm" onClick={onCopyButtonClick}>
+                    <Button color="norm" onClick={onCopyButtonClick} title={c('Info').t`Copy your referral link`}>
                         <span className="flex flex-nowrap flex-align-items-center">
                             <Icon name="link" className="mr0-25 flex-item-noshrink" /> {c('Button').t`Copy`}
                         </span>
