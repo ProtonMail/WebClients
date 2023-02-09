@@ -2058,7 +2058,7 @@
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -2067,7 +2067,7 @@
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Δεν μπορείτε να στείλετε vCards για περισσότερες από 10 επαφές"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
@@ -2800,9 +2800,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Οι μαζικές μεταφορτώσεις ενδέχεται να μειώσουν την απόδοση του υπολογιστή σας. Εξετάστε το ενδεχόμενο να περιορίσετε δραστηριότητες που απαιτούν πολλή μνήμη, όπως η ροή κατά τη μεταφόρτωση. Εναλλακτικά, δοκιμάστε να ανεβάσετε σε παρτίδες."
-      ],
       "Calendar side panel": [
         "Πλαϊνό πλαίσιο ημερολογίου"
       ],
@@ -2988,6 +2985,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Οι φάκελοι που συγχρονίζετε από τον υπολογιστή σας θα εμφανιστούν εδώ."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή εντατικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
       ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
@@ -3288,6 +3288,9 @@
       "Shared link failed to be loaded": [
         "Αποτυχία φόρτωσης κοινόχρηστου σύνδεσμου"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
+      ],
       "Signature check will be ignored": [
         "Ο έλεγχος υπογραφής θα αγνοηθεί"
       ],
@@ -3585,8 +3588,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# των προσβάσεων"
+      "# of downloads": [
+        "# λήψεις"
       ],
       "(Expired)": [
         "(Ληγμένο)"
@@ -4303,9 +4306,6 @@
       "File or folder is missing a name": [
         "Το αρχείο ή ο φάκελος στερείται ονόματος"
       ],
-      "Item failed to be verified": [
-        "Αποτυχία επαλήθευσης στοιχείου"
-      ],
       "Link failed to be loaded": [
         "Ο σύνδεσμος απέτυχε να φορτώσει"
       ],
@@ -4730,8 +4730,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# των προσβάσεων"
+      "# of downloads": [
+        "# λήψεις"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } μέλος",
@@ -5167,6 +5167,9 @@
       ],
       "Uploaded by": [
         "Ανέβηκε από"
+      ],
+      "Uploading a large file or folder": [
+        "Αποστολή μεγάλου αρχείου ή φακέλου"
       ],
       "View contacts": [
         "Προβολή επαφών"

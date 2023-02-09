@@ -1918,6 +1918,9 @@
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
       ],
+      "Contact name is too long": [
+        "Kontaktnavn er for langt"
+      ],
       "Contact signature not verified": [
         "Kontaktsignatur ikke bekræftet"
       ],
@@ -2147,7 +2150,7 @@
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
@@ -2159,7 +2162,7 @@
         "Du kan ikke sende en mail til mere end 100 modtagere"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Du kan ikke sende vCards med mere end 10 kontakter"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
@@ -3004,9 +3007,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Overførsel af mange filer kan reducere din computers ydeevne. Overvej at begrænse hukommelsestunge aktiviteter, så som streaming, under overførslen. Ellers prøv at overføre lidt ad gangen."
-      ],
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
@@ -3045,6 +3045,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
+      ],
+      "Country code": [
+        "Landekode"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Opret ${ calendarsToBeCreated } ny kalender",
@@ -3207,6 +3210,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "De mapper, du synkroniserer fra din computer, vises her."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "For det bedste resultat, undgå streaming og hukommelses-intens aktivitet, eller split dine uploads op i mindre bidder."
       ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
@@ -3541,6 +3547,9 @@
       "Shared link failed to be loaded": [
         "Delt link kunne ikke indlæses"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
+      ],
       "Signature check will be ignored": [
         "Tjek af signatur ignoreres"
       ],
@@ -3573,6 +3582,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "De krypterede data er en smule større på grund af overheadomkostningerne ved krypteringen og signaturerne, som garanterer sikkerheden for dine data."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Der kan være blevet manipuleret med følgende: ${ items }. Åbn kun, hvis du har tillid til den."
@@ -3871,8 +3883,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# af adgange"
+      "# of downloads": [
+        "# af downloads"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } brugernavn"
@@ -3945,6 +3957,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
+      ],
+      "Colors": [
+        "Farver"
       ],
       "Coming soon": [
         "Kommer snart"
@@ -4609,9 +4624,6 @@
       "File or folder is missing a name": [
         "Der mangler et navn på en fil eller mappe"
       ],
-      "Item failed to be verified": [
-        "Element kunne ikke verificeres"
-      ],
       "Link failed to be loaded": [
         "Link kunne ikke indlæses"
       ],
@@ -5114,8 +5126,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# af adgange"
+      "# of downloads": [
+        "# af downloads"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } medlem",
@@ -5411,6 +5423,9 @@
       "Open settings menu": [
         "Åbn indstillingsmenu"
       ],
+      "Original size": [
+        "Original størrelse"
+      ],
       "Other information": [
         "Anden information"
       ],
@@ -5560,6 +5575,9 @@
       ],
       "Uploaded by": [
         "Uploadet af"
+      ],
+      "Uploading a large file or folder": [
+        "Uploader en stor fil eller mappe"
       ],
       "View contacts": [
         "Vis kontakter"

@@ -2168,7 +2168,7 @@
         "Nazwa etykiety nie jest dostępna. Wpisz inną nazwę."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Użyj tylko liter, cyfr i znaków _.-"
@@ -2180,7 +2180,7 @@
         "Nie możesz wysłać wiadomości do ponad 100 odbiorców"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Jednocześnie możesz wysłać maksymalnie 10 plików vCard"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Osiągnięto maksymalną liczbę osobistych kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
@@ -3121,9 +3121,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Masowe przesyłanie może zmniejszyć wydajność komputera. Rozważ ograniczenie aktywności wymagających dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
-      ],
       "Calendar side panel": [
         "Panel boczny kalendarza"
       ],
@@ -3162,6 +3159,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Kontynuuj używanie ${ DRIVE_APP_NAME } i odblokuj dysk później"
+      ],
+      "Country code": [
+        "Kod kraju"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Utwórz ${ calendarsToBeCreated } nowy kalendarz",
@@ -3330,6 +3330,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Tutaj pojawią się foldery zsynchronizowane z urządzeniem."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Ogranicz aktywność wymagającą dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
       ],
       "Free up some space or add more storage space.": [
         "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
@@ -3670,6 +3673,9 @@
       "Shared link failed to be loaded": [
         "Załadowanie linku nie powiodło się"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."
+      ],
       "Signature check will be ignored": [
         "Sprawdzanie podpisu zostanie pominięte"
       ],
@@ -4005,8 +4011,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Liczba dostępów"
+      "# of downloads": [
+        "Liczba pobrań"
       ],
       "${ BRAND_NAME } username": [
         "Nazwa użytkownika ${ BRAND_NAME }"
@@ -4779,9 +4785,6 @@
       ],
       "File or folder is missing a name": [
         "Plik lub folder nie posiada nazwy"
-      ],
-      "Item failed to be verified": [
-        "Weryfikacja elementu nie powiodła się"
       ],
       "Link failed to be loaded": [
         "Załadowanie linku nie powiodło się"
@@ -5573,8 +5576,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Liczba dostępów"
+      "# of downloads": [
+        "Liczba pobrań"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } członek",
@@ -6040,6 +6043,9 @@
       ],
       "Uploaded by": [
         "Przesłany przez"
+      ],
+      "Uploading a large file or folder": [
+        "Przesyłanie większego pliku lub folderu"
       ],
       "View contacts": [
         "Pokaż kontakty"

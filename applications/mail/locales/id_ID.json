@@ -3362,7 +3362,7 @@
         "Pesan ini telah terkirim. Draf baru telah tersimpan."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Pesan ini terindikasi memiliki tautan yang tidak dapat dibuka dengan benar oleh browser Anda."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Terlalu banyak filter yang aktif. Mohon tingkatkan akun Anda untuk mengaktifkan lebih banyak filter."
@@ -3386,7 +3386,7 @@
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Anda tidak dapat mengirim vCard ke lebih dari 10 kontak"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } jendela komposer dalam satu waktu"
@@ -4741,9 +4741,6 @@
       ],
       "Group assignment applied": [
         "Penugasan grup diterapkan"
-      ],
-      "Has ${ numAttachments } attachments": [
-        "Memiliki ${ numAttachments } lampiran"
       ],
       "here": [
         "di sini"
