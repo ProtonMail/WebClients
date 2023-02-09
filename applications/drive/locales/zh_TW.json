@@ -2141,7 +2141,7 @@
         "此標籤名稱不適用。請選擇其它名稱。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的 URL。"
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
@@ -2153,7 +2153,7 @@
         "您無法將電郵傳送給超過100位收件人"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "您無法傳送超過 10 個聯絡人的 vCard"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "您已經達到個人行事曆的數量上限。有部分行事曆無法被匯入。"
@@ -2954,9 +2954,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "大量上載或會降低您的電腦效能。上載其間，請考慮限制佔用記憶體的活動 (例如串流)。又或者嘗試分批上載。"
-      ],
       "Calendar side panel": [
         "行事曆側面板"
       ],
@@ -2995,6 +2992,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "繼續使用 ${ DRIVE_APP_NAME } 並在稍後解鎖雲端硬碟"
+      ],
+      "Country code": [
+        "國家代碼"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "建立 ${ calendarsToBeCreated } 個新行事曆"
@@ -3817,9 +3817,6 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# 存取次數"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
       ],
@@ -4541,9 +4538,6 @@
       "File or folder is missing a name": [
         "檔案或資料夾缺少名稱"
       ],
-      "Item failed to be verified": [
-        "項目驗證失敗"
-      ],
       "Link failed to be loaded": [
         "連結載入失敗"
       ],
@@ -5024,9 +5018,6 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "存取次數"
-      ],
       "${ emailsCount } members": [
         "${ emailsCount } 位成員"
       ],

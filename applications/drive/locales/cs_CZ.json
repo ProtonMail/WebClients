@@ -2168,7 +2168,7 @@
         "Tento název štítku není k dispozici. Zvolte prosím jiný název."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Zkuste používat pouze písmena, číslice a _.-"
@@ -2180,7 +2180,7 @@
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Není možné odeslat vCard s více než 10 kontakty"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Dosáhli jste maximálního počtu osobních kalendářů. Některé kalendáře nebylo možné importovat."
@@ -3113,9 +3113,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Hromadné nahrávání může dočasně snížit dostupný výkon počítače. Během nahrávání zvažte omezit aplikace vyžadující hodně paměti, například streamování. Nebo nahrávejte menší počet souborů najednou."
-      ],
       "Calendar side panel": [
         "Postranní panel kalendáře"
       ],
@@ -3154,6 +3151,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Pokračujte v používání ${ DRIVE_APP_NAME } a odemkněte disk později"
+      ],
+      "Country code": [
+        "Kód země"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Vytvořit ${ calendarsToBeCreated } nový kalendář",
@@ -3322,6 +3322,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Zde se zobrazí složky synchronizované z počítače."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Chcete-li dosáhnout nejlepších výsledků, vyhněte se streamování a činnostem náročným na paměť nebo rozdělte nahrávání na menší části."
       ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
@@ -3662,6 +3665,9 @@
       "Shared link failed to be loaded": [
         "Sdílený odkaz se nepodařilo načíst"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
+      ],
       "Signature check will be ignored": [
         "Výsledek kontroly podpisu bude ignorován"
       ],
@@ -3997,8 +4003,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# přístupů"
+      "# of downloads": [
+        "počet stažení"
       ],
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
@@ -4772,9 +4778,6 @@
       "File or folder is missing a name": [
         "Souboru nebo složce chybí název"
       ],
-      "Item failed to be verified": [
-        "Položku se nepodařilo ověřit"
-      ],
       "Link failed to be loaded": [
         "Nepodařilo se načíst odkaz"
       ],
@@ -5315,8 +5318,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# přístupů"
+      "# of downloads": [
+        "počet stažení"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } člen",
@@ -5782,6 +5785,9 @@
       ],
       "Uploaded by": [
         "Nahráno uživatelem"
+      ],
+      "Uploading a large file or folder": [
+        "Nahrávání velkého souboru nebo složky"
       ],
       "View contacts": [
         "Zobrazit kontakty"

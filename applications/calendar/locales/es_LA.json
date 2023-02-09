@@ -2413,7 +2413,7 @@
         "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves confiadas no son válidas para enviar"
@@ -2431,7 +2431,7 @@
         "No puede enviar un correo a más de 100 destinatarios"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "No puede enviar vCards de más de 10 contactos"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Ha alcanzado el número máximo de calendarios personales. Algunos calendarios podrían no importarse."
@@ -3275,6 +3275,9 @@
       "Close this screen to exit.": [
         "Cierre esta pantalla para salir."
       ],
+      "Country code": [
+        "Código de país"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } calendario nuevo",
         "Crear ${ calendarsToBeCreated } calendarios nuevos"
@@ -3788,7 +3791,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Clic para más detalles"
+        "Haga clic para más detalle."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -4832,7 +4835,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para la verificar la firma."
+        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para verificar la firma."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede usarse para verificar la firma."

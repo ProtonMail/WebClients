@@ -3046,6 +3046,9 @@
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
       ],
+      "Contact name is too long": [
+        "連絡先の名前が長すぎます"
+      ],
       "Contact signature could not be verified": [
         "連絡先の署名を確認できませんでした"
       ],
@@ -3335,7 +3338,7 @@
         "このメッセージは送信されています。下書きが保存されました。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "有効なフィルターが多すぎます。さらに有効なフィルターを使用するには有料プランにアップグレードしてください。"
@@ -3359,7 +3362,7 @@
         "100 人以上の受信者にメールを送信することはできません"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "10 件以上の連絡先の vCard を送信することはできません"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "同時に ${ maxActiveComposer } つ以上の作成画面を開くことはできません"
@@ -4701,8 +4704,8 @@
       "Group assignment applied": [
         "グループの割り当てが適用されました"
       ],
-      "Has ${ numAttachments } attachments": [
-        "${ numAttachments } 件の添付ファイル"
+      "Has ${ numAttachments } attachments (${ numAttachmentsSize })": [
+        "${ numAttachments } 件の添付ファイル (${ numAttachmentsSize })"
       ],
       "here": [
         "こちら"
@@ -5893,6 +5896,9 @@
       ],
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
+      ],
+      "Colors": [
+        "色"
       ],
       "Coming soon": [
         "まもなく登場"

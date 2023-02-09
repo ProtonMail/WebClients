@@ -2457,7 +2457,7 @@
         "Tento název štítku není k dispozici. Zvolte prosím jiný název."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
@@ -2475,7 +2475,7 @@
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Není možné odeslat vCard s více než 10 kontakty"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Dosáhli jste maximálního počtu osobních kalendářů. Některé kalendáře nebylo možné importovat."
@@ -3393,6 +3393,9 @@
       "Close this screen to exit.": [
         "Pro ukončení zavřete tuto obrazovku."
       ],
+      "Country code": [
+        "Kód země"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Vytvořit ${ calendarsToBeCreated } nový kalendář",
         "Vytvořit ${ calendarsToBeCreated } nové kalendáře",
@@ -3915,6 +3918,34 @@
         "Klikněte pro podrobnosti"
       ]
     },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Některé kalendáře nezobrazí podrobnosti o dříve vytvořených událostech."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Kalendáře nebudou zobrazovat podrobnosti o dříve vytvořených událostech."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Je to způsobeno tím, že vaše heslo bylo nedávno resetováno bez použití metody obnovení."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Zašifrovaná data můžete obnovit pomocí souboru pro obnovení, fráze pro obnovení nebo starého hesla."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Sdílení kalendáře bylo vypnuto po tom, co jste nedávno resetovali heslo."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Kalendáře můžete znovu sdílet v nastavení."
+      ]
+    },
     "Input label": {
       "Access": [
         "Přístup"
@@ -4361,6 +4392,11 @@
     "Link to calendar app": {
       "Open in ${ CALENDAR_APP_NAME }": [
         "Otevřít v ${ CALENDAR_APP_NAME }"
+      ]
+    },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Co je to metoda obnovení?"
       ]
     },
     "Loading info": {
@@ -5796,6 +5832,9 @@
       ],
       "Request new code": [
         "Poslat nový kód"
+      ],
+      "Reshare your calendars": [
+        "Obnovte sdílení vašich kalendářů"
       ],
       "Save changes": [
         "Uložit změny"

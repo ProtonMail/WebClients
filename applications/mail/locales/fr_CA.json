@@ -3320,7 +3320,7 @@
         "Ce message a déjà été envoyé. Un nouveau brouillon a été enregistré."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Trop de filtres sont actifs. Nous vous invitons à passer à un abonnement payant pour activer plus de filtres."
@@ -3344,7 +3344,7 @@
         "Vous ne pouvez pas envoyer de courrier à plus de 100 destinataires"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composeur à la fois",
@@ -4729,10 +4729,6 @@
       ],
       "Group assignment applied": [
         "Affectation de groupe appliquée"
-      ],
-      "Has ${ numAttachments } attachment": [
-        "Possède ${ numAttachments } pièce jointe",
-        "Possède ${ numAttachments } pièces jointes"
       ],
       "here": [
         "ici"

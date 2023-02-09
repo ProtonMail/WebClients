@@ -2126,7 +2126,7 @@
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el navegador actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzant només lletres, numèrics, i _.-"
@@ -2138,7 +2138,7 @@
         "No podeu enviar un correu a més de 100 destinataris"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "No podeu enviar vcards de més de 10 contactes"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "No es poden importar tots els calendaris perquè heu arribat al límit personal de calendaris."
@@ -3613,9 +3613,6 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# d'accessos"
-      ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari ${ BRAND_NAME }"
       ],
@@ -4309,9 +4306,6 @@
       "File or folder is missing a name": [
         "Falta un nom pel fitxer o carpeta"
       ],
-      "Item failed to be verified": [
-        "Ha fallat la verificació de l'element."
-      ],
       "Link failed to be loaded": [
         "No s'ha pogut carregar l'enllaç"
       ],
@@ -4765,9 +4759,6 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# d'accessos"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } membre",
         "${ emailsCount } membres"

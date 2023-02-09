@@ -3112,7 +3112,7 @@
         "Αυτό το μήνυμα έχει ήδη αποσταλεί. Αποθηκεύτηκε ένα νέο πρόχειρο."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -3130,7 +3130,7 @@
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Δεν μπορείτε να στείλετε vCards για περισσότερες από 10 επαφές"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρο συντάκτη τη φορά",
@@ -4386,10 +4386,6 @@
       ],
       "Group assignment applied": [
         "Εφαρμογή ομαδικής εκχώρησης"
-      ],
-      "Has ${ numAttachments } attachment": [
-        "Έχει ${ numAttachments } συνημμένο",
-        "Έχει ${ numAttachments } συνημμένα"
       ],
       "here": [
         "εδώ"

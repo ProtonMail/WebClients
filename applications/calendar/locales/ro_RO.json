@@ -2435,7 +2435,7 @@
         "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere"
@@ -2453,7 +2453,7 @@
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Nu puteți trimite cărți de vizită („vCard”) la mai mult de 10 persoane de contact."
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
@@ -3333,6 +3333,9 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
+      ],
+      "Country code": [
+        "Cod țară"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",

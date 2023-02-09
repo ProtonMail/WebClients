@@ -1753,7 +1753,7 @@
         "Naziv oznake nije dostupan. Odaberite drugi naziv."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti."
+        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Unknown error": [
         "Nepoznata pogreška"
@@ -1762,7 +1762,7 @@
         "Ne možete poslati e-poštu za više od 100 primatelja"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Ne možete slati vCards za više od 10 kontakata"
+        "You can't send vCard files of more than 10 contacts"
       ],
       "You must set a name": [
         "Morate postaviti naziv"
@@ -2662,9 +2662,6 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Broj pristupanja"
-      ],
       "(Expired)": [
         "(Isteklo)"
       ],
@@ -3379,9 +3376,6 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Broj pristupanja"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } član",
         "${ emailsCount } člana",
