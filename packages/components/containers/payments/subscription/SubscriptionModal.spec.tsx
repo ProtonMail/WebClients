@@ -11,7 +11,6 @@ import {
     usePlans,
     useSubscription,
     useUser,
-    useVPNCountriesCount,
     useVPNServersCount,
 } from '@proton/components/hooks';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
@@ -21,8 +20,7 @@ import {
     SubscriptionCheckResponse,
     SubscriptionModel,
     UserModel,
-    VPNCountries,
-    VPNServers,
+    VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
 import Payment from '../Payment';
@@ -217,7 +215,6 @@ jest.mock('../../../hooks/useModals');
 jest.mock('../../../hooks/useNotifications');
 jest.mock('../../../hooks/usePlans');
 jest.mock('../../../hooks/useVPNServersCount');
-jest.mock('../../../hooks/useVPNCountriesCount');
 jest.mock('../../../hooks/useOrganization');
 jest.mock('../../../hooks/useCalendars', () => ({
     __esModule: true,
@@ -300,11 +297,11 @@ describe('SubscriptionModal', () => {
 
         (usePlans as jest.Mock).mockReturnValue([]);
 
-        let vpnServers: VPNServers = { free_vpn: 0, [PLANS.VPN]: 0 };
+        let vpnServers: VPNServersCountData = {
+            free: { countries: 3, servers: 150 },
+            paid: { countries: 190, servers: 1900 },
+        };
         (useVPNServersCount as jest.Mock).mockReturnValue([vpnServers]);
-
-        let vpnCountries: VPNCountries = { free_vpn: { count: 0 }, [PLANS.VPN]: { count: 0 } };
-        (useVPNCountriesCount as jest.Mock).mockReturnValue([vpnCountries]);
 
         let noOrganization: any = {}; // otherwise it is Organization
         (useOrganization as jest.Mock).mockReturnValue([noOrganization]);
