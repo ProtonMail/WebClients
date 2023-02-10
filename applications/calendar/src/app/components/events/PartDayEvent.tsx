@@ -1,6 +1,7 @@
 import { CSSProperties, ComponentPropsWithoutRef, ReactNode, Ref, forwardRef, useMemo } from 'react';
 
 import { Icon, classnames } from '@proton/components';
+import { HOUR } from '@proton/shared/lib/constants';
 
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
@@ -20,6 +21,7 @@ interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
     isLoaded?: boolean;
     className?: string;
     children?: ReactNode;
+    eventPartDuration?: number;
 }
 export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps>(function PartDayEventViewComponent(
     {
@@ -31,10 +33,13 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
         isLoaded,
         className,
         children,
+        eventPartDuration,
         ...rest
     }: PartDayEventViewProps,
     ref: Ref<HTMLDivElement>
 ) {
+    const isEventPartNotGreaterThanAnHour = eventPartDuration ? eventPartDuration <= HOUR : false;
+
     return (
         <div
             role="button"
@@ -47,6 +52,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
                 isUnanswered && 'isUnanswered',
                 isCancelled && 'isCancelled',
                 size && `calendar-eventcell--${size}`,
+                isEventPartNotGreaterThanAnHour && 'calendar-eventcell--title-small-fit',
                 className,
             ])}
             ref={ref}
@@ -62,11 +68,11 @@ interface Props {
     style: CSSProperties;
     formatTime: (date: Date) => string;
     event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
+    eventPartDuration: number;
     isSelected: boolean;
     isBeforeNow: boolean;
     eventRef?: Ref<HTMLDivElement>;
     tzid: string;
-    isEventPartLessThanAnHour: boolean;
 }
 const PartDayEvent = ({
     size,
@@ -77,13 +83,14 @@ const PartDayEvent = ({
     isBeforeNow,
     eventRef,
     tzid,
-    isEventPartLessThanAnHour,
+    eventPartDuration,
 }: Props) => {
     const { start, end, data: targetEventData } = event;
     const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
 
     const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
     const { isUnanswered, isCancelled } = getEventStatusTraits(model);
+    const isEventPartLessThanAnHour = eventPartDuration < HOUR;
 
     const eventStyle = useMemo(() => {
         return getEventStyle(calendarColor, style);
@@ -151,6 +158,7 @@ const PartDayEvent = ({
             isCancelled={isCancelled}
             ref={eventRef}
             title={expandableTitleString}
+            eventPartDuration={eventPartDuration}
         >
             {content}
         </PartDayEventView>
