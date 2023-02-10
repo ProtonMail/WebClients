@@ -25,11 +25,17 @@ interface Props {
 }
 
 const HeaderTopPrivacyIcon = ({ message }: Props) => {
-    const [
-        { feature: spyTrackerFeature, loading: loadingSpyTrackerFeature },
-        // On the first part of the SL integration we will not have the change on the icon. We already started the implementation so we will hide it for now
-        //{ feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoginIntegrationFeature }, // TODO uncomment later
-    ] = useFeatures([FeatureCode.SpyTrackerProtection, FeatureCode.SLIntegration]);
+    const { getFeature } = useFeatures([FeatureCode.SpyTrackerProtection, FeatureCode.SLIntegration]);
+    // On the first part of the SL integration we will not have the change on the icon. We already started the implementation so we will hide it for now
+    // TODO uncomment later
+    /* const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoginIntegrationFeature } = getFeature(
+        FeatureCode.SLIntegration
+    );
+    */
+
+    const { feature: spyTrackerFeature, loading: loadingSpyTrackerFeature } = getFeature(
+        FeatureCode.SpyTrackerProtection
+    );
 
     const isSimpleLoginIntegration = false; // TODO replace with when we will need itsimpleLoginIntegrationFeature?.Value;
 
