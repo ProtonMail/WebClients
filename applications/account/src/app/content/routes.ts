@@ -19,6 +19,7 @@ interface Arguments {
     isBulkUserUploadEnabled: boolean;
     isSubscribeCalendarEnabled: boolean;
     isDataRecoveryAvailable: boolean;
+    isGmailSyncEnabled: boolean;
     recoveryNotification?: ThemeColor;
 }
 
@@ -33,11 +34,24 @@ export const getRoutes = ({
     isSubscribeCalendarEnabled,
     isSmtpTokenEnabled,
     isInviteSettingEnabled,
+    isGmailSyncEnabled,
     recoveryNotification,
 }: Arguments) => {
     return {
-        account: getAccountAppRoutes({ user, isDataRecoveryAvailable, isReferralProgramEnabled, recoveryNotification }),
-        mail: getMailAppRoutes({ user, addresses, organization, isSpyTrackerEnabled, isSmtpTokenEnabled }),
+        account: getAccountAppRoutes({
+            user,
+            isDataRecoveryAvailable,
+            isReferralProgramEnabled,
+            recoveryNotification,
+            isGmailSyncEnabled,
+        }),
+        mail: getMailAppRoutes({
+            user,
+            addresses,
+            organization,
+            isSpyTrackerEnabled,
+            isSmtpTokenEnabled,
+        }),
         calendar: getCalendarAppRoutes(isSubscribeCalendarEnabled, isInviteSettingEnabled),
         drive: getDriveAppRoutes(),
         organization: getOrganizationAppRoutes({ user, organization, isBulkUserUploadEnabled }),

@@ -19,10 +19,13 @@ const EmailPrivacySection = () => {
     const [{ HideRemoteImages = SHOW_IMAGES.HIDE, ImageProxy = IMAGE_PROXY_FLAGS.PROXY } = {}] = useMailSettings();
     const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
     const [, setImageProxy] = useState(ImageProxy);
-    const [{ feature: featureSpyTracker }, { feature: featureSpyTrackerIncorporator }] = useFeatures([
+    const { getFeature } = useFeatures([
         FeatureCode.SpyTrackerProtection,
         FeatureCode.SpyTrackerProtectionIncorporator,
     ]);
+
+    const { feature: featureSpyTracker } = getFeature(FeatureCode.SpyTrackerProtection);
+    const { feature: featureSpyTrackerIncorporator } = getFeature(FeatureCode.SpyTrackerProtectionIncorporator);
 
     // Handle updates from the Event Manager.
     useEffect(() => {

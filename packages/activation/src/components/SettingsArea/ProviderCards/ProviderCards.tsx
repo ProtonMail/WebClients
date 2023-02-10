@@ -4,10 +4,9 @@ import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { FeatureCode, useModalState } from '@proton/components';
+import { FeatureCode } from '@proton/components';
 import { useFeature, useUser } from '@proton/components/hooks';
 
-import OAuthImportSelectionModal from '../../Modals/OAuthImportSelectionModal/OAuthImportSelectionModal';
 import ProviderCard from './ProviderCard';
 
 const ProviderCards = () => {
@@ -16,25 +15,15 @@ const ProviderCards = () => {
     const isLoading = loadingUser;
     const disabled = isLoading || !user.hasNonDelinquentScope;
 
-    const gmailSync = useFeature(FeatureCode.EasySwitchGmailSync);
-
-    const [oauthSelectionProps, setOAuthSelectionVisibility, renderOAuthSelection] = useModalState();
+    const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
 
     const handleGoogleClick = () => {
-        if (gmailSync.loading) {
-            return;
-        }
-
-        if (gmailSync.feature && gmailSync.feature.Value) {
-            setOAuthSelectionVisibility(true);
-        } else {
-            dispatch(
-                startOauthDraft({
-                    provider: ImportProvider.GOOGLE,
-                    products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
-                })
-            );
-        }
+        dispatch(
+            startOauthDraft({
+                provider: ImportProvider.GOOGLE,
+                products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
+            })
+        );
     };
 
     return (
@@ -43,7 +32,7 @@ const ProviderCards = () => {
 
             <div className="mt0-5">
                 <ProviderCard
-                    loading={gmailSync.loading}
+                    loading={easySwitchFeature.loading}
                     provider={ImportProvider.GOOGLE}
                     onClick={handleGoogleClick}
                     disabled={disabled}
@@ -81,13 +70,6 @@ const ProviderCards = () => {
                     className="mb1"
                     data-testid="ProviderCard:imapCard"
                 />
-
-                {renderOAuthSelection && gmailSync.feature?.Value && (
-                    <OAuthImportSelectionModal
-                        modalProps={oauthSelectionProps}
-                        onClose={() => setOAuthSelectionVisibility(false)}
-                    />
-                )}
             </div>
         </>
     );
