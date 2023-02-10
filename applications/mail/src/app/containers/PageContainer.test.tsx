@@ -34,6 +34,11 @@ describe('PageContainer', () => {
         addApiMock('mail/v4/conversations', () => ({}));
         addApiMock('domains/optin', () => ({}));
         addApiMock('payments/subscription/latest', () => ({}));
+        addApiMock('mail/v4/incomingdefaults', () => ({
+            IncomingDefaults: [],
+            Total: 0,
+            GlobalTotal: 0,
+        }));
 
         minimalCache();
         addToCache('MailSettings', { Shortcuts: 1 });
