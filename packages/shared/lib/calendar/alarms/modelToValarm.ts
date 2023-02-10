@@ -1,7 +1,7 @@
-import { getValarmTrigger } from '@proton/shared/lib/calendar/alarms/getValarmTrigger';
-import { ICAL_ALARM_ACTION, NOTIFICATION_TYPE_API } from '@proton/shared/lib/calendar/constants';
-import { NotificationModel } from '@proton/shared/lib/interfaces/calendar';
-import { VcalValarmComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { NotificationModel } from '../../interfaces/calendar';
+import { VcalValarmComponent } from '../../interfaces/calendar/VcalModel';
+import { ICAL_ALARM_ACTION, NOTIFICATION_TYPE_API } from '../constants';
+import { getValarmTrigger } from './getValarmTrigger';
 
 export const modelToValarmComponent = (notificationModel: NotificationModel): VcalValarmComponent => {
     return {
