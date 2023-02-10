@@ -1,5 +1,5 @@
 import { Payment, TokenPayment } from '@proton/components/containers/payments/interface';
-import { CLIENT_TYPES, CYCLE, PAYMENT_METHOD_TYPES, TOKEN_TYPES } from '@proton/shared/lib/constants';
+import { CLIENT_TYPES, CYCLE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { SignupCacheResult, SignupType, SubscriptionData } from '../interfaces';
@@ -125,10 +125,6 @@ describe('signupActions', () => {
             expect(handleCreateUserMock).toHaveBeenCalledWith({
                 cache: {
                     ...cache,
-                    humanVerificationResult: {
-                        token: 'payment-token-123',
-                        tokenType: TOKEN_TYPES.PAYMENT,
-                    },
                     subscriptionData,
                 },
                 api,
@@ -193,10 +189,6 @@ describe('signupActions', () => {
             expect(handleCreateUserMock).toHaveBeenCalledWith({
                 cache: {
                     ...cache,
-                    humanVerificationResult: {
-                        token: 'payment-token-123',
-                        tokenType: TOKEN_TYPES.PAYMENT,
-                    },
                     subscriptionData,
                 },
                 api,
