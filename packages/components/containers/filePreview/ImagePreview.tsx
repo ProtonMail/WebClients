@@ -177,7 +177,6 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                             // background: isLoading
                             //     ? ''
                             //     : 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%) 50% / 20px 20px',
-                            overflow: 'hidden',
                         }}
                     >
                         {!isLoading && (
@@ -190,21 +189,29 @@ const ImagePreview = ({ isLoading = false, mimeType, contents, onDownload, place
                                 alt={c('Info').t`Preview`}
                             />
                         )}
-                        <img
-                            ref={imageRef}
-                            onLoad={fitToContainer}
-                            onError={handleBrokenImage}
-                            className={classnames(['file-preview-image', ready && 'hide'])}
+                        <div
                             style={{
                                 ...scaledDimensions,
-                                // Blurring an image this way leads to its edges to become transparent.
-                                // To compensate this, we apply scale transformation.
-                                filter: 'blur(3px)',
-                                transform: 'scale(1.03)',
+                                overflow: 'hidden',
+                                // restrict blurred image to container by faking a new viewport
+                                transform: 'translateZ(0)',
                             }}
-                            src={placeholderSrc}
-                            alt={c('Info').t`Preview`}
-                        />
+                        >
+                            <img
+                                ref={imageRef}
+                                onLoad={fitToContainer}
+                                onError={handleBrokenImage}
+                                className={classnames(['file-preview-image w100', ready && 'hide'])}
+                                style={{
+                                    // Blurring an image this way leads to its edges to become transparent.
+                                    // To compensate this, we apply scale transformation.
+                                    filter: 'blur(3px)',
+                                    transform: 'scale(1.03)',
+                                }}
+                                src={placeholderSrc}
+                                alt={c('Info').t`Preview`}
+                            />
+                        </div>
                     </div>
                 )}
             </div>
