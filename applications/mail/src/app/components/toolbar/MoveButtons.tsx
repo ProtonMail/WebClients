@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms';
+import { Kbd, Vr } from '@proton/atoms';
 import { Icon, ToolbarButton, useLoading, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -141,7 +141,12 @@ const MoveButtons = ({ labelID = '', isExtraTiny, isNarrow, selectedIDs = [], on
     const allButtons = { inbox, trash, archive, spam, nospam, delete: deleteButton };
     const buttons = actions.map((action) => allButtons[action]);
 
-    return <>{buttons}</>;
+    return (
+        <>
+            <Vr />
+            {buttons}
+        </>
+    );
 };
 
 export default MoveButtons;
