@@ -1,6 +1,7 @@
 import { addDays } from 'date-fns';
 
 import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
+import { modelToValarmComponent } from '@proton/shared/lib/calendar/alarms/modelToValarm';
 import { ICAL_EVENT_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import {
     buildVcalOrganizer,
@@ -15,7 +16,6 @@ import { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calenda
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import modelToFrequencyProperties from './modelToFrequencyProperties';
-import { modelToValarmComponent } from './modelToValarm';
 
 export const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: boolean) => {
     const dateObject = {
