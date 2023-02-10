@@ -34,7 +34,7 @@ describe('MetricsRequestService', () => {
         expect(metricsApi.fetch).toHaveBeenCalledTimes(1);
         expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
             method: 'post',
-            body: JSON.stringify(defaultMetricsRequest),
+            body: JSON.stringify({ Metrics: [defaultMetricsRequest] }),
         });
     });
 
@@ -150,13 +150,13 @@ describe('MetricsRequestService', () => {
                 jest.advanceTimersByTime(1);
                 expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
                     method: 'post',
-                    body: JSON.stringify([getMetricsRequest('Request 1')]),
+                    body: JSON.stringify({ Metrics: [getMetricsRequest('Request 1')] }),
                 });
 
                 jest.advanceTimersByTime(1);
                 expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
                     method: 'post',
-                    body: JSON.stringify([getMetricsRequest('Request 2')]),
+                    body: JSON.stringify({ Metrics: [getMetricsRequest('Request 2')] }),
                 });
             });
         });
@@ -219,13 +219,13 @@ describe('MetricsRequestService', () => {
             jest.advanceTimersByTime(batchFrequency);
             expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
                 method: 'post',
-                body: JSON.stringify([getMetricsRequest('Request 1'), getMetricsRequest('Request 2')]),
+                body: JSON.stringify({ Metrics: [getMetricsRequest('Request 1'), getMetricsRequest('Request 2')] }),
             });
 
             jest.advanceTimersByTime(batchFrequency);
             expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
                 method: 'post',
-                body: JSON.stringify([getMetricsRequest('Request 3'), getMetricsRequest('Request 4')]),
+                body: JSON.stringify({ Metrics: [getMetricsRequest('Request 3'), getMetricsRequest('Request 4')] }),
             });
         });
 
@@ -248,13 +248,13 @@ describe('MetricsRequestService', () => {
             jest.advanceTimersByTime(batchFrequency);
             expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
                 method: 'post',
-                body: JSON.stringify([getMetricsRequest('Request 1'), getMetricsRequest('Request 2')]),
+                body: JSON.stringify({ Metrics: [getMetricsRequest('Request 1'), getMetricsRequest('Request 2')] }),
             });
 
             jest.advanceTimersByTime(batchFrequency);
             expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
                 method: 'post',
-                body: JSON.stringify([getMetricsRequest('Request 3')]),
+                body: JSON.stringify({ Metrics: [getMetricsRequest('Request 3')] }),
             });
         });
     });
@@ -358,7 +358,7 @@ describe('MetricsRequestService', () => {
             jest.advanceTimersByTime(batchFrequency);
             expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
                 method: 'post',
-                body: JSON.stringify([getMetricsRequest('Request 1')]),
+                body: JSON.stringify({ Metrics: [getMetricsRequest('Request 1')] }),
             });
 
             jest.advanceTimersByTime(1);
@@ -367,7 +367,7 @@ describe('MetricsRequestService', () => {
             expect(metricsApi.fetch).toHaveBeenCalledTimes(2);
             expect(metricsApi.fetch).toHaveBeenCalledWith('api/data/v1/metrics', {
                 method: 'post',
-                body: JSON.stringify([getMetricsRequest('Request 2'), getMetricsRequest('Request 3')]),
+                body: JSON.stringify({ Metrics: [getMetricsRequest('Request 2'), getMetricsRequest('Request 3')] }),
             });
         });
 
