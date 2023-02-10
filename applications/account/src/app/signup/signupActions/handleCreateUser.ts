@@ -1,3 +1,4 @@
+import { isTokenPayment } from '@proton/components/containers/payments/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -23,6 +24,12 @@ const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) =
     }
 };
 
+export const getTokenPayment = (subscriptionData: SignupCacheResult['subscriptionData']) => {
+    return isTokenPayment(subscriptionData.payment)
+        ? { TokenPayment: subscriptionData.payment.Details.Token }
+        : undefined;
+};
+
 const getSignupTypeQuery = (accountData: SignupCacheResult['accountData'], setupVPN: boolean) => {
     // VPN requests the recovery email, and does not create the address (avoid passing Domain)
     if (accountData.signupType === SignupType.VPN) {
@@ -46,6 +53,7 @@ export const handleCreateUser = async ({
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { signupType, username, email, password, payload },
+        subscriptionData,
         accountData,
         humanVerificationResult,
         inviteData,
@@ -81,6 +89,7 @@ export const handleCreateUser = async ({
                             Type: clientType,
                             Username: username,
                             Payload: payload,
+                            ...getTokenPayment(subscriptionData),
                             ...getSignupTypeQuery(accountData, setupVPN),
                             ...getReferralDataQuery(referralData),
                         },
@@ -135,6 +144,7 @@ export const handleCreateUser = async ({
                         Type: clientType,
                         Email: email,
                         Payload: payload,
+                        ...getTokenPayment(subscriptionData),
                     },
                     cache.productParam
                 )
