@@ -7,8 +7,8 @@ import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg
 import mailThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-mail.svg';
 import vpnThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-vpn.svg';
 
-import { Href, PrimaryButton } from '../../../components';
-import { useConfig } from '../../../hooks';
+import { Href, PrimaryButton } from '../../../../components';
+import { useConfig } from '../../../../hooks';
 
 interface Props {
     onClose?: () => void;
