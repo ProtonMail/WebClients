@@ -108,7 +108,7 @@ class MetricsRequestService implements IMetricsRequestService {
         }
 
         if (this._batch === undefined) {
-            void this.makeRequest(request);
+            void this.makeRequest([request]);
         } else {
             this._requestQueue.push(request);
         }
@@ -128,10 +128,10 @@ class MetricsRequestService implements IMetricsRequestService {
         return this.makeRequest(itemsToProcess);
     }
 
-    private makeRequest(body: MetricsRequest | MetricsRequest[]) {
+    private makeRequest(metrics: MetricsRequest[]) {
         return this.api.fetch('api/data/v1/metrics', {
             method: 'post',
-            body: JSON.stringify(body),
+            body: JSON.stringify({ Metrics: metrics }),
         });
     }
 }

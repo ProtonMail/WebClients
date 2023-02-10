@@ -107,7 +107,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Name).toEqual(counterName);
+            expect(body.Metrics[0].Name).toEqual(counterName);
         });
 
         it('sends the metric version', async () => {
@@ -120,7 +120,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Version).toEqual(counterVersion);
+            expect(body.Metrics[0].Version).toEqual(counterVersion);
         });
 
         it('uses the current time for the timestamp', async () => {
@@ -133,7 +133,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Timestamp).toEqual(time.getTime() / 1000);
+            expect(body.Metrics[0].Timestamp).toEqual(time.getTime() / 1000);
         });
 
         it('sends Value as 1', async () => {
@@ -146,7 +146,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Data?.Value).toBe(1);
+            expect(body.Metrics[0].Data.Value).toBe(1);
         });
 
         it('sends labels', async () => {
@@ -161,7 +161,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Data?.Labels).toEqual(labels);
+            expect(body.Metrics[0].Data.Labels).toEqual(labels);
         });
     });
 
@@ -226,7 +226,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Name).toEqual(histogramName);
+            expect(body.Metrics[0].Name).toEqual(histogramName);
         });
 
         it('sends the metric version', async () => {
@@ -242,7 +242,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Version).toEqual(histogramVersion);
+            expect(body.Metrics[0].Version).toEqual(histogramVersion);
         });
 
         it('uses the current time for the timestamp', async () => {
@@ -258,7 +258,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Timestamp).toEqual(time.getTime() / 1000);
+            expect(body.Metrics[0].Timestamp).toEqual(time.getTime() / 1000);
         });
 
         it('sends float Values', async () => {
@@ -275,7 +275,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Data?.Value).toBe(Value);
+            expect(body.Metrics[0].Data.Value).toBe(Value);
         });
 
         it('sends Labels', async () => {
@@ -293,7 +293,7 @@ describe('metrics', () => {
             const body = JSON.parse(content?.body);
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(body?.Data?.Labels).toEqual(Labels);
+            expect(body.Metrics[0].Data.Labels).toEqual(Labels);
         });
     });
 });
