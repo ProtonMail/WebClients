@@ -7,6 +7,7 @@ describe('OAuthModal helpers', () => {
     it('Should return all feature enabled', () => {
         const featureMap: EasySwitchFeatureFlag = {
             GoogleMail: true,
+            GoogleMailSync: true,
             GoogleCalendar: true,
             GoogleContacts: true,
             GoogleDrive: true,
@@ -30,6 +31,7 @@ describe('OAuthModal helpers', () => {
     it('Should return true for email and everything else false', () => {
         const featureMap: EasySwitchFeatureFlag = {
             GoogleMail: true,
+            GoogleMailSync: true,
             GoogleCalendar: false,
             GoogleContacts: false,
             GoogleDrive: false,
@@ -59,6 +61,7 @@ describe('OAuthModal helpers', () => {
     it('Should return true for calendar and everything else false', () => {
         const featureMap: EasySwitchFeatureFlag = {
             GoogleMail: false,
+            GoogleMailSync: false,
             GoogleCalendar: true,
             GoogleContacts: false,
             GoogleDrive: false,
@@ -88,6 +91,7 @@ describe('OAuthModal helpers', () => {
     it('Should return true for contact and everything else false', () => {
         const featureMap: EasySwitchFeatureFlag = {
             GoogleMail: false,
+            GoogleMailSync: false,
             GoogleCalendar: false,
             GoogleContacts: true,
             GoogleDrive: false,

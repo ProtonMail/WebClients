@@ -24,7 +24,7 @@ const ReportsTableInfos = () => {
     return (
         <>
             {!importErrors.includes('authConnection') && (
-                <SettingsParagraph>{c('Info').t`Check the status of current and previous imports.`}</SettingsParagraph>
+                <SettingsParagraph>{c('Info').t`Check the status of imports and forwarding.`}</SettingsParagraph>
             )}
             {importErrors.includes('storageLimit') && (
                 <Alert className="mb1" type="warning">

@@ -50,7 +50,7 @@ export const deleteSyncItem = createAsyncThunk<
         await thunkApi.extra.api(deleteSync(syncId));
         await thunkApi.extra.eventManager.call();
         thunkApi.extra.notificationManager.createNotification({
-            text: c('loc_nightly:account').t`Synchronization stopped`,
+            text: c('account').t`Mail forwarding stopped`,
         });
 
         return syncId;

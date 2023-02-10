@@ -73,5 +73,5 @@ export const SYNC_SOURCE = EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS;
 export const SYNC_G_OAUTH_SCOPES = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL_READONLY];
 export const SYNC_SUCCESS_NOTIFICATION: CreateNotificationOptions = {
     type: 'success',
-    text: c('loc_nightly:account').t`Synchronization will start soon. New emails will appear in your inbox.`,
+    text: c('account').t`Forwarding will start soon. New emails will appear in your inbox.`,
 };

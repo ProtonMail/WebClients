@@ -74,8 +74,7 @@ const MainContainer = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
 
-    // WARNING: if you change this list, you need to update the spread of the "features" variable
-    const features = useFeatures([
+    const { featuresFlags, getFeature } = useFeatures([
         FeatureCode.SpyTrackerProtection,
         FeatureCode.CalendarInviteLocale,
         FeatureCode.CalendarAutoImportInvite,
@@ -87,24 +86,19 @@ const MainContainer = () => {
         FeatureCode.EasySwitch,
         FeatureCode.CalendarPersonalEventsDeprecated,
     ]);
-    const [
-        spyTrackerFeature,
-        calendarInviteLocaleFeature,
-        calendarAutoImportInviteFeature,
-        referralProgramFeature,
-        bulkUserUploadFeature,
-        smtpTokenFeature,
-    ] = features;
 
-    const isSpyTrackerEnabled = spyTrackerFeature.feature?.Value === true;
-    const isInviteLocaleFeatureEnabled = calendarInviteLocaleFeature.feature?.Value === true;
-    const isAutoImportInviteFeatureEnabled = calendarAutoImportInviteFeature.feature?.Value === true;
-    const isBulkUserUploadEnabled = bulkUserUploadFeature.feature?.Value === true;
-    const isSmtpTokenEnabled = smtpTokenFeature.feature?.Value === true;
+    const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
+
+    const isSpyTrackerEnabled = getFeature(FeatureCode.SpyTrackerProtection).feature?.Value === true;
+    const isInviteLocaleFeatureEnabled = getFeature(FeatureCode.CalendarInviteLocale).feature?.Value === true;
+    const isAutoImportInviteFeatureEnabled = getFeature(FeatureCode.CalendarAutoImportInvite).feature?.Value === true;
+    const isBulkUserUploadEnabled = getFeature(FeatureCode.BulkUserUpload).feature?.Value === true;
+    const isSmtpTokenEnabled = getFeature(FeatureCode.SmtpToken).feature?.Value === true;
+    const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
 
     const { enabled, unavailable } = useCalendarSubscribeFeature();
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
-    const loadingFeatures = features.some(({ loading }) => loading) || loadingDataRecovery;
+    const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
     const recoveryNotification = useRecoveryNotification(false);
 
     const routes = getRoutes({
@@ -118,6 +112,7 @@ const MainContainer = () => {
         isSmtpTokenEnabled,
         isBulkUserUploadEnabled,
         isDataRecoveryAvailable,
+        isGmailSyncEnabled,
         recoveryNotification: recoveryNotification?.color,
     });
 
