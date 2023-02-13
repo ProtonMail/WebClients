@@ -13,15 +13,33 @@ import {
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
+import useActiveShare from '../../../../hooks/drive/useActiveShare';
+import { useFileUploadInput, useFolderUploadInput } from '../../../../store';
 import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 
 interface Props {
     disabled?: boolean;
     className?: string;
 }
+
+// We put all input in the parent components because we need input to be present in the DOM
+// even when the dropdown is closed
 export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Props>) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const isDesktop = !getDevice()?.type;
+    const { activeFolder } = useActiveShare();
+
+    const {
+        inputRef: folderInput,
+        handleClick: handleUploadFolderClick,
+        handleChange: handleInputFolderChange,
+    } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
+
+    const {
+        inputRef: fileInput,
+        handleClick: handleUploadFileClick,
+        handleChange: handleInputFileChange,
+    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
 
     return (
         <>
@@ -37,17 +55,17 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                     c('Action').t`New`
                 }
             </SidebarPrimaryButton>
+            <input multiple type="file" ref={fileInput} className="hidden" onChange={handleInputFileChange} />
+            <input type="file" ref={folderInput} className="hidden" onChange={handleInputFolderChange} />
             <Dropdown
                 size={{ width: DropdownSizeUnit.Anchor, height: DropdownSizeUnit.Dynamic }}
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
-                // Here we don't autoClose the dropdown because the input elements will get dismounted
-                autoClose={false}
             >
                 <DropdownMenu className="mt0-25 mb0-25">
-                    <UploadFileButton onUploadStarted={close} />
-                    {isDesktop && <UploadFolderButton onUploadStarted={close} />}
+                    <UploadFileButton onClick={handleUploadFileClick} />
+                    {isDesktop && <UploadFolderButton onClick={handleUploadFolderClick} />}
                     <hr className="mt0-5 mb0-5" />
                     <CreateNewFolderButton />
                 </DropdownMenu>
