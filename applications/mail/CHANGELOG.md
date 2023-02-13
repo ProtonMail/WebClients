@@ -1,10 +1,5 @@
 ## Release 5.0.17.0 — February 15th, 2023
 
-### New features
-
--   Unlimited plan subscribers can now invite their contacts to join Proton and enjoy 1 month for Mail Plus for free
--   Free plan subscribers can now schedule emails to be sent later
-
 ### Improvements
 
 -   Improve loading of emails with many images
@@ -13,7 +8,6 @@
 -   Redesign of app growlers
 -   Remove Move all to trash action from the schedules messages folder
 -   Add auto-focus on search when contacts is opened from the side bar
- 
 
 ### Bug fixes
 
