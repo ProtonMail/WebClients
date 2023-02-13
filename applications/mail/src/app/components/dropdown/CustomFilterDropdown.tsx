@@ -182,9 +182,9 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                             className="dropdown-item w100 flex flex-nowrap flex-align-items-center p0-5 pl1 pr1"
                         >
                             <Checkbox
-                                labelProps={{ 'data-testid': `custom-filter-checkbox:${filterType.value}` }}
                                 className="flex-item-noshrink mr0-5"
                                 id={filterType.value}
+                                data-testid={`custom-filter-checkbox:${filterType.value}`}
                                 checked={filtersState[filterType.value]}
                                 onChange={() => toggleFilterType(filterType.value)}
                             />
