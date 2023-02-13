@@ -22,6 +22,8 @@ const {
     BUNDLE_PRO,
 } = PLANS;
 
+const { Android, iOS } = External;
+
 export const getPlan = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
     return (subscription?.Plans || []).find(
         ({ Services, Type }) => Type === PLAN && (service === undefined ? true : hasBit(Services, service))
@@ -50,8 +52,8 @@ export const hasMigrationDiscount = (subscription: Subscription) => {
     return subscription?.CouponCode?.startsWith('MIGRATION');
 };
 
-export const isManagedExternally = (subscription: Subscription): boolean => {
-    return subscription.External === External.Android || subscription.External === External.iOS;
+export const isManagedExternally = ({ External }: Subscription): boolean => {
+    return External === Android || External === iOS;
 };
 
 export const hasVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, VISIONARY);
