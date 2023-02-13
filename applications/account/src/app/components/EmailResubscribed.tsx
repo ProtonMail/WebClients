@@ -28,7 +28,7 @@ const EmailResubscribed = ({
                 </Button>
             }
             below={
-                <Button onClick={onManageClick} shape="underline" color="norm">
+                <Button onClick={onManageClick} shape="underline" color="norm" e2e-attr-to-remove="toRemove">
                     {c('Action').t`Change other email subscriptions`}
                 </Button>
             }
