@@ -160,7 +160,8 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                     originalPlacement="bottom-end"
                     ref={ref}
                     title={c('Title').t`Open actions dropdown`}
-                    dropdownStyle={{ '--min-width': '23em' }}
+                    dropdownStyle={{ '--min-width': '23em', '--custom-max-width': '95vw' }}
+                    noMaxSize
                     // contains buttonGroup props
                     {...rest}
                 >
