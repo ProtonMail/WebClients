@@ -1,35 +1,17 @@
-import { ChangeEventHandler } from 'react';
-
 import { c } from 'ttag';
 
 import { DropdownMenuButton, Icon } from '@proton/components';
 
-import useActiveShare from '../../../../../hooks/drive/useActiveShare';
-import { useFileUploadInput } from '../../../../../store';
-
 interface Props {
-    onUploadStarted: () => void;
+    onClick: () => void;
 }
 
-const UploadFileButton = ({ onUploadStarted }: Props) => {
-    const { activeFolder } = useActiveShare();
-    const {
-        inputRef: fileInput,
-        handleClick,
-        handleChange: handleFileChange,
-    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
-
-    const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-        handleFileChange(e);
-        onUploadStarted();
-    };
-
+const UploadFileButton = ({ onClick }: Props) => {
     return (
         <>
-            <input multiple type="file" ref={fileInput} className="hidden" onChange={handleChange} />
             <DropdownMenuButton
                 className="text-left flex flex-align-items-center"
-                onClick={handleClick}
+                onClick={onClick}
                 data-testid="dropdown-upload-file"
             >
                 <Icon className="mr0-5" name="file-arrow-in-up" />
