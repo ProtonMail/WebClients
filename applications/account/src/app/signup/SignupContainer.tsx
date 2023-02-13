@@ -296,6 +296,15 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             });
         };
 
+        /**
+         * Ensure external signup feature and experiment has loaded before
+         * fetching dependencies. This enables the data team to distinguish
+         * between calls made for external and proton accounts.
+         */
+        if (externalSignupExperiment.loading || externalSignupFeature.loading) {
+            return;
+        }
+
         void withLoading(
             fetchDependencies().catch(() => {
                 setStep([[], NoSignup]);
@@ -305,7 +314,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         return () => {
             cacheRef.current = undefined;
         };
-    }, []);
+    }, [externalSignupExperiment.loading, externalSignupFeature.loading]);
 
     const handleBack = () => {
         if (!previousSteps.length) {
