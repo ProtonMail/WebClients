@@ -109,7 +109,7 @@ const usePopper = ({
 
         const iteration = (iterationRef.current = Symbol('iteration'));
         // NOTE: This hook assumes that props never change during the lifetime of the component.
-        computePosition(referenceEl, floatingEl, {
+        void computePosition(referenceEl, floatingEl, {
             placement: originalPlacement,
             middleware: [
                 offset(offsetPx),
@@ -137,6 +137,14 @@ const usePopper = ({
                         ? {
                               altBoundary: true,
                               boundary: relativeReference?.current || undefined,
+                              // This uses the outer viewport size, not the reference's
+                              // inside iframe viewport size
+                              rootBoundary: {
+                                  x: 0,
+                                  y: 0,
+                                  width: document.documentElement.clientWidth,
+                                  height: document.documentElement.clientHeight,
+                              },
                           }
                         : undefined
                 ),
@@ -150,9 +158,6 @@ const usePopper = ({
             }
             data.middlewareData.availableSize = availableSizeVariables;
             setData((oldData) => {
-                if (relativeReference) {
-                    console.log(data, referenceEl, floatingEl);
-                }
                 if (isDeepEqual(oldData, data)) {
                     return oldData;
                 }
