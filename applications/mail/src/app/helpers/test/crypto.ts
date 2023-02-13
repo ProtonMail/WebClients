@@ -4,7 +4,7 @@ import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, KEY_FLAG, RECIPIENT_TYPES } from 
 
 import { base64ToArray } from '../base64';
 import { addApiMock } from './api';
-import { addressKeysCache, cache, resolvedRequest } from './cache';
+import { addressKeysCache, mockCache, resolvedRequest } from './cache';
 
 const { TYPE_INTERNAL, TYPE_EXTERNAL } = RECIPIENT_TYPES;
 
@@ -106,7 +106,7 @@ export const generateCalendarKeysAndPassphrase = async (addressKey: GeneratedKey
 };
 
 export const addKeysToUserKeysCache = (key: GeneratedKey) => {
-    cache.set('USER_KEYS', resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }]));
+    mockCache.set('USER_KEYS', resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }]));
 };
 
 export const addKeysToAddressKeysCache = (addressID: string, key: GeneratedKey | undefined) => {

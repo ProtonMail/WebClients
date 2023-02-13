@@ -33,7 +33,7 @@ import { MailboxContainerContextProvider } from '../../containers/mailbox/Mailbo
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { store } from '../../logic/store';
 import { api, mockDomApi, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
-import { cache, minimalCache } from './cache';
+import { minimalCache, mockCache } from './cache';
 import NotificationsTestProvider from './notifications';
 
 interface RenderResult extends OriginalRenderResult {
@@ -75,7 +75,7 @@ const TestProvider = ({ children }: Props) => {
                 <NotificationsTestProvider>
                     <ModalsProvider>
                         <AuthenticationProvider store={authentication}>
-                            <CacheProvider cache={cache}>
+                            <CacheProvider cache={mockCache}>
                                 <FeaturesProvider>
                                     <SpotlightProvider>
                                         <DrawerProvider>
