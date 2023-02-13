@@ -11,13 +11,15 @@ type ApiMockEntry = {
 
 type ApiMock = { [url: string]: ApiMockEntry[] | undefined };
 
-const apiMocks: ApiMock = {};
+export const apiMocksMap: ApiMock = {};
 
 export const apiMock = jest.fn<Promise<any>, any>(async (args: any) => {
-    const entryKey = Object.keys(apiMocks).find((path) => {
+    const entryKey = Object.keys(apiMocksMap).find((path) => {
         return args.url === path;
     });
-    const entry = apiMocks[entryKey || '']?.find((entry) => entry.method === undefined || entry.method === args.method);
+    const entry = apiMocksMap[entryKey || '']?.find(
+        (entry) => entry.method === undefined || entry.method === args.method
+    );
     if (entry) {
         return entry.handler({ ...args });
     }
@@ -26,10 +28,10 @@ export const apiMock = jest.fn<Promise<any>, any>(async (args: any) => {
 
 export const addApiMock = (url: string, handler: ApiMockHandler, method?: HttpMethod) => {
     const newEntry = { method, handler };
-    if (!apiMocks[url]) {
-        apiMocks[url] = [newEntry];
+    if (!apiMocksMap[url]) {
+        apiMocksMap[url] = [newEntry];
     } else {
-        apiMocks[url] = apiMocks[url]?.filter((entry) => entry.method !== newEntry.method).concat([newEntry]);
+        apiMocksMap[url] = apiMocksMap[url]?.filter((entry) => entry.method !== newEntry.method).concat([newEntry]);
     }
 };
 
@@ -44,5 +46,5 @@ export const addApiResolver = (url: string, method?: HttpMethod) => {
 };
 
 export const clearApiMocks = () => {
-    Object.keys(apiMocks).forEach((key) => delete apiMocks[key]);
+    Object.keys(apiMocksMap).forEach((key) => delete apiMocksMap[key]);
 };
