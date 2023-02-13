@@ -1,6 +1,6 @@
 import React, { forwardRef, useMemo } from 'react';
 
-import { Locale, addDays, addSeconds, format, fromUnixTime, getUnixTime, nextMonday } from 'date-fns';
+import { Locale, add, addDays, addSeconds, format, fromUnixTime, getUnixTime, nextMonday, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -45,9 +45,21 @@ const ScheduleSendActions = ({
         const tomorrow = addDays(now, 1).setHours(8, 0, 0, 0);
         const monday = nextMonday(now).setHours(8, 0, 0, 0);
 
+        const BUFFER_IN_MINUTES = SCHEDULED_SEND_BUFFER / 60;
+        const dayStart = set(now, {
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
+        });
+        const dayStartOfMorning = add(dayStart, {
+            hours: 7,
+            minutes: 60 - BUFFER_IN_MINUTES,
+        });
+        const isNight = now > dayStart && now < dayStartOfMorning;
+
         const list: Actions = [
             {
-                title: c('Action').t`Tomorrow`,
+                title: isNight ? c('Action').t`In the morning` : c('Action').t`Tomorrow`,
                 testId: 'composer:schedule-send:tomorrow',
                 value: formatDate(tomorrow, dateLocale),
                 onSubmit: () => onScheduleSend(getUnixTime(tomorrow)),
