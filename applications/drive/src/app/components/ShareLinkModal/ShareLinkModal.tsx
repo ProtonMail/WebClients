@@ -220,9 +220,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
         }
 
         if (linkError || !link) {
-            return (
-                <ErrorState modalTitleID={modalTitleID} onClose={onClose} error={linkError} isCreationError={!link} />
-            );
+            return <ErrorState onClose={onClose} error={linkError} isCreationError={!link} />;
         }
 
         if (loading) {
@@ -231,14 +229,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
         }
 
         if (error || !shareUrlInfo || !url) {
-            return (
-                <ErrorState
-                    modalTitleID={modalTitleID}
-                    onClose={onClose}
-                    error={error}
-                    isCreationError={!shareUrlInfo}
-                />
-            );
+            return <ErrorState onClose={onClose} error={error} isCreationError={!shareUrlInfo} />;
         }
 
         if (modalState === ShareLinkModalState.GeneratedLink) {

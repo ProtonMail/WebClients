@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert, InnerModal, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
+import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
 import keyAndFileSvg from '@proton/styles/assets/img/illustrations/file-recovery.svg';
 
 interface Props {
@@ -17,15 +17,13 @@ const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
         <>
             <ModalTwoHeader title={c('Title').t`File recovery process`} closeButtonProps={{ disabled: recovering }} />
             <ModalTwoContent>
-                <InnerModal>
-                    <div className="p1 flex w100">
-                        <img src={keyAndFileSvg} alt={title} className="w50 mauto" />
-                    </div>
-                    <Alert className="mb1 mt1">
-                        <div>{c('Info').jt`Would you like to restore your files?`}</div>
-                        <div>{c('Info').jt`Recovery process might take some time.`}</div>
-                    </Alert>
-                </InnerModal>
+                <div className="p1 flex w100">
+                    <img src={keyAndFileSvg} alt={title} className="w50 mauto" />
+                </div>
+                <Alert className="mb1 mt1">
+                    <div>{c('Info').jt`Would you like to restore your files?`}</div>
+                    <div>{c('Info').jt`Recovery process might take some time.`}</div>
+                </Alert>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <div className="flex flex-justify-space-between w100 flex-nowrap">
