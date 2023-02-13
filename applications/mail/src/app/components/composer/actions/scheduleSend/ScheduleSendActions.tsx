@@ -114,11 +114,11 @@ const ScheduleSendActions = ({
                 {actions.map((action) => (
                     <DropdownMenuButton
                         key={action.testId}
-                        className="flex flex-align-items-center flex-justify-space-between"
+                        className="flex flex-align-items-center flex-justify-space-between flex-nowrap flex-gap-1"
                         data-testid={action.testId}
                         onClick={action.onSubmit}
                     >
-                        <span className="text-left">{action.title}</span>
+                        <span className="flex-item-fluid text-left">{action.title}</span>
                         <span className="text-right color-weak">{action.value}</span>
                     </DropdownMenuButton>
                 ))}
@@ -156,6 +156,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                     originalPlacement="bottom-end"
                     ref={ref}
                     title={c('Title').t`Open actions dropdown`}
+                    dropdownStyle={{ '--min-width': '23em' }}
                     // contains buttonGroup props
                     {...rest}
                 >
