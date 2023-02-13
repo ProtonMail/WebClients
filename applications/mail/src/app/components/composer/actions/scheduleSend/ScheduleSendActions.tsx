@@ -59,7 +59,11 @@ const ScheduleSendActions = ({
 
         const list: Actions = [
             {
-                title: isNight ? c('Action').t`In the morning` : c('Action').t`Tomorrow`,
+                title: isNight
+                    ? // translator: Full sentence is: 'In the morning | February 14th at 8:00'
+                      c('Action').t`In the morning`
+                    : // translator: Full sentence is: 'Tomorrow | February 14th at 8:00'
+                      c('Action').t`Tomorrow`,
                 testId: 'composer:schedule-send:tomorrow',
                 value: formatDate(tomorrow, dateLocale),
                 onSubmit: () => onScheduleSend(getUnixTime(tomorrow)),
