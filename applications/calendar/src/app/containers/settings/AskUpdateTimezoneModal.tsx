@@ -1,15 +1,17 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
     AlertModal,
+    Checkbox,
     useApi,
     useCalendarUserSettings,
     useEventManager,
     useLoading,
     useNotifications,
 } from '@proton/components';
-import AutoDetectPrimaryTimezoneToggle from '@proton/components/containers/calendar/settings/AutoDetectPrimaryTimezoneToggle';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 
 interface Props {
@@ -20,49 +22,85 @@ interface Props {
 
 const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
     const api = useApi();
-    const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [calendarUserSettings] = useCalendarUserSettings();
 
-    const handleUpdateTimezone = async (tzid: string) => {
-        await api(updateCalendarUserSettings({ PrimaryTimezone: tzid }));
+    const [updating, withUpdating] = useLoading();
+    const [cancelling, withCancelling] = useLoading();
+
+    const [autoDetectPrimaryTimezone, setAutoDetectPrimaryTimezone] = useState<boolean>(
+        !!calendarUserSettings.AutoDetectPrimaryTimezone
+    );
+
+    const handleUpdateTimezone = async () => {
+        await api(
+            updateCalendarUserSettings({
+                PrimaryTimezone: localTzid,
+                AutoDetectPrimaryTimezone: +autoDetectPrimaryTimezone,
+            })
+        );
         await call();
         onClose?.();
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
-    const timezone = <b key={0}>{localTzid}</b>;
+    const handleCancel = async () => {
+        if (autoDetectPrimaryTimezone !== !!calendarUserSettings.AutoDetectPrimaryTimezone) {
+            await api(
+                updateCalendarUserSettings({
+                    AutoDetectPrimaryTimezone: +autoDetectPrimaryTimezone,
+                })
+            );
+            await call();
+            createNotification({ text: c('Success').t`Preference saved` });
+        }
 
-    const handleClose = () => {
         onClose?.();
     };
 
-    const handleSubmit = () => {
-        void withLoading(handleUpdateTimezone(localTzid));
-    };
+    const timezone = <b key={0}>{localTzid}</b>;
 
     return (
         <AlertModal
             open={isOpen}
-            onClose={handleClose}
-            onSubmit={handleSubmit}
+            onClose={onClose}
             title={c('Modal title').t`Time zone changed`}
             buttons={[
-                <Button loading={loading} color="norm" onClick={handleSubmit}>{c('Action').t`Update`}</Button>,
-                <Button onClick={handleClose} autoFocus>{c('Action').t`Cancel`}</Button>,
+                <Button
+                    loading={updating}
+                    onClick={() => {
+                        void withUpdating(handleUpdateTimezone());
+                    }}
+                    color="norm"
+                >
+                    {c('Action').t`Update`}
+                </Button>,
+                <Button
+                    loading={cancelling}
+                    onClick={() => {
+                        void withCancelling(handleCancel());
+                    }}
+                >
+                    {c('Action').t`Keep current time zone`}
+                </Button>,
             ]}
         >
-            <p>{c('Info')
-                .jt`Your system time zone seems to have changed to ${timezone}. Do you want to update your time zone preference?`}</p>
+            <p>
+                {c('Info')
+                    .jt`Your system time zone seems to have changed to ${timezone}. Do you want to update your time zone preference?`}
+            </p>
 
             <div className="flex flex-align-items-center flex-nowrap">
-                <AutoDetectPrimaryTimezoneToggle
-                    calendarUserSettings={calendarUserSettings}
-                    className="mr0-5 flex-item-noshrink"
-                    reverse
-                />
-                {c("Don't ask to update timezone checkbox label").t`Do not ask again`}
+                <Checkbox
+                    id="autodetect-primary-timezone"
+                    autoFocus
+                    checked={!autoDetectPrimaryTimezone}
+                    disabled={updating}
+                    onChange={() => setAutoDetectPrimaryTimezone(!autoDetectPrimaryTimezone)}
+                >
+                    {c("Don't ask to update timezone checkbox label").t`Do not ask again`}
+                </Checkbox>
             </div>
         </AlertModal>
     );
