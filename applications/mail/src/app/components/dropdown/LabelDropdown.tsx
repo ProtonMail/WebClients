@@ -120,7 +120,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
 
     const initialState = useMemo(
         () => getInitialState(labels, getElementsFromIDs(selectedIDs)),
@@ -284,12 +284,14 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                         <Icon name="tag" /> +
                     </Button>
                 </Tooltip>
-                <EditLabelModal
-                    label={newLabel}
-                    onAdd={(label) => handleAddNewLabel(label)}
-                    onCloseCustomAction={() => setContainFocus(true)}
-                    {...editLabelProps}
-                />
+                {renderLabelModal && (
+                    <EditLabelModal
+                        label={newLabel}
+                        onAdd={(label) => handleAddNewLabel(label)}
+                        onCloseCustomAction={() => setContainFocus(true)}
+                        {...editLabelProps}
+                    />
+                )}
             </div>
             <div className="flex-item-noshrink m1 mb0">
                 <SearchInput
@@ -300,6 +302,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     autoFocus={autoFocusSearch}
                     data-test-selector="label-dropdown:search-label"
                     data-prevent-arrow-navigation
+                    data-testid="label-dropdown:search-input"
                 />
             </div>
             <div
@@ -339,9 +342,19 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                             </label>
                         </li>
                     ))}
-                    {list.length === 0 && (
+                    {list.length === 0 && !search && (
                         <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
                             {c('Info').t`No label found`}
+                        </li>
+                    )}
+                    {list.length === 0 && search && (
+                        <li
+                            key="empty"
+                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
+                            data-testid="label-dropdown:create-label-option"
+                            onClick={handleCreate}
+                        >
+                            <span className="text-ellipsis w100">{c('Title').t`Create label "${search}"`}</span>
                         </li>
                     )}
                 </ul>

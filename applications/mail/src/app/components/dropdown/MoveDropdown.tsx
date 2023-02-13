@@ -19,13 +19,16 @@ import {
     useModalState,
 } from '@proton/components';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
+import { Label } from '@proton/shared/lib/interfaces';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
@@ -79,7 +82,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -153,6 +156,12 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const autoFocusSearch = !breakpoints.isNarrow;
     const applyDisabled = selectedFolder?.ID === undefined;
 
+    const newFolder: Pick<Label, 'Name' | 'Color' | 'Type'> = {
+        Name: search,
+        Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
+        Type: LABEL_TYPE.MESSAGE_FOLDER,
+    };
+
     return (
         <form
             className="flex flex-column flex-nowrap flex-justify-start flex-align-items-stretch flex-item-fluid-auto"
@@ -175,7 +184,14 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         <Icon name="folder" /> +
                     </Button>
                 </Tooltip>
-                <EditLabelModal type="folder" onCloseCustomAction={() => setContainFocus(true)} {...editLabelProps} />
+                {renderLabelModal && (
+                    <EditLabelModal
+                        label={newFolder}
+                        type="folder"
+                        onCloseCustomAction={() => setContainFocus(true)}
+                        {...editLabelProps}
+                    />
+                )}
             </div>
             <div className="flex-item-noshrink m1 mb0">
                 <SearchInput
@@ -226,9 +242,19 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                             </li>
                         );
                     })}
-                    {list.length === 0 && (
+                    {list.length === 0 && !search && (
                         <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
                             {c('Info').t`No folder found`}
+                        </li>
+                    )}
+                    {list.length === 0 && search && (
+                        <li
+                            key="empty"
+                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
+                            data-testid="folder-dropdown:create-folder-option"
+                            onClick={handleCreate}
+                        >
+                            <span className="text-ellipsis w100">{c('Title').t`Create folder "${search}"`}</span>
                         </li>
                     )}
                 </ul>
