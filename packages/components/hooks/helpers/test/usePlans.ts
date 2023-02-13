@@ -77,7 +77,7 @@ export const plansDefaultResponse = {
             Title: 'Mail Essentials',
             MaxDomains: 3,
             MaxAddresses: 10,
-            MaxCalendars: 20,
+            MaxCalendars: 25,
             MaxSpace: 16106127360,
             MaxMembers: 1,
             MaxVPN: 0,
