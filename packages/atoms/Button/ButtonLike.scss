@@ -48,6 +48,11 @@
 	}
 
 	@supports selector(:focus-visible:has(a, b)) {
+		&:focus {
+			// explicitly set color in case focus state get invoked
+			color: var(--button-default-text-color, inherit);
+		}
+
 		&:focus-visible,
 		&:has(*:focus-visible) {
 			border-color: var(--focus-outline);
