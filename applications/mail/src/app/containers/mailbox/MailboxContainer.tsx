@@ -405,11 +405,15 @@ const MailboxContainer = ({
                                         columnLayout={columnLayout}
                                         isComposerOpened={isComposerOpened}
                                         containerRef={messageContainerRef}
+                                        elementIDs={elementIDs}
+                                        loadingElements={loading}
                                     />
                                 ) : (
                                     <MessageOnlyView
                                         hidden={showPlaceholder}
                                         labelID={labelID}
+                                        elementIDs={elementIDs}
+                                        loadingElements={loading}
                                         mailSettings={mailSettings}
                                         messageID={elementID as string}
                                         onBack={handleBack}
