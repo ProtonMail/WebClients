@@ -1,19 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
-import { useApi, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import {
     CalendarMember,
     CalendarMemberInvitation,
     MEMBER_INVITATION_STATUS,
 } from '@proton/shared/lib/interfaces/calendar';
-import { mockApi, mockNotifications } from '@proton/testing';
+import { mockNotifications } from '@proton/testing';
 
 import CalendarMemberAndInvitationList from './CalendarMemberAndInvitationList';
 
 jest.mock('@proton/components/hooks/useGetEncryptionPreferences');
 jest.mock('@proton/components/hooks/useNotifications');
-jest.mock('@proton/components/hooks/useApi');
 jest.mock('@proton/components/hooks/useAddresses');
 
 jest.mock('../../contacts/ContactEmailsProvider', () => ({
@@ -34,12 +33,10 @@ jest.mock('../../contacts/ContactEmailsProvider', () => ({
     }),
 }));
 
-const mockedUseApi = mocked(useApi);
 const mockedUseNotifications = mocked(useNotifications);
 
 describe('CalendarMemberAndInvitationList', () => {
     beforeEach(() => {
-        mockedUseApi.mockImplementation(() => mockApi);
         mockedUseNotifications.mockImplementation(() => mockNotifications);
     });
 
