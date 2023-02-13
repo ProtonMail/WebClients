@@ -124,4 +124,8 @@ export interface DecryptedLink extends Link {
         width: number;
         height: number;
     };
+    // Digests stored in XAttributes
+    digests?: {
+        sha1: string;
+    };
 }
