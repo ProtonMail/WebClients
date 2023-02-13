@@ -9,7 +9,6 @@ import {
     CheckedProductMap,
     EASY_SWITCH_SOURCE,
     ImportToken,
-    ImportType,
     OAUTH_PROVIDER,
     OAuthProps,
 } from '@proton/activation/interface';
@@ -19,8 +18,8 @@ import { ActiveImportID } from '@proton/activation/logic/importers/importers.int
 import { selectActiveImporterById, selectImporterById } from '@proton/activation/logic/importers/importers.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
 import { Button } from '@proton/atoms';
-import { Alert, AlertModal, DropdownActions, FeatureCode, useModalState } from '@proton/components';
-import { useApi, useEventManager, useFeature, useLoading, useNotifications } from '@proton/components/hooks';
+import { Alert, AlertModal, DropdownActions, useModalState } from '@proton/components';
+import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
@@ -37,7 +36,6 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
         errorMessage: c('Error').t`Your import will not be processed.`,
     });
-    const useNewScopeFeature = useFeature(FeatureCode.EasySwitchGmailNewScope);
 
     const api = useApi();
     const { call } = useEventManager();
@@ -48,14 +46,13 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     const [cancelModalProps, showCancelModal, renderCancelModal] = useModalState();
 
     const handleReconnectOAuth = async (ImporterID: string) => {
-        const useNewGmailScope = products?.includes(ImportType.MAIL) && useNewScopeFeature.feature?.Value === true;
         const checkedItems = (products || []).reduce((acc, item) => {
             acc[item] = true;
             return acc;
         }, {} as CheckedProductMap);
 
         // TODO: Typing should be more effective here
-        const scopes = getScopeFromProvider(provider as unknown as OAUTH_PROVIDER, checkedItems, useNewGmailScope);
+        const scopes = getScopeFromProvider(provider as unknown as OAUTH_PROVIDER, checkedItems);
 
         triggerOAuthPopup({
             // TODO: Typing should be more effective here

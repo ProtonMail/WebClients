@@ -85,7 +85,6 @@ const MainContainer = () => {
         FeatureCode.CalendarSubscription,
         FeatureCode.ReferralProgram,
         FeatureCode.EasySwitch,
-        FeatureCode.EasySwitchGmailNewScope,
         FeatureCode.CalendarPersonalEventsDeprecated,
     ]);
     const [
