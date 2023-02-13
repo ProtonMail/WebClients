@@ -14,8 +14,7 @@ import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/cons
 export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
 export const G_OAUTH_SCOPE_DEFAULT = ['email', 'openid'];
 
-export const G_OAUTH_SCOPE_MAIL = ['https://mail.google.com/'];
-export const G_OAUTH_SCOPE_MAIL_NEW_SCOPE = ['https://www.googleapis.com/auth/gmail.readonly'];
+export const G_OAUTH_SCOPE_MAIL_READONLY = ['https://www.googleapis.com/auth/gmail.readonly'];
 
 export const G_OAUTH_SCOPE_CONTACTS = ['https://www.googleapis.com/auth/contacts.readonly'];
 export const G_OAUTH_SCOPE_CALENDAR = ['https://www.googleapis.com/auth/calendar.readonly'];
@@ -71,7 +70,7 @@ export const CALENDAR_TO_BE_CREATED_PREFIX = '###TO_BE_CREATED###';
 /* Sync specific */
 
 export const SYNC_SOURCE = EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS;
-export const SYNC_G_OAUTH_SCOPES = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL_NEW_SCOPE];
+export const SYNC_G_OAUTH_SCOPES = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL_READONLY];
 export const SYNC_SUCCESS_NOTIFICATION: CreateNotificationOptions = {
     type: 'success',
     text: c('loc_nightly:account').t`Synchronization will start soon. New emails will appear in your inbox.`,

@@ -2,8 +2,7 @@ import {
     G_OAUTH_SCOPE_CALENDAR,
     G_OAUTH_SCOPE_CONTACTS,
     G_OAUTH_SCOPE_DEFAULT,
-    G_OAUTH_SCOPE_MAIL,
-    G_OAUTH_SCOPE_MAIL_NEW_SCOPE,
+    G_OAUTH_SCOPE_MAIL_READONLY,
     O_OAUTH_SCOPE_CALENDAR,
     O_OAUTH_SCOPE_CONTACTS,
     O_OAUTH_SCOPE_DEFAULT,
@@ -14,15 +13,11 @@ import isTruthy from '@proton/utils/isTruthy';
 
 const { MAIL, CALENDAR, CONTACTS } = ImportType;
 
-export const getScopeFromProvider = (
-    provider: OAUTH_PROVIDER,
-    checkedTypes: CheckedProductMap,
-    useGmailNewScope?: boolean
-) => {
+export const getScopeFromProvider = (provider: OAUTH_PROVIDER, checkedTypes: CheckedProductMap) => {
     if (provider === OAUTH_PROVIDER.GOOGLE) {
         const scopes = [
             ...G_OAUTH_SCOPE_DEFAULT,
-            checkedTypes[MAIL] && (useGmailNewScope ? G_OAUTH_SCOPE_MAIL_NEW_SCOPE : G_OAUTH_SCOPE_MAIL),
+            checkedTypes[MAIL] && G_OAUTH_SCOPE_MAIL_READONLY,
             checkedTypes[CALENDAR] && G_OAUTH_SCOPE_CALENDAR,
             checkedTypes[CONTACTS] && G_OAUTH_SCOPE_CONTACTS,
             // checkedTypes[DRIVE] && G_OAUTH_SCOPE_DRIVE,
