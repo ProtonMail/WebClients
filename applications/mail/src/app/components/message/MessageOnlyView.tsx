@@ -10,9 +10,9 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOutsideFocusedMessage';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useMessage } from '../../hooks/message/useMessage';
-import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
-import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
+import useShouldMoveOut from '../../hooks/useShouldMoveOut';
 import { removeAllQuickReplyFlags } from '../../logic/messages/draft/messagesDraftActions';
+import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../models/utils';
 import ConversationHeader from '../conversation/ConversationHeader';
 import MessageView, { MessageViewRef } from './MessageView';
@@ -21,6 +21,8 @@ interface Props {
     hidden: boolean;
     labelID: string;
     messageID: string;
+    elementIDs: string[];
+    loadingElements: boolean;
     mailSettings: MailSettings;
     onBack: () => void;
     breakpoints: Breakpoints;
@@ -33,6 +35,8 @@ const MessageOnlyView = ({
     hidden,
     labelID,
     messageID,
+    elementIDs,
+    loadingElements,
     mailSettings,
     onBack,
     breakpoints,
@@ -44,12 +48,12 @@ const MessageOnlyView = ({
 
     const [isMessageFocused, setIsMessageFocused] = useState(false);
     const [isMessageReady, setIsMessageReady] = useState(false);
-    const { message, messageLoaded, bodyLoaded } = useMessage(messageID);
+    const { message, messageLoaded } = useMessage(messageID);
     const load = useLoadMessage(message.data || ({ ID: messageID } as MessageWithOptionalBody));
 
     const dispatch = useDispatch();
 
-    useShouldMoveOut({ conversationMode: false, elementID: messageID, loading: !bodyLoaded, onBack, labelID });
+    useShouldMoveOut({ elementIDs, elementID: messageID, loadingElements, onBack });
 
     // Manage loading the message
     useEffect(() => {
@@ -132,36 +136,36 @@ const MessageOnlyView = ({
     }, [messageID, isMessageReady]);
 
     return (
-            <Scroll className={classnames([hidden && 'hidden'])}>
-                <ConversationHeader
-                    className={classnames([hidden && 'hidden'])}
+        <Scroll className={classnames([hidden && 'hidden'])}>
+            <ConversationHeader
+                className={classnames([hidden && 'hidden'])}
+                loading={!messageLoaded}
+                element={message.data}
+            />
+            <div className="flex-item-fluid px1 mt1 max-w100 outline-none" ref={messageContainerRef} tabIndex={-1}>
+                <MessageView
+                    // Break the reuse of the MessageView accross multiple message
+                    // Solve a lot of reuse issues, reproduce the same as in conversation mode with a map on conversation messages
+                    key={message.localID}
+                    ref={messageRef}
+                    labelID={labelID}
+                    conversationMode={false}
                     loading={!messageLoaded}
-                    element={message.data}
+                    message={data}
+                    labels={labels}
+                    mailSettings={mailSettings}
+                    onBack={onBack}
+                    breakpoints={breakpoints}
+                    onMessageReady={handleMessageReadyCallback}
+                    columnLayout={columnLayout}
+                    isComposerOpened={isComposerOpened}
+                    onBlur={handleBlurCallback}
+                    onFocus={handleFocusCallback}
+                    hasFocus={isMessageFocused}
+                    onOpenQuickReply={handleOpenQuickReply}
                 />
-                <div className="flex-item-fluid px1 mt1 max-w100 outline-none" ref={messageContainerRef} tabIndex={-1}>
-                    <MessageView
-                        // Break the reuse of the MessageView accross multiple message
-                        // Solve a lot of reuse issues, reproduce the same as in conversation mode with a map on conversation messages
-                        key={message.localID}
-                        ref={messageRef}
-                        labelID={labelID}
-                        conversationMode={false}
-                        loading={!messageLoaded}
-                        message={data}
-                        labels={labels}
-                        mailSettings={mailSettings}
-                        onBack={onBack}
-                        breakpoints={breakpoints}
-                        onMessageReady={handleMessageReadyCallback}
-                        columnLayout={columnLayout}
-                        isComposerOpened={isComposerOpened}
-                        onBlur={handleBlurCallback}
-                        onFocus={handleFocusCallback}
-                        hasFocus={isMessageFocused}
-                        onOpenQuickReply={handleOpenQuickReply}
-                    />
-                </div>
-            </Scroll>
+            </div>
+        </Scroll>
     );
 };
 
