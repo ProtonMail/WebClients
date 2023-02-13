@@ -465,7 +465,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     onAddAccount={handleAddAccount}
                                                 />
                                             </Route>
-                                            <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
+                                            <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER, SSO_PATHS.TRIAL]}>
                                                 <SignupContainer
                                                     productParam={productParam}
                                                     clientType={clientType}

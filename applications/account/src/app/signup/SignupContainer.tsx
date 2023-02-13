@@ -9,12 +9,12 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useExperiment,
     useFeature,
     useLoading,
     useLocalState,
     useMyLocation,
     useVPNServersCount,
+    useExperiment,
 } from '@proton/components/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -30,6 +30,7 @@ import {
     DEFAULT_CURRENCY,
     MAIL_APP_NAME,
     PLANS,
+    REFERRER_CODE_MAIL_TRIAL,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -61,7 +62,7 @@ import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
+import { getPlanFromPlanIDs, getSubscriptionPrices, isMailTrialSignup } from './helper';
 import {
     InviteData,
     PlanIDs,
@@ -109,7 +110,6 @@ interface Props {
 
 const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam, setupVPN }: Props) => {
     const { APP_NAME } = useConfig();
-    const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const experimentCode = (() => {
         // Generic or VPN target
         if (!toApp || toApp === APPS.PROTONVPN_SETTINGS || APP_NAME === APPS.PROTONVPN_SETTINGS) {
@@ -126,8 +126,18 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const normalApi = useApi();
     const history = useHistory();
     const location = useLocation<{ invite?: InviteData }>();
+    const isTrial = isMailTrialSignup(location);
+    // Override the app to always be mail in trial signup
+    if (isTrial) {
+        toApp = APPS.PROTONMAIL;
+        toAppName = MAIL_APP_NAME;
+    }
     const [signupParameters] = useState(() => {
-        return getSignupSearchParams(location.search);
+        const params = getSignupSearchParams(location.search);
+        if (isTrial) {
+            params.referrer = REFERRER_CODE_MAIL_TRIAL;
+        }
+        return params;
     });
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const ignoreHumanApi = <T,>(config: any) =>
@@ -138,7 +148,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const [myLocation] = useMyLocation();
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
-    const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
+    const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
         SignupSteps.AccountCreationUsername,
@@ -158,7 +168,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const isExternalSignupEnabled =
         Boolean(externalSignupFeature.feature?.Value) &&
         ((experimentCode === ExperimentCode.ExternalSignupGeneric && externalSignupExperiment.value === 'B') ||
-            experimentCode === ExperimentCode.ExternalSignupDrive);
+            experimentCode === ExperimentCode.ExternalSignupDrive);    
+    const isReferral = model.referralData && !isTrial;
 
     const signupTypes = (() => {
         if (isExternalSignupEnabled && signupParameters.type !== 'vpn') {
@@ -269,7 +280,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                 ).then(({ Plans }) => Plans),
             ]);
 
-            if (location.pathname === SSO_PATHS.REFER && !referralData) {
+            if ((location.pathname === SSO_PATHS.REFER || location.pathname === SSO_PATHS.TRIAL) && !referralData) {
                 history.replace(SSO_PATHS.SIGNUP);
             }
 
@@ -397,7 +408,11 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
 
     const handleBackStep = (() => {
         if (step === AccountCreationUsername) {
-            return onBack && !model.referralData ? onBack : undefined;
+            // No back button on referral
+            if (isReferral) {
+                return undefined;
+            }
+            return onBack;
         }
         if (step === HumanVerification) {
             return () => {
@@ -505,7 +520,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     clientType={clientType}
                     onBack={handleBackStep}
                     title={(() => {
-                        if (model.referralData) {
+                        if (isReferral) {
                             return c('Title').t`You’ve been invited to try ${MAIL_APP_NAME}`;
                         }
                         return c('Title').t`Create your ${BRAND_NAME} Account`;
@@ -514,7 +529,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                         if (loading) {
                             return '';
                         }
-                        if (model.referralData) {
+                        if (isReferral) {
                             return c('Title').t`Secure email based in Switzerland`;
                         }
                         if (toAppName) {
@@ -621,7 +636,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             )}
             {step === TrialPlan && (
                 <ReferralStep
-                    experiment={referralExperiment}
                     onBack={handleBackStep}
                     onPlan={async (planIDs) => {
                         // Referral is always free even if there's a plan, and 1 month cycle
