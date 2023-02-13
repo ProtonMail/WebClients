@@ -368,12 +368,13 @@ export function useLinkInner(
                     ),
                 }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
 
-                const fileModifyTimePromise = !encryptedLink.xAttr
+                const xattrPromise = !encryptedLink.xAttr
                     ? {
                           fileModifyTime: encryptedLink.metaDataModifyTime,
                           fileModifyTimeVerified: VERIFICATION_STATUS.SIGNED_AND_VALID,
                           originalSize: undefined,
                           originalDimensions: undefined,
+                          digests: undefined,
                       }
                     : getLinkPrivateKey(abortSignal, shareId, encryptedLink.linkId)
                           .then(async (privateKey) =>
@@ -397,12 +398,17 @@ export function useLinkInner(
                                         height: xattrs.Media.Height,
                                     }
                                   : undefined,
+                              digests: xattrs.Common?.Digests
+                                  ? {
+                                        sha1: xattrs.Common.Digests.SHA1,
+                                    }
+                                  : undefined,
                           }));
 
                 const [
                     { name, nameVerified },
-                    { fileModifyTime, fileModifyTimeVerified, originalSize, originalDimensions },
-                ] = await Promise.all([namePromise, fileModifyTimePromise]);
+                    { fileModifyTime, fileModifyTimeVerified, originalSize, originalDimensions, digests },
+                ] = await Promise.all([namePromise, xattrPromise]);
 
                 const signatureIssues: SignatureIssues = {};
                 if (
@@ -433,6 +439,7 @@ export function useLinkInner(
                     originalSize,
                     originalDimensions,
                     signatureIssues: Object.keys(signatureIssues).length > 0 ? signatureIssues : undefined,
+                    digests,
                 };
             },
             ['decryptLink', shareId, encryptedLink.linkId],
