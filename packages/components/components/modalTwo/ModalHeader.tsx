@@ -70,7 +70,7 @@ const ModalHeader = ({
             >
                 {title && (
                     <div className="modal-two-header-title mt0-25">
-                        <h3
+                        <h1
                             id={id}
                             className={classnames([
                                 'text-bold',
@@ -79,7 +79,7 @@ const ModalHeader = ({
                             ])}
                         >
                             {title}
-                        </h3>
+                        </h1>
                         {subline && <div className="color-weak text-break">{subline}</div>}
                     </div>
                 )}
