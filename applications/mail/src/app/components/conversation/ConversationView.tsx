@@ -11,7 +11,6 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
-import { isAlwaysMessageLabels } from '../../helpers/labels';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import { useConversation } from '../../hooks/conversation/useConversation';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
@@ -43,6 +42,7 @@ interface Props {
     containerRef: RefObject<HTMLElement>;
     loadingElements: boolean;
     elementIDs: string[];
+    conversationMode: boolean;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -61,6 +61,7 @@ const ConversationView = ({
     containerRef,
     loadingElements,
     elementIDs,
+    conversationMode,
 }: Props) => {
     const dispatch = useDispatch();
     const getMessage = useGetMessage();
@@ -76,7 +77,7 @@ const ConversationView = ({
     const { state: filter, toggle: toggleFilter, set: setFilter } = useToggle(DEFAULT_FILTER_VALUE);
     useShouldMoveOut({
         elementIDs,
-        elementID: isAlwaysMessageLabels(labelID) ? messageID : conversationID,
+        elementID: conversationMode ? conversationID : messageID,
         loadingElements,
         onBack,
     });
