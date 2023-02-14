@@ -35,27 +35,29 @@ const useStepPrepareEmailSummary = ({ handleCloseCustomizeModal }: Props) => {
     const selectedItemsToImportCount = storeFields.mapping.filter((item) => item.checked && !item?.category).length;
     const errors = getMailMappingErrors(storeFields.mapping, isLabelMapping, labels, folders);
 
-    // translator: here is an example of a complete sentence: "Import all messages from 12 labels and label them as ..." followed by the label HTML element
     const summaryAllLabels = isLabelMapping
-        ? c('Mail import summary').ngettext(
+        ? // translator: here is an example of a complete sentence: "Import all messages from 12 labels and label them as ..." followed by the label HTML element
+          c('Mail import summary').ngettext(
               msgid`Import all messages from ${itemsToImportCount} label and label them as`,
               `Import all messages from ${itemsToImportCount} labels and label them as`,
               itemsToImportCount
           )
-        : c('Mail import summary').ngettext(
+        : // translator: here is an example of a complete sentence: "Import all messages from 12 folders and label them as ..." followed by the label HTML element
+          c('Mail import summary').ngettext(
               msgid`Import all messages from ${itemsToImportCount} folder and label them as`,
               `Import all messages from ${itemsToImportCount} folders and label them as`,
               itemsToImportCount
           );
 
-    // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 labels and label them as ..." followed by the label HTML element
     const summarySelectedLabels = isLabelMapping
-        ? c('Mail import summary').ngettext(
+        ? // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 labels and label them as ..." followed by the label HTML element
+          c('Mail import summary').ngettext(
               msgid`Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} label and label them as`,
               `Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} labels and label them as`,
               itemsToImportCount
           )
-        : c('Mail import summary').ngettext(
+        : // translator: here is an example of a complete sentence: "Import all messages from 3 out of 5 folders and label them as ..." followed by the label HTML element
+          c('Mail import summary').ngettext(
               msgid`Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} folder and label them as`,
               `Import all messages from ${selectedItemsToImportCount} out of ${itemsToImportCount} folders and label them as`,
               itemsToImportCount

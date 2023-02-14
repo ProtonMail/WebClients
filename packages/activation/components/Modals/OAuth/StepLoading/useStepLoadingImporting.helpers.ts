@@ -14,6 +14,7 @@ import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupC
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Address, Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
@@ -195,6 +196,9 @@ export const createImporterTask = async ({
         } catch (e) {
             //Rollback to previous state if an error occurred during calendar creation
             dispatch(changeOAuthStep('prepare-import'));
+            captureMessage('Error while creating calendars', {
+                extra: { message: e, importerID: importerData.importerId },
+            });
             return;
         }
     }
@@ -229,7 +233,6 @@ export const createImporterTask = async ({
     }
 
     try {
-        console.log('🚀 ~ file: useStepLoadingImporting.helpers.ts:229 ~ importPayload', importPayload);
         setIsCreatingImportTask(true);
         await api(startImportTask(importPayload));
         await call();
