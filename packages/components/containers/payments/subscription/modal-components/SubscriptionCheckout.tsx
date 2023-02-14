@@ -180,7 +180,11 @@ const SubscriptionCheckout = ({
                         <span className="inline-flex flex-align-items-center">
                             <span className="mr0-5">{c('Label').t`Proration`}</span>
                             <Info
-                                title={c('Info').t`Credit for the unused portion of your previous plan subscription`}
+                                title={
+                                    proration < 0
+                                        ? c('Info').t`Credit for the unused portion of your previous plan subscription`
+                                        : c('Info').t`Balance from your previous subscription`
+                                }
                                 url={
                                     isVPN
                                         ? 'https://protonvpn.com/support/vpn-credit-proration/'
