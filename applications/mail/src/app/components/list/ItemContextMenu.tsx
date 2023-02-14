@@ -1,14 +1,22 @@
 import { RefObject, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
+import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit } from '@proton/components';
+import { useApi, useUser } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useLabelActions } from '../../hooks/useLabelActions';
-import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
+import { expireConversations } from '../../logic/conversations/conversationsActions';
+import {
+    elementsAreUnread as elementsAreUnreadSelector,
+    expiringElements as expiringElementsSelector,
+} from '../../logic/elements/elementsSelectors';
+import { expireMessages } from '../../logic/messages/expire/messagesExpireActions';
+import { useAppDispatch } from '../../logic/store';
 
 interface Props {
     checkedIDs: string[];
@@ -27,6 +35,7 @@ interface Props {
     onDelete: () => void;
     canShowBlockSender: boolean;
     onBlockSender: () => Promise<void>;
+    conversationMode: boolean;
 }
 
 const ItemContextMenu = ({
@@ -38,10 +47,17 @@ const ItemContextMenu = ({
     onMarkAs,
     canShowBlockSender,
     onBlockSender,
+    conversationMode,
     ...rest
 }: Props) => {
+    const dispatch = useAppDispatch();
+    const [user] = useUser();
+    const api = useApi();
     const elementsAreUnread = useSelector(elementsAreUnreadSelector);
-
+    const expiringElements = useSelector(expiringElementsSelector);
+    const willExpire = useMemo(() => {
+        return checkedIDs.every((elementID) => expiringElements[elementID]);
+    }, [checkedIDs, expiringElements]);
     const buttonMarkAsRead = useMemo(() => {
         const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
         return !allRead;
@@ -61,6 +77,18 @@ const ItemContextMenu = ({
 
     const handleMarkAs = (status: MARK_AS_STATUS) => {
         onMarkAs(status);
+        rest.close();
+    };
+
+    const handleExpire = (date?: Date) => {
+        const expirationTime = date ? getUnixTime(date) : null;
+
+        if (conversationMode) {
+            void dispatch(expireConversations({ IDs: checkedIDs, expirationTime, api }));
+        } else {
+            void dispatch(expireMessages({ IDs: checkedIDs, expirationTime, api }));
+        }
+
         rest.close();
     };
 
@@ -182,6 +210,31 @@ const ItemContextMenu = ({
                     name={c('Action').t`Mark as unread`}
                     action={() => handleMarkAs(MARK_AS_STATUS.UNREAD)}
                 />
+            )}
+            {user.isPaid && (
+                <>
+                    <ContextSeparator />
+                    {willExpire ? (
+                        <ContextMenuButton
+                            key="context-menu-keep"
+                            testId="context-menu-keep"
+                            icon="hourglass"
+                            name={c('Action').t`Remove expiration`}
+                            action={() => handleExpire()}
+                        />
+                    ) : (
+                        <ContextMenuButton
+                            key="context-menu-expire"
+                            testId="context-menu-expire"
+                            icon="hourglass"
+                            name={c('Action').t`Expire in 30 days`}
+                            action={() => {
+                                const now = new Date();
+                                handleExpire(addDays(now, 30));
+                            }}
+                        />
+                    )}
+                </>
             )}
         </ContextMenu>
     );
