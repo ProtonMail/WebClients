@@ -92,12 +92,12 @@ const ItemHoverButtons = ({
                     className
                 )}
             >
-                <Tooltip title={unreadAlt}>
+                <Tooltip title={unreadAlt} tooltipClassName="no-pointer-events">
                     <Button icon shape="ghost" size={size} className="color-inherit" onClick={handleMarkAs}>
                         <Icon name={unreadIcon} alt={unreadAlt} />
                     </Button>
                 </Tooltip>
-                <Tooltip title={c('Action').t`Move to trash`}>
+                <Tooltip title={c('Action').t`Move to trash`} tooltipClassName="no-pointer-events">
                     <Button
                         icon
                         shape="ghost"
@@ -109,7 +109,7 @@ const ItemHoverButtons = ({
                         <Icon name="trash" alt={c('Action').t`Move to trash`} />
                     </Button>
                 </Tooltip>
-                <Tooltip title={c('Action').t`Move to archive`}>
+                <Tooltip title={c('Action').t`Move to archive`} tooltipClassName="no-pointer-events">
                     <Button
                         icon
                         shape="ghost"
@@ -122,7 +122,7 @@ const ItemHoverButtons = ({
                     </Button>
                 </Tooltip>
                 {hasStar && (
-                    <Tooltip title={starAlt}>
+                    <Tooltip title={starAlt} tooltipClassName="no-pointer-events">
                         <Button
                             icon
                             shape="ghost"
