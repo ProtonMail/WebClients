@@ -86,6 +86,9 @@
       "Archive": [
         "Archiveren"
       ],
+      "As Scheduled": [
+        "Zoals gepland"
+      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -2882,15 +2885,21 @@
       "No labels": [
         "Geen labels"
       ],
+      "ProtonMail logo and a plus sign": [
+        "ProtonMail logo en een plus teken"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
+      ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Ontgrendel aangepaste berichten inplannen en andere voordelen als u uw abonnement upgrade."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
       "When do you want your message to be sent?": [
-        "Wanneer wilt u dat uw bericht wordt verzonden?"
+        "Wanneer wilt u dat uw bericht wordt verstuurd?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
@@ -3073,6 +3082,9 @@
       ],
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
+      ],
+      "Contact name is too long": [
+        "Naam van contact is te lang"
       ],
       "Contact signature could not be verified": [
         "Contacthandtekening kan niet geverifieerd worden"
@@ -3370,8 +3382,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "Dit bericht is al verzonden. Er is een nieuw concept opgeslagen."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Te veel actieve filters. Upgrade naar een betaald abonnement om meer filters te activeren."
@@ -3394,8 +3406,8 @@
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "U kunt niet meer dan één opstelvenster tegelijk openen",
@@ -4573,6 +4585,9 @@
       "Body: ": [
         "Tekst: "
       ],
+      "Calendar side panel": [
+        "Agenda zijpaneel"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
       ],
@@ -4605,6 +4620,9 @@
       ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
+      ],
+      "Country code": [
+        "Landcode"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Maak één nieuwe agenda",
@@ -4807,6 +4825,10 @@
       ],
       "Group assignment applied": [
         "Groep toewijzing toegepast"
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Heeft ${ numAttachments } bijlage (${ numAttachmentsSize })",
+        "Heeft ${ numAttachments } bijlagen (${ numAttachmentsSize })"
       ],
       "here": [
         "hier"
@@ -5416,6 +5438,9 @@
       ],
       "Updating message content search...": [
         "Zoeken naar berichtinhoud bijwerken..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
       "Upgrade to add more addresses to your account.": [
         "Upgrade om meer adressen aan uw account toe te voegen."
@@ -6929,19 +6954,31 @@
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
+      "Hide My Email aliases": [
+        "Hide My Email-aliassen"
+      ],
+      "Schedule messages at any time": [
+        "Plan berichten in op ieder moment"
+      ],
       "Search message content": [
         "Doorzoek berichtinhoud"
       ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Up to 15 email addresses": [
+        "Tot wel 15 e-mailadressen"
+      ],
+      "Up to 500 GB of storage": [
+        "Tot wel 500 GB Opslag"
       ]
     },
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }."
+        "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -8554,6 +8591,9 @@
       ],
       "Sending original message": [
         "Oorspronkelijk bericht wordt verzonden"
+      ],
+      "Set your own schedule": [
+        "Maak uw eigen planning"
       ],
       "Settings": [
         "Instellingen"

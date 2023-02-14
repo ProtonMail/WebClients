@@ -2458,7 +2458,7 @@
     },
     "Create user accounts empty state": {
       "No search results found": [
-        "検索結果が見つかりません"
+        "該当する検索結果が見つかりませんでした"
       ]
     },
     "Credits": {
@@ -3128,9 +3128,6 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
@@ -4717,6 +4714,9 @@
       "Enable this address to join this calendar": [
         "このアドレスがこのカレンダーに参加できるようにする"
       ],
+      "Enable TLS or SSL on the external service if it is supported.": [
+        "外部サービスが TLS または SSL に対応している場合は有効にします。"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "もう一度回復を有効にすると新しい回復用フレーズが生成されます。"
       ],
@@ -4800,6 +4800,9 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "${ BRAND_NAME } アドレスを入手"
+      ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
+        "トークンを使用する予定のサービスなどのわかりやすい名前を付け、有効な独自ドメインアドレスを選択します。 このトークンでメールを送信できるのは、このアドレスだけです。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "あなたの公開鍵を友達に渡すか、誰もがあなたにエンドツーエンドの暗号化メールを送れるようにオンラインで公開しましょう！"
@@ -4985,7 +4988,7 @@
         "あなたが宛先の方のプライバシーに配慮していることを伝えましょう。"
       ],
       "Link copied to clipboard": [
-        "リンクをコピーしました"
+        "リンクがクリップボードにコピーされました"
       ],
       "Link created": [
         "リンクが作成されました"
@@ -5443,6 +5446,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "このウィンドウを閉じると、トークンは確認できなくなります。トークンは誰とも共有しないでください。"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
       ],
@@ -5589,6 +5595,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "公式アプリを使わず${ VPN_APP_NAME }のサーバーに接続するには、以下の認証情報を使用してください。TunnelblickをMacOSで使う場合や、OpenVPNを使う場合などです。"
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "選択したメールアドレスを外部サービスの SMTP ユーザー名として、生成されたトークンを SMTP パスワードとして使用します。"
       ],
       "Verification can take a few minutes.": [
         "検証に数分かかることがあります。"
@@ -6017,6 +6026,12 @@
       ],
       "Key with fingerprint ${ fp } successfully created.": [
         "フィンガープリント ${ fp } の鍵が正常に作成されました。"
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "暗号鍵を生成しています。これには数分かかり、ブラウザが一時的にフリーズする場合があります。"
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "アドレスの暗号鍵を生成しています。これには数分かかり、ブラウザが一時的にフリーズする場合があります。"
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "現在の鍵が侵害されたと思われる場合は、新しい暗号鍵を生成できます。"
@@ -8883,7 +8898,7 @@
     },
     "Select search results": {
       "No results found": [
-        "結果が見つかりませんでした"
+        "該当する結果が見つかりませんでした"
       ]
     },
     "Settings description": {
@@ -9245,6 +9260,9 @@
       "Phone number updated": [
         "電話番号が更新されました"
       ],
+      "Port copied to clipboard": [
+        "ポートがクリップボードにコピーされました"
+      ],
       "Preference saved": [
         "設定が保存されました"
       ],
@@ -9253,6 +9271,9 @@
       ],
       "Resuming import": [
         "インポートを再開"
+      ],
+      "Server copied to clipboard": [
+        "サーバーがクリップボードにコピーされました"
       ],
       "Session revoked": [
         "セッションを失効しました"
@@ -9267,7 +9288,7 @@
         "SPF 値がクリップボードにコピーされました"
       ],
       "Token copied to clipboard": [
-        "トークンをクリップボードにコピーしました"
+        "トークンがクリップボードにコピーされました"
       ],
       "Undo in progress": [
         "取り消し中"
@@ -9872,7 +9893,7 @@
         "新しい回復用フレーズを生成しますか？"
       ],
       "Generate SMTP token": [
-        "SMTPトークンの生成"
+        "SMTP トークンの生成"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "すべてのサーバーに接続するために ${ vpnPlus } を入手"
@@ -10298,7 +10319,7 @@
         "回復状態"
       ],
       "Your SMTP token": [
-        "あなたのSMTPトークン"
+        "あなたの SMTP トークン"
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"

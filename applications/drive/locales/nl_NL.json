@@ -373,6 +373,9 @@
       "Move to trash": [
         "Naar prullenbak verplaatsen"
       ],
+      "New": [
+        "Nieuw"
+      ],
       "New upload": [
         "Nieuwe upload"
       ],
@@ -1918,6 +1921,9 @@
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
       ],
+      "Contact name is too long": [
+        "Naam van contact is te lang"
+      ],
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
@@ -2146,8 +2152,8 @@
       "This label name is not available. Please choose a different name.": [
         "Deze labelnaam is niet beschikbaar. Kies een andere naam."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
@@ -2158,8 +2164,8 @@
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "U heeft het maximale aantal persoonlijke agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
@@ -2912,6 +2918,9 @@
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } geselecteerd"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } map geselecteerd",
         "${ selectedFoldersCount } mappen geselecteerd"
@@ -2965,6 +2974,9 @@
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
       ],
+      "Also try looking in Trash.": [
+        "Probeer ook eens te zoeken in de Prullenbak."
+      ],
       "An active recovery file": [
         "Een actief herstelbestand"
       ],
@@ -3001,6 +3013,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
+      "Calendar side panel": [
+        "Agenda zijpaneel"
+      ],
       "Canceled": [
         "Geannuleerd"
       ],
@@ -3036,6 +3051,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Blijf ${ DRIVE_APP_NAME } gebruiken en ontgrendel de schijf later"
+      ],
+      "Country code": [
+        "Landcode"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Maak één nieuwe agenda",
@@ -3571,6 +3589,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
       ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "De versleutelde gegevens zijn iets groter door de extra gegevens voor de versleuteling en de handtekening, die de beveiliging van uw gegevens garanderen."
+      ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
@@ -3659,6 +3680,9 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Try searching by file name, date, or type.": [
+        "Zoek ook op bestandsnaam, datum of type."
+      ],
       "Unknown error": [
         "Onbekende fout"
       ],
@@ -3673,6 +3697,9 @@
       ],
       "Updating drive search...": [
         "Drive doorzoeken updaten..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
       "Uploaded": [
         "Geüpload"
@@ -3821,6 +3848,12 @@
       ],
       "file data key": [
         "bestandsgegevenssleutel"
+      ],
+      "file data order": [
+        "bestandsgegevens volgorde"
+      ],
+      "hash key": [
+        "hash sleutel"
       ],
       "keys": [
         "sleutels"
@@ -5618,6 +5651,9 @@
       ],
       "Open settings menu": [
         "Open instellingenmenu"
+      ],
+      "Original size": [
+        "Originele grootte"
       ],
       "Other information": [
         "Andere informatie"
