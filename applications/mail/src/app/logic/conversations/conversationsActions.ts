@@ -74,7 +74,7 @@ export const eventConversationUpdate = createAction<{ ID: string; updatedConvers
 );
 
 export const expireConversations = createAsyncThunk<void, { IDs: string[]; expirationTime: number | null; api: Api }>(
-    'conversations/expire',
+    'conversations/setExpiration',
     async ({ IDs, expirationTime, api }) => {
         await api(setExpiration(IDs, expirationTime));
     }
