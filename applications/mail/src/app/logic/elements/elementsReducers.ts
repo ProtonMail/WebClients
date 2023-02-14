@@ -234,3 +234,48 @@ export const pollTaskRunningFulfilled = (state: Draft<ElementsState>, { payload 
 export const deleteDraft = (state: Draft<ElementsState>, { payload: ID }: PayloadAction<string>) => {
     delete state.elements[ID];
 };
+
+const previousExpiration: Record<string, number | undefined> = {};
+
+export const expireElementsPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<void, string, { arg: { IDs: string[]; expirationTime: number | null } }>
+) => {
+    const { IDs, expirationTime } = action.meta.arg;
+
+    IDs.forEach((ID) => {
+        const element = state.elements[ID];
+
+        if (element) {
+            previousExpiration[ID] = element.ExpirationTime;
+            element.ExpirationTime = expirationTime ? expirationTime : undefined;
+        }
+    });
+};
+
+export const expireElementsFulfilled = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<void, string, { arg: { IDs: string[] } }>
+) => {
+    const { IDs } = action.meta.arg;
+
+    IDs.forEach((ID) => {
+        delete previousExpiration[ID];
+    });
+};
+
+export const expireElementsRejected = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<unknown, string, { arg: { IDs: string[] } }>
+) => {
+    const { IDs } = action.meta.arg;
+
+    IDs.forEach((ID) => {
+        const element = state.elements[ID];
+
+        if (element) {
+            element.ExpirationTime = previousExpiration[ID];
+            delete previousExpiration[ID];
+        }
+    });
+};
