@@ -15,7 +15,7 @@ const UploadFolderButton = () => {
 
     return (
         <>
-            <input multiple type="file" ref={fileInput} className="hidden" onChange={handleChange} />
+            <input type="file" ref={fileInput} className="hidden" onChange={handleChange} />
             <ToolbarButton
                 data-testid="toolbar-upload-folder"
                 icon={<Icon name="folder-arrow-up" />}
