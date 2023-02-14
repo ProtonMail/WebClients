@@ -23,10 +23,11 @@ const { CALENDAR_URL } = MAX_CHARS_API;
 interface Props {
     open: boolean;
     onClose?: () => void;
+    onExit?: () => void;
     onCreateCalendar?: (id: string) => void;
 }
 
-const SubscribedCalendarModal = ({ open, onClose, onCreateCalendar }: Props) => {
+const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Props) => {
     const [, setCalendar] = useState<VisualCalendar | undefined>();
     const [calendarURL, setCalendarURL] = useState('');
     const [model, setModel] = useState(() => getDefaultModel());
@@ -177,6 +178,7 @@ const SubscribedCalendarModal = ({ open, onClose, onCreateCalendar }: Props) => 
                     onSubmit();
                 }
             }}
+            onExit={onExit}
         >
             {loadingSetup ? (
                 <Loader />
