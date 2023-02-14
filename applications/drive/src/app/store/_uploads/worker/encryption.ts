@@ -1,3 +1,5 @@
+import type { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
+
 import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { FILE_CHUNK_SIZE, MB } from '@proton/shared/lib/drive/constants';
 import { Environment } from '@proton/shared/lib/environment/helper';
@@ -19,7 +21,8 @@ export default async function* generateEncryptedBlocks(
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
     environment: Environment | undefined,
-    postNotifySentry: (e: Error) => void
+    postNotifySentry: (e: Error) => void,
+    hashInstance: Sha1
 ): AsyncGenerator<EncryptedBlock | EncryptedThumbnailBlock> {
     if (thumbnailData) {
         yield await encryptThumbnail(addressPrivateKey, sessionKey, thumbnailData);
@@ -32,9 +35,13 @@ export default async function* generateEncryptedBlocks(
     let index = 1;
     const reader = new ChunkFileReader(file, FILE_CHUNK_SIZE);
     while (!reader.isEOF()) {
+        const chunk = await reader.readNextChunk();
+
+        hashInstance.process(chunk);
+
         yield await encryptBlock(
             index++,
-            await reader.readNextChunk(),
+            chunk,
             addressPrivateKey,
             privateKey,
             sessionKey,
