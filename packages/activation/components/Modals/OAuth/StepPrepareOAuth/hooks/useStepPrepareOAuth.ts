@@ -13,6 +13,7 @@ import {
 } from '@proton/activation/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/logic/store';
 import { FeatureCode, useCalendars, useFeature, useFolders, useLabels } from '@proton/components/index';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { getEnabledFeature } from '../../OAuthModal.helpers';
 import { getMailCustomLabel, importerHasErrors } from './useStepPrepareOAuth.helpers';
@@ -32,9 +33,9 @@ const useStepPrepare = () => {
     const [folders = []] = useFolders();
     const [calendars = []] = useCalendars();
 
-    const [mailChecked, setMailChecked] = useState(products.includes(ImportType.MAIL) ?? false);
-    const [contactChecked, setContactChecked] = useState(products.includes(ImportType.CONTACTS) ?? false);
-    const [calendarChecked, setCalendarChecked] = useState(products.includes(ImportType.CALENDAR) ?? false);
+    const [mailChecked, setMailChecked] = useState(products.includes(ImportType.MAIL));
+    const [contactChecked, setContactChecked] = useState(products.includes(ImportType.CONTACTS));
+    const [calendarChecked, setCalendarChecked] = useState(products.includes(ImportType.CALENDAR));
 
     const isLabelMapping = provider === ImportProvider.GOOGLE;
 
@@ -54,16 +55,12 @@ const useStepPrepare = () => {
     const featureMap = easySwitchFeature.feature!.Value;
 
     const handleSubmit = () => {
-        const products = [];
-        if (mailChecked) {
-            products.push(ImportType.MAIL);
-        }
-        if (contactChecked) {
-            products.push(ImportType.CONTACTS);
-        }
-        if (calendarChecked) {
-            products.push(ImportType.CALENDAR);
-        }
+        const products = [
+            mailChecked && ImportType.MAIL,
+            contactChecked && ImportType.CONTACTS,
+            calendarChecked && ImportType.CALENDAR,
+        ].filter(isTruthy);
+
         dispatch(submitProducts(products));
         dispatch(changeOAuthStep('importing'));
     };
