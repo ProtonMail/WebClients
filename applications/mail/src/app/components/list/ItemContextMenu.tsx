@@ -8,6 +8,7 @@ import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit } fr
 import { useApi, useUser } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { canSetExpiration } from '../../helpers/expiration';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { expireConversations } from '../../logic/conversations/conversationsActions';
@@ -62,6 +63,7 @@ const ItemContextMenu = ({
         const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
         return !allRead;
     }, [checkedIDs, elementsAreUnread]);
+    const canExpire = canSetExpiration(user, labelID);
 
     const [actions] = useLabelActions(labelID, false);
 
@@ -211,7 +213,7 @@ const ItemContextMenu = ({
                     action={() => handleMarkAs(MARK_AS_STATUS.UNREAD)}
                 />
             )}
-            {user.isPaid && (
+            {canExpire && (
                 <>
                     <ContextSeparator />
                     {willExpire ? (
