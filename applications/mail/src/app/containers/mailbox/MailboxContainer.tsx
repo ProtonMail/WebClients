@@ -407,6 +407,7 @@ const MailboxContainer = ({
                                         containerRef={messageContainerRef}
                                         elementIDs={elementIDs}
                                         loadingElements={loading}
+                                        conversationMode={conversationMode}
                                     />
                                 ) : (
                                     <MessageOnlyView
