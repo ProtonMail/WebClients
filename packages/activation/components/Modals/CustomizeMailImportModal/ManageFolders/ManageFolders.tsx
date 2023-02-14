@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import { GMAIL_CATEGORIES } from '@proton/activation/constants';
-
 import { MailImportFields } from '../CustomizeMailImportModal.interface';
 import ManageFoldersHeader from './ManageFoldersHeader';
 import ManageFoldersRow from './ManageFoldersRow/ManageFoldersRow';
@@ -30,12 +28,9 @@ const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, 
             <div className="flex mb1">
                 <div className="flex-item-fluid pt0-5">
                     <ul className="unstyled m0">
-                        {items.map((item, index) => {
-                            if (item.category && GMAIL_CATEGORIES.includes(item.category)) {
-                                return null;
-                            }
-
-                            return (
+                        {items
+                            .filter((item) => !item.category)
+                            .map((item, index) => (
                                 <ManageFoldersRow
                                     key={item.id}
                                     index={index}
@@ -44,8 +39,7 @@ const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, 
                                     onErrorSaved={() => onErroredInputSaved(item.id)}
                                     onToggleCheck={handleToggleCheckbox}
                                 />
-                            );
-                        })}
+                            ))}
                     </ul>
                 </div>
             </div>
