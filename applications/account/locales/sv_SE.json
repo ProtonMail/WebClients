@@ -460,7 +460,7 @@
         "Gör till standard"
       ],
       "Manage communication preferences": [
-        "Hantera kommunikationsinställningar"
+        "Hantera kommunikationspreferenser"
       ],
       "Manage folders": [
         "Hantera mappar"
@@ -1303,7 +1303,7 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "Redigera (visa, skapa och redigera händelseinformation)"
+        "Redigera (visa, skapa och redigera händelsedetaljer)"
       ],
       "View (see all event details)": [
         "Vy (se alla händelsedetaljer)"
@@ -3137,7 +3137,7 @@
         "Adressen kan vara felstavad"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Den webbläsare du använder tillåter inte att betalningen godkänns till fullo. Använd en annan webbläsare eller logga in via en dator."
+        "Webbläsaren du använder tillåter inte att betalningen är fullständigt auktoriserad. Använd en annan webbläsare eller logga in via en dator."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappnamnet är ogiltigt. Välj ett annat namn."
@@ -3196,8 +3196,8 @@
       "This label name is not available. Please choose a different name.": [
         "Detta etikettnamn är inte tillgängligt. Välj ett annat namn."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
       ],
       "Trusted keys are not valid for sending": [
         "Betrodda nycklar är inte giltiga för att skicka"
@@ -3230,7 +3230,7 @@
         "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Fel verifieringskod. Kontrollera att du kopierade verifieringskoden korrekt och försök igen. Det kan ta upp till 24 timmar innan ändringarna träder i kraft."
+        "Fel verifieringskod. Se till att du kopierade verifieringskoden korrekt och försök igen. Det kan ta upp till 24 timmar innan ändringarna träder i kraft."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Du har förlorat åtkomst till din organisationsnyckel. Utan återställning kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare, eller få tillgång till icke-privata användarkonto."
@@ -3984,6 +3984,9 @@
       ],
       "Last used": [
         "Senast använd"
+      ],
+      "Token name": [
+        "Tokennamn"
       ]
     },
     "Hint": {
@@ -4020,6 +4023,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Ett fel uppstod vid kryptering och skapande av din händelse. ${ totalImported } av ${ totalToImport } händelse lyckades importeras.",
         "Ett fel uppstod vid kryptering och skapande av dina händelser. ${ totalImported } av ${ totalToImport } händelse lyckades importeras."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Ett fel uppstod när din händelse krypterades och lades till. Ingen händelse kunde importeras."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Ett fel uppstod vid kryptering och när dina händelser skulle läggas till. Ingen händelse kunde importeras."
@@ -4071,6 +4077,9 @@
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Ett fel uppstod när din kontakt skulle krypteras och läggas till. Ingen kontakt kunde importeras."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Ett fel inträffade vid kryptering och när dina kontakter skulle läggas till. ${ totalImported } av ${ totalToImport } kontakter har importerats."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
         "Ett fel uppstod när dina kontakter krypterades och lades till. Ingen kontakt kunde importeras."
@@ -4596,6 +4605,9 @@
       "Amount below minimum (${ amount }).": [
         "Belopp under minimum (${ amount })."
       ],
+      "An error occurred while communicating with the extension": [
+        "Ett fel uppstod i kommunikationen med tillägget."
+      ],
       "and": [
         "och"
       ],
@@ -4730,6 +4742,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Om du fortsätter ansluts ditt ${ BRAND_NAME } till ${ name }."
+      ],
+      "Copy your referral link": [
+        "Kopiera din hänvisningslänk"
       ],
       "Country code": [
         "Landskod"
@@ -7268,6 +7283,9 @@
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
       ],
+      "Token name": [
+        "Tokennamn"
+      ],
       "Two-password mode": [
         "Två-lösenordsläge"
       ],
@@ -9456,7 +9474,7 @@
         "Kalender-URL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "För att prenumerera på en extern eller offentlig kalender och dess uppdateringar anger du dess URL. En skrivskyddad version av kalendern kommer att läggas till i dina prenumererade kalendrar.\n${ kbLink }"
+        "För att prenumerera på en extern eller offentlig kalender och dess uppdateringar, ange URL:en. En skrivskyddad version av kalendern kommer att läggas till i dina prenumererade kalendrar.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -10911,6 +10929,9 @@
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Ställer in följande sidfot för e-posten du skickar: ${ signature } Länken pekar på din refereringslänk. Sidfoten kommer att synas under din signatur. Du kan närsomhelst anpassa din signatur i inställningarna."
+      ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte finns tillgängligt."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer skapade med den här nyckeln behandlas som ogiltiga, och den här nyckeln kan inte användas för kryptering"
