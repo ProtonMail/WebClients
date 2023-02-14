@@ -79,7 +79,7 @@
         "Añadir PayPal"
       ],
       "Add sieve filter": [
-        "Añadir filtro Seve"
+        "Añadir filtro Sieve"
       ],
       "Add user": [
         "Añadir usuario"
@@ -253,7 +253,7 @@
         "Eliminar sin exportar"
       ],
       "Delete your account": [
-        "Eliminar mi cuenta"
+        "Eliminar tu cuenta"
       ],
       "Details": [
         "Detalles"
@@ -319,7 +319,7 @@
         "Editar número de teléfono"
       ],
       "Edit sieve": [
-        "Editar sieve"
+        "Editar filtro Sieve"
       ],
       "Edit sign-in details": [
         "Editar datos de inicio de sesión"
@@ -517,7 +517,7 @@
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
-        "Abrir ajustes de ${ CALENDAR_APP_NAME }"
+        "Abrir la configuración de ${ CALENDAR_APP_NAME }"
       ],
       "Open navigation": [
         "Abrir la navegación"
@@ -532,7 +532,7 @@
         "Pagar"
       ],
       "Pay ${ price } now": [
-        "Pagar ahora ${ price }"
+        "Pagar ${ price } ahora"
       ],
       "Preview": [
         "Vista previa"
@@ -580,13 +580,13 @@
         "Eliminar bloqueo"
       ],
       "Remove bonuses": [
-        "Eliminar bonificaciones"
+        "Eliminar beneficios"
       ],
       "Remove calendar": [
         "Eliminar calendario"
       ],
       "Remove gift code": [
-        "Eliminar código promocional"
+        "Eliminar código de regalo"
       ],
       "Remove this label": [
         "Eliminar esta etiqueta"
@@ -655,7 +655,7 @@
         "Revocar ${ name }"
       ],
       "Revoke all other sessions": [
-        "Revocar las demás sesiones"
+        "Revocar todas las demás sesiones"
       ],
       "Revoke this invitation": [
         "Revocar esta invitación"
@@ -2826,7 +2826,7 @@
     },
     "Error": {
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } es tu nombre de usuario. Para crear ${ Local }@${ Domain }, dirígete a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
+        "${ Local } es tu nombre de usuario. Para crear ${ Local }@${ Domain }, ve a Configuración> Mensajes y redacción > Dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
@@ -2838,7 +2838,7 @@
         "No se ha encontrado la clave primaria de la dirección."
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Todo el espacio de almacenamiento ha sido asignado. Reduce el almacenamiento asignado a otros usuarios."
+        "Se ha asignado todo el espacio de almacenamiento. Reduce el almacenamiento asignado a otros usuarios."
       ],
       "Already a member of this calendar": [
         "Ya eres miembro de este calendario."
@@ -2865,7 +2865,7 @@
         "Se ha alcanzado el límite de calendarios."
       ],
       "Checkout expired, please try again": [
-        "La compra ha expirado, inténtalo de nuevo"
+        "La compra ha expirado. Inténtalo de nuevo."
       ],
       "Condition incomplete": [
         "Condición incompleta"
@@ -2982,10 +2982,10 @@
         "Falta la firma."
       ],
       "Name does not match": [
-        "El nombre no coincide"
+        "El nombre no coincide."
       ],
       "Name on card required": [
-        "El titular de la tarjeta es obligatorio"
+        "El titular de la tarjeta es obligatorio."
       ],
       "Name required": [
         "Nombre requerido"
@@ -3024,7 +3024,7 @@
         "La clave de organización no está descifrada."
       ],
       "Organization not recognized. Try again.": [
-        "Organización no reconocida - inténtalo de nuevo."
+        "Organización no reconocida. Inténtalo de nuevo."
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -3033,10 +3033,10 @@
         "Las contraseñas no coinciden."
       ],
       "Payment process cancelled": [
-        "El proceso de pago ha sido cancelado"
+        "El proceso de pago ha sido cancelado."
       ],
       "Payment process consumed": [
-        "El proceso de pago ha expirado"
+        "El proceso de pago está terminado."
       ],
       "Payment process failed": [
         "Error al procesar el pago"
@@ -3045,10 +3045,10 @@
         "Proceso de pago no soportado"
       ],
       "Payments are currently not available, please try again later": [
-        "Los pagos no están disponibles actualmente, vuelve a intentarlo más tarde"
+        "Los pagos no están disponibles actualmente. Inténtalo de nuevo más tarde."
       ],
       "Permission denied, administrator privileges have been restricted.": [
-        "Permiso denegado, los privilegios de administrador se han limitado."
+        "Permiso denegado. Los privilegios de administrador se han limitado."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Configura un dominio personalizado antes de agregar usuarios a tu organización."
@@ -3094,7 +3094,7 @@
         "La clave principal recuperada para el usuario ${ BRAND_NAME } no es válida para envíos."
       ],
       "Process aborted": [
-        "Proceso abortado"
+        "Proceso anulado"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinatario duplicado eliminado: ${ joinedRecipients }",
@@ -3143,7 +3143,7 @@
         "La dirección podría estar mal escrita."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "El navegador que estás utilizando no permite que el pago sea autorizado. Utiliza un navegador diferente o inicia sesión desde un ordenador."
+        "El navegador que estás utilizando no permite autorizar el pago. Utiliza un navegador diferente o inicia sesión desde un ordenador."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elige un nombre diferente."
@@ -3227,13 +3227,13 @@
         "Error de validación"
       ],
       "Verification did not succeed, please try again in an hour.": [
-        "La verificación no tuvo éxito, vuelve a intentarlo en una hora."
+        "La verificación no ha funcionado. Inténtalo de nuevo en una hora."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Se ha detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Frase de recuperación incorrecta: inténtalo de nuevo o utiliza otro método de recuperación."
+        "Frase de recuperación incorrecta. Inténtalo de nuevo o utiliza otro método de recuperación."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Código de verificación incorrecto. Asegúrate de haber copiado el código de verificación correctamente y vuelve a intentarlo. Puede tomar hasta 24 horas para que los cambios tengan efecto."
@@ -3625,8 +3625,8 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } Conexión VPN",
-        "${ MaxVPN } Conexiones VPN"
+        "${ MaxVPN } conexión VPN",
+        "${ MaxVPN } conexiones VPN"
       ],
       "Access to all countries": [
         "Acceso a todos los países"
@@ -5603,8 +5603,8 @@
         "Las siguientes direcciones no están disponibles."
       ],
       "The following address was not created.": [
-        "La siguiente dirección no fue creada.",
-        "Las siguientes direcciones no fueron creadas."
+        "No se ha creado la siguiente dirección.",
+        "No se han creado las siguientes direcciones."
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de tu archivo CSV es incorrecto."
@@ -7994,12 +7994,12 @@
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "Obtén ${ connections } conexión VPN de alta velocidad",
-        "Obtén ${ connections } conexiones VPN de alta velocidad"
+        "Obtén ${ connections } conexión VPN de alta velocidad.",
+        "Obtén ${ connections } conexiones VPN de alta velocidad."
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Obtén ${ connections } conexión VPN de alta velocidad por usuario",
-        "Obtén ${ connections } conexiones VPN de alta velocidad por usuario"
+        "Obtén ${ connections } conexión VPN de alta velocidad por usuario.",
+        "Obtén ${ connections } conexiones VPN de alta velocidad por usuario."
       ]
     },
     "new_plans: feature": {
@@ -9128,8 +9128,8 @@
         "Elige el número de usuarios para incluir en tu plan. Cada usuario adicional cuesta ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necesitaras más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de Ventas.",
-        "Si necesitaras más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de Ventas."
+        "Si necesitas más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de Ventas.",
+        "Si necesitas más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de Ventas."
       ]
     },
     "Price": {
@@ -9575,8 +9575,8 @@
         "Bloqueador de anuncios integrado (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "VPN de alta velocidad en el dispositivo ${ maxVpn }",
-        "VPN de alta velocidad en los dispositivos ${ maxVpn }"
+        "VPN de alta velocidad en ${ maxVpn } dispositivo",
+        "VPN de alta velocidad en ${ maxVpn } dispositivos"
       ]
     },
     "Subscription price": {
@@ -10029,7 +10029,7 @@
         "Añadir a la lista de spam"
       ],
       "Add to your block list": [
-        "Añadir a la lista de bloqueados"
+        "Añadir a tu lista de bloqueados"
       ],
       "Add user": [
         "Añadir usuario"
@@ -10044,10 +10044,10 @@
         "Cantidad"
       ],
       "Amount due": [
-        "Importe adeudado"
+        "Importe a pagar"
       ],
       "App": [
-        "App"
+        "Aplicación"
       ],
       "Appearance": [
         "Apariencia"
@@ -11048,8 +11048,8 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Actualiza a ${ planName } para conectar hasta ${ n } dispositivo al mismo tiempo",
-        "Actualiza a ${ planName } para conectar hasta ${ n } dispositivos a la VPN a la vez"
+        "Actualiza a ${ planName } para conectar hasta ${ n } dispositivo a la VPN a la vez.",
+        "Actualiza a ${ planName } para conectar hasta ${ n } dispositivos a la VPN a la vez."
       ]
     },
     "Upgrade notice": {
