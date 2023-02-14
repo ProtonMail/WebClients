@@ -3379,8 +3379,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "Esta mensagem já foi enviada. Um novo rascunho foi salvo."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Muitos filtros ativos. Por favor, atualize para um plano pago para ativar mais filtros."
@@ -3403,8 +3403,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Você não pode enviar um e-mail para mais de 100 destinatários"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Você não pode enviar arquivos vCards de mais de 10 contatos"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Você não pode abrir mais de ${ maxActiveComposer } janela do compositor por vez",
@@ -4828,6 +4828,10 @@
       "Group assignment applied": [
         "Atribuição de grupo aplicada"
       ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Contém ${ numAttachments } anexo (${ numAttachmentsSize })",
+        "Contém ${ numAttachments } anexos (${ numAttachmentsSize })"
+      ],
       "here": [
         "aqui"
       ],
@@ -5304,7 +5308,7 @@
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação baixará todas as mensagens para elas poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
+        "Esta ação baixará todas as mensagens para poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -5725,7 +5729,7 @@
         "Ao clicar em \"Confiar na chave\", será associada esta chave pública a este remetente.\ne os e-mails deste endereço serão automaticamente verificados criptograficamente."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Ao clicar em \"Trust Key\" será criado um novo contato e esta chave pública será associada a este remetente. Os e-mails deste endereço serão automaticamente verificados de forma criptográfica."
+        "Ao clicar em \"Confiar na chave\" será criado um novo contato e esta chave pública será associada a este remetente. Os e-mails deste endereço serão automaticamente verificados de forma criptográfica."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Você deseja confiar na chave pública primária com a seguinte impressão digital?",
@@ -8743,7 +8747,7 @@
         "A importação começará com as mensagens mais recentes."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação baixará todas as mensagens para elas poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
+        "Esta ação baixará todas as mensagens para poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
       ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"

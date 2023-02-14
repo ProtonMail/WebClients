@@ -373,6 +373,9 @@
       "Move to trash": [
         "Déplacer dans le dossier Corbeille"
       ],
+      "New": [
+        "Nouveau"
+      ],
       "New upload": [
         "Importer"
       ],
@@ -2149,8 +2152,8 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible, veuillez en choisir un autre."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
       ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
@@ -2161,8 +2164,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
@@ -2915,6 +2918,9 @@
         "${ selectedCalendarsTotal } calendrier sur ${ providerCalendars.length }",
         "${ selectedCalendarsTotal } calendriers sur ${ providerCalendars.length }"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } sélectionné(s)"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } dossier sélectionné",
         "${ selectedFoldersCount } dossiers sélectionnés"
@@ -3548,7 +3554,7 @@
         "Le lien partagé n'a pas pu être chargé."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
-        "La signature ne peut pas être certifiée en raison d'une erreur de réseau, veuillez réessayer plus tard."
+        "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
       ],
       "Signature check will be ignored": [
         "La vérification de signature sera ignorée."
