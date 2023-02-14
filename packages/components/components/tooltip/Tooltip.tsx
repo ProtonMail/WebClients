@@ -38,6 +38,7 @@ interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'> {
     closeDelay?: number;
     longTapDelay?: number;
     updateAnimationFrame?: boolean;
+    tooltipClassName?: string;
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
@@ -104,6 +105,7 @@ const TooltipBase = (
         closeDelay,
         longTapDelay,
         updateAnimationFrame,
+        tooltipClassName,
         ...rest
     }: Props,
     ref: Ref<HTMLElement>
@@ -232,6 +234,7 @@ const TooltipBase = (
                     animateOutLast && `tooltip-out-last`,
                     `tooltip--${placement}`,
                     getTooltipTypeClass(type),
+                    tooltipClassName,
                 ])}
             >
                 {title}
