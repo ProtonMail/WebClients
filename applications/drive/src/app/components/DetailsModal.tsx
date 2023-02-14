@@ -125,6 +125,12 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
                 {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
                     <DetailsRow label={c('Title').t`# of downloads`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
                 )}
+                {link.digests && (
+                    // This should not be visible in the UI, but needed for e2e
+                    <span data-testid="drive:file-digest" className="hidden" aria-hidden="true">
+                        {link.digests.sha1}
+                    </span>
+                )}
             </ModalTwoContent>
         );
     };
