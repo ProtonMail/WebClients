@@ -219,6 +219,18 @@ export const getLinkedDateTimeProperty = ({
     return getDateTimeProperty(property.value, linkedTzid);
 };
 
+export const getSupportedSequenceValue = (sequence = 0) => {
+    /**
+     * According to the RFC (https://datatracker.ietf.org/doc/html/rfc5545#section-3.8.7.4), the sequence property can
+     * have INTEGER values, and the valid range for an integer is that of a 32-byte integer: -2147483648 to 2147483647.,
+     * cf. https://www.rfc-editor.org/rfc/rfc5545#section-3.3.8
+     *
+     * Our BE does not support negative values, and we should not save anything bigger than 2147483687. We transform values
+     * outside this range into 0.
+     */
+    return sequence > 2147483647 || sequence < 0 ? 0 : sequence;
+};
+
 /**
  * Perform ICS surgery on a VEVENT component
  */
@@ -280,6 +292,7 @@ export const getSupportedEvent = ({
             uid: { value: getSupportedUID(uid.value) },
             dtstamp: { ...dtstamp },
             dtstart: { ...dtstart },
+            sequence: { value: getSupportedSequenceValue(sequence?.value) },
         };
         let ignoreRrule = false;
 
@@ -301,9 +314,6 @@ export const getSupportedEvent = ({
                 value: truncate(trimmedLocationValue, MAX_CHARS_API.LOCATION),
             };
         }
-        const sequenceValue = sequence?.value || 0;
-        const sequenceSafeValue = Number.isSafeInteger(sequenceValue) ? sequenceValue : 0;
-        validated.sequence = { value: Math.max(0, sequenceSafeValue) };
 
         validated.dtstart = getSupportedDateOrDateTimeProperty({
             property: dtstart,
