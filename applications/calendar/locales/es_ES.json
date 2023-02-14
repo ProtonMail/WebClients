@@ -561,10 +561,10 @@
     },
     "Action subline": {
       "Anyone with the link can view your calendar": [
-        "Cualquiera en posesión de este enlace puede ver tu calendario."
+        "Cualquier persona en posesión de este enlace puede ver tu calendario."
       ],
       "They can view or edit your calendar": [
-        "Pueden ver o editar tu calendario"
+        "Pueden ver o editar tu calendario."
       ]
     },
     "Action title": {
@@ -594,52 +594,52 @@
     },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
-        "${ title } comenzó a las ${ formattedHour }"
+        "${ title } ha comenzado a las ${ formattedHour }."
       ],
       "${ title } started on ${ formattedDate }": [
-        "${ title } comenzó el ${ formattedDate }"
+        "${ title } ha comenzado el ${ formattedDate }."
       ],
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } comenzó el ${ formattedDate } a las ${ formattedHour }"
+        "${ title } ha comenzado el ${ formattedDate } a las ${ formattedHour }."
       ],
       "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } comenzó el ${ formattedDateWithoutTime }"
+        "${ title } ha comenzado el ${ formattedDateWithoutTime }."
       ],
       "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } comenzó el ${ formattedDateWithTime }"
+        "${ title } ha comenzado el ${ formattedDateWithTime }."
       ],
       "${ title } started yesterday": [
-        "${ title } comenzó ayer"
+        "${ title } ha comenzado ayer."
       ],
       "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } comenzó ayer a las ${ formattedHour }"
+        "${ title } ha comenzado ayer a las ${ formattedHour }."
       ],
       "${ title } starts at ${ formattedHour }": [
-        "${ title } comienza a las ${ formattedHour }"
+        "${ title } comienza a las ${ formattedHour }."
       ],
       "${ title } starts now": [
         "${ title } comienza ahora"
       ],
       "${ title } starts on ${ formattedDate }": [
-        "${ title } comienza el ${ formattedDate }"
+        "${ title } comienza el ${ formattedDate }."
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } comienza el ${ formattedDate } a las ${ formattedHour }"
+        "${ title } comienza el ${ formattedDate } a las ${ formattedHour }."
       ],
       "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } comienza el ${ formattedDateWithoutTime }"
+        "${ title } comienza el ${ formattedDateWithoutTime }."
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } comienza el ${ formattedDateWithTime }"
+        "${ title } comienza el ${ formattedDateWithTime }."
       ],
       "${ title } starts today": [
         "${ title } comienza hoy"
       ],
       "${ title } starts tomorrow": [
-        "${ title } comienza mañana"
+        "${ title } comienza mañana."
       ],
       "${ title } starts tomorrow at ${ formattedHour }": [
-        "${ title } comienza mañana a las ${ formattedHour }"
+        "${ title } comienza mañana a las ${ formattedHour }."
       ]
     },
     "Alert": {
@@ -716,7 +716,7 @@
         "Problema con el dominio personalizado"
       ],
       "Drive problem": [
-        "Problema con Drive"
+        "Problema con unidad de almacenamiento"
       ],
       "Feature request": [
         "Solicitar función"
@@ -790,13 +790,13 @@
         "${ name } ha rechazado la invitación"
       ],
       "${ name } hasn't answered the invitation yet": [
-        "${ name } aún no ha respondido a la invitación"
+        "${ name } aún no ha respondido a la invitación."
       ],
       "${ name } tentatively accepted the invitation": [
-        "${ name } ha aceptado provisionalmente la invitación"
+        "${ name } ha aceptado provisionalmente la invitación."
       ],
       "This event has been canceled": [
-        "Este evento ha sido cancelado"
+        "Se ha cancelado este evento."
       ],
       "You accepted the invitation": [
         "Has aceptado la invitación"
@@ -805,15 +805,15 @@
         "Has rechazado la invitación"
       ],
       "You haven't answered the invitation yet": [
-        "Aún no has respondido a la invitación"
+        "Aún no has respondido a la invitación."
       ],
       "You tentatively accepted the invitation": [
-        "Has aceptado provisionalmente la invitación"
+        "Has aceptado provisionalmente la invitación."
       ]
     },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
-        "Solo tú puedes ver la etiqueta"
+        "Solo tú puedes ver la etiqueta."
       ]
     },
     "Calendar permissions hint": {
@@ -828,29 +828,29 @@
     },
     "Calendar self sharing error": {
       "You already have access to this calendar": [
-        "Ya tienes acceso a este calendario"
+        "Ya tienes acceso a este calendario."
       ]
     },
     "Calendar share limit modal": {
       "Manage links": [
-        "Gestionar enlaces"
+        "Administrar enlaces"
       ],
       "Manage members": [
-        "Gestionar miembros"
+        "Administrar miembros"
       ],
       "Unable to create more calendar links": [
         "No se pueden crear más enlaces a calendarios."
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
-        "No se puede compartir este calendario con más usuarios de ${ BRAND_NAME }"
+        "No se puede compartir este calendario con más usuarios de ${ BRAND_NAME }."
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
         "Has llegado al máximo de ${ MAX_CALENDAR_MEMBERS } miembro para este calendario. \nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, elimina algunos miembros.",
         "Has llegado al máximo de ${ MAX_CALENDAR_MEMBERS } miembros para este calendario.\nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, elimina algunos miembros."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
-        "Has llegado al máximo de ${ MAX_LINKS_PER_CALENDAR } enlace para este calendario.\nPara crear un nuevo enlace a este calendario, elimina uno existente.",
-        "Has llegado al máximo de ${ MAX_LINKS_PER_CALENDAR } enlaces para este calendario.\nPara crear un nuevo enlace a este calendario, elimina uno existente."
+        "Has llegado al máximo de ${ MAX_LINKS_PER_CALENDAR } enlace para este calendario.\nPara crear un enlace a este calendario, elimina uno existente.",
+        "Has llegado al máximo de ${ MAX_LINKS_PER_CALENDAR } enlaces para este calendario.\nPara crear un enlace a este calendario, elimina uno existente."
       ]
     },
     "Calendar sharing access option label": {
@@ -935,7 +935,7 @@
     },
     "Calendar view selector": {
       "Change time range to": [
-        "Cambiar a la vista de"
+        "Cambiar intervalo de tiempo por"
       ]
     },
     "Calendar view; more events collapsed": {
@@ -1978,10 +1978,10 @@
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puedes verificar y cambiar este emparejamiento manualmente."
+        "Además, se han emparejado automáticamente los campos CSV con los campos vCard. Puedes verificar y cambiar este emparejamiento manualmente."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hemos detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
+        "Se han detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
       ]
     },
     "Disabled calendar": {
@@ -2108,32 +2108,32 @@
     },
     "Error": {
       "${ list } doesn't have a valid email address": [
-        "${ list } no tiene una dirección de correo válida",
-        "Algunos contactos no tienen una dirección de correo válida: ${ list }"
+        "${ list } no tiene una dirección de correo válida.",
+        "Algunos contactos no tienen una dirección de correo válida: ${ list }."
       ],
       "${ list } doesn't have an email address": [
         "${ list } no tiene una dirección de correo.",
-        "Algunos contactos no tienen una dirección de correo: ${ list }"
+        "Algunos contactos no tienen una dirección de correo: ${ list }."
       ],
       "${ list } has invalid emails": [
-        "${ list } tiene correos electrónicos no válidos",
-        "Algunos grupos tienen correos electrónicos no válidos: ${ list }"
+        "${ list } tiene correos electrónicos no válidos.",
+        "Algunos grupos tienen correos electrónicos no válidos: ${ list }."
       ],
       "${ list } has no contacts": [
-        "${ list } no tiene contactos",
-        "Algunos grupos no tienen contactos: ${ list }"
+        "${ list } no tiene contactos.",
+        "Algunos grupos no tienen contactos: ${ list }."
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
       ],
       "Account does not exist": [
-        "La cuenta no existe"
+        "La cuenta no existe."
       ],
       "Address primary private key not found": [
         "No se ha encontrado la clave primaria de la dirección."
       ],
       "Already a member of this calendar": [
-        "Ya eres miembro de este calendario"
+        "Ya eres miembro de este calendario."
       ],
       "Answer failed to be sent": [
         "Error al enviar la respuesta"
@@ -2222,7 +2222,7 @@
         "Contraseña de buzón incorrecta. Inténtalo de nuevo."
       ],
       "Interval cannot be empty": [
-        "El intervalo no puede estar vacío"
+        "El intervalo no puede estar vacío."
       ],
       "Invalid email address": [
         "Dirección de correo electrónico no válida"
@@ -2240,13 +2240,13 @@
         "Código de verificación no válido"
       ],
       "Invitation failed to be sent": [
-        "No se ha podido enviar la invitación"
+        "No se ha podido enviar la invitación."
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
-        "Solo es posible crear eventos entre ${ minDateString } y ${ maxDateString }"
+        "Solo es posible crear eventos entre ${ minDateString } y ${ maxDateString }."
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
-        "Solo es posible mover eventos entre ${ minDateString } y ${ maxDateString }"
+        "Solo es posible mover eventos entre ${ minDateString } y ${ maxDateString }."
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
@@ -2274,7 +2274,7 @@
         "No se han encontrado correos para importar. La cuenta no tiene una bandeja de entrada."
       ],
       "No public key for ${ BRAND_NAME } address": [
-        "No hay clave pública para esta dirección ${ BRAND_NAME }"
+        "No hay clave pública para esta dirección ${ BRAND_NAME }."
       ],
       "No valid address found": [
         "No se ha encontrado una dirección válida."
@@ -2283,13 +2283,13 @@
         "Ninguna clave WKD recuperada para el usuario es válida para el envío."
       ],
       "Not a ${ BRAND_NAME } account": [
-        "No es una cuenta ${ BRAND_NAME }"
+        "No es una cuenta de ${ BRAND_NAME }."
       ],
       "Not a valid number": [
         "No es un número válido."
       ],
       "Number of occurrences cannot be empty": [
-        "El número de ocurrencias no puede estar vacío"
+        "El número de ocurrencias no puede estar vacío."
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Uno de los contactos no tiene dirección de correo electrónico: ${ noEmailsContactNamesList }",
@@ -2335,7 +2335,7 @@
         "Tiempo de espera agotado"
       ],
       "Self invitation not allowed": [
-        "Autoinvitación no permitida"
+        "No puedes invitarte a ti mismo."
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -2374,7 +2374,7 @@
         "La hora inicial debe ser antes de la hora final."
       ],
       "The address might be misspelled": [
-        "La dirección podría estar mal escrita"
+        "La dirección podría estar mal escrita."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Elige un nombre diferente."
@@ -2412,8 +2412,8 @@
       "This label name is not available. Please choose a different name.": [
         "Este nombre de etiqueta no está disponible. Elige un nombre diferente."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Este mensaje podría contener enlaces a un URL que no se pueden abrir correctamente en tu navegador actual."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
@@ -2430,8 +2430,8 @@
       "You can't send a mail to more than 100 recipients": [
         "No puedes enviar un correo a más de 100 destinatarios."
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "No puedes enviar archivos vCards de más de 10 contactos."
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Has alcanzado el número máximo de calendarios personales. No se han podido importar algunos calendarios."
@@ -2445,7 +2445,7 @@
     },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
-        "La dirección invitada no existe"
+        "La dirección invitada no existe."
       ]
     },
     "Error importing calendar": {
@@ -2459,7 +2459,7 @@
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. Solo se admiten los formatos ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
+        "Se ha producido un error al cargar el archivo. No se ha seleccionado ningún archivo."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Se ha producido un error inesperado. La importación debe reiniciarse."
@@ -2633,7 +2633,7 @@
         "También puedes ${ refresh } o intentarlo de nuevo más tarde."
       ],
       "You need an active personal calendar to import events": [
-        "Necesitas un calendario personal activo donde importar todos tus eventos"
+        "Necesitas un calendario personal activo donde importar todos tus eventos."
       ]
     },
     "Error notification": {
@@ -2898,14 +2898,14 @@
       ],
       "This file contains an event invitation:": [
         "Este archivo contiene una invitación a un evento:",
-        "Este archivo contiene invitaciones a eventos:"
+        "Este archivo contiene invitaciones a un evento:"
       ],
       "This file contains an invitation response:": [
-        "Este archivo contiene una respuesta de invitación:",
-        "Este archivo contiene respuestas de invitaciones:"
+        "Este archivo contiene una respuesta a la invitación:",
+        "Este archivo contiene respuestas a la invitación:"
       ],
       "This file contains some data that we cannot import:": [
-        "Este archivo contiene algunos datos que no podemos importar:"
+        "Este archivo contiene algunos datos que se pueden importar:"
       ]
     },
     "Import contact": {
@@ -3110,8 +3110,8 @@
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haz clic para obtener más detalles."
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Despliega para ver los detalles.",
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Despliega para ver los detalles."
+        "No se importará ${ totalEventsDiscarded } de ${ totalEvents } evento. Despliega para ver los detalles.",
+        "No se importarán ${ totalEventsDiscarded } de ${ totalEvents } eventos. Despliega para ver los detalles."
       ],
       "No contact can be imported. Click for details": [
         "No se puede importar ningún contacto. Haz clic para obtener detalles."
@@ -3219,10 +3219,10 @@
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "Los participantes añadidos y eliminados serán notificados de todos los eventos de esta serie."
+        "Se notificarán a los participantes añadidos y eliminados de todos los eventos de esta serie."
       ],
       "Added and removed participants will be notified.": [
-        "Se notificará a los participantes añadidos y eliminados."
+        "Se notificarán a los participantes añadidos y eliminados."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
@@ -3245,14 +3245,14 @@
         "y"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Cualquiera en posesión de este enlace puede ver todos los detalles de los eventos de este calendario, como título, ubicación o participantes."
+        "Cualquier persona con este enlace puede ver todos los detalles de este calendario, como título, ubicación o participantes."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Cualquiera en posesión de este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver detalles de eventos, como título, ubicación o participantes."
+        "Cualquier persona con este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver los detalles de eventos, como título, ubicación o participantes."
       ],
       "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Se permite hasta ${ MAX_ATTENDEES } participante por invitación",
-        "Se permiten hasta ${ MAX_ATTENDEES } participantes por invitación"
+        "Se permite hasta ${ MAX_ATTENDEES } participante por invitación.",
+        "Se permiten hasta ${ MAX_ATTENDEES } participantes por invitación."
       ],
       "Attention required": [
         "Atención requerida"
@@ -3540,7 +3540,7 @@
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
       "Removed participants will be notified.": [
-        "Se notificará a los participantes eliminados."
+        "Se notificarán a los participantes eliminados."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que quieres utilizar por defecto al enviar un correo electrónico a esta dirección."
@@ -3588,13 +3588,13 @@
         "El organizador ha actualizado algunos de los eventos de esta serie. Todavía no se admite cambiar el calendario para este tipo de eventos recurrentes."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "El organizador de este evento será notificado de que rechazas la invitación. ¿Quieres eliminar este evento?"
+        "Se notificará al organizador de este evento de que rechazas la invitación. ¿Quieres eliminar este evento?"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "El organizador de este evento no será notificado de que rechazas la invitación porque no puedes enviar correos electrónicos desde la dirección invitada. ¿Quieres eliminar este evento de todos modos?"
+        "Se notificará al organizador de este evento de que rechazas la invitación porque no puedes enviar correos electrónicos desde la dirección invitada. ¿Quieres eliminar este evento de todos modos?"
       ],
       "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "Se notificará al organizador de esta serie de eventos de que rechazas la invitación. ¿Quieres eliminar todos los eventos de la serie?"
+        "Se notificará al organizador de esta serie de eventos de que rechazas la invitación. ¿Quieres eliminar todos los eventos de esta serie?"
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
         "El organizador de esta serie de eventos no será notificado de que rechazas la invitación porque no puedes enviar correos electrónicos desde la dirección invitada. ¿Quieres eliminar todos los eventos de esta serie de todos modos?"
@@ -3606,16 +3606,16 @@
         "Esta dirección está deshabilitada. Para enviar correos esta dirección, el propietario debe en primer lugar habilitar la dirección."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Este evento ha sido actualizado por el organizador. ¿Quieres cambiar tu respuesta sólo para este evento en la serie?"
+        "El organizador ha actualizado este evento. ¿Quieres cambiar tu respuesta solo para este evento en esta serie?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Este evento ha sido actualizado por el organizador. ¿Quieres eliminar este evento?"
+        "El organizador ha actualizado este evento. ¿Quieres eliminar este evento?"
       ],
       "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Este evento ha sido actualizado. Se notificará al organizador de que rechazas la invitación. ¿Quieres eliminar este evento?"
+        "Se ha actualizado este evento. Se notificará al organizador de que rechazas la invitación. ¿Quieres eliminar este evento?"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Este evento ha sido actualizado. El organizador no será notificado de que rechazas la invitación porque no puedes enviar correos electrónicos desde la dirección invitada. ¿Quieres eliminar este evento de todos modos?"
+        "Se ha actualizado este evento. El organizador no será notificado de que rechazas la invitación porque no puedes enviar correos electrónicos desde la dirección invitada. ¿Quieres eliminar este evento de todos modos?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
@@ -3660,19 +3660,19 @@
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
       ],
       "Which event would you like to delete?": [
-        "¿Qué evento quieres eliminar?"
+        "¿Cuál evento quieres eliminar?"
       ],
       "Which event would you like to update?": [
-        "¿Qué evento quieres actualizar?"
+        "¿Cuál evento quieres actualizar?"
       ],
       "Would you like to change your answer for all the events in this series?": [
-        "¿Quieres cambiar tu respuesta para todos los eventos de la serie?"
+        "¿Quieres cambiar tu respuesta para todos los eventos de esta serie?"
       ],
       "Would you like to continue anyway?": [
         "¿Quieres continuar de todos modos?"
       ],
       "Would you like to delete all the events in this series?": [
-        "¿Quieres eliminar todos los eventos de la serie?"
+        "¿Quieres eliminar todos los eventos de esta serie?"
       ],
       "Would you like to delete the event anyway?": [
         "¿Quieres eliminar el evento de todos modos?"
@@ -3696,7 +3696,7 @@
         "Anual"
       ],
       "You already joined this calendar": [
-        "Ya te has unido a este calendario"
+        "Ya te has unido a este calendario."
       ],
       "You are about to open another browser tab and visit:": [
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
@@ -3738,10 +3738,10 @@
         "Actualizarás todos los eventos de esta serie. Se enviará una invitación a los participantes del evento."
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
-        "Actualizarás todos los eventos de esta serie. Los participantes existentes y añadidos serán notificados."
+        "Actualizarás todos los eventos de esta serie. Se notificarán a los participantes existentes y añadidos."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Actualizarás todos los eventos de esta serie. Los participantes existentes y eliminados serán notificados."
+        "Actualizarás todos los eventos de esta serie. Se notificarán a los participantes existentes y eliminados."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
         "Actualizarás todos los eventos de esta serie. Se notificarán a los participantes existentes, añadidos y eliminados."
@@ -3750,10 +3750,10 @@
         "Actualizarás todos los eventos de esta serie. Se notificarán a los participantes eliminados."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
@@ -3777,7 +3777,7 @@
         "Tu correo electrónico solo se utilizará para esta verificación única."
       ],
       "Your events will be encrypted and then saved.": [
-        "Tus eventos serán cifrados y posteriormente guardados."
+        "Se cifrarán tus eventos y luego se guardarán."
       ],
       "Your import will not be processed.": [
         "Tu importación no será procesada."
@@ -3807,7 +3807,7 @@
     },
     "Info; reset calendar keys modal; part 2": {
       "This is because your password was recently reset without using a recovery method.": [
-        "Esto se debe a que tu contraseña ha sido restablecida recientemente sin utilizar un método de recuperación."
+        "Esto se debe a que se ha restablecido tu contraseña recientemente sin utilizar un método de recuperación."
       ]
     },
     "Info; reset calendar keys modal; part 3": {
@@ -3817,12 +3817,12 @@
     },
     "Info; reshare calendar modal; part 1": {
       "Calendar sharing was disabled following your recent password reset.": [
-        "La compartición de calendarios ha sido deshabilitada debido al reciente restablecimiento de tu contraseña."
+        "Se ha deshabilitado la compartición de calendarios al reciente restablecimiento de tu contraseña."
       ]
     },
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
-        "Puedes volver a compartir tus calendarios en configuración."
+        "Puedes volver a compartir tus calendarios en la configuración."
       ]
     },
     "Input label": {
@@ -4585,7 +4585,7 @@
         "Invitación al calendario rechazada"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
-        "Te has unido a ${ calendarName } (${ senderEmail })"
+        "Te has unido a ${ calendarName } (${ senderEmail })."
       ]
     },
     "Notification suffix": {
@@ -4712,7 +4712,7 @@
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF."
+        "Para que la importación funcione, debes seleccionar todos los elementos solicitados como se muestra en el GIF."
       ]
     },
     "Onboarding": {
@@ -4810,7 +4810,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Crear un calendario nuevo"
+        "Crear un calendario"
       ],
       "Merge with calendar": [
         "Combinar con el calendario"
@@ -4823,7 +4823,7 @@
     },
     "Participants collapse button label": {
       "Collapse participants list": [
-        "Contraer lista de participantes"
+        "Minimizar lista de participantes"
       ]
     },
     "Participants expand button label": {
@@ -5006,13 +5006,13 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Para invitar a usuarios que no sean de ${ BRAND_NAME }, comparte tu calendario con un enlace"
+        "Para invitar a usuarios que no sean de ${ BRAND_NAME }, comparte tu calendario con un enlace."
       ]
     },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
-        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembro por calendario",
-        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario"
+        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembro por calendario.",
+        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario."
       ]
     },
     "Share calendar modal description": {
@@ -5022,7 +5022,7 @@
     },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
-        "Introduce una dirección de correo electrónico o nombre de grupo"
+        "Introduce una dirección de correo electrónico o nombre de grupo."
       ]
     },
     "Share calendar modal title": {
@@ -5045,7 +5045,7 @@
     },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
-        "Gestionar calendario"
+        "Administrar calendario"
       ]
     },
     "Signing preference for emails": {
@@ -5110,7 +5110,7 @@
         "Al utilizar este enlace, Google hará público el calendario al que te estás suscribiendo."
       ],
       "This link might be wrong": [
-        "Este enlace puede ser erróneo"
+        "Este enlace puede ser incorrecto."
       ]
     },
     "Subscribed calendar feature unavailable error": {
@@ -5120,7 +5120,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "La URL es demasiado larga"
+        "La URL es demasiado larga."
       ]
     },
     "Success": {
@@ -5135,10 +5135,10 @@
         "Dirección copiada al portapapeles"
       ],
       "All events deleted": [
-        "Todos los eventos han sido eliminados."
+        "Se han eliminado todos los eventos."
       ],
       "All events updated": [
-        "Todos los eventos han sido actualizados"
+        "Se han actualizado todos los eventos."
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
         "Se enviará una invitación a los participantes añadidos para todos los eventos de esta serie."
@@ -5236,7 +5236,7 @@
         "Invitación enviada y participantes añadidos"
       ],
       "Invitation sent and participants added to all events": [
-        "Invitación enviada y participantes añadidos todos los eventos"
+        "Invitación enviada y participantes añadidos a todos los eventos"
       ],
       "Participants notified and all events updated": [
         "Participantes notificados y todos los eventos actualizados"
@@ -5373,19 +5373,19 @@
         "Cuenta suspendida"
       ],
       "Add another notification to remind you of this event": [
-        "Añade otra notificación para recordarte de este evento"
+        "Añade otra notificación para recordarte de este evento."
       ],
       "Add contact group name": [
         "Añadir nombre del grupo de contactos"
       ],
       "Add event location": [
-        "Añade la ubicación del evento"
+        "Añadir la ubicación del evento"
       ],
       "Add event title": [
-        "Añade un título al evento"
+        "Añadir un título al evento"
       ],
       "Add more information related to this event": [
-        "Añade más información relacionada con este evento"
+        "Añade más información relacionada con este evento."
       ],
       "Add participants": [
         "Añadir participantes"
@@ -5416,10 +5416,10 @@
         "Cambiar mi respuesta"
       ],
       "Choose how many times this event will repeat": [
-        "Elige cuántas veces se repetirá este evento"
+        "Elige cuántas veces se repite este evento."
       ],
       "Choose how often this event repeats": [
-        "Elige con qué frecuencia se repite este evento"
+        "Elige con qué frecuencia se repite este evento."
       ],
       "Clearing data": [
         "Limpiando datos"
@@ -5514,10 +5514,10 @@
         "Error"
       ],
       "Event is happening all day": [
-        "El evento ocurre todo el día"
+        "El evento ocurre todo el día."
       ],
       "Event is happening on defined time slot": [
-        "El evento ocurre en un intervalo de tiempo definido"
+        "El evento ocurre en un intervalo de tiempo definido."
       ],
       "Exporting contacts": [
         "Exportando contactos"
@@ -5529,7 +5529,7 @@
         "Grupos"
       ],
       "Hide time zones for event start and end times": [
-        "Ocultar zonas horarias para las horas inicial y final del evento"
+        "Oculta las zonas horarias para las horas inicial y final del evento."
       ],
       "Human verification": [
         "Verificación humana"
@@ -5572,7 +5572,7 @@
         "Abrir menú de configuración"
       ],
       "Organizer cannot be notified": [
-        "No se puede notificar al organizador"
+        "No se puede notificar al organizador."
       ],
       "Other information": [
         "Otra información"
@@ -5617,7 +5617,7 @@
         "Guardar cambios"
       ],
       "Select a day in the month": [
-        "Selecciona un día del mes"
+        "Selecciona un día del mes."
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -5632,43 +5632,43 @@
         "Selecciona la fecha final del evento."
       ],
       "Select event end time": [
-        "Selecciona la hora de finalización del evento"
+        "Selecciona la hora de finalización del evento."
       ],
       "Select event frequency": [
         "Selecciona la frecuencia del evento"
       ],
       "Select event frequency interval": [
-        "Selecciona el intervalo de frecuencia del evento"
+        "Selecciona el intervalo de frecuencia del evento."
       ],
       "Select event start date": [
-        "Selecciona la fecha de inicio del evento"
+        "Selecciona la fecha de inicio del evento."
       ],
       "Select event start time": [
-        "Selecciona la hora inicial del evento"
+        "Selecciona la hora inicial del evento."
       ],
       "Select event's last date": [
-        "Selecciona la última fecha del evento"
+        "Selecciona la última fecha del evento."
       ],
       "Select the time to send this notification": [
-        "Selecciona la hora de envío de esta notificación"
+        "Selecciona la hora de envío de esta notificación."
       ],
       "Select the time zone for the event end time": [
-        "Selecciona la zona horaria para la hora de finalización del evento"
+        "Selecciona la zona horaria para la hora de finalización del evento."
       ],
       "Select the time zone for the event start time": [
-        "Selecciona la zona horaria para la hora inicial del evento"
+        "Selecciona la zona horaria para la hora inicial del evento."
       ],
       "Select the way to send this notification": [
-        "Selecciona la forma de envío de esta notificación"
+        "Selecciona la forma de envío de esta notificación."
       ],
       "Select when this event will stop happening": [
-        "Selecciona cuándo dejará de ocurrir este evento"
+        "Selecciona cuándo dejará de ocurrir este evento."
       ],
       "Select when you want this notification to be sent": [
-        "Selecciona cuándo quieres que se envíe esta notificación"
+        "Selecciona cuándo quieres que se envíe esta notificación."
       ],
       "Select which calendar to add this event to": [
-        "Selecciona a que calendario quieres añadir este evento"
+        "Selecciona a que calendario quieres añadir este evento."
       ],
       "Send feedback": [
         "Enviar comentarios"
@@ -5680,7 +5680,7 @@
         "Configuración"
       ],
       "Show time zones for event start and end times": [
-        "Mostrar zonas horarias para las horas inicial y final del evento"
+        "Mostrar las zonas horarias para las horas inicial y final del evento"
       ],
       "Sign in and grant access": [
         "Iniciar sesión y permitir acceso"
@@ -5716,10 +5716,10 @@
         "Advertencia: sospecha de sitio web falso"
       ],
       "We've locked some calendars to protect your data": [
-        "Hemos bloqueado algunos calendarios para proteger tus datos"
+        "Se han bloqueado algunos calendarios para proteger tus datos."
       ],
       "We've locked your calendars to protect your data": [
-        "Hemos bloqueado tus calendarios para proteger tus datos"
+        "Se han bloqueado tus calendarios para proteger tus datos."
       ],
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
@@ -5728,7 +5728,7 @@
         "Novedades"
       ],
       "You have invited participants with equivalent emails": [
-        "Has invitado a participantes con correos electrónicos equivalentes"
+        "Has invitado a participantes con correos electrónicos idénticos."
       ],
       "Your calendar link": [
         "Enlace a tu calendario"

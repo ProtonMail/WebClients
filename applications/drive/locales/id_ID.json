@@ -371,6 +371,9 @@
       "Move to trash": [
         "Pindahkan ke sampah"
       ],
+      "New": [
+        "Baru"
+      ],
       "New upload": [
         "Unggahan baru"
       ],
@@ -2140,8 +2143,8 @@
       "This label name is not available. Please choose a different name.": [
         "Nama label ini tidak dapat digunakan. Mohon pilih nama lain."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Pesan ini terindikasi memiliki tautan/URL yang tidak dapat dibuka dengan benar oleh browser Anda."
       ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
@@ -2152,8 +2155,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Anda tidak dapat mengirim berkas vCard ke lebih dari 10 kontak"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Anda telah mencapai batas jumlah kalender personal milik Anda. Sebagian kalender tidak dapat diimpor."
@@ -2875,6 +2878,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } dari ${ providerCalendars.length } calendar"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } terpilih"
+      ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } folder terpilih"
       ],
@@ -2997,6 +3003,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Lanjut gunakan ${ DRIVE_APP_NAME } tanpa membuka kunci berkas"
+      ],
+      "Country code": [
+        "Kode negara"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "Buat ${ calendarsToBeCreated } kalender baru"
@@ -3156,6 +3165,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Folder yang Anda sinkronkan dari komputer Anda akan muncul pada layar ini."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Untuk hasil yang maksimal, hindari streaming serta berbagai kegiatan lainnya yang boros akan memori atau pisah unggahan Anda ke dalam beberapa kelompok berkas kecil."
       ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
@@ -3486,6 +3498,9 @@
       ],
       "Shared link failed to be loaded": [
         "Tautan yang dibagikan gagal dimuat"
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
       ],
       "Signature check will be ignored": [
         "Proses verifikasi tanda tangan akan diabaikan"
@@ -3819,6 +3834,9 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "# unduhan"
+      ],
       "${ BRAND_NAME } username": [
         "Pengguna ${ BRAND_NAME }"
       ],
@@ -5020,6 +5038,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "# unduhan"
+      ],
       "${ emailsCount } members": [
         "${ emailsCount } anggota"
       ],
@@ -5457,6 +5478,9 @@
       ],
       "Uploaded by": [
         "Diupload oleh"
+      ],
+      "Uploading a large file or folder": [
+        "Mengunggah berkas atau folder berukuran besar"
       ],
       "View contacts": [
         "Lihat kontak"

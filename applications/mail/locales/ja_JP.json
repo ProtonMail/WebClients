@@ -977,6 +977,9 @@
       "This message contains remote content.": [
         "このメッセージには外部コンテンツが含まれています。"
       ],
+      "Tomorrow": [
+        "明日"
+      ],
       "Trust": [
         "信頼する"
       ],
@@ -3337,9 +3340,6 @@
       "This message has already been sent. A new draft has been saved.": [
         "このメッセージは送信されています。下書きが保存されました。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
-      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "有効なフィルターが多すぎます。さらに有効なフィルターを使用するには有料プランにアップグレードしてください。"
       ],
@@ -3360,9 +3360,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "同時に ${ maxActiveComposer } つ以上の作成画面を開くことはできません"
@@ -4507,7 +4504,7 @@
         "フィッシング報告の確認"
       ],
       "Copied to clipboard": [
-        "クリップボードにコピーされました。"
+        "クリップボードにコピーされました"
       ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
@@ -6793,10 +6790,10 @@
         "制限なしのフォルダー、ラベル、フィルター"
       ],
       "Up to 15 email addresses": [
-        "最大 15 件のメールアドレス"
+        "15 件のメールアドレス"
       ],
       "Up to 500 GB of storage": [
-        "最大 500 GB のストレージ"
+        "500 GB のストレージ"
       ]
     },
     "new_plans: label": {
@@ -7176,7 +7173,7 @@
         "該当する結果が見つかりませんでした"
       ],
       "No unread messages found": [
-        "未読メッセージが見つかりません"
+        "未読メッセージが見つかりませんでした"
       ]
     },
     "Select files": {
@@ -7561,7 +7558,7 @@
         "${ selectionCount } 件のメッセージを移動"
       ],
       "Password copied to clipboard": [
-        "パスワードをクリップボードにコピーしました"
+        "パスワードがクリップボードにコピーされました"
       ],
       "Phishing reported": [
         "フィッシングが報告されました"

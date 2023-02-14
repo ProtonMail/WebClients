@@ -373,6 +373,9 @@
       "Move to trash": [
         "Mover para lixeira"
       ],
+      "New": [
+        "Novo"
+      ],
       "New upload": [
         "Novo envio"
       ],
@@ -2149,8 +2152,8 @@
       "This label name is not available. Please choose a different name.": [
         "Este nome de marcador não está disponível. Por favor, escolha outro nome."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -2161,8 +2164,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Você não pode enviar um e-mail para mais de 100 destinatários"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Você não pode enviar arquivos vCards de mais de 10 contatos"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
@@ -2919,6 +2922,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } selecionado"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } pasta selecionada",

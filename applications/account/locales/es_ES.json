@@ -1122,7 +1122,7 @@
         "Problema con el dominio personalizado"
       ],
       "Drive problem": [
-        "Problema con Drive"
+        "Problema con unidad de almacenamiento"
       ],
       "Feature request": [
         "Solicitar función"
@@ -1249,7 +1249,7 @@
     },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
-        "Solo tú puedes ver la etiqueta"
+        "Solo tú puedes ver la etiqueta."
       ]
     },
     "Calendar permissions hint": {
@@ -1264,7 +1264,7 @@
     },
     "Calendar self sharing error": {
       "You already have access to this calendar": [
-        "Ya tienes acceso a este calendario"
+        "Ya tienes acceso a este calendario."
       ]
     },
     "Calendar settings link share description": {
@@ -2513,7 +2513,7 @@
         "Parece que falta el encabezado \"${ options.fieldName }\" a tu archivo ."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
-        "Hemos detectado errores en varias filas durante la importación. Verifica tu archivo CSV."
+        "Se han detectado errores en varias filas durante la importación. Verifica tu archivo CSV."
       ]
     },
     "Cycle": {
@@ -2626,10 +2626,10 @@
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puedes verificar y cambiar este emparejamiento manualmente."
+        "Además, se han emparejado automáticamente los campos CSV con los campos vCard. Puedes verificar y cambiar este emparejamiento manualmente."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hemos detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
+        "Se han detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
       ]
     },
     "Domain label": {
@@ -2832,7 +2832,7 @@
         "Ya existe un grupo con este nombre."
       ],
       "Account does not exist": [
-        "La cuenta no existe"
+        "La cuenta no existe."
       ],
       "Address primary private key not found": [
         "No se ha encontrado la clave primaria de la dirección."
@@ -2841,7 +2841,7 @@
         "Todo el espacio de almacenamiento ha sido asignado. Reduce el almacenamiento asignado a otros usuarios."
       ],
       "Already a member of this calendar": [
-        "Ya eres miembro de este calendario"
+        "Ya eres miembro de este calendario."
       ],
       "Amount above the maximum.": [
         "Cantidad por encima del máximo."
@@ -2859,7 +2859,7 @@
         "Las respuestas automáticas son una función de pago. Actualiza a una cuenta de pago para usar esta función."
       ],
       "Calendar cannot be found": [
-        "No se ha encontrado el calendario"
+        "No se ha encontrado el calendario."
       ],
       "Calendar limit reached": [
         "Se ha alcanzado el límite de calendarios."
@@ -3003,7 +3003,7 @@
         "No se han encontrado correos para importar. La cuenta no tiene una bandeja de entrada."
       ],
       "No public key for ${ BRAND_NAME } address": [
-        "No hay clave pública para esta dirección ${ BRAND_NAME }"
+        "No hay clave pública para esta dirección ${ BRAND_NAME }."
       ],
       "No valid address found": [
         "No se ha encontrado una dirección válida."
@@ -3012,7 +3012,7 @@
         "Ninguna clave WKD recuperada para el usuario es válida para el envío."
       ],
       "Not a ${ BRAND_NAME } account": [
-        "No es una cuenta ${ BRAND_NAME }"
+        "No es una cuenta de ${ BRAND_NAME }."
       ],
       "Not a valid number": [
         "No es un número válido."
@@ -3140,7 +3140,7 @@
         "Pestaña cerrada"
       ],
       "The address might be misspelled": [
-        "La dirección podría estar mal escrita"
+        "La dirección podría estar mal escrita."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que estás utilizando no permite que el pago sea autorizado. Utiliza un navegador diferente o inicia sesión desde un ordenador."
@@ -3202,8 +3202,8 @@
       "This label name is not available. Please choose a different name.": [
         "Este nombre de etiqueta no está disponible. Elige un nombre diferente."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Este mensaje podría contener enlaces a un URL que no se pueden abrir correctamente en tu navegador actual."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
@@ -3230,7 +3230,7 @@
         "La verificación no tuvo éxito, vuelve a intentarlo en una hora."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Hemos detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
+        "Se ha detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperación incorrecta: inténtalo de nuevo o utiliza otro método de recuperación."
@@ -3286,7 +3286,7 @@
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. Solo se admiten los formatos ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
+        "Se ha producido un error al cargar el archivo. No se ha seleccionado ningún archivo."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Se ha producido un error inesperado. La importación debe reiniciarse."
@@ -4064,14 +4064,14 @@
       ],
       "This file contains an event invitation:": [
         "Este archivo contiene una invitación a un evento:",
-        "Este archivo contiene invitaciones a eventos:"
+        "Este archivo contiene invitaciones a un evento:"
       ],
       "This file contains an invitation response:": [
-        "Este archivo contiene una respuesta de invitación:",
-        "Este archivo contiene respuestas de invitaciones:"
+        "Este archivo contiene una respuesta a la invitación:",
+        "Este archivo contiene respuestas a la invitación:"
       ],
       "This file contains some data that we cannot import:": [
-        "Este archivo contiene algunos datos que no podemos importar:"
+        "Este archivo contiene algunos datos que se pueden importar:"
       ]
     },
     "Import contact": {
@@ -4315,7 +4315,7 @@
         "En progreso"
       ],
       "Paused": [
-        "Pausado"
+        "En pausa"
       ],
       "Started": [
         "Iniciado"
@@ -4337,8 +4337,8 @@
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haz clic para obtener más detalles."
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Despliega para ver los detalles.",
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Despliega para ver los detalles."
+        "No se importará ${ totalEventsDiscarded } de ${ totalEvents } evento. Despliega para ver los detalles.",
+        "No se importarán ${ totalEventsDiscarded } de ${ totalEvents } eventos. Despliega para ver los detalles."
       ],
       "No contact can be imported. Click for details": [
         "No se puede importar ningún contacto. Haz clic para obtener detalles."
@@ -4616,13 +4616,13 @@
         "y"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Cualquiera en posesión de este enlace puede ver todos los detalles de los eventos de este calendario, como título, ubicación o participantes."
+        "Cualquier persona con este enlace puede ver todos los detalles de este calendario, como título, ubicación o participantes."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Cualquiera en posesión de este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver detalles de eventos, como título, ubicación o participantes."
+        "Cualquier persona con este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver los detalles de eventos, como título, ubicación o participantes."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Cualquiera en posesión de este enlace no podrá sincronizar ni obtener actualizaciones futuras para tu calendario. Si quieres darles acceso de nuevo, tendrás que crear un nuevo enlace."
+        "Cualquier persona en posesión de este enlace no podrá sincronizar ni obtener actualizaciones futuras para tu calendario. Si quieres darles acceso de nuevo, tendrás que crear un nuevo enlace."
       ],
       "Are you sure you want to delete this address?": [
         "¿Estás seguro de que quieres eliminar esta dirección?"
@@ -4747,6 +4747,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Al continuar se conectará tu cuenta de ${ BRAND_NAME } a ${ name }."
       ],
+      "Copy your referral link": [
+        "Copiar tu enlace de referencia"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -4837,7 +4840,7 @@
         "Hecho"
       ],
       "Done! We sent a code to ${ destination }.": [
-        "¡Listo! Hemos enviado un código a ${ destination }."
+        "¡Listo! Se ha enviado un código a ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al cambiar por un plan con menos funciones se terminarán las conexiones a los servidores de pago de ${ VPN_APP_NAME }."
@@ -5430,7 +5433,7 @@
         "comprar almacenamiento adicional"
       ],
       "Queued": [
-        "En cola"
+        "En espera"
       ],
       "read our two-factor authentication guide first": [
         "lee primero nuestra guía de autenticación de dos factores"
@@ -6043,10 +6046,10 @@
         "Tu cuenta ${ BRAND_NAME } está asociada a ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Tus cuentas ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminar ambas, inicia sesión en ${ loginLink } y elimina tu cuenta allí."
@@ -8635,7 +8638,7 @@
         "Invitación al calendario rechazada"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
-        "Te has unido a ${ calendarName } (${ senderEmail })"
+        "Te has unido a ${ calendarName } (${ senderEmail })."
       ]
     },
     "Notification success": {
@@ -8687,7 +8690,7 @@
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF."
+        "Para que la importación funcione, debes seleccionar todos los elementos solicitados como se muestra en el GIF."
       ]
     },
     "Onboarding": {
@@ -8922,7 +8925,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Crear un calendario nuevo"
+        "Crear un calendario"
       ],
       "Merge with calendar": [
         "Combinar con el calendario"
@@ -9385,13 +9388,13 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Para invitar a usuarios que no sean de ${ BRAND_NAME }, comparte tu calendario con un enlace"
+        "Para invitar a usuarios que no sean de ${ BRAND_NAME }, comparte tu calendario con un enlace."
       ]
     },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
-        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembro por calendario",
-        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario"
+        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembro por calendario.",
+        "Has excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario."
       ]
     },
     "Share calendar modal description": {
@@ -9401,7 +9404,7 @@
     },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
-        "Introduce una dirección de correo electrónico o nombre de grupo"
+        "Introduce una dirección de correo electrónico o nombre de grupo."
       ]
     },
     "Share calendar modal title": {
@@ -9497,7 +9500,7 @@
         "Al utilizar este enlace, Google hará público el calendario al que te estás suscribiendo."
       ],
       "This link might be wrong": [
-        "Este enlace puede ser erróneo"
+        "Este enlace puede ser incorrecto."
       ]
     },
     "Subscribed calendar section description": {
@@ -9507,7 +9510,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "La URL es demasiado larga"
+        "La URL es demasiado larga."
       ]
     },
     "Subscription attribute": {
@@ -9993,7 +9996,7 @@
         "Añadir dirección"
       ],
       "Add another notification to remind you of this event": [
-        "Añade otra notificación para recordarte de este evento"
+        "Añade otra notificación para recordarte de este evento."
       ],
       "Add contact group name": [
         "Añadir nombre del grupo de contactos"
@@ -10593,13 +10596,13 @@
         "Seleccionar grupo de contactos"
       ],
       "Select the time to send this notification": [
-        "Selecciona la hora de envío de esta notificación"
+        "Selecciona la hora de envío de esta notificación."
       ],
       "Select the way to send this notification": [
-        "Selecciona la forma de envío de esta notificación"
+        "Selecciona la forma de envío de esta notificación."
       ],
       "Select when you want this notification to be sent": [
-        "Selecciona cuándo quieres que se envíe esta notificación"
+        "Selecciona cuándo quieres que se envíe esta notificación."
       ],
       "Sender image": [
         "Imagen del remitente"
@@ -10681,8 +10684,8 @@
         "Cuentas de usuario ${ localSuccessfullyCreatedUsers.length } creadas"
       ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } cuenta de usuario creada",
-        "${ successfullyCreatedUsers.length } cuentas de usuario creadas"
+        "Se ha creado ${ successfullyCreatedUsers.length } cuenta de usuario.",
+        "Se han creado ${ successfullyCreatedUsers.length } cuentas de usuario."
       ],
       "Switch to one-password mode": [
         "Cambiar al modo de una contraseña"
@@ -10980,7 +10983,7 @@
         "Detectamos un problema con tu configuración DNS. Asegúrate de que tus registros coinciden con las instrucciones de abajo. Si el problema persiste, tendremos que cerrar la sesión de DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Hemos detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
+        "Se ha detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Cuando añadas una etiqueta a un mensaje en una conversación, se aplicará automáticamente a todos los mensajes futuros que envíes o recibas en esa conversación."

@@ -101,6 +101,9 @@
       "Close transfers": [
         "Zatvori prijenose"
       ],
+      "Collapse folder": [
+        "Sažmi mapu"
+      ],
       "Compose": [
         "Nova poruka"
       ],
@@ -186,6 +189,9 @@
       "Download all": [
         "Preuzmi sve"
       ],
+      "Download anyway": [
+        "Preuzmi svejedno"
+      ],
       "Edit": [
         "Uredi"
       ],
@@ -210,6 +216,9 @@
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
       ],
+      "Expand": [
+        "Proširi"
+      ],
       "Export": [
         "Izvoz"
       ],
@@ -221,6 +230,9 @@
       ],
       "Forward as attachment": [
         "Proslijedi kao privitak"
+      ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Nabavite ${ DRIVE_APP_NAME }"
       ],
       "Get started": [
         "Započnite"
@@ -366,6 +378,9 @@
       "Rename": [
         "Preimenuj"
       ],
+      "Replace file": [
+        "Zamijeni datoteku"
+      ],
       "Report a problem": [
         "Prijavi problem"
       ],
@@ -462,6 +477,9 @@
       "Submit": [
         "Pošalji"
       ],
+      "Submit report": [
+        "Prijavi problem"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -494,6 +512,9 @@
       ],
       "Upgrade now": [
         "Nadogradi sada"
+      ],
+      "Upload anyway": [
+        "Učitaj svejedno"
       ],
       "Upload file": [
         "Učitaj datoteku"
@@ -1752,17 +1773,11 @@
       "This label name is not available. Please choose a different name.": [
         "Naziv oznake nije dostupan. Odaberite drugi naziv."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
-      ],
       "Unknown error": [
         "Nepoznata pogreška"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Ne možete poslati e-poštu za više od 100 primatelja"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
       ],
       "You must set a name": [
         "Morate postaviti naziv"
@@ -2728,8 +2743,14 @@
       "Deleted": [
         "Izbrisano"
       ],
+      "Device": [
+        "Uređaj"
+      ],
       "Do not ask again": [
         "Ne pitaj ponovno"
+      ],
+      "Download anyway": [
+        "Preuzmi svejedno"
       ],
       "Email": [
         "E-pošta"
@@ -2821,6 +2842,9 @@
       "Main": [
         "Glavno"
       ],
+      "Malware": [
+        "Zlonamjerni program"
+      ],
       "Manage folders": [
         "Upravljanje mapama"
       ],
@@ -2892,6 +2916,9 @@
       ],
       "Replace folder": [
         "Zamijeni mapu"
+      ],
+      "Report Abuse": [
+        "Prijavi zlouporabu"
       ],
       "Reveal password": [
         "Prikaži lozinku"
@@ -3050,6 +3077,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" moved to trash": [
+        "\"${ name }\" premješten u Otpad"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Sve stavke će uskoro biti trajno izbrisane iz otpada"
       ],
@@ -3091,11 +3121,25 @@
         "Premjesti ${ movingCount } stavku",
         "Premjesti ${ movingCount } stavke",
         "Premjesti ${ movingCount } stavki"
+      ],
+      "The link to \"${ name }\" was deleted": [
+        "Poveznica do \"${ name }\" je izbrisana."
+      ],
+      "Your settings have been changed successfully": [
+        "Vaše postavke su promijenjene."
       ]
     },
     "Onboarding Action": {
       "Next": [
         "Sljedeće"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Započnite koristiti ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "Onboarding Info": {
+      "Upload a file": [
+        "Učitaj datoteku"
       ]
     },
     "Onboarding Proton": {
@@ -3110,6 +3154,11 @@
       ],
       "You can change this anytime in your settings.": [
         "Možete promijeniti bilo kada u vašim postavkama."
+      ]
+    },
+    "Onboarding Title": {
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Dobrodošli u ${ DRIVE_APP_NAME }"
       ]
     },
     "Option": {
@@ -3309,6 +3358,12 @@
       "Preferences saved": [
         "Postavke su spremljene"
       ],
+      "Recovery has started": [
+        "Oporavak je započet."
+      ],
+      "The link to your file was successfully copied": [
+        "Poveznica do vaše datoteke je uspješno kopirana."
+      ],
       "Verification successful": [
         "Uspješna provjera"
       ]
@@ -3439,6 +3494,9 @@
       ],
       "Date": [
         "Datum"
+      ],
+      "Decrypting": [
+        "Dešifriranje"
       ],
       "Delete ${ count } contact": [
         "Izbriši ${ count } kontakt",

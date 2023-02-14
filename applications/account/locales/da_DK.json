@@ -91,7 +91,7 @@
         "Venstrestil"
       ],
       "Align right": [
-        "Højerstil"
+        "Højrejustér"
       ],
       "Alignment": [
         "Justering"
@@ -343,7 +343,7 @@
         "Udforsk andre ${ BRAND_NAME }-abonnementer"
       ],
       "Export": [
-        "Exportér"
+        "Eksportér"
       ],
       "Export key": [
         "Eksportér nøgle"
@@ -912,6 +912,9 @@
       ],
       "No, thanks": [
         "Nej tak"
+      ],
+      "Start my 30-day free trial": [
+        "Start min 30-dages prøveperiode"
       ],
       "Try free for 30 days": [
         "Prøv gratis i 30 dage"
@@ -2487,6 +2490,11 @@
         "(via ${ entryCountryName })"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Ingen søgeresultater fundet"
+      ]
+    },
     "Credits": {
       "Available credits": [
         "Tilgængelige kreditter"
@@ -2495,6 +2503,14 @@
     "CSV download button": {
       "CSV template": [
         "CSV-skabelon"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Fejl i række ${ erroredRowsString }."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Vi fandt fejl i flere rækker under import, gennemse venligst din CSV-fil."
       ]
     },
     "Cycle": {
@@ -2633,6 +2649,9 @@
       "${ name } failed to move to spam list": [
         "${ name } kunne ikke flyttes til spamliste"
       ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } kunne ikke flyttes til ikke-spamlisten"
+      ],
       "${ name } failed to move to your block list": [
         "${ name } kunne ikke flyttes til din blokeringsliste"
       ],
@@ -2746,6 +2765,9 @@
       ],
       "${ name } failed to move to spam list": [
         "${ name } kunne ikke flyttes til spamliste"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } kunne ikke flyttes til ikke-spamlisten"
       ],
       "${ name } failed to move to your block list": [
         "${ name } kunne ikke flyttes til din blokeringsliste"
@@ -3177,8 +3199,8 @@
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
@@ -3422,6 +3444,9 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Der opstod en fejl under upload af din fil. Ingen fil er blevet valgt."
       ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Upload en CSV-fil med ${ MAX_NUMBER_OF_USER_ROWS } brugerkonti eller færre."
+      ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "Din fil \"${ formattedFilename }\" er tom."
       ]
@@ -3631,14 +3656,26 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Noget gik galt med registreringen af din sikkerhedsnøgle. Prøv venligst igen."
       ]
     },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "2FA med sikkerhedsnøgle er deaktiveret"
+      ],
+      "Add a name to identify your security key with.": [
+        "Tilføj et navn til at identificere din sikkerhedsnøgle med."
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker på du vil slette sikkerhedsnøgle ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Indsæt din sikkerhedsnøgle i din enheds USB-port."
       ],
       "Security key": [
         "Sikkerhedsnøgle"
@@ -3648,6 +3685,12 @@
       ],
       "Security key updated": [
         "Sikkerhedsnøgle opdateret"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Dette vil slette alle sikkerhedsnøgler forbundet til din konto."
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Bekræft din identitet med en fysisk U2F eller FIDO2 sikkerhedsnøgle"
       ]
     },
     "fido2: Label": {
@@ -3661,6 +3704,15 @@
     "fido2: Title": {
       "Delete security key?": [
         "Slet sikkerhedsnøgle?"
+      ],
+      "Name your security key": [
+        "Navngiv din sikkerhedsnøgle"
+      ],
+      "Register your security key": [
+        "Registrer din sikkerhedsnøgle"
+      ],
+      "Registered security keys": [
+        "Registrerede sikkerhedsnøgler"
       ],
       "Security key registered": [
         "Sikkerhedsnøgle registreret"
@@ -3918,6 +3970,9 @@
       ],
       "Email address": [
         "E-mailadresse"
+      ],
+      "Last used": [
+        "Sidst brugt"
       ],
       "Token name": [
         "Tokennavn"
@@ -4674,6 +4729,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "At fortsætte vil forbinde din ${ BRAND_NAME }-konto til ${ name }."
       ],
+      "Copy your referral link": [
+        "Kopier dit henvisningslink"
+      ],
       "Country code": [
         "Landekode"
       ],
@@ -4906,6 +4964,9 @@
       ],
       "Get my ${ BRAND_NAME } address": [
         "FÅ min ${ BRAND_NAME }-adresse"
+      ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
+        "Giv tokenet et beskrivende navn, såsom den tjeneste, du planlægger at bruge det til, og vælg en af dine aktive brugerdefinerede domæneadresser. Kun denne adresse vil kunne sende e-mails med dette token."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Giv din offentlige nøgle til dine venner, eller offentliggør den online, så alle kan sende dig end-to-end krypterede e-mails!"
@@ -5581,6 +5642,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
       ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "Dette token vil ikke være tilgængeligt, efter du har lukket dette vindue, og du bør ikke dele det med andre."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne bruger er pt. ansvarlig for betalinger for din organisation. Ved at degradere dette medlem, bliver du ansvarlig for betalinger for din organisation."
       ],
@@ -6041,11 +6105,23 @@
       "Create an email address": [
         "Opret en e-mailadresse"
       ],
+      "Day 27: Trial reminder": [
+        "Dag 27: Prøveversion påmindelse"
+      ],
+      "Day 30: Trial ends": [
+        "Dag 30: Prøveversion slutter"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Nyd sikker, brugervenlig e-mail med masser af premium-funktioner."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Nøgle ${ fingerprint } er allerede blevet uploadet"
       ],
       "Try Mail Plus": [
         "Prøv Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Vi sender dig en e-mail, inden din prøveperiode udløber. Du kan annullere når som helst."
       ],
       "Your new email address is ready to go!": [
         "Din nye e-mailadresse er klar til at blive taget i brug!"
@@ -7220,6 +7296,12 @@
       "URL": [
         "URL"
       ],
+      "Use a recovery email address": [
+        "Brug en e-mailadresse til gendannelse"
+      ],
+      "Use a recovery phone number": [
+        "Brug et telefonnummer til gendannelse"
+      ],
       "Use folder colors": [
         "Brug mappefarver"
       ],
@@ -7829,6 +7911,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue to review": [
+        "Fortsæt for at gennemgå"
+      ],
       "Continue with Free": [
         "Fortsæt med Free"
       ],
@@ -7950,11 +8035,23 @@
       "${ size } storage per user": [
         "${ size } lager pr. bruger"
       ],
+      "1 free VPN connection in total": [
+        "1 gratis VPN-forbindelse i alt"
+      ],
+      "Admin console": [
+        "Administrationskonsol"
+      ],
+      "Advanced sharing security": [
+        "Avanceret delingssikkerhed"
+      ],
       "Auto-reply": [
         "Autosvar"
       ],
       "Catch-all": [
         "Fang-alle"
+      ],
+      "Centralized billing": [
+        "Samlet fakturering"
       ],
       "Contact groups": [
         "Kontaktgrupper"
@@ -7965,14 +8062,23 @@
       "DNS leak prevention": [
         "Forebyggelse af DNS-lækage"
       ],
+      "Email client support (via IMAP/SMTP)": [
+        "Understøttelse af e-mailklient (via IMAP/SMTP)"
+      ],
       "Encrypted contact details": [
         "Krypterede kontaktoplysninger"
+      ],
+      "Encrypted VPN servers": [
+        "Krypterede VPN-servere"
       ],
       "End-to-end encryption": [
         "End-to-end kryptering"
       ],
       "Free VPN on a single device": [
         "Gratis VPN på en enkelt enhed"
+      ],
+      "GDPR data processing agreement": [
+        "GDPR databehandleraftale"
       ],
       "High-speed VPN on ${ n } device": [
         "Højhastigheds VPN på ${ n } enhed",
@@ -7984,8 +8090,20 @@
       "Limited support": [
         "Begrænset support"
       ],
+      "Multiple admin roles": [
+        "Flere administratorroller"
+      ],
       "P2P/BitTorrent": [
         "P2P/BitTorrent"
+      ],
+      "Password-protected Emails": [
+        "Kodebeskyttet e-mails"
+      ],
+      "Phone support (6+ users)": [
+        "Telefon-support (6+ brugere)"
+      ],
+      "Priority email support": [
+        "Prioriteret e-mail-support"
       ],
       "Priority support": [
         "Prioriteret support"
@@ -8005,11 +8123,17 @@
       "Share files and folders via link": [
         "Del filer og mapper via link"
       ],
+      "Sign in as user": [
+        "Log ind som bruger"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
+      ],
+      "Team management": [
+        "Brugeradministration"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -8032,21 +8156,36 @@
       "Unlimited messages per day": [
         "Ubegrænset beskedafsendelse pr. dag"
       ],
+      "Unlimited volume/bandwidth": [
+        "Ubegrænset mængde/båndbredde"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
+      ],
+      "Worldwide streaming services": [
+        "Verdensomspændende streamingtjenester"
       ]
     },
     "new_plans: heading": {
       "Support": [
         "Support"
+      ],
+      "Team management": [
+        "Brugeradministration"
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gør privatliv din standard for sikkerhedskopiering, lagring, deling og hentning af filer."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Opgrader til virksomhedspakken med adgang til alle premium ${ BRAND_NAME }-tjenester."
       ],
       "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
         "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
@@ -8056,6 +8195,12 @@
       ]
     },
     "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand } slutter med ${ last4 }"
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "${ BRAND_NAME } lader dig oprette e-mail-adresser og administrere konti for underbrugere. Ideel til familier og organisationer."
+      ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* Med 1-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
       ],
@@ -8074,8 +8219,26 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattende privatliv og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "Hvis du sletter din konto, mister du alle fordelene ved ${ visionary }-abonnementet, og det vil ikke være tilgængeligt, hvis du opretter en ny konto."
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "Hvis du nedgraderer din konto, mister du alle fordele ved ${ visionary }-abonnementet, og det vil ikke være tilgængeligt, hvis du forsøger at abonnere igen."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "Hvis du skifter til et andet abonnement mister du alle fordelene ved ${ visionary }-abonnementet og kan ikke skifte tilbage til ${ visionary }."
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "Vores ${ visionary }-abonnement er ikke længere tilgængeligt for nye abonnenter, da det er et særligt abonnement for oprindelige ${ BRAND_NAME }-brugere med særlige funktioner og fordele."
+      ],
       "Popular": [
         "Populær"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Sikker lagring i skyen der lader dig gemme, synkronisere og dele dine filer nemt og sikkert."
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "Sikker e-mail og kalender til professionelle og virksomheder."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Sikker e-mail med avancerede funktioner til din daglige kommunikation."
@@ -8083,8 +8246,17 @@
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
       ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Den dedikerede VPN-løsning der tilbyder sikker, ubegrænset højhastighedsadgang til internettet uden begrænsninger."
+      ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Den gratis startkonto, der er designet til at give alle mulighed for at få privatlivsbeskyttelse som standard."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "Du drager fordel af en kampagnepris på dit nuværende abonnement. Hvis du sletter din konto, mister du din kampagnepris, og den vil ikke være tilgængelig, hvis du opretter en ny konto."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
     "new_plans: Label": {
@@ -8112,6 +8284,12 @@
       ],
       "terms and conditions": [
         "vilkår og betingelser"
+      ],
+      "Your ${ planName } subscription is now active.": [
+        "Dit ${ planName } abonnement er nu aktivt."
+      ],
+      "Your selected plan: ${ planName }": [
+        "Dit valgte abonnement: ${ planName }"
       ]
     },
     "new_plans: Title": {
@@ -8138,11 +8316,23 @@
       "Review subscription and pay": [
         "Gennemgå abonnement og betal"
       ],
+      "Start exploring the ${ BRAND_NAME } universe": [
+        "Start udforskningen af ${ BRAND_NAME }-universet"
+      ],
       "Switch plans?": [
         "Skift abonnement?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Lås op for premium-funktioner ved at opgradere"
       ]
     },
     "new_plans: tooltip": {
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Tillader at du forbinder til mere end ét netværk samtidigt, eks. kan du streame en film fra et andet land, samtidigt med at du får lokale søgeresultater"
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        "Kontroller adgang til dine delte filer ved at tilføje adgangskodebeskyttelse og link-udløbsdatoer"
+      ],
       "Create up to ${ n } custom calendar.": [
         "Opret op til ${ n } brugertilpasset kalender.",
         "Opret op til ${ n } brugertilpassede kalendere."
@@ -8150,23 +8340,59 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
       ],
+      "Easily share your calendars with your colleagues, family, and friends via a link": [
+        "Du kan nemt dele dine kalendere med dine kolleger, familie eller venner via et link"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues via a link": [
+        "Du kan nemt dele dine kalendere med familie, venner eller kolleger via et link"
+      ],
       "End-to-end encrypted calendar": [
         "End-to-end krypteret kalender"
       ],
       "End-to-end encrypted file storage": [
         "End-to-end krypteret fillagring"
       ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP-understøttelse er begrænset til skrivebords-apps (f.eks. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-baserede IMAP-integrationer er i øjeblikket ikke understøttet."
+      ],
+      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
+        "Oven i det, tilføj op til 5 kalendere fra kollegaer, organisationer, familie og venner."
+      ],
+      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "Oven i det, tilføj op til 5 kalendere fra venner, familie, kollegaer og organisationer."
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "Vores servers harddiske er fuldt krypterede med flere kodelag, så din data er beskyttet selv hvis vores hardware bliver kompromitteret"
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Beskyt alle enheder forbundet til dit WiFi-netværk. Dette er også brugbart hvis du har enheder der ikke understøtter VPN-indstillinger direkte."
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Overflyt hurtigt dine e-mails, kalendere eller kontakter fra en anden udbyder"
+      ],
       "Route your internet traffic through the Tor network with a single click": [
         "Send din internettrafik gennem Tor-netværket med ét enkelt tryk"
       ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Del dine filer eller mapper med enhver ved hjælp af sikre, delbare links"
+      ],
+      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Start med ${ freeStorageSize } og lås op for mere lagerplads undervejs. Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }. Administratorer kan tildele forskellige mængder lagerplads til brugere i deres organisation"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Understøttelse af fildelingsprotokoller såsom BitTorrent"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Brug dine egne brugerdefinerede e-mail-domæneadresser, f.eks. dig@ditnavn.com"
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "Du kan have mere end én administrator. Alle administratorer kan tilføje og administrere brugere, men kun den primære administrator har kontrol over fakturering."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8188,12 +8414,18 @@
       "Boost your storage space to ${ businessStorage } per user": [
         "Forøg din lagerplads til ${ businessStorage } i alt"
       ],
+      "Cover more ground with support for 10 custom email domains": [
+        "Dæk dig mere ind, med understøttelse af 10 brugerdefinerede domæner"
+      ],
       "Create ${ numberOfPersonalCalendars } personal calendar": [
         "Opret ${ numberOfPersonalCalendars } personlig kalender",
         "Opret op til ${ numberOfPersonalCalendars } personlige kalendere"
       ],
       "Everything in ${ vpnPlanName }": [
         "Alt i ${ vpnPlanName }"
+      ],
+      "Get 5 additional email addresses per user": [
+        "Få 5 ekstra e-mailadresser pr. bruger"
       ],
       "Priority support": [
         "Prioriteret support"
@@ -9192,6 +9424,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Den privatlivsorienterede Mail- og kalenderløsning til dine daglige kommunikationsbehov."
+      ],
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Dette tilbud er kun for nye ${ BRAND_NAME }-brugere. Der kræves intet kreditkort."
       ]
     },
     "Success": {
@@ -9492,6 +9727,11 @@
       ],
       "vCard field": [
         "vCard-felt"
+      ]
+    },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "Ingen SMTP-token fundet"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -10527,6 +10767,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Indstiller følgende sidefod i de e-mails, du sender: ${ signature } Linket peger på dit henvisningslink. Sidefoden vises under din signatur. Du kan til enhver tid tilpasse din signatur i indstillingerne."
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Viser hver afsenders billede i meddelelseslisten. Afsenderens initialer vises, hvis der ikke er et billede til rådighed."
+      ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer genereret af denne nøgle behandles som ugyldige, og denne nøgle kan ikke benyttes til kryptering"
       ],
@@ -10535,6 +10778,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Den nye abonnementscyklus starter ${ formattedTime }"
       ],
       "This address has been disabled": [
         "Denne adresse er deaktiveret"
@@ -10774,6 +11020,9 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Dato- og tidsindstillingerne på din enhed er ikke synkroniseret. ${ learnMore }"
+      ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Enheden eller tjenesten der bruger dette token vil ikke længere kunne sende e-mails gennem ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din ${ BRAND_NAME }-konto. Overvej venligst at tilpasse din import."

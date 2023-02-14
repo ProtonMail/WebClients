@@ -162,7 +162,7 @@
         "Crear nueva carpeta"
       ],
       "Create new text file": [
-        "Crear un nuevo archivo de texto"
+        "Crear un archivo de texto"
       ],
       "Customize": [
         "Personalizar"
@@ -287,7 +287,7 @@
         "Ir al panel ${ index }"
       ],
       "Go to parent": [
-        "Ir a la carpeta superior"
+        "Ir al nivel superior"
       ],
       "Go to settings": [
         "Ir a la configuración"
@@ -341,7 +341,7 @@
         "Administrar etiquetas"
       ],
       "Manage link": [
-        "Gestionar enlace"
+        "Administrar enlace"
       ],
       "Mark for deletion": [
         "Marcar para eliminar"
@@ -373,8 +373,11 @@
       "Move to trash": [
         "Mover a la papelera"
       ],
+      "New": [
+        "Nuevo"
+      ],
       "New upload": [
-        "Cargar archivo"
+        "Cargar"
       ],
       "Next": [
         "Siguiente"
@@ -731,7 +734,7 @@
         "Problema con el dominio personalizado"
       ],
       "Drive problem": [
-        "Problema con Drive"
+        "Problema con unidad de almacenamiento"
       ],
       "Feature request": [
         "Solicitar función"
@@ -1814,10 +1817,10 @@
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puedes verificar y cambiar este emparejamiento manualmente."
+        "Además, se han emparejado automáticamente los campos CSV con los campos vCard. Puedes verificar y cambiar este emparejamiento manualmente."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hemos detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
+        "Se han detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
       ]
     },
     "Early Access Disabled": {
@@ -1936,7 +1939,7 @@
         "Anula la selección de al menos ${ calendarToFixCount } calendarios o"
       ],
       "Device name does not match": [
-        "El nombre del dispositivo no concuerda"
+        "El nombre del dispositivo no coincide."
       ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
@@ -1963,10 +1966,10 @@
         "No se puede combinar un archivo con una carpeta."
       ],
       "File selection is already downloading": [
-        "La selección de archivos ya se está descargando"
+        "La selección de archivos ya se está descargando."
       ],
       "Folder \"${ name }\" is already downloading": [
-        "La carpeta \"${ name }\" ya se está descargando"
+        "La carpeta \"${ name }\" ya se está descargando."
       ],
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
@@ -1984,7 +1987,7 @@
         "Contraseña de buzón incorrecta. Inténtalo de nuevo."
       ],
       "Incorrect password. Please try again.": [
-        "Contraseña incorrecta. Iténtalo de nuevo."
+        "Contraseña incorrecta. Inténtalo de nuevo."
       ],
       "Invalid name": [
         "Nombre no válido"
@@ -2149,8 +2152,8 @@
       "This label name is not available. Please choose a different name.": [
         "Este nombre de etiqueta no está disponible. Elige un nombre diferente."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Este mensaje podría contener enlaces a un URL que no se pueden abrir correctamente en tu navegador actual."
       ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
@@ -2161,8 +2164,8 @@
       "You can't send a mail to more than 100 recipients": [
         "No puedes enviar un correo a más de 100 destinatarios."
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "No puedes enviar archivos vCards de más de 10 contactos."
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Has alcanzado el número máximo de calendarios personales. No se han podido importar algunos calendarios."
@@ -2188,7 +2191,7 @@
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. Solo se admiten los formatos ICS."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
+        "Se ha producido un error al cargar el archivo. No se ha seleccionado ningún archivo."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Se ha producido un error inesperado. La importación debe reiniciarse."
@@ -2344,7 +2347,7 @@
         "Acceso denegado"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Espera un tiempo hasta que arreglemos el error."
+        "Espera un momento hasta que se arregle el error."
       ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
@@ -2598,14 +2601,14 @@
       ],
       "This file contains an event invitation:": [
         "Este archivo contiene una invitación a un evento:",
-        "Este archivo contiene invitaciones a eventos:"
+        "Este archivo contiene invitaciones a un evento:"
       ],
       "This file contains an invitation response:": [
-        "Este archivo contiene una respuesta de invitación:",
-        "Este archivo contiene respuestas de invitaciones:"
+        "Este archivo contiene una respuesta a la invitación:",
+        "Este archivo contiene respuestas a la invitación:"
       ],
       "This file contains some data that we cannot import:": [
-        "Este archivo contiene algunos datos que no podemos importar:"
+        "Este archivo contiene algunos datos que se pueden importar:"
       ]
     },
     "Import contact": {
@@ -2810,8 +2813,8 @@
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haz clic para obtener más detalles."
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Despliega para ver los detalles.",
-        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Despliega para ver los detalles."
+        "No se importará ${ totalEventsDiscarded } de ${ totalEvents } evento. Despliega para ver los detalles.",
+        "No se importarán ${ totalEventsDiscarded } de ${ totalEvents } eventos. Despliega para ver los detalles."
       ],
       "No contact can be imported. Click for details": [
         "No se puede importar ningún contacto. Haz clic para obtener detalles."
@@ -2918,6 +2921,9 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seleccionados"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
         "${ selectedFoldersCount } carpetas seleccionadas"
@@ -2949,10 +2955,10 @@
         "(${ memberCount } miembros)"
       ],
       "A number will be added to the filename": [
-        "Se añadirá un número al nombre del archivo"
+        "Se añadirá un número al nombre del archivo."
       ],
       "A number will be added to the folder name": [
-        "Se añadirá un número al nombre de la carpeta"
+        "Se añadirá un número al nombre de la carpeta."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
@@ -2972,7 +2978,7 @@
         "Todos los cambios se perderán."
       ],
       "Also try looking in Trash.": [
-        "Prueba también a mirar en la Papelera."
+        "Prueba también a mirar en la papelera."
       ],
       "An active recovery file": [
         "Un archivo de recuperación activo"
@@ -2984,10 +2990,10 @@
         "¡Y accede a él desde cualquier lugar!"
       ],
       "Anyone with this link can access your file.": [
-        "Cualquiera que tenga este enlace puede acceder a tu archivo."
+        "Cualquier persona que tenga este enlace puede acceder a tu archivo."
       ],
       "Anyone with this link can access your folder.": [
-        "Cualquiera en posesión de este enlace puede acceder a tu carpeta."
+        "Cualquier persona con este enlace puede acceder a tu carpeta."
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
@@ -3091,10 +3097,10 @@
         "Eliminar unidades bloqueadas"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "Firma digital verificada. Este archivo ha sido cargado de forma segura por ${ emailAddress }."
+        "Firma digital verificada. Se ha cargado este archivo de forma segura por ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "Firma digital verificada. Esta carpeta ha sido cargada de forma segura por ${ emailAddress }."
+        "Firma digital verificada. Se ha cargado esta carpeta de forma segura por ${ emailAddress }."
       ],
       "double your storage": [
         "doblar tu almacenamiento"
@@ -3103,7 +3109,7 @@
         "Descarga cancelada"
       ],
       "Download failed": [
-        "Error al descargar"
+        "Error de descarga"
       ],
       "Download failed due to ${ error }": [
         "Error al descargar debido a ${ error }"
@@ -3112,7 +3118,7 @@
         "Descarga finalizada"
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        "La descarga de ${ downloadFileName } será abortada"
+        "Se anulará la descarga de ${ downloadFileName }."
       ],
       "Download paused due to connection issue; it will resume automatically": [
         "La descarga se ha pausado por un incidente en la conexión. Se reanudará automáticamente."
@@ -3136,16 +3142,16 @@
         "Los correos electrónicos son firmados automáticamente."
       ],
       "Enable drive search": [
-        "Activar la búsqueda en almacenamiento"
+        "Activar la búsqueda en la unidad"
       ],
       "Enabling drive search": [
-        "Activación de la búsqueda de unidades"
+        "Activación de la búsqueda en tu unidad"
       ],
       "Encrypted": [
         "Cifrado"
       ],
       "Encrypted search is here": [
-        "La búsqueda cifrada está aquí"
+        "La búsqueda cifrada está aquí."
       ],
       "Enter the code from your authenticator app": [
         "Introduce el código de tu aplicación de autenticación."
@@ -3182,13 +3188,13 @@
         "Error al abrir un enlace seguro. Motivo: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        "El archivo \"${ name }\" fue eliminado durante la descarga."
+        "El archivo \"${ name }\" se ha eliminado durante la descarga."
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "No se ha encontrado la firma del archivo. No hemos podido verificar que ${ emailAddress } haya cargado ${ fileName }."
+        "No se ha encontrado la firma del archivo. No se ha podido verificar que ${ emailAddress } haya cargado ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "No se ha encontrado la firma del archivo. No hemos podido verificar quién ha cargado ${ fileName }."
+        "No se ha encontrado la firma del archivo. No se ha podido verificar quién ha cargado ${ fileName }."
       ],
       "File will not be uploaded": [
         "El archivo no se cargará."
@@ -3197,19 +3203,19 @@
         "Finalizando"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        "La carpeta \"${ link.name }\" fue eliminada durante la descarga"
+        "La carpeta \"${ link.name }\" se ha eliminado durante la descarga."
       ],
       "Folder contents will merge into a single folder": [
-        "El contenido de las carpetas se unirá en una sola carpeta."
+        "El contenido de las carpetas se combinará en una sola carpeta."
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "No se ha encontrado la firma de la carpeta. No hemos podido verificar que ${ emailAddress } haya cargado ${ fileName }."
+        "No se ha encontrado la firma de la carpeta. No se ha podido verificar que ${ emailAddress } haya cargado ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "No se ha encontrado la firma de la carpeta. No hemos podido verificar quién ha cargado ${ fileName }."
+        "No se ha encontrado la firma de la carpeta. No se ha podido verificar quién ha cargado ${ fileName }."
       ],
       "Folder will not be uploaded": [
-        "La carpeta no se cargará"
+        "La carpeta no se cargará."
       ],
       "Folders you sync from your computer will appear here.": [
         "Las carpetas que sincronices de tu ordenador aparecerán aquí."
@@ -3230,7 +3236,7 @@
         "¡Adelante: carga un archivo!"
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Dirígete a \"Mis archivos\" y carga algunos archivos primero."
+        "Ve a \"Mis archivos\" y carga algunos archivos primero."
       ],
       "Group assignment applied": [
         "Asignación de grupo aplicada"
@@ -3297,7 +3303,7 @@
         "Se ha restablecido la conexión a Internet."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Parece ser que recientemente has intentado cargar ${ uploadName }. Si no se ha podido cargar, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
+        "Parece ser que recientemente has intentado cargar ${ uploadName }. Si no se ha podido cargar, ${ replaceFile }. Si la carga está en proceso, reemplazarla cancela la carga en curso."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Los elementos de la papelera permanecerán aquí hasta que los borres permanentemente."
@@ -3420,23 +3426,23 @@
         "de"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Una de tus unidades cifradas está bloqueada. Lo más probable es que esto se deba a un restablecimiento reciente de la contraseña."
+        "Una de tus almacenamientos cifrados está bloqueado. Lo más probable es que esto se deba a un restablecimiento reciente de la contraseña."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Sólo ${ MAX_CUSTOM_PASSWORD_LENGTH } carácter está permitido",
-        "Sólo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres están permitidos"
+        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } carácter está permitido",
+        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres están permitidos"
       ],
       "Only the people with the link and the password can access this file.": [
-        "Solo las personas en posesión del enlace y la contraseña pueden acceder a este archivo."
+        "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
       ],
       "Only the people with the link and the password can access this folder.": [
-        "Solo las personas en posesión del enlace y la contraseña tienen acceso a esta carpeta."
+        "Solo las personas con el enlace y la contraseña tienen acceso a esta carpeta."
       ],
       "Paused": [
-        "Pausado"
+        "En pausa"
       ],
       "Permanently delete all files in your locked drive": [
         "Eliminar permanentemente todos los archivos en tu unidad bloqueada"
@@ -3494,7 +3500,7 @@
         "Búsqueda privada habilitada. Puedes cerrar esta ventana y buscar archivos y carpetas."
       ],
       "Queued": [
-        "En cola"
+        "En espera"
       ],
       "recommended browser": [
         "navegador recomendado"
@@ -3509,16 +3515,16 @@
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
       ],
       "Report has been sent": [
-        "El informe ha sido enviado"
+        "Se ha enviado el informe."
       ],
       "Search cannot be enabled in this browser": [
-        "No se puede habilitar la búsqueda en este navegador"
+        "No se puede habilitar la búsqueda en este navegador."
       ],
       "Search Enabled": [
         "Búsqueda habilitada"
       ],
       "Secure sharing": [
-        "Compartir de forma segura"
+        "Uso compartido seguro"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecciona una carpeta o archivo que has cargado para crear un enlace."
@@ -3581,7 +3587,7 @@
         "Temporalmente no disponible. Vuelve a comprobarlo más tarde."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "La cuenta puede tener una nueva clave o los siguientes elementos pueden haber sido manipulados: ${ items }. Ábrelos solo si son de confianza."
+        "La cuenta puede tener una nueva clave o es posible que se haya manipulado los siguientes elementos: ${ items }. Ábrelos solo si son de confianza."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "La aplicación necesita descifrar localmente tus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrás descargarlo."
@@ -3590,16 +3596,16 @@
         "El tamaño de los datos cifrados es ligeramente mayor debido al espacio adicional necesario para cifrado y firmas, los cuales aseguran la seguridad de tus datos."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Los siguientes elementos pueden haber sido manipulados: ${ items }. Ábrelos solo si son de confianza."
+        "Es posible que se haya manipulado los siguientes elementos: ${ items }. Ábrelos solo si son de confianza."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        "Hay archivos que aún deben ser transferidos. Al cerrar el administrador de transferencias se terminan todas las operaciones."
+        "Hay archivos que aún se deben transferir. Al cerrar el administrador de transferencias se terminan todas las operaciones."
       ],
       "There are no files yet": [
-        "Aún no hay archivos"
+        "Aún no hay archivos."
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Estos archivos fueron compartidos usando cifrado de extremo a extremo. Para mantenerlos seguros (así como tus documentos, fotos y archivos privados), almacénalos en tu propio ${ DRIVE_APP_NAME }. Es gratis y fácil de usar."
+        "Se han compartido estos archivos usando cifrado de extremo a extremo. Para mantenerlos seguros (así como tus documentos, fotos y archivos privados), almacénalos en tu propio ${ DRIVE_APP_NAME }. Es gratis y fácil de usar."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
@@ -3623,17 +3629,17 @@
         "Se ha creado este enlace con una versión antigua de Drive y no se puede modificar. Elimínalo y crea uno nuevo para cambiar tu configuración."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a tu archivo. Para volver a compartir el archivo, necesitarás un nuevo enlace."
+        "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a tu archivo. Para volver a compartir el archivo, necesitas un nuevo enlace."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Este enlace será deshabilitado de forma permanente. Nadie en posesión de este enlace tendrá acceso a tu carpeta. Necesitarás un enlace nuevo para volver a compartir la carpeta."
+        "Se deshabilitará este enlace de forma permanente. Nadie con este enlace tendrá acceso a tu carpeta. Necesitas un enlace nuevo para volver a compartir la carpeta."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Esta acción eliminará el enlace e impedirá el acceso al archivo a cualquier persona que lo tuviese.",
         "Esta acción eliminará los enlaces e impedirá el acceso a los archivos a cualquier persona que los tuviese."
       ],
       "This will overwrite the existing file": [
-        "Esto sobrescribirá el archivo existente"
+        "Esto sobrescribirá el archivo existente."
       ],
       "This will overwrite the existing folder": [
         "Esta acción sobreescribirá la carpeta existente."
@@ -3642,10 +3648,10 @@
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Para habilitar la búsqueda realmente privada, ${ DRIVE_APP_NAME } necesita indexar tus archivos localmente."
+        "Para habilitar una búsqueda realmente privada, ${ DRIVE_APP_NAME } necesita indexar tus archivos localmente."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Para permitir una búsqueda verdaderamente privada, debemos indexar tus archivos localmente. Puedes seguir utilizando ${ DRIVE_APP_NAME } normalmente y te avisaremos cuando la indexación haya terminado."
+        "Para permitir una búsqueda verdaderamente privada, se debe indexar tus archivos localmente. Puedes seguir utilizando ${ DRIVE_APP_NAME } normalmente y te avisaremos cuando la indexación haya terminado."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
@@ -3663,16 +3669,16 @@
         "Para usar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Transfer canceled for file \"${ name }\"": [
-        "Se ha cancelado la transferencia del archivo \"${ name }\""
+        "Se ha cancelado la transferencia del archivo \"${ name }\"."
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        "Se ha cancelado la transferencia de la carpeta \"${ name }\""
+        "Se ha cancelado la transferencia de la carpeta \"${ name }\"."
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "Se ha omitido la transferencia del archivo \"${ file.name }\""
+        "Se ha omitido la transferencia del archivo \"${ file.name }\"."
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        "Se ha omitido la transferencia de la carpeta \"${ folderName }\""
+        "Se ha omitido la transferencia de la carpeta \"${ folderName }\"."
       ],
       "Trash": [
         "Papelera"
@@ -3693,7 +3699,7 @@
         "Archivo no admitido"
       ],
       "Updating drive search...": [
-        "Actualizando búsqueda en drive..."
+        "Actualizando la búsqueda en la unidad..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
@@ -3786,10 +3792,10 @@
         "Perderás todos los cambios no guardados."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en Drive están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
@@ -3801,7 +3807,7 @@
         "Tu cuenta tiene al menos una factura vencida. Tu cuenta está restringida. Las faltas de pago continuadas implicarán el bloqueo de tus correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Tu navegador actual no soporta la descarga de archivos grandes por no disponer de trabajadores de servicio. La descarga de archivos grandes puede inmovilizar o dejar sin respuesta al navegador. Usa la última versión de ${ recommendedBrowser } e inténtalo de nuevo."
+        "Tu navegador actual no admite la descarga de archivos grandes por no disponer de trabajos de servicio. La descarga de archivos grandes puede inmovilizar o dejar sin respuesta al navegador. Usa la última versión de ${ recommendedBrowser } e inténtalo de nuevo."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
@@ -3813,7 +3819,7 @@
         "Tus archivos ya no son accesibles debido a un restablecimiento de la contraseña. Vuelve a cargar la antigua clave de cifrado para recuperar el acceso. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
-        "Tus archivos serán cifrados y posteriormente guardados."
+        "Se cifrarán y luego se guardarán tus archivos."
       ],
       "Your import will not be processed.": [
         "Tu importación no será procesada."
@@ -3995,8 +4001,8 @@
         "Eliminar"
       ],
       "Delete drive?": [
-        "¿Eliminar unidad?",
-        "¿Eliminar unidades?"
+        "¿Eliminar almacenamiento?",
+        "¿Eliminar almacenamientos?"
       ],
       "Delete recovery-related information.": [
         "Eliminar la información de recuperación."
@@ -4152,7 +4158,7 @@
         "Administrar etiquetas"
       ],
       "Merge a folder": [
-        "Fusionar una carpeta"
+        "Combinar una carpeta"
       ],
       "Modified": [
         "Modificado"
@@ -4197,7 +4203,7 @@
         "Número de teléfono"
       ],
       "Please provide full details to help us take appropriate action": [
-        "Proporciona todos los detalles para ayudarnos a actuar de forma apropiada."
+        "Indica todos los detalles para ayudarnos a actuar de forma apropiada."
       ],
       "Port": [
         "Puerto"
@@ -4230,7 +4236,7 @@
         "Mostrar contraseña"
       ],
       "Select type of abuse": [
-        "Selecciona el tipo de abuso"
+        "Selecciona el tipo de abuso."
       ],
       "Set expiration date": [
         "Establecer fecha de expiración"
@@ -4266,7 +4272,7 @@
         "Texto"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Esto eliminará permanentemente todos los archivos en tu unidad bloqueada."
+        "Esto elimina permanentemente todos los archivos en tu unidad bloqueada."
       ],
       "To: ${ emailAddress }": [
         "Para: ${ emailAddress }"
@@ -4499,10 +4505,10 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        "\"${ name }\" ha sido creado."
+        "\"Se ha creado ${ name }\"."
       ],
       "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" ha sido eliminado permanentemente de la papelera"
+        "Se ha eliminado permanentemente \"${ name }\" de la papelera."
       ],
       "\"${ name }\" failed to be created": [
         "Error al crear \"${ name }\""
@@ -4523,13 +4529,13 @@
         "Error al guardar \"${ name }\""
       ],
       "\"${ name }\" moved to trash": [
-        "\"${ name }\" se ha movido a la papelera"
+        "\"${ name }\" se ha movido a la papelera."
       ],
       "\"${ name }\" restored from trash": [
-        "\"${ name }\" se ha restaurado de la papelera"
+        "\"${ name }\" se ha restaurado de la papelera."
       ],
       "\"${ name }\" saved successfully": [
-        "\"${ name }\" guardado"
+        "Se ha guardado \"${ name }\"."
       ],
       "\"${ name }\" successfully moved": [
         "\"${ name }\" se ha movido."
@@ -4538,7 +4544,7 @@
         "Error al renombrar \"${ newName }\""
       ],
       "\"${ newName }\" renamed successfully": [
-        "\"${ newName }\" fue renombrado."
+        "Se ha renombrado \"${ newName }\"."
       ],
       "${ count } item failed to be decrypted": [
         "Error al descifrar ${ count } elemento",
@@ -4581,11 +4587,11 @@
         "Error al eliminar ${ numberOfItems } enlaces a tus archivos"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } enlace a tu elemento ha sido eliminado.",
-        "${ numberOfItems } enlaces a tu elemento han sido eliminados."
+        "Se ha eliminado ${ numberOfItems } enlace a tu elemento.",
+        "Se han eliminado ${ numberOfItems } enlaces a tus elementos."
       ],
       "All items will soon be permanently deleted from trash": [
-        "Todos los elementos serán eliminados permanentemente de la papelera"
+        "Se eliminarán permanentemente todos los elementos de la papelera."
       ],
       "Contact group created": [
         "Grupo de contactos creado"
@@ -4658,7 +4664,7 @@
         "Error al cargar la siguiente página"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        "No hay espacio suficiente para cargar ${ formattedTotal }"
+        "No hay espacio suficiente para cargar ${ formattedTotal }."
       ],
       "Root folder failed to be loaded": [
         "Error al cargar la carpeta raíz"
@@ -4670,25 +4676,25 @@
         "Error al eliminar el enlace a \"${ name }\""
       ],
       "The link to \"${ name }\" was deleted": [
-        "El enlace a \"${ name }\" ha sido eliminado"
+        "Se ha eliminado el enlace a \"${ name }\"."
       ],
       "The link to your item failed to be deleted": [
         "Error al eliminar el enlace a tu elemento"
       ],
       "The link to your item was deleted": [
-        "El enlace a tu elemento ha sido eliminado"
+        "Se ha eliminado el enlace a tu elemento."
       ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
       "Your old files will be deleted in 72 hours": [
-        "Sus archivos antiguos serán eliminados en 72 horas"
+        "Se eliminarán tus archivos antiguos en 72 horas."
       ],
       "Your settings failed to be saved": [
         "Error al guardar tu configuración"
       ],
       "Your settings have been changed successfully": [
-        "Tu configuración ha sido modificada."
+        "Se ha modificado tu configuración."
       ]
     },
     "Oauth instructions": {
@@ -4698,7 +4704,7 @@
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF."
+        "Para que la importación funcione, debes seleccionar todos los elementos solicitados como se muestra en el GIF."
       ]
     },
     "Onboarding Action": {
@@ -4727,7 +4733,7 @@
         "Cargar un archivo"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
-        "Tu bóveda en línea de confianza para los documentos vitales y los recuerdos más preciados."
+        "Tu bóveda en línea de confianza para documentos vitales y recuerdos valiosos."
       ]
     },
     "Onboarding Proton": {
@@ -4755,7 +4761,7 @@
         "Te damos la bienvenida a ${ DRIVE_APP_NAME }"
       ],
       "Your welcome bonus": [
-        "Tu regalo de bienvenida"
+        "Tu bono de bienvenida"
       ]
     },
     "Option": {
@@ -4774,7 +4780,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Crear un calendario nuevo"
+        "Crear un calendario"
       ],
       "Merge with calendar": [
         "Combinar con el calendario"
@@ -4817,13 +4823,13 @@
         "Introduce un nombre de archivo nuevo"
       ],
       "Enter a new folder name": [
-        "Introduce un nombre nuevo para la carpeta"
+        "Introduce un nombre nuevo para la carpeta."
       ],
       "Enter device name": [
-        "Introduce el nombre del dispositivo"
+        "Introduce el nombre del dispositivo."
       ],
       "Enter your email address": [
-        "Introduce tu dirección de correo electrónico"
+        "Introduce tu dirección de correo electrónico."
       ],
       "Filter groups": [
         "Filtrar grupos"
@@ -4953,7 +4959,7 @@
     },
     "Spotlight": {
       "Encrypted search is here": [
-        "La búsqueda cifrada está aquí"
+        "La búsqueda cifrada está aquí."
       ],
       "Get up to ${ credits } in credits.": [
         "Consigue hasta ${ credits } en créditos."
@@ -4962,7 +4968,7 @@
         "Invita amigos a ${ BRAND_NAME }"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        "Ahora puedes buscar fácilmente archivos de Drive mientras mantienes tus datos seguros."
+        "Ahora puedes buscar fácilmente archivos en tu unidad de almacenamiento mientras mantienes tus datos seguros."
       ]
     },
     "Storage": {
@@ -5029,7 +5035,7 @@
         "La recuperación ha comenzado"
       ],
       "The link to your file was successfully copied": [
-        "El enlace a tu archivo se ha copiado."
+        "Se ha copiado el enlace a tu archivo ."
       ],
       "Undo in progress": [
         "Deshacer en progreso"
@@ -5180,7 +5186,7 @@
         "Acceso beta"
       ],
       "Browser might run out of memory": [
-        "El navegador podría quedarse sin memoria"
+        "El navegador podría quedarse sin memoria."
       ],
       "Change layout": [
         "Cambiar diseño"
@@ -5210,10 +5216,10 @@
         "¿Continuar con una importación parcial?"
       ],
       "Create a new file": [
-        "Crear un nuevo archivo"
+        "Crear un archivo"
       ],
       "Create a new folder": [
-        "Crear una carpeta nueva"
+        "Crear una carpeta"
       ],
       "Create contact": [
         "Crear contacto"
@@ -5379,7 +5385,7 @@
         "Ubicación"
       ],
       "Manage secure link": [
-        "Gestionar enlace seguro"
+        "Administrar enlace seguro"
       ],
       "Merge contacts": [
         "Combinar contactos"
@@ -5406,7 +5412,7 @@
         "Nombre"
       ],
       "No results found": [
-        "No se han encontrado resultados."
+        "Ningún resultado"
       ],
       "Number of files": [
         "Número de archivos"
@@ -5436,7 +5442,7 @@
         "Otros nombres"
       ],
       "Performance might be affected": [
-        "El rendimiento puede verse afectado"
+        "Esto puede afectar el rendimiento."
       ],
       "Phone numbers": [
         "Números de teléfono"
@@ -5475,7 +5481,7 @@
         "Solicitar un nuevo código"
       ],
       "Restore your files": [
-        "Restaurar tus archivos"
+        "Restaura tus archivos"
       ],
       "Search results": [
         "Resultados de búsqueda"
@@ -5493,10 +5499,10 @@
         "Seleccionar grupo de contactos"
       ],
       "Select link expiration date": [
-        "Selecciona la fecha de expiración del enlace"
+        "Selecciona la fecha de expiración del enlace."
       ],
       "Select link expiration time": [
-        "Selecciona la hora de expiración del enlace"
+        "Selecciona la hora de expiración del enlace."
       ],
       "Send feedback": [
         "Enviar comentarios"
@@ -5538,13 +5544,13 @@
         "¿Dejar de compartir con todos?"
       ],
       "Stop transfers?": [
-        "¿Detener transferencias?"
+        "¿Parar transferencias?"
       ],
       "The link either does not exist or has expired": [
         "El enlace no existe o ha expirado."
       ],
       "The link expired": [
-        "El enlace ha expirado"
+        "El enlace ha expirado."
       ],
       "The link failed to be loaded": [
         "Error al cargar el enlace"
@@ -5556,7 +5562,7 @@
         "Esta carpeta no tiene firma o no es válida. Ve a Menú (⋮) → Detalles para obtener información."
       ],
       "This link is password protected": [
-        "Este enlace está protegido con contraseña"
+        "Este enlace está protegido con contraseña."
       ],
       "Total size": [
         "Tamaño total"
@@ -5580,7 +5586,7 @@
         "Cargado por"
       ],
       "Uploading a large file or folder": [
-        "Cargando un archivo grande o carpeta."
+        "Cargando un archivo o una carpeta grande"
       ],
       "View contacts": [
         "Ver contactos"
@@ -5598,16 +5604,16 @@
         "Novedades"
       ],
       "You have inaccessible files": [
-        "Tienes archivos inaccesibles"
+        "Tienes archivos inaccesibles."
       ],
       "You have no files to share": [
-        "No tienes archivos para compartir"
+        "No tienes archivos para compartir."
       ],
       "You have no folders yet": [
-        "Todavía no tienes carpetas"
+        "Todavía no tienes carpetas."
       ],
       "You've got files": [
-        "Has recibido archivos."
+        "Tienes archivos."
       ],
       "Your 500 MB bonus": [
         "Tu bonus de 500 MB"
@@ -5622,7 +5628,7 @@
         "Tus acciones de bienvenida"
       ],
       "You’ve got 1 GB of storage": [
-        "Has obtenido 1 GB de almacenamiento"
+        "Has obtenido 1 GB de almacenamiento."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -5698,7 +5704,7 @@
     },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
-        "\"${ str }\" no es un nombre válido"
+        "\"${ str }\" no es un nombre válido."
       ],
       "Name cannot include invisible characters, / or \\.": [
         "El nombre no puede incluir caracteres invisibles, / o \\."
@@ -5708,13 +5714,13 @@
         "El nombre debe tener como máximo ${ MAX_NAME_LENGTH } caracteres."
       ],
       "Name must not be empty": [
-        "El nombre no debe estar vacío"
+        "El nombre no debe estar vacío."
       ],
       "Name must not begin with a space": [
-        "El nombre no debe comenzar con un espacio"
+        "El nombre no debe comenzar con un espacio."
       ],
       "Name must not end with a space": [
-        "El nombre no debe terminar con un espacio"
+        "El nombre no debe terminar con un espacio."
       ]
     },
     "Video control": {

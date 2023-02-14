@@ -60,7 +60,7 @@
         "Venstrestil"
       ],
       "Align right": [
-        "Højerstil"
+        "Højrejustér"
       ],
       "Alignment": [
         "Justering"
@@ -374,7 +374,7 @@
         "Udløbstid"
       ],
       "Export": [
-        "Exportér"
+        "Eksportér"
       ],
       "Export contact group": [
         "Eksporter kontaktgruppe"
@@ -2886,7 +2886,7 @@
         "Ingen etiketter"
       ],
       "ProtonMail logo and a plus sign": [
-        "ProtonMail logo og et plus tegn"
+        "ProtonMail-logo og et plustegn"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
@@ -3382,8 +3382,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "Denne besked er allerede blevet sendt. En ny kladde er blevet gemt."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "For mange aktive filtre. Opgrader venligst til et betalt abonnement for at aktivere flere filtre."
@@ -3406,8 +3406,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Du kan ikke sende en mail til mere end 100 modtagere"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Du kan ikke sende vCard-filer med mere end 10 kontakter"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Du kan ikke åbne mere end ${ maxActiveComposer } skrivervindue ad gangen",
@@ -6955,10 +6955,10 @@
         "Brugerdefinerede e-maildomæner"
       ],
       "Hide My Email aliases": [
-        "Skjul min e-mail aliaser"
+        "Skjul mine e-mail-aliasser"
       ],
       "Schedule messages at any time": [
-        "Planlæg beskeder til enhver tid"
+        "Planlæg beskeder til ethvert tidspunkt"
       ],
       "Search message content": [
         "Søg i beskedindhold"
@@ -7237,8 +7237,8 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } ud af ${ countContacts } kontakt ekporteret.",
-        "${ contactsExported.length } ud af ${ countContacts } kontakter ekporteret."
+        "${ contactsExported.length } ud af ${ countContacts } kontakt eksporteret.",
+        "${ contactsExported.length } ud af ${ countContacts } kontakter eksporteret."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } af i alt ${ totalBeDeleted } kontakt blev slettet.",

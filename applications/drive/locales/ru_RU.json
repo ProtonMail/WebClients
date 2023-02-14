@@ -377,6 +377,9 @@
       "Move to trash": [
         "Переместить в Корзину"
       ],
+      "New": [
+        "Новая"
+      ],
       "New upload": [
         "Новая загрузка"
       ],
@@ -2167,8 +2170,8 @@
       "This label name is not available. Please choose a different name.": [
         "Это имя ярлыка недоступно. Пожалуйста, выберите другое имя."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
       ],
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
@@ -2179,8 +2182,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Нельзя отправить письмо более чем 100 получателям"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Вы не можете отправлять файлы vCard, содержащие более 10 контактов"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
@@ -3004,6 +3007,9 @@
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
+      ],
+      "${ selectedCount } selected": [
+        "Выбрано: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } папка выбрана",

@@ -371,6 +371,9 @@
       "Move to trash": [
         "移至垃圾桶"
       ],
+      "New": [
+        "新增"
+      ],
       "New upload": [
         "上載"
       ],
@@ -2140,8 +2143,8 @@
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱不適用。請選擇其它名稱。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
       ],
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
@@ -2152,8 +2155,8 @@
       "You can't send a mail to more than 100 recipients": [
         "您無法將電郵傳送給超過100位收件人"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "您不能傳送有超過 10 個聯絡人的 vCard 檔案"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "您已經達到個人行事曆的數量上限。有部分行事曆無法被匯入。"
@@ -2870,6 +2873,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
       ],
+      "${ selectedCount } selected": [
+        "已選取 ${ selectedCount } 個"
+      ],
       "${ selectedFoldersCount } folders selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
       ],
@@ -3154,6 +3160,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "來自您電腦的同步資料夾將會出現在此。"
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
       ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
@@ -3484,6 +3493,9 @@
       ],
       "Shared link failed to be loaded": [
         "共享連結載入失敗"
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
       ],
       "Signature check will be ignored": [
         "簽章檢查將會忽略"
@@ -3817,6 +3829,9 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "下載次數"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
       ],
@@ -5018,6 +5033,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "下載次數"
+      ],
       "${ emailsCount } members": [
         "${ emailsCount } 位成員"
       ],
@@ -5455,6 +5473,9 @@
       ],
       "Uploaded by": [
         "上載者"
+      ],
+      "Uploading a large file or folder": [
+        "上傳大檔案或資料夾"
       ],
       "View contacts": [
         "檢視聯絡人"

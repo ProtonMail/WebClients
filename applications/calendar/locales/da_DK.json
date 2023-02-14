@@ -205,7 +205,7 @@
         "aktivér skrivebordsmeddelelser"
       ],
       "Export": [
-        "Exportér"
+        "Eksportér"
       ],
       "Export contact group": [
         "Eksporter kontaktgruppe"
@@ -2412,8 +2412,8 @@
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
@@ -2430,8 +2430,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Du kan ikke sende en mail til mere end 100 modtagere"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Du kan ikke sende vCard-filer med mere end 10 kontakter"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
@@ -4923,8 +4923,8 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } ud af ${ countContacts } kontakt ekporteret.",
-        "${ contactsExported.length } ud af ${ countContacts } kontakter ekporteret."
+        "${ contactsExported.length } ud af ${ countContacts } kontakt eksporteret.",
+        "${ contactsExported.length } ud af ${ countContacts } kontakter eksporteret."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } af i alt ${ totalBeDeleted } kontakt blev slettet.",

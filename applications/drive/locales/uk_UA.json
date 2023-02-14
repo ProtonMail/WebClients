@@ -377,6 +377,9 @@
       "Move to trash": [
         "Перемістити до смітника"
       ],
+      "New": [
+        "Додати"
+      ],
       "New upload": [
         "Нове вивантаження"
       ],
@@ -2167,8 +2170,8 @@
       "This label name is not available. Please choose a different name.": [
         "Назва мітки недоступна. Оберіть іншу назву."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
       ],
       "Try using only letters, numerals, and _.-": [
         "Спробуйте використовувати лише літери, цифри та символи _.-"
@@ -2179,8 +2182,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Ви не можете надіслати лист понад 100 отримувачам"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Ви не можете надіслати файли vCard для понад 10 контактів"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
@@ -3010,6 +3013,9 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } вибрано"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } вибрана тека",
         "${ selectedFoldersCount } вибрані теки",
@@ -3671,7 +3677,7 @@
         "Не вдалося завантажити спільне посилання"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
-        "Підпис не може бути підтверджений через помилку мережі, будь ласка, спробуйте пізніше."
+        "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
       ],
       "Signature check will be ignored": [
         "Перевіркою підпису буде знехтувано"

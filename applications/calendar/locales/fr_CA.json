@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Authenticate": [
         "S'authentifier"
       ],
@@ -117,6 +120,9 @@
       ],
       "Continue import": [
         "Continuer l'importation"
+      ],
+      "Continue to ${ calendarAppBareName }": [
+        "Continuer vers ${ calendarAppBareName }"
       ],
       "Continue with Google": [
         "Continuer avec Google"
@@ -231,6 +237,9 @@
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
+      "Hide affected calendars": [
+        "Masquer les calendriers concernés"
+      ],
       "Hide folders": [
         "Masquer les dossiers"
       ],
@@ -281,6 +290,12 @@
       ],
       "Manage addresses": [
         "Gérer les adresses"
+      ],
+      "Manage folders": [
+        "Gérer les dossiers"
+      ],
+      "Manage labels": [
+        "Gérer les labels"
       ],
       "Mark for deletion": [
         "Marquer pour suppression"
@@ -335,6 +350,9 @@
       ],
       "Open navigation": [
         "Ouvrir la navigation"
+      ],
+      "Open settings": [
+        "Ouvrir les paramètres"
       ],
       "Preview contact": [
         "Aperçu du contact"
@@ -428,6 +446,9 @@
       ],
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
+      ],
+      "Show affected calendars": [
+        "Afficher les calendriers concernés"
       ],
       "Show folders": [
         "Afficher les dossiers"
@@ -1915,6 +1936,11 @@
         "Utiliser la valeur globale par défaut (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "Supprimer l'événement"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Facture impayée"
@@ -1973,9 +1999,19 @@
         "L'événement appartient à un calendrier désactivé."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Do not ask again": [
+        "Ne plus demander"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Ajouter un calendrier"
+      ]
+    },
+    "Duplicate event button tooltip": {
+      "Duplicate event": [
+        "Dupliquer l'événement"
       ]
     },
     "Duration": {
@@ -2000,6 +2036,11 @@
     "Early Access Enabled": {
       "On": [
         "Activé"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "Modifier l'événement"
       ]
     },
     "Email body for description (description part)": {
@@ -2112,6 +2153,9 @@
       "Contact could not be saved": [
         "Le contact n'a pas pu être enregistré"
       ],
+      "Contact name is too long": [
+        "Le nom du contact est trop long"
+      ],
       "Contact signature could not be verified": [
         "La signature du contact n'a pas pu être vérifiée"
       ],
@@ -2137,6 +2181,9 @@
       ],
       "Email address invalid": [
         "Adresse courriel invalide"
+      ],
+      "Email address is required": [
+        "L'adresse électronique est nécessaire"
       ],
       "Email is not valid": [
         "L'adresse électronique n'est pas valide"
@@ -2164,6 +2211,9 @@
       ],
       "Image upload failed": [
         "Échec du téléversement de l'image"
+      ],
+      "IMAP server is required": [
+        "Le serveur IMAP est nécessaire"
       ],
       "Incorrect login credentials. Please try again.": [
         "Identifiants de connexion incorrects. Veuillez réessayer."
@@ -2249,6 +2299,9 @@
         "Un des groupes n'a pas de contacts: ${ noContactGroupList }",
         "Certains groupes n'ont pas de contacts: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Le mot de passe est nécessaire"
+      ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
       ],
@@ -2258,6 +2311,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
+      ],
+      "Port is required": [
+        "Le port est nécessaire"
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée"
@@ -2356,9 +2412,6 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
-      ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi"
       ],
@@ -2373,9 +2426,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer de courrier à plus de 100 destinataires"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
@@ -2806,11 +2856,20 @@
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } sur ${ totalToImport } événement correctement importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } sur ${ totalToImport } événements correctement importés."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout des contacts: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout d'événements à votre calendrier: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "L'événement a été importé. Il apparaîtra dans votre calendrier."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Les événements ont été importés. Ils apparaîtront dans votre calendrier."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Veuillez ne pas fermer l'onglet avant la fin du processus d'importation."
@@ -2844,6 +2903,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact chiffré et ajouté à votre liste de contacts",
         "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de votre contact. Aucun contact n’a pu être importé."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. ${ totalImported } contacts sur ${ totalToImport } ont été importés."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. Aucun contact n’a pu être importé."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Le contact a été importé. Il apparaîtra dans votre liste de contacts."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Les contacts ont été importés. Ils apparaîtront dans votre liste de contacts."
       ]
     },
     "Import contact error": {
@@ -3171,6 +3245,9 @@
         "Un maximum d'${ MAX_ATTENDEES } participant est autorisé par invitation",
         "Au maximum ${ MAX_ATTENDEES } participants sont autorisés par invitation"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
       ],
@@ -3188,6 +3265,9 @@
       ],
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
+      ],
+      "Country code": [
+        "Indicatif du pays"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -3702,6 +3782,34 @@
         "Cliquez pour plus de détails"
       ]
     },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Certains de vos calendriers n'afficheront pas les informations des événements précédemment créés."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Vos calendriers n'afficheront pas les informations des événements précédemment créés."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Ceci s'explique par la réinitialisation récente de votre mot de passe sans méthode de récupération."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Vous pouvez récupérer vos données chiffrées avec un fichier de récupération, une phrase de récupération ou votre ancien mot de passe."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Le partage de calendrier a été désactivé suite à votre récente réinitialisation de mot de passe."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Vous pouvez repartager vos calendriers dans les paramètres."
+      ]
+    },
     "Input label": {
       "Access": [
         "Accès"
@@ -3802,6 +3910,9 @@
       "Color": [
         "Couleur"
       ],
+      "Colors": [
+        "Couleurs"
+      ],
       "Coming soon": [
         "Bientôt disponible"
       ],
@@ -3882,6 +3993,12 @@
       ],
       "Frequency": [
         "Fréquence"
+      ],
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
@@ -4031,6 +4148,12 @@
       "To: ${ emailAddress }": [
         "À: ${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "À: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "À: ${ toEmail }"
+      ],
       "Toolbar": [
         "Barre d'outils"
       ],
@@ -4133,6 +4256,11 @@
         "Ouvrir dans ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Qu'est-ce qu'une méthode de récupération?"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Nous y sommes presque"
@@ -4157,6 +4285,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -4837,6 +4969,11 @@
         "Remarque: le service se rechargera après avoir cliqué sur le bouton Appliquer."
       ]
     },
+    "Reload event button tooltip": {
+      "Reload event": [
+        "Recharger l'événement"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Importer"
@@ -5179,6 +5316,34 @@
         "Paramètres"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } heure",
+        "${ hours } heures"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 heure",
+        "${ hoursInt },5 heures"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minute",
+        "${ minutes } minutes"
+      ]
+    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Rechercher des fuseaux horaires"
@@ -5321,6 +5486,9 @@
       "Email settings": [
         "Paramètres des courriels"
       ],
+      "Encrypted event": [
+        "Événement chiffré"
+      ],
       "Enter your password": [
         "Saisissez votre mot de passe"
       ],
@@ -5427,6 +5595,9 @@
       "Request new code": [
         "Demander un nouveau code"
       ],
+      "Reshare your calendars": [
+        "Repartager vos calendriers"
+      ],
       "Save changes": [
         "Enregistrer les changements"
       ],
@@ -5528,6 +5699,12 @@
       ],
       "Warning: suspected fake website": [
         "Attention: site Web potentiellement faux"
+      ],
+      "We've locked some calendars to protect your data": [
+        "Nous avons verrouillé certains calendriers pour protéger vos données"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Nous avons verrouillé vos calendriers pour protéger vos données"
       ],
       "What would you like to import?": [
         "Que voudriez-vous importer?"

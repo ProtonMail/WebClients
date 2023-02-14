@@ -373,6 +373,9 @@
       "Move to trash": [
         "Sposta nel cestino"
       ],
+      "New": [
+        "Nuovo"
+      ],
       "New upload": [
         "Nuovo caricamento"
       ],
@@ -2149,8 +2152,8 @@
       "This label name is not available. Please choose a different name.": [
         "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser corrente."
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
@@ -2161,8 +2164,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Non puoi inviare una mail a più di 100 destinatari"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Non puoi inviare file vCard di più di 10 contatti"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Hai raggiunto il numero massimo di calendari personali. Alcuni calendari non possono essere importati."
@@ -2914,6 +2917,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendari"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } selezionati"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } cartella selezionata",
@@ -5809,7 +5815,7 @@
         "Caricato da"
       ],
       "Uploading a large file or folder": [
-        "Caricando di un file di grandi dimensioni o di una cartella"
+        "File di grandi dimensioni o cartella in caricamento."
       ],
       "View contacts": [
         "Visualizza contatti"

@@ -242,6 +242,9 @@
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
       ],
+      "Enable drive search": [
+        "ドライブ検索を有効にする"
+      ],
       "Expand": [
         "展開"
       ],
@@ -2137,9 +2140,6 @@
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
-      ],
       "Try using only letters, numerals, and _.-": [
         "文字・数字・ _.- のみを使用してみてください"
       ],
@@ -2148,9 +2148,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
@@ -3059,6 +3056,9 @@
       "Emails are automatically signed": [
         "電子メールは自動的に署名されます"
       ],
+      "Enable drive search": [
+        "ドライブ検索を有効にする"
+      ],
       "Enabling drive search": [
         "ドライブ内検索をオンにしています"
       ],
@@ -3240,7 +3240,7 @@
         "詳細"
       ],
       "Link copied to clipboard": [
-        "リンクをコピーしました"
+        "リンクがクリップボードにコピーされました"
       ],
       "Link failed to be loaded": [
         "リンクの読み込みに失敗しました"
@@ -3545,8 +3545,11 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "厳格なプライベート検索を有効にするために、${ DRIVE_APP_NAME } はローカルにファイルのインデックスを作成する必要があります。"
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "ローカルにファイルのインデックスを作成することで、本当の意味でのプライベート検索を実現します。インデックス作成中も、通常通り ${ DRIVE_APP_NAME } をご利用いただけます。インデックス作成が完了したらお知らせします。"
+        "厳格なプライベート検索を有効にするために、ローカルにファイルのインデックスを作成する必要があります。インデックス作成中も、通常通り ${ DRIVE_APP_NAME } をご利用いただけます。インデックス作成が完了したらお知らせします。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
@@ -3781,6 +3784,9 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "ダウンロード数"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
       ],
@@ -4961,6 +4967,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "ダウンロード数"
+      ],
       "${ emailsCount } members": [
         "${ emailsCount } メンバー"
       ],
@@ -5126,6 +5135,9 @@
       "Empty trash": [
         "ごみ箱を空にする"
       ],
+      "Enable drive search": [
+        "ドライブ検索を有効にする"
+      ],
       "Enter your password": [
         "パスワードを入力"
       ],
@@ -5223,7 +5235,7 @@
         "名前"
       ],
       "No results found": [
-        "結果が見つかりませんでした"
+        "該当する結果が見つかりませんでした"
       ],
       "Number of files": [
         "ファイル数"

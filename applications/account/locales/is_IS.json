@@ -898,8 +898,17 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Halda áfram með ókeypis áskrift"
+      ],
       "No, thanks": [
         "Nei, takk"
+      ],
+      "Start my 30-day free trial": [
+        "Byrja 30 daga ókeypis reynsluáskriftina mína"
+      ],
+      "Try free for 30 days": [
+        "Prófaðu ókeypis í 30 daga"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1079,6 +1088,11 @@
         "Dagatöl"
       ]
     },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "Ekki tókst að finna nýjustu útgáfuna"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Vandamál við forrit"
@@ -1246,6 +1260,11 @@
       ],
       "Share with anyone": [
         "Deila með öllum"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Sýna ${ remainingItems } meira"
       ]
     },
     "Calendar share permission label": {
@@ -1565,6 +1584,9 @@
       ],
       "Remove from the list?": [
         "Fjarlægja af listanum?"
+      ],
+      "Undo this import?": [
+        "Afturkalla þennan innflutning?"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -2431,9 +2453,30 @@
         "(í gegnum ${ entryCountryName })"
       ]
     },
+    "Create user accounts empty state": {
+      "No search results found": [
+        "Engar leitarniðurstöður fundust"
+      ]
+    },
     "Credits": {
       "Available credits": [
         "Tiltækar inneignir"
+      ]
+    },
+    "CSV download button": {
+      "CSV template": [
+        "CSV sniðmát"
+      ]
+    },
+    "CSV format error": {
+      "Error on row ${ erroredRowsString }.": [
+        "Villa í röð ${ erroredRowsString }."
+      ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Það lítur út fyrir að skránna þína vanti '${ options.fieldName }' hausinn."
+      ],
+      "We detected errors in multiple rows during import, please review your CSV file.": [
+        "Við fundum villur í mörgum línum við innflutning, vinsamlegast skoðaðu CSV skrána þína."
       ]
     },
     "Cycle": {
@@ -2591,6 +2634,37 @@
         "${ name } eyðing tókst"
       ]
     },
+    "Downgrade account reason": {
+      "Bugs or quality issue": [
+        "Villur eða gæðavandamál"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Ég nota annan ${ BRAND_NAME } reikning"
+      ],
+      "Missing feature(s)": [
+        "Vantar eiginleika"
+      ],
+      "My reason isn't listed, please comment": [
+        "Ástæðan mín er ekki tilgreind, vinsamlegast skrifaðu athugasemd"
+      ],
+      "Streaming service unsupported": [
+        "Streymisþjónusta óstudd"
+      ],
+      "Subscription is too expensive": [
+        "Áskrift er of dýr"
+      ],
+      "Switching to a different provider": [
+        "Skipti yfir í annan þjónustuaðila"
+      ],
+      "Temporary need, may come back in the future": [
+        "Tímabundin þörf, gæti komið aftur í seinna"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve!": [
+        "Hjálpaðu okkur að bæta okkur!"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 mínútur"
@@ -2695,6 +2769,17 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Uppfærsla fyrir viðburð sem hefst þann ${ formattedStart }"
+      ]
+    },
+    "Email Unsubscribe": {
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "Hvaða tölvupósta viltu fá frá ${ BRAND_NAME }?"
+      ],
+      "You resubscribed to ${ categoriesJsx } emails.": [
+        "Þú gerðist aftur áskrifandi að ${ categoriesJsx } tölvupóstum."
+      ],
+      "You unsubscribed from ${ categoriesJsx } emails.": [
+        "Þú hættir áskrift að ${ categoriesJsx } tölvupóstum."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -3068,8 +3153,8 @@
       "This label name is not available. Please choose a different name.": [
         "Þetta heiti á merki er ekki tiltækt. Vinsamlegast veldu annað heiti."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Þessi skilaboð kunna að innihalda vefslóðatengla sem ekki er hægt að opna almennilega með núverandi vafra."
       ],
       "Trusted keys are not valid for sending": [
         "Treystir dulritunarlyklar eru ekki gildir fyrir sendingu"
@@ -3306,6 +3391,9 @@
       "An error occurred uploading your file. No file has been selected.": [
         "Það kom upp villa við að senda inn skrána þína. Engin skrá hefur verið valin."
       ],
+      "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
+        "Hladdu upp CSV skrá með ${ MAX_NUMBER_OF_USER_ROWS } notendareikninga eða minna."
+      ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "Skráin þín \"${ formattedFilename }\" er tóm."
       ]
@@ -3337,8 +3425,17 @@
       ]
     },
     "Error message, recovery": {
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "Viinsamlega ${ signIn } til að endursenda staðfestingarbeiðni fyrir endurheimtutölvupóst."
+      ],
       "sign in": [
         "skrá inn"
+      ],
+      "There was a problem removing your email address.": [
+        "Vandamál kom upp við að fjarlægja netfangið þitt."
+      ],
+      "There was a problem verifying your email address.": [
+        "Vandamál kom upp við að staðfesta netfangið þitt."
       ]
     },
     "Error message, unsubscribe": {
@@ -3363,6 +3460,14 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Engin mynd valin"
+      ]
+    },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Viðburður @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "Viðburður frá ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -3488,26 +3593,88 @@
       ]
     },
     "fido2: Action": {
+      "Add security key": [
+        "Bæta við öryggislykli"
+      ],
       "Delete key": [
         "Eyða lykli"
       ]
     },
     "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Vinsamlegast slökktu á 2FA með öryggislykli áður en þú gerir TOTP óvirkt"
+      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Eitthvað fór úrskeiðis við auðkenningu með öryggislyklinum þínum. Vinsamlegast reyndu aftur."
+      ],
+      "Something went wrong registering your security key. Please try again.": [
+        "Eitthvað fór úrskeiðis við skráningu á öryggislykil þínum. Vinsamlegast reyndu aftur."
       ]
     },
     "fido2: Info": {
+      "2FA via security key disabled": [
+        "2FA í gegnum öryggislykil óvirkjuð"
+      ],
+      "Add a name to identify your security key with.": [
+        "Bættu við nafni til að auðkenna öryggislykilinn þinn með."
+      ],
+      "Are you sure you want to delete security key ${ name }?": [
+        "Ertu viss um að þú viljir eyða öryggislykli ${ name }?"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Settu inn öryggislykil sem er tengdur við þinn ${ BRAND_NAME } reikning."
+      ],
+      "Insert your security key into your device's USB port.": [
+        "Settu öryggislykilinn þinn inn í USB tengi tækisins."
+      ],
+      "Security key": [
+        "Öryggislykill"
+      ],
+      "Security key removed": [
+        "Öryggislykill fjarlægður"
+      ],
+      "Security key updated": [
+        "Öryggislykill uppfærður"
+      ],
+      "This will delete all security keys linked to your account.": [
+        "Þetta mun eyða öllum öryggislyklum sem tengjast reikningi þínum."
+      ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "Til að kveikja á 2FA með öryggislykli þarftu að virkja 2FA í gegnum auðkenningarforrit"
+      ],
+      "Verify your identity with a physical U2F or FIDO2 security key": [
+        "Staðfestu auðkenni þitt með raunlægum U2F eða FIDO2 öryggislykli"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Tveggja þátta auðkenningarlykillinn þinn er tilbúinn til notkunar."
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Nafn lykils"
       ],
       "Security key": [
         "Öryggislykill"
       ]
     },
-    "fido2: Label": {
-      "Security key": [
-        "Öryggislykill"
+    "fido2: Title": {
+      "Delete security key?": [
+        "Eyða öryggislykli?"
+      ],
+      "Disable 2FA via security key?": [
+        "Slökkva á 2FA með öryggislykli?"
+      ],
+      "Name your security key": [
+        "Gefðu öryggislyklinum nafn"
+      ],
+      "Register your security key": [
+        "Skráðu öryggislykilinn þinn"
+      ],
+      "Registered security keys": [
+        "Skráðir öryggislyklar"
+      ],
+      "Security key registered": [
+        "Öryggislykill skráður"
       ]
     },
     "file size format": {
@@ -3631,9 +3798,25 @@
         "Sjálfgefin"
       ]
     },
+    "Frequency of news": {
+      "(1 email per month)": [
+        "(1 tölvupóstur á mánuði)"
+      ],
+      "(1 email per quarter)": [
+        "(1 tölvupóstur á ársfjórðungi)"
+      ],
+      "(1-2 emails per month)": [
+        "(1-2 tölvupóstar á mánuði)"
+      ]
+    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Þegar með notandaaðgang? ${ signIn }"
+      ]
+    },
+    "Go to sign up": {
+      "New to ${ BRAND_NAME }? ${ signUp }": [
+        "Nýr í ${ BRAND_NAME }? ${ signUp }"
       ]
     },
     "Group": {
@@ -3743,6 +3926,15 @@
       ],
       "Created": [
         "Búið til"
+      ],
+      "Email address": [
+        "Netfang"
+      ],
+      "Last used": [
+        "Síðast notað"
+      ],
+      "Token name": [
+        "Nafn tákns"
       ]
     },
     "Hint": {
@@ -3997,14 +4189,30 @@
         "Veldu ${ boldExport } til að flytja dagatalið út sem ICS skrá."
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Ertu viss um að þú viljir flytja inn einkalykil? Innflutningur á ótryggilega útbúnum eða lekum einkalykli getur skaðað öryggi tölvupóstsins þíns.\n\nVinsamlegast athugaðu líka að opinberi lykillinn sem samsvarar þessum einkalykli verður aðgengilegur almenningi frá lyklaþjóninum okkar. Ef lykillinn inniheldur persónulegar upplýsingar (svo sem fullt nafn þitt) sem þú vilt ekki birta, vinsamlegast breyttu lyklinum áður en þú flytur hann inn."
+      ]
+    },
     "Import provider": {
       "Other": [
         "Annað"
       ]
     },
+    "Import rollback status": {
+      "Undo finished": [
+        "Afturkalla lokið"
+      ],
+      "Undo in progress": [
+        "Afturkalla í vinnslu"
+      ]
+    },
     "Import status": {
       "${ percentageValue }% paused": [
         "${ percentageValue }% í bið"
+      ],
+      "Active": [
+        "Virkt"
       ],
       "Canceled": [
         "Hætt við"
@@ -4037,6 +4245,9 @@
       ],
       "Contacts": [
         "Tengiliðir"
+      ],
+      "Mail": [
+        "Póstur"
       ]
     },
     "Import warning": {
@@ -4256,8 +4467,8 @@
         "Viðbótar valkostir"
       ],
       "address": [
-        "póstfang",
-        "póstföng"
+        "netfang",
+        "netföng"
       ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
         "Sannvottun vistfanga (Address Verification) er þróaður öryggiseiginleiki.\n Ekki kveikja á þessu nema þú vitir hvernig þetta virkar."
@@ -4446,6 +4657,12 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Áframhald mun tengja þinn ${ BRAND_NAME } reikning  við ${ name }."
+      ],
+      "Copy your referral link": [
+        "Afritaðu tilvísunartengilinn þinn"
+      ],
+      "Country code": [
+        "Landsnúmer"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Búa til ${ calendarsToBeCreated } nýtt dagatal",
@@ -5289,12 +5506,12 @@
         "Eftirfarandi heimilisfang er í boði:"
       ],
       "The following address is invalid.": [
-        "Eftirfarandi heimilisfang er ógilt.",
-        "Eftirfarandi heimilisföng eru ógild."
+        "Eftirfarandi netfang er ógilt.",
+        "Eftirfarandi netföng eru ógild."
       ],
       "The following address is unavailable.": [
-        "Eftirfarandi heimilisfang er ekki tiltækt.",
-        "Eftirfarandi heimilisföng eru ekki tiltæk."
+        "Eftirfarandi netfang er ekki tiltækt.",
+        "Eftirfarandi netföng eru ekki tiltæk."
       ],
       "The following address was not created.": [
         "Eftirfarandi netfang var ekki útbúið.",
@@ -5811,17 +6028,35 @@
       ]
     },
     "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Fleiri tvöfaldir lyklar fundust. Vinsamlegast hlaðið hverjum fyrir sig til að fá frekari upplýsingar."
+      ],
       "Create an email address": [
         "Stofnaðu netfang"
+      ],
+      "Day 27: Trial reminder": [
+        "Dagur 27: Áminning um reynsluáskrift"
+      ],
+      "Day 30: Trial ends": [
+        "Dagur 30: Reynsluáskrift lýkur"
       ],
       "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
         "Njóttu öruggs, notendavæns tölvupósts með fullt af úrvalsaðgerðum."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Lykli ${ fingerprint } hefur þegar verið hlaðið upp"
+      ],
       "Try Mail Plus": [
         "Prófaðu Tölvupóst Plús"
       ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Við sendum þér tölvupóst áður en prufuáskriftinni lýkur. Hætta við hvenær sem er."
+      ],
       "Your new email address is ready to go!": [
         "Nýja netfangið þitt er tilbúið til notkunar!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Áskriftin þín hefst á ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -5835,8 +6070,24 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for any user of your organization.": [
+        "Bættu við nýju netfangi fyrir hvaða notanda sem er í fyrirtækinu þínu."
+      ],
+      "Add a new user to your organization and create an address for it.": [
+        "Bættu nýjum notanda við fyrirtækið þitt og búðu til netfang fyrir hann."
+      ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
         "Af öryggisstæðum þurfum við að sannreyna að þú sért eigandi ${ domainName } lénsins. Bættu eftirfarandi DNS TXT færslu inn í DNS-skráninguna þína. Þetta er venjulega hægt að gera í stjórnglugga hjá skrásetjara lénsins þíns."
+      ]
+    },
+    "Info for members section": {
+      "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
+        "Bættu við, fjarlægðu og stjórnaðu notendum innan fyrirtækisins þíns. Hér geturðu stillt úthlutuðu geymslurými þeirra, veitt stjórnandaréttindi og fleira. Veldu notanda til að stjórna netföngum þeirra. Netfangið efst á listanum verður sjálfkrafa valið sem sjálfgefið netfang."
+      ]
+    },
+    "Info for payment methods": {
+      "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
+        "Þú getur bætt við greiðslumáta og látið endurnýja áskriftina þína sjálfkrafa. Aðrir greiðslumátar eru einnig í boði."
       ]
     },
     "Info message for custom invoice modal": {
@@ -5847,6 +6098,11 @@
     "Info on errors": {
       "Click for details": [
         "Smelltu fyrir nánari upplýsingar"
+      ]
+    },
+    "Info when deleting payment method": {
+      "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
+        "Til að forðast truflun á þjónustu vegna ógreiddra reikninga skaltu ganga úr skugga um að þú hafir að minnsta kosti 1 gildan greiðslumáta ávallt vistaðan."
       ]
     },
     "Input label": {
@@ -5862,6 +6118,9 @@
     "Invoice state display as badge": {
       "Billed": [
         "Samkvæmt reikningi"
+      ],
+      "Gifted": [
+        "Gjöf"
       ],
       "Paid": [
         "Greitt"
@@ -5906,8 +6165,26 @@
       ]
     },
     "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        "Lykill með sama dulkóðunaralgrími er þegar til. Að búa til annan lykil mun valda hægari hleðslu reiknings. Ertu viss um að þú viljir halda áfram?"
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "Lykill með sama dulkóðunaralgrími er þegar virkur fyrir þetta netfang. Að búa til annan lykil mun valda hægari hleðslu á reikningi og eyðing á þessum lykli getur valdið vandræðum. Ef þú ert að búa til nýjan lykil vegna þess að gamli lykillinn þinn er í hættu, vinsamlegast merktu þann lykil sem hættulegan. Ertu viss um að þú viljir halda áfram?"
+      ],
       "Generate key": [
         "Útbúa dulritunarlykil"
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "Lykill með fingrafarið ${ fp } var útbúinn."
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Verið er að útbúa dulkóðunarlyklana. Þetta gæti tekið nokkrar mínútur og fryst vafrann þinn tímabundið."
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Verið er að útbúa dulkóðunarlykla fyrir netfangið þitt. Þetta gæti tekið nokkrar mínútur og fryst vafrann þinn tímabundið."
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "Þú getur útbúið nýjan dulritunarlykil ef þú heldur að fyrri dulritunarlykill\n hafi á einhvern hátt orðið berskjaldaður."
       ]
     },
     "Key state badge": {
@@ -5928,6 +6205,14 @@
       ],
       "Primary": [
         "Aðal"
+      ]
+    },
+    "Key type option": {
+      "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
+        "${ compatibility } RSA 4096-bit (Hægari en aukinn samhæfni við eldri hugbúnað)"
+      ],
+      "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
+        "${ stateOfTheArt } ECC Curve25519 (Hraðasta, nútímalegasta)"
       ]
     },
     "Keyboard shortcut name": {
@@ -7029,14 +7314,29 @@
       ],
       "Private": [
         "Einka"
+      ],
+      "VPN connections": [
+        "VPN tengingar"
       ]
     },
     "Label for news": {
+      "${ BRAND_NAME } beta announcements": [
+        "${ BRAND_NAME } tilraunatilkynningar"
+      ],
+      "${ BRAND_NAME } company announcements": [
+        "${ BRAND_NAME } fyrirtækjatilkynningar"
+      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business fréttabréf"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } fréttabréf"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } tilboð og kynningar"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } vörutilkynningar"
       ]
     },
     "Label in domain modal": {
@@ -7220,6 +7520,14 @@
       ],
       "Your import is starting": [
         "Innflutningur þinn er að hefjast"
+      ]
+    },
+    "Log preference": {
+      "Enable advanced logs": [
+        "Virkja háþróaðar gagnaskrár"
+      ],
+      "Enable authentication logs": [
+        "Virkja auðkenningarskrár"
       ]
     },
     "Mail import summary": {
@@ -7490,6 +7798,17 @@
         "Heiti merkingar"
       ]
     },
+    "new_plans": {
+      "Highest VPN speed": [
+        "Hámarks VPN hraði"
+      ],
+      "Keep your inbox organized with folders": [
+        "Hafðu pósthólfið þitt skipulagt með möppum"
+      ],
+      "Medium VPN speed": [
+        "Miðlungs VPN hraði"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Haltu áfram að endurskoða"
@@ -7534,6 +7853,9 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Niðurfærsla í ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Skoðaðu allar ${ BRAND_NAME } áskriftir"
       ],
       "From ${ price }": [
         "Frá ${ price }"
@@ -7603,11 +7925,26 @@
         "${ n } VPN tenging á hvern notanda",
         "${ n } VPN tengingar á hvern notanda"
       ],
+      "${ size } attachment size": [
+        "${ size } viðhengjastærð"
+      ],
       "${ size } storage": [
         "${ size } geymslurými"
       ],
       "${ size } storage per user": [
         "${ size } geymslurými pr./notanda"
+      ],
+      "1 free VPN connection in total": [
+        "Samtals 1 ókeypis VPN tenging"
+      ],
+      "99.95% SLA": [
+        "99.95% SLA"
+      ],
+      "Admin console": [
+        "Stjórnborð"
+      ],
+      "Advanced sharing security": [
+        "Háþróað öryggi við deilingu"
       ],
       "Auto-reply": [
         "Sjálfvirk-svörun"
@@ -7615,42 +7952,117 @@
       "Catch-all": [
         "Safna-öllu"
       ],
+      "Centralized billing": [
+        "Miðstýrð innheimta"
+      ],
       "Contact groups": [
         "Tengiliðahópar"
+      ],
+      "Contact groups management": [
+        "Stjórnun tengiliðahópa"
       ],
       "Custom email domains": [
         "Sérsniðin tölvupóstlén"
       ],
+      "DNS leak prevention": [
+        "Forvarnir gegn DNS leka"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "Skjalaritlar (skjöl, blöð, skyggnur)"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch innflutningsaðstoð"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Stuðningur við tölvupóstforrit (með IMAP/SMTP)"
+      ],
+      "Enables HIPAA compliance": [
+        "Virkjar HIPAA fylgni"
+      ],
       "Encrypted contact details": [
         "Dulritaðar tengiliðaupplýsingar"
       ],
+      "Encrypted VPN servers": [
+        "Dulkóðaðir VPN netþjónar"
+      ],
       "End-to-end encryption": [
         "Enda-í-enda dulritun"
+      ],
+      "Free VPN on a single device": [
+        "Frítt VPN á einu tæki"
+      ],
+      "GDPR data processing agreement": [
+        "GDPR gagnavinnslusamningur"
       ],
       "High-speed VPN on ${ n } device": [
         "Háhraða VPN á ${ n } tæki",
         "Háhraða VPN á ${ n } tækjum"
       ],
+      "HTML signatures": [
+        "HTML undirskriftir"
+      ],
+      "Kill switch/always-on VPN": [
+        "Neyðarrofi/alltaf-kveikt VPN"
+      ],
       "Limited support": [
         "Takmörkuð aðstoð"
+      ],
+      "Multiple admin roles": [
+        "Mörg stjórnendahlutverk"
+      ],
+      "NetShield malware and ad-blocker": [
+        "NetShield spilliforrita- og auglýsingabani"
       ],
       "P2P/BitTorrent": [
         "P2P/BitTorrent"
       ],
+      "Password-protected Emails": [
+        "Lykilorðsvarðir tölvupóstar"
+      ],
+      "Phone support (6+ users)": [
+        "Símastuðningur (6+ notendur)"
+      ],
+      "Priority email support": [
+        "Forgangspóststuðningur"
+      ],
       "Priority support": [
         "Forgangsstuðningur"
+      ],
+      "Router support": [
+        "Stuðningur við beina"
+      ],
+      "Secure Core servers": [
+        "Öruggir Core netþjónar"
+      ],
+      "Send & receive invitations": [
+        "Senda & fá boð"
       ],
       "Share calendar via link": [
         "Deila dagatali með tengli"
       ],
+      "Share files and folders via link": [
+        "Deildu skrám og möppum með tengli"
+      ],
+      "Sign in as user": [
+        "Skráðu þig inn sem notandi"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Skipt göng (Android og Windows)"
+      ],
       "Strict no-logs policy": [
         "Ströng stefna varðandi enga-atvikaskráningu"
+      ],
+      "Team management": [
+        "Teymisstjórnun"
       ],
       "Tor over VPN": [
         "Tor yfir VPN"
       ],
       "Two-factor authentication": [
         "Tveggja-þrepa auðkenning"
+      ],
+      "Unlimited filters": [
+        "Ótakmarkaðar síur"
       ],
       "Unlimited folders": [
         "Ótakmarkaðar möppur"
@@ -7663,11 +8075,49 @@
       ],
       "Unlimited messages per day": [
         "Ótakmörkuð skilaboð á dag"
+      ],
+      "Unlimited volume/bandwidth": [
+        "Ótakmarkað magn/bandbreidd"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Allt að ${ totalStorageSize } geymslupláss"
+      ],
+      "User credential management": [
+        "Stjórnun notendaskilríkja"
+      ],
+      "User session management": [
+        "Stjórnun notendalota"
+      ],
+      "Worldwide streaming services": [
+        "Streymisþjónusta um allan heim"
       ]
     },
     "new_plans: heading": {
       "Support": [
         "Aðstoð"
+      ],
+      "Team management": [
+        "Teymisstjórnun"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gerðu friðhelgi að sjálfgefnu fyrir öryggisafrit, geymslu, deilingu og endurheimt skráa."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Að öðrum kosti verður aðgangur að reikningnum þínum takmarkaður og reikningurinn verður að lokum gerður óvirkur."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Til að halda áfram að nota ${ MAIL_APP_NAME } með úrvalseiginleikum skaltu velja áskrift og greiðslumöguleika."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Uppfærðu í viðskiptapakkann með aðgangi að öllum hágæða ${ BRAND_NAME } þjónustum."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Uppfærðu í fullkominn friðhelgispakka og fáðu aðgang að öllum hágæða ${ BRAND_NAME } þjónustum."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Þinni reynsluáskrift lýkur ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7758,19 +8208,48 @@
       ]
     },
     "new_plans: signup": {
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Með því að stofna ${ BRAND_NAME } reikning samþykkir þú okkar ${ terms }"
+      ],
       "Payment details": [
         "Greiðsluupplýsingar"
+      ],
+      "Save your email address or phone number to use for verification if you need to reset your account.": [
+        "Vistaðu netfangið þitt eða símanúmerið þitt til að nota til staðfestingar ef þú þarft að endurstilla reikninginn þinn."
       ],
       "Subscription": [
         "Áskrift"
       ],
       "terms and conditions": [
         "skilmálar og kvaðir"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Til að byrja með veldu birtingarnafn. Þetta er það sem fólk sér þegar þú sendir tölvupóst, býður því á viðburð eða deilir skrá."
+      ],
+      "Your ${ planName } subscription is now active.": [
+        "Þín ${ planName } áskrift er núna virk."
+      ],
+      "Your selected plan: ${ planName }": [
+        "Þú valdir áskrift: ${ planName }"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } Reynsluáskrift"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppfærðu í ${ planName }"
+      ],
+      "Your account's usage": [
+        "Notkun á reikningi þínum"
       ]
     },
     "new_plans: title": {
       "Delete account?": [
         "Eyða notandaaðgangi?"
+      ],
+      "Downgrade account?": [
+        "Niðurfæra reikning?"
       ],
       "Improved plans coming soon!": [
         "Endurbættar áskriftir koma fljótlega!"
@@ -7781,13 +8260,28 @@
       "Start exploring the ${ BRAND_NAME } universe": [
         "Byrjaðu að skoða ${ BRAND_NAME } þjónustur"
       ],
+      "Switch plans?": [
+        "Skipta um áskrift?"
+      ],
       "Unlock premium features by upgrading": [
         "Opnaðu úrvals eiginleika með því að uppfæra"
       ]
     },
     "new_plans: tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Fáðu aðgang að efni á streymisþjónustum, þar á meðal Netflix, Disney+ og Prime Video, hvar sem er"
+      ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Netföng hafa fulla sendingar- og móttökurgetu. Notanda getur verið úthlutað mörgum netföngum; þó er ekki hægt að úthluta einu netfangi til margra notenda."
+      ],
+      "Advanced security VPN with global network": [
+        "Háþróað VPN öryggi með alþjóðlegu neti"
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Gerir þér kleift að fá aðgang að fleiri en einu neti á sama tíma, t.d. streyma kvikmynd frá öðru landi á meðan þú færð samt staðbundnar leitarniðurstöður"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Gerir þér kleift að setja upp sjálfvirk svör (sjálfvirkt svar) fyrir móttekinn skilaboð"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Ekki er stuðningur fyrir að senda fjölda kynningar eða forritaðan tölvupóst eins og er. Við mælum með því að nota sérstakan tölvupóstþjónustuaðila fyrir slík notkunartilvik."
@@ -7802,6 +8296,9 @@
         "Búa til allt að ${ n } sérsniðið dagatal.",
         "Búa til allt að ${ n } sérsniðin dagatöl."
       ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "Ver gegn ógn gagnvart VPN friðhelgi með því að senda netumferð þína í gegnum marga netþjóna"
+      ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Deildu dagatölunum þínum auðveldlega með samstarfsfólki þínu, fjölskyldu og vinum með tengli"
       ],
@@ -7814,11 +8311,17 @@
       "End-to-end encrypted file storage": [
         "Enda-í-enda dulrituð skráargeymsla"
       ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Tryggir að þú fáir allan tölvupóst sem sendur er á lénið þitt, jafnvel þótt netfangið sé ekki til, sé ekki lengur til eða inniheldur innsláttarvillu"
+      ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Þvingaðu útskráningu á notendalotum þegar talið er að notendaskilríki séu í hættu"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP stuðningur takmarkast við notkun skjáborðsforrita (t.d. Outlook, Apple Mail, Thunderbird) í gegnum ${ MAIL_APP_NAME } Bridge. Skýtengdar IMAP samþættingar eru ekki studdar eins og er."
+      ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Heldur þér vernduðum með því að loka fyrir allar nettengingar þegar þú ert óvænt aftengdur VPN netþjóninum okkar."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Merki eru einfaldar merkingar sem þú getur bætt við skilaboð til að auðvelda að finna þau síðar eða nota síur á"
@@ -7835,6 +8338,9 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Ofan á það skaltu bæta við allt að 5 dagatölum frá vinum, fjölskyldu, samstarfsfólki og samtökum."
       ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
+        "Ein VPN-tenging gerir einu tæki kleift að tengjast ${ BRAND_NAME } VPN á hverjum tíma. Til dæmis, til að tengja síma og fartölvu við ${ BRAND_NAME } VPN á sama tíma þarftu tvær VPN-tengingar."
+      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Valkostur til að skoða pósthólf sem eru hjá ekki einkanotendum eins og notandinn myndi gera, þar á meðal öll skilaboð og tengiliðaupplýsingar"
       ],
@@ -7844,6 +8350,9 @@
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Öflugur innviðir okkar tryggja að þú getur fengið aðgang að reikningnum þínum þegar þú þarft á honum að halda"
       ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "Harðir diskar netþjónanna okkar eru að fullu dulkóðaðir með mörgum lykilorðalögum svo gögnin þín eru vernduð jafnvel þótt vélbúnaður okkar sé í hættu"
+      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Sérsníddu tölvupóstundirskriftina þína með lógóum, myndum, táknum á samfélagsmiðlum, tenglum á tengiliðaupplýsingar þínar og fleira"
       ],
@@ -7852,6 +8361,9 @@
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Kemur í veg fyrir að ${ BRAND_NAME } eða þriðju aðilar fái aðgang að skilaboðum. Eina fólkið sem getur lesið skilaboðin eru sendandi og ætlaður viðtakandi."
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Verndaðu hvert tæki sem er tengt við WiFi netið þitt. Það er líka gagnlegt ef þú ert með tæki sem styðja ekki VPN stillingar beint."
       ],
       "Quickly set up out-of-office messages": [
         "Settu fljótt upp ekki-á-skrifstofu skilaboð"
@@ -7880,6 +8392,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Deildu þínum skrám eða möppum með hverjum sem er með því að nota örugga, deilanlega tengla"
       ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "Sérhannað NetShield verndar tækið þitt og flýtir fyrir vöfrun með því að loka fyrir auglýsingar, sporarakningu og spilliforritum"
+      ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Byrjaðu með ${ freeStorageSize } og opnaðu meira geymslupláss í leiðinni. Geymslurými er deilt á ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
       ],
@@ -7895,8 +8410,14 @@
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Notaðu þín eigin sérsniðnu léna netföng, t.d. þú@nafnþitt.com"
       ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "Við höldum engar lotunotkunarskrár yfir það sem þú gerir á netinu og við skráum ekki lýsigögn sem geta haft áhrif á friðhelgi þína"
+      ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Við erum staðráðin í að hjálpa viðskiptavinum sem falla undir HIPAA/HITECH reglugerðir við að tryggja verndaðar heilsuupplýsingar (PHI). Undirrituð BAA eru fáanleg fyrir alla ${ BRAND_NAME } fyrirtækja viðskiptavini."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "Þegar þú ert tengdur við okkar VPN þá fer þín DNS fyrirspurn í gegnum okkar dulkóðuðu VPN göng, sem eykur friðhelgi þitt og öryggi á netinu"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
         "Þegar sent er til annarra ${ MAIL_APP_NAME } notenda er dulkóðun sjálfvirk. Til að senda til notenda sem ekki eru með ${ MAIL_APP_NAME } þarf að setja lykilorð áður en sent er."
@@ -7905,10 +8426,45 @@
         "Þú getur haft fleiri en einn stjórnanda. Allir stjórnendur geta bætt við og stjórnað notendum en aðeins aðalstjórnandinn hefur stjórn á innheimtu."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Innifalið með ${ plus }, ${ bundle } og ${ BRAND_NAME } fyrir fyrirtæki."
+      ],
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "Innifalið með öllum ${ BRAND_NAME } viðskiptaáskriftum."
+      ]
+    },
     "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        "${ storageSize } heildar geymslurými"
+      ],
+      "10 email addresses/aliases": [
+        "10 netföng/samnefni"
+      ],
+      "Access advanced VPN features": [
+        "Fáðu aðgang að háþróuðum VPN eiginleikum"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Bættu við fleiri sérstillingum með 15 netföngum og stuðningi við 3 sérsniðin tölvupóstlén"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Auktu geymsluplássið þitt í ${ bundleStorage } samtals"
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        "Auktu geymsluplássið þitt í ${ businessStorage } á hvern notanda"
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        "Fáðu meira með stuðningi fyrir 10 sérsniðin tölvupóstlén"
+      ],
       "Create ${ numberOfPersonalCalendars } personal calendar": [
         "Stofnaðu ${ numberOfPersonalCalendars } persónulegt dagatal",
         "Stofnaðu allt að ${ numberOfPersonalCalendars } persónuleg dagatöl"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Allt í ${ vpnPlanName }"
+      ],
+      "Get 5 additional email addresses per user": [
+        "Fáðu 5 netföng til viðbótar á hvern notanda"
       ],
       "Priority support": [
         "Forgangsstuðningur"
@@ -8250,6 +8806,18 @@
       ]
     },
     "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } til að bæta við fleiri notendum eða að fjarlægja nokkra notendareikninga til að losa um pláss."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } til að fá fleiri reikninga, eða fjarlægðu VPN aðgang frá sumum notendum."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } til að fá fleiri netföng, eða fjarlægðu nokkur netföng til að auka pláss."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } til að fá meira geymslupláss, eða fjarlægðu úr geymslurýminu til að auka pláss."
+      ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Áskrift þín inniheldur að hámarki ${ availableAddresses } fleiru netfangi.",
         "Áskrift þín inniheldur að hámarki ${ availableAddresses } fleirum netföngum."
@@ -8261,6 +8829,9 @@
       "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
         "Áskrift þín inniheldur að hámarki ${ availableVPNAccess } fleiri VPN reikningi.",
         "Áskrift þín inniheldur að hámarki ${ availableVPNAccess } fleirum VPN reikningum."
+      ],
+      "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
+        "Áskriftin þín inniheldur að hámarki ${ humanReadableAvailableSpace } meira geymslupláss."
       ]
     },
     "OS compatibility": {
@@ -8291,6 +8862,9 @@
       ],
       "Credit/debit card": [
         "Kredit-/debitkort"
+      ],
+      "New credit/debit card": [
+        "Nýtt kredit-/debetkort"
       ],
       "PayPal": [
         "PayPal"
@@ -8415,6 +8989,9 @@
     "plan customizer, users": {
       "contact": [
         "tengiliður"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Veldu fjölda notenda sem á að hafa með í áskriftinni þinni. Hver notandi til viðbótar kostar ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
         "Ef þú þarft meira en ${ maxUsers } notandareikning, vinsamlega ${ contact } Söluteymið okkar.",
@@ -8591,8 +9168,14 @@
       "Changing organization password": [
         "Skipt um lykilorð stofnunar"
       ],
+      "Creating new users": [
+        "Búa til nýja notendur"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Vegna breytinga á lykilorði hafa stjórnunarheimildir þínar verið skertar.\n Eftirfarandi aðgerðir eru ekki lengur heimilar:"
+      ],
+      "Reading emails of non-private users": [
+        "Lesa tölvupósta frá notendum sem ekki eru einkanotendur"
       ]
     },
     "Select file": {
@@ -8606,11 +9189,22 @@
       ],
       "Upload": [
         "Senda inn"
+      ],
+      "Upload additional files": [
+        "Hlaða upp viðbótarskrám"
       ]
     },
     "Select search results": {
       "No results found": [
         "Engar niðurstöður fundust"
+      ]
+    },
+    "Settings description": {
+      "Make the move to privacy. Effortlessly and securely.": [
+        "Taktu skrefið inn í friðhelgi einkalífs. Áreynslulaust og örugglega."
+      ],
+      "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
+        "Þú getur sett mörg merki á hvert skilaboð, en skilaboð geta venjulega aðeins verið í einni möppu. Dragðu og slepptu til að endurraða röð möppna og merkimiða."
       ]
     },
     "Settings section title": {
@@ -8675,6 +9269,9 @@
       ]
     },
     "Signup step": {
+      "Account setup": [
+        "Uppsetning á reikningi"
+      ],
       "Payment": [
         "Greiðsla"
       ],
@@ -8803,6 +9400,12 @@
       "1 VPN connection": [
         "1 VPN-nettenging"
       ],
+      "Access to streaming services globally": [
+        "Aðgangur að streymisþjónustu um allan heim"
+      ],
+      "Built-in ad blocker (NetShield)": [
+        "Innbyggður auglýsingabani (NetShield)"
+      ],
       "High-speed VPN on ${ maxVpn } device": [
         "Háhraða VPN á ${ maxVpn } tæki",
         "Háhraða VPN á ${ maxVpn } tækjum"
@@ -8824,6 +9427,14 @@
       ],
       "Upcoming": [
         "Framundan"
+      ]
+    },
+    "Subtitle for trial plan": {
+      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "Póst- og dagatalslausnin þar sem friðhelgi er í forgangi fyrir þínar hversdagslegu samskiptaþarfir."
+      ],
+      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
+        "Þetta tilboð er aðeins fyrir þá sem eru nýir hjá ${ BRAND_NAME }. Ekki þarf kreditkort."
       ]
     },
     "Success": {
@@ -9043,6 +9654,9 @@
     "Suffix": {
       "/month": [
         "/mánuði"
+      ],
+      "/user per month": [
+        "/notandi á mánuði"
       ]
     },
     "Suffix for price": {
@@ -9118,6 +9732,11 @@
       ],
       "vCard field": [
         "vCard-gagnasvið"
+      ]
+    },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "Engin SMTP tákn fundust"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -10214,6 +10833,21 @@
         "Þetta bætir dreifilyklinum þínum sjálfvirkt við öll skilaboð sem þú sendir.\n Viðtakendur geta notað hann til að staðfesta gildi skilaboða frá þér og\n notað til að senda þér dulrituð skilaboð."
       ]
     },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
+        "Veldu sjálfgefna PGP stillingar sem notaðar eru til að undirrita eða dulkóða skilaboð með PGP notendum sem ekki eru með ${ BRAND_NAME }. Athugaðu að Inline PGP þvingar fram einföld textaskilaboð. Læra meira"
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Þegar þú færð tölvupóst frá öðrum ${ MAIL_APP_NAME } notanda sem er ekki með trausta lykla í tengiliðunum þínum, mun tilkynningaborði spyrja hvort þú viljir virkja trausta lykla."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Undirritaðu sjálfvirkt öll send skilaboð svo notendur geti staðfest áreiðanleika skilaboðanna þinna. Þetta er gert jafnhliða með sjálfgefnum PGP stillingum sem hægt er að stilla hér að neðan."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "stöðug útgáfa"
@@ -10246,6 +10880,16 @@
       ],
       "Upgrade to a Mail paid plan to share your calendar.": [
         "Uppfærðu í tölvupóstáskrift til að deila dagatalinu þínu."
+      ]
+    },
+    "User referee invited via email": {
+      "Invited via email": [
+        "Boðið með tölvupósti"
+      ]
+    },
+    "User referee signed up using referral link": {
+      "Signed up via your link": [
+        "Skráði sig í gegnum tengilinn þinn"
       ]
     },
     "User role": {
@@ -10417,6 +11061,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Það getur tekið upp undir heilan dag fyrir breytingar á DNS-færslum að\n uppfærast."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        "Þessi lykill uppfyllir ekki lengur öryggisstaðla okkar. Við mælum með að þú merkir hann sem úreltan og útbúir nýjan lykil."
       ]
     },
     "Weekly recurring event, frequency": {

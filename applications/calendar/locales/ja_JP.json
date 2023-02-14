@@ -235,6 +235,9 @@
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
       ],
+      "Hide affected calendars": [
+        "影響のあるカレンダーを非表示"
+      ],
       "Hide folders": [
         "フォルダーを隠す"
       ],
@@ -441,6 +444,9 @@
       ],
       "Show advanced PGP settings": [
         "拡張 PGP 設定を表示"
+      ],
+      "Show affected calendars": [
+        "影響のあるカレンダーを表示"
       ],
       "Show folders": [
         "フォルダーを表示"
@@ -2384,9 +2390,6 @@
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
-      ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
       ],
@@ -2401,9 +2404,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
@@ -3352,7 +3352,7 @@
         "詳細"
       ],
       "Link copied to clipboard": [
-        "リンクをコピーしました"
+        "リンクがクリップボードにコピーされました"
       ],
       "Link created": [
         "リンクが作成されました"
@@ -4825,7 +4825,7 @@
     },
     "Select search results": {
       "No results found": [
-        "結果が見つかりませんでした"
+        "該当する結果が見つかりませんでした"
       ]
     },
     "Settings update growler warning": {

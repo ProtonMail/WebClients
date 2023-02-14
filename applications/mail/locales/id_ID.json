@@ -3361,8 +3361,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "Pesan ini telah terkirim. Draf baru telah tersimpan."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Pesan ini terindikasi memiliki tautan/URL yang tidak dapat dibuka dengan benar oleh browser Anda."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Terlalu banyak filter yang aktif. Mohon tingkatkan akun Anda untuk mengaktifkan lebih banyak filter."
@@ -3385,8 +3385,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Anda tidak dapat mengirim berkas vCard ke lebih dari 10 kontak"
       ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } jendela komposer dalam satu waktu"
@@ -4547,6 +4547,9 @@
       "Copied to clipboard": [
         "Disalin ke clipboard"
       ],
+      "Country code": [
+        "Kode negara"
+      ],
       "Create ${ calendarsToBeCreated } new calendars": [
         "Buat ${ calendarsToBeCreated } kalender baru"
       ],
@@ -4741,6 +4744,9 @@
       ],
       "Group assignment applied": [
         "Penugasan grup diterapkan"
+      ],
+      "Has ${ numAttachments } attachments (${ numAttachmentsSize })": [
+        "Memiliki ${ numAttachments } lampiran (${ numAttachmentsSize })"
       ],
       "here": [
         "di sini"

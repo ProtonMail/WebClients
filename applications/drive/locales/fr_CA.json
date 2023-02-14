@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Authenticate": [
         "S'authentifier"
       ],
@@ -328,6 +331,12 @@
       "Log in": [
         "Se connecter"
       ],
+      "Manage folders": [
+        "Gérer les dossiers"
+      ],
+      "Manage labels": [
+        "Gérer les labels"
+      ],
       "Manage link": [
         "Gérer le lien"
       ],
@@ -360,6 +369,9 @@
       ],
       "Move to trash": [
         "Déplacer vers la corbeille"
+      ],
+      "New": [
+        "Nouveau"
       ],
       "New upload": [
         "Nouveau téléversement"
@@ -1906,6 +1918,9 @@
       "Contact could not be saved": [
         "Le contact n'a pas pu être enregistré"
       ],
+      "Contact name is too long": [
+        "Le nom du contact est trop long"
+      ],
       "Contact signature not verified": [
         "Signature du contact non vérifiée"
       ],
@@ -1928,6 +1943,9 @@
       ],
       "Email address invalid": [
         "Adresse courriel invalide"
+      ],
+      "Email address is required": [
+        "L'adresse électronique est nécessaire"
       ],
       "Email is not valid": [
         "L'adresse électronique n'est pas valide"
@@ -1955,6 +1973,9 @@
       ],
       "Image upload failed": [
         "Échec du téléversement de l'image"
+      ],
+      "IMAP server is required": [
+        "Le serveur IMAP est nécessaire"
       ],
       "Incorrect login credentials. Please try again.": [
         "Identifiants de connexion incorrects. Veuillez réessayer."
@@ -2010,6 +2031,9 @@
         "Un des groupes n'a pas de contacts: ${ noContactGroupList }",
         "Certains groupes n'ont pas de contacts: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Le mot de passe est nécessaire"
+      ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
       ],
@@ -2019,6 +2043,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
+      ],
+      "Port is required": [
+        "Le port est nécessaire"
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée"
@@ -2122,9 +2149,6 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes: _ . -"
       ],
@@ -2133,9 +2157,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer de courrier à plus de 100 destinataires"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
@@ -2535,11 +2556,20 @@
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } sur ${ totalToImport } événement correctement importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } sur ${ totalToImport } événements correctement importés."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout des contacts: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout d'événements à votre calendrier: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "L'événement a été importé. Il apparaîtra dans votre calendrier."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Les événements ont été importés. Ils apparaîtront dans votre calendrier."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Veuillez ne pas fermer l'onglet avant la fin du processus d'importation."
@@ -2573,6 +2603,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact chiffré et ajouté à votre liste de contacts",
         "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de votre contact. Aucun contact n’a pu être importé."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. ${ totalImported } contacts sur ${ totalToImport } ont été importés."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. Aucun contact n’a pu être importé."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Le contact a été importé. Il apparaîtra dans votre liste de contacts."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Les contacts ont été importés. Ils apparaîtront dans votre liste de contacts."
       ]
     },
     "Import contact error": {
@@ -2917,6 +2962,9 @@
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
       ],
+      "Also try looking in Trash.": [
+        "Vérifiez aussi dans le dossier Corbeille."
+      ],
       "An active recovery file": [
         "Un fichier de récupération actif"
       ],
@@ -2943,6 +2991,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Êtes-vous sûr·e de vouloir supprimer définitivement les éléments sélectionnés de la corbeille?"
+      ],
+      "Attention required": [
+        "Attention requise"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
@@ -2985,6 +3036,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuer à utiliser ${ DRIVE_APP_NAME } et déverrouiller le disque plus tard"
+      ],
+      "Country code": [
+        "Indicatif du pays"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -3145,6 +3199,9 @@
       "Folders you sync from your computer will appear here.": [
         "Les dossiers que vous synchronisez depuis votre ordinateur apparaissent ici."
       ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Pour de meilleurs résultats, évitez les activités de diffusion en flux et gourmandes en mémoire ou réduisez la taille de votre téléversement."
+      ],
       "Free up some space or add more storage space.": [
         "Libérez de l'espace ou ajoutez plus d'espace de stockage."
       ],
@@ -3226,6 +3283,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Il semble que vous ayez récemment essayé de charger ${ uploadName }. Si le chargement a échoué, nous vous invitons à ${ replaceFile }. Si le chargement est toujours en cours, remplacer le fichier annulera le chargement en cours."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Les éléments dans le dossier Corbeille y resteront jusqu'à ce que vous les supprimiez définitivement"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Il suffit de glisser-déposer ou de sélectionner des fichiers"
@@ -3337,6 +3397,9 @@
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Certains fichiers n'ont pas été transférés. Essayez à nouveau de les téléverser/télécharger."
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Remarque: les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "de"
@@ -3472,6 +3535,9 @@
       "Shared link failed to be loaded": [
         "Le lien partagé n'a pas pu être chargé"
       ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
+      ],
       "Signature check will be ignored": [
         "La vérification de signature sera ignorée"
       ],
@@ -3504,6 +3570,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Les données chiffrées sont légèrement plus volumineuses en raison du chiffrement et des signatures, qui garantissent la sécurité de vos données."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Les éléments suivants ont peut-être été falsifiés: ${ items }. N'ouvrez que si vous avez confiance."
@@ -3557,6 +3626,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Pour que la recherche soit réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Pour permettre une recherche vraiment privée, nous devons indexer vos fichiers localement. Vous pouvez utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons quand l'indexation sera terminée."
       ],
@@ -3589,6 +3661,9 @@
       ],
       "Trash": [
         "Corbeille"
+      ],
+      "Try searching by file name, date, or type.": [
+        "Essayez une recherche par nom, date ou type de fichier."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -3756,6 +3831,9 @@
       "file data order": [
         "ordre des données du fichier"
       ],
+      "hash key": [
+        "clé de hachage"
+      ],
       "keys": [
         "clés"
       ],
@@ -3790,6 +3868,9 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "No de téléchargements"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
@@ -3861,6 +3942,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces"
+      ],
+      "Colors": [
+        "Couleurs"
       ],
       "Coming soon": [
         "Bientôt disponible"
@@ -3973,6 +4057,12 @@
       ],
       "Folder name": [
         "Nom du dossier"
+      ],
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
@@ -4163,6 +4253,12 @@
       "To: ${ emailAddress }": [
         "À: ${ emailAddress }"
       ],
+      "To: ${ to }": [
+        "À: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "À: ${ toEmail }"
+      ],
       "Toolbar": [
         "Barre d'outils"
       ],
@@ -4302,6 +4398,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -4982,7 +5082,38 @@
         "Paramètres"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } heure",
+        "${ hours } heures"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 heure",
+        "${ hoursInt },5 heures"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minute",
+        "${ minutes } minutes"
+      ]
+    },
     "Title": {
+      "# of downloads": [
+        "No de téléchargements"
+      ],
       "${ emailsCount } member": [
         "${ emailsCount } membre",
         "${ emailsCount } membres"
@@ -5253,6 +5384,9 @@
       "Name": [
         "Nom"
       ],
+      "No results found": [
+        "Aucun résultat n'a été trouvé"
+      ],
       "Number of files": [
         "Nombre de fichiers"
       ],
@@ -5270,6 +5404,9 @@
       ],
       "Open settings menu": [
         "Ouvrir le menu des paramètres"
+      ],
+      "Original size": [
+        "Taille d'origine"
       ],
       "Other information": [
         "Autre information"
@@ -5420,6 +5557,9 @@
       ],
       "Uploaded by": [
         "Téléversé par"
+      ],
+      "Uploading a large file or folder": [
+        "Téléversement d'un fichier ou d'un dossier volumineux"
       ],
       "View contacts": [
         "Afficher les contacts"

@@ -367,6 +367,9 @@
       "Move to trash": [
         "Μετακίνηση στα Διαγραμμένα"
       ],
+      "New": [
+        "Νέο"
+      ],
       "New upload": [
         "Νέο ανέβασμα"
       ],
@@ -2057,8 +2060,8 @@
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -2066,8 +2069,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Δεν μπορείτε να στείλετε φακέλους vCard για περισσότερες από 10 επαφές"
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
@@ -2710,6 +2713,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } επιλεγμένα"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } επιλεγμένος φάκελος",

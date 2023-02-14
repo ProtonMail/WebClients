@@ -3424,8 +3424,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "Это сообщение уже было отправлено. Сохранён новый черновик."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Слишком много активных фильтров. Пожалуйста, улучшите до платного тарифа, чтобы активировать больше фильтров."
@@ -3448,8 +3448,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Нельзя отправить письмо более чем 100 получателям"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
+      "You can't send vCard files of more than 10 contacts": [
+        "Вы не можете отправлять файлы vCard, содержащие более 10 контактов"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Вы не можете открыть одновременно более ${ maxActiveComposer } окна редактора",
@@ -5002,7 +5002,7 @@
         "Есть ${ numAttachments } вложение (${ numAttachmentsSize })",
         "Есть ${ numAttachments } вложения (${ numAttachmentsSize })",
         "Есть ${ numAttachments } вложений (${ numAttachmentsSize })",
-        "Есть ${ numAttachments } вложений (${ numAttachmentsSize })"
+        "Есть ${ numAttachments } вложения (${ numAttachmentsSize })"
       ],
       "here": [
         "здесь"
