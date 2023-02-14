@@ -326,7 +326,7 @@ END:VCALENDAR`;
             });
         });
 
-        test('should generate a DTSTAMP from the message if no DTSTAMP was present', async () => {
+        test('should generate a DTSTAMP from the message if no DTSTAMP was present, and fix sequences that are too big', async () => {
             const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
@@ -335,6 +335,7 @@ BEGIN:VEVENT
 UID:test-event
 DTSTART;TZID=/mozilla.org/20050126_1/Europe/Brussels:20021231T203000
 DTEND;TZID=/mozilla.org/20050126_1/Europe/Brussels:20030101T003000
+SEQUENCE:2205092022
 LOCATION:1CP Conference Room 4350
 ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
  S-ACTION;RSVP=TRUE:mailto:testme@pm.me
@@ -366,7 +367,7 @@ END:VCALENDAR`;
                 method: 'PUBLISH',
                 vevent: expect.objectContaining({
                     component: 'vevent',
-                    uid: { value: 'original-uid-test-event-sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186' },
+                    uid: { value: 'original-uid-test-event-sha1-uid-2d83f9ede40324edd0d2ec094e0015451031cf3c' },
                     dtstamp: {
                         value: { year: 2022, month: 10, day: 10, hours: 10, minutes: 0, seconds: 0, isUTC: true },
                     },
@@ -378,10 +379,11 @@ END:VCALENDAR`;
                         value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
                         parameters: { tzid: 'Europe/Brussels' },
                     },
+                    sequence: { value: 0 },
                 }),
                 originalVcalInvitation: parsedInvitation,
                 originalUniqueIdentifier: 'test-event',
-                legacyUid: 'sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186-original-uid-test-event',
+                legacyUid: 'sha1-uid-2d83f9ede40324edd0d2ec094e0015451031cf3c-original-uid-test-event',
                 hasMultipleVevents: false,
                 fileName: 'test.ics',
             });
