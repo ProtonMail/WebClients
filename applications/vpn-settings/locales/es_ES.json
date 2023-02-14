@@ -96,7 +96,7 @@
         "Eliminar"
       ],
       "Delete your account": [
-        "Eliminar mi cuenta"
+        "Eliminar tu cuenta"
       ],
       "Details": [
         "Detalles"
@@ -204,7 +204,7 @@
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
-        "Abrir ajustes de ${ CALENDAR_APP_NAME }"
+        "Abrir la configuración de ${ CALENDAR_APP_NAME }"
       ],
       "Open navigation": [
         "Abrir la navegación"
@@ -216,7 +216,7 @@
         "Pagar"
       ],
       "Pay ${ price } now": [
-        "Pagar ahora ${ price }"
+        "Pagar ${ price } ahora"
       ],
       "Previous": [
         "Anterior"
@@ -231,10 +231,10 @@
         "actualizar la página"
       ],
       "Remove bonuses": [
-        "Eliminar bonificaciones"
+        "Eliminar beneficios"
       ],
       "Remove gift code": [
-        "Eliminar código promocional"
+        "Eliminar código de regalo"
       ],
       "Report a problem": [
         "Notificar un problema"
@@ -1471,7 +1471,7 @@
         "Cantidad por debajo del mínimo."
       ],
       "Checkout expired, please try again": [
-        "La compra ha expirado, inténtalo de nuevo"
+        "La compra ha expirado. Inténtalo de nuevo."
       ],
       "Code wrong or not valid anymore": [
         "Código incorrecto o no válido"
@@ -1519,22 +1519,22 @@
         "Código de verificación no válido"
       ],
       "Name on card required": [
-        "El titular de la tarjeta es obligatorio"
+        "El titular de la tarjeta es obligatorio."
       ],
       "Not a valid number": [
         "No es un número válido."
       ],
       "Organization not recognized. Try again.": [
-        "Organización no reconocida - inténtalo de nuevo."
+        "Organización no reconocida. Inténtalo de nuevo."
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden."
       ],
       "Payment process cancelled": [
-        "El proceso de pago ha sido cancelado"
+        "El proceso de pago ha sido cancelado."
       ],
       "Payment process consumed": [
-        "El proceso de pago ha expirado"
+        "El proceso de pago está terminado."
       ],
       "Payment process failed": [
         "Error al procesar el pago"
@@ -1543,7 +1543,7 @@
         "Proceso de pago no soportado"
       ],
       "Payments are currently not available, please try again later": [
-        "Los pagos no están disponibles actualmente, vuelve a intentarlo más tarde"
+        "Los pagos no están disponibles actualmente. Inténtalo de nuevo más tarde."
       ],
       "Please generate keys before you try to change your password": [
         "Genera claves antes de intentar cambiar tu contraseña."
@@ -1555,7 +1555,7 @@
         "Establece primero un número de teléfono de recuperación."
       ],
       "Process aborted": [
-        "Proceso abortado"
+        "Proceso anulado"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -1570,7 +1570,7 @@
         "Pestaña cerrada"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "El navegador que estás utilizando no permite que el pago sea autorizado. Utiliza un navegador diferente o inicia sesión desde un ordenador."
+        "El navegador que estás utilizando no permite autorizar el pago. Utiliza un navegador diferente o inicia sesión desde un ordenador."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
@@ -1600,7 +1600,7 @@
         "Estado del token de pago desconocido"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Frase de recuperación incorrecta: inténtalo de nuevo o utiliza otro método de recuperación."
+        "Frase de recuperación incorrecta. Inténtalo de nuevo o utiliza otro método de recuperación."
       ],
       "You have no invoices.": [
         "No tienes facturas."
@@ -3180,12 +3180,12 @@
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "Obtén ${ connections } conexión VPN de alta velocidad",
-        "Obtén ${ connections } conexiones VPN de alta velocidad"
+        "Obtén ${ connections } conexión VPN de alta velocidad.",
+        "Obtén ${ connections } conexiones VPN de alta velocidad."
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Obtén ${ connections } conexión VPN de alta velocidad por usuario",
-        "Obtén ${ connections } conexiones VPN de alta velocidad por usuario"
+        "Obtén ${ connections } conexión VPN de alta velocidad por usuario.",
+        "Obtén ${ connections } conexiones VPN de alta velocidad por usuario."
       ]
     },
     "new_plans: feature": {
@@ -3901,8 +3901,8 @@
         "Elige el número de usuarios para incluir en tu plan. Cada usuario adicional cuesta ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Si necesitaras más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de Ventas.",
-        "Si necesitaras más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de Ventas."
+        "Si necesitas más de ${ maxUsers } cuenta de usuario, ${ contact } con nuestro equipo de Ventas.",
+        "Si necesitas más de ${ maxUsers } cuentas de usuario, ${ contact } con nuestro equipo de Ventas."
       ]
     },
     "Price": {
@@ -4078,8 +4078,8 @@
         "Bloqueador de anuncios integrado (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "VPN de alta velocidad en el dispositivo ${ maxVpn }",
-        "VPN de alta velocidad en los dispositivos ${ maxVpn }"
+        "VPN de alta velocidad en ${ maxVpn } dispositivo",
+        "VPN de alta velocidad en ${ maxVpn } dispositivos"
       ]
     },
     "Subscription price": {
@@ -4283,7 +4283,7 @@
         "Cantidad"
       ],
       "Amount due": [
-        "Importe adeudado"
+        "Importe a pagar"
       ],
       "Apply gift code": [
         "Aplicar código de regalo"
