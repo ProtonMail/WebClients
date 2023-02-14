@@ -34,6 +34,7 @@ describe('ConversationView', () => {
         containerRef: { current: null },
         elementIDs: ['conversationID'],
         loadingElements: false,
+        conversationMode: true,
     };
     const conversation = {
         ID: props.conversationID,
