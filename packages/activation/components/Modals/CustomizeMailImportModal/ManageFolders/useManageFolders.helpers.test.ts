@@ -1,6 +1,10 @@
+import { ApiMailImporterFolder } from '@proton/activation/api/api.interface';
+import MailImportFoldersParser from '@proton/activation/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { folderWithChildren, getRenamedFolders } from '@proton/activation/tests/data/folders';
+import { Label } from '@proton/shared/lib/interfaces';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
-import { renameChildFolders } from './useManageFolders.helpers';
+import { formatItems, renameChildFolders } from './useManageFolders.helpers';
 
 describe('renameChildFolders', () => {
     it('Should rename all child in proton path', () => {
@@ -15,5 +19,61 @@ describe('renameChildFolders', () => {
 
         const renameFolders = renameChildFolders(newFolder, newFolders, newName);
         expect(renameFolders).toStrictEqual(getRenamedFolders(newName));
+    });
+});
+
+describe('formatItems', () => {
+    it('should compare labels and not folders with mapping when isLabelMapping is false', () => {
+        const apiFolders = ['flavien', 'guillaume'].map(
+            (folder) => ({ Source: folder, Separator: '/' } as ApiMailImporterFolder)
+        );
+        const isLabelMapping = false;
+        const mapping = new MailImportFoldersParser(apiFolders, isLabelMapping).folders;
+        const result = formatItems({
+            labels: [
+                {
+                    Name: 'flavien',
+                    Path: 'flavien',
+                } as Label,
+            ],
+            folders: [
+                {
+                    Name: 'guillaume',
+                    Path: 'guillaume',
+                } as Folder,
+            ],
+            isLabelMapping,
+            mapping,
+        });
+
+        expect(result.find((item) => item.id === 'flavien')?.errors).toContain('Unavailable names');
+        expect(result.find((item) => item.id === 'guillaume')?.errors).toEqual([]);
+    });
+
+    it('should compare folders and not labels with mapping when isLabelMapping is true', () => {
+        const apiFolders = ['flavien', 'guillaume'].map(
+            (folder) => ({ Source: folder, Separator: '/' } as ApiMailImporterFolder)
+        );
+        const isLabelMapping = true;
+        const mapping = new MailImportFoldersParser(apiFolders, isLabelMapping).folders;
+        const result = formatItems({
+            folders: [
+                {
+                    Name: 'flavien',
+                    Path: 'flavien',
+                } as Folder,
+            ],
+            labels: [
+                {
+                    Name: 'guillaume',
+                    Path: 'guillaume',
+                } as Label,
+            ],
+            isLabelMapping,
+            mapping,
+        });
+
+        expect(result.find((item) => item.id === 'flavien')?.errors).toContain('Unavailable names');
+        expect(result.find((item) => item.id === 'guillaume')?.errors).toEqual([]);
     });
 });
