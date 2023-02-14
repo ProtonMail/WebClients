@@ -27,19 +27,18 @@ interface Props {
 export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Props>) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const isDesktop = !getDevice()?.type;
+
     const { activeFolder } = useActiveShare();
-
-    const {
-        inputRef: folderInput,
-        handleClick: handleUploadFolderClick,
-        handleChange: handleInputFolderChange,
-    } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
-
     const {
         inputRef: fileInput,
-        handleClick: handleUploadFileClick,
-        handleChange: handleInputFileChange,
+        handleClick: fileClick,
+        handleChange: fileChange,
     } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
+    const {
+        inputRef: folderInput,
+        handleClick: folderClick,
+        handleChange: folderChange,
+    } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
 
     return (
         <>
@@ -55,8 +54,8 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                     c('Action').t`New`
                 }
             </SidebarPrimaryButton>
-            <input multiple type="file" ref={fileInput} className="hidden" onChange={handleInputFileChange} />
-            <input type="file" ref={folderInput} className="hidden" onChange={handleInputFolderChange} />
+            <input multiple type="file" ref={fileInput} className="hidden" onChange={fileChange} />
+            <input type="file" ref={folderInput} className="hidden" onChange={folderChange} />
             <Dropdown
                 size={{ width: DropdownSizeUnit.Anchor, height: DropdownSizeUnit.Dynamic }}
                 isOpen={isOpen}
@@ -64,8 +63,8 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                 onClose={close}
             >
                 <DropdownMenu className="mt0-25 mb0-25">
-                    <UploadFileButton onClick={handleUploadFileClick} />
-                    {isDesktop && <UploadFolderButton onClick={handleUploadFolderClick} />}
+                    <UploadFileButton onClick={fileClick} />
+                    {isDesktop && <UploadFolderButton onClick={folderClick} />}
                     <hr className="mt0-5 mb0-5" />
                     <CreateNewFolderButton />
                 </DropdownMenu>
