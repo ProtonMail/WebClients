@@ -27,8 +27,8 @@ export const getMailMappingError = (
 
     const unavailableNameErrorPaths = [
         // item ids who are checked and not current item
-        ...collection.filter((item) => item.id !== item.id && item.checked).map((m) => m.id),
-        ...(isLabelMapping ? labels.map((item) => item.Path) : folders.map((item) => item.Path)),
+        ...collection.filter((colItem) => colItem.id && colItem.id !== item.id && colItem.checked).map((m) => m.id),
+        ...(isLabelMapping ? folders.map((item) => item.Path) : labels.map((item) => item.Path)),
     ];
 
     const itemName = item.protonPath[item.protonPath.length - 1];
