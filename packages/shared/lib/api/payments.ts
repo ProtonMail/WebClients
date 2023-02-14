@@ -2,7 +2,7 @@ import { Params } from '@proton/components/containers/payments/interface';
 import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 
 import { getProductHeaders } from '../apps/product';
-import { Currency } from '../interfaces';
+import { Currency, RenewState } from '../interfaces';
 
 export const getSubscription = () => ({
     url: 'payments/subscription',
@@ -165,4 +165,14 @@ export const verifyPayment = ({ Amount, Credit, Currency, Payment, GiftCode }: a
 export const getLastCancelledSubscription = () => ({
     url: 'payments/subscription/latest',
     method: 'get',
+});
+
+export interface SetSubscriptionRenewData {
+    RenewalState: RenewState;
+}
+
+export const querySubscriptionRenew = (data: SetSubscriptionRenewData) => ({
+    url: 'payments/subscription/renew',
+    method: 'put',
+    data,
 });
