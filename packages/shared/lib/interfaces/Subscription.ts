@@ -44,6 +44,18 @@ export enum External {
     Android = 2,
 }
 
+export enum RenewState {
+    /**
+     * Default state when user has a subscription.
+     * Subscription will be automatially renewed and user will be charged.
+     */
+    Active = 1,
+    /**
+     * Renew subscription but don't charge the user automatically.
+     */
+    DisableAutopay = 2,
+}
+
 export interface Subscription {
     ID: string;
     InvoiceID: string;
@@ -55,6 +67,7 @@ export interface Subscription {
     Currency: Currency;
     Amount: number;
     RenewAmount: number;
+    Renew: RenewState;
     Discount: number;
     Plans: Plan[];
     External: External;

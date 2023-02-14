@@ -5,6 +5,7 @@ import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import {
     Audience,
     PlansMap,
+    RenewState,
     SubscriptionCheckResponse,
     SubscriptionModel,
     UserModel,
@@ -138,6 +139,7 @@ describe('useProration', () => {
             Discount: 0,
             isManagedByMozilla: false,
             External: 0,
+            Renew: RenewState.Active,
             Plans: [
                 {
                     Amount: 499,
