@@ -2,6 +2,7 @@ import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
+import { withSupportedSequence } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import partition from '@proton/utils/partition';
 import unique from '@proton/utils/unique';
 
@@ -164,7 +165,7 @@ const decryptEvent = async ({
         });
 
         // SUMMARY is mandatory in a PUBLISH ics
-        return withSummary(veventComponent);
+        return withSupportedSequence(withSummary(veventComponent));
     } catch (error: any) {
         const inactiveKeys = addresses.flatMap(({ Keys }) => Keys.filter(({ Active }) => !Active));
         return getError({
