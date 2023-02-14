@@ -3,7 +3,11 @@ import { UserModel } from '@proton/shared/lib/interfaces';
 
 const CANNOT_SET_EXPIRATION = [MAILBOX_LABEL_IDS.SCHEDULED];
 
-export const canSetExpiration = (user: UserModel, labelID: string) => {
+export const canSetExpiration = (featureFlagValue: boolean, user: UserModel, labelID: string) => {
+    if (!featureFlagValue) {
+        return false;
+    }
+
     if (user.isFree) {
         return false;
     }
