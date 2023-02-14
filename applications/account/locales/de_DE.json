@@ -2770,7 +2770,7 @@
         "${ name } konnte nicht in die Spamliste verschoben werden."
       ],
       "${ name } failed to move to the not-spam list": [
-        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden"
+        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden."
       ],
       "${ name } failed to move to your block list": [
         "${ name } konnte nicht in deine Blockliste verschoben werden."
@@ -3202,8 +3202,8 @@
       "This label name is not available. Please choose a different name.": [
         "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -4749,6 +4749,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Wenn du fortfährst, wird dein ${ BRAND_NAME }-Konto mit ${ name } verbunden."
       ],
+      "Copy your referral link": [
+        "Einladungslink kopieren"
+      ],
       "Country code": [
         "Ländercode"
       ],
@@ -4977,7 +4980,7 @@
         "Wenn du eine neue Wiederherstellungsphrase erstellst, wird dadurch deine bisherige Phrase deaktiviert."
       ],
       "Get a ${ BRAND_NAME } address to use all ${ BRAND_NAME } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "Hol dir eine ${ BRAND_NAME }-Adresse um all unsere ${ BRAND_NAME }-Dienste einschließlich ${ MAIL_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } zu nutzen."
+        "Hol dir eine ${ BRAND_NAME }-Adresse, um alle unsere ${ BRAND_NAME }-Dienste einschließlich ${ MAIL_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } zu nutzen."
       ],
       "Get my ${ BRAND_NAME } address": [
         "Meine ${ BRAND_NAME }-Adresse erhalten"
@@ -5798,7 +5801,7 @@
         "Wiederherstellungsphrase aktualisieren"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten"
+        "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -7645,7 +7648,7 @@
         "Alle Nachrichten aus ${ itemsToImportCount } Ordnern importieren und zur Kategorie ${ LABEL_MARKUP_PLACEHOLDER } hinzufügen"
       ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten der Kategorie importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen.",
+        "Alle Nachrichten der Kategorie ${ itemsToImportCount } importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen",
         "Alle Nachrichten der ${ itemsToImportCount } Kategorien importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen."
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
@@ -9918,7 +9921,7 @@
         "Wenn du eine gültige Wiederherstellungs-E-Mail-Adresse eingegeben hast, wird dir in Kürze eine E-Mail mit deinen Benutzernamen zugesendet."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Wenn du eine gültige Wiederherstellungs-Telefonnummer eingegeben hast, erhältst du in Kürze eine SMS mit deinem Benutzernamen."
+        "Wenn du eine gültige Wiederherstellungs-Telefonnummer eingegeben hast, erhältst du in Kürze eine SMS mit deinen Benutzernamen."
       ],
       "Import record deleted": [
         "Import-Eintrag gelöscht"

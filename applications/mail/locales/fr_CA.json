@@ -86,11 +86,17 @@
       "Archive": [
         "Archiver"
       ],
+      "As Scheduled": [
+        "Comme prévu"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
       "Attachment": [
         "Pièce jointe"
+      ],
+      "Attention required": [
+        "Attention requise"
       ],
       "Authenticate": [
         "S'authentifier"
@@ -163,6 +169,9 @@
       ],
       "Close": [
         "Fermer"
+      ],
+      "Close & discard": [
+        "Fermer et abandonner"
       ],
       "Close composer": [
         "Fermer le composeur"
@@ -238,6 +247,9 @@
       ],
       "Create new message": [
         "Créer un nouveau message"
+      ],
+      "Custom": [
+        "Personnalisé"
       ],
       "Customize": [
         "Personnaliser"
@@ -545,6 +557,12 @@
       "Mailbox layout": [
         "Mise en page de la boîte aux lettres"
       ],
+      "Manage folders": [
+        "Gérer les dossiers"
+      ],
+      "Manage labels": [
+        "Gérer les labels"
+      ],
       "Mark as read": [
         "Marquer comme lu"
       ],
@@ -583,6 +601,9 @@
       ],
       "Minimize composer": [
         "Minimiser le composeur"
+      ],
+      "Monday": [
+        "Lundi"
       ],
       "More": [
         "Plus"
@@ -683,6 +704,9 @@
       "Open calendar": [
         "Ouvrir le calendrier"
       ],
+      "Open composer": [
+        "Ouvrir l'éditeur"
+      ],
       "Open get started checklist modal": [
         "Ouvrir la liste de vérification de démarrage"
       ],
@@ -779,6 +803,12 @@
       "Rename": [
         "Renommer"
       ],
+      "Reply": [
+        "Répondre"
+      ],
+      "Reply all": [
+        "Répondre à tous"
+      ],
       "Reply securely": [
         "Répondre en toute sécurité"
       ],
@@ -856,6 +886,9 @@
       ],
       "Send feedback": [
         "Envoyer un avis"
+      ],
+      "Send quick reply": [
+        "Envoyer une réponse rapide"
       ],
       "Send read receipt": [
         "Envoyer une confirmation de lecture"
@@ -955,6 +988,9 @@
       ],
       "This message contains remote content.": [
         "Ce message comporte du contenu distant."
+      ],
+      "Tomorrow": [
+        "Demain"
       ],
       "Trust": [
         "Approuver"
@@ -1093,6 +1129,9 @@
     "action": {
       "Search messages": [
         "Rechercher des messages"
+      ],
+      "Send quick reply": [
+        "Envoyer une réponse rapide"
       ]
     },
     "Actions message": {
@@ -2846,12 +2885,21 @@
       "No labels": [
         "Aucun label"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Logo ProtonMail et un signe plus"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Activez la personnalisation de l'envoi programmé de messages et d'autres fonctionnalités en passant à un abonnement supérieur."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
+      ],
+      "When do you want your message to be sent?": [
+        "Quand voulez-vous que votre message soit envoyé?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus grand, veuillez le diviser en plus petits fichiers."
@@ -3035,6 +3083,9 @@
       "Contact could not be saved": [
         "Le contact n'a pas pu être enregistré"
       ],
+      "Contact name is too long": [
+        "Le nom du contact est trop long"
+      ],
       "Contact signature could not be verified": [
         "La signature du contact n'a pas pu être vérifiée"
       ],
@@ -3069,6 +3120,9 @@
       ],
       "Email address invalid": [
         "Adresse courriel invalide"
+      ],
+      "Email address is required": [
+        "L'adresse électronique est nécessaire"
       ],
       "Email is not valid": [
         "L'adresse électronique n'est pas valide"
@@ -3105,6 +3159,9 @@
       ],
       "Image upload failed": [
         "Échec du téléversement de l'image"
+      ],
+      "IMAP server is required": [
+        "Le serveur IMAP est nécessaire"
       ],
       "Incorrect login credentials. Please try again.": [
         "Identifiants de connexion incorrects. Veuillez réessayer."
@@ -3178,6 +3235,9 @@
         "Un des groupes n'a pas de contacts: ${ noContactGroupList }",
         "Certains groupes n'ont pas de contacts: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Le mot de passe est nécessaire"
+      ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
       ],
@@ -3193,6 +3253,9 @@
       ],
       "Please set a password": [
         "Veuillez créer un mot de passe"
+      ],
+      "Port is required": [
+        "Le port est nécessaire"
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée"
@@ -3319,9 +3382,6 @@
       "This message has already been sent. A new draft has been saved.": [
         "Ce message a déjà été envoyé. Un nouveau brouillon a été enregistré."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "This message may contain some links URL that cannot be properly opened by your current browser."
-      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Trop de filtres sont actifs. Nous vous invitons à passer à un abonnement payant pour activer plus de filtres."
       ],
@@ -3342,9 +3402,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer de courrier à plus de 100 destinataires"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "You can't send vCard files of more than 10 contacts"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composeur à la fois",
@@ -3987,11 +4044,20 @@
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } sur ${ totalToImport } événement correctement importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } sur ${ totalToImport } événements correctement importés."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout des contacts: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout d'événements à votre calendrier: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "L'événement a été importé. Il apparaîtra dans votre calendrier."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Les événements ont été importés. Ils apparaîtront dans votre calendrier."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Veuillez ne pas fermer l'onglet avant la fin du processus d'importation."
@@ -4025,6 +4091,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact chiffré et ajouté à votre liste de contacts",
         "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de votre contact. Aucun contact n’a pu être importé."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. ${ totalImported } contacts sur ${ totalToImport } ont été importés."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. Aucun contact n’a pu être importé."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Le contact a été importé. Il apparaîtra dans votre liste de contacts."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Les contacts ont été importés. Ils apparaîtront dans votre liste de contacts."
       ]
     },
     "Import contact error": {
@@ -4483,6 +4564,9 @@
       "Attach public key": [
         "Attacher une clé publique"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Background color": [
         "Couleur d'arrière-plan"
       ],
@@ -4527,6 +4611,9 @@
       ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
+      ],
+      "Country code": [
+        "Indicatif du pays"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -4730,6 +4817,10 @@
       "Group assignment applied": [
         "Affectation de groupe appliquée"
       ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Contient ${ numAttachments } pièce jointe (${ numAttachmentsSize })",
+        "Contient ${ numAttachments } pièces jointes (${ numAttachmentsSize })"
+      ],
       "here": [
         "ici"
       ],
@@ -4891,6 +4982,9 @@
       "Monthly ${ onDayString }": [
         "Mensuellement le ${ onDayString }"
       ],
+      "Moving messages. This may take a while.": [
+        "Les messages sont en cours de déplacement. Ceci peut prendre un certain temps."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez le dossier parent dans lequel vous voulez le mettre. Si vous ne sélectionnez pas un dossier parent, ce nouveau dossier sera créé en tant que dossier de premier niveau."
       ],
@@ -5020,6 +5114,12 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protégez votre adresse électronique des fuites vers les listes de diffusion ou les pourrielleurs avec ${ maskMyEmailButton }."
+      ],
+      "Quick reply": [
+        "Réponse rapide"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "Réponse rapide à ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinataire: "
@@ -5928,6 +6028,9 @@
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces"
       ],
+      "Colors": [
+        "Couleurs"
+      ],
       "Coming soon": [
         "Bientôt disponible"
       ],
@@ -6011,6 +6114,12 @@
       ],
       "From:": [
         "De:"
+      ],
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
       ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
@@ -6251,6 +6360,12 @@
       ],
       "To: ${ emailAddress }": [
         "À: ${ emailAddress }"
+      ],
+      "To: ${ to }": [
+        "À: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "À: ${ toEmail }"
       ],
       "Toolbar": [
         "Barre d'outils"
@@ -6555,6 +6670,10 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
@@ -7742,6 +7861,34 @@
         "${ secondsCountLeft } secondes"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } heure",
+        "${ hours } heures"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 heure",
+        "${ hoursInt },5 heures"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minute",
+        "${ minutes } minutes"
+      ]
+    },
     "Title": {
       "${ emailsCount } member": [
         "${ emailsCount } membre",
@@ -8186,6 +8333,9 @@
       ],
       "Sending original message": [
         "Envoi du message original"
+      ],
+      "Set your own schedule": [
+        "Définissez votre propre horaire"
       ],
       "Settings": [
         "Paramètres"
