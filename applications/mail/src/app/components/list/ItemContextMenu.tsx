@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit } from '@proton/components';
-import { useApi, useUser } from '@proton/components/hooks';
+import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit, FeatureCode } from '@proton/components';
+import { useApi, useFeature, useUser } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { canSetExpiration } from '../../helpers/expiration';
@@ -54,6 +54,7 @@ const ItemContextMenu = ({
     const dispatch = useAppDispatch();
     const [user] = useUser();
     const api = useApi();
+    const { feature } = useFeature(FeatureCode.SetExpiration);
     const elementsAreUnread = useSelector(elementsAreUnreadSelector);
     const expiringElements = useSelector(expiringElementsSelector);
     const willExpire = useMemo(() => {
@@ -63,7 +64,7 @@ const ItemContextMenu = ({
         const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
         return !allRead;
     }, [checkedIDs, elementsAreUnread]);
-    const canExpire = canSetExpiration(user, labelID);
+    const canExpire = canSetExpiration(feature?.Value, user, labelID);
 
     const [actions] = useLabelActions(labelID, false);
 
@@ -218,23 +219,35 @@ const ItemContextMenu = ({
                     <ContextSeparator />
                     {willExpire ? (
                         <ContextMenuButton
-                            key="context-menu-keep"
-                            testId="context-menu-keep"
+                            key="context-menu-remove-expiration"
+                            testId="context-menu-remove-expiration"
                             icon="hourglass"
                             name={c('Action').t`Remove expiration`}
                             action={() => handleExpire()}
                         />
                     ) : (
-                        <ContextMenuButton
-                            key="context-menu-expire"
-                            testId="context-menu-expire"
-                            icon="hourglass"
-                            name={c('Action').t`Expire in 30 days`}
-                            action={() => {
-                                const now = new Date();
-                                handleExpire(addDays(now, 30));
-                            }}
-                        />
+                        <>
+                            <ContextMenuButton
+                                key="context-menu-expire-tomorrow"
+                                testId="context-menu-expire-tomorrow"
+                                icon="hourglass"
+                                name={c('Action').t`Expire tomorrow`}
+                                action={() => {
+                                    const now = new Date();
+                                    handleExpire(addDays(now, 1));
+                                }}
+                            />
+                            <ContextMenuButton
+                                key="context-menu-expire-next-month"
+                                testId="context-menu-expire-next-month"
+                                icon="hourglass"
+                                name={c('Action').t`Expire in 30 days`}
+                                action={() => {
+                                    const now = new Date();
+                                    handleExpire(addDays(now, 30));
+                                }}
+                            />
+                        </>
                     )}
                 </>
             )}
