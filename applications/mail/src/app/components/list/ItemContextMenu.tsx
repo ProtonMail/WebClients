@@ -83,8 +83,9 @@ const ItemContextMenu = ({
         rest.close();
     };
 
-    const handleExpire = (date?: Date) => {
-        const expirationTime = date ? getUnixTime(date) : null;
+    const handleExpire = (days: number) => {
+        const date = addDays(new Date(), days);
+        const expirationTime = days ? getUnixTime(date) : null;
 
         if (conversationMode) {
             void dispatch(expireConversations({ IDs: checkedIDs, expirationTime, api }));
@@ -223,7 +224,7 @@ const ItemContextMenu = ({
                             testId="context-menu-remove-expiration"
                             icon="hourglass"
                             name={c('Action').t`Remove expiration`}
-                            action={() => handleExpire()}
+                            action={() => handleExpire(0)}
                         />
                     ) : (
                         <>
@@ -232,20 +233,14 @@ const ItemContextMenu = ({
                                 testId="context-menu-expire-tomorrow"
                                 icon="hourglass"
                                 name={c('Action').t`Expire tomorrow`}
-                                action={() => {
-                                    const now = new Date();
-                                    handleExpire(addDays(now, 1));
-                                }}
+                                action={() => handleExpire(1)}
                             />
                             <ContextMenuButton
                                 key="context-menu-expire-next-month"
                                 testId="context-menu-expire-next-month"
                                 icon="hourglass"
                                 name={c('Action').t`Expire in 30 days`}
-                                action={() => {
-                                    const now = new Date();
-                                    handleExpire(addDays(now, 30));
-                                }}
+                                action={() => handleExpire(30)}
                             />
                         </>
                     )}
