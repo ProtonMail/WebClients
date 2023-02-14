@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { PLANS } from '@proton/shared/lib/constants';
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { RenewState, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { Loader } from '../../components/loader';
 import { usePlans, useSubscription } from '../../hooks';
@@ -17,6 +17,8 @@ jest.mock('../account/MozillaInfoPanel', () => ({
     __esModule: true,
     default: jest.fn(() => null),
 }));
+
+jest.mock('./RenewToggle');
 
 const mockedUsePlans = usePlans as jest.Mock<ReturnType<typeof usePlans>>;
 const mockedUseSubscription = useSubscription as jest.Mock<ReturnType<typeof useSubscription>>;
@@ -556,6 +558,7 @@ describe('SubscriptionsSection', () => {
             Amount: 499,
             Discount: 0,
             RenewAmount: 499,
+            Renew: RenewState.Active,
             Plans: [
                 {
                     ID: 'Wb4NAqmiuqoA7kCHE28y92bBFfN8jaYQCLxHRAB96yGj-bh9SxguXC48_WSU-fRUjdAr-lx95c6rFLplgXyXYA==',
