@@ -5,7 +5,7 @@ import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import { AlertModal, AppLink, ModalProps } from '../../../components';
+import { AppLink, ModalProps, Prompt } from '../../../components';
 import { useFeature } from '../../../hooks';
 import { FeatureCode } from '../../index';
 
@@ -58,7 +58,7 @@ const CalendarDowngradeModal = ({ isDowngrade, onConfirm, onClose, ...rest }: Pr
     const text = getText(!!isDowngrade, calendarSharingEnabled);
 
     return (
-        <AlertModal
+        <Prompt
             title={title}
             buttons={[
                 <Button
@@ -80,7 +80,7 @@ const CalendarDowngradeModal = ({ isDowngrade, onConfirm, onClose, ...rest }: Pr
                 <br />
                 {linkButton}
             </div>
-        </AlertModal>
+        </Prompt>
     );
 };
 

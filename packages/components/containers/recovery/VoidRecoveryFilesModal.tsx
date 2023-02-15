@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
 
-import { AlertModal, ModalProps } from '../../components';
+import { ModalProps, Prompt } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 interface Props extends Omit<ModalProps, 'children' | 'size'> {
@@ -28,7 +28,7 @@ const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onClose, ...rest }: Pro
     };
 
     return (
-        <AlertModal
+        <Prompt
             {...rest}
             title={c('Action').t`Void all recovery files?`}
             buttons={[
@@ -44,7 +44,7 @@ const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onClose, ...rest }: Pro
                           .t`You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.`
                     : c('Info').t`You won’t be able to recover locked data using your downloaded recovery files.`}
             </p>
-        </AlertModal>
+        </Prompt>
     );
 };
 

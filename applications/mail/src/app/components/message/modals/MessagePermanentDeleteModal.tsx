@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, ErrorButton, ModalProps, useApi, useEventManager, useNotifications } from '@proton/components';
+import { ErrorButton, ModalProps, Prompt, useApi, useEventManager, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 
 import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/actions/usePermanentDelete';
@@ -26,7 +26,7 @@ const MessagePermanentDeleteModal = ({ message, ...rest }: Props) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={getDeleteTitle(false, false, 1)}
             buttons={[
                 <ErrorButton onClick={handleDelete}>{c('Action').t`Delete`}</ErrorButton>,
@@ -35,7 +35,7 @@ const MessagePermanentDeleteModal = ({ message, ...rest }: Props) => {
             {...rest}
         >
             {getModalText(false, false, 1)}
-        </AlertModal>
+        </Prompt>
     );
 };
 

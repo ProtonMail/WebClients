@@ -5,7 +5,7 @@ import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Organization } from '@proton/shared/lib/interfaces';
 
-import { AlertModal, ModalProps } from '../../components';
+import { ModalProps, Prompt } from '../../components';
 
 interface Props extends ModalProps {
     organization: Organization;
@@ -16,7 +16,7 @@ const LossLoyaltyModal = ({ organization, onConfirm, onClose, ...rest }: Props) 
     const bonusSpace = organization.BonusSpace && humanSize(organization.BonusSpace, 'GB');
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Confirm loss of ${BRAND_NAME} bonuses`}
             buttons={[
                 <Button
@@ -52,7 +52,7 @@ const LossLoyaltyModal = ({ organization, onConfirm, onClose, ...rest }: Props) 
                     ) : null}
                 </ul>
             </div>
-        </AlertModal>
+        </Prompt>
     );
 };
 

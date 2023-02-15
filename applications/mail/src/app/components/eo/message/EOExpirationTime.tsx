@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
-import { AlertModal, Href, Icon, Tooltip, useModalState } from '@proton/components/components';
+import { Href, Icon, Tooltip, useModalState, Prompt } from '@proton/components/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useExpiration } from '../../../hooks/useExpiration';
@@ -34,14 +34,14 @@ const EOExpirationTime = ({ message }: Props) => {
                     <span className="ml0-5">{buttonMessage}</span>
                 </ButtonLike>
             </Tooltip>
-            <AlertModal
+            <Prompt
                 title={c('Title').t`Message will expire`}
                 buttons={[<Button autoFocus type="submit" onClick={onClose}>{c('Action').t`Got it`}</Button>]}
                 {...expirationModalProps}
             >
                 <div className="mr0-5">{expireOnMessage}</div>
                 <Href href={getKnowledgeBaseUrl('/expiration')}>{c('Link').t`Learn more`}</Href>
-            </AlertModal>
+            </Prompt>
         </>
     );
 };

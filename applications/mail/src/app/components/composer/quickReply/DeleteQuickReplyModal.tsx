@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, AlertModal, ErrorButton, ModalProps } from '@proton/components/components';
+import { Alert, ErrorButton, ModalProps, Prompt } from '@proton/components/components';
 
 interface Props extends ModalProps {
     onDeleteDraft: () => void;
@@ -16,7 +16,7 @@ const DeleteQuickReplyModal = ({ onDeleteDraft, ...rest }: Props) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Delete draft`}
             buttons={[
                 <ErrorButton onClick={handleDelete}>{c('Action').t`Delete`}</ErrorButton>,
@@ -26,7 +26,7 @@ const DeleteQuickReplyModal = ({ onDeleteDraft, ...rest }: Props) => {
         >
             <Alert className="mb1" type="error">{c('Info')
                 .t`Are you sure you want to permanently delete this draft?`}</Alert>
-        </AlertModal>
+        </Prompt>
     );
 };
 

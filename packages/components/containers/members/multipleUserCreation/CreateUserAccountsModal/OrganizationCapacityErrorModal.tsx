@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, ModalProps, SettingsLink } from '@proton/components';
+import { ModalProps, Prompt, SettingsLink } from '@proton/components';
 
 import { ORGANIZATION_CAPACITY_ERROR_TYPE, OrganizationCapacityError } from './validateOrganizationCapacity';
 
@@ -41,14 +41,14 @@ const OrganizationCapacityErrorModal = ({ error, onOk, ...rest }: Props) => {
     })();
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Couldn’t create accounts`}
             buttons={[<Button onClick={onOk}>{c('Action').t`Got it`}</Button>]}
             {...rest}
         >
             <p className="mt0">{error.message}</p>
             <p className="mb0">{cta}</p>
-        </AlertModal>
+        </Prompt>
     );
 };
 

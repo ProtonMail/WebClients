@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 
-import { AlertModal, ModalProps } from '../../../components';
+import { ModalProps, Prompt } from '../../../components';
 import { useApi, useNotifications } from '../../../hooks';
 
 interface Props extends ModalProps {
@@ -30,7 +30,7 @@ const VerifyRecoveryEmailModal = ({ email, onClose, ...rest }: Props) => {
         onClose?.();
     };
     return (
-        <AlertModal
+        <Prompt
             title={c('Recovery Email').t`Verify recovery email?`}
             buttons={[
                 <Button loading={loading} shape="solid" color="norm" onClick={handleSendVerificationEmailClick}>{c(
@@ -42,7 +42,7 @@ const VerifyRecoveryEmailModal = ({ email, onClose, ...rest }: Props) => {
         >
             {c('Recovery Email')
                 .t`Verifying your email address increases your account security and allows additional options for recovery.`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

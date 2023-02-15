@@ -5,7 +5,7 @@ import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { deleteLabels } from '@proton/shared/lib/api/labels';
 import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
-import { Alert, AlertModal, ModalProps } from '../../../components';
+import { Alert, ModalProps, Prompt } from '../../../components';
 import { useApi, useContactGroups, useEventManager, useLoading, useNotifications } from '../../../hooks';
 
 export interface ContactGroupDeleteProps {
@@ -55,7 +55,7 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, ...rest }: Props) =>
               );
 
     return (
-        <AlertModal
+        <Prompt
             title={title}
             buttons={[
                 <Button
@@ -76,7 +76,7 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, ...rest }: Props) =>
             <Alert className="mb1" type="error">
                 {alertText}
             </Alert>
-        </AlertModal>
+        </Prompt>
     );
 };
 

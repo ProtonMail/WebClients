@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { postVerifyPhone } from '@proton/shared/lib/api/verify';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 
-import { AlertModal, ModalProps } from '../../../components';
+import { ModalProps, Prompt } from '../../../components';
 import { useApi } from '../../../hooks';
 
 interface Props extends ModalProps {
@@ -28,7 +28,7 @@ const VerifyRecoveryPhoneModal = ({ phone, onClose, ...rest }: Props) => {
         onClose?.();
     };
     return (
-        <AlertModal
+        <Prompt
             title={c('Recovery Phone').t`Verify recovery phone?`}
             buttons={[
                 <Button loading={loading} shape="solid" color="norm" onClick={handleSendVerificationPhoneClick}>{c(
@@ -40,7 +40,7 @@ const VerifyRecoveryPhoneModal = ({ phone, onClose, ...rest }: Props) => {
         >
             {c('Recovery Phone')
                 .t`Verifying your phone number increases your account security and allows additional options for recovery.`}
-        </AlertModal>
+        </Prompt>
     );
 };
 
