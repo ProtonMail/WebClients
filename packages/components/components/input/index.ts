@@ -1,4 +1,5 @@
 export { default as Checkbox } from './Checkbox';
+export * from './Checkbox';
 export { default as ColorPicker } from './ColorPicker';
 export { default as DateInput } from './DateInput';
 export { default as EmailInput } from './EmailInput';
