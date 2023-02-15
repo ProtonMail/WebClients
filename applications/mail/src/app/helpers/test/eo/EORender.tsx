@@ -20,7 +20,7 @@ import ApiContext from '@proton/components/containers/api/apiContext';
 import { EO_REDIRECT_PATH } from '../../../constants';
 import { store } from '../../../logic/eo/eoStore';
 import { api, mockDomApi, registerFeatureFlagsApiMock } from '../api';
-import { cache } from '../cache';
+import { mockCache } from '../cache';
 import NotificationsTestProvider from '../notifications';
 import { config, tick } from '../render';
 
@@ -46,7 +46,7 @@ const EOTestProvider = ({ children, routePath = EO_REDIRECT_PATH }: Props) => {
             <ApiContext.Provider value={api}>
                 <NotificationsTestProvider>
                     <ModalsProvider>
-                        <CacheProvider cache={cache}>
+                        <CacheProvider cache={mockCache}>
                             <FeaturesProvider>
                                 <ExperimentsProvider>
                                     <ModalsChildren />

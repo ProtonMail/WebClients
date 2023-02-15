@@ -7,7 +7,7 @@ import { PublicKeyReference } from '@proton/crypto';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
-import { addressBuilder, calendarBuilder, mockApi, mockNotifications, server } from '@proton/testing';
+import { addressBuilder, calendarBuilder, mockApiWithServer, mockNotifications, server } from '@proton/testing';
 
 import { CacheProvider } from '../../cache';
 import ShareCalendarModal from './ShareCalendarModal';
@@ -80,7 +80,7 @@ xdescribe('ShareCalendarModal', () => {
     afterAll(() => server.close());
 
     beforeEach(() => {
-        mockedUseApi.mockImplementation(() => mockApi);
+        mockedUseApi.mockImplementation(() => mockApiWithServer);
         mockedUseNotifications.mockImplementation(() => mockNotifications);
         mockedUseGetEncryptionPreferences.mockImplementation(() => () => Promise.resolve(mockedEncryptionPreferences));
     });
