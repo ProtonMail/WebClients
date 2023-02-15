@@ -1,7 +1,8 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
 
-const CANNOT_SET_EXPIRATION = [MAILBOX_LABEL_IDS.SCHEDULED];
+const { SCHEDULED, OUTBOX, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
+const CANNOT_SET_EXPIRATION = [SCHEDULED, OUTBOX, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS];
 
 export const canSetExpiration = (featureFlagValue: boolean, user: UserModel, labelID: string) => {
     if (!featureFlagValue) {

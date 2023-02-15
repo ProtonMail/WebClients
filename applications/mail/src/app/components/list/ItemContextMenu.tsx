@@ -239,7 +239,7 @@ const ItemContextMenu = ({
                                 key="context-menu-expire-next-week"
                                 testId="context-menu-expire-next-week"
                                 icon="hourglass"
-                                name={c('Action').t`Expire next week`}
+                                name={c('Action').t`Expire in 7 days`}
                                 action={() => handleExpire(7)}
                             />
                             <ContextMenuButton
