@@ -26,7 +26,7 @@ export const subscriptionDefaultResponse = {
                 Title: 'Proton Unlimited',
                 MaxDomains: 3,
                 MaxAddresses: 15,
-                MaxCalendars: 20,
+                MaxCalendars: 25,
                 MaxSpace: 536870912000,
                 MaxMembers: 1,
                 MaxVPN: 10,
