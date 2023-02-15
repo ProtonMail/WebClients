@@ -1948,19 +1948,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/core@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@floating-ui/core@npm:1.1.0"
-  checksum: ac48969915247320e52d173480c224e2ded94d557ba4cc504547bb314d126348dcc0aeef05686673e1b289596e6ce15118edc84900dd310c613d805f83b4e27d
+"@floating-ui/core@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@floating-ui/core@npm:1.2.1"
+  checksum: 7a263e15abad4cd98ce3938075c90f76bafef71c67964c83dd7cf1e1916c92ccfa46a4f2b95b403bb180f70b3e7ded118db1cbc3426269ec70e948edf0d19ae2
   languageName: node
   linkType: hard
 
-"@floating-ui/dom@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@floating-ui/dom@npm:1.1.1"
+"@floating-ui/dom@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@floating-ui/dom@npm:1.2.1"
   dependencies:
-    "@floating-ui/core": ^1.1.0
-  checksum: 8b7f3b98ed7ec0b634e4a0b735253b0442358c5cea8302935fc185b2bd882202a053622abe9248c76d0908645dd35f93adeaed2d64371b2ab76b36725ce3f7d3
+    "@floating-ui/core": ^1.2.1
+  checksum: ad6928d5dd934ca8b3dcffdfcacde9d147afc0db4db0c0294b23d5f897224d73c7f0ae578b46d813f0d7ae22a86e7a3f8914fdbcdf4a8d42a1b430d0518f45be
   languageName: node
   linkType: hard
 
@@ -3614,7 +3614,7 @@ __metadata:
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.18.6
     "@emoji-mart/data": ^1.0.3
-    "@floating-ui/dom": ^1.1.1
+    "@floating-ui/dom": ^1.2.1
     "@noble/ed25519": 1.7.1
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
