@@ -16,6 +16,7 @@ import { RemoteToggle } from '../emailPrivacy';
 import { FeatureCode } from '../features';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 import ViewModeToggle from '../layouts/ViewModeToggle';
+import AutoDeleteSetting from './AutoDeleteSetting';
 import EmbeddedToggle from './EmbeddedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
 import ShowMovedToggle from './ShowMovedToggle';
@@ -30,6 +31,7 @@ const MessagesSection = () => {
             HideRemoteImages = SHOW_IMAGES.HIDE,
             ConfirmLink = 1,
             SpamAction = null,
+            AutoDeleteSpamAndTrashDays = 0,
         } = {},
     ] = useMailSettings();
     const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
@@ -161,6 +163,8 @@ const MessagesSection = () => {
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
+
+            <AutoDeleteSetting settingValue={AutoDeleteSpamAndTrashDays} onSaved={notifyPreferenceSaved} />
 
             <SettingsLayout>
                 <SettingsLayoutLeft>

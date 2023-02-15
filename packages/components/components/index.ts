@@ -68,6 +68,7 @@ export * from './toolbar';
 export * from './tooltip';
 export * from './topnavbar';
 export * from './treeview';
+export * from './upsell';
 export * from './v2';
 export * from './version';
 export * from './videoInstructions';
