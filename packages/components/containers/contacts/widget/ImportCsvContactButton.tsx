@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton } from '@proton/activation';
-import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/activation/interface';
+import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/activation/src/interface';
 
 import { Loader, PrimaryButton } from '../../../components';
 import { useFeature, useUser } from '../../../hooks';
