@@ -14,7 +14,7 @@ interface Props {
     openConfirmModal: () => void;
 }
 
-const useCustomiseMailImportModal = ({ fields, onClose, onSubmit, openConfirmModal, isLabelMapping }: Props) => {
+const useCustomizeMailImportModal = ({ fields, onClose, onSubmit, openConfirmModal, isLabelMapping }: Props) => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const [customFields, setCustomFields] = useState<MailImportFields>({
@@ -103,4 +103,4 @@ const useCustomiseMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
     };
 };
 
-export default useCustomiseMailImportModal;
+export default useCustomizeMailImportModal;

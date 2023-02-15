@@ -10,7 +10,6 @@ import { useLoading } from '@proton/components/hooks';
 
 interface Props {
     reportSummaryID: ReportSummaryID;
-    // TODO: Remove ImportReportRollbackState when redux migration done
     rollbackState: ApiReportRollbackState | undefined;
 }
 

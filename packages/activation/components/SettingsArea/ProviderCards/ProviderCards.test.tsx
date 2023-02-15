@@ -60,7 +60,7 @@ jest.mock('@proton/components/hooks/useFeature', () => () => {
     };
 });
 
-jest.mock('@proton/activation/components/Modals/Imap/CalendarModal/useUserCalendars', () => () => [
+jest.mock('@proton/activation/hooks/useUserCalendars', () => () => [
     [
         {
             ID: 'calendarId',
@@ -119,7 +119,7 @@ afterAll(() => {
 });
 
 describe('Provider cards process testing', () => {
-    it('Should diplay the four cards on the page without user data', async () => {
+    it('Should display the four cards on the page without user data', async () => {
         easySwitchRender(<ProviderCards />);
 
         const google = screen.getByTestId('ProviderCard:googleCard');

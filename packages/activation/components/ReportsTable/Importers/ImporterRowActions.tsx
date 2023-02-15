@@ -1,15 +1,14 @@
 import { c } from 'ttag';
 
-import { getScopeFromProvider } from '@proton/activation/_legacy/EasySwitchOauthModal.helpers';
 import { createToken, resumeImport, updateImport } from '@proton/activation/api';
 import { ApiImporterError, ApiImporterState } from '@proton/activation/api/api.interface';
 import useOAuthPopup from '@proton/activation/hooks/useOAuthPopup';
 import {
     AuthenticationMethod,
-    CheckedProductMap,
     EASY_SWITCH_SOURCE,
+    ImportProvider,
     ImportToken,
-    OAUTH_PROVIDER,
+    ImportType,
     OAuthProps,
 } from '@proton/activation/interface';
 import { reconnectImapImport } from '@proton/activation/logic/draft/imapDraft/imapDraft.actions';
@@ -21,6 +20,8 @@ import { Button } from '@proton/atoms';
 import { Alert, AlertModal, DropdownActions, useModalState } from '@proton/components';
 import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+
+import { getScopeFromProvider } from '../../Modals/OAuth/StepProducts/useStepProducts.helpers';
 
 interface Props {
     activeImporterID: ActiveImportID;
@@ -46,17 +47,12 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     const [cancelModalProps, showCancelModal, renderCancelModal] = useModalState();
 
     const handleReconnectOAuth = async (ImporterID: string) => {
-        const checkedItems = (products || []).reduce((acc, item) => {
-            acc[item] = true;
-            return acc;
-        }, {} as CheckedProductMap);
-
         // TODO: Typing should be more effective here
-        const scopes = getScopeFromProvider(provider as unknown as OAUTH_PROVIDER, checkedItems);
+        const scopes = getScopeFromProvider(provider as unknown as ImportProvider, products as unknown as ImportType[]);
 
         triggerOAuthPopup({
             // TODO: Typing should be more effective here
-            provider: provider as unknown as OAUTH_PROVIDER,
+            provider: provider as unknown as ImportProvider,
             loginHint: account,
             scope: scopes.join(' '),
             callback: async ({ Code, Provider, RedirectUri }: OAuthProps) => {

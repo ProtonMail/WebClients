@@ -24,12 +24,18 @@ const ImporterRowStatus = ({ processed, total, state, errorCode }: Props) => {
                     </Badge>
 
                     {errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION && (
-                        <Tooltip title={c('Tooltip').t`Account is disconnected`}>
+                        <Tooltip
+                            title={c('Tooltip').t`Account is disconnected`}
+                            data-testid="ImporterRowStatus:IMAP_Error"
+                        >
                             <Icon name="exclamation-circle-filled" />
                         </Tooltip>
                     )}
                     {errorCode === ApiImporterError.ERROR_CODE_QUOTA_LIMIT && (
-                        <Tooltip title={c('Tooltip').t`Your ${MAIL_APP_NAME} inbox is almost full`}>
+                        <Tooltip
+                            title={c('Tooltip').t`Your ${MAIL_APP_NAME} inbox is almost full`}
+                            data-testid="ImporterRowStatus:quota_Error"
+                        >
                             <Icon name="exclamation-circle-filled" />
                         </Tooltip>
                     )}
