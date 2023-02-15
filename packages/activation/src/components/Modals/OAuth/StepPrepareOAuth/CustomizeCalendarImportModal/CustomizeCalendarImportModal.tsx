@@ -34,7 +34,7 @@ const CustomizeCalendarImportModal = ({
     const {
         canMerge,
         calendarLimitReached,
-        calendarToFixCount,
+        calendarsToFixCount,
         calendarsToBeCreatedCount,
         selectedCalendarsCount,
         selectedCalendars,
@@ -47,7 +47,7 @@ const CustomizeCalendarImportModal = ({
             <ModalTwoContent>
                 <div className="mb1" data-testid="CustomizeCalendarImportModal:description">
                     {c('Info')
-                        .t`Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.`}
+                        .t`Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.`}
                     {canMerge &&
                         ` ${c('Info').t`You can also merge imported calendars with existing ${BRAND_NAME} calendars.`}`}
                 </div>
@@ -55,7 +55,7 @@ const CustomizeCalendarImportModal = ({
                 {calendarLimitReached && (
                     <CustomizeCalendarImportModalLimitReached
                         canMerge={canMerge}
-                        calendarToFixCount={calendarToFixCount}
+                        calendarsToFixCount={calendarsToFixCount}
                     />
                 )}
                 <CustomizeCalendarImportModalTableHeader

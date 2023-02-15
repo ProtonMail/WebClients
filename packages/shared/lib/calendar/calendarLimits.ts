@@ -33,3 +33,14 @@ export const getCalendarsLimitReachedText = (isFreeUser: boolean) => {
         combinedText: `${maxReachedText} ${addNewCalendarText}`,
     };
 };
+
+export const willUserReachCalendarsLimit = (
+    calendars: VisualCalendar[],
+    calendarsToCreateCount: number,
+    isFreeUser: boolean
+) => {
+    const maxCalendars = isFreeUser ? MAX_CALENDARS_FREE : MAX_CALENDARS_PAID;
+    const isCalendarsLimitReached = calendars.length + calendarsToCreateCount > maxCalendars;
+
+    return isCalendarsLimitReached;
+};

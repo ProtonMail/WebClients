@@ -59,7 +59,7 @@ const derivedValuesNoErrors: DerivedCalendarType = {
     calendarLimitReached: false,
     selectedCalendarsCount: 1,
     disabled: false,
-    calendarToFixCount: 0,
+    calendarsToFixCount: 0,
     canMerge: true,
     totalCalendarsCount: 10,
     calendarsToBeMergedCount: 2,
