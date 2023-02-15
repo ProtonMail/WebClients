@@ -1,14 +1,11 @@
-import { Dispatch, DragEvent, RefObject, SetStateAction, useCallback } from 'react';
+import { RefObject, useCallback } from 'react';
 
-import { c } from 'ttag';
-
+import { Dropzone } from '@proton/components/components';
 import { ToolbarConfig } from '@proton/components/components/editor/helpers/getToolbarConfig';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 import noop from '@proton/utils/noop';
 
 import { classnames } from '../../helpers';
-import { onlyDragFiles } from '../dropzone';
 import { EDITOR_DEFAULT_METADATA } from './constants';
 import { EditorActions, EditorMetadata, SetEditorToolbarConfig } from './interface';
 import DefaultFontModal from './modals/DefaultFontModal';
@@ -39,8 +36,6 @@ interface Props {
      */
     mailSettings?: MailSettings;
     isPlainText?: boolean;
-    fileHover?: boolean;
-    setFileHover?: Dispatch<SetStateAction<boolean>>;
     openEmojiPickerRef: RefObject<() => void>;
     toolbarConfig?: ToolbarConfig;
     setToolbarConfig: SetEditorToolbarConfig;
@@ -67,8 +62,6 @@ const Editor = ({
     onAddAttachments,
     mailSettings,
     isPlainText,
-    fileHover,
-    setFileHover,
     openEmojiPickerRef,
     toolbarConfig,
     setToolbarConfig,
@@ -76,36 +69,12 @@ const Editor = ({
     modalImage,
     modalDefaultFont,
     hasToolbar = true,
-    hasDropzone = true,
 }: Props) => {
     /**
      * Set to true when editor setContent is called by parent components
      * in order to prevent onChange callback
      */
     const metadata: EditorMetadata = { ...EDITOR_DEFAULT_METADATA, ...metadataProp };
-
-    const handleDrop = onlyDragFiles((event: DragEvent) => {
-        event.preventDefault();
-        event.stopPropagation();
-        setFileHover?.(false);
-        onAddAttachments?.([...event.dataTransfer.files]);
-    });
-
-    /**
-     * Listening for entering on the whole section
-     * But for leaving only on the overlay to prevent any interception by the editor
-     */
-    const handleDragLeave = onlyDragFiles((event) => {
-        event.stopPropagation();
-        setFileHover?.(false);
-    });
-
-    const handleDragOver = onlyDragFiles((event) => {
-        // In order to allow drop we need to preventDefault
-        event.preventDefault();
-        event.stopPropagation();
-        setFileHover?.(true);
-    });
 
     const onPasteImage = useCallback(
         (imageFile: File) => {
@@ -114,6 +83,25 @@ const Editor = ({
             }
         },
         [onAddAttachments, metadata.supportImages]
+    );
+
+    const editor = metadata.isPlainText ? (
+        <PlainTextEditor onChange={onChange} placeholder={placeholder} onReady={onReady} onFocus={onFocus} />
+    ) : (
+        <RoosterEditor
+            placeholder={placeholder}
+            onChange={onChange}
+            onReady={onReady}
+            showBlockquoteToggle={showBlockquoteToggle}
+            onBlockquoteToggleClick={onBlockquoteToggleClick}
+            setToolbarConfig={setToolbarConfig}
+            onPasteImage={onPasteImage}
+            showModalLink={modalLink.showCallback}
+            onFocus={onFocus}
+            mailSettings={mailSettings}
+            className={simple ? 'border rounded' : ''}
+            openEmojiPicker={() => openEmojiPickerRef.current?.()}
+        />
     );
 
     return (
@@ -132,48 +120,8 @@ const Editor = ({
                         isPlainText ? '' : 'composer-content--rich-edition',
                         editorClassname,
                     ])}
-                    onDragOver={handleDragOver}
                 >
-                    {metadata.isPlainText ? (
-                        <PlainTextEditor
-                            onChange={onChange}
-                            placeholder={placeholder}
-                            onReady={onReady}
-                            onFocus={onFocus}
-                        />
-                    ) : (
-                        <RoosterEditor
-                            placeholder={placeholder}
-                            onChange={onChange}
-                            onReady={onReady}
-                            showBlockquoteToggle={showBlockquoteToggle}
-                            onBlockquoteToggleClick={onBlockquoteToggleClick}
-                            setToolbarConfig={setToolbarConfig}
-                            onPasteImage={onPasteImage}
-                            showModalLink={modalLink.showCallback}
-                            onFocus={onFocus}
-                            mailSettings={mailSettings}
-                            className={simple ? 'border rounded' : ''}
-                            openEmojiPicker={() => openEmojiPickerRef.current?.()}
-                        />
-                    )}
-
-                    {fileHover && hasDropzone && (
-                        <div
-                            onDragLeave={handleDragLeave}
-                            onDropCapture={handleDrop}
-                            className={classnames([
-                                'composer-editor-dropzone absolute-cover flex flex-justify-center flex-align-items-center rounded-xl',
-                                /*!isOutside && */ 'mx-6',
-                            ])}
-                        >
-                            <span className="composer-editor-dropzone-text no-pointer-events text-center color-weak">
-                                <img src={dragAndDrop} alt="" className="mb-4" />
-                                <br />
-                                {c('Info').t`Drop a file here to upload`}
-                            </span>
-                        </div>
-                    )}
+                    {onAddAttachments ? <Dropzone onDrop={onAddAttachments}>{editor}</Dropzone> : editor}
                 </div>
 
                 {hasToolbar && (

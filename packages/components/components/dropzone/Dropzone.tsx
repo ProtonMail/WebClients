@@ -1,92 +1,147 @@
-import { HTMLAttributes, ReactNode, useEffect, useState } from 'react';
+import { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import noop from '@proton/utils/noop';
-
-import { classnames } from '../../helpers';
+import { isDragFile } from '@proton/components/components';
+import { useDragOver } from '@proton/components/hooks';
+import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
+import clsx from '@proton/utils/clsx';
 
 import './Dropzone.scss';
 
-type Props = (Omit<HTMLAttributes<HTMLDivElement>, 'content'> &
-    Required<Pick<HTMLAttributes<HTMLDivElement>, 'onDrop' | 'onDragEnter' | 'onDragLeave'>>) & {
+export type DropzoneSize = 'small' | 'medium' | 'large';
+export type DropzoneShape = 'norm' | 'transparent' | 'flashy' | 'invisible';
+
+interface DropzoneProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onDrop'> {
     /**
-     * When true, reveals the overlay and content
+     * Action to trigger when dropping files on top of the dropzone
      */
-    isHovered: boolean;
+    onDrop: (files: File[]) => void;
     /**
-     * The content to show when dragging over the dropzone
+     * Content to display when no hover
      */
-    content?: ReactNode;
-    isDisabled?: boolean;
-};
+    children: JSX.Element;
+    /**
+     * Custom content to show when dragging over the Dropzone
+     */
+    customContent?: ReactNode;
+    /**
+     * Dropzone's size : small | medium | large
+     */
+    size?: DropzoneSize;
+    /**
+     * Dropzone has a border
+     */
+    border?: boolean;
+    /**
+     * Dropzone's border is rounded
+     */
+    rounded?: boolean;
+    /**
+     * Dropzone's shade : norm | transparent | flashy | invisible
+     */
+    shape?: DropzoneShape;
+    /**
+     * Dropzone is always on dragOver state, content is always displayed
+     */
+    showDragOverState?: boolean;
+    /**
+     * Dropzone has no dragOver state, children is always displayed
+     */
+    disabled?: boolean;
+}
 
 const Dropzone = ({
-    children,
-    isHovered,
-    onDrop,
-    onDragEnter,
-    onDragLeave,
     className,
-    content,
-    isDisabled = false,
+    children,
+    customContent,
+    onDrop,
+    disabled = false,
+    showDragOverState = false,
+    size = 'medium',
+    rounded = true,
+    border = true,
+    shape = 'norm',
     ...rest
-}: Props) => {
-    const [allowHover, setAllowHover] = useState(true);
-
-    useEffect(() => {
-        // When dragging over quickly and accidentally dropping the file in the browser window,
-        // the browser prompts to handle it and you remain in the hovered state
-        const onBlur = () => {
-            setAllowHover(false);
-        };
-        // In case the UI bugs out
-        const timeout = setTimeout(() => {
-            if (isHovered) {
-                setAllowHover(false);
-            }
-        }, 5000);
-
-        window.addEventListener('blur', onBlur);
-
-        return () => {
-            window.removeEventListener('blur', onBlur);
-            clearTimeout(timeout);
-        };
-    }, [isHovered]);
-
-    const getContent = () => {
-        if (!content) {
-            return <span className="dropzone-text">{c('Info').t`Drop the file here to upload`}</span>;
-        }
-
-        return content;
+}: DropzoneProps) => {
+    const handleDrop = (event: ReactDragEvent) => {
+        onDrop([...event.dataTransfer.files]);
     };
+
+    const [hovering, dragProps] = useDragOver(isDragFile, 'move', { onDrop: handleDrop });
+
+    const isSmallDropView = size === 'small';
+    const isLargeDropView = size === 'large';
+
+    const isTransparentShape = shape === 'transparent';
+    const isFlashyShape = shape === 'flashy';
+    const isInvisible = shape === 'invisible';
+
+    // We need to display the dropzone content when:
+    // - We are on dragOver state
+    // - We force to always display the dragOver state
+    // BUT, we don't want to show it when:
+    // - Dropzone is completely disabled
+    // - The dropzone is invisible (we always show the children)
+    const shouldDisplayDropzoneContent = (hovering || showDragOverState) && !disabled && !isInvisible;
+
+    const dropzoneContent = shouldDisplayDropzoneContent && (
+        <div
+            className={clsx(
+                'dropzone-content dropzone-content--hovered h100 w100 absolute-cover flex flex-justify-center flex-align-items-center',
+                rounded && 'rounded-xl',
+                border && 'dropzone--bordered',
+                isTransparentShape && 'dropzone-content--transparent',
+                isFlashyShape && 'dropzone-content--flashy',
+                className
+            )}
+        >
+            {customContent ? (
+                customContent
+            ) : (
+                <div className="text-center">
+                    {!isSmallDropView && <img src={dragAndDrop} alt="" aria-hidden="true" className="mb1" />}
+                    {isLargeDropView ? (
+                        <p className={'mb0 mt1-5"'}>
+                            <span className="text-xl text-bold">{c('Info').t`Drop to import`}</span>
+                            <br />
+                            <span className={clsx(!isFlashyShape && 'color-weak')}>
+                                {c('Info').t`Your files will be encrypted and then saved`}
+                            </span>
+                        </p>
+                    ) : (
+                        <p className={clsx('m0', !isFlashyShape && 'color-weak')}>
+                            {c('Info').t`Drop file here to upload`}
+                        </p>
+                    )}
+                </div>
+            )}
+        </div>
+    );
+
+    // If invisible, we always show the children, even on dragOver state
+    if (isInvisible) {
+        return (
+            <div className="w100 h100" {...(!disabled ? rest : undefined)} {...dragProps}>
+                {children}
+            </div>
+        );
+    }
+
+    const canShowChildren = !!children || disabled;
 
     return (
         <div
-            className={className}
-            onDrop={!isDisabled ? onDrop : noop}
-            onDragEnter={(event) => {
-                setAllowHover(true);
-                onDragEnter(event);
-            }}
-            onDragOver={(event) => event.preventDefault()}
-            {...rest}
+            className={clsx('w100 h100 relative', !children && 'absolute-cover')}
+            {...(!disabled ? rest : undefined)}
+            {...dragProps}
         >
-            <div
-                className={classnames([
-                    'dropzone absolute-cover flex flex-justify-center flex-align-items-center',
-                    !isDisabled && allowHover && isHovered && 'is-hovered',
-                ])}
-                onDragLeave={onDragLeave}
-            >
-                <div className="no-pointer-events">{getContent()}</div>
-            </div>
-
-            <div className="dropzone-content flex flex-align-items-center flex-justify-center w100 h100">
-                {children}
-            </div>
+            {canShowChildren && (
+                <div className={clsx('dropzone-children flex flex-align-items-center flex-justify-center w100 h100')}>
+                    {children}
+                </div>
+            )}
+            {dropzoneContent}
         </div>
     );
 };
