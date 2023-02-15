@@ -21,7 +21,7 @@ import {
     calendarBuilder,
     calendarEventBuilder,
     messageBuilder,
-    mockApi,
+    mockApiWithServer,
     mockNotifications,
     rest,
     server,
@@ -81,7 +81,7 @@ describe('EmailReminderWidget', () => {
     afterAll(() => server.close());
 
     beforeEach(() => {
-        mockedUseApi.mockImplementation(() => mockApi);
+        mockedUseApi.mockImplementation(() => mockApiWithServer);
         mockedUseNotifications.mockImplementation(() => mockNotifications);
     });
 

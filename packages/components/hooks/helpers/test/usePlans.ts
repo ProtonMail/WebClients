@@ -1,30 +1,9 @@
-import { render } from '@testing-library/react';
+import { queryPlans } from '@proton/shared/lib/api/payments';
+import { addApiMock } from '@proton/testing';
 
-import { PLANS } from '@proton/shared/lib/constants';
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
-
-import { Loader } from '../../components/loader';
-import { usePlans, useSubscription } from '../../hooks';
-import MozillaInfoPanel from '../account/MozillaInfoPanel';
-import SubscriptionsSection from './SubscriptionsSection';
-
-jest.mock('../../hooks');
-jest.mock('../../components/loader', () => ({
-    __esModule: true,
-    Loader: jest.fn(() => null),
-}));
-jest.mock('../account/MozillaInfoPanel', () => ({
-    __esModule: true,
-    default: jest.fn(() => null),
-}));
-
-const mockedUsePlans = usePlans as jest.Mock<ReturnType<typeof usePlans>>;
-const mockedUseSubscription = useSubscription as jest.Mock<ReturnType<typeof useSubscription>>;
-
-describe('SubscriptionsSection', () => {
-    let subscription: SubscriptionModel;
-    let upcoming: any;
-    let plans: any = [
+export const plansDefaultResponse = {
+    Code: 1000,
+    Plans: [
         {
             ID: 'oVdQDF56OUBX2NOQ1BhY8ZWw96hw6B8r5TttqqwvJmcgTaHU30FRPn9jX3Q2l2V60Li-T8deZHwgA2VpI0ISiQ==',
             ParentMetaPlanID:
@@ -48,9 +27,9 @@ describe('SubscriptionsSection', () => {
                 '24': 8376,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -80,9 +59,9 @@ describe('SubscriptionsSection', () => {
                 '24': 8376,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -112,9 +91,9 @@ describe('SubscriptionsSection', () => {
                 '24': 15576,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -146,11 +125,11 @@ describe('SubscriptionsSection', () => {
                 '30': 29970,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '15': 1708601520,
-                '24': 1732275120,
-                '30': 1747913520,
+                '1': 1678452604,
+                '12': 1707569404,
+                '15': 1715345404,
+                '24': 1739191804,
+                '30': 1754830204,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -180,9 +159,9 @@ describe('SubscriptionsSection', () => {
                 '24': 19176,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -212,9 +191,9 @@ describe('SubscriptionsSection', () => {
                 '24': 19176,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -244,9 +223,9 @@ describe('SubscriptionsSection', () => {
                 '24': 23976,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -276,9 +255,9 @@ describe('SubscriptionsSection', () => {
                 '24': 31176,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -308,9 +287,9 @@ describe('SubscriptionsSection', () => {
                 '24': 3120,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -340,9 +319,9 @@ describe('SubscriptionsSection', () => {
                 '24': 15576,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -372,9 +351,9 @@ describe('SubscriptionsSection', () => {
                 '24': 23976,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -404,9 +383,9 @@ describe('SubscriptionsSection', () => {
                 '24': 31176,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -436,9 +415,9 @@ describe('SubscriptionsSection', () => {
                 '24': 31176,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -468,9 +447,9 @@ describe('SubscriptionsSection', () => {
                 '24': 35976,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -500,9 +479,9 @@ describe('SubscriptionsSection', () => {
                 '24': 47976,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -532,156 +511,18 @@ describe('SubscriptionsSection', () => {
                 '24': 19176,
             },
             PeriodEnd: {
-                '1': 1671708720,
-                '12': 1700652720,
-                '24': 1732275120,
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             Currency: 'CHF',
             Quantity: 1,
             Cycle: 1,
             Amount: 1199,
         },
-    ];
+    ],
+};
 
-    beforeEach(() => {
-        subscription = {
-            ID: 'h3fiHve6jGce6SiAB14JJpusSHlRZT01jQWI-DK6Cc4aY8w_4qqyL8eNS021UNUJAZmT3XT5XnhQWIW97XYkpw==',
-            InvoiceID: 'rUznuSfHQUAWn1-Su6KrQaptDCsOBzrINayg3j8MZ55-BrWXg5gghfiYCRWdvdobFbp5PZa-FfHC04boZv39Zg==',
-            Cycle: 1,
-            PeriodStart: 1669048027,
-            PeriodEnd: 1671640027,
-            CreateTime: 1669048027,
-            CouponCode: null,
-            Currency: 'CHF',
-            Amount: 499,
-            Discount: 0,
-            RenewAmount: 499,
-            Plans: [
-                {
-                    ID: 'Wb4NAqmiuqoA7kCHE28y92bBFfN8jaYQCLxHRAB96yGj-bh9SxguXC48_WSU-fRUjdAr-lx95c6rFLplgXyXYA==',
-                    Type: 1,
-                    Name: PLANS.MAIL,
-                    Title: 'Mail Plus',
-                    MaxDomains: 1,
-                    MaxAddresses: 10,
-                    MaxCalendars: 25,
-                    MaxSpace: 16106127360,
-                    MaxMembers: 1,
-                    MaxVPN: 0,
-                    MaxTier: 0,
-                    Services: 1,
-                    Features: 1,
-                    State: 1,
-                    Cycle: 1,
-                    Currency: 'CHF',
-                    Amount: 499,
-                    Quantity: 1,
-                    Pricing: null as any,
-                },
-            ],
-            isManagedByMozilla: false,
-            External: null as any,
-        };
-
-        upcoming = {
-            ID: 'otn4BE2IqNdCc7EBbk2RRgWcz7MM9uND1crSP6JEr77_NQFaFH4cpTd-hUPhfS6AfEqYHEJAmQTlqGVIGHhu6g==',
-            InvoiceID: 'rUznuSfHQUAWn1-Su6KrQaptDCsOBzrINayg3j8MZ55-BrWXg5gghfiYCRWdvdobFbp5PZa-FfHC04boZv39Zg==',
-            Cycle: 24,
-            PeriodStart: 1671640027,
-            PeriodEnd: 1734798427,
-            CreateTime: 1669119757,
-            CouponCode: 'BUNDLE',
-            Currency: 'CHF',
-            Amount: 499,
-            Discount: 0,
-            RenewDiscount: 0,
-            RenewAmount: 8376,
-            Plans: [
-                {
-                    ID: 'Wb4NAqmiuqoA7kCHE28y92bBFfN8jaYQCLxHRAB96yGj-bh9SxguXC48_WSU-fRUjdAr-lx95c6rFLplgXyXYA==',
-                    ParentMetaPlanID:
-                        'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
-                    Type: 1,
-                    Name: 'mail2022',
-                    Title: 'Mail Plus',
-                    MaxDomains: 1,
-                    MaxAddresses: 10,
-                    MaxCalendars: 25,
-                    MaxSpace: 16106127360,
-                    MaxMembers: 1,
-                    MaxVPN: 0,
-                    MaxTier: 0,
-                    Services: 1,
-                    Features: 1,
-                    State: 1,
-                    Cycle: 24,
-                    Currency: 'CHF',
-                    Amount: 8376,
-                    Quantity: 1,
-                },
-            ],
-            Renew: 1,
-        };
-
-        mockedUseSubscription.mockReturnValue([subscription, false, null as any]);
-
-        mockedUsePlans.mockReturnValue([plans, false, null as any]);
-    });
-
-    it('should return Loader if subscription is loading', () => {
-        mockedUseSubscription.mockReturnValue([subscription, true, null as any]);
-
-        render(<SubscriptionsSection />);
-
-        expect(Loader).toHaveBeenCalled();
-    });
-
-    it('should return Loader if plans is loading', () => {
-        mockedUsePlans.mockReturnValue([plans, true, null as any]);
-
-        render(<SubscriptionsSection />);
-
-        expect(Loader).toHaveBeenCalled();
-    });
-
-    it('should return MozillaInfoPanel if isManagedByMozilla is true', () => {
-        subscription.isManagedByMozilla = true;
-        render(<SubscriptionsSection />);
-        expect(MozillaInfoPanel).toHaveBeenCalled();
-    });
-
-    it('should render current subscription', () => {
-        const { container } = render(<SubscriptionsSection />);
-
-        expect(container).toHaveTextContent('Mail Plus*');
-        expect(container).toHaveTextContent('4.99');
-        expect(container).toHaveTextContent('Active');
-
-        expect(container).not.toHaveTextContent('Upcoming');
-    });
-
-    it('should render current upcoming subscription', () => {
-        subscription.UpcomingSubscription = upcoming;
-
-        const { container } = render(<SubscriptionsSection />);
-
-        expect(container).toHaveTextContent('Mail Plus');
-        expect(container).toHaveTextContent('4.99');
-        expect(container).toHaveTextContent('Active');
-
-        expect(container).toHaveTextContent('Mail Plus*');
-        expect(container).toHaveTextContent('83.76');
-        expect(container).toHaveTextContent('Upcoming');
-    });
-
-    it('should show renewal date as end of the current subscription if there is no upcoming one', () => {
-        const { container } = render(<SubscriptionsSection />);
-        expect(container).toHaveTextContent('* Renews automatically on Dec 21, 2022');
-    });
-
-    it('should show renewal date as end of the upcoming subscription if there is one', () => {
-        subscription.UpcomingSubscription = upcoming;
-        const { container } = render(<SubscriptionsSection />);
-        expect(container).toHaveTextContent('* Renews automatically on Dec 21, 2024');
-    });
-});
+export function mockPlansApi(plans = plansDefaultResponse) {
+    addApiMock(queryPlans({}).url, () => plans);
+}

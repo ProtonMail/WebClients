@@ -14,7 +14,7 @@ function handleResponse(response: Response) {
     });
 }
 
-export const mockApi = jest.fn((config: any) => {
+export const mockApiWithServer = jest.fn((config: any) => {
     const url = new URL(`http://localhost/${config.url}`);
 
     if (config.params) {
