@@ -47,14 +47,8 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     const [cancelModalProps, showCancelModal, renderCancelModal] = useModalState();
 
     const handleReconnectOAuth = async (ImporterID: string) => {
-        const useNewGmailScope = products?.includes(ImportType.MAIL) && useNewScopeFeature.feature?.Value === true;
-
         // TODO: Typing should be more effective here
-        const scopes = getScopeFromProvider(
-            provider as unknown as ImportProvider,
-            products as unknown as ImportType[],
-            useNewGmailScope
-        );
+        const scopes = getScopeFromProvider(provider as unknown as ImportProvider, products as unknown as ImportType[]);
 
         triggerOAuthPopup({
             // TODO: Typing should be more effective here
