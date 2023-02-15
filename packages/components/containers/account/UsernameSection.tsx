@@ -88,6 +88,7 @@ const UsernameSection = ({ app }: Props) => {
                                             setTmpAddress(primaryAddress);
                                             setModalOpen(true);
                                         }}
+                                        aria-label={c('Action').t`Edit display name`}
                                     >
                                         {c('Action').t`Edit`}
                                     </InlineLinkButton>
