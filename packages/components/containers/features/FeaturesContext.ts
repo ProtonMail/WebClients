@@ -71,7 +71,6 @@ export enum FeatureCode {
     SLIntegration = 'SLIntegration',
     BlockSenderInToolbar = 'BlockSenderInToolbar',
     SpotlightAutoAddedInvites = 'SpotlightAutoAddedInvites',
-    EasySwitchGmailNewScope = 'EasySwitchGmailNewScope',
     Offers = 'Offers',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
     OfferSpecialOffer2022 = 'OfferSpecialOffer2022',
