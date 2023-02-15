@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import {
-    AlertModal,
     FeatureCode,
     Field,
     Href,
@@ -13,6 +12,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     PrimaryButton,
+    Prompt,
     Row,
     Tooltip,
     generateUID,
@@ -290,13 +290,13 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 </ModalTwoFooter>
             </ModalTwo>
 
-            <AlertModal
+            <Prompt
                 title={c('Title').t`Unsubscribe request sent`}
                 buttons={[<Button onClick={unsubscribedModalProps.onClose}>{c('Action').t`Close`}</Button>]}
                 {...unsubscribedModalProps}
             >
                 <span>{unsubscribeSLtext}</span>
-            </AlertModal>
+            </Prompt>
 
             {renderSimpleLoginModal && <SimpleLoginModal {...simpleLoginModalProps} />}
         </div>

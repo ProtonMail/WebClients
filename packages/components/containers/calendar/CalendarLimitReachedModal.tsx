@@ -4,8 +4,8 @@ import { Button, ButtonLike } from '@proton/atoms';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 
-import { AlertModal } from '../../components/alertModal';
 import { SettingsLink } from '../../components/link';
+import { Prompt } from '../../components/prompt';
 
 interface Props {
     onClose?: () => void;
@@ -18,7 +18,7 @@ const CalendarLimitReachedModal = ({ open, onClose, isFreeUser }: Props) => {
     const submitButtonText = isFreeUser ? c('Modal action').t`Upgrade` : c('Modal action').t`Manage calendars`;
 
     return (
-        <AlertModal
+        <Prompt
             open={open}
             title={c('Modal title').t`Cannot add more calendars`}
             buttons={[
@@ -31,7 +31,7 @@ const CalendarLimitReachedModal = ({ open, onClose, isFreeUser }: Props) => {
         >
             <p>{maxReachedText}</p>
             <p>{addNewCalendarText}</p>
-        </AlertModal>
+        </Prompt>
     );
 };
 

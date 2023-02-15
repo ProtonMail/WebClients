@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { AlertModal } from '../../../components';
+import { Prompt } from '../../../components';
 
 interface DeleteLinkConfirmationModalProps {
     onClose: () => void;
@@ -11,7 +11,7 @@ interface DeleteLinkConfirmationModalProps {
 }
 
 const DeleteLinkConfirmationModal = ({ onClose, onConfirm, isOpen }: DeleteLinkConfirmationModalProps) => (
-    <AlertModal
+    <Prompt
         open={isOpen}
         onClose={onClose}
         buttons={[
@@ -22,7 +22,7 @@ const DeleteLinkConfirmationModal = ({ onClose, onConfirm, isOpen }: DeleteLinkC
     >
         {c('Info')
             .t`Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.`}
-    </AlertModal>
+    </Prompt>
 );
 
 export default DeleteLinkConfirmationModal;

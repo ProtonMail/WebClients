@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     ModalProps,
+    Prompt,
     useCalendarShareInvitationActions,
     useLoading,
     useNotifications,
@@ -105,7 +105,7 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
           ];
 
     return (
-        <AlertModal {...rest} title={title} buttons={buttons}>
+        <Prompt {...rest} title={title} buttons={buttons}>
             {isInvitedAddressDisabled ? (
                 <>
                     <p>
@@ -123,7 +123,7 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
                         .jt`${calendarOwnerDisplayName} shared their calendar ${boldCalendarName} with you.`}
                 </p>
             )}
-        </AlertModal>
+        </Prompt>
     );
 };
 

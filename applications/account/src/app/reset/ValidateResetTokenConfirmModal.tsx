@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal } from '@proton/components';
+import { Prompt } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 interface ModalProps {
@@ -15,7 +15,7 @@ const ValidateResetTokenConfirmModal = ({ onClose, onConfirm, open }: ModalProps
         <span className="text-bold" key="lose-access">{c('Info').t`lose access to all current encrypted data`}</span>
     );
     return (
-        <AlertModal
+        <Prompt
             open={open}
             onClose={onClose}
             title={c('Title').t`Warning!`}
@@ -39,7 +39,7 @@ const ValidateResetTokenConfirmModal = ({ onClose, onConfirm, open }: ModalProps
                     .t`This will also disable any two-factor authentication method associated with this account.`}</p>
                 <p className="mt0 mb0">{c('Info').t`Continue anyway?`}</p>
             </div>
-        </AlertModal>
+        </Prompt>
     );
 };
 

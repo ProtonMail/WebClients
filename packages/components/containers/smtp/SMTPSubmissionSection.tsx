@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import {
-    AlertModal,
     Loader,
+    Prompt,
     SettingsParagraph,
     SettingsSection,
     SettingsSectionWide,
@@ -187,7 +187,7 @@ const SMTPSubmissionSection = () => {
                 </TableBody>
             </Table>
             {renderConfirmModal ? (
-                <AlertModal
+                <Prompt
                     title={c('Title').t`Delete ${tokenNameToRemove}?`}
                     buttons={[
                         <Button
@@ -202,7 +202,7 @@ const SMTPSubmissionSection = () => {
                 >
                     <p>{c('Warning')
                         .t`The device or service using this token will no longer be able to send email through ${MAIL_APP_NAME}.`}</p>
-                </AlertModal>
+                </Prompt>
             ) : null}
             {renderGenerateTokenModal ? (
                 <SMTPTokenModal

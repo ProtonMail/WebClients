@@ -4,9 +4,9 @@ import { Button } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { AlertModal, AlertModalProps, Href } from '../../../components';
+import { Href, Prompt, PromptProps } from '../../../components';
 
-interface Props extends Omit<AlertModalProps, 'children' | 'title' | 'buttons'> {
+interface Props extends Omit<PromptProps, 'children' | 'title' | 'buttons'> {
     onConfirm: () => void;
 }
 
@@ -18,7 +18,7 @@ export const NewVisionaryWarningModal = ({
     const visionary = 'Visionary';
     const plan = 'visionary';
     return (
-        <AlertModal
+        <Prompt
             title={(() => {
                 if (type === 'switch') {
                     return c('new_plans: title').t`Switch plans?`;
@@ -86,13 +86,13 @@ export const NewVisionaryWarningModal = ({
             })()}{' '}
             <Href url={getKnowledgeBaseUrl('/upgrading-to-new-proton-plan/#switch-from-visionary')}>{c('Info')
                 .t`Learn more`}</Href>
-        </AlertModal>
+        </Prompt>
     );
 };
 
 export const DiscountWarningModal = ({ onConfirm, type, ...rest }: Props & { type: 'downgrade' | 'delete' }) => {
     return (
-        <AlertModal
+        <Prompt
             title={(() => {
                 if (type === 'delete') {
                     return c('new_plans: title').t`Delete account?`;
@@ -132,6 +132,6 @@ export const DiscountWarningModal = ({ onConfirm, type, ...rest }: Props & { typ
                 return c('new_plans: info')
                     .t`You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.`;
             })()}
-        </AlertModal>
+        </Prompt>
     );
 };

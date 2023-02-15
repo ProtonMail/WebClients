@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import noop from '@proton/utils/noop';
 
-import { AlertModal, AlertModalProps } from '../../../components';
+import { Prompt, PromptProps } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 
 enum STEPS {
@@ -13,7 +13,7 @@ enum STEPS {
     DELETE_KEY,
 }
 
-interface Props extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {
+interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     fingerprint: string;
     onDelete: () => Promise<void>;
     onExport?: () => Promise<void>;
@@ -38,9 +38,9 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
     };
 
     const stepProps: {
-        children: AlertModalProps['children'];
-        buttons: AlertModalProps['buttons'];
-        title: AlertModalProps['title'];
+        children: PromptProps['children'];
+        buttons: PromptProps['buttons'];
+        title: PromptProps['title'];
     } = (() => {
         if (step === STEPS.EXPORT_KEY) {
             return {
@@ -110,7 +110,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
         throw new Error('Unsupported step');
     })();
 
-    return <AlertModal {...rest} {...stepProps} />;
+    return <Prompt {...rest} {...stepProps} />;
 };
 
 export default DeleteKeyModal;

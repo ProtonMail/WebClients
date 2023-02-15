@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     Href,
     Icon,
+    Prompt,
     useApi,
     useEventManager,
     useLoading,
@@ -89,7 +89,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                     </Button>
                 </span>
 
-                <AlertModal
+                <Prompt
                     title={c('Title').t`Mark email as legitimate`}
                     buttons={[
                         <Button color="norm" onClick={() => withLoading(markAsLegitimate())}>{c('Action')
@@ -100,7 +100,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                 >
                     {c('Info')
                         .t`We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?`}
-                </AlertModal>
+                </Prompt>
             </div>
         );
     }

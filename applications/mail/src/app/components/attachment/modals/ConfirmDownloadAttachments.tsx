@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, Href, ModalProps, PrimaryButton } from '@proton/components';
+import { Href, ModalProps, PrimaryButton, Prompt } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -42,7 +42,7 @@ const ConfirmDownloadAttachments = ({ downloads, onResolve, onReject, ...rest }:
           );
 
     return (
-        <AlertModal
+        <Prompt
             title={title}
             buttons={[
                 <PrimaryButton onClick={onResolve}>{c('Action').t`Download`}</PrimaryButton>,
@@ -59,7 +59,7 @@ const ConfirmDownloadAttachments = ({ downloads, onResolve, onReject, ...rest }:
                 `Do you want to download these attachments anyway?`,
                 total
             )}
-        </AlertModal>
+        </Prompt>
     );
 };
 

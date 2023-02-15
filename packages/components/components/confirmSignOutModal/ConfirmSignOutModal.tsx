@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, AlertModalProps, Checkbox, Href, Label, PrivateAuthenticationStore } from '@proton/components';
+import { Checkbox, Href, Label, PrivateAuthenticationStore, Prompt, PromptProps } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { User } from '@proton/shared/lib/interfaces';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
@@ -20,7 +20,7 @@ export const shouldShowConfirmSignOutModal = ({
     return hasEnabledDeviceBasedRecovery || getHasRecoveryMessage(user.ID);
 };
 
-interface Props extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {
+interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     onSignOut: (clearData: boolean) => void;
 }
 
@@ -28,7 +28,7 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
     const [clearData, setClearData] = useState(false);
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Sign out`}
             buttons={[
                 <Button
@@ -62,7 +62,7 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
                     </Label>
                 </div>
             </div>
-        </AlertModal>
+        </Prompt>
     );
 };
 

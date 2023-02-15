@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
 import { BRAND_NAME, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
-import { AlertModal, ModalProps } from '../../components';
+import { ModalProps, Prompt } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 import { PaymentTokenResult } from './interface';
 import { process } from './paymentTokenHelper';
@@ -66,7 +66,7 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Add PayPal payment method`}
             onClose={onClose}
             buttons={[
@@ -102,7 +102,7 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
                     </div>
                 </>
             )}
-        </AlertModal>
+        </Prompt>
     );
 };
 

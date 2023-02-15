@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert, AlertModal, ErrorButton, useModalState } from '@proton/components/components';
+import { Alert, ErrorButton, Prompt, useModalState } from '@proton/components/components';
 import { SettingsParagraph } from '@proton/components/containers';
 import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
 import { removeCalendar, removeMember, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
@@ -126,7 +126,7 @@ const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared 
     return (
         <>
             {renderDeleteModal && (
-                <AlertModal
+                <Prompt
                     {...deleteModal}
                     title={modalTitle}
                     buttons={[
@@ -139,7 +139,7 @@ const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared 
                 >
                     <div className="mb1">{modalText}</div>
                     {deleteDefaultAlertText}
-                </AlertModal>
+                </Prompt>
             )}
             <SettingsSection className="container-section-sticky-section">
                 <div className="h2 mb0-25 text-bold">{c('Remove calendar section title').t`Remove calendar`}</div>

@@ -6,8 +6,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     Icon,
+    Prompt,
     classnames,
     useApi,
     useEventManager,
@@ -138,7 +138,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
                 </span>
             ) : null}
 
-            <AlertModal
+            <Prompt
                 title={c('Confirm modal title').t`Edit and reschedule`}
                 buttons={[
                     <Button
@@ -154,7 +154,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
             >
                 {c('Info')
                     .t`This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.`}
-            </AlertModal>
+            </Prompt>
         </div>
     );
 };

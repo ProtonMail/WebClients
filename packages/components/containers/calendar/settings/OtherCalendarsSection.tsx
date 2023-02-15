@@ -13,7 +13,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { CalendarMemberInvitation, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, AlertModal, Href, PrimaryButton, SettingsLink, Tooltip, useModalState } from '../../../components';
+import { Alert, Href, PrimaryButton, Prompt, SettingsLink, Tooltip, useModalState } from '../../../components';
 import { useApi, useEventManager, useFeature, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { SettingsParagraph } from '../../account';
@@ -144,7 +144,7 @@ const OtherCalendarsSection = ({
 
     return (
         <>
-            <AlertModal
+            <Prompt
                 open={deleteCalendarModal.isOpen}
                 title={c('Title').t`Remove calendar`}
                 buttons={[
@@ -165,7 +165,7 @@ const OtherCalendarsSection = ({
                 onClose={() => confirm.current?.reject()}
             >
                 {c('Info').t`The calendar will be removed from your account.`}
-            </AlertModal>
+            </Prompt>
 
             {renderSubscribedCalendarModal && <SubscribedCalendarModal {...subscribedCalendarModal} />}
             {calendarModal.props?.editCalendar && (

@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, useModalState } from '@proton/components';
+import { Prompt, useModalState } from '@proton/components';
 import { useConversationCounts, useMessageCounts } from '@proton/components/hooks';
 import { useMailSettings } from '@proton/components/hooks/useMailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -63,7 +63,7 @@ export const useScheduleSend = ({
     const loadingScheduleCount = loadingMailSettings || loadingConversationCounts || loadingMessageCounts;
 
     const modal = (
-        <AlertModal
+        <Prompt
             title={c('Confirm modal title').t`Message saved to Drafts`}
             buttons={[
                 <Button color="norm" onClick={waitBeforeScheduleModalProps.onClose}>{c('Action').t`Got it`}</Button>,
@@ -72,7 +72,7 @@ export const useScheduleSend = ({
         >
             {c('Info')
                 .t`Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.`}
-        </AlertModal>
+        </Prompt>
     );
 
     const handleScheduleSendModal = async () => {

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { disableTotp } from '@proton/shared/lib/api/settings';
 
-import { AlertModal, ModalProps, useModalState } from '../../../components';
+import { ModalProps, Prompt, useModalState } from '../../../components';
 import { useEventManager, useLoading, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 
@@ -27,7 +27,7 @@ const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                     }}
                 />
             )}
-            <AlertModal
+            <Prompt
                 {...rest}
                 title={c('Title').t`Disable two-factor authentication`}
                 onClose={onClose}
@@ -47,7 +47,7 @@ const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                 ]}
             >
                 {c('Info').t`Are you sure you want to disable two-factor authentication?`}
-            </AlertModal>
+            </Prompt>
         </>
     );
 };
