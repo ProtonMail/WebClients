@@ -34,18 +34,12 @@ const useOAuthModal = () => {
 
     // Initial loading of all required data at later stage, ensure everything is loaded ahead of time
     const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
-    const easySwitchGmailNewScope = useFeature(FeatureCode.EasySwitchGmailNewScope);
     const [, loadingAddresses] = useAddresses();
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingCalendars] = useCalendars();
     const initialLoading =
-        loadingAddresses ||
-        loadingCalendars ||
-        loadingFolders ||
-        loadingLabels ||
-        easySwitchFeature.loading ||
-        easySwitchGmailNewScope.loading;
+        loadingAddresses || loadingCalendars || loadingFolders || loadingLabels || easySwitchFeature.loading;
 
     const triggerOAuth = (tempScopes?: string[]) => {
         const finalScopes = scopes?.join(' ') ?? tempScopes?.join(' ');

@@ -2,8 +2,7 @@ import {
     G_OAUTH_SCOPE_CALENDAR,
     G_OAUTH_SCOPE_CONTACTS,
     G_OAUTH_SCOPE_DEFAULT,
-    G_OAUTH_SCOPE_MAIL,
-    G_OAUTH_SCOPE_MAIL_NEW_SCOPE,
+    G_OAUTH_SCOPE_MAIL_READONLY,
     O_OAUTH_SCOPE_CALENDAR,
     O_OAUTH_SCOPE_CONTACTS,
     O_OAUTH_SCOPE_DEFAULT,
@@ -36,10 +35,7 @@ describe('useStepProducts tests', () => {
 
     it('Should test all possible gmail scopes', () => {
         const scopeEmail = getScopeFromProvider(ImportProvider.GOOGLE, [ImportType.MAIL]);
-        expect(scopeEmail).toStrictEqual([...G_OAUTH_SCOPE_DEFAULT, ...G_OAUTH_SCOPE_MAIL]);
-
-        const scopeNewEmail = getScopeFromProvider(ImportProvider.GOOGLE, [ImportType.MAIL], true);
-        expect(scopeNewEmail).toStrictEqual([...G_OAUTH_SCOPE_DEFAULT, ...G_OAUTH_SCOPE_MAIL_NEW_SCOPE]);
+        expect(scopeEmail).toStrictEqual([...G_OAUTH_SCOPE_DEFAULT, ...G_OAUTH_SCOPE_MAIL_READONLY]);
 
         const scopeContact = getScopeFromProvider(ImportProvider.GOOGLE, [ImportType.CONTACTS]);
         expect(scopeContact).toStrictEqual([...G_OAUTH_SCOPE_DEFAULT, ...G_OAUTH_SCOPE_CONTACTS]);
