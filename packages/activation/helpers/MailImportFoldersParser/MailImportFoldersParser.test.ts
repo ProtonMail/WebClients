@@ -86,7 +86,7 @@ describe('MailFolderMapping', () => {
             expect(foldersMapping.Inbox.folderParentID).toBeUndefined();
             expect(foldersMapping['p/c2'].folderParentID).toBe('p');
             expect(foldersMapping['p/c3'].folderParentID).toBe('p');
-            expect(foldersMapping['p/c2/cc'].folderParentID).toBe('c2');
+            expect(foldersMapping['p/c2/cc'].folderParentID).toBe('p/c2');
         });
 
         it('Should contain expected childIDS', () => {
