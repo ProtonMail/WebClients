@@ -1,3 +1,21 @@
+# Release 5.0.11.0 – February 22, 2023
+
+## Improved
+
+-   Added count of selected files
+-   Improved primary Sidebar upload button to include both file and folder uploads
+-   Added the actual size of the file in the details modal
+-   Empty trash button is active before everything is loaded
+-   Number of accesses changed to the more precise number of downloads
+-   Stop sharing is now always visible in sharing modal
+
+## Fixed
+
+-   Reversed the direction of the sorting arrow
+-   View with the empty search result
+-   Redirect after navigating to a non-existing folder
+-   Error logs when canceling the transfer
+
 # Release 5.0.10.0 – January 25, 2023
 
 ## Improved
