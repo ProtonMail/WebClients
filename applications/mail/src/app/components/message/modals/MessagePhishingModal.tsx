@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, ErrorButton, ModalProps, useApi, useNotifications } from '@proton/components';
+import { ErrorButton, ModalProps, Prompt, useApi, useNotifications } from '@proton/components';
 import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -41,7 +41,7 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Info').t`Confirm phishing report`}
             buttons={[
                 <ErrorButton onClick={handleConfirmPhishing}>{c('Action').t`Confirm`}</ErrorButton>,
@@ -51,7 +51,7 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
         >
             {c('Info')
                 .t`Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, ModalProps } from '@proton/components';
+import { ModalProps, Prompt } from '@proton/components';
 
 interface Props extends ModalProps {
     isMessage: boolean;
@@ -21,7 +21,7 @@ const MoveScheduledModal = ({ isMessage, onResolve, onReject, onCloseCustomActio
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Moving a scheduled message`}
             buttons={[
                 <Button color="norm" onClick={onResolve}>{c('Action').t`OK`}</Button>,
@@ -30,7 +30,7 @@ const MoveScheduledModal = ({ isMessage, onResolve, onReject, onCloseCustomActio
             {...rest}
         >
             {text}
-        </AlertModal>
+        </Prompt>
     );
 };
 export default MoveScheduledModal;

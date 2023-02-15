@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { AlertModal, ModalProps } from '@proton/components/components';
+import { ModalProps, Prompt } from '@proton/components/components';
 import { External, Subscription } from '@proton/shared/lib/interfaces';
 
 interface Props extends ModalProps {
@@ -28,7 +28,7 @@ const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
         .t`Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${subscriptionManager} account`;
 
     return (
-        <AlertModal
+        <Prompt
             title={
                 // translator: subscriptionManager currently can be "Google Play" or "Apple App Store"
                 c('Subscription change warning').t`Manage your subscription on ${subscriptionManagerShort}`
@@ -46,7 +46,7 @@ const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
             {...rest}
         >
             <p className="m0">{userText}</p>
-        </AlertModal>
+        </Prompt>
     );
 };
 

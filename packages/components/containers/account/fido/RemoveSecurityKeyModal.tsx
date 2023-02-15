@@ -5,7 +5,7 @@ import { removeSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import noop from '@proton/utils/noop';
 
-import { AlertModal, ModalProps, useModalState } from '../../../components';
+import { ModalProps, Prompt, useModalState } from '../../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 
@@ -59,7 +59,7 @@ const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
                     }}
                 />
             )}
-            <AlertModal
+            <Prompt
                 {...rest}
                 title={
                     type === 'all'
@@ -85,7 +85,7 @@ const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
             >
                 {type === 'all' && c('fido2: Info').t`This will delete all security keys linked to your account.`}
                 {type === 'single' && c('fido2: Info').jt`Are you sure you want to delete security key ${name}?`}
-            </AlertModal>
+            </Prompt>
         </>
     );
 };

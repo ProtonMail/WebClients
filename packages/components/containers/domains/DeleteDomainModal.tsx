@@ -4,10 +4,10 @@ import { Button } from '@proton/atoms';
 import { deleteDomain } from '@proton/shared/lib/api/domains';
 import { Domain } from '@proton/shared/lib/interfaces';
 
-import { Alert, AlertModal, AlertModalProps, ErrorButton } from '../../components';
+import { Alert, ErrorButton, Prompt, PromptProps } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
-interface Props extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {
+interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     domain: Domain;
 }
 
@@ -25,7 +25,7 @@ const DeleteDomainModal = ({ domain, ...rest }: Props) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Delete ${domain.DomainName}`}
             buttons={[
                 <ErrorButton
@@ -41,7 +41,7 @@ const DeleteDomainModal = ({ domain, ...rest }: Props) => {
             <Alert className="mb1" type="info">{c('Info')
                 .t`Please note that if you delete this domain, all the addresses associated with it will be disabled.`}</Alert>
             <Alert className="mb1" type="error">{c('Info').t`Are you sure you want to delete this domain?`}</Alert>
-        </AlertModal>
+        </Prompt>
     );
 };
 

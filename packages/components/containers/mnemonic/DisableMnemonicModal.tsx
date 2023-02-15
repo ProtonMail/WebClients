@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 
-import { AlertModal, ModalProps, useModalState } from '../../components';
+import { ModalProps, Prompt, useModalState } from '../../components';
 import { useEventManager, useNotifications } from '../../hooks';
 import AuthModal from '../password/AuthModal';
 
@@ -33,7 +33,7 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
                     }}
                 />
             )}
-            <AlertModal
+            <Prompt
                 open={open}
                 title={c('Action').t`Disable recovery phrase?`}
                 buttons={[
@@ -49,7 +49,7 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
                     .t`This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.`}</p>
                 <p className="mb0">{c('Info')
                     .t`Enabling recovery by phrase again will generate a new recovery phrase.`}</p>
-            </AlertModal>
+            </Prompt>
         </>
     );
 };

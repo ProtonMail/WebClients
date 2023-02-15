@@ -5,7 +5,7 @@ import { deleteReportSummary, rollbackReportSummary } from '@proton/activation/s
 import { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.interface';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms';
-import { Alert, AlertModal, DropdownActions, useModalState } from '@proton/components';
+import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components';
 import { useLoading } from '@proton/components/hooks';
 
 interface Props {
@@ -46,7 +46,7 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
             <DropdownActions size="small" list={list} />
 
             {renderDeleteModal && (
-                <AlertModal
+                <Prompt
                     {...deleteModalProps}
                     title={c('Confirm modal title').t`Remove from the list?`}
                     buttons={[
@@ -64,11 +64,11 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
                     <Alert className="mb1" type="error">
                         {c('Warning').t`You will not see this import record in the list any more.`}
                     </Alert>
-                </AlertModal>
+                </Prompt>
             )}
 
             {renderRollbackModal && (
-                <AlertModal
+                <Prompt
                     {...rollbackModalProps}
                     title={c('Confirm modal title').t`Undo this import?`}
                     buttons={[
@@ -85,7 +85,7 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
                     <Alert className="mb1" type="error">
                         {c('Warning').t`This will remove all messages, folders, and labels created during the import.`}
                     </Alert>
-                </AlertModal>
+                </Prompt>
             )}
         </>
     );

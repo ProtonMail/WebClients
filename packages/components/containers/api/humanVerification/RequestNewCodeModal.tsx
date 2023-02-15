@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import noop from '@proton/utils/noop';
 
-import { AlertModal } from '../../../components';
+import { Prompt } from '../../../components';
 import { useLoading } from '../../../hooks';
 import { VerificationModel } from './interface';
 
@@ -19,7 +19,7 @@ const RequestNewCodeModal = ({ open, verificationModel, onEdit, onResend, onClos
     const strong = <strong key="email">{verificationModel.value}</strong>;
     const [loading, withLoading] = useLoading();
     return (
-        <AlertModal
+        <Prompt
             open={open}
             onClose={onClose}
             title={c('Title').t`Request new code`}
@@ -85,7 +85,7 @@ const RequestNewCodeModal = ({ open, verificationModel, onEdit, onResend, onClos
                         .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this phone number is incorrect, click "Edit" to correct it.`;
                 }
             })()}
-        </AlertModal>
+        </Prompt>
     );
 };
 

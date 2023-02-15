@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal } from '@proton/components';
+import { Prompt } from '@proton/components';
 
 interface Props {
     onClose: () => void;
@@ -11,7 +11,7 @@ interface Props {
 
 const MnemonicResetPasswordConfirmModal = ({ onClose, onConfirm, open }: Props) => {
     return (
-        <AlertModal
+        <Prompt
             open={open}
             onClose={onClose}
             title={c('Title').t`Reset password?`}
@@ -31,7 +31,7 @@ const MnemonicResetPasswordConfirmModal = ({ onClose, onConfirm, open }: Props) 
             <p className="m0">
                 {c('Info').t`This will sign you out of any active sessions and disable 2-factor authentication.`}
             </p>
-        </AlertModal>
+        </Prompt>
     );
 };
 

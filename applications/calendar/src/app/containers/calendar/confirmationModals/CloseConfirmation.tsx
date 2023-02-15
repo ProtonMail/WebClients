@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal } from '@proton/components';
+import { Prompt } from '@proton/components';
 
 interface CloseConfirmationModalProps {
     onClose: () => void;
@@ -11,7 +11,7 @@ interface CloseConfirmationModalProps {
 
 const CloseConfirmationModal = ({ onClose, onSubmit, isOpen }: CloseConfirmationModalProps) => {
     return (
-        <AlertModal
+        <Prompt
             title={c('Info').t`Discard changes?`}
             onClose={onClose}
             onSubmit={onSubmit}
@@ -22,7 +22,7 @@ const CloseConfirmationModal = ({ onClose, onSubmit, isOpen }: CloseConfirmation
             ]}
         >
             {c('Info').t`You will lose all unsaved changes.`}
-        </AlertModal>
+        </Prompt>
     );
 };
 
