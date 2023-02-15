@@ -1,4 +1,4 @@
-import { getImportReportsList, getImportsList } from '@proton/activation/api';
+import { getImportReportsList, getImportsList } from '@proton/activation/src/api';
 
 import updateCollection from '../helpers/updateCollection';
 

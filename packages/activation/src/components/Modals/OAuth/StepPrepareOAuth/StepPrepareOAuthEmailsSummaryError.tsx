@@ -1,0 +1,56 @@
+import { c } from 'ttag';
+
+import { MailImportPayloadError } from '@proton/activation/src/interface';
+import { Icon } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
+interface Props {
+    errors: MailImportPayloadError[];
+}
+
+const StepPrepareEmailsSummaryError = ({ errors }: Props) => {
+    return (
+        <div className="flex color-danger">
+            <Icon name="exclamation-circle-filled" className="mr0-5 flex-nowrap" style={{ marginTop: 4 }} />
+
+            <div className="flex-item-fluid">
+                {errors.includes(MailImportPayloadError.MAX_FOLDERS_LIMIT_REACHED) && (
+                    <div className="mb1">
+                        {c('Error')
+                            .t`There are too many folders in your external account. Please customize the import to delete some folders.`}
+                    </div>
+                )}
+
+                {errors.includes(MailImportPayloadError.LABEL_NAMES_TOO_LONG) && (
+                    <div className="mb1">
+                        {c('Error')
+                            .t`Some of your label names exceed ${MAIL_APP_NAME}'s maximum character limit. Please customize the import to edit these names.`}
+                    </div>
+                )}
+
+                {errors.includes(MailImportPayloadError.FOLDER_NAMES_TOO_LONG) && (
+                    <div className="mb1">
+                        {c('Error')
+                            .t`Some of your folder names exceed ${MAIL_APP_NAME}'s maximum character limit. Please customize the import to edit these names.`}
+                    </div>
+                )}
+
+                {errors.includes(MailImportPayloadError.UNAVAILABLE_NAMES) && (
+                    <div className="mb1">
+                        {c('Error')
+                            .t`Some of your label names are unavailable. Please customize the import to edit these names.`}
+                    </div>
+                )}
+
+                {errors.includes(MailImportPayloadError.RESERVED_NAMES) && (
+                    <div className="mb1">
+                        {c('Error')
+                            .t`Some of your label names are reserved. Please customize the import to edit these names.`}
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
+export default StepPrepareEmailsSummaryError;
