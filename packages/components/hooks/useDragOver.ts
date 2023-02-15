@@ -58,6 +58,7 @@ const useDragOver = (
     };
 
     const handleDrop = (event: DragEvent) => {
+        event.preventDefault();
         setDragOver(0);
         onDrop?.(event);
     };
