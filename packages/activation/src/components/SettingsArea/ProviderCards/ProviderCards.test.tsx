@@ -60,7 +60,7 @@ jest.mock('@proton/components/hooks/useFeature', () => () => {
     };
 });
 
-jest.mock('@proton/activation/src/hooks/useUserCalendars', () => () => [
+jest.mock('@proton/components/hooks/useCalendars', () => () => [
     [
         {
             ID: 'calendarId',

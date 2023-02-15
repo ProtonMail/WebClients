@@ -1,11 +1,16 @@
 import { useState } from 'react';
 
-import useUserCalendars from '@proton/activation/src/hooks/useUserCalendars';
 import { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useCalendars } from '@proton/components';
-import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { useCalendars, useUser } from '@proton/components';
+import {
+    getProbablyActiveCalendars,
+    getVisualCalendars,
+    getWritableCalendars,
+} from '@proton/shared/lib/calendar/calendar';
+import { willUserReachCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
+import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 export interface DerivedCalendarType {
@@ -14,7 +19,7 @@ export interface DerivedCalendarType {
     calendarLimitReached: boolean;
     selectedCalendarsCount: number;
     disabled: boolean;
-    calendarToFixCount: number;
+    calendarsToFixCount: number;
     canMerge: boolean;
     totalCalendarsCount: number;
     calendarsToBeMergedCount: number;
@@ -22,16 +27,19 @@ export interface DerivedCalendarType {
 
 const useCustomizeCalendarImportModal = () => {
     const [calendars = []] = useCalendars();
+    const [user] = useUser();
 
     const importerData = useEasySwitchSelector(selectOauthImportStateImporterData);
     const providerCalendars = importerData?.calendars?.calendars!;
 
-    const [userActiveCalendars] = useUserCalendars();
+    const visualCalendars = getVisualCalendars(calendars);
+    const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(visualCalendars));
+
     const [providerCalendarsState, setProviderCalendarsState] = useState<ImporterCalendar[]>(
         providerCalendars.map((calendar) => {
             return {
                 ...calendar,
-                newCalendar: !userActiveCalendars.some((cal) => cal.ID === calendar.id),
+                newCalendar: !activeWritableCalendars.some(({ ID }) => ID === calendar.id),
             };
         })
     );
@@ -59,21 +67,28 @@ const useCustomizeCalendarImportModal = () => {
     };
 
     const selectedCalendars = providerCalendarsState.filter((x) => x.checked);
-    const calendarsToBeCreatedCount = selectedCalendars.filter((cal) => cal.newCalendar).length;
-    const calendarLimitReached = calendarsToBeCreatedCount + calendars.length > MAX_CALENDARS_PAID;
+    const calendarsToBeCreatedCount = selectedCalendars.filter(({ newCalendar }) => newCalendar).length;
+    const calendarLimitReached = willUserReachCalendarsLimit(
+        visualCalendars,
+        calendarsToBeCreatedCount,
+        !user.hasPaidMail
+    );
     const selectedCalendarsCount = selectedCalendars.length;
     const disabled = calendarLimitReached || selectedCalendarsCount === 0;
-    const calendarToFixCount = Math.abs(MAX_CALENDARS_PAID - calendars.length - calendarsToBeCreatedCount);
-    const canMerge = userActiveCalendars.length > 0;
+    const canMerge = activeWritableCalendars.length > 0;
     const totalCalendarsCount = providerCalendarsState.length;
     const calendarsToBeMergedCount = providerCalendarsState.filter((cal) => !!cal.mergedTo).length;
+
+    const maxCalendars = user.hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE;
+    const totalCalendars = calendarsToBeCreatedCount + visualCalendars.length;
+    const calendarsToFixCount = totalCalendars - maxCalendars;
 
     const derivedValues: DerivedCalendarType = {
         calendarsToBeCreatedCount,
         calendarsToBeMergedCount,
         selectedCalendarsCount,
         totalCalendarsCount,
-        calendarToFixCount,
+        calendarsToFixCount,
         calendarLimitReached,
         disabled,
         canMerge,
@@ -85,7 +100,7 @@ const useCustomizeCalendarImportModal = () => {
         derivedValues,
         providerCalendarsState,
         setProviderCalendarsState,
-        activeWritableCalendars: userActiveCalendars,
+        activeWritableCalendars,
         handleCalendarToggle,
         handleMappingChange,
     };
