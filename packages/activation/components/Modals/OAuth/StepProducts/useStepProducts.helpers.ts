@@ -2,8 +2,7 @@ import {
     G_OAUTH_SCOPE_CALENDAR,
     G_OAUTH_SCOPE_CONTACTS,
     G_OAUTH_SCOPE_DEFAULT,
-    G_OAUTH_SCOPE_MAIL,
-    G_OAUTH_SCOPE_MAIL_NEW_SCOPE,
+    G_OAUTH_SCOPE_MAIL_READONLY,
     O_OAUTH_SCOPE_CALENDAR,
     O_OAUTH_SCOPE_CONTACTS,
     O_OAUTH_SCOPE_DEFAULT,
@@ -12,15 +11,11 @@ import {
 import { ImportProvider, ImportType } from '@proton/activation/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
-const getGoogleScopes = (products?: ImportType[], useGmailNewScope?: boolean) => {
+const getGoogleScopes = (products?: ImportType[]) => {
     const scopes = [...G_OAUTH_SCOPE_DEFAULT];
 
     if (products?.includes(ImportType.MAIL)) {
-        if (useGmailNewScope) {
-            scopes.push(...G_OAUTH_SCOPE_MAIL_NEW_SCOPE);
-        } else {
-            scopes.push(...G_OAUTH_SCOPE_MAIL);
-        }
+        scopes.push(...G_OAUTH_SCOPE_MAIL_READONLY);
     }
     if (products?.includes(ImportType.CALENDAR)) {
         scopes.push(...G_OAUTH_SCOPE_CALENDAR);
@@ -50,9 +45,9 @@ const getOutlookScopes = (products?: ImportType[]) => {
     return scopes;
 };
 
-export const getScopeFromProvider = (provider: ImportProvider, products: ImportType[], useGmailNewScope?: boolean) => {
+export const getScopeFromProvider = (provider: ImportProvider, products: ImportType[]) => {
     if (provider === ImportProvider.GOOGLE) {
-        return getGoogleScopes(products, useGmailNewScope);
+        return getGoogleScopes(products);
     }
 
     if (provider === ImportProvider.OUTLOOK) {

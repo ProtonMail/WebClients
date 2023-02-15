@@ -116,7 +116,7 @@ describe('OAuth url generation', () => {
 
         const googleMailsRedirect = getOAuthAuthorizationUrl({ provider, scope: scopesMail.join(' '), config });
         expect(googleMailsRedirect).toStrictEqual(
-            'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fmail.google.com%2F&prompt=consent&access_type=offline&client_id=string'
+            'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.readonly&prompt=consent&access_type=offline&client_id=string'
         );
 
         const scopesContact = getScopeFromProvider(provider, [ImportType.CONTACTS]);
@@ -156,7 +156,7 @@ describe('OAuth url generation', () => {
             config,
         });
         expect(googleAllScopes).toStrictEqual(
-            'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fmail.google.com%2F+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcontacts.readonly&prompt=consent&access_type=offline&client_id=string'
+            'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fwww.protontesting.com%2Foauth%2Fcallback&response_type=code&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcontacts.readonly&prompt=consent&access_type=offline&client_id=string'
         );
     });
 });

@@ -30,7 +30,6 @@ const useStepProducts = ({ triggerOAuth }: Props) => {
         throw new Error('products and provider must be defined');
     }
 
-    const useNewScopeFeature = useFeature(FeatureCode.EasySwitchGmailNewScope);
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const featureMap = easySwitchFeature.feature!.Value;
 
@@ -55,8 +54,7 @@ const useStepProducts = ({ triggerOAuth }: Props) => {
             products.push(ImportType.CALENDAR);
         }
 
-        const useNewGmailScope = useNewScopeFeature.feature?.Value === true;
-        const scopes = getScopeFromProvider(provider, products, useNewGmailScope);
+        const scopes = getScopeFromProvider(provider, products);
         dispatch(submitProductProvider({ products, scopes }));
 
         if (provider === ImportProvider.OUTLOOK) {
