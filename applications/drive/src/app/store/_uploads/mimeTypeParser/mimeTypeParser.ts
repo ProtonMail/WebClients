@@ -13,13 +13,16 @@ import videoSignatures from './signatureChecks/videoSignatures';
 // Many mime-types can be detected within this range
 const minimumBytesToCheck = 4100;
 
-function mimeTypeFromSignature(checker: ReturnType<typeof SignatureChecker>): SupportedMimeTypes | undefined {
+function mimeTypeFromSignature(
+    checker: ReturnType<typeof SignatureChecker>,
+    fileName?: File['name']
+): SupportedMimeTypes | Promise<string> | undefined {
     return (
         imageSignatures(checker) || // before audio
         audioSignatures(checker) || // before video
         videoSignatures(checker) || // before application
         applicationSignatures(checker) ||
-        archiveSignatures(checker) ||
+        archiveSignatures(checker, fileName) ||
         fontSignatures(checker) ||
         unsafeSignatures(checker)
     );
@@ -44,14 +47,6 @@ export async function mimeTypeFromFile(input: File, extensionFallback = true) {
         if (extension.toLowerCase() === 'svg') {
             return SupportedMimeTypes.svg;
         }
-
-        /*
-            .apk has the same file signature as .zip, and since  mimeTypeFromSignature has the highest
-            priority later in the code, we have to check for .apk separately here.
-        */
-        if (extension.toLocaleLowerCase() === 'apk') {
-            return SupportedMimeTypes.apk;
-        }
     }
 
     const reader = new ChunkFileReader(input, minimumBytesToCheck);
@@ -61,7 +56,7 @@ export async function mimeTypeFromFile(input: File, extensionFallback = true) {
 
     const chunk = await reader.readNextChunk();
     return (
-        mimeTypeFromSignature(SignatureChecker(Buffer.from(chunk))) ||
+        mimeTypeFromSignature(SignatureChecker(Buffer.from(chunk)), input.name) ||
         (extensionFallback && mimetypeFromExtension(input.name)) ||
         defaultType
     );
