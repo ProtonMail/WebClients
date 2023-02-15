@@ -42,7 +42,7 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
                     {c('Info').t`When they subscribe to a plan, you'll get credits to use on your subscription.`}
                 </li>
             </ol>
-            <p className="text-small mb0">
+            <p className="text-sm mb0">
                 <Href href={getKnowledgeBaseUrl('/referral-program')}>{c('Link').t`Learn more`}</Href>
             </p>
         </div>

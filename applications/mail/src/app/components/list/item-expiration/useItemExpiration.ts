@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 
 import useInterval from '@proton/hooks/useInterval';
 
-import { formatFullDate } from '../../helpers/date';
+import { formatFullDate } from '../../../helpers/date';
 
 const EVERY_MINUTE = 60 * 1000;
 
