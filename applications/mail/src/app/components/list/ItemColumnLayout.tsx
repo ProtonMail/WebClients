@@ -18,12 +18,12 @@ import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
 import ItemDate from './ItemDate';
-import ItemExpiration from './ItemExpiration';
 import ItemHoverButtons from './ItemHoverButtons';
 import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
+import ItemExpiration from './item-expiration/ItemExpiration';
 
 interface Props {
     labelID: string;
@@ -161,6 +161,8 @@ const ItemColumnLayout = ({
                                     <ItemExpiration
                                         expirationTime={expirationTime}
                                         className="ml0-25 flex-align-self-center"
+                                        element={element}
+                                        labelID={labelID}
                                     />
                                 )}
                                 <ItemAttachmentIcon
@@ -176,8 +178,10 @@ const ItemColumnLayout = ({
                         <div className="item-icons flex flex-row flex-item-noshrink flex-nowrap no-desktop no-tablet on-mobile-flex">
                             {hasExpiration && (
                                 <ItemExpiration
+                                    element={element}
                                     expirationTime={expirationTime}
                                     className="ml0-25 flex-align-self-center"
+                                    labelID={labelID}
                                 />
                             )}
                             <ItemAttachmentIcon

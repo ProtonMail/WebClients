@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -90,7 +90,11 @@ export const newState = ({
 const elementsSlice = createSlice({
     name: 'elements',
     initialState: newState(),
-    reducers: {},
+    reducers: {
+        updateTasksRunning: (state, action: PayloadAction<{ taskRunning: TaskRunningInfo }>) => {
+            state.taskRunning = action.payload.taskRunning;
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(globalReset, globalResetReducer);
 
@@ -131,6 +135,8 @@ const elementsSlice = createSlice({
         builder.addCase(expireMessages.rejected, expireElementsRejected);
     },
 });
+
+export const elementsSliceActions = elementsSlice.actions;
 
 // Export the reducer, either as a default or named export
 export default elementsSlice.reducer;

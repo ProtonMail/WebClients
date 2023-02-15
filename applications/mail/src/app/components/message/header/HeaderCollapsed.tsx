@@ -3,6 +3,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import {
     getHasOnlyIcsAttachments,
     hasAttachments,
@@ -17,11 +18,11 @@ import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../../models/utils';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
-import ItemExpiration from '../../list/ItemExpiration';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemStar from '../../list/ItemStar';
 import ItemUnread from '../../list/ItemUnread';
+import ItemExpiration from '../../list/item-expiration/ItemExpiration';
 import RecipientItem from '../recipients/RecipientItem';
 
 interface Props {
@@ -95,6 +96,8 @@ const HeaderCollapsed = ({
                     <ItemExpiration
                         className="badge-label-weak ml0-5 py-0-5 flex-item-no-shrink"
                         expirationTime={message.data?.ExpirationTime}
+                        element={message.data as Message}
+                        labelID={labelID}
                     />
                 )}
 
