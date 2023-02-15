@@ -28,16 +28,18 @@ const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, 
             <div className="flex mb1">
                 <div className="flex-item-fluid pt0-5">
                     <ul className="unstyled m0">
-                        {items.map((item, index) => (
-                            <ManageFoldersRow
-                                key={item.id}
-                                index={index}
-                                folderItem={item}
-                                onRename={handleRenameItem}
-                                onErrorSaved={() => onErroredInputSaved(item.id)}
-                                onToggleCheck={handleToggleCheckbox}
-                            />
-                        ))}
+                        {items
+                            .filter((item) => !item.category)
+                            .map((item, index) => (
+                                <ManageFoldersRow
+                                    key={item.id}
+                                    index={index}
+                                    folderItem={item}
+                                    onRename={handleRenameItem}
+                                    onErrorSaved={() => onErroredInputSaved(item.id)}
+                                    onToggleCheck={handleToggleCheckbox}
+                                />
+                            ))}
                     </ul>
                 </div>
             </div>

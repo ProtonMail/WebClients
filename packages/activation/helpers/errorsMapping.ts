@@ -4,9 +4,9 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
 
-export const RESERVED_NAMES = ['scheduled'];
+export const RESERVED_NAMES = ['scheduled', 'spam', 'trash', 'outbox'];
 
-export const isNameTooLong = (folderPath: string) => folderPath.length >= 100;
+export const isNameTooLong = (folderPath: string) => new Blob([folderPath]).size >= 100;
 
 export const isNameReserved = (folderPath: string) => RESERVED_NAMES.includes(folderPath.toLowerCase());
 

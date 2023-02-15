@@ -48,7 +48,11 @@ const ProviderCard = ({ className, provider, ...rest }: Props) => {
     const { name, logo, width, height } = providerMap[provider];
 
     return (
-        <Button className={clsx(['provider-card inline-flex flex-column ', className])} {...rest}>
+        <Button
+            className={clsx(['provider-card inline-flex flex-column ', className])}
+            aria-label={c('Import provider').t`Import from ${provider}`}
+            {...rest}
+        >
             <div className="flex-item-fluid flex flex-justify-center w100">
                 <img src={logo} alt="" className="flex-align-self-center" width={width} height={height} />
             </div>

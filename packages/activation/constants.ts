@@ -4,7 +4,6 @@ import {
     EASY_SWITCH_SOURCE,
     ImportProvider,
     MailImportGmailCategories,
-    NON_OAUTH_PROVIDER,
     OAUTH_PROVIDER,
     TIME_PERIOD,
 } from '@proton/activation/interface';
@@ -44,15 +43,15 @@ export const MAX_FOLDER_LIMIT = 20000;
 
 export const IMAPS = {
     [OAUTH_PROVIDER.GOOGLE]: 'imap.gmail.com',
-    [NON_OAUTH_PROVIDER.YAHOO]: 'export.imap.mail.yahoo.com',
-    [NON_OAUTH_PROVIDER.OUTLOOK]: 'outlook.office365.com',
+    [ImportProvider.YAHOO]: 'export.imap.mail.yahoo.com',
+    [ImportProvider.OUTLOOK]: 'outlook.office365.com',
     [OAUTH_PROVIDER.OUTLOOK]: 'outlook.office365.com',
 };
 
 export const PORTS = {
     [OAUTH_PROVIDER.GOOGLE]: '993',
-    [NON_OAUTH_PROVIDER.YAHOO]: '993',
-    [NON_OAUTH_PROVIDER.OUTLOOK]: '993',
+    [ImportProvider.YAHOO]: '993',
+    [ImportProvider.OUTLOOK]: '993',
     [OAUTH_PROVIDER.OUTLOOK]: '993',
 };
 

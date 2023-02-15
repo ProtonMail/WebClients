@@ -5,7 +5,7 @@ import {
     getDefaultCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 
-import useUserCalendars from './useUserCalendars';
+import useUserCalendars from '../../../../hooks/useUserCalendars';
 
 interface Props {
     onClose: () => void;
