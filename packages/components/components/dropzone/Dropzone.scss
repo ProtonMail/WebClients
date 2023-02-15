@@ -1,35 +1,51 @@
 @import '~@proton/styles/scss/lib';
 
 .dropzone {
-	// TODO: commented out until approved in the design system
-	// border: 1px dashed var(--interaction-norm);
-	opacity: 0;
-	visibility: hidden;
-	transition-property: opacity, visibility;
-	transition-duration: 0.15s;
-	transition-timing-function: easing(ease-in);
-	z-index: $layer-dropzone; // 1 less than what modals currently have
-
-	&::before {
-		content: '';
-		background: var(--background-norm);
-		position: absolute;
-		inset: 0;
-		z-index: -1;
-	}
-
-	&.is-hovered {
-		opacity: 1;
-		visibility: visible;
+	&--bordered {
+		border: 1px dashed var(--border-norm);
 	}
 
 	&-content {
-		min-block-size: 100px;
-		position: relative;
+		min-block-size: em(100);
+		background-color: var(--background-norm);
+
+		&--hovered {
+			z-index: $layer-dropzone;
+		}
+
+		&--transparent {
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				opacity: 0.95;
+				background-color: var(--background-norm);
+				z-index: -1; // We want the pseudo element to be behind the element to use it as a "transparent" background
+			}
+
+			border: none;
+			border-radius: 0;
+			background-color: transparent;
+		}
+
+		&--flashy {
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				opacity: 0.07;
+				background-color: var(--primary);
+				border: inherit;
+				border-radius: inherit;
+			}
+
+			border: 1px solid var(--primary);
+			color: var(--primary);
+		}
 	}
 
-	&-text {
-		font-size: 2em;
-		opacity: 0.75;
+	&-children {
+		min-block-size: em(100);
+		position: relative;
 	}
 }
