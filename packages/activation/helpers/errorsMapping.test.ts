@@ -16,7 +16,7 @@ const smallString = '6NLaLHynY3YPM8gGLncefo5PP7n2Db';
 const longString =
     'wIfm5MY1a2j7MwYAFNzQapBIXZdBxZaqRGwun6UBFNVimgw38tmmLhn7HewkHhvuNYf5QlC8a2NmfctV42tdfrJJm10okXooWV5f';
 
-describe('Acrivation errors mapping', () => {
+describe('Activation errors mapping', () => {
     describe('isNameTooLong', () => {
         it('Should return false if the folder/label name is smaller than limit', () => {
             const res = isNameTooLong(smallString);
@@ -29,15 +29,15 @@ describe('Acrivation errors mapping', () => {
     });
 
     describe('isNameReserved', () => {
-        it('Should return false if the name is not reserverd', () => {
+        it('Should return false if the name is not reserved', () => {
             const res = isNameReserved('folder');
             expect(res).toBe(false);
         });
-        it('Should return true if the name is reserverd and capitalized', () => {
+        it('Should return true if the name is reserved and capitalized', () => {
             const res = isNameReserved('Scheduled');
             expect(res).toBe(true);
         });
-        it('Should return true if the name is reserverd and lowercase', () => {
+        it('Should return true if the name is reserved and lowercase', () => {
             const res = isNameReserved('scheduled');
             expect(res).toBe(true);
         });

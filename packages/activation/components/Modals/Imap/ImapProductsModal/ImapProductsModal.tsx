@@ -6,7 +6,7 @@ import { EasySwitchFeatureFlag, ImportType } from '@proton/activation/interface'
 import { FeatureCode, Loader, ModalTwo, ModalTwoContent, ModalTwoHeader, useFeature } from '@proton/components';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
-import useUserCalendars from '../CalendarModal/useUserCalendars';
+import useUserCalendars from '../../../../hooks/useUserCalendars';
 import ImapProductsModalButtons from './ImapProductsModalButtons';
 
 interface Props {

@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import ProviderWrapper from '@proton/activation/components/Modals/Imap/ImapMailModal/ProviderWrapper';
 import { EASY_SWITCH_EMAIL_PLACEHOLDER } from '@proton/activation/constants';
 import { IMPORT_ERROR, ImportProvider } from '@proton/activation/interface';
 import {
@@ -24,6 +23,7 @@ import {
     Row,
 } from '@proton/components/components';
 
+import ProviderWrapper from '../ProviderWrapper';
 import StepFormError from './StepFormError';
 import useStepForm from './hooks/useStepForm';
 

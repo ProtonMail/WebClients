@@ -1,9 +1,6 @@
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
-export enum ImportAuthType {
-    IMAP = 'IMAP',
-    OAUTH = 'OAUTH',
-}
+import { ApiImporterError, ApiImporterState, ApiReportRollbackState } from './api/api.interface';
 
 export enum ImportProvider {
     GOOGLE = 'google',
@@ -17,24 +14,10 @@ export enum OAUTH_PROVIDER {
     OUTLOOK = 2,
 }
 
-/** @deprecated should be cleaned up and replaced by ImportProvider */
-export enum NON_OAUTH_PROVIDER {
-    YAHOO = 'yahoo',
-    OUTLOOK = 'outlook',
-    DEFAULT = 'default',
-}
-
 export interface OAuthProps {
     Code: string;
     Provider: OAUTH_PROVIDER;
     RedirectUri: string;
-}
-
-export enum IAOauthModalModelStep {
-    AUTHENTICATION = 0,
-    SELECT_IMPORT_TYPE = 1,
-    SUCCESS = 2,
-    OAUTH_INSTRUCTIONS = 3,
 }
 
 export enum ImportType {
@@ -43,42 +26,6 @@ export enum ImportType {
     CONTACTS = 'Contacts',
     // DRIVE = 'Drive',
 }
-
-export interface IAOauthModalModelImportData {
-    importerID: string;
-    [ImportType.MAIL]: {
-        selectedPeriod: TIME_PERIOD;
-        providerFolders: ImportedMailFolder[];
-        error?: string;
-    };
-    [ImportType.CALENDAR]: {
-        providerCalendars: ImportedCalendar[];
-        error?: string;
-    };
-    [ImportType.CONTACTS]: {
-        numContacts: number;
-        numContactGroups: number;
-        error?: string;
-    };
-    // [ImportType.DRIVE]: {
-    // };
-}
-
-export interface IAOauthModalModel {
-    step: IAOauthModalModelStep;
-    oauthProps?: OAuthProps;
-    tokenScope?: ImportType[];
-    AddressID: string;
-    importedEmail: string;
-    payload: LaunchImportPayload;
-    data: IAOauthModalModelImportData;
-    isPayloadInvalid: boolean;
-    isImportError?: boolean;
-}
-
-export type CheckedProductMap = {
-    [K in ImportType.MAIL | ImportType.CALENDAR | ImportType.CONTACTS /* | ImportType.DRIVE */]: boolean;
-};
 
 export interface CreateImportPayload {
     TokenID?: string;
@@ -166,6 +113,7 @@ export enum TIME_PERIOD {
 }
 
 export enum IMPORT_ERROR {
+    UNEXPECTED_ERROR = 2000,
     IMAP_CONNECTION_ERROR = 2900,
     AUTHENTICATION_ERROR = 2901,
     ALREADY_EXISTS = 2500,
@@ -195,17 +143,6 @@ export enum MailImportGmailCategories {
     PROMOTIONS = 'Promotions',
     SOCIAL = 'Social',
     UPDATES = 'Updates',
-}
-
-/** @deprecated prefer using ApiMailImportFolder  */
-export interface ImportedMailFolder {
-    DestinationCategory?: MailImportGmailCategories;
-    DestinationFolder?: MailImportDestinationFolder;
-    Flags: string[];
-    Separator: string;
-    Size: number;
-    Source: string;
-    Total: number;
 }
 
 export enum MailImportPayloadError {
@@ -248,10 +185,6 @@ export interface ImportedCalendar {
     Description: string;
 }
 
-export enum CalendarImportPayloadError {
-    MAX_CALENDARS_LIMIT_REACHED = 'Max calendars limit reached',
-}
-
 /* Contacts Specific */
 
 export interface ContactsImporterPayload {}
@@ -262,33 +195,10 @@ export interface DriveImporterPayload {}
 
 /* Imports and Reports from Server */
 
-export enum ImportError {
-    ERROR_CODE_IMAP_CONNECTION = 1,
-    ERROR_CODE_QUOTA_LIMIT = 2,
-}
-
-export enum ImportStatus {
-    QUEUED = 0,
-    RUNNING = 1,
-    DONE = 2,
-    FAILED = 3,
-    PAUSED = 4,
-    CANCELED = 5,
-    DELAYED = 6,
-}
-
-/** @deprecated prefer using ApiReportRollbackState */
-export enum ImportReportRollbackState {
-    CANNOT_ROLLBACK = 0,
-    CAN_ROLLBACK = 1,
-    ROLLING_BACK = 2,
-    ROLLED_BACK = 3,
-}
-
 interface ImporterActiveProps {
     CreateTime: number;
-    State: ImportStatus;
-    ErrorCode?: ImportError;
+    State: ApiImporterState;
+    ErrorCode?: ApiImporterError;
     Mapping: ImportedFolder[];
     Processed?: number;
     Total?: number;
@@ -312,21 +222,15 @@ export interface Importer {
     Email: string; // Soon to be deprecated
 }
 
-export interface NormalizedImporter extends Pick<Importer, Exclude<keyof Importer, 'Active' | 'Product'>> {
-    Active: ImporterActiveProps;
-    Product: ImportType;
-    tokenScope?: ImportType[];
-}
-
 enum ImportReportStatus {
     UNSENT = 0,
     SENT = 1,
 }
 
 interface ImportSummary {
-    State: ImportStatus;
+    State: ApiImporterState;
     TotalSize: number;
-    RollbackState?: ImportReportRollbackState;
+    RollbackState?: ApiReportRollbackState;
 }
 
 export interface ImportReportAggregated {
@@ -358,10 +262,10 @@ export interface ImportReport {
     CreateTime: number;
     EndTime: number;
     NumItems: number;
-    State: ImportStatus;
+    State: ApiImporterState;
     TotalSize: number;
     Product: ImportType;
-    RollbackState?: ImportReportRollbackState;
+    RollbackState?: ApiReportRollbackState;
 }
 
 export enum EASY_SWITCH_SOURCE {
