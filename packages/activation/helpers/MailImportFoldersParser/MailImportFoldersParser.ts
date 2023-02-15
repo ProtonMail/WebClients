@@ -246,10 +246,11 @@ class MailImportFoldersParser {
 
         /**
          * Parents folders are folders that are one level above in the providerPath
+         * We must return the whole parent path and not just the parent id, this is why we do the slice
          * It can either be undefined or a string
          */
         const folderProviderPath = this.getProviderPath(folder.Source, folder.Separator);
-        return folderProviderPath[folderProviderPath.length - 2];
+        return folderProviderPath.slice(0, folderProviderPath.length - 1).join(folder.Separator) || undefined;
     };
 
     private createFolders(isLabelMapping = false) {
