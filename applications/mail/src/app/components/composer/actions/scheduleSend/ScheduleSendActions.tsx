@@ -4,14 +4,20 @@ import { Locale, addDays, addSeconds, format, fromUnixTime, getUnixTime, nextMon
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DropdownMenu, DropdownMenuButton, SimpleDropdown, useModalState } from '@proton/components/components';
+import {
+    DropdownMenu,
+    DropdownMenuButton,
+    SimpleDropdown,
+    UpsellModal,
+    useModalState,
+} from '@proton/components/components';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import clsx from '@proton/utils/clsx';
 
 import { SCHEDULED_SEND_BUFFER } from '../../../../constants';
-import ComposerScheduleSendUpsellModal from './UpsellModal/ScheduleSendUpsellModal';
 import { isScheduledDuringNight } from './helpers';
 import useScheduleSendFeature from './useScheduleSendFeature';
 
@@ -170,7 +176,26 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                         onUpsellModalShow={handleShowUpsellModal}
                     />
                 </SimpleDropdown>
-                {renderUpsellModal && <ComposerScheduleSendUpsellModal {...upsellModalProps} />}
+                {renderUpsellModal && (
+                    <UpsellModal
+                        data-testid="composer:schedule-send:upsell-modal"
+                        title={c('Title').t`Set your own schedule`}
+                        description={c('Description')
+                            .t`Unlock custom message scheduling and other benefits when you upgrade your plan.`}
+                        modalProps={upsellModalProps}
+                        upsellRef={`${APP_UPSELL_REF_PATH.MAIL_UPSELL_MODAL_REF_PATH}${MAIL_UPSELL_PATHS.SCHEDULE_SEND}`}
+                        features={[
+                            'schedule-messages',
+                            'auto-delete-trash-and-spam',
+                            'unlimited-folders-and-labels',
+                            'search-message-content',
+                            'more-storage',
+                            'more-email-addresses',
+                            'custom-email-domains',
+                            'email-aliases',
+                        ]}
+                    />
+                )}
             </>
         );
     }
