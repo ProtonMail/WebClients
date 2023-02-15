@@ -27,6 +27,7 @@ export default function imageSignatures({ check, checkString, sourceBuffer }: Re
         const brandMajor = sourceBuffer.toString('binary', 8, 12).replace('\0', ' ').trim();
         switch (brandMajor) {
             case 'avif':
+            case 'avis':
                 return SupportedMimeTypes.avif;
             case 'mif1':
                 return SupportedMimeTypes.heif;
