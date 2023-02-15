@@ -9,7 +9,12 @@ import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
-import { getPlan, hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import {
+    getPlan,
+    hasMigrationDiscount,
+    hasNewVisionary,
+    isManagedExternally,
+} from '@proton/shared/lib/helpers/subscription';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import {
@@ -32,6 +37,7 @@ import { getShortPlan } from '../features/plan';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import FeedbackDowngradeModal, { FeedbackDowngradeData } from './FeedbackDowngradeModal';
 import HighlightPlanDowngradeModal from './HighlightPlanDowngradeModal';
+import InAppPurchaseModal from './InAppPurchaseModal';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
 
 const { MAIL, VPN } = PLAN_SERVICES;
@@ -41,14 +47,14 @@ interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
 }
 
 const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
+    const api = useApi();
+    const [vpnServers] = useVPNServersCount();
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization] = useOrganization();
     const [plans, loadingPlans] = usePlans();
-    const [vpnServers] = useVPNServersCount();
     const { createNotification, hideNotification } = useNotifications();
     const { createModal } = useModals();
-    const api = useApi();
     const { call } = useEventManager();
     const getCalendars = useGetCalendars();
     const [loading, withLoading] = useLoading();
@@ -98,8 +104,14 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
+        if (isManagedExternally(subscription)) {
+            await new Promise<void>((_, reject) => {
+                createModal(<InAppPurchaseModal onClose={reject} subscription={subscription} />);
+            });
+        }
+
         const shortPlan = currentPlan ? getShortPlan(currentPlan.Name as PLANS, plansMap, vpnServers) : undefined;
-        // We only show the plan downgrade plan modal for plans that are defined with features
+        // We only show the plan downgrade modal for plans that are defined with features
         if (shortPlan) {
             await new Promise<void>((resolve, reject) => {
                 createModal(
@@ -152,6 +164,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             disabled={loading || loadingPlans || loadingSubscription}
             className={className}
             onClick={() => withLoading(handleClick())}
+            data-testid="UnsubscribeButton"
             {...rest}
         >
             {children}
