@@ -201,6 +201,32 @@ END:VEVENT`;
         });
     });
 
+    it('should fix events with a sequence that is too big', () => {
+        const sequenceOutOfBounds = 2 ** 31;
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;TZID=America/New_York:20020312T083000
+DTEND;TZID=America/New_York:20020312T082959
+SEQUENCE:${sequenceOutOfBounds}
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 3, day: 12, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            sequence: { value: 0 },
+        });
+    });
+
     it('should accept (and re-format) events with negative duration and negative sequence', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
