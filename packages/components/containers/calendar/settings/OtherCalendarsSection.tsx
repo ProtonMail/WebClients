@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef, useRef } from 'react';
+import { ComponentPropsWithoutRef, useRef } from 'react';
 
 import { c } from 'ttag';
 
