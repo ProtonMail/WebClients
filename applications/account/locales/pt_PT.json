@@ -506,9 +506,6 @@
       "Remove this notification": [
         "Remover esta notificação"
       ],
-      "Rename": [
-        "Renomear"
-      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -785,9 +782,6 @@
     "Action in trial plan": {
       "Continue with free plan": [
         "Continuar com o plano gratuito"
-      ],
-      "No, thanks": [
-        "Não, obrigado"
       ]
     },
     "Addon": {
@@ -989,6 +983,16 @@
         "Tweet"
       ]
     },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Adicionar pessoas ou grupos"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "Editar agenda"
+      ]
+    },
     "Calendar invite status label": {
       "Declined": [
         "Recusado"
@@ -997,6 +1001,14 @@
     "Calendar permissions label": {
       "Permissions": [
         "Permissões"
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Partilhar agenda"
+      ],
+      "Share with anyone": [
+        "Partilhar com o qualquer pessoa"
       ]
     },
     "Calendar status": {
@@ -2040,6 +2052,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Por favor, reveja como esses grupos devem ser importados."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, por favor divida-o."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2063,6 +2078,9 @@
     "Domain spam notification": {
       "${ name } added": [
         "${ name } adicionado"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado"
       ]
     },
     "Duration": {
@@ -2280,6 +2298,9 @@
       ],
       "No active sessions": [
         "Sem sessões activas"
+      ],
+      "No public key for ${ BRAND_NAME } address": [
+        "Nenhuma chave pública para o endereço do ${ BRAND_NAME }"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Nenhuma das chaves WKD recuperadas para o utilizador é válida para o envio"
@@ -3048,9 +3069,6 @@
       "Canceled": [
         "Cancelada"
       ],
-      "Canceling": [
-        "A cancelar"
-      ],
       "Completed": [
         "Concluída"
       ],
@@ -3107,10 +3125,6 @@
         "${ calendarsToBeCreatedCount } nova agenda",
         "${ calendarsToBeCreatedCount } novas agendas"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } agenda unida",
-        "${ calendarsToBeMerged } agendas unidas"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeCreatedCount } agenda unida",
         "${ calendarsToBeCreatedCount } agendas unidas"
@@ -3142,14 +3156,6 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } grupo de contatos",
-        "${ numContactGroups } grupos de contatos"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } contacto",
-        "${ numContacts } contactos"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
         "${ providerFoldersNumLocalized } pastas encontradas"
@@ -3178,9 +3184,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "É requerida ${ vpnPlus } para ligação a nível de país."
       ],
@@ -3203,9 +3206,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ligação para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)",
         "+${ organization.BonusVPN } ligações para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
@@ -3357,6 +3357,9 @@
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar gravadas"
       ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Ao partilhar todos os detalhes de evento desta agenda, aceita conceder acesso ao ${ BRAND_NAME } à informação encriptada nesta agenda."
+      ],
       "Center": [
         "Centrar"
       ],
@@ -3371,10 +3374,6 @@
       ],
       "Continue anyway?": [
         "Continuar mesmo assim?"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Criar ${ calendarsToBeCreated } nova agenda",
-        "Criar ${ calendarsToBeCreated } novas agendas"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
@@ -3577,10 +3576,6 @@
       ],
       "Image URL": [
         "URL da imagem"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } agenda",
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } agendas"
       ],
       "Import from": [
         "Importar de"
@@ -3813,9 +3808,6 @@
       "Preview": [
         "Antever"
       ],
-      "Priority support": [
-        "Suporte prioritário"
-      ],
       "purchase additional storage": [
         "comprar armazenamento adicional"
       ],
@@ -3983,12 +3975,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "A não ser que termine a sessão ou altere a senha da conta, a sessão permanecerá activa. As sessões expiram após 60 dias de inactividade."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
@@ -4585,6 +4571,9 @@
       "Attach screenshot(s)": [
         "Anexar capturas de ecrã"
       ],
+      "Auto-detect primary time zone": [
+        "Auto-detectar fuso horário primário"
+      ],
       "Auto-reply": [
         "Resposta automática"
       ],
@@ -4611,6 +4600,9 @@
       ],
       "BTC amount:": [
         "Quantia BTC:"
+      ],
+      "Calendar": [
+        "Agenda"
       ],
       "Card holder": [
         "Titular do cartão"
@@ -4705,6 +4697,9 @@
       "Default PGP scheme": [
         "Esquema PGP predefinido"
       ],
+      "Default view": [
+        "Vista predefinida"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -4780,9 +4775,6 @@
       "Folder location": [
         "Localização da pasta"
       ],
-      "From: ${ importedEmail }": [
-        "De: ${ importedEmail }"
-      ],
       "Gift code": [
         "Código de oferta"
       ],
@@ -4849,6 +4841,9 @@
       "Message": [
         "Mensagem"
       ],
+      "Moderate NAT": [
+        "NAT moderado"
+      ],
       "Move to": [
         "Mover para"
       ],
@@ -4864,6 +4859,9 @@
       "Name on card": [
         "Nome no cartão"
       ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Encaminhamento de porta)"
+      ],
       "New login password": [
         "Nova senha de início"
       ],
@@ -4878,6 +4876,9 @@
       ],
       "No label found": [
         "Nenhuma etiqueta encontrada"
+      ],
+      "Non-standard ports": [
+        "Portas não padrão"
       ],
       "Notification": [
         "Notificação"
@@ -4993,8 +4994,14 @@
       "Send crash reports": [
         "Enviar relatórios de erro fatal"
       ],
+      "Show secondary time zone": [
+        "Mostrar fuso horário secundário"
+      ],
       "Show sender images": [
         "Mostrar imagens do remetente"
+      ],
+      "Show week numbers": [
+        "Mostrar números de semana"
       ],
       "Sign external messages": [
         "Assinar mensagens externas"
@@ -5053,17 +5060,11 @@
       "Timezone": [
         "Fuso horário"
       ],
-      "To: ${ emailAddress }": [
-        "Para: ${ emailAddress }"
-      ],
       "Two-password mode": [
         "Modo Senha dupla"
       ],
       "Undo send": [
         "Desfazer Enviar"
-      ],
-      "Upload file": [
-        "Enviar ficheiro"
       ],
       "URL": [
         "URL"
@@ -6081,6 +6082,14 @@
         "Gratuito"
       ]
     },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Fuso horário principal"
+      ],
+      "Secondary time zone": [
+        "Fuso horário secundário"
+      ]
+    },
     "Private Member": {
       "private": [
         "privado"
@@ -6150,6 +6159,9 @@
       ],
       "Remove calendar": [
         "Remover agenda"
+      ],
+      "Unsubscribe?": [
+        "Cancelar subscrição?"
       ]
     },
     "Restore administrator panel": {
@@ -6850,6 +6862,9 @@
       "Encryption and keys": [
         "Encriptação e chaves"
       ],
+      "End date": [
+        "Data de fim"
+      ],
       "Enter your password": [
         "Insira a sua senha"
       ],
@@ -7146,6 +7161,9 @@
       "Start a new import": [
         "Iniciar nova importação"
       ],
+      "Start date": [
+        "Data de início"
+      ],
       "Start import process": [
         "Iniciar o processo de importação"
       ],
@@ -7164,6 +7182,10 @@
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
         "Conta ${ localSuccessfullyCreatedUsers.length } criada",
         "Contas ${ localSuccessfullyCreatedUsers.length } criadas"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Conta ${ successfullyCreatedUsers.length } criada",
+        "Contas ${ successfullyCreatedUsers.length } criadas"
       ],
       "Switch to one-password mode": [
         "Mudar para modo de senha única"
@@ -7191,6 +7213,9 @@
       ],
       "Upgrade plan": [
         "Atualizar plano"
+      ],
+      "Users": [
+        "Utilizadores"
       ],
       "Users and addresses": [
         "Utilizadores e endereços"
@@ -7301,6 +7326,16 @@
       ],
       "Role": [
         "Papel"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Criar agenda"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Editar agenda"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7497,9 +7532,6 @@
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Tem de ${ activateLink } chaves da organização antes de adicionar um endereço de email a um membro não-privado."
-      ],
-      "You will not see this import record in the list anymore.": [
-        "Não voltará a ver este registo de importação na lista."
       ]
     },
     "Warning for domain modal": {

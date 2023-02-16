@@ -800,9 +800,6 @@
       "Remove this label": [
         "Label verwijderen"
       ],
-      "Rename": [
-        "Hernoem"
-      ],
       "Reply": [
         "Antwoord"
       ],
@@ -3303,9 +3300,6 @@
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Sommige namen van uw mappen zijn gereserveerd. Pas de import aan om deze namen te bewerken."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
@@ -4331,10 +4325,6 @@
         "${ calendarsToBeCreatedCount } nieuwe agenda",
         "${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "Éen samengevoegde agenda",
-        "${ calendarsToBeMerged } samengevoegde agenda's"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } samengevoegde agenda",
         "${ calendarsToBeMergedCount } samengevoegde agenda's"
@@ -4380,14 +4370,6 @@
       "${ numberOfTrackers } email tracker blocked": [
         "Één e-mail tracker geblokkeerd",
         "${ numberOfTrackers } e-mail trackers geblokkeerd"
-      ],
-      "${ numContactGroups } contact group": [
-        "Één contactgroep",
-        "${ numContactGroups } contactgroepen"
-      ],
-      "${ numContacts } contact": [
-        "Één contactpersoon",
-        "${ numContacts } contactpersonen"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } bericht in het gesprek",
@@ -4623,10 +4605,6 @@
       ],
       "Country code": [
         "Landcode"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Maak één nieuwe agenda",
-        "Maak ${ calendarsToBeCreated } nieuwe agenda's"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
@@ -4869,10 +4847,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda",
-        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda's"
       ],
       "Import from": [
         "Importeren van"
@@ -6043,9 +6017,6 @@
       "Colors": [
         "Kleuren"
       ],
-      "Coming soon": [
-        "Binnenkort beschikbaar"
-      ],
       "Conditions": [
         "Voorwaarden"
       ],
@@ -6133,9 +6104,6 @@
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Van: ${ importedEmail }"
-      ],
       "Good": [
         "Goed"
       ],
@@ -6210,12 +6178,6 @@
       ],
       "Manage categories": [
         "Beheer categorieën"
-      ],
-      "Manage folders": [
-        "Mappen beheren"
-      ],
-      "Manage labels": [
-        "Beheer labels"
       ],
       "Manage my addresses": [
         "Mijn adressen beheren"
@@ -6370,9 +6332,6 @@
       "To:": [
         "Aan:"
       ],
-      "To: ${ emailAddress }": [
-        "Naar: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Aan: ${ to }"
       ],
@@ -6387,9 +6346,6 @@
       ],
       "Undisclosed Recipients": [
         "Niet-openbaar gemaakte ontvangers"
-      ],
-      "Upload file": [
-        "Bestand uploaden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -6662,9 +6618,6 @@
       "Almost there": [
         "Bijna daar"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Aantal aangemaakte agenda's: ${ createdCalendars } van de ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
       ],
@@ -6679,24 +6632,6 @@
       ],
       "Your import is starting": [
         "Uw import begint"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ itemsToImportCount } map en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ itemsToImportCount } label en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7873,9 +7808,6 @@
       ],
       "Bug reported": [
         "Bug gemeld"
-      ],
-      "Canceling import": [
-        "Annuleer import"
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"

@@ -698,9 +698,6 @@
       "Remove this label": [
         "Kkes tabzimt-a"
       ],
-      "Rename": [
-        "Beddel isem"
-      ],
       "Reply": [
         "Err"
       ],
@@ -3624,10 +3621,6 @@
         "${ calendarsToBeCreatedCount } n uwitay amaynut",
         "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } n uwitay yettwamezdi",
-        "${ calendarsToBeMerged } n yiwitayen ttwamezdin"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
         "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
@@ -3662,14 +3655,6 @@
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } n umeḍfar n yimayl iweḥlen",
         "${ numberOfTrackers } n yimeḍfaren n yimayl iweḥlen"
-      ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } n ugraw n unermes",
-        "${ numContactGroups } n yigrawen n unermes"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } n unermis",
-        "${ numContacts } n yinermisen"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } n temseḍriwt i yettwafen",
@@ -3870,10 +3855,6 @@
       "Copied to clipboard": [
         "Nɣel ɣer tecfawt"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Snulfu-d ${ calendarsToBeCreated } n uwitay amaynut",
-        "Snulfu-d ${ calendarsToBeCreated } n yiwitayen imaynuten"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked yikaramen i tebɣiḍ ad tketreḍ."
       ],
@@ -4059,10 +4040,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Kter ${ contactsFragment } yerna ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n uwitay",
-        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n yiwitayen"
       ],
       "Import from": [
         "Kter si"
@@ -5060,9 +5037,6 @@
       "From:": [
         "Sɣur:"
       ],
-      "From: ${ importedEmail }": [
-        "Sɣur: ${ importedEmail }"
-      ],
       "Good": [
         "Ilha"
       ],
@@ -5122,12 +5096,6 @@
       ],
       "Mailbox password": [
         "Awal uffir n tnaka n yimayl"
-      ],
-      "Manage folders": [
-        "Sefrek ikaramen"
-      ],
-      "Manage labels": [
-        "Sefrek tibzimin"
       ],
       "Manage my addresses": [
         "Sefrek tansiwin-inu"
@@ -5273,17 +5241,11 @@
       "To:": [
         "Ɣer:"
       ],
-      "To: ${ emailAddress }": [
-        "I: ${ emailAddress }"
-      ],
       "Two-factor authentication code": [
         "Tangalt n usesteb s snat n tarrayin"
       ],
       "Undisclosed Recipients": [
         "Iɣerwaḍen ur ttwaskanen ara"
-      ],
-      "Upload file": [
-        "Sali afaylu"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -6331,9 +6293,6 @@
       ],
       "Bug reported": [
         "Abug yettwazen"
-      ],
-      "Canceling import": [
-        "Asefsex n tektert"
       ],
       "Code sent to ${ methodTo }": [
         "Tangalt tettwazen ɣer ${ methodTo }"

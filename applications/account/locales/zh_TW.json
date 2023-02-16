@@ -597,9 +597,6 @@
       "Remove this notification": [
         "移除此通知"
       ],
-      "Rename": [
-        "重新命名"
-      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -910,14 +907,8 @@
       "Continue with free plan": [
         "繼續使用免費方案"
       ],
-      "No, thanks": [
-        "不用了，謝謝"
-      ],
       "Start my 30-day free trial": [
         "開始我的30天免費試用"
-      ],
-      "Try free for 30 days": [
-        "免費試用 30 天"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1051,21 +1042,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "年繳(12 個月)"
-      ],
-      "Payable every 15 months": [
-        "年繳(15 個月)"
-      ],
-      "Payable every 24 months": [
-        "雙年繳 (24 個月)"
-      ],
-      "Payable every 30 months": [
-        "雙年繳 (30 個月)"
-      ],
-      "Payable every month": [
-        "按月付款"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "自動續期在${ formattedEndTime }"
       ]
@@ -3092,9 +3068,6 @@
       "Signature verification failed": [
         "簽名驗證失敗"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "部份資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
@@ -4220,6 +4193,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "從 ${ provider } 匯入"
+      ],
       "Other": [
         "其它"
       ]
@@ -4238,9 +4214,6 @@
       ],
       "Canceled": [
         "已取消"
-      ],
-      "Canceling": [
-        "正在取消"
       ],
       "Completed": [
         "已完成"
@@ -4302,9 +4275,6 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } 暫停了一項匯入，因為您的帳號空間快要用完了。您可以："
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } 將會在電郵提供商提供重設您帳號的 ${ bandwithLimitLink } 後嘗試復原匯入。您不需要執行任何動作。如果您取消匯入，將無法復原匯入，而您就必須重新開始。"
-      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
@@ -4313,9 +4283,6 @@
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
-      ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } 個合併的行事曆"
       ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
@@ -4350,11 +4317,11 @@
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } 個上載的檔案不是有效的私鑰。請驗證並再試一次。"
       ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 個聯絡人群組"
+      "${ numContact } contacts": [
+        "${ numContact } 個聯絡人"
       ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 位聯絡人"
+      "${ numGroups } contact groups": [
+        "${ numGroups } 個聯絡人群組"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -4376,9 +4343,6 @@
       ],
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個標籤"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } 儲存量"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "國家等級的連線需要 ${ vpnPlus } 。"
@@ -4406,9 +4370,6 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. 邀請好友加入 ${ BRAND_NAME }"
-      ],
-      "10 email addresses": [
-        "10 個電郵位址"
       ],
       "2. They try ${ planName }": [
         "2. 讓他們試試看 ${ planName }"
@@ -4668,8 +4629,8 @@
       "Country code": [
         "國家代碼"
       ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "建立 ${ calendarsToBeCreated } 個新行事曆"
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "建立 ${ calendarsToBeCreatedCount } 個新行事曆"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
@@ -4977,11 +4938,11 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "圖像已被移除，因為自動回覆不支援"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "匯入 ${ selectedCalendarsCount } 個，共 ${ totalCalendarsCount } 個行事曆"
       ],
       "Import from": [
         "匯入自"
@@ -5000,6 +4961,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "重要提示：一些註冊機構不接受 (相反某些則要求) CNAME 數值以英文句號作結尾。如果您的註冊機構不接受您的 CNAME 記錄，請刪除每個 CNAME 數值結尾的英文句號，然後再試一次。"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
@@ -5166,9 +5130,6 @@
       "No contact encryption keys exist": [
         "聯絡人沒有加密金鑰"
       ],
-      "No credit card required": [
-        "無需信用卡"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "沒有設定任何資料還原方法，您有可能會無法存取您的資料"
       ],
@@ -5331,9 +5292,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
       ],
-      "Priority support": [
-        "優先支援"
-      ],
       "Public link invite": [
         "公開的連結邀請"
       ],
@@ -5463,17 +5421,11 @@
       "Storage for users": [
         "使用者的儲存空間"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "儲存空間共用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 。"
-      ],
       "Storage used by this user": [
         "儲存空間已被這個使用者所使用"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "將此密碼以及檔案存放在另一處安全的地方。日後匯入金鑰時，就得派上用場。"
-      ],
-      "Support for 1 custom email domain": [
-        "支援 1 個自訂電郵網域"
       ],
       "support team": [
         "支援團隊"
@@ -5684,12 +5636,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "除非您登出您的帳號或更改您的密碼，您的工作階段將保持使用。工作階段閒置 60 天後逾期。"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "不限數量的資料夾、標籤與篩選器"
-      ],
-      "Unlimited messages": [
-        "無限制的郵件"
       ],
       "Unsaved changes": [
         "未儲存的變更"
@@ -6582,6 +6528,9 @@
       "BTC amount:": [
         "BTC 數量："
       ],
+      "Calendar": [
+        "行事曆"
+      ],
       "Calendars": [
         "行事曆"
       ],
@@ -6614,9 +6563,6 @@
       ],
       "Colors": [
         "色彩"
-      ],
-      "Coming soon": [
-        "敬請期待"
       ],
       "Composer": [
         "撰寫器"
@@ -6822,9 +6768,6 @@
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "寄件者：${ importedEmail }"
-      ],
       "Gift code": [
         "禮品代碼"
       ],
@@ -6917,12 +6860,6 @@
       ],
       "Manage categories": [
         "管理分類"
-      ],
-      "Manage folders": [
-        "管理資料夾"
-      ],
-      "Manage labels": [
-        "管理標籤"
       ],
       "Mark as": [
         "標記為"
@@ -7185,9 +7122,6 @@
       "Timezone": [
         "時區"
       ],
-      "To: ${ emailAddress }": [
-        "收件者：${ emailAddress }"
-      ],
       "To: ${ to }": [
         "收件者：${ to }"
       ],
@@ -7208,9 +7142,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "上載一個或更多的帳號救援檔案或是加密金鑰"
-      ],
-      "Upload file": [
-        "上載檔案"
       ],
       "URL": [
         "網址"
@@ -7514,9 +7445,6 @@
       "Almost there": [
         "快完成了"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
       ],
@@ -7539,20 +7467,6 @@
       ],
       "Enable authentication logs": [
         "啟用認證記錄"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ itemsToImportCount } 資料夾中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8088,26 +8002,6 @@
         "團隊管理"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的試用期結束於 ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -8177,6 +8071,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的試用期結束於 ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9400,9 +9314,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "隱私為先的郵件與行事曆解決方案，適合您的日常通訊需要。"
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "此優惠僅適用於 ${ BRAND_NAME } 的新用戶。無需信用卡。"
       ]
@@ -9443,9 +9354,6 @@
       ],
       "Calendar updated": [
         "行事曆已更新"
-      ],
-      "Canceling import": [
-        "正在取消匯入"
       ],
       "Catch-all address updated": [
         "全部擷取電子郵件地址已更新"
@@ -10499,9 +10407,6 @@
       "Track your referrals": [
         "追蹤你的介紹紀錄"
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "免費試試我們最讚的 ${ MAIL_APP_NAME }"
-      ],
       "Two-factor authentication": [
         "兩步驟驗證"
       ],
@@ -11004,9 +10909,6 @@
       ],
       "You will lose any customization you made so far.": [
         "您到目前為止所自訂的所有設置將會遺失。"
-      ],
-      "You will not see this import record in the list anymore.": [
-        "您在清單中將再也看不見此匯入記錄。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費試用將於 ${ textDate } 結束。${ action }"

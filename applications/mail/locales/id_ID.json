@@ -797,9 +797,6 @@
       "Remove this label": [
         "Hapus label ini"
       ],
-      "Rename": [
-        "Ubah nama"
-      ],
       "Reply": [
         "Balas"
       ],
@@ -3286,9 +3283,6 @@
       "Some of the attachments could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe files with a program such as GnuPG.": [
         "Lampiran tidak dapat didekripsi.\nJika Anda memiliki kunci pribadi terkait, Anda akan tetap bisa mendekripsi\nberkas dengan program seperti GnuPG."
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama folder yang bersangkutan dengan menyesuaikan parameter impor Anda."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
@@ -4295,9 +4289,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } kalender baru"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } kalender yang tergabung"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
       ],
@@ -4333,12 +4324,6 @@
       ],
       "${ numberOfTrackers } email trackers blocked": [
         "${ numberOfTrackers } pelacak email telah diblokir"
-      ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } grup kontak"
-      ],
-      "${ numContacts } contacts": [
-        "${ numContacts } kontak"
       ],
       "${ NumMessages } messages in conversation": [
         "${ NumMessages } pesan dalam percakapan"
@@ -4549,9 +4534,6 @@
       ],
       "Country code": [
         "Kode negara"
-      ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "Buat ${ calendarsToBeCreated } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
@@ -4786,9 +4768,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "Impor ${ selectedCalendarsCount } dari ${ totalCalendarsCount } kalender yang tersedia"
       ],
       "Import from": [
         "Impor dari"
@@ -5944,9 +5923,6 @@
       "Colors": [
         "Warna"
       ],
-      "Coming soon": [
-        "Segera hadir"
-      ],
       "Conditions": [
         "Syarat"
       ],
@@ -6034,9 +6010,6 @@
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Dari: ${ importedEmail }"
-      ],
       "Good": [
         "Baik"
       ],
@@ -6111,12 +6084,6 @@
       ],
       "Manage categories": [
         "Kelola kategori"
-      ],
-      "Manage folders": [
-        "Kelola folder"
-      ],
-      "Manage labels": [
-        "Kelola label"
       ],
       "Manage my addresses": [
         "Kelola alamat saya"
@@ -6271,9 +6238,6 @@
       "To:": [
         "Kepada:"
       ],
-      "To: ${ emailAddress }": [
-        "Ke: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Kepada: ${ to }"
       ],
@@ -6288,9 +6252,6 @@
       ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
-      ],
-      "Upload file": [
-        "Unggah berkas"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -6563,9 +6524,6 @@
       "Almost there": [
         "Hampir selesai"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Jumlah kalender yang terbuat: ${ createdCalendars } dari ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
       ],
@@ -6580,20 +6538,6 @@
       ],
       "Your import is starting": [
         "Proses impor Anda akan segera dimulai"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari folder ${ itemsToImportCount } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7515,9 +7459,6 @@
       ],
       "Bug reported": [
         "Bug berhasil dilaporkan"
-      ],
-      "Canceling import": [
-        "Membatalkan proses impor"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"

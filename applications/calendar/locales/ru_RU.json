@@ -280,6 +280,9 @@
       "Join calendar": [
         "Присоединиться к календарю"
       ],
+      "Keep current time zone": [
+        "Оставить текущий часовой пояс"
+      ],
       "Load image": [
         "Загрузить изображение"
       ],
@@ -402,9 +405,6 @@
       ],
       "Remove this participant": [
         "Удалить этого участника"
-      ],
-      "Rename": [
-        "Переименовать"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
@@ -2393,9 +2393,6 @@
       "Some groups could not be deleted": [
         "Некоторые группы не могут быть удалены"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Имена некоторых ваших папок зарезервированы. Пожалуйста, настройте импорт для изменения этих имен."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Имена некоторых ваших папок недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
       ],
@@ -3210,12 +3207,6 @@
         "${ calendarsToBeCreatedCount } новых календарей",
         "${ calendarsToBeCreatedCount } новых календарей"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } объединенный календарь",
-        "${ calendarsToBeMerged } объединенных календаря",
-        "${ calendarsToBeMerged } объединенных календарей",
-        "${ calendarsToBeMerged } объединенных календарей"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } объединенный календарь",
         "${ calendarsToBeMergedCount } объединенных календаря",
@@ -3248,18 +3239,6 @@
         "Найдено ${ groupCounts } группы",
         "Найдено ${ groupCounts } групп",
         "Найдено ${ groupCounts } группы"
-      ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } группа контактов",
-        "${ numContactGroups } группы контактов",
-        "${ numContactGroups } групп контактов",
-        "${ numContactGroups } групп контактов"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } контакт",
-        "${ numContacts } контакта",
-        "${ numContacts } контактов",
-        "${ numContacts } контактов"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
@@ -3396,12 +3375,6 @@
       "Country code": [
         "Код страны"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Создать ${ calendarsToBeCreated } новый календарь",
-        "Создать ${ calendarsToBeCreated } новых календаря",
-        "Создать ${ calendarsToBeCreated } новых календарей",
-        "Создать ${ calendarsToBeCreated } новых календарей"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
       ],
@@ -3500,12 +3473,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Импортировать ${ contactsFragment } и ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календаря",
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей"
       ],
       "Import from": [
         "Импортировать из"
@@ -4049,9 +4016,6 @@
       "Colors": [
         "Цвета"
       ],
-      "Coming soon": [
-        "Скоро появится"
-      ],
       "Contacts": [
         "Контакты"
       ],
@@ -4136,9 +4100,6 @@
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "От: ${ importedEmail }"
-      ],
       "Good": [
         "Хорошо"
       ],
@@ -4192,12 +4153,6 @@
       ],
       "Manage categories": [
         "Управлять категориями"
-      ],
-      "Manage folders": [
-        "Управление папками"
-      ],
-      "Manage labels": [
-        "Управление ярлыками"
       ],
       "Move to Archive": [
         "Переместить в Архив"
@@ -4283,9 +4238,6 @@
       "System information": [
         "Сведения о системе"
       ],
-      "To: ${ emailAddress }": [
-        "Кому: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Кому: ${ to }"
       ],
@@ -4297,9 +4249,6 @@
       ],
       "Two-factor authentication code": [
         "Код двухфакторной аутентификации"
-      ],
-      "Upload file": [
-        "Загрузить файл"
       ],
       "Upload picture": [
         "Загрузить изображение"
@@ -4403,9 +4352,6 @@
       "Almost there": [
         "Почти готово"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Количество созданных календарей: ${ createdCalendars } из ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Подключение к поставщику услуг электронной почты"
       ],
@@ -4420,32 +4366,6 @@
       ],
       "Your import is starting": [
         "Ваш импорт начался"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все сообщения с ${ itemsToImportCount } ярлыком и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
