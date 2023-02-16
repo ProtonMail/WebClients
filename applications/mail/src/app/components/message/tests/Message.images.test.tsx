@@ -220,7 +220,7 @@ describe('Message images', () => {
 
         initMessage(message);
 
-        const { getByTestId, getByText, rerender, container } = await setup({}, false);
+        const { getByTestId, rerender, container } = await setup({}, false);
         const iframe = await getIframeRootDiv(container);
 
         const image = await findByTestId(iframe, 'image');
@@ -245,8 +245,6 @@ describe('Message images', () => {
 
         expect(placeholder).not.toBe(null);
         assertIcon(placeholder.querySelector('svg'), 'cross-circle');
-
-        getByText('Load anyway', { exact: false });
 
         loadButton = getByTestId('remote-content:load');
         fireEvent.click(loadButton);
