@@ -406,14 +406,8 @@
       "Continue with free plan": [
         "Continua con il piano gratuito"
       ],
-      "No, thanks": [
-        "No, grazie"
-      ],
       "Start my 30-day free trial": [
         "Inizia la mia prova gratuita di 30 giorni"
-      ],
-      "Try free for 30 days": [
-        "Prova gratis per 30 giorni"
       ]
     },
     "Addon": {
@@ -437,21 +431,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Pagabile ogni 12 mesi"
-      ],
-      "Payable every 15 months": [
-        "Pagabile ogni 15 mesi"
-      ],
-      "Payable every 24 months": [
-        "Pagabile ogni 24 mesi"
-      ],
-      "Payable every 30 months": [
-        "Pagabile ogni 30 mesi"
-      ],
-      "Payable every month": [
-        "Pagabile ogni mese"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Si rinnova automaticamente il ${ formattedEndTime }"
       ]
@@ -1787,6 +1766,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 email al mese)"
+      ],
+      "(during your first month)": [
+        "(durante il tuo primo mese)"
       ]
     },
     "Go to sign in": {
@@ -1859,9 +1841,6 @@
         "${ number } server",
         "${ number } server"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } spazio"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } richiesta per la connessione a livello di Paese."
       ],
@@ -1877,9 +1856,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } connessione per ${ VPN_APP_NAME } (consente di connettere più dispositivi alla VPN)",
         "+${ organization.BonusVPN } connessioni per ${ VPN_APP_NAME } (consente di connettere più dispositivi alla VPN)"
-      ],
-      "10 email addresses": [
-        "10 indirizzi email"
       ],
       "30-day money-back guarantee.": [
         "Rimborso garantito in 30 giorni."
@@ -2154,9 +2130,6 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "No credit card required": [
-        "Nessuna carta di credito richiesta"
-      ],
       "No payment is required at this time.": [
         "Al momento non è richiesto alcun pagamento."
       ],
@@ -2229,9 +2202,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
       ],
-      "Priority support": [
-        "Assistenza prioritaria"
-      ],
       "read our two-factor authentication guide first": [
         "leggi prima la nostra guida all'autenticazione a due fattori"
       ],
@@ -2273,12 +2243,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Supporto per 1 dominio di posta elettronica personalizzato"
       ],
       "support team": [
         "team di supporto"
@@ -2372,12 +2336,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Purtroppo non c'è nessun metodo di recupero salvato per questo account."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Cartelle, etichette e filtri illimitati"
-      ],
-      "Unlimited messages": [
-        "Messaggi illimitati"
       ],
       "Unsaved changes": [
         "Modifiche non salvate"
@@ -3005,6 +2963,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "Comunicazioni sui servizi ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Email di benvenuto di ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4333,9 +4294,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "La soluzione Mail e Calendar al primo posto per la privacy per le tue esigenze di comunicazione quotidiane."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Questa offerta è riservata ai nuovi utenti di ${ BRAND_NAME }. Nessuna carta di credito richiesta."
       ]
@@ -4783,9 +4741,6 @@
       ],
       "Total paid": [
         "Totale pagato"
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Prova gratuitamente il meglio di ${ MAIL_APP_NAME }"
       ],
       "TV log in": [
         "Accesso TV"

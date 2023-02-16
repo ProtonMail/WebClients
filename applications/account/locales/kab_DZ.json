@@ -515,9 +515,6 @@
       "Remove this notification": [
         "Kkes talɣut-a"
       ],
-      "Rename": [
-        "Beddel isem"
-      ],
       "Report a problem": [
         "Azen aneqqis n wugur"
       ],
@@ -789,14 +786,6 @@
     "Action for user session": {
       "Revoke": [
         "Ḥwi"
-      ]
-    },
-    "Action in trial plan": {
-      "No, thanks": [
-        "Uhu, tanemmirt"
-      ],
-      "Try free for 30 days": [
-        "Ɛreḍ-it baṭel i 30 wussan"
       ]
     },
     "Addon": {
@@ -3200,9 +3189,6 @@
       "Canceled": [
         "Yettwasefsex"
       ],
-      "Canceling": [
-        "Asefsex"
-      ],
       "Completed": [
         "Immed"
       ],
@@ -3251,19 +3237,12 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } yesseḥbes akatar i kra n wakud acku amiḍan-ik·im txuṣṣ deg-s tallunt. Tzemreḍ:"
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } ad yeεreḍ ad ikemmel aktar akken kan ara iwennez usaǧǧaw n yimayl-ik·im ${ bandwithLimitLink } amiḍan-ik·im. Ur teḥwaǧeḍ ad tgeḍ kra. Ma yella tesfesxeḍ aktar-inek·inem, ur tezmireḍ ara ad t-tkemmleḍ, ilaq ad as-d-tεawdeḍ seg tazwara."
-      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } ad yettusbadu d awitay amezwer."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } n uwitay amaynut",
         "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } n uwitay yettwamezdi",
-        "${ calendarsToBeMerged } n yiwitayen ttwamezdin"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
@@ -3296,14 +3275,6 @@
         "Aqeddac ${ number }",
         "Iqeddacen ${ number }"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } n ugraw n unermes",
-        "${ numContactGroups } n yigrawen n unermes"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } n unermis",
-        "${ numContacts } n yinermisen"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } d ukaram yettwafen",
         "${ providerFoldersNumLocalized } d ikaramen yettwafen"
@@ -3332,9 +3303,6 @@
         "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
         "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } n uḥraz"
-      ],
       "(${ memberCount } member)": [
         "(${ memberCount } n uɛeggal)",
         "(${ memberCount } n yiɛeggalen)"
@@ -3354,9 +3322,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } tuqqna i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
         "+${ organization.BonusVPN } tuqqniwin i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
-      ],
-      "10 email addresses": [
-        "10 n tansiwin n yimayl"
       ],
       "2. They try ${ planName }": [
         "2. Ttaɛraḍen ${ planName }"
@@ -3549,10 +3514,6 @@
       ],
       "Continue anyway?": [
         "Ad tkemmeleḍ akken yebɣu yili?"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Snulfu-d ${ calendarsToBeCreated } n uwitay amaynut",
-        "Snulfu-d ${ calendarsToBeCreated } n yiwitayen imaynuten"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked yikaramen i tebɣiḍ ad tketreḍ."
@@ -3777,10 +3738,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Kter ${ contactsFragment } yerna ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n uwitay",
-        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n yiwitayen"
-      ],
       "Import from": [
         "Kter si"
       ],
@@ -3907,9 +3864,6 @@
       "No contact encryption keys exist": [
         "Ulac tisura n uwgelhen n unermas i yellan"
       ],
-      "No credit card required": [
-        "Ulac takarḍa n usmad yettwasran"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Ulac tarayt n tririt n yisefka tettusbadu; tzemreḍ ad tesruḥeḍ adduf ɣer yisefka-inek•inem"
       ],
@@ -4011,9 +3965,6 @@
       ],
       "Preview": [
         "Taskant"
-      ],
-      "Priority support": [
-        "Tallalt yezwaren"
       ],
       "Public link invite": [
         "Aseɣwen n usnubget azayaz"
@@ -4191,9 +4142,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Ala ma yella teffɣeḍ seg umiḍan-ik·im neɣ tbeddleḍ awal-ik·im uffir, tiɣimiyin-ik·im ad qqiment remdent. Tiɣimiyin ad fakkent seld 6O wussan ma yella ulac armud."
-      ],
-      "Unlimited messages": [
-        "Iznan war talast"
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
@@ -4885,6 +4833,9 @@
       "BTC amount:": [
         "Azal BTC:"
       ],
+      "Calendar": [
+        "Awitay"
+      ],
       "Calendars": [
         "Iwitayen"
       ],
@@ -5068,9 +5019,6 @@
       "Folder location": [
         "Ideg n ukaram"
       ],
-      "From: ${ importedEmail }": [
-        "Sɣur: ${ importedEmail }"
-      ],
       "Gift code": [
         "Tangalt n usefk"
       ],
@@ -5142,12 +5090,6 @@
       ],
       "Mailbox password": [
         "Awal uffir n tnaka n yimayl"
-      ],
-      "Manage folders": [
-        "Sefrek ikaramen"
-      ],
-      "Manage labels": [
-        "Sefrek tibzimin"
       ],
       "Mark as": [
         "Creḍ am"
@@ -5359,9 +5301,6 @@
       "Timezone": [
         "Iẓdi n wakud"
       ],
-      "To: ${ emailAddress }": [
-        "I: ${ emailAddress }"
-      ],
       "Two-password mode": [
         "Askar n sin-wawalen-uffiren"
       ],
@@ -5373,9 +5312,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Sali 1 neɣ ugar n yifuyla n tririt neɣ tisura n uwgelhen"
-      ],
-      "Upload file": [
-        "Sali afaylu"
       ],
       "URL": [
         "URL"
@@ -6820,9 +6756,6 @@
       "Calendar updated": [
         "Awitay yettwasnifel"
       ],
-      "Canceling import": [
-        "Asefsex n tektert"
-      ],
       "Catch-all address updated": [
         "Tansa n tuṭṭfa n yal izen tettwalqem"
       ],
@@ -8065,9 +7998,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Ad tesruḥeḍ kra n waggan i tgiḍ ar tura."
-      ],
-      "You will not see this import record in the list anymore.": [
-        "Dayen ur tettwaliḍ ara asekles-a n uktar deg tebdart."
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Afaylu-inek•inem n tririt ifut-it lḥal. Ur yettizmir ad d-yerr isefka ma tulseḍ awennez n umiḍan-inek•inem tikkelt-nniḍen."

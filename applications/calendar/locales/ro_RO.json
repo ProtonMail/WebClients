@@ -401,9 +401,6 @@
       "Remove this participant": [
         "Eliminare acest participant"
       ],
-      "Rename": [
-        "Redenumire"
-      ],
       "Report a problem": [
         "Raportare problemă"
       ],
@@ -2371,9 +2368,6 @@
       "Some groups could not be deleted": [
         "Unele grupuri nu s-au putut șterge."
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Unele nume de foldere sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de foldere nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
@@ -3171,11 +3165,6 @@
         "${ calendarsToBeCreatedCount } calendare noi",
         "${ calendarsToBeCreatedCount } de calendare noi"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "Un calendar îmbinat",
-        "${ calendarsToBeMerged } calendare îmbinate",
-        "${ calendarsToBeMerged } de calendare îmbinate"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "Un calendar îmbinat",
         "${ calendarsToBeMergedCount } calendare îmbinate",
@@ -3203,16 +3192,6 @@
         "S-a găsit un grup",
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
-      ],
-      "${ numContactGroups } contact group": [
-        "Un grup de contacte",
-        "${ numContactGroups } grupuri de contact",
-        "${ numContactGroups } de grupuri de contacte"
-      ],
-      "${ numContacts } contact": [
-        "Un contact",
-        "${ numContacts } contacte",
-        "${ numContacts } de contacte"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "S-a găsit un folder",
@@ -3337,11 +3316,6 @@
       "Country code": [
         "Cod țară"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Creare un calendar",
-        "Creare ${ calendarsToBeCreated } calendare",
-        "Creare ${ calendarsToBeCreated } de calendare"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și folderele care trebuie importate."
       ],
@@ -3440,11 +3414,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendar",
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendare",
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } de calendare"
       ],
       "Import from": [
         "Importare din"
@@ -3987,9 +3956,6 @@
       "Colors": [
         "Culori"
       ],
-      "Coming soon": [
-        "În curând"
-      ],
       "Contacts": [
         "Contacte"
       ],
@@ -4074,9 +4040,6 @@
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "De la: ${ importedEmail }"
-      ],
       "Good": [
         "Bună"
       ],
@@ -4130,12 +4093,6 @@
       ],
       "Manage categories": [
         "Gestionare categorii"
-      ],
-      "Manage folders": [
-        "Gestionare foldere"
-      ],
-      "Manage labels": [
-        "Gestionare etichete"
       ],
       "Move to Archive": [
         "Mutare în «Arhivă»"
@@ -4220,9 +4177,6 @@
       "System information": [
         "Informații sistem"
       ],
-      "To: ${ emailAddress }": [
-        "Către: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Către: ${ to }"
       ],
@@ -4234,9 +4188,6 @@
       ],
       "Two-factor authentication code": [
         "Cod autentificare cu doi factori"
-      ],
-      "Upload file": [
-        "Încărcare fișier"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -4340,9 +4291,6 @@
       "Almost there": [
         "Aproape terminat"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Număr de calendare create: ${ createdCalendars } din ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Se conectează la furnizorul de e-mail"
       ],
@@ -4357,28 +4305,6 @@
       ],
       "Your import is starting": [
         "Începe importarea"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-o etichetă și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ]
     },
     "Message": {

@@ -2077,9 +2077,6 @@
       "Some groups could not be deleted": [
         "Impossibile eliminare alcuni gruppi"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Alcuni nomi delle tue cartelle sono riservati. Si prega di personalizzare l'importazione per evitare questi nomi."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue cartelle non sono disponibili. Personalizza l'importazione per modificare questi nomi."
       ],
@@ -2847,10 +2844,6 @@
         "${ calendarsToBeCreatedCount } nuovo calendario",
         "${ calendarsToBeCreatedCount } nuovi calendari"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendario unito",
-        "${ calendarsToBeMerged } calendari uniti"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendario unito",
         "${ calendarsToBeMergedCount } calendari uniti"
@@ -2893,14 +2886,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
-      ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } gruppo di contatto",
-        "${ numContactGroups } gruppi di contatto"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } contatto",
-        "${ numContacts } contatti"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } in pausa",
@@ -3055,9 +3040,9 @@
       "Country code": [
         "Codice nazione"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Crea ${ calendarsToBeCreated } nuovo calendario",
-        "Crea ${ calendarsToBeCreated } nuovi calendari"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Crea ${ calendarsToBeCreatedCount } nuovo calendario",
+        "Crea ${ calendarsToBeCreatedCount } nuovi calendari"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le cartelle che desideri importare."
@@ -3256,12 +3241,12 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importa ${ calendarCount } di ${ totalCalendarsCount } calendario",
+        "Importa ${ calendarCount } di ${ totalCalendarsCount } calendari"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importa ${ contactsFragment } e ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importa ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendario",
-        "Importa ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendari"
       ],
       "Import from": [
         "Importa da"
@@ -3946,6 +3931,9 @@
       "Browser version": [
         "Versione del browser"
       ],
+      "Calendar": [
+        "Calendario"
+      ],
       "Calendars": [
         "Calendari"
       ],
@@ -3966,9 +3954,6 @@
       ],
       "Colors": [
         "Colori"
-      ],
-      "Coming soon": [
-        "In arrivo"
       ],
       "Comment": [
         "Commento"
@@ -4085,9 +4070,6 @@
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Da: ${ importedEmail }"
-      ],
       "Good": [
         "Buona"
       ],
@@ -4147,12 +4129,6 @@
       ],
       "Manage categories": [
         "Gestione delle categorie"
-      ],
-      "Manage folders": [
-        "Gestisci cartelle"
-      ],
-      "Manage labels": [
-        "Gestisci le etichette"
       ],
       "Merge a folder": [
         "Unisci una cartella"
@@ -4271,9 +4247,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Questo eliminerà definitivamente tutti i file nello spazio bloccato."
       ],
-      "To: ${ emailAddress }": [
-        "A: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "A: ${ to }"
       ],
@@ -4303,9 +4276,6 @@
       ],
       "Upload anyway": [
         "Carica comunque"
-      ],
-      "Upload file": [
-        "Carica file"
       ],
       "Upload picture": [
         "Carica immagine"
@@ -4399,9 +4369,6 @@
       "Almost there": [
         "Già qui"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Totale di calendari creati: ${ createdCalendars } su ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Connessione al tuo provider email"
       ],
@@ -4416,24 +4383,6 @@
       ],
       "Your import is starting": [
         "La tua importazione sta iniziando"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tutti i messaggi da ${ itemsToImportCount } cartella ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tutti i messaggi da ${ itemsToImportCount } cartelle ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tutti i messaggi da ${ itemsToImportCount } etichetta ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tutti i messaggi da ${ itemsToImportCount } etichette ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tutti i messaggi da ${ selectedItemsToImportCount } cartella su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tutti i messaggi da ${ selectedItemsToImportCount } cartelle su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichetta su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichette su ${ itemsToImportCount } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {

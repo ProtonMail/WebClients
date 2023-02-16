@@ -803,9 +803,6 @@
       "Remove this label": [
         "Kategorie entfernen"
       ],
-      "Rename": [
-        "Umbenennen"
-      ],
       "Reply": [
         "Antworten"
       ],
@@ -3306,9 +3303,6 @@
       "Some groups could not be deleted": [
         "Einige Gruppen konnten nicht gelöscht werden"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Einige deiner Ordnernamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Einige Ihrer Ordnernamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
       ],
@@ -4302,6 +4296,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Import von ${ provider }"
+      ],
       "Other": [
         "Andere"
       ]
@@ -4338,10 +4335,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuer Kalender",
         "${ calendarsToBeCreatedCount } neue Kalender"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } zusammengeführter Kalender",
-        "${ calendarsToBeMerged } zusammengeführte Kalender"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } zusammengeführter Kalender",
@@ -4389,13 +4382,13 @@
         "${ numberOfTrackers } E-Mail-Tracker gesperrt",
         "${ numberOfTrackers } E-Mail-Tracker gesperrt"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } Kontaktgruppe",
-        "${ numContactGroups } Kontaktgruppen"
+      "${ numContact } contact": [
+        "${ numContact } Kontakt",
+        "${ numContact } Kontakte"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } Kontakt",
-        "${ numContacts } Kontakte"
+      "${ numGroups } contact group": [
+        "${ numGroups } Kontaktgruppe",
+        "${ numGroups } Kontaktgruppen"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } Nachricht in der Unterhaltung",
@@ -4632,9 +4625,9 @@
       "Country code": [
         "Ländercode"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "${ calendarsToBeCreated } neuen Kalender erstellen",
-        "${ calendarsToBeCreated } neue Kalender erstellen"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } neuen Kalender erstellen",
+        "${ calendarsToBeCreatedCount } neue Kalender erstellen"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchtest."
@@ -4875,12 +4868,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Grafiken wurden entfernt, da diese in automatischen Antworten nicht zulässig sind"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
+        "${ calendarCount }/${ totalCalendarsCount } Kalendern importieren"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren",
-        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalendern importieren"
       ],
       "Import from": [
         "Importieren aus"
@@ -4893,6 +4886,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importiere deine E-Mails, Kalender und Kontakte von einem anderen Dienst zu ${ BRAND_NAME }. Wir begleiten dich bei jedem Schritt und verschlüsseln deine Daten während des Transfers. Willkommen in der Welt der Privatsphäre."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Deine Daten werden von ${ fromEmail } nach ${ toEmail } importiert."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
@@ -6051,9 +6047,6 @@
       "Colors": [
         "Farben"
       ],
-      "Coming soon": [
-        "Demnächst verfügbar"
-      ],
       "Conditions": [
         "Bedingungen"
       ],
@@ -6141,9 +6134,6 @@
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Von: ${ importedEmail }"
-      ],
       "Good": [
         "Gut"
       ],
@@ -6217,12 +6207,6 @@
         "Hauptebene"
       ],
       "Manage categories": [
-        "Kategorien verwalten"
-      ],
-      "Manage folders": [
-        "Ordner verwalten"
-      ],
-      "Manage labels": [
         "Kategorien verwalten"
       ],
       "Manage my addresses": [
@@ -6378,9 +6362,6 @@
       "To:": [
         "An:"
       ],
-      "To: ${ emailAddress }": [
-        "An: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "An: ${ to }"
       ],
@@ -6395,9 +6376,6 @@
       ],
       "Undisclosed Recipients": [
         "Verborgene Empfänger"
-      ],
-      "Upload file": [
-        "Datei hochladen"
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -6670,8 +6648,9 @@
       "Almost there": [
         "Fast geschafft"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Anzahl der erstellten Kalender: ${ createdCalendars } von ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Anzahl der erstellten Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }",
+        "Anzahl der erstellten Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Verbindung zu Ihrem E-Mail-Anbieter wird aufgebaut"
@@ -6690,21 +6669,9 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten aus ${ itemsToImportCount } Ordner importieren und zur Kategorie ${ LABEL_MARKUP_PLACEHOLDER } hinzufügen",
-        "Alle Nachrichten aus ${ itemsToImportCount } Ordnern importieren und zur Kategorie ${ LABEL_MARKUP_PLACEHOLDER } hinzufügen"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten der Kategorie ${ itemsToImportCount } importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen",
-        "Alle Nachrichten der ${ itemsToImportCount } Kategorien importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen."
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten aus dem Ordner importieren und als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen.",
-        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordnern importieren und diese als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen."
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Alle Nachrichten aus der Kategorie importieren und diese als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen.",
-        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und diese als ${ LABEL_MARKUP_PLACEHOLDER } kennzeichnen."
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importieren Sie alle Nachrichten aus ${ itemsToImportCount } Kategorie und kennzeichnen Sie diese als",
+        "Importieren Sie alle Nachrichten aus ${ itemsToImportCount } Kategorien und kennzeichnen Sie diese als"
       ]
     },
     "Mailbox": {
@@ -7894,7 +7861,7 @@
       "Bug reported": [
         "Fehler gemeldet"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Import wird abgebrochen"
       ],
       "Code sent to ${ methodTo }": [

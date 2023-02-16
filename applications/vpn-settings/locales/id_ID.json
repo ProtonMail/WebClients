@@ -406,14 +406,8 @@
       "Continue with free plan": [
         "Lanjutkan dengan akun gratis"
       ],
-      "No, thanks": [
-        "Tidak, terima kasih"
-      ],
       "Start my 30-day free trial": [
         "Mulai masa uji coba 30 hari saya"
-      ],
-      "Try free for 30 days": [
-        "Coba gratis selama 30 hari"
       ]
     },
     "Addon": {
@@ -435,21 +429,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Dapat dibayar per 12 bulan"
-      ],
-      "Payable every 15 months": [
-        "Dapat dibayar per 15 bolan"
-      ],
-      "Payable every 24 months": [
-        "Dapat dibayar per 24 bulan"
-      ],
-      "Payable every 30 months": [
-        "Dapat dibayar per 30 bolan"
-      ],
-      "Payable every month": [
-        "Dapat dibayar per bulan"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Diperbarui secara otomatis pada ${ formattedEndTime }"
       ]
@@ -1852,9 +1831,6 @@
       "${ number } servers": [
         "${ number } server"
       ],
-      "${ storageSize } storage": [
-        "Kuota penyimpanan ${ storageSize }"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } diperlukan untuk koneksi tingkat Negara."
       ],
@@ -1869,9 +1845,6 @@
       ],
       "+${ organization.BonusVPN } connections for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (yang memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN dalam satu waktu)"
-      ],
-      "10 email addresses": [
-        "10 alamat email"
       ],
       "30-day money-back guarantee.": [
         "Jaminan 30 hari uang kembali."
@@ -2146,9 +2119,6 @@
       "MM/YY": [
         "BB/TT"
       ],
-      "No credit card required": [
-        "Tanpa perlu kartu kredit"
-      ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang diperlukan untuk saat ini."
       ],
@@ -2221,9 +2191,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
       ],
-      "Priority support": [
-        "Dukungan prioritas"
-      ],
       "read our two-factor authentication guide first": [
         "baca panduan autentikasi dua faktor kami terlebih dahulu"
       ],
@@ -2265,12 +2232,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
-      ],
-      "Support for 1 custom email domain": [
-        "Dukungan 1 domain email khusus"
       ],
       "support team": [
         "tim dukungan"
@@ -2364,12 +2325,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited messages": [
-        "Tanpa batasan jumlah pesan"
       ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
@@ -4061,9 +4016,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Penawaran ini hanya berlaku bagi pengguna baru ${ BRAND_NAME }. Tidak ada kartu kredit yang diperlukan."
       ]
@@ -4511,9 +4463,6 @@
       ],
       "Total paid": [
         "Total yang dibayarkan"
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Nikmati berbagai fitur unggulan ${ MAIL_APP_NAME } secara gratis"
       ],
       "TV log in": [
         "Masuk TV"

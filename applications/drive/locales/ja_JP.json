@@ -2065,9 +2065,6 @@
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "フォルダー名の中に予約済みのものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
@@ -2804,9 +2801,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } 個の結合されたカレンダー"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
@@ -2839,12 +2833,6 @@
       ],
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"
-      ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 件の連絡先グループ"
-      ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 件の連絡先"
       ],
       "${ pausedCount } paused": [
         "一時停止 ${ pausedCount } 件"
@@ -2939,6 +2927,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
+      "Calendar side panel": [
+        "カレンダーサイドパネル"
+      ],
       "Canceled": [
         "キャンセル"
       ],
@@ -2975,8 +2966,8 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } の使用を継続し、ドライブは後で開く"
       ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
+      "Country code": [
+        "国コード"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
@@ -3173,9 +3164,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "${ totalCalendarsCount } 個のうち ${ selectedCalendarsCount } 個のカレンダーをインポート"
-      ],
       "Import from": [
         "インポート元"
       ],
@@ -3214,6 +3202,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "最近、${ uploadName } のアップロードを試みたようです。アップロードが失敗した場合、${ replaceFile } してください。アップロードが進行中の場合、置き換えると進行中のアップロードがキャンセルされます。"
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "完全に削除しない限り、アイテムはごみ箱に残ります。"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "ドラッグアンドドロップまたはファイルを選択することでアップロードできます。"
@@ -3841,6 +3832,9 @@
       "Browser version": [
         "ブラウザのバージョン"
       ],
+      "Calendar": [
+        "カレンダー"
+      ],
       "Calendars": [
         "カレンダー"
       ],
@@ -3861,9 +3855,6 @@
       ],
       "Colors": [
         "色"
-      ],
-      "Coming soon": [
-        "まもなく登場"
       ],
       "Comment": [
         "コメント"
@@ -3973,9 +3964,6 @@
       "Folder name": [
         "フォルダー名"
       ],
-      "From: ${ importedEmail }": [
-        "移行元: ${ importedEmail }"
-      ],
       "Good": [
         "いい"
       ],
@@ -4035,12 +4023,6 @@
       ],
       "Manage categories": [
         "カテゴリーを管理"
-      ],
-      "Manage folders": [
-        "フォルダーを管理"
-      ],
-      "Manage labels": [
-        "ラベルを管理"
       ],
       "Merge a folder": [
         "フォルダーを統合"
@@ -4159,9 +4141,6 @@
       "This will permanently delete all files in your locked drive.": [
         "開くことのできないドライブ内のすべてのデータが削除されます。"
       ],
-      "To: ${ emailAddress }": [
-        "移行先: ${ emailAddress }"
-      ],
       "Toolbar": [
         "ツールバー"
       ],
@@ -4185,9 +4164,6 @@
       ],
       "Upload anyway": [
         "無視してアップロードする"
-      ],
-      "Upload file": [
-        "ファイルをアップロード"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -4281,9 +4257,6 @@
       "Almost there": [
         "もう少しです"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "作成済みカレンダー数: ${ createdCalendars } / ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
       ],
@@ -4298,11 +4271,6 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ itemsToImportCount } つのラベルから${ periodFragment } の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
     "Message": {
