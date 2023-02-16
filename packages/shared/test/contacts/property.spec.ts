@@ -42,8 +42,9 @@ describe('property', () => {
                     date,
                 },
             } as VCardProperty<VCardDateOrText>;
+            const fallbackDate = new Date();
 
-            expect(getDateFromVCardProperty(vCardProperty)).toEqual(new Date());
+            expect(getDateFromVCardProperty(vCardProperty, fallbackDate)).toEqual(fallbackDate);
         });
 
         it('should give expected date when text is a valid date', () => {
