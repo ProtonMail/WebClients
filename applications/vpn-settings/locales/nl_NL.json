@@ -406,14 +406,8 @@
       "Continue with free plan": [
         "Doorgaan met gratis abonnement"
       ],
-      "No, thanks": [
-        "Nee, bedankt"
-      ],
       "Start my 30-day free trial": [
         "Start mijn 30 dagen proefversie"
-      ],
-      "Try free for 30 days": [
-        "Probeer gratis uit voor 30 dagen"
       ]
     },
     "Addon": {
@@ -437,21 +431,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Betaalbaar elke 12 maanden"
-      ],
-      "Payable every 15 months": [
-        "Betaalbaar elke 15 maanden"
-      ],
-      "Payable every 24 months": [
-        "Betaalbaar elke 24 maanden"
-      ],
-      "Payable every 30 months": [
-        "Betaalbaar elke 30 maanden"
-      ],
-      "Payable every month": [
-        "Betaalbaar elke maand"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Vernieuwd automatisch op ${ formattedEndTime }"
       ]
@@ -1859,9 +1838,6 @@
         "${ number } server",
         "${ number } servers"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } opslagruimte"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } vereist voor verbindingen op landniveau."
       ],
@@ -1877,9 +1853,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadressen"
       ],
       "30-day money-back guarantee.": [
         "30-dagen geld terug garantie."
@@ -2154,9 +2127,6 @@
       "MM/YY": [
         "MM/JJ"
       ],
-      "No credit card required": [
-        "Green kredietkaart vereist"
-      ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
       ],
@@ -2229,9 +2199,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
-      ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
       ],
@@ -2273,12 +2240,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-mail domein"
       ],
       "support team": [
         "ondersteuningsteam"
@@ -2372,12 +2333,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ongelimiteerde mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
       ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
@@ -4324,9 +4279,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "De privacy-eerst e-mail en agenda oplossing voor uw alledaagse communicatienoden."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Dit aanbod is enkel voor zij nieuw bij ${ BRAND_NAME }. Geen kredietkaart vereist."
       ]
@@ -4774,9 +4726,6 @@
       ],
       "Total paid": [
         "Totaal betaald"
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Probeer het beste van ${ MAIL_APP_NAME } gratis"
       ],
       "TV log in": [
         "TV inloggen"

@@ -588,9 +588,6 @@
       "Remove this notification": [
         "Fjarlægja þessa áminningu"
       ],
-      "Rename": [
-        "Endurnefna"
-      ],
       "Report a problem": [
         "Tilkynna vandamál"
       ],
@@ -901,14 +898,8 @@
       "Continue with free plan": [
         "Halda áfram með ókeypis áskrift"
       ],
-      "No, thanks": [
-        "Nei, takk"
-      ],
       "Start my 30-day free trial": [
         "Byrja 30 daga ókeypis reynsluáskriftina mína"
-      ],
-      "Try free for 30 days": [
-        "Prófaðu ókeypis í 30 daga"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1044,21 +1035,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Greiðist á 12 mánaða fresti"
-      ],
-      "Payable every 15 months": [
-        "Greiðist á 15 mánaða fresti"
-      ],
-      "Payable every 24 months": [
-        "Greiðist á 24 mánaða fresti"
-      ],
-      "Payable every 30 months": [
-        "Greiðist á 30 mánaða fresti"
-      ],
-      "Payable every month": [
-        "Greiðist í hverjum mánuði"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Endurnýjast sjálfkrafa þann ${ formattedEndTime }"
       ]
@@ -3066,9 +3042,6 @@
       "Signature verification failed": [
         "Sannvottun undirritunar mistókst"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Nokkur af möppuheitum þínum eru frátekin. Aðlagaðu innflutninginn með því að breyta þessum heitum."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nokkur af þínum merkjaheitum eru ekki tiltæk. Vinsamlega aðlagaðu innflutninginn með því að breyta þessum heitum."
       ],
@@ -4217,9 +4190,6 @@
       "Canceled": [
         "Hætt við"
       ],
-      "Canceling": [
-        "Hætti við"
-      ],
       "Completed": [
         "Lokið"
       ],
@@ -4274,9 +4244,6 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } gerði hlé á innflutningi vegna þess að pláss á reikningnum þínum er að verða lítið. Þú getur:"
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } mun reyna að halda innflutningnum áfram um leið og tölvupóstveitan þín endurstillir reikninginn þinn ${ bandwithLimitLink }. Þú þarft ekki að gera neitt. Ef þú hættir við innflutninginn geturðu ekki haldið honum áfram og þú þarft að byrja upp á nýtt."
-      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s dulkóðunartækni þýðir að enginn hefur aðgang að lykilorðinu þínu - ekki einu sinni við."
       ],
@@ -4286,10 +4253,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nýtt dagatal",
         "${ calendarsToBeCreatedCount } ný dagatöl"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } sameinað dagatal",
-        "${ calendarsToBeMerged } sameinuð dagatöl"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } sameinað dagatal",
@@ -4329,14 +4292,6 @@
         "${ numberOfNonPrivateKeys } hlaðin skrá er ekki gildur einkalykill. Vinsamlega staðfestu og reyndu aftur.",
         "${ numberOfNonPrivateKeys } upphlaðnar skrár eru ekki gildir einkalyklar. Vinsamlega staðfestu og reyndu aftur."
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } tengiliðahópur",
-        "${ numContactGroups } tengiliðahópar"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } tengiliður",
-        "${ numContacts } tengiliðir"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappa fannst",
         "${ providerFoldersNumLocalized } möppur fundust"
@@ -4364,9 +4319,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } merki valið",
         "${ selectedFoldersCountLocalized } merki valin"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } geymslurými"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } krafist fyrir landstengingu."
@@ -4396,9 +4348,6 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Bjóddu vinum til ${ BRAND_NAME }"
-      ],
-      "10 email addresses": [
-        "10 netföng"
       ],
       "2. They try ${ planName }": [
         "2. Þeir reyna ${ planName }"
@@ -4663,10 +4612,6 @@
       ],
       "Country code": [
         "Landsnúmer"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Búa til ${ calendarsToBeCreated } nýtt dagatal",
-        "Búa til ${ calendarsToBeCreated } ný dagatöl"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Búðu til merki fyrir innfluttu skilaboðin, tímabil fyrir þennan innflutning og möppurnar sem þú vilt flytja inn."
@@ -4978,10 +4923,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Flytja inn ${ contactsFragment } og ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Flytja inn ${ selectedCalendarsCount } af ${ totalCalendarsCount } dagatali",
-        "Flytja inn ${ selectedCalendarsCount } af ${ totalCalendarsCount } dagatölum"
-      ],
       "Import from": [
         "Innflutt frá"
       ],
@@ -5166,9 +5107,6 @@
       "No contact encryption keys exist": [
         "Engir dulritunarlyklar tengiliðar fyrirfinnast"
       ],
-      "No credit card required": [
-        "Ekki þörf á kreditkorti"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Engin endurheimtuaðferð er uppsett fyrir gögnin; þú átt á hættu að missa aðgang að gögnunum þínum"
       ],
@@ -5334,9 +5272,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Verðið inniheldur alla viðeigandi afslætti sem byggjast á hringrásarafsláttum og afsláttarmiðum sem ekki eru útrunnir og sem vistaðir eru á reikningnum þínum."
       ],
-      "Priority support": [
-        "Forgangsstuðningur"
-      ],
       "Public link invite": [
         "Almennur boðstengill"
       ],
@@ -5466,17 +5401,11 @@
       "Storage for users": [
         "Geymslurými fyrir notendur"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Geymslurými er deilt yfir ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Geymslurými sem þessi notandi notar"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Geymdu þetta lykilorð og þessa skrá á öruggum stað. Þú þarft aftur á þeim að halda til að flytja inn lykilinn þinn."
-      ],
-      "Support for 1 custom email domain": [
-        "Stuðningur við 1 sérsniðið tölvupóstlén"
       ],
       "support team": [
         "stuðningsteymið okkar"
@@ -5690,12 +5619,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Ef þú ekki beinlínis skráir þig út eða skiptir um lykilorð, þá haldast setur virkar. Setur renna út eftir 60 daga af aðgerðaleysi."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ótakmarkaðar möppur, merkimiðar og síur"
-      ],
-      "Unlimited messages": [
-        "Ótakmörkuð skilaboð"
       ],
       "Unsaved changes": [
         "Óvistaðar breytingar"
@@ -6586,6 +6509,9 @@
       "BTC amount:": [
         "Upphæð í BTC:"
       ],
+      "Calendar": [
+        "Dagatal"
+      ],
       "Calendars": [
         "Dagatöl"
       ],
@@ -6618,9 +6544,6 @@
       ],
       "Colors": [
         "Litur"
-      ],
-      "Coming soon": [
-        "Kemur bráðum"
       ],
       "Composer": [
         "Ritill"
@@ -6811,9 +6734,6 @@
       "From: ${ fromEmail }": [
         "Frá: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Frá: ${ importedEmail }"
-      ],
       "Gift code": [
         "Gjafakóði"
       ],
@@ -6906,12 +6826,6 @@
       ],
       "Manage categories": [
         "Stjórna flokkum"
-      ],
-      "Manage folders": [
-        "Sýsla með möppur"
-      ],
-      "Manage labels": [
-        "Sýsla með merkingar"
       ],
       "Mark as": [
         "Merkja sem"
@@ -7174,9 +7088,6 @@
       "Timezone": [
         "Tímabelti"
       ],
-      "To: ${ emailAddress }": [
-        "Til: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Til: ${ to }"
       ],
@@ -7197,9 +7108,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Hlaða upp 1 eða fleirum endurheimtuskrám eða dulritunarlyklum"
-      ],
-      "Upload file": [
-        "Senda inn skrá"
       ],
       "URL": [
         "Slóð"
@@ -7503,9 +7411,6 @@
       "Almost there": [
         "Næstum þar"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Fjöldi dagatala útbúin: ${ createdCalendars } af ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Tengist tölvupóstveitunni þinni"
       ],
@@ -7528,12 +7433,6 @@
       ],
       "Enable authentication logs": [
         "Virkja auðkenningarskrár"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Flytja inn öll skilaboð frá ${ itemsToImportCount } möppu og merktu þær sem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Flytja inn öll skilaboð frá ${ itemsToImportCount } möppu og merktu þær sem ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8100,26 +7999,6 @@
         "Teymisstjórnun"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gerðu friðhelgi að sjálfgefnu fyrir öryggisafrit, geymslu, deilingu og endurheimt skráa."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Að öðrum kosti verður aðgangur að reikningnum þínum takmarkaður og reikningurinn verður að lokum gerður óvirkur."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Til að halda áfram að nota ${ MAIL_APP_NAME } með úrvalseiginleikum skaltu velja áskrift og greiðslumöguleika."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Uppfærðu í viðskiptapakkann með aðgangi að öllum hágæða ${ BRAND_NAME } þjónustum."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Uppfærðu í fullkominn friðhelgispakka og fáðu aðgang að öllum hágæða ${ BRAND_NAME } þjónustum."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Þinni reynsluáskrift lýkur ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } endar með ${ last4 }"
@@ -8189,6 +8068,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Þú nýtur kynningarverðs á núverandi áskrift þinni. Ef þú færir niður reikninginn þinn taparðu kynningarverðinu þínu og það verður ekki í boði ef þú reynir að gerast áskrifandi aftur."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gerðu friðhelgi að sjálfgefnu fyrir öryggisafrit, geymslu, deilingu og endurheimt skráa."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Að öðrum kosti verður aðgangur að reikningnum þínum takmarkaður og reikningurinn verður að lokum gerður óvirkur."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Til að halda áfram að nota ${ MAIL_APP_NAME } með úrvalseiginleikum skaltu velja áskrift og greiðslumöguleika."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Uppfærðu í viðskiptapakkann með aðgangi að öllum hágæða ${ BRAND_NAME } þjónustum."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Uppfærðu í fullkominn friðhelgispakka og fáðu aðgang að öllum hágæða ${ BRAND_NAME } þjónustum."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Þinni reynsluáskrift lýkur ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9430,9 +9329,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Póst- og dagatalslausnin þar sem friðhelgi er í forgangi fyrir þínar hversdagslegu samskiptaþarfir."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Þetta tilboð er aðeins fyrir þá sem eru nýir hjá ${ BRAND_NAME }. Ekki þarf kreditkort."
       ]
@@ -9470,9 +9366,6 @@
       ],
       "Calendar updated": [
         "Dagatal uppfært"
-      ],
-      "Canceling import": [
-        "Hætti við innflutning"
       ],
       "Catch-all address updated": [
         "Safna-öllu vistfang uppfært"
@@ -10529,9 +10422,6 @@
       "Track your referrals": [
         "Fylgstu með tilvísunum þínum"
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Reyndu það besta af ${ MAIL_APP_NAME } ókeypis"
-      ],
       "Two-factor authentication": [
         "Tveggja-þrepa auðkenning"
       ],
@@ -11041,9 +10931,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Þú munt tapa öllum stillingum sem þú hefur gert hingað til."
-      ],
-      "You will not see this import record in the list anymore.": [
-        "Þú munt ekki lengur sjá þessa innflutningfærslu í listanum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ókeypis prufuáskriftin þín lýkur þann ${ textDate }. ${ action }"

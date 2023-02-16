@@ -806,9 +806,6 @@
       "Remove this label": [
         "Odebrat štítek"
       ],
-      "Rename": [
-        "Přejmenovat"
-      ],
       "Reply": [
         "Odpovědět"
       ],
@@ -3343,9 +3340,6 @@
       "Some groups could not be deleted": [
         "Některé skupiny není možné odstranit"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Některé z vašich názvů složek jsou rezervovány. Přizpůsobte prosím import a upravte tyto názvy."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Některé názvy složek nejsou k dispozici. Přizpůsobte prosím import a upravte tyto názvy."
       ],
@@ -4407,12 +4401,6 @@
         "${ calendarsToBeCreatedCount } nových kalendářů",
         "${ calendarsToBeCreatedCount } nových kalendářů"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } sloučený kalendář",
-        "${ calendarsToBeMerged } sloučené kalendáře",
-        "${ calendarsToBeMerged } sloučených kalendářů",
-        "${ calendarsToBeMerged } sloučených kalendářů"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } sloučený kalendář",
         "${ calendarsToBeMergedCount } sloučené kalendáře",
@@ -4479,17 +4467,17 @@
         "${ numberOfTrackers } e-mailových sledovacích prvků zablokováno",
         "${ numberOfTrackers } e-mailových sledovacích prvků zablokováno"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } skupina kontaktů",
-        "${ numContactGroups } skupiny kontaktů",
-        "${ numContactGroups } skupin kontaktů",
-        "${ numContactGroups } skupin kontaktů"
+      "${ numContact } contact": [
+        "${ numContact } kontakt",
+        "${ numContact } kontakty",
+        "${ numContact } kontaktů",
+        "${ numContact } kontaktů"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } kontakt",
-        "${ numContacts } kontakty",
-        "${ numContacts } kontaktů",
-        "${ numContacts } kontaktů"
+      "${ numGroups } contact group": [
+        "${ numGroups } skupina kontaktů",
+        "${ numGroups } skupiny kontaktů",
+        "${ numGroups } skupin kontaktů",
+        "${ numGroups } skupin kontaktů"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } zpráva v konverzaci",
@@ -4776,11 +4764,11 @@
       "Country code": [
         "Kód země"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Vytvořit ${ calendarsToBeCreated } nový kalendář",
-        "Vytvořit ${ calendarsToBeCreated } nové kalendáře",
-        "Vytvořit ${ calendarsToBeCreated } nových kalendářů",
-        "Vytvořit ${ calendarsToBeCreated } nových kalendářů"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Vytvořit ${ calendarsToBeCreatedCount } nový kalendář",
+        "Vytvořit ${ calendarsToBeCreatedCount } nové kalendáře",
+        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů",
+        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a složky, které chcete importovat."
@@ -5037,14 +5025,14 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Obrázky byly odstraněny, protože nejsou povoleny v automatické odpovědi"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendáře",
+        "Importovat ${ calendarCount } ze ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendáře",
-        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů",
-        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů",
-        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů"
       ],
       "Import from": [
         "Importovat z"
@@ -6245,9 +6233,6 @@
       "Colors": [
         "Barvy"
       ],
-      "Coming soon": [
-        "Již brzy"
-      ],
       "Conditions": [
         "Podmínky"
       ],
@@ -6335,9 +6320,6 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Od: ${ importedEmail }"
-      ],
       "Good": [
         "Dobré"
       ],
@@ -6412,12 +6394,6 @@
       ],
       "Manage categories": [
         "Zpravovat kategorie"
-      ],
-      "Manage folders": [
-        "Správa složek"
-      ],
-      "Manage labels": [
-        "Správa štítků"
       ],
       "Manage my addresses": [
         "Správa mých adres"
@@ -6572,9 +6548,6 @@
       "To:": [
         "Komu:"
       ],
-      "To: ${ emailAddress }": [
-        "Pro: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Komu: ${ to }"
       ],
@@ -6589,9 +6562,6 @@
       ],
       "Undisclosed Recipients": [
         "Nezveřejnění příjemci"
-      ],
-      "Upload file": [
-        "Nahrát soubor"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -6864,9 +6834,6 @@
       "Almost there": [
         "Téměř hotovo"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Počet vytvořených kalendářů: ${ createdCalendars } z ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Připojování k Vašemu poskytovateli e-mailu"
       ],
@@ -6881,32 +6848,6 @@
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny vybrané zprávy z ${ selectedItemsToImportCount } ze složky ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy z ${ selectedItemsToImportCount } ze složek ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy z ${ selectedItemsToImportCount } ze složek ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy z ${ selectedItemsToImportCount } ze složek ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny vybrané zprávy se štítkem ${ selectedItemsToImportCount } z ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy se štítky ${ selectedItemsToImportCount } z ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy se štítky ${ selectedItemsToImportCount } z ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy se štítky ${ selectedItemsToImportCount } z ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7924,9 +7865,6 @@
       ],
       "Bug reported": [
         "Chyba nahlášena"
-      ],
-      "Canceling import": [
-        "Ruším import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"

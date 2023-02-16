@@ -406,14 +406,8 @@
       "Continue with free plan": [
         "Continuar con el plan gratuito"
       ],
-      "No, thanks": [
-        "No, gracias"
-      ],
       "Start my 30-day free trial": [
         "Iniciar mi prueba gratuita de 30 días"
-      ],
-      "Try free for 30 days": [
-        "Prueba gratis durante 30 días"
       ]
     },
     "Addon": {
@@ -437,21 +431,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Pagable cada 12 meses"
-      ],
-      "Payable every 15 months": [
-        "Pagable cada 15 meses"
-      ],
-      "Payable every 24 months": [
-        "Pago cada 24 meses"
-      ],
-      "Payable every 30 months": [
-        "Pagable cada 30 meses"
-      ],
-      "Payable every month": [
-        "Pagable cada mes"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renueva automáticamente el ${ formattedEndTime }."
       ]
@@ -1859,11 +1838,8 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de almacenamiento"
-      ],
       "${ vpnPlus } required for Country level connection.": [
-        "Se requiere ${ vpnPlus } para la conexión a nivel de país."
+        "Se requiere ${ vpnPlus } para conectarte a un país específico."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Se requiere ${ vpnPlus } para la función Secure Core."
@@ -1877,9 +1853,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (te permite conectar más dispositivos a la VPN)",
         "+${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (te permite conectar más dispositivos a la VPN)"
-      ],
-      "10 email addresses": [
-        "10 direcciones de correo"
       ],
       "30-day money-back guarantee.": [
         "Garantía de reembolso de 30 días."
@@ -1930,7 +1903,7 @@
         "Atención requerida"
       ],
       "Basic, Plus or Visionary subscription required": [
-        "Se requiere suscripción Basic, Plus o Visionary"
+        "Se requiere suscripción Basic, Plus o Visionary."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
@@ -2095,7 +2068,7 @@
         "Importante: asegúrate de que has guardado los códigos de recuperación. En caso contrario, puedes perder permanentemente el acceso a tu cuenta si pierdes tu dispositivo de autenticación de dos factores."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Instala un archivo de configuración de País para conectarte a un servidor aleatorio en el país de tu elección."
+        "Instala un archivo de configuración de país para conectarte a un servidor aleatorio en el país de tu elección."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
         "Instala un archivo de configuración de servidor gratuito para conectarte a un servidor específico en una de las tres ubicaciones gratuitas."
@@ -2104,7 +2077,7 @@
         "Instala un archivo de configuración de Secure Core para obtener protección adicional contra el compromiso de punto final de VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Instala un archivo de configuración de Servidor para conectarte a un servidor específico en el país de tu elección."
+        "Instala un archivo de configuración de servidor para conectarte a un servidor específico en el país de tu elección."
       ],
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
@@ -2153,9 +2126,6 @@
       ],
       "MM/YY": [
         "MM/AA"
-      ],
-      "No credit card required": [
-        "No se requiere tarjeta de crédito"
       ],
       "No payment is required at this time.": [
         "En este momento no se requiere ningún pago."
@@ -2218,7 +2188,7 @@
         "Espera hasta que tus cambios estén sincronizados con el servidor."
       ],
       "Plus or Visionary subscription required": [
-        "Se requiere suscripción Plus o Visionary"
+        "Se requiere suscripción Plus o Visionary."
       ],
       "Preview": [
         "Vista previa"
@@ -2228,9 +2198,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
-      ],
-      "Priority support": [
-        "Soporte prioritario"
       ],
       "read our two-factor authentication guide first": [
         "lee primero nuestra guía de autenticación de dos factores"
@@ -2257,7 +2224,7 @@
         "Protegiendo tu cuenta"
       ],
       "Server is currently down": [
-        "El servidor está actualmente caído"
+        "El servidor no está actualmente disponible."
       ],
       "Server load": [
         "Carga del servidor"
@@ -2274,12 +2241,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene habilitadas funciones adicionales."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "1 dominio de correo electrónico personalizado"
-      ],
       "support team": [
         "equipo de soporte"
       ],
@@ -2287,7 +2248,7 @@
         "La manera más segura de navegar, hacer streaming y estar en línea."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Estos ficheros de configuración te permiten elegir a qué servidor de ${ VPN_APP_NAME } te conectarás cuándo uses una aplicación de VPN de terceros o cuándo configures una conexión VPN en un router."
+        "Estos archivos de configuración te permiten elegir a qué servidor de ${ VPN_APP_NAME } te conectarás cuándo uses una aplicación de VPN de terceros o cuándo configures una conexión VPN en un router."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Estas configuraciones son proporcionadas para funcionar con routers WireGuard y clientes oficiales."
@@ -2373,12 +2334,6 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Lamentablemente no hay ningún método de recuperación configurado para esta cuenta."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensajes ilimitados"
-      ],
       "Unsaved changes": [
         "Cambios no guardados"
       ],
@@ -2392,7 +2347,7 @@
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Utiliza las siguientes credenciales cuando te conectes a servidores ${ VPN_APP_NAME } sin aplicación como conTunnelblick en macOSu OpenVPN en GNU/Linux."
+        "Utiliza las siguientes credenciales cuando te conectes a servidores ${ VPN_APP_NAME } sin aplicación como con Tunnelblick en macOSu OpenVPN en GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "La verificación puede tardar unos minutos."
@@ -2476,7 +2431,7 @@
         "Solo puedes tener una instancia de chat abierta a la vez. Cierra las conversaciones anteriores antes de empezar una nueva."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Puede utilizar las siguientes credenciales para conectarse a un servidor ${ VPN_APP_NAME } utilizando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
+        "Puedes utilizar las siguientes credenciales para conectarte a un servidor ${ VPN_APP_NAME } utilizando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "No puedes utilizar las credenciales de OpenVPN/IKEv2 para iniciar sesión en las aplicaciones de ${ VPN_APP_NAME } o en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
@@ -4101,9 +4056,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "La solución de correo electrónico y calendario, basada en el principio de privacidad, que tus comunicaciones del día a día necesitan."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Esta oferta es solo para los nuevos usuarios de ${ BRAND_NAME }. No se requiere tarjeta de crédito."
       ]
@@ -4382,7 +4334,7 @@
         "Correo electrónico"
       ],
       "Email subscriptions": [
-        "Suscripciones de correo electrónico"
+        "Boletines electrónicos"
       ],
       "End date": [
         "Fecha final"
@@ -4436,7 +4388,7 @@
         "Siguiente"
       ],
       "No recovery method": [
-        "No hay ningún método de recuperación"
+        "No hay ningún método de recuperación."
       ],
       "Open actions dropdown": [
         "Abrir lista desplegable de acciones"
@@ -4552,9 +4504,6 @@
       "Total paid": [
         "Total pagado"
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Prueba lo mejor de ${ MAIL_APP_NAME } gratis"
-      ],
       "TV log in": [
         "Inicio de sesión en TV"
       ],
@@ -4592,7 +4541,7 @@
         "Configuración de WireGuard"
       ],
       "You already have a ${ BRAND_NAME } account": [
-        "Ya tienes una cuenta de ${ BRAND_NAME }"
+        "Ya tienes una cuenta de ${ BRAND_NAME }."
       ],
       "Your changes are not synced yet": [
         "Tus cambios todavía no están sincronizados."
@@ -4610,7 +4559,7 @@
         "Tus suscripciones"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Has sido invitado a probar ${ MAIL_APP_NAME }"
+        "Estás invitado a probar ${ MAIL_APP_NAME }."
       ],
       "ZIP / postal code": [
         "CP / código postal"
