@@ -23,6 +23,7 @@ import { Icon, Loader } from '../../components';
 import {
     useApi,
     useConfig,
+    useFeature,
     useLoading,
     useOrganization,
     usePlans,
@@ -31,6 +32,7 @@ import {
     useVPNServersCount,
 } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
+import { FeatureCode } from '../index';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
@@ -64,6 +66,7 @@ const PlansSection = () => {
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
         return getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription));
     });
+    const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const [open] = useSubscriptionModal();
     const isLoading = Boolean(loadingPlans || loadingSubscription || loadingOrganization);
     const [selectedCurrency, setCurrency] = useState<Currency>();
@@ -141,6 +144,7 @@ const PlansSection = () => {
                 selectedProductPlans={selectedProductPlans}
                 onChangeSelectedProductPlans={setSelectedProductPlans}
                 organization={organization}
+                calendarSharingEnabled={calendarSharingEnabled}
             />
             <Button
                 color="norm"
