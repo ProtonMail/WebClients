@@ -406,14 +406,8 @@
       "Continue with free plan": [
         "Продолжить использовать бесплатный тариф"
       ],
-      "No, thanks": [
-        "Нет, спасибо"
-      ],
       "Start my 30-day free trial": [
         "Начать мой 30-дневный бесплатный пробный период"
-      ],
-      "Try free for 30 days": [
-        "Бесплатный пробный период 30 дней"
       ]
     },
     "Addon": {
@@ -441,21 +435,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Оплачивается каждые 12 месяцев"
-      ],
-      "Payable every 15 months": [
-        "Оплачивается каждые 15 месяцев"
-      ],
-      "Payable every 24 months": [
-        "Оплачивается каждые 24 месяца"
-      ],
-      "Payable every 30 months": [
-        "Оплачивается каждые 30 месяцев"
-      ],
-      "Payable every month": [
-        "Оплачивается каждый месяц"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Пролонгируется автоматически ${ formattedEndTime }"
       ]
@@ -1883,9 +1862,6 @@
         "${ number } серверов",
         "${ number } серверов"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } хранилища"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "Для подключений уровня страны требуется ${ vpnPlus }."
       ],
@@ -1903,9 +1879,6 @@
         "+${ organization.BonusVPN } подключения для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
         "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
         "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)"
-      ],
-      "10 email addresses": [
-        "10 адресов электронной почты"
       ],
       "30-day money-back guarantee.": [
         "30-дневная гарантия возврата денег."
@@ -2180,9 +2153,6 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
-      "No credit card required": [
-        "Кредитная карточка не требуется"
-      ],
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
       ],
@@ -2255,9 +2225,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
       ],
-      "Priority support": [
-        "Приоритетная поддержка"
-      ],
       "read our two-factor authentication guide first": [
         "сначала прочитайте наше руководство по двухфакторной аутентификации"
       ],
@@ -2299,12 +2266,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Поддержка 1 пользовательского домена электронной почты"
       ],
       "support team": [
         "служба поддержки"
@@ -2398,12 +2359,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "К сожалению, для этого аккаунта не настроен ни один метод восстановления."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неограниченное количество папок, меток и фильтров"
-      ],
-      "Unlimited messages": [
-        "Неограниченное количество сообщений"
       ],
       "Unsaved changes": [
         "Несохраненные изменения"
@@ -4438,9 +4393,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Почта и календарь - это решение для повседневных коммуникаций с приоритетом конфиденциальности."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Это предложение только для новичков в ${ BRAND_NAME }. Кредитная карта не требуется."
       ]
@@ -4888,9 +4840,6 @@
       ],
       "Total paid": [
         "Всего оплачено"
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
       ],
       "TV log in": [
         "Вход на ТВ"

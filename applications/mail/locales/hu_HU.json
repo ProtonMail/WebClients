@@ -779,9 +779,6 @@
       "Remove this label": [
         "Címke eltávolítása"
       ],
-      "Rename": [
-        "Átnevezés"
-      ],
       "Reply": [
         "Válasz"
       ],
@@ -3239,9 +3236,6 @@
       "Some groups could not be deleted": [
         "Néhány csoport törlése nem sikerült"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Bizonyos mappák neve fenntartott. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos mappák neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
@@ -4228,10 +4222,6 @@
         "${ calendarsToBeCreatedCount } új naptár",
         "${ calendarsToBeCreatedCount } új naptár"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } egyesített naptár",
-        "${ calendarsToBeMerged } egyesített naptár"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } egyesített naptár",
         "${ calendarsToBeMergedCount } egyesített naptár"
@@ -4277,14 +4267,6 @@
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } e-mail követő blokkolva",
         "${ numberOfTrackers } e-mail követő blokkolva"
-      ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } névjegy csoport",
-        "${ numContactGroups } névjegy csoport"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } névjegy",
-        "${ numContacts } névjegy"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } üzenet a beszélgetésben",
@@ -4511,10 +4493,6 @@
       ],
       "Copied to clipboard": [
         "Vágólapra másolva"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Létrehozandó ${ calendarsToBeCreated } új naptár",
-        "Létrehozandó ${ calendarsToBeCreated } új naptár"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó mappákat."
@@ -4747,10 +4725,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból",
-        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból"
       ],
       "Import from": [
         "Importálás innen"
@@ -5882,9 +5856,6 @@
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
       ],
-      "Coming soon": [
-        "Hamarosan"
-      ],
       "Conditions": [
         "Feltételek"
       ],
@@ -5966,9 +5937,6 @@
       "From:": [
         "Feladó:"
       ],
-      "From: ${ importedEmail }": [
-        "Forrás: ${ importedEmail }"
-      ],
       "Good": [
         "Jó"
       ],
@@ -6043,12 +6011,6 @@
       ],
       "Manage categories": [
         "Kategóriák kezelése"
-      ],
-      "Manage folders": [
-        "Mappák kezelése"
-      ],
-      "Manage labels": [
-        "Címkék kezelése"
       ],
       "Manage my addresses": [
         "Saját címek kezelése"
@@ -6203,9 +6165,6 @@
       "To:": [
         "Címzett:"
       ],
-      "To: ${ emailAddress }": [
-        "Ide: ${ emailAddress }"
-      ],
       "Toolbar": [
         "Eszköztár"
       ],
@@ -6214,9 +6173,6 @@
       ],
       "Undisclosed Recipients": [
         "Címzettek nem láthatók"
-      ],
-      "Upload file": [
-        "Fájl feltöltése"
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -6483,9 +6439,6 @@
       "Almost there": [
         "Majdnem kész"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Már ennyi naptárt hozott létre: ${ createdCalendars } ennyiből: ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Csatlakozás az e-mailszolgáltatójához"
       ],
@@ -6500,20 +6453,6 @@
       ],
       "Your import is starting": [
         "Az importálás indul"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7433,9 +7372,6 @@
       ],
       "Bug reported": [
         "Hiba bejelentve"
-      ],
-      "Canceling import": [
-        "Importálás megszakítása"
       ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"

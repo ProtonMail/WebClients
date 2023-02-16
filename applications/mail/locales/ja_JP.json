@@ -245,6 +245,9 @@
       "Create new message": [
         "新しいメッセージを作成"
       ],
+      "Custom": [
+        "カスタム"
+      ],
       "Customize": [
         "カスタマイズ"
       ],
@@ -593,6 +596,9 @@
       "Minimize composer": [
         "最小化"
       ],
+      "Monday": [
+        "月曜日"
+      ],
       "More": [
         "その他"
       ],
@@ -787,9 +793,6 @@
       ],
       "Remove this label": [
         "このラベルを削除"
-      ],
-      "Rename": [
-        "名前を変更"
       ],
       "Reply": [
         "返信"
@@ -2869,6 +2872,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
+      "When do you want your message to be sent?": [
+        "いつメッセージを送信しますか？"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
       ],
@@ -3264,9 +3270,6 @@
       ],
       "Some of the attachments could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe files with a program such as GnuPG.": [
         "いくつかの添付ファイルは復号できませんでした。\n関連する公開鍵を持っている場合は、GnuPG などのプログラムを使ってファイルを復号できます。"
-      ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "フォルダー名の中に予約済みのものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
@@ -4257,9 +4260,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } 個の結合されたカレンダー"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
@@ -4295,12 +4295,6 @@
       ],
       "${ numberOfTrackers } email trackers blocked": [
         "${ numberOfTrackers } 件のメールトラッカーをブロックしました"
-      ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 件の連絡先グループ"
-      ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 件の連絡先"
       ],
       "${ NumMessages } messages in conversation": [
         "会話内に ${ NumMessages } 件の会話"
@@ -4473,6 +4467,9 @@
       "Body: ": [
         "本文: "
       ],
+      "Calendar side panel": [
+        "カレンダーサイドパネル"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
       ],
@@ -4506,8 +4503,8 @@
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
+      "Country code": [
+        "国コード"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
@@ -4742,9 +4739,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "${ totalCalendarsCount } 個のうち ${ selectedCalendarsCount } 個のカレンダーをインポート"
       ],
       "Import from": [
         "インポート元"
@@ -5897,9 +5891,6 @@
       "Colors": [
         "色"
       ],
-      "Coming soon": [
-        "まもなく登場"
-      ],
       "Conditions": [
         "条件"
       ],
@@ -5981,9 +5972,6 @@
       "From:": [
         "差出人："
       ],
-      "From: ${ importedEmail }": [
-        "移行元: ${ importedEmail }"
-      ],
       "Good": [
         "いい"
       ],
@@ -6058,12 +6046,6 @@
       ],
       "Manage categories": [
         "カテゴリーを管理"
-      ],
-      "Manage folders": [
-        "フォルダーを管理"
-      ],
-      "Manage labels": [
-        "ラベルを管理"
       ],
       "Manage my addresses": [
         "アドレスの管理"
@@ -6218,9 +6200,6 @@
       "To:": [
         "宛先:"
       ],
-      "To: ${ emailAddress }": [
-        "移行先: ${ emailAddress }"
-      ],
       "Toolbar": [
         "ツールバー"
       ],
@@ -6229,9 +6208,6 @@
       ],
       "Undisclosed Recipients": [
         "非公開の宛先"
-      ],
-      "Upload file": [
-        "ファイルをアップロード"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -6504,9 +6480,6 @@
       "Almost there": [
         "もう少しです"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "作成済みカレンダー数: ${ createdCalendars } / ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
       ],
@@ -6521,11 +6494,6 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ itemsToImportCount } つのラベルから${ periodFragment } の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
     "Mailbox": {
@@ -7436,9 +7404,6 @@
       ],
       "Bug reported": [
         "バグの報告が送信されました"
-      ],
-      "Canceling import": [
-        "インポートをキャンセル"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"

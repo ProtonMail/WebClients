@@ -280,6 +280,9 @@
       "Join calendar": [
         "Dołącz do kalendarza"
       ],
+      "Keep current time zone": [
+        "Zachowaj obecną strefę czasową"
+      ],
       "Load image": [
         "Załaduj obraz"
       ],
@@ -402,9 +405,6 @@
       ],
       "Remove this participant": [
         "Usuń uczestnika"
-      ],
-      "Rename": [
-        "Zmień nazwę"
       ],
       "Report a problem": [
         "Zgłoś problem"
@@ -2393,9 +2393,6 @@
       "Some groups could not be deleted": [
         "Niektóre grupy nie mogły zostać usunięte"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Niektóre nazwy folderów są zarezerwowane. Dostosuj proces importowania, aby zmienić te nazwy."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Niektóre nazwy folderów są niedostępne. Dostosuj proces importowania, aby zmienić te nazwy."
       ],
@@ -3213,12 +3210,6 @@
         "${ calendarsToBeCreatedCount } nowych kalendarzy",
         "${ calendarsToBeCreatedCount } nowych kalendarzy"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } scalony kalendarz",
-        "${ calendarsToBeMerged } scalone kalendarze",
-        "${ calendarsToBeMerged } scalonych kalendarzy",
-        "${ calendarsToBeMerged } scalonych kalendarzy"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } scalony kalendarz",
         "${ calendarsToBeMergedCount } scalone kalendarze",
@@ -3252,17 +3243,17 @@
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } grupę kontaktów",
-        "${ numContactGroups } grupy kontaktów",
-        "${ numContactGroups } grup kontaktów",
-        "${ numContactGroups } grup kontaktów"
+      "${ numContact } contact": [
+        "${ numContact } kontakt",
+        "${ numContact } kontakty",
+        "${ numContact } kontaktów",
+        "${ numContact } kontaktów"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } kontakt",
-        "${ numContacts } kontakty",
-        "${ numContacts } kontaktów",
-        "${ numContacts } kontaktów"
+      "${ numGroups } contact group": [
+        "${ numGroups } grupa kontaktów",
+        "${ numGroups } grupy kontaktów",
+        "${ numGroups } grup kontaktów",
+        "${ numGroups } grupy kontaktów"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } znaleziony folder",
@@ -3277,10 +3268,10 @@
         "${ providerFoldersNumLocalized } znalezionych etykiet w poczcie Gmail"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarz",
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarze",
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarzy",
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalendarzy"
+        "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarz",
+        "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarze",
+        "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarzy",
+        "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarzy"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } zaznaczony folder",
@@ -3388,7 +3379,7 @@
         "Nie pamiętasz hasła? Aby odrzucić powiadomienie, możesz usunąć dane wszystkich kontaktów zaszyfrowanych tym kluczem."
       ],
       "Checking contact ${ progress } of ${ max }...": [
-        "Sprawdzanie kontaktów... (${ progress }/${ max })"
+        "Sprawdzanie kontaktów... (${ progress } z ${ max })"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
@@ -3399,11 +3390,11 @@
       "Country code": [
         "Kod kraju"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Utwórz ${ calendarsToBeCreated } nowy kalendarz",
-        "Utwórz ${ calendarsToBeCreated } nowe kalendarze",
-        "Utwórz ${ calendarsToBeCreated } nowych kalendarzy",
-        "Utwórz ${ calendarsToBeCreated } nowych kalendarzy"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Utwórz ${ calendarsToBeCreatedCount } nowy kalendarz",
+        "Utwórz ${ calendarsToBeCreatedCount } nowe kalendarze",
+        "Utwórz ${ calendarsToBeCreatedCount } nowych kalendarzy",
+        "Utwórz ${ calendarsToBeCreatedCount } nowych kalendarzy"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Utwórz etykietę dla zaimportowanych wiadomości, wybierz przedział czasowy dla tego importu oraz foldery, które chcesz zaimportować."
@@ -3501,14 +3492,14 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder Spam."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarz",
+        "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarze",
+        "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarzy",
+        "Importuj ${ calendarCount } na ${ totalCalendarsCount } kalendarzy"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importuj ${ contactsFragment } i ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importuj kalendarz (${ selectedCalendarsCount }/${ totalCalendarsCount })",
-        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })",
-        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })",
-        "Importuj kalendarze (${ selectedCalendarsCount }/${ totalCalendarsCount })"
       ],
       "Import from": [
         "Importuj z"
@@ -3521,6 +3512,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }. Poprowadzimy Cię na każdym kroku i zaszyfrujemy dane podczas ich przenoszenia. Witaj w świecie prywatności."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
@@ -4052,9 +4046,6 @@
       "Colors": [
         "Kolory"
       ],
-      "Coming soon": [
-        "Wkrótce"
-      ],
       "Contacts": [
         "Kontakty"
       ],
@@ -4139,9 +4130,6 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Od: ${ importedEmail }"
-      ],
       "Good": [
         "Dobrze"
       ],
@@ -4195,12 +4183,6 @@
       ],
       "Manage categories": [
         "Zarządzaj kategoriami"
-      ],
-      "Manage folders": [
-        "Zarządzaj folderami"
-      ],
-      "Manage labels": [
-        "Zarządzaj etykietami"
       ],
       "Move to Archive": [
         "Przenieś do Archiwum"
@@ -4286,9 +4268,6 @@
       "System information": [
         "Informacje o systemie"
       ],
-      "To: ${ emailAddress }": [
-        "Do: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Do: ${ to }"
       ],
@@ -4300,9 +4279,6 @@
       ],
       "Two-factor authentication code": [
         "Kod uwierzytelniający"
-      ],
-      "Upload file": [
-        "Prześlij plik"
       ],
       "Upload picture": [
         "Prześlij zdjęcie"
@@ -4406,8 +4382,11 @@
       "Almost there": [
         "Już prawie"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Liczba utworzonych kalendarzy: ${ createdCalendars } z ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Łączenie z dostawcą poczty e-mail"
@@ -4426,29 +4405,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importuj wiadomości z ${ itemsToImportCount } folderu i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ itemsToImportCount } folderów i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ itemsToImportCount } folderów i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ itemsToImportCount } folderów i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importuj wiadomości z ${ itemsToImportCount } folderu i oznacz je etykietą",
+        "Importuj wiadomości z ${ itemsToImportCount } folderów i oznacz je etykietą",
+        "Importuj wiadomości z ${ itemsToImportCount } folderów i oznacz je etykietą",
+        "Importuj wiadomości z ${ itemsToImportCount } folderów i oznacz je etykietą"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importuj wiadomości z ${ itemsToImportCount } etykietą i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ itemsToImportCount } etykiet i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ itemsToImportCount } etykiet i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z ${ itemsToImportCount } etykiet i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importuj wiadomości z ${ itemsToImportCount } etykietą i oznacz je etykietą",
+        "Importuj wiadomości z ${ itemsToImportCount } etykiet i oznacz je etykietą",
+        "Importuj wiadomości z ${ itemsToImportCount } etykiet i oznacz je etykietą",
+        "Importuj wiadomości z ${ itemsToImportCount } etykiet i oznacz je etykietą"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
+        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
+        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
+        "Importuj wiadomości z niektórych folderów (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
+        "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
+        "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą",
+        "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą"
       ]
     },
     "Message": {

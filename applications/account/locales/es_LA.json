@@ -597,9 +597,6 @@
       "Remove this notification": [
         "Eliminar esta notificación"
       ],
-      "Rename": [
-        "Renombrar"
-      ],
       "Report a problem": [
         "Reportar un problema"
       ],
@@ -910,14 +907,8 @@
       "Continue with free plan": [
         "Continuar con el plan gratuito"
       ],
-      "No, thanks": [
-        "No, gracias"
-      ],
       "Start my 30-day free trial": [
         "Iniciar mi prueba gratuita de 30 días"
-      ],
-      "Try free for 30 days": [
-        "Pruebe gratis por 30 días"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1053,21 +1044,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Pagable cada 12 meses"
-      ],
-      "Payable every 15 months": [
-        "Pagable cada 15 meses"
-      ],
-      "Payable every 24 months": [
-        "Pagable cada 24 meses"
-      ],
-      "Payable every 30 months": [
-        "Pagable cada 30 meses"
-      ],
-      "Payable every month": [
-        "Pagable cada mes"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renueva automáticamente el ${ formattedEndTime }"
       ]
@@ -3115,9 +3091,6 @@
       "Signature verification failed": [
         "Falló la verificación de la firma"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Algunos nombres de sus carpetas están reservados. Personalice la importación para editar estos nombres."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Algunos de los nombres de las carpetas no están disponibles. Personalice la importación para editar estos nombres."
       ],
@@ -3863,6 +3836,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 correos al mes)"
+      ],
+      "(during your first month)": [
+        "(durante su primer mes)"
       ]
     },
     "Go to sign in": {
@@ -4274,6 +4250,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importar desde ${ provider }"
+      ],
       "Other": [
         "Otro"
       ]
@@ -4296,7 +4275,7 @@
       "Canceled": [
         "Cancelada"
       ],
-      "Canceling": [
+      "Cancelling": [
         "Cancelando"
       ],
       "Completed": [
@@ -4360,8 +4339,8 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } pausó una importación porque queda poco espacio en su cuenta. Puede:"
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } intentará reanudar la importación tan pronto como su proveedor de correo restablezca el ${ bandwithLimitLink } de su cuenta. No necesita hacer nada. Si cancela la importación, no podrá reanudarla y tendrá que empezar de nuevo."
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } intentará reanudar la importación tan pronto como su proveedor de correo restablezca el ${ bandwidthLimitLink } de su cuenta. No necesita hacer nada. Si cancela la importación, no podrá reanudarla y tendrá que empezar de nuevo."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } significa que nadie tiene acceso a su contraseña, ni siquiera nosotros."
@@ -4372,10 +4351,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
         "${ calendarsToBeCreatedCount } calendarios nuevos"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendario fusionado",
-        "${ calendarsToBeMerged } calendarios fusionados"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendario fusionado",
@@ -4415,13 +4390,13 @@
         "${ numberOfNonPrivateKeys } archivo cargado es una clave privada inválida. Verifique e intente de nuevo.",
         "${ numberOfNonPrivateKeys } archivos cargados son claves privadas inválidas. Verifique e intente de nuevo."
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } grupo de contactos",
-        "${ numContactGroups } grupos de contactos"
+      "${ numContact } contact": [
+        "${ numContact } contacto",
+        "${ numContact } contactos"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } contacto",
-        "${ numContacts } contactos"
+      "${ numGroups } contact group": [
+        "${ numGroups } grupo de contactos",
+        "${ numGroups } grupos de contactos"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta encontrada",
@@ -4451,9 +4426,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de almacenamiento"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "Se requiere ${ vpnPlus } para conexión a nivel de país."
       ],
@@ -4482,9 +4454,6 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Invite amistades a ${ BRAND_NAME }"
-      ],
-      "10 email addresses": [
-        "10 direcciones de correo"
       ],
       "2. They try ${ planName }": [
         "2. Ellos prueban ${ planName }"
@@ -4750,9 +4719,9 @@
       "Country code": [
         "Código de país"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Crear ${ calendarsToBeCreated } calendario nuevo",
-        "Crear ${ calendarsToBeCreated } calendarios nuevos"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Crear ${ calendarsToBeCreatedCount } calendario nuevo",
+        "Crear ${ calendarsToBeCreatedCount } calendarios nuevos"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Cree una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las carpetas que le gustaría importar."
@@ -5061,12 +5030,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Las imágenes se han eliminado porque no están permitidas en la respuesta automática"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendarios"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendario",
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendarios"
       ],
       "Import from": [
         "Importar desde"
@@ -5085,6 +5054,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "IMPORTANTE: Algunos registradores no aceptan valores CNAME con un punto al final (mientras que otros lo requieren). Si su registrador no acepta sus registros CNAME, elimine el punto al final de cada valor CNAME e inténtelo de nuevo."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importando sus datos de ${ fromEmail } a ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
@@ -5252,9 +5224,6 @@
       "No contact encryption keys exist": [
         "No existen claves de cifrado de contactos"
       ],
-      "No credit card required": [
-        "No se requiere tarjeta de crédito"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "No se ha definido ningún método de recuperación de datos; corre el riesgo de perder el acceso a sus datos"
       ],
@@ -5420,9 +5389,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en su cuenta."
       ],
-      "Priority support": [
-        "Soporte prioritario"
-      ],
       "Public link invite": [
         "Enlace de invitación público"
       ],
@@ -5552,17 +5518,11 @@
       "Storage for users": [
         "Almacenamiento para usuarios"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Almacenamiento usado por este usuario"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Guarde esta contraseña en un lugar seguro. La necesitará nuevamente para importar su clave."
-      ],
-      "Support for 1 custom email domain": [
-        "Soporte para 1 dominio de correo personalizado"
       ],
       "support team": [
         "equipo de soporte"
@@ -5776,12 +5736,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "A menos que cierre la sesión o cambie su contraseña, su sesión permanecerá activa. Las sesiones expiran después de 60 días de inactividad."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensajes ilimitados"
       ],
       "Unsaved changes": [
         "Cambios sin guardar"
@@ -6678,6 +6632,9 @@
       "BTC amount:": [
         "Cantidad BTC:"
       ],
+      "Calendar": [
+        "Calendario"
+      ],
       "Calendars": [
         "Calendarios"
       ],
@@ -6710,9 +6667,6 @@
       ],
       "Colors": [
         "Colores"
-      ],
-      "Coming soon": [
-        "Próximamente"
       ],
       "Composer": [
         "Compositor"
@@ -6918,9 +6872,6 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Desde: ${ importedEmail }"
-      ],
       "Gift code": [
         "Código de regalo"
       ],
@@ -7013,12 +6964,6 @@
       ],
       "Manage categories": [
         "Gestionar categorías"
-      ],
-      "Manage folders": [
-        "Gestionar carpetas"
-      ],
-      "Manage labels": [
-        "Gestionar etiquetas"
       ],
       "Mark as": [
         "Marcar como"
@@ -7281,9 +7226,6 @@
       "Timezone": [
         "Zona horaria"
       ],
-      "To: ${ emailAddress }": [
-        "Para: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Para: ${ to }"
       ],
@@ -7304,9 +7246,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Cargue 1 o más archivos de recuperación o claves de cifrado"
-      ],
-      "Upload file": [
-        "Cargar archivo"
       ],
       "URL": [
         "URL"
@@ -7444,6 +7383,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "Comunicados de productos de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Correos de bienvenida de ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -7610,8 +7552,9 @@
       "Almost there": [
         "Ya casi está"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Cantidad de calendarios creados: ${ createdCalendars } de ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Conectando con su proveedor de correo"
@@ -7638,21 +7581,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes desde ${ itemsToImportCount } carpeta y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes desde ${ itemsToImportCount } carpetas y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importar todos los mensajes de ${ itemsToImportCount } carpeta y etiquetarlos como",
+        "Importar todos los mensajes de ${ itemsToImportCount } carpetas y etiquetarlos como"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes desde ${ itemsToImportCount } etiqueta y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes desde ${ itemsToImportCount } etiquetas y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importar todos los mensajes de ${ itemsToImportCount } etiqueta y etiquetarlos como",
+        "Importar todos los mensajes de ${ itemsToImportCount } etiquetas y etiquetarlos como"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes desde ${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes desde ${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetas y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta y etiquetarlos como",
+        "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetas y etiquetarlos como"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todos los mensajes desde ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todos los mensajes desde ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta y etiquetarlos como",
+        "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas y etiquetarlos como"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8219,26 +8162,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8308,6 +8231,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9838,9 +9781,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "La solución de calendario y correo que prioriza la privacidad para sus necesidades de comunicación diarias."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Esta oferta es para personas nuevas de ${ BRAND_NAME }. No se requiere tarjeta de crédito."
       ]
@@ -9882,7 +9822,7 @@
       "Calendar updated": [
         "Calendario actualizado"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Cancelando la importación"
       ],
       "Catch-all address updated": [
@@ -10948,9 +10888,6 @@
       "Track your referrals": [
         "Rastree sus referencias"
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Pruebe lo mejor de ${ MAIL_APP_NAME } gratis"
-      ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
       ],
@@ -11461,7 +11398,7 @@
       "You will lose any customization you made so far.": [
         "Perderá cualquier personalización que haya hecho hasta ahora."
       ],
-      "You will not see this import record in the list anymore.": [
+      "You will not see this import record in the list any more.": [
         "Ya no verá este registro de importación en la lista."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
