@@ -1,7 +1,7 @@
 import { CSSProperties, ComponentPropsWithoutRef, ReactNode, Ref, forwardRef, useMemo } from 'react';
 
 import { Icon, classnames } from '@proton/components';
-import { HOUR } from '@proton/shared/lib/constants';
+import { MINUTE } from '@proton/shared/lib/constants';
 
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
@@ -38,7 +38,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
     }: PartDayEventViewProps,
     ref: Ref<HTMLDivElement>
 ) {
-    const isEventPartNotGreaterThanAnHour = eventPartDuration ? eventPartDuration <= HOUR : false;
+    const canDisplayOnlyOneLine = eventPartDuration ? eventPartDuration < 75 * MINUTE : false;
 
     return (
         <div
@@ -52,7 +52,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
                 isUnanswered && 'isUnanswered',
                 isCancelled && 'isCancelled',
                 size && `calendar-eventcell--${size}`,
-                isEventPartNotGreaterThanAnHour && 'calendar-eventcell--title-small-fit',
+                canDisplayOnlyOneLine && 'calendar-eventcell--title-small-fit',
                 className,
             ])}
             ref={ref}
@@ -90,7 +90,6 @@ const PartDayEvent = ({
 
     const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
     const { isUnanswered, isCancelled } = getEventStatusTraits(model);
-    const isEventPartLessThanAnHour = eventPartDuration < HOUR;
 
     const eventStyle = useMemo(() => {
         return getEventStyle(calendarColor, style);
@@ -121,7 +120,7 @@ const PartDayEvent = ({
         const timeEnd = formatTime(end);
         return `${timeStart} - ${timeEnd}`;
     }, [start, end]);
-    const shouldHideTime = isEventReadLoading || (isEventPartLessThanAnHour && titleString);
+    const shouldHideTime = isEventReadLoading || (eventPartDuration < 50 * MINUTE && titleString);
 
     const content = (() => {
         if (eventReadError) {
