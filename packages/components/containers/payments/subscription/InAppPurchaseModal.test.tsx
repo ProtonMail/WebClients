@@ -28,9 +28,8 @@ it('should trigger onClose when user presses the button', async () => {
 });
 
 it('should render iOS text if subscription is managed by Apple', async () => {
-    const onClose = jest.fn();
     const { container } = render(
-        <InAppPurchaseModal onClose={onClose} open={true} subscription={{ External: External.iOS } as any} />
+        <InAppPurchaseModal onClose={() => {}} open={true} subscription={{ External: External.iOS } as any} />
     );
 
     expect(container).toHaveTextContent('Apple App Store');
@@ -46,4 +45,17 @@ it('should immediately close if subscription is not managed externally', () => {
 
     expect(onClose).toHaveBeenCalled();
     expect(container).toBeEmptyDOMElement();
+});
+
+it('should show admin text if the adminPanel property is enabled', () => {
+    const { container } = render(
+        <InAppPurchaseModal
+            onClose={() => {}}
+            adminPanelInfo={{ userId: 1001 }}
+            open={true}
+            subscription={{ External: External.iOS } as any}
+        />
+    );
+
+    expect(container).toHaveTextContent('Subscription of user ID-1001 has been done via an in-app purchase.');
 });
