@@ -230,7 +230,7 @@ const SubscriptionModal = ({
             });
         }
 
-        await api(deleteSubscription());
+        await api(deleteSubscription({}));
         await call();
         onSuccess?.();
         onClose?.();

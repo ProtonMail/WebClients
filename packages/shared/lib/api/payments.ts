@@ -13,7 +13,7 @@ export interface FeedbackDowngradeData {
     Context?: 'vpn' | 'mail';
 }
 
-export const deleteSubscription = (data?: FeedbackDowngradeData) => ({
+export const deleteSubscription = (data: FeedbackDowngradeData) => ({
     url: 'payments/subscription',
     method: 'delete',
     data,
