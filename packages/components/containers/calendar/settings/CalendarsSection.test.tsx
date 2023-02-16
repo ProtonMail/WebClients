@@ -1,4 +1,3 @@
-import React from 'react';
 import { Router } from 'react-router-dom';
 
 import { render, screen } from '@testing-library/react';
@@ -50,20 +49,14 @@ jest.mock('@proton/components/hooks/useAddresses', () => ({
 function renderComponent(props?: Partial<CalendarsSectionProps>) {
     const defaultProps: CalendarsSectionProps = {
         calendars: [],
+        children: null,
         // defaultCalendarID?: string,
         user: { hasPaidMail: false } as UserModel,
         // loading?: boolean,
-        canAdd: true,
-        // isFeatureUnavailable?: boolean,
-        add: 'add',
-        description: 'description',
-        onAdd: jest.fn(),
         // onSetDefault?: (id: string) => Promise<void>,
         onEdit: jest.fn(),
         onDelete: jest.fn(),
         // onExport?: (calendar: Calendar) => void,
-        canUpgradeCalendarsLimit: true,
-        calendarsLimitReachedText: 'calendarLimitReachedText',
     };
 
     return (
@@ -82,8 +75,6 @@ describe('CalendarsSection', () => {
         render(renderComponent({ calendars: [{ ID: '1', Name: 'calendar1' } as VisualCalendar] }));
 
         expect(screen.getByText('calendar1')).toBeInTheDocument();
-        expect(screen.getByText('description')).toBeInTheDocument();
-        expect(screen.getByText('add')).toBeInTheDocument();
     });
 
     it('does not render a table when no calendars are provided', () => {

@@ -1,9 +1,8 @@
 import { ACCENT_COLORS } from '../colors';
 import { BASE_SIZE } from '../constants';
 
-export const MAX_CALENDARS_FREE = 1;
-export const MAX_SUBSCRIBED_CALENDARS = 5;
-export const MAX_CALENDARS_PAID = 20; // Only paid mail
+export const MAX_CALENDARS_FREE = 3;
+export const MAX_CALENDARS_PAID = 25; // Only paid mail
 
 export const MAX_DEFAULT_NOTIFICATIONS = 5;
 export const MAX_NOTIFICATIONS = 10;
@@ -366,7 +365,7 @@ export const CALENDAR_SETTINGS_SECTION_ID = {
     INVITATIONS: 'invitations',
     THEME: 'theme',
     PERSONAL_CALENDARS: 'my-calendars',
-    SUBSCRIBED_CALENDARS: 'other-calendars',
+    OTHER_CALENDARS: 'other-calendars',
     IMPORT: 'import',
     EXPORT: 'export',
     SHARE: 'share',

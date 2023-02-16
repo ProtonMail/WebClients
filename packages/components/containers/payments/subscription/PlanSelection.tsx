@@ -71,6 +71,7 @@ interface Props {
     onChangeSelectedProductPlans: (newPlans: SelectedProductPlans) => void;
     subscription?: Subscription;
     organization?: Organization;
+    calendarSharingEnabled: boolean;
 }
 
 const PlanSelection = ({
@@ -92,6 +93,7 @@ const PlanSelection = ({
     onChangeAudience,
     selectedProductPlans,
     onChangeSelectedProductPlans,
+    calendarSharingEnabled,
 }: Props) => {
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
@@ -111,7 +113,7 @@ const PlanSelection = ({
     ].filter(isTruthy);
 
     const isSignupMode = mode === 'signup';
-    const features = getAllFeatures(plansMap, vpnServers);
+    const features = getAllFeatures(plansMap, vpnServers, calendarSharingEnabled);
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
     const recommendedPlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO];

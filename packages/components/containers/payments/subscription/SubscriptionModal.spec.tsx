@@ -1,18 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import {
-    useApi,
-    useEventManager,
-    useGetCalendars,
-    useModals,
-    useNotifications,
-    useOrganization,
-    usePlans,
-    useSubscription,
-    useUser,
-    useVPNServersCount,
-} from '@proton/components/hooks';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import {
     Audience,
@@ -23,6 +11,20 @@ import {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
+import { FeatureCode } from '../../../containers';
+import {
+    useApi,
+    useEventManager,
+    useFeature,
+    useGetCalendars,
+    useModals,
+    useNotifications,
+    useOrganization,
+    usePlans,
+    useSubscription,
+    useUser,
+    useVPNServersCount,
+} from '../../../hooks';
 import Payment from '../Payment';
 import { handlePaymentToken } from '../paymentTokenHelper';
 import PlanCustomization from './PlanCustomization';
@@ -209,6 +211,7 @@ describe('useProration', () => {
 
 jest.mock('../../../hooks/useApi');
 jest.mock('../../../hooks/useUser');
+jest.mock('../../../hooks/useFeature');
 jest.mock('../../../hooks/useSubscription');
 jest.mock('../../../hooks/useEventManager');
 jest.mock('../../../hooks/useModals');
@@ -282,6 +285,10 @@ describe('SubscriptionModal', () => {
             Idle: 0,
         };
         (useUser as jest.Mock).mockReturnValue([freeUser]);
+
+        (useFeature as jest.Mock).mockReturnValue({
+            feature: { [FeatureCode.CalendarSharingEnabled]: { Value: true } },
+        });
 
         let noSubscription: any = {}; // otherwise it should be SubscriptionModel
         (useSubscription as jest.Mock).mockReturnValue([noSubscription]);

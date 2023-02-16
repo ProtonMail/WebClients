@@ -248,7 +248,6 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
             });
-        const numberOfPersonalCalendars = MAX_CALENDARS_PAID;
         const items: (Item | undefined)[] = [
             {
                 icon: 'storage',
@@ -263,9 +262,9 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 ? {
                       icon: 'calendar-checkmark',
                       text: c('new_plans: Upsell attribute').ngettext(
-                          msgid`Create ${numberOfPersonalCalendars} personal calendar`,
-                          `Create up to ${numberOfPersonalCalendars} personal calendars`,
-                          numberOfPersonalCalendars
+                          msgid`Create up to ${MAX_CALENDARS_PAID} calendar`,
+                          `Create up to ${MAX_CALENDARS_PAID} calendars`,
+                          MAX_CALENDARS_PAID
                       ),
                   }
                 : undefined,

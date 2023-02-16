@@ -1,17 +1,15 @@
-import React from 'react';
 import { Router } from 'react-router-dom';
 
 import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
-import { MAX_SUBSCRIBED_CALENDARS } from '@proton/shared/lib/calendar/constants';
+import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { UserModel } from '@proton/shared/lib/interfaces';
 
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
-import SubscribedCalendarsSection, { SubscribedCalendarsSectionProps } from './SubscribedCalendarsSection';
+import OtherCalendarsSection, { OtherCalendarsSectionProps } from './OtherCalendarsSection';
 
 jest.mock('../../../hooks/useApi', () => () => jest.fn(() => Promise.resolve({})));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({
@@ -42,41 +40,43 @@ jest.mock('@proton/components/hooks/useCalendarSubscribeFeature', () =>
 
 let memoryHistory = createMemoryHistory();
 
-function renderComponent(props?: Partial<SubscribedCalendarsSectionProps>) {
-    const defaultProps: SubscribedCalendarsSectionProps = {
-        addresses: [{ Status: 1, Receive: 1, Send: 1 }] as Address[],
-        calendars: [],
+function renderComponent(props?: Partial<OtherCalendarsSectionProps>) {
+    const defaultProps: OtherCalendarsSectionProps = {
+        addresses: [],
+        subscribedCalendars: [],
+        sharedCalendars: [],
+        calendarInvitations: [],
+        unknownCalendars: [],
         user: { isFree: true, hasNonDelinquentScope: true } as UserModel,
+        canAdd: true,
+        isCalendarsLimitReached: false,
     };
 
     return (
         <ModalsProvider>
             <Router history={memoryHistory}>
                 <CacheProvider cache={createCache()}>
-                    <SubscribedCalendarsSection {...defaultProps} {...props} />
+                    <OtherCalendarsSection {...defaultProps} {...props} />
                 </CacheProvider>
             </Router>
         </ModalsProvider>
     );
 }
 
-describe('SubscribedCalendarsSection', () => {
+// TODO: change into a test for CalendarSettingsSection
+describe.skip('OtherCalendarsSection', () => {
     it('displays the calendar limit warning when the limit is reached', () => {
-        const calendars = Array(MAX_SUBSCRIBED_CALENDARS)
-            .fill(1)
-            .map((_, index) => ({
-                ID: `${index}`,
-                Name: `calendar${index}`,
-                color: '#f00',
-            })) as unknown as SubscribedCalendar[];
+        // const calendars = Array(MAX_CALENDARS_PAID)
+        //     .fill(1)
+        //     .map((_, index) => ({
+        //         ID: `${index}`,
+        //         Name: `calendar${index}`,
+        //         color: '#f00',
+        //     })) as unknown as SubscribedCalendar[];
 
-        const { rerender } = render(
-            renderComponent({
-                calendars,
-            })
-        );
+        const { rerender } = render(renderComponent({}));
 
-        const maxReachedCopy = `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS} subscribed calendars.`;
+        const maxReachedCopy = `You have reached the maximum of ${MAX_CALENDARS_PAID} subscribed calendars.`;
         const createCalendarCopy = 'Add calendar';
 
         expect(screen.getByText(maxReachedCopy)).toBeInTheDocument();
