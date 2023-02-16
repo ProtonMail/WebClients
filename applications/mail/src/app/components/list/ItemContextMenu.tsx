@@ -64,7 +64,7 @@ const ItemContextMenu = ({
         const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
         return !allRead;
     }, [checkedIDs, elementsAreUnread]);
-    const canExpire = canSetExpiration(feature?.Value, user, labelID);
+    const canExpire = canSetExpiration(feature?.Value, user);
 
     const [actions] = useLabelActions(labelID, false);
 
@@ -223,7 +223,7 @@ const ItemContextMenu = ({
                             key="context-menu-remove-expiration"
                             testId="context-menu-remove-expiration"
                             icon="hourglass"
-                            name={c('Action').t`Remove expiration`}
+                            name={c('Action').t`Remove auto-destruction`}
                             action={() => handleExpire(0)}
                         />
                     ) : (
@@ -232,21 +232,21 @@ const ItemContextMenu = ({
                                 key="context-menu-expire-tomorrow"
                                 testId="context-menu-expire-tomorrow"
                                 icon="hourglass"
-                                name={c('Action').t`Expire tomorrow`}
+                                name={c('Action').t`Auto-destruct tomorrow`}
                                 action={() => handleExpire(1)}
                             />
                             <ContextMenuButton
                                 key="context-menu-expire-next-week"
                                 testId="context-menu-expire-next-week"
                                 icon="hourglass"
-                                name={c('Action').t`Expire in 7 days`}
+                                name={c('Action').t`Auto-destruct in 7 days`}
                                 action={() => handleExpire(7)}
                             />
                             <ContextMenuButton
                                 key="context-menu-expire-next-month"
                                 testId="context-menu-expire-next-month"
                                 icon="hourglass"
-                                name={c('Action').t`Expire in 30 days`}
+                                name={c('Action').t`Auto-destruct in 30 days`}
                                 action={() => handleExpire(30)}
                             />
                         </>
