@@ -3,12 +3,11 @@ import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfac
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { data, fromFields, recipients } from '../../components/composer/quickReply/tests/QuickReply.test.data';
-import { removeLineBreaks } from '../../components/composer/quickReply/tests/QuickReply.test.helpers';
 import { addressID, messageID, subject } from '../../components/message/tests/Message.test.helpers';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageDecryption, MessageState } from '../../logic/messages/messagesTypes';
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
-import { clearAll } from '../test/helper';
+import { clearAll, removeLineBreaks } from '../test/helper';
 import { createDocument } from '../test/message';
 import { getContentWithBlockquotes, getContentWithoutBlockquotes } from './messageContent';
 import { generateBlockquote } from './messageDraft';
