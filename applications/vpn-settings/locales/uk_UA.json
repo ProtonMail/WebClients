@@ -406,14 +406,8 @@
       "Continue with free plan": [
         "Залишити безплатний тарифний план"
       ],
-      "No, thanks": [
-        "Ні, дякую"
-      ],
       "Start my 30-day free trial": [
         "Розпочати 30-денний безплатний пробний період"
-      ],
-      "Try free for 30 days": [
-        "Спробуйте безплатно протягом 30 днів"
       ]
     },
     "Addon": {
@@ -441,21 +435,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Сплачується щороку"
-      ],
-      "Payable every 15 months": [
-        "Сплачується кожні 15 місяців"
-      ],
-      "Payable every 24 months": [
-        "Сплачується кожні два роки"
-      ],
-      "Payable every 30 months": [
-        "Сплачується кожні 30 місяців"
-      ],
-      "Payable every month": [
-        "Сплачується щомісяця"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Поновлюється автоматично ${ formattedEndTime }"
       ]
@@ -1812,6 +1791,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 електронні листи на місяць)"
+      ],
+      "(during your first month)": [
+        "(впродовж першого місяця)"
       ]
     },
     "Go to sign in": {
@@ -1888,9 +1870,6 @@
         "${ number } серверів",
         "${ number } серверів"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } сховища"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } вимагає з'єднання на рівні країни."
       ],
@@ -1908,9 +1887,6 @@
         "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
         "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
-      ],
-      "10 email addresses": [
-        "10 адрес е-пошти"
       ],
       "30-day money-back guarantee.": [
         "Гарантія повернення грошей протягом 30 днів."
@@ -2185,9 +2161,6 @@
       "MM/YY": [
         "ММ/РР"
       ],
-      "No credit card required": [
-        "Кредитна картка не обов'язкова"
-      ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
       ],
@@ -2260,9 +2233,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
-      "Priority support": [
-        "Пріоритетна підтримка"
-      ],
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
       ],
@@ -2304,12 +2274,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Підтримка 1 власного домену е-пошти"
       ],
       "support team": [
         "командою підтримки"
@@ -2403,12 +2367,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для цього облікового запису не збережено спосіб відновлення."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited messages": [
-        "Необмежена кількість повідомлень"
       ],
       "Unsaved changes": [
         "Незбережені зміни"
@@ -4196,9 +4154,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Створена для приватності електронна пошта й календар для ваших повсякденних потреб спілкування."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Ця пропозиція лише для новачків у ${ BRAND_NAME }. Кредитна картка не потрібна."
       ]
@@ -4646,9 +4601,6 @@
       ],
       "Total paid": [
         "Усього сплачено"
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Випробуйте найкраще у ${ MAIL_APP_NAME } безплатно"
       ],
       "TV log in": [
         "Вхід на ТБ"

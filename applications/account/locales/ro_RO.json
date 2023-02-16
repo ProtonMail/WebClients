@@ -597,9 +597,6 @@
       "Remove this notification": [
         "Eliminare această notificare"
       ],
-      "Rename": [
-        "Redenumire"
-      ],
       "Report a problem": [
         "Raportare problemă"
       ],
@@ -910,14 +907,8 @@
       "Continue with free plan": [
         "Continuare cu planul gratuit"
       ],
-      "No, thanks": [
-        "Nu, mulțumesc"
-      ],
       "Start my 30-day free trial": [
         "Începere probare gratuită 30 de zile"
-      ],
-      "Try free for 30 days": [
-        "Probați gratuit 30 de zile"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1055,21 +1046,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Plătibil la 12 luni"
-      ],
-      "Payable every 15 months": [
-        "Plătibil la 15 luni"
-      ],
-      "Payable every 24 months": [
-        "Plătibil la 24 de luni"
-      ],
-      "Payable every 30 months": [
-        "Plătibil la 30 de luni"
-      ],
-      "Payable every month": [
-        "Plătibil lunar"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Reînnoire automată la ${ formattedEndTime }"
       ]
@@ -3130,9 +3106,6 @@
       "Signature verification failed": [
         "Eșuare verificare semnătură"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Unele nume de foldere sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de foldere nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
@@ -4327,9 +4300,6 @@
       "Canceled": [
         "Anulat"
       ],
-      "Canceling": [
-        "Se anulează"
-      ],
       "Completed": [
         "Finalizată"
       ],
@@ -4392,9 +4362,6 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } a oprit importarea deoarece contul nu mai are spațiu suficient. Puteți să:"
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } va încerca să reia importarea imediat ce furnizorul de e-mail vă resetează ${ bandwithLimitLink } a contului. Nu trebuie să faceți nimic. Dacă anulați importarea, nu veți mai putea să o reluați și va trebui să o reîncepeți."
-      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
@@ -4405,11 +4372,6 @@
         "Un calendar nou",
         "${ calendarsToBeCreatedCount } calendare noi",
         "${ calendarsToBeCreatedCount } de calendare noi"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "Un calendar îmbinat",
-        "${ calendarsToBeMerged } calendare îmbinate",
-        "${ calendarsToBeMerged } de calendare îmbinate"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "Un calendar îmbinat",
@@ -4454,16 +4416,6 @@
         "${ numberOfNonPrivateKeys } fișiere încărcate nu sunt chei private valide. Verificați și reîncercați.",
         "${ numberOfNonPrivateKeys } de fișiere încărcate nu sunt chei private valide. Verificați și reîncercați."
       ],
-      "${ numContactGroups } contact group": [
-        "Un grup de contacte",
-        "${ numContactGroups } grupuri de contact",
-        "${ numContactGroups } de grupuri de contacte"
-      ],
-      "${ numContacts } contact": [
-        "Un contact",
-        "${ numContacts } contacte",
-        "${ numContacts } de contacte"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "S-a găsit un folder",
         "S-au găsit ${ providerFoldersNumLocalized } foldere",
@@ -4499,9 +4451,6 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } spațiu"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "Trebuie ${ vpnPlus } pentru conexiunea la nivel de țară."
       ],
@@ -4532,9 +4481,6 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Invitați persoane la ${ BRAND_NAME }"
-      ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
       ],
       "2. They try ${ planName }": [
         "2. Ei încearcă ${ planName }"
@@ -4802,11 +4748,6 @@
       ],
       "Country code": [
         "Cod țară"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Creare un calendar",
-        "Creare ${ calendarsToBeCreated } calendare",
-        "Creare ${ calendarsToBeCreated } de calendare"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și folderele care trebuie importate."
@@ -5119,11 +5060,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendar",
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendare",
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } de calendare"
-      ],
       "Import from": [
         "Importare din"
       ],
@@ -5309,9 +5245,6 @@
       "No contact encryption keys exist": [
         "Nu există chei de criptare contacte"
       ],
-      "No credit card required": [
-        "Nu trebuie card de credit"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Nu este setată o metodă de recuperare adatelor; există riscul de a vă pierde accesul la date."
       ],
@@ -5480,9 +5413,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
-      "Priority support": [
-        "Asistență prioritară"
-      ],
       "Public link invite": [
         "Legătură publică invitație"
       ],
@@ -5612,17 +5542,11 @@
       "Storage for users": [
         "Spațiu pentru utilizatori"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Spațiu folosit de utilizator"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Păstrați această parolă și fișierul într-un loc sigur. Veți avea din nou nevoie de ele pentru a importa cheia."
-      ],
-      "Support for 1 custom email domain": [
-        "Suport pentru un domeniu de e-mail personal"
       ],
       "support team": [
         "echipa de asistență"
@@ -5839,12 +5763,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Dacă nu vă deconectați din cont sau nu vă schimbați parola, sesiunea curentă va rămâne activă. Sesiunea expiră după 60 de zile de inactivitate."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited messages": [
-        "Mesaje nelimitate"
       ],
       "Unsaved changes": [
         "Modificări nesalvate"
@@ -6745,6 +6663,9 @@
       "BTC amount:": [
         "Suma BTC:"
       ],
+      "Calendar": [
+        "Calendar"
+      ],
       "Calendars": [
         "Calendare"
       ],
@@ -6777,9 +6698,6 @@
       ],
       "Colors": [
         "Culori"
-      ],
-      "Coming soon": [
-        "În curând"
       ],
       "Composer": [
         "Compunere mesaje"
@@ -6985,9 +6903,6 @@
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "De la: ${ importedEmail }"
-      ],
       "Gift code": [
         "Cod cadou"
       ],
@@ -7080,12 +6995,6 @@
       ],
       "Manage categories": [
         "Gestionare categorii"
-      ],
-      "Manage folders": [
-        "Gestionare foldere"
-      ],
-      "Manage labels": [
-        "Gestionare etichete"
       ],
       "Mark as": [
         "Marcare"
@@ -7348,9 +7257,6 @@
       "Timezone": [
         "Fus orar"
       ],
-      "To: ${ emailAddress }": [
-        "Către: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Către: ${ to }"
       ],
@@ -7371,9 +7277,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Încărcare una sau mai multe fișiere de recuperare sau chei de criptare"
-      ],
-      "Upload file": [
-        "Încărcare fișier"
       ],
       "URL": [
         "Adresa URL"
@@ -7677,9 +7580,6 @@
       "Almost there": [
         "Aproape terminat"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Număr de calendare create: ${ createdCalendars } din ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Se conectează la furnizorul de e-mail"
       ],
@@ -7702,28 +7602,6 @@
       ],
       "Enable authentication logs": [
         "Activare jurnale autentificare"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-o etichetă și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8309,26 +8187,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -8398,6 +8256,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium ale ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probare se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9711,9 +9589,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Soluția de e-mail și calendar focalizate pe intimitate pentru nevoile zilnice de comunicații."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Această ofertă este doar pentru utilizatorii noi ai ${ BRAND_NAME }. Nu trebuie card de credit."
       ]
@@ -9754,9 +9629,6 @@
       ],
       "Calendar updated": [
         "Calendar actualizat"
-      ],
-      "Canceling import": [
-        "Anulare importare"
       ],
       "Catch-all address updated": [
         "Adresă colectoare actualizată"
@@ -10832,9 +10704,6 @@
       "Track your referrals": [
         "Monitorizare persoane recomandate"
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Încercați gratuit cei mai bun din ${ MAIL_APP_NAME }"
-      ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
       ],
@@ -11351,9 +11220,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Veți pierde orice modificare făcută până acum."
-      ],
-      "You will not see this import record in the list anymore.": [
-        "Nu veți mai vedea această înregistrare importată în listă."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"

@@ -388,9 +388,6 @@
       "Remove this participant": [
         "移除此参与者"
       ],
-      "Rename": [
-        "重命名"
-      ],
       "Report a problem": [
         "反馈问题"
       ],
@@ -2310,9 +2307,6 @@
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "某个/些群组没有联系人：${ noContactGroupList } "
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "部分文件夹名称与系统内部名称冲突，请在导入内容中予以更改。"
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "部分文件夹名称不可用，请自定导入内容并予以更改。"
       ],
@@ -3070,9 +3064,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "将 ${ calendarsToBeMerged } 份日历与现有日历合并"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
@@ -3090,12 +3081,6 @@
       ],
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 个群组"
-      ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 个联系人群组"
-      ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 名联系人"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
@@ -3192,9 +3177,6 @@
       ],
       "Close this screen to exit.": [
         "关闭这个窗口以退出"
-      ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "新建 ${ calendarsToBeCreated } 份日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -3294,9 +3276,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "导入 ${ selectedCalendarsCount }/${ totalCalendarsCount } 份日历"
       ],
       "Import from": [
         "导入自"
@@ -3806,9 +3785,6 @@
       "Colors": [
         "颜色"
       ],
-      "Coming soon": [
-        "即将推出"
-      ],
       "Contacts": [
         "通讯录"
       ],
@@ -3893,9 +3869,6 @@
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "来自：${ importedEmail }"
-      ],
       "Good": [
         "很好"
       ],
@@ -3949,12 +3922,6 @@
       ],
       "Manage categories": [
         "管理分类"
-      ],
-      "Manage folders": [
-        "管理文件夹"
-      ],
-      "Manage labels": [
-        "管理标签"
       ],
       "Move to Archive": [
         "存档"
@@ -4037,9 +4004,6 @@
       "System information": [
         "系统信息"
       ],
-      "To: ${ emailAddress }": [
-        "导入到：${ emailAddress }"
-      ],
       "To: ${ to }": [
         "收件人：${ to }"
       ],
@@ -4051,9 +4015,6 @@
       ],
       "Two-factor authentication code": [
         "双重验证码"
-      ],
-      "Upload file": [
-        "上传文件"
       ],
       "Upload picture": [
         "上传图片"
@@ -4152,9 +4113,6 @@
       "Almost there": [
         "即将准备就绪"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
-      ],
       "Connecting to your email provider": [
         "正在连接到您的邮件提供商"
       ],
@@ -4169,20 +4127,6 @@
       ],
       "Your import is starting": [
         "正在启动导入"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件，并标为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从标签 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从 ${ selectedItemsToImportCount } / ${ itemsToImportCount } 个文件夹中导入 所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从 ${ selectedItemsToImportCount } / ${ itemsToImportCount } 个标签中导入 所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {

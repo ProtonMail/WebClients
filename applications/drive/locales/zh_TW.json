@@ -2068,9 +2068,6 @@
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "部份群組無聯絡人：${ noContactGroupList }"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "部份資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
@@ -2779,6 +2776,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "從 ${ provider } 匯入"
+      ],
       "Other": [
         "其它"
       ]
@@ -2819,9 +2819,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } 個合併的行事曆"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
@@ -2855,11 +2852,11 @@
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 個群組"
       ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 個聯絡人群組"
+      "${ numContact } contacts": [
+        "${ numContact } 個聯絡人"
       ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 位聯絡人"
+      "${ numGroups } contact groups": [
+        "${ numGroups } 個聯絡人群組"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } 個任務已暫停"
@@ -3002,8 +2999,8 @@
       "Country code": [
         "國家代碼"
       ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "建立 ${ calendarsToBeCreated } 個新行事曆"
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "建立 ${ calendarsToBeCreatedCount } 個新行事曆"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
@@ -3200,11 +3197,11 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "匯入 ${ selectedCalendarsCount } 個，共 ${ totalCalendarsCount } 個行事曆"
       ],
       "Import from": [
         "匯入自"
@@ -3217,6 +3214,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "從其它服務匯入您的電郵、行事曆或聯絡人到 ${ BRAND_NAME }。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
@@ -3886,6 +3886,9 @@
       "Browser version": [
         "瀏覽器版本"
       ],
+      "Calendar": [
+        "行事曆"
+      ],
       "Calendars": [
         "行事曆"
       ],
@@ -3906,9 +3909,6 @@
       ],
       "Colors": [
         "色彩"
-      ],
-      "Coming soon": [
-        "敬請期待"
       ],
       "Comment": [
         "評論"
@@ -4024,9 +4024,6 @@
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "寄件者：${ importedEmail }"
-      ],
       "Good": [
         "很好"
       ],
@@ -4086,12 +4083,6 @@
       ],
       "Manage categories": [
         "管理分類"
-      ],
-      "Manage folders": [
-        "管理資料夾"
-      ],
-      "Manage labels": [
-        "管理標籤"
       ],
       "Merge a folder": [
         "合併資料夾"
@@ -4210,9 +4201,6 @@
       "This will permanently delete all files in your locked drive.": [
         "此舉將會永久刪除所有位於鎖定之雲端硬碟內的檔案。"
       ],
-      "To: ${ emailAddress }": [
-        "收件者：${ emailAddress }"
-      ],
       "To: ${ to }": [
         "收件者：${ to }"
       ],
@@ -4242,9 +4230,6 @@
       ],
       "Upload anyway": [
         "仍要上載"
-      ],
-      "Upload file": [
-        "上載檔案"
       ],
       "Upload picture": [
         "上載圖像"
@@ -4338,9 +4323,6 @@
       "Almost there": [
         "快完成了"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
       ],
@@ -4355,20 +4337,6 @@
       ],
       "Your import is starting": [
         "您的匯入程序已開始"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ itemsToImportCount } 資料夾中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
