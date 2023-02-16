@@ -46,6 +46,10 @@ export enum External {
 
 export enum RenewState {
     /**
+     * Subscription will not be renewed.
+     */
+    Disabled = 0,
+    /**
      * Default state when user has a subscription.
      * Subscription will be automatially renewed and user will be charged.
      */
@@ -60,7 +64,6 @@ export interface Subscription {
     ID: string;
     InvoiceID: string;
     Cycle: Cycle;
-    Renew: number;
     PeriodStart: number;
     PeriodEnd: number;
     CreateTime: number;

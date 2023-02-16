@@ -9,12 +9,11 @@ import { Toggle } from '../../components';
 import { useApi, useEventManager, useNotifications, useSubscription } from '../../hooks';
 
 const getNewState = (state: RenewState): RenewState => {
-    return (
-        {
-            [RenewState.Active]: RenewState.DisableAutopay,
-            [RenewState.DisableAutopay]: RenewState.Active,
-        }[state] ?? RenewState.Active
-    );
+    if (state === RenewState.Active) {
+        return RenewState.DisableAutopay;
+    }
+
+    return RenewState.Active;
 };
 
 const RenewToggle = () => {
@@ -54,7 +53,7 @@ const RenewToggle = () => {
         <>
             <Toggle id={toggleId} checked={renew === RenewState.Active} onChange={onChange} disabled={updating} />
             <label htmlFor={toggleId} className="ml1">
-                <span>{c('Subscription renewal state').t`Enable automatic subscription renew`}</span>
+                <span>{c('Subscription renewal state').t`Enable autopay`}</span>
             </label>
         </>
     );
