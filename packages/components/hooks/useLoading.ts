@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-type WithLoading = <T>(promise: undefined | Promise<T | void>) => Promise<T | void>;
+export type WithLoading = <T>(promise: undefined | Promise<T | void>) => Promise<T | void>;
 
 const useLoading = (initialState = false): [boolean, WithLoading] => {
     const [loading, setLoading] = useState(initialState);
