@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,7 +9,7 @@ import { useApi, useFeature, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -121,13 +121,15 @@ const CalendarShareSection = ({
                                     ).t`Share with ${BRAND_NAME} users`}</h3>
                                     <SettingsParagraph>{c('Calendar settings private share description')
                                         .t`Share your calendar with other ${BRAND_NAME} users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}</SettingsParagraph>
-                                    <Button
-                                        onClick={() => handleShare()}
-                                        disabled={isLoading || !canShare || isMaximumMembersReached}
-                                        color="norm"
-                                    >
-                                        {c('Action').t`Share`}
-                                    </Button>
+                                    {!isMaximumMembersReached && (
+                                        <Button
+                                            onClick={() => handleShare()}
+                                            disabled={isLoading || !canShare}
+                                            color="norm"
+                                        >
+                                            {c('Action').t`Share`}
+                                        </Button>
+                                    )}
                                 </div>
                                 {isLoading && <MembersAndInvitationsLoadingSkeleton />}
                                 <CalendarMemberAndInvitationList
@@ -150,10 +152,11 @@ const CalendarShareSection = ({
                         />
                     )
                 ) : (
-                    <Card rounded className="mb1" data-test-id="card:upgrade">
+                    <Card rounded className="mt1" data-test-id="card:upgrade">
                         <div className="flex flex-nowrap flex-align-items-center">
                             <p className="flex-item-fluid mt0 mb0 pr2">
-                                {c('Upgrade notice').t`Upgrade to a Mail paid plan to share your calendar.`}
+                                {c('Upgrade notice')
+                                    .t`Upgrade to a ${MAIL_SHORT_APP_NAME} paid plan to share your calendar.`}
                             </p>
                             <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">
                                 {c('Action').t`Upgrade`}

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
 import { Banner } from '@proton/components';

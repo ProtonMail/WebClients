@@ -2,54 +2,26 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { SettingsParagraph, SharedCalendarsSection } from '@proton/components/containers';
+import { Button, ButtonLike, Card } from '@proton/atoms';
+import { SettingsParagraph } from '@proton/components/containers';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
     getOwnedPersonalCalendars,
     getProbablyActiveCalendars,
     groupCalendarsByTaxonomy,
 } from '@proton/shared/lib/calendar/calendar';
-import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit';
-import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
+import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { AlertModal, Href, useModalState } from '../../../components';
+import { Alert, AlertModal, Href, PrimaryButton, SettingsLink, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { CalendarModal } from '../calendarModal/CalendarModal';
 import { ExportModal } from '../exportModal/ExportModal';
 import CalendarsSection from './CalendarsSection';
-
-const getCalendarsLimitReachedText = ({
-    hasInvitations,
-    isPersonalCalendarsLimitReached,
-    isSharedCalendarsLimitReached,
-}: {
-    hasInvitations: boolean;
-    isPersonalCalendarsLimitReached: boolean;
-    isSharedCalendarsLimitReached: boolean;
-}) => {
-    if (!isPersonalCalendarsLimitReached && !isSharedCalendarsLimitReached) {
-        return '';
-    }
-
-    if (isPersonalCalendarsLimitReached) {
-        return hasInvitations
-            ? c('Calendar limit warning')
-                  .t`You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.`
-            : c('Calendar limit warning')
-                  .t`You have reached the maximum number of personal calendars you can create within your plan.`;
-    }
-
-    return hasInvitations
-        ? c('Calendar limit warning')
-              .t`You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.`
-        : '';
-};
 
 type ModalsMap = {
     calendarModal: ModalWithProps<{
@@ -67,21 +39,21 @@ type ModalsMap = {
     }>;
 };
 
-export interface PersonalCalendarsSectionProps {
-    addresses: Address[];
+export interface MyCalendarsSectionProps {
     user: UserModel;
     calendars: VisualCalendar[];
-    calendarInvitations: CalendarMemberInvitation[];
     defaultCalendar?: VisualCalendar;
+    isCalendarsLimitReached: boolean;
+    canAdd: boolean;
 }
 
-const PersonalCalendarsSection = ({
-    addresses,
+const MyCalendarsSection = ({
     user,
     calendars,
     defaultCalendar,
-    calendarInvitations,
-}: PersonalCalendarsSectionProps) => {
+    isCalendarsLimitReached,
+    canAdd,
+}: MyCalendarsSectionProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -96,6 +68,8 @@ const PersonalCalendarsSection = ({
         useModalState();
 
     const defaultCalendarID = defaultCalendar?.ID;
+    const isFreeUser = !user.hasPaidMail;
+    const calendarsLimitReachedText = getCalendarsLimitReachedText(isFreeUser).combinedText;
 
     const handleCreateCalendar = () => {
         setIsCalendarModalOpen(true);
@@ -175,21 +149,34 @@ const PersonalCalendarsSection = ({
         });
     };
 
-    const { ownedPersonalCalendars, sharedCalendars } = groupCalendarsByTaxonomy(calendars);
-    const { isPersonalCalendarsLimitReached, isSharedCalendarsLimitReached } = getHasUserReachedCalendarsLimit({
-        calendars,
-        isFreeUser: !user.hasPaidMail,
-    });
-    const canAddCalendars =
-        getActiveAddresses(addresses).length > 0 && user.hasNonDelinquentScope && !isPersonalCalendarsLimitReached;
-    const canAddSharedCalendars = canAddCalendars && !isSharedCalendarsLimitReached;
-    const calendarsLimitReachedText = getCalendarsLimitReachedText({
-        hasInvitations: !!calendarInvitations.length,
-        isPersonalCalendarsLimitReached,
-        isSharedCalendarsLimitReached,
-    });
-
+    const { ownedPersonalCalendars } = groupCalendarsByTaxonomy(calendars);
     const { calendarModal, exportCalendarModal, deleteCalendarModal } = modalsMap;
+
+    const createCalendarButton = (
+        <div className="mb1">
+            <PrimaryButton
+                data-test-id="calendar-setting-page:add-calendar"
+                disabled={!canAdd}
+                onClick={handleCreateCalendar}
+            >
+                {c('Action').t`Create calendar`}
+            </PrimaryButton>
+        </div>
+    );
+    const isCalendarsLimitReachedNode = isFreeUser ? (
+        <Card rounded className="mb1">
+            <div className="flex flex-nowrap flex-align-items-center">
+                <p className="flex-item-fluid mt0 mb0 pr2">{calendarsLimitReachedText}</p>
+                <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">
+                    {c('Action').t`Upgrade`}
+                </ButtonLike>
+            </div>
+        </Card>
+    ) : (
+        <Alert className="mb1" type="info">
+            {calendarsLimitReachedText}
+        </Alert>
+    );
 
     return (
         <>
@@ -240,34 +227,22 @@ const PersonalCalendarsSection = ({
                 calendars={ownedPersonalCalendars}
                 user={user}
                 defaultCalendarID={defaultCalendar?.ID}
-                add={c('Action').t`Create calendar`}
-                calendarsLimitReachedText={calendarsLimitReachedText}
-                canAdd={canAddCalendars}
-                canUpgradeCalendarsLimit={!user.hasPaidMail}
-                description={
-                    <SettingsParagraph>
-                        {c('Personal calendar section description')
-                            .t`Create a calendar to stay on top of your schedule while keeping your data secure.`}
-                        <br />
-                        <Href url={getKnowledgeBaseUrl('/protoncalendar-calendars')}>{c('Knowledge base link label')
-                            .t`Learn more`}</Href>
-                    </SettingsParagraph>
-                }
-                onAdd={handleCreateCalendar}
                 onSetDefault={handleSetDefaultCalendar}
                 onEdit={handleEditCalendar}
                 onDelete={handleDeleteCalendar}
                 onExport={handleExportCalendar}
-            />
-            <SharedCalendarsSection
-                user={user}
-                addresses={addresses}
-                calendars={sharedCalendars}
-                calendarInvitations={calendarInvitations}
-                canAddCalendars={canAddSharedCalendars}
-            />
+            >
+                <SettingsParagraph>
+                    {c('Personal calendar section description')
+                        .t`Create a calendar to stay on top of your schedule while keeping your data secure.`}
+                    <br />
+                    <Href url={getKnowledgeBaseUrl('/protoncalendar-calendars')}>{c('Knowledge base link label')
+                        .t`Learn more`}</Href>
+                </SettingsParagraph>
+                {isCalendarsLimitReached ? isCalendarsLimitReachedNode : createCalendarButton}
+            </CalendarsSection>
         </>
     );
 };
 
-export default PersonalCalendarsSection;
+export default MyCalendarsSection;

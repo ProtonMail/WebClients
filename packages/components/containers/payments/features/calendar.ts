@@ -7,27 +7,18 @@ import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
-const getCreateText = (n: number) => {
+const getNCalendarsTooltipText = (n: number) => {
     return c('new_plans: tooltip').ngettext(
-        msgid`Create up to ${n} custom calendar.`,
-        `Create up to ${n} custom calendars.`,
+        msgid`Create up to ${n} calendar or add calendars from friends, family, colleagues, and organizations`,
+        `Create up to ${n} calendars or add calendars from friends, family, colleagues, and organizations`,
         n
     );
 };
 
-const getAddText = (n: number, audience?: Audience) => {
-    if (audience === Audience.B2B) {
-        return c('new_plans: tooltip')
-            .t`On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.`;
-    }
-    return c('new_plans: tooltip')
-        .t`On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.`;
-};
-
-export const getNCalendarsFeature = (n: number, audience?: Audience): PlanCardFeatureDefinition => {
+export const getNCalendarsFeature = (n: number): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').ngettext(msgid`${n} personal calendar`, `${n} personal calendars`, n),
-        tooltip: n > 1 ? `${getCreateText(n)} ${getAddText(n, audience)}` : '',
+        featureName: c('new_plans: feature').ngettext(msgid`${n} calendar`, `${n} calendars`, n),
+        tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
         icon: 'calendar-checkmark',
     };
@@ -41,17 +32,23 @@ const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getShareFeature = (plansMap: PlansMap, plan: PLANS, audience?: Audience): PlanCardFeatureDefinition => {
+const getShareFeature = (
+    plansMap: PlansMap,
+    plan: PLANS,
+    calendarSharingEnabled: boolean,
+    audience?: Audience
+): PlanCardFeatureDefinition => {
     const included = hasBit(plansMap[plan]?.Services, PLAN_SERVICES.MAIL);
 
+    const tooltipText = calendarSharingEnabled
+        ? c('new_plans: tooltip').t`Easily share your calendars with your family, friends, or colleagues`
+        : c('new_plans: tooltip').t`Easily share your calendars with your colleagues, family, and friends via a link`;
+
     return {
-        featureName: c('new_plans: feature').t`Share calendar via link`,
-        tooltip:
-            audience === Audience.B2B
-                ? c('new_plans: tooltip')
-                      .t`Easily share your calendars with your colleagues, family, and friends via a link`
-                : c('new_plans: tooltip')
-                      .t`Easily share your calendars with your family, friends, or colleagues via a link`,
+        featureName: calendarSharingEnabled
+            ? c('new_plans: feature').t`Calendar sharing`
+            : c('new_plans: feature').t`Share calendar via link`,
+        tooltip: audience === Audience.B2B ? tooltipText : tooltipText,
         included,
     };
 };
@@ -73,25 +70,22 @@ export const getCalendarAppFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
+export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: boolean): PlanCardFeature[] => {
     return [
         {
             name: 'calendars',
             plans: {
-                [PLANS.FREE]: getNCalendarsFeature(1),
-                [PLANS.BUNDLE]: getNCalendarsFeature(plansMap[PLANS.BUNDLE]?.MaxCalendars || MAX_CALENDARS_PAID),
-                [PLANS.MAIL]: getNCalendarsFeature(plansMap[PLANS.MAIL]?.MaxCalendars || MAX_CALENDARS_PAID),
-                [PLANS.VPN]: getNCalendarsFeature(plansMap[PLANS.VPN]?.MaxCalendars || MAX_CALENDARS_FREE),
-                [PLANS.DRIVE]: getNCalendarsFeature(plansMap[PLANS.DRIVE]?.MaxCalendars || MAX_CALENDARS_FREE),
+                [PLANS.FREE]: getNCalendarsFeature(MAX_CALENDARS_FREE),
+                // TODO: Order should be inverted in ORs of the inputs of getNCalendarsFeature below (B || A instead of A || B). The limits need to be changed API-side for that though, and a FU is needed. Only after that this TODO can be tackled
+                [PLANS.BUNDLE]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE]?.MaxCalendars),
+                [PLANS.MAIL]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.MAIL]?.MaxCalendars),
+                [PLANS.VPN]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.VPN]?.MaxCalendars),
+                [PLANS.DRIVE]: getNCalendarsFeature(MAX_CALENDARS_FREE || plansMap[PLANS.DRIVE]?.MaxCalendars),
                 [PLANS.FAMILY]: getNCalendarsFeature(plansMap[PLANS.FAMILY]?.MaxCalendars || 100),
                 [PLANS.BUNDLE_PRO]: getNCalendarsFeature(
-                    plansMap[PLANS.BUNDLE_PRO]?.MaxCalendars || MAX_CALENDARS_PAID,
-                    Audience.B2B
+                    MAX_CALENDARS_PAID || plansMap[PLANS.BUNDLE_PRO]?.MaxCalendars
                 ),
-                [PLANS.MAIL_PRO]: getNCalendarsFeature(
-                    plansMap[PLANS.MAIL_PRO]?.MaxCalendars || MAX_CALENDARS_PAID,
-                    Audience.B2B
-                ),
+                [PLANS.MAIL_PRO]: getNCalendarsFeature(MAX_CALENDARS_PAID || plansMap[PLANS.MAIL_PRO]?.MaxCalendars),
             },
         },
         {
@@ -110,14 +104,14 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
         {
             name: 'share',
             plans: {
-                [PLANS.FREE]: getShareFeature(plansMap, PLANS.FREE),
-                [PLANS.BUNDLE]: getShareFeature(plansMap, PLANS.BUNDLE),
-                [PLANS.MAIL]: getShareFeature(plansMap, PLANS.MAIL),
-                [PLANS.VPN]: getShareFeature(plansMap, PLANS.VPN),
-                [PLANS.DRIVE]: getShareFeature(plansMap, PLANS.DRIVE),
-                [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY),
-                [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, Audience.B2B),
-                [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, Audience.B2B),
+                [PLANS.FREE]: getShareFeature(plansMap, PLANS.FREE, calendarSharingEnabled),
+                [PLANS.BUNDLE]: getShareFeature(plansMap, PLANS.BUNDLE, calendarSharingEnabled),
+                [PLANS.MAIL]: getShareFeature(plansMap, PLANS.MAIL, calendarSharingEnabled),
+                [PLANS.VPN]: getShareFeature(plansMap, PLANS.VPN, calendarSharingEnabled),
+                [PLANS.DRIVE]: getShareFeature(plansMap, PLANS.DRIVE, calendarSharingEnabled),
+                [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY, calendarSharingEnabled),
+                [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, calendarSharingEnabled, Audience.B2B),
+                [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, calendarSharingEnabled, Audience.B2B),
             },
         },
         {

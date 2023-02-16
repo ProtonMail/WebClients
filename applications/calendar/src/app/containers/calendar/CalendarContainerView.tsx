@@ -526,7 +526,6 @@ const CalendarContainerView = ({
             calendars={calendars}
             addresses={addresses}
             logo={logo}
-            isNarrow={isNarrow}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
