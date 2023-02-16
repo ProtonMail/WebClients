@@ -570,9 +570,6 @@
       "Remove this notification": [
         "Elimina aquesta notificació"
       ],
-      "Rename": [
-        "Canvia el nom"
-      ],
       "Report a problem": [
         "Notifica un problema"
       ],
@@ -871,14 +868,8 @@
       "Continue with free plan": [
         "Continua amb el pla gratuït"
       ],
-      "No, thanks": [
-        "No, gràcies"
-      ],
       "Start my 30-day free trial": [
         "Comença la prova gratuïta de 30 dies"
-      ],
-      "Try free for 30 days": [
-        "Prova gratuïta de 30 dies"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1009,21 +1000,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Pagable cada 12 mesos"
-      ],
-      "Payable every 15 months": [
-        "Pagable cada 15 mesos"
-      ],
-      "Payable every 24 months": [
-        "Pagable cada 24 mesos"
-      ],
-      "Payable every 30 months": [
-        "Pagable cada 30 mesos"
-      ],
-      "Payable every month": [
-        "Pagable cada mes"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Es renova automàticament el ${ formattedEndTime }"
       ]
@@ -2951,9 +2927,6 @@
       "Signature verification failed": [
         "Verificació de la signatura fallida"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Alguns dels vostres noms de carpeta estan reservats. Personalitzeu la importació per tal d'editar-ne els noms."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
@@ -3977,9 +3950,6 @@
       "Canceled": [
         "Cancel·lat"
       ],
-      "Canceling": [
-        "Cancel·lant"
-      ],
       "Completed": [
         "Completat"
       ],
@@ -4038,19 +4008,12 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } ha posat en pausa una importació perquè queda por espai al vostre compte. Pot:"
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } intentarà reprendre la importació tan aviat com el vostre proveïdor de correu electrònic restableixi el del vostre compte ${ bandwithLimitLink }. No cal fer res. Si cancel·leu la importació, no la podreu reprendre i haureu de tornar a començar."
-      ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } es definirà com a calendari predeterminat."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nou calendari",
         "${ calendarsToBeCreatedCount } nous calendaris"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendari combinat",
-        "${ calendarsToBeMerged } calendaris combinats"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendari combinat",
@@ -4090,14 +4053,6 @@
         "${ numberOfNonPrivateKeys } fitxer carregat no és una clau privada vàlida. Verifiqueu-ho i torneu-ho a provar.",
         "${ numberOfNonPrivateKeys } fitxers carregats no són claus privades vàlides. Verifiqueu-ho i torneu-ho a provar."
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } grup de contactes",
-        "${ numContactGroups } grups de contactes"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } contacte",
-        "${ numContacts } contactes"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta trobada",
         "${ providerFoldersNumLocalized } carpetes trobades"
@@ -4126,9 +4081,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } d'emmagatzematge"
-      ],
       "${ vpnPlus } required for Secure Core feature.": [
         "La característica Secure Core requereix ${ vpnPlus }."
       ],
@@ -4154,9 +4106,6 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Convida amistats a ${ BRAND_NAME }"
-      ],
-      "10 email addresses": [
-        "10 adreces de correu"
       ],
       "2. They try ${ planName }": [
         "2. Elles proven ${ planName }"
@@ -4370,10 +4319,6 @@
       ],
       "Continue anyway?": [
         "Voleu continuar igualment?"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Crear ${ calendarsToBeCreated } nou calendari",
-        "Crear ${ calendarsToBeCreated } nous calendaris"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
@@ -4634,10 +4579,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendari",
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendaris"
-      ],
       "Import from": [
         "Importar des de"
       ],
@@ -4795,9 +4736,6 @@
       "No contact encryption keys exist": [
         "No existeixen claus de xifratge de contactes"
       ],
-      "No credit card required": [
-        "No cal targeta de crèdit"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "No s'ha establert un mètode de recuperació. Esteu en risc de perdre l'accés a les vostres regles."
       ],
@@ -4924,9 +4862,6 @@
       "Preview": [
         "Vista prèvia"
       ],
-      "Priority support": [
-        "Suport prioritari"
-      ],
       "Public link invite": [
         "Enllaç públic d'invitació"
       ],
@@ -5028,12 +4963,6 @@
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF s'utilitza per especificar a qui se li pot enviar un missatge de correu electrònic per al domini, per la qual cosa recomanem que inclogui ${ MAIL_APP_NAME } al vostre registre SPF. Afegiu el següent registre TXT al vostre DNS. Normalment es pot fer al tauler de control del registre del vostre nom de domini."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Suport per a 1 domini de correu personalitzat"
       ],
       "support team": [
         "equip de suport"
@@ -5189,12 +5118,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Tret que tanqueu la sessió del vostre compte o canvieu la vostra contrasenya, la vostra sessió es mantindrà activa. Les sessions expiraran després de 30 dies d'inactivitat."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetes, etiquetes, i filtres il·limitats"
-      ],
-      "Unlimited messages": [
-        "Missatges il·limitats"
       ],
       "Unsaved changes": [
         "Canvis no desats"
@@ -5975,6 +5898,9 @@
       "BTC amount:": [
         "Import de BTC:"
       ],
+      "Calendar": [
+        "Calendari"
+      ],
       "Calendars": [
         "Calendaris"
       ],
@@ -5998,9 +5924,6 @@
       ],
       "Color": [
         "Color"
-      ],
-      "Coming soon": [
-        "Disponible properament"
       ],
       "Composer": [
         "Editor"
@@ -6197,9 +6120,6 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "De: ${ importedEmail }"
-      ],
       "Gift code": [
         "Codi regal"
       ],
@@ -6286,12 +6206,6 @@
       ],
       "Manage categories": [
         "Gestiona les categories"
-      ],
-      "Manage folders": [
-        "Gestionar carpetes"
-      ],
-      "Manage labels": [
-        "Gestionar etiquetes"
       ],
       "Mark as": [
         "Marca com a"
@@ -6545,9 +6459,6 @@
       "Timezone": [
         "Fus horari"
       ],
-      "To: ${ emailAddress }": [
-        "A: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Per: ${ to }"
       ],
@@ -6568,9 +6479,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Pengeu 1 o més fitxers de recuperació o claus de xifratge"
-      ],
-      "Upload file": [
-        "Puja un fitxer"
       ],
       "URL": [
         "URL"
@@ -6856,9 +6764,6 @@
       "Almost there": [
         "Ja gairebé està"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Quantitat de calendaris creats: ${ createdCalendars } d'un total de ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Connectant al vostre prveïdor de correu electrònic"
       ],
@@ -6881,24 +6786,6 @@
       ],
       "Enable authentication logs": [
         "Activa els registres d'autenticació"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tots els missatges d' ${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importa tots els missatges d'$${ itemsToImportCount } carpetes i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetés i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7378,11 +7265,6 @@
         "Assistència"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7392,6 +7274,11 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom de manera predeterminada."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8358,9 +8245,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "La solució de correu electrònic i calendari que prioritza la privadesa per a les vostres necessitats de comunicació diàries."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "L'oferta és només per a persones noves a  ${ BRAND_NAME }. No cal targeta de crèdit."
       ]
@@ -8401,9 +8285,6 @@
       ],
       "Calendar updated": [
         "Calendari actualitzat"
-      ],
-      "Canceling import": [
-        "Cancel·lar importació"
       ],
       "Catch-all address updated": [
         "Adreça de \"Captura tot\" actualitzada"
@@ -9851,9 +9732,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Perdràs qualsevol personalització que hagis fet fins ara."
-      ],
-      "You will not see this import record in the list anymore.": [
-        "Ja no veureu aquest registre d'importació a la llista."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"

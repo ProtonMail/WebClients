@@ -375,9 +375,6 @@
     "Action in trial plan": {
       "Continue with free plan": [
         "Continuar com o plano gratuito"
-      ],
-      "No, thanks": [
-        "Não, obrigado"
       ]
     },
     "Addon": {
@@ -1555,9 +1552,6 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "É requerida ${ vpnPlus } para ligação a nível de país."
       ],
@@ -1570,9 +1564,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ligação para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)",
         "+${ organization.BonusVPN } ligações para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
@@ -1793,9 +1784,6 @@
       "Preview": [
         "Antever"
       ],
-      "Priority support": [
-        "Suporte prioritário"
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
@@ -1873,12 +1861,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
@@ -2168,8 +2150,14 @@
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
+      "Moderate NAT": [
+        "NAT moderado"
+      ],
       "Name on card": [
         "Nome no cartão"
+      ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Encaminhamento de porta)"
       ],
       "New login password": [
         "Nova senha de início"
@@ -2179,6 +2167,9 @@
       ],
       "New password": [
         "Nova senha"
+      ],
+      "Non-standard ports": [
+        "Portas não padrão"
       ],
       "OpenVPN / IKEv2 password": [
         "Senha OpenVPN/IKEv2"
@@ -2908,6 +2899,9 @@
       "Email subscriptions": [
         "Subscrições de email"
       ],
+      "End date": [
+        "Data de fim"
+      ],
       "Enter your password": [
         "Insira a sua senha"
       ],
@@ -3040,6 +3034,9 @@
       "Sign out": [
         "Terminar sessão"
       ],
+      "Start date": [
+        "Data de início"
+      ],
       "Status": [
         "Estado"
       ],
@@ -3063,6 +3060,9 @@
       ],
       "Unsupported browser": [
         "Navegador não suportado"
+      ],
+      "Users": [
+        "Utilizadores"
       ],
       "Verification": [
         "Verificação"

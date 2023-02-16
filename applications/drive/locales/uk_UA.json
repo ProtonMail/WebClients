@@ -2095,9 +2095,6 @@
       "Some groups could not be deleted": [
         "Не вдається видалити деякі групи"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Назви деяких ваших тек зарезервовані. Налаштуйте імпорт для зміни цих назв."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
@@ -2850,6 +2847,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Імпорт з ${ provider }"
+      ],
       "Other": [
         "Інший"
       ]
@@ -2907,12 +2907,6 @@
         "${ calendarsToBeCreatedCount } нові календарі",
         "${ calendarsToBeCreatedCount } нових календарів",
         "${ calendarsToBeCreatedCount } нових календарів"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } об'єднаний календар",
-        "${ calendarsToBeMerged } об'єднані календарі",
-        "${ calendarsToBeMerged } об'єднаних календарів",
-        "${ calendarsToBeMerged } об'єднаних календарів"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } об'єднаний календар",
@@ -2977,17 +2971,17 @@
         "Знайдено ${ groupCounts } груп",
         "Знайдено ${ groupCounts } груп"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } група контактів",
-        "${ numContactGroups } групи контактів",
-        "${ numContactGroups } груп контактів",
-        "${ numContactGroups } груп контактів"
+      "${ numContact } contact": [
+        "${ numContact } контакт",
+        "${ numContact } контакти",
+        "${ numContact } контактів",
+        "${ numContact } контактів"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } контакт",
-        "${ numContacts } контакти",
-        "${ numContacts } контактів",
-        "${ numContacts } контакта"
+      "${ numGroups } contact group": [
+        "${ numGroups } група контактів",
+        "${ numGroups } групи контактів",
+        "${ numGroups } груп контактів",
+        "${ numGroups } груп контактів"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } призупинено",
@@ -3166,11 +3160,11 @@
       "Country code": [
         "Код країни"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Створити ${ calendarsToBeCreated } новий календар",
-        "Створити ${ calendarsToBeCreated } нові календарі",
-        "Створити ${ calendarsToBeCreated } нових календарів",
-        "Створити ${ calendarsToBeCreated } нових календарів"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Створити ${ calendarsToBeCreatedCount } новий календар",
+        "Створити ${ calendarsToBeCreatedCount } нові календарі",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також теки, які ви бажаєте імпортувати."
@@ -3373,14 +3367,14 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календаря",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів"
       ],
       "Import from": [
         "Імпортувати з"
@@ -3393,6 +3387,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Імпортуйте свої листи, календарі та контакти з іншої служби до ${ BRAND_NAME }. Ми допоможемо вам пройти кожен крок та зашифрувати ваші дані після переміщення. Вітаємо у світі приватності."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
@@ -4071,6 +4068,9 @@
       "Browser version": [
         "Версія браузера"
       ],
+      "Calendar": [
+        "Календар"
+      ],
       "Calendars": [
         "Календарі"
       ],
@@ -4091,9 +4091,6 @@
       ],
       "Colors": [
         "Кольори"
-      ],
-      "Coming soon": [
-        "Незабаром з'явиться"
       ],
       "Comment": [
         "Коментар"
@@ -4212,9 +4209,6 @@
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Від: ${ importedEmail }"
-      ],
       "Good": [
         "Добре"
       ],
@@ -4274,12 +4268,6 @@
       ],
       "Manage categories": [
         "Керувати категоріями"
-      ],
-      "Manage folders": [
-        "Керувати теками"
-      ],
-      "Manage labels": [
-        "Керувати мітками"
       ],
       "Merge a folder": [
         "Об'єднати теку"
@@ -4398,9 +4386,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Це остаточно видалить усі файли у вашому сховищі."
       ],
-      "To: ${ emailAddress }": [
-        "Кому: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Кому: ${ to }"
       ],
@@ -4430,9 +4415,6 @@
       ],
       "Upload anyway": [
         "Все одно вивантажити"
-      ],
-      "Upload file": [
-        "Вивантажити файл"
       ],
       "Upload picture": [
         "Завантажити зображення"
@@ -4526,9 +4508,6 @@
       "Almost there": [
         "Майже готово"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Кількість створених календарів: ${ createdCalendars } з ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Підключення до вашого постачальника електронної пошти"
       ],
@@ -4546,29 +4525,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
       ]
     },
     "Message": {

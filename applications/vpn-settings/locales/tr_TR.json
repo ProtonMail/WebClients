@@ -406,14 +406,8 @@
       "Continue with free plan": [
         "Ücretsiz Free tarifesini kullanmayı sürdür"
       ],
-      "No, thanks": [
-        "Hayır, teşekkürler"
-      ],
       "Start my 30-day free trial": [
         "30 günlük ücretsiz denememi başlat"
-      ],
-      "Try free for 30 days": [
-        "30 gün ücretsiz olarak deneyin"
       ]
     },
     "Addon": {
@@ -437,21 +431,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "12 ayda bir ödemeli"
-      ],
-      "Payable every 15 months": [
-        "15 ayda bir ödemeli"
-      ],
-      "Payable every 24 months": [
-        "24 ayda bir ödemeli"
-      ],
-      "Payable every 30 months": [
-        "30 ayda bir ödemeli"
-      ],
-      "Payable every month": [
-        "Her ay ödemeli"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "${ formattedEndTime } tarihinde otomatik olarak yenilenir"
       ]
@@ -1859,9 +1838,6 @@
         "${ number } sunucu",
         "${ number } sunucu"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } depolama alanı"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "Ülke düzeyinde bağlantı için ${ vpnPlus } tarifesi gereklidir."
       ],
@@ -1877,9 +1853,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
-      ],
-      "10 email addresses": [
-        "10 e-posta adresi"
       ],
       "30-day money-back guarantee.": [
         "30 gün ücret iade garantisi."
@@ -2154,9 +2127,6 @@
       "MM/YY": [
         "AA/YY"
       ],
-      "No credit card required": [
-        "Kredi kartı gerekmez"
-      ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
@@ -2229,9 +2199,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve süresi dolmamış kuponlar katılmıştır."
       ],
-      "Priority support": [
-        "Öncelikli destek"
-      ],
       "read our two-factor authentication guide first": [
         "önce iki aşamalı doğrulama rehberimizi okuyun"
       ],
@@ -2273,12 +2240,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda ek özellikler etkinleştirildi."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
-      ],
-      "Support for 1 custom email domain": [
-        "1 özel e-posta etki alanı desteği"
       ],
       "support team": [
         "destek ekibi"
@@ -2372,12 +2333,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket, süzgeç"
-      ],
-      "Unlimited messages": [
-        "Sınırsız ileti"
       ],
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
@@ -4101,9 +4056,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Günlük iletişim gereksinimleriniz için gizliliğe öncelik veren e-posta ve takvim çözümü."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Bu teklif yalnızca yeni ${ BRAND_NAME } kullanıcıları için geçerlidir. Kredi kartı gerekmez."
       ]
@@ -4551,9 +4503,6 @@
       ],
       "Total paid": [
         "Toplam ödenen"
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "En iyi ${ MAIL_APP_NAME } sürümünü ücretsiz deneyin"
       ],
       "TV log in": [
         "TV oturumu açma"

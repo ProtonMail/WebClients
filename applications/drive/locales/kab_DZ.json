@@ -2413,10 +2413,6 @@
         "${ calendarsToBeCreatedCount } n uwitay amaynut",
         "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } n uwitay yettwamezdi",
-        "${ calendarsToBeMerged } n yiwitayen ttwamezdin"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
         "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
@@ -2452,14 +2448,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } n ugraw yettwafen",
         "${ groupCounts } n yigrawen yettwafen"
-      ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } n ugraw n unermes",
-        "${ numContactGroups } n yigrawen n unermes"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } n unermis",
-        "${ numContacts } n yinermisen"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } yettwaḥbes",
@@ -2575,10 +2563,6 @@
       "Conflict": [
         "Amgirred"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Snulfu-d ${ calendarsToBeCreated } n uwitay amaynut",
-        "Snulfu-d ${ calendarsToBeCreated } n yiwitayen imaynuten"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked yikaramen i tebɣiḍ ad tketreḍ."
       ],
@@ -2687,10 +2671,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Kter ${ contactsFragment } yerna ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n uwitay",
-        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n yiwitayen"
       ],
       "Import from": [
         "Kter si"
@@ -3103,6 +3083,9 @@
       "Browser version": [
         "Lqem n yiminig"
       ],
+      "Calendar": [
+        "Awitay"
+      ],
       "Calendars": [
         "Iwitayen"
       ],
@@ -3194,9 +3177,6 @@
       "Folder name": [
         "Isem n ukaram"
       ],
-      "From: ${ importedEmail }": [
-        "Sɣur: ${ importedEmail }"
-      ],
       "Good": [
         "Ilha"
       ],
@@ -3244,12 +3224,6 @@
       ],
       "Malware": [
         "Aseɣẓan"
-      ],
-      "Manage folders": [
-        "Sefrek ikaramen"
-      ],
-      "Manage labels": [
-        "Sefrek tibzimin"
       ],
       "Merge a folder": [
         "Zdi akaram"
@@ -3350,9 +3324,6 @@
       "Text": [
         "Aḍris"
       ],
-      "To: ${ emailAddress }": [
-        "I: ${ emailAddress }"
-      ],
       "Two-factor authentication code": [
         "Tangalt n usesteb s snat n tarrayin"
       ],
@@ -3370,9 +3341,6 @@
       ],
       "Upload anyway": [
         "Sali-d akken yebɣu yili"
-      ],
-      "Upload file": [
-        "Sali afaylu"
       ],
       "Upload picture": [
         "Sali-d tugna"

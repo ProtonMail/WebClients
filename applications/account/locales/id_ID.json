@@ -597,9 +597,6 @@
       "Remove this notification": [
         "Hapus notifikasi ini"
       ],
-      "Rename": [
-        "Ubah nama"
-      ],
       "Report a problem": [
         "Laporkan masalah"
       ],
@@ -910,14 +907,8 @@
       "Continue with free plan": [
         "Lanjutkan dengan akun gratis"
       ],
-      "No, thanks": [
-        "Tidak, terima kasih"
-      ],
       "Start my 30-day free trial": [
         "Mulai masa uji coba 30 hari saya"
-      ],
-      "Try free for 30 days": [
-        "Coba gratis selama 30 hari"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1051,21 +1042,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Dapat dibayar per 12 bulan"
-      ],
-      "Payable every 15 months": [
-        "Dapat dibayar per 15 bolan"
-      ],
-      "Payable every 24 months": [
-        "Dapat dibayar per 24 bulan"
-      ],
-      "Payable every 30 months": [
-        "Dapat dibayar per 30 bolan"
-      ],
-      "Payable every month": [
-        "Dapat dibayar per bulan"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Diperbarui secara otomatis pada ${ formattedEndTime }"
       ]
@@ -3100,9 +3076,6 @@
       "Signature verification failed": [
         "Verifikasi tanda tangan gagal"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama folder yang bersangkutan dengan menyesuaikan parameter impor Anda."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
@@ -4270,9 +4243,6 @@
       "Canceled": [
         "Dibatalkan"
       ],
-      "Canceling": [
-        "Membatalkan"
-      ],
       "Completed": [
         "Selesai"
       ],
@@ -4333,9 +4303,6 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } menghentikan sementara proses impor karena ruang penyimpanan Anda hampir habis. Anda dapat:"
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } akan mencoba untuk melanjutkan proses impor sesegera mungkin setelah penyedia email Anda mengatur ulang ${ bandwithLimitLink } akun. Anda tidak perlu melakukan apapun. Apabila Anda membatalkan impor, Anda tidak akan dapat melanjutkannya dan harus mengulang dari awal."
-      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
@@ -4344,9 +4311,6 @@
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } kalender baru"
-      ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } kalender yang tergabung"
       ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
@@ -4381,12 +4345,6 @@
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
       ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } grup kontak"
-      ],
-      "${ numContacts } contacts": [
-        "${ numContacts } kontak"
-      ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
       ],
@@ -4407,9 +4365,6 @@
       ],
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
-      ],
-      "${ storageSize } storage": [
-        "Kuota penyimpanan ${ storageSize }"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } diperlukan untuk koneksi tingkat Negara."
@@ -4437,9 +4392,6 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Undang teman ke ${ BRAND_NAME }"
-      ],
-      "10 email addresses": [
-        "10 alamat email"
       ],
       "2. They try ${ planName }": [
         "2. Mereka mencoba ${ planName }"
@@ -4701,9 +4653,6 @@
       ],
       "Country code": [
         "Kode negara"
-      ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "Buat ${ calendarsToBeCreated } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
@@ -5014,9 +4963,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "Impor ${ selectedCalendarsCount } dari ${ totalCalendarsCount } kalender yang tersedia"
-      ],
       "Import from": [
         "Impor dari"
       ],
@@ -5200,9 +5146,6 @@
       "No contact encryption keys exist": [
         "Kunci enkripsi kontak tidak ada"
       ],
-      "No credit card required": [
-        "Tanpa perlu kartu kredit"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Tidak ada metode pemulihan data yang ditentukan; Anda beresiko kehilangan akses menuju data Anda"
       ],
@@ -5365,9 +5308,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
       ],
-      "Priority support": [
-        "Dukungan prioritas"
-      ],
       "Public link invite": [
         "Tautan undangan publik"
       ],
@@ -5497,17 +5437,11 @@
       "Storage for users": [
         "Penyimpanan untuk anggota"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
-      ],
       "Storage used by this user": [
         "Kuota penyimpanan yang digunakan oleh pengguna ini"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Simpan kata sandi dan berkas ini di tempat yang aman. Anda akan membutuhkan keduanya untuk mengimpor kunci Anda."
-      ],
-      "Support for 1 custom email domain": [
-        "Dukungan 1 domain email khusus"
       ],
       "support team": [
         "tim dukungan"
@@ -5718,12 +5652,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Kecuali Anda keluar dari akun atau mengubah kata sandi Anda, sesi Anda akan tetap aktif. Seluruh sesi akan berakhir setelah 60 hari tidak aktif."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited messages": [
-        "Tanpa batasan jumlah pesan"
       ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
@@ -6616,6 +6544,9 @@
       "BTC amount:": [
         "Jumlah BTC:"
       ],
+      "Calendar": [
+        "Kalender"
+      ],
       "Calendars": [
         "Kalender"
       ],
@@ -6648,9 +6579,6 @@
       ],
       "Colors": [
         "Warna"
-      ],
-      "Coming soon": [
-        "Segera hadir"
       ],
       "Composer": [
         "Komposer"
@@ -6856,9 +6784,6 @@
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Dari: ${ importedEmail }"
-      ],
       "Gift code": [
         "Kode hadiah"
       ],
@@ -6951,12 +6876,6 @@
       ],
       "Manage categories": [
         "Kelola kategori"
-      ],
-      "Manage folders": [
-        "Kelola folder"
-      ],
-      "Manage labels": [
-        "Kelola label"
       ],
       "Mark as": [
         "Tandai sebagai"
@@ -7219,9 +7138,6 @@
       "Timezone": [
         "Zona waktu"
       ],
-      "To: ${ emailAddress }": [
-        "Ke: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Kepada: ${ to }"
       ],
@@ -7242,9 +7158,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Unggah setidaknya 1 berkas pemulihan atau kunci enkripsi"
-      ],
-      "Upload file": [
-        "Unggah berkas"
       ],
       "URL": [
         "URL"
@@ -7548,9 +7461,6 @@
       "Almost there": [
         "Hampir selesai"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Jumlah kalender yang terbuat: ${ createdCalendars } dari ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
       ],
@@ -7573,20 +7483,6 @@
       ],
       "Enable authentication logs": [
         "Aktifkan catatan autentikasi"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari folder ${ itemsToImportCount } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8134,26 +8030,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8223,6 +8099,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9484,9 +9380,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Penawaran ini hanya berlaku bagi pengguna baru ${ BRAND_NAME }. Tidak ada kartu kredit yang diperlukan."
       ]
@@ -9527,9 +9420,6 @@
       ],
       "Calendar updated": [
         "Kalender berhasil diperbarui"
-      ],
-      "Canceling import": [
-        "Membatalkan proses impor"
       ],
       "Catch-all address updated": [
         "Alamat catch-all diperbarui"
@@ -10583,9 +10473,6 @@
       "Track your referrals": [
         "Lacak rujukan Anda"
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Nikmati berbagai fitur unggulan ${ MAIL_APP_NAME } secara gratis"
-      ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
       ],
@@ -11088,9 +10975,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
-      ],
-      "You will not see this import record in the list anymore.": [
-        "Anda tidak akan lagi melihat rekaman impor ini di daftar."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"

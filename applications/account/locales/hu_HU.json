@@ -579,9 +579,6 @@
       "Remove this notification": [
         "Emlékeztető törlése"
       ],
-      "Rename": [
-        "Átnevezés"
-      ],
       "Report a problem": [
         "Probléma jelentése"
       ],
@@ -892,14 +889,8 @@
       "Continue with free plan": [
         "Folytatás az ingyenes csomaggal"
       ],
-      "No, thanks": [
-        "Köszönöm, nem"
-      ],
       "Start my 30-day free trial": [
         "30 napos ingyenes próba megkezdése"
-      ],
-      "Try free for 30 days": [
-        "Próbálja 30 napig ingyen"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1030,21 +1021,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "12 havonta fizetendő"
-      ],
-      "Payable every 15 months": [
-        "15 havonta fizetendő"
-      ],
-      "Payable every 24 months": [
-        "24 havonta fizetendő"
-      ],
-      "Payable every 30 months": [
-        "30 havonta fizetendő"
-      ],
-      "Payable every month": [
-        "Havonta fizetendő"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Automatikusan megújul: ${ formattedEndTime }"
       ]
@@ -3044,9 +3020,6 @@
       "Signature verification failed": [
         "Aláírás ellenőrzése sikertelen"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Bizonyos mappák neve fenntartott. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos mappák neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
@@ -4174,9 +4147,6 @@
       "Canceled": [
         "Megszakítva"
       ],
-      "Canceling": [
-        "Megszakítás alatt"
-      ],
       "Completed": [
         "Kész"
       ],
@@ -4238,9 +4208,6 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } felfüggesztette az importálást mert a fiókban túlságosan lecsökkent a tárhely. Próbálja meg:"
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } megpróbálja folytatni az importálást ahogy az e-mail szolgáltatója visszaállítja a fiók ${ bandwithLimitLink }-jét. Nem kell semmit csinálnia. Ha abbahagyja az importálást, nem fogja tudni folytatni és újra fog kelleni kezdenie."
-      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
       ],
@@ -4250,10 +4217,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
         "${ calendarsToBeCreatedCount } új naptár"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } egyesített naptár",
-        "${ calendarsToBeMerged } egyesített naptár"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } egyesített naptár",
@@ -4293,14 +4256,6 @@
         "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra.",
         "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } névjegy csoport",
-        "${ numContactGroups } névjegy csoport"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } névjegy",
-        "${ numContacts } névjegy"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappa található",
         "${ providerFoldersNumLocalized } mappa található"
@@ -4328,9 +4283,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } címke kiválasztva",
         "${ selectedFoldersCountLocalized } címke kiválasztva"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } tárhely"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } csomag szükséges az ország-szintű kapcsolódáshoz."
@@ -4360,9 +4312,6 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Hívjon meg barátokat a ${ BRAND_NAME }ba"
-      ],
-      "10 email addresses": [
-        "10 e-mail cím"
       ],
       "2. They try ${ planName }": [
         "2. Kipróbálják a ${ planName } csomagot"
@@ -4612,10 +4561,6 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "A folytatással összekapcsolja a ${ BRAND_NAME } fiókját a ${ name } szolgáltatással."
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Létrehozandó ${ calendarsToBeCreated } új naptár",
-        "Létrehozandó ${ calendarsToBeCreated } új naptár"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó mappákat."
@@ -4912,10 +4857,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból",
-        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból"
-      ],
       "Import from": [
         "Importálás innen"
       ],
@@ -5094,9 +5035,6 @@
       "No contact encryption keys exist": [
         "Nincs névjegy titkosító kulcs"
       ],
-      "No credit card required": [
-        "Bankkártya nem szükséges"
-      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Nincs megadva adat helyreállítási mód; megvan a veszélye, hogy elveszti adatai elérését"
       ],
@@ -5259,9 +5197,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Az ár tartalmaz minden vonatkozó, megújulás-alapú kedvezményt és a fiókjában mentett, le nem járt kupont."
       ],
-      "Priority support": [
-        "Elsőbbségi támogatás"
-      ],
       "Public link invite": [
         "Nyilvános meghívási hivatkozás"
       ],
@@ -5385,17 +5320,11 @@
       "Storage for users": [
         "Tárhely felhasználók számára"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "A tárhely megosztott a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } között."
-      ],
       "Storage used by this user": [
         "A felhasználó által használt tárhely"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Tárolja a jelszót és a fájlt egy biztos helyen. Szüksége lesz rá később a kulcsa importálásához."
-      ],
-      "Support for 1 custom email domain": [
-        "Egy saját e-mail domain név használata"
       ],
       "support team": [
         "ügyfélszolgálat"
@@ -5597,12 +5526,6 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Ha nem lép ki fiókjából vagy nem változtat jelszót, a munkafolyamat aktív marad. A munkafolyamatok 60 nap inaktivitás után járnak le."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Korlátlan számú mappa, címke és szűrő"
-      ],
-      "Unlimited messages": [
-        "Korlátlan számú üzenet"
       ],
       "Unsaved changes": [
         "Nem mentett módosítások"
@@ -6483,6 +6406,9 @@
       "BTC amount:": [
         "BTC összeg:"
       ],
+      "Calendar": [
+        "Naptár"
+      ],
       "Calendars": [
         "Naptárak"
       ],
@@ -6512,9 +6438,6 @@
       ],
       "Color": [
         "Szín"
-      ],
-      "Coming soon": [
-        "Hamarosan"
       ],
       "Composer": [
         "Szerkesztő"
@@ -6714,9 +6637,6 @@
       "Folder location": [
         "Mappa helye"
       ],
-      "From: ${ importedEmail }": [
-        "Forrás: ${ importedEmail }"
-      ],
       "Gift code": [
         "Ajándék kód"
       ],
@@ -6809,12 +6729,6 @@
       ],
       "Manage categories": [
         "Kategóriák kezelése"
-      ],
-      "Manage folders": [
-        "Mappák kezelése"
-      ],
-      "Manage labels": [
-        "Címkék kezelése"
       ],
       "Mark as": [
         "Megjelölés mint"
@@ -7068,9 +6982,6 @@
       "Timezone": [
         "Időzóna"
       ],
-      "To: ${ emailAddress }": [
-        "Ide: ${ emailAddress }"
-      ],
       "Two-password mode": [
         "Két jelszavas mód"
       ],
@@ -7082,9 +6993,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Töltsön fel egy vagy több helyreállító fájlt vagy titkosítási kulcsot"
-      ],
-      "Upload file": [
-        "Fájl feltöltése"
       ],
       "URL": [
         "URL"
@@ -7373,9 +7281,6 @@
       "Almost there": [
         "Majdnem kész"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Már ennyi naptárt hozott létre: ${ createdCalendars } ennyiből: ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Csatlakozás az e-mailszolgáltatójához"
       ],
@@ -7398,20 +7303,6 @@
       ],
       "Enable authentication logs": [
         "Hitelesítési naplók engedélyezése"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7978,26 +7869,6 @@
         "Csoport menedzsment"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -8067,6 +7938,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9295,9 +9186,6 @@
       ]
     },
     "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "A magánszférát előtérben tartó E-mail és Naptár megoldás, a mindennapi kommunikációjához."
-      ],
       "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
         "Ez az ajánlat csak új ${ BRAND_NAME } felhasználóknak érvényes. Nem szükséges bankkártya."
       ]
@@ -9335,9 +9223,6 @@
       ],
       "Calendar updated": [
         "Naptár frissítve"
-      ],
-      "Canceling import": [
-        "Importálás megszakítása"
       ],
       "Catch-all address updated": [
         "Gyűjtő e-mail cím frissítve"
@@ -10342,9 +10227,6 @@
       "Track your referrals": [
         "Meghívók megtekintése"
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Próbálja ki a ${ MAIL_APP_NAME } legjavát ingyen"
-      ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
       ],
@@ -10833,9 +10715,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Elveszíti az eddigi változtatásokat."
-      ],
-      "You will not see this import record in the list anymore.": [
-        "Az importálási elem a továbbiakban nem fog szerepelni a listán."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ textDate }. ${ action }"

@@ -2053,9 +2053,6 @@
       "Some groups could not be deleted": [
         "Alguns grups no poden ser esborrats"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Alguns dels vostres noms de carpeta estan reservats. Personalitzeu la importació per tal d'editar-ne els noms."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
@@ -2764,10 +2761,6 @@
         "${ calendarsToBeCreatedCount } nou calendari",
         "${ calendarsToBeCreatedCount } nous calendaris"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendari combinat",
-        "${ calendarsToBeMerged } calendaris combinats"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendari combinat",
         "${ calendarsToBeMergedCount } calendaris combinats"
@@ -2810,14 +2803,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
-      ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } grup de contactes",
-        "${ numContactGroups } grups de contactes"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } contacte",
-        "${ numContacts } contactes"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausat",
@@ -2944,10 +2929,6 @@
       ],
       "Conflict": [
         "Conflicte"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Crear ${ calendarsToBeCreated } nou calendari",
-        "Crear ${ calendarsToBeCreated } nous calendaris"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
@@ -3103,10 +3084,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendari",
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendaris"
       ],
       "Import from": [
         "Importar des de"
@@ -3661,6 +3638,9 @@
       "Browser version": [
         "Versió del navegador"
       ],
+      "Calendar": [
+        "Calendari"
+      ],
       "Calendars": [
         "Calendaris"
       ],
@@ -3678,9 +3658,6 @@
       ],
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
-      ],
-      "Coming soon": [
-        "Disponible properament"
       ],
       "Comment": [
         "Commentari"
@@ -3797,9 +3774,6 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "De: ${ importedEmail }"
-      ],
       "Good": [
         "Bona"
       ],
@@ -3859,12 +3833,6 @@
       ],
       "Manage categories": [
         "Gestiona les categories"
-      ],
-      "Manage folders": [
-        "Gestionar carpetes"
-      ],
-      "Manage labels": [
-        "Gestionar etiquetes"
       ],
       "Merge a folder": [
         "Fusionar una carpeta"
@@ -3980,9 +3948,6 @@
       "Text": [
         "Text"
       ],
-      "To: ${ emailAddress }": [
-        "A: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Per: ${ to }"
       ],
@@ -4009,9 +3974,6 @@
       ],
       "Upload anyway": [
         "Carregar de totes maneres"
-      ],
-      "Upload file": [
-        "Puja un fitxer"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -4099,9 +4061,6 @@
       "Almost there": [
         "Ja gairebé està"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Quantitat de calendaris creats: ${ createdCalendars } d'un total de ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Connectant al vostre prveïdor de correu electrònic"
       ],
@@ -4116,24 +4075,6 @@
       ],
       "Your import is starting": [
         "La importació s'està iniciant"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tots els missatges d' ${ itemsToImportCount } carpeta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importa tots els missatges d'$${ itemsToImportCount } carpetes i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }."
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar tots els missatges d'$${ itemsToImportCount } etiquetas i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetes i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetés i etiqueta'ls com a ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {

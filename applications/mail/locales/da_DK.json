@@ -800,9 +800,6 @@
       "Remove this label": [
         "Fjern denne etiket"
       ],
-      "Rename": [
-        "Omdøb"
-      ],
       "Reply": [
         "Svar"
       ],
@@ -3303,9 +3300,6 @@
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Nogle af dine mappenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
@@ -4331,10 +4325,6 @@
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } flettet kalender",
-        "${ calendarsToBeMerged } flettede kalendere"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } flettet kalender",
         "${ calendarsToBeMergedCount } flettede kalendere"
@@ -4380,14 +4370,6 @@
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } e-mail-tracker blokeret",
         "${ numberOfTrackers } e-mail-trackere blokeret"
-      ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } kontaktgruppe",
-        "${ numContactGroups } kontaktgrupper"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } kontakt",
-        "${ numContacts } kontakter"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } besked i samtale",
@@ -4623,10 +4605,6 @@
       ],
       "Country code": [
         "Landekode"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Opret ${ calendarsToBeCreated } ny kalender",
-        "Opret ${ calendarsToBeCreated } nye kalendere"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Opret et mærkat til de importerede beskeder, et tidsinterval for importen og de mapper du gerne vil importere."
@@ -4869,10 +4847,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importer ${ selectedCalendarsCount } af ${ totalCalendarsCount } kalender",
-        "Importer ${ selectedCalendarsCount } af ${ totalCalendarsCount } kalendere"
       ],
       "Import from": [
         "Importer fra"
@@ -6043,9 +6017,6 @@
       "Colors": [
         "Farver"
       ],
-      "Coming soon": [
-        "Kommer snart"
-      ],
       "Conditions": [
         "Betingelser"
       ],
@@ -6133,9 +6104,6 @@
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Fra: ${ importedEmail }"
-      ],
       "Good": [
         "God"
       ],
@@ -6210,12 +6178,6 @@
       ],
       "Manage categories": [
         "Administrer kategorier"
-      ],
-      "Manage folders": [
-        "Administrer mapper"
-      ],
-      "Manage labels": [
-        "Administrer etiketter"
       ],
       "Manage my addresses": [
         "Administrer mine adresser"
@@ -6370,9 +6332,6 @@
       "To:": [
         "Til:"
       ],
-      "To: ${ emailAddress }": [
-        "Til: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Til: ${ to }"
       ],
@@ -6387,9 +6346,6 @@
       ],
       "Undisclosed Recipients": [
         "Oplyste modtagere"
-      ],
-      "Upload file": [
-        "Upload fil"
       ],
       "Upload picture": [
         "Upload billede"
@@ -6662,9 +6618,6 @@
       "Almost there": [
         "Næsten færdig"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Antal oprettede kalendere: ${ createdCalendars } ud af ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Forbinder til din e-mailudbyder"
       ],
@@ -6679,24 +6632,6 @@
       ],
       "Your import is starting": [
         "Din import starter"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -7650,9 +7585,6 @@
       ],
       "Bug reported": [
         "Fejl anmeldt"
-      ],
-      "Canceling import": [
-        "Annullerer import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
