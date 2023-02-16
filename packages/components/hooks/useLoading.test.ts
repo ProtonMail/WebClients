@@ -118,3 +118,14 @@ it('should ignore previous errors', async () => {
     expect(handledSecondReject).toEqual(true);
     expect(await wrappedPromise1).toEqual(undefined);
 });
+
+it('should support function as an argument', async () => {
+    const { result } = renderHook(() => useLoading());
+
+    async function run(): Promise<string> {
+        return 'resolved result';
+    }
+
+    const resolvedResult = await withLoading(result)(run);
+    expect(resolvedResult).toEqual('resolved result');
+});
