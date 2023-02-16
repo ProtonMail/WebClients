@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Badge, Tooltip } from '@proton/components/components';
 import { CalendarStatusBadge } from '@proton/shared/lib/calendar/badges';
 
