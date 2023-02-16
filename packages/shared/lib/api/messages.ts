@@ -229,14 +229,12 @@ export const labelMessages = ({ LabelID, IDs }: { LabelID: string; IDs: string[]
     method: 'put',
     url: 'mail/v4/messages/label',
     data: { LabelID, IDs },
-    params: { LabelID }, // Used for tracking
 });
 
 export const unlabelMessages = ({ LabelID, IDs }: { LabelID: string; IDs: string[] }) => ({
     method: 'put',
     url: 'mail/v4/messages/unlabel',
     data: { LabelID, IDs },
-    params: { LabelID }, // Used for tracking
 });
 
 export const emptyLabel = ({ LabelID, AddressID }: { LabelID: string; AddressID: string | undefined }) => ({
