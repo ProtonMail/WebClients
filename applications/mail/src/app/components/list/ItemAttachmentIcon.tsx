@@ -34,7 +34,7 @@ const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paper-clip' }
 
     const commonProps = {
         className: classnames(['flex', className]),
-        'data-testid': 'item-attachment-icon',
+        'data-testid': `item-attachment-icon-${icon}`,
     };
     const buttonProps = {
         onClick,
