@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
