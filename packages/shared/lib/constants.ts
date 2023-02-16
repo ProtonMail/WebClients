@@ -525,12 +525,6 @@ export enum SHARED_UPSELL_PATHS {
     STORAGE = 'storage',
 }
 
-export enum SUBSCRIPTION_RENEW_STATE {
-    DISABLED = 0,
-    ENABLED = 1,
-    DISABLED_AUTOPAY = 2,
-}
-
 export const LOYAL_BONUS_STORAGE = 5 * GIGA;
 export const LOYAL_BONUS_CONNECTION = 2;
 
