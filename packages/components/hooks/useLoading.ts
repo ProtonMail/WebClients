@@ -1,6 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-export type WithLoading = <T>(promise: undefined | Promise<T | void>) => Promise<T | void>;
+import isFunction from '@proton/utils/isFunction';
+
+export type WithLoading = <T>(promise: undefined | Promise<T | void> | (() => Promise<T | void>)) => Promise<T | void>;
+
+function unwrapPromise<T>(maybeWrappedPromise: Promise<T | void> | (() => Promise<T | void>)): Promise<T | void> {
+    if (isFunction(maybeWrappedPromise)) {
+        return maybeWrappedPromise();
+    }
+
+    return maybeWrappedPromise;
+}
 
 const useLoading = (initialState = false): [boolean, WithLoading] => {
     const [loading, setLoading] = useState(initialState);
@@ -13,11 +23,12 @@ const useLoading = (initialState = false): [boolean, WithLoading] => {
         };
     }, []);
 
-    const withLoading = useCallback<WithLoading>((promise) => {
-        if (!promise) {
+    const withLoading = useCallback<WithLoading>((maybeWrappedPromise) => {
+        if (!maybeWrappedPromise) {
             setLoading(false);
             return Promise.resolve();
         }
+        const promise = unwrapPromise(maybeWrappedPromise);
         const counterNext = counterRef.current + 1;
         counterRef.current = counterNext;
         setLoading(true);
