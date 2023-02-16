@@ -60,6 +60,7 @@ export interface Subscription {
     ID: string;
     InvoiceID: string;
     Cycle: Cycle;
+    Renew: number;
     PeriodStart: number;
     PeriodEnd: number;
     CreateTime: number;
