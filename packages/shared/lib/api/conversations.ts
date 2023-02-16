@@ -114,12 +114,10 @@ export const labelConversations = ({ LabelID, IDs, SpamAction }: LabelConversati
     method: 'put',
     url: 'mail/v4/conversations/label',
     data: { LabelID, IDs, SpamAction },
-    params: { LabelID }, // Used for tracking
 });
 
 export const unlabelConversations = ({ LabelID, IDs }: LabelConversationsProps) => ({
     method: 'put',
     url: 'mail/v4/conversations/unlabel',
     data: { LabelID, IDs },
-    params: { LabelID }, // Used for tracking
 });
