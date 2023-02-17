@@ -80,7 +80,7 @@ describe('Composer expiration', () => {
 
         const { getByText, getByTestId } = await setup();
 
-        getByText(/This message will expire on/);
+        getByText(/This message will self-destruct on/);
 
         const editButton = getByTestId('message:expiration-banner-edit-button');
         await act(async () => {
