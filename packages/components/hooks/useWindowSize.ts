@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import debounce from '@proton/utils/debounce';
 
-const getWindowSize = (): [number, number] => {
+const getWindowSize = (): [width: number, height: number] => {
     return [window.innerWidth, window.innerHeight];
 };
 
