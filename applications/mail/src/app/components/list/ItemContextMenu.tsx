@@ -1,14 +1,13 @@
 import { RefObject, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit, FeatureCode } from '@proton/components';
 import { useApi, useEventManager, useFeature, useNotifications, useUser } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { canSetExpiration } from '../../helpers/expiration';
+import { canSetExpiration, getExpirationTime } from '../../helpers/expiration';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { expireConversations } from '../../logic/conversations/conversationsActions';
@@ -86,8 +85,7 @@ const ItemContextMenu = ({
     };
 
     const handleExpire = (days: number) => {
-        const date = addDays(new Date(), days);
-        const expirationTime = days ? getUnixTime(date) : null;
+        const expirationTime = getExpirationTime(days);
 
         if (conversationMode) {
             void dispatch(expireConversations({ IDs: checkedIDs, expirationTime, api, call }));
