@@ -343,7 +343,7 @@ export const expireConversationsPending = (
 
 export const expireConversationsFullfilled = (
     state: Draft<ConversationsState>,
-    action: PayloadAction<void, string, { arg: { IDs: string[] } }>
+    action: PayloadAction<Promise<void>, string, { arg: { IDs: string[] } }>
 ) => {
     const { IDs } = action.meta.arg;
 

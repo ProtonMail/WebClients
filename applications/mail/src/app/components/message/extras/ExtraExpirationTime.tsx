@@ -1,11 +1,23 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { AlertModal, Href, Icon, Tooltip, classnames, useModalState } from '@proton/components';
+import {
+    AlertModal,
+    Href,
+    Icon,
+    classnames,
+    useApi,
+    useEventManager,
+    useModalState,
+    useNotifications,
+    useUser,
+} from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useExpiration } from '../../../hooks/useExpiration';
+import { expireMessages } from '../../../logic/messages/expire/messagesExpireActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../../logic/store';
 
 interface Props {
     message: MessageState;
@@ -15,10 +27,14 @@ interface Props {
 }
 
 const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = true, onEditExpiration }: Props) => {
+    const dispatch = useAppDispatch();
+    const { createNotification } = useNotifications();
+    const api = useApi();
+    const [user] = useUser();
+    const { call } = useEventManager();
     const [expirationModalProps, setExpirationModalOpen] = useModalState();
     const { onClose } = expirationModalProps;
-
-    const { isExpiration, delayMessage, buttonMessage, expireOnMessage, lessThanTwoHours } = useExpiration(message);
+    const { isExpiration, delayMessage, expireOnMessage, lessThanTwoHours } = useExpiration(message);
     const isExpiringDraft = !!message.draftFlags?.expiresIn;
 
     if (!isExpiration) {
@@ -26,23 +42,30 @@ const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = 
     }
 
     if (displayAsButton) {
+        const handleRemove = () => {
+            void dispatch(expireMessages({ IDs: [message.localID], expirationTime: null, api, call }));
+            onClose();
+            createNotification({ text: c('Success').t`Expiration removed` });
+        };
         return (
             <>
-                <Tooltip title={delayMessage}>
-                    <ButtonLike
-                        as="span"
-                        color={lessThanTwoHours ? 'danger' : undefined}
-                        data-testid="expiration-banner"
-                        className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
-                        onClick={() => setExpirationModalOpen(true)}
-                    >
-                        <Icon name="hourglass" className="flex-item-noshrink ml0-2" />
-                        <span className="ml0-5">{buttonMessage}</span>
-                    </ButtonLike>
-                </Tooltip>
+                <ButtonLike
+                    as="span"
+                    color={lessThanTwoHours ? 'danger' : undefined}
+                    data-testid="expiration-banner"
+                    className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
+                    onClick={() => setExpirationModalOpen(true)}
+                >
+                    <Icon name="hourglass" className="flex-item-noshrink ml0-2" />
+                    <span className="ml0-5">{delayMessage}</span>
+                </ButtonLike>
                 <AlertModal
                     title={c('Title').t`Message will expire`}
-                    buttons={<Button type="submit" onClick={onClose}>{c('Action').t`Got it`}</Button>}
+                    buttons={[
+                        <Button autoFocus type="submit" onClick={onClose}>{c('Action').t`Got it`}</Button>,
+                        <Button disabled={user.isFree} onClick={handleRemove}>{c('Action')
+                            .t`Remove expiration`}</Button>,
+                    ]}
                     {...expirationModalProps}
                 >
                     <div className="mr0-5">{expireOnMessage}</div>
