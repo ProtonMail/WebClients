@@ -70,7 +70,7 @@ describe('useStepPrepare tests', () => {
     });
 
     it('Should return an error if number of calendars exceed MAX_CALENDARS_PAID', () => {
-        const dummyCalendarArray = Array(20).fill(dummyCalendar);
+        const dummyCalendarArray = Array(25).fill(dummyCalendar);
         const products: ImportType[] = [ImportType.CALENDAR];
         const importerData: ImporterData = {
             importedEmail: 'test@proton.me',
