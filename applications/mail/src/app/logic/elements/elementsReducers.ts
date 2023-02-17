@@ -252,6 +252,7 @@ export const expireElementsPending = (
     // Look to update the Conversation.ExpirationTime that contains the only message
     if (conversationID) {
         const conversation = state.elements[conversationID] as Conversation;
+
         if (conversation && conversation.NumMessages === 1) {
             copyIDs.push(conversationID);
         }
@@ -269,22 +270,42 @@ export const expireElementsPending = (
 
 export const expireElementsFulfilled = (
     state: Draft<ElementsState>,
-    action: PayloadAction<Promise<void>, string, { arg: { IDs: string[] } }>
+    action: PayloadAction<Promise<void>, string, { arg: { IDs: string[]; conversationID?: string } }>
 ) => {
-    const { IDs } = action.meta.arg;
+    const { IDs, conversationID } = action.meta.arg;
+    const copyIDs = [...IDs]; // Copy the array to avoid mutating the original one
 
-    IDs.forEach((ID) => {
+    // Look to update the Conversation.ExpirationTime that contains the only message
+    if (conversationID) {
+        const conversation = state.elements[conversationID] as Conversation;
+
+        if (conversation && conversation.NumMessages === 1) {
+            copyIDs.push(conversationID);
+        }
+    }
+
+    copyIDs.forEach((ID) => {
         delete previousExpiration[ID];
     });
 };
 
 export const expireElementsRejected = (
     state: Draft<ElementsState>,
-    action: PayloadAction<unknown, string, { arg: { IDs: string[] } }>
+    action: PayloadAction<unknown, string, { arg: { IDs: string[]; conversationID?: string } }>
 ) => {
-    const { IDs } = action.meta.arg;
+    const { IDs, conversationID } = action.meta.arg;
+    const copyIDs = [...IDs]; // Copy the array to avoid mutating the original one
 
-    IDs.forEach((ID) => {
+    // Look to update the Conversation.ExpirationTime that contains the only message
+    if (conversationID) {
+        const conversation = state.elements[conversationID] as Conversation;
+
+        if (conversation && conversation.NumMessages === 1) {
+            copyIDs.push(conversationID);
+        }
+    }
+
+    copyIDs.forEach((ID) => {
         const element = state.elements[ID];
 
         if (element) {
