@@ -71,7 +71,7 @@ describe('Composer outside encryption', () => {
         fireEvent.click(setEncryptionButton);
 
         // The expiration banner is displayed
-        getByText(/This message will expire on/);
+        getByText(/This message will self-destruct on/);
 
         // Trigger manual save to avoid unhandledPromiseRejection
         await act(async () => {
@@ -187,7 +187,7 @@ describe('Composer outside encryption', () => {
             fireEvent.click(editEncryptionButton);
         });
 
-        expect(queryByText(/This message will expire on/)).toBe(null);
+        expect(queryByText(/This message will self-destruct on/)).toBe(null);
 
         // Trigger manual save to avoid unhandledPromiseRejection
         await act(async () => {
