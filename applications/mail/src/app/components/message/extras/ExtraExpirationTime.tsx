@@ -28,7 +28,15 @@ const ExtraExpirationTime = ({ message }: Props) => {
         if (user.isFree) {
             return;
         }
-        void dispatch(expireMessages({ IDs: [message.localID], expirationTime: null, api, call }));
+        void dispatch(
+            expireMessages({
+                IDs: [message.localID],
+                conversationID: message.data?.ConversationID,
+                expirationTime: null,
+                api,
+                call,
+            })
+        );
         createNotification({ text: c('Success').t`Self-destruction cancelled` });
     };
 

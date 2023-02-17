@@ -164,7 +164,15 @@ const HeaderMoreDropdown = ({
 
     const handleExpire = (days: number) => {
         const expirationTime = getExpirationTime(days);
-        void dispatch(expireMessages({ IDs: [], expirationTime, api, call }));
+        void dispatch(
+            expireMessages({
+                IDs: [message.localID],
+                conversationID: message.data?.ConversationID,
+                expirationTime,
+                api,
+                call,
+            })
+        );
 
         createNotification({
             text: days ? c('Success').t`Self-destruction set` : c('Success').t`Self-destruction removed`,
