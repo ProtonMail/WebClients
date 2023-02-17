@@ -12,7 +12,7 @@ interface Props {
     maximized: boolean;
     composerIndex: number;
     totalComposers: number;
-    windowWidth: number;
+    drawerOffset: number;
 }
 
 interface State {
@@ -44,7 +44,8 @@ const moveReducer = (state: State, action: Action) => {
     }
 };
 
-const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, composerIndex }: Props) => {
+const useComposerDrag = ({ drawerOffset, maximized, minimized, totalComposers, composerIndex }: Props) => {
+    const windowWidth = window.innerWidth - drawerOffset;
     const [mailSettings] = useMailSettings();
     const prevMinimized = useRef(minimized);
     const prevMaximized = useRef(maximized);
