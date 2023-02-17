@@ -59,11 +59,3 @@ export const isSupportedText = (mimeType: string) =>
 export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
 export const isAudio = (mimeType: string) => mimeType.startsWith('audio/');
 export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
-
-/**
- * isSupportedVideo returns true for any video smaller than 100 MB.
- * The reason is currently we don't support streaming and thus the whole
- * video content has to be buffered and fit memory.
- */
-export const isSupportedVideo = (mimeType: string, fileSize?: number) =>
-    isVideo(mimeType) && fileSize && fileSize < 1024 * 1024 * 100;
