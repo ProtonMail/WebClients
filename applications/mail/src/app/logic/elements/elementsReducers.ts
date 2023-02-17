@@ -255,7 +255,7 @@ export const expireElementsPending = (
 
 export const expireElementsFulfilled = (
     state: Draft<ElementsState>,
-    action: PayloadAction<void, string, { arg: { IDs: string[] } }>
+    action: PayloadAction<Promise<void>, string, { arg: { IDs: string[] } }>
 ) => {
     const { IDs } = action.meta.arg;
 

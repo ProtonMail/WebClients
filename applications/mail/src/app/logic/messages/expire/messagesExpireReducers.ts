@@ -24,7 +24,7 @@ export const expirePending = (
 
 export const expireFullfilled = (
     state: Draft<MessagesState>,
-    action: PayloadAction<void, string, { arg: { IDs: string[] } }>
+    action: PayloadAction<Promise<void>, string, { arg: { IDs: string[] } }>
 ) => {
     const { IDs } = action.meta.arg;
 
