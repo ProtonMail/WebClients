@@ -74,9 +74,9 @@ const HeaderExtra = ({
             {showCalendarWidget ? <EmailReminderWidget message={message.data} errors={message.errors} /> : null}
             {showCalendarWidget ? <ExtraEvents message={message} /> : null}
             {isScheduledMessage && canScheduleSend ? <ExtraScheduledMessage message={message} /> : null}
+            <ExtraExpirationTime message={message} />
 
             <span className="inline-flex flex-row on-mobile-w100 hidden-empty">
-                <ExtraExpirationTime displayAsButton message={message} />
                 <ExtraReadReceipt message={message.data} />
                 {!sourceMode && (
                     <ExtraImages

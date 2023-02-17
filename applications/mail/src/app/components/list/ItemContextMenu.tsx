@@ -97,7 +97,7 @@ const ItemContextMenu = ({
 
         rest.close();
         createNotification({
-            text: days ? c('Success').t`Expiration date set` : c('Success').t`Expiration date removed`,
+            text: days ? c('Success').t`Self-destruction set` : c('Success').t`Self-destruction removed`,
         });
     };
 
@@ -228,7 +228,7 @@ const ItemContextMenu = ({
                             key="context-menu-remove-expiration"
                             testId="context-menu-remove-expiration"
                             icon="hourglass"
-                            name={c('Action').t`Remove auto-destruction`}
+                            name={c('Action').t`Remove self-destruction`}
                             action={() => handleExpire(0)}
                         />
                     ) : (
@@ -237,21 +237,21 @@ const ItemContextMenu = ({
                                 key="context-menu-expire-tomorrow"
                                 testId="context-menu-expire-tomorrow"
                                 icon="hourglass"
-                                name={c('Action').t`Auto-destruct tomorrow`}
+                                name={c('Action').t`Self-destruct tomorrow`}
                                 action={() => handleExpire(1)}
                             />
                             <ContextMenuButton
                                 key="context-menu-expire-next-week"
                                 testId="context-menu-expire-next-week"
                                 icon="hourglass"
-                                name={c('Action').t`Auto-destruct in 7 days`}
+                                name={c('Action').t`Self-destruct in 7 days`}
                                 action={() => handleExpire(7)}
                             />
                             <ContextMenuButton
                                 key="context-menu-expire-next-month"
                                 testId="context-menu-expire-next-month"
                                 icon="hourglass"
-                                name={c('Action').t`Auto-destruct in 30 days`}
+                                name={c('Action').t`Self-destruct in 30 days`}
                                 action={() => handleExpire(30)}
                             />
                         </>

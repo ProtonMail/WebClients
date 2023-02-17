@@ -10,19 +10,13 @@ const getExpirationTime = (numberOfSeconds: number) => {
 describe('ExtraExpirationTime', () => {
     const seconds = 50;
 
-    const setup = async (ExpirationTime: number, displayAsButton = false) => {
+    const setup = async (ExpirationTime: number) => {
         const result = await render(
-            <ExtraExpirationTime
-                message={{ localID: 'localID', data: { ExpirationTime } as Message }}
-                displayAsButton={displayAsButton}
-            />
+            <ExtraExpirationTime message={{ localID: 'localID', data: { ExpirationTime } as Message }} />
         );
         const rerender = async (ExpirationTime: number) => {
             await result.rerender(
-                <ExtraExpirationTime
-                    message={{ localID: 'localID', data: { ExpirationTime } as Message }}
-                    displayAsButton={displayAsButton}
-                />
+                <ExtraExpirationTime message={{ localID: 'localID', data: { ExpirationTime } as Message }} />
             );
             return result.queryByTestId('expiration-banner');
         };
@@ -63,7 +57,7 @@ describe('ExtraExpirationTime', () => {
         // Set expiration time to two days
         const daysInSeconds = 60 * 60 * 24 * 2;
 
-        const result = await setup(getExpirationTime(daysInSeconds), true);
+        const result = await setup(getExpirationTime(daysInSeconds));
         let { banner } = result;
 
         // The message will expire in 1 day 23h 59min 59s, so we display "Expires in 1 day"
