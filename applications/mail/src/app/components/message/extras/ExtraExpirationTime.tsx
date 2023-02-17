@@ -5,6 +5,7 @@ import {
     AlertModal,
     Href,
     Icon,
+    Tooltip,
     classnames,
     useApi,
     useEventManager,
@@ -34,7 +35,7 @@ const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = 
     const { call } = useEventManager();
     const [expirationModalProps, setExpirationModalOpen] = useModalState();
     const { onClose } = expirationModalProps;
-    const { isExpiration, delayMessage, expireOnMessage, lessThanTwoHours } = useExpiration(message);
+    const { isExpiration, delayMessage, buttonMessage, expireOnMessage, lessThanTwoHours } = useExpiration(message);
     const isExpiringDraft = !!message.draftFlags?.expiresIn;
 
     if (!isExpiration) {
@@ -49,16 +50,18 @@ const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = 
         };
         return (
             <>
-                <ButtonLike
-                    as="span"
-                    color={lessThanTwoHours ? 'danger' : undefined}
-                    data-testid="expiration-banner"
-                    className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
-                    onClick={() => setExpirationModalOpen(true)}
-                >
-                    <Icon name="hourglass" className="flex-item-noshrink ml0-2" />
-                    <span className="ml0-5">{delayMessage}</span>
-                </ButtonLike>
+                <Tooltip title={delayMessage}>
+                    <ButtonLike
+                        as="span"
+                        color={lessThanTwoHours ? 'danger' : undefined}
+                        data-testid="expiration-banner"
+                        className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
+                        onClick={() => setExpirationModalOpen(true)}
+                    >
+                        <Icon name="hourglass" className="flex-item-noshrink ml0-2" />
+                        <span className="ml0-5">{buttonMessage}</span>
+                    </ButtonLike>
+                </Tooltip>
                 <AlertModal
                     title={c('Title').t`Message will expire`}
                     buttons={[
