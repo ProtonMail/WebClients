@@ -28,9 +28,14 @@ const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, 
             <div className="flex mb1">
                 <div className="flex-item-fluid pt0-5">
                     <ul className="unstyled m0">
-                        {items
-                            .filter((item) => !item.category)
-                            .map((item, index) => (
+                        {items.map((item, index) => {
+                            //We don't display folder with categories since they are merged
+                            //We need them to keep the folder mapping intact so we return null instead of filtering the array
+                            if (item.category) {
+                                return null;
+                            }
+
+                            return (
                                 <ManageFoldersRow
                                     key={item.id}
                                     index={index}
@@ -39,7 +44,8 @@ const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, 
                                     onErrorSaved={() => onErroredInputSaved(item.id)}
                                     onToggleCheck={handleToggleCheckbox}
                                 />
-                            ))}
+                            );
+                        })}
                     </ul>
                 </div>
             </div>
