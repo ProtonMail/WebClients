@@ -1,3 +1,5 @@
+import { SyntheticEvent } from 'react';
+
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
@@ -41,12 +43,19 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
         );
     };
 
+    const preventDefaultEvent = (e: SyntheticEvent) => e.preventDefault();
+
     return (
-        <div className="h100" 
-            onDrop={(e) => {
-                e.preventDefault();
-                console.log("!!!!!")
-            }}>
+        <div
+            className="h100"
+            // Ignore drag & drop during loading to avoid issue when user drops
+            // file too soon before the app is ready causing stop of the app
+            // load and showing the file instead.
+            onDragOver={preventDefaultEvent}
+            onDragEnter={preventDefaultEvent}
+            onDragEnd={preventDefaultEvent}
+            onDrop={preventDefaultEvent}
+        >
             <div className={classnames(['absolute-center text-center', isDrawerApp && 'w90'])}>
                 {isDrawerApp && <CircleLoader className="mauto color-primary" size="medium" />}
                 {!isIframe && (
