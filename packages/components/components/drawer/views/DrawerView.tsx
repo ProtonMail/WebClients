@@ -1,4 +1,4 @@
-import { AnimationEvent, ReactNode } from 'react';
+import { AnimationEvent, HTMLAttributes, ReactNode } from 'react';
 
 import DrawerHeaderTitleDropdown from '@proton/components/components/drawer/views/DrawerHeaderTitleDropdown';
 import { DrawerAppFooter, DrawerAppHeader } from '@proton/components/containers';
@@ -8,7 +8,7 @@ export interface SelectedDrawerOption {
     value: string;
 }
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLElement> {
     tab: SelectedDrawerOption;
     onSelectDrawerOption?: (option: SelectedDrawerOption) => void;
     options?: SelectedDrawerOption[];
@@ -17,7 +17,7 @@ interface Props {
     onAnimationEnd?: () => void;
 }
 
-const DrawerView = ({ options, tab, onSelectDrawerOption, content, footerButtons, onAnimationEnd }: Props) => {
+const DrawerView = ({ options, tab, onSelectDrawerOption, content, footerButtons, onAnimationEnd, ...rest }: Props) => {
     const drawerHeaderTitle = options ? (
         <DrawerHeaderTitleDropdown title={tab.text} options={options} onClickOption={onSelectDrawerOption} />
     ) : (
@@ -33,7 +33,7 @@ const DrawerView = ({ options, tab, onSelectDrawerOption, content, footerButtons
     };
 
     return (
-        <div className="drawer-app-view h100 w100 flex flex-column" onAnimationEnd={handleOnAnimationEnd}>
+        <div className="drawer-app-view h100 w100 flex flex-column" onAnimationEnd={handleOnAnimationEnd} {...rest}>
             <DrawerAppHeader title={drawerHeaderTitle} />
             <div className="flex-item-fluid contacts-widget w100">{content}</div>
             {footerButtons && <DrawerAppFooter buttons={footerButtons} />}
