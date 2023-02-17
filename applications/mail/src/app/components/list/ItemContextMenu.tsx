@@ -5,7 +5,7 @@ import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit, FeatureCode } from '@proton/components';
-import { useApi, useFeature, useUser } from '@proton/components/hooks';
+import { useApi, useEventManager, useFeature, useNotifications, useUser } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { canSetExpiration } from '../../helpers/expiration';
@@ -52,7 +52,9 @@ const ItemContextMenu = ({
     ...rest
 }: Props) => {
     const dispatch = useAppDispatch();
+    const { createNotification } = useNotifications();
     const [user] = useUser();
+    const { call } = useEventManager();
     const api = useApi();
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const elementsAreUnread = useSelector(elementsAreUnreadSelector);
@@ -88,12 +90,15 @@ const ItemContextMenu = ({
         const expirationTime = days ? getUnixTime(date) : null;
 
         if (conversationMode) {
-            void dispatch(expireConversations({ IDs: checkedIDs, expirationTime, api }));
+            void dispatch(expireConversations({ IDs: checkedIDs, expirationTime, api, call }));
         } else {
-            void dispatch(expireMessages({ IDs: checkedIDs, expirationTime, api }));
+            void dispatch(expireMessages({ IDs: checkedIDs, expirationTime, api, call }));
         }
 
         rest.close();
+        createNotification({
+            text: days ? c('Success').t`Expiration date set` : c('Success').t`Expiration date removed`,
+        });
     };
 
     const inbox = (
