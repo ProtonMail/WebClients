@@ -62,7 +62,7 @@ export default {
             },
             {
                 name: 'activation',
-                glob: '{{api,components,hooks,logic,mail,modals,steps,utils}/**/*,index,helpers,constants,interface}.{js,jsx,ts,tsx}',
+                glob: '{src/**/*,index}.{js,jsx,ts,tsx}',
             },
         ],
         ignore: ['pack', 'config', 'i18n', 'eslint-config-proton', 'stylelint-config-proton', 'styles', 'testing'],
