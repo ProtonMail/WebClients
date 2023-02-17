@@ -4,13 +4,7 @@ import { c } from 'ttag';
 
 import { useCombinedRefs } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
-import {
-    isAudio,
-    isPDF,
-    isSupportedImage,
-    isSupportedText,
-    isSupportedVideo,
-} from '@proton/shared/lib/helpers/mimetype';
+import { isAudio, isPDF, isSupportedImage, isSupportedText, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useFocusTrap, useModalState } from '../../components';
@@ -175,7 +169,7 @@ const FilePreview = (
                 />
             );
         }
-        if (isSupportedVideo(mimeType, fileSize)) {
+        if (isVideo(mimeType)) {
             return <VideoPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
         }
         if (isAudio(mimeType)) {
