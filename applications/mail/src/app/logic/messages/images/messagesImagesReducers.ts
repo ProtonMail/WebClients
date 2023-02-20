@@ -274,3 +274,20 @@ export const loadRemoteDirectFromURL = (
         });
     }
 };
+
+export const failedRemoteDirectLoading = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<{ ID: string; image: MessageRemoteImage }>
+) => {
+    const { image: failedImage, ID } = action.payload;
+
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        const imageFromState = getStateImage({ image: failedImage }, messageState);
+        const { image } = imageFromState;
+
+        // We set an error just to see a placeholder in the message view
+        image.error = 'Could not load the image without using proxy';
+    }
+};
