@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { ChecklistItem, Loader, classnames, useApi } from '@proton/components';
+import { ChecklistItem, Loader, useApi } from '@proton/components';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -13,12 +13,11 @@ import GetStartedChecklistHeader from './GetStartedChecklistHeader';
 import './GetStartedChecklist.scss';
 
 interface Props {
-    limitedMaxWidth?: boolean;
     onItemSelection: (key: ChecklistKey) => () => void;
     onDismiss?: () => void;
 }
 
-const PaidUserGetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: Props) => {
+const PaidUserGetStartedChecklist = ({ onDismiss, onItemSelection }: Props) => {
     const api = useApi();
     const { checklist, loading } = usePaidUserChecklist();
 
@@ -74,7 +73,7 @@ const PaidUserGetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelecti
     const { length: totalNumberOfItems } = checklistItems;
 
     return (
-        <div className={classnames(['p1', limitedMaxWidth && 'get-started_root--limited-width mauto'])}>
+        <div className="p1">
             <GetStartedChecklistHeader
                 totalNumberOfItems={totalNumberOfItems}
                 numberOfCompletedItems={numberOfCompletedItems}
