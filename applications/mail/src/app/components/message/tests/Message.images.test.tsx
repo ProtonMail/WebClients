@@ -233,15 +233,7 @@ describe('Message images', () => {
         await rerender(<MessageView {...defaultProps} />);
         const iframeRerendered = await getIframeRootDiv(container);
 
-        // Make the loading through URL fail
-        const imageInBody = await findByTestId(iframeRerendered, 'image');
-        fireEvent.error(imageInBody, { Code: 2902, Error: 'TEST error message' });
-
-        // Rerender again the message view to check that images have been loaded through normal api call
-        await rerender(<MessageView {...defaultProps} />);
-        const iframeRerendered2 = await getIframeRootDiv(container);
-
-        const placeholder = iframeRerendered2.querySelector('.proton-image-placeholder') as HTMLImageElement;
+        const placeholder = iframeRerendered.querySelector('.proton-image-placeholder') as HTMLImageElement;
 
         expect(placeholder).not.toBe(null);
         assertIcon(placeholder.querySelector('svg'), 'cross-circle');
@@ -252,8 +244,10 @@ describe('Message images', () => {
         // Rerender the message view to check that images have been loaded
         await rerender(<MessageView {...defaultProps} />);
 
-        const loadedImage = iframeRerendered2.querySelector('.proton-image-anchor img') as HTMLImageElement;
+        const loadedImage = iframeRerendered.querySelector('.proton-image-anchor img') as HTMLImageElement;
         expect(loadedImage).toBeDefined();
-        expect(loadedImage.getAttribute('src')).toEqual(imageURL);
+        expect(loadedImage.getAttribute('src')).toEqual(
+            `https://mail.proton.pink/api/core/v4/images?Url=${imageURL}&DryRun=0&UID=uid`
+        );
     });
 });

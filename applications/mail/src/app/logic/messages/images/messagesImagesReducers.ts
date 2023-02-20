@@ -203,8 +203,10 @@ export const loadFakeProxyFulFilled = (
     if (messageState && payload) {
         const { image, tracker, error } = getStateImage(payload, messageState);
 
-        image.error = error;
-        image.tracker = tracker;
+        if (image) {
+            image.error = error;
+            image.tracker = tracker;
+        }
     }
 };
 
