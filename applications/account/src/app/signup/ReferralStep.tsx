@@ -33,7 +33,7 @@ const ReferralStep = ({ onPlan, onBack }: Props) => {
             <Content>
                 <Text>
                     {c(
-                        'Mail Plus: the privacy-first Mail and Calendar solution for your everyday communications needs.'
+                        'Baseline in trial plan'
                     )
                         .t`${mailPlus}: the privacy-first Mail and Calendar solution for your everyday communications needs.`}
                 </Text>
