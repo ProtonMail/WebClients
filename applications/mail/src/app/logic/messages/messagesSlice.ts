@@ -45,6 +45,7 @@ const messagesSlice = createSlice({
         builder.addCase(msgImageAction.loadFakeProxy.fulfilled, msgImageReducer.loadFakeProxyFulFilled);
         builder.addCase(msgImageAction.loadRemoteProxyFromURL, msgImageReducer.loadRemoteProxyFromURL);
         builder.addCase(msgImageAction.loadRemoteDirectFromURL, msgImageReducer.loadRemoteDirectFromURL);
+        builder.addCase(msgImageAction.failedRemoteDirectLoading, msgImageReducer.failedRemoteDirectLoading);
 
         builder.addCase(msgOptimisticAction.optimisticApplyLabels, msgOptimisticReducer.optimisticApplyLabels);
         builder.addCase(msgOptimisticAction.optimisticMarkAs, msgOptimisticReducer.optimisticMarkAs);
