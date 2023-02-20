@@ -27,7 +27,7 @@ const ReferralStep = ({ onPlan, onBack }: Props) => {
     return (
         <Main>
             <Header
-                title={c('Try the best of Proton Mail for free').t`Try the best of ${MAIL_APP_NAME} for free`}
+                title={c('Heading in trial plan').t`Try the best of ${MAIL_APP_NAME} for free`}
                 onBack={onBack}
             />
             <Content>
