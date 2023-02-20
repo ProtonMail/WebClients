@@ -33,6 +33,7 @@ const UpgradeBanner = ({ free, className, children, audience }: Props) => {
                 })()}
                 color="norm"
                 className="mtauto"
+                aria-label={c('Action').t`Upgrade your plan`}
             >{c('Action').t`Upgrade`}</ButtonLike>
         </Card>
     );
