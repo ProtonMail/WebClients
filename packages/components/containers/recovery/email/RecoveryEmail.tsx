@@ -95,6 +95,8 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                                         className="link"
                                         type="button"
                                         onClick={() => setVerifyRecoveryEmailModalOpen(true)}
+                                        aria-label={c('Recovery Email')
+                                            .t`Verify now this recovery email address: ${email.Value}`}
                                     >
                                         {c('Recovery Email').t`Verify now`}
                                     </button>
