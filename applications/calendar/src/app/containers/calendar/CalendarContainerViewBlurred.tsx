@@ -32,7 +32,6 @@ const CalendarContainerViewBlurred = () => {
     return (
         <CalendarContainerView
             view={VIEWS.WEEK}
-            isBlurred
             utcDate={now}
             utcDefaultDate={now}
             utcDateRange={dateRange}

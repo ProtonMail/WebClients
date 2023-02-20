@@ -100,7 +100,6 @@ const DriveContainerBlurred = () => {
         <>
             <ModalsChildren />
             <PrivateAppContainer
-                isBlurred
                 header={header}
                 sidebar={sidebar}
                 drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
