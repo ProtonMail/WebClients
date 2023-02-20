@@ -126,8 +126,11 @@ export const transformRemote = (
 
     if (skipProxy) {
         void loadSkipProxyImages(remoteImages, onLoadRemoteImagesDirect);
-    } else if (showRemoteImages) {
+    } else if (showRemoteImages && onLoadFakeImagesProxy) {
+        // Load images through proxy, by forging the URL and putting it directly into the image src
         void loadRemoteImages(useProxy, remoteImages, onLoadRemoteImagesDirect, onLoadRemoteImagesProxy);
+        // Make a fake load of images to check if they are trackers
+        void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
     } else if (useProxy && onLoadFakeImagesProxy) {
         void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
     }
