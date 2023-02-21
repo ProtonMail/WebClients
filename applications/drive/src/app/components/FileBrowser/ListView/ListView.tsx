@@ -174,6 +174,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
                     itemCount={items.length}
                     onSort={onSort}
                     sortParams={sortParams}
+                    isMultiSelectionDisabled={isMultiSelectionDisabled}
                 />
             </Table>
 

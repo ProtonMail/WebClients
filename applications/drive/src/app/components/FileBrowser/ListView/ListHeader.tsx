@@ -17,6 +17,7 @@ interface Props<T> {
     items: any[];
     onSort?: (params: SortParams<T>) => void;
     itemCount: number;
+    isMultiSelectionDisabled?: boolean;
 }
 
 export enum HeaderCellsPresets {
@@ -30,12 +31,14 @@ const HeaderCell = <T,>({
     sortParams,
     itemCount,
     onSort,
+    isMultiSelectionDisabled,
 }: {
     item: any;
     isLoading: boolean;
     itemCount: number;
     onSort: (key: T) => void;
     sortParams?: SortParams<T>;
+    isMultiSelectionDisabled?: boolean;
 }) => {
     const selection = useSelection();
     const selectedCount = selection?.selectedItemIds.length;
@@ -66,7 +69,7 @@ const HeaderCell = <T,>({
         );
     }
 
-    if (selection?.selectionState !== SelectionState.NONE) {
+    if (!isMultiSelectionDisabled && selection?.selectionState !== SelectionState.NONE) {
         return null;
     }
 
@@ -88,7 +91,15 @@ const HeaderCell = <T,>({
     );
 };
 
-const ListHeader = <T,>({ scrollAreaRef, items, sortParams, isLoading, itemCount, onSort }: Props<T>) => {
+const ListHeader = <T,>({
+    scrollAreaRef,
+    items,
+    sortParams,
+    isLoading,
+    itemCount,
+    onSort,
+    isMultiSelectionDisabled,
+}: Props<T>) => {
     const handleSort = (key: T) => {
         if (!sortParams || !onSort) {
             return;
@@ -113,6 +124,7 @@ const ListHeader = <T,>({ scrollAreaRef, items, sortParams, isLoading, itemCount
                         key={index}
                         itemCount={itemCount}
                         onSort={handleSort}
+                        isMultiSelectionDisabled={isMultiSelectionDisabled}
                     />
                 ))}
             </TableRowSticky>
