@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import { ShareType } from '../..';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { sendErrorReport, isIgnoredError } from '../../../utils/errorHandling';
+import { isIgnoredError, sendErrorReport } from '../../../utils/errorHandling';
 import { DecryptedLink, useLink } from '../../_links';
 import { useShareType } from './useShareType';
 
-const isLinkReadOnly = (link: DecryptedLink, shareType: ShareType) => {
+export const isLinkReadOnly = (link: DecryptedLink, shareType: ShareType) => {
     const isRootLink = !link.parentLinkId;
     return shareType === ShareType.device && isRootLink;
 };
