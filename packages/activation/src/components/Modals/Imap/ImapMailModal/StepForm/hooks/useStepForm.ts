@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { IMPORT_ERROR } from '@proton/activation/src/interface';
+import { updateImport } from '@proton/activation/src/api';
+import { AuthenticationMethod, IMPORT_ERROR, ImportType } from '@proton/activation/src/interface';
 import { selectImapDraftProduct } from '@proton/activation/src/logic/draft/draft.selector';
 import {
     displayConfirmLeaveModal,
@@ -14,6 +15,7 @@ import {
     selectImapDraftProvider,
 } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
+import { useApi } from '@proton/components/index';
 import throttle from '@proton/utils/throttle';
 
 import useAuthInfoByEmail from './useAuthInfoByEmail';
@@ -23,6 +25,8 @@ import { StepFormBlur, StepFormErrors, StepFormState } from './useStepForm.inter
 const throttleValidateForm = throttle(validateStepForm, 150);
 
 const useStepForm = () => {
+    const api = useApi();
+
     const dispatch = useEasySwitchDispatch();
     const product = useEasySwitchSelector(selectImapDraftProduct);
     const mailImport = useEasySwitchSelector(selectImapDraftMailImport);
@@ -46,15 +50,32 @@ const useStepForm = () => {
         port: false,
     });
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (hasErrors) {
             return;
         }
+
+        const { emailAddress, imap, port, password } = formValues;
+        const allowSelfSigned = apiError?.code === IMPORT_ERROR.IMAP_CONNECTION_ERROR;
 
         if (mailImport?.step === 'reconnect-form') {
             if (!mailImport.apiImporterID || !product) {
                 throw new Error('Missing importerID or product');
             }
+
+            await api(
+                updateImport(mailImport.apiImporterID, {
+                    [ImportType.MAIL]: {
+                        Account: emailAddress,
+                        ImapHost: imap,
+                        ImapPort: parseInt(port, 10),
+                        Code: password,
+                        Sasl: AuthenticationMethod.PLAIN,
+                        AllowSelfSigned: allowSelfSigned ? 1 : 0,
+                    },
+                })
+            );
+
             return dispatch(
                 resumeImapImport({
                     importID: mailImport.apiImporterID,
@@ -64,11 +85,11 @@ const useStepForm = () => {
         } else {
             return dispatch(
                 submitImapMailCredentials({
-                    email: formValues.emailAddress,
-                    password: formValues.password,
-                    domain: formValues.imap,
-                    port: formValues.port,
-                    allowSelfSigned: apiError?.code === IMPORT_ERROR.IMAP_CONNECTION_ERROR,
+                    email: emailAddress,
+                    password: password,
+                    domain: imap,
+                    port,
+                    allowSelfSigned,
                 })
             );
         }
