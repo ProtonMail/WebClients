@@ -58,7 +58,7 @@ const ExtraExpirationTime = ({ message }: Props) => {
             <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5" data-testid="expiration-banner">
                 <Icon name="hourglass" className="mt0-4 flex-item-noshrink ml0-2" />
                 <span
-                    className={clsx(canExpire && 'mt0-25', 'pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center')}
+                    className={clsx(!canExpire && 'mt0-25', 'pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center')}
                 >
                     {delayMessage}
                 </span>
