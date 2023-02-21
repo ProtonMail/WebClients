@@ -142,6 +142,10 @@
 		padding-inline: em(44);
 		padding-block: em(24) em(44);
 
+		@include media('>small') {
+			min-block-size: 20em; // value to keep back button centered when > mobile breakpoint
+		}
+
 		@include media('<=small') {
 			padding-inline: em(20);
 			padding-block-start: 0;
