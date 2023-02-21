@@ -1,4 +1,4 @@
-import { addDays, getUnixTime } from 'date-fns';
+import { getUnixTime } from 'date-fns';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
 
@@ -14,7 +14,6 @@ export const canSetExpiration = (featureFlagValue: boolean, user: UserModel) => 
     return true;
 };
 
-export const getExpirationTime = (days: number) => {
-    const date = addDays(new Date(), days);
-    return days ? getUnixTime(date) : null;
+export const getExpirationTime = (date?: Date) => {
+    return date ? getUnixTime(date) : null;
 };

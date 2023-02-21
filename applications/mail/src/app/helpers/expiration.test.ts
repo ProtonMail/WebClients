@@ -1,3 +1,5 @@
+import { addDays } from 'date-fns';
+
 import { UserModel } from '@proton/shared/lib/interfaces';
 
 import { canSetExpiration, getExpirationTime } from './expiration';
@@ -17,11 +19,11 @@ describe('canSetExpiration', () => {
 });
 
 describe('getExpirationTime', () => {
-    it('should return null if days is 0', () => {
-        expect(getExpirationTime(0)).toBe(null);
+    it('should return null if days is undefined', () => {
+        expect(getExpirationTime(undefined)).toBe(null);
     });
 
     it('should return a Unix timestamp if days is > 0', () => {
-        expect(getExpirationTime(1)).toBeGreaterThan(0);
+        expect(getExpirationTime(addDays(new Date(), 1))).toBeGreaterThan(0);
     });
 });
