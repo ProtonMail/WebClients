@@ -36,10 +36,8 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
 
         traverseLinksToRoot(abortController.signal, activeFolder.shareId, activeFolder.linkId)
             .then((pathItems) => {
-                const breadcrumbs = pathItems.map(({ linkId, name, isRoot, link }) => {
+                const breadcrumbs = pathItems.map(({ linkId, name, isRoot, link, isReadOnly }) => {
                     const handleDrop = getHandleItemDrop(linkId);
-                    const isReadOnly = rootShare?.type === ShareType.device && isRoot;
-
                     const breadcrumb: BreadcrumbInfo = {
                         key: linkId,
                         text: name,
