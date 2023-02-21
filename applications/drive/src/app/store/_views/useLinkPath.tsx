@@ -4,12 +4,14 @@ import { useDevicesListing } from '../_devices';
 import { DecryptedLink, useLink } from '../_links';
 import useLinksState from '../_links/useLinksState';
 import { ShareType, useShare } from '../_shares';
+import { isLinkReadOnly } from './utils/useIsActiveLinkReadOnly';
 
 type PathItem = {
     linkId: string;
     name: string;
     isRoot: boolean;
     link: DecryptedLink;
+    isReadOnly?: boolean;
 };
 
 const generateLinkPath = async (
@@ -63,6 +65,7 @@ export default function useLinkPath() {
                 linkId: link.linkId,
                 name: !link.parentLinkId && rootLinkName ? rootLinkName : link.name,
                 isRoot: !link.parentLinkId,
+                isReadOnly: isLinkReadOnly(link, rootShare.type),
                 link,
             }));
         },
