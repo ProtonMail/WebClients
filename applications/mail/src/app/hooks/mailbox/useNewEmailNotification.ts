@@ -6,7 +6,7 @@ import { useFolders, useMailSettings, useSubscribeEventManager } from '@proton/c
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { create } from '@proton/shared/lib/helpers/desktopNotification';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { isImported, isSynced } from '@proton/shared/lib/mail/messages';
+import { isImported } from '@proton/shared/lib/mail/messages';
 
 import notificationIcon from '../../assets/notification.png';
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -24,16 +24,13 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
     ];
 
     useSubscribeEventManager(({ Messages = [] }: Event) => {
-        Messages.filter(({ Action, Message }) => {
-            const isSyncedMail = !isImported(Message) || isSynced(Message);
-
-            return (
-                isSyncedMail &&
+        Messages.filter(
+            ({ Action, Message }) =>
+                !isImported(Message) &&
                 Action === 1 &&
                 Message?.Unread === 1 &&
                 Message.LabelIDs.some((labelID) => notifier.includes(labelID))
-            );
-        }).forEach(({ Message }) => {
+        ).forEach(({ Message }) => {
             const { Subject, Sender, ID, ConversationID, LabelIDs } = Message as Message;
             const sender = Sender.Name || Sender.Address;
             const title = c('Desktop notification title').t`New email received`;
