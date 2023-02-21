@@ -1,8 +1,18 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Tooltip, useApi, useEventManager, useNotifications, useUser } from '@proton/components';
+import {
+    FeatureCode,
+    Icon,
+    Tooltip,
+    useApi,
+    useEventManager,
+    useFeature,
+    useNotifications,
+    useUser,
+} from '@proton/components';
 
+import { canSetExpiration } from '../../../helpers/expiration';
 import { useExpiration } from '../../../hooks/useExpiration';
 import { expireMessages } from '../../../logic/messages/expire/messagesExpireActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -19,6 +29,8 @@ const ExtraExpirationTime = ({ message }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { isExpiration, delayMessage } = useExpiration(message);
+    const { feature } = useFeature(FeatureCode.SetExpiration);
+    const canExpire = canSetExpiration(feature?.Value, user);
 
     if (!isExpiration) {
         return null;
@@ -46,22 +58,23 @@ const ExtraExpirationTime = ({ message }: Props) => {
                 <Icon name="hourglass" className="mt0-4 flex-item-noshrink ml0-2" />
                 <span className="pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center">{delayMessage}</span>
             </div>
-            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
-                <Tooltip title={c('Cancel self-destruction of the message').t`Cancel self-destruction`}>
-                    <Button
-                        onClick={handleClick}
-                        size="small"
-                        color="weak"
-                        shape="outline"
-                        fullWidth
-                        className="rounded-sm"
-                        data-testid="unsubscribe-banner"
-                        disabled={user.isFree}
-                    >
-                        {c('Cancel self-destruction of the message').t`Cancel`}
-                    </Button>
-                </Tooltip>
-            </span>
+            {canExpire ? (
+                <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
+                    <Tooltip title={c('Cancel self-destruction of the message').t`Cancel self-destruction`}>
+                        <Button
+                            onClick={handleClick}
+                            size="small"
+                            color="weak"
+                            shape="outline"
+                            fullWidth
+                            className="rounded-sm"
+                            data-testid="unsubscribe-banner"
+                        >
+                            {c('Cancel self-destruction of the message').t`Cancel`}
+                        </Button>
+                    </Tooltip>
+                </span>
+            ) : null}
         </div>
     );
 };
