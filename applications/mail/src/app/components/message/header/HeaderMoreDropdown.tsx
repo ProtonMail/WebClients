@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { addDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
@@ -50,6 +51,7 @@ import { Breakpoints } from '../../../models/utils';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
+import CustomExpirationModal from '../modals/CustomExpirationModal';
 import MessageDetailsModal from '../modals/MessageDetailsModal';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
 import MessagePermanentDeleteModal from '../modals/MessagePermanentDeleteModal';
@@ -112,6 +114,7 @@ const HeaderMoreDropdown = ({
     const markAs = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const [CustomExpirationModalProps, openCustomExpirationModal, renderCustomExpirationModal] = useModalState();
 
     const [messageDetailsModalProps, setMessageDetailsModalOpen] = useModalState();
     const [messageHeaderModalProps, setMessageHeaderModalOpen] = useModalState();
@@ -163,7 +166,8 @@ const HeaderMoreDropdown = ({
     };
 
     const handleExpire = (days: number) => {
-        const expirationTime = getExpirationTime(days);
+        const date = days ? addDays(new Date(), days) : undefined;
+        const expirationTime = getExpirationTime(date);
         void dispatch(
             expireMessages({
                 IDs: [message.localID],
@@ -177,6 +181,13 @@ const HeaderMoreDropdown = ({
         createNotification({
             text: days ? c('Success').t`Self-destruction set` : c('Success').t`Self-destruction removed`,
         });
+    };
+
+    const handleCustomExpiration = (expirationDate: Date) => {
+        const expirationTime = getExpirationTime(expirationDate);
+        void dispatch(expireMessages({ IDs: [message.localID], expirationTime, api, call }));
+        openCustomExpirationModal(false);
+        createNotification({ text: c('Success').t`Self-destruction set` });
     };
 
     const messageLabelIDs = message.data?.LabelIDs || [];
@@ -520,15 +531,6 @@ const HeaderMoreDropdown = ({
                                                 <>
                                                     <DropdownMenuButton
                                                         className="text-left flex flex-nowrap flex-align-items-center"
-                                                        onClick={() => handleExpire(1)}
-                                                        data-testid="message-view-more-dropdown:expire-1-day"
-                                                    >
-                                                        <Icon name="hourglass" className="mr0-5" />
-                                                        <span className="flex-item-fluid myauto">{c('Action')
-                                                            .t`Self-destruct tomorrow`}</span>
-                                                    </DropdownMenuButton>
-                                                    <DropdownMenuButton
-                                                        className="text-left flex flex-nowrap flex-align-items-center"
                                                         onClick={() => handleExpire(7)}
                                                         data-testid="message-view-more-dropdown:expire-7-days"
                                                     >
@@ -538,12 +540,12 @@ const HeaderMoreDropdown = ({
                                                     </DropdownMenuButton>
                                                     <DropdownMenuButton
                                                         className="text-left flex flex-nowrap flex-align-items-center"
-                                                        onClick={() => handleExpire(30)}
+                                                        onClick={() => openCustomExpirationModal(true)}
                                                         data-testid="message-view-more-dropdown:expire-30-days"
                                                     >
                                                         <Icon name="hourglass" className="mr0-5" />
                                                         <span className="flex-item-fluid myauto">{c('Action')
-                                                            .t`Self-destruct in 30 days`}</span>
+                                                            .t`Self-destruct on ...`}</span>
                                                     </DropdownMenuButton>
                                                 </>
                                             )}
@@ -653,6 +655,9 @@ const HeaderMoreDropdown = ({
             {moveScheduledModal}
             {moveAllModal}
             {moveToSpamModal}
+            {renderCustomExpirationModal && (
+                <CustomExpirationModal onSubmit={handleCustomExpiration} {...CustomExpirationModalProps} />
+            )}
         </>
     );
 };
