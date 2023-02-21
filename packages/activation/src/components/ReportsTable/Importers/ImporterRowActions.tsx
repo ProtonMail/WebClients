@@ -2,15 +2,9 @@ import { c } from 'ttag';
 
 import { createToken, resumeImport, updateImport } from '@proton/activation/src/api';
 import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
+import { getImportProviderFromApiProvider } from '@proton/activation/src/helpers/getImportProviderFromApiProvider';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import {
-    AuthenticationMethod,
-    EASY_SWITCH_SOURCE,
-    ImportProvider,
-    ImportToken,
-    ImportType,
-    OAuthProps,
-} from '@proton/activation/src/interface';
+import { AuthenticationMethod, EASY_SWITCH_SOURCE, ImportToken, OAuthProps } from '@proton/activation/src/interface';
 import { reconnectImapImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { cancelImporter } from '@proton/activation/src/logic/importers/importers.actions';
 import { ActiveImportID } from '@proton/activation/src/logic/importers/importers.interface';
@@ -35,6 +29,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     const activeImporter = useEasySwitchSelector((state) => selectActiveImporterById(state, activeImporterID));
     const importer = useEasySwitchSelector((state) => selectImporterById(state, activeImporter.importerID));
     const { ID, account, sasl, provider, products } = importer;
+    const importProvider = getImportProviderFromApiProvider(provider);
     const { product, errorCode, importState } = activeImporter;
 
     const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
@@ -50,12 +45,10 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
     const [cancelModalProps, showCancelModal, renderCancelModal] = useModalState();
 
     const handleReconnectOAuth = async (ImporterID: string) => {
-        // TODO: Typing should be more effective here
-        const scopes = getScopeFromProvider(provider as unknown as ImportProvider, products as unknown as ImportType[]);
+        const scopes = getScopeFromProvider(importProvider, products);
 
         triggerOAuthPopup({
-            // TODO: Typing should be more effective here
-            provider: provider as unknown as ImportProvider,
+            provider: importProvider,
             loginHint: account,
             scope: scopes.join(' '),
             callback: async ({ Code, Provider, RedirectUri }: OAuthProps) => {
