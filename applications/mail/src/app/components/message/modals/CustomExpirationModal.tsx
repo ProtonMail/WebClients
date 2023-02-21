@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
 import { addDays, endOfDay, endOfToday, isToday, startOfToday } from 'date-fns';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
@@ -27,10 +27,25 @@ interface Props extends Omit<ModalProps, 'onSubmit'> {
 const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
     const { onClose } = rest;
     const [userSettings] = useUserSettings();
-    const tomorrow = addDays(new Date(), 1);
+    const tomorrow = useRef<Date>(addDays(new Date(), 1));
     const minDate = startOfToday();
     const maxDate = endOfDay(addDays(minDate, EXPIRATION_TIME_MAX_DAYS));
-    const [date, setDate] = useState<Date>(tomorrow);
+    const [date, setDate] = useState<Date>(tomorrow.current);
+
+    const errorDate = useMemo(() => {
+        if (date < minDate) {
+            return c('Error').t`Choose a date in the future.`;
+        }
+        if (date > maxDate) {
+            // translator : The variable is the number of days, written in digits
+            return c('Error').ngettext(
+                msgid`Choose a date within the next ${EXPIRATION_TIME_MAX_DAYS} day.`,
+                `Choose a date within the next ${EXPIRATION_TIME_MAX_DAYS} days.`,
+                EXPIRATION_TIME_MAX_DAYS
+            );
+        }
+        return undefined;
+    }, [date]);
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -68,12 +83,13 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
                     <InputFieldTwo
                         as={DateInput}
                         id="expiration-date"
-                        label={c('Label').t`Date`}
+                        label={c('Label attach to date input to select a date').t`Date`}
                         onChange={handleDate}
                         value={date}
                         min={minDate}
                         weekStartsOn={getWeekStartsOn({ WeekStart: userSettings.WeekStart })}
                         max={maxDate}
+                        error={errorDate}
                         preventValueReset
                         errorZoneClassName="hidden"
                         data-testid="message:expiration-date-input"
@@ -82,7 +98,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
                     <InputFieldTwo
                         as={TimeInput}
                         id="expiration-time"
-                        label={c('Label').t`Time`}
+                        label={c('Label attach to time input to select hours').t`Time`}
                         onChange={handleDate}
                         value={date}
                         min={getMinScheduleTime(date)}
