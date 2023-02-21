@@ -17,6 +17,7 @@ const {
     FLAG_RECEIPT_SENT,
     FLAG_IMPORTED,
     FLAG_REPLIED,
+    FLAG_SYNCED,
     FLAG_REPLIEDALL,
     FLAG_FORWARDED,
     FLAG_INTERNAL,
@@ -61,6 +62,7 @@ export const toggleFlag = (flag: number) => (message?: Partial<Message>) => togg
 export const isRequestReadReceipt = hasFlag(FLAG_RECEIPT_REQUEST);
 export const isReadReceiptSent = hasFlag(FLAG_RECEIPT_SENT);
 export const isImported = hasFlag(FLAG_IMPORTED);
+export const isSynced = hasFlag(FLAG_SYNCED);
 export const isInternal = hasFlag(FLAG_INTERNAL);
 export const isExternal = (message?: Partial<Message>) => !isInternal(message);
 export const isAuto = hasFlag(FLAG_AUTO);
