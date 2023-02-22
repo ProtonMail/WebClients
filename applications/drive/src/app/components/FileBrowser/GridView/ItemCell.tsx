@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import * as React from 'react';
 
-import { DragMoveContainer, classnames } from '@proton/components';
+import { DragMoveContainer } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import useDragAndDrop from '../hooks/useDragAndDrop';
 import useFileBrowserItem from '../hooks/useFileBrowserItem';
@@ -56,7 +57,7 @@ const ItemCell = <T extends FileBrowserBaseItem>({
     }, [onItemRender]);
 
     return (
-        <div className={classnames(['flex flex-col opacity-on-hover-container', className])} style={style}>
+        <div className={clsx(['flex flex-col opacity-on-hover-container', className])} style={style}>
             {draggable && (
                 <DragMoveContent dragging={dragging} data={dragMoveItems}>
                     <DragMoveContainer>{dragnDropControls.moveText}</DragMoveContainer>
@@ -66,7 +67,7 @@ const ItemCell = <T extends FileBrowserBaseItem>({
                 role="button"
                 tabIndex={0}
                 draggable={draggable}
-                className={classnames([
+                className={clsx([
                     'file-browser-grid-item m0-5 flex flex-column w100 rounded border text-align-left',
                     isSelected && 'border-primary',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.isLocked) &&

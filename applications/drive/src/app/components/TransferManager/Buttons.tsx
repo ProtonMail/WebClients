@@ -1,10 +1,11 @@
 import { Button } from '@proton/atoms';
-import { Icon, Tooltip, classnames } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { TransfersManagerButtonsProps } from './interfaces';
 
 const Buttons = ({ className, buttons, id }: TransfersManagerButtonsProps) => {
-    const elClassName = classnames(['flex flex-nowrap flex-justify-end', className]);
+    const elClassName = clsx(['flex flex-nowrap flex-justify-end', className]);
 
     return (
         <div className={elClassName} id={id}>

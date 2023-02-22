@@ -1,7 +1,8 @@
 import { memo, useEffect } from 'react';
 
-import { DragMoveContainer, TableRow, classnames } from '@proton/components';
+import { DragMoveContainer, TableRow } from '@proton/components';
 import { isEquivalent } from '@proton/shared/lib/helpers/object';
+import clsx from '@proton/utils/clsx';
 import shallowEqual from '@proton/utils/shallowEqual';
 
 import useDragAndDrop from '../hooks/useDragAndDrop';
@@ -65,7 +66,7 @@ const ItemRow = <T extends FileBrowserBaseItem>({
                 tabIndex={0}
                 role="button"
                 draggable={draggable}
-                className={classnames([
+                className={clsx([
                     'file-browser-list-item flex user-select-none opacity-on-hover-container',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.isLocked) && 'bg-strong',
                     (dragging || item.isLocked) && 'opacity-50',

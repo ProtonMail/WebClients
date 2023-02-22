@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { FileIcon, Icon, TableCell, classnames, useActiveBreakpoint } from '@proton/components';
+import { FileIcon, Icon, TableCell, useActiveBreakpoint } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { formatAccessCount } from '../../../utils/formatters';
@@ -76,7 +77,7 @@ export const ModifiedCellDevice = ({ item }: { item: DeviceItem }) => {
 export function SizeCell({ item }: { item: DriveItem | TrashItem }) {
     const { isDesktop } = useActiveBreakpoint();
     return (
-        <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])} data-testid="column-size">
+        <TableCell className={clsx(['m0', isDesktop ? 'w10' : 'w15'])} data-testid="column-size">
             {item.isFile ? <SizeCellBase size={item.size} /> : '-'}
         </TableCell>
     );
@@ -103,7 +104,7 @@ export const LocationCell = ({ item }: { item: TrashItem | SharedLinkItem }) => 
     const shareId = item.rootShareId;
 
     return (
-        <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])} data-testid="column-location">
+        <TableCell className={clsx(['m0', isDesktop ? 'w20' : 'w25'])} data-testid="column-location">
             <LocationCellBase shareId={shareId} parentLinkId={item.parentLinkId} />
         </TableCell>
     );

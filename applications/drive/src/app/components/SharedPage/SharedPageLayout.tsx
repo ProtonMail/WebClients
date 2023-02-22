@@ -3,9 +3,10 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Icon, Logo, Unauthenticated, classnames, useConfig } from '@proton/components';
+import { Icon, Logo, Unauthenticated, useConfig } from '@proton/components';
 import { BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 
 import './Layout.scss';
 
@@ -41,7 +42,7 @@ export default function SharedPageLayout({ reportAbuseButton, withSidebar, expan
                     </ButtonLike>
                 </header>
                 <div
-                    className={classnames([
+                    className={clsx([
                         'shared-page-layout-container flex flex-no-min-children flex-nowrap on-mobile-flex-column',
                         !withSidebar && 'shared-page-layout-container-without-sidebar',
                         expand && 'flex-item-fluid',
