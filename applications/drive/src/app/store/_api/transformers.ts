@@ -59,7 +59,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                       isExpired: link.UrlsExpired,
                       createTime: link.ShareUrls[0].CreateTime,
                       expireTime: link.ShareUrls[0].ExpireTime,
-                      numAccesses: link.ShareUrls[0].ShareURL?.NumAccesses,
+                      numAccesses: link.ShareUrls[0].NumAccesses,
                   }
                 : undefined,
         nodeKey: link.NodeKey,

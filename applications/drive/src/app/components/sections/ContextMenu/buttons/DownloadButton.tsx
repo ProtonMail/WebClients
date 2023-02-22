@@ -4,19 +4,18 @@ import { DecryptedLink, useDownload } from '../../../../store';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
-    shareId: string;
     selectedLinks: DecryptedLink[];
     close: () => void;
 }
 
-const DownloadButton = ({ shareId, selectedLinks, close }: Props) => {
+const DownloadButton = ({ selectedLinks, close }: Props) => {
     const { download } = useDownload();
 
     const onClick = () => {
         void download(
             selectedLinks.map((link) => ({
                 ...link,
-                shareId,
+                shareId: link.rootShareId,
             }))
         );
     };

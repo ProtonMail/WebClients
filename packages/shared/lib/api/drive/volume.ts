@@ -33,3 +33,14 @@ export const queryVolumeTrash = (
         },
     };
 };
+
+export const queryVolumeSharedLinks = (
+    volumeId: string,
+    params: { Page: number; PageSize?: number; Recursive?: 1 | 0 }
+) => {
+    return {
+        method: 'get',
+        url: `drive/volumes/${volumeId}/urls`,
+        params,
+    };
+};
