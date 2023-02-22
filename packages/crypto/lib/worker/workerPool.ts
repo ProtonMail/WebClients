@@ -85,6 +85,7 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         verifyCleartextMessage: (opts) => getWorker().verifyCleartextMessage(opts),
         processMIME: (opts) => getWorker().processMIME(opts),
         computeHash: (opts) => getWorker().computeHash(opts),
+        computeHashStream: (opts) => getWorker().computeHashStream(opts),
 
         generateSessionKey: (opts) => getWorker().generateSessionKey(opts),
         generateSessionKeyForAlgorithm: (opts) => getWorker().generateSessionKeyForAlgorithm(opts),

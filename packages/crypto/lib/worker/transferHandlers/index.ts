@@ -1,6 +1,7 @@
 import type { TransferHandler } from 'comlink';
 
-import type { KeyReference } from './api.models';
+import type { ComputeHashStreamOptions, KeyReference } from '../api.models';
+import { ReadableStreamSerializer, SerializeWebStreamTypes } from './streamHandler';
 
 // return interface with same non-function fields as T, and with function fields type converted to their return type
 // e.g. ExtractFunctionReturnTypes<{ foo: () => string, bar: 3 }> returns { foo: string, bar: 3 }
@@ -103,6 +104,22 @@ const KeyOptionsSerializer = {
     },
 };
 
+type SerializedComputeHashStreamOptions = SerializeWebStreamTypes<ComputeHashStreamOptions>;
+const ComputeHashStreamOptionsSerializer = {
+    canHandle: (input: any): input is ComputeHashStreamOptions =>
+        typeof input === 'object' && input.algorithm && ReadableStreamSerializer.canHandle(input.dataStream),
+
+    serialize: ({ dataStream, ...rest }: ComputeHashStreamOptions): SerializedComputeHashStreamOptions => ({
+        ...rest,
+        dataStream: ReadableStreamSerializer.serialize(dataStream),
+    }),
+
+    deserialize: ({ dataStream, ...rest }: SerializedComputeHashStreamOptions): ComputeHashStreamOptions => ({
+        ...rest,
+        dataStream: ReadableStreamSerializer.deserialize(dataStream),
+    }),
+};
+
 type SerializedError = { isError: true; value: Pick<Error, 'message' | 'name' | 'stack'> };
 const ErrorSerializer = {
     canHandle: (value: any) => typeof value === 'object' && (value instanceof Error || value.isError),
@@ -179,6 +196,26 @@ const oneWayTransferHanders: OneWayTransferHandler[] = [
                 [], // transferables: no transferring from main thread
             ],
             deserialize: (bytes) => bytes,
+        },
+    },
+    {
+        name: 'ComputeHashStreamOptions', // takes stream as input but returns a Uint8Array (responsibility of a different handler)
+        workerHandler: {
+            canHandle: ComputeHashStreamOptionsSerializer.canHandle,
+            serialize: () => [undefined, []], // unused on worker side
+            deserialize: ComputeHashStreamOptionsSerializer.deserialize,
+        },
+        mainThreadHandler: {
+            canHandle: (input: any): input is { dataStream: ReadableStream<Uint8Array> } =>
+                typeof input === 'object' && ReadableStreamSerializer.canHandle(input.dataStream),
+            serialize: ({ dataStream, ...rest }) => {
+                const serializedStreamPort = ReadableStreamSerializer.serialize(dataStream);
+                return [
+                    { dataStream: serializedStreamPort, ...rest },
+                    [serializedStreamPort], // transferables
+                ];
+            },
+            deserialize: () => {}, // unused on main thread side
         },
     },
     {
