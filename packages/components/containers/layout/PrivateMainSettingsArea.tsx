@@ -124,7 +124,7 @@ export const PrivateMainSettingsAreaBase = ({
             <div className="container-section-sticky">
                 {breadcrumbs && <div className="on-mobile-mt1-5">{breadcrumbs}</div>}
                 {!noTitle && (
-                    <SettingsPageTitle className={classnames(['mt1-5', !description && 'mb1-5'])}>
+                    <SettingsPageTitle className={classnames(['mt1-5', description ? 'mb0-5' : 'mb1-5'])}>
                         {title}
                     </SettingsPageTitle>
                 )}

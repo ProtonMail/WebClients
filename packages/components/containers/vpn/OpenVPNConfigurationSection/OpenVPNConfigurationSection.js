@@ -153,7 +153,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     .t`These configuration files let you choose which ${VPN_APP_NAME} server you connect to when using a third-party VPN app or setting up a VPN connection on a router.
                         `}
                             </SettingsParagraph>
-                            <h3 className="mt2">{c('Title').t`1. Select platform`}</h3>
+                            <h3 className="mt2 mb0-5">{c('Title').t`1. Select platform`}</h3>
                             <div className="flex on-mobile-flex-column">
                                 {[
                                     {
@@ -207,7 +207,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                 })}
                             </div>
 
-                            <h3 className="mt2">{c('Title').t`2. Select protocol`}</h3>
+                            <h3 className="mt2 mb0-5">{c('Title').t`2. Select protocol`}</h3>
                             <div className="flex on-mobile-flex-column mb0-5">
                                 <RadioGroup
                                     name="protocol"
@@ -224,7 +224,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     .t`What is the difference between UDP and TCP protocols?`}</Href>
                             </div>
 
-                            <h3 className="mt2">{c('Title').t`3. Select config file and download`}</h3>
+                            <h3 className="mt2 mb0-5">{c('Title').t`3. Select config file and download`}</h3>
                         </>
                     )}
                     <div className="flex on-mobile-flex-column mb1-5">
