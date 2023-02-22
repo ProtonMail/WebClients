@@ -134,11 +134,7 @@ export const restoreAllPrefixedAttributes = (content: string) => {
 /**
  * Remove all "normal" HTML attributes that we filled with our values (e.g. images src with proxyfied urls)
  */
-export const removeProxyURLAttributes = (content: string, messageImages: MessageImages | undefined) => {
-    if (!messageImages || !messageImages.hasRemoteImages || !(messageImages.images.length > 0)) {
-        return content;
-    }
-
+export const removeProxyURLAttributes = (content: string) => {
     const document = setDocumentContent(window.document.createElement('div'), content);
 
     const foundElements = document.querySelectorAll(getRemoteSelector());
@@ -146,7 +142,6 @@ export const removeProxyURLAttributes = (content: string, messageImages: Message
     foundElements.forEach((element) => {
         ATTRIBUTES_TO_LOAD.forEach((attr) => {
             if (element.hasAttribute(attr)) {
-                const elementURL = element.getAttribute(attr);
                 const elementProtonURL = element.getAttribute(`proton-${attr}`);
 
                 /**
@@ -166,16 +161,8 @@ export const removeProxyURLAttributes = (content: string, messageImages: Message
                     return;
                 }
 
-                const imageFromState = messageImages.images.find((img) => {
-                    if (img.type !== 'remote' || !img.originalURL) {
-                        return false;
-                    }
-                    return img.url === elementURL && elementProtonURL === img.originalURL;
-                });
-
-                if (imageFromState) {
-                    element.removeAttribute(attr);
-                }
+                element.setAttribute(attr, elementProtonURL);
+                element.removeAttribute(`proton-${attr}`);
             }
         });
     });
@@ -194,7 +181,7 @@ export const replaceProxyWithOriginalURLAttributes = (message: MessageState, doc
     let content = getDocumentContent(document);
 
     // First step, remove all src on images that are using Proton proxy urls
-    content = removeProxyURLAttributes(content, message?.messageImages);
+    content = removeProxyURLAttributes(content);
 
     // Step two, transform all proton-src (and others) attributes to src, since it contains the original URL of the image
     // Normally, removing a proxy url should be associated with transforming a proton-src attribute to src at the same time
