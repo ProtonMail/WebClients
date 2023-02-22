@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
@@ -184,6 +184,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         );
     });
 
+    const userFound = membersSelected.length;
+
     return (
         <SettingsSectionWide>
             <RestoreAdministratorPrivileges />
@@ -234,9 +236,14 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         placeholder={c('Placeholder').t`Search users`}
                         delay={500}
                         value={keywords}
+                        aria-label={c('Placeholder').t`Search users`}
                     />
                 </div>
             </Block>
+            <span className="sr-only" aria-live="polite" aria-atomic="true">
+                {c('Info').ngettext(msgid`${userFound} user found`, `${userFound} users found`, userFound)}
+            </span>
+
             <Table hasActions responsive="cards">
                 <thead>
                     <tr>{headerCells}</tr>
