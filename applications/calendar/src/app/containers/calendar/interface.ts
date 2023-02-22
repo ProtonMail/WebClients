@@ -112,6 +112,7 @@ export interface OnSaveConfirmationArgs {
     };
     inviteActions: InviteActions;
     isAttendee: boolean;
+    canEditOnlyNotifications: boolean;
 }
 export interface OnDeleteConfirmationArgs {
     type: DELETE_CONFIRMATION_TYPES;
