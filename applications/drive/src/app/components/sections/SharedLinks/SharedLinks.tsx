@@ -147,7 +147,6 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     return (
         <>
             <SharedLinksItemContextMenu
-                shareId={shareId}
                 selectedLinks={selectedItems}
                 anchorRef={contextMenuAnchorRef}
                 close={browserItemContextMenu.close}

@@ -1,3 +1,5 @@
+import { ShareURL } from './sharing';
+
 export interface CreateDriveVolume {
     AddressID: string;
     VolumeName: string;
@@ -42,5 +44,13 @@ export interface ListDriveVolumeTrashPayload {
         LinkIDs: string[];
         ShareID: string;
         ParentIDs: string[];
+    }[];
+}
+
+export interface ListDriveVolumeSharedLinksPayload {
+    ShareURLContexts: {
+        ContextShareID: string;
+        ShareURLs: ShareURL[];
+        LinkIDs: string[];
     }[];
 }
