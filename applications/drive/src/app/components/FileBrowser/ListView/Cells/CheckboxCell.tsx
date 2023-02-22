@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
-import { Checkbox, TableCell, classnames } from '@proton/components';
+import { Checkbox, TableCell } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { stopPropagation } from '../../../../utils/stopPropagation';
 import { useFileBrowserCheckbox } from '../../hooks/useFileBrowserCheckbox';
@@ -33,7 +34,7 @@ const CheckboxCellBase = ({
         <TableCell className="m0 flex file-browser-list-checkbox-cell" data-testid="column-checkbox">
             <div
                 role="presentation"
-                className={classnames(['flex flex-align-items-center', className])}
+                className={clsx(['flex flex-align-items-center', className])}
                 onTouchStart={stopPropagation}
                 onKeyDown={stopPropagation}
                 onClick={onCheckboxWrapperClick}
