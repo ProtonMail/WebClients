@@ -201,6 +201,7 @@ const CreateEventModal = ({
                 canEditSharedEventData={canEditSharedEventData}
                 isCreateEvent={isCreateEvent}
                 setParticipantError={setParticipantError}
+                isWritableCalendar={!isSubscribedCalendar && getCanWrite(permissions)}
                 isDuplicating={isDuplicating}
                 isDrawerApp={isDrawerApp}
             />

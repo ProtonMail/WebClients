@@ -203,6 +203,7 @@ type ModalsMap = {
         };
         inviteActions: InviteActions;
         isAttendee: boolean;
+        canEditOnlyNotifications: boolean;
     }>;
     editSingleConfirmModal: ModalWithProps<{
         inviteActions: InviteActions;
@@ -576,6 +577,7 @@ const InteractiveCalendarView = ({
             selfAddressData,
             calendarSettings: CalendarSettings,
         });
+        // TODO: check this part
         if (partstat) {
             // The user attends the event and is changing the partstat
             return {
@@ -930,6 +932,7 @@ const InteractiveCalendarView = ({
         type,
         data,
         isAttendee,
+        canEditOnlyNotifications,
         inviteActions,
     }: OnSaveConfirmationArgs): Promise<RecurringActionData> => {
         return new Promise<RecurringActionData>((resolve, reject) => {
@@ -941,6 +944,7 @@ const InteractiveCalendarView = ({
                         data,
                         inviteActions,
                         isAttendee,
+                        canEditOnlyNotifications,
                     },
                 });
             } else if (type === SAVE_CONFIRMATION_TYPES.SINGLE) {
@@ -1589,6 +1593,7 @@ const InteractiveCalendarView = ({
                     isOpen={editRecurringConfirmModal.isOpen}
                     {...editRecurringConfirmModal.props.data}
                     isAttendee={editRecurringConfirmModal.props.isAttendee}
+                    canEditOnlyNotifications={editRecurringConfirmModal.props.canEditOnlyNotifications}
                     inviteActions={editRecurringConfirmModal.props.inviteActions}
                     onClose={() => {
                         closeModal('editRecurringConfirmModal');
