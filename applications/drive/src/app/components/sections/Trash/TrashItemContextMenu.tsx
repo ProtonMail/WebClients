@@ -17,7 +17,6 @@ export function TrashItemContextMenu({
     selectedLinks: DecryptedLink[];
 }) {
     const selectedLink = selectedLinks[0];
-    const shareId = selectedLink ? selectedLink.rootShareId : '';
     const hasPreviewAvailable =
         selectedLinks.length === 1 &&
         selectedLink.isFile &&
@@ -27,8 +26,10 @@ export function TrashItemContextMenu({
 
     return (
         <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-            {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
-            {hasDownloadAvailable && <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />}
+            {hasPreviewAvailable && (
+                <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
+            )}
+            {hasDownloadAvailable && <DownloadButton selectedLinks={selectedLinks} close={close} />}
             <DetailsButton selectedLinks={selectedLinks} close={close} />
             <RestoreFromTrashButton selectedLinks={selectedLinks} close={close} />
             <DeletePermanentlyButton selectedLinks={selectedLinks} close={close} />
