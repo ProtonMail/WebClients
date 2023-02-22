@@ -217,7 +217,7 @@ export interface EventModelErrors {
 }
 
 export interface EventModelReadView extends EventModelView {
-    notifications: NotificationModel[];
+    notifications?: NotificationModel[];
     isAllDay: boolean;
 }
 
