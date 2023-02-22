@@ -25,7 +25,7 @@ const SettingsParagraph = ({
     ) : null;
 
     return (
-        <p className={classnames(['color-weak', large ? 'max-w57e' : 'max-w43e', className])} {...rest}>
+        <p className={classnames(['color-weak mt0', large ? 'max-w57e' : 'max-w43e', className])} {...rest}>
             {children}
             {learnMoreElement}
         </p>
