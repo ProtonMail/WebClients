@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Checkbox, FileNameDisplay, Icon, classnames } from '@proton/components';
+import { Checkbox, FileNameDisplay, Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
 import { useCheckbox, useItemContextMenu, useSelection } from '../../FileBrowser';
@@ -33,7 +34,7 @@ const GridViewItemBase = ({
                 {IconComponent}
             </div>
             <div
-                className={classnames([
+                className={clsx([
                     'flex file-browser-grid-item--select',
                     selectionControls?.selectionState !== SelectionState.NONE ? null : 'opacity-on-hover-only-desktop',
                 ])}
@@ -58,7 +59,7 @@ const GridViewItemBase = ({
                     shape="ghost"
                     size="small"
                     icon
-                    className={classnames([
+                    className={clsx([
                         'file-browser-grid-view--options',
                         isContextMenuButtonActive ? 'file-browser--options-focus' : 'opacity-on-hover-only-desktop',
                     ])}

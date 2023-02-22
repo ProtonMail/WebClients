@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 
-import { Loader, Table, classnames, useElementRect, useRightToLeft } from '@proton/components';
+import { Loader, Table, useElementRect, useRightToLeft } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { FileBrowserProps } from '../FileBrowser';
 import { FileBrowserBaseItem } from '../interface';
@@ -42,7 +43,7 @@ const GridItemCell = <T extends FileBrowserBaseItem>({
     return item ? (
         <ItemCell
             {...getItemProps(item)}
-            className={classnames([
+            className={clsx([
                 columnIndex === 0 && 'pl0-5',
                 rowIndex === 0 && 'pt0-5',
                 columnIndex === itemsPerRow - 1 && 'pr0-5',

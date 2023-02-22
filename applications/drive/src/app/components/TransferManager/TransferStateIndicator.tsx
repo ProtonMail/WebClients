@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, IconName, Tooltip, classnames } from '@proton/components';
+import { Icon, IconName, Tooltip } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import {
     isTransferCanceled,
@@ -86,7 +87,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
 
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'text-ellipsis flex-no-min-children flex-align-items-center flex-nowrap',
                 isTransferManuallyPaused(transfer) && 'color-info',
                 isTransferDone(transfer) && 'color-success',
@@ -119,10 +120,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             {shouldShowDirection && (
                 <Icon
                     name={type === TransferType.Download ? 'arrow-down-line' : 'arrow-up-line'}
-                    className={classnames([
-                        'flex-item-noshrink ml0-5',
-                        isTransferDone(transfer) && 'no-tablet no-desktop',
-                    ])}
+                    className={clsx(['flex-item-noshrink ml0-5', isTransferDone(transfer) && 'no-tablet no-desktop'])}
                     alt={progressTitle}
                 />
             )}

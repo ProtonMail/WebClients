@@ -1,4 +1,5 @@
-import { Progress, classnames } from '@proton/components';
+import { Progress } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 export enum ProgressBarStatus {
     Disabled = 'disabled',
@@ -15,10 +16,7 @@ interface Props {
 }
 
 const ProgressBar = ({ status = ProgressBarStatus.Success, ...rest }: Props) => (
-    <Progress
-        className={classnames(['transfers-manager-list-item-progress is-thin', `progress-bar--${status}`])}
-        {...rest}
-    />
+    <Progress className={clsx(['transfers-manager-list-item-progress is-thin', `progress-bar--${status}`])} {...rest} />
 );
 
 export default ProgressBar;

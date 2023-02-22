@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     className?: string;
@@ -22,7 +23,7 @@ export default function ExpandButton({ className, expanded, onClick, style }: Pr
             shape="ghost"
             size="small"
             icon
-            className={classnames([
+            className={clsx([
                 'flex-item-noshrink flex flex-align-items-center drive-sidebar--button-expand',
                 className,
             ])}

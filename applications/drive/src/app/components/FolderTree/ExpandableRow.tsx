@@ -3,7 +3,8 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { FileIcon, FileNameDisplay, Icon, TableRowBusy, classnames } from '@proton/components';
+import { FileIcon, FileNameDisplay, Icon, TableRowBusy } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { DecryptedLink } from '../../store';
 
@@ -42,11 +43,7 @@ const ExpandableRow = ({
     return (
         <>
             <tr
-                className={classnames([
-                    'folder-tree-list-item',
-                    !isDisabled && 'cursor-pointer',
-                    isSelected && 'bg-strong',
-                ])}
+                className={clsx(['folder-tree-list-item', !isDisabled && 'cursor-pointer', isSelected && 'bg-strong'])}
                 onClick={handleSelect}
             >
                 <td style={paddingElement} className="flex flex-align-items-center flex-nowrap m0 pl-custom">

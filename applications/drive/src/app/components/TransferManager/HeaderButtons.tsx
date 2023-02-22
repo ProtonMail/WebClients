@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import {
     isTransferCanceled,
@@ -101,14 +101,7 @@ const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
 
     return (
         <div
-            className={classnames([
-                'flex',
-                'flex-nowrap',
-                'flex-justify-end',
-                'no-scroll',
-                'flex-item-noshrink',
-                className,
-            ])}
+            className={clsx(['flex', 'flex-nowrap', 'flex-justify-end', 'no-scroll', 'flex-item-noshrink', className])}
         >
             <Buttons buttons={buttons} className="flex-item-noshrink" />
         </div>

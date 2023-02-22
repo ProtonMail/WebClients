@@ -9,7 +9,6 @@ import {
     IconName,
     Row,
     Spotlight,
-    classnames,
     useActiveBreakpoint,
     useAuthentication,
     useLocalState,
@@ -22,6 +21,7 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
+import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../hooks/drive/useActiveShare';
 import { useFileUploadInput } from '../../store';
@@ -260,13 +260,13 @@ function WelcomeAction({
 
     return (
         <Row
-            className={classnames(['flex flex-align-items-center rounded', !isDone && 'cursor-pointer'])}
+            className={clsx(['flex flex-align-items-center rounded', !isDone && 'cursor-pointer'])}
             onClick={isDone ? undefined : action}
             onMouseEnter={() => setOnHover(true)}
             onMouseLeave={() => setOnHover(false)}
         >
             <div
-                className={classnames([
+                className={clsx([
                     'flex-item-nowrap h-custom w-custom rounded mr0-5',
                     'flex flex-justify-center flex-align-items-center',
                     isDone ? 'bg-success' : 'bg-weak',
@@ -275,7 +275,7 @@ function WelcomeAction({
             >
                 <Icon name={icon} />
             </div>
-            <div className={classnames(['flex-item-fluid', isDone && 'text-strike color-weak'])}>
+            <div className={clsx(['flex-item-fluid', isDone && 'text-strike color-weak'])}>
                 {title}
                 {!isDone && text && <div className="color-weak">{text}</div>}
             </div>
