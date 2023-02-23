@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Href, MailShortcutsModal, Price, SettingsLink, useModalState, useModals } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
 import {
+    APP_UPSELL_REF_PATH,
     BRAND_NAME,
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,
@@ -18,7 +19,7 @@ import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
 import { PROTON_DEFAULT_THEME, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { WELCOME_PANE_OPTIONS_URLS, upsellRefLink } from '../../constants';
+import { WELCOME_PANE_OPTIONS_URLS } from '../../constants';
 
 enum UPSELL_MAIL_BANNER_LINK_ID {
     GET_MORE_STORAGE = 1,
@@ -76,7 +77,8 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
         openCalendar: c('Action').t`Open calendar`,
     };
 
-    const getLink = (url: string, optionID: number) => `${url}?ref=${upsellRefLink}${optionID}`;
+    const getLink = (url: string, optionID: number) =>
+        `${url}?ref=${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${optionID}`;
 
     const messagesOptions: MessageOption[] = [
         {

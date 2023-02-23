@@ -1,4 +1,5 @@
 import { APPS, APPS_CONFIGURATION, APP_NAMES, DOH_DOMAINS, LINK_TYPES } from '../constants';
+import window from '../window';
 
 const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'tel:': LINK_TYPES.PHONE,
@@ -300,4 +301,17 @@ export const isAppFromURL = (url: string | undefined, app: APP_NAMES) => {
         return segments[0] === APPS_CONFIGURATION[app].subdomain;
     }
     return false;
+};
+
+export const formatURLForAjaxRequest = () => {
+    const url = new URL(window.location.href);
+    if (url.search.includes('?')) {
+        url.search = `${url.search}&load=ajax`;
+    } else {
+        url.search = '?load=ajax';
+    }
+
+    url.hash = '';
+
+    return url;
 };

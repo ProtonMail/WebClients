@@ -178,8 +178,6 @@ export const defaultESContextMail: EncryptedSearchFunctionsMail = {
     getESDBStatus: () => ({ ...defaultESContext.getESDBStatus(), ...defaultESMailStatus }),
 };
 
-export const upsellRefLink = 'upsell_mail-banner-';
-
 export const WELCOME_PANE_OPTIONS_URLS = {
     plansSelection: '/upgrade',
     protonShop: getShopURL(),
