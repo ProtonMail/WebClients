@@ -10,7 +10,7 @@ import {
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
-    getDefaultCalendar,
+    getPreferredActiveWritableCalendar,
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -71,7 +71,10 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
         return getActiveAddresses(addresses);
     }, [addresses]);
 
-    const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
+    const preferredPersonalActiveCalendar = getPreferredActiveWritableCalendar(
+        activeCalendars,
+        calendarUserSettings.DefaultCalendarID
+    );
 
     const [localTzid] = useState(() => getTimezone());
     const [customTzid, setCustomTzid] = useState('');
@@ -113,7 +116,7 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) =
                         visibleCalendars={visibleCalendars}
                         activeCalendars={activeCalendars}
                         calendars={calendars}
-                        defaultCalendar={defaultCalendar}
+                        createEventCalendar={preferredPersonalActiveCalendar}
                         calendarsEventsCacheRef={calendarsEventsCacheRef}
                         calendarUserSettings={calendarUserSettings}
                         userSettings={userSettings}

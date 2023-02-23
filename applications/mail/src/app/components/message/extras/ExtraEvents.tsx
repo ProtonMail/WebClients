@@ -24,7 +24,7 @@ import {
     getCanCreateCalendar,
     getDefaultCalendar,
     getIsCalendarDisabled,
-    getWritableCalendars,
+    getOwnedPersonalCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
 import {
@@ -127,19 +127,19 @@ const ExtraEvents = ({ message }: Props) => {
                         getCalendarUserSettings,
                     });
                     const defaultCalendar = getDefaultCalendar(calendars, calendarUserSettings.DefaultCalendarID);
-                    const writableCalendars = getWritableCalendars(calendars);
-                    const disabledCalendars = writableCalendars.filter(unary(getIsCalendarDisabled));
+                    const ownedPersonalCalendars = getOwnedPersonalCalendars(calendars);
+                    const disabledCalendars = ownedPersonalCalendars.filter(unary(getIsCalendarDisabled));
                     const canCreateCalendar = getCanCreateCalendar({
                         calendars,
-                        writableCalendars,
+                        ownedPersonalCalendars,
                         disabledCalendars,
                         isFreeUser,
                     });
                     const maxUserCalendarsDisabled =
-                        !canCreateCalendar && writableCalendars.length === disabledCalendars.length;
+                        !canCreateCalendar && ownedPersonalCalendars.length === disabledCalendars.length;
 
                     return {
-                        calendars: writableCalendars,
+                        calendars: ownedPersonalCalendars,
                         defaultCalendar,
                         canCreateCalendar,
                         maxUserCalendarsDisabled,

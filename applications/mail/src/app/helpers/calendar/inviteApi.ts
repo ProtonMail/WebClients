@@ -18,8 +18,8 @@ import {
     getCalendarWithReactivatedKeys,
     getDoesCalendarNeedUserAction,
     getIsCalendarDisabled,
+    getOwnedPersonalCalendars,
     getVisualCalendars,
-    getWritableCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import {
@@ -138,7 +138,7 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
 
     const { isCalendarsLimitReached } = getHasUserReachedCalendarsLimit(calendars, isFreeUser);
 
-    if (!getWritableCalendars(calendars).length && !isCalendarsLimitReached) {
+    if (!getOwnedPersonalCalendars(calendars).length && !isCalendarsLimitReached) {
         // create a calendar automatically
         try {
             const { calendar, updatedCalendarUserSettings } = await setupCalendarHelper({

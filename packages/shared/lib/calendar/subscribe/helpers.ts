@@ -1,10 +1,7 @@
 import { c } from 'ttag';
 
-import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
-import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
-
-import { EVENT_ACTIONS, HOUR } from '../../constants';
-import { CALENDAR_SUBSCRIPTION_STATUS, Calendar, SubscribedCalendar, VisualCalendar } from '../../interfaces/calendar';
+import { CALENDAR_APP_NAME, EVENT_ACTIONS, HOUR } from '../../constants';
+import { CALENDAR_SUBSCRIPTION_STATUS, Calendar, SubscribedCalendar } from '../../interfaces/calendar';
 import {
     CalendarSubscriptionEventManager,
     CalendarSubscriptionEventManagerCreate,
@@ -42,12 +39,6 @@ export const getIsCalendarSubscriptionEventManagerUpdate = (
     event: CalendarSubscriptionEventManager
 ): event is CalendarSubscriptionEventManagerUpdate => {
     return event.Action === EVENT_ACTIONS.UPDATE;
-};
-
-export const getIsSubscribedCalendar = (
-    calendar: Calendar | VisualCalendar | SubscribedCalendar
-): calendar is SubscribedCalendar => {
-    return calendar.Type === CALENDAR_TYPE.SUBSCRIPTION;
 };
 
 export const getCalendarHasSubscriptionParameters = (

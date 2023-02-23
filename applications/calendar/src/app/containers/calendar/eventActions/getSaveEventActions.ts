@@ -3,7 +3,6 @@ import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/recurrence/rruleEqual';
 import withVeventRruleWkst from '@proton/shared/lib/calendar/recurrence/rruleWkst';
 import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar/vcalConverter';
@@ -21,6 +20,7 @@ import noop from '@proton/utils/noop';
 
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
+import { getCanEditSharedEventData } from '../../../helpers/event';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
     CleanSendIcsActionData,
@@ -193,15 +193,22 @@ const getSaveEventActions = async ({
         tmpOriginalTarget: { data: { eventData: oldEventData, eventRecurrence, eventReadResult } } = { data: {} },
         tmpData,
         tmpData: {
-            calendar: { id: newCalendarID, isSubscribed: isSubscribedCalendar, permissions },
+            calendar: { id: newCalendarID, isOwned: isOwnedCalendar, isWritable: isCalendarWritable },
             member: { memberID: newMemberID, addressID: newAddressID },
             frequencyModel,
             hasDefaultNotifications,
         },
     } = temporaryEvent;
-    const isWritableCalendar = !isSubscribedCalendar && getCanWrite(permissions);
-    const isAttendee = !!tmpData.isAttendee;
-    const canEditOnlyNotifications = isAttendee || !isWritableCalendar;
+    const { isAttendee, isOrganizer, organizer, selfAddress: existingSelfAddress } = tmpData;
+    const isInvitation = !!organizer;
+    const canEditOnlyNotifications = !getCanEditSharedEventData({
+        isOwnedCalendar,
+        isCalendarWritable,
+        isOrganizer,
+        isAttendee,
+        isInvitation,
+        selfAddress: existingSelfAddress,
+    });
     const selfAddress = addresses.find(({ ID }) => ID === newAddressID);
     if (!selfAddress) {
         throw new Error('Wrong member data');

@@ -123,8 +123,8 @@ const CalendarShareSection = ({
                                         .t`Share your calendar with other ${BRAND_NAME} users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}</SettingsParagraph>
                                     {!isMaximumMembersReached && (
                                         <Button
-                                            onClick={() => handleShare()}
-                                            disabled={isLoading || !canShare}
+                                            onClick={handleShare}
+                                            disabled={isLoading || !canShare || isMaximumMembersReached}
                                             color="norm"
                                         >
                                             {c('Action').t`Share`}

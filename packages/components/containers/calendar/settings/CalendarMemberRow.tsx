@@ -15,7 +15,7 @@ import { TableCell, TableRow } from '../../../components';
 import './CalendarMemberGrid.scss';
 
 const permissionLabelMap = {
-    // [CalendarMemberPermissions.EDIT]: c('Calendar share permission label').t`Edit`,
+    [MEMBER_PERMISSIONS.EDIT]: c('Calendar share permission label').t`Edit`,
     [MEMBER_PERMISSIONS.FULL_VIEW]: c('Calendar share permission label').t`See all event details`,
     // [CalendarMemberPermissions.LIMITED]: c('Calendar share permission label').t`See only free/busy`,
 };
@@ -92,12 +92,16 @@ const CalendarMemberRow = ({
         <SelectTwo
             loading={isLoadingPermissionsUpdate}
             value={perms}
-            disabled={!canEdit}
+            // TODO: remove dummy true condition when change of permissions is implemented
+            disabled={true || !canEdit}
             onChange={handleChangePermissions}
         >
-            {availablePermissions.map(([value, label]) => (
-                <Option key={value} value={+value} title={label} />
-            ))}
+            {availablePermissions
+                .filter(([stringifiedPermission]) => +stringifiedPermission === perms)
+                .map(([value, label]) => (
+                    <Option key={value} value={+value} title={label} />
+                ))
+            }
         </SelectTwo>
     );
 

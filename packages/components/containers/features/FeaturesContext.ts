@@ -44,6 +44,7 @@ export enum FeatureCode {
     ExternalSignup = 'ExternalSignup',
     CalendarInviteLocale = 'CalendarInviteLocale',
     CalendarAutoImportInvite = 'CalendarAutoImportInvite',
+    CalendarNotificationsRevampAvailable = 'CalendarNotificationsRevampAvailable',
     CalendarPersonalEventsDeprecated = 'CalendarPersonalEventsDeprecated',
     CalendarSharingEnabled = 'CalendarSharingEnabled',
     SpyTrackerProtection = 'SpyTrackerProtection',

@@ -13,10 +13,9 @@ import {
 import CalendarSettingsBreadcrumbs from '@proton/components/containers/calendar/settings/CalendarSettingsBreadcrumbs';
 import { useApi, useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
-import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
+import { getIsOwnedCalendar, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import {
     CalendarMember,
