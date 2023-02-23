@@ -92,4 +92,80 @@ describe('transformRemote', () => {
 
         expect(onLoadRemoteImagesProxy).toHaveBeenCalled();
     });
+
+    it('should load remote images by default whatever the loading setting value when Sender is Proton verified', async () => {
+        const imageURL = 'imageURL';
+
+        const content = `<div>
+                            <img proton-src='${imageURL}'/>
+                        </div>`;
+
+        const message: MessageState = {
+            localID: 'messageWithRemote',
+            data: {
+                ID: 'messageID',
+                Sender: {
+                    Name: 'Verified address',
+                    Address: 'verified@proton.me',
+                    IsProton: 1,
+                },
+            } as Message,
+            messageDocument: { document: createDocument(content) },
+        };
+
+        const mailSettings = {
+            HideRemoteImages: SHOW_IMAGES.HIDE,
+            ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
+        } as MailSettings;
+
+        const { showRemoteImages, remoteImages, hasRemoteImages } = setup(message, mailSettings);
+
+        expect(showRemoteImages).toBeTruthy();
+        expect(hasRemoteImages).toBeTruthy();
+        expect(remoteImages[0].type).toEqual('remote');
+        expect(remoteImages[0].url).toEqual(imageURL);
+
+        // There is a wait 0 inside the loadRemoteImages helper
+        await wait(0);
+
+        expect(onLoadRemoteImagesProxy).toHaveBeenCalled();
+    });
+
+    it('should not load remote images by default when setting is off and address is not Proton verified', async () => {
+        const imageURL = 'imageURL';
+
+        const content = `<div>
+                            <img proton-src='${imageURL}'/>
+                        </div>`;
+
+        const message: MessageState = {
+            localID: 'messageWithRemote',
+            data: {
+                ID: 'messageID',
+                Sender: {
+                    Name: 'normal address',
+                    Address: 'normal@proton.me',
+                    IsProton: 0,
+                },
+            } as Message,
+            messageDocument: { document: createDocument(content) },
+        };
+
+        const mailSettings = {
+            HideRemoteImages: SHOW_IMAGES.HIDE,
+            ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
+        } as MailSettings;
+
+        const { showRemoteImages, remoteImages, hasRemoteImages } = setup(message, mailSettings);
+
+        expect(showRemoteImages).toBeFalsy();
+        expect(hasRemoteImages).toBeTruthy();
+        expect(remoteImages[0].type).toEqual('remote');
+        expect(remoteImages[0].url).toEqual(imageURL);
+
+        // There is a wait 0 inside the loadRemoteImages helper
+        await wait(0);
+
+        expect(onLoadRemoteImagesProxy).not.toHaveBeenCalled();
+    });
 });

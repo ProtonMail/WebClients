@@ -89,6 +89,7 @@ const HeaderExpanded = ({
 }: Props) => {
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
+
     const isSendingMessage = message.draftFlags?.sending;
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
 
