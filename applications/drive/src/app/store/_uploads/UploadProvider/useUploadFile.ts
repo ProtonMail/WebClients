@@ -414,7 +414,7 @@ export default function useUploadFile() {
 
                 // If creation of revision failed, it is already processed by
                 // this handler. Do not throw it here again.
-                const createdFileRevision = await createdFileRevisionPromise.catch(() => undefined);
+                const createdFileRevision = await createdFileRevisionPromise?.catch(() => undefined);
                 try {
                     if (createdFileRevision) {
                         createdFileRevision.uploadFailed();
