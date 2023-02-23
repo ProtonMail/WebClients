@@ -97,11 +97,11 @@ const RecipientItemSingle = ({
                 >
                     <DropdownMenu>
                         <RecipientDropdownItem
-                            displaySenderImage={!!message?.data?.DisplaySenderImage}
+                            displaySenderImage={!!recipient?.DisplaySenderImage}
                             recipient={recipient}
                             label={label}
                             closeDropdown={close}
-                            bimiSelector={message?.data?.BimiSelector || undefined}
+                            bimiSelector={recipient?.BimiSelector || undefined}
                             isOutside={isOutside}
                         />
                         {customDropdownActions}
@@ -110,6 +110,7 @@ const RecipientItemSingle = ({
             }
             isOutside={isOutside}
             isRecipient={isRecipient}
+            recipientOrGroup={{ recipient }}
             customDataTestId={customDataTestId}
         />
     );

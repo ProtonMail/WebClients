@@ -34,7 +34,6 @@ export interface UnsubscribeMethods {
 export interface MessageMetadata {
     ID: string;
     Order: number;
-    DisplaySenderImage: number;
     ConversationID: string;
     Subject: string;
     Unread: number;
@@ -52,7 +51,6 @@ export interface MessageMetadata {
     Size: number;
     /** @deprecated use Flags instead */
     IsEncrypted?: number;
-    IsProton: number;
     ExpirationTime?: number;
     IsReplied: number;
     IsRepliedAll: number;
@@ -63,7 +61,6 @@ export interface MessageMetadata {
     NumAttachments: number;
     Flags: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
-    BimiSelector?: string | null;
 }
 
 export interface Message extends MessageMetadata {
