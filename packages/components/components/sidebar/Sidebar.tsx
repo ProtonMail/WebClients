@@ -3,9 +3,10 @@ import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { addUpsellPath, getUpsellAppRef } from '@proton/shared/lib/helpers/upsell';
 import percentage from '@proton/utils/percentage';
 
 import { classnames } from '../../helpers';
@@ -53,6 +54,8 @@ const Sidebar = ({
     const [subscription] = useSubscription();
     const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
     const spacePercentage = percentage(MaxSpace, UsedSpace);
+
+    const upsellRef = getUpsellAppRef(APP_NAME, SHARED_UPSELL_PATHS.STORAGE, app);
 
     const canAddStorage = useMemo(() => {
         if (!subscription) {
@@ -112,7 +115,7 @@ const Sidebar = ({
                             {canAddStorage ? (
                                 <Tooltip title={c('Storage').t`Upgrade storage`}>
                                     <SettingsLink
-                                        path="/upgrade"
+                                        path={addUpsellPath('/upgrade', upsellRef)}
                                         className="app-infos-storage text-no-decoration text-xs m0"
                                     >
                                         {storageText}

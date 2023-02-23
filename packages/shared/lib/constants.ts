@@ -499,6 +499,32 @@ export enum ORGANIZATION_FLAGS {
     PROTON = 128,
 }
 
+export enum APP_UPSELL_REF_PATH {
+    MAIL_UPSELL_REF_PATH = 'upsell_mail-banner-',
+    CALENDAR_UPSELL_REF_PATH = 'upsell_calendar-banner-',
+    DRIVE_UPSELL_REF_PATH = 'upsell_drive-banner-',
+    VPN_UPSELL_REF_PATH = 'upsell_vpn-banner-',
+}
+
+export enum MAIL_UPSELL_PATHS {
+    AUTO_REPLY = 'auto-reply',
+    DOMAIN_NAMES = 'domain-names',
+    CATCH_ALL = 'catchall',
+    BRIDGE = 'bridge',
+    PM_ME = 'pm_me',
+}
+
+export enum CALENDAR_UPSELL_PATHS {
+    MULTI_CAL = 'multi_cal',
+    SHARE_CAL = 'share_cal',
+}
+
+export enum SHARED_UPSELL_PATHS {
+    MULTI_USER = 'multi_user',
+    CONTACT_GROUP = 'contact_groups',
+    STORAGE = 'storage',
+}
+
 export const LOYAL_BONUS_STORAGE = 5 * GIGA;
 export const LOYAL_BONUS_CONNECTION = 2;
 
