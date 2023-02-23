@@ -116,14 +116,14 @@ describe('Composer scheduled messages', () => {
         });
 
         it.each`
-            display             | date
-            ${'Tomorrow'}       | ${new Date('2023-01-01T07:59:00')}
-            ${'Tomorrow'}       | ${new Date('2023-01-01T08:00:00')}
-            ${'Tomorrow'}       | ${new Date('2023-01-01T10:00:00')}
-            ${'In the morning'} | ${new Date('2023-01-01T01:00:00')}
-            ${'In the morning'} | ${new Date('2023-01-01T03:00:00')}
-            ${'In the morning'} | ${new Date('2023-01-01T07:57:00')}
-        `('Should display "$display" on "$date"', async ({ display, date }) => {
+            expected            | date
+            ${'Tomorrow'}       | ${new Date(2023, 0, 1, 7, 59, 0)}
+            ${'Tomorrow'}       | ${new Date(2023, 0, 1, 8, 0, 0)}
+            ${'Tomorrow'}       | ${new Date(2023, 0, 1, 10, 0, 0)}
+            ${'In the morning'} | ${new Date(2023, 0, 1, 0, 0, 1)}
+            ${'In the morning'} | ${new Date(2023, 0, 1, 2, 0, 0)}
+            ${'In the morning'} | ${new Date(2023, 0, 1, 7, 30, 0)}
+        `('Should display "$expected" on "$date"', async ({ expected, date }) => {
             jest.useFakeTimers('modern').setSystemTime(date.getTime());
 
             setupMessage('Subject', [user as Recipient]);
@@ -134,7 +134,7 @@ describe('Composer scheduled messages', () => {
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
 
-            expect(screen.queryByTestId('composer:schedule-send:tomorrow')).toHaveTextContent(display);
+            expect(screen.queryByTestId('composer:schedule-send:tomorrow')).toHaveTextContent(expected);
         });
 
         it('Should contain "as scheduled" field when editing', async () => {
