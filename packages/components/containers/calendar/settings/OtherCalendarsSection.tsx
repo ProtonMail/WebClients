@@ -6,6 +6,8 @@ import { Button, ButtonLike, Card } from '@proton/atoms';
 import { FeatureCode, SharedCalendarsSection } from '@proton/components/containers';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
+import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -120,7 +122,16 @@ const OtherCalendarsSection = ({
         <Card rounded className="mb1">
             <div className="flex flex-nowrap flex-align-items-center">
                 <p className="flex-item-fluid mt0 mb0 pr2">{calendarsLimitReachedText}</p>
-                <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">
+                <ButtonLike
+                    as={SettingsLink}
+                    path={addUpsellPath(
+                        '/upgrade',
+                        `${APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH}${CALENDAR_UPSELL_PATHS.MULTI_CAL}`
+                    )}
+                    color="norm"
+                    shape="solid"
+                    size="small"
+                >
                     {c('Action').t`Upgrade`}
                 </ButtonLike>
             </div>

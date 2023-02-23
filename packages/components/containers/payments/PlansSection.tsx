@@ -24,6 +24,7 @@ import {
     useApi,
     useConfig,
     useFeature,
+    useLoad,
     useLoading,
     useOrganization,
     usePlans,
@@ -74,6 +75,8 @@ const PlansSection = () => {
 
     const [cycle, setCycle] = useState(DEFAULT_CYCLE);
     const { CouponCode } = subscription;
+
+    useLoad();
 
     const handleModal = async (newPlanIDs: PlanIDs) => {
         if (!hasPlanIDs(newPlanIDs)) {

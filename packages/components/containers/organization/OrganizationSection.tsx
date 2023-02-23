@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME, MAIL_APP_NAME, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import {
     getHasB2BPlan,
     hasFree,
@@ -11,22 +11,25 @@ import {
     hasNewVisionary,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
+import { getUpsellAppRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience, Organization } from '@proton/shared/lib/interfaces';
 
 import { Field, Label, Loader, PrimaryButton, Row, SettingsLink } from '../../components';
-import { useModals, useNotifications, useSubscription } from '../../hooks';
+import { useConfig, useModals, useNotifications, useSubscription } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import AuthModal from '../password/AuthModal';
 import OrganizationNameModal from './OrganizationNameModal';
 import SetupOrganizationModal from './SetupOrganizationModal';
 
 interface Props {
+    app: APP_NAMES;
     organization?: Organization;
     onSetupOrganization?: () => void;
 }
 
-const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
+const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) => {
+    const { APP_NAME } = useConfig();
     const { createModal } = useModals();
     const [subscription, loadingSubscription] = useSubscription();
 
@@ -49,8 +52,11 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
                         .t`${BRAND_NAME} lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.`}
                 </SettingsParagraph>
 
-                <UpgradeBanner free={hasFree(subscription)} audience={Audience.B2B}>{c('new_plans: upgrade')
-                    .t`Included with all ${BRAND_NAME} for Business plans.`}</UpgradeBanner>
+                <UpgradeBanner
+                    free={hasFree(subscription)}
+                    audience={Audience.B2B}
+                    upsellPath={getUpsellAppRef(APP_NAME, SHARED_UPSELL_PATHS.MULTI_USER, app)}
+                >{c('new_plans: upgrade').t`Included with all ${BRAND_NAME} for Business plans.`}</UpgradeBanner>
             </SettingsSectionWide>
         );
     }
