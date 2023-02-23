@@ -5,12 +5,12 @@ import {
     Table,
     TableBody,
     TableCellBusy,
-    classnames,
     useActiveBreakpoint,
     useElementRect,
     useRightToLeft,
 } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import clsx from '@proton/utils/clsx';
 
 import { FileBrowserProps } from '../FileBrowser';
 import { BrowserItemId, DragMoveControls, FileBrowserBaseItem } from '../interface';
@@ -91,10 +91,7 @@ const TableBodyRenderer = ({
     return (
         <Table
             {...props}
-            className={classnames([
-                'file-browser-table simple-table--is-hoverable border-none border-collapse',
-                className,
-            ])}
+            className={clsx(['file-browser-table simple-table--is-hoverable border-none border-collapse', className])}
         >
             <TableBody>{children}</TableBody>
         </Table>
