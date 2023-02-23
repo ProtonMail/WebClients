@@ -3,7 +3,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Tooltip, classnames } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import {
     calculateProgress,
@@ -183,7 +184,7 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
                     aria-expanded={!minimized}
                     aria-controls="transfer-manager"
                 >
-                    <Icon className={classnames(['mauto', minimized && 'rotateX-180'])} name="low-dash" />
+                    <Icon className={clsx(['mauto', minimized && 'rotateX-180'])} name="low-dash" />
                     <span className="sr-only">{minMaxTitle}</span>
                 </Button>
             </Tooltip>

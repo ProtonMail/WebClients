@@ -1,7 +1,8 @@
 import * as React from 'react';
 
-import { FileIcon, FileNameDisplay, Loader, classnames } from '@proton/components';
+import { FileIcon, FileNameDisplay, Loader } from '@proton/components';
 import humanSize, { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
+import clsx from '@proton/utils/clsx';
 
 import {
     getProgressBarStatus,
@@ -45,7 +46,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
 
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'transfers-manager-list-item pb1 pt1 pl1 pr1',
                 isCanceled && 'transfers-manager-list-item--canceled',
                 className,
@@ -56,7 +57,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
                 <span className="transfers-manager-list-item-icon flex flex-item-noshrink mr0-5">
                     {isInitializing ? <Loader size="small" /> : <FileIcon mimeType={transfer.meta.mimeType} />}
                 </span>
-                <span className={classnames(['flex', isNameUnresolved && 'color-weak'])}>
+                <span className={clsx(['flex', isNameUnresolved && 'color-weak'])}>
                     <FileNameDisplay text={transfer.meta.filename} />
                 </span>
             </div>

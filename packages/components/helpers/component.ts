@@ -10,6 +10,8 @@ export const concatStringProp = (strings: (string | boolean | null | undefined)[
 };
 
 /**
+ * @deprecated please use clsx from @proton/utils/clsx
+ *
  * Join CSS classes into string for className prop
  */
 export const classnames = (classNames: (string | boolean | null | undefined)[] = []) => {

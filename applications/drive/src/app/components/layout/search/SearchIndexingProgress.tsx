@@ -2,8 +2,9 @@ import * as React from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Progress, classnames, useUser } from '@proton/components';
+import { Progress, useUser } from '@proton/components';
 import { getESCurrentProgress, getESTotal } from '@proton/encrypted-search';
+import clsx from '@proton/utils/clsx';
 
 import { useSearchLibrary } from '../../../store';
 import useSearchState from '../../../store/_search/useSearchState';
@@ -52,14 +53,14 @@ export const SearchIndexingProgress = () => {
                 <Progress
                     value={progressValue || 0}
                     aria-describedby="timeRemaining"
-                    className={classnames(['mt0-5 mb0-5 flex-item-fluid'])}
+                    className={clsx(['mt0-5 mb0-5 flex-item-fluid'])}
                 />
             </div>
             <span
                 id="timeRemaining"
                 aria-live="polite"
                 aria-atomic="true"
-                className={classnames([
+                className={clsx([
                     'color-weak relative advanced-search-time-remaining',
                     isEstimating ? 'visibility-hidden' : undefined,
                 ])}
