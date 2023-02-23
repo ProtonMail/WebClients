@@ -36,7 +36,6 @@ import {
     AddressesAutocompleteTwo,
     AddressesInput,
     AddressesInputItem,
-    Badge,
     Icon,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -117,6 +116,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
         if (!rest.open) {
             setRecipients([]);
             setInvalidRecipients({});
+            setPermissions(MEMBER_PERMISSIONS.FULL_VIEW);
         }
     }, [rest.open]);
 
@@ -438,12 +438,10 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                         label: (
                                             <span className="flex-item-fluid">
                                                 {c('Calendar sharing access option label')
-                                                    .t`Edit (view, create and edit event details)`}{' '}
-                                                <Badge type="info">{c('Badge').t`Coming soon`}</Badge>
+                                                    .t`Edit (view, create and edit event details)`}
                                             </span>
                                         ),
                                         value: MEMBER_PERMISSIONS.EDIT,
-                                        disabled: true,
                                     },
                                 ]}
                                 onChange={(value) => setPermissions(value)}
