@@ -1,54 +1,50 @@
-import { ChangeEvent, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useMailSettings } from '@proton/components/hooks';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
-import { MailSettings } from '@proton/shared/lib/interfaces';
 
-import { useLinkHandler } from '../../../hooks/useLinkHandler';
-import { PrimaryButton } from '../../button';
-import Field from '../../container/Field';
-import Row from '../../container/Row';
-import { Form } from '../../form';
-import Label from '../../label/Label';
-import Href from '../../link/Href';
-import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
-import { Select } from '../../select';
-import { InputTwo } from '../../v2';
+import { useLinkHandler } from '../../../../hooks/useLinkHandler';
+import { PrimaryButton } from '../../../button';
+import Field from '../../../container/Field';
+import Row from '../../../container/Row';
+import { Form } from '../../../form';
+import Label from '../../../label/Label';
+import Href from '../../../link/Href';
+import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../modalTwo';
+import { Option } from '../../../option';
+import { SelectTwo } from '../../../selectTwo';
+import { InputTwo } from '../../../v2';
+import { InsertLinkSelectionType } from './InsertLinkModal';
 
 export interface InsertLinkModalProps {
-    selectionRangeFragment: DocumentFragment;
-    cursorLinkElement: HTMLLinkElement | undefined;
-    mailSettings?: MailSettings;
-    onSubmit: (url: string, altAttribute: string | undefined, textToDisplay?: string) => void;
     modalStateProps: ModalStateProps;
+    onSubmit: (url: string, altAttribute: string | undefined, textToDisplay?: string) => void;
+    selectionType: InsertLinkSelectionType;
+    title: string;
+    url?: string;
 }
 
 const InsertLinkModalComponent = ({
-    selectionRangeFragment,
-    cursorLinkElement,
-    onSubmit,
-    mailSettings,
     modalStateProps,
+    onSubmit,
+    selectionType,
+    title,
+    url: initialUrl,
 }: InsertLinkModalProps) => {
+    const [mailSettings] = useMailSettings();
     const modalContentRef = useRef<HTMLDivElement>(null);
 
-    const { hasImageInSelection, hasOnlyImageInSelection, cursorLinkHrefAttr, cursorLinkTitleAttr } = useMemo(() => {
-        const hasImageInSelection = selectionRangeFragment.querySelector('img') !== null;
-        const hasOnlyImageInSelection = selectionRangeFragment.textContent === '' && hasImageInSelection;
-        const cursorLinkHrefAttr = cursorLinkElement?.getAttribute('href') || undefined;
-        const cursorLinkTitleAttr = cursorLinkElement?.getAttribute('title') || undefined;
+    const [type, setType] = useState(linkToType(initialUrl) || LINK_TYPES.WEB);
+    const [url, setUrl] = useState(initialUrl || '');
+    const [label, setLabel] = useState<string>(title);
+    const hasImageInSelection = ['text-with-img', 'img'].includes(selectionType);
 
-        return { hasImageInSelection, hasOnlyImageInSelection, cursorLinkHrefAttr, cursorLinkTitleAttr };
-    }, []);
-
-    const [type, setType] = useState(linkToType(cursorLinkHrefAttr) || LINK_TYPES.WEB);
-    const [url, setUrl] = useState(cursorLinkHrefAttr || '');
-    const [label, setLabel] = useState<string>(
-        selectionRangeFragment.textContent || cursorLinkElement?.textContent || cursorLinkTitleAttr || ''
-    );
+    // if image only url is required
+    // if text label and url are required
     const canSubmit = hasImageInSelection ? !!url : !!(label && url);
 
     const { modal: linkModal } = useLinkHandler(modalContentRef, mailSettings);
@@ -74,10 +70,6 @@ const InsertLinkModalComponent = ({
         },
     };
 
-    const handleTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
-        setType(event.target.value as LINK_TYPES);
-    };
-
     const handleUrlChange = (event: ChangeEvent<HTMLInputElement>) => {
         setUrl(event.target.value);
         if (url === label && !hasImageInSelection) {
@@ -93,7 +85,7 @@ const InsertLinkModalComponent = ({
     return (
         <>
             <ModalTwo as={Form} onSubmit={handleSubmit} size="large" {...modalStateProps}>
-                <ModalTwoHeader title={cursorLinkHrefAttr ? c('Info').t`Edit link` : c('Info').t`Insert link`} />
+                <ModalTwoHeader title={url ? c('Info').t`Edit link` : c('Info').t`Insert link`} />
                 <ModalTwoContent>
                     <div ref={modalContentRef}>
                         <div className="mb1">{c('Info')
@@ -103,13 +95,17 @@ const InsertLinkModalComponent = ({
                                 {c('Info').t`Link type`}
                             </Label>
                             <Field>
-                                <Select
+                                <SelectTwo
                                     id="link-modal-type"
                                     value={type}
-                                    onChange={handleTypeChange}
-                                    options={typesOptions}
-                                    required
-                                />
+                                    onChange={({ value }) => {
+                                        setType(value);
+                                    }}
+                                >
+                                    {typesOptions.map((option) => (
+                                        <Option key={option.value} value={option.value} title={option.text} />
+                                    ))}
+                                </SelectTwo>
                             </Field>
                         </Row>
                         <Row>
@@ -128,10 +124,10 @@ const InsertLinkModalComponent = ({
                                 />
                             </Field>
                         </Row>
-                        {(!hasImageInSelection || hasOnlyImageInSelection) && (
+                        {selectionType !== 'text-with-img' && (
                             <Row>
                                 <Label htmlFor="link-modal-label" className="flex flex-column">
-                                    {hasOnlyImageInSelection
+                                    {selectionType === 'img'
                                         ? c('Info').t`Image description`
                                         : c('Info').t`Text to display`}
                                 </Label>
@@ -143,7 +139,7 @@ const InsertLinkModalComponent = ({
                                             setLabel(event.target.value)
                                         }
                                         placeholder={c('Placeholder').t`Text`}
-                                        required={!hasOnlyImageInSelection}
+                                        required={selectionType !== 'img'}
                                         title={c('Info').t`Please fill out this field.`}
                                     />
                                 </Field>
