@@ -33,7 +33,12 @@ import ShareLinkModal from '@proton/components/containers/calendar/shareURL/Shar
 import ShareLinkSuccessModal from '@proton/components/containers/calendar/shareURL/ShareLinkSuccessModal';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/shared/lib/api/calendars';
-import { getIsCalendarDisabled, getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
+import {
+    getIsCalendarDisabled,
+    getIsCalendarWritable,
+    getIsOwnedCalendar,
+    getIsPersonalCalendar,
+} from '@proton/shared/lib/calendar/calendar';
 import {
     CALENDAR_SETTINGS_SECTION_ID,
     COLORS,
@@ -140,6 +145,7 @@ const CalendarSidebarListItems = ({
         const isPersonalCalendar = getIsPersonalCalendar(calendar);
         const isCalendarDisabled = getIsCalendarDisabled(calendar);
         const isOwnedCalendar = getIsOwnedCalendar(calendar);
+        const isCalendarWritable = getIsCalendarWritable(calendar);
 
         const left = (
             <Checkbox
@@ -240,7 +246,7 @@ const CalendarSidebarListItems = ({
                                                     {c('Action').t`Share`}
                                                 </DropdownMenuLink>
                                             ))}
-                                        {isPersonalCalendar && isOwnedCalendar && !isCalendarDisabled && (
+                                        {isCalendarWritable && !isCalendarDisabled && (
                                             <DropdownMenuButton
                                                 className="text-left"
                                                 onClick={() => {
@@ -475,7 +481,7 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                         onExitImportModal?.();
                         setImportModalCalendar(null);
                     }}
-                    defaultCalendar={importModalCalendar}
+                    initialCalendar={importModalCalendar}
                     calendars={calendars}
                 />
             )}

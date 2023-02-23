@@ -36,7 +36,7 @@ import ImportingModalContent from './ImportingModalContent';
 import PartialImportModalContent from './PartialImportModalContent';
 
 interface Props {
-    defaultCalendar: VisualCalendar;
+    initialCalendar: VisualCalendar;
     calendars: VisualCalendar[];
     onClose?: () => void;
     onExit?: () => void;
@@ -55,14 +55,14 @@ const getInitialState = (calendar: VisualCalendar): ImportCalendarModel => ({
     loading: false,
 });
 
-const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClose, onExit }: Props) => {
+const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClose, onExit }: Props) => {
     const [addresses] = useAddresses();
     const api = useApi();
     const { APP_NAME } = useConfig();
     const { call: coreCall } = useEventManager();
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const { call: calendarCall } = useCalendarModelEventManager();
-    const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
+    const [model, setModel] = useState<ImportCalendarModel>(getInitialState(initialCalendar));
     const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
 
     const isCalendar = APP_NAME === APPS.PROTONCALENDAR;

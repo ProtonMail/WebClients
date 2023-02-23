@@ -9,19 +9,25 @@ import {
     AppLink,
     Badge,
     CalendarInviteButtons,
+    FeatureCode,
     Icon,
     Loader,
     ReloadSpinner,
     Tooltip,
+    useFeature,
     useLoading,
     useReadCalendarBootstrap,
 } from '@proton/components';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
-import { getIsCalendarDisabled, getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
+import {
+    getIsCalendarDisabled,
+    getIsCalendarWritable,
+    getIsOwnedCalendar,
+    getIsSubscribedCalendar,
+} from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getLinkToCalendarEvent, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -34,6 +40,7 @@ import {
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
+import { getCanDeleteEvent, getCanDuplicateEvent, getCanEditEvent } from '../../helpers/event';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from './PopoverContainer';
@@ -84,6 +91,7 @@ const EventPopover = ({
 }: Props) => {
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
 
+    const notificationsRevampAvailable = !!useFeature(FeatureCode.CalendarNotificationsRevampAvailable).feature?.Value;
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
     const readCalendarBootstrap = useReadCalendarBootstrap();
@@ -91,6 +99,10 @@ const EventPopover = ({
     const targetEventData = targetEvent?.data || {};
     const { eventReadResult, eventData, calendarData } = targetEventData;
     const calendarBootstrap = readCalendarBootstrap(calendarData.ID);
+    const isCalendarDisabled = getIsCalendarDisabled(calendarData);
+    const isSubscribedCalendar = getIsSubscribedCalendar(calendarData);
+    const isOwnedCalendar = getIsOwnedCalendar(calendarData);
+    const isCalendarWritable = getIsCalendarWritable(calendarData);
 
     const recurrenceDate = toLocalDate(fromUTCDate(start));
     const recurrenceTimestamp = getUnixTime(recurrenceDate);
@@ -102,13 +114,16 @@ const EventPopover = ({
             recurrenceID: recurrenceTimestamp,
         });
 
-    const isCalendarDisabled = getIsCalendarDisabled(calendarData);
-    const isSubscribedCalendar = getIsSubscribedCalendar(calendarData);
-    const isCalendarWritable = getIsCalendarWritable(calendarData);
-
     const model = useReadEvent(eventReadResult?.result, tzid, calendarBootstrap?.CalendarSettings);
-    const { eventReadError, isEventReadLoading, eventTitleSafe, isCancelled, userPartstat, isSelfAddressActive } =
-        getEventInformation(targetEvent, model);
+    const {
+        eventReadError,
+        isEventReadLoading,
+        eventTitleSafe,
+        isInvitation,
+        isCancelled,
+        userPartstat,
+        isSelfAddressActive,
+    } = getEventInformation(targetEvent, model);
 
     const handleDelete = () => {
         const sendCancellationNotice =
@@ -168,7 +183,7 @@ const EventPopover = ({
     const reloadText = c('Reload event button tooltip').t`Reload event`;
     const viewText = c('View event button tooltip').t`Open in a new tab`;
 
-    const editButton = isCalendarWritable && !isCalendarDisabled && (
+    const editButton = getCanEditEvent({ isCalendarDisabled, isSubscribedCalendar, notificationsRevampAvailable }) && (
         <Tooltip title={editText}>
             <ButtonLike
                 data-test-id="event-popover:edit"
@@ -182,7 +197,7 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const deleteButton = isCalendarWritable && (
+    const deleteButton = getCanDeleteEvent({ isOwnedCalendar, isCalendarWritable, isInvitation }) && (
         <Tooltip title={deleteText}>
             <ButtonLike
                 data-test-id="event-popover:delete"
@@ -196,20 +211,26 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const duplicateButton = !isSubscribedCalendar && !model.isAttendee && !!onDuplicate && (
-        <Tooltip title={duplicateText}>
-            <ButtonLike
-                data-test-id="event-popover:duplicate"
-                shape="ghost"
-                onClick={onDuplicate}
-                disabled={loadingDelete}
-                icon
-                size="small"
-            >
-                <Icon name="squares" alt={duplicateText} />
-            </ButtonLike>
-        </Tooltip>
-    );
+    const duplicateButton = onDuplicate &&
+        getCanDuplicateEvent({
+            isSubscribedCalendar,
+            isOwnedCalendar,
+            isOrganizer: model.isOrganizer,
+            isInvitation,
+        }) && (
+            <Tooltip title={duplicateText}>
+                <ButtonLike
+                    data-test-id="event-popover:duplicate"
+                    shape="ghost"
+                    onClick={onDuplicate}
+                    disabled={loadingDelete}
+                    icon
+                    size="small"
+                >
+                    <Icon name="squares" alt={duplicateText} />
+                </ButtonLike>
+            </Tooltip>
+        );
 
     const reloadButton = (
         <Tooltip title={reloadText}>
@@ -343,7 +364,7 @@ const EventPopover = ({
                     popoverEventContentRef={popoverEventContentRef}
                 />
             </div>
-            {isCalendarWritable && model.isAttendee && !isCancelled && (
+            {isOwnedCalendar && model.isAttendee && !isCancelled && (
                 <PopoverFooter
                     className="flex-align-items-center flex-justify-space-between on-mobile-flex-justify-start flex-gap-1"
                     key={targetEvent.id}

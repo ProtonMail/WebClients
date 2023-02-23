@@ -22,6 +22,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 
+import { getCanChangeCalendarOfEvent } from '../../helpers/event';
 import createHandlers from './eventForm/createPropFactory';
 import { getOrganizerAndSelfAddressModel } from './eventForm/state';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
@@ -43,8 +44,10 @@ export interface EventFormProps {
     canEditSharedEventData?: boolean;
     isMinimal?: boolean;
     isCreateEvent: boolean;
+    isInvitation: boolean;
     setParticipantError?: (value: boolean) => void;
-    isWritableCalendar?: boolean;
+    isOwnedCalendar?: boolean;
+    isCalendarWritable?: boolean;
     isDuplicating?: boolean;
     isDrawerApp?: boolean;
 }
@@ -61,8 +64,10 @@ const EventForm = ({
     isMinimal,
     canEditSharedEventData = true,
     isCreateEvent,
+    isInvitation,
     setParticipantError,
-    isWritableCalendar = true,
+    isOwnedCalendar = true,
+    isCalendarWritable = true,
     isDuplicating = false,
     isDrawerApp,
     ...props
@@ -76,6 +81,7 @@ const EventForm = ({
         start,
         isAllDay,
         isAttendee,
+        isOrganizer,
         fullDayNotifications,
         defaultFullDayNotification,
         partDayNotifications,
@@ -86,7 +92,15 @@ const EventForm = ({
 
     const isImportedEvent = uid && !getIsProtonUID(uid);
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
-    const canChangeCalendar = isAttendee ? !isSingleEdit : !isOrganizerOfInvitation && isWritableCalendar;
+    const canChangeCalendar = getCanChangeCalendarOfEvent({
+        isCreateEvent,
+        isOwnedCalendar,
+        isCalendarWritable,
+        isSingleEdit,
+        isInvitation,
+        isAttendee,
+        isOrganizer,
+    });
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications = canAddNotifications || notifications.length;
@@ -286,7 +300,7 @@ const EventForm = ({
         setModel({
             ...model,
             attendees: value,
-            isOrganizer: !!value.length,
+            isOrganizer: isOrganizerOfInvitation ? true : !!value.length,
             organizer: isOrganizerOfInvitation ? model.organizer : newOrganizer,
             selfAddress: isOrganizerOfInvitation ? model.selfAddress : newSelfAddress,
         });
@@ -298,6 +312,7 @@ const EventForm = ({
                 placeholder={c('Placeholder').t`Add participants`}
                 id={PARTICIPANTS_INPUT_ID}
                 value={model.attendees}
+                isOwnedCalendar={model.calendar.isOwned}
                 onChange={handleChangeAttendees}
                 organizer={model.organizer}
                 addresses={addresses}
