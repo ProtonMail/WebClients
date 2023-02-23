@@ -48,4 +48,8 @@ export interface Recipient {
     Address: string;
     ContactID?: string;
     Group?: string;
+    BimiSelector?: string | null;
+    DisplaySenderImage?: number;
+    IsProton?: number;
+    IsSimpleLogin?: number;
 }

@@ -4,7 +4,6 @@ import { AttachmentInfo } from '@proton/shared/lib/interfaces/mail/Message';
 
 export interface Conversation {
     ID: string;
-    DisplaySenderImage?: number;
     Subject?: string;
     Size?: number;
     Time?: number;
@@ -21,8 +20,6 @@ export interface Conversation {
     ContextNumAttachments?: number;
     ExpirationTime?: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
-    BimiSelector?: string | null;
-    IsProton?: number;
 }
 
 export interface ConversationLabel {

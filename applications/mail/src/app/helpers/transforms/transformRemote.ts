@@ -3,9 +3,8 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowRemote } from '@proton/shared/lib/mail/images';
-import { isDMARCValidationFailure, isDraft } from '@proton/shared/lib/mail/messages';
+import { isDraft } from '@proton/shared/lib/mail/messages';
 
-import { WHITE_LISTED_ADDRESSES } from '../../constants';
 import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
 import { querySelectorAll } from '../message/messageContent';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
@@ -60,10 +59,7 @@ export const transformRemote = (
     onLoadFakeImagesProxy?: (imagesToLoad: MessageRemoteImage[]) => void
 ) => {
     const showRemoteImages =
-        message.messageImages?.showRemoteImages ||
-        hasShowRemote(mailSettings) ||
-        (WHITE_LISTED_ADDRESSES.includes(message.data?.Sender?.Address || '') &&
-            !isDMARCValidationFailure(message.data));
+        message.messageImages?.showRemoteImages || hasShowRemote(mailSettings) || !!message.data?.Sender.IsProton;
 
     const draft = isDraft(message.data);
 
