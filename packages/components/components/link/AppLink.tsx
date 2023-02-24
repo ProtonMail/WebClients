@@ -61,6 +61,7 @@ const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkP
             );
         }
         const href = getAppHrefBundle(to, targetApp);
+
         return (
             <a ref={ref} target="_self" {...rest} href={href}>
                 {children}
