@@ -17,7 +17,11 @@ export const expirePending = (
 
         if (messageState && messageState.data) {
             previousExpiration[localID] = messageState.data.ExpirationTime;
-            messageState.data.ExpirationTime = expirationTime || undefined;
+            messageState.data.ExpirationTime = expirationTime || 0;
+
+            if (messageState.draftFlags) {
+                messageState.draftFlags.expiresIn = undefined;
+            }
         }
     });
 };
