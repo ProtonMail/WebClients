@@ -123,7 +123,7 @@ const HeaderMoreDropdown = ({
     const [messagePermanentDeleteModalProps, setMessagePermanentDeleteModalOpen] = useModalState();
     const canExpire = canSetExpiration(feature?.Value, user);
     const isStarred = IsMessageStarred(message.data || ({} as Element));
-
+    const messageID = message.data?.ID || '';
     const staringText = isStarred ? c('Action').t`Unstar` : c('Action').t`Star`;
     const willExpire = !!message.data?.ExpirationTime;
 
@@ -170,7 +170,7 @@ const HeaderMoreDropdown = ({
         const expirationTime = getExpirationTime(date);
         void dispatch(
             expireMessages({
-                IDs: [message.localID],
+                IDs: [messageID],
                 conversationID: message.data?.ConversationID,
                 expirationTime,
                 api,
@@ -185,13 +185,21 @@ const HeaderMoreDropdown = ({
 
     const handleCustomExpiration = (expirationDate: Date) => {
         const expirationTime = getExpirationTime(expirationDate);
-        void dispatch(expireMessages({ IDs: [message.localID], expirationTime, api, call }));
+        void dispatch(
+            expireMessages({
+                IDs: [messageID],
+                conversationID: message.data?.ConversationID,
+                expirationTime,
+                api,
+                call,
+            })
+        );
         openCustomExpirationModal(false);
         createNotification({ text: c('Success').t`Self-destruction set` });
     };
 
     const messageLabelIDs = message.data?.LabelIDs || [];
-    const selectedIDs = [message.data?.ID || ''];
+    const selectedIDs = [messageID];
     const isSpam = messageLabelIDs.includes(SPAM);
     const isInTrash = messageLabelIDs.includes(TRASH);
     const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
