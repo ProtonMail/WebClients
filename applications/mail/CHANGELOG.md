@@ -1,3 +1,19 @@
+## Release 5.0.18.0 — March 8, 2023
+
+### New features
+
+-   Emails from Proton will be marked with an authenticity badge that will replace the starring system
+-   You can now schedule your emails to be sent later with pre-defined options for all Proton plans
+
+### Improvements
+
+-   Hide CC/BCC button from the composer when the fields are shown
+
+### Bug fixes
+
+-   Fix opening a message from a conversation thread when previous messages were deleted
+-   Fix forward of emails with encrypted attachments
+
 ## Release 5.0.17.0 — February 15th, 2023
 
 ### Improvements
