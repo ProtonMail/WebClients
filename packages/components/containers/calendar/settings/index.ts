@@ -1,6 +1,6 @@
 export { default as CalendarImportSection } from './CalendarImportSection';
 export { default as CalendarExportSection } from './CalendarExportSection';
-export { default as PersonalCalendarsSection } from './MyCalendarsSection';
+export { default as MyCalendarsSection } from './MyCalendarsSection';
 export { default as OtherCalendarsSection } from './OtherCalendarsSection';
 export { default as CalendarTimeSection } from './CalendarTimeSection';
 export { default as SecondaryTimezoneSection } from './SecondaryTimezoneSection';
