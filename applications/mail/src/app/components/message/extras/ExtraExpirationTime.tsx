@@ -32,6 +32,8 @@ const ExtraExpirationTime = ({ message }: Props) => {
     const { isExpiration, delayMessage } = useExpiration(message);
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const canExpire = canSetExpiration(feature?.Value, user);
+    const messageID = message.data?.ID || '';
+    const conversationID = message.data?.ConversationID;
 
     if (!isExpiration) {
         return null;
@@ -43,8 +45,8 @@ const ExtraExpirationTime = ({ message }: Props) => {
         }
         void dispatch(
             expireMessages({
-                IDs: [message.localID],
-                conversationID: message.data?.ConversationID,
+                IDs: [messageID],
+                conversationID,
                 expirationTime: null,
                 api,
                 call,
