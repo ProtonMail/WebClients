@@ -4,6 +4,7 @@ import { getLocalID, getMessage } from '../helpers/messagesReducer';
 import { MessagesState } from '../messagesTypes';
 
 const previousExpiration: Record<string, number | undefined> = {};
+const previousDraftFlagsExpiresIn: Record<string, number | undefined> = {};
 
 export const expirePending = (
     state: Draft<MessagesState>,
@@ -19,7 +20,8 @@ export const expirePending = (
             previousExpiration[localID] = messageState.data.ExpirationTime;
             messageState.data.ExpirationTime = expirationTime || 0;
 
-            if (messageState.draftFlags) {
+            if (messageState.draftFlags?.expiresIn) {
+                previousDraftFlagsExpiresIn[localID] = messageState.draftFlags.expiresIn;
                 messageState.draftFlags.expiresIn = undefined;
             }
         }
@@ -37,6 +39,7 @@ export const expireFullfilled = (
 
         if (localID) {
             delete previousExpiration[localID];
+            delete previousDraftFlagsExpiresIn[localID];
         }
     });
 };
@@ -54,6 +57,7 @@ export const expireRejected = (
         if (messageState && messageState.data) {
             messageState.data.ExpirationTime = previousExpiration[localID];
             delete previousExpiration[localID];
+            delete previousDraftFlagsExpiresIn[localID];
         }
     });
 };
