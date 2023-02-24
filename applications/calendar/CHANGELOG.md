@@ -1,3 +1,13 @@
+## Release: 5.0.9 — March 8, 2023
+
+### New features
+
+-   Lift restrictions for the number of calendars you can create by category. Create up to 3 calendars as a free user and 25 if you have a Mail subscription
+
+### Fixes
+
+-   Proactively fix sequence properties outside the valid value range (established on the RFC 5545 standard) when importing and exporting events
+
 ## Release: 5.0.8 — February 15, 2023
 
 ### Improvements
