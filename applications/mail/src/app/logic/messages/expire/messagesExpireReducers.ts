@@ -57,7 +57,11 @@ export const expireRejected = (
         if (messageState && messageState.data) {
             messageState.data.ExpirationTime = previousExpiration[localID];
             delete previousExpiration[localID];
-            delete previousDraftFlagsExpiresIn[localID];
+
+            if (messageState.draftFlags) {
+                messageState.draftFlags.expiresIn = previousDraftFlagsExpiresIn[localID];
+                delete previousDraftFlagsExpiresIn[localID];
+            }
         }
     });
 };
