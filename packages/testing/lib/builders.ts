@@ -4,7 +4,12 @@ import { CALENDAR_DISPLAY, CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { Address, AddressKey } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import {
+    CALENDAR_SUBSCRIPTION_STATUS,
+    CalendarEvent,
+    VcalVeventComponent,
+    VisualCalendar
+} from '@proton/shared/lib/interfaces/calendar';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export const messageBuilder = build<Pick<Message, 'ID' | 'ParsedHeaders'>>('Message', {
@@ -395,9 +400,11 @@ export const userBuilder = build('User', {
         DisplayName: 'Bad Boy',
     },
 });
-const generateSimpleCalendar = (
+
+export const generateSimpleCalendar = (
     i: number,
     {
+        name = `name-${i}`,
         calendarEmail = 'calendarEmail',
         ownerEmail = 'calendarEmail',
         permissions = MEMBER_PERMISSIONS.OWNS,
@@ -406,6 +413,7 @@ const generateSimpleCalendar = (
         display = CALENDAR_DISPLAY.VISIBLE,
         color = '#F00',
     }: {
+        name?: string;
         calendarEmail?: string;
         ownerEmail?: string;
         permissions?: number;
@@ -414,9 +422,9 @@ const generateSimpleCalendar = (
         display?: CALENDAR_DISPLAY;
         color?: string;
     }
-) => ({
+): VisualCalendar => ({
     ID: `id-${i}`,
-    Name: `name-${i}`,
+    Name: name,
     Description: `description-${i}`,
     Type: type,
     Flags: flags,
@@ -440,11 +448,33 @@ const generateSimpleCalendar = (
         },
     ],
 });
+
+export const generateSubscribedCalendar = ({ calendar, status = CALENDAR_SUBSCRIPTION_STATUS.OK, url = '#' }: {
+    calendar: VisualCalendar;
+    status?: CALENDAR_SUBSCRIPTION_STATUS;
+    url?: string;
+}) => {
+    const SubscriptionParameters = {
+        CalendarID: calendar.ID,
+        CreateTime: 0,
+        LastUpdateTime: Math.floor(+Date.now() / 1000),
+        Status: status,
+        URL: url,
+    };
+
+    return {
+        ...calendar,
+        Type: CALENDAR_TYPE.SUBSCRIPTION,
+        SubscriptionParameters
+    };
+};
+
 export const generateOwnedPersonalCalendars = (n: number) => {
     return Array(n)
         .fill(1)
         .map((val, i) => generateSimpleCalendar(i, {}));
 };
+
 export const generateSharedCalendars = (n: number) => {
     if (n <= 0) {
         return [];
@@ -453,8 +483,11 @@ export const generateSharedCalendars = (n: number) => {
         .fill(1)
         .map((val, i) => generateSimpleCalendar(i, { calendarEmail: 'calendarEmail', ownerEmail: 'ownerEmail' }));
 };
+
 export const generateSubscribedCalendars = (n: number) => {
     return Array(n)
         .fill(1)
-        .map((val, i) => generateSimpleCalendar(i, { type: CALENDAR_TYPE.SUBSCRIPTION }));
+        .map((val, i) => generateSubscribedCalendar({
+            calendar: generateSimpleCalendar(i, { type: CALENDAR_TYPE.SUBSCRIPTION })
+        }));
 };

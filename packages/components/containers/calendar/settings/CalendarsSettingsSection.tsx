@@ -8,10 +8,15 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useCalendarShareInvitations } from '../../../hooks';
-import { PersonalCalendarsSection, PrivateMainAreaLoading, PrivateMainSettingsArea, SectionConfig } from '../../index';
+import {
+    MyCalendarsSection,
+    PrivateMainAreaLoading,
+    PrivateMainSettingsArea,
+    SectionConfig
+} from '../..';
 import OtherCalendarsSection from '../settings/OtherCalendarsSection';
 
-interface Props {
+export interface CalendarsSettingsSectionProps {
     config: SectionConfig;
     user: UserModel;
     addresses: Address[];
@@ -35,7 +40,7 @@ const CalendarsSettingsSection = ({
     unknownCalendars,
     defaultCalendar,
     calendarSubscribeUnavailable,
-}: Props) => {
+}: CalendarsSettingsSectionProps) => {
     const { invitations: calendarInvitations, loading } = useCalendarShareInvitations();
     const { isCalendarsLimitReached, isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(
         calendars,
@@ -49,20 +54,21 @@ const CalendarsSettingsSection = ({
 
     return (
         <PrivateMainSettingsArea config={config}>
-            <PersonalCalendarsSection
-                user={user}
-                calendars={myCalendars}
+            <MyCalendarsSection
+                myCalendars={myCalendars}
                 defaultCalendar={defaultCalendar}
+                addresses={addresses}
+                user={user}
                 canAdd={canAddCalendar}
                 isCalendarsLimitReached={isCalendarsLimitReached}
             />
             <OtherCalendarsSection
-                addresses={addresses}
-                user={user}
                 subscribedCalendars={subscribedCalendars}
                 sharedCalendars={sharedCalendars}
                 calendarInvitations={filterOutExpiredInvitations(getPendingInvitations(calendarInvitations))}
                 unknownCalendars={unknownCalendars}
+                addresses={addresses}
+                user={user}
                 canAdd={canAddCalendar}
                 isCalendarsLimitReached={isOtherCalendarsLimitReached}
                 unavailable={calendarSubscribeUnavailable}

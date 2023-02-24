@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history';
 
 import createCache from '@proton/shared/lib/helpers/cache';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { generateSimpleCalendar } from '@proton/testing/lib/builders';
 
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
@@ -48,6 +48,7 @@ jest.mock('@proton/components/hooks/useAddresses', () => ({
 
 function renderComponent(props?: Partial<CalendarsSectionProps>) {
     const defaultProps: CalendarsSectionProps = {
+        addresses: [],
         calendars: [],
         children: null,
         // defaultCalendarID?: string,
@@ -72,7 +73,11 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
 
 describe('CalendarsSection', () => {
     it('renders properly', () => {
-        render(renderComponent({ calendars: [{ ID: '1', Name: 'calendar1' } as VisualCalendar] }));
+        render(
+            renderComponent({
+                calendars: [generateSimpleCalendar(1, { name: 'calendar1' })],
+            })
+        );
 
         expect(screen.getByText('calendar1')).toBeInTheDocument();
     });
