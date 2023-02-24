@@ -92,6 +92,8 @@ const CalendarSubpage = ({ calendars, subscribedCalendars, defaultCalendar, addr
             };
 
             const loadMembersAndInvitations = async () => {
+                // set loading state to true in case the component did not get unmounted
+                setLoadingShareData(true);
                 if (!getIsOwnedCalendar(calendar)) {
                     return;
                 }
