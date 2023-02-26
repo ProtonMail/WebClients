@@ -25,7 +25,7 @@
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@types/react": "^17.0.53",
-        "@types/react-dom": "^17.0.18",
+        "@types/react-dom": "^17.0.19",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "ttag": "^1.7.24"
@@ -39,11 +39,11 @@
         "@types/jest": "^28.1.8",
         "babel-jest": "^28.1.3",
         "cross-env": "^7.0.3",
-        "eslint": "^8.33.0",
+        "eslint": "^8.35.0",
         "jest": "^28.1.3",
         "jest-environment-jsdom": "^28.1.3",
         "jest-junit": "^14.0.1",
-        "prettier": "^2.8.3",
+        "prettier": "^2.8.4",
         "typescript": "^4.9.5"
     }
 }
