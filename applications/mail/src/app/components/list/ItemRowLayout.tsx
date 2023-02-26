@@ -46,12 +46,13 @@ const ItemRowLayout = ({
     unread,
     onBack,
 }: Props) => {
-    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
+    const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
+    const { contentIndexingDone } = getESDBStatus();
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, conversationMode);
 
-    const body = (element as ESMessage).decryptedBody;
+    const body = contentIndexingDone ? (element as ESMessage).decryptedBody : undefined;
     const { Subject } = element;
 
     const subjectContent = useMemo(

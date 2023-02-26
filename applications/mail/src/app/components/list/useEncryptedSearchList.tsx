@@ -9,6 +9,7 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 
 const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: number, total: number) => {
     const { getESDBStatus } = useEncryptedSearchContext();
+
     const { dbExists, esEnabled, isSearchPartial, isCacheLimited, isSearching } = getESDBStatus();
     const [esTimer, setESTimer] = useState<NodeJS.Timeout>(setTimeout(() => {}));
     const [esTimerExpired, setESTimerExpired] = useState<boolean>(false);
@@ -41,7 +42,12 @@ const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: numbe
         }
     }, [isESLoading]);
 
-    return { showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement };
+    return {
+        showESSlowToolbar,
+        loadingElement,
+        disableGoToLast,
+        useLoadingElement,
+    };
 };
 
 export default useEncryptedSearchList;
