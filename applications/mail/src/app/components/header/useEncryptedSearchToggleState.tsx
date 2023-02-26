@@ -1,56 +1,53 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useUser } from '@proton/components';
-import {
-    ESIndexingState,
-    defaultESIndexingState,
-    estimateIndexingProgress,
-    wasIndexingDone,
-} from '@proton/encrypted-search';
+import { ESIndexingState, defaultESIndexingState, estimateIndexingProgress } from '@proton/encrypted-search';
 import { SECOND } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { getOldestTimeMail } from '../../helpers/encryptedSearch/esUtils';
 
 const useEncryptedSearchToggleState = (isOpen: boolean) => {
     const [user] = useUser();
     const { getProgressRecorderRef, getESDBStatus } = useEncryptedSearchContext();
-    const { isBuilding, isDBLimited, isRefreshing } = getESDBStatus();
+    const { isEnablingContentSearch, isDBLimited, isRefreshing, contentIndexingDone, lastContentTime } =
+        getESDBStatus();
     const [esState, setESState] = useState<ESIndexingState>(defaultESIndexingState);
 
     const abortProgressRef = useRef<AbortController>(new AbortController());
 
-    const setProgress = async () => {
+    const setProgress = async (inputESState: ESIndexingState): Promise<void> => {
+        let localESState: ESIndexingState = inputESState;
         while (!abortProgressRef.current.signal.aborted) {
-            setESState((esState) => {
-                const [esProgress, esTotal] = getProgressRecorderRef().current;
-                const endTime = performance.now();
+            const [esProgress, esTotal] = getProgressRecorderRef().current;
+            const endTime = performance.now();
 
-                const { estimatedMinutes, currentProgressValue } = estimateIndexingProgress(
-                    user.ID,
-                    esProgress,
-                    esTotal,
-                    endTime,
-                    esState
-                );
+            const { estimatedMinutes, currentProgressValue } = await estimateIndexingProgress(
+                user.ID,
+                esProgress,
+                esTotal,
+                endTime,
+                localESState
+            );
 
-                return {
-                    ...esState,
-                    endTime,
-                    esProgress,
-                    totalIndexingMessages: esTotal,
-                    estimatedMinutes: estimatedMinutes || esState.estimatedMinutes,
-                    currentProgressValue: currentProgressValue || esState.currentProgressValue,
-                };
-            });
+            const newESState: ESIndexingState = {
+                ...localESState,
+                endTime,
+                esProgress,
+                totalIndexingItems: esTotal,
+                estimatedMinutes: estimatedMinutes || localESState.estimatedMinutes,
+                currentProgressValue: currentProgressValue || localESState.currentProgressValue,
+            };
+            localESState = { ...newESState };
+
+            setESState(() => newESState);
             await wait(2 * SECOND);
         }
     };
 
     const setOldestTime = async () => {
-        if (wasIndexingDone(user.ID) && isDBLimited) {
-            const oldestTime = await getOldestTimeMail(user.ID, 1000);
+        if (contentIndexingDone && isDBLimited) {
+            const oldestTime = lastContentTime;
             setESState((esState) => {
                 return {
                     ...esState,
@@ -62,17 +59,17 @@ const useEncryptedSearchToggleState = (isOpen: boolean) => {
 
     const startProgress = async () => {
         abortProgressRef.current = new AbortController();
-        const [esPrevProgress, totalIndexingMessages] = getProgressRecorderRef().current;
-        setESState((esState) => {
-            return {
-                ...esState,
-                startTime: performance.now(),
-                esPrevProgress,
-                totalIndexingMessages,
-            };
-        });
+        const [esPrevProgress, totalIndexingItems] = getProgressRecorderRef().current;
+        const initialESState: ESIndexingState = {
+            ...esState,
+            startTime: performance.now(),
+            esPrevProgress,
+            esProgress: esPrevProgress,
+            totalIndexingItems,
+        };
+        setESState(() => initialESState);
         await wait(5 * SECOND);
-        void setProgress();
+        void setProgress(initialESState);
     };
 
     const stopProgress = () => {
@@ -87,13 +84,13 @@ const useEncryptedSearchToggleState = (isOpen: boolean) => {
     }, [isOpen]);
 
     useEffect(() => {
-        if (isBuilding || isRefreshing) {
+        if (isEnablingContentSearch || (contentIndexingDone && isRefreshing)) {
             void startProgress();
         } else {
             stopProgress();
         }
         void setOldestTime();
-    }, [isBuilding, isRefreshing]);
+    }, [isEnablingContentSearch, isRefreshing]);
 
     return esState;
 };

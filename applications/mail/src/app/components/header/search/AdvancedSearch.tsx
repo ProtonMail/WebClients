@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DateInput, Label, Option, PrimaryButton, Radio, SelectTwo, useAddresses, useUser } from '@proton/components';
-import { ESIndexingState, wasIndexingDone } from '@proton/encrypted-search';
+import { ESIndexingState, isContentIndexingDone } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -16,7 +16,7 @@ import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
-import { getOldestTimeMail } from '../../../helpers/encryptedSearch/esUtils';
+import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { getHumanLabelID } from '../../../helpers/labels';
 import { extractSearchParameters, keywordToString } from '../../../helpers/mailboxUrl';
 import AddressesInput from '../../composer/addresses/AddressesInput';
@@ -88,7 +88,6 @@ interface Props {
     showEncryptedSearch: boolean;
     onClose: () => void;
     esState: ESIndexingState;
-    isDBLimited: boolean;
     showMore: boolean;
     toggleShowMore: () => void;
     searchInputValue: string;
@@ -100,7 +99,6 @@ const AdvancedSearch = ({
     showEncryptedSearch,
     onClose,
     esState,
-    isDBLimited,
     showMore,
     searchInputValue,
     toggleShowMore,
@@ -111,6 +109,8 @@ const AdvancedSearch = ({
     const [addresses] = useAddresses();
     const [model, updateModel] = useState<SearchModel>(initializeModel(history, labelID, searchInputValue));
     const [user] = useUser();
+    const { getESDBStatus } = useEncryptedSearchContext();
+    const { isDBLimited, lastContentTime } = getESDBStatus();
 
     const senderListAnchorRef = useRef<HTMLDivElement>(null);
     const toListAnchorRef = useRef<HTMLDivElement>(null);
@@ -195,9 +195,7 @@ const AdvancedSearch = ({
                 />
             </div>
             <div className={clsx(['pt1 px1-5 pb0'])}>
-                {showEncryptedSearch && (
-                    <EncryptedSearchField esState={esState} showMore={showMore} toggleShowMore={toggleShowMore} />
-                )}
+                {showEncryptedSearch && <EncryptedSearchField esState={esState} />}
                 <div>
                     <LocationField
                         value={model.labelID}
@@ -229,8 +227,9 @@ const AdvancedSearch = ({
                                     onChange={async (begin) => {
                                         if (begin) {
                                             let oldestTime = -1;
-                                            if (wasIndexingDone(user.ID) && isDBLimited) {
-                                                oldestTime = await getOldestTimeMail(user.ID, 1000);
+                                            const wasIndexingDone = await isContentIndexingDone(user.ID);
+                                            if (wasIndexingDone && isDBLimited) {
+                                                oldestTime = lastContentTime;
                                             }
                                             if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
                                                 return;

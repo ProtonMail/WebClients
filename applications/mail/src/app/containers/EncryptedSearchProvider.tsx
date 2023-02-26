@@ -5,39 +5,38 @@ import { c } from 'ttag';
 
 import {
     FeatureCode,
+    useAddresses,
     useApi,
     useFeature,
     useGetMessageCounts,
     useGetUserKeys,
+    useNotifications,
     useSubscribeEventManager,
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
-import { decryptIndexKey, esSentryReport, getES, useEncryptedSearch } from '@proton/encrypted-search';
-import { EVENT_ERRORS } from '@proton/shared/lib/errors';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import noop from '@proton/utils/noop';
-
 import {
-    defaultESContextMail,
-    defaultESMailStatus,
-    indexKeyNames,
-    indexName,
-    primaryKeyName,
-    storeName,
-} from '../constants';
-import { getESHelpers } from '../helpers/encryptedSearch/encryptedSearchMailHelpers';
-import { checkIndexCorruption, recoverIndex } from '../helpers/encryptedSearch/esRecovery';
-import { convertEventType } from '../helpers/encryptedSearch/esSync';
-import { parseSearchParams } from '../helpers/encryptedSearch/esUtils';
+    checkVersionedESDB,
+    esSentryReport,
+    getIndexKey,
+    readContentProgress,
+    useEncryptedSearch,
+    wrappedGetOldestInfo,
+} from '@proton/encrypted-search';
+import { SECOND } from '@proton/shared/lib/constants';
+import { EVENT_ERRORS } from '@proton/shared/lib/errors';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isPaid } from '@proton/shared/lib/user/helpers';
+
+import { defaultESContextMail, defaultESMailStatus } from '../constants';
+import { convertEventType, getESHelpers, migrate, parseSearchParams } from '../helpers/encryptedSearch';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import {
+    ESBaseMessage,
     ESDBStatusMail,
-    ESItemChangesMail,
-    ESMessage,
+    ESMessageContent,
     EncryptedSearchFunctionsMail,
     NormalizedSearchParams,
-    StoredCiphertext,
 } from '../models/encryptedSearch';
 import { Event } from '../models/event';
 
@@ -51,13 +50,16 @@ interface Props {
 const EncryptedSearchProvider = ({ children }: Props) => {
     const history = useHistory();
     const getMessageKeys = useGetMessageKeys();
-    const getMessageCounts = useGetMessageCounts();
     const getUserKeys = useGetUserKeys();
+    const getMessageCounts = useGetMessageCounts();
     const api = useApi();
     const [user] = useUser();
     const [welcomeFlags] = useWelcomeFlags();
     const { update: updateSpotlightES } = useFeature(FeatureCode.SpotlightEncryptedSearch);
+    const { createNotification } = useNotifications();
     const { isSearch, page } = parseSearchParams(history.location);
+
+    const [addresses] = useAddresses();
 
     const [esMailStatus, setESMailStatus] = useState<ESDBStatusMail>(defaultESMailStatus);
     // Allow to track changes in page to set the elements list accordingly
@@ -68,49 +70,36 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         getMessageCounts,
         api,
         user,
-        welcomeFlags,
-        updateSpotlightES,
         history,
+        numAddresses: addresses.length,
     });
 
-    const {
-        handleEvent,
-        initializeES,
-        toggleEncryptedSearch,
-        getESDBStatus: getLibraryStatus,
-        ...esLibraryFunctions
-    } = useEncryptedSearch<Message, ESMessage, NormalizedSearchParams, ESItemChangesMail, StoredCiphertext>({
-        storeName,
-        indexName,
-        primaryKeyName,
-        indexKeyNames,
+    const successMessage = c('Success').t`Message content search activated`;
+
+    const esLibraryFunctions = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
         refreshMask: EVENT_ERRORS.MAIL,
         esHelpers,
-        successMessage: c('Success').t`Message content search activated`,
+        successMessage,
     });
 
     /**
      * Open the advanced search dropdown
      */
     const openDropdown = () => {
-        setESMailStatus((esMailStatus) => {
-            return {
-                ...esMailStatus,
-                dropdownOpened: true,
-            };
-        });
+        setESMailStatus((esMailStatus) => ({
+            ...esMailStatus,
+            dropdownOpened: true,
+        }));
     };
 
     /**
      * Close the advanced search dropdown
      */
     const closeDropdown = () => {
-        setESMailStatus((esMailStatus) => {
-            return {
-                ...esMailStatus,
-                dropdownOpened: false,
-            };
-        });
+        setESMailStatus((esMailStatus) => ({
+            ...esMailStatus,
+            dropdownOpened: false,
+        }));
     };
 
     /**
@@ -118,13 +107,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * search is needed. The toggle is set automatically back on upon exiting search mode
      */
     const setTemporaryToggleOff = () => {
-        setESMailStatus((esMailStatus) => {
-            return {
-                ...esMailStatus,
-                temporaryToggleOff: true,
-            };
-        });
-        toggleEncryptedSearch();
+        setESMailStatus((esMailStatus) => ({
+            ...esMailStatus,
+            temporaryToggleOff: true,
+        }));
+        void esLibraryFunctions.toggleEncryptedSearch();
     };
 
     /**
@@ -132,7 +119,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const getESDBStatus = () => {
         return {
-            ...getLibraryStatus(),
+            ...esLibraryFunctions.getESDBStatus(),
             ...esMailStatus,
         };
     };
@@ -141,32 +128,83 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Initialize ES
      */
     const initializeESMail = async () => {
-        // If no ES:*:Key blob can be found, the user has never activated ES.
-        const armoredKey = getES.Key(user.ID);
-        if (!armoredKey) {
+        if (!isPaid(user)) {
+            return esLibraryFunctions.esDelete();
+        }
+
+        setESMailStatus((esMailStatus) => ({
+            ...esMailStatus,
+            isMigrating: true,
+        }));
+
+        // Migrate old IDBs
+        const { success, isIndexEmpty } = await migrate(user.ID, api, getUserKeys, getMessageKeys, () =>
+            esHelpers.queryItemsMetadata(new AbortController().signal)
+        ).catch((error) => {
+            esSentryReport(`migration: ${error.message}`, error);
+            return { success: false, isIndexEmpty: false };
+        });
+
+        setESMailStatus((esMailStatus) => ({
+            ...esMailStatus,
+            isMigrating: false,
+        }));
+
+        if (!success) {
+            if (!isIndexEmpty) {
+                createNotification({
+                    text: c('Error')
+                        .t`There was a problem updating your local messages, they will be downloaded again to re-enable content search`,
+                    type: 'error',
+                });
+            }
+
+            return esLibraryFunctions
+                .esDelete()
+                .then(() => esLibraryFunctions.enableEncryptedSearch({ isRefreshed: true }))
+                .then((success) =>
+                    success ? esLibraryFunctions.enableContentSearch({ isRefreshed: true }) : undefined
+                );
+        }
+
+        // Enable encrypted search for all new users. For paid users only,
+        // automatically enable content search too
+        if (welcomeFlags.isWelcomeFlow && !isMobile()) {
+            // Prevent showing the spotlight for ES to them
+            await updateSpotlightES(false);
+            return esLibraryFunctions.enableEncryptedSearch().then((success) => {
+                if (success && isPaid(user)) {
+                    return esLibraryFunctions.enableContentSearch({ notify: false });
+                }
+            });
+        }
+
+        // Existence of IDB is checked since the following operations interact with it
+        if (!(await checkVersionedESDB(user.ID))) {
             return;
         }
 
-        // If the blob can be found but failed decryption, the content of IDB
-        // cannot be decrypted, therefore we trigger the initialisation directly
-        // which will take care of this case
-        const indexKey = await decryptIndexKey(getUserKeys, armoredKey).catch(noop);
-
-        const isIndexCorrupted = await checkIndexCorruption(user.ID, api).catch(() => false);
-        if (indexKey && isIndexCorrupted) {
-            // The recovery process should happen transparently in the background
-            // and ES should be active in the meantime
-            void recoverIndex(user.ID, indexKey, api, getMessageKeys).catch((error: any) =>
-                esSentryReport('recoverIndex', { error })
-            );
+        let contentProgress = await readContentProgress(user.ID);
+        if (!contentProgress) {
+            return esLibraryFunctions.initializeES();
         }
 
-        return initializeES();
+        // We need to cache the metadata directly, since the library is
+        // not yet initialised, i.e. the flags in memory are not yet set.
+        // The reason for not initialising the library just yet is that
+        // in case an upgrade/downgrade is needed, the flags would be set
+        // incorrectly due to the way we encode the latter
+        const indexKey = await getIndexKey(getUserKeys, user.ID);
+        if (!indexKey) {
+            return esLibraryFunctions.esDelete();
+        }
+
+        return esLibraryFunctions.initializeES();
     };
 
-    useSubscribeEventManager(async (event: Event) => {
-        void handleEvent(convertEventType(event));
-    });
+    useSubscribeEventManager(async (event: Event) =>
+        esLibraryFunctions.handleEvent(convertEventType(event, addresses.length))
+    );
 
     /**
      * Keep the current page always up to date to avoid pagination glitches
@@ -176,20 +214,39 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     }, [page]);
 
     /**
+     * In case content indexing finished, we need to update the last content
+     * time to show appropriate UI
+     */
+    useEffect(() => {
+        const run = async () => {
+            const timepoint = await wrappedGetOldestInfo(user.ID);
+            if (timepoint) {
+                setESMailStatus((esMailStatus) => ({
+                    ...esMailStatus,
+                    lastContentTime: timepoint.timepoint[0] * SECOND,
+                }));
+            }
+        };
+
+        const { dbExists, contentIndexingDone } = getESDBStatus();
+        if (dbExists && contentIndexingDone) {
+            void run();
+        }
+    }, [getESDBStatus().contentIndexingDone]);
+
+    /**
      * Re-enable ES in case it was disabled because of a slow search
      */
     useEffect(() => {
         if (!isSearch) {
             const { temporaryToggleOff } = esMailStatus;
             if (temporaryToggleOff) {
-                toggleEncryptedSearch();
+                void esLibraryFunctions.toggleEncryptedSearch();
                 // Remove the temporary switch-off of ES
-                setESMailStatus((esMailStatus) => {
-                    return {
-                        ...esMailStatus,
-                        temporaryToggleOff: false,
-                    };
-                });
+                setESMailStatus((esMailStatus) => ({
+                    ...esMailStatus,
+                    temporaryToggleOff: false,
+                }));
             }
         }
     }, [isSearch]);
@@ -204,7 +261,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         openDropdown,
         closeDropdown,
         setTemporaryToggleOff,
-        toggleEncryptedSearch,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;
