@@ -533,9 +533,6 @@
       "Load": [
         "Cargar"
       ],
-      "Load anyway": [
-        "Cargar de todos modos"
-      ],
       "Load embedded images": [
         "Cargar imágenes incrustadas"
       ],
@@ -959,8 +956,8 @@
       "Skip verification": [
         "Omitir verificación"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Se ha producido un error al cargar algunas de las imágenes con la protección de rastreo."
+      "Some images could not be loaded with tracker protection.": [
+        "Algunas de las imágenes no han podido ser cargadas con la protección de rastreo."
       ],
       "Star": [
         "Destacar"
@@ -1048,10 +1045,10 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Cambiar de plan"
       ],
       "Upgrade now": [
-        "Actualizar"
+        "Cambiar de plan"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -2890,7 +2887,7 @@
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Desbloquea la programación personalizada de mensajes y otros beneficios al mejorar tu plan."
+        "Desbloquea la programación personalizada de mensajes y otros beneficios al pasar a un plan superior."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
@@ -3380,7 +3377,7 @@
         "Este mensaje podría contener enlaces a un URL que no se pueden abrir correctamente en tu navegador actual."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Demasiados filtros activos. Actualiza a un plan de pago para activar más filtros."
+        "Demasiados filtros activos. Pasa a un plan de pago para activar más filtros."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
@@ -4736,7 +4733,7 @@
         "Los correos electrónicos son firmados automáticamente."
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Los correos electrónicos almacenados en esta carpeta no se eliminarán y aún se pueden encontrar en la carpeta Todos los correos."
+        "Los correos electrónicos almacenados en esta carpeta no se eliminarán y aún se pueden encontrar en la carpeta Todo el correo."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Los correos electrónicos etiquetados con esta etiqueta no se eliminarán y se podrán encontrar en sus respectivas carpetas."
@@ -4862,6 +4859,10 @@
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "Las imágenes se han eliminado porque no están permitidas en la respuesta automática."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendarios"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
@@ -5255,7 +5256,7 @@
         "equipo de soporte"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporalmente no disponible. Vuelve a comprobarlo más tarde."
+        "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
       "Test link": [
         "Enlace de prueba"
@@ -5435,37 +5436,37 @@
         "Actualizando búsqueda de contenido de mensaje..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
+        "Pasa a un plan superior ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
       ],
       "Upgrade to add more addresses to your account.": [
-        "Actualiza tu plan para añadir más direcciones a tu cuenta."
+        "Pasa a un plan superior para añadir más direcciones a tu cuenta."
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        "Actualiza tu plan para poder configurar una respuesta automática."
+        "Pasa a un plan superior para poder configurar una respuesta automática."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Actualiza tu plan para crear más carpetas, filtros y direcciones."
+        "Pasa a un plan superior para crear más carpetas, filtros y direcciones."
       ],
       "Upgrade to host emails from your own domain name.": [
-        "Actualiza tu plan para alojar correos electrónicos desde tu dominio personal."
+        "Pasa a un plan superior para alojar correos electrónicos desde tu dominio personal."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Actualiza tu plan para enviar correos desde direcciones @pm.me."
+        "Pasa a un plan superior para enviar correos desde direcciones @pm.me."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Actualiza tu plan para enviar fácilmente correos electrónicos a grupos de contactos."
+        "Pasa a un plan superior para enviar fácilmente correos electrónicos a grupos de contactos."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Actualiza tu plan para apoyar un internet que dé prioridad a la privacidad."
+        "Pasa a un plan superior para apoyar un internet que dé prioridad a la privacidad."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Actualiza tu plan para apoyar nuestra misión de traer privacidad a todos."
+        "Pasa a un plan superior para apoyar nuestra misión de traer privacidad a todos."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Actualiza tu plan para apoyar la privacidad y obtener más funciones."
+        "Pasa a un plan superior para apoyar la privacidad y obtener más funciones."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Actualiza tu plan para usar ${ MAIL_APP_NAME } con programas de escritorio de terceros."
+        "Pasa a un plan superior para usar ${ MAIL_APP_NAME } con programas de escritorio de terceros."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -6476,6 +6477,17 @@
         "Fila"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Para añadir un nuevo calendario, elimina uno existente."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Para añadir un nuevo calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Has alcanzado el número máximo de calendarios disponibles en tu plan."
+      ]
+    },
     "Link": {
       "All mail": [
         "Todo el correo"
@@ -6595,7 +6607,7 @@
         "Papelera"
       ],
       "Upgrade account": [
-        "Actualizar cuenta"
+        "Mejorar cuenta"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -6952,7 +6964,7 @@
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7529,7 +7541,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Actualizar almacenamiento"
+        "Aumentar almacenamiento"
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
@@ -7569,8 +7581,8 @@
         "${ elementsCount } conversaciones marcadas como sin leer."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } conversación movida a ${ folderName } y remitente añadido a tu lista de \"no es spam\".",
-        "${ elementsCount } conversaciones movidas a ${ folderName } y remitentes añadidos a tu lista de \"no es spam\"."
+        "${ elementsCount } conversación movida a ${ folderName } y remitente añadido a tu lista \"No es spam\".",
+        "${ elementsCount } conversaciones movidas a ${ folderName } y remitentes añadidos a tu lista \"No es spam\"."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversación movida a ${ folderName }.",
@@ -7601,8 +7613,8 @@
         "${ elementsCount } mensajes marcados como sin leer."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } mensaje movido a ${ folderName } y remitente añadido a tu lista de \"no es spam\".",
-        "${ elementsCount } mensajes movidos a ${ folderName } y remitentes añadidos a tu lista de \"no es spam\"."
+        "${ elementsCount } mensaje movido a ${ folderName } y remitente añadido a tu lista \"No es spam\".",
+        "${ elementsCount } mensajes movidos a ${ folderName } y remitentes añadidos a tu lista \"No es spam\"."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } mensaje movido a ${ folderName }.",
@@ -7661,7 +7673,7 @@
         "Conversación marcada como sin leer."
       ],
       "Conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "Conversación movida a ${ folderName } y remitente añadido a tu lista de no spam."
+        "Conversación movida a ${ folderName } y remitente añadido a tu lista \"No es spam\"."
       ],
       "Conversation moved to ${ folderName }.": [
         "Conversación movida a ${ folderName }."
@@ -7691,7 +7703,7 @@
         "Carpeta vaciada"
       ],
       "Import record deleted": [
-        "Se ha eliminado el registro importación"
+        "Se ha eliminado el registro importación."
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferencias de atajos de teclado actualizadas"
@@ -7727,7 +7739,7 @@
         "Mensaje marcado como sin leer."
       ],
       "Message moved to ${ folderName } and sender added to your not spam list.": [
-        "Mensaje movido a ${ folderName } y remitente añadido a tu lista de no es spam."
+        "Mensaje movido a ${ folderName } y remitente añadido a tu lista \"No es spam\"."
       ],
       "Message moved to ${ folderName }.": [
         "Mensaje movido a ${ folderName }."

@@ -539,9 +539,6 @@
       "Load": [
         "Загрузіць"
       ],
-      "Load anyway": [
-        "Усё роўна загрузіць"
-      ],
       "Load embedded images": [
         "Загружаць убудаваныя відарысы"
       ],
@@ -965,8 +962,8 @@
       "Skip verification": [
         "Прапусціць праверку"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Не ўдалося загрузіць некаторыя відарысы з абаронай ад сачэння."
+      "Some images could not be loaded with tracker protection.": [
+        "Немагчыма загрузіць некаторыя відарысы з уключанай абаронай ад адсочвання."
       ],
       "Star": [
         "Пазначыць зорачкай"
@@ -6686,6 +6683,17 @@
         "Радкамі"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Каб дадаць новы каляндар, выдаліце які-небудзь з існуючых."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Каб дадаць новы каляндар, выдаліць іншы каляндар або перайсці з тарыфнага плана ${ BRAND_NAME } на платны тарыфны план ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
+      ]
+    },
     "Link": {
       "All mail": [
         "Уся пошта"
@@ -6850,7 +6858,7 @@
         "Амаль гатова"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
@@ -7182,7 +7190,7 @@
         "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

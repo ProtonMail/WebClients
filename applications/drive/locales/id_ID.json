@@ -2781,6 +2781,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Impor dari ${ provider }"
+      ],
       "Other": [
         "Lainnya"
       ]
@@ -2853,6 +2856,12 @@
       ],
       "${ groupCounts } groups found": [
         "ditemukan ${ groupCounts } grup"
+      ],
+      "${ numContact } contacts": [
+        "${ numContact } kontak"
+      ],
+      "${ numGroups } contact groups": [
+        "${ numGroups } grup kontak"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } dijeda"
@@ -2994,6 +3003,9 @@
       ],
       "Country code": [
         "Kode negara"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
@@ -3189,6 +3201,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -4310,6 +4325,9 @@
       "Almost there": [
         "Hampir selesai"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
       ],
@@ -4857,8 +4875,8 @@
       "Bug reported": [
         "Bug berhasil dilaporkan"
       ],
-      "Canceling import": [
-        "Membatalkan proses impor"
+      "Cancelling import": [
+        "Membatalkan impor"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"

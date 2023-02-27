@@ -309,6 +309,9 @@
       "Edit billing details": [
         "Editar detalles de facturación"
       ],
+      "Edit display name": [
+        "Editar nombre a mostrar"
+      ],
       "Edit email address": [
         "Editar dirección de correo"
       ],
@@ -1195,21 +1198,6 @@
       ],
       "Invite sent": [
         "Invitación enviada"
-      ]
-    },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Ha alcanzado el número máximo de calendarios personales que puede crear dentro de su plan."
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Ha alcanzado el número máximo de calendarios personales que puede tener. Para aceptar invitaciones de calendarios pendientes, necesita eliminar algunos de sus calendarios."
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Ha alcanzado el número máximo de calendarios compartidos que puede tener. Para aceptar invitaciones de calendarios pendientes, necesita eliminar algunos de sus calendarios."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Ha alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS } calendario suscrito.",
-        "Ha alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS } calendarios suscritos."
       ]
     },
     "Calendar link purpose update success message": {
@@ -5896,6 +5884,18 @@
       "You can import one data type at a time.": [
         "Puede importar un tipo de datos a la vez."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Puede mantener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido sus calendarios antes de cancelar su suscripción de ${ MAIL_SHORT_APP_NAME }.",
+        "Puede mantener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido sus calendarios antes de cancelar su suscripción de ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Puede mantener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido sus calendarios antes de cancelar su suscripción.",
+        "Puede mantener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido sus calendarios antes de cancelar su suscripción."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Puede mantener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendarios compartidos antes de cancelar su suscripción.",
+        "Puede mantener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendarios compartidos antes de cancelar su suscripción."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Ahora puede acceder y gestionar la cuenta como administrador."
       ],
@@ -5927,8 +5927,8 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No definió un método de recuperación por lo que la recuperación de cuentas es imposible si olvida su contraseña. ¿Proceder sin método de recuperación?"
       ],
-      "You have no personal calendars to export.": [
-        "No tiene calendarios personales para exportar."
+      "You have no calendars to export.": [
+        "No tiene calendarios para exportar."
       ],
       "You have no saved payment methods.": [
         "No tiene ningún método de pago guardado."
@@ -5947,12 +5947,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada a su cuenta de PayPal. Si su cuenta de PayPal no lo tiene, haga clic en el botón de abajo."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Debe eliminar cualquier calendario adicional y cualquier enlace al calendario compartido antes de poder cancelar su suscripción de Correo."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Debe eliminar cualquier calendario adicional y cualquier enlace al calendario compartido antes de poder cancelar su suscripción."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Necesita tener un calendario personal activo para importar sus eventos desde ICS."
@@ -7456,6 +7450,17 @@
         "Preferencia guardada"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Para añadir un calendario nuevo, elimine uno existente."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Para añadir un calendario nuevo, elimine otro calendario o actualice su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ha alcanzado el número máximo de calendarios disponibles en su plan."
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Añadir código de regalo"
@@ -7553,7 +7558,7 @@
         "Ya casi está"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -7943,6 +7948,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendario",
+        "${ n } calendarios"
+      ],
       "${ n } custom email domain": [
         "${ n } dominio de correo electrónico personalizado",
         "${ n } dominios de correo electrónico personalizados"
@@ -7975,10 +7984,6 @@
         "${ n } mensaje al día",
         "${ n } mensajes al día"
       ],
-      "${ n } personal calendar": [
-        "${ n } calendario personal",
-        "${ n } calendarios personales"
-      ],
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
@@ -8010,6 +8015,9 @@
       ],
       "Auto-reply": [
         "Respuesta automática"
+      ],
+      "Calendar sharing": [
+        "Uso compartido de calendarios"
       ],
       "Catch-all": [
         "Catch-all"
@@ -8162,6 +8170,26 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Su prueba termina el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -8231,26 +8259,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haga que la privacidad sea su opción predeterminada para la copia de seguridad, el almacenamiento, el uso compartido y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de negocios con acceso a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Actualice al paquete de privaciad definitivo y acceda a todos los servicios premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Su prueba termina el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8354,9 +8362,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Cree hasta ${ n } calendario personalizado.",
-        "Cree hasta ${ n } calendarios personalizados."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Cree hasta ${ n } calendarios o añada calendarios de amistades, familia, colegas y organizaciones",
+        "Cree hasta ${ n } calendarios o añada calendarios de amistades, familia, colegas y organizaciones"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores"
@@ -8364,8 +8372,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Comparta calendarios con compañeros, familiares y amigos fácilmente mediante un enlace"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Comparta calendarios con familiares, amigos y compañeros fácilmente mediante un enlace"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Comparta fácilmente sus calendarios com familiares, amistades o colegas"
       ],
       "End-to-end encrypted calendar": [
         "Calendario cifrado de extremo a extremo"
@@ -8393,12 +8401,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "En días laborales, reciba soporte del equipo de servicio al cliente de ${ BRAND_NAME } en menos de 24 horas"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Además, puede añadir hasta 5 calendarios de compañeros, empresas, familiares y amigos."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Además, puede añadir hasta 5 calendarios de amigos, familiares, compañeros y empresas."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Una conexión VPN permite que un dispositivo se conecte a ${ BRAND_NAME } VPN en cualquier momento. Por ejemplo, para conectar un teléfono y una computadora portátil a ${ BRAND_NAME } VPN al mismo tiempo, necesita dos conexiones VPN."
@@ -8518,9 +8520,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "Cubra más con soporte para 10 dominios de correo electrónico personalizados"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Crear ${ numberOfPersonalCalendars } calendario personal",
-        "Crear hasta ${ numberOfPersonalCalendars } calendarios personales"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Cree hasta ${ MAX_CALENDARS_PAID } calendario",
+        "Cree hasta ${ MAX_CALENDARS_PAID } calendarios"
       ],
       "Everything in ${ vpnPlanName }": [
         "Todo en ${ vpnPlanName }"
@@ -9689,6 +9691,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Añadir calendario compartido, público o externo mediante URL."
+      ],
+      "Add public, external, or shared calendars.": [
+        "Añada calendarios compartidos, públicos o externos."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9760,6 +9765,14 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN de gran velocidad en ${ maxVpn } dispositivo",
         "VPN de gran velocidad en ${ maxVpn } dispositivos"
+      ]
+    },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Suscripción gestionada en otro lugar"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Su suscripción fue realizada mediante una compra en la app. Para gestionar su suscripción actual necesita ir a la sección de Suscripción en su cuenta de ${ subscriptionManager }."
       ]
     },
     "Subscription price": {
@@ -10262,8 +10275,8 @@
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
       ],
-      "Cancel Mail subscription": [
-        "Cancelar suscripción de Correo"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Cancelar suscripción de ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Verificación de tarjeta"
@@ -10673,6 +10686,9 @@
       "Organization and keys": [
         "Organización y claves"
       ],
+      "Other calendars": [
+        "Otros calendarios"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -10852,9 +10868,6 @@
       ],
       "Status": [
         "Estado"
-      ],
-      "Subscribed calendars": [
-        "Calendarios suscritos"
       ],
       "Success": [
         "Exitoso"
@@ -11230,12 +11243,8 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Actualice a un plan de pago de Correo para crear hasta ${ MAX_CALENDARS_PAID } calendario, permitiéndole crear calendarios para el trabajo, para compartir con sus amigos y solo para usted.",
-        "Actualice a un plan de pago de Correo para crear hasta ${ MAX_CALENDARS_PAID } calendarios, permitiéndole crear calendarios para el trabajo, para compartir con sus amigos y solo para usted."
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "Actualice a un plan de pago para compartir su calendario."
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Actualice a un plan de pago de ${ MAIL_SHORT_APP_NAME } para compartir su calendario."
       ]
     },
     "User referee invited via email": {

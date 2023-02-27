@@ -276,6 +276,9 @@
       "Join calendar": [
         "Tilmeld kalender"
       ],
+      "Keep current time zone": [
+        "Bevar den nuværende tidszone"
+      ],
       "Load image": [
         "Indlæs billede"
       ],
@@ -864,11 +867,6 @@
       ],
       "More options": [
         "Flere muligheder"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Delt med mig"
       ]
     },
     "Calendar status": {
@@ -3092,6 +3090,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importér fra ${ provider }"
+      ],
       "Other": [
         "Anden"
       ]
@@ -3148,6 +3149,14 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
+      ],
+      "${ numContact } contact": [
+        "${ numContact } kontakt",
+        "${ numContact } kontakter"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } kontaktgruppe",
+        "${ numGroups } kontaktgrupper"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe fundet",
@@ -3260,6 +3269,10 @@
       "Country code": [
         "Landekode"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Opret ${ calendarsToBeCreatedCount } ny kalender",
+        "Opret ${ calendarsToBeCreatedCount } nye kalendere"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Opret et mærkat til de importerede beskeder, et tidsinterval for importen og de mapper du gerne vil importere."
       ],
@@ -3356,6 +3369,10 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
+        "Importer ${ calendarCount } af ${ totalCalendarsCount } kalendere"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
       ],
@@ -3370,6 +3387,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
@@ -4190,6 +4210,17 @@
         "Sidepanel"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "For at tilføje en ny kalender skal du fjerne en eksisterende kalender."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "For at tilføje en ny kalender, fjern en anden kalender eller opgrader dit ${ BRAND_NAME }-abonnement til et betalt ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du har nået det maksimale antal kalendere, der er tilgængelige med dit abonnement."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Kalendere"
@@ -4203,14 +4234,14 @@
       "My calendars": [
         "Mine kalendere"
       ],
+      "Other calendars": [
+        "Andre kalendere"
+      ],
       "Pay invoice": [
         "Betal faktura"
       ],
       "Request an invite": [
         "Anmod om invitation"
-      ],
-      "Subscribed calendars": [
-        "Tilmeldte kalendere"
       ],
       "Upgrade account": [
         "Opgradér konto"
@@ -4233,6 +4264,10 @@
       "Almost there": [
         "Næsten færdig"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Antal oprettede kalendere: ${ createdCalendarCount } af ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Forbinder til din e-mailudbyder"
       ],
@@ -4247,6 +4282,24 @@
       ],
       "Your import is starting": [
         "Din import starter"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten",
+        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten",
+        "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mappe og giv dem etiketten",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mapper og giv dem etiketten"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etikette og giv dem etiketten",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten"
       ]
     },
     "Message": {
@@ -4279,17 +4332,9 @@
       ],
       "Manage calendars": [
         "Administrer kalendere"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Ikke muligt at oprette flere kalendere. Du har nået det maksimale antal personlige kalendere for dit abonnement."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Ikke muligt at tilføje flere kalendere. Du har nået det maksimale antal tilmeldte kalendere for dit abonnement."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Ikke muligt at oprette flere kalendere. Du har nået det maksimale antal personlige kalendere for dit abonnement."
+      "Upgrade": [
+        "Opgradér"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4306,6 +4351,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Kan ikke tilføje flere kalendere"
+      ],
       "How to import calendars from another service": [
         "Sådan importerer du kalendere fra en anden tjeneste"
       ],
@@ -4329,9 +4377,6 @@
       ],
       "Time zone changed": [
         "Tidszone ændret"
-      ],
-      "Unable to add more calendars": [
-        "Kan ikke tilføje flere kalendere"
       ]
     },
     "Modal title and action": {
@@ -5000,12 +5045,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Nu vises invitationer i din kalender som afventende begivenheder. Du skal blot åbne en begivenhed for at svare. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Abonner på andre kalendere"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Du kan abonnere på eksterne kalendere og læse deres begivenheder."
       ]
     },
     "Spotlight settings link": {
@@ -5096,9 +5135,6 @@
       "Calendar updated": [
         "Kalender opdateret"
       ],
-      "Canceling import": [
-        "Annullerer import"
-      ],
       "Cancellation sent and all events deleted": [
         "Aflysning sendt og alle begivenheder slettet"
       ],
@@ -5110,6 +5146,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Aflysning sendt og deltagere fjernet fra alle begivenheder"
+      ],
+      "Cancelling import": [
+        "Annullerer import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
