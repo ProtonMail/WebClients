@@ -1,6 +1,5 @@
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
-import { isTokenPayment } from '@proton/components/containers/payments/interface';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -9,7 +8,7 @@ import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/s
 import { getUser, queryCheckEmailAvailability, queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { CLIENT_TYPES, COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
+import { CLIENT_TYPES, COUPON_CODES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -270,23 +269,9 @@ export const handlePayment = ({
     cache: SignupCacheResult;
     subscriptionData: SubscriptionData;
 }): Promise<SignupActionResponse> => {
-    let humanVerificationResult = cache.humanVerificationResult;
-
-    if (
-        (cache.accountData.signupType === SignupType.Username || cache.accountData.signupType === SignupType.VPN) &&
-        isTokenPayment(subscriptionData.payment)
-    ) {
-        // Use payment token to prove humanity for a username paid account
-        humanVerificationResult = {
-            token: subscriptionData.payment.Details.Token,
-            tokenType: TOKEN_TYPES.PAYMENT,
-        };
-    }
-
     return handleCreateUser({
         cache: {
             ...cache,
-            humanVerificationResult,
             subscriptionData,
         },
         api,

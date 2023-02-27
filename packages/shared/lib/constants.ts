@@ -815,7 +815,6 @@ export enum TOKEN_TYPES {
     SMS = 'sms',
     INVITE = 'invite',
     COUPON = 'coupon',
-    PAYMENT = 'payment',
     CAPTCHA = 'captcha',
 }
 
