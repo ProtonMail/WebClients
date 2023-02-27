@@ -31,7 +31,7 @@ describe('forgeImageURL', () => {
     });
 });
 
-describe.skip('removeProxyURLAttributes', () => {
+describe('removeProxyURLAttributes', () => {
     const content = `<div>
                         <img proton-src='${originalImageURL}-1' src='${imageURL}-1'/>
                         <table>
@@ -53,45 +53,27 @@ describe.skip('removeProxyURLAttributes', () => {
 
     it('should remove all proton urls from the content', () => {
         const expectedContent = `<div>
-                        <img proton-src="${originalImageURL}-1">
+                        <img src="${originalImageURL}-1">
                         <table>
                             <tbody>
                                 <tr>
-                                    <td proton-background="${originalImageURL}-2">Element1</td>
+                                    <td background="${originalImageURL}-2">Element1</td>
                                 </tr>
                             </tbody>
                        </table>
 
-                       <video proton-poster="${originalImageURL}-3">
+                       <video poster="${originalImageURL}-3">
                             <source src="" type="video/mp4">
                        </video>
 
                        <svg width="90" height="90">
-                           <img proton-xlink:href="${originalImageURL}-4">
+                           <img xlink:href="${originalImageURL}-4">
                        </svg>
                   </div>`;
 
         const result = removeProxyURLAttributes(content);
 
         expect(result).toEqual(expectedContent);
-    });
-
-    it('should return content when no messageImages', function () {
-        const result = removeProxyURLAttributes(content);
-
-        expect(result).toEqual(content);
-    });
-
-    it('should return content when no remote images', function () {
-        const result = removeProxyURLAttributes(content);
-
-        expect(result).toEqual(content);
-    });
-
-    it('should return content when no images', function () {
-        const result = removeProxyURLAttributes(content);
-
-        expect(result).toEqual(content);
     });
 
     it('should not remove urls from embedded images', () => {
@@ -103,7 +85,7 @@ describe.skip('removeProxyURLAttributes', () => {
 
         const expectedContent = `<div>
                             <img src="cid:${cid}">
-                            <img proton-src="${originalImageURL}-1">
+                            <img src="${originalImageURL}-1">
                         </div>`;
 
         const result = removeProxyURLAttributes(content);
@@ -120,8 +102,8 @@ describe.skip('removeProxyURLAttributes', () => {
 
         const expectedContent = `<div>
                             <img src="${imageURL}-1">
-                            <img proton-src="${originalImageURL}-2">
-                            <img proton-src="${originalImageURL}-3">
+                            <img src="${originalImageURL}-2">
+                            <img src="${originalImageURL}-3">
                         </div>`;
 
         const result = removeProxyURLAttributes(content);
