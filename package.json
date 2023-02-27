@@ -17,7 +17,7 @@
         "version": "yarn workspace version run version"
     },
     "resolutions": {
-        "@noble/ed25519@1.7.1": "patch:@noble/ed25519@npm:1.7.1#.yarn/patches/@noble-ed25519-npm-1.6.0-59c82563e0",
+        "@noble/ed25519@1.7.3": "patch:@noble/ed25519@npm%3A1.7.3#./.yarn/patches/@noble-ed25519-npm-1.7.3-033c70acb7.patch",
         "@types/jest": "^27.5.2",
         "@types/react": "^17.0.53",
         "@types/react-dom": "^17.0.19",
