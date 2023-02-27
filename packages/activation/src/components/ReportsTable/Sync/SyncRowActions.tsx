@@ -79,6 +79,7 @@ const SyncRowActions = ({ syncId }: Props) => {
         {
             text: c('account').t`Delete forward`,
             onClick: () => showDeleteModal(true),
+            'data-testid': 'ReportsTable:deleteForward',
             loading: loadingApiChange,
         },
     ];
@@ -99,6 +100,7 @@ const SyncRowActions = ({ syncId }: Props) => {
             {renderDeleteModal && (
                 <Prompt
                     title={c('account').t`Remove forward`}
+                    data-testid="ReportsTable:deleteModal"
                     buttons={[
                         <Button color="danger" onClick={handleDeleteSync}>
                             {c('Action').t`Remove`}

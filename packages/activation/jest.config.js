@@ -3,15 +3,11 @@ module.exports = {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     collectCoverage: true,
     collectCoverageFrom: [
-        'components/**/*.{js,jsx,ts,tsx}',
-        'hooks/**/*.{js,jsx,ts,tsx}',
-        'logic/**/*.{js,jsx,ts,tsx}',
-        'mail/**/*.{js,jsx,ts,tsx}',
-        'modals/**/*.{js,jsx,ts,tsx}',
-        'steps/**/*.{js,jsx,ts,tsx}',
-        'utils/**/*.{js,jsx,ts,tsx}',
+        'src/**/*.{js,jsx,ts,tsx}',
         '!./**/*.interface.ts',
         '!./**/(interface|interfaces).ts',
+        '!src/tests/*',
+        '!src/tests/**/*',
     ],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
