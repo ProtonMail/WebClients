@@ -40,6 +40,17 @@ describe('PageContainer', () => {
             GlobalTotal: 0,
         }));
 
+        //TODO remove once Gmail Forwarding onboarding experiment is done
+        addApiMock('core/v4/experiments', () => ({
+            Code: 1000,
+            Experiments: [
+                {
+                    Name: 'GmailSyncOnboarding',
+                    Value: 'B',
+                },
+            ],
+        }));
+
         minimalCache();
         addToCache('MailSettings', { Shortcuts: 1 });
 
