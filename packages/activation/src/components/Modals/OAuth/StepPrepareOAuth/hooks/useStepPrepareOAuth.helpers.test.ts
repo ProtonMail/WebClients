@@ -2,10 +2,10 @@ import { MailImportFolder } from '@proton/activation/src/helpers/MailImportFolde
 import { ImportType, MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
 import { ImporterCalendar, ImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { mockAddresses } from '@proton/activation/src/tests/data/addresses';
-import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { Label } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { generateOwnedPersonalCalendars } from '@proton/testing/lib/builders';
 
 import { getMailCustomLabel, importerHasErrors } from './useStepPrepareOAuth.helpers';
 
@@ -33,7 +33,7 @@ const dummyFolder: MailImportFolder = {
     systemFolder: MailImportDestinationFolder.ARCHIVE,
 };
 
-describe('useStepPrepare tests', () => {
+describe('getMailCustomLabel', () => {
     it('Should return the appropriate mail label', () => {
         const labelBigBang = getMailCustomLabel(TIME_PERIOD.BIG_BANG);
         expect(labelBigBang).toBe('Emails (all messages)');
@@ -46,15 +46,23 @@ describe('useStepPrepare tests', () => {
         const labelDefault = getMailCustomLabel();
         expect(labelDefault).toBe('Email');
     });
+});
 
-    it('Should return no errors', () => {
-        const products: ImportType[] = [ImportType.CONTACTS];
-        const importerData: ImporterData = { importedEmail: 'test@proton.me', importerId: '1' };
+describe('importerHasErrors calendar tests', () => {
+    it('Should return an error if number of calendars exceed MAX_CALENDARS_PAID for paid user (max 25)', () => {
+        const dummyCalendarArray = Array(20).fill(dummyCalendar);
+        const products: ImportType[] = [ImportType.CALENDAR];
+        const importerData: ImporterData = {
+            importedEmail: 'test@proton.me',
+            importerId: '1',
+            calendars: { calendars: dummyCalendarArray },
+        };
         const labels: Label[] = [];
         const folders: Folder[] = [];
-        const calendars: Calendar[] = [];
+        const calendars: VisualCalendar[] = generateOwnedPersonalCalendars(10);
         const mailChecked = false;
-        const calendarChecked = false;
+        const calendarChecked = true;
+        const isFreeUser = false;
 
         const errors = importerHasErrors(
             products,
@@ -64,12 +72,44 @@ describe('useStepPrepare tests', () => {
             calendars,
             mailChecked,
             calendarChecked,
-            true
+            true,
+            isFreeUser
         );
+
+        expect(errors).toBe(true);
+    });
+
+    it('Should NOT return an error if number of calendars is below MAX_CALENDARS_PAID for paid user (max 25)', () => {
+        const dummyCalendarArray = Array(20).fill(dummyCalendar);
+        const products: ImportType[] = [ImportType.CALENDAR];
+        const importerData: ImporterData = {
+            importedEmail: 'test@proton.me',
+            importerId: '1',
+            calendars: { calendars: dummyCalendarArray },
+        };
+        const labels: Label[] = [];
+        const folders: Folder[] = [];
+        const calendars: VisualCalendar[] = generateOwnedPersonalCalendars(2);
+        const mailChecked = false;
+        const calendarChecked = true;
+        const isFreeUser = false;
+
+        const errors = importerHasErrors(
+            products,
+            importerData,
+            labels,
+            folders,
+            calendars,
+            mailChecked,
+            calendarChecked,
+            true,
+            isFreeUser
+        );
+
         expect(errors).toBe(false);
     });
 
-    it('Should return an error if number of calendars exceed MAX_CALENDARS_PAID', () => {
+    it('Should return an error if number of calendars exceed MAX_CALENDARS_FREE for free user (max 3)', () => {
         const dummyCalendarArray = Array(25).fill(dummyCalendar);
         const products: ImportType[] = [ImportType.CALENDAR];
         const importerData: ImporterData = {
@@ -79,9 +119,10 @@ describe('useStepPrepare tests', () => {
         };
         const labels: Label[] = [];
         const folders: Folder[] = [];
-        const calendars: Calendar[] = [{ ID: 'id', Type: CALENDAR_TYPE.PERSONAL }];
+        const calendars: VisualCalendar[] = generateOwnedPersonalCalendars(10);
         const mailChecked = false;
         const calendarChecked = true;
+        const isFreeUser = true;
 
         const errors = importerHasErrors(
             products,
@@ -91,12 +132,45 @@ describe('useStepPrepare tests', () => {
             calendars,
             mailChecked,
             calendarChecked,
-            true
+            true,
+            isFreeUser
         );
 
         expect(errors).toBe(true);
     });
 
+    it('Should NOT return an error if number of calendars is below MAX_CALENDARS_FREE for paid user (max 3)', () => {
+        const dummyCalendarArray = Array(1).fill(dummyCalendar);
+        const products: ImportType[] = [ImportType.CALENDAR];
+        const importerData: ImporterData = {
+            importedEmail: 'test@proton.me',
+            importerId: '1',
+            calendars: { calendars: dummyCalendarArray },
+        };
+        const labels: Label[] = [];
+        const folders: Folder[] = [];
+        const calendars: VisualCalendar[] = generateOwnedPersonalCalendars(1);
+        const mailChecked = false;
+        const calendarChecked = true;
+        const isFreeUser = true;
+
+        const errors = importerHasErrors(
+            products,
+            importerData,
+            labels,
+            folders,
+            calendars,
+            mailChecked,
+            calendarChecked,
+            true,
+            isFreeUser
+        );
+
+        expect(errors).toBe(false);
+    });
+});
+
+describe('importerHasErrors test check and general behavior', () => {
     it('Should not return an error if number of calendars exceed MAX_CALENDARS_PAID but no calendar product', () => {
         const dummyCalendarArray = Array(20).fill(dummyCalendar);
         const products: ImportType[] = [ImportType.CONTACTS];
@@ -107,7 +181,7 @@ describe('useStepPrepare tests', () => {
         };
         const labels: Label[] = [];
         const folders: Folder[] = [];
-        const calendars: Calendar[] = [{ ID: 'id', Type: CALENDAR_TYPE.PERSONAL }];
+        const calendars: VisualCalendar[] = generateOwnedPersonalCalendars(1);
         const mailChecked = false;
         const calendarChecked = true;
 
@@ -119,6 +193,7 @@ describe('useStepPrepare tests', () => {
             calendars,
             mailChecked,
             calendarChecked,
+            true,
             true
         );
 
@@ -135,7 +210,7 @@ describe('useStepPrepare tests', () => {
         };
         const labels: Label[] = [];
         const folders: Folder[] = [];
-        const calendars: Calendar[] = [{ ID: 'id', Type: CALENDAR_TYPE.PERSONAL }];
+        const calendars: VisualCalendar[] = generateOwnedPersonalCalendars(1);
         const mailChecked = false;
         const calendarChecked = false;
 
@@ -147,9 +222,33 @@ describe('useStepPrepare tests', () => {
             calendars,
             mailChecked,
             calendarChecked,
-            true
+            true,
+            false
         );
 
+        expect(errors).toBe(false);
+    });
+
+    it('Should return no errors', () => {
+        const products: ImportType[] = [ImportType.CONTACTS];
+        const importerData: ImporterData = { importedEmail: 'test@proton.me', importerId: '1' };
+        const labels: Label[] = [];
+        const folders: Folder[] = [];
+        const calendars: VisualCalendar[] = [];
+        const mailChecked = false;
+        const calendarChecked = false;
+
+        const errors = importerHasErrors(
+            products,
+            importerData,
+            labels,
+            folders,
+            calendars,
+            mailChecked,
+            calendarChecked,
+            true,
+            true
+        );
         expect(errors).toBe(false);
     });
 
@@ -182,7 +281,7 @@ describe('useStepPrepare tests', () => {
                 Notify: 1,
             },
         ];
-        const calendars: Calendar[] = [];
+        const calendars: VisualCalendar[] = [];
         const mailChecked = true;
         const calendarChecked = false;
 
@@ -194,7 +293,8 @@ describe('useStepPrepare tests', () => {
             calendars,
             mailChecked,
             calendarChecked,
-            true
+            true,
+            false
         );
         expect(errors).toBe(true);
     });
@@ -228,7 +328,7 @@ describe('useStepPrepare tests', () => {
                 Notify: 1,
             },
         ];
-        const calendars: Calendar[] = [];
+        const calendars: VisualCalendar[] = [];
         const mailChecked = false;
         const calendarChecked = false;
 
@@ -240,7 +340,8 @@ describe('useStepPrepare tests', () => {
             calendars,
             mailChecked,
             calendarChecked,
-            true
+            true,
+            false
         );
         expect(errors).toBe(false);
     });
@@ -274,7 +375,7 @@ describe('useStepPrepare tests', () => {
                 Notify: 1,
             },
         ];
-        const calendars: Calendar[] = [];
+        const calendars: VisualCalendar[] = [];
         const mailChecked = false;
         const calendarChecked = false;
 
@@ -286,7 +387,8 @@ describe('useStepPrepare tests', () => {
             calendars,
             mailChecked,
             calendarChecked,
-            true
+            true,
+            false
         );
         expect(errors).toBe(false);
     });
@@ -311,7 +413,7 @@ describe('useStepPrepare tests', () => {
                 Notify: 1,
             },
         ];
-        const calendars: Calendar[] = [];
+        const calendars: VisualCalendar[] = [];
         const mailChecked = false;
         const calendarChecked = false;
 
@@ -323,7 +425,8 @@ describe('useStepPrepare tests', () => {
             calendars,
             mailChecked,
             calendarChecked,
-            true
+            true,
+            false
         );
         expect(errors).toBe(false);
     });

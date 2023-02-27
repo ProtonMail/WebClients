@@ -3,10 +3,22 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { EasySwitchFeatureFlag, ImportType } from '@proton/activation/src/interface';
-import { FeatureCode, Loader, ModalTwo, ModalTwoContent, ModalTwoHeader, useFeature } from '@proton/components';
+import {
+    FeatureCode,
+    Loader,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoHeader,
+    useCalendars,
+    useFeature,
+} from '@proton/components';
+import {
+    getProbablyActiveCalendars,
+    getVisualCalendars,
+    getWritableCalendars,
+} from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
-import useUserCalendars from '../../../../hooks/useUserCalendars';
 import ImapProductsModalButtons from './ImapProductsModalButtons';
 
 interface Props {
@@ -16,7 +28,8 @@ interface Props {
 
 const ImapProductsModal = ({ onClick, onClose }: Props) => {
     const { feature, loading: FFLoading } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
-    const [userActiveCalendars, calendarLoading] = useUserCalendars();
+    const [calendars = [], calendarLoading] = useCalendars();
+    const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(getVisualCalendars(calendars)));
     const loading = FFLoading || calendarLoading;
 
     return (
@@ -45,7 +58,7 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
                             <ImapProductsModalButtons
                                 importType={ImportType.CALENDAR}
                                 onClick={() => onClick(ImportType.CALENDAR)}
-                                disabled={!feature?.Value?.OtherCalendar || userActiveCalendars.length === 0}
+                                disabled={!feature?.Value?.OtherCalendar || activeWritableCalendars.length === 0}
                                 disabledTooltipTitle={
                                     feature?.Value?.OtherCalendar
                                         ? c('Info')
