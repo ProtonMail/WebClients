@@ -542,9 +542,6 @@
       "Load": [
         "Завантажити"
       ],
-      "Load anyway": [
-        "Все одно завантажити"
-      ],
       "Load embedded images": [
         "Завантажити вбудовані зображення"
       ],
@@ -968,8 +965,8 @@
       "Skip verification": [
         "Пропустити перевірку"
       ],
-      "Some images failed to load with tracking protection.": [
-        "У зв'язку із захистом від стеження, не вдалося завантажити деякі зображення."
+      "Some images could not be loaded with tracker protection.": [
+        "Деякі зображення неможливо завантажити з активним захистом від елементів стеження."
       ],
       "Star": [
         "Позначити зірочкою"
@@ -6691,6 +6688,17 @@
         "Рядок"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Щоб додати новий календар, вилучіть наявний."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Щоб додати новий календар, вилучіть інший календар або оновіть ваш ${ BRAND_NAME } тарифний план до ${ MAIL_SHORT_APP_NAME } платного плану."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ви досягли максимальної кількості календарів, доступної у вашому тарифному плані."
+      ]
+    },
     "Link": {
       "All mail": [
         "Уся пошта"
@@ -6853,6 +6861,12 @@
     "Loading info": {
       "Almost there": [
         "Майже готово"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Підключення до вашого постачальника електронної пошти"
@@ -7181,7 +7195,7 @@
         "Отримайте необмежену кількість псевдонімів із SimpleLogin від ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Обсяг сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

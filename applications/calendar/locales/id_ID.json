@@ -274,6 +274,9 @@
       "Join calendar": [
         "Gabung ke kalender"
       ],
+      "Keep current time zone": [
+        "Tetap gunakan zona waktu saat ini"
+      ],
       "Load image": [
         "Muat gambar"
       ],
@@ -860,11 +863,6 @@
       ],
       "More options": [
         "Opsi lainya"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Dibagikan dengan saya"
       ]
     },
     "Calendar status": {
@@ -3056,6 +3054,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Impor dari ${ provider }"
+      ],
       "Other": [
         "Lainnya"
       ]
@@ -3104,6 +3105,12 @@
       ],
       "${ groupCounts } groups found": [
         "ditemukan ${ groupCounts } grup"
+      ],
+      "${ numContact } contacts": [
+        "${ numContact } kontak"
+      ],
+      "${ numGroups } contact groups": [
+        "${ numGroups } grup kontak"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
@@ -3204,6 +3211,9 @@
       "Country code": [
         "Kode negara"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "Buat ${ calendarsToBeCreatedCount } kalender baru"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
       ],
@@ -3299,6 +3309,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -4132,6 +4145,17 @@
         "Panel samping"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada atau tingkatkan akun ${ BRAND_NAME } Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Anda telah mencapai batas jumlah kalender yang diperkenankan oleh paket Anda."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Kalender"
@@ -4145,14 +4169,14 @@
       "My calendars": [
         "Kalender saya"
       ],
+      "Other calendars": [
+        "Kalender lainnya"
+      ],
       "Pay invoice": [
         "Bayar tagihan"
       ],
       "Request an invite": [
         "Minta undangan"
-      ],
-      "Subscribed calendars": [
-        "Kalender yang dilanggan"
       ],
       "Upgrade account": [
         "Tingkatkan akun"
@@ -4174,6 +4198,9 @@
     "Loading info": {
       "Almost there": [
         "Hampir selesai"
+      ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
@@ -4221,17 +4248,9 @@
       ],
       "Manage calendars": [
         "Kelola kalender"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Tidak dapat menambahkan kalender baru. Anda telah mencapat batas jumlah kalender personal yang diizinkan untuk paket Anda."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Tidak dapat menambahkan kalender baru. Anda telah mencapat batas jumlah langganan kalender yang diizinkan untuk paket Anda."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Tidak dapat membuat kalender baru. Anda telah mencapat batas jumlah kalender personal yang diizinkan untuk paket Anda."
+      "Upgrade": [
+        "Tingkatkan"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4248,6 +4267,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Tidak dapat menambahkan lebih banyak kalender"
+      ],
       "How to import calendars from another service": [
         "Cara untuk mengimpor kalender-kalender dari layanan email lainnya"
       ],
@@ -4271,9 +4293,6 @@
       ],
       "Time zone changed": [
         "Zona waktu diubah"
-      ],
-      "Unable to add more calendars": [
-        "Tidak dapat menambahkan lebih banyak kalender"
       ]
     },
     "Modal title and action": {
@@ -4910,12 +4929,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Sekarang, undangan akan muncul pada kalender Anda sebagai acara yang menunggu balasan. Anda hanya perlu membuka acara untuk membalas. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Langgan kalender lain"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Anda dapat berlangganan ke kalender eksternal dan melihat acara yang tertera di dalamnya."
       ]
     },
     "Spotlight settings link": {
@@ -5005,9 +5018,6 @@
       "Calendar updated": [
         "Kalender berhasil diperbarui"
       ],
-      "Canceling import": [
-        "Membatalkan proses impor"
-      ],
       "Cancellation sent and all events deleted": [
         "Pembatalan terkirim dan semua acara berhasil dihapus"
       ],
@@ -5019,6 +5029,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Pembatalan terkirim dan peserta berhasil dihapus dari semua acara"
+      ],
+      "Cancelling import": [
+        "Membatalkan impor"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"

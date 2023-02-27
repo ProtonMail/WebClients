@@ -377,6 +377,9 @@
       "Move to trash": [
         "Přesunout do koše"
       ],
+      "New": [
+        "Nový"
+      ],
       "New upload": [
         "Nové nahrávání"
       ],
@@ -2164,6 +2167,9 @@
       "This label name is not available. Please choose a different name.": [
         "Tento název štítku není k dispozici. Zvolte prosím jiný název."
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Zkuste používat pouze písmena, číslice a _.-"
       ],
@@ -2172,6 +2178,9 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "Není možné odeslat soubory vCard více než 10 kontaktů"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Dosáhli jste maximálního počtu osobních kalendářů. Některé kalendáře nebylo možné importovat."
@@ -2833,6 +2842,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importovat z ${ provider }"
+      ],
       "Other": [
         "Ostatní"
       ]
@@ -2989,6 +3001,9 @@
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
+      ],
+      "${ selectedCount } selected": [
+        "Vybráno: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } vybraná složka",
@@ -3367,6 +3382,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importujeme vaše data z ${ fromEmail } do ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
@@ -4485,6 +4503,12 @@
       "Almost there": [
         "Téměř hotovo"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Připojování k Vašemu poskytovateli e-mailu"
       ],
@@ -4499,6 +4523,32 @@
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
       ]
     },
     "Message": {
@@ -5101,7 +5151,7 @@
       "Bug reported": [
         "Chyba nahlášena"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Ruším import"
       ],
       "Code sent to ${ methodTo }": [

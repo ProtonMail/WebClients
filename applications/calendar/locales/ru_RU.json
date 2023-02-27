@@ -877,11 +877,6 @@
         "Дополнительные параметры"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Поделились со мной"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "Не синхронизировано"
@@ -3167,6 +3162,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Импортировать из ${ provider }"
+      ],
       "Other": [
         "Другой"
       ]
@@ -3239,6 +3237,18 @@
         "Найдено ${ groupCounts } группы",
         "Найдено ${ groupCounts } групп",
         "Найдено ${ groupCounts } группы"
+      ],
+      "${ numContact } contact": [
+        "${ numContact } контакт",
+        "${ numContact } контакта",
+        "${ numContact } контактов",
+        "${ numContact } контактов"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } группа контактов",
+        "${ numGroups } группы контактов",
+        "${ numGroups } групп контактов",
+        "${ numGroups } групп контактов"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
@@ -3375,6 +3385,12 @@
       "Country code": [
         "Код страны"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Создать ${ calendarsToBeCreatedCount } новый календарь",
+        "Создать ${ calendarsToBeCreatedCount } новых календаря",
+        "Создать ${ calendarsToBeCreatedCount } новых календарей",
+        "Создать ${ calendarsToBeCreatedCount } новых календарей"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
       ],
@@ -3471,6 +3487,12 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календаря",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Импортировать ${ contactsFragment } и ${ contactsGroupsFragment }"
       ],
@@ -3485,6 +3507,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Импортируйте электронную почту, календари и контакты из другой службы в ${ BRAND_NAME }. Мы будем сопровождать вас на каждом шагу и шифровать ваши данные при переносе. Добро пожаловать в мир конфиденциальности."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Импорт данных из ${ fromEmail } в ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
@@ -4309,6 +4334,17 @@
         "Боковая панель"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Чтобы добавить новый календарь, удалите существующий."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Чтобы добавить новый календарь, удалите другой календарь или улучшите тариф ${ BRAND_NAME } до платного тарифа ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Вы достигли максимального количества календарей, доступных в вашем тарифе."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Календари"
@@ -4322,14 +4358,14 @@
       "My calendars": [
         "Мои календари"
       ],
+      "Other calendars": [
+        "Другие календари"
+      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
       "Request an invite": [
         "Запросить приглашение"
-      ],
-      "Subscribed calendars": [
-        "Подписанные календари"
       ],
       "Upgrade account": [
         "Повысить учётную запись"
@@ -4352,6 +4388,12 @@
       "Almost there": [
         "Почти готово"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Подключение к поставщику услуг электронной почты"
       ],
@@ -4366,6 +4408,32 @@
       ],
       "Your import is starting": [
         "Ваш импорт начался"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыка и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как"
       ]
     },
     "Message": {
@@ -4398,17 +4466,9 @@
       ],
       "Manage calendars": [
         "Управление календарями"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Невозможно добавить больше календарей. Вы достигли максимального количества личных календарей в пределах вашего тарифа."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Невозможно добавить больше календарей. Вы достигли максимального количества подписанных календарей в пределах вашего тарифа."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Невозможно создать больше календарей. Вы достигли максимального количества личных календарей в пределах вашего тарифа."
+      "Upgrade": [
+        "Улучшить"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4425,6 +4485,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Невозможно добавить больше календарей"
+      ],
       "How to import calendars from another service": [
         "Как импортировать календари из другой службы"
       ],
@@ -4448,9 +4511,6 @@
       ],
       "Time zone changed": [
         "Часовой пояс изменен"
-      ],
-      "Unable to add more calendars": [
-        "Невозможно добавить больше календарей"
       ]
     },
     "Modal title and action": {
@@ -5430,12 +5490,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Теперь приглашения появляются в вашем календаре как ожидающие события. Просто откройте событие, чтобы ответить. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Подписаться на другие календари"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Можно подписаться на внешние календари и читать события из них."
       ]
     },
     "Spotlight settings link": {
@@ -5528,9 +5582,6 @@
       "Calendar updated": [
         "Календарь обновлен"
       ],
-      "Canceling import": [
-        "Импорт отменяется"
-      ],
       "Cancellation sent and all events deleted": [
         "Сообщение об отмене отправлено и все события удалены"
       ],
@@ -5542,6 +5593,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Сообщение об отмене отправлено и участники удалены из всех событий"
+      ],
+      "Cancelling import": [
+        "Отмена импорта"
       ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"

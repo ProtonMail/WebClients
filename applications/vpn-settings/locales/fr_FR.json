@@ -131,6 +131,9 @@
       "Edit billing details": [
         "Modifier les informations de facturation"
       ],
+      "Edit display name": [
+        "Modifier le nom d’affichage"
+      ],
       "Edit email address": [
         "Modifier l'adresse électronique"
       ],
@@ -1766,6 +1769,9 @@
       ],
       "(1-2 emails per month)": [
         "(une à deux fois par mois)"
+      ],
+      "(during your first month)": [
+        "(au cours de votre premier mois)"
       ]
     },
     "Go to sign in": {
@@ -2209,7 +2215,7 @@
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualisez la page ou ${ link } pour résoudre automatiquement la plupart des problèmes."
+        "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Revoke certificate ${ name }": [
         "Révoquer le certificat ${ name }"
@@ -2450,12 +2456,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal. Si ce n'est pas le cas, cliquez sur le lien ci-dessous."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"
@@ -2960,6 +2960,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "Actualités des produits ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "E-mails de bienvenue ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -2975,7 +2978,7 @@
         "Ajouter un code cadeau"
       ],
       "clearing your browser cache": [
-        "vider le cache de votre navigateur"
+        "videz le cache de votre navigateur"
       ],
       "click here": [
         "cliquez ici"
@@ -3144,6 +3147,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendrier",
+        "${ n } calendriers"
+      ],
       "${ n } custom email domain": [
         "${ n } domaine de messagerie personnalisé",
         "${ n } domaines de messagerie personnalisés"
@@ -3176,10 +3183,6 @@
         "${ n } message par jour",
         "${ n } messages par jour"
       ],
-      "${ n } personal calendar": [
-        "${ n } calendrier personnel",
-        "${ n } calendriers personnels"
-      ],
       "${ n } VPN connection": [
         "${ n } connexion VPN",
         "${ n } connexions VPN"
@@ -3211,6 +3214,9 @@
       ],
       "Auto-reply": [
         "Réponse automatique"
+      ],
+      "Calendar sharing": [
+        "Partage de calendrier"
       ],
       "Catch-all": [
         "Catch-all"
@@ -3546,9 +3552,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain } » pour les abonnements à des sites d'informations par exemple."
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Créez ${ n } calendrier personnalisé.",
-        "Créez jusqu'à ${ n } calendriers personnalisés."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Créez jusqu'à ${ n } calendrier personnalisé ou ajoutez les calendriers d'amis, de famille, de collègues et d'organisations.",
+        "Créez jusqu'à ${ n } calendriers personnalisés ou ajoutez les calendriers d'amis, de famille, de collègues et d'organisations."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
@@ -3556,8 +3562,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Partagez facilement vos calendriers avec vos collègues, votre famille et vos amis via un lien."
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues via un lien."
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues."
       ],
       "End-to-end encrypted calendar": [
         "Calendrier chiffré de bout en bout"
@@ -3585,12 +3591,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Les jours ouvrés, l'équipe support client ${ BRAND_NAME } vous apporte son aide dans les 24 heures suivant votre demande."
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "En plus de cela, ajoutez jusqu'à 5 calendriers d'amis, de famille, de collègues et d'organisations."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "En plus de cela, ajoutez jusqu'à 5 calendriers d'amis, de famille, de collègues et d'organisations."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Une connexion VPN permet à un seul appareil de se connecter à ${ BRAND_NAME } VPN. Pour connecter en même temps un téléphone et un ordinateur portable à ${ BRAND_NAME } VPN par exemple, vous avez besoin de deux connexions VPN."
@@ -3701,10 +3701,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Bénéficiez de plus de possibilités avec la prise en charge de 10 domaines de messagerie personnalisés."
-      ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Créez ${ numberOfPersonalCalendars } calendrier personnel",
-        "Créez jusqu'à ${ numberOfPersonalCalendars } calendriers personnels"
       ],
       "Everything in ${ vpnPlanName }": [
         "Tout ce qui est inclus dans l'abonnement ${ vpnPlanName }"
@@ -4272,6 +4268,14 @@
         "VPN haut débit sur ${ maxVpn } appareils"
       ]
     },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Abonnement géré extérieurement"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Votre abonnement a été effectué via un achat dans l’application. Pour gérer votre abonnement actuel, vous devez naviguer vers la section d’abonnement sur votre compte ${ subscriptionManager }"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Pour"
@@ -4484,8 +4488,8 @@
       "Billing cycle": [
         "Cycle de facturation"
       ],
-      "Cancel Mail subscription": [
-        "Annuler l'abonnement Mail"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Annuler l'abonnement ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Vérification de la carte"
