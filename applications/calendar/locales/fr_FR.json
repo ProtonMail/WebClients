@@ -276,6 +276,9 @@
       "Join calendar": [
         "Rejoindre le calendrier"
       ],
+      "Keep current time zone": [
+        "Garder le fuseau horaire actuel"
+      ],
       "Load image": [
         "Charger l'image"
       ],
@@ -864,11 +867,6 @@
       ],
       "More options": [
         "Plus d’options"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Partagé avec moi"
       ]
     },
     "Calendar status": {
@@ -3092,6 +3090,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importer depuis ${ provider }"
+      ],
       "Other": [
         "Autre"
       ]
@@ -3148,6 +3149,14 @@
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
+      ],
+      "${ numContact } contact": [
+        "${ numContact } contact",
+        "${ numContact } contacts"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } groupe de contacts",
+        "${ numGroups } groupes de contacts"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
@@ -3260,6 +3269,10 @@
       "Country code": [
         "Indicatif du pays"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
+        "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
       ],
@@ -3356,6 +3369,10 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
+        "Importer ${ calendarCount } calendriers sur ${ totalCalendarsCount }"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
       ],
@@ -3370,6 +3387,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importez vos e-mails, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
@@ -3508,7 +3528,7 @@
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualisez la page ou ${ link } pour résoudre automatiquement la plupart des problèmes."
+        "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Removed participants will be notified.": [
         "Les participants supprimés seront informés."
@@ -4195,7 +4215,7 @@
         "Calendriers"
       ],
       "clearing your browser cache": [
-        "vider le cache de votre navigateur"
+        "videz le cache de votre navigateur"
       ],
       "Learn more": [
         "En savoir plus"
@@ -4203,14 +4223,14 @@
       "My calendars": [
         "Mes calendriers"
       ],
+      "Other calendars": [
+        "Autres calendriers"
+      ],
       "Pay invoice": [
         "Payer la facture"
       ],
       "Request an invite": [
         "Demander une invitation"
-      ],
-      "Subscribed calendars": [
-        "Calendriers souscrits"
       ],
       "Upgrade account": [
         "Passer à un abonnement supérieur"
@@ -4233,6 +4253,10 @@
       "Almost there": [
         "Nous y sommes presque."
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }."
+      ],
       "Connecting to your email provider": [
         "Connexion à votre fournisseur de messagerie"
       ],
@@ -4247,6 +4271,24 @@
       ],
       "Your import is starting": [
         "Votre importation commence."
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label",
+        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label",
+        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label",
+        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label"
       ]
     },
     "Message": {
@@ -4281,17 +4323,6 @@
         "Gérer les calendriers"
       ]
     },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le maximum de calendriers personnels prévus dans votre abonnement."
-      ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le nombre maximum de calendriers auxquels vous pouvez vous abonner dans le cadre de votre abonnement."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Impossible de créer d'autres calendriers. Vous avez atteint le maximum de calendriers personnels prévus dans votre abonnement."
-      ]
-    },
     "Modal for received invitation to share calendar; text": {
       "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
         "${ calendarOwnerDisplayName } a partagé son calendrier ${ boldCalendarName } avec vous."
@@ -4306,6 +4337,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Impossible d'ajouter d'autres calendriers"
+      ],
       "How to import calendars from another service": [
         "Comment importer des calendriers depuis un autre service"
       ],
@@ -4329,9 +4363,6 @@
       ],
       "Time zone changed": [
         "Le fuseau horaire est modifié."
-      ],
-      "Unable to add more calendars": [
-        "Impossible d'ajouter d'autres calendriers"
       ]
     },
     "Modal title and action": {
@@ -5235,12 +5266,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Les invitations sont maintenant affichées dans votre calendrier comme des événements en attente. Pour répondre, il suffit d'ouvrir un événement. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Abonnez-vous à d'autres calendriers"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Vous pouvez vous abonner à des calendriers externes et voir leurs événements."
       ]
     },
     "Spotlight settings link": {
@@ -5331,9 +5356,6 @@
       "Calendar updated": [
         "Le calendrier a été mis à jour."
       ],
-      "Canceling import": [
-        "Annulation de l'importation"
-      ],
       "Cancellation sent and all events deleted": [
         "L'annulation a été envoyée et tous les événements ont été supprimés."
       ],
@@ -5345,6 +5367,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "L'annulation a été envoyée et les participants ont été supprimés de tous les événements."
+      ],
+      "Cancelling import": [
+        "Annulation de l'importation"
       ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."

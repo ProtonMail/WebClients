@@ -869,11 +869,6 @@
         "Più opzioni"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Condiviso con me"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "Non sincronizzato"
@@ -3152,6 +3147,14 @@
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
       ],
+      "${ numContact } contact": [
+        "${ numContact } contatto",
+        "${ numContact } contatti"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } gruppo di contatti",
+        "${ numGroups } gruppi di contatti"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } cartella trovata",
         "${ providerFoldersNumLocalized } cartelle trovate"
@@ -3381,6 +3384,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importa le tue e-mail, calendari e contatti da un altro servizio a ${ BRAND_NAME }. Ti guideremo passo dopo passo e crittograferemo i tuoi dati man mano che vengono spostati. Benvenuto nel mondo della privacy."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importazione dei tuoi dati da ${ fromEmail } a ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
@@ -4214,14 +4220,14 @@
       "My calendars": [
         "Miei calendari"
       ],
+      "Other calendars": [
+        "Altri calendari"
+      ],
       "Pay invoice": [
         "Pagamento della fattura"
       ],
       "Request an invite": [
         "Richiedi un invito"
-      ],
-      "Subscribed calendars": [
-        "Calendari registrati"
       ],
       "Upgrade account": [
         "Effettua l'upgrade dell'account"
@@ -4244,6 +4250,10 @@
       "Almost there": [
         "Già qui"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Totale calendari creati: ${ createdCalendarCount } di ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Connessione al tuo provider email"
       ],
@@ -4258,6 +4268,24 @@
       ],
       "Your import is starting": [
         "La tua importazione sta iniziando"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importa tutti i messaggi da ${ itemsToImportCount } cartella ed etichettali come",
+        "Importa tutti i messaggi da ${ itemsToImportCount } cartelle ed etichettali come"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importa tutti i messaggi da ${ itemsToImportCount } etichetta ed etichettali come",
+        "Importa tutti i messaggi da ${ itemsToImportCount } etichette ed etichettali come"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } cartella su ${ itemsToImportCount } ed etichettali come",
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } cartelle su ${ itemsToImportCount } ed etichettali come"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichetta su ${ itemsToImportCount } ed etichettali come",
+        "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichette su ${ itemsToImportCount } ed etichettali come"
       ]
     },
     "Message": {
@@ -4290,17 +4318,9 @@
       ],
       "Manage calendars": [
         "Gestisci calendari"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Impossibile aggiungere calendari. Hai raggiunto il numero massimo di calendari personali all'interno del tuo piano."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Impossibile aggiungere altri calendari. Hai raggiunto il numero massimo di calendari sottoscrivibili all'interno del tuo piano."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Impossibile creare più calendari. Hai raggiunto il numero massimo di calendari personali all'interno del tuo piano."
+      "Upgrade": [
+        "Aggiornamento"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4317,6 +4337,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Impossibile aggiungere altri calendari"
+      ],
       "How to import calendars from another service": [
         "Come importare i calendari da un altro servizio"
       ],
@@ -4340,9 +4363,6 @@
       ],
       "Time zone changed": [
         "Fuso orario cambiato"
-      ],
-      "Unable to add more calendars": [
-        "Impossibile aggiungere altri calendari"
       ]
     },
     "Modal title and action": {
@@ -5243,12 +5263,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Ora gli inviti appaiono sul tuo calendario come eventi in attesa. Apri un evento per rispondere. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Iscriviti ad altri calendari"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Puoi iscriverti a calendari esterni e leggere i loro eventi."
       ]
     },
     "Spotlight settings link": {
@@ -5339,9 +5353,6 @@
       "Calendar updated": [
         "Calendario aggiornato"
       ],
-      "Canceling import": [
-        "Cancellazione importazione"
-      ],
       "Cancellation sent and all events deleted": [
         "Cancellazione inviata e tutti gli eventi cancellati"
       ],
@@ -5353,6 +5364,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Cancellazione inviata e partecipanti rimossi da tutti gli eventi"
+      ],
+      "Cancelling import": [
+        "Annullamento dell'importazione"
       ],
       "Code sent to ${ methodTo }": [
         "Codice inviato a ${ methodTo }"

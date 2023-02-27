@@ -530,9 +530,6 @@
       "Load": [
         "Muat"
       ],
-      "Load anyway": [
-        "Tetap muat"
-      ],
       "Load embedded images": [
         "Muat gambar yang tersemat"
       ],
@@ -956,7 +953,7 @@
       "Skip verification": [
         "Lewati verifikasi"
       ],
-      "Some images failed to load with tracking protection.": [
+      "Some images could not be loaded with tracker protection.": [
         "Sebagian gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
       ],
       "Star": [
@@ -4255,6 +4252,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Impor dari ${ provider }"
+      ],
       "Other": [
         "Lainnya"
       ]
@@ -4324,6 +4324,12 @@
       ],
       "${ numberOfTrackers } email trackers blocked": [
         "${ numberOfTrackers } pelacak email telah diblokir"
+      ],
+      "${ numContact } contacts": [
+        "${ numContact } kontak"
+      ],
+      "${ numGroups } contact groups": [
+        "${ numGroups } grup kontak"
       ],
       "${ NumMessages } messages in conversation": [
         "${ NumMessages } pesan dalam percakapan"
@@ -4534,6 +4540,9 @@
       ],
       "Country code": [
         "Kode negara"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
@@ -4765,6 +4774,9 @@
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "Seluruh gambar telah dihapus karena tidak dapat diikutsertakan dalam pesan balasan otomatis"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -6361,6 +6373,17 @@
         "Baris"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada atau tingkatkan akun ${ BRAND_NAME } Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Anda telah mencapai batas jumlah kalender yang diperkenankan oleh paket Anda."
+      ]
+    },
     "Link": {
       "All mail": [
         "Semua surat"
@@ -6523,6 +6546,9 @@
     "Loading info": {
       "Almost there": [
         "Hampir selesai"
+      ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
@@ -6816,7 +6842,7 @@
         "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7459,6 +7485,9 @@
       ],
       "Bug reported": [
         "Bug berhasil dilaporkan"
+      ],
+      "Cancelling import": [
+        "Membatalkan impor"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"

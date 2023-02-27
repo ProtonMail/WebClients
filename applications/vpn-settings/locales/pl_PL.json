@@ -131,6 +131,9 @@
       "Edit billing details": [
         "Edytuj szczegóły płatności"
       ],
+      "Edit display name": [
+        "Edytuj nazwę wyświetlaną"
+      ],
       "Edit email address": [
         "Edytuj adres e-mail"
       ],
@@ -2461,6 +2464,24 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Możesz dostosować i pobrać swoje faktury do celów księgowych."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Zanim anulujesz subskrypcję, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Zanim anulujesz subskrypcję, usuń linki kalendarza.",
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję, usuń linki kalendarza.",
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję, usuń linki kalendarza.",
+        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję, usuń linki kalendarza."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Możesz otworzyć jeden czat jednocześnie. Najpierw zamknij poprzedni wątek."
       ],
@@ -2484,12 +2505,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Twoje konto PayPal musi być powiązane z kartą płatniczą lub kontem bankowym. Jeśli nie posiada tej funkcji, kliknij przycisk poniżej."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Musisz usunąć wszystkie dodatkowe kalendarze i udostępnione linki kalendarzy, zanim anulujesz subskrypcję poczty."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Musisz usunąć wszystkie dodatkowe kalendarze i udostępnione linki kalendarzy, zanim anulujesz subskrypcję."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Wykorzystano ${ spaceDisplayed }% dostępnej przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
@@ -3187,6 +3202,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } kalendarz",
+        "${ n } kalendarze",
+        "${ n } kalendarzy",
+        "${ n } kalendarzy"
+      ],
       "${ n } custom email domain": [
         "${ n } niestandardowa domena",
         "${ n } niestandardowe domeny",
@@ -3235,12 +3256,6 @@
         "${ n } wiadomości dziennie",
         "${ n } wiadomości dziennie"
       ],
-      "${ n } personal calendar": [
-        "${ n } osobisty kalendarz",
-        "${ n } osobiste kalendarze",
-        "${ n } osobistych kalendarzy",
-        "${ n } osobistych kalendarzy"
-      ],
       "${ n } VPN connection": [
         "${ n } połączenie VPN",
         "${ n } połączenia VPN",
@@ -3276,6 +3291,9 @@
       ],
       "Auto-reply": [
         "Autoresponder"
+      ],
+      "Calendar sharing": [
+        "Udostępnianie kalendarza"
       ],
       "Catch-all": [
         "Catch-all"
@@ -3615,11 +3633,11 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain } dla subskrybowania wiadomości"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Utwórz do ${ n } niestandardowego kalendarza.",
-        "Utwórz do ${ n } niestandardowych kalendarzy.",
-        "Utwórz do ${ n } niestandardowych kalendarzy.",
-        "Utwórz do ${ n } niestandardowych kalendarzy."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Utwórz maksymalnie ${ n } kalendarz albo dodaj kalendarze znajomych, rodziny, współpracowników lub organizacji",
+        "Utwórz do ${ n } kalendarzy lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji",
+        "Utwórz do ${ n } kalendarzy lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji",
+        "Utwórz do ${ n } kalendarzy lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chroni przed zagrożeniem prywatności VPN, przekierowując ruch internetowy przez wiele serwerów"
@@ -3627,8 +3645,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Udostępnij swoje kalendarze za pomocą linku współpracownikom, rodzinie i znajomym"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Udostępnij swoje kalendarze za pomocą linku rodzinie, znajomym i współpracownikom"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Udostępnij swoje kalendarze rodzinie, znajomym i współpracownikom"
       ],
       "End-to-end encrypted calendar": [
         "Kalendarz zaszyfrowany end-to-end"
@@ -3656,12 +3674,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "W dni robocze otrzymasz odpowiedź od zespołu wsparcia klienta ${ BRAND_NAME } w ciągu 24 godzin od zgłoszenia"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Ponadto możesz dodać do 5 kalendarzy od współpracowników, organizacji, rodziny i znajomych."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Ponadto możesz dodać do 5 kalendarzy od znajomych, rodziny, współpracowników i organizacji."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą ${ BRAND_NAME } VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do ${ BRAND_NAME } VPN w tym samym czasie, potrzebujesz 2 połączenia VPN."
@@ -3773,11 +3785,11 @@
       "Cover more ground with support for 10 custom email domains": [
         "Pracuj przy wielu projektach dzięki wsparciu dla 10 niestandardowych domen"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Utwórz ${ numberOfPersonalCalendars } osobisty kalendarz",
-        "Utwórz do ${ numberOfPersonalCalendars } osobistych kalendarzy",
-        "Utwórz do ${ numberOfPersonalCalendars } osobistych kalendarzy",
-        "Utwórz do ${ numberOfPersonalCalendars } osobistych kalendarzy"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Utwórz do ${ MAX_CALENDARS_PAID } kalendarza",
+        "Utwórz do ${ MAX_CALENDARS_PAID } kalendarzy",
+        "Utwórz do ${ MAX_CALENDARS_PAID } kalendarzy",
+        "Utwórz do ${ MAX_CALENDARS_PAID } kalendarzy"
       ],
       "Everything in ${ vpnPlanName }": [
         "Wszystkie zalety planu ${ vpnPlanName }"
@@ -4388,6 +4400,14 @@
         "Szybki VPN na ${ maxVpn } urządzeń"
       ]
     },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Subskrypcja zarządzana gdzieś indziej"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Subskrypcja została zakupiona w aplikacji. Aby zarządzać nią, przejdź do sekcji Subskrypcja w koncie ${ subscriptionManager }"
+      ]
+    },
     "Subscription price": {
       "For": [
         "za"
@@ -4600,8 +4620,8 @@
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
-      "Cancel Mail subscription": [
-        "Anuluj subskrypcję poczty"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Anuluj subskrypcję ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Weryfikacja karty płatniczej"

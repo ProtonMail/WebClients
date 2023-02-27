@@ -527,9 +527,6 @@
       "Load": [
         "加载"
       ],
-      "Load anyway": [
-        "确定加载"
-      ],
       "Load embedded images": [
         "加载嵌入图像"
       ],
@@ -952,9 +949,6 @@
       ],
       "Skip verification": [
         "跳过验证"
-      ],
-      "Some images failed to load with tracking protection.": [
-        "跟踪防护已阻止加载部分图像。"
       ],
       "Star": [
         "星标"
@@ -6772,7 +6766,7 @@
     },
     "new_plans: feature info": {
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 共用同一存储空间"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

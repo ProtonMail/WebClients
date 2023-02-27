@@ -1195,20 +1195,6 @@
         "邀请已发送"
       ]
     },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "您已达到您账户等级所能创建的个人日历数上限。"
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "您的个人日历数量已达上限，必须移除部分现有日历才能接受其他日历邀请。"
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "您的共享日历数量已达上限，必须移除部分现有日历才能接受其他日历邀请。"
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
-        "您已达到订阅日历的最大值 ${ MAX_SUBSCRIBED_CALENDARS } 个。"
-      ]
-    },
     "Calendar link purpose update success message": {
       "Label added": [
         "标签已添加"
@@ -5825,9 +5811,6 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
       ],
-      "You have no personal calendars to export.": [
-        "您没有个人日历导出。"
-      ],
       "You have no saved payment methods.": [
         "您尚未添加支付方式。"
       ],
@@ -5845,12 +5828,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "您需要在 PayPal 账户中绑定信用卡或银行账户，如果您没有绑定，请点击下方按钮。"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "您需要先删除超出免费额度的日历以及所有日历共享链接才能退订。"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "取消订阅前，请删除任何附加的个人日历和共享日历链接。"
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "从ICS导入日程之前需要有一个在用的个人日历。"
@@ -7830,9 +7807,6 @@
       "${ n } messages per day": [
         "每天可发 ${ n } 封邮件"
       ],
-      "${ n } personal calendars": [
-        "${ n } 份个人日历"
-      ],
       "${ n } VPN connections": [
         "${ n } 台设备可同时接入 VPN"
       ],
@@ -8013,6 +7987,26 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -8082,26 +8076,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -8204,17 +8178,11 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain } 用于收取时事新闻"
       ],
-      "Create up to ${ n } custom calendars.": [
-        "创建高达 ${ n } 个自定义日历。"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "通过多台服务器中转流量，增强 VPN 安全性"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "通过链接轻松与同事、亲友分享日程安排"
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "通过链接轻松与亲友、同事分享日程安排"
       ],
       "End-to-end encrypted calendar": [
         "端对端加密日历"
@@ -8242,12 +8210,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "工作日 24 小时内即可得到 ${ BRAND_NAME } 客服团队援助"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "除此之外，您还可以添加来自同事、组织、家人和朋友等最多5个日历。"
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "除此之外，您还可以添加来自朋友、家人、同事和组织等最多5个日历。"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "例如手机和电脑同时连接就属于 2 台设备同时接入 ${ BRAND_NAME } VPN。"
@@ -8366,9 +8328,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "10 个自有域名更显游刃有余"
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendars": [
-        "创建多达 ${ numberOfPersonalCalendars } 份个人日历"
       ],
       "Everything in ${ vpnPlanName }": [
         "包含 ${ vpnPlanName } 所有功能"
@@ -9835,9 +9794,6 @@
       "Bridge for ${ platform }": [
         "Bridge ${ platform } 客户端"
       ],
-      "Cancel Mail subscription": [
-        "取消邮件订阅"
-      ],
       "Card verification": [
         "银行卡验证"
       ],
@@ -10423,9 +10379,6 @@
       "Status": [
         "状态"
       ],
-      "Subscribed calendars": [
-        "已订阅日历"
-      ],
       "Success": [
         "成功"
       ],
@@ -10794,14 +10747,6 @@
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "升级到 ${ planName } ，即可立即将最多 ${ n } 台设备连接到VPN"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "升级到付费套餐以创建至多 ${ MAX_CALENDARS_PAID } 个日历，让您工作、社交、生活全不误。"
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "升级套餐即可分享您的日历。"
       ]
     },
     "User referee invited via email": {

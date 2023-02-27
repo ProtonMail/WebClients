@@ -536,9 +536,6 @@
       "Load": [
         "Laden"
       ],
-      "Load anyway": [
-        "Trotzdem laden"
-      ],
       "Load embedded images": [
         "Eingebettete Grafiken laden"
       ],
@@ -962,8 +959,8 @@
       "Skip verification": [
         "Überprüfung überspringen"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Einige Bilder konnten nicht mit Tracking-Schutz geladen werden."
+      "Some images could not be loaded with tracker protection.": [
+        "Einige Bilder konnten wegen dem Tracker-Schutz nicht geladen werden."
       ],
       "Star": [
         "Markieren"
@@ -4160,7 +4157,7 @@
         "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Die Zwei-Faktor-Authentifizierung in deinem externen E-Mail-Konto ist aktiviert."
+        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
       ],
       "IMAP access is enabled in your external account.": [
         "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
@@ -4190,7 +4187,7 @@
         "Deine E-Mail-Adresse und dein App-Passwort sind korrekt. Verwende ${ boldNot } dein reguläres Passwort."
       ],
       "Your email address and password are correct.": [
-        "Deine E-Mail-Adresse und dein Passwort sind korrekt."
+        "Deine E-Mail-Adresse und dein Passwort korrekt sind."
       ],
       "Your password is correct.": [
         "Dein Passwort ist korrekt."
@@ -6485,6 +6482,17 @@
         "Zeile"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Entferne einen bestehenden Kalender, um einen neuen hinzuzufügen."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Um einen neuen Kalender hinzuzufügen, entferne einen anderen Kalender oder upgrade dein ${ BRAND_NAME }-Abonnement auf ein kostenpflichtiges ${ MAIL_SHORT_APP_NAME }-Abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du hast die maximale Anzahl von Kalendern erreicht, die in deinem Abonnement erstellt werden können."
+      ]
+    },
     "Link": {
       "All mail": [
         "Alle E-Mails"
@@ -6649,8 +6657,8 @@
         "Fast geschafft"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Anzahl der erstellten Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }",
-        "Anzahl der erstellten Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Verbindung zu Ihrem E-Mail-Anbieter wird aufgebaut"
@@ -6669,9 +6677,21 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle Nachrichten aus ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importieren Sie alle Nachrichten aus ${ itemsToImportCount } Kategorie und kennzeichnen Sie diese als",
-        "Importieren Sie alle Nachrichten aus ${ itemsToImportCount } Kategorien und kennzeichnen Sie diese als"
+        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorie und markiere diese als",
+        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorien und markiere diese als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorie importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
       ]
     },
     "Mailbox": {
@@ -6953,7 +6973,7 @@
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

@@ -276,6 +276,9 @@
       "Join calendar": [
         "Takvime katıl"
       ],
+      "Keep current time zone": [
+        "Geçerli saat dilimi korunsun"
+      ],
       "Load image": [
         "Görsel yükle"
       ],
@@ -682,7 +685,7 @@
     },
     "Badge": {
       "Coming soon": [
-        "Çok yakında"
+        "Yakında"
       ]
     },
     "Beta access description": {
@@ -864,11 +867,6 @@
       ],
       "More options": [
         "Diğer seçenekler"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Benimle paylaşılan"
       ]
     },
     "Calendar status": {
@@ -3092,6 +3090,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "${ provider } üzerinden içe aktar"
+      ],
       "Other": [
         "Diğer"
       ]
@@ -3148,6 +3149,14 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
+      ],
+      "${ numContact } contact": [
+        "${ numContact } kişi",
+        "${ numContact } kişi"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } kişi grubu",
+        "${ numGroups } kişi grubu"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } klasör bulundu",
@@ -3260,6 +3269,10 @@
       "Country code": [
         "Ülke kodu"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } yeni takvim ekle",
+        "${ calendarsToBeCreatedCount } yeni takvim ekle"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
       ],
@@ -3356,6 +3369,10 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
       ],
@@ -3370,6 +3387,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
@@ -4190,6 +4210,17 @@
         "Yan pano"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Yeni bir takvim eklemek için var olan bir takvimi silin."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Yeni bir takvim eklemek için başka bir takvimi silin ya da ${ BRAND_NAME } tarifenizi ücretli ${ MAIL_SHORT_APP_NAME } tarifesine yükseltin."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Tarifenizin kullanılabilecek en fazla takvim sayısına ulaştınız."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Takvimler"
@@ -4203,14 +4234,14 @@
       "My calendars": [
         "Takvimlerim"
       ],
+      "Other calendars": [
+        "Diğer takvimler"
+      ],
       "Pay invoice": [
         "Faturayı öde"
       ],
       "Request an invite": [
         "Davet iste"
-      ],
-      "Subscribed calendars": [
-        "Abone olunmuş takvimler"
       ],
       "Upgrade account": [
         "Hesabı yükselt"
@@ -4233,6 +4264,10 @@
       "Almost there": [
         "Neredeyse tamam"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
       ],
@@ -4247,6 +4282,24 @@
       ],
       "Your import is starting": [
         "İçe aktarma işleminize başlanıyor"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
       ]
     },
     "Message": {
@@ -4279,17 +4332,9 @@
       ],
       "Manage calendars": [
         "Takvim yönetimi"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Daha fazla takvim eklenemiyor. Tarifenizin en fazla kişisel takvim sayısı sınırına ulaştınız."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Daha fazla takvim oluşturulamıyor. Tarifenizdeki en fazla abone olunabilecek takvim sayısına ulaştınız."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Daha fazla takvim eklenemiyor. Tarifenizin en fazla kişisel takvim sayısı sınırına ulaştınız."
+      "Upgrade": [
+        "Yükselt"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4306,6 +4351,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Başka takvim eklenemez"
+      ],
       "How to import calendars from another service": [
         "Başka bir e-posta hizmeti sağlayıcısının takvimleri nasıl içe aktarılır"
       ],
@@ -4329,9 +4377,6 @@
       ],
       "Time zone changed": [
         "Saat dilimi değişti"
-      ],
-      "Unable to add more calendars": [
-        "Başka takvim eklenemez"
       ]
     },
     "Modal title and action": {
@@ -5000,12 +5045,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Artık davetler takviminizde bekleyen etkinlikler olarak görüntülenecek. Yanıtlamak istediğiniz etkinliği açmanız yeterli. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Diğer takvimlere abone ol"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Dış takvimlere abone olarak etkinliklerini okuyabilirsiniz."
       ]
     },
     "Spotlight settings link": {
@@ -5096,9 +5135,6 @@
       "Calendar updated": [
         "Takvim güncellendi"
       ],
-      "Canceling import": [
-        "İçe aktarma iptal ediliyor"
-      ],
       "Cancellation sent and all events deleted": [
         "İptal bilgilendirmesi gönderildi ve tüm etkinlikler silindi"
       ],
@@ -5110,6 +5146,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "İptal bilgilendirmesi gönderildi ve katılımcılar tüm etkinlliklerden çıkarıldı"
+      ],
+      "Cancelling import": [
+        "İçe aktarma iptal ediliyor"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"

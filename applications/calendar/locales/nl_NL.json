@@ -866,11 +866,6 @@
         "Meer opties"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Met mij gedeeld"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "Niet gesynchroniseerd"
@@ -4209,9 +4204,6 @@
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
-      "Subscribed calendars": [
-        "Abonneer op agenda's"
-      ],
       "Upgrade account": [
         "Account upgraden"
       ],
@@ -4281,17 +4273,6 @@
         "Agenda's beheren"
       ]
     },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Kan niet meer agenda's aanmaken. U hebt het maximum aantal persoonlijke agenda's binnen uw abonnement bereikt."
-      ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Kan niet meer agenda's toevoegen. U hebt het maximum aantal geabonneerde agenda's binnen uw plan bereikt."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Kan niet meer agenda's aanmaken. U hebt het maximum aantal persoonlijke agenda's binnen uw plan bereikt."
-      ]
-    },
     "Modal for received invitation to share calendar; text": {
       "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
         "${ calendarOwnerDisplayName } deelde hun agenda ${ boldCalendarName } met u."
@@ -4329,9 +4310,6 @@
       ],
       "Time zone changed": [
         "Tijdzone gewijzigd"
-      ],
-      "Unable to add more calendars": [
-        "Kan niet meer agenda's toevoegen"
       ]
     },
     "Modal title and action": {
@@ -5223,12 +5201,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Uitnodigingen verschijnen nu in uw agenda als afspraken in afwachting. Open de afspraak om te antwoorden. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Abonneer op andere agenda's"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "U kunt zich abonneren op externe agenda's en de bijbehorende gebeurtenissen lezen."
       ]
     },
     "Spotlight settings link": {
@@ -5318,9 +5290,6 @@
       ],
       "Calendar updated": [
         "Agenda bijgewerkt"
-      ],
-      "Canceling import": [
-        "Annuleer import"
       ],
       "Cancellation sent and all events deleted": [
         "Annulering verzonden en alle afspraken zijn verwijderd"
