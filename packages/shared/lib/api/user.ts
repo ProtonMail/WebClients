@@ -16,6 +16,7 @@ export const queryCreateUser = (
         Referrer?: string;
         ReferralIdentifier?: string;
         ReferralID?: string; // Invite
+        TokenPayment?: string;
         Payload?: {
             [key: string]: string;
         };
@@ -42,6 +43,7 @@ export const queryCreateUserExternal = (
         TokenType?: HumanVerificationMethodType;
         Type: 1 | 2; // 1 = mail, 2 = VPN
         Referrer?: string;
+        TokenPayment?: string;
         Payload?: {
             [key: string]: string;
         };
