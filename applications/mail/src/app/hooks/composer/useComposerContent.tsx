@@ -574,7 +574,7 @@ export const useComposerContent = (args: EditorArgs) => {
         if (isQuickReply && args.replyUpdated && !isSending) {
             setIsSending(true);
             dispatch(removeQuickReplyFlag(modelMessage.localID));
-            void handleSend();
+            void handleSend('send-button')();
         }
     };
 

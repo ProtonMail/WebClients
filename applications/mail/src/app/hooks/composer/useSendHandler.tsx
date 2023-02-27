@@ -150,9 +150,15 @@ export const useSendHandler = ({
         }
     });
 
-    const handleSend = useHandler(async () => {
+    const handleSend = useHandler((target: 'send-button' | 'scheduled-send-button') => async () => {
         const { localID, draftFlags } = getModelMessage();
-        const { scheduledAt } = draftFlags || {};
+
+        let scheduledAt = (() => {
+            if (draftFlags?.scheduledAt && target === 'scheduled-send-button') {
+                return draftFlags.scheduledAt;
+            }
+            return undefined;
+        })();
         const notifManager = createSendingMessageNotificationManager();
 
         // If scheduledAt is set we already performed the preliminary verifications
