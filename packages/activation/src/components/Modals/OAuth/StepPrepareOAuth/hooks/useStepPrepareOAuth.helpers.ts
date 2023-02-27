@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { getMailMappingErrors } from '@proton/activation/src/helpers/getMailMappingErrors';
 import { ImportType, TIME_PERIOD } from '@proton/activation/src/interface';
 import { ImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
-import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { willUserReachCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { Label } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
 export const getMailCustomLabel = (period?: TIME_PERIOD) => {
@@ -31,10 +31,11 @@ export const importerHasErrors = (
     importerData: ImporterData,
     labels: Label[],
     folders: Folder[],
-    calendars: Calendar[],
+    calendars: VisualCalendar[],
     mailChecked: boolean,
     calendarChecked: boolean,
-    isLabelMapping: boolean
+    isLabelMapping: boolean,
+    isFreeUser: boolean
 ) => {
     const hasErrors = [];
 
@@ -49,7 +50,7 @@ export const importerHasErrors = (
     if (products?.includes(ImportType.CALENDAR) && calendarChecked) {
         const calendarsToBeCreatedCount =
             importerData?.calendars?.calendars?.filter((item) => item.checked && !item.mergedTo).length ?? 0;
-        const limitReached = calendarsToBeCreatedCount + calendars.length > MAX_CALENDARS_PAID;
+        const limitReached = willUserReachCalendarsLimit(calendars, calendarsToBeCreatedCount, isFreeUser);
 
         hasErrors.push(limitReached);
     }

@@ -12,7 +12,8 @@ import {
     selectOauthImportStateProducts,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { FeatureCode, useCalendars, useFeature, useFolders, useLabels } from '@proton/components/index';
+import { FeatureCode, useCalendars, useFeature, useFolders, useLabels, useUser } from '@proton/components/index';
+import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getEnabledFeature } from '../../OAuthModal.helpers';
@@ -29,9 +30,11 @@ const useStepPrepare = () => {
         throw new Error('products or importerData must be defined');
     }
 
+    const [user] = useUser();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const [calendars = []] = useCalendars();
+    const visualCalendars = getVisualCalendars(calendars);
 
     const [mailChecked, setMailChecked] = useState(products.includes(ImportType.MAIL));
     const [contactChecked, setContactChecked] = useState(products.includes(ImportType.CONTACTS));
@@ -45,10 +48,11 @@ const useStepPrepare = () => {
         importerData,
         labels,
         folders,
-        calendars,
+        visualCalendars,
         mailChecked,
         calendarChecked,
-        isLabelMapping
+        isLabelMapping,
+        !user.hasPaidMail
     );
 
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
