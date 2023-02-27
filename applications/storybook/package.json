@@ -24,11 +24,11 @@
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@types/react": "^17.0.53",
-        "@types/react-dom": "^17.0.18",
+        "@types/react-dom": "^17.0.19",
         "cross-env": "^7.0.3",
-        "eslint": "^8.33.0",
+        "eslint": "^8.35.0",
         "lodash.startcase": "^4.4.0",
-        "prettier": "^2.8.3",
+        "prettier": "^2.8.4",
         "prop-types": "15.8.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
@@ -37,7 +37,7 @@
         "webpack": "^5.75.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.20.12",
+        "@babel/core": "^7.21.0",
         "@storybook/addon-actions": "^6.5.16",
         "@storybook/addon-essentials": "^6.5.16",
         "@storybook/addon-links": "^6.5.16",
@@ -47,7 +47,7 @@
         "@storybook/react": "^6.5.16",
         "@storybook/source-loader": "^6.5.16",
         "babel-loader": "^9.1.2",
-        "eslint-plugin-storybook": "^0.6.10",
-        "netlify-cli": "^12.10.0"
+        "eslint-plugin-storybook": "^0.6.11",
+        "netlify-cli": "^12.14.0"
     }
 }
