@@ -29,11 +29,11 @@ type ModalsMap = {
 };
 
 export interface OtherCalendarsSectionProps extends ComponentPropsWithoutRef<'div'> {
-    addresses: Address[];
     subscribedCalendars: SubscribedCalendar[];
     sharedCalendars: VisualCalendar[];
     calendarInvitations: CalendarMemberInvitation[];
     unknownCalendars: VisualCalendar[];
+    addresses: Address[];
     user: UserModel;
     canAdd: boolean;
     isCalendarsLimitReached: boolean;
@@ -41,11 +41,11 @@ export interface OtherCalendarsSectionProps extends ComponentPropsWithoutRef<'di
 }
 
 const OtherCalendarsSection = ({
-    addresses,
     subscribedCalendars,
     sharedCalendars,
     calendarInvitations,
     unknownCalendars,
+    addresses,
     user,
     canAdd,
     isCalendarsLimitReached,
@@ -180,6 +180,7 @@ const OtherCalendarsSection = ({
             )}
             <CalendarsSection
                 calendars={[...subscribedCalendars, ...unknownCalendars]}
+                addresses={addresses}
                 user={user}
                 onEdit={handleEdit}
                 onDelete={handleDelete}

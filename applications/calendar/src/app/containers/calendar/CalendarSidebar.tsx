@@ -109,7 +109,7 @@ const CalendarSidebar = ({
         await call();
     };
 
-    const handleCreatePersonalCalendar = async () => {
+    const handleCreatePersonalCalendar = () => {
         if (!isCalendarsLimitReached) {
             setIsCalendarModalOpen(true);
         } else {
@@ -197,14 +197,10 @@ const CalendarSidebar = ({
                                 size="medium"
                                 icon
                                 className="navigation-link-header-group-control"
+                                onClick={handleCreatePersonalCalendar}
                             >
                                 <Tooltip title={addCalendarText}>
-                                    <Icon
-                                        onClick={handleCreatePersonalCalendar}
-                                        name="plus"
-                                        className="navigation-icon"
-                                        alt={addCalendarText}
-                                    />
+                                    <Icon name="plus" className="navigation-icon" alt={addCalendarText} />
                                 </Tooltip>
                             </Button>
                         )}
