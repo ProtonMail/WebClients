@@ -217,7 +217,7 @@ const Composer = (
         setInnerModal,
         ComposerInnerModal: ComposerInnerModalStates,
         setModelMessage,
-        handleSend,
+        handleSend: handleSend({ sendAsScheduled: true }),
         handleNoRecipients,
         handleNoSubjects,
         handleNoAttachments,
@@ -305,7 +305,7 @@ const Composer = (
                     onPassword={handlePassword}
                     onScheduleSendModal={handleScheduleSendModal}
                     onScheduleSend={handleScheduleSend}
-                    onSend={handleSend}
+                    onSend={handleSend({ sendAsScheduled: false })}
                     opening={opening}
                     syncInProgress={pendingSave.isPending}
                 />

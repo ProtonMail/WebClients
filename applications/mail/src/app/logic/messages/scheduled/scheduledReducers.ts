@@ -37,6 +37,10 @@ export const cancelScheduled = (
             } else {
                 messageState.draftFlags = { scheduledAt };
             }
+        } else {
+            if (messageState.draftFlags) {
+                delete messageState.draftFlags.scheduledAt;
+            }
         }
     }
 };

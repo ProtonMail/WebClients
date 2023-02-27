@@ -6,6 +6,7 @@ import { EditorActions, EditorMetadata, EditorTextDirection } from '@proton/comp
 import { useAddresses, useHandler, useMailSettings, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import noop from '@proton/utils/noop';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
@@ -574,7 +575,7 @@ export const useComposerContent = (args: EditorArgs) => {
         if (isQuickReply && args.replyUpdated && !isSending) {
             setIsSending(true);
             dispatch(removeQuickReplyFlag(modelMessage.localID));
-            void handleSend();
+            void handleSend({ sendAsScheduled: false })();
         }
     };
 
@@ -592,37 +593,35 @@ export const useComposerContent = (args: EditorArgs) => {
 
     const hasHotkeysEnabled = mailSettings?.Shortcuts === 1;
 
-    const composerHotkeysArgs = (
-        isComposer
-            ? {
-                  type: EditorTypes.composer,
-                  composerRef: composerFrameRef,
-                  handleClose,
-                  handleDelete,
-                  handleExpiration,
-                  handleManualSave,
-                  handlePassword,
-                  handleSend,
-                  toggleMinimized: args.toggleMinimized,
-                  toggleMaximized: args.toggleMaximized,
-                  lock,
-                  saving,
-                  hasHotkeysEnabled,
-                  editorRef: args.editorRef,
-              }
-            : {
-                  type: EditorTypes.quickReply,
-                  composerRef: composerFrameRef,
-                  handleDelete: handleDeleteQuickReplyFromShortcut,
-                  handleManualSave,
-                  handleSend: handleSendQuickReply,
-                  toggleMaximized: handleExpandComposer,
-                  lock,
-                  saving,
-                  hasHotkeysEnabled,
-                  editorRef: args.editorRef,
-              }
-    ) as EditorHotkeysHandlers;
+    const composerHotkeysArgs: EditorHotkeysHandlers = isComposer
+        ? {
+              type: EditorTypes.composer,
+              composerRef: composerFrameRef,
+              handleClose,
+              handleDelete,
+              handleExpiration,
+              handleManualSave,
+              handlePassword,
+              handleSend: handleSend({ sendAsScheduled: false }),
+              toggleMinimized: args.toggleMinimized || noop,
+              toggleMaximized: args.toggleMaximized || noop,
+              lock,
+              saving,
+              hasHotkeysEnabled,
+              editorRef: args.editorRef,
+          }
+        : {
+              type: EditorTypes.quickReply,
+              composerRef: composerFrameRef,
+              handleDelete: handleDeleteQuickReplyFromShortcut,
+              handleManualSave,
+              handleSend: handleSendQuickReply,
+              toggleMaximized: handleExpandComposer,
+              lock,
+              saving,
+              hasHotkeysEnabled,
+              editorRef: args.editorRef,
+          };
 
     const attachmentTriggerRef = useComposerHotkeys(composerHotkeysArgs);
 
