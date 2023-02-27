@@ -278,6 +278,9 @@
       "Join calendar": [
         "Alăturare la calendar"
       ],
+      "Keep current time zone": [
+        "Păstrare fus orar actual"
+      ],
       "Load image": [
         "Încărcare imagine"
       ],
@@ -868,11 +871,6 @@
       ],
       "More options": [
         "Mai multe opțiuni"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Partajat cu mine"
       ]
     },
     "Calendar status": {
@@ -3128,6 +3126,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importare din ${ provider }"
+      ],
       "Other": [
         "Altele"
       ]
@@ -3192,6 +3193,16 @@
         "S-a găsit un grup",
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
+      ],
+      "${ numContact } contact": [
+        "Un contact",
+        "${ numContact } contacte",
+        "${ numContact } de contacte"
+      ],
+      "${ numGroups } contact group": [
+        "Un grup de contacte",
+        "${ numGroups } grupuri de contacte",
+        "${ numGroups } de grupuri de contacte"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "S-a găsit un folder",
@@ -3316,6 +3327,11 @@
       "Country code": [
         "Cod țară"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Creare un calendar",
+        "Creare ${ calendarsToBeCreatedCount } calendare",
+        "Creare ${ calendarsToBeCreatedCount } de calendare"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și folderele care trebuie importate."
       ],
@@ -3412,6 +3428,11 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } de calendare"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
       ],
@@ -3426,6 +3447,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importați e-mailurile, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }. Vă vom ghida la fiecare pas și vă vom cripta datele pe măsură ce acestea sunt mutate. Bine ați venit în lumea vieții private."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Se importă datele de la ${ fromEmail } la ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
@@ -4248,6 +4272,17 @@
         "Panou lateral"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Pentru a adăuga un nou calendar, eliminați unul existent."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Pentru a adăuga un nou calendar, eliminați alt calendar sau actualizați planul ${ BRAND_NAME } la un plan plătit ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ați atins numărul maxim de calendare disponibile în cadrul planului dumneavoastră."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Calendare"
@@ -4261,14 +4296,14 @@
       "My calendars": [
         "Calendarele mele"
       ],
+      "Other calendars": [
+        "Alte calendare"
+      ],
       "Pay invoice": [
         "Plată factură"
       ],
       "Request an invite": [
         "Solicitați o invitație"
-      ],
-      "Subscribed calendars": [
-        "Calendare abonate"
       ],
       "Upgrade account": [
         "Modernizare cont"
@@ -4291,6 +4326,11 @@
       "Almost there": [
         "Aproape terminat"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Se conectează la furnizorul de e-mail"
       ],
@@ -4305,6 +4345,28 @@
       ],
       "Your import is starting": [
         "Începe importarea"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importare toate mesajele dintr-un folder și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare cu"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importare toate mesajele dintr-un folder și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
       ]
     },
     "Message": {
@@ -4337,17 +4399,9 @@
       ],
       "Manage calendars": [
         "Gestionare calendare"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Nu se mai pot adăuga calendare. Ați atins numărul maxim de calendare personale din plan."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Nu se mai pot adăuga calendare. Ați atins numărul maxim de abonări la calendare din plan."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Nu se pot crea mai multe calendare. Ați atins numărul maxim de calendare personale din plan."
+      "Upgrade": [
+        "Upgrade"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4364,6 +4418,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Nu se mai pot adăuga calendare"
+      ],
       "How to import calendars from another service": [
         "Cum se importă calendarele din alt serviciu"
       ],
@@ -4387,9 +4444,6 @@
       ],
       "Time zone changed": [
         "Fus orar schimbat"
-      ],
-      "Unable to add more calendars": [
-        "Nu se mai pot adăuga calendare"
       ]
     },
     "Modal title and action": {
@@ -5090,12 +5144,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Acum invitațiile apar în calendar ca evenimente în așteptare. Doar deschideți un eveniment pentru a răspunde. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Abonare la alte calendare"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Vă puteți abona la calendare externe și să le citiți evenimentele."
       ]
     },
     "Spotlight settings link": {
@@ -5187,9 +5235,6 @@
       "Calendar updated": [
         "Calendar actualizat"
       ],
-      "Canceling import": [
-        "Anulare importare"
-      ],
       "Cancellation sent and all events deleted": [
         "Anularea a fost trimisă și toate evenimentele au fost șterse."
       ],
@@ -5201,6 +5246,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Anularea a fost trimisă și participanții eliminați din toate evenimentele."
+      ],
+      "Cancelling import": [
+        "Se anulează importarea"
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"

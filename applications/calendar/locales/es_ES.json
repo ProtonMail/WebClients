@@ -520,10 +520,10 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Cambiar de plan"
       ],
       "Upgrade now": [
-        "Actualizar"
+        "Cambiar de plan"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -867,11 +867,6 @@
       ],
       "More options": [
         "Más opciones"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Compartido conmigo"
       ]
     },
     "Calendar status": {
@@ -3377,6 +3372,10 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendarios"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
@@ -3562,7 +3561,7 @@
         "equipo de soporte"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporalmente no disponible. Vuelve a comprobarlo más tarde."
+        "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "La aplicación necesita descifrar localmente tus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrás descargarlo."
@@ -3640,7 +3639,7 @@
         "Actualizar evento recurrente"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
+        "Pasa a un plan superior ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
       ],
       "We'll notify you when the import is done.": [
         "Te avisaremos cuando la importación esté terminada."
@@ -4214,6 +4213,17 @@
         "Panel lateral"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Para añadir un nuevo calendario, elimina uno existente."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Para añadir un nuevo calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Has alcanzado el número máximo de calendarios disponibles en tu plan."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Calendarios"
@@ -4227,17 +4237,17 @@
       "My calendars": [
         "Mis calendarios"
       ],
+      "Other calendars": [
+        "Otros calendarios"
+      ],
       "Pay invoice": [
         "Pagar factura"
       ],
       "Request an invite": [
         "Solicitar una invitación"
       ],
-      "Subscribed calendars": [
-        "Calendarios suscritos"
-      ],
       "Upgrade account": [
-        "Actualizar cuenta"
+        "Mejorar cuenta"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -4321,17 +4331,9 @@
       ],
       "Manage calendars": [
         "Gestionar calendarios"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "No se pueden añadir más calendarios. Has alcanzado el máximo de calendarios personales con tu plan."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "No se pueden añadir más calendarios. Has alcanzado el número máximo de calendarios permitidos dentro de tu plan."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "No se pueden crear más calendarios. Has alcanzado el número máximo de calendarios personales dentro de tu plan."
+      "Upgrade": [
+        "Mejorar plan"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4348,6 +4350,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "No se pueden añadir más calendarios"
+      ],
       "How to import calendars from another service": [
         "Cómo importar calendarios desde otro servicio"
       ],
@@ -4371,9 +4376,6 @@
       ],
       "Time zone changed": [
         "Zona horaria cambiada"
-      ],
-      "Unable to add more calendars": [
-        "No se pueden añadir más calendarios"
       ]
     },
     "Modal title and action": {
@@ -5042,12 +5044,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Ahora las invitaciones aparecen en tu calendario como eventos pendientes. Solo abre un evento para responder. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Suscríbete a otros calendarios"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Puedes suscribirte a calendarios externos y leer sus eventos."
       ]
     },
     "Spotlight settings link": {
@@ -5060,7 +5056,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Actualizar almacenamiento"
+        "Aumentar almacenamiento"
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
@@ -5138,9 +5134,6 @@
       "Calendar updated": [
         "Calendario actualizado"
       ],
-      "Canceling import": [
-        "Cancelando importación"
-      ],
       "Cancellation sent and all events deleted": [
         "Cancelación enviada y todos los eventos eliminados"
       ],
@@ -5152,6 +5145,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Cancelación enviada y participantes eliminados de todos los eventos"
+      ],
+      "Cancelling import": [
+        "Cancelación de la importación"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -5195,7 +5191,7 @@
         "Eventos futuros actualizados"
       ],
       "Import record deleted": [
-        "Se ha eliminado el registro importación"
+        "Se ha eliminado el registro importación."
       ],
       "Invitation sent and all events updated": [
         "Invitación enviada y todos los eventos actualizados"

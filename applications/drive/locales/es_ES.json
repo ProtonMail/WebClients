@@ -602,10 +602,10 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Cambiar de plan"
       ],
       "Upgrade now": [
-        "Actualizar"
+        "Cambiar de plan"
       ],
       "Upload anyway": [
         "Cargar de todos modos"
@@ -3255,6 +3255,10 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendarios"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
       ],
@@ -3579,7 +3583,7 @@
         "Privacidad suiza"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporalmente no disponible. Vuelve a comprobarlo más tarde."
+        "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "La cuenta puede tener una nueva clave o es posible que se haya manipulado los siguientes elementos: ${ items }. Ábrelos solo si son de confianza."
@@ -3697,7 +3701,7 @@
         "Actualizando la búsqueda en la unidad..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Actualiza tu cuenta ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
+        "Pasa a un plan superior ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
       ],
       "Uploaded": [
         "Cargado"
@@ -4372,7 +4376,7 @@
         "Papelera"
       ],
       "Upgrade account": [
-        "Actualizar cuenta"
+        "Mejorar cuenta"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -4953,7 +4957,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Actualizar almacenamiento"
+        "Aumentar almacenamiento"
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
@@ -4970,8 +4974,8 @@
       "Bug reported": [
         "Error reportado"
       ],
-      "Canceling import": [
-        "Cancelando importación"
+      "Cancelling import": [
+        "Cancelación de la importación"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -4997,7 +5001,7 @@
         "Huella digital copiada al portapapeles"
       ],
       "Import record deleted": [
-        "Se ha eliminado el registro importación"
+        "Se ha eliminado el registro importación."
       ],
       "Phone number copied to clipboard": [
         "Número de teléfono copiado al portapapeles"

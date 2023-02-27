@@ -309,6 +309,9 @@
       "Edit billing details": [
         "Zahlungsinformationen bearbeiten"
       ],
+      "Edit display name": [
+        "Anzeigename bearbeiten"
+      ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
@@ -1195,21 +1198,6 @@
       ],
       "Invite sent": [
         "Einladung gesendet"
-      ]
-    },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Du hast die maximale Anzahl von privaten Kalendern erreicht, die du in deinem Abonnement erstellen kannst."
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Du hast die maximale Anzahl von persönlichen Kalendern erreicht, die du haben kannst. Um ausstehende Kalendereinladungen anzunehmen, musst du einige deiner Kalender entfernen."
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Du hast die maximale Anzahl von geteilten Kalendern erreicht, die du haben kannst. Um ausstehende Kalendereinladungen anzunehmen, musst du einige deiner Kalender entfernen."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Du hast die maximale Anzahl von ${ MAX_SUBSCRIBED_CALENDARS } abonnierten Kalender erreicht.",
-        "Du hast die maximale Anzahl von ${ MAX_SUBSCRIBED_CALENDARS } abonnierten Kalendern erreicht."
       ]
     },
     "Calendar link purpose update success message": {
@@ -2629,7 +2617,7 @@
         "${ name } konnte nicht in die Spamliste verschoben werden."
       ],
       "${ name } failed to move to the not-spam list": [
-        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden"
+        "${ name } konnte nicht in die Liste „Kein Spam“ verschoben werden."
       ],
       "${ name } failed to move to your block list": [
         "${ name } konnte nicht in deine Blockliste verschoben werden."
@@ -3808,7 +3796,7 @@
         "Füge einen benutzerdefinierten Filter hinzu, um bestimmte Aktionen, wie die Kennzeichnung oder Archivierung von Nachrichten, automatisch durchzuführen. Filter können direkt über die Sieve-Programmiersprache bearbeitet und erstellt werden."
       ],
       "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
-        "Nachrichten von Adressen, die von dir oder von ${ BRAND_NAME } als Spam markiert wurden, landen in deinem Spam-Ordner. Wenn du Nachrichten von einer dieser Adressen zulassen möchtest, kennzeichne sie als „Kein Spam“."
+        "Nachrichten von Adressen, die von dir oder von ${ BRAND_NAME } als Spam markiert wurden, landen in deinem Spam-Ordner. Wenn du Nachrichten von einer dieser Adressen zulassen möchtest, markiere sie als „Kein Spam“."
       ],
       "Emails from blocked addresses won't be delivered.": [
         "Nachrichten von gesperrten Adressen werden nicht zugestellt."
@@ -4117,7 +4105,7 @@
         "Die 2-Schritt-Verifizierung in deinem externen Konto ist aktiviert."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Die Zwei-Faktor-Authentifizierung in deinem externen E-Mail-Konto ist aktiviert."
+        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
       ],
       "IMAP access is enabled in your external account.": [
         "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
@@ -4147,7 +4135,7 @@
         "Deine E-Mail-Adresse und dein App-Passwort sind korrekt. Verwende ${ boldNot } dein reguläres Passwort."
       ],
       "Your email address and password are correct.": [
-        "Deine E-Mail-Adresse und dein Passwort sind korrekt."
+        "Deine E-Mail-Adresse und dein Passwort korrekt sind."
       ],
       "Your password is correct.": [
         "Dein Passwort ist korrekt."
@@ -4339,7 +4327,7 @@
         "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } hat einen Import angehalten, weil es die Verbindung mit deinem anderen E-Mail-Anbieter verloren hat. Bitte verbinde es erneut."
+        "${ BRAND_NAME } hat einen Import angehalten, weil es die Verbindung mit deinem anderen E-Mail-Anbieter verloren hat. Bitte verbinde dich erneut."
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } hat einen Import angehalten, weil der Speicherplatz auf deinem Konto knapp wird. Du kannst:"
@@ -5932,8 +5920,8 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
       ],
-      "You have no personal calendars to export.": [
-        "Du hast keine persönlichen Kalender zum Exportieren."
+      "You have no calendars to export.": [
+        "Du hast keine Kalender zum Exportieren."
       ],
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
@@ -5952,12 +5940,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Es muss eine Kreditkarte oder ein Bankkonto mit deinem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicke bitte auf die nachfolgende Schaltfläche."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Du musst jegliche zusätzliche persönliche Kalender und alle freigegebenen Kalender-Links löschen, bevor du dein Abonnement kündigen kannst."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Du musst jegliche zusätzliche persönliche Kalender und alle freigegebenen Kalender-Links löschen, bevor du dein Abonnement kündigen kannst."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Du musst einen aktiven persönlichen Kalender nutzen, um deine Termine mittels ICS zu importieren."
@@ -5999,7 +5981,7 @@
         "Du bleibst angemeldet, auch wenn du den Browser schließt."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
-        "Ihr Konto ${ BRAND_NAME } ist mit ${ externalEmailAddress } verknüpft."
+        "Dein Konto ${ BRAND_NAME } ist mit ${ externalEmailAddress } verknüpft."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
@@ -7256,7 +7238,7 @@
         "URL"
       ],
       "Use a recovery email address": [
-        "E-Mail-Adresse für die Wiederherstellung verwenden"
+        "Verwende eine E-Mail-Adresse für die Wiederherstellung"
       ],
       "Use a recovery phone number": [
         "Telefonnummer für die Wiederherstellung verwenden"
@@ -7461,6 +7443,17 @@
         "Einstellung gespeichert"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Entferne einen bestehenden Kalender, um einen neuen hinzuzufügen."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Um einen neuen Kalender hinzuzufügen, entferne einen anderen Kalender oder upgrade dein ${ BRAND_NAME }-Abonnement auf ein kostenpflichtiges ${ MAIL_SHORT_APP_NAME }-Abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du hast die maximale Anzahl von Kalendern erreicht, die in deinem Abonnement erstellt werden können."
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Gutscheincode hinzufügen"
@@ -7558,8 +7551,8 @@
         "Fast geschafft"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Anzahl der erstellten Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }",
-        "Anzahl der erstellten Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Verbindung zu Ihrem E-Mail-Anbieter wird aufgebaut"
@@ -7586,9 +7579,21 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle Nachrichten aus ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importieren Sie alle Nachrichten aus ${ itemsToImportCount } Kategorie und kennzeichnen Sie diese als",
-        "Importieren Sie alle Nachrichten aus ${ itemsToImportCount } Kategorien und kennzeichnen Sie diese als"
+        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorie und markiere diese als",
+        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorien und markiere diese als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorie importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7936,6 +7941,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } Kalender",
+        "${ n } Kalender"
+      ],
       "${ n } custom email domain": [
         "${ n } eigene E-Mail-Domain",
         "${ n } eigene E-Mail-Domains"
@@ -7968,10 +7977,6 @@
         "${ n } Nachricht pro Tag",
         "${ n } Nachrichten pro Tag"
       ],
-      "${ n } personal calendar": [
-        "${ n } persönlicher Kalender",
-        "${ n } persönliche Kalender"
-      ],
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
@@ -8003,6 +8008,9 @@
       ],
       "Auto-reply": [
         "Automatische Antworten"
+      ],
+      "Calendar sharing": [
+        "Kalender teilen"
       ],
       "Catch-all": [
         "Catch-All"
@@ -8155,6 +8163,26 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -8226,26 +8254,6 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
@@ -8296,7 +8304,7 @@
         "Auf ${ planName } upgraden"
       ],
       "Your account's usage": [
-        "Nutzung deines Kontos"
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: title": {
@@ -8347,9 +8355,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain } für Nachrichten-Abonnements."
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Erstelle bis zu ${ n } benutzerdefinierten Kalender.",
-        "Erstelle bis zu ${ n } benutzerdefinierte Kalender."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Erstelle bis zu ${ n } eigenen Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu.",
+        "Erstelle bis zu ${ n } eigene Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
@@ -8357,8 +8365,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Teile deine Kalender ganz einfach über einen Link mit Kollegen oder Freunden und Familie."
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Teile deine Kalender ganz einfach über einen Link mit Freunden und Familie oder Kollegen."
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Teile deine Kalender ganz einfach mit Familie, Freunden oder Kollegen."
       ],
       "End-to-end encrypted calendar": [
         "Ende-zu-Ende-verschlüsselter Kalender"
@@ -8386,12 +8394,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "An Werktagen erhältst du innerhalb von 24 Stunden Unterstützung durch den Kundensupport von ${ BRAND_NAME }."
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Darüber hinaus kannst du bis zu 5 Kalender von Kollegen, Organisationen sowie Freunden und Familie hinzufügen."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Darüber hinaus kannst du bis zu 5 Kalender von Freunden und Familie, Kollegen und Organisationen hinzufügen."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Eine VPN-Verbindung erlaubt es einem Gerät, sich jederzeit mit ${ BRAND_NAME }-VPN zu verbinden. Um beispielsweise ein Handy und einen Laptop gleichzeitig mit ${ BRAND_NAME }-VPN zu verbinden, brauchst du zwei VPN-Verbindungen."
@@ -8511,9 +8513,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "Erhöhe deine Reichweite mit 10 eigenen E-Mail-Domains."
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Erstelle ${ numberOfPersonalCalendars } persönlichen Kalender",
-        "Erstelle bis zu ${ numberOfPersonalCalendars } persönliche Kalender"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Erstelle bis zu ${ MAX_CALENDARS_PAID } Kalender",
+        "Erstelle bis zu ${ MAX_CALENDARS_PAID } Kalender"
       ],
       "Everything in ${ vpnPlanName }": [
         "Alle Vorteile von ${ vpnPlanName }"
@@ -9679,6 +9681,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Füge öffentliche, externe oder gemeinsame Kalender über eine URL hinzu."
+      ],
+      "Add public, external, or shared calendars.": [
+        "Füge öffentliche, externe oder geteilte Kalender hinzu."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9750,6 +9755,14 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Hochgeschwindigkeits-VPN auf ${ maxVpn } Gerät",
         "Hochgeschwindigkeits-VPN auf ${ maxVpn } Geräten"
+      ]
+    },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Anderweitig verwaltetes Abonnement"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Dein Abonnement wurde über einen In-App-Kauf abgeschlossen. Um dein aktuelles Abonnement zu verwalten, musst du zum Bereich „Abonnements“ in deinem ${ subscriptionManager }-Konto navigieren"
       ]
     },
     "Subscription price": {
@@ -10252,8 +10265,8 @@
       "Bridge for ${ platform }": [
         "Bridge für ${ platform }"
       ],
-      "Cancel Mail subscription": [
-        "Mail-Abonnement kündigen"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "${ MAIL_SHORT_APP_NAME }-Abonnement beenden."
       ],
       "Card verification": [
         "Kartenprüfung"
@@ -10663,6 +10676,9 @@
       "Organization and keys": [
         "Organisation und Schlüssel"
       ],
+      "Other calendars": [
+        "Weitere Kalender"
+      ],
       "Password": [
         "Passwort"
       ],
@@ -10842,9 +10858,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Subscribed calendars": [
-        "Abonnierte Kalender"
       ],
       "Success": [
         "Erfolgreich"
@@ -11220,12 +11233,8 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Mit einem Upgrade auf ein kostenpflichtiges Mail-Abonnement kannst du bis zu ${ MAX_CALENDARS_PAID } Kalender erstellen, den du für die Arbeit, zum Teilen mit Freunden oder einfach für dich selbst nutzen kannst.",
-        "Mit einem Upgrade auf ein kostenpflichtiges Mail-Abonnement kannst du bis zu ${ MAX_CALENDARS_PAID } Kalender erstellen, die du für die Arbeit, zum Teilen mit Freunden oder einfach für dich selbst nutzen kannst."
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "Upgrade auf ein kostenpflichtiges Abonnement, um deinen Kalender zu teilen. "
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Führe ein Upgrade auf ein kostenpflichtiges ${ MAIL_SHORT_APP_NAME }-Abonnement durch, um deine Kalender zu teilen."
       ]
     },
     "User referee invited via email": {

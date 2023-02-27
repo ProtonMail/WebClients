@@ -877,11 +877,6 @@
         "Дадатковыя параметры"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Абагулена са мной"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "Не сінхранізавана"
@@ -4342,6 +4337,17 @@
         "Бакавая панэль"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Каб дадаць новы каляндар, выдаліце які-небудзь з існуючых."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Каб дадаць новы каляндар, выдаліць іншы каляндар або перайсці з тарыфнага плана ${ BRAND_NAME } на платны тарыфны план ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Календары"
@@ -4355,14 +4361,14 @@
       "My calendars": [
         "Мае календары"
       ],
+      "Other calendars": [
+        "Іншыя календары"
+      ],
       "Pay invoice": [
         "Аплаціць рахунак"
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
-      ],
-      "Subscribed calendars": [
-        "Падпісаныя календары"
       ],
       "Upgrade account": [
         "Палепшыць уліковы запіс"
@@ -4386,7 +4392,7 @@
         "Амаль гатова"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
@@ -4463,17 +4469,9 @@
       ],
       "Manage calendars": [
         "Кіраванне календарамі"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Немагчыма дадаць больш календароў. Вы дасягнулі максімальнай колькасці асабістых календароў у межах вашага тарыфнага плана."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Немагчыма дадаць больш календароў. Вы дасягнулі максімальнай колькасці падпісак на календары ў межах вашага тарыфнага плана."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Немагчыма стварыць больш календароў. Вы дасягнулі максімальнай колькасці асабістых календароў у межах вашага тарыфнага плана."
+      "Upgrade": [
+        "Палепшыць"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4490,6 +4488,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Немагчыма дадаць больш календароў"
+      ],
       "How to import calendars from another service": [
         "Як імпартаваць календары з іншага сэрвісу"
       ],
@@ -4513,9 +4514,6 @@
       ],
       "Time zone changed": [
         "Часавы пояс зменены"
-      ],
-      "Unable to add more calendars": [
-        "Немагчыма дадаць больш календароў"
       ]
     },
     "Modal title and action": {
@@ -5248,12 +5246,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Цяпер запрашэнні з'яўляюцца ў вашым календары як незавершаныя падзеі. Проста адкрыйце іх, каб адказаць. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Падпісацца на іншыя календары"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Вы можаце падпісацца на знешнія календары і чытаць іх падзеі."
       ]
     },
     "Spotlight settings link": {
@@ -5346,9 +5338,6 @@
       "Calendar updated": [
         "Каляндар абноўлены"
       ],
-      "Canceling import": [
-        "Скасаванне імпартавання"
-      ],
       "Cancellation sent and all events deleted": [
         "Скасаванне адпраўлена і ўсе падзеі выдалены"
       ],
@@ -5360,6 +5349,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Скасаванне адпраўлена і ўдзельнікі выдалены з усіх падзей"
+      ],
+      "Cancelling import": [
+        "Скасаванне імпартавання"
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"

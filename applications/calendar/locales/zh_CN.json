@@ -850,11 +850,6 @@
         "更多选项"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "与我共享"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "未同步"
@@ -4094,9 +4089,6 @@
       "Request an invite": [
         "申请注册"
       ],
-      "Subscribed calendars": [
-        "已订阅日历"
-      ],
       "Upgrade account": [
         "升级账户"
       ],
@@ -4161,17 +4153,6 @@
         "管理日历"
       ]
     },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "无法添加更多的日历，因为您已经达到套餐中个人日历最大值。"
-      ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "无法添加更多日历。你已经达到了计划内订阅日历的上限。"
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "无法创建更多的日历。你已经达到了计划中个人日历的上限。"
-      ]
-    },
     "Modal for received invitation to share calendar; text": {
       "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
         "${ calendarOwnerDisplayName } 与你分享其日历 ${ boldCalendarName } 。"
@@ -4209,9 +4190,6 @@
       ],
       "Time zone changed": [
         "时区已更改"
-      ],
-      "Unable to add more calendars": [
-        "无法添加更多日历"
       ]
     },
     "Modal title and action": {
@@ -4848,12 +4826,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "现在，邀请将在您的日历中显示为待处理事件。 只需打开事件就可以回复。 ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "订阅其他日历"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "您可以通过订阅外部日历来获取其日程。"
       ]
     },
     "Spotlight settings link": {
@@ -4942,9 +4914,6 @@
       ],
       "Calendar updated": [
         "日历已更新"
-      ],
-      "Canceling import": [
-        "正在取消导入"
       ],
       "Cancellation sent and all events deleted": [
         "取消邮件已发送，所有日程已删除"

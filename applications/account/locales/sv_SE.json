@@ -309,6 +309,9 @@
       "Edit billing details": [
         "Redigera faktureringsdetaljer"
       ],
+      "Edit display name": [
+        "Redigera visningsnamn"
+      ],
       "Edit email address": [
         "Redigera e-postadress"
       ],
@@ -1195,21 +1198,6 @@
       ],
       "Invite sent": [
         "Inbjudan skickad"
-      ]
-    },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Du har nått det maximala antalet personliga kalendrar som du kan skapa med ditt paket."
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Du har uppnått maximalt antal personliga kalendrar som du kan ha. För att godkänna väntande kalenderinbjudningar behöver du ta bort några av dina kalendrar."
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Du har uppnått maximalt antal delade kalendrar som du kan ha. För att godkänna väntande kalenderinbjudningar behöver du ta bort några av dina kalendrar."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Du har nått det maximala antalet av ${ MAX_SUBSCRIBED_CALENDARS } prenumererad kalender.",
-        "Du har nått det maximala antalet av ${ MAX_SUBSCRIBED_CALENDARS } prenumererade kalendrar."
       ]
     },
     "Calendar link purpose update success message": {
@@ -2628,6 +2616,9 @@
       "${ name } failed to move to spam list": [
         "${ name } misslyckades att flyttas till skräppostlista"
       ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } misslyckades att flyttas till icke-skräppostlistan"
+      ],
       "${ name } failed to move to your block list": [
         "${ name } kunde inte flyttas till din blockeringslista"
       ],
@@ -2741,6 +2732,9 @@
       ],
       "${ name } failed to move to spam list": [
         "${ name } misslyckades att flyttas till skräppostlista"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } misslyckades att flyttas till icke-skräppostlistan"
       ],
       "${ name } failed to move to your block list": [
         "${ name } kunde inte flyttas till din blockeringslista"
@@ -3228,6 +3222,9 @@
       ],
       "You must set a name": [
         "Du måste ange ett namn"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Du måste ha en anpassad domänadress för att generera en SMTP-inlämningstoken."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ditt konto eller organisation har en förfallen faktura. Vänligen betala alla obetalda fakturor."
@@ -4274,6 +4271,9 @@
       "Canceled": [
         "Avbruten"
       ],
+      "Cancelling": [
+        "Avbryter"
+      ],
       "Completed": [
         "Slutförd"
       ],
@@ -4334,6 +4334,9 @@
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } pausade en import eftersom ditt konto har ont om lagringsutrymme. Du kan:"
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } försöker att fortsätta importen så snart din epostleverantör återställer ditt kontos ${ bandwidthLimitLink }. Du behöver inte göra någonting. Om du avbryter din import kommer du inte att kunna fortsätta den och du behöver starta om på nytt."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
@@ -5490,6 +5493,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "SMTP tillåter tjänster eller enheter från tredje part att skicka e-post via ${ MAIL_APP_NAME }. Det är en ny funktion som är tillgänglig för utvalda Business-användare. Skicka e-post till ${ emailLink } för att begära åtkomst."
+      ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
         "SMTP tillåter tjänster eller enheter från tredje part att skicka e-post via ${ MAIL_APP_NAME }. För att använda denna funktion, börja med att generera en ny token."
       ],
@@ -5886,6 +5892,18 @@
       "You can import one data type at a time.": [
         "Du kan importera en datatyp åt gången."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Vänligen ta bort delade kalenderlänkar och alla ${ BRAND_NAME } användare som du delat dina kalendrar med innan du avbryter din prenumeration.",
+        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Vänligen ta bort delade kalenderlänkar och alla ${ BRAND_NAME } användare som du delat dina kalendrar med innan du avbryter din prenumeration."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Vänligen ta bort delade kalenderlänkar och alla ${ BRAND_NAME } användare som du delat dina kalendrar med innan du avbryter din prenumeration.",
+        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Vänligen ta bort delade kalenderlänkar och alla ${ BRAND_NAME } användare som du delat dina kalendrar med innan du avbryter din prenumeration."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar innan du avbryter din prenumeration.",
+        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Ta bort delade kalenderlänkar innan du avbryter din prenumeration."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nu komma åt och hantera kontot som administratör."
       ],
@@ -5917,8 +5935,8 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har inte angett en återställningsmetod så kontoåterställning är omöjlig om du glömmer ditt lösenord. Fortsätt utan återställningsmetod?"
       ],
-      "You have no personal calendars to export.": [
-        "Du har inga personliga kalendrar att exportera."
+      "You have no calendars to export.": [
+        "Du har inga kalendrar att exportera."
       ],
       "You have no saved payment methods.": [
         "Du har inga sparade betalningsmetoder."
@@ -5937,12 +5955,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du måste ha ett kreditkort eller bankkonto kopplat till ditt PayPal-konto. Om ditt PayPal-konto inte har det, klicka på knappen nedan."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Du måste ta bort eventuella ytterligare personliga kalendrar och eventuella delade kalenderlänkar innan du kan avbryta din Mail-prenumeration."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Du måste ta bort eventuella ytterligare personliga kalendrar och eventuella delade kalenderlänkar innan du kan avsluta din prenumeration."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Du måste ha en aktiv personlig kalender för att importera dina händelser från ICS."
@@ -7446,6 +7458,17 @@
         "Preferens sparad"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "För att lägga till en ny kalender, ta bort en befintlig."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "För att skapa en ny kalender, ta bort en annan kalender eller uppgradera ditt ${ BRAND_NAME } paket till en ${ MAIL_SHORT_APP_NAME } betalt paket."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du har nått det maximala antalet tillgängliga kalendrar i ditt paket."
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Lägg till en presentkod"
@@ -7542,6 +7565,10 @@
       "Almost there": [
         "Nästan framme"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Antal skapade kalendrar: ${ createdCalendarCount } av ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Ansluter till din e-postleverantör"
       ],
@@ -7570,6 +7597,18 @@
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importera alla meddelanden från ${ itemsToImportCount } mapp och märk dem som",
         "Importera alla meddelanden från ${ itemsToImportCount } mappar och märk dem som"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importera alla meddelanden från ${ itemsToImportCount } etikett och märk dem som",
+        "Importera alla meddelanden från ${ itemsToImportCount } etiketter och märk dem som"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } mapp och märk dem som",
+        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } mappar och märk dem som"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etikett och märk dem som",
+        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etiketter och märk dem som"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7917,6 +7956,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } kalender",
+        "${ n } kalendrar"
+      ],
       "${ n } custom email domain": [
         "${ n } anpassad e-postdomän",
         "${ n } anpassade e-postdomäner"
@@ -7949,10 +7992,6 @@
         "${ n } meddelande per dag",
         "${ n } meddelanden per dag"
       ],
-      "${ n } personal calendar": [
-        "${ n } personlig kalender",
-        "${ n } personliga kalendrar"
-      ],
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
@@ -7984,6 +8023,9 @@
       ],
       "Auto-reply": [
         "Automatiskt svar"
+      ],
+      "Calendar sharing": [
+        "Kalenderdelning"
       ],
       "Catch-all": [
         "Catch-all"
@@ -8136,6 +8178,26 @@
         "Teamhantering"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gör integritet till din standard för säkerhetskopiering, lagring, delning och hämtning."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Uppgradera till företagspaketet med åtkomst till alla ${ BRAND_NAME } premiumtjänster."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Uppgradera till det ultimata integritetspaketet och få tillgång till alla premium ${ BRAND_NAME }-tjänster."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din provperiod slutar ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -8205,26 +8267,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på din nuvarande prenumeration. Om du nedgraderar ditt konto så förlorar du kampanjpriset och det kommer inte vara tillgängligt om du prövar att prenumerera igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gör integritet till din standard för säkerhetskopiering, lagring, delning och hämtning."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till företagspaketet med åtkomst till alla ${ BRAND_NAME } premiumtjänster."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till det ultimata integritetspaketet och få tillgång till alla premium ${ BRAND_NAME }-tjänster."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din provperiod slutar ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8328,9 +8370,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain } för nyhetsprenumerationer"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Skapa upp till ${ n } anpassad kalender.",
-        "Skapa upp till ${ n } anpassade kalendrar."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Skapa upp till ${ n } kalender eller lägg till kalendrar från vänner, familj, kollegor och organisationer",
+        "Skapa upp till ${ n } kalendrar eller lägg till kalendrar från vänner, familj, kollegor och organisationer"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Försvarar mot hot mot VPN-integriteten genom att skicka din Internet-trafik via flera servrar"
@@ -8338,8 +8380,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Dela enkelt dina kalendrar med dina kollegor, familj och vänner via en länk"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Dela enkelt din kalender med din familj, vänner eller kollegor via en länk"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Dela enkelt din kalender med din familj, vänner eller kollegor"
       ],
       "End-to-end encrypted calendar": [
         "End-to-end-krypterad kalender"
@@ -8367,12 +8409,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Få support från ${ BRAND_NAME }s kundservice inom 24 timmar efter förfrågan på vardagar"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Utöver det kan du lägga till upp till fem kalendrar från kollegor, organisationer, familj och vänner."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Utöver det kan du lägga till upp till fem kalendrar från vänner, familj, kollegor och organisationer."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "En VPN-anslutning låter en enhet ansluta till ${ BRAND_NAME } VPN när som helst. Till exempel, för att ansluta en mobil och en bärbar dator till ${ BRAND_NAME } VPN samtidigt så behöver du två VPN-anslutningar."
@@ -8492,9 +8528,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "Få mer gjort med stöd för 10 anpassade e-postdomäner"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Skapa ${ numberOfPersonalCalendars } personlig kalender",
-        "Skapa upp till ${ numberOfPersonalCalendars } personliga kalendrar"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Skapa upp till ${ MAX_CALENDARS_PAID } kalender",
+        "Skapa upp till ${ MAX_CALENDARS_PAID } kalendrar"
       ],
       "Everything in ${ vpnPlanName }": [
         "Allt i ${ vpnPlanName }"
@@ -9420,6 +9456,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Lägg till offentliga, externa eller delade kalendrar med en URL."
+      ],
+      "Add public, external, or shared calendars.": [
+        "Lägg till offentliga, externa eller delade kalendrar."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9491,6 +9530,14 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Höghastighets-VPN på ${ maxVpn } enhet",
         "Höghastighets-VPN på ${ maxVpn } enheter"
+      ]
+    },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Prenumeration hanteras någon annanstans"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Din prenumeration har satts upp via ett in-app köp. För att hantera din nuvarande prenumeration behöver du gå till prenumerationssektionen på ditt ${ subscriptionManager } konto"
       ]
     },
     "Subscription price": {
@@ -9993,8 +10040,8 @@
       "Bridge for ${ platform }": [
         "Bridge för ${ platform }"
       ],
-      "Cancel Mail subscription": [
-        "Avsluta Mail-prenumeration"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Avbryt ${ MAIL_SHORT_APP_NAME }-prenumeration"
       ],
       "Card verification": [
         "Kortverifiering"
@@ -10404,6 +10451,9 @@
       "Organization and keys": [
         "Organisation och nycklar"
       ],
+      "Other calendars": [
+        "Andra kalendrar"
+      ],
       "Password": [
         "Lösenord"
       ],
@@ -10583,9 +10633,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Subscribed calendars": [
-        "Prenumererade kalendrar"
       ],
       "Success": [
         "Lyckades"
@@ -10961,12 +11008,8 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Uppgradera till ett betalt paket för Mail för att skapa upp till ${ MAX_CALENDARS_PAID } kalender, så att du kan skapa kalendrar för jobbet, för att dela med vänner och bara för dig själv.",
-        "Uppgradera till ett betalt paket för Mail för att skapa upp till ${ MAX_CALENDARS_PAID } kalendrar, så att du kan skapa kalendrar för jobbet, att dela med vänner och bara för dig själv."
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "Uppgradera till ett betalt paket för Mail för att dela din kalender."
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Uppgradera till ett ${ MAIL_SHORT_APP_NAME } betalt paket för att dela din kalender."
       ]
     },
     "User referee invited via email": {
@@ -11128,6 +11171,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Du kommer förlora alla anpassningar du gjort hittills."
+      ],
+      "You will not see this import record in the list any more.": [
+        "Du kommer inte att se denna importpost i listan längre."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"

@@ -869,11 +869,6 @@
         "Weitere Optionen"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Mit mir geteilt"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "Nicht synchronisiert"
@@ -2967,7 +2962,7 @@
         "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Die Zwei-Faktor-Authentifizierung in deinem externen E-Mail-Konto ist aktiviert."
+        "Die 2-Schritt-Verifizierung in deinem externen Konto aktiviert ist."
       ],
       "IMAP access is enabled in your external account.": [
         "Der IMAP-Zugang in deinem externen Konto aktiviert ist."
@@ -2997,7 +2992,7 @@
         "Deine E-Mail-Adresse und dein App-Passwort sind korrekt. Verwende ${ boldNot } dein reguläres Passwort."
       ],
       "Your email address and password are correct.": [
-        "Deine E-Mail-Adresse und dein Passwort sind korrekt."
+        "Deine E-Mail-Adresse und dein Passwort korrekt sind."
       ],
       "Your password is correct.": [
         "Dein Passwort ist korrekt."
@@ -4215,6 +4210,17 @@
         "Seitenleiste"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Entferne einen bestehenden Kalender, um einen neuen hinzuzufügen."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Um einen neuen Kalender hinzuzufügen, entferne einen anderen Kalender oder upgrade dein ${ BRAND_NAME }-Abonnement auf ein kostenpflichtiges ${ MAIL_SHORT_APP_NAME }-Abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du hast die maximale Anzahl von Kalendern erreicht, die in deinem Abonnement erstellt werden können."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Kalender"
@@ -4228,14 +4234,14 @@
       "My calendars": [
         "Meine Kalender"
       ],
+      "Other calendars": [
+        "Weitere Kalender"
+      ],
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
       "Request an invite": [
         "Einladung anfordern"
-      ],
-      "Subscribed calendars": [
-        "Abonnierte Kalender"
       ],
       "Upgrade account": [
         "Konto-Upgrade durchführen"
@@ -4259,8 +4265,8 @@
         "Fast geschafft"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Anzahl der erstellten Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }",
-        "Anzahl der erstellten Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Verbindung zu Ihrem E-Mail-Anbieter wird aufgebaut"
@@ -4279,9 +4285,21 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle Nachrichten aus ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importieren Sie alle Nachrichten aus ${ itemsToImportCount } Kategorie und kennzeichnen Sie diese als",
-        "Importieren Sie alle Nachrichten aus ${ itemsToImportCount } Kategorien und kennzeichnen Sie diese als"
+        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorie und markiere diese als",
+        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorien und markiere diese als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorie importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
       ]
     },
     "Message": {
@@ -4314,17 +4332,9 @@
       ],
       "Manage calendars": [
         "Kalender verwalten"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Es können keine weiteren Kalender hinzugefügt werden, da die maximale Anzahl an persönlichen Kalendern in deinem Abonnement erreicht wurde."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Es können keine weiteren Kalender hinzugefügt werden, da die maximale Anzahl an abonnierten Kalendern in deinem Abonnement erreicht wurde."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Es konnten keine weiteren Kalender erstellt werden, da die maximale Anzahl an persönlichen Kalendern in deinem Abonnement erreicht wurde."
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4341,6 +4351,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Es können keine weiteren Kalender hinzugefügt werden"
+      ],
       "How to import calendars from another service": [
         "Wie du Kalender von einem anderen Dienst importierst"
       ],
@@ -4364,9 +4377,6 @@
       ],
       "Time zone changed": [
         "Zeitzone geändert"
-      ],
-      "Unable to add more calendars": [
-        "Weitere Kalender konnten nicht hinzugefügt werden"
       ]
     },
     "Modal title and action": {
@@ -5270,12 +5280,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Jetzt werden Einladungen in deinem Kalender als ausstehende Termine angezeigt. Öffne einfach einen Termin, um zu antworten. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Andere Kalender abonnieren"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Du kannst externe Kalender abonnieren und deren Termine einsehen."
       ]
     },
     "Spotlight settings link": {
@@ -5366,9 +5370,6 @@
       "Calendar updated": [
         "Kalender aktualisiert"
       ],
-      "Canceling import": [
-        "Import wird abgebrochen"
-      ],
       "Cancellation sent and all events deleted": [
         "Absage gesendet und alle Termine gelöscht"
       ],
@@ -5380,6 +5381,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Absage gesendet und Teilnehmer aus allen Terminen entfernt"
+      ],
+      "Cancelling import": [
+        "Import wird abgebrochen"
       ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"

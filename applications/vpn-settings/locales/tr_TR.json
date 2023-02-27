@@ -131,6 +131,9 @@
       "Edit billing details": [
         "Fatura bilgilerini düzenle"
       ],
+      "Edit display name": [
+        "Görüntülenecek adı düzenle"
+      ],
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
@@ -1766,6 +1769,9 @@
       ],
       "(1-2 emails per month)": [
         "(ayda 1-2 e-posta)"
+      ],
+      "(during your first month)": [
+        "(ilk ayınız boyunca)"
       ]
     },
     "Go to sign in": {
@@ -2427,6 +2433,18 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Faturalarınızı muhasebe kullanımı için özelleştirebilir ve indirebilirsiniz."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "En fazla ${ MAX_CALENDARS_FREE } takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
+        "En fazla ${ MAX_CALENDARS_FREE } takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "En fazla ${ MAX_CALENDARS_FREE } takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
+        "En fazla ${ MAX_CALENDARS_FREE } takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "En fazla ${ MAX_CALENDARS_FREE } takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını kaldırın.",
+        "En fazla ${ MAX_CALENDARS_FREE } takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını kaldırın."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Aynı anda yalnızca bir sohbet kopyası açabilirsiniz. Lütfen yeni bir konuşma başlatmadan önce önceki konuşmaları kapatın."
       ],
@@ -2450,12 +2468,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Mail aboneliğinizi iptal etmeden önce bütün ek olan kişisel takvimleri ve paylaşılan takvim bağlantılarını kaldırmanız gerekir."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Aboneliğinizi iptal etmeden önce bütün ek olan kişisel takvimleri ve paylaşılan takvim bağlantılarını kaldırmanız gerekir."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Depolama kapasitenizi %${ spaceDisplayed } oranında kullanıyorsunuz. ${ freeUpMessage } ${ upgradeLink }"
@@ -2960,6 +2972,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } ürün duyuruları"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } karşılama e-postaları"
       ]
     },
     "Label on payment method": {
@@ -3144,6 +3159,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } takvim",
+        "${ n } takvim"
+      ],
       "${ n } custom email domain": [
         "${ n } özel e-posta etki alanı",
         "${ n } özel e-posta etki alanı"
@@ -3176,10 +3195,6 @@
         "Her gün ${ n } ileti",
         "Her gün ${ n } ileti"
       ],
-      "${ n } personal calendar": [
-        "${ n } kişisel takvim",
-        "${ n } kişisel takvim"
-      ],
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
@@ -3211,6 +3226,9 @@
       ],
       "Auto-reply": [
         "Otomatik yanıt"
+      ],
+      "Calendar sharing": [
+        "Takvim paylaşımı"
       ],
       "Catch-all": [
         "Tümünü yakalayan e-posta"
@@ -3546,9 +3564,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber${ domain } gibi takma adlar oluşturabilirsiniz"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "${ n } özel takvime kadar ekleyin.",
-        "${ n } özel takvime kadar ekleyin."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } taneye kadar takvim oluşturabilir ya da arkadaşlarınızın, ailenizin iş arkadaşlarınızın ve kuruluşların takvim ekleyebilirsiniz",
+        "${ n } taneye kadar takvim oluşturabilir ya da arkadaşlarınızın, ailenizin iş arkadaşlarınızın ve kuruluşların takvim ekleyebilirsiniz"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
@@ -3556,8 +3574,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Takvimlerinizi bir bağlantı ile iş arkadaşlarınız, aileniz ve arkadaşlarınızla paylaşın"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Takvimlerinizi bir bağlantı ile arkadaşlarınız, aileniz veya iş arkadaşlarınız ile kolayca paylaşın"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Takvimlerinizi arkadaşlarınız, aileniz veya iş arkadaşlarınız ile kolayca paylaşın"
       ],
       "End-to-end encrypted calendar": [
         "Uçtan uca şifrelenmiş takvim"
@@ -3585,12 +3603,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Çalışma günlerinde, isteklerin ardından 24 saat içinde ${ BRAND_NAME } müşteri destek ekibinden yardım alın"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Buna ek olarak, iş arkadaşlarınız, kuruluşunuz, aileniz ve arkadaşlarınız için 5 taneye kadar takvim ekleyebilirsiniz."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Buna ek olarak, arkadaşlarınız, aileniz, iş arkadaşlarınız ve kuruluşunuz için 5 taneye kadar takvim ekleyebilirsiniz."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ BRAND_NAME } VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ BRAND_NAME } VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
@@ -3702,9 +3714,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "${ numberOfPersonalCalendars } kişisel takvim ekleyin",
-        "${ numberOfPersonalCalendars } kişisel takvime kadar ekleyin"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "${ MAX_CALENDARS_PAID } takvime kadar ekleyin",
+        "${ MAX_CALENDARS_PAID } takvime kadar ekleyin"
       ],
       "Everything in ${ vpnPlanName }": [
         "${ vpnPlanName } özelliklerinin tümü"
@@ -4037,6 +4049,14 @@
         "${ maxVpn } aygıt için yüksek hızlı VPN"
       ]
     },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Abonelik başka bir yerden yönetiliyor"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Aboneliğiniz uygulama içi satın alma yöntemiyle yapılmış. Var olan aboneliğinizi yönetmek için ${ subscriptionManager } hesabınızdaki Abonelikler bölümüne gitmeniz gerekir"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Toplam"
@@ -4249,8 +4269,8 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
-      "Cancel Mail subscription": [
-        "Mail aboneliğini iptal et"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "${ MAIL_SHORT_APP_NAME } aboneliğini iptal et"
       ],
       "Card verification": [
         "Kart doğrulama"

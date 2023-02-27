@@ -539,9 +539,6 @@
       "Load": [
         "Załaduj"
       ],
-      "Load anyway": [
-        "Załaduj mimo to"
-      ],
       "Load embedded images": [
         "Załaduj osadzone obrazy"
       ],
@@ -965,7 +962,7 @@
       "Skip verification": [
         "Pomiń weryfikację"
       ],
-      "Some images failed to load with tracking protection.": [
+      "Some images could not be loaded with tracker protection.": [
         "Niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem."
       ],
       "Star": [
@@ -6688,6 +6685,17 @@
         "Wiersz"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Aby dodać nowy kalendarz, usuń obecny."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Aby dodać nowy kalendarz, usuń inny lub ulepsz konto ${ BRAND_NAME } do płatnego planu ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Limit maksymalnej liczby kalendarzy dostępnych w Twoim planie został osiągnięty."
+      ]
+    },
     "Link": {
       "All mail": [
         "Wszystkie wiadomości"
@@ -6852,7 +6860,7 @@
         "Już prawie"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
@@ -7184,7 +7192,7 @@
         "Uzyskaj nieograniczoną liczby aliasów SimpleLogin przez ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

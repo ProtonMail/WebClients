@@ -1145,15 +1145,6 @@
         "Μπορείτε να εισάγετε αρχεία ICS από άλλο ημερολόγιο στο ${ CALENDAR_APP_NAME }. Αυτό σας επιτρέπει να εισάγετε γρήγορα ένα γεγονός ή ολόκληρη την ατζέντα σας."
       ]
     },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Έχετε φθάσει τον μέγιστο αριθμό προσωπικών ημερολογίων που μπορείτε να δημιουργήσετε στο πρόγραμμά σας."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Έχετε φτάσει τον μέγιστο αριθμό του ${ MAX_SUBSCRIBED_CALENDARS } συνδρομητικού ημερολογίου.",
-        "Έχετε φτάσει τον μέγιστο αριθμό των ${ MAX_SUBSCRIBED_CALENDARS } συνδρομητικών ημερολογίων."
-      ]
-    },
     "Calendar link purpose update success message": {
       "Label added": [
         "Η ετικέτα προστέθηκε"
@@ -1283,6 +1274,14 @@
         "Σύνολο για ${ n } μήνες"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Σύμπτυξη"
+      ],
+      "Expand": [
+        "Ανάπτυξη"
+      ]
+    },
     "color": {
       "apple": [
         "μήλο"
@@ -1334,6 +1333,9 @@
       ],
       "forest": [
         "δάσος"
+      ],
+      "gainsboro": [
+        "γκέινσμπορο"
       ],
       "kiwi": [
         "ακτινίδιο"
@@ -1721,6 +1723,9 @@
       "Congo": [
         "Κογκό"
       ],
+      "Congo, Democratic Republic of the": [
+        "Κονγκό-Κινσάσα"
+      ],
       "Cook Islands": [
         "Νήσοι Κουκ"
       ],
@@ -1909,6 +1914,9 @@
       ],
       "Japan": [
         "Ιαπωνία"
+      ],
+      "Jersey": [
+        "Βαϊλάτο του Τζέρσεϊ"
       ],
       "Jordan": [
         "Ιορδανία"
@@ -3197,6 +3205,12 @@
       "Please ${ refresh } or check your connection.": [
         "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
+      ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο ${ BRAND_NAME }."
+      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Πάρα πολλές υποσυνεδρίες, παρακαλούμε καθαρίστε τα cookies σας και συνδεθείτε ξανά."
       ],
@@ -3704,6 +3718,12 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
@@ -3724,6 +3744,9 @@
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Η διεύθυνση email και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
       ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
@@ -5325,9 +5348,6 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Δεν έχετε ορίσει μία μέθοδο ανάκτησης, με αποτέλεσμα η ανάκτηση λογαριασμού να είναι αδύνατη αν ξεχάσετε τον κωδικό πρόσβασής σας. Θέλετε να συνεχίσετε χωρίς μέθοδο ανάκτησης;"
       ],
-      "You have no personal calendars to export.": [
-        "Δεν έχετε προσωπικά ημερολόγια για εξαγωγή."
-      ],
       "You have no saved payment methods.": [
         "Δεν έχετε αποθηκευμένους τρόπους πληρωμής."
       ],
@@ -5342,9 +5362,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Για να μπορέσετε να ακυρώσετε τη συνδρομή σας, πρέπει πρώτα να αφαιρέσετε τυχόν πρόσθετα προσωπικά ημερολόγια και τυχόν κοινοποιημένους συνδέσμους ημερολογίου."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας από αρχείο ICS."
@@ -6816,6 +6833,9 @@
       "What is the difference between UDP and TCP protocols?": [
         "Ποια είναι η διαφορά μεταξύ των πρωτοκόλλων UDP και TCP;"
       ],
+      "What’s this?": [
+        "Τι είναι αυτό?"
+      ],
       "Why set recovery methods?": [
         "Γιατί να ορίσετε μεθόδους ανάκτησης;"
       ]
@@ -6825,7 +6845,7 @@
         "Ακόμα λίγο"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -7227,10 +7247,6 @@
         "${ n } μήνυμα ανά ημέρα",
         "${ n } μηνύματα ανά ημέρα"
       ],
-      "${ n } personal calendar": [
-        "${ n } προσωπικό ημερολόγιο",
-        "${ n } προσωπικά ημερολόγια"
-      ],
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
@@ -7375,6 +7391,20 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -7399,20 +7429,6 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7489,10 +7505,6 @@
       "Advanced security VPN with global network": [
         "Προηγμένη διασφάλιση VPN με παγκόσμιο δίκτυο"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Δημιουργία ${ n } προσαρμοσμένου ημερολογίου.",
-        "Δημιουργία έως και ${ n } προσαρμοσμένων ημερολογίων."
-      ],
       "End-to-end encrypted calendar": [
         "Διατερματικά κρυπτογραφημένο ημερολόγιο"
       ],
@@ -7530,10 +7542,6 @@
       "Boost your storage space to ${ businessStorage } per user": [
         "Μεγαλώστε τον αποθηκευτικό σας χώρο σε ${ businessStorage } ανά χρήστη"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Δημιουργία ${ numberOfPersonalCalendars } προσωπικού ημερολογίου",
-        "Δημιουργία έως και ${ numberOfPersonalCalendars } προσωπικών ημερολογίων"
-      ],
       "Everything in ${ vpnPlanName }": [
         "Όλα στο ${ vpnPlanName }"
       ],
@@ -7551,6 +7559,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } δημιουργήθηκε"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Το κλειδί με δακτυλικό αποτύπωμα ${ fp } διαγράφηκε."
       ],
@@ -8485,6 +8496,9 @@
       "Calendar updated": [
         "Το ημερολόγιο ενημερώθηκε"
       ],
+      "Cancelling import": [
+        "Γίνεται ακύρωση εισαγωγής"
+      ],
       "Catch-all address updated": [
         "Έγινε ενημέρωση της διεύθυνσης catch-all"
       ],
@@ -8900,9 +8914,6 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge για ${ platform }"
-      ],
-      "Cancel Mail subscription": [
-        "Ακυρώστε τη συνδρομή Ηλεκτρονικού Ταχυδρομείου"
       ],
       "Card verification": [
         "Επαλήθευση Κάρτας"
@@ -9464,9 +9475,6 @@
       "Status": [
         "Κατάσταση"
       ],
-      "Subscribed calendars": [
-        "Εγγεγραμμένα ημερολόγια"
-      ],
       "Success": [
         "Επιτυχία"
       ],
@@ -9794,6 +9802,9 @@
       ]
     },
     "Update font modal": {
+      "Today is a good day to write an email": [
+        "Σήμερα είναι μια καλή μέρα για να γράψετε ένα email"
+      ],
       "Update default font and size": [
         "Ενημέρωση προεπιλεγμένης γραμματοσειράς και μεγέθους"
       ],
@@ -9805,12 +9816,6 @@
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Αναβαθμίστε σε ${ planName } για να συνδέετε στο VPN έως και ${ n } συσκευή ταυτόχρονα",
         "Αναβαθμίστε σε ${ planName } για να συνδέετε στο VPN έως και ${ n } συσκευές ταυτόχρονα"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Αναβαθμίστε σε πακέτο Ηλεκτρονικού Ταχυδρομείου επί πληρωμή για να δημιουργήσετε έως και ${ MAX_CALENDARS_PAID } ημερολόγιο και να έχετε έτσι την δυνατότητα να δημιουργήσετε ημερολόγια για την δουλειά, για να τα μοιράζεστε με φίλους ή και μόνο για τον εαυτό σας.",
-        "Αναβαθμίστε σε πακέτο Ηλεκτρονικού Ταχυδρομείου επί πληρωμή για να δημιουργήσετε έως και ${ MAX_CALENDARS_PAID } ημερολόγια και να έχετε έτσι την δυνατότητα να δημιουργήσετε ημερολόγια για την δουλειά, για να τα μοιράζεστε με φίλους ή και μόνο για τον εαυτό σας."
       ]
     },
     "User referee invited via email": {

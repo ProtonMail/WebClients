@@ -1174,21 +1174,6 @@
         "Meghívó elküldve"
       ]
     },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Elérte a csomagjában maximálisan létrehozható személyes naptárak számát."
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Elérte a létrehozható személyes naptárak maximális számát. Ahhoz, hogy elfogadhasson egy függőben lévő naptár meghívást, törölnie kell valamelyik naptárát."
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Elérte a létrehozható megosztott naptárak maximális számát. Ahhoz, hogy elfogadhasson egy függőben lévő naptár meghívást, törölnie kell valamelyik naptárát."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS } feliratkozott naptárat.",
-        "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS } feliratkozott naptárat."
-      ]
-    },
     "Calendar link purpose update success message": {
       "Label added": [
         "Címke hozzáadva"
@@ -5708,9 +5693,6 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nem adott meg helyreállítási módszert. Ha elveszíti a jelszavát, így lehetetlen lesz visszaszereznie a fiók elérést. Biztos, hogy folytatja helyreállítási módszer nélkül?"
       ],
-      "You have no personal calendars to export.": [
-        "Nincs személyes naptára, amit exportálhatna."
-      ],
       "You have no saved payment methods.": [
         "Nincs elmentve fizetési mód."
       ],
@@ -5728,12 +5710,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát. Ha ezek egyike sincs, kattintson a lentebbi gombra."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "A Mail előfizetés lemondása előtt törölnie kell minden személyes naptárat és megosztott naptár hivatkozást."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Az előfizetés lemondása előtt törölnie kell minden személyes naptárat és megosztott naptár hivatkozást."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Egy ICS fájlból való importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
@@ -7682,10 +7658,6 @@
         "${ n } üzenet naponta",
         "${ n } üzenet naponta"
       ],
-      "${ n } personal calendar": [
-        "${ n } személyes naptár",
-        "${ n } személyes naptár"
-      ],
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
@@ -7869,6 +7841,26 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7938,26 +7930,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8061,18 +8033,11 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain } a hírleveleinek"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Hozzon létre ${ n } egyedi naptárat.",
-        "Hozzon létre akár ${ n } egyedi naptárat."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "A VPN elleni támadással szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Egyszerűen megoszthatja a naptárait kollégáival, családjval vagy barátaival egy hivatkozáson keresztül"
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Egyszerűen megoszthatja naptárait családjával, barátaival vagy kollégáival egy hivatkozáson keresztül"
       ],
       "End-to-end encrypted calendar": [
         "Végpontok közt titkosított naptár"
@@ -8100,12 +8065,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Munkanapokon a ${ BRAND_NAME } Ügyféltámogatási Csoporttól 24 órán belül választ kap kérdéseire"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Ezen felül hozzáadáat 5 tovább naptárat kollégáktól, szervezetektől, a családtól vagy barátoktól."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Ezen kívül hozzáadhat 5 naptárt barátaitól, családjától, kollégáitól vagy szervezeteitől is."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Lehetőség van a nem-privát felhasználók levelezésének megnyitására, ahogy a felhasználó látja, beleértve az üzenetek és a névjegyek részleteit"
@@ -8221,10 +8180,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Fedjen le több területet 10 saját e-mail domain név támogatásával"
-      ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Hozzon létre ${ numberOfPersonalCalendars } személyes naptárat",
-        "Hozzon létre akár ${ numberOfPersonalCalendars } személyes naptárat"
       ],
       "Everything in ${ vpnPlanName }": [
         "Minden a ${ vpnPlanName } csomagból"
@@ -9616,9 +9571,6 @@
       "Bridge for ${ platform }": [
         "Bridge ${ platform } eszközökre"
       ],
-      "Cancel Mail subscription": [
-        "Mail előfizetés lemondása"
-      ],
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
@@ -10195,9 +10147,6 @@
       "Status": [
         "Állapot"
       ],
-      "Subscribed calendars": [
-        "Feliratkozott naptárak"
-      ],
       "Success": [
         "Sikeres"
       ],
@@ -10548,15 +10497,6 @@
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re",
         "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Váltson előfizetéses Mail csomagra, hogy akár ${ MAX_CALENDARS_PAID } naptárat is létrehozhasson. Így lehet külön naptára munkára, másokkal való megosztásra vagy saját magának.",
-        "Váltson előfizetéses Mail csomagra, hogy akár ${ MAX_CALENDARS_PAID } naptárat is létrehozhasson. Így lehet külön naptára munkára, másokkal való megosztásra vagy saját magának."
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "Váltson egy előfizetéses Mail csomagra, hogy megoszthassa a naptárát."
       ]
     },
     "User referee invited via email": {

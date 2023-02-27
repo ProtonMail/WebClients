@@ -869,11 +869,6 @@
         "Más opciones"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Compartido conmigo"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "No sincronizado"
@@ -4215,6 +4210,17 @@
         "Panel lateral"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Para añadir un calendario nuevo, elimine uno existente."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Para añadir un calendario nuevo, elimine otro calendario o actualice su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ha alcanzado el número máximo de calendarios disponibles en su plan."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Calendarios"
@@ -4228,14 +4234,14 @@
       "My calendars": [
         "Mis calendarios"
       ],
+      "Other calendars": [
+        "Otros calendarios"
+      ],
       "Pay invoice": [
         "Pagar factura"
       ],
       "Request an invite": [
         "Solicitar una invitación"
-      ],
-      "Subscribed calendars": [
-        "Calendarios suscritos"
       ],
       "Upgrade account": [
         "Mejorar cuenta"
@@ -4259,7 +4265,7 @@
         "Ya casi está"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -4326,17 +4332,9 @@
       ],
       "Manage calendars": [
         "Gestionar calendarios"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "No se pueden añadir más calendarios. Ha alcanzado el máximo de calendarios personales dentro de su plan."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "No se pueden añadir más calendarios. Ha alcanzado el máximo de calendarios suscritos dentro de su plan."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "No se pueden crear más calendarios. Ha alcanzado el máximo de calendarios personales dentro de su plan."
+      "Upgrade": [
+        "Actualizar"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4353,6 +4351,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "No se pueden añadir más calendarios"
+      ],
       "How to import calendars from another service": [
         "Cómo importar calendarios desde otro servicio"
       ],
@@ -4376,9 +4377,6 @@
       ],
       "Time zone changed": [
         "Zona horaria cambiada"
-      ],
-      "Unable to add more calendars": [
-        "No se pueden añadir más calendarios"
       ]
     },
     "Modal title and action": {
@@ -5285,12 +5283,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Ahora las invitaciones aparecen en su calendario como eventos pendientes. Solo abra un evento para responder. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Suscríbase a otros calendarios"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Puede suscribirse a calendarios externos y leer sus eventos."
       ]
     },
     "Spotlight settings link": {
@@ -5381,9 +5373,6 @@
       "Calendar updated": [
         "Calendario actualizado"
       ],
-      "Canceling import": [
-        "Cancelando la importación"
-      ],
       "Cancellation sent and all events deleted": [
         "Cancelación enviada y todos los eventos eliminados"
       ],
@@ -5395,6 +5384,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Cancelación enviada y participantes eliminados de todos los eventos"
+      ],
+      "Cancelling import": [
+        "Cancelando la importación"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"

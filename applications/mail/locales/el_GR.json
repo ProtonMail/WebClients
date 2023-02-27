@@ -533,9 +533,6 @@
       "Load": [
         "Φόρτωση"
       ],
-      "Load anyway": [
-        "Φόρτωση οπωσδήποτε"
-      ],
       "Load embedded images": [
         "Φόρτωση ενσωματωμένων εικόνων"
       ],
@@ -958,9 +955,6 @@
       ],
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
-      ],
-      "Some images failed to load with tracking protection.": [
-        "Ορισμένες εικόνες απέτυχαν να φορτωθούν με προστασία παρακολούθησης."
       ],
       "Star": [
         "Προσθήκη αστεριού"
@@ -1539,6 +1533,14 @@
         "Εκδήλωση σε εξέλιξη"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Σύμπτυξη"
+      ],
+      "Expand": [
+        "Ανάπτυξη"
+      ]
+    },
     "color": {
       "apple": [
         "μήλο"
@@ -1590,6 +1592,9 @@
       ],
       "forest": [
         "δάσος"
+      ],
+      "gainsboro": [
+        "γκέινσμπορο"
       ],
       "kiwi": [
         "ακτινίδιο"
@@ -1998,6 +2003,9 @@
       "Congo": [
         "Κογκό"
       ],
+      "Congo, Democratic Republic of the": [
+        "Κονγκό-Κινσάσα"
+      ],
       "Cook Islands": [
         "Νήσοι Κουκ"
       ],
@@ -2186,6 +2194,9 @@
       ],
       "Japan": [
         "Ιαπωνία"
+      ],
+      "Jersey": [
+        "Βαϊλάτο του Τζέρσεϊ"
       ],
       "Jordan": [
         "Ιορδανία"
@@ -2700,6 +2711,9 @@
         "Νέα μηνύματα από ${ senderEmailAddress } και άλλο ${ otherSendersCount } δεν θα αποσταλούν και θα διαγραφούν οριστικά.",
         "Νέα μηνύματα από ${ senderEmailAddress } και άλλα ${ otherSendersCount } δεν θα αποσταλούν και θα διαγραφούν οριστικά."
       ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Νέα μηνύματα από ${ senderEmailAddress } δεν θα αποσταλούν και θα διαγραφούν οριστικά."
+      ],
       "No folders": [
         "Κανένας φάκελος"
       ],
@@ -2710,8 +2724,14 @@
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφή. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει\nμέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Ξεκλειδώστε προσαρμοσμένο προγραμματισμό μηνυμάτων και άλλα οφέλη όταν αναβαθμίζετε το πρόγραμμά σας."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
+      ],
+      "When do you want your message to be sent?": [
+        "Πότε θέλετε να αποσταλεί το μήνυμά σας?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε γεγονότα σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι ${ MAX_IMPORT_EVENTS_STRING } γεγονότα.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
@@ -2863,6 +2883,9 @@
       ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
+      ],
+      "A problem occurred, please try again": [
+        "Προέκυψε πρόβλημα. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
@@ -3109,6 +3132,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
       ],
+      "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
+        "Λυπούμαστε, το ${ BRAND_NAME } δεν μπορεί να αποκρυπτογραφήσει το μήνυμά σας. Παρακαλούμε ελέγξτε αν είναι ενεργά όλα τα κλειδιά σας."
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Δεν ήταν δυνατή η αποκρυπτογράφηση του συνημμένου.\nΑν έχετε το αντίστοιχο ιδιωτικό κλειδί, θα μπορείτε να αποκρυπτογραφήσετε\nτο αρχείο με ένα πρόγραμμα όπως το GnuPG.",
         "Ορισμένα από τα συνημμένα δεν μπόρεσαν να αποκρυπτογραφηθούν.\nΑν έχετε το αντίστοιχο ιδιωτικό κλειδί, θα μπορείτε να αποκρυπτογραφήσετε\nτα αρχεία με ένα πρόγραμμα όπως το GnuPG."
@@ -3163,6 +3189,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
+      ],
+      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
+        "Υπερβολικός αριθμός ενεργών φίλτρων. Για ενεργοποίηση περισσότερων φίλτρων, παρακαλούμε αναβαθμίστε σε πρόγραμμα επί πληρωμή."
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -3405,6 +3434,12 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
+      ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο ${ BRAND_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Δεν έχετε καμία επαφή ακόμα. Ξεκινήστε δημιουργώντας μια νέα επαφή"
@@ -3865,6 +3900,12 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
@@ -3885,6 +3926,9 @@
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Η διεύθυνση email και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
       ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
@@ -5026,6 +5070,9 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Αυτό το μήνυμα θα μετακινηθεί στα Πρόχειρα, ώστε να μπορείτε να το επεξεργαστείτε. Θα πρέπει να επαναπρογραμματίσετε πότε θα σταλεί."
       ],
+      "This message will be sent on ${ dateString } at ${ formattedTime }": [
+        "Αυτό το μήνυμα θα αποσταλεί τη ${ dateString } στις ${ formattedTime }"
+      ],
       "This message will be sent shortly": [
         "Αυτό το μήνυμα θα σταλεί σύντομα"
       ],
@@ -6165,6 +6212,9 @@
       "More about recovery": [
         "Περισσότερα περί ανάκτησης"
       ],
+      "Open in ${ CALENDAR_APP_NAME }": [
+        "Άνοιγμα σε ${ CALENDAR_APP_NAME }"
+      ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
         "Ή μπορείτε να διαγράψετε ένα από τα ημερολόγιά σας και να δημιουργήσετε ένα νέο συνδεδεμένο με μια ενεργή διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
@@ -6210,6 +6260,9 @@
       "Upgrade account": [
         "Αναβάθμιση λογαριασμού"
       ],
+      "What’s this?": [
+        "Τι είναι αυτό?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Πρέπει να ενεργοποιήσετε τα κλειδιά ημερολογίου σας για να προσθέσετε αυτό το γεγονός"
       ],
@@ -6250,7 +6303,7 @@
         "Ακόμα λίγο"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -6528,8 +6581,20 @@
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
       ],
+      "Schedule messages at any time": [
+        "Προγραμματισμός μηνυμάτων ανά πάσα στιγμή"
+      ],
+      "Search message content": [
+        "Αναζήτηση εντός περιεχομένου μηνυμάτων"
+      ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+      ],
+      "Up to 15 email addresses": [
+        "Έως 15 ηλ. διευθύνσεις"
+      ],
+      "Up to 500 GB of storage": [
+        "Έως 500 GB αποθηκευτικού χώρου"
       ]
     },
     "new_plans: label": {
@@ -6543,6 +6608,9 @@
       ]
     },
     "Notification": {
+      "${ Filter.Name } created": [
+        "${ Filter.Name } δημιουργήθηκε"
+      ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
       ],
@@ -6671,6 +6739,9 @@
       ],
       "Filter labels": [
         "Φιλτράρισμα ετικετών"
+      ],
+      "Group name": [
+        "Όνομα ομάδας"
       ],
       "Hint": [
         "Υπόδειξη"
@@ -6956,6 +7027,9 @@
       ]
     },
     "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "Μήνυμα με κρυπτογράφηση PGP. Η επαλήθευση αποστολέα απέτυχε:${ verificationErrorsMessage }"
+      ],
       "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Μήνυμα υπογεγραμμένο PGP. Η επαλήθευση αποστολέα απέτυχε: ${ verificationErrorsMessage }"
       ],
@@ -7133,6 +7207,9 @@
       ],
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
+      ],
+      "Cancelling import": [
+        "Γίνεται ακύρωση εισαγωγής"
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
@@ -7426,6 +7503,9 @@
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
       ],
+      "Block sender": [
+        "Αποκλεισμός αποστολέα"
+      ],
       "Carbon Copy": [
         "Κοινοποίηση"
       ],
@@ -7577,6 +7657,9 @@
       ],
       "Feedback": [
         "Σχόλια"
+      ],
+      "Filter on...": [
+        "Φιλτράρισμα σε..."
       ],
       "Forward": [
         "Προώθηση"
@@ -7786,6 +7869,9 @@
       "Sending original message": [
         "Αποστολή αρχικού μηνύματος"
       ],
+      "Set your own schedule": [
+        "Ορίστε το δικό σας πρόγραμμα"
+      ],
       "Settings": [
         "Ρυθμίσεις"
       ],
@@ -7908,6 +7994,9 @@
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
       ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Αυτή η ενέργεια θα κάνει λήψη όλων των μηνυμάτων, ώστε να μπορείτε να κάνετε αναζήτηση τοπικά. Η εκκαθάριση των δεδομένων του προγράμματος περιήγησης θα απενεργοποιήσει αυτήν την επιλογή."
+      ],
       "This feature is only available for paid users": [
         "Αυτή η λειτουργία είναι διαθέσιμη μόνο για χρήστες επί πληρωμή"
       ],
@@ -7927,6 +8016,9 @@
       ]
     },
     "Update font modal": {
+      "Today is a good day to write an email": [
+        "Σήμερα είναι μια καλή μέρα για να γράψετε ένα email"
+      ],
       "Update default font and size": [
         "Ενημέρωση προεπιλεγμένης γραμματοσειράς και μεγέθους"
       ],
@@ -8009,6 +8101,9 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Αυτή η λειτουργία απαιτεί έναν λογαριασμό ${ BRAND_NAME } επί πληρωμή"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας ${ BRAND_NAME }. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."

@@ -814,6 +814,14 @@
         "Μη υποστηριζόμενη μορφή ημερολογίου"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Σύμπτυξη"
+      ],
+      "Expand": [
+        "Ανάπτυξη"
+      ]
+    },
     "color": {
       "carrot": [
         "καρότο"
@@ -1120,6 +1128,9 @@
       "Congo": [
         "Κογκό"
       ],
+      "Congo, Democratic Republic of the": [
+        "Κονγκό-Κινσάσα"
+      ],
       "Cook Islands": [
         "Νήσοι Κουκ"
       ],
@@ -1308,6 +1319,9 @@
       ],
       "Japan": [
         "Ιαπωνία"
+      ],
+      "Jersey": [
+        "Βαϊλάτο του Τζέρσεϊ"
       ],
       "Jordan": [
         "Ιορδανία"
@@ -1857,6 +1871,9 @@
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
+      "A problem occurred, please try again": [
+        "Προέκυψε πρόβλημα. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
@@ -2282,6 +2299,12 @@
       "Please ${ refresh } or check your connection.": [
         "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
+      ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο ${ BRAND_NAME }."
+      ],
       "You may also ${ refresh } or try again later.": [
         "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
       ],
@@ -2542,6 +2565,12 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
@@ -2562,6 +2591,9 @@
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Η διεύθυνση email και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
       ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
@@ -4178,6 +4210,9 @@
       ],
       "Upgrade account": [
         "Αναβάθμιση λογαριασμού"
+      ],
+      "What’s this?": [
+        "Τι είναι αυτό?"
       ]
     },
     "Loading info": {
@@ -4185,7 +4220,7 @@
         "Ακόμα λίγο"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -4590,6 +4625,9 @@
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
       ],
+      "Group name": [
+        "Όνομα ομάδας"
+      ],
       "Image URL": [
         "URL εικόνας"
       ],
@@ -4732,7 +4770,7 @@
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Γίνεται ακύρωση εισαγωγής"
       ],
       "Code sent to ${ methodTo }": [
@@ -5493,6 +5531,9 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Αυτή η λειτουργία απαιτεί έναν λογαριασμό ${ BRAND_NAME } επί πληρωμή"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας ${ BRAND_NAME }. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."
