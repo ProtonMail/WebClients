@@ -2,6 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import metrics from '@proton/metrics';
 import { updateCrashReports, updateTelemetry } from '@proton/shared/lib/api/settings';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
@@ -48,6 +49,7 @@ const PrivacySection = () => {
                                 await api(updateTelemetry({ Telemetry: Number(value) }));
                                 await call();
                                 setMetricsEnabled(value);
+                                metrics.setReportMetrics(value);
                             };
                             withLoadingTelemetry(handleChange(target.checked)).catch(noop);
                         }}
