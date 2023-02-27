@@ -170,6 +170,20 @@ export const getCanEditSharedEventData = ({
     return true;
 };
 
+export const getCanReplyToEvent = ({
+    isOwnedCalendar,
+    isCalendarWritable,
+    isAttendee,
+    isCancelled,
+}: {
+    isOwnedCalendar: boolean;
+    isCalendarWritable: boolean;
+    isAttendee: boolean;
+    isCancelled: boolean;
+}) => {
+    return isOwnedCalendar && isCalendarWritable && isAttendee && !isCancelled;
+};
+
 export const getIsAvailableCalendar = ({
     isOwnedCalendar,
     isCalendarWritable,
