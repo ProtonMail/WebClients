@@ -575,7 +575,7 @@ export const useComposerContent = (args: EditorArgs) => {
         if (isQuickReply && args.replyUpdated && !isSending) {
             setIsSending(true);
             dispatch(removeQuickReplyFlag(modelMessage.localID));
-            void handleSend('send-button')();
+            void handleSend({ sendAsScheduled: false })();
         }
     };
 
@@ -602,7 +602,7 @@ export const useComposerContent = (args: EditorArgs) => {
               handleExpiration,
               handleManualSave,
               handlePassword,
-              handleSend: handleSend('send-button'),
+              handleSend: handleSend({ sendAsScheduled: false }),
               toggleMinimized: args.toggleMinimized || noop,
               toggleMaximized: args.toggleMaximized || noop,
               lock,

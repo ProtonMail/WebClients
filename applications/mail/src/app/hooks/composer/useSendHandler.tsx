@@ -151,15 +151,22 @@ export const useSendHandler = ({
         }
     });
 
-    const handleSend = useHandler((target: 'send-button' | 'scheduled-send-button') => async () => {
+    type HandleSendOptions = {
+        /**
+         * If true will send message with its scheduled flag if there's one
+         * If false will reset message scheduled flag then send it
+         */
+        sendAsScheduled?: boolean;
+    };
+    const handleSend = useHandler(({ sendAsScheduled = false }: HandleSendOptions = {}) => async () => {
         const { localID, draftFlags } = getModelMessage();
 
-        let scheduledAt = (() => {
+        const scheduledAt = (() => {
             if (!draftFlags?.scheduledAt) {
                 return undefined;
             }
 
-            if (target === 'scheduled-send-button') {
+            if (sendAsScheduled) {
                 return draftFlags.scheduledAt;
             } else {
                 dispatch(cancelScheduled({ ID: localID }));
