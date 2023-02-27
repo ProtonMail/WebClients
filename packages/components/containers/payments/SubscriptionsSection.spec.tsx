@@ -18,8 +18,6 @@ jest.mock('../account/MozillaInfoPanel', () => ({
     default: jest.fn(() => null),
 }));
 
-jest.mock('./RenewToggle');
-
 const mockedUsePlans = usePlans as jest.Mock<ReturnType<typeof usePlans>>;
 const mockedUseSubscription = useSubscription as jest.Mock<ReturnType<typeof useSubscription>>;
 
