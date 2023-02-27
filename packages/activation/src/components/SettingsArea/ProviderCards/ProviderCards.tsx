@@ -29,7 +29,6 @@ const ProviderCards = () => {
     return (
         <>
             <div className="mb1 text-bold">{c('Info').t`Select a service provider to start`}</div>
-
             <div className="mt0-5">
                 <ProviderCard
                     loading={easySwitchFeature.loading}

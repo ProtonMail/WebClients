@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Router } from 'react-router';
 
 import { render as originalRender } from '@testing-library/react';
+import { renderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
 
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
@@ -74,7 +75,7 @@ const notificationsManager = {
 
 let history = createMemoryHistory();
 
-const EasySwitchTestProviders = ({ children }: { children: JSX.Element | (JSX.Element | null)[] | null }) => (
+export const EasySwitchTestProviders = ({ children }: { children: JSX.Element | (JSX.Element | null)[] | null }) => (
     <ConfigProvider config={config}>
         <NotificationsContext.Provider value={notificationsManager}>
             <ModalsProvider>
@@ -105,3 +106,9 @@ export const easySwitchRender = (ui: ReactElement) => {
 
     return result;
 };
+
+const easySwitchHookWrapper = ({ children }: { children: any }) => {
+    return <EasySwitchTestProviders>{children}</EasySwitchTestProviders>;
+};
+
+export const easySwitchHookRender = (hook: any) => renderHook(() => hook(), { wrapper: easySwitchHookWrapper });

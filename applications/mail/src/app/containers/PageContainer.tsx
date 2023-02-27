@@ -1,6 +1,7 @@
 import { Ref, forwardRef, memo, useRef } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
+import { EasySwitchGmailSyncModal, EasySwitchProvider, useEasySwitchGmailSync } from '@proton/activation/index';
 import {
     CalendarDrawerAppButton,
     ContactDrawerAppButton,
@@ -50,9 +51,11 @@ const PageContainer = (
 ) => {
     const [userSettings] = useUserSettings();
     const [mailSettings] = useMailSettings();
-    const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+    const [, setWelcomeFlagsDone] = useWelcomeFlags();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
     const { showDrawerSidebar, appInView } = useDrawer();
+
+    const { derivedValues, handleSyncSkip, handleSyncCallback } = useEasySwitchGmailSync();
 
     useOpenDrawerOnLoad();
     const { getFeature } = useFeatures([FeatureCode.LegacyMessageMigrationEnabled]);
@@ -98,11 +101,10 @@ const PageContainer = (
         return <Redirect to="/inbox" />;
     }
 
-    const onboardingOpen = !welcomeFlags.isDone;
-
     return (
         <PrivateLayout
             ref={ref}
+            isBlurred={derivedValues.isBlurred}
             labelID={labelID}
             elementID={elementID}
             breakpoints={breakpoints}
@@ -110,7 +112,23 @@ const PageContainer = (
             drawerSpotlightSeenRef={drawerSpotlightSeenRef}
             showDrawerSidebar={showDrawerSidebar}
         >
-            <MailStartupModals onboardingOpen={onboardingOpen} onOnboardingDone={() => setWelcomeFlagsDone()} />
+            <EasySwitchProvider>
+                <>
+                    {derivedValues.displaySync && !derivedValues.displayOnboarding && (
+                        <EasySwitchGmailSyncModal
+                            syncOpen={derivedValues.displaySync}
+                            onSyncCallback={handleSyncCallback}
+                            onSyncSkipCallback={handleSyncSkip}
+                        />
+                    )}
+                    {derivedValues.displayOnboarding && !derivedValues.displaySync && (
+                        <MailStartupModals
+                            onboardingOpen={derivedValues.displayOnboarding}
+                            onOnboardingDone={() => setWelcomeFlagsDone()}
+                        />
+                    )}
+                </>
+            </EasySwitchProvider>
             <LocationErrorBoundary>
                 {runLegacyMessageMigration && <LegacyMessagesMigrationContainer />}
                 <MailboxContainer
