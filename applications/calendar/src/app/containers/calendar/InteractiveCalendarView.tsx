@@ -580,7 +580,6 @@ const InteractiveCalendarView = ({
             selfAddressData,
             calendarSettings: CalendarSettings,
         });
-        // TODO: check this part
         if (partstat) {
             // The user attends the event and is changing the partstat
             return {
