@@ -3,12 +3,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { useAddresses } from '@proton/components/hooks';
 import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import {Address, UserModel} from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
@@ -30,16 +29,16 @@ import CalendarBadge from './CalendarBadge';
 interface Props {
     calendars: (VisualCalendar | SubscribedCalendar)[];
     defaultCalendarID?: string;
+    addresses: Address[];
     user: UserModel;
     onSetDefault?: (id: string) => Promise<void>;
 }
 
-const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault }: Props) => {
+const CalendarsTable = ({ calendars, defaultCalendarID, addresses, user, onSetDefault }: Props) => {
     const { hasNonDelinquentScope } = user;
-    const [addresses, loadingAddresses] = useAddresses();
     const [isLoading, setIsLoading] = useState<string>();
 
-    const hasSingleAddress = !loadingAddresses && addresses.length === 1;
+    const hasSingleAddress = addresses.length === 1;
 
     if (!calendars.length) {
         return null;
@@ -63,7 +62,7 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {(calendars || []).map((calendar, index) => {
+                {calendars.map((calendar, index) => {
                     const { ID, Name, Color, Email } = calendar;
 
                     const { isDisabled, isDefault, isSubscribed, badges } = getCalendarStatusBadges(
