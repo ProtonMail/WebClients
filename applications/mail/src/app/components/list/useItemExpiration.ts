@@ -45,9 +45,9 @@ const useItemExpiration = (expirationTime?: number) => {
                 } else if (remainingDays > 1) {
                     setShortMessage(c('Remaining days before the message expire').t`${remainingDays} days`);
                 } else if (remainingHours > 1) {
-                    setShortMessage(c('Remaining hours before message expire').t`${remainingHours} hours`);
+                    setShortMessage(c('Remaining hours before the message expire').t`${remainingHours} hours`);
                 } else {
-                    setShortMessage(c('Remaining minutes before message expire').t`<1 hour`);
+                    setShortMessage(c('Remaining time before the message expire').t`<1 hour`);
                 }
             };
 
