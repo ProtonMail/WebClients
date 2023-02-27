@@ -13,6 +13,7 @@ import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { endSending, startSending } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { cancelScheduled } from '../../logic/messages/scheduled/scheduledActions';
 import { useAppDispatch } from '../../logic/store';
 import { MapSendInfo } from '../../models/crypto';
 import { useGetMessage } from '../message/useMessage';
@@ -154,11 +155,18 @@ export const useSendHandler = ({
         const { localID, draftFlags } = getModelMessage();
 
         let scheduledAt = (() => {
-            if (draftFlags?.scheduledAt && target === 'scheduled-send-button') {
-                return draftFlags.scheduledAt;
+            if (!draftFlags?.scheduledAt) {
+                return undefined;
             }
-            return undefined;
+
+            if (target === 'scheduled-send-button') {
+                return draftFlags.scheduledAt;
+            } else {
+                dispatch(cancelScheduled({ ID: localID }));
+                return undefined;
+            }
         })();
+
         const notifManager = createSendingMessageNotificationManager();
 
         // If scheduledAt is set we already performed the preliminary verifications
