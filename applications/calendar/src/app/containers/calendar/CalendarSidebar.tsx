@@ -109,7 +109,7 @@ const CalendarSidebar = ({
         await call();
     };
 
-    const handleCreatePersonalCalendar = async () => {
+    const handleCreatePersonalCalendar = () => {
         if (!isCalendarsLimitReached) {
             setIsCalendarModalOpen(true);
         } else {
