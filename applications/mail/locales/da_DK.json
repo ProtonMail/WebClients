@@ -533,9 +533,6 @@
       "Load": [
         "Indlæs"
       ],
-      "Load anyway": [
-        "Indlæs alligevel"
-      ],
       "Load embedded images": [
         "Indlæs indlejrede billeder"
       ],
@@ -959,7 +956,7 @@
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
-      "Some images failed to load with tracking protection.": [
+      "Some images could not be loaded with tracker protection.": [
         "Nogle billeder kunne ikke indlæses med sporingsbeskyttelse."
       ],
       "Star": [
@@ -4288,6 +4285,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importér fra ${ provider }"
+      ],
       "Other": [
         "Anden"
       ]
@@ -4370,6 +4370,14 @@
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } e-mail-tracker blokeret",
         "${ numberOfTrackers } e-mail-trackere blokeret"
+      ],
+      "${ numContact } contact": [
+        "${ numContact } kontakt",
+        "${ numContact } kontakter"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } kontaktgruppe",
+        "${ numGroups } kontaktgrupper"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } besked i samtale",
@@ -4605,6 +4613,10 @@
       ],
       "Country code": [
         "Landekode"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Opret ${ calendarsToBeCreatedCount } ny kalender",
+        "Opret ${ calendarsToBeCreatedCount } nye kalendere"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Opret et mærkat til de importerede beskeder, et tidsinterval for importen og de mapper du gerne vil importere."
@@ -4845,6 +4857,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Billeder er blevet fjernet, fordi de ikke er tilladte i auto-svar"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
+        "Importer ${ calendarCount } af ${ totalCalendarsCount } kalendere"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
       ],
@@ -4859,6 +4875,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
@@ -6455,6 +6474,17 @@
         "Række"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "For at tilføje en ny kalender skal du fjerne en eksisterende kalender."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "For at tilføje en ny kalender, fjern en anden kalender eller opgrader dit ${ BRAND_NAME }-abonnement til et betalt ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du har nået det maksimale antal kalendere, der er tilgængelige med dit abonnement."
+      ]
+    },
     "Link": {
       "All mail": [
         "Alle e-mails"
@@ -6618,6 +6648,10 @@
       "Almost there": [
         "Næsten færdig"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Antal oprettede kalendere: ${ createdCalendarCount } af ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Forbinder til din e-mailudbyder"
       ],
@@ -6632,6 +6666,24 @@
       ],
       "Your import is starting": [
         "Din import starter"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten",
+        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten",
+        "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mappe og giv dem etiketten",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mapper og giv dem etiketten"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etikette og giv dem etiketten",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten"
       ]
     },
     "Mailbox": {
@@ -6913,7 +6965,7 @@
         "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7585,6 +7637,9 @@
       ],
       "Bug reported": [
         "Fejl anmeldt"
+      ],
+      "Cancelling import": [
+        "Annullerer import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"

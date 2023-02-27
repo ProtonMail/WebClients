@@ -280,6 +280,9 @@
       "Join calendar": [
         "Připojit ke kalendáři"
       ],
+      "Keep current time zone": [
+        "Zachovat aktuální časové pásmo"
+      ],
       "Load image": [
         "Načíst obrázek"
       ],
@@ -872,11 +875,6 @@
       ],
       "More options": [
         "Více možností"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Sdíleno se mnou"
       ]
     },
     "Calendar status": {
@@ -2450,6 +2448,9 @@
       "This label name is not available. Please choose a different name.": [
         "Tento název štítku není k dispozici. Zvolte prosím jiný název."
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
+      ],
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
       ],
@@ -2464,6 +2465,9 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "Není možné odeslat soubory vCard více než 10 kontaktů"
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "Dosáhli jste maximálního počtu osobních kalendářů. Některé kalendáře nebylo možné importovat."
@@ -3158,6 +3162,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importovat z ${ provider }"
+      ],
       "Other": [
         "Ostatní"
       ]
@@ -3500,6 +3507,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importujeme vaše data z ${ fromEmail } do ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
@@ -4324,6 +4334,14 @@
         "Postranní panel"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Chcete-li přidat nový kalendář, odstraňte stávající."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Dosáhli jste maximálního počtu kalendářů dostupných ve vašem tarifu."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Kalendáře"
@@ -4337,14 +4355,14 @@
       "My calendars": [
         "Mé kalendáře"
       ],
+      "Other calendars": [
+        "Ostatní kalendáře"
+      ],
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
       "Request an invite": [
         "Požádat o pozvánku"
-      ],
-      "Subscribed calendars": [
-        "Odebírané kalendáře"
       ],
       "Upgrade account": [
         "Navýšit účet"
@@ -4367,6 +4385,12 @@
       "Almost there": [
         "Téměř hotovo"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Připojování k Vašemu poskytovateli e-mailu"
       ],
@@ -4381,6 +4405,32 @@
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
       ]
     },
     "Message": {
@@ -4413,17 +4463,9 @@
       ],
       "Manage calendars": [
         "Spravovat kalendáře"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Nelze přidat další kalendáře. Dosáhli jste maximálního počtu osobních kalendářů v rámci svého tarifu."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Nelze přidat další kalendáře. Dosáhli jste maximálního počtu odebíraných kalendářů v rámci vašeho tarifu."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Nelze vytvořit další kalendáře. Dosáhli jste maximálního počtu osobních kalendářů v rámci svého tarifu."
+      "Upgrade": [
+        "Navýšit"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4440,6 +4482,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Nelze přidat více kalendářů"
+      ],
       "How to import calendars from another service": [
         "Jak importovat kalendáře z jiné služby"
       ],
@@ -4463,9 +4508,6 @@
       ],
       "Time zone changed": [
         "Časové pásmo se změnilo"
-      ],
-      "Unable to add more calendars": [
-        "Nebylo možné přidat více kalendářů"
       ]
     },
     "Modal title and action": {
@@ -5198,12 +5240,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Nyní se pozvánky zobrazují v kalendáři jako události bez odpovědi. Stačí otevřít událost a odpovědět na ni. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Přihlásit se k odběru dalších kalendářů"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Můžete se přihlásit k odběru externích kalendářů a číst jejich události."
       ]
     },
     "Spotlight settings link": {
@@ -5296,9 +5332,6 @@
       "Calendar updated": [
         "Kalendář aktualizován"
       ],
-      "Canceling import": [
-        "Ruším import"
-      ],
       "Cancellation sent and all events deleted": [
         "Zrušení odesláno a všechny události smazány"
       ],
@@ -5310,6 +5343,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Zrušení odesláno a účastníci byli odebrání ze všech událostí"
+      ],
+      "Cancelling import": [
+        "Ruším import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"

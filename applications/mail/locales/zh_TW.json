@@ -530,9 +530,6 @@
       "Load": [
         "載入"
       ],
-      "Load anyway": [
-        "仍要載入"
-      ],
       "Load embedded images": [
         "載入內崁圖樣"
       ],
@@ -956,8 +953,8 @@
       "Skip verification": [
         "略過驗證"
       ],
-      "Some images failed to load with tracking protection.": [
-        "追蹤防護會導致某些圖像無法載入。"
+      "Some images could not be loaded with tracker protection.": [
+        "因有追蹤程式保護，因此某些影像無法載入。"
       ],
       "Star": [
         "星號"
@@ -6374,6 +6371,17 @@
         "列"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "要新增行事曆，請移除既有的。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "要新增行事曆，請移除其他行事曆或升級您的 ${ BRAND_NAME } 方案至 ${ MAIL_SHORT_APP_NAME } 付費方案。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "您已達到您方案中可用的最大行事曆數量。"
+      ]
+    },
     "Link": {
       "All mail": [
         "所有郵件"
@@ -6537,6 +6545,9 @@
       "Almost there": [
         "快完成了"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
       ],
@@ -6551,6 +6562,20 @@
       ],
       "Your import is starting": [
         "您的匯入程序已開始"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "匯入來自 ${ itemsToImportCount } 個資料夾的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "從 ${ itemsToImportCount } 個資料夾中匯入來自 ${ selectedItemsToImportCount } 個的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
       ]
     },
     "Mailbox": {
@@ -6829,7 +6854,7 @@
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "儲存空間共用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 。"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7472,6 +7497,9 @@
       ],
       "Bug reported": [
         "錯誤已回報"
+      ],
+      "Cancelling import": [
+        "正在取消匯入"
       ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"

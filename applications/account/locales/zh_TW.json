@@ -1195,20 +1195,6 @@
         "邀請傳送"
       ]
     },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "您已用鑿方案裡提供的創建個人行事曆的最多數量。"
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "您已取得最高限數的私人行事曆。若要接受擱置的行事曆邀請，您需先行移除您需先行移除一些行事曆。"
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "您已取得最高限數的共用行事曆。若要接受擱置的行事曆邀請，您需先行移除一些行事曆。"
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
-        "您已達到最高限數 ${ MAX_SUBSCRIBED_CALENDARS } 訂購授權行事曆。"
-      ]
-    },
     "Calendar link purpose update success message": {
       "Label added": [
         "已加入標籤"
@@ -3789,6 +3775,9 @@
       ],
       "(1-2 emails per month)": [
         "(每月 1-2 封電郵)"
+      ],
+      "(during your first month)": [
+        "（在您的第一個月）"
       ]
     },
     "Go to sign in": {
@@ -5826,9 +5815,6 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您沒有設定復原方法，萬一忘記您的密碼，將無從恢復帳號。要在無復原電郵的情況下繼續嗎？"
       ],
-      "You have no personal calendars to export.": [
-        "您沒有可匯出的個人行事曆。"
-      ],
       "You have no saved payment methods.": [
         "您沒有任何已儲存的付款方法。"
       ],
@@ -5846,12 +5832,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "您的 PayPal 帳號須先連結信用卡或銀行賬戶。如果您的 PayPal 帳號沒有，請按一下以下按鈕。"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "您需移除其它額外添加的個人行事曆，以及共享行事曆的連結後，即可進行取消 Mail 訂購授權。"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "您需移除其它額外添加的個人行事曆，以及共享行事曆的連結後，即可進行取消訂購授權。"
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "您需要有使用中的個人行事曆才可以從 ICS 匯入您的行程。"
@@ -7279,6 +7259,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } 產品公告"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } 歡迎電子郵件"
       ]
     },
     "Label in domain modal": {
@@ -7347,6 +7330,17 @@
       ],
       "Preference saved": [
         "喜好設定已儲存"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "要新增行事曆，請移除既有的。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "要新增行事曆，請移除其他行事曆或升級您的 ${ BRAND_NAME } 方案至 ${ MAIL_SHORT_APP_NAME } 付費方案。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "您已達到您方案中可用的最大行事曆數量。"
       ]
     },
     "Link": {
@@ -7445,6 +7439,9 @@
       "Almost there": [
         "快完成了"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
       ],
@@ -7467,6 +7464,20 @@
       ],
       "Enable authentication logs": [
         "啟用認證記錄"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "匯入來自 ${ itemsToImportCount } 個資料夾的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "從 ${ itemsToImportCount } 個資料夾中匯入來自 ${ selectedItemsToImportCount } 個的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7828,9 +7839,6 @@
       "${ n } messages per day": [
         "${ n } 封郵件 / 每天"
       ],
-      "${ n } personal calendars": [
-        "${ n } 個私人行事曆"
-      ],
       "${ n } VPN connections": [
         "${ n } 個 VPN 連線"
       ],
@@ -8002,6 +8010,26 @@
         "團隊管理"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的試用期結束於 ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -8071,26 +8099,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "將隱私權設定為檔案備份、儲存、共享和檢索的預設值。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "升級到商業組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "升級到終極的隱私權組合，以存取所有 ${ BRAND_NAME } 的優質服務。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的試用期結束於 ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8190,17 +8198,11 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "為您的線上身份建立多個電子郵件地址，例如 JohnShopper@${ domain } 作購物帳號、JohnNews@${ domain } 作新聞訂閱"
       ],
-      "Create up to ${ n } custom calendars.": [
-        "創建多達 ${ n } 自訂行事曆。"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "輕鬆與您的同事、家庭和好友以連結分享您的行事曆"
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "輕鬆與您的家人、好友或同事以連結分享您的行事曆"
       ],
       "End-to-end encrypted calendar": [
         "端對端加密行事曆"
@@ -8219,12 +8221,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "凡工作天，於提出請求後 24 小時內取得 ${ BRAND_NAME } 客戶服務團隊的支援"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "除此以外，可新增多達 5 個來自同事、組織、家庭和好友的行事曆。"
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "最重要的是，新增多達 5 個來自朋友、家庭、同事與組織的行事曆。"
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "此選項可視作使用者般檢視非私人使用者的收件匣，包括完整郵件和聯絡人詳細資料"
@@ -8317,9 +8313,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "支援 10 個自訂電郵網域更全面性的服務"
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendars": [
-        "建立 ${ numberOfPersonalCalendars } 個人行事曆"
       ],
       "Everything in ${ vpnPlanName }": [
         "全部都在 ${ vpnPlanName }"
@@ -9355,6 +9348,9 @@
       "Calendar updated": [
         "行事曆已更新"
       ],
+      "Cancelling import": [
+        "正在取消匯入"
+      ],
       "Catch-all address updated": [
         "全部擷取電子郵件地址已更新"
       ],
@@ -9785,9 +9781,6 @@
       ],
       "Bridge for ${ platform }": [
         "適用於 ${ platform } 的 Bridge"
-      ],
-      "Cancel Mail subscription": [
-        "取消 Mail 訂購授權"
       ],
       "Card verification": [
         "信用卡驗證"
@@ -10374,9 +10367,6 @@
       "Status": [
         "狀態"
       ],
-      "Subscribed calendars": [
-        "已訂閱行事曆"
-      ],
       "Success": [
         "成功"
       ],
@@ -10745,14 +10735,6 @@
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "升級為 ${ planName } 方案，即可讓 ${ n } 台裝置同時連線 VPN"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "升級為付費方案後可創建多達 ${ MAX_CALENDARS_PAID } 個行事曆，讓您可建立行事曆用於公務、與好友共享，也可為自己處理私事。"
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "升級到郵件的付費方案來分享您的行事曆。"
       ]
     },
     "User referee invited via email": {

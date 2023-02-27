@@ -536,9 +536,6 @@
       "Load": [
         "Carregar"
       ],
-      "Load anyway": [
-        "Carregar mesmo assim"
-      ],
       "Load embedded images": [
         "Carregar imagens incorporadas"
       ],
@@ -962,8 +959,8 @@
       "Skip verification": [
         "Pular verificação"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Algumas imagens falharam ao carregar com proteção contra rastreamento."
+      "Some images could not be loaded with tracker protection.": [
+        "Algumas imagens com proteção de rastreamento falharam ao tentarem ser carregadas."
       ],
       "Star": [
         "Favorito"
@@ -6482,6 +6479,17 @@
         "Linha"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Para adicionar um novo calendário, remova um existente."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Para adicionar um novo calendário, remova outro calendário ou atualize seu plano ${ BRAND_NAME } para um plano pago ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Você atingiu o número máximo de calendários disponíveis que seu plano permite."
+      ]
+    },
     "Link": {
       "All mail": [
         "Todos os e-mails"
@@ -6646,7 +6654,7 @@
         "Quase lá"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Quantidade de calendário criado: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Quantidade de calendários criados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -6962,7 +6970,7 @@
         "Obtenha aliases ilimitados com SimpleLogin do ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

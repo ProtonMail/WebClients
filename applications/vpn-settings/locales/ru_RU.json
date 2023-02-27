@@ -131,6 +131,9 @@
       "Edit billing details": [
         "Изменить платежную информацию"
       ],
+      "Edit display name": [
+        "Изменить отображаемое имя"
+      ],
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
@@ -1786,6 +1789,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 письма в месяц)"
+      ],
+      "(during your first month)": [
+        "(в течение первого месяца)"
       ]
     },
     "Go to sign in": {
@@ -2453,6 +2459,24 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Вы можете настраивать и загружать свои счета для бухгалтерского учета."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календаря. Удалите общие ссылки на календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились календарями, прежде чем отменить подписку на ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календарей. Удалите общие ссылки на календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились календарями, прежде чем отменить подписку на ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календарей. Удалите общие ссылки на календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились календарями, прежде чем отменить подписку на ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календарей. Удалите общие ссылки на календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились календарями, прежде чем отменить подписку на ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календаря. Удалите общие ссылки на календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились календарями, прежде чем отменить подписку.",
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календарей. Удалите общие ссылки на календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились календарями, прежде чем отменить подписку.",
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календарей. Удалите общие ссылки на календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились календарями, прежде чем отменить подписку.",
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календарей. Удалите общие ссылки на календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились календарями, прежде чем отменить подписку."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календаря. Пожалуйста, удалите ссылки на общие календари до отмены подписки.",
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари до отмены подписки.",
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календарей. Пожалуйста, удалите ссылки на общие календари до отмены подписки.",
+        "Вы можете иметь до ${ MAX_CALENDARS_FREE } календарей. Пожалуйста, удалите ссылки на общие календари до отмены подписки."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Одновременно может быть открыт только один чат. Пожалуйста, закройте предыдущие беседы, прежде чем начинать новую."
       ],
@@ -2476,12 +2500,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Вы должны удалить все дополнительные личные календари и все ссылки на общие календари, прежде чем отменять подписку на Почту."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Вы должны удалить все дополнительные личные календари и все ссылки на общие календари, прежде чем вы сможете отменить подписку."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
@@ -2988,6 +3006,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "Объявления о продукции ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Приветственные письма ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -3176,6 +3197,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } календарь",
+        "${ n } календаря",
+        "${ n } календарей",
+        "${ n } календарей"
+      ],
       "${ n } custom email domain": [
         "${ n } пользовательский домен электронной почты",
         "${ n } пользовательских домена электронной почты",
@@ -3224,12 +3251,6 @@
         "${ n } сообщений в день",
         "Сообщений в день: ${ n }"
       ],
-      "${ n } personal calendar": [
-        "${ n } личный календарь",
-        "${ n } личных календаря",
-        "${ n } личных календарей",
-        "${ n } личных календаря"
-      ],
       "${ n } VPN connection": [
         "${ n } подключение к VPN",
         "${ n } подключения к VPN",
@@ -3265,6 +3286,9 @@
       ],
       "Auto-reply": [
         "Автоответчик"
+      ],
+      "Calendar sharing": [
+        "Совместное использование календаря"
       ],
       "Catch-all": [
         "Прием всей почты домена"
@@ -3604,11 +3628,11 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, JohnShopper@${ domain } для учетных записей покупок, JohnNews@${ domain } для подписки на новости"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Создайте до ${ n } пользовательского календаря.",
-        "Создайте до ${ n } пользовательских календарей.",
-        "Создайте до ${ n } пользовательских календарей.",
-        "Создайте до ${ n } пользовательских календарей."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Создать до ${ n } календаря или добавить календари друзей, семьи, коллег и организаций",
+        "Создать до ${ n } календарей или добавить календари друзей, семьи, коллег и организаций",
+        "Создать до ${ n } календарей или добавить календари друзей, семьи, коллег и организаций",
+        "Создать до ${ n } календарей или добавить календари друзей, семьи, коллег и организаций"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
@@ -3616,8 +3640,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Легко делитесь своими календарями с коллегами, семьей и друзьями с помощью ссылки"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Легко делитесь своими календарями с семьей, друзьями или коллегами с помощью ссылки"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Легко делитесь своими календарями с семьей, друзьями или коллегами"
       ],
       "End-to-end encrypted calendar": [
         "Календарь, зашифрованный сквозным методом"
@@ -3645,12 +3669,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "В рабочие дни получайте помощь от Службы Поддержки Клиентов ${ BRAND_NAME } в течение 24 часов после поступления запроса"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Кроме того, можно добавить до 5 календарей коллег, организаций, семьи и друзей."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Кроме того, можно добавить до 5 календарей друзей, членов семьи, коллег и организаций."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Одно подключение к VPN позволяет одному устройству подключаться к ${ BRAND_NAME } VPN в любой момент времени. Например, чтобы подключить телефон и ноутбук к ${ BRAND_NAME } VPN одновременно, необходимо два подключения к VPN."
@@ -3762,11 +3780,11 @@
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Создайте до ${ numberOfPersonalCalendars } личного календаря",
-        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
-        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
-        "Создайте до ${ numberOfPersonalCalendars } личных календарей"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Создать до ${ MAX_CALENDARS_PAID } календаря",
+        "Создать до ${ MAX_CALENDARS_PAID } календарей",
+        "Создать до ${ MAX_CALENDARS_PAID } календарей",
+        "Создать до ${ MAX_CALENDARS_PAID } календарей"
       ],
       "Everything in ${ vpnPlanName }": [
         "Все, что входит в ${ vpnPlanName }"
@@ -4374,6 +4392,14 @@
         "Высокоскоростная VPN на ${ maxVpn } устройствах"
       ]
     },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Подписка, управляемая в другом месте"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Ваша подписка была оформлена через покупку в приложении. Чтобы управлять текущей подпиской, вам необходимо перейти в раздел \"Подписка\" в вашем аккаунте ${ subscriptionManager }"
+      ]
+    },
     "Subscription price": {
       "For": [
         "За"
@@ -4586,8 +4612,8 @@
       "Billing cycle": [
         "Период оплаты"
       ],
-      "Cancel Mail subscription": [
-        "Отменить подписку на почту"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Отменить подписку на ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Проверка карты"

@@ -877,11 +877,6 @@
         "Додаткові параметри"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Отриманий мною доступ"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "Не синхронізовано"
@@ -4339,6 +4334,17 @@
         "Бічна панель"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Щоб додати новий календар, вилучіть наявний."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Щоб додати новий календар, вилучіть інший календар або оновіть ваш ${ BRAND_NAME } тарифний план до ${ MAIL_SHORT_APP_NAME } платного плану."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ви досягли максимальної кількості календарів, доступної у вашому тарифному плані."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Календарі"
@@ -4352,14 +4358,14 @@
       "My calendars": [
         "Мої календарі"
       ],
+      "Other calendars": [
+        "Інші календарі"
+      ],
       "Pay invoice": [
         "Сплатити рахунок"
       ],
       "Request an invite": [
         "Запитати запрошення"
-      ],
-      "Subscribed calendars": [
-        "Підписки на календарі"
       ],
       "Upgrade account": [
         "Покращити обліковий запис"
@@ -4381,6 +4387,12 @@
     "Loading info": {
       "Almost there": [
         "Майже готово"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Підключення до вашого постачальника електронної пошти"
@@ -4454,17 +4466,9 @@
       ],
       "Manage calendars": [
         "Керувати календарями"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Неможливо додати більше календарів. Ви досягли максимальної кількості особистих календарів для свого тарифного плану."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Неможливо додати більше календарів. Ви досягли максимальної кількості підписних календарів для свого тарифного плану."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Неможливо створити більше календарів. Ви досягли максимальної кількості особистих календарів для свого тарифного плану."
+      "Upgrade": [
+        "Покращити"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4481,6 +4485,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Неможливо додати більше календарів"
+      ],
       "How to import calendars from another service": [
         "Як імпортувати календарі з іншого сервісу"
       ],
@@ -4504,9 +4511,6 @@
       ],
       "Time zone changed": [
         "Часовий пояс змінено"
-      ],
-      "Unable to add more calendars": [
-        "Не вдалося додати інші календарі"
       ]
     },
     "Modal title and action": {
@@ -5239,12 +5243,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Відтепер запрошення показуються у вашому календарі подіями, що очікують на розгляд. Просто відкрийте подію, щоб відповісти. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Підписатися на інші календарі"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Ви можете підписатися на зовнішні календарі та переглядати події в них."
       ]
     },
     "Spotlight settings link": {
@@ -5337,9 +5335,6 @@
       "Calendar updated": [
         "Календар оновлено"
       ],
-      "Canceling import": [
-        "Скасування імпорту"
-      ],
       "Cancellation sent and all events deleted": [
         "Лист про скасування надіслано, а всі події видалено"
       ],
@@ -5351,6 +5346,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Лист про скасування надіслано, а учасників вилучено з усіх подій"
+      ],
+      "Cancelling import": [
+        "Скасування імпорту"
       ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"

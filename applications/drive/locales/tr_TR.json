@@ -2798,6 +2798,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "${ provider } üzerinden içe aktar"
+      ],
       "Other": [
         "Diğer"
       ]
@@ -2886,6 +2889,14 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
+      ],
+      "${ numContact } contact": [
+        "${ numContact } kişi",
+        "${ numContact } kişi"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } kişi grubu",
+        "${ numGroups } kişi grubu"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } duraklatıldı",
@@ -3039,6 +3050,10 @@
       ],
       "Country code": [
         "Ülke kodu"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } yeni takvim ekle",
+        "${ calendarsToBeCreatedCount } yeni takvim ekle"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
@@ -3237,6 +3252,10 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
       ],
@@ -3251,6 +3270,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
@@ -4361,6 +4383,10 @@
       "Almost there": [
         "Neredeyse tamam"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
       ],
@@ -4375,6 +4401,24 @@
       ],
       "Your import is starting": [
         "İçe aktarma işleminize başlanıyor"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
       ]
     },
     "Message": {
@@ -4931,7 +4975,7 @@
       "Bug reported": [
         "Hata bildirildi"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "İçe aktarma iptal ediliyor"
       ],
       "Code sent to ${ methodTo }": [

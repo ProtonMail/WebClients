@@ -131,6 +131,9 @@
       "Edit billing details": [
         "Editar detalhes de pagamento"
       ],
+      "Edit display name": [
+        "Editar o seu nome de exibição"
+      ],
       "Edit email address": [
         "Editar endereço de e-mail"
       ],
@@ -2435,6 +2438,18 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Você pode personalizar e baixar suas faturas para fins contábeis."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Por favor, remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Por favor, remova links de calendários compartilhados e qualquer ${ BRAND_NAME } usuário com quem você compartilhou seus calendários antes de cancelar sua ${ MAIL_SHORT_APP_NAME } assinatura."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Por favor, remova as ligações de calendários compartilhados e qualquer usuário ${ BRAND_NAME } com quem compartilhou os seus calendários antes de cancelar a sua assinatura.",
+        "Pode manter até ${ MAX_CALENDARS_FREE } calendários. Por favor, remova as ligações de calendários compartilhados e qualquer usuário ${ BRAND_NAME } com quem compartilhou os seus calendários antes de cancelar a sua subscrição."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Por favor, remova as ligações de calendários compartilhados antes de cancelar a sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Por favor, remova as ligações de calendários compartilhados antes de cancelar a sua assinatura."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Você só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
@@ -2458,12 +2473,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal. Se a sua conta do PayPal não tem isso, por favor clique no botão abaixo."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Você deve remover todos os calendários pessoais adicionais e quaisquer links de calendário compartilhados antes de cancelar sua assinatura de e-mail."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Você deve remover todos os calendários pessoais adicionais e quaisquer links de calendário compartilhados antes de cancelar sua assinatura."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Você atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
@@ -3155,6 +3164,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendário",
+        "${ n } calendarios"
+      ],
       "${ n } custom email domain": [
         "${ n } domínio de e-mail personalizado",
         "${ n } domínios de e-mail personalizados"
@@ -3187,10 +3200,6 @@
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
       ],
-      "${ n } personal calendar": [
-        "${ n } calendário pessoal",
-        "${ n } calendários pessoais"
-      ],
       "${ n } VPN connection": [
         "${ n } conexão VPN",
         "${ n } conexões VPN"
@@ -3222,6 +3231,9 @@
       ],
       "Auto-reply": [
         "Resposta automática"
+      ],
+      "Calendar sharing": [
+        "Compartilhamento de calendário"
       ],
       "Catch-all": [
         "Catch-all"
@@ -3557,9 +3569,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crie vários endereços de e-mail para suas identidades on-line (por exemplo JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain } para assinaturas de notícias)"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Crie ${ n } calendário personalizado.",
-        "Crie até ${ n } calendários personalizados."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Crie até ${ n } calendário personalizado ou adicione calendários de amigos, familiares, colaboradores e organizações",
+        "Crie até ${ n } calendários personalizados ou adicione calendários de amigos, familiares, colaboradores e organizações"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Proteja-se de ameaças à privacidade da VPN ao transmitir seu tráfego de internet por meio de múltiplos servidores"
@@ -3567,8 +3579,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Compartilhe facilmente seus calendários com colegas, familiares e amigos por meio de um link"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Compartilhe facilmente seus calendários com familiares, amigos ou colegas por meio de um link"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Compartilhe facilmente seus calendários com amigos, familiares ou colegas"
       ],
       "End-to-end encrypted calendar": [
         "Calendário criptografado de ponta a ponta"
@@ -3596,12 +3608,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Em dias úteis, receba o suporte da equipe de Suporte ao Cliente do ${ BRAND_NAME } com respostas em até 24 horas"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Além disso, adicione até 5 calendários de colegas, organizações, familiares e amigos."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Além disso, adicione até 5 calendários de amigos, familiares, colegas e organizações."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Uma conexão VPN permite que um dispositivo se conecte ao ${ BRAND_NAME } de cada vez. Por exemplo, para conectar um smartphone e um laptop ao ${ BRAND_NAME } ao mesmo tempo, você precisa de duas conexões VPN."
@@ -3713,9 +3719,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "Tenha mais opções com o suporte para 10 domínios de e-mail personalizados"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Crie ${ numberOfPersonalCalendars } calendário pessoal",
-        "Crie até ${ numberOfPersonalCalendars } calendários pessoais"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Crie até ${ MAX_CALENDARS_PAID } calendário",
+        "Crie até ${ MAX_CALENDARS_PAID } calendários"
       ],
       "Everything in ${ vpnPlanName }": [
         "Tudo que está incluso no ${ vpnPlanName }"
@@ -4286,6 +4292,14 @@
         "VPN de alta velocidade em ${ maxVpn } dispositivos"
       ]
     },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Assinatura gerenciada em outro lugar"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Sua assinatura foi feita através de uma compra no aplicativo. Para gerenciar sua assinatura atual você precisa acessar a seção de Assinatura em sua ${ subscriptionManager } conta"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Por"
@@ -4498,8 +4512,8 @@
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
-      "Cancel Mail subscription": [
-        "Cancelar assinatura de e-mail"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Cancelar ${ MAIL_SHORT_APP_NAME } assinatura"
       ],
       "Card verification": [
         "Verificação do cartão"

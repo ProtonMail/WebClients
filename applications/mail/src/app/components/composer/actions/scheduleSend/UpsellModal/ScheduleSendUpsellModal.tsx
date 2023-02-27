@@ -47,7 +47,7 @@ const upsellItems: Item[] = [
         getText: () => c('new_plans: feature').t`Up to 500 GB of storage`,
         getTooltip: () =>
             c('new_plans: feature info')
-                .t`Storage space is shared accross ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME} and ${DRIVE_APP_NAME}`,
+                .t`Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }`,
     },
     {
         icon: 'envelopes',

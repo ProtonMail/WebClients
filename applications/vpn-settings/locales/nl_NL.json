@@ -2451,12 +2451,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw Mail abonnement kunt opzeggen."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw abonnement kunt opzeggen."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -3176,10 +3170,6 @@
         "${ n } bericht per dag",
         "${ n } berichten per dag"
       ],
-      "${ n } personal calendar": [
-        "${ n } persoonlijke agenda",
-        "${ n } persoonlijke agenda's"
-      ],
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
@@ -3546,18 +3536,11 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Maak ${ n } aangepaste agenda.",
-        "Maak tot ${ n } aangepaste agenda's."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Deel uw agenda's eenvoudig met collega's, familieleden en vrienden via een koppeling"
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's via een koppeling"
       ],
       "End-to-end encrypted calendar": [
         "End-to-end versleutelde agenda"
@@ -3585,12 +3568,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van ${ BRAND_NAME }-klantenondersteuning"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Voeg daarnaast tot 5 agenda's toe van collega's, organisaties, familieleden en vrienden."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Voeg daarnaast tot 5 agenda's toe van vrienden, familieleden, collega's en organisaties."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Met één VPN-verbinding kunt u één apparaat per keer verbinden met ${ BRAND_NAME } VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met ${ BRAND_NAME } VPN wilt verbinden, hebt u twee VPN-verbindingen nodig."
@@ -3701,10 +3678,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
-      ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Maak ${ numberOfPersonalCalendars } persoonlijke agenda",
-        "Maak tot ${ numberOfPersonalCalendars } persoonlijke agenda's"
       ],
       "Everything in ${ vpnPlanName }": [
         "Alles van ${ vpnPlanName }"
@@ -4471,9 +4444,6 @@
       ],
       "Billing cycle": [
         "Factuurperiode"
-      ],
-      "Cancel Mail subscription": [
-        "Mail-abonnement opzeggen"
       ],
       "Card verification": [
         "Kaartverificatie"

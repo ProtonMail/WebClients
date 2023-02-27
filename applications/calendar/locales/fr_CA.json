@@ -866,11 +866,6 @@
         "Plus d’options"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Partagé avec moi"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "Non synchronisé"
@@ -4197,9 +4192,6 @@
       "Request an invite": [
         "Demander une invitation"
       ],
-      "Subscribed calendars": [
-        "Calendriers souscrits"
-      ],
       "Upgrade account": [
         "Changer d'offre"
       ],
@@ -4269,17 +4261,6 @@
         "Gérer les calendriers"
       ]
     },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le maximum de calendriers personnels prévus dans votre abonnement."
-      ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le nombre maximum de calendriers auxquels vous pouvez vous abonner dans le cadre de votre abonnement."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Impossible de créer d'autres calendriers. Vous avez atteint le maximum de calendriers personnels prévus dans votre abonnement."
-      ]
-    },
     "Modal for received invitation to share calendar; text": {
       "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
         "${ calendarOwnerDisplayName } a partagé son calendrier ${ boldCalendarName } avec vous."
@@ -4317,9 +4298,6 @@
       ],
       "Time zone changed": [
         "Fuseau horaire modifié"
-      ],
-      "Unable to add more calendars": [
-        "Impossible d'ajouter d'autres calendriers"
       ]
     },
     "Modal title and action": {
@@ -4988,12 +4966,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Les invitations sont maintenant affichées dans votre calendrier comme des événements en attente. Pour répondre, il suffit d'ouvrir un événement. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Abonnez-vous à d'autres calendriers"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Vous pouvez vous abonner à des calendriers externes et voir leurs événements."
       ]
     },
     "Spotlight settings link": {
@@ -5083,9 +5055,6 @@
       ],
       "Calendar updated": [
         "Calendrier mis à jour"
-      ],
-      "Canceling import": [
-        "Annulation de l'importation"
       ],
       "Cancellation sent and all events deleted": [
         "Annulation envoyée et tous les événements supprimés"

@@ -300,6 +300,9 @@
       "Edit billing details": [
         "Breyta greiðsluupplýsingum"
       ],
+      "Edit display name": [
+        "Breyta birtingarnafni"
+      ],
       "Edit email address": [
         "Breyta netfangi"
       ],
@@ -1181,21 +1184,6 @@
       ],
       "Invite sent": [
         "Boð sent"
-      ]
-    },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Þú hefur náð hámarksfjölda persónulegra dagatala sem þú getur búið til innan áskriftar þinnar."
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Þú hefur náð hámarksfjölda persónulegra dagatala sem þú getur haft. Til að samþykkja dagatalsboð í bið þarftu að fjarlægja sum dagatölin þín."
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Þú hefur náð hámarksfjölda samnýttra dagatala sem þú getur haft. Til að samþykkja dagatalsboð í bið þarftu að fjarlægja sum dagatölin þín."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Þú hefur náð hámarki á ${ MAX_SUBSCRIBED_CALENDARS } áskrifuðu dagatali.",
-        "Þú hefur náð hámarki á ${ MAX_SUBSCRIBED_CALENDARS } áskrifuðum dagatölum."
       ]
     },
     "Calendar link purpose update success message": {
@@ -3780,6 +3768,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 tölvupóstar á mánuði)"
+      ],
+      "(during your first month)": [
+        "(á fyrsta mánuðinum þínum)"
       ]
     },
     "Go to sign in": {
@@ -4168,6 +4159,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Flytja inn frá ${ provider }"
+      ],
       "Other": [
         "Annað"
       ]
@@ -4189,6 +4183,9 @@
       ],
       "Canceled": [
         "Hætt við"
+      ],
+      "Cancelling": [
+        "Hætti við"
       ],
       "Completed": [
         "Lokið"
@@ -4244,6 +4241,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } gerði hlé á innflutningi vegna þess að pláss á reikningnum þínum er að verða lítið. Þú getur:"
       ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } mun reyna að halda innflutningnum áfram um leið og tölvupóstveitan þín endurstillir ${ bandwidthLimitLink } á reikningnum þínum. Þú þarft ekki að gera neitt. Ef þú hættir við innflutninginn geturðu ekki haldið honum áfram og þú þarft að byrja upp á nýtt."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s dulkóðunartækni þýðir að enginn hefur aðgang að lykilorðinu þínu - ekki einu sinni við."
       ],
@@ -4291,6 +4291,14 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } hlaðin skrá er ekki gildur einkalykill. Vinsamlega staðfestu og reyndu aftur.",
         "${ numberOfNonPrivateKeys } upphlaðnar skrár eru ekki gildir einkalyklar. Vinsamlega staðfestu og reyndu aftur."
+      ],
+      "${ numContact } contact": [
+        "${ numContact } tengiliður",
+        "${ numContact } tengiliðir"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } tengiliðahópur",
+        "${ numGroups } tengiliðahópar"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappa fannst",
@@ -4613,6 +4621,10 @@
       "Country code": [
         "Landsnúmer"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Búa til ${ calendarsToBeCreatedCount } nýtt dagatal",
+        "Búa til ${ calendarsToBeCreatedCount } ný dagatöl"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Búðu til merki fyrir innfluttu skilaboðin, tímabil fyrir þennan innflutning og möppurnar sem þú vilt flytja inn."
       ],
@@ -4920,6 +4932,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Myndir hafa verið fjarlægðar vegna þess að þær eru ekki leyfðar í sjálfvirku svari"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Flytja inn ${ calendarCount } af ${ totalCalendarsCount } dagatali",
+        "Flytja inn ${ calendarCount } af ${ totalCalendarsCount } dagatölum"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Flytja inn ${ contactsFragment } og ${ contactsGroupsFragment }"
       ],
@@ -4940,6 +4956,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "IMPORTANT: Sumir skráningaraðilar samþykkja ekki CNAME-gildi með punkti í endann (á meðan aðrir krefjast þess). Ef skráningaraðilinn þinn samþykkir ekki CNAME-færslurnar þínar, skaltu eyða punktinum í enda hvers CNAME-gildis og prófa síðan aftur."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Flyt inn gögnin þín frá ${ fromEmail } í ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Flyt inn gögnin þín frá ${ importedEmailAddress } í ${ toEmail }."
@@ -5779,6 +5798,18 @@
       "You can import one data type at a time.": [
         "Þú getur flutt inn eina gagnategund í einu."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Þú getur geymt allt að ${ MAX_CALENDARS_FREE } dagatal. Vinsamlegast fjarlægðu deilda dagatalstengla og hvaða ${ BRAND_NAME } notanda sem þú deildir dagatölunum þínum með áður en þú segir upp ${ MAIL_SHORT_APP_NAME } áskriftinni þinni.",
+        "Þú getur geymt allt að ${ MAX_CALENDARS_FREE } dagatöl. Vinsamlegast fjarlægðu deilda dagatalstengla og hvaða ${ BRAND_NAME } notanda sem þú deildir dagatölunum þínum með áður en þú segir upp ${ MAIL_SHORT_APP_NAME } áskriftinni þinni."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Þú getur geymt allt að ${ MAX_CALENDARS_FREE } dagatal. Vinsamlegast fjarlægðu deilda dagatalstengla og hvaða ${ BRAND_NAME } notanda sem þú deildir dagatölunum þínum með áður en þú segir upp áskriftinni þinni.",
+        "Þú getur geymt allt að ${ MAX_CALENDARS_FREE } dagatöl. Vinsamlegast fjarlægðu deilda dagatalstengla og hvaða ${ BRAND_NAME } notanda sem þú deildir dagatölunum þínum með áður en þú segir upp áskriftinni þinni."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Þú getur geymt allt að ${ MAX_CALENDARS_FREE } dagatal. Vinsamlegast fjarlægðu deilda dagatalstengla áður en þú segir upp áskriftinni þinni.",
+        "Þú getur geymt allt að ${ MAX_CALENDARS_FREE } dagatöl. Vinsamlegast fjarlægðu deilda dagatalstengla áður en þú segir upp áskriftinni þinni."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Þú getur nú fengið aðgang að og stjórnað reikningnum sem stjórnandi."
       ],
@@ -5810,8 +5841,8 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Þú settir ekki upp endurheimtuaðferð þannig að endurheimt reiknings er ómöguleg ef þú gleymir lykilorðinu þínu. Halda áfram án endurheimtuaðferðar?"
       ],
-      "You have no personal calendars to export.": [
-        "Þú hefur engin persónuleg dagatöl til að flytja út."
+      "You have no calendars to export.": [
+        "Þú hefur engin dagatöl til að flytja út."
       ],
       "You have no saved payment methods.": [
         "Þú ert ekki með neina vistaða greiðslumáta."
@@ -5830,12 +5861,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Þú verður að hafa kreditkort eða bankareikning tengt PayPal reikningnum þínum. Ef PayPal reikningurinn þinn er ekki með það, vinsamlegast smelltu á hnappinn hér að neðan."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Þú verður að fjarlægja öll viðbótar persónuleg dagatöl og alla deilda dagatalstengla áður en þú getur sagt upp tölvupóstáskriftinni þinni."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Þú verður að fjarlægja öll viðbótar persónuleg dagatöl og alla deilda dagatalstengla áður en þú getur sagt upp áskriftinni þinni."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Þú þarft að vera með virkt dagatal til að flytja atburðina þína frá ICS."
@@ -7245,6 +7270,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } vörutilkynningar"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } velkominn tölvupóstur"
       ]
     },
     "Label in domain modal": {
@@ -7313,6 +7341,17 @@
       ],
       "Preference saved": [
         "Kjörstilling vistuð"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Til að bæta við nýju dagatali skaltu fjarlægja það sem fyrir er."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Til að bæta við nýju dagatali skaltu fjarlægja annað dagatal eða uppfæra ${ BRAND_NAME } áskriftina þína í ${ MAIL_SHORT_APP_NAME } greidda áskrift."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Þú hefur náð hámarksfjölda dagatala í áskrift þinni."
       ]
     },
     "Link": {
@@ -7411,6 +7450,10 @@
       "Almost there": [
         "Næstum þar"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Fjöldi dagatala útbúin: ${ createdCalendarCount } af ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Tengist tölvupóstveitunni þinni"
       ],
@@ -7433,6 +7476,24 @@
       ],
       "Enable authentication logs": [
         "Virkja auðkenningarskrár"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Flytja inn öll skilaboð frá ${ itemsToImportCount } möppu og merktu þær sem",
+        "Flytja inn öll skilaboð frá ${ itemsToImportCount } möppum og merktu þær sem"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Flytja inn öll skilaboð frá ${ itemsToImportCount } merki og merkja þau sem",
+        "Flytja inn öll skilaboð frá ${ itemsToImportCount } merki og merkja þau sem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Flytja inn öll skilaboð frá ${ selectedItemsToImportCount } af ${ itemsToImportCount } möppu og merkja þau sem",
+        "Flytja inn öll skilaboð frá ${ selectedItemsToImportCount } af ${ itemsToImportCount } möppum og merkja þau sem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Flytja inn öll skilaboð frá ${ selectedItemsToImportCount } af ${ itemsToImportCount } merki og merkja þau sem",
+        "Flytja inn öll skilaboð frá ${ selectedItemsToImportCount } af ${ itemsToImportCount } merkjum og merkja þau sem"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7780,6 +7841,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } dagatal",
+        "${ n } dagatöl"
+      ],
       "${ n } custom email domain": [
         "${ n } sérsniðið tölvupóstlén",
         "${ n } sérsniðin tölvupóstlén"
@@ -7812,10 +7877,6 @@
         "${ n } skilaboð á dag",
         "${ n } skilaboð á dag"
       ],
-      "${ n } personal calendar": [
-        "${ n } persónulegt dagatal",
-        "${ n } persónuleg dagatöl"
-      ],
       "${ n } VPN connection": [
         "${ n } VPN tenging",
         "${ n } VPN tengingar"
@@ -7847,6 +7908,9 @@
       ],
       "Auto-reply": [
         "Sjálfvirk-svörun"
+      ],
+      "Calendar sharing": [
+        "Deiling dagatals"
       ],
       "Catch-all": [
         "Safna-öllu"
@@ -7999,6 +8063,26 @@
         "Teymisstjórnun"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gerðu friðhelgi að sjálfgefnu fyrir öryggisafrit, geymslu, deilingu og endurheimt skráa."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Að öðrum kosti verður aðgangur að reikningnum þínum takmarkaður og reikningurinn verður að lokum gerður óvirkur."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Til að halda áfram að nota ${ MAIL_APP_NAME } með úrvalseiginleikum skaltu velja áskrift og greiðslumöguleika."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Uppfærðu í viðskiptapakkann með aðgangi að öllum hágæða ${ BRAND_NAME } þjónustum."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Uppfærðu í fullkominn friðhelgispakka og fáðu aðgang að öllum hágæða ${ BRAND_NAME } þjónustum."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Þinni reynsluáskrift lýkur ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } endar með ${ last4 }"
@@ -8068,26 +8152,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Þú nýtur kynningarverðs á núverandi áskrift þinni. Ef þú færir niður reikninginn þinn taparðu kynningarverðinu þínu og það verður ekki í boði ef þú reynir að gerast áskrifandi aftur."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gerðu friðhelgi að sjálfgefnu fyrir öryggisafrit, geymslu, deilingu og endurheimt skráa."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Að öðrum kosti verður aðgangur að reikningnum þínum takmarkaður og reikningurinn verður að lokum gerður óvirkur."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Til að halda áfram að nota ${ MAIL_APP_NAME } með úrvalseiginleikum skaltu velja áskrift og greiðslumöguleika."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Uppfærðu í viðskiptapakkann með aðgangi að öllum hágæða ${ BRAND_NAME } þjónustum."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Uppfærðu í fullkominn friðhelgispakka og fáðu aðgang að öllum hágæða ${ BRAND_NAME } þjónustum."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Þinni reynsluáskrift lýkur ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8191,9 +8255,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Útbúðu mörg netföng fyrir auðkenni þín á netinu, t.d. JohnShopper@${ domain } fyrir innkaupareikninga, JohnNews@${ domain } fyrir fréttaáskrift"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Búa til allt að ${ n } sérsniðið dagatal.",
-        "Búa til allt að ${ n } sérsniðin dagatöl."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Búðu til allt að ${ n } dagatal eða bættu við dagatölum frá vinum, fjölskyldu, samstarfsfólki og samtökum",
+        "Búðu til allt að ${ n } dagatöl eða bættu við dagatölum frá vinum, fjölskyldu, samstarfsfólki og samtökum"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Ver gegn ógn gagnvart VPN friðhelgi með því að senda netumferð þína í gegnum marga netþjóna"
@@ -8201,8 +8265,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Deildu dagatölunum þínum auðveldlega með samstarfsfólki þínu, fjölskyldu og vinum með tengli"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Deildu dagatölunum þínum auðveldlega með fjölskyldu þinni, vinum eða samstarfsmönnum með tengli"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Deildu dagatölunum þínum auðveldlega með fjölskyldu þinni, vinum eða samstarfsmönnum"
       ],
       "End-to-end encrypted calendar": [
         "Enda-í-enda dulritað dagatal"
@@ -8230,12 +8294,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Á virkum dögum færðu aðstoð frá ${ BRAND_NAME } þjónustuveri innan við 24 klukkustundum frá beiðni"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Ofan á það skaltu bæta við allt að 5 dagatölum frá samstarfsmönnum, samtökum, fjölskyldu og vinum."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Ofan á það skaltu bæta við allt að 5 dagatölum frá vinum, fjölskyldu, samstarfsfólki og samtökum."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Ein VPN-tenging gerir einu tæki kleift að tengjast ${ BRAND_NAME } VPN á hverjum tíma. Til dæmis, til að tengja síma og fartölvu við ${ BRAND_NAME } VPN á sama tíma þarftu tvær VPN-tengingar."
@@ -8355,9 +8413,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "Fáðu meira með stuðningi fyrir 10 sérsniðin tölvupóstlén"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Stofnaðu ${ numberOfPersonalCalendars } persónulegt dagatal",
-        "Stofnaðu allt að ${ numberOfPersonalCalendars } persónuleg dagatöl"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Búa til allt að ${ MAX_CALENDARS_PAID } dagatal",
+        "Búa til allt að ${ MAX_CALENDARS_PAID } dagatöl"
       ],
       "Everything in ${ vpnPlanName }": [
         "Allt í ${ vpnPlanName }"
@@ -9237,6 +9295,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Bættu við opinberum, ytri eða sameiginlegum dagatölum með því að nota vefslóð."
+      ],
+      "Add public, external, or shared calendars.": [
+        "Bættu við opinberum, ytri eða deildum dagatölum."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9310,6 +9371,14 @@
         "Háhraða VPN á ${ maxVpn } tækjum"
       ]
     },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Áskrift stjórnað annars staðar"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Áskriftin þín hefur verið gerð með kaupum í gegnum forrit. Til að hafa umsjón með núverandi áskrift þarftu að fara í áskriftarhlutann á þínum ${ subscriptionManager } reikningi"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Fyrir"
@@ -9366,6 +9435,9 @@
       ],
       "Calendar updated": [
         "Dagatal uppfært"
+      ],
+      "Cancelling import": [
+        "Hætti við innflutning"
       ],
       "Catch-all address updated": [
         "Safna-öllu vistfang uppfært"
@@ -9799,8 +9871,8 @@
       "Bridge for ${ platform }": [
         "Brú fyrir ${ platform }"
       ],
-      "Cancel Mail subscription": [
-        "Hætta tölvupóstáskrift"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Hætta við ${ MAIL_SHORT_APP_NAME } áskrift"
       ],
       "Card verification": [
         "Sannvottun greiðslukorts"
@@ -10207,6 +10279,9 @@
       "Organization and keys": [
         "Fyrirtæki og lyklar"
       ],
+      "Other calendars": [
+        "Önnur dagatöl"
+      ],
       "Password": [
         "Lykilorð"
       ],
@@ -10386,9 +10461,6 @@
       ],
       "Status": [
         "Staða"
-      ],
-      "Subscribed calendars": [
-        "Dagatöl í áskrift"
       ],
       "Success": [
         "Tókst"
@@ -10764,12 +10836,8 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Uppfærðu í áskrift að póstþjónustu til að búa til allt að ${ MAX_CALENDARS_PAID } dagatal, sem gerir þér kleift að búa til dagatöl fyrir vinnuna, til að deila með vinum og bara fyrir sjálfan þig.",
-        "Uppfærðu í áskrift að póstþjónustu til að búa til allt að ${ MAX_CALENDARS_PAID } dagatöl, sem gerir þér kleift að búa til dagatöl fyrir vinnuna, til að deila með vinum og bara fyrir sjálfan þig."
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "Uppfærðu í tölvupóstáskrift til að deila dagatalinu þínu."
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Uppfærðu í ${ MAIL_SHORT_APP_NAME } greidda áskrift til að deila dagatalinu þínu."
       ]
     },
     "User referee invited via email": {
@@ -10931,6 +10999,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Þú munt tapa öllum stillingum sem þú hefur gert hingað til."
+      ],
+      "You will not see this import record in the list any more.": [
+        "Þú munt ekki lengur sjá þessa innflutningsskrá á listanum."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ókeypis prufuáskriftin þín lýkur þann ${ textDate }. ${ action }"

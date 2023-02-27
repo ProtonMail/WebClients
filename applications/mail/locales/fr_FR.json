@@ -533,9 +533,6 @@
       "Load": [
         "Charger"
       ],
-      "Load anyway": [
-        "Charger quand même"
-      ],
       "Load embedded images": [
         "Charger les images intégrées"
       ],
@@ -959,8 +956,8 @@
       "Skip verification": [
         "Ignorer la vérification"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Certaines images n'ont pas pu être chargées en raison de la protection du suivi."
+      "Some images could not be loaded with tracker protection.": [
+        "Certaines images n'ont pas pu être chargées avec la protection contre les traqueurs."
       ],
       "Star": [
         "Ajouter aux Favoris"
@@ -4288,6 +4285,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importer depuis ${ provider }"
+      ],
       "Other": [
         "Autre"
       ]
@@ -4370,6 +4370,14 @@
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } traqueur d'e-mail bloqué",
         "${ numberOfTrackers } traqueurs d'e-mail bloqués"
+      ],
+      "${ numContact } contact": [
+        "${ numContact } contact",
+        "${ numContact } contacts"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } groupe de contacts",
+        "${ numGroups } groupes de contacts"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } message dans la conversation",
@@ -4605,6 +4613,10 @@
       ],
       "Country code": [
         "Indicatif du pays"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
+        "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
@@ -4845,6 +4857,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Les images ont été supprimées, elles ne sont pas autorisées dans la réponse automatique."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
+        "Importer ${ calendarCount } calendriers sur ${ totalCalendarsCount }"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
       ],
@@ -4859,6 +4875,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importez vos e-mails, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
@@ -5117,7 +5136,7 @@
         "La phrase de récupération a été téléchargée."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualisez la page ou ${ link } pour résoudre automatiquement la plupart des problèmes."
+        "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Signaler un message comme une tentative de phishing/hameçonnage nous enverra le message afin que nous puissions l'analyser et améliorer nos filtres. Cela signifie que nous serons en mesure de voir le contenu du message dans son intégralité."
@@ -6463,7 +6482,7 @@
         "Archives"
       ],
       "clearing your browser cache": [
-        "vider le cache de votre navigateur"
+        "videz le cache de votre navigateur"
       ],
       "Create a calendar linked to an active email address.": [
         "Créez un calendrier lié à une adresse électronique active."
@@ -6618,6 +6637,10 @@
       "Almost there": [
         "Nous y sommes presque."
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }."
+      ],
       "Connecting to your email provider": [
         "Connexion à votre fournisseur de messagerie"
       ],
@@ -6632,6 +6655,24 @@
       ],
       "Your import is starting": [
         "Votre importation commence."
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label",
+        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label",
+        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label",
+        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label"
       ]
     },
     "Mailbox": {
@@ -6913,7 +6954,7 @@
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7821,6 +7862,9 @@
       "Bug reported": [
         "Le bug a été signalé."
       ],
+      "Cancelling import": [
+        "Annulation de l'importation"
+      ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
       ],
@@ -8537,7 +8581,7 @@
         "Envoi du message original"
       ],
       "Set your own schedule": [
-        "Définissez votre propre horaire"
+        "Définissez vous-même le moment de l'envoi"
       ],
       "Settings": [
         "Paramètres"

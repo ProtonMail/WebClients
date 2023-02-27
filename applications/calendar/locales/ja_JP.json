@@ -862,11 +862,6 @@
         "詳細設定を表示"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "私と共有"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "未同期"
@@ -4096,9 +4091,6 @@
       "Request an invite": [
         "登録を申請"
       ],
-      "Subscribed calendars": [
-        "購読カレンダー"
-      ],
       "Upgrade account": [
         "アカウントをアップグレード"
       ],
@@ -4168,17 +4160,6 @@
         "カレンダーを管理"
       ]
     },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "これ以上のカレンダーを追加できません。このプランで作成できる個人用カレンダーの最大数に達しています。"
-      ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "これ以上のカレンダーを追加できません。このプランで追加できる購読カレンダーの最大数に達しています。"
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "これ以上のカレンダーを作成できません。このプランで作成できる個人用カレンダーの最大数に達しています。"
-      ]
-    },
     "Modal for received invitation to share calendar; text": {
       "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
         "${ calendarOwnerDisplayName } がカレンダー ${ boldCalendarName } をあなたに共有しました。"
@@ -4216,9 +4197,6 @@
       ],
       "Time zone changed": [
         "タイムゾーンが変更されました。"
-      ],
-      "Unable to add more calendars": [
-        "カレンダーを追加できません"
       ]
     },
     "Modal title and action": {
@@ -4850,12 +4828,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "招待は、保留中の予定としてカレンダーに表示されるようになりました。その予定を開いて、返信することができます。${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "他のカレンダーを購読"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "外部カレンダーを購読して、イベントを読み込むことができます。"
       ]
     },
     "Spotlight settings link": {
@@ -4941,9 +4913,6 @@
       ],
       "Calendar updated": [
         "カレンダーが更新されました。"
-      ],
-      "Canceling import": [
-        "インポートをキャンセル"
       ],
       "Cancellation sent and all events deleted": [
         "予定キャンセルの通知を送り、すべてのイベントは削除されました。"

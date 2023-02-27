@@ -276,6 +276,9 @@
       "Join calendar": [
         "Uneix-te al calendari"
       ],
+      "Keep current time zone": [
+        "Mantenir el fus horari actual"
+      ],
       "Load image": [
         "Carrega la imatge"
       ],
@@ -290,6 +293,12 @@
       ],
       "Manage addresses": [
         "Gestionar adreces"
+      ],
+      "Manage folders": [
+        "Gestionar carpetes"
+      ],
+      "Manage labels": [
+        "Gestionar etiquetes"
       ],
       "Mark for deletion": [
         "Marcar per eliminar"
@@ -502,7 +511,7 @@
         "No confiable"
       ],
       "Update": [
-        "Millora"
+        "Actualitzar"
       ],
       "Update recovery file": [
         "Actualitza el fitxer de recuperació"
@@ -514,7 +523,7 @@
         "Actualitzar"
       ],
       "Upgrade now": [
-        "Millora ara"
+        "Actualitzar ara"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -566,7 +575,7 @@
         "No s'han trobat resultats."
       ],
       "Please try another search term.": [
-        "Si us plau, proveu un altre terme de cerca."
+        "Proveu un altre terme de cerca."
       ],
       "You don't have any contacts.": [
         "No teniu contactes."
@@ -891,7 +900,7 @@
         "L'enllaç del calendari no és accessible des de fora de l'ecosistema del proveïdor del calendari."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Siusplau, verifiqueu que l'enllaç segueix essent vàlid."
+        "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Verifiqueu que l'enllaç segueix essent vàlid."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Fa més de 12 hores de la darrera actualització — ${ CALENDAR_APP_NAME } provarà d'actualitzar-lo en les hores vinents."
@@ -1903,12 +1912,12 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Utilitzeu la configuració predeterminada global (${ defaultValueText })"
+        "Utilitzeu la configuració per defecte global (${ defaultValueText })."
       ]
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "Utilitzar la configuració predeterminada global (${ globalDefaultText })"
+        "Utilitzar la configuració per defecte global (${ globalDefaultText })"
       ]
     },
     "Delete event button tooltip": {
@@ -2107,6 +2116,9 @@
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
+      "Already a member of this calendar": [
+        "Ja és membre del calendari"
+      ],
       "Answer failed to be sent": [
         "No s'ha pogut enviar la resposta"
       ],
@@ -2155,10 +2167,10 @@
         "El correu electrònic no és vàlid"
       ],
       "Ends on date cannot be empty": [
-        "La data final no pot estar buida"
+        "La data final no pot estar buida."
       ],
       "Ends on date must be after start time": [
-        "La data de finalització ha de ser posterior a la d'inici"
+        "La data final ha de ser posterior a la data d'inici."
       ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
@@ -2177,6 +2189,9 @@
       ],
       "Image upload failed": [
         "La càrrega de la imatge ha fallat"
+      ],
+      "IMAP server is required": [
+        "Es requereix un servidor IMAP."
       ],
       "Incorrect login credentials. Please try again.": [
         "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
@@ -2266,7 +2281,7 @@
         "Les contrasenyes no coincideixen"
       ],
       "Please create an address first.": [
-        "Si us plau, creeu la vostra adreça primer."
+        "Creeu la vostra adreça primer."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
@@ -2366,6 +2381,9 @@
       "This label name is not available. Please choose a different name.": [
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el navegador actual."
+      ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
       ],
@@ -2380,6 +2398,9 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "No podeu enviar un correu a més de 100 destinataris"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "No podeu enviar arxius vCard de més de 10 contactes."
       ],
       "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
         "No es poden importar tots els calendaris perquè heu arribat al límit personal de calendaris."
@@ -2463,7 +2484,7 @@
         "Calendari"
       ],
       "Calendar time zone not supported": [
-        "Zona horària del calendari no admesa"
+        "Fus horari del calendari no compatible"
       ],
       "Component with wrong format": [
         "Component amb format erroni"
@@ -2538,7 +2559,7 @@
         "Hora d’inici fora de límits"
       ],
       "Time zone not supported": [
-        "Zona horària no admesa"
+        "Fus horari no compatible"
       ],
       "Timezone": [
         "Zona Horària"
@@ -3048,6 +3069,14 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
+      "${ numContact } contact": [
+        "${ numContact } contacte",
+        "${ numContact } contactes"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } grup de contactes",
+        "${ numGroups } grups de contactes"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta trobada",
         "${ providerFoldersNumLocalized } carpetes trobades"
@@ -3094,7 +3123,7 @@
         "Un correu electrònic serà enviat als participants de l'esdeveniment. Voleu esborrar aquest esdeveniment?"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Accés al compte restringit degut a factures impagades. Si us plau, contacti amb el teu administrador."
+        "Accés al compte restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Els participants afegits o eliminats serán notificats de tots els esdeveniments d'aquesta sèrie."
@@ -3155,6 +3184,13 @@
       ],
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
+      ],
+      "Country code": [
+        "Codi de país"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Crea ${ calendarsToBeCreatedCount } nou calendari",
+        "Crea ${ calendarsToBeCreatedCount } nous calendaris"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
@@ -3252,6 +3288,10 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importa ${ calendarCount } de ${ totalCalendarsCount } calendari",
+        "Importa ${ calendarCount } de ${ totalCalendarsCount } calendaris"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
       ],
@@ -3263,6 +3303,9 @@
       ],
       "Import mailbox": [
         "Importar bústia de correu"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Important les vostres dades des de ${ fromEmail } a ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
@@ -3358,7 +3401,7 @@
         "Les ocurrències prèviament actualitzades per l'organitzador es mantindran."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
+        "Una o més de les vostres claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline només és compatible amb format de Text Pla."
@@ -3373,7 +3416,7 @@
         "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
       ],
       "Please remove the duplicates and try again.": [
-        "Si us plau, suprimiu els duplicats i torneu-ho a provar."
+        "Suprimiu els duplicats i torneu-ho a provar."
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
@@ -3386,10 +3429,10 @@
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Si us plau, espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
+        "Espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Si us plau, espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
+        "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
       ],
       "Previous modifications on this series will be lost.": [
         "Es perdran les modificacions prèvies d'aquesta sèrie."
@@ -3470,7 +3513,7 @@
         "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'habilitar en primer lloc."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "L'organitzador ha actualitzat aquest esdeveniment. Vols canviar la teva resposta només per aquest esdeveniment de la sèrie?"
+        "L'organitzador ha actualitzat aquest esdeveniment. Vulgueu canviar la vostra resposta només per aquest esdeveniment de la sèrie?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
         "L'organitzador ha actualitzat aquest esdeveniment. Voleu suprimir aquest esdeveniment?"
@@ -3482,7 +3525,7 @@
         "Aquest esdeveniment s'ha actualitzat. No es notificarà a l'organitzador d'aquest esdeveniment que rebutgeu la invitació perquè no podeu enviar correus des de l'adreça electrònica convidada. Voleu suprimir aquest esdeveniment de totes maneres?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
+        "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les vostres targetes de crèdit."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb el navegador Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
@@ -3491,7 +3534,7 @@
         "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
+        "Per combatre el correu brossa, verifiqueu que sou humà."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importar esdeveniments creeu abans un calendari a ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
@@ -3765,6 +3808,9 @@
       ],
       "Color": [
         "Color"
+      ],
+      "Colors": [
+        "Colors"
       ],
       "Contacts": [
         "Contactes"
@@ -4076,9 +4122,6 @@
       "Request an invite": [
         "Demana una invitació"
       ],
-      "Subscribed calendars": [
-        "Calendaris subscrits"
-      ],
       "Upgrade account": [
         "Millorar el compte"
       ],
@@ -4095,6 +4138,10 @@
       "Almost there": [
         "Ja gairebé està"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Connectant al vostre prveïdor de correu electrònic"
       ],
@@ -4109,6 +4156,24 @@
       ],
       "Your import is starting": [
         "La importació s'està iniciant"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importa tots els missatges d' ${ itemsToImportCount } carpeta i etiquetar-los com a",
+        "Importa tots els missatges d'$${ itemsToImportCount } carpetes i etiquetar-los com a"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importar tots els missatges d' ${ itemsToImportCount } etiqueta i etiquetar-los com a",
+        "Importar tots els missatges d'$${ itemsToImportCount } etiquetés i etiquetar-los com a"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta i etiqueta'ls com a",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetes i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta i etiqueta'ls com a",
+        "Importa tots els missatges d'${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetés i etiqueta'ls com a"
       ]
     },
     "Message": {
@@ -4143,17 +4208,6 @@
         "Gestionar els calendaris"
       ]
     },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "No es poden afegir més calendaris. Heu arribat al màxim de calendaris personals del vostre pla."
-      ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "No es poden afegir més calendaris. Heu arribat al màxim de calendaris subscrits del vostre pla."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "No es poden crear més calendaris. Heu arribat al màxim de calendaris personals del vostre pla."
-      ]
-    },
     "Modal for received invitation to share calendar; Title": {
       "Join calendar": [
         "Uneix-te al calendari"
@@ -4186,9 +4240,6 @@
       ],
       "Time zone changed": [
         "Fus horari canviat"
-      ],
-      "Unable to add more calendars": [
-        "No es poden afegir més calendaris"
       ]
     },
     "Modal title and action": {
@@ -4496,7 +4547,7 @@
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        "Benvingut/da a ${ appName }"
+        "Li donem la benvinguda a ${ appName }"
       ],
       "Where you can take control of your time and your data.": [
         "Preneu el control del vostre temps i les vostres dades."
@@ -4675,7 +4726,7 @@
         "Contrasenya"
       ],
       "Please describe the problem and include any error messages": [
-        "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
+        "Descriu el problema i inclou-hi qualssevol missatges d'error."
       ],
       "Search for group name": [
         "Buscar per nom de grup"
@@ -4838,12 +4889,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Ara les invitacions apareixen al vostre calendari en forma d'esdeveniments pendents. Simplement, obre un esdeveniment per respondre. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Subscriure's a altres calendaris"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Podeu subscriure-us a calendaris externs i llegir-ne els esdeveniments."
       ]
     },
     "Spotlight settings link": {
@@ -4929,9 +4974,6 @@
       "Calendar updated": [
         "Calendari actualitzat"
       ],
-      "Canceling import": [
-        "Cancel·lar importació"
-      ],
       "Cancellation sent and all events deleted": [
         "Cancel·lació enviada i tots els esdeveniments eliminats"
       ],
@@ -4943,6 +4985,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Cancel·lació enviada i participants eliminats de tots els esdeveniments"
+      ],
+      "Cancelling import": [
+        "Cancel·lant importació"
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
@@ -5267,7 +5312,7 @@
         "Esdeveniment encriptat"
       ],
       "Enter your password": [
-        "Introdueix la teva contrasenya"
+        "Introduïu la vostra contrasenya"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
         "Introduïu el nom d'usuari i l'adreça de correu de ${ MAIL_APP_NAME }"
@@ -5391,7 +5436,7 @@
         "Seleccionar grup de contactes"
       ],
       "Select event end date": [
-        "Seleccioneu la data de finalització de l'esdeveniment"
+        "Seleccioneu la data final de l'esdeveniment."
       ],
       "Select event end time": [
         "Seleccioneu l'hora de finalització de l'esdeveniment"
@@ -5629,7 +5674,7 @@
         "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ${ VPN_APP_NAME }. En comptes d'això, obriu una incidència."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
+        "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
       ],
       "Skip verification?": [
         "Ometre la verificació?"
@@ -5653,7 +5698,7 @@
         "La verificació de la signatura dels detalls del contacte ha fallat."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Aquesta acció és irreversible. Si us plau, introduïu la paraula ${ boldDanger } al camp per continuar."
+        "Aquesta acció és irreversible. Introduïu la paraula ${ boldDanger } al camp per continuar."
       ],
       "This feature requires a paid ${ BRAND_NAME } account": [
         "Aquesta característica requereix un compte de pagament de ${ BRAND_NAME }"

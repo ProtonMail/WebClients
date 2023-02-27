@@ -309,6 +309,9 @@
       "Edit billing details": [
         "Sunting rincian tagihan"
       ],
+      "Edit display name": [
+        "Sunting nama tampilan"
+      ],
       "Edit email address": [
         "Ubah alamat email"
       ],
@@ -1193,20 +1196,6 @@
       ],
       "Invite sent": [
         "Undangan dikirim"
-      ]
-    },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Anda telah mencapai batas jumlah kalender personal yang dapat Anda buat untuk jenis akun Anda."
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Anda telah mencapai batas jumlah kalender personal yang dapat Anda miliki. Untuk dapat menerima undangan kalender baru, Anda harus terlebih dahulu menghapus sebagian kalender Anda."
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Anda telah mencapai batas jumlah kalender bersama yang dapat Anda miliki. Untuk dapat menerima undangan kalender baru, Anda harus terlebih dahulu menghapus sebagian kalender Anda."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
-        "Anda telah mencapai batas ${ MAX_SUBSCRIBED_CALENDARS } langganan kalender yang diperkenankan."
       ]
     },
     "Calendar link purpose update success message": {
@@ -4221,6 +4210,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Impor dari ${ provider }"
+      ],
       "Other": [
         "Lainnya"
       ]
@@ -4344,6 +4336,12 @@
       ],
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } berkas yang terunggah bukan merupakan kunci privat yang valid. Mohon periksa dan coba lagi."
+      ],
+      "${ numContact } contacts": [
+        "${ numContact } kontak"
+      ],
+      "${ numGroups } contact groups": [
+        "${ numGroups } grup kontak"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
@@ -4654,6 +4652,9 @@
       "Country code": [
         "Kode negara"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "Buat ${ calendarsToBeCreatedCount } kalender baru"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
       ],
@@ -4959,6 +4960,9 @@
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "Seluruh gambar telah dihapus karena tidak dapat diikutsertakan dalam pesan balasan otomatis"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -5812,6 +5816,15 @@
       "You can import one data type at a time.": [
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Silakan hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum Anda membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Silakan hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum Anda membatalkan langganan."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
+        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Silakan hapus tautan kalender bersama yang ada sebelum Anda membatalkan langganan."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Anda kini dapat mengakses dan mengelola akun selaku administrator."
       ],
@@ -5842,8 +5855,8 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Berhubung Anda belum mengatur metode pemulihan, akun Anda tidak akan dapat dipulihkan apabila ke depannya Anda kehilangan kata sandi Anda. Lanjutkan tanpa metode pemulihan?"
       ],
-      "You have no personal calendars to export.": [
-        "Anda tidak memiliki kalender personal yang dapat diekspor."
+      "You have no calendars to export.": [
+        "Anda tidak memiliki kalender untuk diekspor."
       ],
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
@@ -5862,12 +5875,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memilikinya, silakan klik tombol di bawah."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Anda harus menghapus seluruh kalender personal tambahan beserta tautan kalender yang dibagikan sebelum langganan Mail Anda dapat dibatalkan."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Anda harus menghapus seluruh kalender personal tambahan dan tautan kalender yang yang telah dibagikan sebelum Anda dapat membatalkan langganan Anda."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Anda harus memiliki kalender personal yang aktif untuk dapat mengimpor acara dari berkas ICS."
@@ -7365,6 +7372,17 @@
         "Preferensi disimpan"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada atau tingkatkan akun ${ BRAND_NAME } Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Anda telah mencapai batas jumlah kalender yang diperkenankan oleh paket Anda."
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Tambahkan kode hadiah"
@@ -7460,6 +7478,9 @@
     "Loading info": {
       "Almost there": [
         "Hampir selesai"
+      ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
@@ -7823,6 +7844,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendars": [
+        "${ n } kalender"
+      ],
       "${ n } custom email domains": [
         "${ n } domain email khusus"
       ],
@@ -7846,9 +7870,6 @@
       ],
       "${ n } messages per day": [
         "${ n } pesan per hari"
-      ],
-      "${ n } personal calendars": [
-        "${ n } kalender personal"
       ],
       "${ n } VPN connections": [
         "${ n } koneksi VPN"
@@ -7879,6 +7900,9 @@
       ],
       "Auto-reply": [
         "Pesan balasan otomatis"
+      ],
+      "Calendar sharing": [
+        "Membagikan kalender"
       ],
       "Catch-all": [
         "Alamat email catch-all"
@@ -8030,6 +8054,26 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8099,26 +8143,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8221,8 +8245,8 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
       ],
-      "Create up to ${ n } custom calendars.": [
-        "Buat hingga ${ n } kalender khusus."
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Melindungi Anda dari ancaman terhadap privasi VPN dengan mengalihkan lalu lintas internet Anda melalui berbagai server"
@@ -8230,8 +8254,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Bagi dan tautkan kalender Anda kepada rekan kerja, keluarga, dan teman Anda dengan mudah"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Bagi dan tautkan kalender Anda kepada keluarga, teman, atau rekan kerja Anda dengan mudah"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Bagikan kalender Anda kepada keluarga, teman, atau rekan kerja Anda dengan mudah"
       ],
       "End-to-end encrypted calendar": [
         "Kalender yang terenkripsi ujung ke ujung"
@@ -8259,12 +8283,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Dapatkan dukungan dari tim Layanan Dukungan ${ BRAND_NAME } dalam rentang waktu 1 x 24 jam pada hari kerja"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari rekan kerja, organisasi, keluarga, dan teman Anda."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari teman, keluarga, rekan kerja, dan organisasi Anda."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Satu koneksi VPN hanya memungkinkan Anda untuk menghubungkan satu perangkat ke ${ BRAND_NAME } pada satu waktu. Semisal Anda ingin menyambungkan ponsel dan laptop Anda ke ${ BRAND_NAME } secara bersamaan, Anda akan butuh dua koneksi VPN."
@@ -8384,8 +8402,8 @@
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
       ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendars": [
-        "Buat hingga ${ numberOfPersonalCalendars } kalender personal"
+      "Create up to ${ MAX_CALENDARS_PAID } calendars": [
+        "Buat hingga ${ MAX_CALENDARS_PAID } kalender"
       ],
       "Everything in ${ vpnPlanName }": [
         "Segalanya di ${ vpnPlanName }"
@@ -9301,6 +9319,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Tambahkan kalender publik, eksternal, atau bersama melalui URL."
+      ],
+      "Add public, external, or shared calendars.": [
+        "Tambahkan kalender publik, eksternal, atau bersama."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9359,6 +9380,11 @@
       ],
       "High-speed VPN on ${ maxVpn } devices": [
         "VPN berkecepatan tinggi pada ${ maxVpn } perangkat"
+      ]
+    },
+    "Subscription change warning": {
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Langganan Anda dibeli melalui pembelian dalam aplikasi. Untuk mengelola langganan Anda saat ini, Anda perlu untuk membuka bagian Langganan pada akun ${ subscriptionManager } Anda"
       ]
     },
     "Subscription price": {
@@ -9420,6 +9446,9 @@
       ],
       "Calendar updated": [
         "Kalender berhasil diperbarui"
+      ],
+      "Cancelling import": [
+        "Membatalkan impor"
       ],
       "Catch-all address updated": [
         "Alamat catch-all diperbarui"
@@ -9852,8 +9881,8 @@
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
       ],
-      "Cancel Mail subscription": [
-        "Batalkan langganan Mail"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Verifikasi kartu"
@@ -10260,6 +10289,9 @@
       "Organization and keys": [
         "Organisasi dan kunci"
       ],
+      "Other calendars": [
+        "Kalender lainnya"
+      ],
       "Password": [
         "Kata sandi"
       ],
@@ -10439,9 +10471,6 @@
       ],
       "Status": [
         "Status"
-      ],
-      "Subscribed calendars": [
-        "Kalender yang dilanggan"
       ],
       "Success": [
         "Berhasil"
@@ -10814,11 +10843,8 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Tingkatkan akun Anda ke akun Mail berbayar untuk dapat membuat hingga ${ MAX_CALENDARS_PAID } kalender untuk segala jenis keperluan mulai dari kerja, dibagikan kepada teman, hingga diri Anda sendiri."
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "Tingkatkan akun Anda ke akun Mail berbayar untuk membagikan kalender Anda."
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Tingkatkan akun Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar untuk membagikan kalender Anda."
       ]
     },
     "User referee invited via email": {
