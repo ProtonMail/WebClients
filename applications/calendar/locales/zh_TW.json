@@ -274,6 +274,9 @@
       "Join calendar": [
         "加入日曆"
       ],
+      "Keep current time zone": [
+        "維持目前時區"
+      ],
       "Load image": [
         "載入圖像"
       ],
@@ -860,11 +863,6 @@
       ],
       "More options": [
         "更多選項"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "與我分享"
       ]
     },
     "Calendar status": {
@@ -4150,6 +4148,17 @@
         "側邊面板"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "要新增行事曆，請移除既有的。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "要新增行事曆，請移除其他行事曆或升級您的 ${ BRAND_NAME } 方案至 ${ MAIL_SHORT_APP_NAME } 付費方案。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "您已達到您方案中可用的最大行事曆數量。"
+      ]
+    },
     "Link": {
       "Calendars": [
         "行事曆"
@@ -4163,14 +4172,14 @@
       "My calendars": [
         "我的行事曆"
       ],
+      "Other calendars": [
+        "其他行事曆"
+      ],
       "Pay invoice": [
         "繳付帳單"
       ],
       "Request an invite": [
         "請求邀請"
-      ],
-      "Subscribed calendars": [
-        "已訂購授權的行事曆"
       ],
       "Upgrade account": [
         "升級帳號"
@@ -4193,6 +4202,9 @@
       "Almost there": [
         "快完成了"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
       ],
@@ -4207,6 +4219,20 @@
       ],
       "Your import is starting": [
         "您的匯入程序已開始"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "匯入來自 ${ itemsToImportCount } 個資料夾的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "從 ${ itemsToImportCount } 個資料夾中匯入來自 ${ selectedItemsToImportCount } 個的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
       ]
     },
     "Message": {
@@ -4239,17 +4265,9 @@
       ],
       "Manage calendars": [
         "管理行事曆"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "無法新增更多行事曆。您已達到您的方案中的個人行事曆上限。"
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "無法新增更多行事曆。您已達到您的方案中的個人行事曆上限。"
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "無法建立更多行事曆。您已達到您的方案中的個人行事曆上限。"
+      "Upgrade": [
+        "升級"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4266,6 +4284,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "無法新增更多行事曆"
+      ],
       "How to import calendars from another service": [
         "如何從其它服務匯入行事曆"
       ],
@@ -4289,9 +4310,6 @@
       ],
       "Time zone changed": [
         "時區已變更"
-      ],
-      "Unable to add more calendars": [
-        "無法加入更多行事曆"
       ]
     },
     "Modal title and action": {
@@ -4928,12 +4946,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "現在，邀請會在您的行事曆中以擱置中事件的方式顯示。只要開啟事件回應就可以了。${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "訂閱其他行事曆"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "您可以訂閱外部行事曆並讀取其活動。"
       ]
     },
     "Spotlight settings link": {
@@ -5023,9 +5035,6 @@
       "Calendar updated": [
         "行事曆已更新"
       ],
-      "Canceling import": [
-        "正在取消匯入"
-      ],
       "Cancellation sent and all events deleted": [
         "取消已送出，並且已刪除全部事件"
       ],
@@ -5037,6 +5046,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "取消已送出，並且已從全部事件中移除參與者"
+      ],
+      "Cancelling import": [
+        "正在取消匯入"
       ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"

@@ -1187,14 +1187,6 @@
         "拒否済み"
       ]
     },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "現在のプランで作成できるパーソナルカレンダーの最大数に達しています。"
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendars.": [
-        "登録カレンダーの登録上限（${ MAX_SUBSCRIBED_CALENDARS }）に達しました。"
-      ]
-    },
     "Calendar link purpose update success message": {
       "Label added": [
         "ラベルが追加されました"
@@ -5683,9 +5675,6 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
       ],
-      "You have no personal calendars to export.": [
-        "エクスポートする個人用カレンダーがありません。"
-      ],
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
       ],
@@ -5700,12 +5689,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちでない場合はこちらのボタンをクリックしてください。"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Mail サブスクリプションをキャンセルする前に、すべての個人のカレンダーと共有中のカレンダーのリンクを削除する必要があります。"
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "サブスクリプションをキャンセルする前に、すべての個人のカレンダーと共有中のカレンダーのリンクを削除する必要があります。"
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "予定を ICS からインポートするには、アクティブなパーソナルカレンダーが必要です。"
@@ -7650,9 +7633,6 @@
       "${ n } messages per day": [
         "1 日あたり ${ n } メッセージ"
       ],
-      "${ n } personal calendars": [
-        "${ n } 件のパーソナルカレンダー"
-      ],
       "${ n } VPN connections": [
         "${ n } 件の VPN 接続"
       ],
@@ -7830,6 +7810,23 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7887,23 +7884,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -7990,9 +7970,6 @@
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "パスワード保護とリンクの有効期限を追加して、共有ファイルへのアクセスを制御します"
-      ],
-      "Create up to ${ n } custom calendars.": [
-        "最大 ${ n } 件のカスタムカレンダーを作成します。"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します"
@@ -8087,9 +8064,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "1 人ユーザーあたりストレージ容量を合計 ${ businessStorage } に拡張"
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendars": [
-        "最大 ${ numberOfPersonalCalendars } 件のパーソナルカレンダーを作成"
       ],
       "Everything in ${ vpnPlanName }": [
         "${ vpnPlanName } のすべての機能を含みます"
@@ -9519,9 +9493,6 @@
       "Bridge for ${ platform }": [
         "${ platform } 版 Bridge"
       ],
-      "Cancel Mail subscription": [
-        "Mail サブスクリプションのキャンセル"
-      ],
       "Card verification": [
         "カードの検証"
       ],
@@ -10107,9 +10078,6 @@
       "Status": [
         "状態"
       ],
-      "Subscribed calendars": [
-        "購読カレンダー"
-      ],
       "Success": [
         "完了"
       ],
@@ -10451,14 +10419,6 @@
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "${ planName } にアップグレードして同時に ${ n } のデバイスを VPN に接続します"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendars, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Mail の有料プランにアップグレードすると、最大 ${ MAX_CALENDARS_PAID } 件のカレンダーを作成できるようになり、仕事用、友人との共有用、個人用などのカレンダーを作成できます。"
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "カレンダーを共有するには、Mail 有料プランにアップグレードしてください。"
       ]
     },
     "User referee invited via email": {

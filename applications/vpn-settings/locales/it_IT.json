@@ -131,6 +131,9 @@
       "Edit billing details": [
         "Modifica i dettagli di fatturazione"
       ],
+      "Edit display name": [
+        "Modifica nome visualizzato"
+      ],
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
@@ -2454,12 +2457,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Devi avere una carta di credito o un conto bancario collegato al tuo conto PayPal. Se il tuo account PayPal non lo ha, clicca sul pulsante qui sotto."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Devi rimuovere qualsiasi calendario personale e qualsiasi calendario condiviso prima di poter cancellare la tua sottoscrizione."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Devi rimuovere ogni calendario personale aggiuntivo e ogni link del calendario condiviso prima di poter annullare il tuo abbonamento."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Hai raggiunto ${ spaceDisplayed }% della tua capacità di archiviazione. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -3150,6 +3147,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendario",
+        "${ n } calendari"
+      ],
       "${ n } custom email domain": [
         "${ n } dominio email personalizzato",
         "${ n } domini email personalizzati"
@@ -3182,10 +3183,6 @@
         "${ n } messaggio al giorno",
         "${ n } messaggi al giorno"
       ],
-      "${ n } personal calendar": [
-        "${ n } calendario personale",
-        "${ n } calendari personali"
-      ],
       "${ n } VPN connection": [
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
@@ -3217,6 +3214,9 @@
       ],
       "Auto-reply": [
         "Risposta automatica"
+      ],
+      "Calendar sharing": [
+        "Condivisione del calendario"
       ],
       "Catch-all": [
         "Catch-all"
@@ -3552,18 +3552,14 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crea più indirizzi email per le tue identità online, ad es. JohnShopper@${ domain } per i profili di shopping, JohnNews@${ domain } per gli abbonamenti alle notizie"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Crea fino a ${ n } calendario personalizzato.",
-        "Crea fino a ${ n } calendari personalizzati."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Condividi facilmente i tuoi calendari con colleghi, familiari e amici tramite un link"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Condividi facilmente i tuoi calendari con familiari, amici o colleghi tramite un link"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Condividi facilmente i tuoi calendari con familiari, amici o colleghi"
       ],
       "End-to-end encrypted calendar": [
         "Calendario con crittografia end-to-end"
@@ -3591,12 +3587,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Nei giorni lavorativi, ricevi assistenza dal team di assistenza clienti ${ BRAND_NAME } entro 24 ore dalle richieste"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Inoltre, aggiungi fino a 5 calendari di colleghi, organizzazioni, familiari e amici."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Inoltre, aggiungi fino a 5 calendari di amici, familiari, colleghi e organizzazioni."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Una connessione VPN permette a un dispositivo di connettersi a ${ BRAND_NAME } VPN in qualsiasi momento. Ad esempio, per collegare un telefono e un computer portatile a ${ BRAND_NAME } VPN allo stesso tempo, sono necessarie due connessioni VPN."
@@ -3707,10 +3697,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Ottieni di più con 10 domini email personalizzati inclusi"
-      ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Crea ${ numberOfPersonalCalendars } calendario personale",
-        "Crea fino a ${ numberOfPersonalCalendars } calendari personali"
       ],
       "Everything in ${ vpnPlanName }": [
         "Tutto in ${ vpnPlanName }"
@@ -4275,6 +4261,14 @@
         "VPN ad alta velocità su ${ maxVpn } dispositivi"
       ]
     },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Il tuo abbonamento è gestito altrove"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Il tuo abbonamento è stato effettuato tramite un acquisto in-app. Per gestire il tuo attuale abbonamento devi accedere alla sezione Sottoscrizione sul tuo account ${ subscriptionManager }"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Per"
@@ -4486,9 +4480,6 @@
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
-      ],
-      "Cancel Mail subscription": [
-        "Annulla l'abbonamento"
       ],
       "Card verification": [
         "Verifica della carta"

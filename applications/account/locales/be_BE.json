@@ -309,6 +309,9 @@
       "Edit billing details": [
         "Рэдагаваць падрабязнасці плацяжу"
       ],
+      "Edit display name": [
+        "Рэдагаваць бачнае імя"
+      ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
       ],
@@ -1199,23 +1202,6 @@
       ],
       "Invite sent": [
         "Запрашэнне адпраўлена"
-      ]
-    },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Вы дасягнулі максімальнай колькасці асабістых календароў у межах вашага тарыфнага плана."
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Вы дасягнулі максімальнай колькасці асабістых календароў, якія вы можаце мець. Вам неабходна выдаліць некаторыя вашы календары, каб прыняць запрашэнні ад адкладзеных календароў."
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Вы дасягнулі максімальнай колькасці абагуленых календароў, якія вы можаце мець. Вам неабходна выдаліць некаторыя вашы календары, каб прыняць запрашэнні ад адкладзеных календароў."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Вы дасягнулі максімальнай колькасці з ${ MAX_SUBSCRIBED_CALENDARS } падпісанага календара.",
-        "Вы дасягнулі максімальнай колькасці з ${ MAX_SUBSCRIBED_CALENDARS } падпісаных календароў.",
-        "Вы дасягнулі максімальнай колькасці з ${ MAX_SUBSCRIBED_CALENDARS } падпісаных календароў.",
-        "Вы дасягнулі максімальнай колькасці з ${ MAX_SUBSCRIBED_CALENDARS } падпісаных календароў."
       ]
     },
     "Calendar link purpose update success message": {
@@ -4602,7 +4588,7 @@
         "Дадаць адрас электроннай пошты для аднаўлення доступу"
       ],
       "add a recovery method": [
-        "дадаць метад аднаўлення"
+        "даданы метад аднаўлення"
       ],
       "Add a recovery phone number": [
         "Дадаць нумар тэлефона для аднаўлення"
@@ -5292,7 +5278,7 @@
         "страціце доступ да ўсіх бягучых зашыфраваных даных"
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
-        "Пераканайцеся, што ваш ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
+        "Пераканайцеся, што ў вас ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Для налады свайго ўліковага запісу ўвядзіце гэту інфармацыю ўручную ў сваю прыладу двухфактарнай аўтэнтыфікацыі. ${ switchButton }."
@@ -6023,6 +6009,24 @@
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календара. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календара. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календара. Выдаліце абагуленыя спасылкі на каляндар перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар перад тым, як скасаваць сваю падпіску."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Цяпер вы можаце атрымаць доступ да ўліковага запісу ў якасці адміністратара."
       ],
@@ -6056,8 +6060,8 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задалі метад для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без метаду аднаўлення?"
       ],
-      "You have no personal calendars to export.": [
-        "У вас няма асабістых календароў для экспартавання."
+      "You have no calendars to export.": [
+        "У вас няма календароў для экспартавання."
       ],
       "You have no saved payment methods.": [
         "У вас няма захаваных спосабаў аплаты."
@@ -6076,12 +6080,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вы павінны прывязаць крэдытную картку або банкаўскі рахунак да вашага ўліковага запісу PayPal. Калі вы гэтага яшчэ не зрабілі, націсніце на кнопку ніжэй."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Перад тым, як скасаваць сваю падпіску Пошты, вы павінны выдаліць усе дадатковыя асабістыя календары і ўсе абагуленыя спасылкі календара."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Перад тым, як скасаваць сваю падпіску, вы павінны выдаліць усе дадатковыя асабістыя календары і ўсе абагуленыя спасылкі календара."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Вам неабходна мець актыўны асабісты каляндар для імпартавання вашых падзей з ICS."
@@ -7591,6 +7589,17 @@
         "Параметр захаваны"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Каб дадаць новы каляндар, выдаліце які-небудзь з існуючых."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Каб дадаць новы каляндар, выдаліць іншы каляндар або перайсці з тарыфнага плана ${ BRAND_NAME } на платны тарыфны план ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Дадаць падарункавы код"
@@ -7688,7 +7697,7 @@
         "Амаль гатова"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
@@ -8102,6 +8111,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } каляндар",
+        "${ n } календары",
+        "${ n } календароў",
+        "${ n } календары"
+      ],
       "${ n } custom email domain": [
         "${ n } карыстальніцкі дамен электроннай пошты",
         "${ n } карыстальніцкія дамены электроннай пошты",
@@ -8150,12 +8165,6 @@
         "${ n } паведамленняў у дзень",
         "${ n } паведамленні ў дзень"
       ],
-      "${ n } personal calendar": [
-        "${ n } асабісты каляндар",
-        "${ n } асабістыя календары",
-        "${ n } асабістых календароў",
-        "${ n } асабістых календары"
-      ],
       "${ n } VPN connection": [
         "${ n } злучэнне з VPN",
         "${ n } злучэнні з VPN",
@@ -8191,6 +8200,9 @@
       ],
       "Auto-reply": [
         "Аўтаматычны адказ"
+      ],
+      "Calendar sharing": [
+        "Абагуленне календара"
       ],
       "Catch-all": [
         "Уся пошта дамена"
@@ -8345,6 +8357,26 @@
         "Кіраванне камандамі"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зрабіце прыватнасць прадвызначаным параметрам для рэзервовага капіявання, захоўвання і абмену файламі."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Палепшыце да пакета для бізнесу і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Палепшыце да максімальнага пакета прыватнасці і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -8414,26 +8446,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зрабіце прыватнасць прадвызначаным параметрам для рэзервовага капіявання, захоўвання і абмену файламі."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да пакета для бізнесу і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да максімальнага пакета прыватнасці і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш выпрабавальны перыяд завершыцца ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8531,7 +8543,7 @@
         "Дазваляе вам наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Масавае рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
+        "Масавая рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Кантралюйце доступ да вашых абагуленых файлаў з дапамогай пароля і спасылак з тэрмінам дзеяння"
@@ -8539,11 +8551,11 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain } для падпіскі на навіны"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Стварыце да ${ n } карыстальніцкага календара.",
-        "Стварыце да ${ n } карыстальніцкіх календароў.",
-        "Стварыце да ${ n } карыстальніцкіх календароў.",
-        "Стварыце да ${ n } карыстальніцкіх календароў."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Стварайце да ${ n } календара або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў"
@@ -8551,8 +8563,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Без намаганняў абагульвайце свае календары праз спасылку з сям'ёй, сябрамі або калегамі"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Без намаганняў абагульвайце свае календары праз спасылку з сям'ёй, сябрамі або калегамі"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Без намаганняў абагульвайце свае календары з сям'ёй, сябрамі або калегамі"
       ],
       "End-to-end encrypted calendar": [
         "Каляндар зашыфраваны скразным метадам"
@@ -8580,12 +8592,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "У працоўныя дні каманда падтрымкі кліентаў ${ BRAND_NAME } дапаможа вам на працягу 24 гадзін пасля атрымання запыту"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Акрамя гэтага, дадавайце да 5 календароў ад калег, арганізацый, сям'і і сяброў."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Акрамя гэтага, дадавайце да 5 календароў ад сяброў, сям'і, калег і арганізацый."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Адно злучэнне з VPN дазваляе адной прыладзе ў любы час падлучацца да ${ BRAND_NAME } VPN. Напрыклад, каб падлучыць адначасова да ${ BRAND_NAME } VPN тэлефон і ноўтбук, вам спатрэбіцца два злучэнні з VPN."
@@ -8705,11 +8711,11 @@
       "Cover more ground with support for 10 custom email domains": [
         "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Стварыце ${ numberOfPersonalCalendars } асабісты каляндар",
-        "Стварыце да ${ numberOfPersonalCalendars } асабістых календароў",
-        "Стварыце да ${ numberOfPersonalCalendars } асабістых календароў",
-        "Стварыце да ${ numberOfPersonalCalendars } асабістых календароў"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Стварыць да ${ MAX_CALENDARS_PAID } календара",
+        "Стварыць да ${ MAX_CALENDARS_PAID } календароў",
+        "Стварыць да ${ MAX_CALENDARS_PAID } календароў",
+        "Стварыць да ${ MAX_CALENDARS_PAID } календароў"
       ],
       "Everything in ${ vpnPlanName }": [
         "Усё, што ўваходзіць у ${ vpnPlanName }"
@@ -9655,6 +9661,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Дадавайце публічныя, знешнія або абагуленыя календары, выкарыстоўваючы URL-адрасы."
+      ],
+      "Add public, external, or shared calendars.": [
+        "Дадавайце публічныя, знешнія або абагуленыя календары."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9752,6 +9761,14 @@
         "Высакахуткасны VPN на ${ maxVpn } прыладах",
         "Высакахуткасны VPN на ${ maxVpn } прыладах",
         "Высакахуткасны VPN на ${ maxVpn } прыладах"
+      ]
+    },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Кіраванне падпіскай адбываецца ў іншым месцы"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Вы набылі падпіску праз куплю ў праграме. Каб кіраваць ёй, вам неабходна перайсці ў раздзел \"Падпіска\" ў сваім уліковым запісе ${ subscriptionManager }"
       ]
     },
     "Subscription price": {
@@ -10266,8 +10283,8 @@
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
       ],
-      "Cancel Mail subscription": [
-        "Скасаваць падпіску Пошты"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Праверка карткі"
@@ -10683,6 +10700,9 @@
       "Organization and keys": [
         "Арганізацыя і ключы"
       ],
+      "Other calendars": [
+        "Іншыя календары"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -10862,9 +10882,6 @@
       ],
       "Status": [
         "Статус"
-      ],
-      "Subscribed calendars": [
-        "Падпісаныя календары"
       ],
       "Success": [
         "Паспяхова"
@@ -11195,7 +11212,7 @@
         "Ваш подпіс DKIM працуе."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
-        "Відавочна, што ваш уліковы запіс дасягнуў абмежавання паласы прапускання, якая разлічана на 24 гадзіны. ${ BRAND_NAME } паспрабуе ўзнавіць імпартаванне, як толькі гэта будзе магчыма."
+        "Відавочна, што ваш уліковы запіс дасягнуў абмежавання паласы прапускання, якая разлічана на суткі. ${ BRAND_NAME } паспрабуе ўзнавіць імпартаванне, як толькі гэта будзе магчыма."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -11246,14 +11263,8 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Перайдзіце на платны тарыфны план Пошты, каб атрымаць магчымасць ствараць да ${ MAX_CALENDARS_PAID } календара для працы, сяброў і для сябе.",
-        "Перайдзіце на платны тарыфны план Пошты, каб атрымаць магчымасць ствараць да ${ MAX_CALENDARS_PAID } календароў для працы, сяброў і для сябе.",
-        "Перайдзіце на платны тарыфны план Пошты, каб атрымаць магчымасць ствараць да ${ MAX_CALENDARS_PAID } календароў для працы, сяброў і для сябе.",
-        "Перайдзіце на платны тарыфны план Пошты, каб атрымаць магчымасць ствараць да ${ MAX_CALENDARS_PAID } календароў для працы, сяброў і для сябе."
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "Перайдзіце на платны тарыфны план Пошты, каб абагуліць ваш каляндар."
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Перайсці на платны тарыфны план ${ MAIL_SHORT_APP_NAME }, каб абагуліць свой каляндар."
       ]
     },
     "User referee invited via email": {

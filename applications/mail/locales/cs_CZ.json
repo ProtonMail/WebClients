@@ -539,9 +539,6 @@
       "Load": [
         "Načíst"
       ],
-      "Load anyway": [
-        "Přesto načíst"
-      ],
       "Load embedded images": [
         "Načíst vložené obrázky"
       ],
@@ -965,8 +962,8 @@
       "Skip verification": [
         "Přeskočit ověření"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Některé obrázky se nepodařilo načíst s ochranou proti sledování."
+      "Some images could not be loaded with tracker protection.": [
+        "Některé obrázky nemohly být načteny kvůli ochraně před sledovacími prvky."
       ],
       "Star": [
         "Přidat hvězdičku"
@@ -3418,6 +3415,9 @@
       "This message has already been sent. A new draft has been saved.": [
         "Tato zpráva již byla odeslána. Nový koncept byl uložen."
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Byl dosažen maximální počet aktivních filtrů. Přejděte prosím na placený tarif, abyste mohli aktivovat více filtrů."
       ],
@@ -3438,6 +3438,9 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "Není možné odeslat soubory vCard více než 10 kontaktů"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Nelze otevřít více než ${ maxActiveComposer } okno editoru",
@@ -4358,6 +4361,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importovat z ${ provider }"
+      ],
       "Other": [
         "Ostatní"
       ]
@@ -5045,6 +5051,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importujeme vaše data z ${ fromEmail } do ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
@@ -6671,6 +6680,14 @@
         "Řádek"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Chcete-li přidat nový kalendář, odstraňte stávající."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Dosáhli jste maximálního počtu kalendářů dostupných ve vašem tarifu."
+      ]
+    },
     "Link": {
       "All mail": [
         "Všechny zprávy"
@@ -6834,6 +6851,12 @@
       "Almost there": [
         "Téměř hotovo"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Připojování k Vašemu poskytovateli e-mailu"
       ],
@@ -6848,6 +6871,32 @@
       ],
       "Your import is starting": [
         "Váš import byl zahájen"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
       ]
     },
     "Mailbox": {
@@ -7135,7 +7184,7 @@
         "Získejte neomezený počet aliasů skrze SimpleLogin od ${ BRAND_NAME }"
       ],
       "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
+        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7865,6 +7914,9 @@
       ],
       "Bug reported": [
         "Chyba nahlášena"
+      ],
+      "Cancelling import": [
+        "Ruším import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"

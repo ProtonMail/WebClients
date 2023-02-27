@@ -4508,6 +4508,12 @@
       "Almost there": [
         "Майже готово"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Підключення до вашого постачальника електронної пошти"
       ],
@@ -5150,7 +5156,7 @@
       "Bug reported": [
         "Звіт про помилку надіслано"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Скасування імпорту"
       ],
       "Code sent to ${ methodTo }": [
