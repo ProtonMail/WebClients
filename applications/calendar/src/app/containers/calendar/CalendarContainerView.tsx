@@ -552,7 +552,7 @@ const CalendarContainerView = ({
             <div className="notification" role="alert">
                 <span className="notification__content">
                     <span>{c('Info').t`Loading events`}</span>
-                    <CircleLoader />
+                    <CircleLoader srLabelHidden={true} />
                 </span>
             </div>
         </div>

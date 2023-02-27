@@ -12,9 +12,10 @@ export type CircleLoaderSize = 'small' | 'medium' | 'large';
 
 export interface CircleLoaderProps extends ComponentPropsWithoutRef<'svg'> {
     size?: CircleLoaderSize;
+    srLabelHidden?: Boolean;
 }
 
-const CircleLoader = ({ size, className, ...rest }: CircleLoaderProps) => {
+const CircleLoader = ({ size, className, srLabelHidden, ...rest }: CircleLoaderProps) => {
     const uid = generateUID('circle-loader');
 
     return (
@@ -31,7 +32,7 @@ const CircleLoader = ({ size, className, ...rest }: CircleLoaderProps) => {
                 <use href={`#${uid}`} className="circle-loader-track" />
                 <use href={`#${uid}`} className="circle-loader-circle" />
             </svg>
-            <span className="sr-only">{c('Info').t`Loading`}</span>
+            {!srLabelHidden ? <span className="sr-only">{c('Info').t`Loading`}</span> : null}
         </>
     );
 };
