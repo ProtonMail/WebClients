@@ -37,17 +37,24 @@ const PaymentVerificationModal = ({
 }) => {
     const isAddCard = mode === ADD_CARD_MODE;
     const isPayPal = [PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT].includes(type);
+
+    let failTitle;
+    if (isPayPal) {
+        failTitle = c('Title').t`PayPal verification failed`;
+    } else if (isAddCard) {
+        failTitle = c('Title').t`Verification failed`;
+    } else {
+        failTitle = c('Title').t`Payment failed`;
+    }
+
     const TITLES = {
         [STEPS.DO_NOT_WINDOW_OPEN]: c('Title').t`Unsupported browser`,
         [STEPS.REDIRECT]: isAddCard ? c('Title').t`Card verification` : c('Title').t`Payment verification`,
         [STEPS.REDIRECTING]: c('Title').t`Processing...`,
-        [STEPS.REDIRECTED]: isAddCard
-            ? c('Title').t`Card verification in progress`
-            : c('Title').t`Payment verification in progress`,
-        [STEPS.FAIL]: isPayPal
-            ? c('Title').t`PayPal verification failed`
-            : c('Title').t`3-D Secure verification failed`,
+        [STEPS.REDIRECTED]: isAddCard ? c('Title').t`Verifying your card...` : c('Title').t`Verifying your payment...`,
+        [STEPS.FAIL]: failTitle,
     };
+
     const [step, setStep] = useState(() => (doNotWindowOpen() ? STEPS.DO_NOT_WINDOW_OPEN : STEPS.REDIRECT));
     const [error, setError] = useState({});
     const { createNotification } = useNotifications();
@@ -107,8 +114,11 @@ const PaymentVerificationModal = ({
             {{
                 [STEPS.REDIRECT]: () => (
                     <>
-                        <p className="text-center">{c('Info')
-                            .t`Your bank requires 3-D Secure verification for security purposes.`}</p>
+                        <p className="text-center">
+                            {isAddCard
+                                ? c('Info').t`We need to authenticate your payment method with your bank.`
+                                : c('Info').t`We need to authenticate your payment with your bank.`}
+                        </p>
                         <p className="text-center">
                             <PaymentVerificationImage payment={payment} type={type} />
                         </p>
@@ -116,7 +126,8 @@ const PaymentVerificationModal = ({
                             {isAddCard
                                 ? c('Info')
                                       .t`Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.`
-                                : c('Info').t`Verification will open a new tab, please disable any popup blockers.`}
+                                : c('Info')
+                                      .t`The verification process will open a new browser tab. Please disable any active pop-up blockers.`}
                         </div>
                     </>
                 ),
@@ -125,29 +136,25 @@ const PaymentVerificationModal = ({
                         <p className="text-center">
                             {isPayPal
                                 ? c('Info').t`You will soon be redirected to PayPal to verify your payment.`
-                                : c('Info').t`You will be soon redirected to your bank to verify your payment.`}
+                                : c('Info').t`You may be redirected to your bank’s website.`}
                         </p>
                         <Loader />
                         <div className="mb1">{c('Info')
-                            .t`Verification will open a new tab, please disable any popup blockers.`}</div>
+                            .t`Don’t see anything? Remember to turn off pop-up blockers.`}</div>
                     </>
                 ),
                 [STEPS.REDIRECTED]: () => (
                     <>
                         <p className="text-center">
                             {isAddCard && !isPayPal
-                                ? c('Info').t`Please verify the card in the new tab which was opened.`
-                                : c('Info').t`Please verify payment at the new tab which was opened.`}
+                                ? c('Info').t`Please authenticate your card in the verification tab.`
+                                : c('Info').t`Please authenticate your payment in the verification tab.`}
                         </p>
                         <Loader />
                         <p className="text-center">
                             <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                         </p>
-                        <div className="mb1">
-                            {isAddCard && isPayPal
-                                ? c('Info').t`Verification can take a few minutes.`
-                                : c('Info').t`Payment can take a few minutes to fully verify.`}
-                        </div>
+                        <div className="mb1">{c('Info').t`Verification may take a few minutes.`}</div>
                     </>
                 ),
                 [STEPS.DO_NOT_WINDOW_OPEN]: () => (
@@ -158,14 +165,14 @@ const PaymentVerificationModal = ({
                 ),
                 [STEPS.FAIL]: () => (
                     <div className="text-center">
+                        <p>{!isAddCard && c('Info').t`We couldn’t process your payment.`}</p>
+                        <img src={errorSvg} alt={c('Title').t`Error`} />
                         <p>
                             {isPayPal
                                 ? c('Info')
                                       .t`Please try again, use a different payment method, or contact PayPal for assistance.`
-                                : c('Info')
-                                      .t`Please try again, use a different payment method, or call your bank for assistance.`}
+                                : c('Info').t`Please try again using a different payment method, or contact your bank.`}
                         </p>
-                        <img src={errorSvg} alt={c('Title').t`Error`} />
                         {error?.tryAgain ? (
                             <p>
                                 <Button type="submit">{c('Action').t`Try again`}</Button>
