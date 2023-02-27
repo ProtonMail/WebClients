@@ -21,14 +21,14 @@ const ItemExpiration = ({ className, expirationTime }: Props) => {
         <Tooltip title={tooltipMessage}>
             <div
                 className={clsx([
-                    'pill-icon flex flex-align-items-center',
+                    'pill-icon flex flex-align-items-center flex-nowrap',
                     className,
                     willExpireToday && 'color-danger',
                 ])}
                 data-testid="item-expiration"
             >
                 <Icon name="hourglass" className="flex-item-noshrink" size={14} alt={tooltipMessage} />
-                <span className="ml0-25 text-sm">{shortMessage}</span>
+                <span className="ml0-25 text-sm text-nowrap">{shortMessage}</span>
             </div>
         </Tooltip>
     );
