@@ -46,40 +46,6 @@ jest.mock('@proton/components/hooks/useFeature', () => () => {
     };
 });
 
-jest.mock('@proton/activation/src/hooks/useUserCalendars', () => () => [
-    [
-        {
-            ID: 'calendarId',
-            Name: 'testing@proton.ch',
-            Description: '',
-            Type: 0,
-            Owner: {
-                Email: 'testing@proton.ch',
-            },
-            Flags: 1,
-            Members: [
-                {
-                    ID: 'memberId',
-                    Permissions: 127,
-                    Email: 'testing@proton.ch',
-                    AddressID: 'addressID',
-                    CalendarID: 'calendarId',
-                    Name: 'testing@proton.ch',
-                    Description: '',
-                    Color: '#273EB2',
-                    Display: 1,
-                    Flags: 1,
-                },
-            ],
-            Color: '#273EB2',
-            Display: 1,
-            Email: 'testing@proton.ch',
-            Permissions: 127,
-        },
-    ],
-    false,
-]);
-
 beforeAll(() => {
     server.listen();
     server.use(
