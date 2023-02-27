@@ -18,7 +18,7 @@ const ShareButton = ({ shareId }: Props) => {
             onClick={() => {
                 openFileSharing(shareId);
             }}
-            data-testid="toolbar-shareViaLink"
+            data-testid="toolbar-share-via-link"
         />
     );
 };

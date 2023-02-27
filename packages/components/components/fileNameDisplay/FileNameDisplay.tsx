@@ -1,3 +1,5 @@
+import { HTMLProps } from 'react';
+
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 
@@ -5,13 +7,13 @@ import { MiddleEllipsis } from '../ellipsis';
 
 const CHARACTERS_BEFORE_EXTENSION = 3;
 
-interface Props {
+interface Props extends HTMLProps<HTMLSpanElement> {
     text?: string;
     className?: string;
     charsToDisplayEnd?: number;
 }
 
-const FileNameDisplay = ({ text = '', className, charsToDisplayEnd = 6 }: Props) => {
+const FileNameDisplay = ({ text = '', className, charsToDisplayEnd = 6, ...rest }: Props) => {
     const sanitized = rtlSanitize(text);
     const [, extension] = splitExtension(sanitized);
     const extensionOffset =
@@ -23,6 +25,7 @@ const FileNameDisplay = ({ text = '', className, charsToDisplayEnd = 6 }: Props)
             text={sanitized}
             displayTitle={false}
             displayTooltip
+            {...rest}
         />
     );
 };

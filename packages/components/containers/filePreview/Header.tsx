@@ -67,7 +67,7 @@ const Header = ({
                 data-testid="preview:file-name"
             >
                 {mimeType && <FileIcon mimeType={mimeType} className="mr0-5" />}
-                <FileNameDisplay text={name} />
+                <FileNameDisplay text={name} data-testid="file-preview:file-name" />
                 {signatureStatus}
             </div>
             {children}
@@ -79,7 +79,7 @@ const Header = ({
                         title={c('Action').t`Download`}
                         onClick={onDownload}
                         className="ml0-5"
-                        data-testid="preview:button:download"
+                        data-testid="file-preview:actions:download"
                     >
                         <Icon name="arrow-down-line" size={20} alt={c('Action').t`Download`} />
                     </Button>
@@ -95,7 +95,7 @@ const Header = ({
                         }
                         onClick={handleSave}
                         className="ml0-5"
-                        data-testid="preview:button:save"
+                        data-testid="file-preview:actions:save"
                         loading={isSaving}
                         disabled={!isDirty}
                     >
@@ -113,7 +113,7 @@ const Header = ({
                         title={c('Action').t`Details`}
                         onClick={onDetail}
                         className="ml0-5 no-mobile"
-                        data-testid="preview:button:details"
+                        data-testid="file-preview:actions:details"
                     >
                         <Icon name="info-circle" size={20} alt={c('Action').t`Details`} />
                     </Button>
@@ -125,7 +125,7 @@ const Header = ({
                         title={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
                         onClick={onShare}
                         className="ml0-5 no-mobile"
-                        data-testid="preview:button:share"
+                        data-testid="file-preview:actions:share"
                     >
                         <Icon
                             name="link"
