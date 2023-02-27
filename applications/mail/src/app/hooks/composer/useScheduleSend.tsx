@@ -91,25 +91,29 @@ export const useScheduleSend = ({
     };
 
     const handleScheduleSend = async (scheduledAt: number) => {
-        try {
-            // check if all needed composer fields are filled
-            await preliminaryVerifications(modelMessage);
+        if (scheduleCount.Total && scheduleCount.Total >= SCHEDULED_MESSAGES_LIMIT) {
+            setWaitBeforeScheduleModalOpen(true);
+        } else {
+            try {
+                // check if all needed composer fields are filled
+                await preliminaryVerifications(modelMessage);
 
-            // Save scheduled at in store
-            dispatch(updateScheduled({ ID: modelMessage.localID, scheduledAt }));
+                // Save scheduled at in store
+                dispatch(updateScheduled({ ID: modelMessage.localID, scheduledAt }));
 
-            // Save scheduled at in message model
-            setModelMessage({
-                ...modelMessage,
-                draftFlags: {
-                    ...modelMessage.draftFlags,
-                    scheduledAt,
-                },
-            });
+                // Save scheduled at in message model
+                setModelMessage({
+                    ...modelMessage,
+                    draftFlags: {
+                        ...modelMessage.draftFlags,
+                        scheduledAt,
+                    },
+                });
 
-            // Handle send
-            setTimeout(handleSend);
-        } catch {}
+                // Handle send
+                setTimeout(handleSend);
+            } catch {}
+        }
     };
 
     return { scheduleCount, loadingScheduleCount, handleScheduleSendModal, handleScheduleSend, modal };
