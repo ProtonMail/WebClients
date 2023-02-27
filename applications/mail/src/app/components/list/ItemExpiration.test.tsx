@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { addHours, addMinutes, getUnixTime } from 'date-fns';
+import { addDays, addHours, addMinutes, getUnixTime } from 'date-fns';
 
 import ItemExpiration from './ItemExpiration';
 
@@ -28,5 +28,12 @@ describe('ItemExpiration', () => {
         const expirationTime = getUnixTime(date);
         render(<ItemExpiration expirationTime={expirationTime} />);
         expect(screen.getByText('<1 hour')).toBeInTheDocument();
+    });
+
+    it('should diplay 30 days', () => {
+        const date = addDays(new Date(), 30);
+        const expirationTime = getUnixTime(date);
+        render(<ItemExpiration expirationTime={expirationTime} />);
+        expect(screen.getByText('30 days')).toBeInTheDocument();
     });
 });
