@@ -1,11 +1,7 @@
-import { useMemo } from 'react';
+import { Icon, Tooltip } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
-import { fromUnixTime } from 'date-fns';
-import { c } from 'ttag';
-
-import { Icon, Tooltip, classnames } from '@proton/components';
-
-import { formatFullDate } from '../../helpers/date';
+import useItemExpiration from './useItemExpiration';
 
 import './ItemExpiration.scss';
 
@@ -15,21 +11,24 @@ interface Props {
 }
 
 const ItemExpiration = ({ className, expirationTime }: Props) => {
-    const tooltipMessage = useMemo(() => {
-        const date = fromUnixTime(expirationTime || 0);
-        const formattedDate = formatFullDate(date);
-        return c('Info').t`This message will expire ${formattedDate}`;
-    }, [expirationTime]);
+    const { tooltipMessage, shortMessage, willExpireToday } = useItemExpiration(expirationTime);
 
     if (!expirationTime) {
         return null;
     }
 
     return (
-        // @ts-ignore
-        <Tooltip title={tooltipMessage} className={classnames(['flex', className])}>
-            <div className="pill-icon bg-global-warning" data-testid="item-expiration">
-                <Icon name="hourglass" size={14} alt={tooltipMessage} />
+        <Tooltip title={tooltipMessage}>
+            <div
+                className={clsx([
+                    'pill-icon flex flex-align-items-center',
+                    className,
+                    willExpireToday && 'color-danger',
+                ])}
+                data-testid="item-expiration"
+            >
+                <Icon name="hourglass" className="flex-item-noshrink" size={14} alt={tooltipMessage} />
+                <span className="ml0-25 text-sm">{shortMessage}</span>
             </div>
         </Tooltip>
     );
