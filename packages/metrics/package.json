@@ -8,7 +8,7 @@
         "lint": "eslint . --ext ts --quiet --cache"
     },
     "dependencies": {
-        "json-schema-to-typescript": "^11.0.3"
+        "json-schema-to-typescript": "^11.0.5"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
