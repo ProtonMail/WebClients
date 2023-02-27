@@ -5,16 +5,12 @@ import { c } from 'ttag';
 import { Button, ButtonLike, Card } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import {
-    getOwnedPersonalCalendars,
-    getProbablyActiveCalendars,
-    groupCalendarsByTaxonomy,
-} from '@proton/shared/lib/calendar/calendar';
+import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import {Address, UserModel} from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -41,21 +37,23 @@ type ModalsMap = {
     }>;
 };
 
-export interface MyCalendarsSectionProps {
+interface Props {
+    addresses: Address[];
     user: UserModel;
-    calendars: VisualCalendar[];
+    myCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
     isCalendarsLimitReached: boolean;
     canAdd: boolean;
 }
 
 const MyCalendarsSection = ({
+    addresses,
     user,
-    calendars,
+    myCalendars,
     defaultCalendar,
     isCalendarsLimitReached,
     canAdd,
-}: MyCalendarsSectionProps) => {
+}: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -77,7 +75,7 @@ const MyCalendarsSection = ({
         setIsCalendarModalOpen(true);
         updateModal('calendarModal', {
             isOpen: true,
-            props: { calendars, defaultCalendarID },
+            props: { calendars: myCalendars, defaultCalendarID },
         });
     };
 
@@ -97,7 +95,7 @@ const MyCalendarsSection = ({
 
     const handleDeleteCalendar = async (id: string) => {
         const isDeleteDefaultCalendar = id === defaultCalendarID;
-        const firstRemainingCalendar = getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars)).find(
+        const firstRemainingCalendar = getProbablyActiveCalendars(myCalendars).find(
             ({ ID: calendarID }) => calendarID !== id
         );
 
@@ -151,7 +149,6 @@ const MyCalendarsSection = ({
         });
     };
 
-    const { ownedPersonalCalendars } = groupCalendarsByTaxonomy(calendars);
     const { calendarModal, exportCalendarModal, deleteCalendarModal } = modalsMap;
 
     const createCalendarButton = (
@@ -235,7 +232,8 @@ const MyCalendarsSection = ({
             )}
 
             <CalendarsSection
-                calendars={ownedPersonalCalendars}
+                calendars={myCalendars}
+                addresses={addresses}
                 user={user}
                 defaultCalendarID={defaultCalendar?.ID}
                 onSetDefault={handleSetDefaultCalendar}
