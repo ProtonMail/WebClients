@@ -13,7 +13,6 @@ import Price from '../../components/price/Price';
 import { usePlans, useSubscription } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
-import RenewToggle from './RenewToggle';
 import { getShortBillingText } from './helper';
 
 const getRenewalText = (periodEnd: number) => {
@@ -159,7 +158,6 @@ const SubscriptionsSection = () => {
                     </div>
                 </div>
             </div>
-            <RenewToggle />
         </SettingsSectionWide>
     );
 };
