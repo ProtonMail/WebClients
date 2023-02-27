@@ -40,7 +40,7 @@ import {
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
-import { getCanDeleteEvent, getCanDuplicateEvent, getCanEditEvent } from '../../helpers/event';
+import { getCanDeleteEvent, getCanDuplicateEvent, getCanEditEvent, getCanReplyToEvent } from '../../helpers/event';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from './PopoverContainer';
@@ -364,7 +364,7 @@ const EventPopover = ({
                     popoverEventContentRef={popoverEventContentRef}
                 />
             </div>
-            {isOwnedCalendar && model.isAttendee && !isCancelled && (
+            {getCanReplyToEvent({ isOwnedCalendar, isCalendarWritable, isAttendee: model.isAttendee, isCancelled }) && (
                 <PopoverFooter
                     className="flex-align-items-center flex-justify-space-between on-mobile-flex-justify-start flex-gap-1"
                     key={targetEvent.id}
