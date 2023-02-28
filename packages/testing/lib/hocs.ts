@@ -6,10 +6,10 @@ interface HOC<T> {
     (Component: ComponentType<T>): ComponentType<T>;
 }
 
-const reduceHOCs = <T>(...hocs: HOC<T>[]): HOC<T> => hocs.reduce((reduced, next) => (c) => next(reduced(c)));
+const reduceHOCs = <T>(hocs: HOC<T>[]): HOC<T> => hocs.reduce((reduced, next) => (c) => next(reduced(c)));
 
 export const applyHOCs = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]) => {
-    const reducedHoc = reduceHOCs(...hocs);
+    const reducedHoc = reduceHOCs(hocs);
 
     return (Component: ComponentType<T>) => {
         const WrappedComponent = reducedHoc(Component);
@@ -21,5 +21,5 @@ export const applyHOCs = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]) 
 };
 
 export const hookWrapper = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]): WrapperComponent<T> => {
-    return reduceHOCs(...hocs)(({ children }) => React.createElement('', { children }));
+    return reduceHOCs(hocs)(({ children }) => React.createElement('', { children }));
 };
