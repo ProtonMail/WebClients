@@ -406,11 +406,11 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Mit dem kostenlosen Abonnement fortfahren"
+      "No, thanks": [
+        "Nein, danke"
       ],
-      "Start my 30-day free trial": [
-        "Meine 30-tägige kostenlose Testversion starten"
+      "Try free for 30 days": [
+        "30 Tage lang kostenlos testen"
       ]
     },
     "Addon": {
@@ -431,6 +431,11 @@
     "Badge": {
       "5 users": [
         "5 Benutzer"
+      ]
+    },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: die datenschutzfreundliche E-Mail- und Kalenderlösung für deine täglichen Kommunikationsbedürfnisse."
       ]
     },
     "Billing cycle": {
@@ -689,7 +694,7 @@
         "Barbados"
       ],
       "Belarus": [
-        "Belarus"
+        "Weißrussland"
       ],
       "Belgium": [
         "Belgien"
@@ -815,7 +820,7 @@
         "Dschibuti"
       ],
       "Dominica": [
-        "Dominica"
+        "Dominika"
       ],
       "Dominican Republic": [
         "Dominikanische Republik"
@@ -1745,19 +1750,19 @@
     "file size format, long": {
       "Byte": [
         "Byte",
-        "Bytes"
+        "Byte"
       ],
       "Gigabyte": [
         "Gigabyte",
-        "Gigabytes"
+        "Gigabyte"
       ],
       "Kilobyte": [
         "Kilobyte",
-        "Kilobytes"
+        "Kilobyte"
       ],
       "Megabyte": [
         "Megabyte",
-        "Megabytes"
+        "Megabyte"
       ]
     },
     "Footer": {
@@ -1811,10 +1816,12 @@
         "Hilfe erhalten"
       ]
     },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Teste die besten Funktionen von ${ MAIL_APP_NAME } umsonst"
+      ]
+    },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-Mail"
       ],
@@ -2138,6 +2145,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "No credit card required": [
+        "Keine Kreditkarte erforderlich"
+      ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
       ],
@@ -2162,12 +2172,6 @@
       "Or select a particular server:": [
         "Oder wähle einen bestimmten Server aus:"
       ],
-      "P2P": [
-        "P2P"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Die vollständige Überprüfung der Zahlung kann einige Minuten dauern."
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
       ],
@@ -2183,17 +2187,11 @@
       "Please provide an email address in case we need to contact you.": [
         "Bitte gib eine E‐Mail‐Adresse an, falls wir dich kontaktieren müssen."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an Ihre Bank."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an PayPal, um Hilfe zu erhalten."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Bitte überprüfen Sie die Zahlung im neu geöffneten Tab."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Bitte überprüfen Sie die Karte im neu geöffneten Tab."
       ],
       "Please wait till your changes are synced with the server.": [
         "Bitte warte, bis deine Änderungen mit dem Server synchronisiert wurden."
@@ -2209,6 +2207,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
+      ],
+      "Priority support": [
+        "Vorrangiger Support"
       ],
       "read our two-factor authentication guide first": [
         "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
@@ -2251,6 +2252,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
+      ],
+      "Support for 1 custom email domain": [
+        "Unterstützung für eine eigene E-Mail-Domain"
       ],
       "support team": [
         "Support-Team"
@@ -2315,9 +2319,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Laden Sie Ihr Konto mit Guthaben auf, mit dem Sie ein anderes Abonnement abschließen oder Ihre aktuelles Abonnement verlängern können. Sie erhalten ein Guthaben für jeden ${ i18nCurrency }, der ausgegeben wird."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Anzahl E-Mail-Adressen"
       ],
@@ -2345,6 +2346,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
       ],
+      "Unlimited messages": [
+        "Unbegrenzte Anzahl von Nachrichten"
+      ],
       "Unsaved changes": [
         "Ungespeicherte Änderungen"
       ],
@@ -2362,9 +2366,6 @@
       ],
       "Verification can take a few minutes.": [
         "Die Überprüfung kann einige Minuten dauern."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Die Bestätigung öffnet einen neuen Tab. Bitte deaktivieren Sie alle Popup‐Blocker."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Die Überprüfung öffnet einen neuen Tab — bitte deaktivieren Sie daher alle Popup-Blocker. Ihr Konto wird nicht belastet. Jeder Betrag, der zur Überprüfung der Karte verwendet wird, wird sofort zurückerstattet."
@@ -2471,9 +2472,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Du wirst ${ loseAllData } in deinem ${ BRAND_NAME }-Konto verlieren. Um diese wiederherzustellen, musst du dein altes Passwort eingeben."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Sie werden in Kürze zu Ihrer Bank weitergeleitet, um Ihre Zahlung zu bestätigen."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
       ],
@@ -2504,9 +2502,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ihr Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Ihre Bank erfordert aus Sicherheitsgründen eine 3-D-Sicherheitsüberprüfung."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
@@ -2521,32 +2516,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ihr Abonnement wird von Mozilla verwaltet. Bitte kontaktieren Sie den Mozilla-Support."
-      ]
-    },
-    "info": {
-      "Create an email address": [
-        "Eine E-Mail-Adresse erstellen"
-      ],
-      "Day 27: Trial reminder": [
-        "Tag 27: Erinnerung zur Testversion"
-      ],
-      "Day 30: Trial ends": [
-        "Tag 30: Testversion endet"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Genieße sicheren, benutzerfreundlichen E-Mail-Versand mit zahlreichen Premium-Funktionen."
-      ],
-      "Try Mail Plus": [
-        "Mail Plus ausprobieren"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Wir senden dir eine E-Mail, bevor deine Testversion endet. Du kannst jederzeit kündigen."
-      ],
-      "Your new email address is ready to go!": [
-        "Deine neue E-Mail-Adresse ist jetzt einsatzbereit!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Dein Abonnement beginnt am ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -2567,6 +2536,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Um eine Unterbrechung des Dienstes aufgrund unbezahlter Rechnungen zu vermeiden, stellen Sie bitte sicher, dass Sie zu jedem Zeitpunkt mindestens eine gültige Zahlungsmethode hinterlegt haben."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Nur anzeigen"
       ]
     },
     "Invoice state display as badge": {
@@ -2917,9 +2891,6 @@
       "Verification code": [
         "Verifizierungscode"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Wir bedauern es sehr, dass du ProtonMail nicht mehr nutzen möchtest. Bitte teile uns deine Gründe mit, damit wir uns verbessern können."
       ],
@@ -3221,7 +3192,7 @@
         "Automatische Antworten"
       ],
       "Calendar sharing": [
-        "Kalender teilen"
+        "Kalenderfreigabe"
       ],
       "Catch-all": [
         "Catch-All"
@@ -3286,9 +3257,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "NetShield-Malware- und Werbe-Blocker"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
@@ -3558,8 +3526,8 @@
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain } für Nachrichten-Abonnements."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Erstelle bis zu ${ n } eigenen Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu.",
-        "Erstelle bis zu ${ n } eigene Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu."
+        "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu",
+        "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
@@ -3568,7 +3536,7 @@
         "Teile deine Kalender ganz einfach über einen Link mit Kollegen oder Freunden und Familie."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Teile deine Kalender ganz einfach mit Familie, Freunden oder Kollegen."
+        "Teile deine Kalender ganz einfach mit Verwandten, Freunden oder Kollegen"
       ],
       "End-to-end encrypted calendar": [
         "Ende-zu-Ende-verschlüsselter Kalender"
@@ -3741,17 +3709,11 @@
       ]
     },
     "Option": {
-      "Android": [
-        "Android"
-      ],
       "Country configs": [
         "Länderkonfigurationen"
       ],
       "Free server configs": [
         "Kostenlose Server-Konfigurationen"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
@@ -3759,17 +3721,11 @@
       "I use a different ${ BRAND_NAME } account": [
         "Ich verwende ein anderes ${ BRAND_NAME }-Konto"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Es fehlt eine Schlüsselfunktion, die ich benötige"
       ],
       "It's too expensive": [
         "Es ist mir zu teuer"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Mein Grund ist nicht aufgeführt"
@@ -3782,29 +3738,14 @@
       ],
       "Standard server configs": [
         "Standard-Server-Konfigurationen"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Placeholder": {
@@ -3928,6 +3869,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Das Verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Erstellt von ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -4279,10 +4225,7 @@
     },
     "Subscription change warning": {
       "Subscription managed elsewhere": [
-        "Anderweitig verwaltetes Abonnement"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Dein Abonnement wurde über einen In-App-Kauf abgeschlossen. Um dein aktuelles Abonnement zu verwalten, musst du zum Bereich „Abonnements“ in deinem ${ subscriptionManager }-Konto navigieren"
+        "Manage your subscription on Google Play"
       ]
     },
     "Subscription price": {
@@ -4301,11 +4244,6 @@
       ],
       "Upcoming": [
         "Demnächst"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Dieses Angebot gilt nur für Neukunden von ${ BRAND_NAME }. Keine Kreditkarte erforderlich."
       ]
     },
     "Success": {
@@ -4446,9 +4384,6 @@
       "2. Select protocol": [
         "2.) Protokoll auswählen"
       ],
-      "3-D Secure verification failed": [
-        "3D-Sicherheitsbestätigung fehlgeschlagen"
-      ],
       "3. Select config file and download": [
         "3.) Konfigurationsdatei auswählen und herunterladen"
       ],
@@ -4497,14 +4432,8 @@
       "Billing cycle": [
         "Abrechnungszeitraum"
       ],
-      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "${ MAIL_SHORT_APP_NAME }-Abonnement beenden."
-      ],
       "Card verification": [
         "Kartenprüfung"
-      ],
-      "Card verification in progress": [
-        "Kartenprüfung wird ausgeführt"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -4608,9 +4537,6 @@
       "Gift code": [
         "Gutscheincode"
       ],
-      "How your free trial works": [
-        "So funktioniert deine kostenlose Testversion"
-      ],
       "Human verification": [
         "Captcha"
       ],
@@ -4664,9 +4590,6 @@
       ],
       "Payment verification": [
         "Zahlungsbestätigung"
-      ],
-      "Payment verification in progress": [
-        "Zahlungsbestätigung wird ausgeführt"
       ],
       "Payments": [
         "Zahlungen"
@@ -4872,29 +4795,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } Land",
         "${ numberOfServers } in ${ numberOfCountries } Ländern"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

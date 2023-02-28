@@ -349,7 +349,7 @@
         "Ajusta a la finestra"
       ],
       "Font": [
-        "Font"
+        "Tipus de lletra"
       ],
       "Generate": [
         "Generar"
@@ -496,7 +496,7 @@
         "D'acord"
       ],
       "Ok": [
-        "Ok"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -873,14 +873,6 @@
         "Revoca"
       ]
     },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "Continua amb el pla gratuït"
-      ],
-      "Start my 30-day free trial": [
-        "Comença la prova gratuïta de 30 dies"
-      ]
-    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "Acceptar"
@@ -987,9 +979,6 @@
     "Badge": {
       "5 users": [
         "5 usuaris"
-      ],
-      "Coming soon": [
-        "Disponible properament"
       ]
     },
     "Badge for domain": {
@@ -1149,6 +1138,9 @@
     "Calendar invite status label": {
       "Declined": [
         "Rebutjat"
+      ],
+      "Invite sent": [
+        "Invitació enviada"
       ]
     },
     "Calendar link purpose update success message": {
@@ -1554,7 +1546,7 @@
         "Gènere"
       ],
       "Geo": [
-        "Geo"
+        "Geolocalització"
       ],
       "Language": [
         "Idioma"
@@ -1614,9 +1606,6 @@
       ],
       "Work": [
         "Feina"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2386,11 +2375,6 @@
         "Illes Aland"
       ]
     },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(via ${ entryCountryName })"
-      ]
-    },
     "Create user accounts empty state": {
       "No search results found": [
         "No s'han trobat resultats de cerca."
@@ -2709,19 +2693,14 @@
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Desmarqueu almenys ${ calendarToFixCount } calendari",
-        "Desmarqueu almenys ${ calendarToFixCount } calendaris"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Desmarqueu almenys ${ calendarToFixCount } calendari o",
-        "Desmarqueu almenys ${ calendarToFixCount } calendaris o"
-      ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Email address disabled": [
         "Correu electrònic deshabilitada"
+      ],
+      "Email address is required": [
+        "L'adreça de correu electrònic és obligatòria."
       ],
       "Email is not valid": [
         "El correu electrònic no és vàlid"
@@ -2801,10 +2780,6 @@
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Combineu almenys ${ calendarToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent",
-        "Combineu almenys ${ calendarToFixCount } calendaris importats amb els vostres calendaris ${ BRAND_NAME } existents"
-      ],
       "Missing key packet": [
         "Falta el paquet de claus"
       ],
@@ -2855,6 +2830,9 @@
       ],
       "Organization not recognized. Try again.": [
         "Organització no reconeguda. Torneu-ho a provar."
+      ],
+      "Password is required": [
+        "La contrasenya és obligatòria."
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
@@ -3002,6 +2980,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Aquest camp requereix el màxim de ${ maximumLength } caràcters."
+      ],
       "This field is required": [
         "Aquest camp és obligatori"
       ],
@@ -3055,9 +3036,6 @@
       ],
       "You have no invoices.": [
         "No teniu cap factura."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "No es poden importar tots els calendaris perquè heu arribat al límit personal de calendaris."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Heu emprat totes les adreces del vostre pla. Actualitzeu el pla per afegir noves adreces."
@@ -3450,7 +3428,15 @@
         "Eliminar clau"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inseriu una clau de seguretat associada al vostre compte ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clau de seguretat"
       ],
@@ -3580,6 +3566,11 @@
         "destacat"
       ]
     },
+    "FilterSettings": {
+      "Search list": [
+        "Llista de cerca"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Per defecte"
@@ -3637,6 +3628,9 @@
       ],
       "Actions": [
         "Accions"
+      ],
+      "App version": [
+        "Versió de l'aplicació"
       ],
       "Event": [
         "Esdeveniment"
@@ -3733,9 +3727,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -3744,9 +3735,6 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -3757,6 +3745,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "S'ha produït un error xifrant i afegint el teu esdeveniment. No s´ha pogut importar cap esdeveniment."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "S'ha produït un error xifrant i afegint els teus esdeveniments. No s’ha pogut importar cap esdeveniment."
@@ -3941,14 +3932,17 @@
       "app password": [
         "contrasenya de l'aplicació"
       ],
+      "app password or enable IMAP": [
+        "contrasenya d'aplicació o activa IMAP"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV o un fitxer VCF (vCard)"
+      ],
       "full calendar view": [
         "vista de calendari completa"
       ],
       "ICS file": [
         "Fitxer ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3957,6 +3951,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importar des de ${ provider }"
+      ],
       "Other": [
         "Altres"
       ]
@@ -3970,6 +3967,9 @@
       ],
       "Canceled": [
         "Cancel·lat"
+      ],
+      "Cancelling": [
+        "Cancel·lant"
       ],
       "Completed": [
         "Completat"
@@ -4643,6 +4643,9 @@
       "Import mailbox": [
         "Importar bústia de correu"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importeu els seus correus electronics, calendaris, i contactes des d'un altra servei a ${ BRAND_NAME }. Us guiarem en cada pas del camí i xifrarem les vostres dades a mesura que es mouen. Benvingut al món de la privadesa."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: assegureu-vos de desar els codis de recuperació. En cas contrari, podeu perdre l'accés al vostre compte permanentment si perdeu el dispositiu d'autenticació de dos factors."
       ],
@@ -4845,18 +4848,12 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Ha pagat un pla de ${ rewardMonths } mes",
         "Ha pagat un pla de ${ rewardMonths } mesos"
       ],
       "Paid for a monthly plan": [
         "Ha pagat un pla mensual"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "El pagament pot trigar uns minuts en verificar-se completament."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
@@ -4905,17 +4902,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Seleccioneu el tipus d'enllaç que voleu inserir i ompliu tots els camps."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Torneu-ho a provar, utilitzeu un mètode de pagament diferent o bé truqueu per assistència al banc."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Torneu-ho a provar, utilitzeu un mètode de pagament diferent o bé contacteu per assistència de PayPal."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Verifiqueu el pagament a la pestanya nova que s'ha obert."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Verifiqueu la targeta a la pestanya nova que s'ha obert."
       ],
       "Please wait till your changes are synced with the server.": [
         "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
@@ -4991,9 +4982,6 @@
       ],
       "Select what you want to import.": [
         "Seleccioneu què voleu importar."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Seleccioneu quins calendaris importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 calendaris."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviat amb <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> correu segur."
@@ -5160,9 +5148,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregeu el vostre compte amb crèdits que podeu utilitzar per subscriure-us a un nou pla o per renovar el pla actual. Obteniu un crèdit per cada ${ i18nCurrency } gastat."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Adreces de correu totals"
       ],
@@ -5222,9 +5207,6 @@
       ],
       "Verification can take a few minutes.": [
         "La verificació pot trigar uns minuts."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "La verificació obrirà una nova pestanya. Desactiveu els bloquejadors emergents."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificació obrirà una nova pestanya. Desactiveu els bloquejadors emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta serà retornada immediatament."
@@ -5319,6 +5301,9 @@
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Podeu habilitar l'accés amb autenticació per veure quan s'accedeix al vostre compte, i des de quina IP. Enregistrarem l'adreça IP que accedeix al compte, l'hora i els intents fallits."
       ],
+      "You can import one data type at a time.": [
+        "Podeu importar un tipus de dades alhora."
+      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Ara podeu rebre missatges a la vostra adreça @pm.me. Actualitzeu a un pla de pagament per enviar també correus electrònics usant la vostra adreça @pm.me i per crear adreces @pm.me addicionals."
       ],
@@ -5361,9 +5346,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Perdrà ${ loseAllData } al ses compte ${ BRAND_NAME }. Per restaurar-lo, haureu d'introduir la contrasenya anterior."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Ben aviat sereu redirigits al banc per verificar el pagament."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
@@ -5393,9 +5375,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "El vostre compte s’actualitzarà un cop suprimit el pagament."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "El vostre banc requereix una verificació segura en 3-D amb finalitats de seguretat."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
@@ -5441,14 +5420,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
       ],
-      "Create an email address": [
-        "Crea una adreça de correu"
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Try Mail Plus": [
-        "Proveu Mail Plus"
       ]
     },
     "Info - folder colouring feature": {
@@ -6482,6 +6455,12 @@
       "Signature": [
         "Signatura"
       ],
+      "SMTP port": [
+        "Port SMTP "
+      ],
+      "SMTP server": [
+        "Servidor SMTP"
+      ],
       "SMTP token": [
         "Token SMTP"
       ],
@@ -6580,9 +6559,6 @@
       ],
       "Verification code": [
         "Codi de verificació"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ens sap greu que marxeu. Expliqueu perquè us n'aneu per ajudar-nos a millorar."
@@ -6758,6 +6734,17 @@
       ],
       "Preference saved": [
         "Preferència desada"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Per afegir un nou calendari, esborreu-ne un d'existent."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Per afegir un nou calendari, cal eliminar un calendari existent, o actualitzar la vostra subscripció ${ BRAND_NAME } a una subscripció ${ MAIL_SHORT_APP_NAME } de pagament."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
       ]
     },
     "Link": {
@@ -7128,9 +7115,6 @@
       "Calendar": [
         "Calendari"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Inbox": [
         "Safata d'entrada"
       ],
@@ -7190,6 +7174,9 @@
       ],
       "Switch or add account": [
         "Canvia o afegeix un compte"
+      ],
+      "Switch plan": [
+        "Canviar plan"
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
@@ -7323,9 +7310,6 @@
       ],
       "Limited support": [
         "Suport limitat"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
@@ -7682,9 +7666,6 @@
       "Add to existing group": [
         "Afegir a grup existent"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "Pregunta cada vegada"
       ],
@@ -7706,9 +7687,6 @@
       "Free server configs": [
         "Configuracions de servidor gratuït"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "He trobat un altre servei que m'agrada mes"
       ],
@@ -7718,9 +7696,6 @@
       "Ignore group": [
         "Ignorar grup"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Li falta una característica clau que necessito"
       ],
@@ -7729,9 +7704,6 @@
       ],
       "Left to Right": [
         "Esquerra a dreta"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "La meva raó no apareix"
@@ -7774,15 +7746,6 @@
       ],
       "Standard server configs": [
         "Configuracions estàndard de servidor"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -7825,9 +7788,6 @@
       ".dmg (10.12 or later)": [
         ".dmg (10.12 o posterior)"
       ],
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (per a Fedora/openSUSE)"
       ],
@@ -7841,17 +7801,11 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "PGP key warning": {
@@ -7957,7 +7911,7 @@
         "elteudomini.com"
       ],
       "ZIP": [
-        "ZIP"
+        "Codi postal"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -8251,6 +8205,9 @@
       ]
     },
     "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "Obtingui fins a ${ credits } en crèdits."
+      ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
       ]
@@ -8395,11 +8352,9 @@
     "Subscription status": {
       "Active": [
         "Actiu"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "L'oferta és només per a persones noves a  ${ BRAND_NAME }. No cal targeta de crèdit."
+      ],
+      "Upcoming": [
+        "Pròximament"
       ]
     },
     "Success": {
@@ -8532,6 +8487,9 @@
       "SPF value copied to clipboard": [
         "Valor SPF copiat al portaretalls"
       ],
+      "Undo in progress": [
+        "Desfer en curs"
+      ],
       "User created": [
         "S'ha creat l'usuari"
       ],
@@ -8656,6 +8614,9 @@
       "Import": [
         "Importar"
       ],
+      "Marked as": [
+        "Marcat com"
+      ],
       "Name": [
         "Nom"
       ],
@@ -8706,9 +8667,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ MAIL_APP_NAME }"
       ],
@@ -8720,9 +8678,6 @@
       ],
       "2. Select protocol": [
         "2. Seleccioneu el protocol"
-      ],
-      "3-D Secure verification failed": [
-        "Ha fallat la verificació segura en 3-D"
       ],
       "3. Select config file and download": [
         "3. Seleccioneu el fitxer de configuració i baixeu-lo"
@@ -8835,9 +8790,6 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Card verification in progress": [
-        "Verificació de targeta en curs"
-      ],
       "Catch-All address": [
         "Adreça Catch-All"
       ],
@@ -8897,6 +8849,10 @@
       ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Crea ${ selectedUserIds.length } usuari",
+        "Crea ${ selectedUserIds.length } usuaris"
       ],
       "Create multiple user accounts": [
         "Crea diversos comptes d'usuari"
@@ -9114,9 +9070,6 @@
       "Identity and addresses": [
         "Identitat i adreces"
       ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
-      ],
       "Import": [
         "Importació"
       ],
@@ -9211,9 +9164,6 @@
       "Open pagination": [
         "Obrir paginació"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Fitxers de configuració d'OpenVPN"
       ],
@@ -9237,9 +9187,6 @@
       ],
       "Payment verification": [
         "Verificació de pagament"
-      ],
-      "Payment verification in progress": [
-        "Verificació de pagament en progres"
       ],
       "PayPal verification failed": [
         "Ha fallat la verificació de PayPal"
@@ -9403,6 +9350,10 @@
       "Success": [
         "Èxit"
       ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "S'ha creat ${ localSuccessfullyCreatedUsers.length } compte d'usuari.",
+        "S'han creat ${ localSuccessfullyCreatedUsers.length } comptes d'usuari."
+      ],
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "S'ha creat ${ successfullyCreatedUsers.length } compte d'usuari.",
         "S'han creat ${ successfullyCreatedUsers.length } comptes d'usuari."
@@ -9472,9 +9423,6 @@
       ],
       "What's new": [
         "Novetats"
-      ],
-      "WireGuard": [
-        "WireGuard"
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"
@@ -9553,7 +9501,7 @@
         "Adreça"
       ],
       "Catch-All": [
-        "Catch-All"
+        "Capturar-ho tot"
       ],
       "Status": [
         "Estat"
@@ -9629,6 +9577,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Habitar els registres avançats enregistra l'adreça IP per a cada esdeveniment al registre de seguretat."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail classifica automàticament alguns correus electrònics com ara Socials o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupeu correus electrònics a la mateixa conversa a la vostra safata d'entrada o mostreu-los separadament."
@@ -9803,29 +9754,6 @@
         "${ numberOfServers } a ${ numberOfCountries } països"
       ]
     },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } combinarà totes les carpetes amb el mateix nom. Per evitar-ho, canvieu els noms abans d’importar-les."
@@ -9886,6 +9814,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "No s'ha pogut verificar el servidor de correu. Si confieu en el servidor, podeu ometre aquesta verificació."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."

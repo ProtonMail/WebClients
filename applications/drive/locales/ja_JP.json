@@ -785,54 +785,6 @@
         "${ MAIL_APP_NAME } を使って続行します。"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "未同期"
-      ],
-      "Syncing": [
-        "同期中"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "カレンダーを復号できませんでした"
-      ],
-      "Calendar is syncing": [
-        "カレンダーの同期中"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "カレンダーを同期しています: すべての予定が表示されるまでしばらくお待ちください。"
-      ],
-      "Calendar is too big": [
-        "カレンダーが大きすぎます"
-      ],
-      "Calendar link is not accessible": [
-        "カレンダーのリンクにアクセスできません"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "カレンダーのリンクが一時的にアクセスできません"
-      ],
-      "Failed to sync calendar": [
-        "カレンダーの同期に失敗しました"
-      ],
-      "More than 12 hours passed since last update": [
-        "最後のアップデートから12時間以上経過しています"
-      ],
-      "Unsupported calendar format": [
-        "非対応のカレンダー形式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "カレンダーの公開リンクは、当該カレンダーのアカウントを所持していないと見ることはできません。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "公開リンクには現在アクセスできません。リンクがまだ有効かどうかをご確認ください。"
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "前回の更新から12時間以上経過 — ${ CALENDAR_APP_NAME } は数時間後にカレンダーの更新を試行します。"
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "作成"
@@ -1924,12 +1876,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
-      ],
       "Device name does not match": [
         "デバイス名が一致しません"
       ],
@@ -1992,9 +1938,6 @@
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "${ calendarToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Missing key packet": [
         "キーパケットが利用できません"
@@ -2145,9 +2088,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -2512,9 +2452,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "メール"
       ],
@@ -2523,9 +2460,6 @@
       ],
       "No verification method available": [
         "検証方法がありません"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2744,9 +2678,6 @@
       ],
       "ICS file": [
         "ICS ファイル"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2761,6 +2692,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "${ provider } からインポート"
+      ],
       "Other": [
         "その他"
       ]
@@ -2834,6 +2768,12 @@
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
+      "${ numContact } contacts": [
+        "${ numContact } 件の連絡先"
+      ],
+      "${ numGroups } contact groups": [
+        "${ numGroups } 件の連絡先グループ"
+      ],
       "${ pausedCount } paused": [
         "一時停止 ${ pausedCount } 件"
       ],
@@ -2845,6 +2785,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } 件選択済み"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
@@ -3431,9 +3374,6 @@
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
@@ -3769,9 +3709,6 @@
       ],
       "Trusted": [
         "信頼済み"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4777,7 +4714,7 @@
         "最大${ credits }分のクレジットを獲得できます"
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "フレンドを ${ BRAND_NAME } に招待"
+        "友達を ${ BRAND_NAME } に招待"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "データの安全性を保ったまま、Drive内のファイルを検索できるようになりました。"
@@ -5220,6 +5157,9 @@
       "Open settings menu": [
         "設定メニューを開く"
       ],
+      "Original size": [
+        "オリジナルサイズ"
+      ],
       "Other information": [
         "その他の情報"
       ],
@@ -5369,6 +5309,9 @@
       ],
       "Uploaded by": [
         "アップロードしたユーザー"
+      ],
+      "Uploading a large file or folder": [
+        "大きなファイルまたはフォルダーをアップロードしています"
       ],
       "View contacts": [
         "連絡先を表示"

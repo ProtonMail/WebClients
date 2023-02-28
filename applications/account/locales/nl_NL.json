@@ -295,7 +295,7 @@
         "CSV-voorbeeld downloaden"
       ],
       "Download ICS": [
-        "Download ICS"
+        "ICS downloaden"
       ],
       "Download recovery file": [
         "Herstelbestand downloaden"
@@ -903,14 +903,6 @@
         "Intrekken"
       ]
     },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "Doorgaan met gratis abonnement"
-      ],
-      "Start my 30-day free trial": [
-        "Start mijn 30 dagen proefversie"
-      ]
-    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "Accepteren"
@@ -1022,9 +1014,6 @@
     "Badge": {
       "5 users": [
         "5 gebruikers"
-      ],
-      "Coming soon": [
-        "Binnenkort beschikbaar"
       ]
     },
     "Badge for domain": {
@@ -1674,9 +1663,6 @@
       ],
       "Work": [
         "Werk"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2290,7 +2276,7 @@
         "Singapore"
       ],
       "Sint Maarten": [
-        "Sint Maarten"
+        "Sint-Maarten"
       ],
       "Slovakia": [
         "Slowakije"
@@ -2837,14 +2823,6 @@
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deselecteer tenminste één agenda",
-        "Deselecteer tenminste ${ calendarToFixCount } agenda's"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Ten minste ${ calendarToFixCount } agenda deselecteren of",
-        "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
-      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -2931,10 +2909,6 @@
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
-        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
@@ -3201,9 +3175,6 @@
       ],
       "You have no invoices.": [
         "U heeft geen facturen."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "U heeft het maximale aantal persoonlijke agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
@@ -3597,7 +3568,7 @@
         "Snelste VPN-servers"
       ],
       "Secure Core servers": [
-        "Secure Core servers"
+        "Secure Core-servers"
       ],
       "Secure streaming support": [
         "Veilig streamen"
@@ -3925,7 +3896,7 @@
         "Prioriteit"
       ],
       "Type": [
-        "Type"
+        "Soort"
       ],
       "Value / Data": [
         "Waarde / Data"
@@ -3961,9 +3932,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mailadres"
       ],
@@ -3972,9 +3940,6 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -3985,6 +3950,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
@@ -4210,9 +4178,6 @@
       ],
       "ICS file": [
         "ICS-bestand"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4232,6 +4197,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importeer uit ${ provider }"
+      ],
       "Other": [
         "Overig"
       ]
@@ -4253,6 +4221,9 @@
       ],
       "Canceled": [
         "Geannuleerd"
+      ],
+      "Cancelling": [
+        "Annuleren"
       ],
       "Completed": [
         "Voltooid"
@@ -4279,9 +4250,6 @@
       ],
       "Contacts": [
         "Contacten"
-      ],
-      "Mail": [
-        "Mail"
       ]
     },
     "Import warning": {
@@ -4314,6 +4282,9 @@
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } heeft een import gepauzeerd omdat uw account weinig ruimte heeft. U kunt:"
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } zal proberen de import te hervatten zodra uw e-mailprovider de ${ bandwidthLimitLink } van uw account opnieuw instelt. U hoeft niets te doen. Als u het importeren annuleert, kunt u het niet meer hervatten en moet u opnieuw beginnen."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
@@ -4362,6 +4333,14 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } geüploade bestand is geen geldige geheime sleutel. Controleer het en probeer het opnieuw.",
         "${ numberOfNonPrivateKeys } geüploade bestanden zijn geen geldige geheime sleutels. Controleer het en probeer het opnieuw."
+      ],
+      "${ numContact } contact": [
+        "${ numContact } contactpersoon",
+        "${ numContact } contactpersonen"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } contactgroep",
+        "${ numGroups } contactgroepen"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } map gevonden",
@@ -4684,6 +4663,10 @@
       "Country code": [
         "Landcode"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
       ],
@@ -4991,6 +4974,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Afbeeldingen werden verwijderd omdat ze niet toegelaten zijn in automatisch antwoord"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
       ],
@@ -5011,6 +4998,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "BELANGRIJK: Sommige registrars accepteren geen CNAME-waarden met een periode aan het einde (terwijl andere gebruikers dit nodig hebben). Als uw registratie uw CNAME-records niet accepteert, verwijder dan de periode aan het einde van elke CNAME-waarde en probeer het opnieuw."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
@@ -5244,18 +5234,12 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Verouderde herstelzin; werk het bij om toegang tot uw gegevens te garanderen"
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Betaald voor een ${ rewardMonths } maand abonnement",
         "Betaald voor een ${ rewardMonths } maanden abonnement"
       ],
       "Paid for a monthly plan": [
         "Betaald voor een maandelijks abonnement"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "De betaling bevestigen kan een paar minuten duren."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
@@ -5316,17 +5300,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecteer het soort link dat u wil invoeren en vul alle velden in."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Probeer het opnieuw, gebruik een andere betaalmethode of bel uw bank voor hulp."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Controleer de betaling op het nieuwe tabblad dat is geopend."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Controleer de kaart in het nieuwe tabblad dat is geopend."
       ],
       "Please wait till your changes are synced with the server.": [
         "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
@@ -5417,9 +5395,6 @@
       ],
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
@@ -5655,9 +5630,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Totaal e-mailadressen"
       ],
@@ -5726,9 +5698,6 @@
       ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Verificatie zal een nieuw tabblad openen, schakel eventuele popup blockers uit."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
@@ -5917,9 +5886,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "U zult ${ loseAllData } m.b.t. uw ${ BRAND_NAME } account. Om dit te herstellen moet u uw oude wachtwoord invoeren."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "U wordt doorgestuurd naar uw bank om uw betaling te controleren."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
       ],
@@ -5964,9 +5930,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Uw account zal worden bijgewerkt zodra de betaling is gewist."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Uw bank vereist 3-D Secure verificatie voor veiligheidsdoeleinden."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
@@ -6016,32 +5979,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
       ],
-      "Create an email address": [
-        "Een e-mailadres aanmaken"
-      ],
-      "Day 27: Trial reminder": [
-        "Dag 27: Proefversie herinnering"
-      ],
-      "Day 30: Trial ends": [
-        "Dag 30: Proefversie eindigt"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Geniet van veilig, eenvoudig-te-gebruiken mailen met veel premium functies."
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Try Mail Plus": [
-        "Probeer Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "We mailen u voor uw proefversie eindigt. Annuleren wanneer u wilt."
-      ],
-      "Your new email address is ready to go!": [
-        "Uw nieuw e-mailadres is klaar om te starten!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Uw abonnement start op ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6689,7 +6628,7 @@
         "Dagelijkse e-mailmeldingen"
       ],
       "Date": [
-        "Date"
+        "Datum"
       ],
       "Date format": [
         "Datumformaat"
@@ -6896,7 +6835,7 @@
         "Niveau voor NetShield blokkeerfiltering"
       ],
       "Link label": [
-        "Link label"
+        "Label linken"
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
@@ -7141,9 +7080,6 @@
       "Statement": [
         "Voorwaarde"
       ],
-      "Sticky labels": [
-        "Sticky labels"
-      ],
       "Subscription options": [
         "Abonnementsopties"
       ],
@@ -7215,9 +7151,6 @@
       ],
       "Verification code": [
         "Verificatiecode"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "We vinden het jammer u te zien gaan. Leg uit waarom u vertrekt om ons te helpen te verbeteren."
@@ -7494,6 +7427,10 @@
       "Almost there": [
         "Bijna daar"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
       ],
@@ -7516,6 +7453,12 @@
       ],
       "Enable authentication logs": [
         "Verificatielogboeken inschakelen"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
+        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7756,9 +7699,6 @@
       "Calendar": [
         "Agenda"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Inbox": [
         "Postvak in"
       ],
@@ -7990,9 +7930,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "Malware- en adblocker NetShield"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
@@ -8634,9 +8571,6 @@
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "Telkens opnieuw vragen"
       ],
@@ -8658,9 +8592,6 @@
       "Free server configs": [
         "Gratis server configuratiebestanden"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Ik heb een anderen service gevonden die mijn voorkeur heeft"
       ],
@@ -8670,9 +8601,6 @@
       "Ignore group": [
         "Groep negeren"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Ik mis een belangrijke functie"
       ],
@@ -8681,9 +8609,6 @@
       ],
       "Left to Right": [
         "Links naar rechts"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Mijn reden wordt niet vermeld"
@@ -8726,15 +8651,6 @@
       ],
       "Standard server configs": [
         "Standaard server configuraties"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -8814,9 +8730,6 @@
       ".dmg (10.12 or later)": [
         ".dmg (10.12 of hoger)"
       ],
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (voor Fedora/openSUSE)"
       ],
@@ -8830,17 +8743,11 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -9664,11 +9571,6 @@
         "Binnenkort"
       ]
     },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Dit aanbod is enkel voor zij nieuw bij ${ BRAND_NAME }. Geen kredietkaart vereist."
-      ]
-    },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } gekopieerd naar uw klembord"
@@ -9705,6 +9607,9 @@
       ],
       "Calendar updated": [
         "Agenda bijgewerkt"
+      ],
+      "Cancelling import": [
+        "Importeren annuleren"
       ],
       "Catch-all address updated": [
         "Catch-all adres bijgewerkt"
@@ -10005,9 +9910,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Sneltoetsen"
       ],
@@ -10022,9 +9924,6 @@
       ],
       "2. Select protocol": [
         "2. Protocol kiezen"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure verificatie mislukt"
       ],
       "3. Select config file and download": [
         "3. Configuratiebestand kiezen en downloaden"
@@ -10146,9 +10045,6 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Card verification in progress": [
-        "Kaartverificatie bezig"
-      ],
       "Catch-All address": [
         "Catch-All adres"
       ],
@@ -10268,7 +10164,7 @@
         "Dataherstel"
       ],
       "Date": [
-        "Date"
+        "Datum"
       ],
       "Decrypt key": [
         "Sleutel decoderen"
@@ -10328,7 +10224,7 @@
         "Account downgraden"
       ],
       "Download ${ VPN_APP_NAME }": [
-        "Download ${ VPN_APP_NAME }"
+        "${ VPN_APP_NAME } downloaden"
       ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
@@ -10433,17 +10329,11 @@
       "How to refer a friend and get credits": [
         "Hoe een vriend doorverwijzen en tegoed verdienen"
       ],
-      "How your free trial works": [
-        "Hoe uw gratis proefperiode werkt"
-      ],
       "Human verification": [
         "Persoonsverificatie"
       ],
       "Identity and addresses": [
         "Identiteit en adressen"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "Importeren"
@@ -10539,9 +10429,6 @@
       "Open pagination": [
         "Paginering openen"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN-configuratiebestanden"
       ],
@@ -10565,9 +10452,6 @@
       ],
       "Payment verification": [
         "Betalingsverificatie"
-      ],
-      "Payment verification in progress": [
-        "Betalingsverzoek bezig"
       ],
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
@@ -10808,9 +10692,6 @@
       "What's new": [
         "Wat is er nieuw"
       ],
-      "WireGuard": [
-        "WireGuard"
-      ],
       "WireGuard configuration": [
         "WireGuard configuratie"
       ],
@@ -10830,7 +10711,7 @@
         "Uw import historiek"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uw Mail Plus proefversie eindigt op ${ textDate }."
+        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ],
       "Your plan": [
         "Uw abonnement"
@@ -11162,29 +11043,6 @@
         "${ numberOfServers } in ${ numberOfCountries } landen"
       ]
     },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } zal alle mappen met dezelfde naam samenvoegen. Om dit te voorkomen, verander de namen voordat ze geïmporteerd worden."
@@ -11263,6 +11121,9 @@
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
+      ],
+      "You will not see this import record in the list any more.": [
+        "U ziet dit importrecord niet meer in de lijst."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"

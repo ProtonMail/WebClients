@@ -678,11 +678,6 @@
         "任意"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "まもなく登場"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "ベータ版アクセスでは、${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } のベータ版を一般公開前に使用できます。ベータ版アクセスで新製品をいち早く試し、使用することができます。"
@@ -2130,12 +2125,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "復号エラー：この予定の内容の復号に失敗しました。"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
-      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
@@ -2213,9 +2202,6 @@
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "${ calendarToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Missing key packet": [
         "キーパケットが利用できません"
@@ -2393,9 +2379,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -2616,11 +2599,6 @@
         "中止"
       ]
     },
-    "Event form": {
-      "${ numberOfParticipants } participants": [
-        "${ numberOfParticipants } 人の参加者"
-      ]
-    },
     "Event info. Organizer name": {
       "You": [
         "あなた"
@@ -2790,9 +2768,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "メール"
       ],
@@ -2801,9 +2776,6 @@
       ],
       "No verification method available": [
         "検証方法がありません"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -3022,9 +2994,6 @@
       ],
       "ICS file": [
         "ICS ファイル"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3039,6 +3008,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "${ provider } からインポート"
+      ],
       "Other": [
         "その他"
       ]
@@ -3087,6 +3059,12 @@
       ],
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"
+      ],
+      "${ numContact } contacts": [
+        "${ numContact } 件の連絡先"
+      ],
+      "${ numGroups } contact groups": [
+        "${ numGroups } 件の連絡先グループ"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
@@ -3156,9 +3134,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "このリンクを持っている人は誰でもカレンダー上であなたの予定の有無を確認できます。タイトル、場所、参加者などの予定詳細は表示されません。"
-      ],
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "1 つの招待につき ${ MAX_ATTENDEES } 人までが許可されています"
       ],
       "Attention required": [
         "注意が必要です"
@@ -3445,9 +3420,6 @@
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
@@ -3722,9 +3694,6 @@
       ],
       "Trusted": [
         "信頼済み"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4158,6 +4127,9 @@
       ],
       "Manage calendars": [
         "カレンダーを管理"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4824,7 +4796,7 @@
         "最大${ credits }分のクレジットを獲得できます"
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "フレンドを ${ BRAND_NAME } に招待"
+        "友達を ${ BRAND_NAME } に招待"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "招待は、保留中の予定としてカレンダーに表示されるようになりました。その予定を開いて、返信することができます。${ goToSettingsLink }"
@@ -5232,6 +5204,9 @@
       ],
       "Email settings": [
         "メールの設定"
+      ],
+      "Encrypted event": [
+        "暗号化された予定"
       ],
       "Enter your password": [
         "パスワードを入力"

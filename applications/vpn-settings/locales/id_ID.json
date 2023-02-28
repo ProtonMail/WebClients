@@ -131,9 +131,6 @@
       "Edit billing details": [
         "Sunting rincian tagihan"
       ],
-      "Edit display name": [
-        "Sunting nama tampilan"
-      ],
       "Edit email address": [
         "Ubah alamat email"
       ],
@@ -333,7 +330,7 @@
         "Coba metode lain"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Coba simpan kembali. Penyimpanan gagal akibat: ${ saveError }"
+        "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
       ],
       "Unlock": [
         "Membuka"
@@ -406,11 +403,11 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Lanjutkan dengan akun gratis"
+      "No, thanks": [
+        "Tidak, terima kasih"
       ],
-      "Start my 30-day free trial": [
-        "Mulai masa uji coba 30 hari saya"
+      "Try free for 30 days": [
+        "Coba gratis selama 30 hari"
       ]
     },
     "Addon": {
@@ -429,6 +426,11 @@
     "Badge": {
       "5 users": [
         "5 pengguna"
+      ]
+    },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
       ]
     },
     "Billing cycle": {
@@ -589,7 +591,7 @@
         "merah jambu"
       ],
       "plum": [
-        "plum"
+        "plem"
       ],
       "purple": [
         "ungu"
@@ -718,7 +720,7 @@
         "Pulau Bouvet"
       ],
       "Brazil": [
-        "Brasil"
+        "Brazil"
       ],
       "British Indian Ocean Territory": [
         "Teritori Samudera Hindia Inggris"
@@ -838,7 +840,7 @@
         "Eswatini"
       ],
       "Ethiopia": [
-        "Ethiopia"
+        "Etiopia"
       ],
       "Falkland Islands": [
         "Kepulauan Falkland"
@@ -991,7 +993,7 @@
         "Kuwait"
       ],
       "Kyrgyzstan": [
-        "Kirgizstan"
+        "Kyrgyzstan"
       ],
       "Laos": [
         "Laos"
@@ -1201,7 +1203,7 @@
         "Saint Pierre dan Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        "Saint Vincent dan Grenadines"
+        "Saint Vincent dan Grenadine"
       ],
       "Samoa": [
         "Samoa"
@@ -1345,7 +1347,7 @@
         "Amerika Serikat"
       ],
       "United States Minor Outlying Islands": [
-        "Pulau-Pulau Terluar Amerika Serikat"
+        "Kepulauan Terluar Kecil Amerika Serikat"
       ],
       "Uruguay": [
         "Uruguay"
@@ -1389,7 +1391,7 @@
     },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
-        "(via ${ entryCountryName })"
+        "(melalui ${ entryCountryName })"
       ]
     },
     "Credits": {
@@ -1764,6 +1766,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 email per bulan)"
+      ],
+      "(during your first month)": [
+        "(pada bulan pertama Anda)"
       ]
     },
     "Go to sign in": {
@@ -1798,21 +1803,20 @@
         "Dapatkan bantuan"
       ]
     },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Cobalah berbagai fitur unggulan ${ MAIL_APP_NAME } secara cuma-cuma"
+      ]
+    },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Email"
       ],
       "Manual": [
-        "Manual"
+        "Penuntun"
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -2146,12 +2150,6 @@
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
       ],
-      "P2P": [
-        "P2P"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Pembayaran dapat memakan waktu beberapa menit untuk terverifikasi sepenuhnya."
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
       ],
@@ -2167,17 +2165,11 @@
       "Please provide an email address in case we need to contact you.": [
         "Harap sertakan alamat email seandainya kami perlu menghubungi Anda."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi bank Anda untuk mendapatkan bantuan."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk medapatkan bantuan."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Mohon verifikasi pembayaran di tab baru yang terbuka."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Mohon verifikasi kartu di tab baru yang telah dibuka."
       ],
       "Please wait till your changes are synced with the server.": [
         "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
@@ -2299,9 +2291,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Total alamat email"
       ],
@@ -2346,9 +2335,6 @@
       ],
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
@@ -2422,14 +2408,8 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Anda dapat menyesuaikan dan mengunduh tagihan Anda untuk keperluan akuntansi."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Silakan hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum Anda membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Silakan hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum Anda membatalkan langganan."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
-        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Silakan hapus tautan kalender bersama yang ada sebelum Anda membatalkan langganan."
+        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Anda hanya dapat membuka satu jendela percakapan dalam satu waktu. Harap tutup jendela percakapan lainnya yang terbuka sebelum memulai percakapan baru."
@@ -2464,9 +2444,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Anda akan ${ loseAllData } di akun ${ BRAND_NAME } Anda. Untuk memulihkannya, masukkan kata sandi lama Anda."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Anda akan dialihkan ke situs bank untuk menyelesaikan verifikasi pembayaran."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
       ],
@@ -2497,9 +2474,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
       ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Bank Anda mewajibkan verifikasi 3-D Secure demi keamanan."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
@@ -2514,32 +2488,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Harap hubungi layanan dukungan Mozilla."
-      ]
-    },
-    "info": {
-      "Create an email address": [
-        "Buat alamat email"
-      ],
-      "Day 27: Trial reminder": [
-        "Hari ke-27: Pengingat akhir masa uji coba"
-      ],
-      "Day 30: Trial ends": [
-        "Hari ke-30: Akhir masa uji coba"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Nikmati layanan email yang aman dan mudah digunakan dengan berbagai fitur premium."
-      ],
-      "Try Mail Plus": [
-        "Coba Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Kami akan mengirimkan Anda email sebelum masa uji coba Anda berakhir, yang dapat Anda batalkan kapan saja."
-      ],
-      "Your new email address is ready to go!": [
-        "Alamat email baru Anda siap digunakan!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Langganan Anda akan dimulai pada ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -2560,6 +2508,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Untuk menghindari gangguan layanan karena tagihan yang belum terbayar, mohon pastikan Anda memiliki paling tidak 1 metode pembayaran yang valid yang telah tersimpan untuk digunakan sewaktu-waktu."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Hanya melihat"
       ]
     },
     "Invoice state display as badge": {
@@ -2796,7 +2749,7 @@
         "Nama di kartu"
       ],
       "NAT-PMP (Port Forwarding)": [
-        "NAT-PMP (Port Forwarding)"
+        "NAT-PMP (Penerusan Porta)"
       ],
       "Navigation": [
         "Navigasi"
@@ -2909,9 +2862,6 @@
       "Verification code": [
         "Kode verifikasi"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Kami sedih dengan kepergian Anda. Mohon jelaskan alasan kepergian Anda agar kami dapat menjadi lebih baik ke depannya."
       ],
@@ -2957,11 +2907,14 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "Pengumuman produk ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } email datang"
       ]
     },
     "Label on payment method": {
       "Default": [
-        "Default"
+        "Bawaan"
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -3139,9 +3092,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ n } calendars": [
-        "${ n } kalender"
-      ],
       "${ n } custom email domains": [
         "${ n } domain email khusus"
       ],
@@ -3197,7 +3147,7 @@
         "Pesan balasan otomatis"
       ],
       "Calendar sharing": [
-        "Membagikan kalender"
+        "Berbagi kalender"
       ],
       "Catch-all": [
         "Alamat email catch-all"
@@ -3261,9 +3211,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "Pemblokir malware dan iklan NetShield"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
@@ -3531,9 +3478,6 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
       ],
-      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
-        "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Melindungi Anda dari ancaman terhadap privasi VPN dengan mengalihkan lalu lintas internet Anda melalui berbagai server"
       ],
@@ -3541,7 +3485,7 @@
         "Bagi dan tautkan kalender Anda kepada rekan kerja, keluarga, dan teman Anda dengan mudah"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Bagikan kalender Anda kepada keluarga, teman, atau rekan kerja Anda dengan mudah"
+        "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
       ],
       "End-to-end encrypted calendar": [
         "Kalender yang terenkripsi ujung ke ujung"
@@ -3680,9 +3624,6 @@
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
       ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendars": [
-        "Buat hingga ${ MAX_CALENDARS_PAID } kalender"
-      ],
       "Everything in ${ vpnPlanName }": [
         "Segalanya di ${ vpnPlanName }"
       ],
@@ -3713,17 +3654,11 @@
       ]
     },
     "Option": {
-      "Android": [
-        "Android"
-      ],
       "Country configs": [
         "Konfigurasi negara"
       ],
       "Free server configs": [
         "Konfigurasi server gratis"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Saya menemukan layanan lain yang lebih baik"
@@ -3731,17 +3666,11 @@
       "I use a different ${ BRAND_NAME } account": [
         "Saya menggunakan akun ${ BRAND_NAME } lainnya"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Tidak ada fitur penting yang saya butuhkan"
       ],
       "It's too expensive": [
         "Terlalu mahal"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Alasan saya tidak ada di daftar"
@@ -3754,29 +3683,14 @@
       ],
       "Standard server configs": [
         "Konfigurasi server standar"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Kartu kredit/debit"
       ],
       "New credit/debit card": [
         "Kartu kredit/debit baru"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Placeholder": {
@@ -3901,6 +3815,11 @@
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Dibuat oleh ${ ownerName }"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nama tampilan"
@@ -4001,8 +3920,8 @@
       ]
     },
     "Subscription change warning": {
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Langganan Anda dibeli melalui pembelian dalam aplikasi. Untuk mengelola langganan Anda saat ini, Anda perlu untuk membuka bagian Langganan pada akun ${ subscriptionManager } Anda"
+      "Subscription managed elsewhere": [
+        "Manage your subscription on Google Play"
       ]
     },
     "Subscription price": {
@@ -4021,11 +3940,6 @@
       ],
       "Upcoming": [
         "Akan datang"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Penawaran ini hanya berlaku bagi pengguna baru ${ BRAND_NAME }. Tidak ada kartu kredit yang diperlukan."
       ]
     },
     "Success": {
@@ -4166,9 +4080,6 @@
       "2. Select protocol": [
         "2. Pilih protokol"
       ],
-      "3-D Secure verification failed": [
-        "Verifikasi 3-D Secure gagal"
-      ],
       "3. Select config file and download": [
         "3. Pilih berkas konfigurasi dan unduh"
       ],
@@ -4217,14 +4128,8 @@
       "Billing cycle": [
         "Siklus tagihan"
       ],
-      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
-      ],
       "Card verification": [
         "Verifikasi kartu"
-      ],
-      "Card verification in progress": [
-        "Verifikasi kartu sedang berlangsung"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -4299,7 +4204,7 @@
         "Sunting nama tampilan"
       ],
       "Email": [
-        "Email"
+        "Surel"
       ],
       "Email subscriptions": [
         "Email berlangganan"
@@ -4327,9 +4232,6 @@
       ],
       "Gift code": [
         "Kode hadiah"
-      ],
-      "How your free trial works": [
-        "Bagaimana masa uji coba gratis Anda bekerja"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -4384,9 +4286,6 @@
       ],
       "Payment verification": [
         "Verifikasi pembayaran"
-      ],
-      "Payment verification in progress": [
-        "Verifikasi pembayaran sedang berlangsung"
       ],
       "Payments": [
         "Pembayaran"
@@ -4587,29 +4486,6 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

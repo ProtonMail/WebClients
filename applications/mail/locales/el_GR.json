@@ -956,6 +956,9 @@
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
       ],
+      "Some images could not be loaded with tracker protection.": [
+        "Ορισμένες εικόνες απέτυχαν να φορτωθούν με προστασία παρακολούθησης."
+      ],
       "Star": [
         "Προσθήκη αστεριού"
       ],
@@ -1181,16 +1184,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Συνομιλία"
-      ]
-    },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1491,40 +1484,6 @@
         "Η ηλ. διεύθυνσή σας δεν βρίσκεται στη λίστα συμμετεχόντων"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Δεν συγχρονίστηκαν"
-      ],
-      "Syncing": [
-        "Συχρονισμός"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Αδυναμία αποκρυπτογράφησης ημερολογίου"
-      ],
-      "Calendar is syncing": [
-        "Το ημερολόγιο συγχρονίζεται"
-      ],
-      "Calendar is too big": [
-        "Υπερβολικά μεγάλο ημερολόγιο"
-      ],
-      "Calendar link is not accessible": [
-        "Ο σύνδεσμος του ημερολογίου είναι μη προσβάσιμος"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος"
-      ],
-      "Failed to sync calendar": [
-        "Αποτυχία συγχρονισμού ημερολογίου"
-      ],
-      "More than 12 hours passed since last update": [
-        "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
-      ],
-      "Unsupported calendar format": [
-        "Μη υποστηριζόμενη μορφή ημερολογίου"
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Η εκδήλωση ήδη τελείωσε"
@@ -1774,9 +1733,6 @@
       "Birthday": [
         "Γενέθλια"
       ],
-      "Email": [
-        "Email"
-      ],
       "Gender": [
         "Φύλο"
       ],
@@ -1815,9 +1771,6 @@
       ],
       "Title": [
         "Τίτλος"
-      ],
-      "URL": [
-        "URL"
       ]
     },
     "Contact type label": {
@@ -2930,14 +2883,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Σφάλμα αποκρυπτογράφησης: η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου αυτού του μηνύματος απέτυχε."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια ή"
-      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -3015,10 +2960,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Υπέρβαση μέγιστου αριθμού συνημμένων (${ attachmentsCountLimit })"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Το μήνυμα πρέπει πρώτα να αποσταλεί"
@@ -3515,15 +3456,6 @@
       "byte": [
         "byte",
         "bytes"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -3537,7 +3469,7 @@
       ],
       "Kilobyte": [
         "Kilobyte",
-        "Kilobytes"
+        "Kilobyte"
       ],
       "Megabyte": [
         "Megabyte",
@@ -3777,20 +3709,11 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
       "Manual": [
         "Χειροκίνητα"
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -3996,9 +3919,6 @@
       ],
       "ICS file": [
         "αρχείο ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4661,6 +4581,9 @@
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
       ],
+      "Loading...": [
+        "Φόρτωση..."
+      ],
       "Manage your folders": [
         "Διαχείριση των φακέλων σας"
       ],
@@ -4895,9 +4818,6 @@
       ],
       "Select what you want to import.": [
         "Επιλέξτε τι θέλετε να εισάγετε."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Στείλτε ένα κρυπτογραφημένο, προστατευμένο με κωδικό πρόσβασης μήνυμα σε μια ${ boldText } διεύθυνση email."
@@ -5181,17 +5101,11 @@
       "URL link": [
         "Σύνδεσμος URL"
       ],
-      "URL: ${ unsubscribeMethods.HttpClient }": [
-        "URL: ${ unsubscribeMethods.HttpClient }"
-      ],
       "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
         "Χρησιμοποιήστε το ${ CALENDAR_APP_NAME } για να διατηρήσετε την ατζέντα σας ιδιωτική."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Χρησιμοποιήστε συντομεύσεις πληκτρολογίου για να διαχειριστείτε το ηλεκτρονικό ταχυδρομείο σας γρηγορότερα."
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Επιβεβαιωμένο ${ BRAND_NAME } μήνυμα"
       ],
       "Version ${ appVersion }": [
         "'Εκδοση ${ appVersion }"
@@ -5210,9 +5124,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
-      ],
-      "Web URL": [
-        "Web URL"
       ],
       "Week": [
         "Εβδομάδα"
@@ -5414,9 +5325,6 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -5748,9 +5656,6 @@
       ],
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
-      ],
-      "Email": [
-        "Email"
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -6839,9 +6744,6 @@
       "Address": [
         "Διεύθυνση"
       ],
-      "Email": [
-        "Email"
-      ],
       "Fax": [
         "Φαξ"
       ],
@@ -7331,6 +7233,9 @@
       ],
       "Read receipt sent": [
         "Έγινε αποστολή αποδεικτικού ανάγνωσης"
+      ],
+      "Undo in progress": [
+        "Αναίρεση σε εξέλιξη"
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"

@@ -780,40 +780,6 @@
         "Πρόβλημα πρόσβασης ιστοσελίδας"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Δεν συγχρονίστηκαν"
-      ],
-      "Syncing": [
-        "Συχρονισμός"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Αδυναμία αποκρυπτογράφησης ημερολογίου"
-      ],
-      "Calendar is syncing": [
-        "Το ημερολόγιο συγχρονίζεται"
-      ],
-      "Calendar is too big": [
-        "Υπερβολικά μεγάλο ημερολόγιο"
-      ],
-      "Calendar link is not accessible": [
-        "Ο σύνδεσμος του ημερολογίου είναι μη προσβάσιμος"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Ο σύνδεσμος του ημερολογίου είναι προσωρινά μη προσβάσιμος"
-      ],
-      "Failed to sync calendar": [
-        "Αποτυχία συγχρονισμού ημερολογίου"
-      ],
-      "More than 12 hours passed since last update": [
-        "Πέρασαν πάνω από 12 ώρες από την τελευταία ανανέωση"
-      ],
-      "Unsupported calendar format": [
-        "Μη υποστηριζόμενη μορφή ημερολογίου"
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Σύμπτυξη"
@@ -899,9 +865,6 @@
       "Birthday": [
         "Γενέθλια"
       ],
-      "Email": [
-        "Email"
-      ],
       "Gender": [
         "Φύλο"
       ],
@@ -940,9 +903,6 @@
       ],
       "Title": [
         "Τίτλος"
-      ],
-      "URL": [
-        "URL"
       ]
     },
     "Contact type label": {
@@ -1895,14 +1855,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια ή"
-      ],
       "Device name does not match": [
         "Το όνομα της συσκευής δεν ταιριάζει"
       ],
@@ -1965,10 +1917,6 @@
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -2379,15 +2327,6 @@
       "byte": [
         "byte",
         "bytes"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -2401,7 +2340,7 @@
       ],
       "Kilobyte": [
         "Kilobyte",
-        "Kilobytes"
+        "Kilobyte"
       ],
       "Megabyte": [
         "Megabyte",
@@ -2451,20 +2390,11 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
       "Manual": [
         "Χειροκίνητα"
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2653,9 +2583,6 @@
       ],
       "ICS file": [
         "αρχείο ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3218,6 +3145,9 @@
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
       ],
+      "Loading...": [
+        "Φόρτωση..."
+      ],
       "Makes your account safer": [
         "Κάνει τον λογαριασμό σας ασφαλέστερο"
       ],
@@ -3390,9 +3320,6 @@
       ],
       "Select what you want to import.": [
         "Επιλέξτε τι θέλετε να εισάγετε."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -3733,9 +3660,6 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -3856,9 +3780,6 @@
       ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
-      ],
-      "Email": [
-        "Email"
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -4694,9 +4615,6 @@
       "Address": [
         "Διεύθυνση"
       ],
-      "Email": [
-        "Email"
-      ],
       "Fax": [
         "Φαξ"
       ],
@@ -4813,6 +4731,9 @@
       ],
       "The link to your file was successfully copied": [
         "Ο σύνδεσμος προς το αρχείο σας αντιγράφηκε επιτυχώς"
+      ],
+      "Undo in progress": [
+        "Αναίρεση σε εξέλιξη"
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
@@ -5196,6 +5117,9 @@
       ],
       "Open settings menu": [
         "Άνοιγμα μενού ρυθμίσεων"
+      ],
+      "Original size": [
+        "Αρχικό μέγεθος"
       ],
       "Other information": [
         "Άλλες πληροφορίες"

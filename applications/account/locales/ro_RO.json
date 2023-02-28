@@ -517,7 +517,7 @@
         "OK"
       ],
       "Ok": [
-        "Ok"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
@@ -831,6 +831,9 @@
       "Upgrade now": [
         "Modernizare"
       ],
+      "Upgrade your plan": [
+        "Modernizare plan"
+      ],
       "Upload picture": [
         "Încărcare imagine"
       ],
@@ -907,11 +910,11 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Continuare cu planul gratuit"
+      "No, thanks": [
+        "Nu, mulțumesc"
       ],
-      "Start my 30-day free trial": [
-        "Începere probare gratuită 30 de zile"
+      "Try free for 30 days": [
+        "Încercați gratuit 30 de zile"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1027,9 +1030,6 @@
     "Badge": {
       "5 users": [
         "5 utilizatori"
-      ],
-      "Coming soon": [
-        "În curând"
       ]
     },
     "Badge for domain": {
@@ -1046,6 +1046,11 @@
     "Badge for user sessions table": {
       "Current session": [
         "Sesiune curentă"
+      ]
+    },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: soluția de e-mail și calendar private pentru nevoile personale de comunicații zilnice."
       ]
     },
     "Billing cycle": {
@@ -1263,6 +1268,9 @@
       ]
     },
     "Calendar share permission label": {
+      "Edit": [
+        "Editare"
+      ],
       "See all event details": [
         "Afișare detalii eveniment"
       ]
@@ -1681,9 +1689,6 @@
       ],
       "Work": [
         "Serviciu"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1736,7 +1741,7 @@
         "Austria"
       ],
       "Azerbaijan": [
-        "Azerbaijan"
+        "Azerbaidjan"
       ],
       "Bahamas": [
         "Bahamas"
@@ -1838,7 +1843,7 @@
         "Columbia"
       ],
       "Comoros": [
-        "Comoros"
+        "Comore"
       ],
       "Congo": [
         "Congo"
@@ -1877,7 +1882,7 @@
         "Djibouti"
       ],
       "Dominica": [
-        "Dominica"
+        "Republica Dominicană"
       ],
       "Dominican Republic": [
         "Republica Dominicană"
@@ -1973,10 +1978,10 @@
         "Guernsey"
       ],
       "Guinea": [
-        "Guinea"
+        "Guineea"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bissau"
+        "Guineea-Bissau"
       ],
       "Guyana": [
         "Guiana"
@@ -2057,7 +2062,7 @@
         "Kuweit"
       ],
       "Kyrgyzstan": [
-        "Kyrgyzstan"
+        "Kârgâzstan"
       ],
       "Laos": [
         "Laos"
@@ -2126,7 +2131,7 @@
         "Mexic"
       ],
       "Moldova": [
-        "Moldova"
+        "Republica Moldova"
       ],
       "Monaco": [
         "Monaco"
@@ -2177,7 +2182,7 @@
         "Nigeria"
       ],
       "Niue": [
-        "Niue"
+        "Insula Niue"
       ],
       "Norfolk Island": [
         "Insula Norfolk"
@@ -2354,7 +2359,7 @@
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tajikistan"
+        "Tadjikistan"
       ],
       "Tanzania": [
         "Tanzania"
@@ -2363,7 +2368,7 @@
         "Tailanda"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timorul De Est"
       ],
       "Togo": [
         "Togo"
@@ -2849,16 +2854,6 @@
       "Contact signature not verified": [
         "Semnătura contactului nu a fost verificată"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deselectați cel puțin un calendar.",
-        "Deselectați cel puțin ${ calendarToFixCount } calendare.",
-        "Deselectați cel puțin ${ calendarToFixCount } de calendare."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Deselectați cel puțin un calendar sau",
-        "Deselectați cel puțin ${ calendarToFixCount } calendare sau",
-        "Deselectați cel puțin ${ calendarToFixCount } de calendare sau"
-      ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
@@ -2945,11 +2940,6 @@
       ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Îmbinați cel puțin un calendar cu un calendar ${ BRAND_NAME } existent.",
-        "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
-        "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
       ],
       "Missing key packet": [
         "Lipsește pachetul de chei."
@@ -3218,9 +3208,6 @@
       ],
       "You have no invoices.": [
         "Nu aveți facturi."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ați folosit toate adresele din plan. Treceți la un plan cu plată superior pentru a adăuga o adresă nouă."
@@ -3980,6 +3967,11 @@
         "Nume cod de acces"
       ]
     },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Încercați gratuit renumitul ${ MAIL_APP_NAME }"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "S-a găsit o sugestie, folosiți tastatura pentru a naviga.",
@@ -3991,9 +3983,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -4002,9 +3991,6 @@
       ],
       "No verification method available": [
         "Nu sunt metode de verificare disponibile"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -4017,6 +4003,9 @@
         "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
@@ -4246,9 +4235,6 @@
       ],
       "ICS file": [
         "fișier ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4460,6 +4446,14 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } spațiu"
+      ],
+      "${ userFound } user found": [
+        "S-a găsit ${ userFound } utilizator",
+        "S-au găsit ${ userFound } utilizatori",
+        "S-au găsit ${ userFound } de utilizatori"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Trebuie ${ vpnPlus } pentru conexiunea la nivel de țară."
       ],
@@ -4490,6 +4484,9 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Invitați persoane la ${ BRAND_NAME }"
+      ],
+      "10 email addresses": [
+        "10 adrese de e-mail"
       ],
       "2. They try ${ planName }": [
         "2. Ei încearcă ${ planName }"
@@ -5267,6 +5264,9 @@
       "No contact encryption keys exist": [
         "Nu există chei de criptare contacte"
       ],
+      "No credit card required": [
+        "Nu trebuie card de credit"
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Nu este setată o metodă de recuperare adatelor; există riscul de a vă pierde accesul la date."
       ],
@@ -5333,9 +5333,6 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frază de recuperare învechită. Actualizați-o pentru a vă asigura accesul la date."
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Plătit pentru un plan de o lună.",
         "Plătit pentru un plan de ${ rewardMonths } luni.",
@@ -5343,9 +5340,6 @@
       ],
       "Paid for a monthly plan": [
         "Plătit pentru un plan lunar"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Verificarea plății poate dura câteva minute."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
@@ -5408,17 +5402,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selectați tipul de legătură pe care doriți să o inserați și completați toate câmpurile."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Mai încercați. Folosiți o metodă de plată diferită sau contactați-vă banca pentru asistență."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Verificați efectuarea plății în noua filă deschisă."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Verificați cardul în noua pagină deschisă."
       ],
       "Please wait till your changes are synced with the server.": [
         "Așteptați până când modificările se sincronizează cu serverul."
@@ -5434,6 +5422,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
+      ],
+      "Priority support": [
+        "Asistență prioritară"
       ],
       "Public link invite": [
         "Legătură publică invitație"
@@ -5510,9 +5501,6 @@
       "Select what you want to import.": [
         "Selectați ce doriți să importați."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
-      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> e-mail securizat."
       ],
@@ -5564,11 +5552,17 @@
       "Storage for users": [
         "Spațiu pentru utilizatori"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ],
       "Storage used by this user": [
         "Spațiu folosit de utilizator"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Păstrați această parolă și fișierul într-un loc sigur. Veți avea din nou nevoie de ele pentru a importa cheia."
+      ],
+      "Support for 1 custom email domain": [
+        "Suport pentru un domeniu de e-mail personal"
       ],
       "support team": [
         "echipa de asistență"
@@ -5750,9 +5744,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Alimentați-vă contul cu credite pe care le puteți folosi pentru a vă cumpăra un plan nou sau pentru a-l reînnoi pe cel existent. Veți obține câte un credit pentru fiecare ${ i18nCurrency } cheltuit."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Total adrese de e-mail"
       ],
@@ -5785,6 +5776,12 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Dacă nu vă deconectați din cont sau nu vă schimbați parola, sesiunea curentă va rămâne activă. Sesiunea expiră după 60 de zile de inactivitate."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Unlimited messages": [
+        "Mesaje nelimitate"
       ],
       "Unsaved changes": [
         "Modificări nesalvate"
@@ -5821,9 +5818,6 @@
       ],
       "Verification can take a few minutes.": [
         "Verificarea poate dura câteva minute."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Pentru verificare se va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu veți fi taxat. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
@@ -5946,19 +5940,24 @@
         "Puteți importa un singur tip de date la un moment dat."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puteți păstra până la ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonamentul ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți păstra până la ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonamentul ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți păstra până la ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonamentul ${ MAIL_SHORT_APP_NAME }."
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puteți păstra până la ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonamentul.",
-        "Puteți păstra până la ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonamentul.",
-        "Puteți păstra până la ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonamentul."
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Puteți păstra până la ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile partajate înainte de a anula abonamentul.",
-        "Puteți păstra până la ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile partajate înainte de a anula abonamentul.",
-        "Puteți păstra până la ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile partajate înainte de a anula abonamentul."
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea.",
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea.",
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea."
       ],
       "You can now access and manage the account as an administrator.": [
         "Acum puteți accesa și gestiona contul ca administrator."
@@ -6031,9 +6030,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Veți ${ loseAllData } din contul ${ BRAND_NAME }. Pentru a-l restaura, va trebui să introduceți vechea parolă."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Pentru verificarea efectuării plății se va deschide o filă către bancă."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
@@ -6078,9 +6074,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Banca solicită verificarea cu sistemul 3-D Secure din motive de securitate."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
@@ -6131,32 +6124,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
       ],
-      "Create an email address": [
-        "Creare adresă de e-mail"
-      ],
-      "Day 27: Trial reminder": [
-        "Ziua 27: reamintire perioadă de probare."
-      ],
-      "Day 30: Trial ends": [
-        "Ziua 30: probarea se încheie."
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Bucurați-vă de mesaje pe e-mail sigure, ușor de folosit cu o mulțime de funcții speciale."
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Try Mail Plus": [
-        "Încercați Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Veți primi un mesaj pe e-mail înainte de expirarea perioadei de probare. Puteți anula oricând."
-      ],
-      "Your new email address is ready to go!": [
-        "Noua adresă de e-mail este gata de utilizare!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Abonamentul începe ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6203,6 +6172,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Pentru a evita orice întrerupere a serviciilor din cauza facturilor neplătite, asigurați-vă că aveți cel puțin o metodă de plată validă salvată în orice moment."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Numai vizualizare"
       ]
     },
     "Input label": {
@@ -7238,7 +7212,7 @@
         "Nume utilizator SMTP"
       ],
       "Spam": [
-        "Spam"
+        "Nedorite"
       ],
       "Starred": [
         "Cu stea"
@@ -7520,13 +7494,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Pentru a adăuga un nou calendar, eliminați unul existent."
+        "Pentru a adăuga un calendar, eliminați altul existent."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Pentru a adăuga un nou calendar, eliminați alt calendar sau actualizați planul ${ BRAND_NAME } la un plan plătit ${ MAIL_SHORT_APP_NAME }."
+        "Pentru a adăuga un calendar, eliminați altul existent sau modificați planul ${ BRAND_NAME } cu un plan ${ MAIL_SHORT_APP_NAME } cu plată."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Ați atins numărul maxim de calendare disponibile în cadrul planului dumneavoastră."
+        "Ați atins maximul de calendare disponibile în acest plan."
       ]
     },
     "Link": {
@@ -7919,9 +7893,6 @@
       "Calendar": [
         "Calendar"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Inbox": [
         "Primite"
       ],
@@ -8031,7 +8002,7 @@
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
-        "${ n } calendare"
+        "${ n } de calendare"
       ],
       "${ n } custom email domain": [
         "Un domeniu personal de e-mail",
@@ -8456,8 +8427,8 @@
         "Creați adrese de e-mail multiple pentru identitățile personale online, de exemplu, ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain } pentru abonamentul la știri."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Creați până la ${ n } de calendar sau adăugați calendare de la prieteni, familie, colegi și organizații",
-        "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } calendar sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
         "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
@@ -8467,7 +8438,7 @@
         "Partajați cu ușurință calendarele cu colegii, familia și prietenii printr-o legătură."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Partajați cu ușurință calendarele cu familia, prietenii sau colegii"
+        "Partajați calendarele ușor cu familia, prietenii sau colegii."
       ],
       "End-to-end encrypted calendar": [
         "Calendar criptat în ambele părți"
@@ -8617,7 +8588,7 @@
       "Create up to ${ MAX_CALENDARS_PAID } calendar": [
         "Creați până la ${ MAX_CALENDARS_PAID } calendar",
         "Creați până la ${ MAX_CALENDARS_PAID } calendare",
-        "Creați până la ${ MAX_CALENDARS_PAID } calendare"
+        "Creați până la ${ MAX_CALENDARS_PAID } de calendare"
       ],
       "Everything in ${ vpnPlanName }": [
         "Totul în ${ vpnPlanName }"
@@ -8837,9 +8808,6 @@
       "Add to existing group": [
         "Adăugare la grup existent"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "Întrebare de fiecare dată"
       ],
@@ -8861,9 +8829,6 @@
       "Free server configs": [
         "Configurări servere gratuite"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Am găsit un alt serviciu care îmi place mai mult"
       ],
@@ -8873,9 +8838,6 @@
       "Ignore group": [
         "Ignorare grup"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Nu are o caracteristică esențială de care am nevoie"
       ],
@@ -8884,9 +8846,6 @@
       ],
       "Left to Right": [
         "De la stânga la dreapta"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Motivul meu nu este afișat"
@@ -8929,15 +8888,6 @@
       ],
       "Standard server configs": [
         "Configurări standard de server"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -9036,17 +8986,11 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Card de credit/debit"
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -9157,7 +9101,7 @@
         "domeniuldvs.com"
       ],
       "ZIP": [
-        "ZIP"
+        "Cod Poștal"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -9249,6 +9193,12 @@
       ],
       "Verify now": [
         "Verificare acum"
+      ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Verificare acum această adresă de e-mail: ${ email.Value }"
+      ],
+      "Verify now this recovery phone number address: ${ phone.Value }": [
+        "Verificare acum acest număr de telefon: ${ phone.Value }"
       ],
       "Verify recovery email?": [
         "Verificare e-mail de recuperare?"
@@ -9644,10 +9594,10 @@
     },
     "Subscription change warning": {
       "Subscription managed elsewhere": [
-        "Abonament gestionat altundeva"
+        "Manage your subscription on Google Play"
       ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Abonarea s-a efectuat prin achiziția din aplicație. Pentru a vă gestiona abonamentul actual trebuie să navigați la secțiunea «Abonament» din contul ${ subscriptionManager }."
+        "Abonarea s-a efectuat prin achiziția din aplicație. Pentru a vă gestiona abonamentul actual trebuie să accesați secțiunea «Abonamente» din contul ${ subscriptionManager }."
       ]
     },
     "Subscription price": {
@@ -9666,11 +9616,6 @@
       ],
       "Upcoming": [
         "Urmează"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Această ofertă este doar pentru utilizatorii noi ai ${ BRAND_NAME }. Nu trebuie card de credit."
       ]
     },
     "Success": {
@@ -10018,9 +9963,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Combinații de taste ${ MAIL_APP_NAME }"
       ],
@@ -10035,9 +9977,6 @@
       ],
       "2. Select protocol": [
         "2. Selectați protocolul"
-      ],
-      "3-D Secure verification failed": [
-        "Verificarea cu 3-D Secure a eșuat"
       ],
       "3. Select config file and download": [
         "3. Selectați fișierul de configurare și descărcați-l"
@@ -10157,13 +10096,10 @@
         "Bridge pentru ${ platform }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Anulați abonamentul pentru ${ MAIL_SHORT_APP_NAME }"
+        "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Verificare card"
-      ],
-      "Card verification in progress": [
-        "Verificare card în desfășurare"
       ],
       "Catch-All address": [
         "Adresă colectoare"
@@ -10451,9 +10387,6 @@
       "How to refer a friend and get credits": [
         "Cum să recomandați o persoană și să primiți credite"
       ],
-      "How your free trial works": [
-        "Cum funcționează probarea gratuită"
-      ],
       "Human verification": [
         "Verificare persoană"
       ],
@@ -10558,9 +10491,6 @@
       "Open pagination": [
         "Deschidere paginare"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Fișiere de configurare OpenVPN"
       ],
@@ -10587,9 +10517,6 @@
       ],
       "Payment verification": [
         "Verificare plată"
-      ],
-      "Payment verification in progress": [
-        "Verificarea plății în desfășurare"
       ],
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
@@ -10831,9 +10758,6 @@
       ],
       "What's new": [
         "Ce este nou"
-      ],
-      "WireGuard": [
-        "WireGuard"
       ],
       "WireGuard configuration": [
         "Configurare WireGuard"
@@ -11131,7 +11055,7 @@
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Actualizați la un plan plătit pentru ${ MAIL_SHORT_APP_NAME } pentru a partaja calendarul."
+        "Treceți la un plan cu plată ${ MAIL_SHORT_APP_NAME } pentru a vă partaja calendarul."
       ]
     },
     "User referee invited via email": {
@@ -11195,29 +11119,6 @@
         "${ numberOfServers } într-o țară",
         "${ numberOfServers } în ${ numberOfCountries } țări",
         "${ numberOfServers } în ${ numberOfCountries } de țări"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

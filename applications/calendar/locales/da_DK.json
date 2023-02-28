@@ -253,7 +253,7 @@
         "Jeg har et spørgsmål"
       ],
       "Import": [
-        "Import"
+        "Importér"
       ],
       "import": [
         "importér"
@@ -683,11 +683,6 @@
         "Valgfri"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "Kommer snart"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Beta-adgang giver dig mulighed for at bruge betaversionen af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
@@ -1039,7 +1034,7 @@
         "Køn"
       ],
       "Geo": [
-        "Geo"
+        "Geolokalisering"
       ],
       "Language": [
         "Sprog"
@@ -1054,7 +1049,7 @@
         "Navn"
       ],
       "Note": [
-        "Note"
+        "Notat"
       ],
       "Organization": [
         "Organisation"
@@ -1099,9 +1094,6 @@
       ],
       "Work": [
         "Arbejde"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1247,7 +1239,7 @@
         "Kina"
       ],
       "Christmas Island": [
-        "Christmas Island"
+        "Juleøen"
       ],
       "Cocos (Keeling) Islands": [
         "Cocosøerne"
@@ -2160,14 +2152,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne begivenheds indhold mislykkedes."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Fravælg mindst ${ calendarToFixCount } kalender",
-        "Fravælg mindst ${ calendarToFixCount } kalendere"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Fravælg mindst ${ calendarToFixCount } kalender eller",
-        "Fravælg mindst ${ calendarToFixCount } kalendere eller"
-      ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
@@ -2245,10 +2229,6 @@
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Flet mindst ${ calendarToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
-        "Flet mindst ${ calendarToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
       ],
       "Missing key packet": [
         "Manglende nøglepakke"
@@ -2424,9 +2404,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Du kan ikke sende vCard-filer med mere end 10 kontakter"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -2649,9 +2626,9 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } deltager",
-        "${ numberOfParticipants } deltagere"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } deltager",
+        "${ numberOfAttendees } deltagere"
       ]
     },
     "Event info. Organizer name": {
@@ -2829,9 +2806,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -2840,9 +2814,6 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2853,6 +2824,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret.",
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. Ingen begivenhed kunne importeres."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. Ingen begivenheder kunne importeres."
@@ -3073,9 +3047,6 @@
       ],
       "ICS file": [
         "ICS fil"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3237,10 +3208,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Alle med dette link kan se, om du er fri eller optaget på din kalender. De kan ikke se begivenhedsdetaljer, såsom titel, placering eller deltagere."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Højst ${ MAX_ATTENDEES } deltager er tilladt pr. invitation",
-        "Højst ${ MAX_ATTENDEES } deltagere er tilladt pr. invitation"
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
@@ -3539,9 +3506,6 @@
       "Select what you want to import.": [
         "Vælg, hvad du ønsker at importere."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
@@ -3816,6 +3780,15 @@
         "Du kan gendele dine kalendere i indstillingerne."
       ]
     },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Højst ${ MAX_ATTENDEES } deltager er tilladt pr. invitation",
+        "Højst ${ MAX_ATTENDEES } deltagere er tilladt pr. invitation"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Det er ikke tilladt at oprette invitationer i en delt kalender"
+      ]
+    },
     "Input label": {
       "Access": [
         "Adgang"
@@ -3847,9 +3820,6 @@
       ],
       "Trusted": [
         "Betroet"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4119,7 +4089,7 @@
         "Offentlige nøgler"
       ],
       "Region": [
-        "Region"
+        "Område"
       ],
       "Repeat every": [
         "Gentag hver"
@@ -4212,13 +4182,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "For at tilføje en ny kalender skal du fjerne en eksisterende kalender."
+        "For at tilføje en ny kalender, skal du fjerne en eksisterende kalender."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "For at tilføje en ny kalender, fjern en anden kalender eller opgrader dit ${ BRAND_NAME }-abonnement til et betalt ${ MAIL_SHORT_APP_NAME }-abonnement."
+        "For at tilføje en ny kalender, skal du fjerne en anden kalender eller opgradere dit ${ BRAND_NAME }-abonnement til et betalt ${ MAIL_SHORT_APP_NAME }-abonnement."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Du har nået det maksimale antal kalendere, der er tilgængelige med dit abonnement."
+        "Du har nået det maksimale antal kalendere, der er tilgængelige i dit abonnement."
       ]
     },
     "Link": {
@@ -5285,7 +5255,7 @@
         "CSV-felt"
       ],
       "Import": [
-        "Import"
+        "Importér"
       ],
       "Name": [
         "Navn"

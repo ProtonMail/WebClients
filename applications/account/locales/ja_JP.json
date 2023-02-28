@@ -898,14 +898,6 @@
         "失効させる"
       ]
     },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "無料プランで続行"
-      ],
-      "Start my 30-day free trial": [
-        "30 日の無料トライアルを開始"
-      ]
-    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "承認"
@@ -1015,9 +1007,6 @@
     "Badge": {
       "5 users": [
         "5 ユーザー"
-      ],
-      "Coming soon": [
-        "まもなく登場"
       ]
     },
     "Badge for domain": {
@@ -1159,7 +1148,7 @@
         "送信"
       ],
       "Tweet": [
-        "Tweet"
+        "ツイート"
       ]
     },
     "Calendar access select label": {
@@ -2520,11 +2509,17 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
+      "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
+        "友達を ${ BRAND_NAME } に招待して、最大 ${ credits } のクレジットを獲得しましょう。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
+      ],
+      "Track the status and activity of your referrals.": [
+        "招待の状態やアクティビティを確認します。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
@@ -2776,12 +2771,6 @@
       "Contact signature not verified": [
         "連絡先の署名が検証されていません"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
-      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
@@ -2868,9 +2857,6 @@
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "${ calendarToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Missing key packet": [
         "キーパケットが利用できません"
@@ -3132,9 +3118,6 @@
       ],
       "You have no invoices.": [
         "請求書はありません。"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "現在のプランでのメールアドレス数の上限に達しました。新規アドレスを追加するにはアップグレードしてください。"
@@ -3699,6 +3682,12 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなど特定の操作を自動で実行できます。Sieve プログラミング言語で直接フィルターを編集や作成することもできます。"
       ],
+      "Emails from addresses marked as spam by you or ${ BRAND_NAME } will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "あなたまたは ${ BRAND_NAME } によって迷惑メールと指定されたアドレスからのメールは、迷惑メールフォルダーに送られます。これらのアドレスのいずれかからのメールを許可したい場合は、「迷惑メールでない」と指定してください。"
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "ブロックされたアドレスからのメールは受信しなくなります。"
+      ],
       "Search list": [
         "リストを検索"
       ]
@@ -3861,9 +3850,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "メール"
       ],
@@ -3872,9 +3858,6 @@
       ],
       "No verification method available": [
         "検証方法がありません"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -4098,9 +4081,6 @@
       ],
       "ICS file": [
         "ICS ファイル"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4120,6 +4100,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "${ provider } からインポート"
+      ],
       "Other": [
         "その他"
       ]
@@ -4243,6 +4226,12 @@
       ],
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } 件のアップロードされたファイルは有効な秘密鍵ではありません。確認して再度お試しください。"
+      ],
+      "${ numContact } contacts": [
+        "${ numContact } 件の連絡先"
+      ],
+      "${ numGroups } contact groups": [
+        "${ numGroups } 件の連絡先グループ"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
@@ -4528,6 +4517,9 @@
       ],
       "Continue anyway?": [
         "続けますか?"
+      ],
+      "Copy your referral link": [
+        "招待リンクをコピー"
       ],
       "Country code": [
         "国コード"
@@ -4896,7 +4888,7 @@
         "あとは、選択を確認するだけです。"
       ],
       "Just send them your personal referral link.": [
-        "個人用の紹介リンクを送信。"
+        "個人用の招待リンクを送信します。"
       ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "DKIM を使用し続ける限り、これらのレコードを DNS に登録したままにしておいてください。"
@@ -4978,6 +4970,9 @@
       ],
       "Merged": [
         "結合済み"
+      ],
+      "MM/YY": [
+        "MM/YY"
       ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
@@ -5075,17 +5070,11 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "古い回復用フレーズです。アップデートして確実にデータにアクセスできるようにしてください"
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } months plan": [
         "${ rewardMonths } か月プランに課金"
       ],
       "Paid for a monthly plan": [
         "月額プランに課金"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "お支払いの検証完了まで数分を要する場合があります。"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
@@ -5138,17 +5127,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "挿入するリンクの種類を選択し、すべての項目に入力してください。"
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "再度試すか、別の支払い方法を用いてください。あるいはあなたの銀行にお尋ねください。"
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "再度試すか、別の支払い方法をお試しください。あるいは PayPal にお尋ねください。"
       ],
       "Please verify payment at the new tab which was opened.": [
         "新たに開かれたタブで支払いの検証を行ってください。"
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "新たに開かれたタブでカードの検証を行ってください。"
       ],
       "Please wait till your changes are synced with the server.": [
         "変更がサーバーで同期されるまでお待ちください。"
@@ -5233,9 +5216,6 @@
       ],
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> から送信されました。"
@@ -5456,9 +5436,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "新規プランに登録したり、現在のプランを更新するときに使えるクレジットをアカウントにチャージします。1 ${ i18nCurrency } ごとに 1 クレジットを取得できます。"
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "総メールアドレス数"
       ],
@@ -5524,9 +5501,6 @@
       ],
       "Verification can take a few minutes.": [
         "検証に数分かかることがあります。"
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "検証のために新しいタブを開きますので、ポップアップブロッカーをオフにしてください。"
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "検証のために新しいタブを開きます、ポップアップブロッカーはオフにしてください。この検証作業では課金されません。カードの確認に使用した金額は直ちに返金されます。"
@@ -5708,9 +5682,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ BRAND_NAME } アカウントに${ loseAllData }。復元するには、古いパスワードが必要です。"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "支払いの検証のため、まもなく銀行のサイトへリダイレクトされます。"
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
       ],
@@ -5756,9 +5727,6 @@
       "Your account will be updated once the payment is cleared.": [
         "支払いが完了すると、アカウントは更新されます。"
       ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "セキュリティ上の観点から、3D セキュア認証に対応した銀行口座が必要です。"
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
       ],
@@ -5803,26 +5771,8 @@
       ]
     },
     "info": {
-      "Create an email address": [
-        "メールアドレスを作成"
-      ],
-      "Day 27: Trial reminder": [
-        "27 日目: トライアルが間もなく終了"
-      ],
-      "Day 30: Trial ends": [
-        "30 日目: トライアル終了"
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Try Mail Plus": [
-        "Mail Plus を試す"
-      ],
-      "Your new email address is ready to go!": [
-        "新しいメールアドレスの準備ができました!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "サブスクリプションは ${ startText } に開始されます。"
       ]
     },
     "Info - folder colouring feature": {
@@ -6975,9 +6925,6 @@
       "Verification code": [
         "認証コード"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
       ],
@@ -7651,9 +7598,6 @@
       "1 free VPN connection in total": [
         "合計 1 件の無料 VPN 接続"
       ],
-      "99.95% SLA": [
-        "99.95% SLA"
-      ],
       "Admin console": [
         "管理者コンソール"
       ],
@@ -7722,9 +7666,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "NetShield マルウェア・広告ブロッカー"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
@@ -8270,9 +8211,6 @@
       "Add to existing group": [
         "既存のグループに追加"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "毎回確認"
       ],
@@ -8294,9 +8232,6 @@
       "Free server configs": [
         "無料サーバーの設定ファイル"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "より良い他のサービスを見つけた"
       ],
@@ -8306,9 +8241,6 @@
       "Ignore group": [
         "グループを無視"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "欲しい機能が含まれていない"
       ],
@@ -8317,9 +8249,6 @@
       ],
       "Left to Right": [
         "左から右"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "それ以外の理由"
@@ -8362,15 +8291,6 @@
       ],
       "Standard server configs": [
         "標準サーバーの設定ファイル"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -8459,9 +8379,6 @@
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -8893,7 +8810,7 @@
         "最大${ credits }分のクレジットを獲得できます"
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "フレンドを ${ BRAND_NAME } に招待"
+        "友達を ${ BRAND_NAME } に招待"
       ]
     },
     "State": {
@@ -9355,9 +9272,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } のキーボードショートカット"
       ],
@@ -9372,9 +9286,6 @@
       ],
       "2. Select protocol": [
         "2. プロトコルを選択"
-      ],
-      "3-D Secure verification failed": [
-        "3Dセキュアの検証に失敗しました"
       ],
       "3. Select config file and download": [
         "3. 設定ファイルを選択してダウンロード"
@@ -9495,9 +9406,6 @@
       ],
       "Card verification": [
         "カードの検証"
-      ],
-      "Card verification in progress": [
-        "カード検証中"
       ],
       "Catch-All address": [
         "Catch-All アドレス"
@@ -9781,17 +9689,11 @@
       "How to refer a friend and get credits": [
         "友人を招待し、クレジットを獲得する方法"
       ],
-      "How your free trial works": [
-        "無料トライアルについて"
-      ],
       "Human verification": [
         "人間であることの検証"
       ],
       "Identity and addresses": [
         "署名とアドレス"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "インポート"
@@ -9886,9 +9788,6 @@
       "Open pagination": [
         "ページネーションを開く"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN 設定ファイル"
       ],
@@ -9912,9 +9811,6 @@
       ],
       "Payment verification": [
         "支払いの検証"
-      ],
-      "Payment verification in progress": [
-        "支払いを検証中"
       ],
       "PayPal verification failed": [
         "PayPal 認証に失敗しました。"
@@ -10153,9 +10049,6 @@
       "What's new": [
         "更新情報"
       ],
-      "WireGuard": [
-        "WireGuard"
-      ],
       "WireGuard configuration": [
         "WireGuard 設定ファイル"
       ],
@@ -10237,9 +10130,6 @@
     "Title header for addresses domain table": {
       "Address": [
         "アドレス"
-      ],
-      "Catch-All": [
-        "Catch-All"
       ],
       "Status": [
         "状態"
@@ -10472,29 +10362,6 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfCountries } か国で ${ numberOfServers } 台"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

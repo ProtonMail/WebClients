@@ -309,9 +309,6 @@
       "Edit billing details": [
         "Sunting rincian tagihan"
       ],
-      "Edit display name": [
-        "Sunting nama tampilan"
-      ],
       "Edit email address": [
         "Ubah alamat email"
       ],
@@ -364,7 +361,7 @@
         "Sesuaikan dengan jendela"
       ],
       "Font": [
-        "Font"
+        "Fon"
       ],
       "Generate": [
         "Hasilkan"
@@ -796,7 +793,7 @@
         "Coba metode lain"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Coba simpan kembali. Penyimpanan gagal akibat: ${ saveError }"
+        "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
       ],
       "Underline": [
         "Garis bawah"
@@ -907,11 +904,11 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Lanjutkan dengan akun gratis"
+      "No, thanks": [
+        "Tidak, terima kasih"
       ],
-      "Start my 30-day free trial": [
-        "Mulai masa uji coba 30 hari saya"
+      "Try free for 30 days": [
+        "Coba gratis selama 30 hari"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -957,7 +954,7 @@
         "Aktif"
       ],
       "Default": [
-        "Default"
+        "Bawaan"
       ],
       "Disabled": [
         "Nonaktif"
@@ -1023,9 +1020,6 @@
     "Badge": {
       "5 users": [
         "5 pengguna"
-      ],
-      "Coming soon": [
-        "Segera hadir"
       ]
     },
     "Badge for domain": {
@@ -1042,6 +1036,11 @@
     "Badge for user sessions table": {
       "Current session": [
         "Sesi saat ini"
+      ]
+    },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
       ]
     },
     "Billing cycle": {
@@ -1281,7 +1280,7 @@
         "Aktif"
       ],
       "Default": [
-        "Default"
+        "Bawaan"
       ],
       "Disabled": [
         "Dinonaktifkan"
@@ -1498,10 +1497,10 @@
         "merah jambu"
       ],
       "pistachio": [
-        "pistachio"
+        "kacang pistasi"
       ],
       "plum": [
-        "plum"
+        "plem"
       ],
       "purple": [
         "ungu"
@@ -1673,9 +1672,6 @@
       ],
       "Work": [
         "Kantor"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1776,7 +1772,7 @@
         "Pulau Bouvet"
       ],
       "Brazil": [
-        "Brasil"
+        "Brazil"
       ],
       "British Indian Ocean Territory": [
         "Teritori Samudera Hindia Inggris"
@@ -1896,7 +1892,7 @@
         "Eswatini"
       ],
       "Ethiopia": [
-        "Ethiopia"
+        "Etiopia"
       ],
       "Falkland Islands": [
         "Kepulauan Falkland"
@@ -2049,7 +2045,7 @@
         "Kuwait"
       ],
       "Kyrgyzstan": [
-        "Kirgizstan"
+        "Kyrgyzstan"
       ],
       "Laos": [
         "Laos"
@@ -2259,7 +2255,7 @@
         "Saint Pierre dan Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        "Saint Vincent dan Grenadines"
+        "Saint Vincent dan Grenadine"
       ],
       "Samoa": [
         "Samoa"
@@ -2403,7 +2399,7 @@
         "Amerika Serikat"
       ],
       "United States Minor Outlying Islands": [
-        "Pulau-Pulau Terluar Amerika Serikat"
+        "Kepulauan Terluar Kecil Amerika Serikat"
       ],
       "Uruguay": [
         "Uruguay"
@@ -2447,7 +2443,7 @@
     },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
-        "(via ${ entryCountryName })"
+        "(melalui ${ entryCountryName })"
       ]
     },
     "Create user accounts empty state": {
@@ -2831,12 +2827,6 @@
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan atau"
-      ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
@@ -2923,9 +2913,6 @@
       ],
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
       ],
       "Missing key packet": [
         "Paket kunci hilang"
@@ -3190,9 +3177,6 @@
       ],
       "You have no invoices.": [
         "Anda tidak memiliki tagihan apa pun."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Anda telah mencapai batas jumlah kalender personal milik Anda. Sebagian kalender tidak dapat diimpor."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Anda telah menggunakan semua alamat dalam paket Anda. Mohon tingkatkan paket untuk menambah alamat baru."
@@ -3784,12 +3768,12 @@
     },
     "Font Face Default": {
       "Default": [
-        "Default"
+        "Bawaan"
       ]
     },
     "Font Size Default": {
       "Default": [
-        "Default"
+        "Bawaan"
       ]
     },
     "Footer": {
@@ -3806,6 +3790,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 email per bulan)"
+      ],
+      "(during your first month)": [
+        "(pada bulan pertama Anda)"
       ]
     },
     "Go to sign in": {
@@ -3936,6 +3923,11 @@
         "Nama token"
       ]
     },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Cobalah berbagai fitur unggulan ${ MAIL_APP_NAME } secara cuma-cuma"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestions, use keyboard to navigate.": [
         "Menemukan ${ items.length } saran, gunakan papan ketik untuk navigasi."
@@ -3945,25 +3937,22 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Email"
       ],
       "Manual": [
-        "Manual"
+        "Penuntun"
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Ada kesalahan saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
@@ -4188,9 +4177,6 @@
       ],
       "ICS file": [
         "Berkas ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4234,6 +4220,9 @@
       ],
       "Canceled": [
         "Dibatalkan"
+      ],
+      "Cancelling": [
+        "Membatalkan"
       ],
       "Completed": [
         "Selesai"
@@ -4294,6 +4283,9 @@
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } menghentikan sementara proses impor karena ruang penyimpanan Anda hampir habis. Anda dapat:"
+      ],
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } akan mencoba untuk melanjutkan pengimporan ketika penyedia surel Anda mengatur ulang ${ bandwidthLimitLink } akun Anda. Anda tidak harus melakukan apa pun. Jika Anda membatalkan pengimporan Anda, Anda tidak akan dapat melanjutkannya dan Anda harus memulai dari awal."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
@@ -4985,6 +4977,9 @@
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "PENTING: Beberapa registrar tidak menerima nilai CNAME dengan titik di belakang (sementara yang lain menerima). Jika registrar Anda tidak menerima data CNAME Anda, mohon hapus titik di belakang pada setiap nilai CNAME dan coba lagi."
       ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
@@ -5216,17 +5211,11 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frasa pemulihan telah kedaluwarsa; harap perbarui agar data-data Anda selalu dapat diakses"
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } months plan": [
         "Telah dibayar untuk paket ${ rewardMonths } bulan"
       ],
       "Paid for a monthly plan": [
         "Terbayar dalam bentuk paket berlangganan bulanan"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Pembayaran dapat memakan waktu beberapa menit untuk terverifikasi sepenuhnya."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Pembayaran dilindungi dengan enkripsi TLS dan undang-undang privasi Swiss."
@@ -5285,17 +5274,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Silakan pilih jenis tautan yang hendak Anda sisipkan dan isi semua kolom di bawah ini."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi bank Anda untuk mendapatkan bantuan."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk medapatkan bantuan."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Mohon verifikasi pembayaran di tab baru yang terbuka."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Mohon verifikasi kartu di tab baru yang telah dibuka."
       ],
       "Please wait till your changes are synced with the server.": [
         "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
@@ -5386,9 +5369,6 @@
       ],
       "Select what you want to import.": [
         "Pilih hal apa saja yang hendak Anda impor."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -5621,9 +5601,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Total alamat email"
       ],
@@ -5692,9 +5669,6 @@
       ],
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
@@ -5816,14 +5790,8 @@
       "You can import one data type at a time.": [
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Silakan hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum Anda membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Silakan hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum Anda membatalkan langganan."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
-        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Silakan hapus tautan kalender bersama yang ada sebelum Anda membatalkan langganan."
+        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan."
       ],
       "You can now access and manage the account as an administrator.": [
         "Anda kini dapat mengakses dan mengelola akun selaku administrator."
@@ -5854,9 +5822,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Berhubung Anda belum mengatur metode pemulihan, akun Anda tidak akan dapat dipulihkan apabila ke depannya Anda kehilangan kata sandi Anda. Lanjutkan tanpa metode pemulihan?"
-      ],
-      "You have no calendars to export.": [
-        "Anda tidak memiliki kalender untuk diekspor."
       ],
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
@@ -5893,9 +5858,6 @@
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Anda akan ${ loseAllData } di akun ${ BRAND_NAME } Anda. Untuk memulihkannya, masukkan kata sandi lama Anda."
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Anda akan dialihkan ke situs bank untuk menyelesaikan verifikasi pembayaran."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
@@ -5941,9 +5903,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Bank Anda mewajibkan verifikasi 3-D Secure demi keamanan."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
@@ -5992,32 +5951,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
       ],
-      "Create an email address": [
-        "Buat alamat email"
-      ],
-      "Day 27: Trial reminder": [
-        "Hari ke-27: Pengingat akhir masa uji coba"
-      ],
-      "Day 30: Trial ends": [
-        "Hari ke-30: Akhir masa uji coba"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Nikmati layanan email yang aman dan mudah digunakan dengan berbagai fitur premium."
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Try Mail Plus": [
-        "Coba Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Kami akan mengirimkan Anda email sebelum masa uji coba Anda berakhir, yang dapat Anda batalkan kapan saja."
-      ],
-      "Your new email address is ready to go!": [
-        "Alamat email baru Anda siap digunakan!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Langganan Anda akan dimulai pada ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6064,6 +5999,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Untuk menghindari gangguan layanan karena tagihan yang belum terbayar, mohon pastikan Anda memiliki paling tidak 1 metode pembayaran yang valid yang telah tersimpan untuk digunakan sewaktu-waktu."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Hanya melihat"
       ]
     },
     "Input label": {
@@ -6909,7 +6849,7 @@
         "Nama di kartu"
       ],
       "NAT-PMP (Port Forwarding)": [
-        "NAT-PMP (Port Forwarding)"
+        "NAT-PMP (Penerusan Porta)"
       ],
       "Navigation": [
         "Navigasi"
@@ -7190,9 +7130,6 @@
       "Verification code": [
         "Kode verifikasi"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Kami sedih dengan kepergian Anda. Mohon jelaskan alasan kepergian Anda agar kami dapat menjadi lebih baik ke depannya."
       ],
@@ -7302,6 +7239,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "Pengumuman produk ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } email datang"
       ]
     },
     "Label in domain modal": {
@@ -7317,7 +7257,7 @@
     },
     "Label on payment method": {
       "Default": [
-        "Default"
+        "Bawaan"
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -7374,13 +7314,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada."
+        "Untuk menambah kalender baru, hapus kalender yang ada."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada atau tingkatkan akun ${ BRAND_NAME } Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar."
+        "Untuk menambah kalender baru, hapus kalender lainnya atau tingkatkan ${ BRAND_NAME } paket ke ${ MAIL_SHORT_APP_NAME } paket berbayar."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Anda telah mencapai batas jumlah kalender yang diperkenankan oleh paket Anda."
+        "Anda telah mencapai jumlah kalender maksimum yang tersedia dalam paket Anda."
       ]
     },
     "Link": {
@@ -7506,6 +7446,20 @@
         "Aktifkan catatan autentikasi"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "Impor semua pesan dari ${ itemsToImportCount } folder dan berikan label sebagai"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "Impor semua pesan dari ${ itemsToImportCount } label dan berikan label sebagai"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "Impor semua pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan berikan label sebagai"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "Impor semua pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan berikan label sebagai"
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Anda dapat membuat hingga ${ MAX_LINKS_PER_CALENDAR } tautan per kalender. Untuk dapat membuat tautan baru bagi kalender ini, hapus salah satu tautan di bawah ini."
@@ -7521,7 +7475,7 @@
         "Hapus"
       ],
       "Edit": [
-        "Edit"
+        "Sunting"
       ],
       "Revoke sessions": [
         "Cabut sesi"
@@ -7739,9 +7693,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Inbox": [
         "Kotak masuk"
       ],
@@ -7844,9 +7795,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ n } calendars": [
-        "${ n } kalender"
-      ],
       "${ n } custom email domains": [
         "${ n } domain email khusus"
       ],
@@ -7902,7 +7850,7 @@
         "Pesan balasan otomatis"
       ],
       "Calendar sharing": [
-        "Membagikan kalender"
+        "Berbagi kalender"
       ],
       "Catch-all": [
         "Alamat email catch-all"
@@ -7966,9 +7914,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "Pemblokir malware dan iklan NetShield"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
@@ -8245,9 +8190,6 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain } untuk berlangganan berita"
       ],
-      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
-        "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Melindungi Anda dari ancaman terhadap privasi VPN dengan mengalihkan lalu lintas internet Anda melalui berbagai server"
       ],
@@ -8255,7 +8197,7 @@
         "Bagi dan tautkan kalender Anda kepada rekan kerja, keluarga, dan teman Anda dengan mudah"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Bagikan kalender Anda kepada keluarga, teman, atau rekan kerja Anda dengan mudah"
+        "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
       ],
       "End-to-end encrypted calendar": [
         "Kalender yang terenkripsi ujung ke ujung"
@@ -8401,9 +8343,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Perluas jaringan relasi Anda dengan dukungan 10 alamat email khusus"
-      ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendars": [
-        "Buat hingga ${ MAX_CALENDARS_PAID } kalender"
       ],
       "Everything in ${ vpnPlanName }": [
         "Segalanya di ${ vpnPlanName }"
@@ -8613,9 +8552,6 @@
       "Add to existing group": [
         "Tambah ke grup yang sudah ada"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "Tanyakan setiap kali"
       ],
@@ -8637,9 +8573,6 @@
       "Free server configs": [
         "Konfigurasi server gratis"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Saya menemukan layanan lain yang lebih baik"
       ],
@@ -8649,9 +8582,6 @@
       "Ignore group": [
         "Abaikan grup"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Tidak ada fitur penting yang saya butuhkan"
       ],
@@ -8660,9 +8590,6 @@
       ],
       "Left to Right": [
         "Kiri ke Kanan"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Alasan saya tidak ada di daftar"
@@ -8705,15 +8632,6 @@
       ],
       "Standard server configs": [
         "Konfigurasi server standar"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -8790,9 +8708,6 @@
       ".dmg (10.12 or later)": [
         ".dmg (10.12 atau lebih tinggi)"
       ],
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (untuk Fedora/openSUSE)"
       ],
@@ -8806,17 +8721,11 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Kartu kredit/debit"
       ],
       "New credit/debit card": [
         "Kartu kredit/debit baru"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -8858,7 +8767,7 @@
         "Konfirmasi kata sandi"
       ],
       "domain.com": [
-        "domain.com"
+        "domain.co.id"
       ],
       "E.g., ": [
         "Misalnya "
@@ -8900,7 +8809,7 @@
         "Kode pos"
       ],
       "Printer": [
-        "Printer"
+        "Pencetak"
       ],
       "Search": [
         "Pencarian"
@@ -9319,9 +9228,6 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Tambahkan kalender publik, eksternal, atau bersama melalui URL."
-      ],
-      "Add public, external, or shared calendars.": [
-        "Tambahkan kalender publik, eksternal, atau bersama."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9383,8 +9289,8 @@
       ]
     },
     "Subscription change warning": {
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Langganan Anda dibeli melalui pembelian dalam aplikasi. Untuk mengelola langganan Anda saat ini, Anda perlu untuk membuka bagian Langganan pada akun ${ subscriptionManager } Anda"
+      "Subscription managed elsewhere": [
+        "Manage your subscription on Google Play"
       ]
     },
     "Subscription price": {
@@ -9403,11 +9309,6 @@
       ],
       "Upcoming": [
         "Akan datang"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Penawaran ini hanya berlaku bagi pengguna baru ${ BRAND_NAME }. Tidak ada kartu kredit yang diperlukan."
       ]
     },
     "Success": {
@@ -9761,9 +9662,6 @@
       "2. Select protocol": [
         "2. Pilih protokol"
       ],
-      "3-D Secure verification failed": [
-        "Verifikasi 3-D Secure gagal"
-      ],
       "3. Select config file and download": [
         "3. Pilih berkas konfigurasi dan unduh"
       ],
@@ -9881,14 +9779,8 @@
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
       ],
-      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
-      ],
       "Card verification": [
         "Verifikasi kartu"
-      ],
-      "Card verification in progress": [
-        "Verifikasi kartu sedang berlangsung"
       ],
       "Catch-All address": [
         "Alamat Catch-All"
@@ -10089,7 +9981,7 @@
         "Ubah pengguna"
       ],
       "Email": [
-        "Email"
+        "Surel"
       ],
       "Email composer": [
         "Komposer email"
@@ -10172,17 +10064,11 @@
       "How to refer a friend and get credits": [
         "Cara untuk merujuk teman dan memperoleh saldo tambahan"
       ],
-      "How your free trial works": [
-        "Bagaimana masa uji coba gratis Anda bekerja"
-      ],
       "Human verification": [
         "Verifikasi manusia"
       ],
       "Identity and addresses": [
         "Identitas dan alamat"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "Impor"
@@ -10277,9 +10163,6 @@
       "Open pagination": [
         "Buka paginasi"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Berkas konfigurasi OpenVPN"
       ],
@@ -10288,9 +10171,6 @@
       ],
       "Organization and keys": [
         "Organisasi dan kunci"
-      ],
-      "Other calendars": [
-        "Kalender lainnya"
       ],
       "Password": [
         "Kata sandi"
@@ -10306,9 +10186,6 @@
       ],
       "Payment verification": [
         "Verifikasi pembayaran"
-      ],
-      "Payment verification in progress": [
-        "Verifikasi pembayaran sedang berlangsung"
       ],
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
@@ -10547,9 +10424,6 @@
       "What's new": [
         "Apa-apa saja yang baru"
       ],
-      "WireGuard": [
-        "WireGuard"
-      ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
       ],
@@ -10633,7 +10507,7 @@
         "Alamat"
       ],
       "Catch-All": [
-        "Catch-All"
+        "Tangkap-semua"
       ],
       "Status": [
         "Status"
@@ -10842,11 +10716,6 @@
         "Tingkatkan akun Anda ke ${ planName } untuk dapat menghubungkan ${ n } perangkat ke jaringan VPN secara bersamaan"
       ]
     },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Tingkatkan akun Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar untuk membagikan kalender Anda."
-      ]
-    },
     "User referee invited via email": {
       "Invited via email": [
         "Diundang via email"
@@ -10898,29 +10767,6 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "${ numberOfServers } di ${ numberOfCountries } negara"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {
@@ -11001,6 +10847,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
+      ],
+      "You will not see this import record in the list any more.": [
+        "Anda tidak akan lagi melihat catatan impor ini dalam daftar."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"

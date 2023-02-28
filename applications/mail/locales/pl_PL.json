@@ -1208,16 +1208,6 @@
         "Wątek"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Witaj"
@@ -1611,54 +1601,6 @@
         "Twój adres e-mail nie znajduje się na liście uczestników"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Niezsynchronizowany"
-      ],
-      "Syncing": [
-        "Trwa synchronizacja"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalendarz nie może zostać odszyfrowany"
-      ],
-      "Calendar is syncing": [
-        "Kalendarz jest synchronizowany"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalendarz jest synchronizowany: Ładowanie wszystkich wydarzeń może potrwać kilka minut."
-      ],
-      "Calendar is too big": [
-        "Rozmiar kalendarza jest zbyt duży"
-      ],
-      "Calendar link is not accessible": [
-        "Link kalendarza nie jest dostępny"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Link kalendarza jest tymczasowo niedostępny"
-      ],
-      "Failed to sync calendar": [
-        "Nie udało się zsynchronizować kalendarza"
-      ],
-      "More than 12 hours passed since last update": [
-        "Od ostatniej aktualizacji minęło ponad 12 godzin"
-      ],
-      "Unsupported calendar format": [
-        "Format kalendarza jest nieobsługiwany"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Link kalendarza nie jest dostępny poza usługą dostawcy kalendarza."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Link kalendarza jest tymczasowo niedostępny. Zweryfikuj, czy link dostawcy kalendarza jest ważny."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Minęło ponad 12 godzin od ostatniej synchronizacji. ${ CALENDAR_APP_NAME } zaktualizuje kalendarz w ciągu kilku godzin."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Wydarzenie zakończyło się"
@@ -1999,9 +1941,6 @@
       ],
       "Work": [
         "Służbowy"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2900,7 +2839,7 @@
         "Brak etykiet"
       ],
       "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail i znak plusa"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
@@ -3121,18 +3060,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Błąd odszyfrowywania: odszyfrowanie tej wiadomości nie powiodło się."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarz",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarze",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarz lub",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarze lub",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub"
-      ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
@@ -3210,12 +3137,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maksymalna liczba ${ attachmentsCountLimit } załączników została przekroczona"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem ${ BRAND_NAME }",
-        "Scal co najmniej ${ calendarToFixCount } kalendarze z obecnymi kalendarzami ${ BRAND_NAME }",
-        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }",
-        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Najpierw wyślij wiadomość"
@@ -3450,9 +3371,6 @@
       ],
       "You did not provide a file.": [
         "Nie załączono pliku."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Osiągnięto maksymalną liczbę osobistych kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
@@ -4074,9 +3992,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -4085,9 +4000,6 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4352,9 +4264,6 @@
       ],
       "ICS file": [
         "pliku ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4369,6 +4278,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importuj z ${ provider }"
+      ],
       "Other": [
         "Inny"
       ]
@@ -5366,9 +5278,6 @@
       "Select what you want to import.": [
         "Wybierz, co chcesz zaimportować."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Wyślij zaszyfrowaną, chronioną hasłem wiadomość do ${ boldText }."
       ],
@@ -5672,9 +5581,6 @@
       "Using SimpleLogin is easy": [
         "Używanie usługi SimpleLogin jest łatwe"
       ],
-      "Verified ${ BRAND_NAME } message": [
-        "Zweryfikowana wiadomość ${ BRAND_NAME }"
-      ],
       "Version ${ appVersion }": [
         "Wersja ${ appVersion }"
       ],
@@ -5917,9 +5823,6 @@
       ],
       "Trusted": [
         "Zaufany"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -7190,9 +7093,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Uzyskaj nieograniczoną liczby aliasów SimpleLogin przez ${ BRAND_NAME }"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -8448,10 +8348,10 @@
         "${ hoursInt },5 godz."
       ],
       "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min"
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minuty"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
