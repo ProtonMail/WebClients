@@ -1,6 +1,7 @@
 import tinycolor from 'tinycolor2';
 
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     color?: string;
@@ -12,7 +13,7 @@ const CalendarIcon = ({ color, className }: Props) => {
     if (!iconColor) {
         return null;
     }
-    return <Icon className={classnames(['flex-item-noshrink', className])} name="calendar-grid" color={iconColor} />;
+    return <Icon className={clsx(['flex-item-noshrink', className])} name="calendar-grid" color={iconColor} />;
 };
 
 export default CalendarIcon;

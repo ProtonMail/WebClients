@@ -1,6 +1,7 @@
 import { CSSProperties, Ref, useMemo } from 'react';
 
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
@@ -98,7 +99,7 @@ const FullDayEvent = ({
     return (
         <div
             style={style}
-            className={classnames([className, isOutsideStart && 'isOutsideStart', isOutsideEnd && 'isOutsideEnd'])}
+            className={clsx([className, isOutsideStart && 'isOutsideStart', isOutsideEnd && 'isOutsideEnd'])}
             data-ignore-create="1"
         >
             <div
@@ -106,7 +107,7 @@ const FullDayEvent = ({
                 title={expandableTitleString}
                 role="button"
                 tabIndex={0}
-                className={classnames([
+                className={clsx([
                     'calendar-dayeventcell-inner text-left flex',
                     !isAllDay && 'isNotAllDay',
                     !isEventReadLoading && 'isLoaded',

@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-import { Tooltip, classnames } from '@proton/components';
+import { Tooltip } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     icon: React.ReactNode;
@@ -14,7 +15,7 @@ interface Props {
 
 const Participant = ({ icon, text, title, tooltip, initials, extraText, className }: Props) => {
     return (
-        <div className={classnames(['participant flex flex-nowrap flex-align-items-center', className])}>
+        <div className={clsx(['participant flex flex-nowrap flex-align-items-center', className])}>
             <Tooltip title={tooltip}>
                 <div className="participant-display item-icon relative flex flex-item-noshrink flex-align-items-center flex-justify-center">
                     <div className="item-abbr">{initials}</div>
