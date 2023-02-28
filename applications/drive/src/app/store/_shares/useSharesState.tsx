@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useState } from 'react';
 
-import { LockedVolumeForRestore, Share, ShareWithKey } from './interface';
+import { LockedVolumeForRestore, Share, ShareType, ShareWithKey } from './interface';
 
 type SharesState = {
     [shareId: string]: Share | ShareWithKey;
@@ -9,7 +9,7 @@ type SharesState = {
 /**
  * useSharesStateProvider provides a storage to cache shares.
  */
-function useSharesStateProvider() {
+export function useSharesStateProvider() {
     const [state, setState] = useState<SharesState>({});
     const [lockedVolumesForRestore, setLockedVolumesForRestore] = useState<LockedVolumeForRestore[]>([]);
 
@@ -35,8 +35,28 @@ function useSharesStateProvider() {
         [state]
     );
 
-    const getLockedShares = useCallback((): (Share | ShareWithKey)[] => {
-        return Object.values(state).filter((share) => share.isLocked && share.isDefault && !share.isVolumeSoftDeleted);
+    /**
+     * In the past, volume only had a single default share, making it
+     * appropriate to match share with volume. However, volume can contain
+     * multiple root shares - one default share and any number of devices.
+     * Volume has to be unlocked in one request and thus we need to prepare
+     * default shares together with devices for the same volume.
+     * In the future it makes sense to move this logic fully to volume
+     * section.
+     */
+    const getLockedShares = useCallback((): {
+        defaultShare: Share | ShareWithKey;
+        devices: (Share | ShareWithKey)[];
+    }[] => {
+        return Object.values(state)
+            .filter((share) => share.isLocked && share.isDefault && !share.isVolumeSoftDeleted)
+            .map((defaultShare) => ({
+                defaultShare,
+                devices: Object.values(state).filter(
+                    (share) =>
+                        share.isLocked && share.type === ShareType.device && share.volumeId === defaultShare.volumeId
+                ),
+            }));
     }, [state]);
 
     const getDefaultShareId = useCallback((): string | undefined => {

@@ -33,14 +33,26 @@ jest.mock('@proton/components/hooks/usePreventLeave', () => {
 
 const SHARE_MOCK_1 = {
     shareId: 'shareId1',
-    lockedVolumeId: 'volumeId',
-    decryptedPassphrase: 'passphrase',
+    lockedVolumeId: 'volumeId1',
+    linkDecryptedPassphrase: 'passphrase',
 };
 
 const SHARE_MOCK_2 = {
     shareId: 'shareId2',
-    lockedVolumeId: 'volumeId',
-    decryptedPassphrase: 'passphrase',
+    lockedVolumeId: 'volumeId2',
+    linkDecryptedPassphrase: 'passphrase',
+};
+
+const LOCKED_VOLUME_MOCK_1 = {
+    lockedVolumeId: 'volumeId1',
+    defaultShare: SHARE_MOCK_1,
+    devices: [],
+};
+
+const LOCKED_VOLUME_MOCK_2 = {
+    lockedVolumeId: 'volumeId2',
+    defaultShare: SHARE_MOCK_2,
+    devices: [],
 };
 
 const mockGetLockedShares = jest.fn();
@@ -84,6 +96,7 @@ const useHook = (props: any = {}) => {
         prepareVolumeForRestore: jest.fn(),
         getLinkPrivateKey: jest.fn(),
         getLinkHashKey: jest.fn(),
+        getDeviceByShareId: jest.fn(),
         ...props,
     });
 };
@@ -115,12 +128,13 @@ describe('useLockedVolume', () => {
             const { result } = renderHook(() => useHook());
             hook = result;
 
-            sharesStateMock.lockedVolumesForRestore = [SHARE_MOCK_1, SHARE_MOCK_2];
+            sharesStateMock.lockedVolumesForRestore = [LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2];
             await act(async () => {
                 const result = await hook.current.prepareVolumesForRestore(abortSignal);
-                expect(result).toMatchObject([SHARE_MOCK_1, SHARE_MOCK_2]);
+                expect(result).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
             });
         });
+
         it("should return locked volumes if there's no locked unprepared shares", async () => {
             const addressesKeys = await generateAddressKeys();
             const { result } = renderHook(() =>
@@ -130,17 +144,17 @@ describe('useLockedVolume', () => {
             );
             hook = result;
 
-            sharesStateMock.lockedVolumesForRestore = [SHARE_MOCK_1, SHARE_MOCK_2];
+            sharesStateMock.lockedVolumesForRestore = [LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2];
 
             await act(async () => {
                 const result = await hook.current.prepareVolumesForRestore(abortSignal);
-                expect(result).toMatchObject([SHARE_MOCK_1, SHARE_MOCK_2]);
+                expect(result).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
             });
         });
 
         it("should return locked volumes if there's no new prepared shares", async () => {
             mockGetLockedShares.mockImplementation(() => {
-                return [{ shareId: 'shareId' }];
+                return [{ defaultShare: { shareId: 'shareId' }, devices: [] }];
             });
             mockGetShareWithKey.mockImplementation(() => {
                 return [{ shareId: 'shareId' }];
@@ -154,26 +168,28 @@ describe('useLockedVolume', () => {
             );
             hook = result;
 
-            sharesStateMock.lockedVolumesForRestore = [SHARE_MOCK_1, SHARE_MOCK_2];
+            sharesStateMock.lockedVolumesForRestore = [LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2];
 
             await act(async () => {
                 const result = await hook.current.prepareVolumesForRestore(abortSignal);
-                expect(result).toMatchObject([SHARE_MOCK_1, SHARE_MOCK_2]);
+                expect(result).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2]);
             });
         });
 
         it('should return extended volume list with new prepared volumes', async () => {
             mockGetLockedShares.mockImplementation(() => {
-                return [{ shareId: 'shareId' }];
+                return [{ defaultShare: { shareId: 'shareId' }, devices: [] }];
             });
             mockGetShareWithKey.mockImplementation(() => {
                 return [{ shareId: 'shareId' }];
             });
 
             const lockedVolumeForRestore = {
-                shareId: 'shareId',
                 lockedVolumeId: 'volumeId',
-                decryptedPassphrase: 'passphrase',
+                defaultShare: {
+                    shareId: 'shareId',
+                    linkDecryptedPassphrase: 'passphrase',
+                },
             } as LockedVolumeForRestore;
 
             const addressesKeys = await generateAddressKeys();
@@ -187,11 +203,11 @@ describe('useLockedVolume', () => {
             );
             hook = result;
 
-            sharesStateMock.lockedVolumesForRestore = [SHARE_MOCK_1, SHARE_MOCK_2];
+            sharesStateMock.lockedVolumesForRestore = [LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2];
 
             await act(async () => {
                 const result = await hook.current.prepareVolumesForRestore(abortSignal);
-                expect(result).toMatchObject([SHARE_MOCK_1, SHARE_MOCK_2, lockedVolumeForRestore]);
+                expect(result).toMatchObject([LOCKED_VOLUME_MOCK_1, LOCKED_VOLUME_MOCK_2, lockedVolumeForRestore]);
             });
         });
     });
