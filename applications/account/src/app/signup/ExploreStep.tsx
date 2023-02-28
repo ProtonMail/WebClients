@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Logo, classnames, useLoading } from '@proton/components';
+import { Icon, Logo, useLoading } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
@@ -33,7 +33,7 @@ const ExploreStep = ({ onExplore }: Props) => {
                                     data-testid={app.replace('proton-', 'explore-')}
                                     size="large"
                                     shape="ghost"
-                                    className={classnames(['flex flex-align-items-center text-left my0-5'])}
+                                    className="flex flex-align-items-center text-left my0-5"
                                     fullWidth
                                     onClick={() => {
                                         if (loading) {

@@ -10,7 +10,6 @@ import {
     InlineLinkButton,
     Loader,
     OnLoginCallbackArguments,
-    classnames,
     useApi,
     useErrorHandler,
     useLoading,
@@ -31,6 +30,7 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import Content from './Content';
@@ -183,10 +183,10 @@ const SwitchAccountContainer = ({ toAppName, onLogin, activeSessions, onAddAccou
             return (
                 <Fragment key={LocalID}>
                     <div
-                        className={classnames([
+                        className={clsx(
                             'account-button p1 interactive flex flex-align-items-start w100 text-left rounded relative',
-                            isLoading && 'is-loading',
-                        ])}
+                            isLoading && 'is-loading'
+                        )}
                     >
                         <span className="flex user-initials rounded bg-primary">
                             <span className="mauto text-semibold" aria-hidden="true">
