@@ -492,6 +492,7 @@ const SubscriptionModal = ({
                 withLoading(handleCheckout());
             }}
             onClose={onClose}
+            data-testid="plansModal"
             {...rest}
             as="form"
             size="large"
