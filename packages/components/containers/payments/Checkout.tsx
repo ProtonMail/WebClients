@@ -30,7 +30,7 @@ const Checkout = ({
         <div className="p2">
             <div className="flex flex-nowrap flex row mb1">
                 <h2 className="h4 text-bold mt0-25 mb0 text-cut flex-item-fluid">{c('Title').t`Plan summary`}</h2>
-                <span className="flex-item-noshrink">
+                <span className="flex-item-noshrink" data-testid="checkoutCurrencyDropdown">
                     <CurrencySelector
                         currency={currency}
                         onSelect={onChangeCurrency}
