@@ -1201,11 +1201,6 @@
         "簡易登入"
       ]
     },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "歡迎"
@@ -1594,54 +1589,6 @@
       ],
       "Your email address is not in the participants list": [
         "您的電郵位址不在參與者清單中"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "未同步"
-      ],
-      "Syncing": [
-        "正在同步"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "無法解密行事曆"
-      ],
-      "Calendar is syncing": [
-        "行事曆正在同步"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "行事曆同步中：僅需數分鐘即可顯示所有事件。"
-      ],
-      "Calendar is too big": [
-        "行事曆太大了"
-      ],
-      "Calendar link is not accessible": [
-        "行事曆無法存取"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "行事曆連結暫時無法存取"
-      ],
-      "Failed to sync calendar": [
-        "同步行事曆失敗"
-      ],
-      "More than 12 hours passed since last update": [
-        "距離上次更新已經過了12小時以上"
-      ],
-      "Unsupported calendar format": [
-        "不支援的行事曆格式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "行事曆連結無法從服務提供商生態系統外進行連線。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "從上次更新以來已經過了超過12小時 — ${ CALENDAR_APP_NAME } 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Calendar widget banner": {
@@ -2870,7 +2817,7 @@
         "沒有標籤"
       ],
       "ProtonMail logo and a plus sign": [
-        "Proton Mail 標誌與加號"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -3082,12 +3029,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密錯誤：此郵件的加密內容解密失敗。"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
-      ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
@@ -3165,9 +3106,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "可容許的附件數量 (${ attachmentsCountLimit }) 已達上限"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "請至少將 ${ calendarToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
       "Message needs to be sent first": [
         "需要先傳送郵件"
@@ -3384,9 +3322,6 @@
       ],
       "You did not provide a file.": [
         "您沒有提供檔案。"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "您已經達到個人行事曆的數量上限。有部分行事曆無法被匯入。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -3711,15 +3646,6 @@
     "file size format": {
       "bytes": [
         "位元組"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -4004,6 +3930,9 @@
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
+      ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
@@ -4230,9 +4159,6 @@
       ],
       "ICS file": [
         "ICS 檔案"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5094,9 +5020,6 @@
       "Select what you want to import.": [
         "選擇您要匯入的檔案。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "傳送一封加密、密碼保護的郵件至 ${ boldText } 電郵位址。"
       ],
@@ -5391,9 +5314,6 @@
       "Using SimpleLogin is easy": [
         "使用 SimpleLogin 很簡單"
       ],
-      "Verified ${ BRAND_NAME } message": [
-        "驗證過的 ${ BRAND_NAME } 訊息"
-      ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
       ],
@@ -5609,9 +5529,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6371,17 +6288,6 @@
         "列"
       ]
     },
-    "Limit of calendars reached": {
-      "To add a new calendar, remove an existing one.": [
-        "要新增行事曆，請移除既有的。"
-      ],
-      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "要新增行事曆，請移除其他行事曆或升級您的 ${ BRAND_NAME } 方案至 ${ MAIL_SHORT_APP_NAME } 付費方案。"
-      ],
-      "You've reached the maximum number of calendars available in your plan.": [
-        "您已達到您方案中可用的最大行事曆數量。"
-      ]
-    },
     "Link": {
       "All mail": [
         "所有郵件"
@@ -6609,7 +6515,7 @@
         "在 ${ date }，${ senderString } 寫道："
       ],
       "Re:": [
-        "Re:"
+        "回复："
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費試用期已結束。您即將無法存取您的帳戶。${ action }"
@@ -6852,9 +6758,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

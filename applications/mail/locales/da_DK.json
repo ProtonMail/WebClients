@@ -216,7 +216,7 @@
         "Sammentræk skrivevinduet"
       ],
       "Copy address": [
-        "Kopiér addresse"
+        "Kopiér adresse"
       ],
       "Copy addresses": [
         "Kopiér adresser"
@@ -473,7 +473,7 @@
         "Billeder vil blive indlæst uden en proxy"
       ],
       "Import": [
-        "Import"
+        "Importér"
       ],
       "import": [
         "importér"
@@ -491,7 +491,7 @@
         "Importer fra .csv eller vCard"
       ],
       "Inline": [
-        "Inline"
+        "Indbygget"
       ],
       "Insert": [
         "Indsæt"
@@ -1200,16 +1200,6 @@
         "Samtale"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Velkommen"
@@ -1601,54 +1591,6 @@
         "Din e-mailadresse er ikke på deltagerlisten"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Ikke synkroniseret"
-      ],
-      "Syncing": [
-        "Synkroniserer"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender kunne ikke dekrypteres"
-      ],
-      "Calendar is syncing": [
-        "Kalender synkroniserer"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalender er ved at blive synkroniseret: Det kan tage flere minutter, før alle begivenhederne vises."
-      ],
-      "Calendar is too big": [
-        "Kalender er for stor"
-      ],
-      "Calendar link is not accessible": [
-        "Kalenderlink er ikke tilgængeligt"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Kalenderlink er midlertidig ikke tilgængeligt"
-      ],
-      "Failed to sync calendar": [
-        "Kunne ikke synkronisere kalender"
-      ],
-      "More than 12 hours passed since last update": [
-        "Der er gået mere end 12 timer siden den seneste opdatering"
-      ],
-      "Unsupported calendar format": [
-        "Ikke-understøttet kalenderformat"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Kalenderlinket er ikke tilgængeligt uden for kalenderudbyderens økosystem."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Der er gået mere end 12 timer siden sidste opdatering - ${ CALENDAR_APP_NAME } vil forsøge at opdatere kalenderen om et par timer."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Begivenhed allerede afsluttet"
@@ -1929,7 +1871,7 @@
         "Køn"
       ],
       "Geo": [
-        "Geo"
+        "Geolokalisering"
       ],
       "Language": [
         "Sprog"
@@ -1944,7 +1886,7 @@
         "Navn"
       ],
       "Note": [
-        "Note"
+        "Notat"
       ],
       "Organization": [
         "Organisation"
@@ -1989,9 +1931,6 @@
       ],
       "Work": [
         "Arbejde"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2137,7 +2076,7 @@
         "Kina"
       ],
       "Christmas Island": [
-        "Christmas Island"
+        "Juleøen"
       ],
       "Cocos (Keeling) Islands": [
         "Cocosøerne"
@@ -2880,7 +2819,7 @@
         "Ingen etiketter"
       ],
       "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
@@ -3095,14 +3034,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne beskeds indhold mislykkedes."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Fravælg mindst ${ calendarToFixCount } kalender",
-        "Fravælg mindst ${ calendarToFixCount } kalendere"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Fravælg mindst ${ calendarToFixCount } kalender eller",
-        "Fravælg mindst ${ calendarToFixCount } kalendere eller"
-      ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
@@ -3180,10 +3111,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Det maksimale antal vedhæftninger (${ attachmentsCountLimit }) overskredet"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Flet mindst ${ calendarToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
-        "Flet mindst ${ calendarToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
       ],
       "Message needs to be sent first": [
         "Beskeden skal sendes først"
@@ -3406,9 +3333,6 @@
       ],
       "You did not provide a file.": [
         "Du har ikke angivet en fil."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -4007,9 +3931,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -4018,9 +3939,6 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4040,6 +3958,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret.",
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. Ingen begivenhed kunne importeres."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. Ingen begivenheder kunne importeres."
@@ -4268,9 +4189,6 @@
       ],
       "ICS file": [
         "ICS fil"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5145,7 +5063,7 @@
         "Anmod om kvittering for læsning"
       ],
       "Rich text": [
-        "Rich text"
+        "Rig tekst"
       ],
       "Right to Left": [
         "Højre mod venstre"
@@ -5182,9 +5100,6 @@
       ],
       "Select what you want to import.": [
         "Vælg, hvad du ønsker at importere."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Send en krypteret, adgangskodebeskyttet besked til en ${ boldText } e-mailadresse."
@@ -5483,9 +5398,6 @@
       "Using SimpleLogin is easy": [
         "Det er nemt at bruge SimpleLogin"
       ],
-      "Verified ${ BRAND_NAME } message": [
-        "Verificeret ${ BRAND_NAME }-besked"
-      ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
       ],
@@ -5710,9 +5622,6 @@
       ],
       "Trusted": [
         "Betroet"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -5953,7 +5862,7 @@
         "Adresse"
       ],
       "ALL": [
-        "ALL"
+        "ALLE"
       ],
       "Also archive": [
         "Arkivér også"
@@ -5974,7 +5883,7 @@
         "Og"
       ],
       "ANY": [
-        "ANY"
+        "ENHVER"
       ],
       "App password": [
         "App-adgangskode"
@@ -6139,7 +6048,7 @@
         "Jeg er indforstået med risikoen"
       ],
       "IF": [
-        "IF"
+        "HVIS"
       ],
       "If": [
         "Hvis"
@@ -6283,7 +6192,7 @@
         "Gendannelsessætning"
       ],
       "Region": [
-        "Region"
+        "Område"
       ],
       "Remember my choice": [
         "Husk mit valg"
@@ -6476,13 +6385,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "For at tilføje en ny kalender skal du fjerne en eksisterende kalender."
+        "For at tilføje en ny kalender, skal du fjerne en eksisterende kalender."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "For at tilføje en ny kalender, fjern en anden kalender eller opgrader dit ${ BRAND_NAME }-abonnement til et betalt ${ MAIL_SHORT_APP_NAME }-abonnement."
+        "For at tilføje en ny kalender, skal du fjerne en anden kalender eller opgradere dit ${ BRAND_NAME }-abonnement til et betalt ${ MAIL_SHORT_APP_NAME }-abonnement."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Du har nået det maksimale antal kalendere, der er tilgængelige med dit abonnement."
+        "Du har nået det maksimale antal kalendere, der er tilgængelige i dit abonnement."
       ]
     },
     "Link": {
@@ -6963,9 +6872,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7843,7 +7749,7 @@
         "CSV-felt"
       ],
       "Import": [
-        "Import"
+        "Importér"
       ],
       "Name": [
         "Navn"

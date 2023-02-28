@@ -886,14 +886,6 @@
         "Ανάκληση"
       ]
     },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "Συνέχεια με το δωρεάν πλάνο"
-      ],
-      "Start my 30-day free trial": [
-        "Ξεκινήστε τη δωρεάν δοκιμή 30 ημερών"
-      ]
-    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "Αποδοχή"
@@ -987,11 +979,6 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο email μου."
-      ]
-    },
-    "Badge": {
-      "Coming soon": [
-        "Ερχεται σύντομα"
       ]
     },
     "Badge for domain": {
@@ -1125,9 +1112,6 @@
       ],
       "Send": [
         "Αποστολή"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -1494,9 +1478,6 @@
       "Birthday": [
         "Γενέθλια"
       ],
-      "Email": [
-        "Email"
-      ],
       "Gender": [
         "Φύλο"
       ],
@@ -1535,9 +1516,6 @@
       ],
       "Title": [
         "Τίτλος"
-      ],
-      "URL": [
-        "URL"
       ]
     },
     "Contact type label": {
@@ -2644,14 +2622,6 @@
       "Contact signature not verified": [
         "Η υπογραφή επαφής δεν πιστοποιήθηκε"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια ή"
-      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -2738,10 +2708,6 @@
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -3359,15 +3325,6 @@
       "byte": [
         "byte",
         "bytes"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -3381,7 +3338,7 @@
       ],
       "Kilobyte": [
         "Kilobyte",
-        "Kilobytes"
+        "Kilobyte"
       ],
       "Megabyte": [
         "Megabyte",
@@ -3604,20 +3561,11 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
       "Manual": [
         "Χειροκίνητα"
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -3811,9 +3759,6 @@
       ],
       "ICS file": [
         "αρχείο ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4681,6 +4626,9 @@
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
       ],
+      "Loading...": [
+        "Φόρτωση..."
+      ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Για ενεργοποίηση της διεύθυνσής σας, εισέλθετε στο ${ MAIL_APP_NAME }"
       ],
@@ -4798,18 +4746,12 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Παρωχημένη φράση ανάκτησης. Για εξασφαλισμένη πρόσβαση στα δεδομένα σας, ενημερώστε τη."
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Πλήρωσε για πρόγραμμα ${ rewardMonths } μήνα",
         "Πλήρωσε για πρόγραμμα ${ rewardMonths } μηνών"
       ],
       "Paid for a monthly plan": [
         "Πλήρωσε για μηνιαίο πρόγραμμα"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Η πληρωμή μπορεί να πάρει μερικά λεπτά προκειμένου να επαληθευτεί πλήρως."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
@@ -4864,17 +4806,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Επιλέξτε τον τύπο σύνδεσμου που θέλετε να εισαγάγετε και συμπληρώστε όλα τα πεδία."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε μια διαφορετική μέθοδο πληρωμής, ή καλέστε την τράπεζα σας για περαιτέρω βοήθεια."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Παρακαλώ προσπαθήστε ξανά, χρησιμοποιείστε ένα διαφορετικό τρόπο πληρωμής, ή επικοινωνήστε με το Paypal για περαιτέρω βοήθεια."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Παρακαλώ επαληθεύστε τη πληρωμή που βρίσκεται στη νέα καρτέλα που έχει ανοιχτεί."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Παρακαλώ επαληθεύστε τη κάρτα που βρίσκεται στη νέα καρτέλα που έχει ανοιχτεί."
       ],
       "Please wait till your changes are synced with the server.": [
         "Παρακαλούμε να περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
@@ -4953,9 +4889,6 @@
       ],
       "Select what you want to import.": [
         "Επιλέξτε τι θέλετε να εισάγετε."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Στάλθηκε με διασφαλισμένο ταχυδρομείο <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -5161,9 +5094,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Προσθέστε στο λογαριασμό πιστωτικές μονάδες, τις οποίες μπορείτε να χρησιμοποιήσετε για να έχετε μια νέα συνδρομή πακέτου/πλάνου ή να ανανεώσετε το τρέχον πακέτο σας. Λαμβάνετε μία πιστωτική μονάδα για κάθε ${ i18nCurrency } που ξοδεύτηκε."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Two-factor authentication disabled": [
         "Έλεγχος ταυτότητας δύο παραγόντων απενεργοποιημένος"
       ],
@@ -5218,9 +5148,6 @@
       "Verification can take a few minutes.": [
         "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
       ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλώ απενεργοποιήστε τον αποκλεισμό αναδυόμενων παραθύρων."
-      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλώ απενεργοποιήστε τον αποκλεισμό αναδυόμενων παραθύρων. Δεν θα χρεωθείτε. Κάθε ποσό που χρησιμοποιείται για την επαλήθευση της κάρτας θα επιστραφεί αμέσως."
       ],
@@ -5256,9 +5183,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
-      ],
-      "Web URL": [
-        "Web URL"
       ],
       "Week": [
         "Εβδομάδα"
@@ -5381,9 +5305,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Θα ${ loseAllData } στον ${ BRAND_NAME } λογαριασμό σας. Για να το επαναφέρετε, θα πρέπει να εισάγετε τον παλιό κωδικό πρόσβασης σας."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Θα ανακατευθυνθείτε σύντομα στην τράπεζα σας, για να επαληθεύσετε την πληρωμή σας."
-      ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
         "ΔΕΝ θα μπορείτε να αποκρυπτογραφήσετε τυχόν μηνύματα, αρχεία και άλλα δεδομένα κρυπτογραφημένα με αυτό το κλειδί."
       ],
@@ -5419,9 +5340,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Η τράπεζα σας, απαιτεί ασφαλή επαλήθευση 3-D για λόγους ασφαλείας."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
@@ -6131,9 +6049,6 @@
       "Duration": [
         "Διάρκεια"
       ],
-      "Email": [
-        "Email"
-      ],
       "Email address": [
         "Διεύθυνση email"
       ],
@@ -6554,9 +6469,6 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Ανεβάστε 1 ή περισσότερα αρχεία ανάκτησης ή κλειδιά κρυπτογράφησης"
       ],
-      "URL": [
-        "URL"
-      ],
       "Use a recovery email address": [
         "Χρήση ηλ. διεύθυνσης ανάκτησης"
       ],
@@ -6577,9 +6489,6 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Λυπούμαστε που φεύγετε. Παρακαλούμε εξηγήστε τον λόγο, για να μας βοηθήσετε να βελτιωθούμε."
@@ -7267,17 +7176,11 @@
       "1 free VPN connection in total": [
         "συνολικά 1 δωρεάν σύνδεση VPN"
       ],
-      "99.95% SLA": [
-        "99.95% SLA"
-      ],
       "Advanced sharing security": [
         "Προχωρημένη διασφάλιση κοινοποίησης"
       ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
-      ],
-      "Catch-all": [
-        "Catch-all"
       ],
       "Contact groups": [
         "Ομάδες επαφών"
@@ -7318,9 +7221,6 @@
       ],
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Phone support (6+ users)": [
         "Τηλεφωνική υποστήριξη (6+ χρήστες)"
@@ -7727,9 +7627,6 @@
       "Add to existing group": [
         "Προσθήκη σε υπάρχουσα ομάδα"
       ],
-      "Android": [
-        "Android"
-      ],
       "Automatic (${ defaultDay })": [
         "Αυτόματο (${ defaultDay })"
       ],
@@ -7748,17 +7645,11 @@
       "Free server configs": [
         "Ρυθμίσεις δωρεάν διακομιστή"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
       ],
       "Ignore group": [
         "Παράβλεψη ομάδας"
-      ],
-      "iOS": [
-        "iOS"
       ],
       "It's missing a key feature that I need": [
         "Λείπει ένα βασικό χαρακτηριστικό που χρειάζομαι"
@@ -7768,9 +7659,6 @@
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Ο λόγος δεν συμπεριλαμβάνεται στη λίστα"
@@ -7813,15 +7701,6 @@
       ],
       "Standard server configs": [
         "Ρυθμίσεις τυπικού διακομιστή"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -7886,12 +7765,6 @@
       ".deb (for Debian/Ubuntu)": [
         ".deb (για Debian/Ubuntu)"
       ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 or later)"
-      ],
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (για Fedora/openSUSE)"
       ],
@@ -7905,17 +7778,11 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "PGP key warning": {
@@ -7956,9 +7823,6 @@
       ],
       "Email address": [
         "Διεύθυνση email"
-      ],
-      "example@domain.com": [
-        "example@domain.com"
       ],
       "Feedback": [
         "Αξιολόγηση"
@@ -8011,9 +7875,6 @@
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
       ],
-      "yourdomain.com": [
-        "yourdomain.com"
-      ],
       "ZIP": [
         "T.K"
       ]
@@ -8056,9 +7917,6 @@
     "Property type": {
       "Address": [
         "Διεύθυνση"
-      ],
-      "Email": [
-        "Email"
       ],
       "Fax": [
         "Φαξ"
@@ -8121,9 +7979,6 @@
       ]
     },
     "Recovery method": {
-      "Email": [
-        "Email"
-      ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
@@ -8289,9 +8144,6 @@
       "Display name": [
         "Εμφανιζόμενο Όνομα"
       ],
-      "Email": [
-        "Email"
-      ],
       "Username": [
         "Όνομα χρήστη"
       ]
@@ -8454,11 +8306,6 @@
         "Ενεργά"
       ]
     },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Αυτή η προσφορά είναι μόνο για όσους είναι νέοι στο ${ BRAND_NAME }. Δεν απαιτείται πιστωτική κάρτα."
-      ]
-    },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } αντιγράφηκε στο πρόχειρο σας"
@@ -8597,6 +8444,9 @@
       ],
       "SPF value copied to clipboard": [
         "Η τιμή SPF αντιγράφηκε στο πρόχειρο"
+      ],
+      "Undo in progress": [
+        "Αναίρεση σε εξέλιξη"
       ],
       "User created": [
         "Ο χρήστης δημιουργήθηκε"
@@ -8789,9 +8639,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "1. Give a name to the config to be generated": [
         "1. Δώστε όνομα στην παραγόμενη διαμόρφωση"
       ],
@@ -8803,9 +8650,6 @@
       ],
       "2. Select protocol": [
         "2. Επιλέξτε πρωτόκολλο"
-      ],
-      "3-D Secure verification failed": [
-        "Η επαλήθευση ασφαλείας 3-D απέτυχε"
       ],
       "3. Select config file and download": [
         "3. Επιλέξτε αρχείο ρυθμίσεων και λήψη"
@@ -8917,9 +8761,6 @@
       ],
       "Card verification": [
         "Επαλήθευση Κάρτας"
-      ],
-      "Card verification in progress": [
-        "Επαλήθευση κάρτας σε εξέλιξη"
       ],
       "Catch-All address": [
         "Διευθύνσεις Catch all"
@@ -9111,9 +8952,6 @@
       "Edit user": [
         "Επεξεργασία χρήστη"
       ],
-      "Email": [
-        "Email"
-      ],
       "Email composer": [
         "Συντάκτης μηνύματος"
       ],
@@ -9197,9 +9035,6 @@
       ],
       "Identity and addresses": [
         "Ταυτότητα και διευθύνσεις"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "Εισαγωγή"
@@ -9292,9 +9127,6 @@
       "Open pagination": [
         "Άνοιγμα σελιδοποίησης"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Αρχεία διαμόρφωσης OpenVPN"
       ],
@@ -9318,9 +9150,6 @@
       ],
       "Payment verification": [
         "Επαλήθευση Πληρωμής"
-      ],
-      "Payment verification in progress": [
-        "Επαλήθευση πληρωμής σε εξέλιξη"
       ],
       "PayPal verification failed": [
         "Η επαλήθευση PayPal απέτυχε"
@@ -9546,9 +9375,6 @@
       "What's new": [
         "Τι νέο υπάρχει"
       ],
-      "WireGuard": [
-        "WireGuard"
-      ],
       "WireGuard configuration": [
         "Διαμόρφωση WireGuard"
       ],
@@ -9621,9 +9447,6 @@
     "Title header for addresses domain table": {
       "Address": [
         "Διεύθυνση"
-      ],
-      "Catch-All": [
-        "Catch-All"
       ],
       "Status": [
         "Κατάσταση"
@@ -9874,29 +9697,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } σε ${ numberOfCountries } χώρα",
         "${ numberOfServers } σε ${ numberOfCountries } χώρες"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

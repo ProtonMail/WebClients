@@ -685,11 +685,6 @@
         "Opțional"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "În curând"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "„Accesul la Beta” vă permite să utilizați versiunea beta a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME } înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
@@ -1104,9 +1099,6 @@
       ],
       "Work": [
         "Serviciu"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1159,7 +1151,7 @@
         "Austria"
       ],
       "Azerbaijan": [
-        "Azerbaijan"
+        "Azerbaidjan"
       ],
       "Bahamas": [
         "Bahamas"
@@ -1261,7 +1253,7 @@
         "Columbia"
       ],
       "Comoros": [
-        "Comoros"
+        "Comore"
       ],
       "Congo": [
         "Congo"
@@ -1300,7 +1292,7 @@
         "Djibouti"
       ],
       "Dominica": [
-        "Dominica"
+        "Republica Dominicană"
       ],
       "Dominican Republic": [
         "Republica Dominicană"
@@ -1396,10 +1388,10 @@
         "Guernsey"
       ],
       "Guinea": [
-        "Guinea"
+        "Guineea"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bissau"
+        "Guineea-Bissau"
       ],
       "Guyana": [
         "Guiana"
@@ -1480,7 +1472,7 @@
         "Kuweit"
       ],
       "Kyrgyzstan": [
-        "Kyrgyzstan"
+        "Kârgâzstan"
       ],
       "Laos": [
         "Laos"
@@ -1549,7 +1541,7 @@
         "Mexic"
       ],
       "Moldova": [
-        "Moldova"
+        "Republica Moldova"
       ],
       "Monaco": [
         "Monaco"
@@ -1600,7 +1592,7 @@
         "Nigeria"
       ],
       "Niue": [
-        "Niue"
+        "Insula Niue"
       ],
       "Norfolk Island": [
         "Insula Norfolk"
@@ -1777,7 +1769,7 @@
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tajikistan"
+        "Tadjikistan"
       ],
       "Tanzania": [
         "Tanzania"
@@ -1786,7 +1778,7 @@
         "Tailanda"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timorul De Est"
       ],
       "Togo": [
         "Togo"
@@ -2175,16 +2167,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Eroare decriptare: decriptarea conținutului acestui eveniment a eșuat."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deselectați cel puțin un calendar.",
-        "Deselectați cel puțin ${ calendarToFixCount } calendare.",
-        "Deselectați cel puțin ${ calendarToFixCount } de calendare."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Deselectați cel puțin un calendar sau",
-        "Deselectați cel puțin ${ calendarToFixCount } calendare sau",
-        "Deselectați cel puțin ${ calendarToFixCount } de calendare sau"
-      ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
@@ -2262,11 +2244,6 @@
       ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Îmbinați cel puțin un calendar cu un calendar ${ BRAND_NAME } existent.",
-        "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
-        "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
       ],
       "Missing key packet": [
         "Lipsește pachetul de chei."
@@ -2446,9 +2423,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Nu puteți trimite fișiere vCard pentru mai mult de 10 contacte."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
@@ -2672,10 +2646,10 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "Un participant",
-        "${ numberOfParticipants } participanți",
-        "${ numberOfParticipants } de participanți"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } participant",
+        "${ numberOfAttendees } participanți",
+        "${ numberOfAttendees } de participanți"
       ]
     },
     "Event info. Organizer name": {
@@ -2859,9 +2833,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -2870,9 +2841,6 @@
       ],
       "No verification method available": [
         "Nu sunt metode de verificare disponibile"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2885,6 +2853,9 @@
         "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
@@ -3109,9 +3080,6 @@
       ],
       "ICS file": [
         "fișier ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3294,11 +3262,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Oricine are această legătură poate vedea dacă aveți sau nu timp liber în calendar. Nu pot vedea detaliile evenimentului, cum ar fi titlul, locul sau participanții."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Este permis cel mult un participant per invitație.",
-        "Sunt permiși cel mult ${ MAX_ATTENDEES } participanți per invitație.",
-        "Sunt permiși cel mult ${ MAX_ATTENDEES } de participanți per invitație."
       ],
       "Attention required": [
         "Necesită atenție"
@@ -3600,9 +3563,6 @@
       "Select what you want to import.": [
         "Selectați ce doriți să importați."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
@@ -3849,6 +3809,11 @@
         "Apăsați pentru detalii"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Numai vizualizare"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Câteva calendare nu vor afișa detaliile evenimentelor create anterior."
@@ -3875,6 +3840,16 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Puteți repartaja calendarele din setări."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Este permis cel mult ${ MAX_ATTENDEES } participant per invitație.",
+        "Sunt permiși cel mult ${ MAX_ATTENDEES } participanți per invitație.",
+        "Sunt permiși cel mult ${ MAX_ATTENDEES } de participanți per invitație."
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Crearea de invitații la un calendar partajat nu este permisă."
       ]
     },
     "Input label": {
@@ -3908,9 +3883,6 @@
       ],
       "Trusted": [
         "Aprobată"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4274,13 +4246,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Pentru a adăuga un nou calendar, eliminați unul existent."
+        "Pentru a adăuga un calendar, eliminați altul existent."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Pentru a adăuga un nou calendar, eliminați alt calendar sau actualizați planul ${ BRAND_NAME } la un plan plătit ${ MAIL_SHORT_APP_NAME }."
+        "Pentru a adăuga un calendar, eliminați altul existent sau modificați planul ${ BRAND_NAME } cu un plan ${ MAIL_SHORT_APP_NAME } cu plată."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Ați atins numărul maxim de calendare disponibile în cadrul planului dumneavoastră."
+        "Ați atins maximul de calendare disponibile în acest plan."
       ]
     },
     "Link": {
@@ -4371,10 +4343,10 @@
     },
     "Message": {
       "Fw:": [
-        "Fw:"
+        "Rd:"
       ],
       "Re:": [
-        "Re:"
+        "Rs:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
@@ -4401,7 +4373,7 @@
         "Gestionare calendare"
       ],
       "Upgrade": [
-        "Upgrade"
+        "Modernizare"
       ]
     },
     "Modal for received invitation to share calendar; text": {

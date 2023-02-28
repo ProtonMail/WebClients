@@ -794,54 +794,6 @@
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Niezsynchronizowany"
-      ],
-      "Syncing": [
-        "Trwa synchronizacja"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalendarz nie może zostać odszyfrowany"
-      ],
-      "Calendar is syncing": [
-        "Kalendarz jest synchronizowany"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalendarz jest synchronizowany: Ładowanie wszystkich wydarzeń może potrwać kilka minut."
-      ],
-      "Calendar is too big": [
-        "Rozmiar kalendarza jest zbyt duży"
-      ],
-      "Calendar link is not accessible": [
-        "Link kalendarza nie jest dostępny"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Link kalendarza jest tymczasowo niedostępny"
-      ],
-      "Failed to sync calendar": [
-        "Nie udało się zsynchronizować kalendarza"
-      ],
-      "More than 12 hours passed since last update": [
-        "Od ostatniej aktualizacji minęło ponad 12 godzin"
-      ],
-      "Unsupported calendar format": [
-        "Format kalendarza jest nieobsługiwany"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Link kalendarza nie jest dostępny poza usługą dostawcy kalendarza."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Link kalendarza jest tymczasowo niedostępny. Zweryfikuj, czy link dostawcy kalendarza jest ważny."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Minęło ponad 12 godzin od ostatniej synchronizacji. ${ CALENDAR_APP_NAME } zaktualizuje kalendarz w ciągu kilku godzin."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Zwiń"
@@ -997,9 +949,6 @@
       ],
       "Work": [
         "Służbowy"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1936,18 +1885,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Nie można włączyć wyszukiwania zawartości w tej przeglądarce. Wyjdź z trybu prywatnego przeglądarki lub spróbuj użyć innej."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarz",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarze",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarz lub",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarze lub",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub"
-      ],
       "Device name does not match": [
         "Nazwy urządzeń nie pasują do siebie"
       ],
@@ -2010,12 +1947,6 @@
       ],
       "Label name cannot be empty.": [
         "Nazwa etykiety nie może być pusta."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem ${ BRAND_NAME }",
-        "Scal co najmniej ${ calendarToFixCount } kalendarze z obecnymi kalendarzami ${ BRAND_NAME }",
-        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }",
-        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Brak pakietu klucza"
@@ -2181,9 +2112,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Jednocześnie możesz wysłać maksymalnie 10 plików vCard"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Osiągnięto maksymalną liczbę osobistych kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
@@ -2574,9 +2502,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -2585,9 +2510,6 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2833,9 +2755,6 @@
       ],
       "ICS file": [
         "pliku ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2850,6 +2769,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importuj z ${ provider }"
+      ],
       "Other": [
         "Inny"
       ]
@@ -3649,9 +3571,6 @@
       "Select what you want to import.": [
         "Wybierz, co chcesz zaimportować."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
@@ -4002,9 +3921,6 @@
       ],
       "Trusted": [
         "Zaufany"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4473,6 +4389,17 @@
     "Landmarks": {
       "Side panel": [
         "Panel boczny"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Aby dodać nowy kalendarz, usuń obecny."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Aby dodać nowy kalendarz, usuń inny lub ulepsz konto ${ BRAND_NAME } do płatnego planu ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Limit maksymalnej liczby kalendarzy dostępnych w Twoim planie został osiągnięty."
       ]
     },
     "Link": {
@@ -5534,10 +5461,10 @@
         "${ hoursInt },5 godz."
       ],
       "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min"
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minuty"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {

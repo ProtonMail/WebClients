@@ -71,7 +71,7 @@ const UpsellBox = ({ title, items, children, description }: UpsellBoxProps) => (
                 <img
                     src={headerImage}
                     className="w100 block"
-                    alt={c('Description').t`ProtonMail logo and a plus sign`}
+                    alt={c('Description').t`Proton Mail logo and a plus sign`}
                 />
             </div>
             <h1 className="h3 text-bold mb1">{title}</h1>

@@ -675,11 +675,6 @@
         "Προαιρετικό"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "Ερχεται σύντομα"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Η Beta Πρόσβαση σας επιτρέπει να χρησιμοποιήσετε την έκδοση beta του ${ MAIL_APP_NAME }, του ${ CALENDAR_APP_NAME } και του ${ DRIVE_APP_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό σημαίνει ότι μπορείτε να είστε οι πρώτοι που θα δοκιμάσετε νέα προϊόντα, θα λάβετε νέες ενημερώσεις και θα χρησιμοποιήσετε νέες δυνατότητες."
@@ -920,11 +915,6 @@
         "Ανάπτυξη"
       ]
     },
-    "colon": {
-      ": ": [
-        ": "
-      ]
-    },
     "color": {
       "carrot": [
         "καρότο"
@@ -1002,9 +992,6 @@
       "Birthday": [
         "Γενέθλια"
       ],
-      "Email": [
-        "Email"
-      ],
       "Gender": [
         "Φύλο"
       ],
@@ -1043,9 +1030,6 @@
       ],
       "Title": [
         "Τίτλος"
-      ],
-      "URL": [
-        "URL"
       ]
     },
     "Contact type label": {
@@ -2122,14 +2106,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Σφάλμα αποκρυπτογράφησης: Αποτυχία αποκρυπτογράφησης του περιεχομένου γεγονότος."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια ή"
-      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -2207,10 +2183,6 @@
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -2586,12 +2558,6 @@
         "ακυρωμένες"
       ]
     },
-    "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } συμμετέχων",
-        "${ numberOfParticipants } συμμετέχοντες"
-      ]
-    },
     "Event info. Organizer name": {
       "You": [
         "Εσείς"
@@ -2668,15 +2634,6 @@
       "byte": [
         "byte",
         "bytes"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -2690,7 +2647,7 @@
       ],
       "Kilobyte": [
         "Kilobyte",
-        "Kilobytes"
+        "Kilobyte"
       ],
       "Megabyte": [
         "Megabyte",
@@ -2743,20 +2700,11 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
       "Manual": [
         "Χειροκίνητα"
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2945,9 +2893,6 @@
       ],
       "ICS file": [
         "αρχείο ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3106,10 +3051,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει αν είστε ελεύθεροι ή απασχολημένοι στο ημερολόγιο σας. Όμως δεν μπορούν να δουν τις λεπτομέρειες των συμβάντων, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
-        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
       ],
       "Attention required": [
         "Χρειάζεται προσοχή"
@@ -3407,9 +3348,6 @@
       ],
       "Select what you want to import.": [
         "Επιλέξτε τι θέλετε να εισάγετε."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -3713,9 +3651,6 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -3796,9 +3731,6 @@
       ],
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
-      ],
-      "Email": [
-        "Email"
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -4004,9 +3936,6 @@
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
-      ],
-      "URL": [
-        "URL"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Όνομα χρήστη ή διεύθυνση ${ MAIL_APP_NAME }"
@@ -4734,9 +4663,6 @@
       "Address": [
         "Διεύθυνση"
       ],
-      "Email": [
-        "Email"
-      ],
       "Fax": [
         "Φαξ"
       ],
@@ -5024,6 +4950,9 @@
       ],
       "Preferences saved": [
         "Οι προτιμήσεις αποθηκεύτηκαν"
+      ],
+      "Undo in progress": [
+        "Αναίρεση σε εξέλιξη"
       ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"

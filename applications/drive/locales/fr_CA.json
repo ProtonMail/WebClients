@@ -382,9 +382,6 @@
       "Next month": [
         "Mois suivant"
       ],
-      "OK": [
-        "OK"
-      ],
       "Open navigation": [
         "Ouvrir la navigation"
       ],
@@ -787,54 +784,6 @@
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Non synchronisé"
-      ],
-      "Syncing": [
-        "Synchronisation en cours"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Le calendrier n'a pas pu être déchiffré"
-      ],
-      "Calendar is syncing": [
-        "Synchronisation du calendrier"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Le calendrier se synchronise: vous devrez peut être attendre plusieurs minutes avant de voir tous les événements."
-      ],
-      "Calendar is too big": [
-        "Le calendrier est trop gros"
-      ],
-      "Calendar link is not accessible": [
-        "Le lien du calendrier n’est pas accessible"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Le lien du calendrier est temporairement inaccessible"
-      ],
-      "Failed to sync calendar": [
-        "Échec de la synchronisation du calendrier"
-      ],
-      "More than 12 hours passed since last update": [
-        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour"
-      ],
-      "Unsupported calendar format": [
-        "Format de calendrier non pris en charge"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Le lien du calendrier n'est pas accessible depuis l'extérieur de l'écosystème du fournisseur de calendrier."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "La dernière mise à jour remonte à plus de 12 heures. ${ CALENDAR_APP_NAME } essaiera de mettre à jour le calendrier dans quelques heures."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Replier"
@@ -850,9 +799,6 @@
       "cerise": [
         "rouge cerise"
       ],
-      "cobalt": [
-        "cobalt"
-      ],
       "copper": [
         "cuivre"
       ],
@@ -867,9 +813,6 @@
       ],
       "ocean": [
         "océan"
-      ],
-      "olive": [
-        "olive"
       ],
       "pacific": [
         "pacifique"
@@ -891,9 +834,6 @@
       ],
       "reef": [
         "récif"
-      ],
-      "sahara": [
-        "sahara"
       ],
       "slateblue": [
         "bleu ardoise"
@@ -935,26 +875,17 @@
       "Language": [
         "Langue"
       ],
-      "Logo": [
-        "Logo"
-      ],
       "Member": [
         "Membre"
       ],
       "Name": [
         "Nom"
       ],
-      "Note": [
-        "Note"
-      ],
       "Organization": [
         "Organisation"
       ],
       "Phone": [
         "Téléphone"
-      ],
-      "Photo": [
-        "Photo"
       ],
       "Role": [
         "Rôle"
@@ -964,9 +895,6 @@
       ],
       "Title": [
         "Titre"
-      ],
-      "URL": [
-        "URL"
       ]
     },
     "Contact type label": {
@@ -990,17 +918,11 @@
       ],
       "Work": [
         "Travail"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
       "Abkhazia": [
         "Abkhazie"
-      ],
-      "Afghanistan": [
-        "Afghanistan"
       ],
       "Albania": [
         "Albanie"
@@ -1014,12 +936,6 @@
       "Andorra": [
         "Andorre"
       ],
-      "Angola": [
-        "Angola"
-      ],
-      "Anguilla": [
-        "Anguilla"
-      ],
       "Antarctica": [
         "Antarctique"
       ],
@@ -1031,9 +947,6 @@
       ],
       "Armenia": [
         "Arménie"
-      ],
-      "Aruba": [
-        "Aruba"
       ],
       "Ascension Island": [
         "Île de l'Ascension"
@@ -1047,14 +960,8 @@
       "Azerbaijan": [
         "Azerbaïdjan"
       ],
-      "Bahamas": [
-        "Bahamas"
-      ],
       "Bahrain": [
         "Bahreïn"
-      ],
-      "Bangladesh": [
-        "Bangladesh"
       ],
       "Barbados": [
         "Barbade"
@@ -1086,9 +993,6 @@
       "Bosnia and Herzegovina": [
         "Bosnie-Herzégovine"
       ],
-      "Botswana": [
-        "Botswana"
-      ],
       "Bouvet Island": [
         "Île Bouvet"
       ],
@@ -1098,26 +1002,14 @@
       "British Indian Ocean Territory": [
         "Territoire britannique de l'océan Indien"
       ],
-      "Brunei Darussalam": [
-        "Brunei Darussalam"
-      ],
       "Bulgaria": [
         "Bulgarie"
-      ],
-      "Burkina Faso": [
-        "Burkina Faso"
-      ],
-      "Burundi": [
-        "Burundi"
       ],
       "Cambodia": [
         "Cambodge"
       ],
       "Cameroon": [
         "Cameroun"
-      ],
-      "Canada": [
-        "Canada"
       ],
       "Cape Verde": [
         "Cap-Vert"
@@ -1158,17 +1050,8 @@
       "Cook Islands": [
         "Îles Cook"
       ],
-      "Costa Rica": [
-        "Costa Rica"
-      ],
       "Croatia": [
         "Croatie"
-      ],
-      "Cuba": [
-        "Cuba"
-      ],
-      "Curaçao": [
-        "Curaçao"
       ],
       "Cyprus": [
         "Chypre"
@@ -1176,14 +1059,8 @@
       "Czech Republic": [
         "Tchéquie"
       ],
-      "Côte d'Ivoire": [
-        "Côte d'Ivoire"
-      ],
       "Denmark": [
         "Danemark"
-      ],
-      "Djibouti": [
-        "Djibouti"
       ],
       "Dominica": [
         "Dominique"
@@ -1209,9 +1086,6 @@
       "Estonia": [
         "Estonie"
       ],
-      "Eswatini": [
-        "Eswatini"
-      ],
       "Ethiopia": [
         "Éthiopie"
       ],
@@ -1230,9 +1104,6 @@
       "Finland": [
         "Finlande"
       ],
-      "France": [
-        "France"
-      ],
       "French Guiana": [
         "Guyane française"
       ],
@@ -1241,9 +1112,6 @@
       ],
       "French Southern Territories": [
         "Terres australes françaises"
-      ],
-      "Gabon": [
-        "Gabon"
       ],
       "Gambia": [
         "Gambie"
@@ -1254,12 +1122,6 @@
       "Germany": [
         "Allemagne"
       ],
-      "Ghana": [
-        "Ghana"
-      ],
-      "Gibraltar": [
-        "Gibraltar"
-      ],
       "Greece": [
         "Grèce"
       ],
@@ -1268,12 +1130,6 @@
       ],
       "Grenada": [
         "Grenade"
-      ],
-      "Guadeloupe": [
-        "Guadeloupe"
-      ],
-      "Guam": [
-        "Guam"
       ],
       "Guatemala": [
         "Guatémala"
@@ -1287,9 +1143,6 @@
       "Guinea-Bissau": [
         "Guinée-Bissau"
       ],
-      "Guyana": [
-        "Guyana"
-      ],
       "Haiti": [
         "Haïti"
       ],
@@ -1298,12 +1151,6 @@
       ],
       "Holy See (Vatican City State)": [
         "Saint-Siège (État de la Cité du Vatican)"
-      ],
-      "Honduras": [
-        "Honduras"
-      ],
-      "Hong Kong": [
-        "Hong Kong"
       ],
       "Hungary": [
         "Hongrie"
@@ -1316,12 +1163,6 @@
       ],
       "Indonesia": [
         "Indonésie"
-      ],
-      "International": [
-        "International"
-      ],
-      "Iran": [
-        "Iran"
       ],
       "Iraq": [
         "Irak"
@@ -1344,23 +1185,8 @@
       "Japan": [
         "Japon"
       ],
-      "Jersey": [
-        "Jersey"
-      ],
       "Jordan": [
         "Jordanie"
-      ],
-      "Kazakhstan": [
-        "Kazakhstan"
-      ],
-      "Kenya": [
-        "Kenya"
-      ],
-      "Kiribati": [
-        "Kiribati"
-      ],
-      "Kosovo": [
-        "Kosovo"
       ],
       "Kuwait": [
         "Koweït"
@@ -1368,17 +1194,11 @@
       "Kyrgyzstan": [
         "Kirghizistan"
       ],
-      "Laos": [
-        "Laos"
-      ],
       "Latvia": [
         "Lettonie"
       ],
       "Lebanon": [
         "Liban"
-      ],
-      "Lesotho": [
-        "Lesotho"
       ],
       "Liberia": [
         "Libéria"
@@ -1386,32 +1206,11 @@
       "Libya": [
         "Libye"
       ],
-      "Liechtenstein": [
-        "Liechtenstein"
-      ],
       "Lithuania": [
         "Lituanie"
       ],
-      "Luxembourg": [
-        "Luxembourg"
-      ],
-      "Macao": [
-        "Macao"
-      ],
-      "Madagascar": [
-        "Madagascar"
-      ],
-      "Malawi": [
-        "Malawi"
-      ],
       "Malaysia": [
         "Malaisie"
-      ],
-      "Maldives": [
-        "Maldives"
-      ],
-      "Mali": [
-        "Mali"
       ],
       "Malta": [
         "Malte"
@@ -1419,17 +1218,11 @@
       "Marshall Islands": [
         "Îles Marshall"
       ],
-      "Martinique": [
-        "Martinique"
-      ],
       "Mauritania": [
         "Mauritanie"
       ],
       "Mauritius": [
         "Île Maurice"
-      ],
-      "Mayotte": [
-        "Mayotte"
       ],
       "Mexico": [
         "Mexique"
@@ -1437,32 +1230,20 @@
       "Moldova": [
         "Moldavie"
       ],
-      "Monaco": [
-        "Monaco"
-      ],
       "Mongolia": [
         "Mongolie"
       ],
       "Montenegro": [
         "Monténégro"
       ],
-      "Montserrat": [
-        "Montserrat"
-      ],
       "Morocco": [
         "Maroc"
-      ],
-      "Mozambique": [
-        "Mozambique"
       ],
       "Myanmar": [
         "Birmanie"
       ],
       "Namibia": [
         "Namibie"
-      ],
-      "Nauru": [
-        "Nauru"
       ],
       "Nepal": [
         "Népal"
@@ -1475,12 +1256,6 @@
       ],
       "New Zealand": [
         "Nouvelle-Zélande"
-      ],
-      "Nicaragua": [
-        "Nicaragua"
-      ],
-      "Niger": [
-        "Niger"
       ],
       "Nigeria": [
         "Nigéria"
@@ -1503,32 +1278,14 @@
       "Norway": [
         "Norvège"
       ],
-      "Oman": [
-        "Oman"
-      ],
-      "Pakistan": [
-        "Pakistan"
-      ],
       "Palau": [
         "Palaos"
-      ],
-      "Palestine": [
-        "Palestine"
-      ],
-      "Panama": [
-        "Panama"
       ],
       "Papua New Guinea": [
         "Papouasie-Nouvelle-Guinée"
       ],
-      "Paraguay": [
-        "Paraguay"
-      ],
       "Peru": [
         "Pérou"
-      ],
-      "Philippines": [
-        "Philippines"
       ],
       "Pitcairn": [
         "Îles Pitcairn"
@@ -1536,14 +1293,8 @@
       "Poland": [
         "Pologne"
       ],
-      "Portugal": [
-        "Portugal"
-      ],
       "Puerto Rico": [
         "Porto Rico"
-      ],
-      "Qatar": [
-        "Qatar"
       ],
       "Reunion": [
         "La Réunion"
@@ -1553,9 +1304,6 @@
       ],
       "Russia": [
         "Russie"
-      ],
-      "Rwanda": [
-        "Rwanda"
       ],
       "Saint Barthélemy": [
         "Saint-Barthélémy"
@@ -1578,9 +1326,6 @@
       "Saint Vincent and the Grenadines": [
         "Saint-Vincent et les Grenadines"
       ],
-      "Samoa": [
-        "Samoa"
-      ],
       "San Marino": [
         "Saint-Marin"
       ],
@@ -1595,12 +1340,6 @@
       ],
       "Serbia": [
         "Serbie"
-      ],
-      "Seychelles": [
-        "Seychelles"
-      ],
-      "Sierra Leone": [
-        "Sierra Leone"
       ],
       "Singapore": [
         "Singapour"
@@ -1638,14 +1377,8 @@
       "Spain": [
         "Espagne"
       ],
-      "Sri Lanka": [
-        "Sri Lanka"
-      ],
       "Sudan": [
         "Soudan"
-      ],
-      "Suriname": [
-        "Suriname"
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard et Jan Mayen"
@@ -1674,20 +1407,8 @@
       "Timor-Leste": [
         "Timor oriental"
       ],
-      "Togo": [
-        "Togo"
-      ],
-      "Tokelau": [
-        "Tokelau"
-      ],
-      "Tonga": [
-        "Tonga"
-      ],
       "Trinidad and Tobago": [
         "Trinité-et-Tobago"
-      ],
-      "Tristan da Cunha": [
-        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunisie"
@@ -1701,14 +1422,8 @@
       "Turks and Caicos Islands": [
         "Îles Turques-et-Caïques"
       ],
-      "Tuvalu": [
-        "Tuvalu"
-      ],
       "Uganda": [
         "Ouganda"
-      ],
-      "Ukraine": [
-        "Ukraine"
       ],
       "United Arab Emirates": [
         "Émirats Arabes Unis"
@@ -1722,20 +1437,11 @@
       "United States Minor Outlying Islands": [
         "Îles mineures éloignées des États-Unis"
       ],
-      "Uruguay": [
-        "Uruguay"
-      ],
       "Uzbekistan": [
         "Ouzbékistan"
       ],
-      "Vanuatu": [
-        "Vanuatu"
-      ],
       "Venezuela": [
         "Vénézuéla"
-      ],
-      "Vietnam": [
-        "Vietnam"
       ],
       "Virgin Islands, British": [
         "Îles Vierges britanniques"
@@ -1754,9 +1460,6 @@
       ],
       "Zambia": [
         "Zambie"
-      ],
-      "Zimbabwe": [
-        "Zimbabwe"
       ],
       "Åland Islands": [
         "Îles d'Åland"
@@ -1927,14 +1630,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La recherche de contenu ne peut pas être activée dans ce navigateur. Veuillez quitter la navigation privée ou essayer avec un autre navigateur."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
-      ],
       "Device name does not match": [
         "Le nom de l'appareil ne correspond pas"
       ],
@@ -1997,10 +1692,6 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant",
-        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants"
       ],
       "Missing key packet": [
         "Paquet de clé manquant"
@@ -2154,9 +1845,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer de courrier à plus de 100 destinataires"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
       ],
       "You must set a name": [
         "Vous devez définir un nom"
@@ -2502,15 +2190,9 @@
       ],
       "Other category": [
         "Autre catégorie"
-      ],
-      "Services": [
-        "Services"
       ]
     },
     "Header": {
-      "Contacts": [
-        "Contacts"
-      ],
       "Contacts, groups and settings": [
         "Contacts, groupes et paramètres"
       ],
@@ -2528,9 +2210,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Courriel"
       ],
@@ -2539,9 +2218,6 @@
       ],
       "No verification method available": [
         "Aucune méthode de vérification disponible"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2620,12 +2296,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contact ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } contact",
-        "${ totalContacts } contacts"
       ]
     },
     "Import contact. Contact identifier": {
@@ -2772,9 +2442,6 @@
       ],
       "ICS file": [
         "fichier ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2909,9 +2576,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label sélectionné",
         "${ selectedFoldersCountLocalized } labels sélectionnés"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact correctement mis à jour.",
@@ -3121,9 +2785,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -3491,9 +3152,6 @@
       "Select what you want to import.": [
         "Sélectionnez ce que vous voulez importer."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
       ],
@@ -3839,9 +3497,6 @@
       ],
       "Trusted": [
         "Approuvée"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -3928,9 +3583,6 @@
       ],
       "Comment": [
         "Commentaire"
-      ],
-      "Contacts": [
-        "Contacts"
       ],
       "Copy": [
         "Copier"
@@ -4053,9 +3705,6 @@
       "I understand the risk": [
         "Je comprends le risque"
       ],
-      "Image": [
-        "Image"
-      ],
       "Import all messages": [
         "Importer tous les messages"
       ],
@@ -4116,17 +3765,8 @@
       "Name": [
         "Nom"
       ],
-      "Navigation": [
-        "Navigation"
-      ],
       "Never": [
         "Jamais"
-      ],
-      "Notification": [
-        "Notification"
-      ],
-      "OK": [
-        "OK"
       ],
       "Operating system": [
         "Système d'exploitation"
@@ -4148,9 +3788,6 @@
       ],
       "Please provide full details to help us take appropriate action": [
         "Veuillez indiquer le maximum de détails pour nous aider à prendre les actions appropriées"
-      ],
-      "Port": [
-        "Port"
       ],
       "Post office box": [
         "Boîte postale"
@@ -4229,9 +3866,6 @@
       ],
       "Two-factor authentication code": [
         "Code d'authentification à deux facteurs"
-      ],
-      "Type": [
-        "Type"
       ],
       "Unknown file": [
         "Fichier inconnu"
@@ -4964,12 +4598,6 @@
       ]
     },
     "Table header": {
-      "Action": [
-        "Action"
-      ],
-      "Actions": [
-        "Actions"
-      ],
       "Address": [
         "Adresse"
       ],
@@ -4987,15 +4615,9 @@
       ],
       "Status": [
         "État"
-      ],
-      "Type": [
-        "Type"
       ]
     },
     "TableHeader": {
-      "Actions": [
-        "Actions"
-      ],
       "Address": [
         "Adresse"
       ],
@@ -5021,17 +4643,9 @@
       ]
     },
     "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
       "${ hoursInt }.5 h": [
         "${ hoursInt },5 h",
         "${ hoursInt },5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
@@ -5042,10 +4656,6 @@
       "${ hoursInt }.5 hour": [
         "${ hoursInt },5 heure",
         "${ hoursInt },5 heures"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
       ]
     },
     "Title": {
@@ -5123,9 +4733,6 @@
       "Contact group": [
         "Groupe de contacts"
       ],
-      "Contacts": [
-        "Contacts"
-      ],
       "Continue with partial import?": [
         "Poursuivre l'importation partielle?"
       ],
@@ -5152,9 +4759,6 @@
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de courrier"
-      ],
-      "Date": [
-        "Date"
       ],
       "Decrypting": [
         "Déchiffrement..."
@@ -5190,9 +4794,6 @@
       ],
       "Download unverified folder?": [
         "Télécharger le dossier non vérifié?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "Déposer pour téléverser"
@@ -5483,9 +5084,6 @@
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
-      ],
-      "Type": [
-        "Type"
       ],
       "Upgrade required": [
         "Offre supérieure requise"
