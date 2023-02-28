@@ -1,3 +1,4 @@
+import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
 import { protonizer as purifyHTML } from '@proton/shared/lib/sanitize';
 
 import { Base64Cache } from '../../hooks/useBase64Cache';
@@ -49,14 +50,6 @@ export const attachBase64 = (element: Element, cache: Base64Cache) => {
         }
         node.removeAttribute(IMG_SRC_BASE_64_PREFIX);
     });
-};
-
-/**
- * Remove all comments from an HTML string
- * @param content String in which we want to remove all comments
- */
-export const removeHTMLComments = (content = '') => {
-    return content.replaceAll(/<!--[\s\S]*?-->/g, '');
 };
 
 /**
