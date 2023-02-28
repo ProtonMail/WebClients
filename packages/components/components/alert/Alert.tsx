@@ -2,8 +2,9 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
-import Href from '../link/Href';
 
 const CLASSES = {
     info: 'alert-block',

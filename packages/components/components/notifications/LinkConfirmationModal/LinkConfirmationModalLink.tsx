@@ -2,12 +2,12 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { isEdge, isIE11 } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Checkbox } from '../../input';
 import { Label } from '../../label';
-import { Href } from '../../link';
 
 interface Props {
     link: string;

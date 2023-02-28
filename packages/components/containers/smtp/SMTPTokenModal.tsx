@@ -2,11 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
     Copy,
     Form,
-    Href,
     InputFieldTwo,
     ModalProps,
     ModalTwo,

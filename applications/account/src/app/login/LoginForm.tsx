@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
     Challenge,
     ChallengeError,
     ChallengeRef,
     ChallengeResult,
     Checkbox,
-    Href,
+    Icon,
     Info,
     InputFieldTwo,
     Label,
@@ -20,7 +20,6 @@ import {
     useLoading,
     useLocalState,
 } from '@proton/components';
-import { Icon } from '@proton/components';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

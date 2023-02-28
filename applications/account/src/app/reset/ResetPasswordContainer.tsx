@@ -3,11 +3,10 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
 import {
     FeatureCode,
     GenericError,
-    Href,
     OnLoginCallback,
     useApi,
     useConfig,

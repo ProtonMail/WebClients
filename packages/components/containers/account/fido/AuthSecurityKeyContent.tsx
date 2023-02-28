@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
 
-import { Href } from '../../../components';
 import Banner, { BannerBackgroundColor } from '../../../components/banner/Banner';
 
 const AuthSecurityKeyContent = ({ error }: { error?: boolean }) => {

@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 
+import { Href } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
-import { Href } from '../link';
 import Tooltip from '../tooltip/Tooltip';
 
 const CLASSNAMES = {

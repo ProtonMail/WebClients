@@ -1,9 +1,9 @@
+import { Href } from '@proton/atoms';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import unsupportedBrowserSettings from '@proton/styles/assets/img/errors/unsupported-browser.svg';
 
-import { Href } from '../../components';
 import { useAppTitle } from '../../hooks';
 
 interface Props {

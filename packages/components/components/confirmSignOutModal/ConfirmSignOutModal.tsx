@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Checkbox, Href, Label, PrivateAuthenticationStore, Prompt, PromptProps } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { Checkbox, Label, PrivateAuthenticationStore, Prompt, PromptProps } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { User } from '@proton/shared/lib/interfaces';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
@@ -58,7 +58,7 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
                 <div className="flex-item-fluid">
                     <Label htmlFor="delete-recovery-storage" className="block">
                         {c('Label').jt`Delete recovery-related information.`}{' '}
-                        <Href url={getKnowledgeBaseUrl('/trusted-device/recovery/')}>{c('Link').t`What’s this?`}</Href>
+                        <Href href={getKnowledgeBaseUrl('/trusted-device/recovery/')}>{c('Link').t`What’s this?`}</Href>
                     </Label>
                 </div>
             </div>

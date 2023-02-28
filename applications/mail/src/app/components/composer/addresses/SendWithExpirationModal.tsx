@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Form, Href, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
@@ -32,7 +32,7 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
                     {c('Info')
                         .t`Message expiration works out-of-the-box when sending emails to other ${MAIL_APP_NAME} users. To send expiring emails to non-${BRAND_NAME} users, please cancel and add password protection to your email.`}
                     <br />
-                    <Href url={getKnowledgeBaseUrl('/expiration')}>{c('Info').t`Learn more`}</Href>
+                    <Href href={getKnowledgeBaseUrl('/expiration')}>{c('Info').t`Learn more`}</Href>
                 </div>
                 <span>
                     {c('Send email with warnings').ngettext(

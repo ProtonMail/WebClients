@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Href from './Href';
+import { Href } from '@proton/atoms';
 
 export interface LearnMoreProps {
     url: string;

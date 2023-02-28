@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
-import { Href, Icon, Tooltip, useModalState, Prompt } from '@proton/components/components';
+import { Button, ButtonLike, Href } from '@proton/atoms';
+import { Icon, Prompt, Tooltip, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useExpiration } from '../../../hooks/useExpiration';

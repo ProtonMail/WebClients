@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
-import { Alert, Href, Tabs } from '../../../components';
+import { Alert, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
 import Captcha from './Captcha';
 import CodeMethod from './CodeMethod';
