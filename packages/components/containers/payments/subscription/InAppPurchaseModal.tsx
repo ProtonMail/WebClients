@@ -11,10 +11,13 @@ interface Props extends ModalProps {
 
 const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
     let subscriptionManager: string;
+    let subscriptionManagerShort: string;
     if (subscription.External === External.Android) {
         subscriptionManager = 'Google Play store';
+        subscriptionManagerShort = 'Google Play';
     } else if (subscription.External === External.iOS) {
         subscriptionManager = 'Apple App Store';
+        subscriptionManagerShort = 'Apple App Store';
     } else {
         rest.onClose();
         return null;
@@ -26,7 +29,10 @@ const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
 
     return (
         <AlertModal
-            title={c('Subscription change warning').t`Subscription managed elsewhere`}
+            title={
+                // translator: subscriptionManager currently can be "Google Play" or "Apple App Store"
+                c('Subscription change warning').t`Manage your subscription on ${subscriptionManagerShort}`
+            }
             buttons={[
                 <Button
                     className="on-mobile-w100"
