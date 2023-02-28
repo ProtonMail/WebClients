@@ -61,7 +61,7 @@ const ExtraBlockedSender = ({ message }: Props) => {
                     shape="outline"
                     size="small"
                 >
-                    {c('Action').t`Allow messages`}
+                    {c('Action').t`Unblock`}
                 </Button>
             </span>
         </div>
