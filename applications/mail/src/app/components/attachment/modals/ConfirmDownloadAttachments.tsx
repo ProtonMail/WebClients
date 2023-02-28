@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Href, ModalProps, PrimaryButton, Prompt } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { ModalProps, PrimaryButton, Prompt } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 

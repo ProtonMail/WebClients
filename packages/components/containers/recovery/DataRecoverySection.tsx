@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
-import { Href, Icon, Info, Toggle, useModalState } from '../../components';
+import { Icon, Info, Toggle, useModalState } from '../../components';
 import {
     useApi,
     useEventManager,

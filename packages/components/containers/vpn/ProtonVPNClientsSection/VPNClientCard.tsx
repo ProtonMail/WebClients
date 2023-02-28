@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike, Href } from '@proton/atoms';
 
-import { Block, Bordered, ButtonGroup, DropdownMenu, Href, Icon, IconName, SimpleDropdown } from '../../../components';
+import { Block, Bordered, ButtonGroup, DropdownMenu, Icon, IconName, SimpleDropdown } from '../../../components';
 
 interface Props {
     title: string;

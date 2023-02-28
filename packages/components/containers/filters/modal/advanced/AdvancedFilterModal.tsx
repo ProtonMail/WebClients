@@ -2,13 +2,13 @@ import { FormEvent, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import {
     Form,
-    Href,
     ModalProps,
     ModalTwo,
     ModalTwoContent,

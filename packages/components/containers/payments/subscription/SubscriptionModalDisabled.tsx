@@ -1,12 +1,14 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Href, Prompt, PromptProps } from '../../../components';
+import { Prompt, PromptProps } from '../../../components';
 
 const SubscriptionModalDisabled = (props: Omit<PromptProps, 'title' | 'buttons' | 'children'>) => {
-    const learnMore = <Href url={getKnowledgeBaseUrl('/upgrading-to-new-proton-plan')}>{c('Link').t`Learn more`}</Href>;
+    const learnMore = (
+        <Href href={getKnowledgeBaseUrl('/upgrading-to-new-proton-plan')}>{c('Link').t`Learn more`}</Href>
+    );
     return (
         <Prompt
             {...props}

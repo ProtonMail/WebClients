@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Href, useNotifications } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { useNotifications } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

@@ -1,9 +1,8 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
     ErrorButton,
-    Href,
     Prompt,
     useAddresses,
     useApi,

@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
+import { Card, Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Href, Loader } from '../../components';
+import { Loader } from '../../components';
 import {
     useHasOutdatedRecoveryFile,
     useIsDataRecoveryAvailable,

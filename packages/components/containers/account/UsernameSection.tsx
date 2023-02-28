@@ -2,9 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { ButtonLike, Card, CircleLoader, Href } from '@proton/atoms';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import {
     APPS,
@@ -20,7 +18,7 @@ import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserType } from '@proton/shared/lib/interfaces';
 
-import { AppLink, Href, InlineLinkButton, useModalState } from '../../components';
+import { AppLink, InlineLinkButton, useModalState } from '../../components';
 import { useAddresses, useConfig, useUser } from '../../hooks';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import SettingsLayout from './SettingsLayout';

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Href, Prompt, PromptProps } from '../../../components';
+import { Prompt, PromptProps } from '../../../components';
 
 interface Props extends Omit<PromptProps, 'children' | 'title' | 'buttons'> {
     onConfirm: () => void;
@@ -84,7 +84,7 @@ export const NewVisionaryWarningModal = ({
                         .t`If you delete your account, you lose all ${visionary} plan benefits and it won’t be available if you create a new account.`;
                 }
             })()}{' '}
-            <Href url={getKnowledgeBaseUrl('/upgrading-to-new-proton-plan/#switch-from-visionary')}>{c('Info')
+            <Href href={getKnowledgeBaseUrl('/upgrading-to-new-proton-plan/#switch-from-visionary')}>{c('Info')
                 .t`Learn more`}</Href>
         </Prompt>
     );

@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { isMaybeTorLessThan11 } from '@proton/shared/lib/helpers/browser';
 
-import { Href } from '../../components';
 import TopBanner from './TopBanner';
 
 const TorWarningBanner = () => {

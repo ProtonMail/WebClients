@@ -2,7 +2,7 @@ import { ChangeEvent, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { useMailSettings } from '@proton/components/hooks';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
@@ -13,7 +13,6 @@ import Field from '../../../container/Field';
 import Row from '../../../container/Row';
 import { Form } from '../../../form';
 import Label from '../../../label/Label';
-import Href from '../../../link/Href';
 import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../modalTwo';
 import { Option } from '../../../option';
 import { SelectTwo } from '../../../selectTwo';

@@ -2,13 +2,13 @@ import { ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { createBitcoinDonation, createBitcoinPayment } from '@proton/shared/lib/api/payments';
 import { APPS, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { Alert, Bordered, Href, Loader, Price } from '../../components';
+import { Alert, Bordered, Loader, Price } from '../../components';
 import { useApi, useConfig, useLoading } from '../../hooks';
 import BitcoinDetails from './BitcoinDetails';
 import BitcoinQRCode from './BitcoinQRCode';

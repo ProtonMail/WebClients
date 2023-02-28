@@ -15,7 +15,8 @@ import {
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { DateInput, Href, InputFieldTwo, TimeInput, generateUID, useUserSettings } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { DateInput, InputFieldTwo, TimeInput, generateUID, useUserSettings } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 

@@ -1,16 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import {
-    Href,
-    Icon,
-    Prompt,
-    useApi,
-    useEventManager,
-    useLoading,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { Icon, Prompt, useApi, useEventManager, useLoading, useModalState, useNotifications } from '@proton/components';
 import { markAsHam } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -42,7 +33,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                     {c('Info')
                         .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.`}{' '}
                     <Href
-                        url={getKnowledgeBaseUrl('/email-has-failed-its-domains-authentication-requirements-warning')}
+                        href={getKnowledgeBaseUrl('/email-has-failed-its-domains-authentication-requirements-warning')}
                     >
                         {c('Info').t`Learn more`}
                     </Href>
@@ -70,7 +61,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                 <span className="pl0-5 mt0-2 pr0-5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
-                    <Href className="pl0-5 pr0-5" url={getBlogURL('/prevent-phishing-attacks')}>
+                    <Href className="pl0-5 pr0-5" href={getBlogURL('/prevent-phishing-attacks')}>
                         {c('Info').t`Learn more`}
                     </Href>
                 </span>

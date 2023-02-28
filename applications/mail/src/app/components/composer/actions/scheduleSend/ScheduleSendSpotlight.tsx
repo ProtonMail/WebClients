@@ -2,7 +2,8 @@ import { ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { Href, Spotlight, useSpotlightShow } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import { Spotlight, useSpotlightShow } from '@proton/components/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import scheduledImg from '@proton/styles/assets/img/illustrations/spotlight-scheduled-send.svg';
 

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DialogModal, Href, InnerModal, ModalCloseButton, ModalPropsInjection, QRCode } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { DialogModal, InnerModal, ModalCloseButton, ModalPropsInjection, QRCode } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 const ModalGetMobileApp = ({ onClose, ...rest }: Partial<ModalPropsInjection>) => (

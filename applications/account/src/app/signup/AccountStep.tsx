@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
     Challenge,
     ChallengeError,
     ChallengeRef,
     ChallengeResult,
     DropdownSizeUnit,
-    Href,
     Info,
     InlineLinkButton,
     InputFieldTwo,
