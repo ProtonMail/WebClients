@@ -1,8 +1,17 @@
 import { c } from 'ttag';
+
 import { SectionConfig } from '@proton/components';
 import { Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
 
-export const getOrganizationAppRoutes = ({ user, organization, isBulkUserUploadEnabled }: { user: UserModel; organization: Organization, isBulkUserUploadEnabled: boolean }) => {
+export const getOrganizationAppRoutes = ({
+    user,
+    organization,
+    isBulkUserUploadEnabled,
+}: {
+    user: UserModel;
+    organization: Organization;
+    isBulkUserUploadEnabled: boolean;
+}) => {
     const canHaveOrganization = !user.isMember && !user.isSubUser && user.Type !== UserType.EXTERNAL;
     const hasOrganization = !!organization?.HasKeys;
     return {
