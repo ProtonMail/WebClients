@@ -3,9 +3,27 @@ import { fireEvent, waitFor } from '@testing-library/react';
 import { CryptoProxy } from '@proton/crypto';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { api, clearAll, mockedCryptoApi, notificationManager, render } from '../tests/render';
 import ContactEditModal, { ContactEditModalProps, ContactEditProps } from './ContactEditModal';
+
+jest.mock('../../../hooks/useAuthentication', () => {
+    return {
+        __esModule: true,
+        default: jest.fn(() => ({
+            getUID: jest.fn(),
+        })),
+    };
+});
+
+jest.mock('../../../hooks/useConfig', () => () => ({ API_URL: 'api' }));
+
+jest.mock('@proton/shared/lib/helpers/image.ts', () => {
+    return {
+        toImage: (src: string) => ({ src }),
+    };
+});
 
 describe('ContactEditModal', () => {
     const props: ContactEditProps & ContactEditModalProps = {
@@ -44,6 +62,9 @@ END:VCARD`;
         const vCardContact = parseToVCard(vcard);
 
         const { getByDisplayValue } = render(<ContactEditModal open={true} {...props} vCardContact={vCardContact} />);
+
+        // To see the image loaded
+        await wait(0);
 
         getByDisplayValue('J. Doe');
         expect(document.querySelector('img[src="https://example.com/myphoto.jpg"]')).not.toBe(null);

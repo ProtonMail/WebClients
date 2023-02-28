@@ -1,15 +1,9 @@
 import { Ref, forwardRef } from 'react';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-
-
 
 import { DropdownActions, Icon, OrderableHandle } from '../../../components';
 import { classnames } from '../../../helpers';
@@ -19,7 +13,6 @@ import { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReache
 import { ContactImageProps } from '../modals/ContactImageModal';
 import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
-
 
 interface Props {
     vCardProperty: VCardProperty;

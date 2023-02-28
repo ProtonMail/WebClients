@@ -1,35 +1,9 @@
-import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
-
 import { MessageImage, MessageImages, MessageState } from '../../logic/messages/messagesTypes';
 import { createDocument } from '../test/message';
-import { forgeImageURL, removeProxyURLAttributes, replaceProxyWithOriginalURLAttributes } from './messageImages';
+import { removeProxyURLAttributes, replaceProxyWithOriginalURLAttributes } from './messageImages';
 
 const imageURL = 'imageURL';
 const originalImageURL = 'originalImageURL';
-
-describe('forgeImageURL', () => {
-    const windowOrigin = 'https://mail.proton.pink';
-
-    // Mock window location
-    beforeAll(() => {
-        mockWindowLocation(windowOrigin);
-    });
-
-    afterAll(() => {
-        resetWindowLocation();
-    });
-
-    it('should forge the expected image URL', () => {
-        const imageURL = 'https://example.com/image1.png';
-        const uid = 'uid';
-        const forgedURL = forgeImageURL(imageURL, uid);
-        const expectedURL = `${windowOrigin}/api/core/v4/images?Url=${encodeURIComponent(
-            imageURL
-        )}&DryRun=0&UID=${uid}`;
-
-        expect(forgedURL).toEqual(expectedURL);
-    });
-});
 
 describe('removeProxyURLAttributes', () => {
     const content = `<div>

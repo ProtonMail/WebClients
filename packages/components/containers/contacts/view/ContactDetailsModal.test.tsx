@@ -4,6 +4,8 @@ import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { addToCache, api, clearAll, minimalCache, mockedCryptoApi, prepareContact, render } from '../tests/render';
 import ContactDetailsModal, { ContactDetailsProps } from './ContactDetailsModal';
 
+jest.mock('../../../hooks/useConfig', () => () => ({ API_URL: 'api' }));
+
 describe('ContactDetailsModal', () => {
     const props: ContactDetailsProps = {
         contactID: 'ContactID',
