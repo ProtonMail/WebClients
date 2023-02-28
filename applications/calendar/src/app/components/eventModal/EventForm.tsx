@@ -2,7 +2,7 @@ import { HTMLAttributes, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { MemoizedIconRow as IconRow, InputTwo, Notifications, TextAreaTwo, classnames } from '@proton/components';
+import { MemoizedIconRow as IconRow, InputTwo, Notifications, TextAreaTwo } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import {
@@ -21,6 +21,7 @@ import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 import { getCanChangeCalendarOfEvent } from '../../helpers/event';
 import createHandlers from './eventForm/createPropFactory';
@@ -140,7 +141,7 @@ const EventForm = ({
     const frequencyRow = (
         <IconRow icon="arrows-rotate" title={c('Label').t`Frequency`} id={FREQUENCY_INPUT_ID}>
             <FrequencyInput
-                className={classnames([isCustomFrequencySet && 'mb0-5', 'w100'])}
+                className={clsx([isCustomFrequencySet && 'mb0-5', 'w100'])}
                 id={FREQUENCY_INPUT_ID}
                 data-test-id="event-modal/frequency:select"
                 value={frequencyModel.type}

@@ -2,7 +2,7 @@ import { CSSProperties, Ref } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     style: CSSProperties;
@@ -25,7 +25,7 @@ const MoreFullDayEvent = ({ style, more, eventRef, isSelected }: Props) => {
         "
         >
             <div
-                className={classnames([
+                className={clsx([
                     'calendar-dayeventcell-inner isNotAllDay isLoaded text-ellipsis inline-flex text-left w100 pl0-5 pr0-5',
                     isSelected && 'isSelected',
                 ])}

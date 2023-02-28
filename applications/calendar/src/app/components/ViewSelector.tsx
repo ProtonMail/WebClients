@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { ToolbarButton, classnames } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import clsx from '@proton/utils/clsx';
 
 const { DAY, WEEK, MONTH, CUSTOM } = VIEWS;
 
@@ -30,7 +31,7 @@ const ViewSelector = ({ range, loading = false, disabled = false, view, onChange
                         key={value}
                         title={c('Calendar view selector').t`Change time range to`}
                         disabled={loading || disabled}
-                        className={classnames(['color-inherit', v === view && 'is-active'])}
+                        className={clsx(['color-inherit', v === view && 'is-active'])}
                         aria-pressed={v === view ? true : undefined}
                         onClick={() => onChange(value)}
                         {...rest}
