@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
     margin?: 'small';
@@ -10,10 +10,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 
 const Text = ({ children, margin, className, ...rest }: Props) => {
     return (
-        <div
-            className={classnames([margin === 'small' ? 'mb1' : 'mb1-75', 'text-break color-weak', className])}
-            {...rest}
-        >
+        <div className={clsx(margin === 'small' ? 'mb1' : 'mb1-75', 'text-break color-weak', className)} {...rest}>
             {children}
         </div>
     );

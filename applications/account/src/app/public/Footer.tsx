@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
     children: React.ReactNode;
@@ -8,7 +6,7 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
 
 const Footer = ({ children, className, ...rest }: Props) => {
     return (
-        <div className={classnames(['border-top flex p1', className])} {...rest}>
+        <div className={clsx(['border-top flex p1', className])} {...rest}>
             {children}
         </div>
     );
