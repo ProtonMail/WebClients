@@ -34,7 +34,17 @@ export type EditorHotkeysHandlers = (ComposerHotkeysHandlers | QuickReplyHotkeys
 };
 
 export const useComposerHotkeys = (args: EditorHotkeysHandlers) => {
-    const { composerRef, handleSend, handleDelete, toggleMaximized, handleManualSave, lock, saving, hasHotkeysEnabled,  type } = args;
+    const {
+        composerRef,
+        handleSend,
+        handleDelete,
+        toggleMaximized,
+        handleManualSave,
+        lock,
+        saving,
+        hasHotkeysEnabled,
+        type,
+    } = args;
     const isSafari = checkIsSafari();
 
     const isComposer = type === EditorTypes.composer;

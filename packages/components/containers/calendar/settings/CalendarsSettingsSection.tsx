@@ -7,13 +7,8 @@ import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
+import { MyCalendarsSection, PrivateMainAreaLoading, PrivateMainSettingsArea, SectionConfig } from '../..';
 import { useCalendarShareInvitations } from '../../../hooks';
-import {
-    MyCalendarsSection,
-    PrivateMainAreaLoading,
-    PrivateMainSettingsArea,
-    SectionConfig
-} from '../..';
 import OtherCalendarsSection from '../settings/OtherCalendarsSection';
 
 export interface CalendarsSettingsSectionProps {

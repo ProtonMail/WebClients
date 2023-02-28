@@ -10,7 +10,11 @@ import { PlanCardFeature } from './interface';
 import { getMailFeatures } from './mail';
 import { getVPNFeatures } from './vpn';
 
-export const getAllFeatures = (plansMap: PlansMap, serversCount: VPNServersCountData, calendarSharingEnabled: boolean) => {
+export const getAllFeatures = (
+    plansMap: PlansMap,
+    serversCount: VPNServersCountData,
+    calendarSharingEnabled: boolean
+) => {
     return {
         highlight: getHighlightFeatures(plansMap),
         mail: getMailFeatures(plansMap),
