@@ -29,6 +29,12 @@ export interface RestoreDriveVolume {
     NodePassphrase: string;
     NodePassphraseSignature: string;
     TargetVolumeID: string;
+    Devices?: {
+        LockedShareID: string;
+        ShareKeyPacket: string;
+        Name: string;
+        PassphraseSignature: string;
+    }[];
 }
 
 export interface ListDriveVolumeTrashPayload {
