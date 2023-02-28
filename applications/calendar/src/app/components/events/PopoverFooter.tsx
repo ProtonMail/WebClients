@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     children?: React.ReactNode;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const PopoverFooter = ({ children, className }: Props) => {
-    return <footer className={classnames(['flex', className])}>{children}</footer>;
+    return <footer className={clsx(['flex', className])}>{children}</footer>;
 };
 
 export default PopoverFooter;

@@ -15,7 +15,6 @@ import {
     SidebarListItemLabel,
     SimpleDropdown,
     Tooltip,
-    classnames,
     useApi,
     useFeature,
     useLoading,
@@ -66,6 +65,7 @@ import {
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import CalendarSidebarShareCalendarModal from './CalendarSidebarShareCalendarModal';
@@ -174,7 +174,7 @@ const CalendarSidebarListItems = ({
                     <SidebarListItemContent
                         data-test-id="calendar-sidebar:user-calendars"
                         left={left}
-                        className={classnames(['flex', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
+                        className={clsx(['flex', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                     >
                         <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w100">
                             <div className="flex flex-nowrap mr0-5">
