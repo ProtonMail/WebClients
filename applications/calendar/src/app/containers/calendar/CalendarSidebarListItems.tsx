@@ -157,7 +157,6 @@ const CalendarSidebarListItems = ({
                 disabled={loading}
                 id={`calendar-${ID}`}
                 name={`calendar-${Name}`}
-                aria-describedby={`calendar-${Name}`}
                 onChange={({ target: { checked } }) => onChangeVisibility(ID, checked)}
             />
         );
