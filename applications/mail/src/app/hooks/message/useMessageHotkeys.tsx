@@ -17,6 +17,7 @@ import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
 import { useMoveToFolder } from '../actions/useMoveToFolder';
 import { useStar } from '../actions/useStar';
 import { ComposeTypes } from '../composer/useCompose';
+import { useLastDraft } from './useLastDraft';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -36,6 +37,7 @@ interface MessageHotkeysContext {
     conversationMode: boolean;
     mailSettings: MailSettings;
     messageRef: React.RefObject<HTMLElement>;
+    conversationID?: string,
 }
 
 interface MessageHotkeysHandlers {
@@ -59,6 +61,7 @@ export const useMessageHotkeys = (
         conversationMode,
         mailSettings,
         messageRef,
+        conversationID: inputConversationID,
     }: MessageHotkeysContext,
     {
         hasFocus,
@@ -88,6 +91,8 @@ export const useMessageHotkeys = (
         Shortcuts && isMessageReady && expanded && message.messageDocument?.initialized;
 
     const isScheduledMessage = message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SCHEDULED);
+
+    const mostRecentDraft = useLastDraft(inputConversationID || '')
 
     const moveElementTo = async (e: KeyboardEvent, LabelID: MAILBOX_LABEL_IDS) => {
         if (!message.data) {
@@ -171,11 +176,19 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
                     e.preventDefault();
                     e.stopPropagation();
-                    onCompose({
-                        type: ComposeTypes.newMessage,
-                        action: MESSAGE_ACTIONS.REPLY,
-                        referenceMessage: message,
-                    });
+                    if(mostRecentDraft.messageLoaded) {
+                        onCompose({ 
+                            type: ComposeTypes.existingDraft,
+                            existingDraft: mostRecentDraft.message,
+                            fromUndo: true
+                        });
+                    } else {
+                        onCompose({
+                            type: ComposeTypes.newMessage,
+                            action: MESSAGE_ACTIONS.REPLY,
+                            referenceMessage: message,
+                        });
+                    }
                 }
             },
         ],

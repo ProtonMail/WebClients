@@ -40,6 +40,8 @@ import HeaderExtra from './HeaderExtra';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderTopPrivacyIcon from './HeaderTopPrivacyIcon';
 
+import { useLastDraft } from '../../../hooks/message/useLastDraft';
+
 interface Props {
     labelID: string;
     labels?: Label[];
@@ -62,6 +64,7 @@ interface Props {
     filterDropdownToggleRef: React.MutableRefObject<() => void>;
     parentMessageRef: React.RefObject<HTMLElement>;
     conversationIndex?: number;
+    conversationID?: string,
 }
 
 const HeaderExpanded = ({
@@ -86,6 +89,7 @@ const HeaderExpanded = ({
     filterDropdownToggleRef,
     parentMessageRef,
     conversationIndex = 0,
+    conversationID: inputConversationID,
 }: Props) => {
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
@@ -106,6 +110,8 @@ const HeaderExpanded = ({
     const recipients = getRecipients(message.data);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
 
+    const mostRecentDraft = useLastDraft(inputConversationID || '')
+
     const handleClick = (event: MouseEvent) => {
         if (
             (event.target as HTMLElement).closest('.stop-propagation') ||
@@ -124,11 +130,19 @@ const HeaderExpanded = ({
     };
 
     const handleCompose = (action: MESSAGE_ACTIONS) => async () => {
-        onCompose({
-            type: ComposeTypes.newMessage,
-            action,
-            referenceMessage: message,
-        });
+        if(mostRecentDraft.messageLoaded) {
+            onCompose({
+                type: ComposeTypes.existingDraft,
+                existingDraft: mostRecentDraft.message,
+                fromUndo: true
+            });
+        } else {
+            onCompose({
+                type: ComposeTypes.newMessage,
+                action,
+                referenceMessage: message,
+            });
+        }
     };
 
     const hasSigningPublicKey =
