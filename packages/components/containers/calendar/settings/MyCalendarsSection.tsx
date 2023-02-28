@@ -10,7 +10,7 @@ import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calend
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import {Address, UserModel} from '@proton/shared/lib/interfaces';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 

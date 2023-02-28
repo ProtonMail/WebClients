@@ -9,12 +9,12 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
+    useExperiment,
     useFeature,
     useLoading,
     useLocalState,
     useMyLocation,
     useVPNServersCount,
-    useExperiment,
 } from '@proton/components/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -168,7 +168,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const isExternalSignupEnabled =
         Boolean(externalSignupFeature.feature?.Value) &&
         ((experimentCode === ExperimentCode.ExternalSignupGeneric && externalSignupExperiment.value === 'B') ||
-            experimentCode === ExperimentCode.ExternalSignupDrive);    
+            experimentCode === ExperimentCode.ExternalSignupDrive);
     const isReferral = model.referralData && !isTrial;
 
     const signupTypes = (() => {
