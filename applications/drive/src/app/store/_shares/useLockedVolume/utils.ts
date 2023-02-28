@@ -1,14 +1,20 @@
 import { c } from 'ttag';
 
 import { useAddressesKeys } from '@proton/components';
-import { CryptoProxy, PrivateKeyReference, VERIFICATION_STATUS, getMatchingSigningKey } from '@proton/crypto';
+import {
+    CryptoProxy,
+    PrivateKeyReference,
+    SessionKey,
+    VERIFICATION_STATUS,
+    getMatchingSigningKey,
+} from '@proton/crypto';
 import { concatArrays } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { LockedVolumeForRestore, ShareWithKey } from './../interface';
+import { LockedDeviceForRestore, LockedShareForRestore, LockedVolumeForRestore, ShareWithKey } from './../interface';
 
 export const getPossibleAddressPrivateKeys = (addressesKeys: ReturnType<typeof useAddressesKeys>[0]) => {
     if (!addressesKeys?.length) {
@@ -32,7 +38,14 @@ export const getPossibleAddressPrivateKeys = (addressesKeys: ReturnType<typeof u
 export async function decryptLockedSharePassphrase(
     oldPrivateKey: PrivateKeyReference,
     lockedShare: ShareWithKey
-): Promise<string | undefined> {
+): Promise<
+    | {
+          shareSessionKey: SessionKey;
+          shareDecryptedPassphrase: string;
+          linkDecryptedPassphrase: string;
+      }
+    | undefined
+> {
     if (!lockedShare.possibleKeyPackets) {
         return;
     }
@@ -40,15 +53,15 @@ export async function decryptLockedSharePassphrase(
     const keyPacketsAsUnit8Array = concatArrays(
         lockedShare.possibleKeyPackets.map((keyPacket) => base64StringToUint8Array(keyPacket))
     );
-    const sessionKey = await getDecryptedSessionKey({
+    const shareSessionKey = await getDecryptedSessionKey({
         data: keyPacketsAsUnit8Array,
         privateKeys: oldPrivateKey,
     });
 
-    const { data: decryptedPassphrase, verified } = await CryptoProxy.decryptMessage({
+    const { data: shareDecryptedPassphrase, verified } = await CryptoProxy.decryptMessage({
         armoredMessage: lockedShare.passphrase,
         armoredSignature: lockedShare.passphraseSignature,
-        sessionKeys: sessionKey,
+        sessionKeys: shareSessionKey,
         verificationKeys: oldPrivateKey,
     });
 
@@ -64,25 +77,64 @@ export async function decryptLockedSharePassphrase(
 
     const lockedShareKey = await CryptoProxy.importPrivateKey({
         armoredKey: lockedShare.key,
-        passphrase: decryptedPassphrase,
+        passphrase: shareDecryptedPassphrase,
     });
-    const shareSessionKey = await getDecryptedSessionKey({
+    const linkSessionKey = await getDecryptedSessionKey({
         data: lockedShare.rootLinkRecoveryPassphrase,
         privateKeys: lockedShareKey,
     });
-    const { data: shareDecryptedPassphrase } = await CryptoProxy.decryptMessage({
+    const { data: linkDecryptedPassphrase } = await CryptoProxy.decryptMessage({
         armoredMessage: lockedShare.rootLinkRecoveryPassphrase,
-        sessionKeys: shareSessionKey,
+        sessionKeys: linkSessionKey,
         verificationKeys: lockedShareKey,
     });
 
-    return shareDecryptedPassphrase;
+    return {
+        shareSessionKey,
+        shareDecryptedPassphrase,
+        linkDecryptedPassphrase,
+    };
 }
 
 export async function prepareVolumeForRestore(
-    share: ShareWithKey,
+    defaultShare: ShareWithKey,
+    devices: (ShareWithKey & { deviceName?: string })[],
     addressPrivateKeys: PrivateKeyReference[]
 ): Promise<LockedVolumeForRestore | undefined> {
+    const preparedDefaultShare = await prepareShareForRestore(defaultShare, addressPrivateKeys);
+    if (!preparedDefaultShare) {
+        return undefined;
+    }
+
+    const preparedDevices = await Promise.all(
+        devices.map(async (device) => {
+            const preparedShare = await prepareShareForRestore(device, addressPrivateKeys);
+            if (!preparedShare) {
+                return undefined;
+            }
+            return {
+                ...preparedShare,
+                deviceName: device.deviceName,
+            };
+        })
+    );
+    return {
+        lockedVolumeId: defaultShare.volumeId,
+        defaultShare: preparedDefaultShare,
+        devices: preparedDevices.filter(isTruthy),
+    };
+}
+
+async function prepareShareForRestore(
+    share: ShareWithKey,
+    addressPrivateKeys: PrivateKeyReference[]
+): Promise<
+    | (LockedShareForRestore & {
+          shareSessionKey: LockedDeviceForRestore['shareSessionKey'];
+          shareDecryptedPassphrase: LockedDeviceForRestore['shareDecryptedPassphrase'];
+      })
+    | undefined
+> {
     try {
         const matchingPrivateKey = (await getMatchingSigningKey({
             armoredSignature: share.passphraseSignature,
@@ -90,9 +142,14 @@ export async function prepareVolumeForRestore(
         })) as PrivateKeyReference | undefined;
 
         if (matchingPrivateKey) {
-            const decryptedPassphrase = await decryptLockedSharePassphrase(matchingPrivateKey, share);
-            if (decryptedPassphrase) {
-                return { shareId: share.shareId, lockedVolumeId: share.volumeId, decryptedPassphrase };
+            const result = await decryptLockedSharePassphrase(matchingPrivateKey, share);
+            if (result) {
+                return {
+                    shareId: share.shareId,
+                    shareSessionKey: result.shareSessionKey,
+                    shareDecryptedPassphrase: result.shareDecryptedPassphrase,
+                    linkDecryptedPassphrase: result.linkDecryptedPassphrase,
+                };
             }
         }
     } catch {

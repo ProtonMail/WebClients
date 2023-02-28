@@ -1,3 +1,5 @@
+import { SessionKey } from '@proton/crypto';
+
 export enum ShareType {
     default = 1,
     standart,
@@ -25,7 +27,18 @@ export interface ShareWithKey extends Share {
 }
 
 export interface LockedVolumeForRestore {
-    shareId: string;
     lockedVolumeId: string;
-    decryptedPassphrase: string;
+    defaultShare: LockedShareForRestore;
+    devices: LockedDeviceForRestore[];
+}
+
+export interface LockedShareForRestore {
+    shareId: string;
+    linkDecryptedPassphrase: string;
+}
+
+export interface LockedDeviceForRestore extends LockedShareForRestore {
+    deviceName: string | undefined;
+    shareDecryptedPassphrase: string;
+    shareSessionKey: SessionKey;
 }
