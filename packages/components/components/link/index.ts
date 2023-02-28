@@ -1,5 +1,4 @@
 export { default as Info } from './Info';
-export { default as Href } from './Href';
 export { default as useAppLink } from './useAppLink';
 export { default as useSettingsLink } from './useSettingsLink';
 export { default as AppLink } from './AppLink';
