@@ -35,7 +35,14 @@ interface Props {
     customDataTestId?: string;
 }
 
-const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, isOutside, customDataTestId }: Props) => {
+const RecipientItemGroup = ({
+    group,
+    mapStatusIcons,
+    globalIcon,
+    showDropdown,
+    isOutside,
+    customDataTestId,
+}: Props) => {
     const { getGroupLabel, getRecipientLabel } = useRecipientLabel();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();

@@ -79,7 +79,7 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
 
     const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
-    const handleChange = (key: keyof typeof model) => (value: typeof model[typeof key]) =>
+    const handleChange = (key: keyof typeof model) => (value: (typeof model)[typeof key]) =>
         setModel({ ...model, [key]: value });
 
     const save = async () => {
