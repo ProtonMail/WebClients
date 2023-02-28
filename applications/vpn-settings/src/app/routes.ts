@@ -1,7 +1,8 @@
 import { c } from 'ttag';
+
 import { SectionConfig } from '@proton/components';
-import { UserModel } from '@proton/shared/lib/interfaces';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { UserModel } from '@proton/shared/lib/interfaces';
 
 export const getRoutes = (user: UserModel) => {
     return {
