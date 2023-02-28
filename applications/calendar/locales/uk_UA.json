@@ -687,11 +687,6 @@
         "Необов'язково"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "Незабаром з'явиться"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Бета-доступ дає вам змогу користуватися тестовою версією ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } до того, як вони будуть випущені для широкого загалу. Це означає, що ви можете першими випробувати нові продукти та функції."
@@ -1085,7 +1080,7 @@
         "Назва"
       ],
       "URL": [
-        "URL"
+        "URL-адреса"
       ]
     },
     "Contact type label": {
@@ -1109,9 +1104,6 @@
       ],
       "Work": [
         "Робочий"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2190,18 +2182,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Помилка розшифрування: Не вдалося розшифрувати вміст цієї події."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Приберіть принаймні ${ calendarToFixCount } календар",
-        "Приберіть принаймні ${ calendarToFixCount } календарі",
-        "Приберіть принаймні ${ calendarToFixCount } календарів",
-        "Приберіть принаймні ${ calendarToFixCount } календаря"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Приберіть принаймні ${ calendarToFixCount } календар або",
-        "Приберіть принаймні ${ calendarToFixCount } календарі або",
-        "Приберіть принаймні ${ calendarToFixCount } календарів або",
-        "Приберіть принаймні ${ calendarToFixCount } календаря або"
-      ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
       ],
@@ -2279,12 +2259,6 @@
       ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Відсутній пакунок ключів"
@@ -2469,9 +2443,6 @@
       "You can't send vCard files of more than 10 contacts": [
         "Ви не можете надіслати файли vCard для понад 10 контактів"
       ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
-      ],
       "You must set a name": [
         "Ви повинні вказати назву"
       ],
@@ -2529,7 +2500,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+        "Під час читання вашого файлу ${ formattedFilename } сталася помилка. Файл має неправильний формат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2695,11 +2666,11 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } учасник",
-        "${ numberOfParticipants } учасники",
-        "${ numberOfParticipants } учасників",
-        "${ numberOfParticipants } учасників"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } учасник",
+        "${ numberOfAttendees } учасника",
+        "${ numberOfAttendees } учасників",
+        "${ numberOfAttendees } учасників"
       ]
     },
     "Event info. Organizer name": {
@@ -2889,9 +2860,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Е-пошта"
       ],
@@ -2900,9 +2868,6 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2917,6 +2882,9 @@
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Під час шифрування та додавання події сталася помилка. Неможливо імпортувати подію."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Сталася помилка під час шифрування й додавання ваших подій. Жодна подія не може бути імпортована."
@@ -3145,9 +3113,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3351,12 +3316,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Будь-хто з цим посиланням може бачити вашу доступність чи зайнятість в календарі. Вони не можуть бачити подробиці подій, наприклад, назву, розташування та учасників."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасника",
-        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників",
-        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників",
-        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників"
       ],
       "Attention required": [
         "Потребує уваги"
@@ -3661,9 +3620,6 @@
       "Select what you want to import.": [
         "Виберіть, що ви хочете імпортувати."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більш ніж 20 календарів."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
@@ -3910,6 +3866,11 @@
         "Натисніть для подробиць"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Тільки перегляд"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Деякі з ваших календарів не показуватимуть подробиці раніше створених подій."
@@ -3936,6 +3897,17 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Ви можете повторно поширити свої календарі в налаштуваннях."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасника",
+        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників",
+        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників",
+        "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Створення запрошень в спільному календарі не дозволено"
       ]
     },
     "Input label": {
@@ -3969,9 +3941,6 @@
       ],
       "Trusted": [
         "Надійний"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4339,10 +4308,10 @@
         "Щоб додати новий календар, вилучіть наявний."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Щоб додати новий календар, вилучіть інший календар або оновіть ваш ${ BRAND_NAME } тарифний план до ${ MAIL_SHORT_APP_NAME } платного плану."
+        "Щоб додати новий календар, вилучіть інший календар або змініть свій тарифний план ${ BRAND_NAME } на платний ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Ви досягли максимальної кількості календарів, доступної у вашому тарифному плані."
+        "Ви досягли максимальної кількості календарів для вашого тарифного плану."
       ]
     },
     "Link": {

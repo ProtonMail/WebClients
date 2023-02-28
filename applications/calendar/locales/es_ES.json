@@ -349,7 +349,7 @@
         "No, gracias"
       ],
       "OK": [
-        "OK"
+        "Aceptar"
       ],
       "Open navigation": [
         "Abrir la navegación"
@@ -683,11 +683,6 @@
         "Opcional"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "Próximamente"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "El acceso beta te permite utilizar la versión beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME } antes de que sean lanzados al público. Esto significa que puedes probar nuevos productos , obtener nuevas actualizaciones y utilizar nuevas funciones."
@@ -1002,7 +997,7 @@
         "arrecife"
       ],
       "sahara": [
-        "sahara"
+        "sáhara"
       ],
       "slateblue": [
         "azul pizarra"
@@ -1039,7 +1034,7 @@
         "Género"
       ],
       "Geo": [
-        "Geo"
+        "Geolocalización"
       ],
       "Language": [
         "Idioma"
@@ -1099,9 +1094,6 @@
       ],
       "Work": [
         "Trabajo"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1397,7 +1389,7 @@
         "Guinea-Bisáu"
       ],
       "Guyana": [
-        "Guyana"
+        "Guayana"
       ],
       "Haiti": [
         "Haití"
@@ -2160,14 +2152,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Error de descifrado: no se ha podido descifrar el contenido de este evento."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Anula la selección de al menos ${ calendarToFixCount } calendario",
-        "Anula la selección de al menos ${ calendarToFixCount } calendarios"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Anula la selección de al menos ${ calendarToFixCount } calendario o",
-        "Anula la selección de al menos ${ calendarToFixCount } calendarios o"
-      ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
@@ -2245,10 +2229,6 @@
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Combinar al menos ${ calendarToFixCount } calendario con un calendario ${ BRAND_NAME } existente",
-        "Combinar al menos ${ calendarToFixCount } calendarios con un calendario ${ BRAND_NAME } existente"
       ],
       "Missing key packet": [
         "Falta el paquete de claves."
@@ -2424,9 +2404,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "No puedes enviar archivos vCards de más de 10 contactos."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Has alcanzado el número máximo de calendarios personales. No se han podido importar algunos calendarios."
       ],
       "You must set a name": [
         "Debes establecer un nombre."
@@ -2649,9 +2626,9 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } participante",
-        "${ numberOfParticipants } participantes"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } participante",
+        "${ numberOfAttendees } participantes"
       ]
     },
     "Event info. Organizer name": {
@@ -2829,9 +2806,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Correo electrónico"
       ],
@@ -3076,9 +3050,6 @@
       ],
       "ICS file": [
         "archivo CSV"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3240,10 +3211,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Cualquier persona con este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver los detalles de eventos, como título, ubicación o participantes."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Se permite hasta ${ MAX_ATTENDEES } participante por invitación.",
-        "Se permiten hasta ${ MAX_ATTENDEES } participantes por invitación."
       ],
       "Attention required": [
         "Atención requerida"
@@ -3542,9 +3509,6 @@
       "Select what you want to import.": [
         "Selecciona lo que quieres importar."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado hasta el límite de 20 calendarios."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
       ],
@@ -3791,6 +3755,11 @@
         "Haz clic para más detalles."
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Solo lectura"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Algunos de tus calendarios no mostrarán detalles de eventos creados previamente."
@@ -3817,6 +3786,15 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Puedes volver a compartir tus calendarios en la configuración."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Se permite hasta ${ MAX_ATTENDEES } participante por invitación",
+        "Se permiten hasta ${ MAX_ATTENDEES } participantes por invitación"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "No se pueden crear invitaciones en un calendario compartido"
       ]
     },
     "Input label": {
@@ -3850,9 +3828,6 @@
       ],
       "Trusted": [
         "Confiable"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4079,7 +4054,7 @@
         "Notificaciones"
       ],
       "OK": [
-        "OK"
+        "Aceptar"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -4218,7 +4193,7 @@
         "Para añadir un nuevo calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un nuevo calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un nuevo calenario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -4266,6 +4241,10 @@
     "Loading info": {
       "Almost there": [
         "¡Ya casi está!"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Conectando con tu proveedor de correo electrónico"
@@ -4333,7 +4312,7 @@
         "Gestionar calendarios"
       ],
       "Upgrade": [
-        "Mejorar plan"
+        "Mejorar"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -5030,6 +5009,11 @@
       ],
       "Sign": [
         "Firmar"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
       ]
     },
     "Spotlight": {

@@ -687,11 +687,6 @@
         "Неабавязкова"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "Неўзабаве з'явіцца"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Бэта-доступ дазваляе вам карыстацца тэставай версіяй ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME } да таго, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта значыць, што вы можаце першымі паспрабаваць новыя прадукты і функцыі."
@@ -1109,9 +1104,6 @@
       ],
       "Work": [
         "Працоўны"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2190,18 +2182,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Памылка расшыфроўкі: Не ўдалося расшыфраваць змесціва гэтай падзеі."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календара",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календара або",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў або",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў або",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў або"
-      ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
@@ -2279,12 +2259,6 @@
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Аб'яднайце прынамсі ${ calendarToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
-        "Аб'яднайце прынамсі ${ calendarToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
-        "Аб'яднайце прынамсі ${ calendarToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
-        "Аб'яднайце прынамсі ${ calendarToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
@@ -2468,9 +2442,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Вы не можаце адправіць файлы vCard больш чым 10 кантактам"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Вы дасягнулі максімальнай колькасці асабістых календароў. Некаторыя календары не будуць імпартаваныя."
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
@@ -2695,11 +2666,11 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } удзельнік",
-        "${ numberOfParticipants } удзельнікі",
-        "${ numberOfParticipants } удзельнікаў",
-        "${ numberOfParticipants } удзельнікі"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } удзельнік",
+        "${ numberOfAttendees } удзельнікі",
+        "${ numberOfAttendees } удзельнікаў",
+        "${ numberOfAttendees } удзельнікі"
       ]
     },
     "Event info. Organizer name": {
@@ -2889,9 +2860,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -2900,9 +2868,6 @@
       ],
       "No verification method available": [
         "Няма даступных спосабаў праверкі"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -3148,9 +3113,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3354,12 +3316,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Любы чалавек з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, напрыклад, загаловак, размяшчэнне або ўдзельнікаў."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельніка",
-        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікі",
-        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікаў",
-        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікі"
       ],
       "Attention required": [
         "Патрабуецца ўвага"
@@ -3664,9 +3620,6 @@
       "Select what you want to import.": [
         "Выберыце, што вы хочаце імпартаваць."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Выберыце календары для імпартавання. Новы каляндар будзе створаны для кожнага імпартаванага календара з абмежаваннем у 20 календароў."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
@@ -3913,6 +3866,11 @@
         "Націсніце, каб даведацца падрабязнасці"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Толькі прагляд"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "У некаторых вашых календарах не будуць паказвацца падрабязнасці пра падзеі, якія створаны раней."
@@ -3939,6 +3897,17 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Вы можаце паўторна абагуліць вашы календары ў наладах."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельніка",
+        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікі",
+        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікаў",
+        "На адно запрашэнне дапускаецца не больш за ${ MAX_ATTENDEES } удзельнікі"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Не дазваляецца стварэнне запрашэнняў у абагуленым календары"
       ]
     },
     "Input label": {
@@ -3972,9 +3941,6 @@
       ],
       "Trusted": [
         "Давераны"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4339,13 +4305,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Каб дадаць новы каляндар, выдаліце які-небудзь з існуючых."
+        "Каб дадаць новы каляндар, выдаліце адзін з існуючых."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Каб дадаць новы каляндар, выдаліць іншы каляндар або перайсці з тарыфнага плана ${ BRAND_NAME } на платны тарыфны план ${ MAIL_SHORT_APP_NAME }."
+        "Каб дадаць новы каляндар, выдаліце іншы каляндар або палепшыце свой тарыфны план ${ BRAND_NAME } да платнага тарыфнага плана ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
+        "Вы дасягнулі максімальнай колькасці календароў, даступных на вашым тарыфным плане."
       ]
     },
     "Link": {
@@ -4362,7 +4328,7 @@
         "Мае календары"
       ],
       "Other calendars": [
-        "Іншыя календары"
+        "Іншыя прагляды"
       ],
       "Pay invoice": [
         "Аплаціць рахунак"

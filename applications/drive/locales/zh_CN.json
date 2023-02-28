@@ -371,6 +371,9 @@
       "Move to trash": [
         "移至废件箱"
       ],
+      "New": [
+        "新建"
+      ],
       "New upload": [
         "上传文件"
       ],
@@ -783,54 +786,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "继续使用 ${ MAIL_APP_NAME }。"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "未同步"
-      ],
-      "Syncing": [
-        "同步中"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "未能解密日历"
-      ],
-      "Calendar is syncing": [
-        "日历正在同步中"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "日历正在同步：可能需要几分钟的时间才能显示出所有的事件."
-      ],
-      "Calendar is too big": [
-        "日历文件太大"
-      ],
-      "Calendar link is not accessible": [
-        "日历链接不能被访问"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "日历链接暂时无法访问"
-      ],
-      "Failed to sync calendar": [
-        "同步日历失败"
-      ],
-      "More than 12 hours passed since last update": [
-        "离上一个更新已经超过了12小时"
-      ],
-      "Unsupported calendar format": [
-        "不受支持的日历格式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "日历链接不能从日历提供者的系统之外访问。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "日历链接暂时无法访问。请核实日历提供者的链接仍然有效。"
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "距上次更新已超过 12 小时，${ CALENDAR_APP_NAME } 将在数小时内尝试更新日历。"
       ]
     },
     "Collapsible tooltip": {
@@ -1924,12 +1879,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器。"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "取消选择至少 ${ calendarToFixCount } 个日历"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "取消选择至少 ${ calendarToFixCount } 个日历或者"
-      ],
       "Device name does not match": [
         "设备名称不匹配"
       ],
@@ -1992,9 +1941,6 @@
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "将至少 ${ calendarToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
@@ -2137,6 +2083,9 @@
       "This label name is not available. Please choose a different name.": [
         "标签名称不可用，请重新填写。"
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "此邮件含有浏览器不能打开的链接."
+      ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
@@ -2145,9 +2094,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "收件人不能超过 100 个"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "您已达到您账户等级所能创建的个人日历数上限。无法导入多出的日历。"
       ],
       "You must set a name": [
         "请输入名称（必填）"
@@ -2445,15 +2391,6 @@
     "file size format": {
       "bytes": [
         "B"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -2531,6 +2468,9 @@
     "Import calendar": {
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密并添加日程时出错。未能导入任何日程。"
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
@@ -2750,9 +2690,6 @@
       ],
       "ICS file": [
         "ICS 文件"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2852,6 +2789,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
       ],
+      "${ selectedCount } selected": [
+        "已选择 ${ selectedCount } 项"
+      ],
       "${ selectedFoldersCount } folders selected": [
         "已选择 ${ selectedFoldersCount } 个文件夹"
       ],
@@ -2863,9 +2803,6 @@
       ],
       "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
       ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
@@ -3437,9 +3374,6 @@
       "Select what you want to import.": [
         "选择需要导入的内容。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
       ],
@@ -3457,6 +3391,9 @@
       ],
       "Shared link failed to be loaded": [
         "分享链接加载失败"
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "由于网络错误，无法验证签名，请稍后重试。"
       ],
       "Signature check will be ignored": [
         "将忽略签名校验"
@@ -3778,9 +3715,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -5235,6 +5169,9 @@
       "Open settings menu": [
         "打开设置菜单"
       ],
+      "Original size": [
+        "原始尺寸"
+      ],
       "Other information": [
         "其他信息"
       ],
@@ -5384,6 +5321,9 @@
       ],
       "Uploaded by": [
         "上传者"
+      ],
+      "Uploading a large file or folder": [
+        "上传大文件或文件夹"
       ],
       "View contacts": [
         "查看联系人"

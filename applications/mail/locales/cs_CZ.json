@@ -480,7 +480,7 @@
         "Importovat"
       ],
       "import": [
-        "import"
+        "importovat"
       ],
       "Import calendars": [
         "Importovat kalendáře"
@@ -1208,16 +1208,6 @@
         "Konverzace"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Vítejte"
@@ -1611,54 +1601,6 @@
         "Vaše e-mailová adresa není v seznamu účastníků"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Nesynchronizováno"
-      ],
-      "Syncing": [
-        "Synchronizace"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalendář se nepodařilo dešifrovat"
-      ],
-      "Calendar is syncing": [
-        "Kalendář se synchronizuje"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Synchronizace kalendáře: načtení všech událostí může trvat několik minut."
-      ],
-      "Calendar is too big": [
-        "Kalendář je příliš velký"
-      ],
-      "Calendar link is not accessible": [
-        "Odkaz na kalendář není přístupný"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Odkaz na kalendář je dočasně nedostupný"
-      ],
-      "Failed to sync calendar": [
-        "Synchronizace kalendáře selhala"
-      ],
-      "More than 12 hours passed since last update": [
-        "Od poslední aktualizace uběhlo už více jak 12 hodin"
-      ],
-      "Unsupported calendar format": [
-        "Nepodporovaný formát kalendáře"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Odkaz na kalendář není přístupný mimo ekosystém poskytovatele kalendáře."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Odkaz na kalendář je dočasně nedostupný. Zkontrolujte, zda je odkaz od poskytovatele kalendáře stále platný."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Od poslední aktualizace uplynulo více než 12 hodin — ${ CALENDAR_APP_NAME } se pokusí kalendář aktualizovat během několika hodin."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Událost již skončila"
@@ -1677,7 +1619,7 @@
     },
     "color": {
       "apple": [
-        "apple"
+        "jablko"
       ],
       "azureish white": [
         "azurově bílá"
@@ -1999,9 +1941,6 @@
       ],
       "Work": [
         "Práce"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2900,7 +2839,7 @@
         "Bez štítků"
       ],
       "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail a znaménko plus"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
@@ -3121,18 +3060,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této zprávy se nezdařilo."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře nebo",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo"
-      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -3210,12 +3137,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Překročen maximální počet příloh (${ attachmentsCountLimit })"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Sloučit alespoň ${ calendarToFixCount } kalendář s existujícím ${ BRAND_NAME } kalendářem",
-        "Sloučit alespoň ${ calendarToFixCount } kalendáře s existujícími ${ BRAND_NAME } kalendáři",
-        "Sloučit alespoň ${ calendarToFixCount } kalendářů s existujícími ${ BRAND_NAME } kalendáři",
-        "Sloučit alespoň ${ calendarToFixCount } kalendářů s existujícími ${ BRAND_NAME } kalendáři"
       ],
       "Message needs to be sent first": [
         "Nejdříve je potřeba zaslat zprávu"
@@ -3450,9 +3371,6 @@
       ],
       "You did not provide a file.": [
         "Neposkytli jste soubor."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Dosáhli jste maximálního počtu osobních kalendářů. Některé kalendáře nebylo možné importovat."
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -4069,9 +3987,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -4080,9 +3995,6 @@
       ],
       "No verification method available": [
         "Nejsou k dispozici žádné metody ověřování"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4108,6 +4020,9 @@
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } ze ${ totalToImport } událostí byly úspěšně importovány.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Nastala chyba při šifrování a přidávání vaší události. Událost nemůže být importována."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Nastala chyba při šifrování a přidávání vašich událostí. Události nemohly být importovány."
@@ -4344,9 +4259,6 @@
       ],
       "ICS file": [
         "Soubor ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5053,7 +4965,7 @@
         "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "Importujeme vaše data z ${ fromEmail } do ${ toEmail }."
+        "Import vašich dat z ${ fromEmail } do ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
@@ -5361,9 +5273,6 @@
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Odeslat šifrovanou, heslem chráněnou zprávu pro e-mailovou adresu ${ boldText }."
       ],
@@ -5667,9 +5576,6 @@
       "Using SimpleLogin is easy": [
         "Používání SimpleLogin je snadné"
       ],
-      "Verified ${ BRAND_NAME } message": [
-        "Ověřená zpráva ${ BRAND_NAME }"
-      ],
       "Version ${ appVersion }": [
         "Verze ${ appVersion }"
       ],
@@ -5912,9 +5818,6 @@
       ],
       "Trusted": [
         "Důvěryhodný"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6684,6 +6587,9 @@
       "To add a new calendar, remove an existing one.": [
         "Chcete-li přidat nový kalendář, odstraňte stávající."
       ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Chcete-li přidat nový kalendář, odstraňte jiný kalendář nebo navyšte tarif ${ BRAND_NAME } na placený tarif ${ MAIL_SHORT_APP_NAME }."
+      ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Dosáhli jste maximálního počtu kalendářů dostupných ve vašem tarifu."
       ]
@@ -6893,7 +6799,7 @@
         "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítku celkem a označit je jako",
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
@@ -7182,9 +7088,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získejte neomezený počet aliasů skrze SimpleLogin od ${ BRAND_NAME }"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

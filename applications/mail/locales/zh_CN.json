@@ -1190,16 +1190,6 @@
         "会话"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "欢迎"
@@ -1588,54 +1578,6 @@
       ],
       "Your email address is not in the participants list": [
         "您的邮箱地址不在参与者列表中"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "未同步"
-      ],
-      "Syncing": [
-        "同步中"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "未能解密日历"
-      ],
-      "Calendar is syncing": [
-        "日历正在同步中"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "日历正在同步：可能需要几分钟的时间才能显示出所有的事件."
-      ],
-      "Calendar is too big": [
-        "日历文件太大"
-      ],
-      "Calendar link is not accessible": [
-        "日历链接不能被访问"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "日历链接暂时无法访问"
-      ],
-      "Failed to sync calendar": [
-        "同步日历失败"
-      ],
-      "More than 12 hours passed since last update": [
-        "离上一个更新已经超过了12小时"
-      ],
-      "Unsupported calendar format": [
-        "不受支持的日历格式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "日历链接不能从日历提供者的系统之外访问。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "日历链接暂时无法访问。请核实日历提供者的链接仍然有效。"
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "距上次更新已超过 12 小时，${ CALENDAR_APP_NAME } 将在数小时内尝试更新日历。"
       ]
     },
     "Calendar widget banner": {
@@ -2869,6 +2811,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
+      "When do you want your message to be sent?": [
+        "您想要什么时候发送您的邮件？"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
@@ -3067,12 +3012,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密失败：此邮件内容解密失败"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "取消选择至少 ${ calendarToFixCount } 个日历"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "取消选择至少 ${ calendarToFixCount } 个日历或者"
-      ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
       ],
@@ -3150,9 +3089,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "最多只能有 ${ attachmentsCountLimit } 个附件"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "将至少 ${ calendarToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Message needs to be sent first": [
         "需要先发送邮件"
@@ -3337,6 +3273,9 @@
       "This message has already been sent. A new draft has been saved.": [
         "此邮件已发送，已保存新草稿。"
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "此邮件含有浏览器不能打开的链接."
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "启用的规则数量已达上限，开通付费账户即可使用更多筛选规则。"
       ],
@@ -3363,9 +3302,6 @@
       ],
       "You did not provide a file.": [
         "您尚未选择文件。"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "您已达到您账户等级所能创建的个人日历数上限。无法导入多出的日历。"
       ],
       "You must set a name": [
         "请输入名称（必填）"
@@ -3690,15 +3626,6 @@
     "file size format": {
       "bytes": [
         "B"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -3983,6 +3910,9 @@
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密并添加日程时出错。未能导入任何日程。"
+      ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
@@ -4209,9 +4139,6 @@
       ],
       "ICS file": [
         "ICS 文件"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5049,9 +4976,6 @@
       "Select what you want to import.": [
         "选择需要导入的内容。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "向 ${ boldText } 邮箱发送加密且需要密码才能打开的邮件。"
       ],
@@ -5343,9 +5267,6 @@
       "Using SimpleLogin is easy": [
         "SimpleLogin 便捷易用"
       ],
-      "Verified ${ BRAND_NAME } message": [
-        "已核实为 ${ BRAND_NAME } 官方邮件"
-      ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
       ],
@@ -5561,9 +5482,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6754,6 +6672,9 @@
       "Custom email domains": [
         "自有域名"
       ],
+      "Search message content": [
+        "搜索邮件全文"
+      ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
       ],
@@ -6762,11 +6683,6 @@
       ],
       "Up to 500 GB of storage": [
         "最高 500 GB 存储空间"
-      ]
-    },
-    "new_plans: feature info": {
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

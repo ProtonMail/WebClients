@@ -860,6 +860,9 @@
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Aquest camp requereix el màxim de ${ maximumLength } caràcters."
+      ],
       "This field is required": [
         "Aquest camp és obligatori"
       ],
@@ -893,7 +896,15 @@
         "També podeu ${ refresh } o tornar-ho a intentar més tard."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inseriu una clau de seguretat associada al vostre compte ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clau de seguretat"
       ]
@@ -904,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -915,9 +923,6 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {

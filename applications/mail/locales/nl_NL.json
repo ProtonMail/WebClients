@@ -317,7 +317,7 @@
         "Downloaden"
       ],
       "Download ${ attachmentName }": [
-        "Download ${ attachmentName }"
+        "${ attachmentName } downloaden"
       ],
       "Edit": [
         "Bewerken"
@@ -489,9 +489,6 @@
       ],
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
-      ],
-      "Inline": [
-        "Inline"
       ],
       "Insert": [
         "Invoegen"
@@ -703,9 +700,6 @@
       ],
       "Open composer": [
         "Open het opstelvenster"
-      ],
-      "Open get started checklist modal": [
-        "Open get started checklist modal"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -1197,16 +1191,6 @@
         "Gesprek"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Welkom"
@@ -1598,54 +1582,6 @@
         "Het e-mailadres staat niet in de lijst met deelnemers"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Niet gesynchroniseerd"
-      ],
-      "Syncing": [
-        "Synchroniseren"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Agenda kon niet ontsleuteld worden"
-      ],
-      "Calendar is syncing": [
-        "De agenda wordt gesynchroniseerd"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Agenda is aan het synchroniseren: het kan enkele minuten duren voordat alle afspraken verschijnen."
-      ],
-      "Calendar is too big": [
-        "De agenda is te groot"
-      ],
-      "Calendar link is not accessible": [
-        "Agendakoppeling is niet toegankelijk"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Agendakoppeling is tijdelijk ontoegankelijk"
-      ],
-      "Failed to sync calendar": [
-        "Synchronisatie van de agenda is mislukt"
-      ],
-      "More than 12 hours passed since last update": [
-        "Er zijn meer dan 12 uur verstreken sinds de laatste update"
-      ],
-      "Unsupported calendar format": [
-        "Niet-ondersteunde agenda-indeling"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Agendalink is niet toegankelijk van buiten de agendaproviders ecosysteem."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Meer dan 12 uur geleden sinds de laatste update — ${ CALENDAR_APP_NAME } probeert de agenda over enkele uren te updaten."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Het evenement is al afgelopen"
@@ -1986,9 +1922,6 @@
       ],
       "Work": [
         "Werk"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2602,7 +2535,7 @@
         "Singapore"
       ],
       "Sint Maarten": [
-        "Sint Maarten"
+        "Sint-Maarten"
       ],
       "Slovakia": [
         "Slowakije"
@@ -2877,7 +2810,7 @@
         "Geen labels"
       ],
       "ProtonMail logo and a plus sign": [
-        "ProtonMail logo en een plus teken"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
@@ -3092,14 +3025,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ontsleutelingsfout: decodering van de gecodeerde inhoud van dit bericht is mislukt."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deselecteer tenminste één agenda",
-        "Deselecteer tenminste ${ calendarToFixCount } agenda's"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Ten minste ${ calendarToFixCount } agenda deselecteren of",
-        "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
-      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -3177,10 +3102,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximum aantal bijlagen (${ attachmentsCountLimit }) overschreden"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
-        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
       "Message needs to be sent first": [
         "Bericht moet eerst verzonden worden"
@@ -3403,9 +3324,6 @@
       ],
       "You did not provide a file.": [
         "U heeft geen bestand geselecteerd."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "U heeft het maximale aantal persoonlijke agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -4004,9 +3922,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mailadres"
       ],
@@ -4015,9 +3930,6 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4037,6 +3949,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
@@ -4265,9 +4180,6 @@
       ],
       "ICS file": [
         "ICS-bestand"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4282,6 +4194,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importeer uit ${ provider }"
+      ],
       "Other": [
         "Overig"
       ]
@@ -4364,6 +4279,14 @@
       "${ numberOfTrackers } email tracker blocked": [
         "Één e-mail tracker geblokkeerd",
         "${ numberOfTrackers } e-mail trackers geblokkeerd"
+      ],
+      "${ numContact } contact": [
+        "${ numContact } contactpersoon",
+        "${ numContact } contactpersonen"
+      ],
+      "${ numGroups } contact group": [
+        "${ numGroups } contactgroep",
+        "${ numGroups } contactgroepen"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } bericht in het gesprek",
@@ -4599,6 +4522,10 @@
       ],
       "Country code": [
         "Landcode"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
@@ -4839,6 +4766,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Afbeeldingen werden verwijderd omdat ze niet toegelaten zijn in automatisch antwoord"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
       ],
@@ -4853,6 +4784,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importeer uw e-mails, agenda's en contacten vanuit een andere dienst naar ${ BRAND_NAME }. We zullen u bij elke stap leiden en uw gegevens versleutelen terwijl het wordt verplaatst. Welkom in de wereld van privacy."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
@@ -5158,9 +5092,6 @@
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Verzend een versleuteld, met wachtwoord beveiligd bericht naar een ${ boldText } e-mailadres."
       ],
@@ -5457,9 +5388,6 @@
       ],
       "Using SimpleLogin is easy": [
         "Het gebruik van SimpleLogin is eenvoudig"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Geverifieerd ${ BRAND_NAME }-bericht"
       ],
       "Version ${ appVersion }": [
         "Versie ${ appVersion }"
@@ -6024,7 +5952,7 @@
         "Land"
       ],
       "Date": [
-        "Date"
+        "Datum"
       ],
       "Date:": [
         "Datum:"
@@ -6612,6 +6540,10 @@
       "Almost there": [
         "Bijna daar"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
       ],
@@ -6626,6 +6558,12 @@
       ],
       "Your import is starting": [
         "Uw import begint"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
+        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
       ]
     },
     "Mailbox": {
@@ -6905,9 +6843,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7803,6 +7738,9 @@
       "Bug reported": [
         "Bug gemeld"
       ],
+      "Cancelling import": [
+        "Importeren annuleren"
+      ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
@@ -8604,7 +8542,7 @@
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
-        "Uw Mail Plus proefversie eindigt op ${ textDate }."
+        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
