@@ -71,7 +71,6 @@ const ModalHeader = ({
                 {title && (
                     <div className="modal-two-header-title mt0-25">
                         <h1
-                            data-testid="plansModalTitle"
                             id={id}
                             className={classnames([
                                 'text-bold',
