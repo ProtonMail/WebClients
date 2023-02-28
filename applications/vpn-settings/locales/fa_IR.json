@@ -390,14 +390,6 @@
         "کوچک‌نمایی"
       ]
     },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "ادامه با طرح رایگان"
-      ],
-      "Start my 30-day free trial": [
-        "شروع دوره آزمایشی 30 روزه من"
-      ]
-    },
     "Addon": {
       "+ ${ domains } custom domain": [
         "+ ${ domains } دامنه سفارشی",
@@ -2018,12 +2010,6 @@
       "Or select a particular server:": [
         "یا سروری خاص را انتخاب کنید:"
       ],
-      "P2P": [
-        "P2P"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "تایید کامل پرداخت ممکن است چند دقیقه طول بکشد."
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "پرداخت‌ها با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت شده‌اند."
       ],
@@ -2039,17 +2025,11 @@
       "Please provide an email address in case we need to contact you.": [
         "لطفا در صورت نیاز به تماس با شما یک رایانشانی ارائه دهید."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "لطفا دوباره امتحان کنید، از روش پرداخت متفاوتی استفاده کنید، یا از بانک‌تان درخواست کمک کنید."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "لطفا دوباره امتحان کنید، از روش پرداخت دیگری استفاده کنید یا برای دریافت کمک با پی‌پال تماس بگیرید."
       ],
       "Please verify payment at the new tab which was opened.": [
         "لطفا پرداخت را در زبانه جدیدی که باز شد تایید کنید."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "لطفا کارت را در زبانه جدیدی که باز شد تایید کنید."
       ],
       "Plus or Visionary subscription required": [
         "اشتراک Plus یا Visionary مورد نیاز است"
@@ -2192,9 +2172,6 @@
       "Verification can take a few minutes.": [
         "تایید ممکن است چند دقیقه طول بکشد."
       ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "تایید یک زبانه جدید باز می‌کند، لطفا هر مسدودکننده پیش‌آ را غیرفعال کنید."
-      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "تایید یک زبانه جدید باز می‌کند، لطفا هر مسدودکننده پیش‌آ را غیرفعال کنید. هزینه‌ای از شما دریافت نمی‌شود. هر مبلغی که برای تایید کارت استفاده شود، بلافاصله بازپرداخت می‌شود."
       ],
@@ -2294,9 +2271,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "شما در حساب ${ BRAND_NAME } خود ${ loseAllData } خواهید داد. برای بازیابی آن، شما لازم است که گذرواژه قدیمی خود را وارد کنید."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "به زودی برای تایید پرداخت به بانک خود هدایت می‌شوید."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "به زودی برای تایید پرداخت به PayPal هدایت می‌شوید."
       ],
@@ -2312,9 +2286,6 @@
       "Your account will be updated once the payment is cleared.": [
         "به محض تصفیه حساب، حساب شما بروز می‌شود."
       ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "بانک شما برای اهداف امنیتی به تایید امن 3 بعدی نیاز دارد."
-      ],
       "Your email will only be used for this one-time verification.": [
         "از رایانامه شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
       ],
@@ -2329,32 +2300,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "اشتراک شما توسط موزیلا مدیریت می‌شود. لطفا با پشتیبانی موزیلا تماس بگیرید."
-      ]
-    },
-    "info": {
-      "Create an email address": [
-        "یک آدرس ایمیل بسازید"
-      ],
-      "Day 27: Trial reminder": [
-        "روز 27: یادآور دوره آزمایشی رایگان"
-      ],
-      "Day 30: Trial ends": [
-        "روز 30: دوره آزمایشی رایگان به پایان رسید"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "از ایمیل کردن آسام و امن با امکانات ویژه بسیار لذت ببرید."
-      ],
-      "Try Mail Plus": [
-        "Mail Plus را امتحان کنید"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "قبل از اتمام دوره آزمایشی به شما ایمیل خواهیم زد. هر زمانی لغو کنید."
-      ],
-      "Your new email address is ready to go!": [
-        "آدرس ایمیل جدید شما آماده است!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "اشتراک شما از ${ startText } آغاز میشود."
       ]
     },
     "Info for cash payment method": {
@@ -2598,9 +2543,6 @@
       ],
       "Main": [
         "اصلی"
-      ],
-      "Moderate NAT": [
-        "Moderate NAT"
       ],
       "Name on card": [
         "نام روی کارت"
@@ -2982,9 +2924,6 @@
       "1 free VPN connection in total": [
         "درکل 1 اتصال VPN رایگان"
       ],
-      "99.95% SLA": [
-        "99.95% SLA"
-      ],
       "Admin console": [
         "کنسول مدیریت"
       ],
@@ -3057,9 +2996,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "مسدود سازی بد افزار و تبلیغات با استفاده از NetShield"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "ایمیل محافظت شده با رمزعبور"
@@ -3540,12 +3476,6 @@
       "Standard server configs": [
         "پیکربندی‌های سرور استاندارد"
       ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
       "Windows": [
         "ویندوز"
       ]
@@ -3687,6 +3617,11 @@
         "تایید کردن شماره تلفن شما امنیت حساب شما را افزایش داده و اجازه میدهد تا گزینه های بیشتری برای بازیابی داشته باشید."
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "ایجاد شده توسط ${ ownerName }"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "نام نمایشی"
@@ -3792,11 +3727,6 @@
     "Subscription saving": {
       "Save": [
         "ذخیره"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "این پیشنهاد تنها برای کابران جدید ${ BRAND_NAME } است. به کارت اعتباری نیازی نیست."
       ]
     },
     "Success": {
@@ -3937,9 +3867,6 @@
       "2. Select protocol": [
         "2. پروتکل را انتخاب کنید"
       ],
-      "3-D Secure verification failed": [
-        "تایید امنیت 3 بعدی انجام نشد"
-      ],
       "3. Select config file and download": [
         "3. فایل پیکربندی را انتخاب کرده و بارگیری کنید"
       ],
@@ -3987,9 +3914,6 @@
       ],
       "Card verification": [
         "تایید کارت"
-      ],
-      "Card verification in progress": [
-        "تایید کارت در حال انجام است"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"
@@ -4090,9 +4014,6 @@
       "Gift code": [
         "کد هدیه"
       ],
-      "How your free trial works": [
-        "طرح آزمایشی شما چگونه کار میکند"
-      ],
       "Human verification": [
         "تشخیص انسان"
       ],
@@ -4143,9 +4064,6 @@
       ],
       "Payment verification": [
         "تایید پرداخت"
-      ],
-      "Payment verification in progress": [
-        "تایید پرداخت در حال انجام است"
       ],
       "Payments": [
         "پرداخت‌ها"

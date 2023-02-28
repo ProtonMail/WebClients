@@ -790,54 +790,6 @@
         "${ MAIL_APP_NAME } weiterhin verwenden."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Nicht synchronisiert"
-      ],
-      "Syncing": [
-        "Synchronisiere"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender konnte nicht entschlüsselt werden"
-      ],
-      "Calendar is syncing": [
-        "Kalender wird synchronisiert"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Der Kalender wird synchronisiert: Es kann einige Minuten dauern, bis alle Termine angezeigt werden."
-      ],
-      "Calendar is too big": [
-        "Kalender ist zu groß"
-      ],
-      "Calendar link is not accessible": [
-        "Kalender-Link ist nicht erreichbar"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Der Link zum Kalender ist vorübergehend nicht erreichbar."
-      ],
-      "Failed to sync calendar": [
-        "Kalender konnte nicht synchronisiert werden"
-      ],
-      "More than 12 hours passed since last update": [
-        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen"
-      ],
-      "Unsupported calendar format": [
-        "Nicht unterstütztes Kalender-Format"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Der Kalender-Link ist von außerhalb des Ökosystems des Kalenderanbieters nicht zugänglich."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Auf den Kalenderlink kann vorübergehend nicht zugegriffen werden. Bitte überprüfe, ob der Link des Kalenderanbieters noch gültig ist."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen - ${ CALENDAR_APP_NAME } wird versuchen, den Kalender in ein paar Stunden zu aktualisieren."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Reduzieren"
@@ -1063,7 +1015,7 @@
         "Barbados"
       ],
       "Belarus": [
-        "Belarus"
+        "Weißrussland"
       ],
       "Belgium": [
         "Belgien"
@@ -1189,7 +1141,7 @@
         "Dschibuti"
       ],
       "Dominica": [
-        "Dominica"
+        "Dominika"
       ],
       "Dominican Republic": [
         "Dominikanische Republik"
@@ -1930,14 +1882,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Die Inhaltssuche kann in diesem Browser nicht aktiviert werden. Bitte beende den privaten Browsermodus oder verwende einen anderen Browser."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Mindestens ${ calendarToFixCount } Kalender abwählen",
-        "Mindestens ${ calendarToFixCount } Kalender abwählen"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Mindestens ${ calendarToFixCount } Kalender abwählen oder",
-        "Mindestens ${ calendarToFixCount } Kalender abwählen oder"
-      ],
       "Device name does not match": [
         "Gerätename stimmt nicht überein"
       ],
@@ -2000,10 +1944,6 @@
       ],
       "Label name cannot be empty.": [
         "Name der Kategorie kann nicht leer sein."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Mindestens ${ calendarToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
-        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
       ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
@@ -2162,10 +2102,7 @@
         "Es können keine Mails an mehr als 100 Empfänger gesendet werden"
       ],
       "You can't send vCard files of more than 10 contacts": [
-        "Du kannst keine vCard-Dateien versenden welche mehr als 10 Kontakten enthalten."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Du hast die maximale Anzahl von privaten Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
+        "Du kannst keine vCard-Dateien mit mehr als 10 Kontakten versenden."
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
@@ -2479,19 +2416,19 @@
     "file size format, long": {
       "Byte": [
         "Byte",
-        "Bytes"
+        "Byte"
       ],
       "Gigabyte": [
         "Gigabyte",
-        "Gigabytes"
+        "Gigabyte"
       ],
       "Kilobyte": [
         "Kilobyte",
-        "Kilobytes"
+        "Kilobyte"
       ],
       "Megabyte": [
         "Megabyte",
-        "Megabytes"
+        "Megabyte"
       ]
     },
     "Filter notification": {
@@ -2542,9 +2479,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-Mail"
       ],
@@ -2566,6 +2500,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Termin wurde erfolgreich importiert.",
         "Beim Verschlüsseln und Hinzufügen deiner Termine ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Terminen wurden erfolgreich importiert."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. Es konnte kein Termin importiert werden."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Das Verschlüsseln und Hinzufügen deiner Termine ist fehlgeschlagen. Es konnte kein Termin importiert werden."
@@ -2786,9 +2723,6 @@
       ],
       "ICS file": [
         "ICS-Datei"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3536,9 +3470,6 @@
       "Select what you want to import.": [
         "Wähle aus, was du importieren möchtest."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
@@ -3887,9 +3818,6 @@
       ],
       "Trusted": [
         "Vertrauenswürdig"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4356,6 +4284,17 @@
     "Landmarks": {
       "Side panel": [
         "Seitenleiste"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Um einen neuen Kalender hinzuzufügen, entferne einen bestehenden."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Um einen neuen Kalender hinzuzufügen, entferne einen anderen Kalender oder upgrade dein ${ BRAND_NAME } Abonnement zu einem kostenpflichtigen ${ MAIL_SHORT_APP_NAME } Abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du hast die maximale Anzahl von Kalendern in deinem Abonnement erreicht."
       ]
     },
     "Link": {
@@ -5311,7 +5250,7 @@
         "CSV-Feld"
       ],
       "Import": [
-        "Import"
+        "Importieren"
       ],
       "Name": [
         "Name"
@@ -5498,9 +5437,6 @@
       ],
       "Download unverified folder?": [
         "Ungeprüften Ordner herunterladen?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "Datei zum Hochladen in dieses Feld ziehen"

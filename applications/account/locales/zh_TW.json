@@ -903,14 +903,6 @@
         "撤銷"
       ]
     },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "繼續使用免費方案"
-      ],
-      "Start my 30-day free trial": [
-        "開始我的30天免費試用"
-      ]
-    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "接受"
@@ -1020,9 +1012,6 @@
     "Badge": {
       "5 users": [
         "5 個使用者"
-      ],
-      "Coming soon": [
-        "敬請期待"
       ]
     },
     "Badge for domain": {
@@ -1162,9 +1151,6 @@
       ],
       "Send": [
         "傳送"
-      ],
-      "Tweet": [
-        "Tweet"
       ]
     },
     "Calendar access select label": {
@@ -2820,12 +2806,6 @@
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
-      ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
@@ -2912,9 +2892,6 @@
       ],
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "請至少將 ${ calendarToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
       "Missing key packet": [
         "缺少金鑰封包"
@@ -3179,9 +3156,6 @@
       ],
       "You have no invoices.": [
         "您沒有任何帳單。"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "您已經達到個人行事曆的數量上限。有部分行事曆無法被匯入。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
@@ -3653,15 +3627,6 @@
     "file size format": {
       "bytes": [
         "位元組"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -3937,6 +3902,9 @@
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
+      ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
@@ -4160,9 +4128,6 @@
       ],
       "ICS file": [
         "ICS 檔案"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5185,17 +5150,11 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "密碼短語已過時，更新以確保您可以存取您的資料"
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } months plan": [
         "已付費 ${ rewardMonths } 個月方案"
       ],
       "Paid for a monthly plan": [
         "以每月方案付費"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "付款或需時數分鐘才驗證完成。"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付受 TLS 加密及瑞士隱私法律保護。"
@@ -5254,17 +5213,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "請選擇您想插入的連結類型，並填寫所有欄位。"
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "諘再試一次，您也可換另一個付款方法，或致電您的銀行尋求協助。"
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "諘再試一次，您也可換另一個付款方法，或聯絡 PayPal 尋求協助。"
       ],
       "Please verify payment at the new tab which was opened.": [
         "請在剛開啟的新索引標籤中驗證付款。"
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "請在剛開啟的新索引標籤中驗證信用卡。"
       ],
       "Please wait till your changes are synced with the server.": [
         "請等待您的變更與伺服器同步。"
@@ -5355,9 +5308,6 @@
       ],
       "Select what you want to import.": [
         "選擇您要匯入的檔案。"
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "以 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電郵送出。"
@@ -5590,9 +5540,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "為您的帳號儲值，以便訂閱新方案或為您目前的方案續期。每儲值一${ i18nCurrency }，帳號餘額將會增加一單位（這些貨幣對餘額來說是一樣的）。"
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "可使用的電郵位址總數"
       ],
@@ -5661,9 +5608,6 @@
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "驗證將開新索引標籤，請停用任何彈出式視窗攔截程式。"
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "驗證將開新索引標籤，請停用任何彈出式視窗攔截程式。您不會被收費。任何用於驗證信用卡的金額都會馬上退還。"
@@ -5851,9 +5795,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "您將會 ${ loseAllData } 在您的 ${ BRAND_NAME } 帳號。要復原，您將需要輸入您的舊密碼。"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "即將重新導向到您的銀行驗證您的付款。"
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "您將需要一個 ${ BRAND_NAME } 電子郵件地址，方可使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
@@ -5898,9 +5839,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "為確保安全，您的銀行要求您進行 3-D Secure 驗證。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
@@ -5949,32 +5887,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "偵測到其它重複的金鑰。請單獨上載以取得更多資訊。"
       ],
-      "Create an email address": [
-        "創建一組電子郵件位址"
-      ],
-      "Day 27: Trial reminder": [
-        "第 27 天: 試用到期提醒"
-      ],
-      "Day 30: Trial ends": [
-        "第 30 天: 試用期結束"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "享受擁有安全、容易使用的豐富專業版功能電子郵件。"
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "金鑰 ${ fingerprint } 已上載"
-      ],
-      "Try Mail Plus": [
-        "試試 Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "我們會在您試用結束前以電子郵件通知。隨時可以取消試用。"
-      ],
-      "Your new email address is ready to go!": [
-        "您的新電郵位址已準備就緒！"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "您的訂購授權起始日為 ${ startText }。"
       ]
     },
     "Info - folder colouring feature": {
@@ -7332,17 +7246,6 @@
         "喜好設定已儲存"
       ]
     },
-    "Limit of calendars reached": {
-      "To add a new calendar, remove an existing one.": [
-        "要新增行事曆，請移除既有的。"
-      ],
-      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "要新增行事曆，請移除其他行事曆或升級您的 ${ BRAND_NAME } 方案至 ${ MAIL_SHORT_APP_NAME } 付費方案。"
-      ],
-      "You've reached the maximum number of calendars available in your plan.": [
-        "您已達到您方案中可用的最大行事曆數量。"
-      ]
-    },
     "Link": {
       "Add a gift code": [
         "加入禮品代碼"
@@ -7925,9 +7828,6 @@
       ],
       "Multiple admin roles": [
         "多重管理員角色"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
@@ -8522,9 +8422,6 @@
       "Add to existing group": [
         "加入至現有群組"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "每一次都詢問我"
       ],
@@ -8546,9 +8443,6 @@
       "Free server configs": [
         "免費伺服器組態設定"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "別家的服務，我更喜歡"
       ],
@@ -8558,9 +8452,6 @@
       "Ignore group": [
         "忽略群組"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "我需要一個很重要的功能，你們欠奉"
       ],
@@ -8569,9 +8460,6 @@
       ],
       "Left to Right": [
         "由左至右"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "其實我的理由，你沒有懂"
@@ -8614,15 +8502,6 @@
       ],
       "Standard server configs": [
         "標準伺服器組態設定"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -8723,9 +8602,6 @@
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -8766,17 +8642,11 @@
       "Confirm password": [
         "確認密碼"
       ],
-      "domain.com": [
-        "domain.com"
-      ],
       "E.g., ": [
         "例如： "
       ],
       "Email address": [
         "電郵位址"
-      ],
-      "example@domain.com": [
-        "example@domain.com"
       ],
       "Feedback": [
         "意見回饋"
@@ -8831,9 +8701,6 @@
       ],
       "Type text or keyword": [
         "鍵入文字或關鍵詞"
-      ],
-      "yourdomain.com": [
-        "yourdomain.com"
       ],
       "ZIP": [
         "美國郵區編號"
@@ -9306,11 +9173,6 @@
         "即將到來"
       ]
     },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "此優惠僅適用於 ${ BRAND_NAME } 的新用戶。無需信用卡。"
-      ]
-    },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } 已複製到剪貼簿"
@@ -9644,9 +9506,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME }鍵盤快捷鍵"
       ],
@@ -9661,9 +9520,6 @@
       ],
       "2. Select protocol": [
         "2. 選擇通訊協定"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure 驗證失敗"
       ],
       "3. Select config file and download": [
         "3. 選取組態設定檔並下載"
@@ -9784,9 +9640,6 @@
       ],
       "Card verification": [
         "信用卡驗證"
-      ],
-      "Card verification in progress": [
-        "信用卡驗證處理中"
       ],
       "Catch-All address": [
         "全部擷取電郵位址"
@@ -10070,17 +9923,11 @@
       "How to refer a friend and get credits": [
         "如何介紹朋友以獲得獎勵餘額"
       ],
-      "How your free trial works": [
-        "您的免費試用是如何工作的"
-      ],
       "Human verification": [
         "真人身分驗證"
       ],
       "Identity and addresses": [
         "身份和電郵位址"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "匯入"
@@ -10175,9 +10022,6 @@
       "Open pagination": [
         "開啟分頁"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "OpenVPN 組態設定檔"
       ],
@@ -10201,9 +10045,6 @@
       ],
       "Payment verification": [
         "付款驗證"
-      ],
-      "Payment verification in progress": [
-        "付款驗證處理中"
       ],
       "PayPal verification failed": [
         "PayPal 驗證失敗"
@@ -10441,9 +10282,6 @@
       ],
       "What's new": [
         "最新功能"
-      ],
-      "WireGuard": [
-        "WireGuard"
       ],
       "WireGuard configuration": [
         "WireGuard 組態"
@@ -10788,29 +10626,6 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } countries": [
         "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

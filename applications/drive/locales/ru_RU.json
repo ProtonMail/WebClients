@@ -794,54 +794,6 @@
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Не синхронизировано"
-      ],
-      "Syncing": [
-        "Синхронизация"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Календарь не может быть расшифрован"
-      ],
-      "Calendar is syncing": [
-        "Календарь синхронизируется"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Календарь синхронизируется: может понадобиться несколько минут, чтобы показать все события."
-      ],
-      "Calendar is too big": [
-        "Календарь слишком большой"
-      ],
-      "Calendar link is not accessible": [
-        "Ссылка на календарь недоступна"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Ссылка на календарь временно недоступна"
-      ],
-      "Failed to sync calendar": [
-        "Не удалось синхронизировать календарь"
-      ],
-      "More than 12 hours passed since last update": [
-        "Более 12 часов прошло с момента последнего обновления"
-      ],
-      "Unsupported calendar format": [
-        "Неподдерживаемый формат календаря"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Ссылка на календарь недоступна вне экосистемы, в которой он был создан."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "С момента последнего обновления прошло более 12 часов - ${ CALENDAR_APP_NAME } попытается обновить календарь через несколько часов."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Свернуть"
@@ -1910,7 +1862,7 @@
         "Группа с таким именем уже существует"
       ],
       "A problem occurred, please try again": [
-        "Возникла проблема. Попробуйте снова"
+        "Возникла проблема. Попробуйте еще раз"
       ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
@@ -1935,18 +1887,6 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
       ],
       "Device name does not match": [
         "Название устройства не совпадает"
@@ -2010,12 +1950,6 @@
       ],
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
@@ -2181,9 +2115,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Вы не можете отправлять файлы vCard, содержащие более 10 контактов"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
       ],
       "You must set a name": [
         "Вы должны задать имя"
@@ -2569,9 +2500,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Эл. почта"
       ],
@@ -2582,7 +2510,7 @@
         "Нет доступных способов проверки"
       ],
       "SMS": [
-        "SMS"
+        "СМС"
       ]
     },
     "Import calendar": {
@@ -2597,6 +2525,9 @@
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Произошла ошибка при шифровании и добавлении ваших событий. Не удалось импортировать ни одно событие."
@@ -2825,9 +2756,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3647,9 +3575,6 @@
       "Select what you want to import.": [
         "Выберите то, что вы хотите импортировать."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -4000,9 +3925,6 @@
       ],
       "Trusted": [
         "Надежный"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4471,6 +4393,17 @@
     "Landmarks": {
       "Side panel": [
         "Боковая панель"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Чтобы добавить новый календарь, удалите существующий."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Чтобы добавить новый календарь, удалите другой календарь или улучшите свой тариф ${ BRAND_NAME } до платного тарифа ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Вы достигли максимального количества календарей, доступных в вашем тарифе."
       ]
     },
     "Link": {

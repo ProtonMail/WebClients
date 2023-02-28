@@ -794,54 +794,6 @@
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Не сінхранізавана"
-      ],
-      "Syncing": [
-        "Сінхранізацыя"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Не атрымалася расшыфраваць каляндар"
-      ],
-      "Calendar is syncing": [
-        "Каляндар сінхранізуецца"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Адбываецца сінхранізацыя календара: для паказу ўсіх падзей можа спатрэбіцца некалькі хвілін."
-      ],
-      "Calendar is too big": [
-        "Занадта вялікі каляндар"
-      ],
-      "Calendar link is not accessible": [
-        "Спасылка на каляндар недаступна"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Спасылка на каляндар часова недаступна"
-      ],
-      "Failed to sync calendar": [
-        "Не ўдалося сінхранізаваць каляндар"
-      ],
-      "More than 12 hours passed since last update": [
-        "Ад моманту апошняга абнаўлення мінула больш за 12 гадзін"
-      ],
-      "Unsupported calendar format": [
-        "Фармат календара не падтрымліваецца"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Спасылка на каляндар недаступна па-за межамі экасістэмы пастаўшчыка паслуг у якой ён быў створаны."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Спасылка на каляндар часова недаступна. Пераканайцеся, што спасылка ад пастаўшчыка паслуг календара ўсё яшчэ дзейнічае."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Ад моманту апошняга абнаўлення мінула больш за 12 гадзін. ${ CALENDAR_APP_NAME } паспрабуе абнавіць каляндар праз некалькі гадзін."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Згарнуць"
@@ -997,9 +949,6 @@
       ],
       "Work": [
         "Працоўны"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1936,18 +1885,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календара",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календара або",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў або",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў або",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў або"
-      ],
       "Device name does not match": [
         "Назва прылады не супадае"
       ],
@@ -2010,12 +1947,6 @@
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Аб'яднайце прынамсі ${ calendarToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
-        "Аб'яднайце прынамсі ${ calendarToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
-        "Аб'яднайце прынамсі ${ calendarToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
-        "Аб'яднайце прынамсі ${ calendarToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
@@ -2181,9 +2112,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Вы не можаце адправіць файлы vCard больш чым 10 кантактам"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Вы дасягнулі максімальнай колькасці асабістых календароў. Некаторыя календары не будуць імпартаваныя."
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
@@ -2569,9 +2497,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -2580,9 +2505,6 @@
       ],
       "No verification method available": [
         "Няма даступных спосабаў праверкі"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2828,9 +2750,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3650,9 +3569,6 @@
       "Select what you want to import.": [
         "Выберыце, што вы хочаце імпартаваць."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Выберыце календары для імпартавання. Новы каляндар будзе створаны для кожнага імпартаванага календара з абмежаваннем у 20 календароў."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
@@ -4003,9 +3919,6 @@
       ],
       "Trusted": [
         "Давераны"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4474,6 +4387,17 @@
     "Landmarks": {
       "Side panel": [
         "Бакавая панэль"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Каб дадаць новы каляндар, выдаліце адзін з існуючых."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Каб дадаць новы каляндар, выдаліце іншы каляндар або палепшыце свой тарыфны план ${ BRAND_NAME } да платнага тарыфнага плана ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Вы дасягнулі максімальнай колькасці календароў, даступных на вашым тарыфным плане."
       ]
     },
     "Link": {

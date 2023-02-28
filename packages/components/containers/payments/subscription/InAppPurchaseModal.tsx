@@ -26,7 +26,7 @@ const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
 
     return (
         <AlertModal
-            title={c('Subscription change warning').t`Subscription managed elsewhere`}
+            title={c('Subscription change warning').t`Manage your subscription on Google Play`}
             buttons={[
                 <Button
                     className="on-mobile-w100"

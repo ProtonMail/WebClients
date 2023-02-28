@@ -788,54 +788,6 @@
         "繼續使用 ${ MAIL_APP_NAME }。"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "未同步"
-      ],
-      "Syncing": [
-        "正在同步"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "無法解密行事曆"
-      ],
-      "Calendar is syncing": [
-        "行事曆正在同步"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "行事曆同步中：僅需數分鐘即可顯示所有事件。"
-      ],
-      "Calendar is too big": [
-        "行事曆太大了"
-      ],
-      "Calendar link is not accessible": [
-        "行事曆無法存取"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "行事曆連結暫時無法存取"
-      ],
-      "Failed to sync calendar": [
-        "同步行事曆失敗"
-      ],
-      "More than 12 hours passed since last update": [
-        "距離上次更新已經過了12小時以上"
-      ],
-      "Unsupported calendar format": [
-        "不支援的行事曆格式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "行事曆連結無法從服務提供商生態系統外進行連線。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "從上次更新以來已經過了超過12小時 — ${ CALENDAR_APP_NAME } 將會嘗試在幾個小時內更新日曆。"
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "收合"
@@ -1927,12 +1879,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其它瀏覽器。"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
-      ],
       "Device name does not match": [
         "裝置名稱不符合"
       ],
@@ -1995,9 +1941,6 @@
       ],
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "請至少將 ${ calendarToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
       "Missing key packet": [
         "缺少金鑰封包"
@@ -2154,9 +2097,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "您不能傳送有超過 10 個聯絡人的 vCard 檔案"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "您已經達到個人行事曆的數量上限。有部分行事曆無法被匯入。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -2454,15 +2394,6 @@
     "file size format": {
       "bytes": [
         "位元組"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -2540,6 +2471,9 @@
     "Import calendar": {
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
@@ -2759,9 +2693,6 @@
       ],
       "ICS file": [
         "ICS 檔案"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3473,9 +3404,6 @@
       "Select what you want to import.": [
         "選擇您要匯入的檔案。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -3823,9 +3751,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {

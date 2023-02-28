@@ -693,7 +693,7 @@
         "No guardado"
       ],
       "OK": [
-        "OK"
+        "Aceptar"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -1200,16 +1200,6 @@
         "Conversación"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Te damos la bienvenida"
@@ -1601,54 +1591,6 @@
         "Tu dirección de correo electrónico no está en la lista de participantes."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "No sincronizado"
-      ],
-      "Syncing": [
-        "Sincronizando"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "No se ha podido descifrar el calendario."
-      ],
-      "Calendar is syncing": [
-        "El calendario se está sincronizando."
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "El calendario se está sincronizando: puede tardar varios minutos en mostrar todos sus eventos."
-      ],
-      "Calendar is too big": [
-        "El calendario es demasiado grande."
-      ],
-      "Calendar link is not accessible": [
-        "El enlace del calendario no es accesible."
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "El enlace del calendario está temporalmente inaccesible."
-      ],
-      "Failed to sync calendar": [
-        "Error al sincronizar el calendario"
-      ],
-      "More than 12 hours passed since last update": [
-        "Han pasado más de 12 horas desde la última actualización."
-      ],
-      "Unsupported calendar format": [
-        "Formato de calendario no admitido"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "El enlace al calendario no es accesible desde fuera del ecosistema del proveedor del calendario."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "El enlace al calendario está temporalmente inaccesible. Verifica que el enlace del proveedor del calendario aún es válido."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Han pasado más de 12 horas desde la última actualización — ${ CALENDAR_APP_NAME } intentará actualizar el calendario dentro de unas horas."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Evento ya finalizado"
@@ -1811,7 +1753,7 @@
         "rosa rojizo"
       ],
       "sahara": [
-        "sahara"
+        "sáhara"
       ],
       "satin sheen gold": [
         "oro satén"
@@ -1929,7 +1871,7 @@
         "Género"
       ],
       "Geo": [
-        "Geo"
+        "Geolocalización"
       ],
       "Language": [
         "Idioma"
@@ -1989,9 +1931,6 @@
       ],
       "Work": [
         "Trabajo"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2287,7 +2226,7 @@
         "Guinea-Bisáu"
       ],
       "Guyana": [
-        "Guyana"
+        "Guayana"
       ],
       "Haiti": [
         "Haití"
@@ -2880,7 +2819,7 @@
         "Sin etiquetas"
       ],
       "ProtonMail logo and a plus sign": [
-        "Logo de Proton Mail y un signo más"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
@@ -3095,14 +3034,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error al descifrar: no se ha podido descifrar el contenido de este mensaje."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Anula la selección de al menos ${ calendarToFixCount } calendario",
-        "Anula la selección de al menos ${ calendarToFixCount } calendarios"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Anula la selección de al menos ${ calendarToFixCount } calendario o",
-        "Anula la selección de al menos ${ calendarToFixCount } calendarios o"
-      ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
@@ -3180,10 +3111,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Número máximo de adjuntos (${ attachmentsCountLimit }) superado"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Combinar al menos ${ calendarToFixCount } calendario con un calendario ${ BRAND_NAME } existente",
-        "Combinar al menos ${ calendarToFixCount } calendarios con un calendario ${ BRAND_NAME } existente"
       ],
       "Message needs to be sent first": [
         "Se debe primero enviar el mensaje."
@@ -3406,9 +3333,6 @@
       ],
       "You did not provide a file.": [
         "No has proporcionado ningún archivo."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Has alcanzado el número máximo de calendarios personales. No se han podido importar algunos calendarios."
       ],
       "You must set a name": [
         "Debes establecer un nombre."
@@ -4007,9 +3931,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Correo electrónico"
       ],
@@ -4271,9 +4192,6 @@
       ],
       "ICS file": [
         "archivo CSV"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5186,9 +5104,6 @@
       "Select what you want to import.": [
         "Selecciona lo que quieres importar."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado hasta el límite de 20 calendarios."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Enviar un mensaje encriptado y protegido por contraseña a una dirección de correo electrónico que no es de ${ boldText }."
       ],
@@ -5475,7 +5390,7 @@
         "Enlace del URL"
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
-        "URL: ${ unsubscribeMethods.HttpClient }"
+        "URL：${ unsubscribeMethods.HttpClient }"
       ],
       "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
         "Utiliza ${ CALENDAR_APP_NAME } para mantener tu agenda privada."
@@ -5485,9 +5400,6 @@
       ],
       "Using SimpleLogin is easy": [
         "SimpleLogin es fácil de usar."
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Mensaje de ${ BRAND_NAME } verificado"
       ],
       "Version ${ appVersion }": [
         "Versión ${ appVersion }"
@@ -5713,9 +5625,6 @@
       ],
       "Trusted": [
         "Confiable"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6232,7 +6141,7 @@
         "Notificación"
       ],
       "OK": [
-        "OK"
+        "Aceptar"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -6482,7 +6391,7 @@
         "Para añadir un nuevo calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un nuevo calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un nuevo calenario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -6650,6 +6559,10 @@
     "Loading info": {
       "Almost there": [
         "¡Ya casi está!"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Conectando con tu proveedor de correo electrónico"
@@ -6962,9 +6875,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7485,6 +7395,11 @@
         "Más pequeño primero"
       ]
     },
+    "specialoffer: Deal details": {
+      "3 TB": [
+        "3 TB"
+      ]
+    },
     "Spotlight": {
       "Email tracking protection": [
         "Protección contra rastreos de correo electrónico"
@@ -7871,7 +7786,7 @@
       ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } hora",
-        "${ hoursCountLeft } hours"
+        "${ hoursCountLeft } horas"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuto",

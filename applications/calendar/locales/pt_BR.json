@@ -349,7 +349,7 @@
         "Não, obrigado"
       ],
       "OK": [
-        "OK"
+        "Aceitar"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -520,7 +520,7 @@
         "Atualizar frase de recuperação"
       ],
       "Upgrade": [
-        "Upgrade"
+        "Fazer upgrade"
       ],
       "Upgrade now": [
         "Atualizar agora"
@@ -681,11 +681,6 @@
     "Attendee role": {
       "Optional": [
         "Opcional"
-      ]
-    },
-    "Badge": {
-      "Coming soon": [
-        "Em breve"
       ]
     },
     "Beta access description": {
@@ -1099,9 +1094,6 @@
       ],
       "Work": [
         "Trabalho"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1127,7 +1119,7 @@
         "Angola"
       ],
       "Anguilla": [
-        "Anguilla"
+        "Anguila"
       ],
       "Antarctica": [
         "Antártica"
@@ -1214,7 +1206,7 @@
         "Bulgária"
       ],
       "Burkina Faso": [
-        "Burkina Faso"
+        "Burquina Faso"
       ],
       "Burundi": [
         "Burundi"
@@ -1292,7 +1284,7 @@
         "Dinamarca"
       ],
       "Djibouti": [
-        "Djibouti"
+        "Djibuti"
       ],
       "Dominica": [
         "Dominica"
@@ -1706,7 +1698,7 @@
         "Sérvia"
       ],
       "Seychelles": [
-        "Seychelles"
+        "Seicheles"
       ],
       "Sierra Leone": [
         "Serra Leoa"
@@ -1781,7 +1773,7 @@
         "Tailândia"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timor Leste"
       ],
       "Togo": [
         "Togo"
@@ -2160,14 +2152,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Erro ao descriptografar: A descriptografia deste evento falhou."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Desmarque ao menos ${ calendarToFixCount } calendário",
-        "Desmarque ao menos ${ calendarToFixCount } calendários"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Desmarque ao menos ${ calendarToFixCount } calendário ou",
-        "Desmarque ao menos ${ calendarToFixCount } calendários ou"
-      ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
@@ -2245,10 +2229,6 @@
       ],
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Mescle ao menos ${ calendarToFixCount } calendário com um calendário existente do ${ BRAND_NAME }",
-        "Mescle ao menos ${ calendarToFixCount } calendários com calendários existente do ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Pacote de chave ausente"
@@ -2424,9 +2404,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Você não pode enviar arquivos vCards de mais de 10 contatos"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
       ],
       "You must set a name": [
         "Você deve especificar um nome"
@@ -2649,9 +2626,9 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } participante",
-        "${ numberOfParticipants } participantes"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } participante",
+        "${ numberOfAttendees } participantes"
       ]
     },
     "Event info. Organizer name": {
@@ -2829,9 +2806,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -2853,6 +2827,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
         "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento pôde ser importado."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seus eventos. Nenhum evento pôde ser importado."
@@ -3073,9 +3050,6 @@
       ],
       "ICS file": [
         "Arquivo ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3237,10 +3211,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Qualquer um com este link pode ver se você está livre ou ocupado no seu calendário. Eles não podem ver os detalhes do evento, como título, localização ou participantes."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "No máximo ${ MAX_ATTENDEES } participante é permitido por convite",
-        "No máximo ${ MAX_ATTENDEES } participantes são permitidos por convite"
       ],
       "Attention required": [
         "Atenção necessária"
@@ -3539,9 +3509,6 @@
       "Select what you want to import.": [
         "Selecione o que você deseja importar."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
       ],
@@ -3816,6 +3783,12 @@
         "Você pode compartilhar seus calendários em configurações."
       ]
     },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "No máximo ${ MAX_ATTENDEES } participante é permitido por convite",
+        "No máximo ${ MAX_ATTENDEES } participantes são permitidos por convite"
+      ]
+    },
     "Input label": {
       "Access": [
         "Acesso"
@@ -3847,9 +3820,6 @@
       ],
       "Trusted": [
         "Confiável"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4076,7 +4046,7 @@
         "Notificações"
       ],
       "OK": [
-        "OK"
+        "Aceitar"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -4210,17 +4180,6 @@
         "Painel lateral"
       ]
     },
-    "Limit of calendars reached": {
-      "To add a new calendar, remove an existing one.": [
-        "Para adicionar um novo calendário, remova um existente."
-      ],
-      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para adicionar um novo calendário, remova outro calendário ou atualize seu plano ${ BRAND_NAME } para um plano pago ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You've reached the maximum number of calendars available in your plan.": [
-        "Você atingiu o número máximo de calendários disponíveis que seu plano permite."
-      ]
-    },
     "Link": {
       "Calendars": [
         "Calendários"
@@ -4334,7 +4293,7 @@
         "Gerenciar calendários"
       ],
       "Upgrade": [
-        "Upgrade"
+        "Fazer upgrade"
       ]
     },
     "Modal for received invitation to share calendar; text": {
