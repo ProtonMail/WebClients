@@ -348,7 +348,7 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                             {filteredOptions.map(({ id, totalStorage, displayName, emailAddresses }) => {
                                 const isItemSelected = selectedUserIds.indexOf(id) !== -1;
                                 const checkboxId = `user-${id}`;
-                                const humanReadableStorage = humanSize(totalStorage);
+                                const humanReadableStorage = humanSize(totalStorage, 'GB');
 
                                 return (
                                     <tr key={id} onClick={() => handleCheckboxChange(id)}>

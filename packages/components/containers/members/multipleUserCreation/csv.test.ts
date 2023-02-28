@@ -127,7 +127,7 @@ describe('multi user upload csv.ts', () => {
                     /**
                      * `Alice,"` must be of this form - it will parse incorrectly if there is a space before the `"" ie `Alice, "`
                      */
-                    `  Alice,"  alice1@mydomain.com , alice2@mydomain.com ",alice_password, 1073741824 ,1 ,0 `,
+                    `  Alice,"  alice1@mydomain.com , alice2@mydomain.com ",alice_password, 2 ,1 ,0 `,
                 ].join('\n');
                 const file = getFile(fileContent);
 
@@ -142,7 +142,7 @@ describe('multi user upload csv.ts', () => {
                 expect(user.emailAddresses[0]).toBe('alice1@mydomain.com');
                 expect(user.emailAddresses[1]).toBe('alice2@mydomain.com');
                 expect(user.password).toBe('alice_password');
-                expect(user.totalStorage).toBe(1073741824);
+                expect(user.totalStorage).toBe(2 * GIGA);
                 expect(user.vpnAccess).toBe(true);
                 expect(user.privateSubUser).toBe(false);
             });
@@ -366,7 +366,7 @@ describe('multi user upload csv.ts', () => {
                     const user = result.users[0];
 
                     expect(result.errors.length).toBe(0);
-                    expect(user.totalStorage).toBe(123);
+                    expect(user.totalStorage).toBe(123 * GIGA);
                 });
 
                 it('uses default if value is not a valid number', async () => {
@@ -393,6 +393,21 @@ describe('multi user upload csv.ts', () => {
 
                     expect(result.errors.length).toBe(0);
                     expect(user.totalStorage).toBe(0);
+                });
+
+                it('allows decimal values', async () => {
+                    const totalStorage = 1.5;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file]);
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(1.5 * GIGA);
                 });
             });
 
