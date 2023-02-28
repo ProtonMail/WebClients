@@ -2,6 +2,7 @@ import {
     DEFAULT_TRUNCATE_OMISSION,
     findLongestMatchingIndex,
     getInitials,
+    removeHTMLComments,
     truncateMore,
     truncatePossiblyQuotedString,
 } from '../../lib/helpers/string';
@@ -99,6 +100,29 @@ describe('string', () => {
             expect(truncatePossiblyQuotedString('abcd', 3)).toEqual(`a${DEFAULT_TRUNCATE_OMISSION}d`);
             expect(truncatePossiblyQuotedString('abcde', 4)).toEqual(`ab${DEFAULT_TRUNCATE_OMISSION}e`);
             expect(truncatePossiblyQuotedString('"abcde"', 4)).toEqual(`"a${DEFAULT_TRUNCATE_OMISSION}"`);
+        });
+    });
+
+    describe('removeHTMLComments', () => {
+        it('should remove comments', () => {
+            expect(removeHTMLComments('')).toEqual('');
+            expect(removeHTMLComments('a')).toEqual('a');
+            expect(removeHTMLComments('<!-- a -->')).toEqual('');
+            expect(removeHTMLComments('<!-- a -->b')).toEqual('b');
+            expect(removeHTMLComments('a<!-- b -->')).toEqual('a');
+            expect(removeHTMLComments('a<!-- b -->c')).toEqual('ac');
+            expect(removeHTMLComments('a<!-- b -->c<!-- d -->')).toEqual('ac');
+            expect(removeHTMLComments('a<!-- b -->c<!-- d -->e')).toEqual('ace');
+            expect(removeHTMLComments('a<!-- b -->c<!-- d -->e<!-- f -->')).toEqual('ace');
+            expect(removeHTMLComments('a<!-- b -->c<!-- d -->e<!-- f -->g')).toEqual('aceg');
+            expect(removeHTMLComments('a<!-- b -->c<!-- d -->e<!-- f -->g<!-- h -->')).toEqual('aceg');
+            expect(removeHTMLComments('a<!-- b -->c<!-- d -->e<!-- f -->g<!-- h -->i')).toEqual('acegi');
+            expect(removeHTMLComments('<a href="#">a<!-- b -->c<!-- d -->e<!-- f -->g<!-- h --></a>')).toEqual(
+                '<a href="#">aceg</a>'
+            );
+            expect(removeHTMLComments('<a href="#">a<!-- b -->c<!-- d -->e<!-- f -->g<!-- h -->i</a>')).toEqual(
+                '<a href="#">acegi</a>'
+            );
         });
     });
 });
