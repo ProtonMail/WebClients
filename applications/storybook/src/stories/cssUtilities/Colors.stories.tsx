@@ -1,4 +1,4 @@
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Colors.mdx';
@@ -22,10 +22,10 @@ type ColorPaletteProps = {
 
 const ColorItem = ({ className }: ColorItemProps) => (
     <div
-        className={classnames([
+        className={clsx(
             'w8e text-sm flex flex-align-items-center flex-justify-center p1 rounded shadow-norm border user-select',
-            className,
-        ])}
+            className
+        )}
         style={{ 'aspect-ratio': '1' }}
     >
         .{className}
@@ -34,11 +34,11 @@ const ColorItem = ({ className }: ColorItemProps) => (
 
 const TextItem = ({ className }: ColorItemProps) => (
     <div
-        className={classnames([
+        className={clsx(
             'flex flex-align-items-center flex-justify-center p1 rounded shadow-norm border user-select',
             className,
-            className === 'color-invert' ? 'bg-primary' : '',
-        ])}
+            className === 'color-invert' ? 'bg-primary' : ''
+        )}
     >
         .{className}
     </div>
@@ -47,11 +47,9 @@ const TextItem = ({ className }: ColorItemProps) => (
 const ColorPalette = ({ children }: ColorPaletteProps) => (
     <>
         <strong className="block mb0-5">on UI Standard</strong>
-        <div className={classnames(['ui-standard border rounded-lg p1 mb2 flex flex-wrap flex-gap-1'])}>{children}</div>
+        <div className={clsx('ui-standard border rounded-lg p1 mb2 flex flex-wrap flex-gap-1')}>{children}</div>
         <strong className="block mb0-5">on UI prominent</strong>
-        <div className={classnames(['ui-prominent border rounded-lg p1 mb2 flex flex-wrap flex-gap-1'])}>
-            {children}
-        </div>
+        <div className={clsx('ui-prominent border rounded-lg p1 mb2 flex flex-wrap flex-gap-1')}>{children}</div>
     </>
 );
 
