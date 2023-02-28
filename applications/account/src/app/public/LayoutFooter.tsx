@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/components/components';
+import { Href } from '@proton/atoms';
 import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getPrivacyPolicyURL, getTermsURL } from '@proton/shared/lib/helpers/url';
 

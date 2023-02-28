@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Card } from '@proton/atoms';
+import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
@@ -14,7 +14,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, Href, Prompt, PrimaryButton, SettingsLink, useModalState } from '../../../components';
+import { Alert, PrimaryButton, Prompt, SettingsLink, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { CalendarModal } from '../calendarModal/CalendarModal';
@@ -245,7 +245,7 @@ const MyCalendarsSection = ({
                     {c('Personal calendar section description')
                         .t`Create a calendar to stay on top of your schedule while keeping your data secure.`}
                     <br />
-                    <Href url={getKnowledgeBaseUrl('/protoncalendar-calendars')}>{c('Knowledge base link label')
+                    <Href href={getKnowledgeBaseUrl('/protoncalendar-calendars')}>{c('Knowledge base link label')
                         .t`Learn more`}</Href>
                 </SettingsParagraph>
                 {isCalendarsLimitReached ? isCalendarsLimitReachedNode : createCalendarButton}

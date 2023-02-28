@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MnemonicData, generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import userPromptSvg from '@proton/styles/assets/img/illustrations/passphrase-recover.svg';
 
 import {
-    Href,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,

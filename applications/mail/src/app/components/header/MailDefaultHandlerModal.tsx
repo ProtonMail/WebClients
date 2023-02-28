@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { ModalProps, Prompt } from '@proton/components';
-import { Href } from '@proton/components/components/link';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -30,7 +29,7 @@ const MailDefaultHandlerModal = (props: ModalProps) => {
                 .t`Set ${MAIL_APP_NAME} as your default email application for this browser. ${MAIL_APP_NAME} will open automatically when you click an email link.`}</span>
             <Href
                 className="ml0-5"
-                url={getKnowledgeBaseUrl('/set-default-email-handler')}
+                href={getKnowledgeBaseUrl('/set-default-email-handler')}
                 title="Default mail handler"
             >
                 {c('Info').t`Learn more`}

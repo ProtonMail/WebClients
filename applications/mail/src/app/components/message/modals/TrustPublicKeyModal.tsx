@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
     Form,
-    Href,
     ModalProps,
     ModalTwo,
     ModalTwoContent,

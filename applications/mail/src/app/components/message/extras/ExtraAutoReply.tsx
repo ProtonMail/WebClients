@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Href, Icon } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isAutoReply } from '@proton/shared/lib/mail/messages';
 

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { APPS, BRAND_NAME, CLIENT_TYPES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -17,7 +17,6 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Form,
-    Href,
     Icon,
     InputFieldTwo,
     ModalTwo as Modal,

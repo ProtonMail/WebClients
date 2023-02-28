@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     EXPORT_ERRORS,
@@ -9,7 +10,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 import partition from '@proton/utils/partition';
 
-import { Alert, Bordered, Details, DynamicProgress, Href, Summary } from '../../../components';
+import { Alert, Bordered, Details, DynamicProgress, Summary } from '../../../components';
 
 const getErrorMessage = (hasMultiplePasswordResetErrors: boolean) => (type: EXPORT_EVENT_ERROR_TYPES) => {
     const errorMessagesMap: { [key in EXPORT_EVENT_ERROR_TYPES]: string } = {

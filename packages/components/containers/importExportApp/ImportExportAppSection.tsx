@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike, Href } from '@proton/atoms';
 import { getImportExportAppUrl } from '@proton/shared/lib/helpers/url';
 
-import { Href } from '../../components';
 import { SettingsParagraph, SettingsSection } from '../account';
 
 const ImportExportAppSection = () => {

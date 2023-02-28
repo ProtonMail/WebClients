@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Href, Icon, useModalState } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { Icon, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';

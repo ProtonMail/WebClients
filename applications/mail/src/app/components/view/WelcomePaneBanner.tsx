@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Href, MailShortcutsModal, Price, SettingsLink, useModalState, useModals } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { MailShortcutsModal, Price, SettingsLink, useModalState, useModals } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
 import {
     APP_UPSELL_REF_PATH,

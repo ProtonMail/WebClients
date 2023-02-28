@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import Href from '../link/Href';
 import WarningIcon from './WarningIcon';
 
 interface Props {

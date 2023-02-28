@@ -1,8 +1,7 @@
-import * as React from 'react';
-
 import { c } from 'ttag';
 
-import { Href, SettingsLink } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { SettingsLink } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { reActivateKeySettingsURL, restoringEncryptedMessagesURL } from '../../constants';

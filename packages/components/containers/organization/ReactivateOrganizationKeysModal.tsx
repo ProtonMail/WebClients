@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -14,7 +14,6 @@ import noop from '@proton/utils/noop';
 import {
     Alert,
     Form,
-    Href,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

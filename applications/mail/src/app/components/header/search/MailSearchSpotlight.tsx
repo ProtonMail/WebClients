@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Href, Spotlight, useSpotlightShow } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import { Spotlight, useSpotlightShow } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
 import { useSpotlightOnFeature, useWelcomeFlags } from '@proton/components/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
