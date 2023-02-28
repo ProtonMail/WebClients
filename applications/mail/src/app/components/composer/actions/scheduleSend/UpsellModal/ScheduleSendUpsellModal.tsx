@@ -47,7 +47,7 @@ const upsellItems: Item[] = [
         getText: () => c('new_plans: feature').t`Up to 500 GB of storage`,
         getTooltip: () =>
             c('new_plans: feature info')
-                .t`Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }`,
+                .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME} and ${DRIVE_APP_NAME}`,
     },
     {
         icon: 'envelopes',
@@ -71,7 +71,7 @@ const UpsellBox = ({ title, items, children, description }: UpsellBoxProps) => (
                 <img
                     src={headerImage}
                     className="w100 block"
-                    alt={c('Description').t`Proton Mail logo and a plus sign`}
+                    alt={c('Description').t`${MAIL_APP_NAME} logo and a plus sign`}
                 />
             </div>
             <h1 className="h3 text-bold mb1">{title}</h1>
