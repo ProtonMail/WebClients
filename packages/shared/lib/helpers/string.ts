@@ -152,3 +152,7 @@ export const removeDiacritics = (str: string) => {
 export const rtlSanitize = (str: string) => {
     return str.replace(/[\u202D\u202E]/g, '_');
 };
+
+export const removeHTMLComments = (str: string) => {
+    return str.replace(/<!--[\s\S]*?-->/g, '');
+};
