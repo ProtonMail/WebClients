@@ -1,36 +1,34 @@
 import { useState } from 'react';
 
-import { noop } from 'lodash';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { querySubscriptionRenew } from '@proton/shared/lib/api/payments';
-import { RenewState } from '@proton/shared/lib/interfaces';
+import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { Autopay } from '@proton/shared/lib/interfaces';
 
-import { useApi, useEventManager, useNotifications, useSubscription } from '../../hooks';
-
+import { Prompt } from '../../components/prompt';
 import { PrimaryButton } from '../../components/button';
 import { ModalProps } from '../../components/modalTwo';
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
-import { Prompt } from '../../components/prompt';
 import { Toggle } from '../../components/toggle';
+import { useSubscription } from '../../hooks';
 
-interface DisableRenewModalProps extends ModalProps {
-    isVPNPlan: boolean;
-    onResolve: () => void;
-    onReject: () => void;
-}
+type DisableRenewModalOwnProps = { isVPNPlan: boolean };
+type DisableRenewModalPromiseProps = { onResolve: (result: boolean) => void };
+type DisableRenewModalProps = ModalProps & DisableRenewModalPromiseProps & DisableRenewModalOwnProps;
 
-export const DisableRenewModal = ({ isVPNPlan, onResolve, onReject, ...rest }: DisableRenewModalProps) => {
+export const DisableRenewModal = ({ isVPNPlan, onResolve, ...rest }: DisableRenewModalProps) => {
     return (
         <Prompt
             data-testid="disable-renew-modal"
             title={c('Subscription renewal state').t`Are you sure?`}
             buttons={[
-                <Button data-testid="action-disable-autopay" onClick={onResolve}>{c('Subscription renewal state')
-                    .t`Disable`}</Button>,
-                <PrimaryButton data-testid="action-keep-autopay" onClick={onReject}>{c('Subscription renewal state')
-                    .t`Keep auto-pay`}</PrimaryButton>,
+                <Button data-testid="action-disable-autopay" onClick={() => onResolve(true)}>{c(
+                    'Subscription renewal state'
+                ).t`Disable`}</Button>,
+                <PrimaryButton data-testid="action-keep-autopay" onClick={() => onResolve(false)}>{c(
+                    'Subscription renewal state'
+                ).t`Keep auto-pay`}</PrimaryButton>,
             ]}
             {...rest}
         >
@@ -45,82 +43,71 @@ export const DisableRenewModal = ({ isVPNPlan, onResolve, onReject, ...rest }: D
     );
 };
 
-const getNewState = (state: RenewState): RenewState => {
-    if (state === RenewState.Active) {
-        return RenewState.DisableAutopay;
-    }
+export interface UseRenewToggleOptions {
+    initialRenewState?: Autopay;
+}
 
-    return RenewState.Active;
-};
+export interface UseRenewToggleResult {
+    onChange: () => Promise<Autopay | null>;
+    disableRenewModal: JSX.Element | null;
+    renewState: Autopay;
+    setRenewState: (newState: Autopay) => void;
+}
 
-export const useRenewToggle = () => {
+export const useRenewToggle = ({ initialRenewState = Autopay.ENABLE }: UseRenewToggleOptions): UseRenewToggleResult => {
     const [subscription] = useSubscription();
-    const isRenewActive = subscription.Renew === RenewState.Active;
+    const vpnPlans: (PLANS | ADDON_NAMES)[] = [PLANS.VPN, PLANS.VPNBASIC, PLANS.VPNPLUS];
+    const isVPNPlan = subscription?.Plans?.some(({ Name }) => vpnPlans.includes(Name));
 
-    const api = useApi();
-    const { call } = useEventManager();
-    const { createNotification } = useNotifications();
-    const [disableRenewModal, showDisableRenewModal] = useModalTwo(DisableRenewModal);
+    const [disableRenewModal, showDisableRenewModal] = useModalTwo<DisableRenewModalOwnProps, boolean>(
+        DisableRenewModal
+    );
 
-    const [renewState, setRenewState] = useState(subscription.Renew);
-    const toggle = () => setRenewState(getNewState);
-
-    const [isUpdating, setUpdating] = useState(false);
-
-    const sendRequest = async (RenewalState: RenewState) => {
-        try {
-            setUpdating(true);
-
-            toggle();
-            await api(querySubscriptionRenew({ RenewalState }));
-            call().catch(noop);
-
-            createNotification({
-                text: c('Subscription renewal state').t`Subscription renewal setting was successfully updated`,
-                type: 'success',
-            });
-        } catch {
-            toggle();
-        } finally {
-            setUpdating(false);
-        }
-    };
-
-    const onChange = async () => {
-        if (isRenewActive) {
-            try {
-                await showDisableRenewModal({ isVPNPlan: false });
-                await sendRequest(RenewState.DisableAutopay);
-            } catch {
-                // User doesn't want to disable subscription. We don't do anything in this case.
-                return;
+    const [renewState, setRenewState] = useState(initialRenewState);
+    const onChange = async (): Promise<Autopay | null> => {
+        let newState: Autopay;
+        if (renewState === Autopay.ENABLE) {
+            const userDecidedDisable = await showDisableRenewModal({ isVPNPlan });
+            if (!userDecidedDisable) {
+                return null;
             }
+
+            newState = Autopay.DISABLE;
         } else {
-            await sendRequest(RenewState.Active);
+            newState = Autopay.ENABLE;
         }
+
+        setRenewState(newState);
+        return newState;
     };
 
-    return { onChange, renewState, isUpdating, disableRenewModal };
+    return { onChange, disableRenewModal, renewState, setRenewState };
 };
 
-export type Props = ReturnType<typeof useRenewToggle>;
+export type Props = {
+    loading?: boolean;
+    onChange: () => any;
+} & Pick<UseRenewToggleResult, 'renewState' | 'disableRenewModal'>;
 
-const RenewToggle = ({ onChange, renewState, isUpdating, disableRenewModal }: Props) => {
+const RenewToggle = ({ renewState, onChange, disableRenewModal, loading }: Props) => {
     const toggleId = 'toggle-subscription-renew';
+    const checked = renewState === Autopay.ENABLE;
 
     return (
         <>
             {disableRenewModal}
-            <Toggle
-                id={toggleId}
-                checked={renewState === RenewState.Active}
-                onChange={onChange}
-                disabled={isUpdating}
-                data-testid="toggle-subscription-renew"
-            />
-            <label htmlFor={toggleId} className="ml1">
-                <span>{c('Subscription renewal state').t`Enable autopay`}</span>
-            </label>
+            <div className="flex flex-justify-space-between ml0-5 mr0-5">
+                <label htmlFor={toggleId}>
+                    <span>{c('Subscription renewal state').t`Enable auto-pay support`}</span>
+                </label>
+                <Toggle
+                    id={toggleId}
+                    checked={checked}
+                    onChange={onChange}
+                    loading={loading}
+                    data-testid="toggle-subscription-renew"
+                />
+            </div>
         </>
     );
 };

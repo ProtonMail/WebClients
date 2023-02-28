@@ -1,23 +1,14 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
-import { cloneDeep } from 'lodash';
 
-import { defaultSubscriptionCache, mockSubscriptionCache } from '@proton/components/hooks/helpers/test';
-import { querySubscriptionRenew } from '@proton/shared/lib/api/payments';
-import { RenewState } from '@proton/shared/lib/interfaces';
-import {
-    apiMock,
-    applyHOCs,
-    hookWrapper,
-    withApi,
-    withCache,
-    withEventManager,
-    withNotifications,
-} from '@proton/testing';
+import { mockSubscriptionCache } from '@proton/components/hooks/helpers/test';
+import { Autopay } from '@proton/shared/lib/interfaces';
+import { applyHOCs, hookWrapper, withCache } from '@proton/testing';
 
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 
 jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/components/components/toggle/Toggle');
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -25,53 +16,33 @@ beforeEach(() => {
     mockSubscriptionCache();
 });
 
-function disableInitialAutopay() {
-    const subscription = cloneDeep(defaultSubscriptionCache);
-    subscription.Renew = RenewState.DisableAutopay;
-    mockSubscriptionCache(subscription);
-}
-
-const providers = [withNotifications, withEventManager(), withApi(), withCache()];
+const providers = [withCache()];
 const ContextRenewToggle = applyHOCs(...providers)(RenewToggle);
 const wrapper = hookWrapper(...providers);
 
 it('should render', () => {
-    const { result } = renderHook(() => useRenewToggle(), { wrapper });
+    const { result } = renderHook(() => useRenewToggle({}), { wrapper });
     const { container } = render(<ContextRenewToggle {...result.current} />);
 
     expect(container).not.toBeEmptyDOMElement();
 });
 
 it('should be checked when RenewState is Active', () => {
-    const { result } = renderHook(() => useRenewToggle(), { wrapper });
-    const { container } = render(<ContextRenewToggle {...result.current} />);
+    const { result } = renderHook(() => useRenewToggle({}), { wrapper });
+    const { getByTestId } = render(<ContextRenewToggle {...result.current} />);
 
-    expect(container.querySelector('#toggle-subscription-renew')).toHaveAttribute('checked', '');
+    expect(getByTestId('toggle-subscription-renew')).toHaveTextContent('CHECKED');
 });
 
 it('should be unchecked when RenewState is Disabled', () => {
-    const subscription = cloneDeep(defaultSubscriptionCache);
-    subscription.Renew = RenewState.Disabled;
-    mockSubscriptionCache(subscription);
+    const { result } = renderHook(() => useRenewToggle({ initialRenewState: Autopay.DISABLE }), { wrapper });
+    const { getByTestId } = render(<ContextRenewToggle {...result.current} />);
 
-    const { result } = renderHook(() => useRenewToggle(), { wrapper });
-    const { container } = render(<ContextRenewToggle {...result.current} />);
-
-    expect(container).not.toBeEmptyDOMElement();
-    expect(container.querySelector('#toggle-subscription-renew')).not.toHaveAttribute('checked');
-});
-
-it('should be unchecked when RenewState is DisableAutopay', () => {
-    disableInitialAutopay();
-
-    const { result } = renderHook(() => useRenewToggle(), { wrapper });
-    const { container } = render(<ContextRenewToggle {...result.current} />);
-
-    expect(container.querySelector('#toggle-subscription-renew')).not.toHaveAttribute('checked');
+    expect(getByTestId('toggle-subscription-renew')).not.toHaveTextContent('CHECKED');
 });
 
 it('should show modal when user disables auto renew', () => {
-    const { result } = renderHook(() => useRenewToggle(), { wrapper });
+    const { result } = renderHook(() => useRenewToggle({}), { wrapper });
     const { container, getByTestId, rerender } = render(<ContextRenewToggle {...result.current} />);
 
     fireEvent.click(getByTestId('toggle-subscription-renew'));
@@ -80,39 +51,88 @@ it('should show modal when user disables auto renew', () => {
     expect(container).toHaveTextContent('Our system will no longer auto-charge you using this payment method');
 });
 
-it('should not send the request if user clicked Keep auto-pay/Cancel', () => {
-    const { result } = renderHook(() => useRenewToggle(), { wrapper });
-    const { getByTestId, rerender } = render(<ContextRenewToggle {...result.current} />);
+it('should not toggle off if user clicked Keep auto-pay/Cancel', async () => {
+    const { result, rerender: rerenderHook } = renderHook(() => useRenewToggle({}), { wrapper });
+    const { getByTestId, rerender, container } = render(<ContextRenewToggle {...result.current} />);
 
     fireEvent.click(getByTestId('toggle-subscription-renew'));
+    rerenderHook();
+    rerender(<ContextRenewToggle {...result.current} />);
+    expect(container).toHaveTextContent('Are you sure?');
+
+    await waitFor(() => {
+        fireEvent.click(getByTestId('action-keep-autopay'));
+    });
+    rerenderHook();
     rerender(<ContextRenewToggle {...result.current} />);
 
-    fireEvent.click(getByTestId('action-keep-autopay'));
-
-    expect(apiMock).not.toHaveBeenCalled();
+    expect(getByTestId('toggle-subscription-renew')).toHaveTextContent('CHECKED');
 });
 
-it('should disable the renew if user clicks Disable auto-pay', async () => {
-    const { result } = renderHook(() => useRenewToggle(), { wrapper });
-    const { getByTestId, rerender } = render(<ContextRenewToggle {...result.current} />);
-
-    await waitFor(async () => {
-        fireEvent.click(getByTestId('toggle-subscription-renew'));
-        rerender(<ContextRenewToggle {...result.current} />);
-        fireEvent.click(getByTestId('action-disable-autopay'));
-    });
-
-    expect(apiMock).toHaveBeenCalledWith(querySubscriptionRenew({ RenewalState: RenewState.DisableAutopay }));
-});
-
-it('should directly send the API request when user enables auto renew', () => {
-    disableInitialAutopay();
-
-    const { result } = renderHook(() => useRenewToggle(), { wrapper });
-    const { getByTestId, container } = render(<ContextRenewToggle {...result.current} />);
+it('should toggle off if user clicked Disable', async () => {
+    const { result, rerender: rerenderHook } = renderHook(() => useRenewToggle({}), { wrapper });
+    const { getByTestId, rerender, container } = render(<ContextRenewToggle {...result.current} />);
 
     fireEvent.click(getByTestId('toggle-subscription-renew'));
+    rerenderHook();
+    rerender(<ContextRenewToggle {...result.current} />);
+    expect(container).toHaveTextContent('Are you sure?');
+
+    fireEvent.click(getByTestId('action-disable-autopay'));
+    await waitFor(() => {});
+    rerenderHook();
+    rerender(<ContextRenewToggle {...result.current} />);
+
+    await waitFor(() => {
+        expect(getByTestId('toggle-subscription-renew')).not.toHaveTextContent('CHECKED');
+    });
+});
+
+it('should toggle on without modal', async () => {
+    const { result, rerender: rerenderHook } = renderHook(
+        () => useRenewToggle({ initialRenewState: Autopay.DISABLE }),
+        { wrapper }
+    );
+    const { getByTestId, container, rerender } = render(<ContextRenewToggle {...result.current} />);
+
+    fireEvent.click(getByTestId('toggle-subscription-renew'));
+    await waitFor(() => {});
+    rerenderHook();
+    rerender(<ContextRenewToggle {...result.current} />);
+
     expect(container).not.toHaveTextContent('Our system will no longer auto-charge you using this payment method');
 
-    expect(apiMock).toHaveBeenCalledWith(querySubscriptionRenew({ RenewalState: RenewState.Active }));
+    expect(getByTestId('toggle-subscription-renew')).toHaveTextContent('CHECKED');
+});
+
+describe('useRenewToggle', () => {
+    it('onChange should return ENABLE if toggled on', async () => {
+        const { result } = renderHook(() => useRenewToggle({ initialRenewState: Autopay.DISABLE }), { wrapper });
+
+        expect(await result.current.onChange()).toEqual(Autopay.ENABLE);
+    });
+
+    it('onChange should return DISABLE if toggled off', async () => {
+        const { result } = renderHook(() => useRenewToggle({ initialRenewState: Autopay.ENABLE }), { wrapper });
+        const { getByTestId, rerender } = render(<ContextRenewToggle {...result.current} />);
+
+        const onChangePromise = result.current.onChange();
+        rerender(<ContextRenewToggle {...result.current} />);
+
+        fireEvent.click(getByTestId('action-disable-autopay'));
+
+        expect(await onChangePromise).toEqual(Autopay.DISABLE);
+    });
+
+    it('onChange should return null if the checkbox was not toggled off', async () => {
+        const { result } = renderHook(() => useRenewToggle({ initialRenewState: Autopay.ENABLE }), { wrapper });
+        const { getByTestId, rerender } = render(<ContextRenewToggle {...result.current} />);
+
+        const onChangePromise = result.current.onChange();
+        rerender(<ContextRenewToggle {...result.current} />);
+
+        fireEvent.click(getByTestId('action-keep-autopay'));
+
+        expect(await onChangePromise).toEqual(null);
+    });
 });

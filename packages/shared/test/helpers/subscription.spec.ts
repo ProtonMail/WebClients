@@ -1,6 +1,6 @@
 import { addWeeks } from 'date-fns';
 
-import { External, RenewState } from '@proton/shared/lib/interfaces';
+import { External } from '@proton/shared/lib/interfaces';
 
 import { COUPON_CODES, CYCLE } from '../../lib/constants';
 import {
@@ -90,7 +90,6 @@ describe('isManagedExternally', () => {
             Discount: 0,
             Plans: {} as any,
             External: External.Android,
-            Renew: RenewState.Active,
         });
 
         expect(result).toEqual(true);
@@ -111,7 +110,6 @@ describe('isManagedExternally', () => {
             Discount: 0,
             Plans: {} as any,
             External: External.iOS,
-            Renew: RenewState.Active,
         });
 
         expect(result).toEqual(true);
@@ -132,7 +130,6 @@ describe('isManagedExternally', () => {
             Discount: 0,
             Plans: {} as any,
             External: External.Default,
-            Renew: RenewState.Active,
         });
 
         expect(result).toEqual(false);

@@ -44,11 +44,17 @@ export function isCardDetails(obj: any): obj is CardDetails {
     return props.every((prop) => typeof obj[prop] === 'string');
 }
 
+export enum Autopay {
+    DISABLE = 0,
+    ENABLE = 1,
+}
+
 export type PaymentMethodCardDetails = {
     Order: number;
     ID: string;
     Type: PAYMENT_METHOD_TYPES.CARD;
     Details: CardDetails;
+    Autopay: Autopay;
 };
 
 export type PaymentMethodPaypal = {
