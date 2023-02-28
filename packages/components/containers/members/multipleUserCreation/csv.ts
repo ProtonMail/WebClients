@@ -45,7 +45,7 @@ const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number) => {
         if (isNaN(totalStorageNumber)) {
             return 0;
         }
-        return totalStorageNumber;
+        return totalStorageNumber * GIGA;
     })();
 
     const vpnAccess = (() => {
@@ -171,7 +171,7 @@ const defaultSampleCSV: ExportedCSVUser[] = [
         DisplayName: 'Alice',
         EmailAddresses: 'alice@mydomain.com',
         Password: 'alice_password',
-        TotalStorage: GIGA,
+        TotalStorage: 1,
         VPNAccess: 1,
         PrivateSubUser: 0,
     },
@@ -179,7 +179,7 @@ const defaultSampleCSV: ExportedCSVUser[] = [
         DisplayName: 'Bob',
         EmailAddresses: 'bob@mydomain.com',
         Password: 'bob_password',
-        TotalStorage: GIGA,
+        TotalStorage: 1,
         VPNAccess: 0,
         PrivateSubUser: 1,
     },
@@ -187,7 +187,7 @@ const defaultSampleCSV: ExportedCSVUser[] = [
         DisplayName: 'Charlie',
         EmailAddresses: 'charlie@mydomain.com, anotheraddress@mydomain.com, notanotherone@mydomain.com',
         Password: 'charlie_password',
-        TotalStorage: GIGA,
+        TotalStorage: 1,
         VPNAccess: 1,
         PrivateSubUser: 1,
     },
@@ -199,8 +199,7 @@ export const getSampleCSV = (userArray: ExportedCSVUser[] = defaultSampleCSV) =>
         EmailAddresses:
             '# Enter the email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.',
         Password: '# Add a password for their account',
-        TotalStorage:
-            '# Number of bytes of storage the user will have. For example entering 1073741824 will result in 1GiB of storage.',
+        TotalStorage: '# Amount of storage the user will have in GiB',
         VPNAccess: '# Enter 1 to give the user a VPN account',
         PrivateSubUser: '# Enter 1 to make the user account private',
     };
