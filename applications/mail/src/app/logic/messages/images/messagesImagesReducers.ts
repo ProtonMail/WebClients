@@ -1,15 +1,12 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
 
+import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
+
+import { API_URL } from '../../../config';
 import { markEmbeddedImagesAsLoaded } from '../../../helpers/message/messageEmbeddeds';
-import {
-    forgeImageURL,
-    getEmbeddedImages,
-    getRemoteImages,
-    updateImages,
-} from '../../../helpers/message/messageImages';
+import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
 import { loadBackgroundImages, loadImages, urlCreator } from '../../../helpers/message/messageRemotes';
-import encodeImageUri from '../helpers/encodeImageUri';
 import { getMessage } from '../helpers/messagesReducer';
 import {
     LoadEmbeddedParams,
@@ -127,7 +124,7 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
 
                 if (imageToLoad.url && uid) {
                     const encodedImageUrl = encodeImageUri(imageToLoad.url);
-                    const loadingURL = forgeImageURL(encodedImageUrl, uid);
+                    const loadingURL = forgeImageURL(API_URL, encodedImageUrl, uid);
 
                     // Image is already in state, we only need to put it as loaded
                     if (image) {

@@ -1,55 +1,61 @@
-import { DetailedHTMLProps, ImgHTMLAttributes, useEffect, useState } from 'react';
+import { DetailedHTMLProps, ImgHTMLAttributes, useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { toImage } from '@proton/shared/lib/helpers/image';
-import { isURL } from '@proton/shared/lib/helpers/validators';
-import { hasShowRemote } from '@proton/shared/lib/mail/images';
+import { Icon, Tooltip } from '@proton/components/components';
 
-import { useLoading, useMailSettings } from '../../hooks';
+import LoadRemoteImageBanner from '../../containers/banner/LoadRemoteImageBanner';
+import useLoadContactImage from '../../hooks/useLoadContactImage';
 import { Loader } from '../loader';
 
 export interface Props extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
     src: string;
     text?: string;
+    /**
+     * Force loading the image on component render
+     */
+    autoLoad?: boolean;
 }
-const RemoteImage = ({ src, text = c('Action').t`Load image`, ...rest }: Props) => {
-    const [mailSettings, loadingMailSettings] = useMailSettings();
-    const [loading, withLoading] = useLoading();
-    const [showAnyways, setShowAnyways] = useState(false);
-    const [image, setImage] = useState<HTMLImageElement>();
+const RemoteImage = ({ src, text = c('Action').t`Load image`, autoLoad = false, ...rest }: Props) => {
+    const { handleLoadImageDirect, image, setShowAnyway, display } = useLoadContactImage({
+        photo: src,
+    });
 
+    const handleClick = () => setShowAnyway(true);
+
+    /**
+     * Should be only used in ContactFieldImage, to show it directly
+     * In other cases, we want to rely on the auto show setting
+     */
     useEffect(() => {
-        const load = async () => {
-            if (!isURL(src)) {
-                return;
-            }
-            try {
-                setImage(await toImage(src));
-            } catch {
-                // return;
-            }
-        };
-        void withLoading<void>(load());
-    }, [src]);
+        if (autoLoad) {
+            handleClick();
+        }
+    }, [autoLoad]);
 
-    const handleClick = () => setShowAnyways(true);
-
-    if (loading || loadingMailSettings) {
-        return <Loader />;
-    }
-
-    if (!image) {
-        return <img alt={src} />;
-    }
-
-    if (hasShowRemote(mailSettings) || showAnyways) {
-        // eslint-disable-next-line jsx-a11y/alt-text
-        return <img src={image?.src} referrerPolicy="no-referrer" {...rest} />;
-    }
-
-    return <Button onClick={handleClick}>{text}</Button>;
+    return (
+        <>
+            {display === 'loading' && <Loader />}
+            {display === 'loadDirectFailed' && (
+                <div className="border rounded bg-norm mb-0 flex flex-justify-center flex-align-items-center p-4">
+                    <Tooltip title={c('Tooltip').t`The image could not be loaded`}>
+                        <Icon name="cross-circle" size={24} className="color-danger" />
+                    </Tooltip>
+                </div>
+            )}
+            {display === 'needsLoadDirect' && (
+                <LoadRemoteImageBanner
+                    onClick={handleLoadImageDirect}
+                    text={c('Action').t`Image could not be loaded with tracker protection.`}
+                    tooltip={c('Action').t`Image will be loaded without a proxy`}
+                    actionText={c('Action').t`Load`}
+                />
+            )}
+            {display === 'loaded' && <img src={image?.src} alt="" referrerPolicy="no-referrer" {...rest} />}
+            {display === 'askLoading' && <Button onClick={handleClick}>{text}</Button>}
+        </>
+    );
 };
 
 export default RemoteImage;

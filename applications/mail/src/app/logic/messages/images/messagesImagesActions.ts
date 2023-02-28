@@ -2,10 +2,10 @@ import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getImage } from '@proton/shared/lib/api/images';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { encodeImageUri } from '@proton/shared/lib/helpers/image';
 
 import { get } from '../../../helpers/attachment/attachmentLoader';
 import { createBlob } from '../../../helpers/message/messageEmbeddeds';
-import encodeImageUri from '../helpers/encodeImageUri';
 import {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
