@@ -1208,16 +1208,6 @@
         "Размова"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Вітаем"
@@ -1611,54 +1601,6 @@
         "Ваш адрас электроннай пошты адсутнічае ў спісе ўдзельнікаў"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Не сінхранізавана"
-      ],
-      "Syncing": [
-        "Сінхранізацыя"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Не атрымалася расшыфраваць каляндар"
-      ],
-      "Calendar is syncing": [
-        "Каляндар сінхранізуецца"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Адбываецца сінхранізацыя календара: для паказу ўсіх падзей можа спатрэбіцца некалькі хвілін."
-      ],
-      "Calendar is too big": [
-        "Занадта вялікі каляндар"
-      ],
-      "Calendar link is not accessible": [
-        "Спасылка на каляндар недаступна"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Спасылка на каляндар часова недаступна"
-      ],
-      "Failed to sync calendar": [
-        "Не ўдалося сінхранізаваць каляндар"
-      ],
-      "More than 12 hours passed since last update": [
-        "Ад моманту апошняга абнаўлення мінула больш за 12 гадзін"
-      ],
-      "Unsupported calendar format": [
-        "Фармат календара не падтрымліваецца"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Спасылка на каляндар недаступна па-за межамі экасістэмы пастаўшчыка паслуг у якой ён быў створаны."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Спасылка на каляндар часова недаступна. Пераканайцеся, што спасылка ад пастаўшчыка паслуг календара ўсё яшчэ дзейнічае."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Ад моманту апошняга абнаўлення мінула больш за 12 гадзін. ${ CALENDAR_APP_NAME } паспрабуе абнавіць каляндар праз некалькі гадзін."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Падзея ўжо завяршылася"
@@ -1999,9 +1941,6 @@
       ],
       "Work": [
         "Працоўны"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2900,7 +2839,7 @@
         "Няма метак"
       ],
       "ProtonMail logo and a plus sign": [
-        "Лагатып Proton Mail і знак плюс"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакт. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
@@ -3121,18 +3060,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Памылка расшыфроўкі: не ўдалося расшыфраваць змесціва гэтага паведамлення."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календара",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календара або",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў або",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў або",
-        "Здыміце выбар прынамсі з ${ calendarToFixCount } календароў або"
-      ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
@@ -3210,12 +3137,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Перавышана максімальная колькасць далучэнняў (${ attachmentsCountLimit })"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Аб'яднайце прынамсі ${ calendarToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
-        "Аб'яднайце прынамсі ${ calendarToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
-        "Аб'яднайце прынамсі ${ calendarToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
-        "Аб'яднайце прынамсі ${ calendarToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Спачатку неабходна адправіць паведамленне"
@@ -3450,9 +3371,6 @@
       ],
       "You did not provide a file.": [
         "Вы не выбралі файл."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Вы дасягнулі максімальнай колькасці асабістых календароў. Некаторыя календары не будуць імпартаваныя."
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
@@ -4069,9 +3987,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -4080,9 +3995,6 @@
       ],
       "No verification method available": [
         "Няма даступных спосабаў праверкі"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4347,9 +4259,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5364,9 +5273,6 @@
       "Select what you want to import.": [
         "Выберыце, што вы хочаце імпартаваць."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Выберыце календары для імпартавання. Новы каляндар будзе створаны для кожнага імпартаванага календара з абмежаваннем у 20 календароў."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Адправіць зашыфраванае і абароненае паролем паведамленне на адрас электроннай пошты ${ boldText }."
       ],
@@ -5670,9 +5576,6 @@
       "Using SimpleLogin is easy": [
         "Выкарыстоўваць SimpleLogin проста"
       ],
-      "Verified ${ BRAND_NAME } message": [
-        "Праверанае паведамленне ${ BRAND_NAME }"
-      ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
       ],
@@ -5915,9 +5818,6 @@
       ],
       "Trusted": [
         "Давераны"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6685,13 +6585,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Каб дадаць новы каляндар, выдаліце які-небудзь з існуючых."
+        "Каб дадаць новы каляндар, выдаліце адзін з існуючых."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Каб дадаць новы каляндар, выдаліць іншы каляндар або перайсці з тарыфнага плана ${ BRAND_NAME } на платны тарыфны план ${ MAIL_SHORT_APP_NAME }."
+        "Каб дадаць новы каляндар, выдаліце іншы каляндар або палепшыце свой тарыфны план ${ BRAND_NAME } да платнага тарыфнага плана ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Вы дасягнулі максімальнай колькасці календароў, якія даступны на вашым тарыфным плане."
+        "Вы дасягнулі максімальнай колькасці календароў, даступных на вашым тарыфным плане."
       ]
     },
     "Link": {
@@ -7188,9 +7088,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

@@ -467,9 +467,6 @@
       "Hide messages": [
         "Приховати повідомлення"
       ],
-      "Hide My Email": [
-        "Hide My Email"
-      ],
       "Hide my email": [
         "Hide My Email"
       ],
@@ -966,7 +963,7 @@
         "Пропустити перевірку"
       ],
       "Some images could not be loaded with tracker protection.": [
-        "Деякі зображення неможливо завантажити з активним захистом від елементів стеження."
+        "Деякі зображення неможливо завантажити, якщо увімкнено захист від стеження."
       ],
       "Star": [
         "Позначити зірочкою"
@@ -1209,16 +1206,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Розмова"
-      ]
-    },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1614,54 +1601,6 @@
         "Ваша адреса електронної пошти відсутня в переліку учасників"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Не синхронізовано"
-      ],
-      "Syncing": [
-        "Синхронізація"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Не вдалося розшифрувати календар"
-      ],
-      "Calendar is syncing": [
-        "Календар синхронізується"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
-      ],
-      "Calendar is too big": [
-        "Календар завеликий"
-      ],
-      "Calendar link is not accessible": [
-        "Календар за посиланням недоступний"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Посилання календаря тимчасово недоступне"
-      ],
-      "Failed to sync calendar": [
-        "Не вдалося синхронізувати календар"
-      ],
-      "More than 12 hours passed since last update": [
-        "Понад 12 годин минуло після попередньої синхронізації"
-      ],
-      "Unsupported calendar format": [
-        "Непідтримуваний формат календаря"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Від часу останнього оновлення минуло понад 12 годин — ${ CALENDAR_APP_NAME } спробує оновити календар за кілька годин."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Подія вже завершилася"
@@ -1978,7 +1917,7 @@
         "Назва"
       ],
       "URL": [
-        "URL"
+        "URL-адреса"
       ]
     },
     "Contact type label": {
@@ -2002,9 +1941,6 @@
       ],
       "Work": [
         "Робочий"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2903,7 +2839,7 @@
         "Немає міток"
       ],
       "ProtonMail logo and a plus sign": [
-        "Логотип ProtonMail та знак плюс"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
@@ -3124,18 +3060,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Помилка розшифрування: не вдалося розшифрувати вміст цього повідомлення."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Приберіть принаймні ${ calendarToFixCount } календар",
-        "Приберіть принаймні ${ calendarToFixCount } календарі",
-        "Приберіть принаймні ${ calendarToFixCount } календарів",
-        "Приберіть принаймні ${ calendarToFixCount } календаря"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Приберіть принаймні ${ calendarToFixCount } календар або",
-        "Приберіть принаймні ${ calendarToFixCount } календарі або",
-        "Приберіть принаймні ${ calendarToFixCount } календарів або",
-        "Приберіть принаймні ${ calendarToFixCount } календаря або"
-      ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
       ],
@@ -3213,12 +3137,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Перевищено максимальну кількість (${ attachmentsCountLimit }) вкладень"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Спершу необхідно надіслати повідомлення"
@@ -3454,9 +3372,6 @@
       "You did not provide a file.": [
         "Ви не надали файл."
       ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
-      ],
       "You must set a name": [
         "Ви повинні вказати назву"
       ],
@@ -3543,7 +3458,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+        "Під час читання вашого файлу ${ formattedFilename } сталася помилка. Файл має неправильний формат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -4077,9 +3992,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Е-пошта"
       ],
@@ -4088,9 +4000,6 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4116,6 +4025,9 @@
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Під час шифрування та додавання події сталася помилка. Неможливо імпортувати подію."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Сталася помилка під час шифрування й додавання ваших подій. Жодна подія не може бути імпортована."
@@ -4352,9 +4264,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5369,9 +5278,6 @@
       "Select what you want to import.": [
         "Виберіть, що ви хочете імпортувати."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більш ніж 20 календарів."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Надіслати зашифроване, захищене паролем повідомлення на електронну адресу ${ boldText }."
       ],
@@ -5675,9 +5581,6 @@
       "Using SimpleLogin is easy": [
         "Користуватися SimpleLogin легко"
       ],
-      "Verified ${ BRAND_NAME } message": [
-        "Підтверджене повідомлення ${ BRAND_NAME }"
-      ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
       ],
@@ -5920,9 +5823,6 @@
       ],
       "Trusted": [
         "Надійний"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6693,10 +6593,10 @@
         "Щоб додати новий календар, вилучіть наявний."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Щоб додати новий календар, вилучіть інший календар або оновіть ваш ${ BRAND_NAME } тарифний план до ${ MAIL_SHORT_APP_NAME } платного плану."
+        "Щоб додати новий календар, вилучіть інший календар або змініть свій тарифний план ${ BRAND_NAME } на платний ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Ви досягли максимальної кількості календарів, доступної у вашому тарифному плані."
+        "Ви досягли максимальної кількості календарів для вашого тарифного плану."
       ]
     },
     "Link": {
@@ -7193,9 +7093,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Отримайте необмежену кількість псевдонімів із SimpleLogin від ${ BRAND_NAME }"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

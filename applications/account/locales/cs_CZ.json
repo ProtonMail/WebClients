@@ -517,7 +517,7 @@
         "OK"
       ],
       "Ok": [
-        "Ok"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -831,6 +831,9 @@
       "Upgrade now": [
         "Navýšit nyní"
       ],
+      "Upgrade your plan": [
+        "Přejít na vyšší tarif"
+      ],
       "Upload picture": [
         "Nahrát obrázek"
       ],
@@ -907,11 +910,11 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Pokračovat s bezplatným tarifem"
+      "No, thanks": [
+        "Ne, děkuji"
       ],
-      "Start my 30-day free trial": [
-        "Začít 30denní zkušební dobu zdarma"
+      "Try free for 30 days": [
+        "Vyzkoušet na 30 dní zdarma"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1029,9 +1032,6 @@
     "Badge": {
       "5 users": [
         "5 uživatelů"
-      ],
-      "Coming soon": [
-        "Již brzy"
       ]
     },
     "Badge for domain": {
@@ -1048,6 +1048,11 @@
     "Badge for user sessions table": {
       "Current session": [
         "Aktivní relace"
+      ]
+    },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: řešení e-mailu a kalendáře pro každodenní komunikaci s ohledem na soukromí."
       ]
     },
     "Billing cycle": {
@@ -1265,6 +1270,9 @@
       ]
     },
     "Calendar share permission label": {
+      "Edit": [
+        "Upravit"
+      ],
       "See all event details": [
         "Zobrazit všechny detaily události"
       ]
@@ -1384,7 +1392,7 @@
     },
     "color": {
       "apple": [
-        "apple"
+        "jablko"
       ],
       "azureish white": [
         "azurově bílá"
@@ -1685,9 +1693,6 @@
       ],
       "Work": [
         "Práce"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2858,18 +2863,6 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře nebo",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo"
-      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -2956,12 +2949,6 @@
       ],
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Sloučit alespoň ${ calendarToFixCount } kalendář s existujícím ${ BRAND_NAME } kalendářem",
-        "Sloučit alespoň ${ calendarToFixCount } kalendáře s existujícími ${ BRAND_NAME } kalendáři",
-        "Sloučit alespoň ${ calendarToFixCount } kalendářů s existujícími ${ BRAND_NAME } kalendáři",
-        "Sloučit alespoň ${ calendarToFixCount } kalendářů s existujícími ${ BRAND_NAME } kalendáři"
       ],
       "Missing key packet": [
         "Chybějící balíček klíčů"
@@ -3232,9 +3219,6 @@
       ],
       "You have no invoices.": [
         "Nemáte žádné faktury."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Dosáhli jste maximálního počtu osobních kalendářů. Některé kalendáře nebylo možné importovat."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Všechny adresy ve vašem tarifu jsou vyčerpány. Přejděte na vyšší tarif, abyste mohli přidat další adresu."
@@ -4003,6 +3987,11 @@
         "Název tokenu"
       ]
     },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Vyzkoušejte to nejlepší z ${ MAIL_APP_NAME } zdarma"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Nalezen ${ items.length } návrh, použijte klávesnice pro navigaci.",
@@ -4015,9 +4004,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -4026,9 +4012,6 @@
       ],
       "No verification method available": [
         "Nejsou k dispozici žádné metody ověřování"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -4043,6 +4026,9 @@
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } ze ${ totalToImport } událostí byly úspěšně importovány.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Nastala chyba při šifrování a přidávání vaší události. Událost nemůže být importována."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Nastala chyba při šifrování a přidávání vašich událostí. Události nemohly být importovány."
@@ -4276,9 +4262,6 @@
       ],
       "ICS file": [
         "Soubor ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4506,6 +4489,15 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } úložiště"
+      ],
+      "${ userFound } user found": [
+        "Uživatel ${ userFound } nalezen",
+        "Uživatelé ${ userFound } nalezeni",
+        "Uživatelé ${ userFound } nalezeni",
+        "Uživatelé ${ userFound } nalezeni"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Země vyžaduje tarif ${ vpnPlus }."
       ],
@@ -4538,6 +4530,9 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Pozvěte přátele do ${ BRAND_NAME }"
+      ],
+      "10 email addresses": [
+        "10 e-mailových adres"
       ],
       "2. They try ${ planName }": [
         "2. Vyzkouší ${ planName }"
@@ -4660,7 +4655,7 @@
         "Již použito"
       ],
       "American Express SafeKey logo": [
-        "American Express SafeKey logo"
+        "Logo American Express SafeKey"
       ],
       "Amount below minimum (${ amount }).": [
         "Částka je nižší než minimální možná hodnota (${ amount })."
@@ -4876,7 +4871,7 @@
         "Odstranit odkaz?"
       ],
       "Discover ProtectBuy logo": [
-        "Discover ProtectBuy logo"
+        "Logo Discover ProtectBuy"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Nezapomeňte toto heslo. V případě, že ho zapomenete, nebudete se moci přihlásit nebo dešifrovat své zprávy."
@@ -5152,7 +5147,7 @@
         "DŮLEŽITÉ: Někteří registrátoři nepřijímají hodnoty CNAME s tečkou na konci (zatímco jiní to vyžadují). Pokud váš registrátor nepřijímá vaše CNAME záznamy, smažte tečku na konci každého CNAME záznamu a zkuste to znovu."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "Importujeme vaše data z ${ fromEmail } do ${ toEmail }."
+        "Import vašich dat z ${ fromEmail } do ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
@@ -5281,7 +5276,7 @@
         "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
-        "Mastercard SecureCode logo"
+        "Logo Mastercard SecureCode"
       ],
       "Member": [
         "Člen"
@@ -5321,6 +5316,9 @@
       ],
       "No contact encryption keys exist": [
         "Neexistuje žádný klíč pro šifrování kontaktů"
+      ],
+      "No credit card required": [
+        "Kreditní karta není vyžadována"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Není nastavena žádná metoda obnovy dat; jste vystaveni riziku ztráty přístupu ke svým datům"
@@ -5388,9 +5386,6 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Zastaralá obnovovací fráze; aktualizujte, abyste zajistili přístup k vašim údajům"
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Zaplaceno za ${ rewardMonths } měsíční tarif",
         "Zaplaceno za ${ rewardMonths } měsíční tarif",
@@ -5399,9 +5394,6 @@
       ],
       "Paid for a monthly plan": [
         "Zaplaceno za měsíční tarif"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Než bude platba zcela ověřena, může to trvat i několik minut."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Platby jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
@@ -5466,17 +5458,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Prosím vyberte druh odkazu, který chcete vložit a vyplňte všechna pole."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Zkuste to prosím znovu, použijte jinou platební metodu nebo kontaktujte svoji banku pro pomoc."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Zkuste to prosím znovu, použijte jinou platební metodu, nebo požádejte PayPal o pomoc."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Ověřte prosím platbu v nové záložce, která je již otevřena."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Ověřte prosím kartu v nové záložce, která je již otevřena."
       ],
       "Please wait till your changes are synced with the server.": [
         "Počkejte prosím, dokud se vaše změny nesynchronizují se serverem."
@@ -5492,6 +5478,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
+      ],
+      "Priority support": [
+        "Prioritní podpora"
       ],
       "Public link invite": [
         "Pozvánka na veřejný odkaz"
@@ -5568,9 +5557,6 @@
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
-      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }u</a>."
       ],
@@ -5622,11 +5608,17 @@
       "Storage for users": [
         "Úložiště pro uživatele"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
+      ],
       "Storage used by this user": [
         "Úložného prostoru využito tímto uživatelem"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Heslo a soubor uschovejte na bezpečném místě. Budete je znovu potřebovat k importu klíče."
+      ],
+      "Support for 1 custom email domain": [
+        "Podpora 1 vlastní e-mailové domény"
       ],
       "support team": [
         "tým podpory"
@@ -5811,9 +5803,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Dobijte na svůj účet kredity, za které si můžete předplatit nový tarif nebo prodloužit předplatné vašeho současného tarifu. Získáte jeden kredit za každý/každou/každé ${ i18nCurrency }."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Celkem e-mailových adres"
       ],
@@ -5846,6 +5835,12 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Pokud se neodhlásíte z účtu nebo nezměníte heslo, Vaše relace zůstane aktivní. Relace vyprší po 60 dnech nečinnosti."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited messages": [
+        "Neomezený počet zpráv"
       ],
       "Unsaved changes": [
         "Neuložené změny"
@@ -5883,9 +5878,6 @@
       "Verification can take a few minutes.": [
         "Ověřování může trvat několik minut."
       ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken."
-      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken. Nebude účtován žádný poplatek. Jakákoli částka použitá pro ověření karty bude obratem vrácena."
       ],
@@ -5899,7 +5891,7 @@
         "Verze ${ version }"
       ],
       "Visa Secure logo": [
-        "Visa Secure logo"
+        "Logo Visa Secure"
       ],
       "Warning:": [
         "Upozornění:"
@@ -6006,6 +5998,12 @@
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendář. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na váš kalendář a každého ${ BRAND_NAME } uživatele, se kterým jste váš kalendář sdíleli.",
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendáře. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli.",
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli.",
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Nyní můžete k účtu přistupovat a spravovat jej jako správce."
       ],
@@ -6040,7 +6038,7 @@
         "Nenastavili jste e-mail pro obnovení, takže v případě ztráty hesla nebude možné účet obnovit. Pokračovat bez sekundárního e-mailu?"
       ],
       "You have no calendars to export.": [
-        "Nemáte žádné kalendáře, které byste mohli exportovat."
+        "Nemáte žádné kalendáře k exportu."
       ],
       "You have no saved payment methods.": [
         "Nemáte žádné uložené způsoby platby."
@@ -6077,9 +6075,6 @@
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ loseAllData } ve Vašem ${ BRAND_NAME } účtu. Chcete-li jej obnovit, musíte zadat Vaše původní heslo."
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Pro ověření platby budete brzy přesměrováni na stránky Vaší banky."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Potřebujete ${ BRAND_NAME } adresu pro používání ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -6125,9 +6120,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Jakmile bude platba zrušena, váš účet bude aktualizován."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Z důvodu bezpečnosti Vaše banka vyžaduje ověření pomocí 3-D Secure."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
@@ -6179,32 +6171,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
       ],
-      "Create an email address": [
-        "Vytvořit e-mailovou adresu"
-      ],
-      "Day 27: Trial reminder": [
-        "Den 27: Připomenutí zkušební doby"
-      ],
-      "Day 30: Trial ends": [
-        "Den 30: Zkušební doba končí"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Užívejte si bezpečné a snadno použitelné odesílání e-mailů se spoustou prémiových funkcí."
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Try Mail Plus": [
-        "Vyzkoušejte Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Před koncem zkušebního období vám zašleme e-mail. Zrušit to můžete kdykoli."
-      ],
-      "Your new email address is ready to go!": [
-        "Vaše nová e-mailová adresa je připravena k použití!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Vaše předplatné začne ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6251,6 +6219,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Abyste se vyvarovali přerušení služeb z důvodu neuhrazených faktur, prosím zajistěte si, že máte alespoň 1 uloženou platební metodu."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Pouze zobrazení"
       ]
     },
     "Input label": {
@@ -7383,9 +7356,6 @@
       "Verification code": [
         "Ověřovací kód"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
       ],
@@ -7572,6 +7542,9 @@
       "To add a new calendar, remove an existing one.": [
         "Chcete-li přidat nový kalendář, odstraňte stávající."
       ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Chcete-li přidat nový kalendář, odstraňte jiný kalendář nebo navyšte tarif ${ BRAND_NAME } na placený tarif ${ MAIL_SHORT_APP_NAME }."
+      ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Dosáhli jste maximálního počtu kalendářů dostupných ve vašem tarifu."
       ]
@@ -7722,7 +7695,7 @@
         "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítku celkem a označit je jako",
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
@@ -8246,9 +8219,6 @@
       "NetShield malware and ad-blocker": [
         "Blokování reklam a malware NetShield"
       ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
       ],
@@ -8280,7 +8250,7 @@
         "Přihlasit se jako uživatel"
       ],
       "Split tunneling (Android and Windows)": [
-        "Rozdělené tunelování (Android a Windows)"
+        "Split Tunneling (Android a Windows)"
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání záznamů"
@@ -8526,12 +8496,6 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain } pro odběry zpráv"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Vytvořte až ${ n } kalendář nebo přidejte kalendáře od přátel, rodiny, kolegů a organizací",
-        "Vytvořte až ${ n } kalendáře nebo přidejte kalendáře od přátel, rodiny, kolegů a organizací",
-        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře od přátel, rodiny, kolegů a organizací",
-        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře od přátel, rodiny, kolegů a organizací"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
@@ -8916,9 +8880,6 @@
       "Add to existing group": [
         "Přidat do existující skupiny"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "Vždy se ptát"
       ],
@@ -8940,9 +8901,6 @@
       "Free server configs": [
         "Konfigurace bezplatného serveru"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Našel jsem jinou službu, která se mi líbí více"
       ],
@@ -8952,9 +8910,6 @@
       "Ignore group": [
         "Ignorovat skupinu"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Chybí klíčová funkce, kterou potřebuji"
       ],
@@ -8963,9 +8918,6 @@
       ],
       "Left to Right": [
         "Zleva doprava"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Můj důvod není na seznamu"
@@ -9008,15 +8960,6 @@
       ],
       "Standard server configs": [
         "Konfigurace standardního serveru"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -9102,9 +9045,6 @@
       ".dmg (10.12 or later)": [
         ".dmg (10.12 nebo novější)"
       ],
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (pro Fedora/openSUSE)"
       ],
@@ -9118,17 +9058,11 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -9332,6 +9266,12 @@
       ],
       "Verify now": [
         "Ověřit nyní"
+      ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Nyní ověřte tuto obnovovací e-mailovou adresu: ${ email.Value }"
+      ],
+      "Verify now this recovery phone number address: ${ phone.Value }": [
+        "Nyní ověřte toto obnovovací telefonní číslo: ${ phone.Value }"
       ],
       "Verify recovery email?": [
         "Ověřit e-mail obnovení?"
@@ -9741,10 +9681,10 @@
     },
     "Subscription change warning": {
       "Subscription managed elsewhere": [
-        "Předplatné spravované odjinud"
+        "Manage your subscription on Google Play"
       ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Vaše předplatné bylo provedeno prostřednictvím nákupu v aplikaci. Chcete-li spravovat své aktuální předplatné, musíte přejít do sekce Předplatné ve svém účtu ${ subscriptionManager }"
+        "Předplatné jste si zakoupili v aplikaci. Pro správu vašich aktuálních předplatných přejděte do sekce Předplatné na vašem ${ subscriptionManager } účtu"
       ]
     },
     "Subscription price": {
@@ -9763,11 +9703,6 @@
       ],
       "Upcoming": [
         "Nadcházející"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Tato nabídka je určena pouze pro nové zákazníky společnosti ${ BRAND_NAME }. Kreditní karta není vyžadována."
       ]
     },
     "Success": {
@@ -10121,9 +10056,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } klávesové zkratky"
       ],
@@ -10138,9 +10070,6 @@
       ],
       "2. Select protocol": [
         "2. Vyberte protokol"
-      ],
-      "3-D Secure verification failed": [
-        "Ověření 3D Secure selhalo"
       ],
       "3. Select config file and download": [
         "3. Vyberte konfigurační soubor a stáhněte jej"
@@ -10260,13 +10189,10 @@
         "Most pro ${ platform }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"
+        "Zrušit ${ MAIL_SHORT_APP_NAME } předplatné"
       ],
       "Card verification": [
         "Ověření karty"
-      ],
-      "Card verification in progress": [
-        "Probíhá ověřování karty"
       ],
       "Catch-All address": [
         "Adresa doménového koše"
@@ -10497,7 +10423,7 @@
         "Chyba"
       ],
       "Export": [
-        "Export"
+        "Exportovat"
       ],
       "Export calendar": [
         "Exportovat kalendář"
@@ -10556,17 +10482,11 @@
       "How to refer a friend and get credits": [
         "Jak doporučit známého a získat kredity"
       ],
-      "How your free trial works": [
-        "Jak funguje vaše zkušební verze"
-      ],
       "Human verification": [
         "Lidské ověření"
       ],
       "Identity and addresses": [
         "Identita a adresy"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "Importovat"
@@ -10664,9 +10584,6 @@
       "Open pagination": [
         "Otevřít stránkování"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Konfigurační soubory OpenVPN"
       ],
@@ -10693,9 +10610,6 @@
       ],
       "Payment verification": [
         "Ověřování platby"
-      ],
-      "Payment verification in progress": [
-        "Probíhá ověřování platby"
       ],
       "PayPal verification failed": [
         "Ověření platby PayPal se nezdařilo"
@@ -10940,9 +10854,6 @@
       "What's new": [
         "Co je nového"
       ],
-      "WireGuard": [
-        "WireGuard"
-      ],
       "WireGuard configuration": [
         "Konfigurace WireGuard"
       ],
@@ -11012,7 +10923,7 @@
         "Datum"
       ],
       "Import": [
-        "Import"
+        "Importovat"
       ],
       "Size": [
         "Velikost"
@@ -11240,7 +11151,7 @@
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Předplaťte si vyšší tarif ${ MAIL_SHORT_APP_NAME } abyste mohli sdílet váš kalendář."
+        "Pro sdílení vašeho kalendáře si pořiďte ${ MAIL_SHORT_APP_NAME } předplatné."
       ]
     },
     "User referee invited via email": {
@@ -11294,7 +11205,7 @@
     "VPN Plan Feature": {
       "${ n } server": [
         "${ n } server",
-        "${ n } servery",
+        "${ n }+ servery",
         "${ n } serverů",
         "${ n } serverů"
       ],
@@ -11309,29 +11220,6 @@
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích",
         "${ numberOfServers } v ${ numberOfCountries } zemích"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

@@ -393,7 +393,7 @@
         "Sesuaikan dengan jendela"
       ],
       "Font": [
-        "Font"
+        "Fon"
       ],
       "Forward as attachment": [
         "Teruskan sebagai lampiran"
@@ -489,7 +489,7 @@
         "Impor dari .csv atau vCard"
       ],
       "Inline": [
-        "Inline"
+        "Dalam baris"
       ],
       "Insert": [
         "Sisipkan"
@@ -999,7 +999,7 @@
         "Coba metode lain"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Coba simpan kembali. Penyimpanan gagal akibat: ${ saveError }"
+        "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
       ],
       "Turn on tracker protection": [
         "Aktifkan perlindungan pelacak"
@@ -1194,16 +1194,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Percakapan"
-      ]
-    },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1596,54 +1586,6 @@
         "Alamat email Anda tidak ada di dalam daftar peserta"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Tidak disinkronkan"
-      ],
-      "Syncing": [
-        "Menyinkronkan"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender tidak dapat didekripsi"
-      ],
-      "Calendar is syncing": [
-        "Kalender sedang menyinkronkan data"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalender sedang menyinkronkan data: proses ini dapat berlangsung hingga beberapa menit sebelum seluruh acara dapat dimunculkan."
-      ],
-      "Calendar is too big": [
-        "Ukuran kalender terlalu besar"
-      ],
-      "Calendar link is not accessible": [
-        "Tautan kalender tidak dapat diakses"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Tautan kalender untuk sementara tidak dapat diakses"
-      ],
-      "Failed to sync calendar": [
-        "Gagal menyinkronkan kalender"
-      ],
-      "More than 12 hours passed since last update": [
-        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir"
-      ],
-      "Unsupported calendar format": [
-        "Format kalender tidak didukung"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Tautan kalender tidak dapat diakses dari luar ekosistem penyedia kalender."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Tautan kalender untuk sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — ${ CALENDAR_APP_NAME } akan mencoba untuk memperbarui kalender dalam beberapa jam."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Acara telah berakhir"
@@ -1788,10 +1730,10 @@
         "merah jambu"
       ],
       "pistachio": [
-        "pistachio"
+        "kacang pistasi"
       ],
       "plum": [
-        "plum"
+        "plem"
       ],
       "purple": [
         "ungu"
@@ -1984,9 +1926,6 @@
       ],
       "Work": [
         "Kantor"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2087,7 +2026,7 @@
         "Pulau Bouvet"
       ],
       "Brazil": [
-        "Brasil"
+        "Brazil"
       ],
       "British Indian Ocean Territory": [
         "Teritori Samudera Hindia Inggris"
@@ -2207,7 +2146,7 @@
         "Eswatini"
       ],
       "Ethiopia": [
-        "Ethiopia"
+        "Etiopia"
       ],
       "Falkland Islands": [
         "Kepulauan Falkland"
@@ -2360,7 +2299,7 @@
         "Kuwait"
       ],
       "Kyrgyzstan": [
-        "Kirgizstan"
+        "Kyrgyzstan"
       ],
       "Laos": [
         "Laos"
@@ -2570,7 +2509,7 @@
         "Saint Pierre dan Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        "Saint Vincent dan Grenadines"
+        "Saint Vincent dan Grenadine"
       ],
       "Samoa": [
         "Samoa"
@@ -2714,7 +2653,7 @@
         "Amerika Serikat"
       ],
       "United States Minor Outlying Islands": [
-        "Pulau-Pulau Terluar Amerika Serikat"
+        "Kepulauan Terluar Kecil Amerika Serikat"
       ],
       "Uruguay": [
         "Uruguay"
@@ -2870,7 +2809,7 @@
         "Tidak ada label"
       ],
       "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail dan tanda plus"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
@@ -3082,12 +3021,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Kesalahan dekripsi: konten terenkripsi yang terdapat pada pesan ini gagal didekripsi."
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan atau"
-      ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
@@ -3165,9 +3098,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Jumlah lampiran maksimum (${ attachmentsCountLimit }) terlampaui"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
       ],
       "Message needs to be sent first": [
         "Pesan perlu dikirim terlebih dahulu"
@@ -3384,9 +3314,6 @@
       ],
       "You did not provide a file.": [
         "Anda tidak menyertakan berkas."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Anda telah mencapai batas jumlah kalender personal milik Anda. Sebagian kalender tidak dapat diimpor."
       ],
       "You must set a name": [
         "Anda harus mengatur nama"
@@ -3836,12 +3763,12 @@
     },
     "Font Face Default": {
       "Default": [
-        "Default"
+        "Bawaan"
       ]
     },
     "Font Size Default": {
       "Default": [
-        "Default"
+        "Bawaan"
       ]
     },
     "Footer": {
@@ -3981,20 +3908,14 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Email"
       ],
       "Manual": [
-        "Manual"
+        "Penuntun"
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4008,6 +3929,9 @@
     "Import calendar": {
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Ada kesalahan saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
@@ -4235,9 +4159,6 @@
       ],
       "ICS file": [
         "Berkas ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4793,6 +4714,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Impor email, kalender, dan kontak yang Anda miliki dari layanan email Anda terdahulu ke ${ BRAND_NAME }. Kami akan memandu Anda untuk memindahkan dan mengenkripsi data selangkah demi selangkah. Selamat datang di dunia privasi."
       ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
@@ -5058,7 +4982,7 @@
         "Minta bukti baca"
       ],
       "Rich text": [
-        "Rich text"
+        "Teks kaya"
       ],
       "Right to Left": [
         "Kanan ke Kiri"
@@ -5095,9 +5019,6 @@
       ],
       "Select what you want to import.": [
         "Pilih hal apa saja yang hendak Anda impor."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Kirimkan pesan yang terenkripsi dan terlindungi oleh kata sandi kepada alamat email ${ boldText }."
@@ -5393,9 +5314,6 @@
       "Using SimpleLogin is easy": [
         "Menggunakan SimpleLogin itu mudah"
       ],
-      "Verified ${ BRAND_NAME } message": [
-        "Pesan ${ BRAND_NAME } yang terverifikasi"
-      ],
       "Version ${ appVersion }": [
         "Versi ${ appVersion }"
       ],
@@ -5611,9 +5529,6 @@
       ],
       "Trusted": [
         "Tepercaya"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6257,7 +6172,7 @@
         "Kepada: ${ toEmail }"
       ],
       "Toolbar": [
-        "Toolbar"
+        "Bilah Alat"
       ],
       "Two-factor authentication code": [
         "Kode autentikasi dua faktor"
@@ -6375,13 +6290,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada."
+        "Untuk menambah kalender baru, hapus kalender yang ada."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Untuk menambahkan kalender baru, hapus kalender yang sudah ada atau tingkatkan akun ${ BRAND_NAME } Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar."
+        "Untuk menambah kalender baru, hapus kalender lainnya atau tingkatkan ${ BRAND_NAME } paket ke ${ MAIL_SHORT_APP_NAME } paket berbayar."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Anda telah mencapai batas jumlah kalender yang diperkenankan oleh paket Anda."
+        "Anda telah mencapai jumlah kalender maksimum yang tersedia dalam paket Anda."
       ]
     },
     "Link": {
@@ -6564,6 +6479,20 @@
       ],
       "Your import is starting": [
         "Proses impor Anda akan segera dimulai"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "Impor semua pesan dari ${ itemsToImportCount } folder dan berikan label sebagai"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "Impor semua pesan dari ${ itemsToImportCount } label dan berikan label sebagai"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "Impor semua pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan berikan label sebagai"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "Impor semua pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan berikan label sebagai"
       ]
     },
     "Mailbox": {
@@ -6840,9 +6769,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

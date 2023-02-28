@@ -687,11 +687,6 @@
         "Opcjonalnie"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "Wkrótce"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Dostęp beta umożliwia korzystanie z wersji beta aplikacji ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }, przed ich publicznym udostępnieniem. Oznacza to, że możesz jako pierwszy testować nowe usługi, aktualizacje i funkcje."
@@ -1109,9 +1104,6 @@
       ],
       "Work": [
         "Służbowy"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2190,18 +2182,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Błąd odszyfrowywania: odszyfrowanie tego wydarzenia nie powiodło się."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarz",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarze",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarz lub",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarze lub",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub",
-        "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub"
-      ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
@@ -2279,12 +2259,6 @@
       ],
       "Label name cannot be empty.": [
         "Nazwa etykiety nie może być pusta."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem ${ BRAND_NAME }",
-        "Scal co najmniej ${ calendarToFixCount } kalendarze z obecnymi kalendarzami ${ BRAND_NAME }",
-        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }",
-        "Scal co najmniej ${ calendarToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Brak pakietu klucza"
@@ -2468,9 +2442,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Jednocześnie możesz wysłać maksymalnie 10 plików vCard"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Osiągnięto maksymalną liczbę osobistych kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
@@ -2695,11 +2666,11 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } uczestnik",
-        "${ numberOfParticipants } uczestników",
-        "${ numberOfParticipants } uczestników",
-        "${ numberOfParticipants } uczestników"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } uczestnik",
+        "${ numberOfAttendees } uczestników",
+        "${ numberOfAttendees } uczestników",
+        "${ numberOfAttendees } uczestników"
       ]
     },
     "Event info. Organizer name": {
@@ -2889,9 +2860,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -2900,9 +2868,6 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -3148,9 +3113,6 @@
       ],
       "ICS file": [
         "pliku ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3165,6 +3127,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importuj z ${ provider }"
+      ],
       "Other": [
         "Inny"
       ]
@@ -3351,12 +3316,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Każdy, kto posiada link, może zobaczyć w kalendarzu informację o stanie wolny i zajęty. Nikt nie może zobaczyć szczegółów wydarzenia, takich jak nazwę, lokalizację i uczestników."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestnika",
-        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników",
-        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników",
-        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników"
       ],
       "Attention required": [
         "Wymagana uwaga"
@@ -3661,9 +3620,6 @@
       "Select what you want to import.": [
         "Wybierz, co chcesz zaimportować."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
@@ -3910,6 +3866,11 @@
         "Kliknij po szczegóły"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Tylko do odczytu"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Niektóre kalendarze nie będą pokazywać szczegółów wcześniej utworzonych wydarzeń."
@@ -3936,6 +3897,17 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Możesz ponownie udostępnić kalendarze w ustawieniach."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestnika",
+        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników",
+        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników",
+        "Zaproszenie może posiadać maksymalnie ${ MAX_ATTENDEES } uczestników"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Tworzenie zaproszeń w udostępnionym kalendarzu nie jest dozwolone"
       ]
     },
     "Input label": {
@@ -3969,9 +3941,6 @@
       ],
       "Trusted": [
         "Zaufany"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -5770,10 +5739,10 @@
         "${ hoursInt },5 godz."
       ],
       "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min"
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minuty"
       ]
     },
     "Time unit for duration; vocalized in the time picker": {

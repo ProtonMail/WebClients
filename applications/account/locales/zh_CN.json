@@ -903,14 +903,6 @@
         "下线"
       ]
     },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "继续使用免费账户"
-      ],
-      "Start my 30-day free trial": [
-        "开始我的30天免费试用"
-      ]
-    },
     "Action; accept invitation to share calendar": {
       "Accept": [
         "接受"
@@ -1020,9 +1012,6 @@
     "Badge": {
       "5 users": [
         "5 名用户"
-      ],
-      "Coming soon": [
-        "即将推出"
       ]
     },
     "Badge for domain": {
@@ -2828,12 +2817,6 @@
       "Contact signature not verified": [
         "未验证联系人签名"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "取消选择至少 ${ calendarToFixCount } 个日历"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "取消选择至少 ${ calendarToFixCount } 个日历或者"
-      ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
       ],
@@ -2920,9 +2903,6 @@
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "将至少 ${ calendarToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
@@ -3146,6 +3126,9 @@
       "This label name is not available. Please choose a different name.": [
         "标签名称不可用，请重新填写。"
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "此邮件含有浏览器不能打开的链接."
+      ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
       ],
@@ -3184,9 +3167,6 @@
       ],
       "You have no invoices.": [
         "您目前没有账单。"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "您已达到您账户等级所能创建的个人日历数上限。无法导入多出的日历。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您的地址数已达上限，升级账户后方可再添加地址。"
@@ -3673,15 +3653,6 @@
     "file size format": {
       "bytes": [
         "B"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -3954,6 +3925,9 @@
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密并添加日程时出错。未能导入任何日程。"
+      ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
@@ -4177,9 +4151,6 @@
       ],
       "ICS file": [
         "ICS 文件"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4220,6 +4191,9 @@
       ],
       "Canceled": [
         "已取消"
+      ],
+      "Cancelling": [
+        "正在取消"
       ],
       "Completed": [
         "完成"
@@ -5085,9 +5059,6 @@
       "Merged": [
         "已合并"
       ],
-      "MM/YY": [
-        "MM/YY"
-      ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
       ],
@@ -5184,17 +5155,11 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "恢复密语已过时，请更新以确保能访问您的数据"
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } months plan": [
         "为 ${ rewardMonths } 个月的计划付费"
       ],
       "Paid for a monthly plan": [
         "已开通月费账户"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "验证需要几分钟才能完成。"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付安全由 TLS 加密和瑞士隐私法律保障。"
@@ -5253,17 +5218,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "选择链接类型并填写相关信息。"
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "请重试，用其他方式支付，或联系银行寻求帮助。"
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "请用其他方式支付，或联系 PayPal 寻求帮助。"
       ],
       "Please verify payment at the new tab which was opened.": [
         "请在打开的新标签页中完成验证。"
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "请在新打开的标签页中验证银行卡。"
       ],
       "Please wait till your changes are synced with the server.": [
         "请稍候，数据正在与服务器同步。"
@@ -5354,9 +5313,6 @@
       ],
       "Select what you want to import.": [
         "选择需要导入的内容。"
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "通过 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
@@ -5589,9 +5545,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "充值后即可使用余额升级账户或增添服务项目。余额与${ i18nCurrency }等值。"
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "电子邮件地址总数"
       ],
@@ -5657,9 +5610,6 @@
       ],
       "Verification can take a few minutes.": [
         "验证可能需要数分钟。"
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "验证将在新标签页中进行，请停止拦截弹窗。"
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
@@ -5847,9 +5797,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "您将失去该 ${ BRAND_NAME } 账户中的${ loseAllData }，只有将来想起旧密码后才能恢复。"
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "即将为您转至银行网站完成验证。"
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME } 还需注册 ${ BRAND_NAME } 邮箱地址"
       ],
@@ -5894,9 +5841,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "支付成功后账户将立即完成升级。"
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "您的发卡银行要求您进行 3-D Secure 验证以确保安全。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
@@ -5945,32 +5889,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "检测到多余的重复密钥，请单独上传以获取更多信息。"
       ],
-      "Create an email address": [
-        "创建邮箱地址"
-      ],
-      "Day 27: Trial reminder": [
-        "第27天：试用提醒"
-      ],
-      "Day 30: Trial ends": [
-        "第30天：试用结束"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "享受带有大量付费功能，安全易用地收发电子邮件。"
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "密钥 ${ fingerprint } 已上传"
-      ],
-      "Try Mail Plus": [
-        "试试 Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "试用期结束前，我们会通过电子邮件通知您。您可以随时取消。"
-      ],
-      "Your new email address is ready to go!": [
-        "您的新电子邮件地址已准备就绪！"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "您的订阅于${ startText } 开始。"
       ]
     },
     "Info - folder colouring feature": {
@@ -6019,6 +5939,11 @@
         "为避免欠费导致服务中断，请确保账户中随时都有一种有效的支付方式。"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "仅查看"
+      ]
+    },
     "Input label": {
       "Access": [
         "权限"
@@ -6034,7 +5959,7 @@
     },
     "Invoice state display as badge": {
       "Billed": [
-        "Billed"
+        "账单"
       ],
       "Gifted": [
         "才华横溢"
@@ -7900,9 +7825,6 @@
       "NetShield malware and ad-blocker": [
         "NetShield 广告拦截与恶意软件防护"
       ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
       "Password-protected Emails": [
         "邮件密码保护"
       ],
@@ -8537,9 +8459,6 @@
       "Add to existing group": [
         "添加到已有队列"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "每次询问"
       ],
@@ -8561,9 +8480,6 @@
       "Free server configs": [
         "免费服务器配置"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "不如别的产品好用"
       ],
@@ -8573,9 +8489,6 @@
       "Ignore group": [
         "忽略分组"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "找不到我想要的功能"
       ],
@@ -8584,9 +8497,6 @@
       ],
       "Left to Right": [
         "从左到右"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "其他原因"
@@ -8629,15 +8539,6 @@
       ],
       "Standard server configs": [
         "标准服务器配置"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -8738,9 +8639,6 @@
       ],
       "New credit/debit card": [
         "添加信用卡/借记卡"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -8848,7 +8746,7 @@
         "输入文本或关键词"
       ],
       "yourdomain.com": [
-        "yourdomain.com"
+        "你的域名.com"
       ],
       "ZIP": [
         "邮编"
@@ -9321,11 +9219,6 @@
         "即将到来"
       ]
     },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "此优惠仅限首次注册 ${ BRAND_NAME } 用户。无需信用卡。"
-      ]
-    },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } 已复制到剪贴板"
@@ -9674,9 +9567,6 @@
       "2. Select protocol": [
         "2. 选择协议"
       ],
-      "3-D Secure verification failed": [
-        "3-D Secure 验证失败"
-      ],
       "3. Select config file and download": [
         "3. 选择配置文件并下载"
       ],
@@ -9796,9 +9686,6 @@
       ],
       "Card verification": [
         "银行卡验证"
-      ],
-      "Card verification in progress": [
-        "正在验证银行卡"
       ],
       "Catch-All address": [
         "通配邮箱"
@@ -10082,17 +9969,11 @@
       "How to refer a friend and get credits": [
         "如何邀请好友并获得奖励"
       ],
-      "How your free trial works": [
-        "您的免费试用版如何运作"
-      ],
       "Human verification": [
         "身份验证"
       ],
       "Identity and addresses": [
         "身份和地址"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "导入"
@@ -10213,9 +10094,6 @@
       ],
       "Payment verification": [
         "支付验证"
-      ],
-      "Payment verification in progress": [
-        "正在验证付款"
       ],
       "PayPal verification failed": [
         "PayPal 验证失败"
@@ -10436,9 +10314,6 @@
       "Verify email address": [
         "验证邮箱地址"
       ],
-      "VPN apps": [
-        "VPN apps"
-      ],
       "Warning": [
         "警告"
       ],
@@ -10453,9 +10328,6 @@
       ],
       "What's new": [
         "更新内容"
-      ],
-      "WireGuard": [
-        "WireGuard"
       ],
       "WireGuard configuration": [
         "WireGuard 配置"
@@ -10802,29 +10674,6 @@
         "${ numberOfCountries } 个国家的 ${ numberOfServers }"
       ]
     },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } 将合并所有同名文件夹，无需合并的文件夹请在导入前更改名称。"
@@ -10903,6 +10752,9 @@
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"
+      ],
+      "You will not see this import record in the list any more.": [
+        "此处将不会再出现这条导入记录。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免费体验期将于 ${ textDate } 结束。${ action }"

@@ -787,54 +787,6 @@
         "Continua utilitzant ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "No sincronitzat"
-      ],
-      "Syncing": [
-        "Sincronitzant"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "El calendari no es pot desxifrar"
-      ],
-      "Calendar is syncing": [
-        "El calendari s'està sincronitzant"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "El calendari s'està sincronitzant. Pot ser que els vostres esdeveniments tardin uns minuts en aparèixer."
-      ],
-      "Calendar is too big": [
-        "El calendari és massa gran"
-      ],
-      "Calendar link is not accessible": [
-        "L'enllaç del calendari no és accessible"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "L'enllaç del calendari no és accessible temporalment"
-      ],
-      "Failed to sync calendar": [
-        "Error sincronitzant el calendari"
-      ],
-      "More than 12 hours passed since last update": [
-        "Han passat més de 12 hores des de la darrera actualització"
-      ],
-      "Unsupported calendar format": [
-        "Format de calendari no suportat"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "L'enllaç del calendari no és accessible des de fora de l'ecosistema del proveïdor del calendari."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Verifiqueu que l'enllaç segueix essent vàlid."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Fa més de 12 hores de la darrera actualització — ${ CALENDAR_APP_NAME } provarà d'actualitzar-lo en les hores vinents."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Replega"
@@ -930,7 +882,7 @@
         "Gènere"
       ],
       "Geo": [
-        "Geo"
+        "Geolocalització"
       ],
       "Language": [
         "Idioma"
@@ -990,9 +942,6 @@
       ],
       "Work": [
         "Feina"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1918,19 +1867,14 @@
       "Contact could not be saved": [
         "El contacte no pot ser desat"
       ],
+      "Contact name is too long": [
+        "El nom del contacte és massa llarg"
+      ],
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Desmarqueu almenys ${ calendarToFixCount } calendari",
-        "Desmarqueu almenys ${ calendarToFixCount } calendaris"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Desmarqueu almenys ${ calendarToFixCount } calendari o",
-        "Desmarqueu almenys ${ calendarToFixCount } calendaris o"
       ],
       "Device name does not match": [
         "El nom del dispositiu no coincideix."
@@ -1940,6 +1884,9 @@
       ],
       "Email address invalid": [
         "Correu electrònic invàlid"
+      ],
+      "Email address is required": [
+        "L'adreça de correu electrònic és obligatòria."
       ],
       "Email is not valid": [
         "El correu electrònic no és vàlid"
@@ -1992,10 +1939,6 @@
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Combineu almenys ${ calendarToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent",
-        "Combineu almenys ${ calendarToFixCount } calendaris importats amb els vostres calendaris ${ BRAND_NAME } existents"
-      ],
       "Missing key packet": [
         "Falta el paquet de claus"
       ],
@@ -2024,6 +1967,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Un dels grups no té contactes: ${ noContactGroupList }",
         "Alguns grups no tenen contactes: ${ noContactGroupList } "
+      ],
+      "Password is required": [
+        "La contrasenya és obligatòria."
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
@@ -2122,6 +2068,9 @@
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vcards dels contactes"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Aquest camp requereix el màxim de ${ maximumLength } caràcters."
+      ],
       "This field is required": [
         "Aquest camp és obligatori"
       ],
@@ -2148,9 +2097,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "No podeu enviar arxius vCard de més de 10 contactes."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "No es poden importar tots els calendaris perquè heu arribat al límit personal de calendaris."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -2428,7 +2374,15 @@
         "Els teus comentaris"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Alguna cosa no ha anat bé amb l'autenticació amb la vostra clau de seguretat. Proveu-ho de nou."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inseriu una clau de seguretat associada al vostre compte ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clau de seguretat"
       ]
@@ -2514,9 +2468,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -2525,9 +2476,6 @@
       ],
       "No verification method available": [
         "Cap mètode de verificació disponible"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2538,6 +2486,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
         "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "S'ha produït un error xifrant i afegint el teu esdeveniment. No s´ha pogut importar cap esdeveniment."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "S'ha produït un error xifrant i afegint els teus esdeveniments. No s’ha pogut importar cap esdeveniment."
@@ -2717,14 +2668,17 @@
       "app password": [
         "contrasenya de l'aplicació"
       ],
+      "app password or enable IMAP": [
+        "contrasenya d'aplicació o activa IMAP"
+      ],
+      "CSV or a VCF (vCard) file": [
+        "CSV o un fitxer VCF (vCard)"
+      ],
       "full calendar view": [
         "vista de calendari completa"
       ],
       "ICS file": [
         "Fitxer ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2733,6 +2687,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importar des de ${ provider }"
+      ],
       "Other": [
         "Altres"
       ]
@@ -2845,6 +2802,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seleccionat"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -3134,6 +3094,9 @@
       "Import mailbox": [
         "Importar bústia de correu"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "Importeu els seus correus electronics, calendaris, i contactes des d'un altra servei a ${ BRAND_NAME }. Us guiarem en cada pas del camí i xifrarem les vostres dades a mesura que es mouen. Benvingut al món de la privadesa."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Important les vostres dades des de ${ fromEmail } a ${ toEmail }."
       ],
@@ -3345,9 +3308,6 @@
       "Select what you want to import.": [
         "Seleccioneu què voleu importar."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Seleccioneu quins calendaris importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 calendaris."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
@@ -3523,6 +3483,9 @@
       "You can check the progress ${ importProgressLink }.": [
         "Podeu comprovar el progrés a ${ importProgressLink }."
       ],
+      "You can import one data type at a time.": [
+        "Podeu importar un tipus de dades alhora."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
       ],
@@ -3624,12 +3587,12 @@
       ],
       "Trusted": [
         "De confiança"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
+      "# of downloads": [
+        "Nombre de baixades"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari ${ BRAND_NAME }"
       ],
@@ -4080,6 +4043,17 @@
         "Subfinestra lateral"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Per afegir un nou calendari, esborreu-ne un d'existent."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Per afegir un nou calendari, cal eliminar un calendari existent, o actualitzar la vostra subscripció ${ BRAND_NAME } a una subscripció ${ MAIL_SHORT_APP_NAME } de pagament."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
@@ -4430,6 +4404,9 @@
       "Set up your organization": [
         "Configureu la vostra organització"
       ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "Feu servir el selector d'aplicacions de dalt a l'esquerra per accedir a tots els serveis de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }."
+      ],
       "You can change this anytime in your settings.": [
         "Podeu canviar-ho en qualsevol moment a les preferències."
       ]
@@ -4620,6 +4597,9 @@
       ]
     },
     "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "Gestioni els seus contactes i vegi el seu calendari sense sortir de la seva aplicació."
+      ],
       "Try the new side panel": [
         "Provar la nova subfinestra lateral"
       ]
@@ -4635,6 +4615,9 @@
     "Spotlight": {
       "Encrypted search is here": [
         "Ha arribat la cerca xifrada"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "Obtingui fins a ${ credits } en crèdits."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
@@ -4702,6 +4685,9 @@
       ],
       "Recovery has started": [
         "Ha començat la recuperació"
+      ],
+      "Undo in progress": [
+        "Desfer en curs"
       ],
       "Verification successful": [
         "Èxit de verificació"
@@ -4798,6 +4784,9 @@
       ]
     },
     "Title": {
+      "# of downloads": [
+        "Nombre de baixades"
+      ],
       "${ emailsCount } member": [
         "${ emailsCount } membre",
         "${ emailsCount } membres"
@@ -4936,9 +4925,6 @@
       ],
       "Download unverified folder?": [
         "Baixa una carpeta no verificada?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "Arrossegar per carregar"
@@ -5088,6 +5074,9 @@
       ],
       "Open settings menu": [
         "Obrir el menú de preferències"
+      ],
+      "Original size": [
+        "Mida original"
       ],
       "Other information": [
         "Altres dades"
@@ -5318,6 +5307,9 @@
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail classifica automàticament alguns correus electrònics com ara Socials o Promocions. Podeu seleccionar on importar aquests correus electrònics."
+      ],
       "Hide side panel": [
         "Amaga la subfinestra lateral"
       ],
@@ -5447,6 +5439,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "No s'ha pogut verificar el servidor de correu. Si confieu en el servidor, podeu ometre aquesta verificació."
       ],
       "You will lose any customization you made so far.": [
         "Perdràs qualsevol personalització que hagis fet fins ara."
