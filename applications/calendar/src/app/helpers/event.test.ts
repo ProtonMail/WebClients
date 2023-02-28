@@ -8,6 +8,7 @@ import {
     getCanDuplicateEvent,
     getCanEditEvent,
     getCanEditSharedEventData,
+    getCanReplyToEvent,
     getCannotSaveEvent,
     getIsAvailableCalendar,
 } from './event';
@@ -621,6 +622,87 @@ describe('getCanDuplicateEvent()', () => {
                     isOwnedCalendar: false,
                     isInvitation: true,
                     isOrganizer,
+                })
+            ).toEqual(false);
+        });
+    });
+});
+
+describe('getCanReplyToEvent()', () => {
+    test('User can reply to events he is invited in one of his own personal calendars if and only if the event is not cancelled', () => {
+        const combinations = [];
+        for (let i = 0; i < 2 ** 1; i++) {
+            const isCancelled = !!(1 & i);
+
+            combinations.push({ isCancelled });
+        }
+        combinations.forEach(({ isCancelled }) => {
+            expect(
+                getCanReplyToEvent({
+                    isOwnedCalendar: true,
+                    isCalendarWritable: true,
+                    isAttendee: true,
+                    isCancelled,
+                })
+            ).toEqual(!isCancelled);
+        });
+    });
+
+    test('User cannot reply to events he is not attending', () => {
+        const combinations = [];
+        for (let i = 0; i < 2 ** 3; i++) {
+            const isOwnedCalendar = !!(1 & i);
+            const isCalendarWritable = isOwnedCalendar || !!(2 & i);
+            const isCancelled = !!(4 & i);
+
+            combinations.push({ isOwnedCalendar, isCalendarWritable, isCancelled });
+        }
+        combinations.forEach(({ isOwnedCalendar, isCalendarWritable, isCancelled }) => {
+            expect(
+                getCanReplyToEvent({
+                    isOwnedCalendar,
+                    isCalendarWritable,
+                    isAttendee: false,
+                    isCancelled,
+                })
+            ).toEqual(false);
+        });
+    });
+
+    test('User cannot reply to invitations on subscribed calendars', () => {
+        const combinations = [];
+        for (let i = 0; i < 2 ** 1; i++) {
+            const isCancelled = !!(1 & i);
+
+            combinations.push({ isCancelled });
+        }
+        combinations.forEach(({ isCancelled }) => {
+            expect(
+                getCanReplyToEvent({
+                    isOwnedCalendar: true,
+                    isCalendarWritable: false,
+                    isAttendee: true,
+                    isCancelled,
+                })
+            ).toEqual(false);
+        });
+    });
+
+    test('User cannot reply to invitations on shared calendars, with or without edit rights', () => {
+        const combinations = [];
+        for (let i = 0; i < 2 ** 2; i++) {
+            const isCalendarWritable = !!(1 & i);
+            const isCancelled = !!(2 & i);
+
+            combinations.push({ isCalendarWritable, isCancelled });
+        }
+        combinations.forEach(({ isCalendarWritable, isCancelled }) => {
+            expect(
+                getCanReplyToEvent({
+                    isOwnedCalendar: false,
+                    isCalendarWritable,
+                    isAttendee: true,
+                    isCancelled,
                 })
             ).toEqual(false);
         });
