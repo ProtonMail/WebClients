@@ -554,6 +554,7 @@ export const useComposerContent = (args: EditorArgs) => {
 
     const handleSend = useSendHandler({
         getModelMessage,
+        setModelMessage,
         ensureMessageContent,
         mapSendInfo: messageSendInfo.mapSendInfo,
         promiseUpload,

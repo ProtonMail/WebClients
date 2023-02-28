@@ -25,6 +25,7 @@ import { useSendVerifications } from './useSendVerifications';
 export interface UseSendHandlerParameters {
     // Composer will be unmounted and modelMessage will continue changing after sending start
     getModelMessage: () => MessageState;
+    setModelMessage: (message: MessageState) => void;
     ensureMessageContent: () => void;
     mapSendInfo: MapSendInfo;
     promiseUpload?: Promise<void>;
@@ -43,6 +44,7 @@ export interface UseSendHandlerParameters {
 
 export const useSendHandler = ({
     getModelMessage,
+    setModelMessage,
     ensureMessageContent,
     mapSendInfo,
     promiseUpload,
@@ -170,6 +172,14 @@ export const useSendHandler = ({
                 return draftFlags.scheduledAt;
             } else {
                 dispatch(cancelScheduled({ ID: localID }));
+                const modelMsg = getModelMessage();
+                setModelMessage({
+                    ...modelMsg,
+                    draftFlags: {
+                        ...modelMsg.draftFlags,
+                        scheduledAt: undefined,
+                    },
+                });
                 return undefined;
             }
         })();
