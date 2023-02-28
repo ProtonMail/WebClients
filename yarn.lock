@@ -3816,7 +3816,7 @@ __metadata:
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     eslint: ^8.35.0
-    json-schema-to-typescript: ^11.0.5
+    json-schema-to-typescript: ^12.0.0
     rimraf: ^4.1.2
     typescript: ^4.9.5
   languageName: unknown
@@ -19650,9 +19650,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"json-schema-to-typescript@npm:^11.0.5":
-  version: 11.0.5
-  resolution: "json-schema-to-typescript@npm:11.0.5"
+"json-schema-to-typescript@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "json-schema-to-typescript@npm:12.0.0"
   dependencies:
     "@bcherny/json-schema-ref-parser": 10.0.5-fork
     "@types/json-schema": ^7.0.11
@@ -19670,7 +19670,7 @@ fsevents@^1.2.7:
     prettier: ^2.6.2
   bin:
     json2ts: dist/src/cli.js
-  checksum: 2b1114e32a088279a6a482f25ca8f9a1ce02fa038d98859526c7b92858bfdb30356acb518eb348b4cbbaddf508ccdceef85ec586c9b142c72031dd14cef08ec8
+  checksum: 4d662dd433b08f7a727fc6d464145e273bc347790537305c776f53321994f83d64242d0fe5b3a68d0cf81d866738df78ed4f8300a51d4c79a24657cac8f5e915
   languageName: node
   linkType: hard
 
