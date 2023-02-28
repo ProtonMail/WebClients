@@ -1,12 +1,14 @@
 import { c } from 'ttag';
 
-import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { isExpired } from '@proton/shared/lib/helpers/card';
 import { PaymentMethod, PaymentMethodCardDetails } from '@proton/shared/lib/interfaces';
 
-import { Alert, ConfirmModal, DropdownActions, ErrorButton } from '../../components';
+import { Alert } from '../../components/alert';
+import { ErrorButton } from '../../components/button';
+import DropdownActions, { DropdownActionProps } from '../../components/dropdown/DropdownActions';
+import { ConfirmModal } from '../../components/modal';
 import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
 import EditCardModal from '../payments/EditCardModal';
 import { CardModel } from '../payments/interface';
@@ -58,7 +60,8 @@ const PaymentMethodActions = ({ method, methods, index }: Props) => {
 
         dropdownActions.push({
             text: c('Action').t`Edit`,
-            onClick: () => createModal(<EditCardModal card={card} />),
+            onClick: () =>
+                createModal(<EditCardModal card={card} renewState={method.Autopay} paymentMethodId={method.ID} />),
         });
     }
 

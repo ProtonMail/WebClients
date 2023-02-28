@@ -2,7 +2,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { PaymentMethod } from '@proton/shared/lib/interfaces';
+import { Autopay, PaymentMethod } from '@proton/shared/lib/interfaces';
 
 import { useApi, useEventManager, useModals, useNotifications } from '../..';
 import { DropdownActions } from '../../components';
@@ -94,6 +94,7 @@ describe('PaymentMethodActions', () => {
                 Last4: '4444',
                 Brand: 'Mastercard',
             },
+            Autopay: Autopay.ENABLE,
         };
 
         const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={1} />);
@@ -117,6 +118,7 @@ describe('PaymentMethodActions', () => {
                 Last4: '4444',
                 Brand: 'Mastercard',
             },
+            Autopay: Autopay.ENABLE,
         };
 
         const { container } = render(<PaymentMethodActions method={method} methods={[method]} index={0} />);
@@ -152,6 +154,7 @@ describe('PaymentMethodActions', () => {
                     Last4: '4444',
                     Brand: 'Mastercard',
                 },
+                Autopay: Autopay.ENABLE,
             };
             const { createModal } = useModals();
             (createModal as jest.Mock).mockReset();
@@ -177,6 +180,7 @@ describe('PaymentMethodActions', () => {
                     Last4: '4242',
                     Brand: 'Visa',
                 },
+                Autopay: Autopay.ENABLE,
             };
 
             const method1: PaymentMethod = {
@@ -192,6 +196,7 @@ describe('PaymentMethodActions', () => {
                     Last4: '4444',
                     Brand: 'Mastercard',
                 },
+                Autopay: Autopay.ENABLE,
             };
 
             const api = useApi();
@@ -207,13 +212,13 @@ describe('PaymentMethodActions', () => {
                 <PaymentMethodActions method={method1} methods={[method0, method1]} index={1} />
             );
 
-            await waitFor(async () => {
-                fireEvent.click(await findByTestId('actionIndex-1'));
-            });
+            fireEvent.click(await findByTestId('actionIndex-1'));
 
-            expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'])); // a request to change the order of the payment methods
-            expect(call).toHaveBeenCalled();
-            expect(createNotification).toHaveBeenCalled();
+            await waitFor(async () => {
+                expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'])); // a request to change the order of the payment methods
+                expect(call).toHaveBeenCalled();
+                expect(createNotification).toHaveBeenCalled();
+            });
         });
 
         it('should open ConfirmModal on Delete', async () => {
@@ -230,6 +235,7 @@ describe('PaymentMethodActions', () => {
                     Last4: '4444',
                     Brand: 'Mastercard',
                 },
+                Autopay: Autopay.ENABLE,
             };
             const { createModal } = useModals();
             (createModal as jest.Mock).mockReset();
@@ -249,14 +255,13 @@ describe('PaymentMethodActions', () => {
 
             expect(createModal).toHaveBeenCalled();
 
+            const onDelete = (createModal as jest.Mock).mock.lastCall[0].props.onConfirm;
+            await onDelete();
             await waitFor(async () => {
-                const onDelete = (createModal as jest.Mock).mock.lastCall[0].props.onConfirm;
-                await onDelete();
+                expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123'));
+                expect(call).toHaveBeenCalled();
+                expect(createNotification).toHaveBeenCalled();
             });
-
-            expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123'));
-            expect(call).toHaveBeenCalled();
-            expect(createNotification).toHaveBeenCalled();
         });
     });
 });
