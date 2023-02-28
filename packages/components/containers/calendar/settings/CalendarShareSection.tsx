@@ -9,7 +9,12 @@ import { useApi, useFeature, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
-import { APP_UPSELL_REF_PATH, BRAND_NAME, CALENDAR_UPSELL_PATHS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    APP_UPSELL_REF_PATH,
+    BRAND_NAME,
+    CALENDAR_UPSELL_PATHS,
+    MAIL_SHORT_APP_NAME,
+} from '@proton/shared/lib/constants';
 import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -117,9 +122,10 @@ const CalendarShareSection = ({
                         <>
                             <div className="mb3 mt1-5">
                                 <div className="mb1-75">
-                                    <h3 className="text-bold" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}>{c(
-                                        'Calendar settings section title'
-                                    ).t`Share with ${BRAND_NAME} users`}</h3>
+                                    <h3
+                                        className="text-bold mb0-5"
+                                        id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}
+                                    >{c('Calendar settings section title').t`Share with ${BRAND_NAME} users`}</h3>
                                     <SettingsParagraph>{c('Calendar settings private share description')
                                         .t`Share your calendar with other ${BRAND_NAME} users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}</SettingsParagraph>
                                     {!isMaximumMembersReached && (

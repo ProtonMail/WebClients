@@ -255,7 +255,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                     content
                 ) : (
                     <>
-                        <h3 className="text-bold" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PUBLICLY}>
+                        <h3 className="text-bold mb0-5" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PUBLICLY}>
                             {c('Calendar settings section title').t`Share with anyone`}
                         </h3>
                         {content}
