@@ -1,10 +1,30 @@
+import { getImage } from '../api/images';
 import { REGEX_IMAGE_EXTENSION } from '../constants';
+import { createUrl } from '../fetch/helpers';
 import { toBase64 } from './file';
+
+/**
+ * Use to encode Image URI when loading images
+ */
+export const encodeImageUri = (url: string) => {
+    // Only replace spaces for the moment
+    return url.trim().replaceAll(' ', '%20');
+};
+
+/**
+ * Forge a url to load an image through the Proton proxy
+ */
+export const forgeImageURL = (apiUrl: string, url: string, uid: string) => {
+    const config = getImage(url, 0, uid);
+    const prefixedUrl = `${apiUrl}/${config.url}`; // api/ is required to set the AUTH cookie
+    const urlToLoad = createUrl(prefixedUrl, config.params);
+    return urlToLoad.toString();
+};
 
 /**
  * Convert url to Image
  */
-export const toImage = (url: string): Promise<HTMLImageElement> => {
+export const toImage = (url: string, crossOrigin = true): Promise<HTMLImageElement> => {
     return new Promise((resolve, reject) => {
         if (!url) {
             return reject(new Error('url required'));
@@ -21,8 +41,15 @@ export const toImage = (url: string): Promise<HTMLImageElement> => {
          * (otherwise canvas.toDataURL in resizeImage will throw complaining that the canvas is tainted)
          * An error will be thrown if the requested resource hasn't specified an appropriate CORS policy
          * See https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image
+         *
+         * However, on contact side, we are now using the proxy to load images.
+         * If the user choose explicitly not to use it or load the image using its default URL because loading through proxy failed,
+         * we consider that he really wants to load the image.
+         * Removing the crossOrigin attribute will allow us to load the image on more cases.
          */
-        image.crossOrigin = 'anonymous';
+        if (crossOrigin) {
+            image.crossOrigin = 'anonymous';
+        }
         image.referrerPolicy = 'no-referrer';
         image.src = url;
     });
@@ -53,6 +80,10 @@ interface ResizeImageProps {
      * If both maxHeight and maxWidth are specified, pick the smaller resize factor.
      */
     bigResize?: boolean;
+    /**
+     * Does the image needs to be loaded with the crossOrigin attribute
+     */
+    crossOrigin?: boolean;
 }
 
 /**
@@ -67,8 +98,9 @@ export const resizeImage = async ({
     finalMimeType = 'image/jpeg',
     encoderOptions = 1,
     bigResize = false,
+    crossOrigin = true,
 }: ResizeImageProps) => {
-    const image = await toImage(original);
+    const image = await toImage(original, crossOrigin);
     // Resize the image
     let { width, height } = image;
 

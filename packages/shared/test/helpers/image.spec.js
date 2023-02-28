@@ -1,10 +1,48 @@
-import { formatImage, resizeImage, toBlob, toFile } from '../../lib/helpers/image';
+import { encodeImageUri, forgeImageURL, formatImage, resizeImage, toBlob, toFile } from '../../lib/helpers/image';
 import { img } from './file.data';
+import { mockWindowLocation, resetWindowLocation } from './url.helper';
 
 // width: 300 px, height: 200 px
 
 const MIMETYPE_REGEX = /data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/;
 const fileName = 'proton';
+
+describe('encodeImageUri', () => {
+    const domain = 'https://test.com';
+
+    [
+        { url: `${domain}/a space.png`, expected: `${domain}/a%20space.png` },
+        { url: `${domain}/a%20space.png`, expected: `${domain}/a%20space.png` },
+        { url: `${domain}/logo.png%22`, expected: `${domain}/logo.png%22` },
+        { url: `${domain}/logo.png&quot`, expected: `${domain}/logo.png&quot` },
+    ].forEach(({ url, expected }) => {
+        it(`should encode image URI "${url}"`, () => {
+            expect(encodeImageUri(url)).toEqual(expected);
+        });
+    });
+});
+describe('forgeImageURL', () => {
+    const windowOrigin = 'https://mail.proton.pink';
+
+    beforeEach(() => {
+        mockWindowLocation({ origin: windowOrigin });
+    });
+
+    afterEach(() => {
+        resetWindowLocation();
+    });
+
+    it('should forge the expected image URL', () => {
+        const imageURL = 'https://example.com/image1.png';
+        const uid = 'uid';
+        const forgedURL = forgeImageURL('api', imageURL, uid);
+        const expectedURL = `${windowOrigin}/api/core/v4/images?Url=${encodeURIComponent(
+            imageURL
+        )}&DryRun=0&UID=${uid}`;
+
+        expect(forgedURL).toEqual(expectedURL);
+    });
+});
 
 describe('toBlob', () => {
     it('it should be an instance of an Object', () => {
