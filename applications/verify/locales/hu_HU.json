@@ -85,15 +85,6 @@
       "American Samoa": [
         "Amerikai Szamoa"
       ],
-      "Andorra": [
-        "Andorra"
-      ],
-      "Angola": [
-        "Angola"
-      ],
-      "Anguilla": [
-        "Anguilla"
-      ],
       "Antarctica": [
         "Antarktisz"
       ],
@@ -105,9 +96,6 @@
       ],
       "Armenia": [
         "Örményország"
-      ],
-      "Aruba": [
-        "Aruba"
       ],
       "Ascension Island": [
         "Ascension-sziget"
@@ -130,23 +118,8 @@
       "Bangladesh": [
         "Banglades"
       ],
-      "Barbados": [
-        "Barbados"
-      ],
       "Belarus": [
         "Fehéroroszország"
-      ],
-      "Belgium": [
-        "Belgium"
-      ],
-      "Belize": [
-        "Belize"
-      ],
-      "Benin": [
-        "Benin"
-      ],
-      "Bermuda": [
-        "Bermuda"
       ],
       "Bhutan": [
         "Bhután"
@@ -159,9 +132,6 @@
       ],
       "Bosnia and Herzegovina": [
         "Bosznia-Hercegovina"
-      ],
-      "Botswana": [
-        "Botswana"
       ],
       "Bouvet Island": [
         "Bouvet-sziget"
@@ -177,12 +147,6 @@
       ],
       "Bulgaria": [
         "Bulgária"
-      ],
-      "Burkina Faso": [
-        "Burkina Faso"
-      ],
-      "Burundi": [
-        "Burundi"
       ],
       "Cambodia": [
         "Kambodzsa"
@@ -204,9 +168,6 @@
       ],
       "Chad": [
         "Csád"
-      ],
-      "Chile": [
-        "Chile"
       ],
       "China": [
         "Kína"
@@ -232,17 +193,11 @@
       "Cook Islands": [
         "Cook-szigetek"
       ],
-      "Costa Rica": [
-        "Costa Rica"
-      ],
       "Croatia": [
         "Horvátország"
       ],
       "Cuba": [
         "Kuba"
-      ],
-      "Curaçao": [
-        "Curaçao"
       ],
       "Cyprus": [
         "Ciprus"
@@ -265,9 +220,6 @@
       "Dominican Republic": [
         "Dominikai Köztársaság"
       ],
-      "Ecuador": [
-        "Ecuador"
-      ],
       "Egypt": [
         "Egyiptom"
       ],
@@ -276,9 +228,6 @@
       ],
       "Equatorial Guinea": [
         "Egyenlítői-Guinea"
-      ],
-      "Eritrea": [
-        "Eritrea"
       ],
       "Estonia": [
         "Észtország"
@@ -316,12 +265,6 @@
       "French Southern Territories": [
         "Francia déli területek"
       ],
-      "Gabon": [
-        "Gabon"
-      ],
-      "Gambia": [
-        "Gambia"
-      ],
       "Georgia": [
         "Grúzia"
       ],
@@ -340,23 +283,11 @@
       "Greenland": [
         "Grönland"
       ],
-      "Grenada": [
-        "Grenada"
-      ],
-      "Guadeloupe": [
-        "Guadeloupe"
-      ],
       "Guam": [
         "Guam"
       ],
       "Guatemala": [
         "Guatemala"
-      ],
-      "Guernsey": [
-        "Guernsey"
-      ],
-      "Guinea": [
-        "Guinea"
       ],
       "Guinea-Bissau": [
         "Bissau-Guinea"
@@ -452,7 +383,7 @@
         "Libanon"
       ],
       "Lesotho": [
-        "Lesotho"
+        "Lesothói Királyság"
       ],
       "Liberia": [
         "Libéria"
@@ -461,7 +392,7 @@
         "Líbia"
       ],
       "Liechtenstein": [
-        "Liechtenstein"
+        "Lichtenstein"
       ],
       "Lithuania": [
         "Litvánia"
@@ -512,7 +443,7 @@
         "Moldova"
       ],
       "Monaco": [
-        "Monaco"
+        "Monakó"
       ],
       "Mongolia": [
         "Mongólia"
@@ -596,7 +527,7 @@
         "Pápua Új-Guinea"
       ],
       "Paraguay": [
-        "Paraguay"
+        "Paraguayi Köztársaság"
       ],
       "Peru": [
         "Peru"
@@ -641,7 +572,7 @@
         "Saint Christopher és Nevis Államszövetség"
       ],
       "Saint Lucia": [
-        "Saint Lucia"
+        "Szent Lucia"
       ],
       "Saint Martin (French Part)": [
         "Saint Martin (francia rész)"
@@ -912,9 +843,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -923,9 +851,6 @@
       ],
       "No verification method available": [
         "Nincs elérhető ellenőrzési módszer"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -934,6 +859,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
+      ],
+      "Country code": [
+        "Országkód"
       ],
       "Each code can only be used once": [
         "Minden kódot csak egyszer lehet felhasználni"

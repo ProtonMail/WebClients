@@ -308,7 +308,7 @@
         "Jeg har et spørgsmål"
       ],
       "Import": [
-        "Import"
+        "Importér"
       ],
       "import": [
         "importér"
@@ -790,54 +790,6 @@
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Ikke synkroniseret"
-      ],
-      "Syncing": [
-        "Synkroniserer"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender kunne ikke dekrypteres"
-      ],
-      "Calendar is syncing": [
-        "Kalender synkroniserer"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalender er ved at blive synkroniseret: Det kan tage flere minutter, før alle begivenhederne vises."
-      ],
-      "Calendar is too big": [
-        "Kalender er for stor"
-      ],
-      "Calendar link is not accessible": [
-        "Kalenderlink er ikke tilgængeligt"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Kalenderlink er midlertidig ikke tilgængeligt"
-      ],
-      "Failed to sync calendar": [
-        "Kunne ikke synkronisere kalender"
-      ],
-      "More than 12 hours passed since last update": [
-        "Der er gået mere end 12 timer siden den seneste opdatering"
-      ],
-      "Unsupported calendar format": [
-        "Ikke-understøttet kalenderformat"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Kalenderlinket er ikke tilgængeligt uden for kalenderudbyderens økosystem."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Der er gået mere end 12 timer siden sidste opdatering - ${ CALENDAR_APP_NAME } vil forsøge at opdatere kalenderen om et par timer."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Fold sammen"
@@ -933,7 +885,7 @@
         "Køn"
       ],
       "Geo": [
-        "Geo"
+        "Geolokalisering"
       ],
       "Language": [
         "Sprog"
@@ -948,7 +900,7 @@
         "Navn"
       ],
       "Note": [
-        "Note"
+        "Notat"
       ],
       "Organization": [
         "Organisation"
@@ -993,9 +945,6 @@
       ],
       "Work": [
         "Arbejde"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1141,7 +1090,7 @@
         "Kina"
       ],
       "Christmas Island": [
-        "Christmas Island"
+        "Juleøen"
       ],
       "Cocos (Keeling) Islands": [
         "Cocosøerne"
@@ -1930,14 +1879,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Fravælg mindst ${ calendarToFixCount } kalender",
-        "Fravælg mindst ${ calendarToFixCount } kalendere"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Fravælg mindst ${ calendarToFixCount } kalender eller",
-        "Fravælg mindst ${ calendarToFixCount } kalendere eller"
-      ],
       "Device name does not match": [
         "Enhedens navn matcher ikke"
       ],
@@ -2000,10 +1941,6 @@
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Flet mindst ${ calendarToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
-        "Flet mindst ${ calendarToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
       ],
       "Missing key packet": [
         "Manglende nøglepakke"
@@ -2163,9 +2100,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Du kan ikke sende vCard-filer med mere end 10 kontakter"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -2537,9 +2471,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -2548,9 +2479,6 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2561,6 +2489,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret.",
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. Ingen begivenhed kunne importeres."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. Ingen begivenheder kunne importeres."
@@ -2781,9 +2712,6 @@
       ],
       "ICS file": [
         "ICS fil"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3531,9 +3459,6 @@
       "Select what you want to import.": [
         "Vælg, hvad du ønsker at importere."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
@@ -3882,9 +3807,6 @@
       ],
       "Trusted": [
         "Betroet"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4208,7 +4130,7 @@
         "Offentlige nøgler"
       ],
       "Region": [
-        "Region"
+        "Område"
       ],
       "Replace file": [
         "Erstat fil"
@@ -4351,6 +4273,17 @@
     "Landmarks": {
       "Side panel": [
         "Sidepanel"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "For at tilføje en ny kalender, skal du fjerne en eksisterende kalender."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "For at tilføje en ny kalender, skal du fjerne en anden kalender eller opgradere dit ${ BRAND_NAME }-abonnement til et betalt ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du har nået det maksimale antal kalendere, der er tilgængelige i dit abonnement."
       ]
     },
     "Link": {
@@ -5071,7 +5004,7 @@
         "CSV-felt"
       ],
       "Import": [
-        "Import"
+        "Importér"
       ],
       "Name": [
         "Navn"
@@ -5222,7 +5155,7 @@
         "Tilpas din mail-import"
       ],
       "Date": [
-        "Date"
+        "Dato"
       ],
       "Decrypting": [
         "Dekrypterer"

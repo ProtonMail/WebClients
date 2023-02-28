@@ -1203,16 +1203,6 @@
         "Yazışma"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Hoş geldiniz"
@@ -1604,54 +1594,6 @@
         "E-posta adresiniz katılımcılar listesinde yok"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Eşitlenmemiş"
-      ],
-      "Syncing": [
-        "Eşitleniyor"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Takvimin şifresi çözülemedi"
-      ],
-      "Calendar is syncing": [
-        "Takvim eşitleniyor"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir."
-      ],
-      "Calendar is too big": [
-        "Takvim çok büyük"
-      ],
-      "Calendar link is not accessible": [
-        "Takvim bağlantısına erişilemiyor"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Takvim bağlantısına geçici olarak erişilemiyor"
-      ],
-      "Failed to sync calendar": [
-        "Takvim eşitlenemedi"
-      ],
-      "More than 12 hours passed since last update": [
-        "Son güncellemeden bu yana 12 saatten fazla zaman geçti"
-      ],
-      "Unsupported calendar format": [
-        "Takvim biçimi desteklenmiyor"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Takvim bağlantısına, takvim hizmeti sağlayıcısının ekosistemi dışından erişilemez."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Takvim bağlantısına geçici olarak erişilemiyor. Lütfen takvim hizmeti sağlayıcısı bağlantısının hala geçerli olduğunu doğrulayın."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. ${ CALENDAR_APP_NAME }, takvimi birkaç saat içinde güncellemeye çalışacak."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Etkinlik zaten bitmiş"
@@ -1992,9 +1934,6 @@
       ],
       "Work": [
         "İş"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2014,7 +1953,7 @@
         "Amerikan Samoası"
       ],
       "Andorra": [
-        "Andorra"
+        "Andora"
       ],
       "Angola": [
         "Angola"
@@ -2883,7 +2822,7 @@
         "Henüz bir etiket yok"
       ],
       "ProtonMail logo and a plus sign": [
-        "ProtonMail logosu ve bir artı işareti"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
@@ -3098,14 +3037,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Şifre çözme hatası: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "En az ${ calendarToFixCount } takvimi kaldırın",
-        "En az ${ calendarToFixCount } takvimi kaldırın"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "En az ${ calendarToFixCount } takvimi kaldırın ya da",
-        "En az ${ calendarToFixCount } takvimi kaldırın ya da"
-      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -3183,10 +3114,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Eklenebilecek en fazla dosya sayısı (${ attachmentsCountLimit }) sınırı aşıldı"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin",
-        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin"
       ],
       "Message needs to be sent first": [
         "Öncelikle iletinin gönderilmesi gerekiyor"
@@ -3409,9 +3336,6 @@
       ],
       "You did not provide a file.": [
         "Bir dosya seçmediniz."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Kişisel takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -4010,9 +3934,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-posta"
       ],
@@ -4021,9 +3942,6 @@
       ],
       "No verification method available": [
         "Kullanılabilecek bir doğrulama yöntemi yok"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4043,6 +3961,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
@@ -4169,17 +4090,11 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
-      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
-      ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -4271,9 +4186,6 @@
       ],
       "ICS file": [
         "ICS dosyası"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5186,9 +5098,6 @@
       "Select what you want to import.": [
         "İçe aktarmak istediklerinizi seçin."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "${ boldText } e-posta adresine şifrelenmiş ve parola ile korunan bir ileti gönderin."
       ],
@@ -5486,9 +5395,6 @@
       "Using SimpleLogin is easy": [
         "SimpleLogin kullanmak kolaydır"
       ],
-      "Verified ${ BRAND_NAME } message": [
-        "Doğrulanmış ${ BRAND_NAME } iletisi"
-      ],
       "Version ${ appVersion }": [
         "Sürüm ${ appVersion }"
       ],
@@ -5713,9 +5619,6 @@
       ],
       "Trusted": [
         "Güvenilmiş"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6479,13 +6382,13 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Yeni bir takvim eklemek için var olan bir takvimi silin."
+        "Yeni bir takvim eklemek için var olan bir takvimi kaldırın."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Yeni bir takvim eklemek için başka bir takvimi silin ya da ${ BRAND_NAME } tarifenizi ücretli ${ MAIL_SHORT_APP_NAME } tarifesine yükseltin."
+        "Yeni bir takvim eklemek için başka bir takvimi kaldırın ya da ${ BRAND_NAME } tarifenizi ${ MAIL_SHORT_APP_NAME } ücretli tarifesine yükseltin."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
-        "Tarifenizin kullanılabilecek en fazla takvim sayısına ulaştınız."
+        "Tarifenizle kullanabileceğiniz en fazla takvim sayısına ulaştınız."
       ]
     },
     "Link": {
@@ -6966,9 +6869,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

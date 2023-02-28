@@ -1208,16 +1208,6 @@
         "Цепочка писем"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Добро пожаловать"
@@ -1611,54 +1601,6 @@
         "Ваш адрес электронной почты отсутствует в списке участников"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Не синхронизировано"
-      ],
-      "Syncing": [
-        "Синхронизация"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Календарь не может быть расшифрован"
-      ],
-      "Calendar is syncing": [
-        "Календарь синхронизируется"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Календарь синхронизируется: может понадобиться несколько минут, чтобы показать все события."
-      ],
-      "Calendar is too big": [
-        "Календарь слишком большой"
-      ],
-      "Calendar link is not accessible": [
-        "Ссылка на календарь недоступна"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Ссылка на календарь временно недоступна"
-      ],
-      "Failed to sync calendar": [
-        "Не удалось синхронизировать календарь"
-      ],
-      "More than 12 hours passed since last update": [
-        "Более 12 часов прошло с момента последнего обновления"
-      ],
-      "Unsupported calendar format": [
-        "Неподдерживаемый формат календаря"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Ссылка на календарь недоступна вне экосистемы, в которой он был создан."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "С момента последнего обновления прошло более 12 часов - ${ CALENDAR_APP_NAME } попытается обновить календарь через несколько часов."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Событие уже закончилось"
@@ -1677,7 +1619,7 @@
     },
     "color": {
       "apple": [
-        "apple"
+        "яблочный"
       ],
       "azureish white": [
         "лазурно-белый"
@@ -2900,7 +2842,7 @@
         "Нет ярлыков"
       ],
       "ProtonMail logo and a plus sign": [
-        "Логотип Proton Mail и знак плюс"
+        "Proton Mail logo and a plus sign"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
@@ -3121,18 +3063,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ошибка расшифровки: не удалось расшифровать зашифрованное содержимое сообщения."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
-      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
@@ -3210,12 +3140,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Превышено максимальное количество вложений (${ attachmentsCountLimit })"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Сначала нужно отправить сообщение"
@@ -3450,9 +3374,6 @@
       ],
       "You did not provide a file.": [
         "Вы не предоставили файл."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
       ],
       "You must set a name": [
         "Вы должны задать имя"
@@ -4069,9 +3990,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Эл. почта"
       ],
@@ -4082,7 +4000,7 @@
         "Нет доступных способов проверки"
       ],
       "SMS": [
-        "SMS"
+        "СМС"
       ]
     },
     "ICS widget label for event details": {
@@ -4108,6 +4026,9 @@
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Произошла ошибка при шифровании и добавлении ваших событий. Не удалось импортировать ни одно событие."
@@ -4344,9 +4265,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -5361,9 +5279,6 @@
       "Select what you want to import.": [
         "Выберите то, что вы хотите импортировать."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Отправьте зашифрованное, защищенное паролем сообщение на адрес электронной почты ${ boldText }."
       ],
@@ -5662,13 +5577,10 @@
         "Используйте ${ CALENDAR_APP_NAME }, чтобы сохранить свою повестку дня в конфиденциальной."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        "Use keyboard shortcuts to manage your email faster."
+        "Используйте горячие клавиши, чтобы работать с почтой быстрее."
       ],
       "Using SimpleLogin is easy": [
         "Использовать SimpleLogin просто"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Проверено сообщение ${ BRAND_NAME }"
       ],
       "Version ${ appVersion }": [
         "Версия ${ appVersion }"
@@ -5912,9 +5824,6 @@
       ],
       "Trusted": [
         "Надежный"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6685,7 +6594,7 @@
         "Чтобы добавить новый календарь, удалите существующий."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Чтобы добавить новый календарь, удалите другой календарь или улучшите тариф ${ BRAND_NAME } до платного тарифа ${ MAIL_SHORT_APP_NAME }."
+        "Чтобы добавить новый календарь, удалите другой календарь или улучшите свой тариф ${ BRAND_NAME } до платного тарифа ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Вы достигли максимального количества календарей, доступных в вашем тарифе."
@@ -7185,9 +7094,6 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Получите неограниченное количество псевдонимов с SimpleLogin, предоставляемого ${ BRAND_NAME }"
-      ],
-      "Storage space is shared accross ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {

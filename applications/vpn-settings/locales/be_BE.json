@@ -406,11 +406,11 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Працягнуць карыстацца бясплатным тарыфным планам"
+      "No, thanks": [
+        "Не, дзякуй"
       ],
-      "Start my 30-day free trial": [
-        "Пачаць мой 30-дзённы бясплатны выпрабавальны перыяд"
+      "Try free for 30 days": [
+        "Паспрабуйце бясплатна на працягу 30 дзён"
       ]
     },
     "Addon": {
@@ -435,6 +435,11 @@
     "Badge": {
       "5 users": [
         "5 карыстальнікаў"
+      ]
+    },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: пошта і каляндар з акцэнтам на прыватнасць, як рашэнне для штодзённых задач камунікацыі."
       ]
     },
     "Billing cycle": {
@@ -1826,10 +1831,12 @@
         "Атрымаць даведку"
       ]
     },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Паспрабуйце лепшы з ${ MAIL_APP_NAME } бясплатна"
+      ]
+    },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -1838,9 +1845,6 @@
       ],
       "No verification method available": [
         "Няма даступных спосабаў праверкі"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -1868,6 +1872,9 @@
         "${ number } сервераў",
         "${ number } серверы"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } сховішча"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Для выбару злучэння на ўзроўні краіны патрабуецца тарыфны план ${ vpnPlus }."
       ],
@@ -1885,6 +1892,9 @@
         "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)",
         "+${ organization.BonusVPN } злучэнняў з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)",
         "+${ organization.BonusVPN } злучэнні з VPN для ${ VPN_APP_NAME } (можна падлучыць больш прылад да VPN)"
+      ],
+      "10 email addresses": [
+        "10 адрасоў электроннай пошты"
       ],
       "30-day money-back guarantee.": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
@@ -2159,6 +2169,9 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
+      "No credit card required": [
+        "Крэдытная картка не патрабуецца"
+      ],
       "No payment is required at this time.": [
         "Зараз аплата не патрабуецца."
       ],
@@ -2183,12 +2196,6 @@
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
       ],
-      "P2P": [
-        "P2P"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Поўная праверка плацяжу можа заняць некалькі хвілін."
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
@@ -2204,17 +2211,11 @@
       "Please provide an email address in case we need to contact you.": [
         "Пазначце адрас электроннай пошты на выпадак, калі нам спатрэбіцца звязацца з вамі."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі PayPal."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Праверце плацеж у новай адкрытай укладцы."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Праверце картку ў новай адкрытай укладцы."
       ],
       "Please wait till your changes are synced with the server.": [
         "Пачакайце, пакуль вашы змены сінхранізуюцца з серверам."
@@ -2230,6 +2231,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
       ],
       "read our two-factor authentication guide first": [
         "спачатку прачытайце наш дапаможнік па двухфактарнай аўтэнтыфікацыі"
@@ -2272,6 +2276,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
+      ],
+      "Support for 1 custom email domain": [
+        "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
       ],
       "support team": [
         "каманда падтрымкі"
@@ -2336,9 +2346,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Папаўняйце свой уліковы запіс крэдытамі, якія вы можаце выкарыстоўваць для падпіскі на новы тарыфны план або падаўжэння свайго бягучага тарыфнага плана. Вы атрымліваеце адзін крэдыт за кожны выдаткаваны ${ i18nCurrency }."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Усяго адрасоў электроннай пошты"
       ],
@@ -2366,6 +2373,12 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць метады аднаўлення."
       ],
+      "Unlimited folders, labels, and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Unlimited messages": [
+        "Неабмежаваная колькасць паведамленняў"
+      ],
       "Unsaved changes": [
         "Незахаваныя змены"
       ],
@@ -2383,9 +2396,6 @@
       ],
       "Verification can take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
@@ -2460,22 +2470,28 @@
         "Вы можаце наладжваць і спампоўваць свае рахункі, каб весці ўлік выдаткаў."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календара. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календара. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар і ўсіх карыстальнікаў ${ BRAND_NAME }, з якімі вы абагулілі вашы календары перад тым, як скасаваць сваю падпіску."
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календара. Выдаліце абагуленыя спасылкі на каляндар перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце мець да ${ MAX_CALENDARS_FREE } календароў. Выдаліце абагуленыя спасылкі на каляндар перад тым, як скасаваць сваю падпіску."
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Толькі адзін экзэмпляр чата можа быць адкрыты адначасова. Закрыйце папярэднюю размову перад тым, як пачаць новую."
@@ -2510,9 +2526,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Вы ${ loseAllData } у вашым уліковым запісе ${ BRAND_NAME }. Для аднаўлення доступу, вам неабходна будзе ўвесці свой стары пароль."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Неўзабаве вы будзеце перанакіраваны на сайт вашага банка для праверкі плацяжу."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
@@ -2543,9 +2556,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш уліковы запіс будзе абноўлены, калі плацеж будзе правераны."
       ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Ваш банк патрабуе праверку 3-D Secure у мэтах бяспекі."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
@@ -2560,32 +2570,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ]
-    },
-    "info": {
-      "Create an email address": [
-        "Стварыце паштовы адрас"
-      ],
-      "Day 27: Trial reminder": [
-        "Дзень 27: Нагадванне пра выпрабавальны перыяд"
-      ],
-      "Day 30: Trial ends": [
-        "Дзень 30: Выпрабавальны перыяд завяршыўся"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Атрымлівайце асалоду ад бяспечнай і простай у выкарыстанні электроннай пошты з вялікай колькасцю прэміяльных функцый."
-      ],
-      "Try Mail Plus": [
-        "Паспрабуйце Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Мы адправім вам ліст перад завяршэннем выпрабавальнага перыяду. Скасаваць можна ў любы час."
-      ],
-      "Your new email address is ready to go!": [
-        "Ваш новы паштовы адрас гатовы да выкарыстання!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Ваша падпіска пачынаецца ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -2606,6 +2590,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Каб пазбегнуць перапынку ў абслугоўванні па прычыне неаплачаных рахункаў, пераканайцеся, што ў любы момант часу ў вас застаецца як мінімум адзін рабочы спосаб аплаты."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Толькі прагляд"
       ]
     },
     "Invoice state display as badge": {
@@ -2958,9 +2947,6 @@
       "Verification code": [
         "Праверачны код"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа палепшыць наш сэрвіс."
       ],
@@ -3288,7 +3274,7 @@
         "Аўтаматычны адказ"
       ],
       "Calendar sharing": [
-        "Абагуленне календара"
+        "Абагулены каляндар"
       ],
       "Catch-all": [
         "Уся пошта дамена"
@@ -3355,9 +3341,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "Блакіроўшчык рэкламы і шкодных праграм NetShield"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "Лісты абаронены паролем"
@@ -3641,7 +3624,7 @@
         "Без намаганняў абагульвайце свае календары праз спасылку з сям'ёй, сябрамі або калегамі"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Без намаганняў абагульвайце свае календары з сям'ёй, сябрамі або калегамі"
+        "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
       ],
       "End-to-end encrypted calendar": [
         "Каляндар зашыфраваны скразным метадам"
@@ -3816,17 +3799,11 @@
       ]
     },
     "Option": {
-      "Android": [
-        "Android"
-      ],
       "Country configs": [
         "Канфігурацыі краіны"
       ],
       "Free server configs": [
         "Канфігурацыі бясплатнага сервера"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Я знайшоў больш прывабны сэрвіс"
@@ -3834,17 +3811,11 @@
       "I use a different ${ BRAND_NAME } account": [
         "Я выкарыстоўваю іншы ўліковы запіс ${ BRAND_NAME }"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "У вас адсутнічае важная функцыя, якая мне неабходна"
       ],
       "It's too expensive": [
         "Занадта дорага"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Нічога з пералічанага"
@@ -3857,29 +3828,14 @@
       ],
       "Standard server configs": [
         "Канфігурацыі стандартнага сервера"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Банкаўская картка"
       ],
       "New credit/debit card": [
         "Новая банкаўская картка"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Placeholder": {
@@ -3963,6 +3919,9 @@
       "Verify now": [
         "Праверыць зараз"
       ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Праверыць гэты адрас электроннай пошты для аднаўлення доступу: ${ email.Value }"
+      ],
       "Verify recovery email?": [
         "Праверыць электронную пошту для аднаўлення доступу?"
       ],
@@ -4005,6 +3964,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Праверка вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Створана ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -4147,10 +4111,10 @@
     },
     "Subscription change warning": {
       "Subscription managed elsewhere": [
-        "Кіраванне падпіскай адбываецца ў іншым месцы"
+        "Manage your subscription on Google Play"
       ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Вы набылі падпіску праз куплю ў праграме. Каб кіраваць ёй, вам неабходна перайсці ў раздзел \"Падпіска\" ў сваім уліковым запісе ${ subscriptionManager }"
+        "Падпіска была здзейснена праз куплю ў праграме. Для кіравання вашай бягучай падпіскай, вам неабходна перайсці ў раздзел з падпіскамі вашага ўліковага запісу ${ subscriptionManager }"
       ]
     },
     "Subscription price": {
@@ -4169,11 +4133,6 @@
       ],
       "Upcoming": [
         "Надыходзячы"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Гэта прапанова дзейнічае толькі для тых, хто карыстаецца ${ BRAND_NAME } упершыню. Даныя крэдытнай карткі не патрабуюцца."
       ]
     },
     "Success": {
@@ -4314,9 +4273,6 @@
       "2. Select protocol": [
         "2. Выберыце пратакол"
       ],
-      "3-D Secure verification failed": [
-        "Не ўдалося ажыццявіць праверку 3-D Secure"
-      ],
       "3. Select config file and download": [
         "3. Выберыце файл канфігурацыі і спампуйце яго"
       ],
@@ -4370,9 +4326,6 @@
       ],
       "Card verification": [
         "Праверка карткі"
-      ],
-      "Card verification in progress": [
-        "Выконваецца праверка карткі"
       ],
       "Change login password": [
         "Змяніць пароль уваходу"
@@ -4476,9 +4429,6 @@
       "Gift code": [
         "Падарункавы код"
       ],
-      "How your free trial works": [
-        "Як працуе бясплатны выпрабавальны перыяд"
-      ],
       "Human verification": [
         "Антыспамавая праверка"
       ],
@@ -4532,9 +4482,6 @@
       ],
       "Payment verification": [
         "Праверка плацяжу"
-      ],
-      "Payment verification in progress": [
-        "Выконваецца праверка плацяжу"
       ],
       "Payments": [
         "Плацяжы"
@@ -4750,29 +4697,6 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

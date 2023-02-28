@@ -687,11 +687,6 @@
         "Необязательно"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "Скоро появится"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Бета-доступ позволит вам использовать бета-версию ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } до их публичного выпуска. Это означает, что вы сможете первыми опробовать новые продукты, получать обновления и использовать новые функции."
@@ -2190,18 +2185,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Ошибка расшифровки: не удалось расшифровать содержимое этого события."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
-      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
@@ -2279,12 +2262,6 @@
       ],
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
@@ -2468,9 +2445,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Вы не можете отправлять файлы vCard, содержащие более 10 контактов"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
       ],
       "You must set a name": [
         "Вы должны задать имя"
@@ -2695,11 +2669,11 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } участник",
-        "${ numberOfParticipants } участника",
-        "${ numberOfParticipants } участников",
-        "${ numberOfParticipants } участников"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } участник",
+        "${ numberOfAttendees } участника",
+        "${ numberOfAttendees } участников",
+        "${ numberOfAttendees } участников"
       ]
     },
     "Event info. Organizer name": {
@@ -2889,9 +2863,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Эл. почта"
       ],
@@ -2902,7 +2873,7 @@
         "Нет доступных способов проверки"
       ],
       "SMS": [
-        "SMS"
+        "СМС"
       ]
     },
     "Import calendar": {
@@ -2917,6 +2888,9 @@
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Произошла ошибка при шифровании и добавлении ваших событий. Не удалось импортировать ни одно событие."
@@ -3145,9 +3119,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3351,12 +3322,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Каждый, кто имеет эту ссылку, может увидеть все подробности события из этого календаря, такие как название, местоположение или участников."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участника",
-        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников",
-        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников",
-        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников"
       ],
       "Attention required": [
         "Требуется внимание"
@@ -3661,9 +3626,6 @@
       "Select what you want to import.": [
         "Выберите то, что вы хотите импортировать."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -3910,6 +3872,11 @@
         "Нажмите, чтобы узнать подробности"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Только просмотр"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "В некоторых календарях не будет отображаться информация о ранее созданных событиях."
@@ -3936,6 +3903,17 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Вы можете настроить совместное использования ваших календарей в настройках."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участника",
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участников",
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участников",
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участников"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Создание приглашений в общем календаре не разрешается"
       ]
     },
     "Input label": {
@@ -3969,9 +3947,6 @@
       ],
       "Trusted": [
         "Надежный"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4339,7 +4314,7 @@
         "Чтобы добавить новый календарь, удалите существующий."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Чтобы добавить новый календарь, удалите другой календарь или улучшите тариф ${ BRAND_NAME } до платного тарифа ${ MAIL_SHORT_APP_NAME }."
+        "Чтобы добавить новый календарь, удалите другой календарь или улучшите свой тариф ${ BRAND_NAME } до платного тарифа ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Вы достигли максимального количества календарей, доступных в вашем тарифе."

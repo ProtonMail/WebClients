@@ -309,9 +309,6 @@
       "Edit billing details": [
         "Modifica i dettagli di fatturazione"
       ],
-      "Edit display name": [
-        "Modifica nome visualizzato"
-      ],
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
@@ -517,7 +514,7 @@
         "OK"
       ],
       "Ok": [
-        "Ok"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -907,11 +904,11 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Continua con il piano gratuito"
+      "No, thanks": [
+        "No, grazie"
       ],
-      "Start my 30-day free trial": [
-        "Inizia la mia prova gratuita di 30 giorni"
+      "Try free for 30 days": [
+        "Prova gratis per 30 giorni"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1025,9 +1022,6 @@
     "Badge": {
       "5 users": [
         "5 utenti"
-      ],
-      "Coming soon": [
-        "In arrivo"
       ]
     },
     "Badge for domain": {
@@ -1044,6 +1038,11 @@
     "Badge for user sessions table": {
       "Current session": [
         "Sessione corrente"
+      ]
+    },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: la soluzione di posta e calendario incentrata sulla privacy per le tue esigenze di comunicazione quotidiane."
       ]
     },
     "Billing cycle": {
@@ -1376,7 +1375,7 @@
     },
     "color": {
       "apple": [
-        "apple"
+        "mela"
       ],
       "azureish white": [
         "bianco azzurro"
@@ -1617,7 +1616,7 @@
         "Sesso"
       ],
       "Geo": [
-        "Geo"
+        "Geolocalizzazione"
       ],
       "Language": [
         "Lingua"
@@ -1677,9 +1676,6 @@
       ],
       "Work": [
         "Lavoro"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1732,7 +1728,7 @@
         "Austria"
       ],
       "Azerbaijan": [
-        "Azerbaijan"
+        "Azerbaigian"
       ],
       "Bahamas": [
         "Bahamas"
@@ -1816,7 +1812,7 @@
         "Repubblica Centrafricana"
       ],
       "Chad": [
-        "Chad"
+        "Ciad"
       ],
       "Chile": [
         "Cile"
@@ -2233,7 +2229,7 @@
         "Qatar"
       ],
       "Reunion": [
-        "Reunion"
+        "Riunione"
       ],
       "Romania": [
         "Romania"
@@ -2840,14 +2836,6 @@
       "Contact signature not verified": [
         "Firma del contatto non verificata"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deseleziona almeno ${ calendarToFixCount } calendario",
-        "Deseleziona almeno ${ calendarToFixCount } calendari"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Deseleziona almeno ${ calendarToFixCount } calendario o",
-        "Deseleziona almeno ${ calendarToFixCount } calendari o"
-      ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
       ],
@@ -2934,10 +2922,6 @@
       ],
       "Label name cannot be empty.": [
         "Il nome dell'etichetta non può essere vuoto."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Unisci almeno ${ calendarToFixCount } calendario con un calendario ${ BRAND_NAME } esistente",
-        "Unisci almeno ${ calendarToFixCount } calendari con calendari ${ BRAND_NAME } esistenti"
       ],
       "Missing key packet": [
         "Pacchetto chiavi mancante"
@@ -3204,9 +3188,6 @@
       ],
       "You have no invoices.": [
         "Non hai nessuna fattura."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Hai raggiunto il numero massimo di calendari personali. Alcuni calendari non possono essere importati."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Hai utilizzato tutti gli indirizzi del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo indirizzo."
@@ -3957,6 +3938,11 @@
         "Nome token"
       ]
     },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Prova il meglio di ${ MAIL_APP_NAME } gratuitamente"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Trovato ${ items.length } suggerimento, usa la tastiera per navigare.",
@@ -3967,9 +3953,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Email"
       ],
@@ -3991,6 +3974,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Si è verificato un errore durante la crittografia e l'aggiunta del tuo evento. ${ totalImported } su ${ totalToImport } evento importato con successo.",
         "Si è verificato un errore durante la crittografia e l'aggiunta dei tuoi eventi. ${ totalImported } su ${ totalToImport } eventi importati con successo."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Si è verificato un errore durante la crittografia e l'aggiunta dell'evento. Non è stato possibile importare alcun evento."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Si è verificato un errore durante la crittografia e l'aggiunta degli eventi. Non è stato possibile importare alcun evento."
@@ -4216,9 +4202,6 @@
       ],
       "ICS file": [
         "File ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4238,6 +4221,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importa da ${ provider }"
+      ],
       "Other": [
         "Altro"
       ]
@@ -5275,18 +5261,12 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Frase di recupero obsoleta; aggiornare per garantire l'accesso ai tuoi dati"
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Pagato per un piano di ${ rewardMonths } mese",
         "Pagato per un piano di ${ rewardMonths } mesi"
       ],
       "Paid for a monthly plan": [
         "Pagato per un piano mensile"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Il pagamento può richiedere alcuni minuti per una verifica completa."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "I pagamenti sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
@@ -5347,17 +5327,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Seleziona il tipo di link che vuoi inserire e compila tutti i campi."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Per favore riprova, usa un altro metodo di pagamento o contatta la tua banca per assistenza."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Per favore riprova, usa un altro metodo di pagamento o contatta PayPal per assistenza."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Per favore verifica il pagamento nella nuova scheda che è stata aperta."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Per favore verifica la carta nella nuova scheda che è stata aperta."
       ],
       "Please wait till your changes are synced with the server.": [
         "Attendi che le tue modifiche siano sincronizzate con il server."
@@ -5449,9 +5423,6 @@
       "Select what you want to import.": [
         "Seleziona cosa vuoi importare."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
-      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Inviato con l'email sicura di <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -5516,7 +5487,7 @@
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
       "Test link": [
-        "Test link"
+        "Link di test"
       ],
       "Text color": [
         "Colore del testo"
@@ -5686,9 +5657,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ricarica il tuo account con crediti che puoi utilizzare per sottoscrivere un nuovo piano o rinnovare il piano attuale. Si ottiene un credito per ogni ${ i18nCurrency } speso."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Totale indirizzi email"
       ],
@@ -5757,9 +5725,6 @@
       ],
       "Verification can take a few minutes.": [
         "La verifica può richiedere alcuni minuti."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco dei popup."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verifica aprirà una nuova scheda, per favore disabilita qualsiasi blocco popup. Non avrai addebiti. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
@@ -5881,6 +5846,14 @@
       "You can import one data type at a time.": [
         "Puoi importare un tipo di dati alla volta."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento.",
+        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link del calendario condiviso prima di annullare l'abbonamento.",
+        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link del calendario condiviso prima di annullare l'abbonamento."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Ora puoi accedere e gestire l'account come amministratore."
       ],
@@ -5911,9 +5884,6 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Non è stato impostato alcun metodo di recupero, quindi il recupero dell'account è impossibile se si dimentica la password. Procedere senza metodo di recupero?"
-      ],
-      "You have no calendars to export.": [
-        "Non hai calendari da esportare."
       ],
       "You have no saved payment methods.": [
         "Non hai salvato alcun metodo di pagamento."
@@ -5950,9 +5920,6 @@
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "${ loseAllData } nel tuo account ${ BRAND_NAME } . Per ripristinarlo, dovrai inserire la tua vecchia password."
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Sarai presto reindirizzato alla tua banca per verificare il pagamento."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Avrai bisogno di un indirizzo ${ BRAND_NAME } per utilizzare ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -5998,9 +5965,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "La tua banca richiede una verifica 3-D Secure per scopi di sicurezza."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
@@ -6050,32 +6014,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Rilevate chiavi aggiuntive duplicate. Si prega di caricare singolarmente per ulteriori informazioni."
       ],
-      "Create an email address": [
-        "Crea un indirizzo email"
-      ],
-      "Day 27: Trial reminder": [
-        "Giorno 27: Promemoria della prova"
-      ],
-      "Day 30: Trial ends": [
-        "Giorno 30: La prova finisce"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Goditi l'invio di email sicuro e facile da usare con molte funzionalità premium."
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Try Mail Plus": [
-        "Prova Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Ti invieremo un'email prima della fine del periodo di prova. Annulla in qualsiasi momento."
-      ],
-      "Your new email address is ready to go!": [
-        "Il tuo nuovo indirizzo email è pronto per partire!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Il tuo abbonamento inizia da ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6122,6 +6062,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Per evitare interruzioni di servizio dovute a fatture non pagate, assicurati di avere almeno 1 metodo di pagamento valido salvato in qualsiasi momento."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Visualizza soltanto"
       ]
     },
     "Input label": {
@@ -6472,7 +6417,7 @@
         "${ BRAND_NAME } email o nome utente"
       ],
       "${ BRAND_NAME } username": [
-        "${ BRAND_NAME } username"
+        "Nome utente ${ BRAND_NAME }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } di ${ humanMaxSpace }"
@@ -6933,7 +6878,7 @@
         "Link etichetta"
       ],
       "Mail Server (IMAP)": [
-        "Mail Server (IMAP)"
+        "Server di posta (IMAP)"
       ],
       "Mailbox password": [
         "Password della casella email"
@@ -7250,9 +7195,6 @@
       "Verification code": [
         "Codice di verifica"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Siamo spiacenti di vederti andare via. Spiegaci perché ci stai lasciando per aiutarci a migliorare."
       ],
@@ -7433,6 +7375,17 @@
       ],
       "Preference saved": [
         "Preferenze salvate"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Per aggiungere un nuovo calendario, rimuovi un calendario esistente."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Per aggiungere un nuovo calendario, rimuovi un calendario esistente o aggiorna il tuo piano ${ BRAND_NAME } a un piano ${ MAIL_SHORT_APP_NAME } a pagamento."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Hai raggiunto il numero massimo di calendari disponibili nel tuo piano."
       ]
     },
     "Link": {
@@ -7815,9 +7768,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Inbox": [
         "Posta in arrivo"
       ],
@@ -7922,10 +7872,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ n } calendar": [
-        "${ n } calendario",
-        "${ n } calendari"
-      ],
       "${ n } custom email domain": [
         "${ n } dominio email personalizzato",
         "${ n } domini email personalizzati"
@@ -8056,9 +8002,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "Blocco di pubblicità e malware NetShield"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "Email protette da password"
@@ -8703,9 +8646,6 @@
       "Add to existing group": [
         "Aggiungi al gruppo esistente"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "Chiedi ogni volta"
       ],
@@ -8727,9 +8667,6 @@
       "Free server configs": [
         "Configurazioni del server gratuite"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Ho trovato un altro servizio che mi piace di più"
       ],
@@ -8739,9 +8676,6 @@
       "Ignore group": [
         "Ignora gruppo"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Manca una caratteristica chiave di cui ho bisogno"
       ],
@@ -8750,9 +8684,6 @@
       ],
       "Left to Right": [
         "Da sinistra a destra"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Il motivo non è elencato"
@@ -8795,15 +8726,6 @@
       ],
       "Standard server configs": [
         "Configurazioni server standard"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -8883,9 +8805,6 @@
       ".dmg (10.12 or later)": [
         ".dmg (10.12 o successivi)"
       ],
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (per Fedora/openSUSE)"
       ],
@@ -8899,17 +8818,11 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Carta di credito/debito"
       ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -9651,9 +9564,6 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Aggiungi calendari pubblici, esterni o condivisi utilizzando un URL."
-      ],
-      "Add public, external, or shared calendars.": [
-        "Aggiungi calendari pubblici, esterni o condivisi."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9729,10 +9639,7 @@
     },
     "Subscription change warning": {
       "Subscription managed elsewhere": [
-        "Il tuo abbonamento è gestito altrove"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Il tuo abbonamento è stato effettuato tramite un acquisto in-app. Per gestire il tuo attuale abbonamento devi accedere alla sezione Sottoscrizione sul tuo account ${ subscriptionManager }"
+        "Manage your subscription on Google Play"
       ]
     },
     "Subscription price": {
@@ -9751,11 +9658,6 @@
       ],
       "Upcoming": [
         "In arrivo"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Questa offerta è riservata ai nuovi utenti di ${ BRAND_NAME }. Nessuna carta di credito richiesta."
       ]
     },
     "Success": {
@@ -10097,9 +9999,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } Scorciatoie da tastiera"
       ],
@@ -10114,9 +10013,6 @@
       ],
       "2. Select protocol": [
         "2. Seleziona protocollo"
-      ],
-      "3-D Secure verification failed": [
-        "Verifica 3-D Secure fallita"
       ],
       "3. Select config file and download": [
         "3. Seleziona file di configurazione e scarica"
@@ -10200,7 +10096,7 @@
         "Importo dovuto"
       ],
       "App": [
-        "App"
+        "Applicazione"
       ],
       "Appearance": [
         "Aspetto"
@@ -10237,9 +10133,6 @@
       ],
       "Card verification": [
         "Verifica della carta"
-      ],
-      "Card verification in progress": [
-        "Verifica della carta in corso"
       ],
       "Catch-All address": [
         "Indirizzi catch-all"
@@ -10525,17 +10418,11 @@
       "How to refer a friend and get credits": [
         "Come segnalare un amico e ottenere crediti"
       ],
-      "How your free trial works": [
-        "Come funziona la tua prova gratuita"
-      ],
       "Human verification": [
         "Verifica umana"
       ],
       "Identity and addresses": [
         "Identità e indirizzi"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "Importa"
@@ -10631,9 +10518,6 @@
       "Open pagination": [
         "Apri paginazione"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "File di configurazione di OpenVPN"
       ],
@@ -10642,9 +10526,6 @@
       ],
       "Organization and keys": [
         "Organizzazione e chiavi"
-      ],
-      "Other calendars": [
-        "Altri calendari"
       ],
       "Password": [
         "Password"
@@ -10660,9 +10541,6 @@
       ],
       "Payment verification": [
         "Verifica pagamento"
-      ],
-      "Payment verification in progress": [
-        "Verifica pagamento in corso"
       ],
       "PayPal verification failed": [
         "Verifica PayPal fallita"
@@ -10902,9 +10780,6 @@
       ],
       "What's new": [
         "Cosa c'è di nuovo"
-      ],
-      "WireGuard": [
-        "WireGuard"
       ],
       "WireGuard configuration": [
         "Configurazione WireGuard"
@@ -11255,29 +11130,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } paese",
         "${ numberOfServers } in ${ numberOfCountries } paesi"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

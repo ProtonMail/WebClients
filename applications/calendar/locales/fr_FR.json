@@ -683,11 +683,6 @@
         "Facultatif"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "Bientôt disponible"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "L'accès à la version bêta vous permet d'utiliser la version bêta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME } avant leur lancement public. Vous serez donc parmi les premiers à essayer les nouveaux produits, à recevoir les nouvelles mises à jour et à utiliser les nouvelles fonctionnalités."
@@ -1099,9 +1094,6 @@
       ],
       "Work": [
         "Bureau"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1262,7 +1254,7 @@
         "Congo"
       ],
       "Congo, Democratic Republic of the": [
-        "République démocratique du Congo"
+        "Congo - République démocratique du Congo"
       ],
       "Cook Islands": [
         "Îles Cook"
@@ -2160,14 +2152,6 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Erreur de déchiffrement : le contenu de cet événement n'a pas pu être déchiffré."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
-      ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
@@ -2245,10 +2229,6 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
-        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
       ],
       "Missing key packet": [
         "Il manque le paquet de clés."
@@ -2424,9 +2404,6 @@
       ],
       "You can't send vCard files of more than 10 contacts": [
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
       ],
       "You must set a name": [
         "Vous devez définir un nom."
@@ -2649,9 +2626,9 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } participant",
-        "${ numberOfParticipants } participants"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } participant",
+        "${ numberOfAttendees } participants"
       ]
     },
     "Event info. Organizer name": {
@@ -2854,6 +2831,9 @@
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } événement sur ${ totalToImport } a été importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } événements sur ${ totalToImport } ont été importés."
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. Aucun événement n'a pu être importé."
+      ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
       ],
@@ -2883,7 +2863,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Les invitations importées apparaissent dans ${ CALENDAR_APP_NAME } comme de simples événements sans les informations sur l'organisateur et les participants. Pour recevoir les mises à jour des événements et voir les participants, demandez aux organisateurs de vous inviter en utilisant votre adresse électronique ${ BRAND_NAME }."
+        "Les invitations importées apparaissent dans ${ CALENDAR_APP_NAME } sans les informations sur l'organisateur et les participants. Pour recevoir les mises à jour des événements et voir les participants, demandez aux organisateurs de vous inviter en utilisant votre adresse électronique ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Ce fichier contient une invitation à un événement :",
@@ -3073,9 +3053,6 @@
       ],
       "ICS file": [
         "fichier ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3237,10 +3214,6 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Toute personne ayant ce lien peut voir sur votre calendrier si vous êtes libre ou occupé. Les informations de l'événement (comme le titre, le lieu ou les participants) ne sont pas visibles."
-      ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Un maximum d'${ MAX_ATTENDEES } participant est autorisé par invitation.",
-        "Au maximum ${ MAX_ATTENDEES } participants sont autorisés par invitation."
       ],
       "Attention required": [
         "Attention requise"
@@ -3539,9 +3512,6 @@
       "Select what you want to import.": [
         "Sélectionnez ce que vous voulez importer."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
@@ -3788,6 +3758,11 @@
         "Cliquez pour plus de détails."
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Voir seulement"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Certains de vos calendriers n'afficheront pas les informations des événements précédemment créés."
@@ -3814,6 +3789,15 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "Vous pouvez repartager vos calendriers dans les paramètres."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "${ MAX_ATTENDEES } seul participant est autorisé par invitation.",
+        "Jusqu'à ${ MAX_ATTENDEES } participants sont autorisés par invitation."
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Il n'est pas permis de créer des invitations dans un calendrier partagé."
       ]
     },
     "Input label": {
@@ -4210,6 +4194,17 @@
         "Panneau latéral"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Pour ajouter un nouveau calendrier, supprimez d'abord un calendrier existant."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Pour ajouter un nouveau calendrier, vous devez d'abord supprimer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Vous avez atteint le nombre maximum de calendriers prévus dans votre abonnement."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Calendriers"
@@ -4321,6 +4316,9 @@
       ],
       "Manage calendars": [
         "Gérer les calendriers"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4338,7 +4336,7 @@
     },
     "Modal title": {
       "Cannot add more calendars": [
-        "Impossible d'ajouter d'autres calendriers"
+        "Il n'est pas possible d'ajouter d'autres calendriers."
       ],
       "How to import calendars from another service": [
         "Comment importer des calendriers depuis un autre service"
@@ -5727,8 +5725,8 @@
         "Vérification humaine"
       ],
       "Import as simple event?": [
-        "Importer comme simple événement ?",
-        "Importer comme simples événements ?"
+        "Importer l'événement sans les détails ?",
+        "Importer les événements sans les détails ?"
       ],
       "Import contacts": [
         "Importer les contacts"
