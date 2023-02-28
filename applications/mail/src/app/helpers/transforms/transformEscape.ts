@@ -56,7 +56,7 @@ export const attachBase64 = (element: Element, cache: Base64Cache) => {
  * @param content String in which we want to remove all comments
  */
 export const removeHTMLComments = (content = '') => {
-    return content.replaceAll(/<!--(.*?)-->/g, '');
+    return content.replaceAll(/<!--[\s\S]*?-->/g, '');
 };
 
 /**
