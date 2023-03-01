@@ -92,15 +92,12 @@ const CalendarMemberRow = ({
         <SelectTwo
             loading={isLoadingPermissionsUpdate}
             value={perms}
-            // TODO: remove dummy true condition when change of permissions is implemented
-            disabled={true || !canEdit}
+            disabled={!canEdit}
             onChange={handleChangePermissions}
         >
-            {availablePermissions
-                .filter(([stringifiedPermission]) => +stringifiedPermission === perms)
-                .map(([value, label]) => (
-                    <Option key={value} value={+value} title={label} />
-                ))}
+            {availablePermissions.map(([value, label]) => (
+                <Option key={value} value={+value} title={label} />
+            ))}
         </SelectTwo>
     );
 
