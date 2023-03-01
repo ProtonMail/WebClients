@@ -16,22 +16,6 @@ export const MAP_TAGS = {
 };
 
 /**
- * Replace custom unicode escape for chevrons by default
- * Replace <> (for a tag) via unicode or reverse it
- * mode undefined for toUnicode, reverse for unicode -> <|>
- */
-export function unicodeTag(input = '', mode: 'reverse' | undefined) {
-    if (mode === 'reverse') {
-        const matchTagUnicodeOpenClose = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE}|${CLOSE_TAG_AUTOCOMPLETE}`, 'ig');
-
-        return input.replace(matchTagUnicodeOpenClose(), (match) => MAP_TAGS[match] || '');
-    }
-
-    const matchTagOpenClose = () => new RegExp(`${OPEN_TAG_AUTOCOMPLETE_RAW}|${CLOSE_TAG_AUTOCOMPLETE_RAW}`, 'ig');
-    return input.replace(matchTagOpenClose(), (match) => MAP_TAGS[match] || '');
-}
-
-/**
  * Converts the integer to a 32-bit base encoded string in 2s complement format, so that it doesn't contain a sign "-"
  * @param val The integer to be encoded
  * @param bits The amount of bits per character

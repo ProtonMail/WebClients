@@ -68,14 +68,6 @@ export const formatDownload = async (
  * Generate a download for an attachment
  */
 export const generateDownload = async (download: Download /* , message: MessageExtended */) => {
-    // TODO: uncomment
-    // try {
-    //     await checkAllSignatures(message, [attachment]);
-    // } catch (e: any) {
-    //     // swallow as the user is informed already by a confirmation and actually caused this error
-    //     return;
-    // }
-
     let mimeType = download.attachment.MIMEType;
 
     // Since version 98, PDF are opened instead of being downloaded in Firefox
@@ -123,20 +115,12 @@ export const formatDownloadAll = async (
     );
 };
 
-const getZipAttachmentName = (message: Pick<Message, 'Subject'>) => `Attachments-${message.Subject}.zip`;
+export const getZipAttachmentName = (message: Pick<Message, 'Subject'>) => `Attachments-${message.Subject}.zip`;
 
 /**
  * Zip and trigger download of a list of download objects
  */
 export const generateDownloadAll = async (message: Pick<Message, 'Subject'>, list: Download[]) => {
-    // TODO: uncomment
-    // try {
-    //     await checkAllSignatures(message, list);
-    // } catch (e: any) {
-    //     // swallow as the user is informed already by a confirmation and actually caused this error
-    //     return;
-    // }
-
     const zip = new JSZip();
     list.forEach(({ attachment: { Name = '' }, data }) => zip.file(Name, data));
     const content = await zip.generateAsync({ type: 'blob' });
