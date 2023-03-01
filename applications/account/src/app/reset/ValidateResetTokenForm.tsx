@@ -49,7 +49,7 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
             <ValidateResetTokenConfirmModal
                 onClose={() => setConfirmModal(false)}
                 onConfirm={() => {
-                    withLoading(onSubmit(token)).catch(noop);
+                    withLoading(onSubmit(token.trim())).catch(noop);
                 }}
                 open={confirmModal}
             />
