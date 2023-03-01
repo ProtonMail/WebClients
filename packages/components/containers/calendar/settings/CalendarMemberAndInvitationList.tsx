@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { Alert } from '@proton/components/components';
 import { useApi, useNotifications } from '@proton/components/hooks';
-import { updateInvitation, updateMember } from '@proton/shared/lib/api/calendars';
+import { updateInvitation, updateMemberPermission } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import {
@@ -97,7 +97,7 @@ const CalendarMemberAndInvitationList = ({
                                 canEdit={canEdit}
                                 onDelete={() => onDeleteMember(ID)}
                                 onPermissionsUpdate={async (newPermissions) => {
-                                    await api(updateMember(calendarID, ID, { Permissions: newPermissions }));
+                                    await api(updateMemberPermission(calendarID, ID, { Permissions: newPermissions }));
                                     showPermissionChangeSuccessNotification(contactEmail);
                                 }}
                             />
