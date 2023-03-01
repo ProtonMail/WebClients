@@ -7,4 +7,5 @@
 
 .item-sender-image {
 	background-color: white; // background color forced to display sender image logo
+	transform: scale(1.0); // crazy fix for bleeding bg color on radius.
 }
