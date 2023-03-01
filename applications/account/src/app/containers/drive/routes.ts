@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { SectionConfig } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 

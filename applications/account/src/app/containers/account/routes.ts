@@ -1,9 +1,10 @@
 import { c } from 'ttag';
-import { SectionConfig } from '@proton/components';
+
 import { ThemeColor } from '@proton/colors';
+import { SectionConfig } from '@proton/components';
 import { BRAND_NAME, DEFAULT_CURRENCY, PRODUCT_NAMES, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
-import { UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
+import { UserModel, UserType } from '@proton/shared/lib/interfaces';
 
 import { recoveryIds } from './recoveryIds';
 

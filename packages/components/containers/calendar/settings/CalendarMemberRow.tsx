@@ -100,8 +100,7 @@ const CalendarMemberRow = ({
                 .filter(([stringifiedPermission]) => +stringifiedPermission === perms)
                 .map(([value, label]) => (
                     <Option key={value} value={+value} title={label} />
-                ))
-            }
+                ))}
         </SelectTwo>
     );
 

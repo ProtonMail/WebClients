@@ -122,7 +122,7 @@ const MessageBodyImage = ({
     if (showImage) {
         // attributes are the provided by the code just above, coming from original message source
         // eslint-disable-next-line jsx-a11y/alt-text
-        return <img ref={imageRef} src={url} loading="lazy" onError={handleError}  />;
+        return <img ref={imageRef} src={url} loading="lazy" onError={handleError} />;
     }
 
     const showLoader = status === 'loading';

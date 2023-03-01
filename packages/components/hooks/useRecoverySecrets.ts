@@ -1,4 +1,5 @@
 import { getRecoverySecrets } from '@proton/shared/lib/recoveryFile/recoveryFile';
+
 import { useUser } from './useUser';
 
 const useRecoverySecrets = () => {
