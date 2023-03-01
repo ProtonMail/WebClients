@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -56,14 +55,10 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                 </AppLink>
                 <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-column">
                     <div className="ml1 on-mobile-ml0">
-                        <ButtonLike
-                            className="text-semibold"
-                            shape="outline"
-                            color="norm"
-                            pill
-                            as={Link}
-                            to="/signup"
-                        >{c('Link').t`Sign up for free`}</ButtonLike>
+                        <Href href="/signup" target="_self">
+                            <ButtonLike className="text-semibold" shape="outline" color="norm" pill>{c('Link')
+                                .t`Sign up for free`}</ButtonLike>
+                        </Href>
                     </div>
                 </div>
             </header>
