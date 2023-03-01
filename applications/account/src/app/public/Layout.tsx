@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Href, ProtonLogo, PublicTopBanners, classnames, getAppVersion, useConfig } from '@proton/components';
+import { Href, ProtonLogo, PublicTopBanners, getAppVersion, useConfig } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -30,7 +30,7 @@ const Layout = ({ children, hasDecoration, bottomRight, onBack, headerClassName 
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
 
-    const protonLogo = <ProtonLogo variant="full" className={classnames([onBack && 'on-mobile-ml1'])} />;
+    const protonLogo = <ProtonLogo variant="full" className={clsx(onBack && 'on-mobile-ml1')} />;
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">

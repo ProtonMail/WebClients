@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
     children: React.ReactNode;
@@ -8,7 +6,7 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
 
 const Content = ({ children, className, ...rest }: Props) => {
     return (
-        <div className={classnames(['sign-layout-main-content', className])} {...rest}>
+        <div className={clsx('sign-layout-main-content', className)} {...rest}>
             {children}
         </div>
     );
