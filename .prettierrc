@@ -12,6 +12,12 @@
                 "useTabs": true,
                 "singleQuote": true
             }
+        },
+        {
+            "files": "*.ts",
+            "options": {
+                "importOrderParserPlugins": ["typescript"]
+            }
         }
     ],
     "importOrder": [

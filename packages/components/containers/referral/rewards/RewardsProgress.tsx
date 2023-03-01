@@ -12,7 +12,7 @@ interface Props {
 const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
     const [user] = useUser();
     const [plans = []] = usePlans();
-    
+
     const mailPlusPlan = plans.find(({ Name }) => Name === PLANS.MAIL);
     const price = Math.round((mailPlusPlan?.Pricing[CYCLE.MONTHLY] || 0) / 100) * 100; // Price rounded to 500
     const current = humanPriceWithCurrency(rewards * price, user.Currency);

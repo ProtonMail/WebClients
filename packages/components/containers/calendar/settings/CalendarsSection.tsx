@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import {Address, UserModel} from '@proton/shared/lib/interfaces';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { SettingsSectionWide } from '../../account';

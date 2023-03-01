@@ -494,7 +494,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     onLogin={handleLogin}
                                                     onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
                                                     setupVPN={setupVPN}
-                                                    signupOptions={{plan}}
+                                                    signupOptions={{ plan }}
                                                 />
                                             </Route>
                                             <Redirect to={SSO_PATHS.LOGIN} />
