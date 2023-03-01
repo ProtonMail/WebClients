@@ -91,7 +91,7 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
                             .t`After making your Bitcoin payment, please follow the instructions below to upgrade.`}
                         <div>
                             <Href
-                                url={
+                                href={
                                     APP_NAME === APPS.PROTONVPN_SETTINGS
                                         ? 'https://protonvpn.com/support/vpn-bitcoin-payments/'
                                         : getKnowledgeBaseUrl('/pay-with-bitcoin')

@@ -54,7 +54,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
     };
 
     const learnMoreLink = (
-        <Href url={emailTrackerProtectionURL} data-testid="spyTrackerModal:learnmore">{c('Info').t`Learn more`}</Href>
+        <Href href={emailTrackerProtectionURL} data-testid="spyTrackerModal:learnmore">{c('Info').t`Learn more`}</Href>
     );
 
     let content;

@@ -32,7 +32,7 @@ const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
             </ul>
 
             <p className="mb0-5">
-                <Href url={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>
+                <Href href={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>
                     {c('Link').t`How to unlock data`}
                 </Href>
             </p>

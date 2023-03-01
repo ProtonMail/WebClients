@@ -7,7 +7,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 const DefaultContactsInstructions = () => {
     // translator: full sentence: "To import contacts to Proton, you need a CSV or a VCF (vCard) file. Download this before you start the import process."
     const knowledgeBaseLink = (
-        <Href url={getKnowledgeBaseUrl('/exporting-contacts-from-other-mail-providers')} key="knowledgeBaseLink">
+        <Href href={getKnowledgeBaseUrl('/exporting-contacts-from-other-mail-providers')} key="knowledgeBaseLink">
             {c('Import instructions link').t`CSV or a VCF (vCard) file`}
         </Href>
     );

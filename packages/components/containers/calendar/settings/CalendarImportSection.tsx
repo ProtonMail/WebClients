@@ -51,7 +51,7 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
                 {c('Calendar import section description')
                     .t`You can import ICS files from another calendar to ${CALENDAR_APP_NAME}. This lets you quickly import one event or your entire agenda.`}
                 <br />
-                <Href url={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)}>{c('Knowledge base link label')
+                <Href href={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)}>{c('Knowledge base link label')
                     .t`Here's how`}</Href>
             </SettingsParagraph>
 

@@ -15,7 +15,7 @@ const DecryptionErrorNotification = ({ keyFound = false }: Props) => {
         const learnMoreLink = (
             <Href
                 key="learn-more-link"
-                url={restoringEncryptedMessagesURL}
+                href={restoringEncryptedMessagesURL}
                 className="text-bold link align-baseline color-inherit"
             >
                 {c('Action').t`Learn more`}

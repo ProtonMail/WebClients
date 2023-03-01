@@ -143,7 +143,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     });
     const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
     const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
-    const link = <Href key="linkClearCache" url={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
+    const link = <Href key="linkClearCache" href={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
 
     const { validator, onFormSubmit } = useFormErrors();
 

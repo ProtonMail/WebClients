@@ -124,7 +124,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
             <p className="mt0 mb1 color-weak">
                 {expirationText}
                 <br />
-                <Href url={getKnowledgeBaseUrl('/password-protected-emails')}>{c('Info').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/password-protected-emails')}>{c('Info').t`Learn more`}</Href>
             </p>
 
             <PasswordInnerModalForm

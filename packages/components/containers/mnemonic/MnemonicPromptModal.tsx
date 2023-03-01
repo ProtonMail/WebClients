@@ -88,7 +88,7 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
                         {c('Info')
                             .t`A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.`}
                         <br />
-                        <Href className="text-center" url={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
+                        <Href className="text-center" href={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
                             {c('Link').t`More about recovery`}
                         </Href>
                     </p>

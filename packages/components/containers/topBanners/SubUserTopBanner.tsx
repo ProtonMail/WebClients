@@ -17,7 +17,7 @@ const SubUserTopBanner = () => {
         <TopBanner className="bg-info">
             {c('Info').t`You are currently signed in as ${user.Name} (${user.Email}).`}
             {` `}
-            <Href url={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link').t`Learn more`}</Href>
+            <Href href={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link').t`Learn more`}</Href>
         </TopBanner>
     );
 };

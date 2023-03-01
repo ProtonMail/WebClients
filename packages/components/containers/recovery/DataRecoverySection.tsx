@@ -107,7 +107,7 @@ const DataRecoverySection = () => {
                     {c('Info')
                         .t`Activate at least one data recovery method to make sure you can continue to access the contents of your ${BRAND_NAME} Account if you lose your password.`}
                     <br />
-                    <Href url={getKnowledgeBaseUrl('/set-account-recovery-methods#how-to-enable-a-recovery-phrase')}>
+                    <Href href={getKnowledgeBaseUrl('/set-account-recovery-methods#how-to-enable-a-recovery-phrase')}>
                         {c('Link').t`Learn more about data recovery`}
                     </Href>
                 </SettingsParagraph>

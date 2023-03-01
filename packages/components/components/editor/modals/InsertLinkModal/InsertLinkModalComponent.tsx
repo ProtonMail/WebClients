@@ -149,7 +149,7 @@ const InsertLinkModalComponent = ({
                                 <Label>{c('Info').t`Test link`}</Label>
                                 <Field className="pt0-5 text-ellipsis">
                                     {url && label ? (
-                                        <Href url={addLinkPrefix(url, type)} title={label}>
+                                        <Href href={addLinkPrefix(url, type)} title={label}>
                                             {label}
                                         </Href>
                                     ) : (

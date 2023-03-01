@@ -229,7 +229,7 @@ const AccountStep = ({
     const terms = (
         <Fragment key="terms">
             <br />
-            <Href url={getTermsURL(getIsVPNApp(toApp, clientType) ? APPS.PROTONVPN_SETTINGS : undefined)}>{
+            <Href href={getTermsURL(getIsVPNApp(toApp, clientType) ? APPS.PROTONVPN_SETTINGS : undefined)}>{
                 // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
                 c('new_plans: signup').t`terms and conditions`
             }</Href>

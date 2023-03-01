@@ -50,7 +50,7 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
                 {c('Calendar export section description')
                     .t`Download an ICS file with all the events from the selected calendar.`}
                 <br />
-                <Href url={getKnowledgeBaseUrl('/protoncalendar-calendars')}>{c('Knowledge base link label')
+                <Href href={getKnowledgeBaseUrl('/protoncalendar-calendars')}>{c('Knowledge base link label')
                     .t`Here's how`}</Href>
             </SettingsParagraph>
 
