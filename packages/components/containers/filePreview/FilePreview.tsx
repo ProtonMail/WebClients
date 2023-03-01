@@ -4,7 +4,14 @@ import { c } from 'ttag';
 
 import { useCombinedRefs } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
-import { isAudio, isPDF, isSupportedImage, isSupportedText, isVideo } from '@proton/shared/lib/helpers/mimetype';
+import {
+    isAudio,
+    isPDF,
+    isSupportedImage,
+    isSupportedText,
+    isVideo,
+    isWordDocument,
+} from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { useFocusTrap, useModalState } from '../../components';
@@ -20,6 +27,7 @@ import SignatureIssue from './SignatureIssue';
 import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import VideoPreview from './VideoPreview';
+import WordPreview from './WordPreview';
 
 interface Props {
     isMetaLoading?: boolean;
@@ -192,6 +200,9 @@ const FilePreview = (
         }
         if (isPDF(mimeType)) {
             return <PDFPreview contents={contents} filename={fileName} />;
+        }
+        if (isWordDocument(mimeType)) {
+            return <WordPreview contents={contents} onDownload={onDownload} />;
         }
     };
 
