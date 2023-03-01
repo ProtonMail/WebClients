@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 
-import { addDays, endOfDay, endOfToday, isToday, startOfToday } from 'date-fns';
+import { addDays, endOfDay, endOfToday, isBefore, isToday, startOfToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -61,9 +61,13 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
         if (!newDate) {
             return;
         }
-        // keep the time
-        newDate.setHours(date.getHours());
-        newDate.setMinutes(date.getMinutes());
+
+        const now = new Date();
+
+        if (isBefore(newDate, now)) {
+            return;
+        }
+
         setDate(newDate);
     };
 
@@ -84,7 +88,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
                         as={DateInput}
                         id="expiration-date"
                         label={c('Label attach to date input to select a date').t`Date`}
-                        onChange={handleDate}
+                        onChange={(newDate?: Date) => newDate && handleDate(endOfDay(newDate))}
                         value={date}
                         min={minDate}
                         weekStartsOn={getWeekStartsOn({ WeekStart: userSettings.WeekStart })}
