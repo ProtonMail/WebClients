@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
 import useInterval from '@proton/hooks/useInterval';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import accountSetupImg from '@proton/styles/assets/img/illustrations/account-setup.svg';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -57,10 +58,10 @@ const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
                             return (
                                 <div className="text-lg" key={step}>
                                     <div
-                                        className={classnames([
+                                        className={clsx(
                                             'flex-no-min-children flex-align-items-center flex-nowrap',
-                                            isCurrentStep && 'color-primary',
-                                        ])}
+                                            isCurrentStep && 'color-primary'
+                                        )}
                                     >
                                         <div className="mr0-5 min-w2e flex flex-item-noshrink">
                                             {isCurrentStep ? (
