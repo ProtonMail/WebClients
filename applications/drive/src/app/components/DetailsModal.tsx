@@ -83,9 +83,11 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
                 <DetailsRow label={c('Title').t`Uploaded by`}>
                     <UserNameCell />
                 </DetailsRow>
-                <DetailsRow label={c('Title').t`Location`}>
-                    <LocationCell shareId={shareId} parentLinkId={link.parentLinkId} />
-                </DetailsRow>
+                {link.parentLinkId && (
+                    <DetailsRow label={c('Title').t`Location`}>
+                        <LocationCell shareId={shareId} parentLinkId={link.parentLinkId} />
+                    </DetailsRow>
+                )}
                 <DetailsRow label={c('Title').t`Uploaded`}>
                     <TimeCell time={link.createTime} />
                 </DetailsRow>
