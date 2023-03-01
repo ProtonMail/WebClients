@@ -1,7 +1,8 @@
 import { CSSProperties, ComponentPropsWithoutRef, ReactNode, Ref, forwardRef, useMemo } from 'react';
 
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
 import { MINUTE } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import { getEventStyle } from '../../helpers/color';
@@ -44,7 +45,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
         <div
             role="button"
             tabIndex={0}
-            className={classnames([
+            className={clsx([
                 'calendar-eventcell no-scroll',
                 isLoaded && 'isLoaded',
                 isPast && 'isPast',
@@ -137,9 +138,7 @@ const PartDayEvent = ({
                 <div data-test-id="calendar-day-week-view:part-day-event" className="calendar-eventcell-title">
                     {titleString}
                 </div>
-                <div
-                    className={classnames(['text-ellipsis calendar-eventcell-timestring', shouldHideTime && 'sr-only'])}
-                >
+                <div className={clsx(['text-ellipsis calendar-eventcell-timestring', shouldHideTime && 'sr-only'])}>
                     {timeString}
                 </div>
             </>

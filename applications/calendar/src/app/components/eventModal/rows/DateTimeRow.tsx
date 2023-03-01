@@ -8,12 +8,12 @@ import {
     TimeInput,
     TimeZoneSelector,
     UnderlineButton,
-    classnames,
 } from '@proton/components';
 import { DATE_INPUT_ID, MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 import { getAllDayCheck } from '../eventForm/stateActions';
@@ -70,7 +70,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
     return (
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
-            <div className={classnames([isAllDay && 'w50 on-mobile-w100'])}>
+            <div className={clsx([isAllDay && 'w50 on-mobile-w100'])}>
                 <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
                         <div
