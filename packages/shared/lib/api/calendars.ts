@@ -16,7 +16,7 @@ import {
     UpdateCalendarInviteData,
     UpdateCalendarMemberData,
 } from '../interfaces/calendar/Api';
-import { Nullable } from '../interfaces/utils';
+import { Nullable, RequireOnly } from '../interfaces/utils';
 import { PaginationParams } from './interface';
 
 const CALENDAR_V1 = 'calendar/v1';
@@ -129,6 +129,16 @@ export const addMember = (calendarID: string, data: { AddressID: string; Members
 
 export const updateMember = (calendarID: string, memberID: string, data: Partial<UpdateCalendarMemberData>) => ({
     url: `${CALENDAR_V1}/${calendarID}/members/${memberID}`,
+    method: 'put',
+    data,
+});
+
+export const updateMemberPermission = (
+    calendarID: string,
+    memberID: string,
+    data: RequireOnly<Pick<UpdateCalendarMemberData, 'Permissions' | 'PassphraseKeyPacket'>, 'Permissions'>
+) => ({
+    url: `${CALENDAR_V1}/${calendarID}/members/${memberID}/permission`,
     method: 'put',
     data,
 });
