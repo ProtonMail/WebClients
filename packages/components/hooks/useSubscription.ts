@@ -25,4 +25,19 @@ const useSubscription = (): [tsSubscriptionModel, boolean, Error] => {
     return useCachedModelResult(cache, SubscriptionModel.key, miss);
 };
 
+/**
+ * Unlike the return type of {@link useSubscription}, it doesn't have the third element in the array. That's because
+ * {@link useCachedModelResult} never actually returns 3-element arrays.
+ */
+export type SubscriptionResult =
+    | [subscription: tsSubscriptionModel | typeof FREE_SUBSCRIPTION, loading: false]
+    | [subscription: undefined, loading: true];
+
+/**
+ * Same as {@link useSubscription} but *better*. In a sense of type-safety.
+ */
+export const useTypedSubscription = (): SubscriptionResult => {
+    return useSubscription() as any;
+};
+
 export default useSubscription;

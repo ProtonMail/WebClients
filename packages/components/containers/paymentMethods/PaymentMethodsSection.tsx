@@ -5,7 +5,7 @@ import { APPS, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Loader } from '../../components';
-import { useConfig, useModals, usePaymentMethods, useSubscription } from '../../hooks';
+import { useConfig, useModals, useMozillaCheck, usePaymentMethods } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import EditCardModal from '../payments/EditCardModal';
@@ -15,10 +15,10 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 const PaymentMethodsSection = () => {
     const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
-    const [{ isManagedByMozilla } = {}, loadingSubscription] = useSubscription();
+    const [isManagedByMozilla, loadingCheck] = useMozillaCheck();
     const { createModal } = useModals();
 
-    if (loadingPaymentMethods || loadingSubscription) {
+    if (loadingPaymentMethods || loadingCheck) {
         return <Loader />;
     }
 
@@ -34,12 +34,12 @@ const PaymentMethodsSection = () => {
         createModal(<PayPalModal />);
     };
 
-    const hasPayPal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
-
     const learnMoreUrl =
         APP_NAME === APPS.PROTONVPN_SETTINGS
             ? 'https://protonvpn.com/support/payment-options/'
             : getKnowledgeBaseUrl('/payment-options');
+
+    const hasPayPal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
 
     return (
         <SettingsSection>
@@ -52,13 +52,13 @@ const PaymentMethodsSection = () => {
                     {c('Action').t`Add credit / debit card`}
                 </Button>
 
-                {hasPayPal ? null : (
+                {!hasPayPal && (
                     <Button shape="outline" onClick={handlePayPal}>
                         {c('Action').t`Add PayPal`}
                     </Button>
                 )}
             </div>
-            <PaymentMethodsTable loading={loadingPaymentMethods || loadingSubscription} methods={paymentMethods} />
+            <PaymentMethodsTable loading={false} methods={paymentMethods} />
         </SettingsSection>
     );
 };
