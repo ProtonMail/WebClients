@@ -1,8 +1,9 @@
 import { c } from 'ttag';
+
 import { SectionConfig } from '@proton/components';
-import { Address, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
+import { Address, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
 
 export const getHasPmMeAddress = (addresses: Address[]) => {
     return addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -187,7 +188,7 @@ export const getMailAppRoutes = ({
                         text: c('Title').t`SMTP tokens`,
                         id: 'smtp-tokens',
                         available: isSmtpTokenEnabled && (isB2BOrganization || hasSmtpOrganization),
-                    }
+                    },
                 ],
             },
             backup: <SectionConfig>{

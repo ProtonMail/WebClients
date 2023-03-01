@@ -75,7 +75,7 @@ const MainContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
 
     // WARNING: if you change this list, you need to update the spread of the "features" variable
-    const features = useFeatures([ 
+    const features = useFeatures([
         FeatureCode.SpyTrackerProtection,
         FeatureCode.CalendarInviteLocale,
         FeatureCode.CalendarAutoImportInvite,

@@ -1,7 +1,7 @@
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 
 export const otherProductParamValues = ['generic', 'business'] as const;
-export type OtherProductParam = typeof otherProductParamValues[number];
+export type OtherProductParam = (typeof otherProductParamValues)[number];
 export type ProductParam = APP_NAMES | OtherProductParam | 'none' | undefined;
 
 const normalizeProduct = (product: ProductParam) => {

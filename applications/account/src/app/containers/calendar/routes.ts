@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
-import {CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID} from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 /**

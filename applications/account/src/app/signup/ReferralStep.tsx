@@ -26,15 +26,10 @@ const ReferralStep = ({ onPlan, onBack }: Props) => {
 
     return (
         <Main>
-            <Header
-                title={c('Heading in trial plan').t`Try the best of ${MAIL_APP_NAME} for free`}
-                onBack={onBack}
-            />
+            <Header title={c('Heading in trial plan').t`Try the best of ${MAIL_APP_NAME} for free`} onBack={onBack} />
             <Content>
                 <Text>
-                    {c(
-                        'Baseline in trial plan'
-                    )
+                    {c('Baseline in trial plan')
                         .t`${mailPlus}: the privacy-first Mail and Calendar solution for your everyday communications needs.`}
                 </Text>
                 <ReferralFeaturesList />

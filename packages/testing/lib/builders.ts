@@ -8,7 +8,7 @@ import {
     CALENDAR_SUBSCRIPTION_STATUS,
     CalendarEvent,
     VcalVeventComponent,
-    VisualCalendar
+    VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -449,7 +449,11 @@ export const generateSimpleCalendar = (
     ],
 });
 
-export const generateSubscribedCalendar = ({ calendar, status = CALENDAR_SUBSCRIPTION_STATUS.OK, url = '#' }: {
+export const generateSubscribedCalendar = ({
+    calendar,
+    status = CALENDAR_SUBSCRIPTION_STATUS.OK,
+    url = '#',
+}: {
     calendar: VisualCalendar;
     status?: CALENDAR_SUBSCRIPTION_STATUS;
     url?: string;
@@ -465,7 +469,7 @@ export const generateSubscribedCalendar = ({ calendar, status = CALENDAR_SUBSCRI
     return {
         ...calendar,
         Type: CALENDAR_TYPE.SUBSCRIPTION,
-        SubscriptionParameters
+        SubscriptionParameters,
     };
 };
 
@@ -487,7 +491,9 @@ export const generateSharedCalendars = (n: number) => {
 export const generateSubscribedCalendars = (n: number) => {
     return Array(n)
         .fill(1)
-        .map((val, i) => generateSubscribedCalendar({
-            calendar: generateSimpleCalendar(i, { type: CALENDAR_TYPE.SUBSCRIPTION })
-        }));
+        .map((val, i) =>
+            generateSubscribedCalendar({
+                calendar: generateSimpleCalendar(i, { type: CALENDAR_TYPE.SUBSCRIPTION }),
+            })
+        );
 };
