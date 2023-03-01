@@ -56,7 +56,7 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
 
         if (mode === 'reactivate') {
             const learnMore = (
-                <Href key={1} url={getKnowledgeBaseUrl('/restore-administrator')}>
+                <Href key={1} href={getKnowledgeBaseUrl('/restore-administrator')}>
                     {c('Link').t`Learn more`}
                 </Href>
             );

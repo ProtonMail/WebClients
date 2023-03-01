@@ -15,7 +15,7 @@ const ImportExportAppSection = () => {
                 {c('Info').t`Available on macOS, Windows, and Linux.`}
             </SettingsParagraph>
 
-            <ButtonLike color="norm" as={Href} url={getImportExportAppUrl()}>
+            <ButtonLike color="norm" as={Href} href={getImportExportAppUrl()}>
                 {c('Action').t`Download the Import-Export app`}
             </ButtonLike>
         </SettingsSection>

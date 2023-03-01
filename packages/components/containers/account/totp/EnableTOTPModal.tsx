@@ -104,7 +104,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
 
             // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication guide first</link>.
             const guideButton = (
-                <Href key="0" url={twoFactorAuthLink}>{c('Info')
+                <Href key="0" href={twoFactorAuthLink}>{c('Info')
                     .t`read our two-factor authentication guide first`}</Href>
             );
 

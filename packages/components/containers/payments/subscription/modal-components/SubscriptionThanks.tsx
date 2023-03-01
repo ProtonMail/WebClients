@@ -41,7 +41,7 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                     .t`Download your favorite app today and take privacy with you everywhere you go.`}</p>
                 <div className="mt1 mb2 text-center">
                     <Href
-                        url={
+                        href={
                             isVPN
                                 ? 'https://play.google.com/store/apps/details?id=ch.protonvpn.android'
                                 : 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
@@ -51,7 +51,7 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                         <img width="150" src={playStoreSvg} alt="Play Store" />
                     </Href>
                     <Href
-                        url={
+                        href={
                             isVPN
                                 ? 'https://itunes.apple.com/us/app/protonvpn-fast-secure-vpn/id1437005085'
                                 : 'https://apps.apple.com/app/protonmail-encrypted-email/id979659905'

@@ -29,7 +29,7 @@ export interface Props {
 const Badge = ({ children, type = 'default', url, tooltip, className = 'mr1' }: Props) => {
     const badge = <span className={classnames([CLASSNAMES[type], className])}>{children}</span>;
     const wrappedBadge = url ? (
-        <Href url={url} className="text-no-decoration">
+        <Href href={url} className="text-no-decoration">
             {badge}
         </Href>
     ) : (

@@ -26,7 +26,7 @@ const Alert = ({ type = 'info', children, learnMore, className }: Props) => {
             <div>{children}</div>
             {learnMore ? (
                 <div>
-                    <Href url={learnMore} className={className}>{c('Link').t`Learn more`}</Href>
+                    <Href href={learnMore} className={className}>{c('Link').t`Learn more`}</Href>
                 </div>
             ) : null}
         </div>

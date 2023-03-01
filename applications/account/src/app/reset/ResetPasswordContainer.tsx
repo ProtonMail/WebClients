@@ -285,7 +285,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                url={getStaticURL('/support')}
+                                href={getStaticURL('/support')}
                                 target="_self"
                                 fullWidth
                                 className="mt0-5"
@@ -403,7 +403,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                             color="norm"
                             shape="ghost"
                             size="large"
-                            url={getStaticURL('/support')}
+                            href={getStaticURL('/support')}
                             target="_self"
                             fullWidth
                             className="mt0-5"

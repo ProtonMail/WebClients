@@ -124,7 +124,7 @@ const getFeatureLink = (feature: FeatureOption<any>) =>
     feature.url ? (
         <>
             {' '}
-            &nbsp; <Href className="text-no-bold" url={feature.url}>{c('Info').t`Learn more`}</Href>
+            &nbsp; <Href className="text-no-bold" href={feature.url}>{c('Info').t`Learn more`}</Href>
         </>
     ) : (
         ''

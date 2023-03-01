@@ -128,9 +128,10 @@ const ContactViewErrors = ({
             <Icon name="exclamation-circle" className="flex-item-noshrink myauto" />
             <span className="flex-item-fluid pl0-5 pr0-5">
                 <span className="mr0-5">{text}</span>
-                <Href className="underline inline-block color-inherit" url={getKnowledgeBaseUrl('/proton-contacts')}>{c(
-                    'Link'
-                ).t`Learn more`}</Href>
+                <Href
+                    className="underline inline-block color-inherit"
+                    href={getKnowledgeBaseUrl('/proton-contacts')}
+                >{c('Link').t`Learn more`}</Href>
             </span>
             {!isPreview && (
                 <span className="flex-item-noshrink flex">

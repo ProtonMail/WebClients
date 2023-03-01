@@ -15,7 +15,7 @@ const ReportsTableInfos = () => {
     const bandwidthLimitLink = (
         <Href
             key="bandwidthLimitLink"
-            url={getKnowledgeBaseUrl(
+            href={getKnowledgeBaseUrl(
                 '/manage-imports-easy-switch#:~:text=notification%20in%20advance.-,Delayed%20imports,-Some%20email%20providers'
             )}
         >

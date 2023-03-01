@@ -197,7 +197,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                                 {label}
                                             </Radio>
                                             <Href
-                                                url={link}
+                                                href={link}
                                                 className="text-sm m0 block ml-custom"
                                                 style={{ '--padding-left-custom': `1.312rem` }}
                                             >{c('Link').t`View guide`}</Href>
@@ -219,7 +219,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                 />
                             </div>
                             <div className="mb1">
-                                <Href url="https://protonvpn.com/support/udp-tcp/" className="text-sm m0">{c('Link')
+                                <Href href="https://protonvpn.com/support/udp-tcp/" className="text-sm m0">{c('Link')
                                     .t`What is the difference between UDP and TCP protocols?`}</Href>
                             </div>
 

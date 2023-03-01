@@ -163,7 +163,7 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
 
     // translator: full sentence is: To work properly, each filter must contain at least a name and a valid Sieve script. You can learn more about Sieve programming language
     const link = (
-        <Href key="more-info-link" url={getKnowledgeBaseUrl('/sieve-advanced-custom-filters')}>{c('Info')
+        <Href key="more-info-link" href={getKnowledgeBaseUrl('/sieve-advanced-custom-filters')}>{c('Info')
             .t`learn more about Sieve programming language`}</Href>
     );
 

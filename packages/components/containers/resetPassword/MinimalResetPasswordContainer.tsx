@@ -141,7 +141,7 @@ const DangerForm = ({ onSubmit, isVPN }: { onSubmit: () => Promise<void>; isVPN:
     const [danger, setDanger] = useState('');
     const [loading, withLoading] = useLoading();
     const dangerWord = 'DANGER';
-    const hereLink = <Href key="0" url="https://account.proton.me/login">{c('Link').t`here`}</Href>;
+    const hereLink = <Href key="0" href="https://account.proton.me/login">{c('Link').t`here`}</Href>;
     const dangerError = danger.length > 0 && danger !== dangerWord ? c('Error').t`Please enter '${dangerWord}'` : '';
     return (
         <form
