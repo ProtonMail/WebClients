@@ -75,7 +75,7 @@ const ItemContextMenu = ({
         const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
         return !allRead;
     }, [checkedIDs, elementsAreUnread]);
-    const canExpire = canSetExpiration(feature?.Value, user);
+    const canExpire = !conversationMode && canSetExpiration(feature?.Value, user);
 
     const [actions] = useLabelActions(labelID, false);
 
