@@ -91,8 +91,8 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                                         className="link"
                                         type="button"
                                         onClick={() => setVerifyRecoveryPhoneModalOpen(true)}
-                                        aria-label={c('Recovery Email')
-                                            .t`Verify now this recovery phone number address: ${phone.Value}`}
+                                        aria-label={c('Recovery Phone')
+                                            .t`Verify this recovery phone number now: ${phone.Value}`}
                                     >
                                         {c('Recovery Phone').t`Verify now`}
                                     </button>
