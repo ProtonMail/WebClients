@@ -29,6 +29,12 @@
 		padding-inline: rem(16);
 	}
 
+	@include media('print') {
+		inline-size: rem(392);
+		block-size: fit-content;
+		border: 1px solid var(--border-norm);
+	}
+
 	&,
 	&:focus-visible,
 	&:focus:focus-visible {
