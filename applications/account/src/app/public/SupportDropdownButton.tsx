@@ -1,9 +1,9 @@
 import { Ref } from 'react';
-import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownCaret, Icon, classnames } from '@proton/components';
+import { DropdownCaret, Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     children?: React.ReactNode;
@@ -31,7 +31,7 @@ const SupportDropdownButton = ({
     return (
         <button
             type="button"
-            className={classnames(['support-dropdown-button', className])}
+            className={clsx('support-dropdown-button', className)}
             aria-expanded={isOpen}
             ref={buttonRef}
             {...rest}

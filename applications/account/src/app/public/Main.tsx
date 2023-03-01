@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
     larger?: boolean;
@@ -10,12 +8,12 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
 const Main = ({ children, className, center = true, larger, ...rest }: Props) => {
     return (
         <main
-            className={classnames([
+            className={clsx(
                 'ui-standard w100 relative sign-layout shadow-lifted on-tiny-mobile-no-box-shadow',
                 !larger ? 'mw30r' : '',
                 center && 'max-w100 center',
-                className,
-            ])}
+                className
+            )}
             {...rest}
         >
             {children}
