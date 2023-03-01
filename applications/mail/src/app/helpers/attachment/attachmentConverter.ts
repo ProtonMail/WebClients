@@ -4,15 +4,15 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 import { ENCRYPTED_STATUS } from '../../constants';
 
 // This prefix is really useful to distinguish 'real' attachments from pgp attachments.
-const ID_PREFIX = 'PGPAttachment';
+export const ID_PREFIX = 'PGPAttachment';
 
-const getId = (message: Message, parsedAttachment: MIMEAttachment, number: number) =>
+export const getId = (message: Message, parsedAttachment: MIMEAttachment, number: number) =>
     `${ID_PREFIX}_${message.ID}_${parsedAttachment.contentId}_${number}`;
 
 /**
  * Unfortunately mailparser doesn't expose header data directly so we will reconstruct the headers
  */
-const getHeaders = ({
+export const getHeaders = ({
     fileName,
     contentDisposition = '',
     contentType = '',
@@ -35,11 +35,11 @@ const getHeaders = ({
 /**
  * Convert a single attachment
  */
-const convertSingle = (
+export const convertSingle = (
     message: Message,
     parsedAttachment: MIMEAttachment,
     number: number,
-    verified: number,
+    verified: number, // TODO remove this variable?
     onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
 ): Attachment => {
     const ID = getId(message, parsedAttachment, number);
