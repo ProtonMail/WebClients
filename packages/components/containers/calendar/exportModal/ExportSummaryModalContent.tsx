@@ -71,7 +71,7 @@ const ExportSummaryModalContent = ({ model }: Props) => {
                                 .t`You can save an ICS file of the events that were successfully exported.`}
                         </div>
                         <div>
-                            <Href url={kbLink}>{c('Export calendar')
+                            <Href href={kbLink}>{c('Export calendar')
                                 .t`Learn how to restore encrypted events with old password`}</Href>
                         </div>
                     </>
@@ -100,7 +100,7 @@ const ExportSummaryModalContent = ({ model }: Props) => {
                             .t`Due to a password reset, none of your events could be decrypted and exported.`}
                     </div>
                     <div>
-                        <Href url={kbLink}>{c('Export calendar')
+                        <Href href={kbLink}>{c('Export calendar')
                             .t`Learn how to restore encrypted events with old password`}</Href>
                     </div>
                 </>

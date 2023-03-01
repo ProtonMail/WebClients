@@ -48,7 +48,7 @@ const UsernameSection = ({ app }: Props) => {
                         <div className="mb0-5">
                             {c('Info')
                                 .t`Get a ${BRAND_NAME} address to use all ${BRAND_NAME} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`}{' '}
-                            <Href url={getKnowledgeBaseUrl('/external-accounts')}>{c('Link').t`Learn more`}</Href>
+                            <Href href={getKnowledgeBaseUrl('/external-accounts')}>{c('Link').t`Learn more`}</Href>
                         </div>
                         <ButtonLike
                             as={AppLink}
@@ -109,7 +109,7 @@ const UsernameSection = ({ app }: Props) => {
                                 <div className="text-pre-wrap break user-select">{primaryAddress.Email}</div>
                             ) : (
                                 <Href
-                                    url={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
+                                    href={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
                                     title={c('Info').t`Sign in to ${MAIL_APP_NAME} to activate your address`}
                                 >
                                     {c('Link').t`Not activated`}

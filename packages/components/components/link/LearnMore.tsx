@@ -11,7 +11,7 @@ export interface LearnMoreProps {
  * @deprecated please use Href
  */
 const LearnMore = ({ url, className }: LearnMoreProps) => (
-    <Href url={url} className={className}>{c('Link').t`Learn more`}</Href>
+    <Href href={url} className={className}>{c('Link').t`Learn more`}</Href>
 );
 
 export default LearnMore;

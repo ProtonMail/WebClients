@@ -209,7 +209,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
             text: c('Info').t`Visit our shop to get ${BRAND_NAME} merchandise.`,
             cta: (
                 <Href
-                    url={getLink(WELCOME_PANE_OPTIONS_URLS.protonShop, UPSELL_MAIL_BANNER_LINK_ID.PROTON_SHOP)}
+                    href={getLink(WELCOME_PANE_OPTIONS_URLS.protonShop, UPSELL_MAIL_BANNER_LINK_ID.PROTON_SHOP)}
                     className="text-bold link align-baseline color-inherit"
                 >
                     {callToActionTexts.openShop}
@@ -246,7 +246,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
                 text: c('Info').t`For increased security, activate 2FA.`,
                 cta: (
                     <Href
-                        url={getLink(WELCOME_PANE_OPTIONS_URLS.proton2FA, UPSELL_MAIL_BANNER_LINK_ID.USE_2FA)}
+                        href={getLink(WELCOME_PANE_OPTIONS_URLS.proton2FA, UPSELL_MAIL_BANNER_LINK_ID.USE_2FA)}
                         className="text-bold link align-baseline color-inherit"
                     >
                         {callToActionTexts.learnMore}
@@ -297,7 +297,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
             text: c('Info').t`${MAIL_APP_NAME} can protect your business as well.`,
             cta: (
                 <Href
-                    url={getLink(
+                    href={getLink(
                         WELCOME_PANE_OPTIONS_URLS.protonBusiness,
                         UPSELL_MAIL_BANNER_LINK_ID.PROTECT_YOUR_BUSINESS
                     )}
@@ -381,7 +381,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
             text: c('Info').t`You can use ${VPN_APP_NAME} for free today.`,
             cta: (
                 <Href
-                    url={getLink(WELCOME_PANE_OPTIONS_URLS.vpn, UPSELL_MAIL_BANNER_LINK_ID.USE_PROTON_VPN)}
+                    href={getLink(WELCOME_PANE_OPTIONS_URLS.vpn, UPSELL_MAIL_BANNER_LINK_ID.USE_PROTON_VPN)}
                     className="text-bold link align-baseline color-inherit"
                 >
                     {callToActionTexts.learnMore}
@@ -393,7 +393,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
             text: c('Info').t`Use ${CALENDAR_APP_NAME} to keep your agenda private.`,
             cta: (
                 <Href
-                    url={getLink(WELCOME_PANE_OPTIONS_URLS.calendar, UPSELL_MAIL_BANNER_LINK_ID.USE_PROTON_CALENDAR)}
+                    href={getLink(WELCOME_PANE_OPTIONS_URLS.calendar, UPSELL_MAIL_BANNER_LINK_ID.USE_PROTON_CALENDAR)}
                     className="text-bold link align-baseline color-inherit"
                 >
                     {callToActionTexts.openCalendar}

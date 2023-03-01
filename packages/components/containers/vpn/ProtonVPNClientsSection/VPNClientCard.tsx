@@ -22,14 +22,14 @@ const VPNClientCard = ({ title, link, items, icon }: Props) => {
             <Block>{title}</Block>
             {!items ? (
                 <div className="pl1 pr1 flex mt1 flex-justify-center">
-                    <ButtonLike as={Href} url={link}>
+                    <ButtonLike as={Href} href={link}>
                         {c('Action').t`Download`}
                         <span className="sr-only">{title}</span>
                     </ButtonLike>
                 </div>
             ) : (
                 <ButtonGroup className="flex pl0-25 pr0-25 mt1 flex-justify-center">
-                    <ButtonLike as={Href} url={link}>
+                    <ButtonLike as={Href} href={link}>
                         {c('Action').t`Download`}
                         <span className="sr-only">{title}</span>
                     </ButtonLike>

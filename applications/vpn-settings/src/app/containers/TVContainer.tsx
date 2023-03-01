@@ -95,7 +95,7 @@ const TVContainer = () => {
         <div className="ui-prominent background-container h100 flex-no-min-children flex-column flex-nowrap flex-align-items-center scroll-if-needed">
             <div className="flex flex-justify-center flex-align-items-center pt2">
                 <div className="w150p">
-                    <Href url="https://protonvpn.com" target="_self">
+                    <Href href="https://protonvpn.com" target="_self">
                         <VpnLogo />
                     </Href>
                 </div>

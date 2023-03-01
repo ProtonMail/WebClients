@@ -16,7 +16,7 @@ const AuthSecurityKeyContent = ({ error }: { error?: boolean }) => {
             <div>
                 {c('fido2: Info').t`Insert a security key linked to your ${BRAND_NAME} Account.`}
                 <br />
-                <Href url={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
             </div>
             {error && (
                 <div className="mt1">

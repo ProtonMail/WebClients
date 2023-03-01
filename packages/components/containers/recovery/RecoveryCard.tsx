@@ -191,7 +191,7 @@ const RecoveryCard = ({ ids }: Props) => {
                       c('Info')
                           .jt`If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.`}
                 <br />
-                <Href url={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
+                <Href href={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
                     {c('Link').t`Why set recovery methods?`}
                 </Href>
             </p>

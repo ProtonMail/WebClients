@@ -29,7 +29,7 @@ const DeleteSection = () => {
         addresses.some((address) => address.Type !== ADDRESS_TYPE.TYPE_EXTERNAL)
     ) {
         const loginLink = (
-            <Href key="0" url="https://account.proton.me/login?product=mail">
+            <Href key="0" href="https://account.proton.me/login?product=mail">
                 mail.proton.me
             </Href>
         );

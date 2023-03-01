@@ -103,7 +103,7 @@ const CreditsModal = (props: ModalProps) => {
                             .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}
                     </div>
                     <Href
-                        url={
+                        href={
                             APP_NAME === APPS.PROTONVPN_SETTINGS
                                 ? 'https://protonvpn.com/support/vpn-credit-proration/'
                                 : getKnowledgeBaseUrl('/credit-proration-coupons')
