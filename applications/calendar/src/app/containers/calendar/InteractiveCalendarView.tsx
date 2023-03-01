@@ -16,7 +16,6 @@ import { c } from 'ttag';
 import {
     Dropzone,
     FeatureCode,
-    classnames,
     onlyDragFiles,
     useApi,
     useBeforeUnload,
@@ -91,6 +90,7 @@ import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
@@ -1520,7 +1520,7 @@ const InteractiveCalendarView = ({
             onDrop={handleDrop}
             onDragEnter={handleHover(true)}
             onDragLeave={handleHover(false)}
-            className={classnames(['relative h100', isDropzoneHovered && 'no-scroll'])}
+            className={clsx(['relative h100', isDropzoneHovered && 'no-scroll'])}
             content={
                 <section className="main-dropzone p4 text-center">
                     <img className="main-dropzone-image" src={eventImport} alt="" aria-hidden="true" />

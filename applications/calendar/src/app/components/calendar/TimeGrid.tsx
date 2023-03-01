@@ -9,13 +9,15 @@ import {
     useRef,
     useState,
 } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ButtonGroup, Icon, Tooltip, classnames, useElementRect } from '@proton/components';
+import { ButtonGroup, Icon, Tooltip, useElementRect } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { addDays, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import clsx from '@proton/utils/clsx';
 
 import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
 import { getNavigationArrowsText } from '../../helpers/i18n';
@@ -310,14 +312,14 @@ const TimeGrid = ({
 
     return (
         <div
-            className={classnames(['flex-item-fluid scroll-if-needed h100', displayViewClass])}
+            className={clsx(['flex-item-fluid scroll-if-needed h100', displayViewClass])}
             onScroll={handleScroll}
             ref={scrollRef}
         >
             <div className="relative main-area-content">
                 <div
                     ref={titleRef}
-                    className={classnames([
+                    className={clsx([
                         'sticky-title sticky-title--no-padding on-mobile-remain-sticky',
                         !scrollTop && 'sticky-title--on-top',
                     ])}

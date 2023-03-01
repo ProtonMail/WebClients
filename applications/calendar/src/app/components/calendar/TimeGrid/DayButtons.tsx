@@ -1,7 +1,7 @@
-import { classnames } from '@proton/components/helpers';
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     days: Date[];
@@ -38,7 +38,7 @@ const DayButtons = ({
                     <span className="calendar-grid-heading-day-fullname">{weekdays[day.getUTCDay()]}</span>
 
                     <span
-                        className={classnames([
+                        className={clsx([
                             'calendar-grid-heading-day-shortname no-desktop no-tablet',
                             hasSmallLabels && 'text-xs',
                             hasBoldLabels && 'text-strong',

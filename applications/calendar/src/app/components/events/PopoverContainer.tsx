@@ -1,8 +1,9 @@
 import { Ref, forwardRef, useRef } from 'react';
 import * as React from 'react';
 
-import { classnames, useFocusTrap, useHotkeys } from '@proton/components';
+import { useFocusTrap, useHotkeys } from '@proton/components';
 import { useCombinedRefs } from '@proton/hooks';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     isOpen?: boolean;
@@ -27,7 +28,7 @@ const PopoverContainer = (
     ]);
 
     return (
-        <div ref={combinedRefs} className={classnames([className, 'outline-none'])} {...rest} {...focusTrapProps}>
+        <div ref={combinedRefs} className={clsx([className, 'outline-none'])} {...rest} {...focusTrapProps}>
             {children}
         </div>
     );
