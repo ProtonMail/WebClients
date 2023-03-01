@@ -1,35 +1,44 @@
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { PaymentMethod, isCardDetails, isPaypalDetails } from '@proton/shared/lib/interfaces';
 import orderBy from '@proton/utils/orderBy';
 
 import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 
-const PaymentMethodsTable = ({ methods, loading }) => {
+export interface Props {
+    methods: PaymentMethod[];
+    loading: boolean;
+}
+
+const MethodCell = ({ method }: { method: PaymentMethod }) => {
+    if (isPaypalDetails(method.Details)) {
+        return (
+            <>
+                <span className="mr0-5">PayPal</span>
+                <span className="auto-tablet text-ellipsis max-w100" title={method.Details.Payer}>
+                    {method.Details.Payer}
+                </span>
+            </>
+        );
+    }
+
+    if (isCardDetails(method.Details)) {
+        return (
+            <span>
+                {method.Details.Brand} (•••• {method.Details.Last4})
+            </span>
+        );
+    }
+
+    return null;
+};
+
+const PaymentMethodsTable = ({ methods, loading }: Props) => {
     if (!loading && !methods.length) {
         return <p>{c('Info').t`You have no saved payment methods.`}</p>;
     }
-
-    const getMethod = (method) => {
-        switch (method.Type) {
-            case PAYMENT_METHOD_TYPES.CARD:
-                return `${method.Details.Brand} (•••• ${method.Details.Last4})`;
-            case PAYMENT_METHOD_TYPES.PAYPAL:
-                return (
-                    <>
-                        <span className="mr0-5">PayPal</span>
-                        <span className="auto-tablet text-ellipsis max-w100" title={method.Details.Payer}>
-                            {method.Details.Payer}
-                        </span>
-                    </>
-                );
-            default:
-                return '';
-        }
-    };
 
     const orderedMethods = orderBy(methods, 'Order');
 
@@ -48,7 +57,7 @@ const PaymentMethodsTable = ({ methods, loading }) => {
                         <TableRow
                             key={method.ID}
                             cells={[
-                                getMethod(method),
+                                <MethodCell method={method} />,
                                 <PaymentMethodState key={method.ID} method={method} index={index} />,
                                 <PaymentMethodActions
                                     key={method.ID}
@@ -63,11 +72,6 @@ const PaymentMethodsTable = ({ methods, loading }) => {
             </TableBody>
         </Table>
     );
-};
-
-PaymentMethodsTable.propTypes = {
-    methods: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired,
 };
 
 export default PaymentMethodsTable;

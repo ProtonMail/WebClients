@@ -615,7 +615,14 @@ export enum PLAN_SERVICES {
     VPN = 4,
 }
 
-export const FREE_SUBSCRIPTION = {}; // You don't need more, use `user.isPaid`
+// You don't need more, use `user.isPaid`
+export const FREE_SUBSCRIPTION = {
+    isFreeSubscription: true,
+};
+export function isFreeSubscription(obj: any): obj is typeof FREE_SUBSCRIPTION {
+    return !!obj && obj.isFreeSubscription;
+}
+
 export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`
 
 export enum PLANS {

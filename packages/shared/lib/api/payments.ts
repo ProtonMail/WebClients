@@ -1,3 +1,6 @@
+import { Params } from '@proton/components/containers/payments/interface';
+import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
+
 import { getProductHeaders } from '../apps/product';
 import { Currency } from '../interfaces';
 
@@ -32,7 +35,21 @@ export const subscribe = (data: any, product: any) => ({
     headers: getProductHeaders(product),
 });
 
-export const queryInvoices = ({ Page, PageSize, Owner, State, Type }: any) => ({
+export interface QueryInvoicesPayload {
+    /**
+     * Starts with 0
+     */
+    Page: number;
+    PageSize: number;
+    Owner: INVOICE_OWNER;
+    State?: INVOICE_STATE;
+    Type?: INVOICE_TYPE;
+}
+
+/**
+ * Query list of invoices for the current user. The response is {@link InvoiceResponse}
+ */
+export const queryInvoices = ({ Page, PageSize, Owner, State, Type }: QueryInvoicesPayload) => ({
     url: 'payments/invoices',
     method: 'get',
     params: { Page, PageSize, Owner, State, Type },
@@ -90,7 +107,7 @@ export const createPayPalPayment = (Amount: number, Currency: Currency) => ({
     data: { Amount, Currency },
 });
 
-export const payInvoice = (invoiceID: string, data: any) => ({
+export const payInvoice = (invoiceID: string, data: Params) => ({
     url: `payments/invoices/${invoiceID}`,
     method: 'post',
     data,
@@ -101,7 +118,7 @@ export const queryPaymentMethodStatus = () => ({
     method: 'get',
 });
 
-export const orderPaymentMethods = (PaymentMethodIDs: any) => ({
+export const orderPaymentMethods = (PaymentMethodIDs: string[]) => ({
     url: 'payments/methods/order',
     method: 'put',
     data: { PaymentMethodIDs },
