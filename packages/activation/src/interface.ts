@@ -279,6 +279,7 @@ export enum EASY_SWITCH_SOURCE {
 
 export interface EasySwitchFeatureFlag {
     GoogleMail: boolean;
+    GoogleMailSync: boolean;
     GoogleCalendar: boolean;
     GoogleContacts: boolean;
     GoogleDrive: boolean;
