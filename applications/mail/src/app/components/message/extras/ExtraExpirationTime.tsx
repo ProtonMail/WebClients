@@ -31,7 +31,7 @@ const ExtraExpirationTime = ({ message }: Props) => {
     const { call } = useEventManager();
     const { isExpiration, delayMessage } = useExpiration(message);
     const { feature } = useFeature(FeatureCode.SetExpiration);
-    const canExpire = canSetExpiration(feature?.Value, user);
+    const canExpire = canSetExpiration(feature?.Value, user, message.data?.LabelIDs);
     const messageID = message.data?.ID || '';
     const conversationID = message.data?.ConversationID;
 
