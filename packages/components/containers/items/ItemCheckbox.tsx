@@ -62,13 +62,13 @@ const ItemCheckbox = ({
                 data-testid="element-list:message-checkbox"
                 aria-hidden="true"
             >
-                <span className="mauto item-abbr" aria-hidden="true">
+                <span className="mauto item-abbr rounded no-scroll" aria-hidden="true">
                     <ContactImage
                         email={email}
                         name={name}
                         bimiSelector={bimiSelector}
                         displaySenderImage={displaySenderImage}
-                        className="rounded"
+                        className="rounded relative"
                     />
                 </span>
                 <span className="item-icon-fakecheck mauto">
