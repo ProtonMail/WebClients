@@ -98,7 +98,7 @@ const SyncRowActions = ({ syncId }: Props) => {
 
             {renderDeleteModal && (
                 <AlertModal
-                    title="Remove the sync"
+                    title={c('account').t`Remove forward`}
                     buttons={[
                         <Button color="danger" onClick={handleDeleteSync}>
                             {c('Action').t`Remove`}
