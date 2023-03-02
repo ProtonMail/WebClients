@@ -4,13 +4,11 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
-import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
+import { HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import {
     useApi,
     useConfig,
     useErrorHandler,
-    useExperiment,
-    useFeature,
     useLoading,
     useLocalState,
     useMyLocation,
@@ -110,19 +108,6 @@ interface Props {
 
 const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam, setupVPN }: Props) => {
     const { APP_NAME } = useConfig();
-    const experimentCode = (() => {
-        // Generic or VPN target
-        if (!toApp || toApp === APPS.PROTONVPN_SETTINGS || APP_NAME === APPS.PROTONVPN_SETTINGS) {
-            return ExperimentCode.ExternalSignupGeneric;
-        }
-        // Drive target
-        if (toApp === APPS.PROTONDRIVE) {
-            return ExperimentCode.ExternalSignupDrive;
-        }
-        // Anything else just reuses generic
-        return ExperimentCode.ExternalSignupGeneric;
-    })();
-    const externalSignupExperiment = useExperiment(experimentCode);
     const normalApi = useApi();
     const history = useHistory();
     const location = useLocation<{ invite?: InviteData }>();
@@ -148,7 +133,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const [myLocation] = useMyLocation();
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
-    const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
         SignupSteps.AccountCreationUsername,
@@ -165,33 +149,21 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const cache = cacheRef.current;
     const accountData = cache?.accountData;
 
-    const isExternalSignupEnabled =
-        Boolean(externalSignupFeature.feature?.Value) &&
-        ((experimentCode === ExperimentCode.ExternalSignupGeneric && externalSignupExperiment.value === 'B') ||
-            experimentCode === ExperimentCode.ExternalSignupDrive);
     const isReferral = model.referralData && !isTrial;
 
     const signupTypes = (() => {
-        if (isExternalSignupEnabled && signupParameters.type !== 'vpn') {
-            if (toApp && getHasAppExternalSignup(toApp)) {
-                if (experimentCode === ExperimentCode.ExternalSignupDrive) {
-                    if (externalSignupExperiment.value === 'A') {
-                        return [SignupType.Email, SignupType.Username];
-                    } else {
-                        return [SignupType.Username, SignupType.Email];
-                    }
-                }
-                return [SignupType.Email, SignupType.Username];
-            }
-            // Only on account.protonvpn.com do we suggest external only sign up
-            if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
-                return [SignupType.Email];
-            }
-            if (!toApp) {
-                return [SignupType.Username, SignupType.Email];
-            }
+        // Only on account.protonvpn.com do we suggest external only sign up
+        if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
+            return [SignupType.Email];
         }
-        return getIsVPNApp(toApp, clientType) ? [SignupType.VPN] : [SignupType.Username];
+        if (toApp && getHasAppExternalSignup(toApp)) {
+            return [SignupType.Email, SignupType.Username];
+        }
+        // Generic signup
+        if (!toApp) {
+            return [SignupType.Username, SignupType.Email];
+        }
+        return [SignupType.Username];
     })();
     const defaultSignupType = signupTypes[0];
 
@@ -296,15 +268,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
             });
         };
 
-        /**
-         * Ensure external signup feature and experiment has loaded before
-         * fetching dependencies. This enables the data team to distinguish
-         * between calls made for external and proton accounts.
-         */
-        if (externalSignupExperiment.loading || externalSignupFeature.loading) {
-            return;
-        }
-
         void withLoading(
             fetchDependencies().catch(() => {
                 setStep([[], NoSignup]);
@@ -314,7 +277,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         return () => {
             cacheRef.current = undefined;
         };
-    }, [externalSignupExperiment.loading, externalSignupFeature.loading]);
+    }, []);
 
     const handleBack = () => {
         if (!previousSteps.length) {
@@ -602,7 +565,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             .catch(handleError);
                     }}
                     hasChallenge={!accountData?.payload || !Object.keys(accountData.payload).length}
-                    loading={loading || externalSignupFeature.loading || externalSignupExperiment.loading}
+                    loading={loading}
                 />
             )}
             {step === HumanVerification && (
