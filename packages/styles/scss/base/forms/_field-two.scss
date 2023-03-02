@@ -130,6 +130,10 @@
 			font-size: max(16px, em($base-font-size));
 		}
 
+		@include media('print') {
+			font-size: 10pt;
+		}
+
 		.is-drawer-app & {
 			font-size: em($base-font-size);
 		}
