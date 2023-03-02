@@ -136,3 +136,17 @@ export const getDisplayContactsInDrawer = (app: APP_NAMES, drawerFeature?: Featu
 
     return undefined;
 };
+
+export const closeDrawerFromChildApp = (parentApp: APP_NAMES, currentApp: APP_NAMES, closeDefinitely?: boolean) => {
+    if (!getIsIframedDrawerApp(currentApp)) {
+        throw new Error('Cannot close non-iframed app');
+    }
+
+    postMessageFromIframe(
+        {
+            type: DRAWER_EVENTS.CLOSE,
+            payload: { app: currentApp, closeDefinitely },
+        },
+        parentApp
+    );
+};
