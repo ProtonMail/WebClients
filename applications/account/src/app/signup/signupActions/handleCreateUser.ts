@@ -30,15 +30,7 @@ export const getTokenPayment = (subscriptionData: SignupCacheResult['subscriptio
         : undefined;
 };
 
-const getSignupTypeQuery = (accountData: SignupCacheResult['accountData'], setupVPN: boolean) => {
-    // VPN requests the recovery email, and does not create the address (avoid passing Domain)
-    if (accountData.signupType === SignupType.VPN) {
-        let extra = {};
-        if (setupVPN) {
-            extra = { Domain: accountData.domain };
-        }
-        return { ...extra, Email: accountData.recoveryEmail };
-    }
+const getSignupTypeQuery = (accountData: SignupCacheResult['accountData']) => {
     if (accountData.signupType === SignupType.Username) {
         return { Domain: accountData.domain };
     }
@@ -59,10 +51,9 @@ export const handleCreateUser = async ({
         inviteData,
         referralData,
         clientType,
-        setupVPN,
     } = cache;
 
-    if (signupType === SignupType.Username || signupType === SignupType.VPN) {
+    if (signupType === SignupType.Username) {
         const humanVerificationParameters = (() => {
             if (humanVerificationResult) {
                 return {
@@ -90,7 +81,7 @@ export const handleCreateUser = async ({
                             Username: username,
                             Payload: payload,
                             ...getTokenPayment(subscriptionData),
-                            ...getSignupTypeQuery(accountData, setupVPN),
+                            ...getSignupTypeQuery(accountData),
                             ...getReferralDataQuery(referralData),
                         },
                         cache.productParam

@@ -481,7 +481,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     toAppName={toAppName}
                                                     onLogin={handleLogin}
                                                     onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
-                                                    setupVPN={setupVPN}
                                                 />
                                             </Route>
                                             <Route path={SSO_PATHS.RESET_PASSWORD}>

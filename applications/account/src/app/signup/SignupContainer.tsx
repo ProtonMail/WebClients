@@ -103,10 +103,9 @@ interface Props {
     toAppName?: string;
     onBack?: () => void;
     clientType: CLIENT_TYPES;
-    setupVPN: boolean;
 }
 
-const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam, setupVPN }: Props) => {
+const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam }: Props) => {
     const { APP_NAME } = useConfig();
     const normalApi = useApi();
     const history = useHistory();
@@ -522,16 +521,13 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     onChangeSignupType={(type) => {
                         setSignupType({ method: 'manual', type });
                     }}
-                    defaultRecoveryEmail={
-                        (accountData?.signupType === SignupType.VPN && accountData.recoveryEmail) || ''
-                    }
+                    defaultRecoveryEmail=""
                     domains={model.domains}
-                    onSubmit={async ({ username, email, recoveryEmail, domain, password, signupType, payload }) => {
+                    onSubmit={async ({ username, email, domain, password, signupType, payload }) => {
                         const accountData = {
                             username,
                             email,
                             password,
-                            recoveryEmail,
                             signupType,
                             payload,
                             domain,
@@ -546,9 +542,8 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                                   }
                                 : undefined,
                             productParam,
-                            setupVPN,
                             // Internal app or oauth app or vpn
-                            ignoreExplore: Boolean(toApp || toAppName || signupType === SignupType.VPN),
+                            ignoreExplore: Boolean(toApp || toAppName),
                             accountData,
                             subscriptionData,
                             inviteData: model.inviteData,
@@ -578,7 +573,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                         }
                         return c('Title').t`Verification`;
                     })()}
-                    defaultEmail={accountData?.signupType === SignupType.VPN ? accountData.recoveryEmail : ''}
+                    defaultEmail=""
                     token={cache?.humanVerificationData?.token || ''}
                     methods={cache?.humanVerificationData?.methods || []}
                     step={humanVerificationStep}
@@ -610,7 +605,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                 <ReferralStep
                     onBack={handleBackStep}
                     onPlan={async (planIDs) => {
-                        // Referral is always free even if there's a plan, and 1 month cycle
+                        // Referral is always free even if there's a plan, and 1-month cycle
                         const cycle = CYCLE.MONTHLY;
                         const checkResult = getFreeCheckResult(model.subscriptionData.currency, cycle);
                         return handlePlanSelectionCallback({ checkResult, planIDs, cycle });
@@ -694,7 +689,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                 <CongratulationsStep
                     defaultName={
                         cache?.accountData.username ||
-                        (accountData?.signupType === SignupType.VPN && getLocalPart(accountData.recoveryEmail)) ||
                         (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
                         ''
                     }
