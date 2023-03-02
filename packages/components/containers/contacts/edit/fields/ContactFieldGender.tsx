@@ -1,12 +1,10 @@
 import { ChangeEvent } from 'react';
 
+import { Input, InputProps } from '@proton/atoms';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import { VCardGenderValue, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { InputTwo } from '../../../../components';
-import { InputTwoProps } from '../../../../components/v2/input/Input';
-
-interface Props extends Omit<InputTwoProps, 'onChange'> {
+interface Props extends Omit<InputProps, 'onChange'> {
     vCardProperty: VCardProperty<VCardGenderValue>;
     onChange: (vCardProperty: VCardProperty) => void;
 }
@@ -21,7 +19,7 @@ const ContactFieldGender = ({ vCardProperty, onChange, ...rest }: Props) => {
         onChange({ ...vCardProperty, value: { gender: vCardProperty.value?.gender, text: newValue } });
     };
 
-    return <InputTwo value={value} placeholder={label} onChange={handleChange} data-testid={label} {...rest} />;
+    return <Input value={value} placeholder={label} onChange={handleChange} data-testid={label} {...rest} />;
 };
 
 export default ContactFieldGender;

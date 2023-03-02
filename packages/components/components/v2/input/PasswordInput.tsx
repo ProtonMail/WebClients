@@ -2,14 +2,13 @@ import { Ref, forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Input, InputProps } from '@proton/atoms';
 
 import Icon from '../../icon/Icon';
-import InputTwo, { InputTwoProps } from './Input';
 
 type PasswordType = 'password' | 'text';
 
-interface Props extends Omit<InputTwoProps, 'type'> {
+interface Props extends Omit<InputProps, 'type'> {
     defaultType?: PasswordType;
 }
 
@@ -22,7 +21,7 @@ const PasswordInputTwoBase = (
         setType(type === 'password' ? 'text' : 'password');
     };
     return (
-        <InputTwo
+        <Input
             autoComplete="off"
             autoCapitalize="off"
             autoCorrect="off"

@@ -2,14 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Input } from '@proton/atoms';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isDomain } from '@proton/shared/lib/helpers/validators';
 
 import {
     Field,
     Form,
-    InputTwo,
     Label,
     ModalProps,
     ModalTwo,
@@ -116,7 +115,7 @@ const SpamModal = ({ type, onAdd, modalProps }: Props) => {
                     <Label htmlFor={`${mode}Input`}>
                         {mode === 'email' ? c('Label').t`Email` : c('Label').t`Domain`}
                     </Label>
-                    <InputTwo
+                    <Input
                         id={`${mode}Input`}
                         ref={inputElementRef}
                         value={mode === 'email' ? email : domain}
