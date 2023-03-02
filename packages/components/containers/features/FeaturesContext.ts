@@ -90,7 +90,6 @@ export enum FeatureCode {
     ProtonBadge = 'ProtonBadge',
     TelemetrySetting = 'TelemetrySetting',
     QuickReply = 'QuickReply',
-    EasySwitchGmailSync = 'EasySwitchGmailSync',
     ScheduledSendFreemium = 'ScheduledSendFreemium',
 }
 
@@ -109,6 +108,7 @@ export interface FeatureContextValue<V = any> {
     loading: boolean | undefined;
     get: () => Promise<Feature<V>>;
     update: (value: V) => Promise<Feature<V>>;
+    code: FeatureCode;
 }
 
 export const FeaturesContext = createContext<FeaturesContextValue>({} as FeaturesContextValue);

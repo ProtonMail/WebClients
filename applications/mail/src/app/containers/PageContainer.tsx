@@ -51,10 +51,9 @@ const PageContainer = (
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
     const { showDrawerSidebar } = useDrawer();
 
-    const [{ feature: drawerFeature }, { feature: runLegacyMessageFeature }] = useFeatures([
-        FeatureCode.Drawer,
-        FeatureCode.LegacyMessageMigrationEnabled,
-    ]);
+    const { getFeature } = useFeatures([FeatureCode.Drawer, FeatureCode.LegacyMessageMigrationEnabled]);
+    const { feature: drawerFeature } = getFeature(FeatureCode.Drawer);
+    const { feature: runLegacyMessageFeature } = getFeature(FeatureCode.LegacyMessageMigrationEnabled);
 
     const runLegacyMessageMigration = runLegacyMessageFeature?.Value;
 

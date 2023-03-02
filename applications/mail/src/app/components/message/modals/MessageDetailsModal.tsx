@@ -52,10 +52,9 @@ const MessageDetailsModal = ({
     onContactEdit,
     ...rest
 }: Props) => {
-    const [{ feature: spyTrackerFeature }, { feature: numAttachmentsWithoutEmbeddedFeature }] = useFeatures([
-        FeatureCode.SpyTrackerProtection,
-        FeatureCode.NumAttachmentsWithoutEmbedded,
-    ]);
+    const { getFeature } = useFeatures([FeatureCode.SpyTrackerProtection, FeatureCode.NumAttachmentsWithoutEmbedded]);
+    const { feature: spyTrackerFeature } = getFeature(FeatureCode.SpyTrackerProtection);
+    const { feature: numAttachmentsWithoutEmbeddedFeature } = getFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
 
     const { onClose } = rest;
 
