@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { ImportProvider } from '@proton/activation/src/interface';
 import { Button, ButtonProps } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
-import otherIllustration from '@proton/styles/assets/img/import/providers/other.svg';
 import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';
 import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo.svg';
 import clsx from '@proton/utils/clsx';
@@ -39,7 +39,7 @@ const ProviderCard = ({ className, provider, ...rest }: Props) => {
         [DEFAULT]: {
             // translator: here 'Other' stand for "other provider"
             name: c('Import provider').t`Other`,
-            logo: otherIllustration,
+            logo: 'three-dots-horizontal',
             width: 48,
             height: 46,
         },
@@ -49,12 +49,16 @@ const ProviderCard = ({ className, provider, ...rest }: Props) => {
 
     return (
         <Button
-            className={clsx(['provider-card inline-flex flex-column ', className])}
+            className={clsx(['provider-card inline-flex flex-column py1-5', className])}
             aria-label={c('Import provider').t`Import from ${provider}`}
             {...rest}
         >
             <div className="flex-item-fluid flex flex-justify-center w100">
-                <img src={logo} alt="" className="flex-align-self-center" width={width} height={height} />
+                {provider === ImportProvider.DEFAULT ? (
+                    <Icon name={logo} className="flex-align-self-center" size={40} />
+                ) : (
+                    <img src={logo} alt="" className="flex-align-self-center" width={width} height={height} />
+                )}
             </div>
             <span className="flex-align-self-center">{name}</span>
         </Button>

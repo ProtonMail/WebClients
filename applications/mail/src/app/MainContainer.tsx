@@ -26,7 +26,7 @@ const MainContainer = () => {
 
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);
-    const [{ feature: featureSw, loading: loadingSw }] = useFeatures([
+    const { getFeature } = useFeatures([
         FeatureCode.MailServiceWorker,
         FeatureCode.EarlyAccessScope,
         FeatureCode.ScheduledSendFreemium,
@@ -37,6 +37,8 @@ const MainContainer = () => {
         FeatureCode.SpyTrackerProtection,
         FeatureCode.LegacyMessageMigrationEnabled,
     ]);
+
+    const { feature: featureSw, loading: loadingSw } = getFeature(FeatureCode.MailServiceWorker);
 
     // Service Worker registration
     // Including a kill switch with a feature flag

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import { SYNC_G_OAUTH_SCOPES, SYNC_SOURCE } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { ImportProvider, OAuthProps } from '@proton/activation/src/interface';
+import { EasySwitchFeatureFlag, ImportProvider, OAuthProps } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
@@ -26,10 +26,10 @@ const SyncRowActions = ({ syncId }: Props) => {
     const [loadingApiChange, withLoadingApiChange] = useLoading();
 
     const { triggerOAuthPopup } = useOAuthPopup({
-        errorMessage: c('loc_nightly:Error').t`Your sync will not be processed.`,
+        errorMessage: c('Error').t`Your forward will not be processed.`,
     });
 
-    const gmailSync = useFeature(FeatureCode.EasySwitchGmailSync);
+    const { feature } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
 
     const handleReconnectClick = () => {
         triggerOAuthPopup({
@@ -45,7 +45,7 @@ const SyncRowActions = ({ syncId }: Props) => {
                             Provider,
                             RedirectUri,
                             Source: SYNC_SOURCE,
-                            notification: { text: c('loc_nightly:Success').t`Resuming sync` },
+                            notification: { text: c('action').t`Resuming forward` },
                             syncId,
                             importerId: syncItem.importerID,
                         })
@@ -57,14 +57,14 @@ const SyncRowActions = ({ syncId }: Props) => {
 
     const getStoppedAction = () => {
         const deleteSyncButton = {
-            text: c('loc_nightly:account').t`Delete sync`,
+            text: c('account').t`Delete forward`,
             onClick: () => showDeleteModal(true),
         };
 
-        if (gmailSync.feature?.Value) {
+        if (feature?.Value.GoogleMailSync) {
             return [
                 {
-                    text: c('loc_nightly:account').t`Reconnect`,
+                    text: c('account').t`Reconnect`,
                     onClick: handleReconnectClick,
                 },
                 deleteSyncButton,
@@ -77,7 +77,7 @@ const SyncRowActions = ({ syncId }: Props) => {
 
     const activeAction = [
         {
-            text: c('loc_nightly:account').t`Delete sync`,
+            text: c('account').t`Delete forward`,
             onClick: () => showDeleteModal(true),
             loading: loadingApiChange,
         },
@@ -110,7 +110,7 @@ const SyncRowActions = ({ syncId }: Props) => {
                     {...deleteModalProps}
                 >
                     <Alert className="mb1" type="error">
-                        {c('loc_nightly:account').t`You will stop the syncing process.`}
+                        {c('account').t`You will stop the mail forwarding.`}
                     </Alert>
                 </AlertModal>
             )}

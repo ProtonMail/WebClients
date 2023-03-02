@@ -30,7 +30,7 @@ const ReportsTable = () => {
     if (reportIds.length === 0 && activeImporterIds.length === 0 && syncIdsArray.length === 0) {
         return (
             <SettingsParagraph data-testid="reportsTable:noImports">{c('Info')
-                .t`No imports to display.`}</SettingsParagraph>
+                .t`No imports or forwarding history.`}</SettingsParagraph>
         );
     }
 
