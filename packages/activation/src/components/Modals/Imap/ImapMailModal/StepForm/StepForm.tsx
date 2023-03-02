@@ -8,11 +8,10 @@ import {
     selectImapDraftProvider,
 } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { Button } from '@proton/atoms/Button';
+import { Button, Input } from '@proton/atoms';
 import {
     Field,
     Form,
-    InputTwo,
     Label,
     ModalTwo,
     ModalTwoContent,
@@ -59,7 +58,7 @@ function StepForm() {
                     <Row>
                         <Label htmlFor="emailAddress">{c('Label').t`Email`}</Label>
                         <Field>
-                            <InputTwo
+                            <Input
                                 id="emailAddress"
                                 value={formValues.emailAddress}
                                 onChange={({ target }) => {
@@ -100,7 +99,7 @@ function StepForm() {
                     <Row>
                         <Label htmlFor="imap">{c('Label').t`Mail Server (IMAP)`}</Label>
                         <Field>
-                            <InputTwo
+                            <Input
                                 id="imap"
                                 placeholder="imap.domain.com"
                                 value={formValues.imap}
@@ -118,7 +117,7 @@ function StepForm() {
                     <Row>
                         <Label htmlFor="port">{c('Label').t`Port`}</Label>
                         <Field>
-                            <InputTwo
+                            <Input
                                 id="port"
                                 placeholder="993"
                                 value={formValues.port}
