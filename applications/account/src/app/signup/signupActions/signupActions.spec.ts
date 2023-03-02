@@ -37,14 +37,12 @@ describe('signupActions', () => {
             };
 
             const cache: SignupCacheResult = {
-                setupVPN: false,
                 accountData: {
                     username: 'user123',
                     domain: 'proton.me',
                     email: 'user123@proton.me',
                     password: 'secure123',
-                    recoveryEmail: 'user123@gmail.com',
-                    signupType: SignupType.VPN,
+                    signupType: SignupType.Username,
                     payload: undefined,
                 },
                 subscriptionData,
@@ -94,14 +92,12 @@ describe('signupActions', () => {
             };
 
             const cache: SignupCacheResult = {
-                setupVPN: false,
                 accountData: {
                     username: 'user123',
                     domain: 'proton.me',
                     email: 'user123@proton.me',
                     password: 'secure123',
-                    recoveryEmail: 'user123@gmail.com',
-                    signupType: SignupType.VPN,
+                    signupType: SignupType.Username,
                     payload: undefined,
                 },
                 subscriptionData,
@@ -159,7 +155,6 @@ describe('signupActions', () => {
             };
 
             const cache: SignupCacheResult = {
-                setupVPN: false,
                 accountData: {
                     username: 'user123',
                     domain: 'proton.me',
@@ -223,7 +218,6 @@ describe('signupActions', () => {
             };
 
             const cache: SignupCacheResult = {
-                setupVPN: false,
                 accountData: {
                     username: 'user123',
                     domain: 'proton.me',
