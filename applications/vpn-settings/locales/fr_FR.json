@@ -1518,7 +1518,7 @@
         "Les mots de passe ne correspondent pas."
       ],
       "Payment process cancelled": [
-        "Le processus de paiement a été annulé."
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Le processus de paiement est achevé."
@@ -1557,7 +1557,7 @@
         "L'onglet est fermé."
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Le navigateur que vous utilisez ne permet pas d'autoriser complètement le paiement. Nous vous invitons à utiliser un autre navigateur ou à vous connecter à partir d'un ordinateur."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
@@ -1964,7 +1964,7 @@
         "Crédit pour la période non utilisée de votre abonnement précédent"
       ],
       "Custom email domains": [
-        "Domaines d'e-mails personnalisés"
+        "Domaines de messagerie personnalisés"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -1997,7 +1997,7 @@
         "Votre sélection est enregistrée."
       ],
       "Enter code from your authenticator app": [
-        "Saisissez le code de votre application d'authentification."
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Saisir plutôt la clé manuellement"
@@ -2075,7 +2075,7 @@
         "Si vous n'avez jamais utilisé l'authentification à deux facteurs, nous vous recommandons vivement de ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "En cas de perte de l'appareil que vous utilisez pour l'authentification à deux facteurs, ces codes peuvent être utilisés à la place du code d'authentification à 6 chiffres pour vous connecter à votre compte. Chaque code ne peut être utilisé qu'une seule fois."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
@@ -2114,7 +2114,7 @@
         "La connexion internet est rétablie."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Apprenez comment vous connecter à ${ VPN_APP_NAME } avec des applications VPN tierces."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "En savoir plus"
@@ -2135,7 +2135,7 @@
         "Chargement en cours..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Connectez-vous à ${ MAIL_APP_NAME } pour activer votre adresse."
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "perdre l'accès à toutes les données actuellement chiffrées"
@@ -2366,7 +2366,7 @@
         "L'authentification à deux facteurs est activée."
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Le mode à deux mots de passe nécessite un mot de passe pour se connecter à votre compte et un autre pour déchiffrer votre boîte aux lettres (avancé)."
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Avec l'option deux mots de passe, vous utilisez un mot de passe pour vous connecter à votre compte et un autre mot de passe pour déchiffrer votre messagerie. Cela représente une petite sécurité supplémentaire dans certains cas, mais nous recommandons d'utiliser un seul mot de passe, cela convient pour la majorité des utilisateurs. Pour utiliser deux mots de passe, définissez d'abord un mot de passe de connexion à votre compte, puis choisissez un mot de passe pour votre messagerie."
@@ -2505,7 +2505,7 @@
         "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ${ VPN_APP_NAME } en utilisant une application VPN open source tierce, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Vous ne pouvez pas utiliser les identifiants OpenVPN/IKEv2 pour vous connecter aux applications ${ VPN_APP_NAME } ou au tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vous n'avez pas défini de méthode de récupération : si vous oubliez votre mot de passe, la récupération de votre compte ne sera pas possible. Voulez-vous continuer sans méthode de récupération ?"
@@ -2550,7 +2550,7 @@
         "Votre compte ${ BRAND_NAME } est suspendu. Les e-mails ne sont plus envoyés dans votre boîte de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Vos comptes ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } sont liés. Pour les supprimer tous les deux, nous vous invitons à vous connecter à ${ loginLink } et à y supprimer votre compte."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
@@ -2574,7 +2574,7 @@
         "Vos informations de paiement sont protégées par le chiffrement TLS et les lois suisses sur la protection de la vie privée."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
+        "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
@@ -2602,7 +2602,7 @@
     },
     "Info; access rights for shared calendar": {
       "View only": [
-        "Voir seulement"
+        "Lecture seulement"
       ]
     },
     "Invoice state display as badge": {
@@ -2972,7 +2972,7 @@
         "Votre mot de passe (admin)"
       ],
       "ZIP code": [
-        "Code postal"
+        "Postal code"
       ]
     },
     "label": {
@@ -3372,7 +3372,7 @@
         "Dossiers illimités"
       ],
       "Unlimited folders, labels and filters": [
-        "Dossiers, labels et filtres illimités"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "Labels illimités"
@@ -3892,9 +3892,6 @@
       "Verify now this recovery email address: ${ email.Value }": [
         "Vérifiez maintenant cette adresse électronique de récupération : ${ email.Value }"
       ],
-      "Verify now this recovery phone number address: ${ phone.Value }": [
-        "Vérifier maintenant ce numéro de téléphone de récupération de votre compte : ${ phone.Value }"
-      ],
       "Verify recovery email?": [
         "Vérifier l'e-mail de récupération ?"
       ],
@@ -4292,8 +4289,8 @@
       ]
     },
     "Subscription change warning": {
-      "Subscription managed elsewhere": [
-        "Manage your subscription on Google Play"
+      "Manage your subscription on ${ subscriptionManagerShort }": [
+        "Gérez votre abonnement sur ${ subscriptionManagerShort }."
       ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
         "Votre abonnement a été effectué par le biais d'un achat dans l'application. Pour gérer votre abonnement actuel, vous devez vous rendre dans la section Abonnement de votre compte ${ subscriptionManager }."
@@ -4322,7 +4319,7 @@
         "${ server.Domain } a été copié dans votre presse-papiers."
       ],
       "Account deleted. Logging out...": [
-        "Le compte a été supprimé. Déconnexion…"
+        "Account deleted. Signing out..."
       ],
       "Bug reported": [
         "Le bug a été signalé."
@@ -4753,7 +4750,7 @@
         "Total payé"
       ],
       "TV log in": [
-        "Connexion à la télévision"
+        "TV sign in"
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
@@ -4819,7 +4816,7 @@
         "Vous avez été invité à essayer ${ MAIL_APP_NAME }."
       ],
       "ZIP / postal code": [
-        "Code postal"
+        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4885,7 +4882,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Voulez-vous vraiment supprimer cette adresse ?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Voulez-vous vraiment supprimer ce numéro de téléphone ?"

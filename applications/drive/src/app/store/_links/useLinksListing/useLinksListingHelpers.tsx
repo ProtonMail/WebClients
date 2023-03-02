@@ -162,7 +162,7 @@ export function useLinksListingHelpers() {
                 // logic with notifications, similarly like we have hook
                 // useActions, to have better freedom to chose what to use.
                 if (showNotification) {
-                    showErrorNotification(err, c('Notification').t`Next page failed to be loaded`);
+                    showErrorNotification(err, c('Notification').t`Cannot load next page`);
                     // Very probably the next page is still there, but to not cause
                     // inifinite loop requesting next page, lets return false.
                     return false;

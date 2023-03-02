@@ -40,7 +40,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink mt0-4 ml0-2 color-danger" />
                 <span className="pl0-5 pr0-5 pb0-25 mt0-2 flex-item-fluid">
                     {c('Info')
-                        .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!`}{' '}
+                        .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.`}{' '}
                     <Href
                         url={getKnowledgeBaseUrl('/email-has-failed-its-domains-authentication-requirements-warning')}
                     >

@@ -45,14 +45,14 @@ const OpenVPNCredentialsSection = (props: Props) => {
                             .t`You can use the following credentials to connect to a ${VPN_APP_NAME} server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.`}
                     </SettingsParagraph>
                     <SettingsParagraph>
-                        {c('Info').t`Learn how to log in to ${VPN_APP_NAME} with third-party VPN applications.`}
+                        {c('Info').t`Learn how to sign in to ${VPN_APP_NAME} with third-party VPN applications.`}
                     </SettingsParagraph>
                     <SettingsParagraph>
                         {c('Info').t`We advise you to use official ${VPN_APP_NAME} applications when possible.`}
                     </SettingsParagraph>
                     <SettingsParagraph>
                         {c('Info').jt`
-                     You cannot use the OpenVPN / IKEv2 credentials to log in to ${VPN_APP_NAME} applications or the ${VPN_APP_NAME} dashboard. ${learnMore}`}
+                     You cannot use the OpenVPN / IKEv2 credentials to sign in to ${VPN_APP_NAME} applications or the ${VPN_APP_NAME} dashboard. ${learnMore}`}
                     </SettingsParagraph>
                 </>
             ) : (

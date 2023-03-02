@@ -79,7 +79,7 @@ const PasswordsSection = () => {
                                     <Info
                                         url={getKnowledgeBaseUrl('/single-password')}
                                         title={c('Info')
-                                            .t`Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)`}
+                                            .t`Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)`}
                                     />
                                 </label>
                             </SettingsLayoutLeft>

@@ -332,7 +332,7 @@
         "Cargar imagen"
       ],
       "Log in": [
-        "Iniciar sesión"
+        "Sign in"
       ],
       "Manage folders": [
         "Gestionar carpetas"
@@ -915,7 +915,7 @@
         "Profesión"
       ],
       "Timezone": [
-        "Zona horaria"
+        "Time zone"
       ],
       "Title": [
         "Título"
@@ -1886,7 +1886,7 @@
         "Dominio no disponible, inténtelo más tarde"
       ],
       "Email address invalid": [
-        "Dirección de correo inválida"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Dirección de correo requerida"
@@ -2113,7 +2113,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Ocurrió un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2154,7 +2154,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ocurrió un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2189,7 +2189,7 @@
         "Componente con formato incorrecto"
       ],
       "Custom timezone": [
-        "Zona horaria personalizada"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado no compatible"
@@ -2261,7 +2261,7 @@
         "Zona horaria no admitida"
       ],
       "Timezone": [
-        "Zona horaria"
+        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tareas"
@@ -3263,10 +3263,10 @@
         "Enlace copiado al portapapeles"
       ],
       "Link failed to be loaded": [
-        "Error al cargar el enlace"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Error al cargar los enlaces"
+        "Cannot load links"
       ],
       "Loading": [
         "Cargando"
@@ -3478,7 +3478,7 @@
         "Enlace compartible para ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Error al cargar el enlace compartido"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No se pudo validar la firma por problemas de red. Intente de nuevo más tarde."
@@ -3938,7 +3938,7 @@
         "Nombre del dispositivo"
       ],
       "Do not ask again": [
-        "No volver a preguntar"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Descargar de todos modos"
@@ -4552,7 +4552,7 @@
         "Falta el nombre del archivo o carpeta"
       ],
       "Link failed to be loaded": [
-        "Error al cargar el enlace"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Mover ${ itemsToMoveCount } archivo",
@@ -4579,7 +4579,7 @@
         "Mover ${ movingCount } elementos"
       ],
       "Next page failed to be loaded": [
-        "Error al cargar la siguiente página"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hay espacio suficiente para cargar ${ formattedTotal }"
@@ -5150,7 +5150,7 @@
         "Error reportado"
       ],
       "Cancelling import": [
-        "Cancelando la importación"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -5529,7 +5529,7 @@
         "Detalles del elemento"
       ],
       "Items details": [
-        "Detalles de elementos"
+        "Item details"
       ],
       "Link confirmation": [
         "Confirmación de enlace"
@@ -5706,7 +5706,7 @@
         "El enlace expiró"
       ],
       "The link failed to be loaded": [
-        "Error al cargar el enlace"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Falta la clave del achivo o la firma es inválida. Vaya a Menú (⋮) → Detalles para más información."

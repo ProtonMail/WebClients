@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Усі без зірочки"
       ],
-      "Allow messages": [
-        "Дозволити повідомлення"
-      ],
       "Apply": [
         "Застосувати"
       ],
@@ -552,7 +549,7 @@
         "Завантаження${ ellipsis }"
       ],
       "Log in": [
-        "Увійти"
+        "Sign in"
       ],
       "Mailbox density": [
         "Щільність поштової скриньки"
@@ -1911,7 +1908,7 @@
         "Роль"
       ],
       "Timezone": [
-        "Часовий пояс"
+        "Time zone"
       ],
       "Title": [
         "Назва"
@@ -2838,9 +2835,6 @@
       "No labels": [
         "Немає міток"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
@@ -3070,7 +3064,7 @@
         "Адреса е-пошти вимкнена"
       ],
       "Email address invalid": [
-        "Недійсна адреса електронної пошти"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Адреса е-пошти обов'язкова"
@@ -3415,7 +3409,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3458,7 +3452,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Під час читання вашого файлу ${ formattedFilename } сталася помилка. Файл має неправильний формат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3493,7 +3487,7 @@
         "Компонент з неправильним форматом"
       ],
       "Custom timezone": [
-        "Власний часовий пояс"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Відредагована подія не підтримується"
@@ -3565,7 +3559,7 @@
         "Часовий пояс не підтримується"
       ],
       "Timezone": [
-        "Часовий пояс"
+        "Time zone"
       ],
       "To-do entry": [
         "Запис завдання"
@@ -4871,8 +4865,8 @@
         "Скоро завершується"
       ],
       "file attached": [
-        "вкладений файл",
-        "вкладені файли",
+        "attachment",
+        "attachments",
         "вкладених файлів",
         "вкладених файлів"
       ],
@@ -5261,7 +5255,7 @@
         "Збереження чернетки…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Заплановане надсилання цього повідомлення буде скасовано."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Планування повідомлення..."
@@ -5402,7 +5396,7 @@
         "Цей браузер не підтримує перегляд PDF документів. Будь ласка, завантажте файл."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Ця розмова має заплановане повідомлення. Надсилання цього повідомлення буде скасовано."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Ця розмова містить не видалені повідомлення."
@@ -5417,7 +5411,7 @@
         "Ці розмови будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Цей лист не пройшов вимоги перевірки свого домену. Він міг бути підроблений або неправильно пересланий!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Це запрошення збережено у вимкненому календарі."
@@ -6175,7 +6169,7 @@
         "Видалити інформацію повʼязану з відновленням."
       ],
       "Do not ask again": [
-        "Не питати знову"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Більше не показувати"
@@ -6870,7 +6864,7 @@
         "Заплановане надсилання скасовано"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Планування скасовано. Повідомлення переміщено до чернеток."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Надсилання скасовано"
@@ -7081,7 +7075,7 @@
         "Пошук вмісту повідомлень"
       ],
       "Unlimited folders, labels and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "До 15 адрес електронної пошти"
@@ -7824,7 +7818,7 @@
         "Звіт про помилку надіслано"
       ],
       "Cancelling import": [
-        "Скасування імпорту"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
@@ -7899,7 +7893,7 @@
         "Налаштування комбінацій клавіш оновлено"
       ],
       "Label cleared": [
-        "Мітку очищено"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Мітки застосовано."

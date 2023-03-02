@@ -131,6 +131,9 @@
       "Edit billing details": [
         "Bewerk facturatiegegevens"
       ],
+      "Edit display name": [
+        "Wijzig weergavenaam"
+      ],
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
@@ -1502,7 +1505,7 @@
         "Wachtwoorden komen niet overeen"
       ],
       "Payment process cancelled": [
-        "Betalingsverzoek geannuleerd"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Betalingsverzoek verwerkt"
@@ -1541,7 +1544,7 @@
         "Tab gesloten"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
@@ -1824,6 +1827,9 @@
         "${ number } server",
         "${ number } servers"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } opslagruimte"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } vereist voor verbindingen op landniveau."
       ],
@@ -1958,7 +1964,7 @@
         "E-mailvoorkeuren opgeslagen"
       ],
       "Enter code from your authenticator app": [
-        "Voer de code van uw verificatie-app in"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Sleutel handmatig invoeren"
@@ -2036,7 +2042,7 @@
         "Als u nog nooit eerder tweestapsverificatie heeft gebruikt, raden we u aan om ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Als u uw tweestapsverificatie-apparaat kwijtraakt, kunnen deze codes worden gebruikt in plaats van de 6-cijferige tweestapsverificatiecode om in te loggen op uw account. Elke code kan slechts één keer worden gebruikt."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
@@ -2075,7 +2081,7 @@
         "Internetverbinding hersteld."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "Meer informatie"
@@ -2096,7 +2102,7 @@
         "Laden..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "toegang tot alle huidige versleutelde gegevens verliezen"
@@ -2297,7 +2303,7 @@
         "Tweestapsverificatie ingeschakeld"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Twee-wachtwoordmodus vereist twee wachtwoorden: één om in te loggen op uw account en één om uw mailbox te decoderen. (Geavanceerd)"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Twee-wachtwoordsmodus maakt gebruik van verschillende wachtwoorden voor het inloggen en de ontsleuteling van de mailbox. Dit biedt in sommige gevallen een klein veiligheidsvoordeel maar wij raden één-wachtwoordsmodus aan voor de meeste gebruikers. Om over te schakel naar twee-wachtwoordsmodus, stelt u eerst een inlogwachtwoord in en daarna een mailboxwachtwoord."
@@ -2395,6 +2401,22 @@
       "You can customize and download your invoices for accounting purposes.": [
         "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw abonnement annuleert."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "U kunt slechts één chat-instantie tegelijk open hebben. Sluit eerdere gesprekken voordat u een nieuw gesprek begint."
       ],
@@ -2402,7 +2424,7 @@
         "U kunt de volgende inloggegevens gebruiken om met een ${ VPN_APP_NAME }-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ${ VPN_APP_NAME } applicaties of op het ${ VPN_APP_NAME } dashboard. ${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
@@ -2444,7 +2466,7 @@
         "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
@@ -2492,6 +2514,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Om een onderbreking van uw account te voorkomen als gevolg van onbetaalde facturen, zorg ervoor dat u minstens één geldige betaalmethode toegevoegd hebt aan uw account."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Alleen bekijken"
       ]
     },
     "Invoice state display as badge": {
@@ -2861,7 +2888,7 @@
         "Uw wachtwoord (admin)"
       ],
       "ZIP code": [
-        "Postcode"
+        "Postal code"
       ]
     },
     "label": {
@@ -3071,6 +3098,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
       "${ n } custom email domain": [
         "${ n } aangepast e-maildomein",
         "${ n } aangepaste e-maildomeinen"
@@ -3251,7 +3282,7 @@
         "Onbeperkt aantal mappen"
       ],
       "Unlimited folders, labels and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
@@ -3466,6 +3497,10 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
@@ -3608,6 +3643,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
+      ],
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Maak tot ${ MAX_CALENDARS_PAID } agenda",
+        "Maak tot ${ MAX_CALENDARS_PAID } agenda's"
       ],
       "Everything in ${ vpnPlanName }": [
         "Alles van ${ vpnPlanName }"
@@ -4164,7 +4203,7 @@
         "${ server.Domain } gekopieerd naar uw klembord"
       ],
       "Account deleted. Logging out...": [
-        "Account verwijderd. Uitloggen..."
+        "Account deleted. Signing out..."
       ],
       "Bug reported": [
         "Bug gemeld"
@@ -4345,6 +4384,9 @@
       "Billing cycle": [
         "Factuurperiode"
       ],
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
+      ],
       "Card verification": [
         "Kaartverificatie"
       ],
@@ -4495,6 +4537,9 @@
       "Pay invoice": [
         "Factuur betalen"
       ],
+      "Payment failed": [
+        "Betaling mislukt"
+      ],
       "Payment methods": [
         "Betalingswijzen"
       ],
@@ -4586,7 +4631,7 @@
         "Totaal betaald"
       ],
       "TV log in": [
-        "TV inloggen"
+        "TV sign in"
       ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
@@ -4606,8 +4651,17 @@
       "Verification": [
         "Verificatie"
       ],
+      "Verification failed": [
+        "Verificatie mislukt"
+      ],
       "Verify email address": [
         "Verifieer e-mailadres"
+      ],
+      "Verifying your card...": [
+        "Uw kaart wordt geverifieerd..."
+      ],
+      "Verifying your payment...": [
+        "Uw betaling wordt geverifieerd..."
       ],
       "Warning": [
         "Waarschuwing"
@@ -4643,7 +4697,7 @@
         "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"
       ],
       "ZIP / postal code": [
-        "Postcode"
+        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4709,7 +4763,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Weet u zeker dat u het e-mailadres wil verwijderen?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Bent u zeker dat u het telefoonnummer wilt verwijderen?"
