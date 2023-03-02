@@ -63,7 +63,6 @@ export interface ReferralData {
 export enum SignupType {
     Email = 1,
     Username,
-    VPN,
 }
 
 export interface SignupModel {
@@ -107,13 +106,9 @@ interface BaseAccountData {
 }
 
 export type AccountData =
-    | (BaseAccountData & {
-          signupType: Exclude<SignupType, SignupType.VPN>;
-      })
-    | (BaseAccountData & {
-          recoveryEmail: string;
-          signupType: SignupType.VPN;
-      });
+    | BaseAccountData & {
+          signupType: SignupType;
+      };
 
 export enum HumanVerificationTrigger {
     ExternalCheck,
@@ -144,7 +139,6 @@ export interface SignupCacheResult {
     productParam: ProductParam;
     userData?: UserData;
     setupData?: SetupData;
-    setupVPN: boolean;
     accountData: AccountData;
     subscriptionData: SubscriptionData;
     inviteData: InviteData | undefined;
