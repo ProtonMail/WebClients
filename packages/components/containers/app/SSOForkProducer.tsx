@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { OAuthClientInfo, getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
     GetActiveSessionsResult,
@@ -132,7 +131,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
             const handleActiveSessions = async (activeSessionsResult: GetActiveSessionsResult) => {
                 const { session, sessions } = activeSessionsResult;
 
-                if (session && sessions.length === 1 && type !== FORK_TYPE.SWITCH) {
+                if (session && sessions.length === 1 && type === undefined) {
                     const { UID, keyPassword, persistent, trusted } = session;
                     await onProduceFork({
                         type: SSOType.Proton,
