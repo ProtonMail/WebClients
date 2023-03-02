@@ -19,7 +19,7 @@ const ShareLinkButton = ({ shareId, link, close }: Props) => {
         <ContextMenuButton
             name={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
             icon={hasSharedLink ? 'link-pen' : 'link'}
-            testId="context-menu-share-link"
+            testId="context-menu-manage-link"
             action={() => openLinkSharing(shareId, link.linkId)}
             close={close}
         />
