@@ -25,7 +25,7 @@ interface Props {
 const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
     const { isLoading, error, hasFile, hasFolder, count, size } = useLinksDetailsView(selectedItems);
 
-    let title = c('Title').t`Items details`;
+    let title = c('Title').t`Item details`;
     let labelCount = c('Title').t`Number of items`;
     if (!hasFile || !hasFolder) {
         title = hasFile ? c('Title').t`Files details` : c('Title').t`Folders details`;
@@ -40,7 +40,7 @@ const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
         if (error) {
             return (
                 <ModalTwoContent>
-                    <Alert type="error">{c('Info').t`Links failed to be loaded`}</Alert>
+                    <Alert type="error">{c('Info').t`Cannot load links`}</Alert>
                 </ModalTwoContent>
             );
         }

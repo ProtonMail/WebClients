@@ -332,7 +332,7 @@
         "Charger l'image"
       ],
       "Log in": [
-        "Se connecter"
+        "Sign in"
       ],
       "Manage folders": [
         "Gérer les dossiers"
@@ -915,7 +915,7 @@
         "Rôle"
       ],
       "Timezone": [
-        "Fuseau horaire"
+        "Time zone"
       ],
       "Title": [
         "Fonction/Profession"
@@ -1879,6 +1879,14 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La recherche dans le contenu ne peut pas être activée dans ce navigateur. Nous vous invitons à quitter la navigation privée ou à essayer avec un autre navigateur."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
+        "Désélectionnez au moins ${ calendarsToFixCount } calendriers."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Désélectionnez au moins ${ calendarsToFixCount } calendrier ou",
+        "Désélectionnez au moins ${ calendarsToFixCount } calendriers ou"
+      ],
       "Device name does not match": [
         "Le nom de l'appareil ne correspond pas."
       ],
@@ -1886,7 +1894,7 @@
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
       "Email address invalid": [
-        "L'adresse électronique n'est pas valide."
+        "Invalid email address"
       ],
       "Email address is required": [
         "L'adresse électronique est nécessaire."
@@ -1941,6 +1949,10 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
+        "Fusionnez au moins ${ calendarsToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
       ],
       "Missing key packet": [
         "Il manque le paquet de clés."
@@ -2101,6 +2113,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Vous avez atteint le nombre maximum de calendriers. Certains calendriers n'ont pas pu être importés."
+      ],
       "You must set a name": [
         "Vous devez définir un nom."
       ],
@@ -2113,7 +2128,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d'un fichier est de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2154,7 +2169,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2189,7 +2204,7 @@
         "L'élément n'a pas le bon format."
       ],
       "Custom timezone": [
-        "Fuseau horaire personnalisé"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "L'événement modifié n'est pas pris en charge."
@@ -2261,7 +2276,7 @@
         "Le fuseau horaire n'est pas pris en charge."
       ],
       "Timezone": [
-        "Fuseau horaire"
+        "Time zone"
       ],
       "To-do entry": [
         "Entrée de type tâche à réaliser"
@@ -2804,6 +2819,9 @@
         "${ contactsCount } contact trouvé",
         "${ contactsCount } contacts trouvés"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (restauré)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } terminé",
         "${ doneCount } terminés"
@@ -3266,10 +3284,10 @@
         "Le lien est copié dans le presse-papiers."
       ],
       "Link failed to be loaded": [
-        "Le lien n'a pas pu être chargé."
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Les liens n'ont pas pu être chargés."
+        "Cannot load links"
       ],
       "Loading": [
         "Chargement"
@@ -3447,6 +3465,9 @@
       "Report has been sent": [
         "Le rapport a été envoyé."
       ],
+      "Restored files ${ formattedDate }": [
+        "Fichiers restaurés ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "La recherche ne peut pas être activée dans ce navigateur."
       ],
@@ -3465,6 +3486,9 @@
       "Select what you want to import.": [
         "Sélectionnez ce que vous voulez importer."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé, en fonction du nombre de calendriers disponibles dans votre abonnement."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
@@ -3481,7 +3505,7 @@
         "Lien partageable pour ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Le lien partagé n'a pas pu être chargé."
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
@@ -3755,7 +3779,7 @@
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
+        "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
       ],
       "Your previous password": [
         "Votre précédent mot de passe"
@@ -3865,7 +3889,7 @@
         "Enregistrer automatiquement les contacts"
       ],
       "Awful": [
-        "Affreuse"
+        "Affreux"
       ],
       "Bad": [
         "Mauvaise"
@@ -3944,7 +3968,7 @@
         "Nom de l'appareil"
       ],
       "Do not ask again": [
-        "Ne plus demander"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Télécharger quand même"
@@ -4241,7 +4265,7 @@
         "Que s'est-il passé ?"
       ],
       "Wonderful": [
-        "Merveilleuse"
+        "Merveilleux"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Oui, je veux supprimer définitivement mes anciens fichiers."
@@ -4558,7 +4582,7 @@
         "Il manque un nom au fichier ou au dossier."
       ],
       "Link failed to be loaded": [
-        "Le lien n'a pas pu être chargé."
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Déplacer ${ itemsToMoveCount } fichier",
@@ -4585,7 +4609,7 @@
         "Déplacer ${ movingCount } éléments"
       ],
       "Next page failed to be loaded": [
-        "La page suivante n'a pas pu être chargée."
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "L'espace est insuffisant pour charger ${ formattedTotal }."
@@ -4825,7 +4849,7 @@
     },
     "Property type": {
       "Address": [
-        "Addresse"
+        "Adresse"
       ],
       "Email": [
         "Adresse e-mail"
@@ -5153,7 +5177,7 @@
         "Le bug a été signalé."
       ],
       "Cancelling import": [
-        "Annulation de l'importation"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
@@ -5535,7 +5559,7 @@
         "Informations sur l'élément"
       ],
       "Items details": [
-        "Informations sur les éléments"
+        "Item details"
       ],
       "Link confirmation": [
         "Confirmation du lien"
@@ -5712,7 +5736,7 @@
         "Le lien a expiré."
       ],
       "The link failed to be loaded": [
-        "Le lien n'a pas pu être chargé."
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Il manque une signature pour ce fichier, ou bien elle n'est pas valide. Allez à Menu (⋮) → Détails pour plus d'informations."
@@ -5754,7 +5778,7 @@
         "Attention"
       ],
       "Warning: suspected fake website": [
-        "Attention : site web suspect/frauduleux"
+        "Attention : site internet suspect/frauduleux"
       ],
       "What would you like to import?": [
         "Que voulez-vous importer ?"

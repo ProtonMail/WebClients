@@ -36,7 +36,7 @@ const upsellItems: Item[] = [
     },
     {
         icon: 'folders',
-        getText: () => c('new_plans: feature').t`Unlimited folders, labels and filters`,
+        getText: () => c('new_plans: feature').t`Unlimited folders, labels, and filters`,
     },
     {
         icon: 'magnifier',

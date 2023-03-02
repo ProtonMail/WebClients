@@ -46,7 +46,7 @@ const InviteSendEmail = () => {
 
     const handleSendEmails = () => {
         if (!recipients.length) {
-            createNotification({ text: c('Warning').t`Please provide at least one recipient`, type: 'warning' });
+            createNotification({ text: c('Warning').t`Please add at least one recipient.`, type: 'warning' });
             return;
         }
 

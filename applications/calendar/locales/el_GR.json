@@ -280,7 +280,7 @@
         "Φόρτωση εικόνας"
       ],
       "Log in": [
-        "Είσοδος"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Κάντε αυτό το συμμετέχοντα προαιρετικό"
@@ -427,7 +427,7 @@
         "Επιλογή όλων"
       ],
       "Select timezone": [
-        "Επιλογή ζώνης ώρας"
+        "Select time zone"
       ],
       "Send": [
         "Αποστολή"
@@ -1026,7 +1026,7 @@
         "Ρόλος"
       ],
       "Timezone": [
-        "Ζώνη ώρας"
+        "Time zone"
       ],
       "Title": [
         "Τίτλος"
@@ -1945,7 +1945,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Να μην ερωτηθώ ξανά"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2113,7 +2113,7 @@
         "Η διεύθυνση email έχει απενεργοποιηθεί"
       ],
       "Email address invalid": [
-        "Η διεύθυνση E-mail δεν είναι έγκυρη"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
@@ -2352,7 +2352,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2393,7 +2393,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2428,7 +2428,7 @@
         "Συνθετικό λανθασμένης μορφής"
       ],
       "Custom timezone": [
-        "Προσαρμοσμένη ζώνη ώρας"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
@@ -2500,7 +2500,7 @@
         "Μη υποστηριζόμενη ζώνη ώρας"
       ],
       "Timezone": [
-        "Ζώνη ώρας"
+        "Time zone"
       ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
@@ -3654,6 +3654,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } username": [
+        "όνομα χρήστη ${ BRAND_NAME }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
@@ -3711,6 +3714,9 @@
       "Color": [
         "Χρώμα"
       ],
+      "Colors": [
+        "Χρώματα"
+      ],
       "Contacts": [
         "Επαφές"
       ],
@@ -3730,7 +3736,10 @@
         "Περιγραφή"
       ],
       "Do not ask again": [
-        "Να μην ερωτηθώ ξανά"
+        "Don't ask again"
+      ],
+      "Email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -3839,6 +3848,9 @@
       ],
       "Main": [
         "Κύριο"
+      ],
+      "Manage categories": [
+        "Διαχείριση κατηγοριών"
       ],
       "Move to Archive": [
         "Μεταφορά στα Αρχειοθετημένα"
@@ -4866,7 +4878,7 @@
         "Η ακύρωση εστάλη και οι συμμετέχοντες αφαιρέθηκαν από όλες τις εκδηλώσεις"
       ],
       "Cancelling import": [
-        "Γίνεται ακύρωση εισαγωγής"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
@@ -5050,7 +5062,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Αναζήτηση ζώνης ώρας"
+        "Search time zones"
       ]
     },
     "Title": {
@@ -5177,6 +5189,9 @@
       ],
       "Edit contact group": [
         "Επεξεργασία ομάδας επαφών"
+      ],
+      "Edit email settings": [
+        "Επεξεργασία ρυθμίσεων email"
       ],
       "Edit image": [
         "Επεξεργασία εικόνας"
@@ -5415,6 +5430,9 @@
       ],
       "Your calendar link": [
         "Ο σύνδεσμος του ημερολογίου σας"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

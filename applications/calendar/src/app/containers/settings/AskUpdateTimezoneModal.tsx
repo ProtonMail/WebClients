@@ -99,7 +99,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
                     disabled={updating}
                     onChange={() => setAutoDetectPrimaryTimezone(!autoDetectPrimaryTimezone)}
                 >
-                    {c("Don't ask to update timezone checkbox label").t`Do not ask again`}
+                    {c("Don't ask to update timezone checkbox label").t`Don't ask again`}
                 </Checkbox>
             </div>
         </AlertModal>

@@ -37,7 +37,7 @@ const DeleteSection = () => {
         return (
             <SettingsParagraph>
                 {c('Info')
-                    .jt`Your ${VPN_APP_NAME} and ${MAIL_APP_NAME} accounts are linked. To delete them both, please log in at ${loginLink} and delete your account there.`}
+                    .jt`Your ${VPN_APP_NAME} and ${MAIL_APP_NAME} accounts are linked. To delete them both, please sign in at ${loginLink} and delete your account there.`}
             </SettingsParagraph>
         );
     }

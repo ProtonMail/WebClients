@@ -200,7 +200,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
         return (
             <StandardErrorPage>
                 {c('Error message').jt`Too many child sessions, please clear your cookies and sign back in.`}
-                <Href href={getKnowledgeBaseUrl('/how-to-clean-cache-and-cookies')}>{c('Info').t`More Info`}</Href>
+                <Href href={getKnowledgeBaseUrl('/how-to-clean-cache-and-cookies')}>{c('Info').t`Learn more`}</Href>
             </StandardErrorPage>
         );
     }

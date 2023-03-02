@@ -131,6 +131,9 @@
       "Edit billing details": [
         "Modifica i dettagli di fatturazione"
       ],
+      "Edit display name": [
+        "Modifica nome visualizzato"
+      ],
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
@@ -1515,7 +1518,7 @@
         "Le password non corrispondono"
       ],
       "Payment process cancelled": [
-        "Processo di pagamento annullato"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Processo di pagamento completato"
@@ -1554,7 +1557,7 @@
         "Scheda chiusa"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Il browser che stai usando attualmente non permette l'autorizzazione completa del pagamento. Usa un browser differente oppure fai il log in da un computer."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
@@ -1848,6 +1851,9 @@
         "${ number } server",
         "${ number } server"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } di archiviazione"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } richiesta per la connessione a livello di Paese."
       ],
@@ -1863,6 +1869,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } connessione per ${ VPN_APP_NAME } (consente di connettere più dispositivi alla VPN)",
         "+${ organization.BonusVPN } connessioni per ${ VPN_APP_NAME } (consente di connettere più dispositivi alla VPN)"
+      ],
+      "10 email addresses": [
+        "10 indirizzi email"
       ],
       "30-day money-back guarantee.": [
         "Rimborso garantito in 30 giorni."
@@ -1982,7 +1991,7 @@
         "Preferenze email salvate"
       ],
       "Enter code from your authenticator app": [
-        "Inserisci il codice dalla tua app di autenticazione"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Inserisci invece la chiave manualmente"
@@ -2060,7 +2069,7 @@
         "Se non hai mai usato l'autenticazione a 2 fattori prima, ti raccomandiamo fortemente ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Se dovessi perdere il dispositivo che utilizzi per l'autenticazione in due fattori, potrai usare questi codici per accedere al posto del codice di 6 cifre dell'autenticazione a 2 fattori. Ogni codice può essere usato una sola volta."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -2099,7 +2108,7 @@
         "Connessione Internet ripristinata."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Scopri come accedere a ${ VPN_APP_NAME } con applicazioni VPN di terze parti."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "Per saperne di più"
@@ -2120,7 +2129,7 @@
         "Caricamento in corso..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Accedi a ${ MAIL_APP_NAME } per attivare il tuo indirizzo"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "perderai l'accesso a tutti i dati crittografati attuali"
@@ -2136,6 +2145,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "No credit card required": [
+        "Nessuna carta di credito richiesta"
       ],
       "No payment is required at this time.": [
         "Al momento non è richiesto alcun pagamento."
@@ -2197,6 +2209,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
       ],
+      "Priority support": [
+        "Assistenza prioritaria"
+      ],
       "read our two-factor authentication guide first": [
         "leggi prima la nostra guida all'autenticazione a due fattori"
       ],
@@ -2238,6 +2253,12 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }."
+      ],
+      "Support for 1 custom email domain": [
+        "Assistenza per 1 dominio email personalizzato"
       ],
       "support team": [
         "team di supporto"
@@ -2321,13 +2342,19 @@
         "Autenticazione a due fattori attivata"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "La modalità a doppia password richiede due password: una per accedere al tuo account e una per decifrare la tua casella di posta. (Avanzata)"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "La modalità a doppia password utilizza due password separate per la decifratura del login e della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Purtroppo non c'è nessun metodo di recupero salvato per questo account."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Unlimited messages": [
+        "Messaggi illimitati"
       ],
       "Unsaved changes": [
         "Modifiche non salvate"
@@ -2419,9 +2446,17 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Puoi personalizzare e scaricare le tue fatture per scopi contabili."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
+        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento.",
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link del calendario condiviso prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
+        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link del calendario condiviso prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link del calendario condiviso prima di annullare l'abbonamento.",
@@ -2434,7 +2469,7 @@
         "È possibile utilizzare le seguenti credenziali per connettersi a un server ${ VPN_APP_NAME } utilizzando un'app VPN open source di terze parti, come Tunnelblick per macOS o OpenVPN per GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Non è possibile utilizzare le credenziali OpenVPN/IKEv2 per accedere alle applicazioni ${ VPN_APP_NAME } o al pannello di controllo ${ VPN_APP_NAME }. ${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Non è stato impostato alcun metodo di recupero, quindi il recupero dell'account è impossibile se si dimentica la password. Procedere senza metodo di recupero?"
@@ -2476,7 +2511,7 @@
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "I tuoi account ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } sono collegati. Per eliminarli entrambi, accedi a ${ loginLink } ed elimina il tuo account da lì."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -2898,7 +2933,7 @@
         "La tua password (admin)"
       ],
       "ZIP code": [
-        "CAP"
+        "Postal code"
       ]
     },
     "label": {
@@ -3111,6 +3146,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendario",
+        "${ n } calendari"
+      ],
       "${ n } custom email domain": [
         "${ n } dominio email personalizzato",
         "${ n } domini email personalizzati"
@@ -3294,7 +3333,7 @@
         "Cartelle illimitate"
       ],
       "Unlimited folders, labels and filters": [
-        "Cartelle, etichette e filtri illimitati"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "Etichette illimitate"
@@ -3509,6 +3548,10 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crea più indirizzi email per le tue identità online, ad es. JohnShopper@${ domain } per i profili di shopping, JohnNews@${ domain } per gli abbonamenti alle notizie"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Crea fino a ${ n } calendario o aggiungi calendari di amici, familiari, colleghi e organizzazioni",
+        "Crea fino a ${ n } calendari o aggiungi calendari di amici, familiari, colleghi e organizzazioni"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server"
       ],
@@ -3654,6 +3697,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Ottieni di più con 10 domini email personalizzati inclusi"
+      ],
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Crea fino a ${ MAX_CALENDARS_PAID } calendario",
+        "Crea fino a ${ MAX_CALENDARS_PAID } calendari"
       ],
       "Everything in ${ vpnPlanName }": [
         "Tutto in ${ vpnPlanName }"
@@ -3802,6 +3849,9 @@
       ],
       "Verify now": [
         "Verifica ora"
+      ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Verifica ora questo indirizzo email di recupero: ${ email.Value }"
       ],
       "Verify recovery email?": [
         "Verifica email di recupero?"
@@ -4197,8 +4247,8 @@
       ]
     },
     "Subscription change warning": {
-      "Subscription managed elsewhere": [
-        "Manage your subscription on Google Play"
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Il tuo abbonamento è stato effettuato tramite un acquisto in-app. Per gestire il tuo abbonamento devi accedere alla sezione Abbonamento sul tuo account ${ subscriptionManager }"
       ]
     },
     "Subscription price": {
@@ -4224,7 +4274,7 @@
         "${ server.Domain } copiato negli appunti"
       ],
       "Account deleted. Logging out...": [
-        "Account eliminato. Disconnessione..."
+        "Account deleted. Signing out..."
       ],
       "Bug reported": [
         "Bug segnalato"
@@ -4404,6 +4454,9 @@
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
+      ],
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Annulla l'abbonamento a ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Verifica della carta"
@@ -4649,7 +4702,7 @@
         "Totale pagato"
       ],
       "TV log in": [
-        "Accesso TV"
+        "TV sign in"
       ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
@@ -4706,7 +4759,7 @@
         "Sei stato invitato a provare ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
-        "CAP / codice postale"
+        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4772,7 +4825,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Sei sicuro di voler eliminare l'indirizzo?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Sei sicuro di voler eliminare il numero di telefono?"

@@ -25,6 +25,10 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
     // translator: this is the pattern for bank card expiration MM/YY, where MM stands for Month Month and YY Year Year. Please keep the slash in the middle.
     const patternExpiration = c('Info').t`MM/YY`;
 
+    // translator: this is a ZIP code used for american credit cards
+    const zipCode = c('Label, credit card').t`ZIP code`;
+    const title = card.country === 'US' ? zipCode : c('Label').t`Postal code`;
+
     return (
         <>
             <InputFieldTwo
@@ -112,13 +116,13 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                 </div>
                 <div className="flex-item-fluid ml0-5 on-tiny-mobile-ml0">
                     <InputFieldTwo
-                        label={card.country === 'US' ? c('Label').t`ZIP code` : c('Label').t`Postal code`}
+                        label={title}
                         id="postalcode"
                         autoComplete="postal-code"
                         value={card.zip}
                         onChange={handleChange('zip')}
-                        placeholder={card.country === 'US' ? c('Placeholder').t`ZIP` : c('Placeholder').t`Postal code`}
-                        title={c('Title').t`ZIP / postal code`}
+                        placeholder={title}
+                        title={title}
                         error={errors.zip}
                         disableChange={loading}
                         minLength={3}

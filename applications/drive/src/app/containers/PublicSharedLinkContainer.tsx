@@ -72,7 +72,7 @@ function PublicSharedLink({ token }: { token: string }) {
                 .catch((error) => {
                     console.error(error);
                     const apiError = getApiError(error);
-                    setError(apiError.message || error.message || c('Info').t`Shared link failed to be loaded`);
+                    setError(apiError.message || error.message || c('Info').t`Cannot load shared link`);
                 })
         );
         return () => {
@@ -85,7 +85,7 @@ function PublicSharedLink({ token }: { token: string }) {
     }
 
     if (error || !link) {
-        return <ErrorPage error={error || c('Info').t`Link failed to be loaded`} />;
+        return <ErrorPage error={error || c('Info').t`Cannot load link`} />;
     }
 
     if (link.isFile) {

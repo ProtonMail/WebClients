@@ -57,7 +57,7 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
         if (!link || error) {
             return (
                 <ModalTwoContent>
-                    <Alert type="error">{c('Info').t`Link failed to be loaded`}</Alert>
+                    <Alert type="error">{c('Info').t`Cannot load link`}</Alert>
                 </ModalTwoContent>
             );
         }

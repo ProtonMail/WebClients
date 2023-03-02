@@ -77,9 +77,6 @@
       "All Unstarred": [
         "全部取消星號郵件"
       ],
-      "Allow messages": [
-        "允許郵件"
-      ],
       "Apply": [
         "套用"
       ],
@@ -543,7 +540,7 @@
         "正在載入${ ellipsis }"
       ],
       "Log in": [
-        "登入"
+        "Sign in"
       ],
       "Mailbox density": [
         "信箱密集度"
@@ -1901,7 +1898,7 @@
         "身份"
       ],
       "Timezone": [
-        "時區"
+        "Time zone"
       ],
       "Title": [
         "職銜"
@@ -2816,9 +2813,6 @@
       "No labels": [
         "沒有標籤"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
@@ -3039,7 +3033,7 @@
         "電郵位址已停用"
       ],
       "Email address invalid": [
-        "電郵位址無效"
+        "Invalid email address"
       ],
       "Email address is required": [
         "電郵位址為必填"
@@ -3363,7 +3357,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -3403,7 +3397,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -3438,7 +3432,7 @@
         "元件的格式有誤"
       ],
       "Custom timezone": [
-        "自訂時區"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "已編輯事件不受支援"
@@ -3510,7 +3504,7 @@
         "不支援的時區"
       ],
       "Timezone": [
-        "時區"
+        "Time zone"
       ],
       "To-do entry": [
         "待辦事項"
@@ -3646,6 +3640,15 @@
     "file size format": {
       "bytes": [
         "位元組"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
       ]
     },
     "file size format, long": {
@@ -4628,7 +4631,7 @@
         "即將到期"
       ],
       "files attached": [
-        "檔案已附加"
+        "attachment"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
@@ -5003,7 +5006,7 @@
         "正在儲存草稿…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "此郵件的寄送預定將被取消。"
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "排程傳送郵件中…"
@@ -5147,7 +5150,7 @@
         "此瀏覽器不支援預覽 PDF 文件。請下載該檔案。"
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "此交談包含了排定傳送的郵件。此郵件的傳送將會被取消。"
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "此交談包含非垃圾訊息。"
@@ -5156,7 +5159,7 @@
         "此交談含有已被移至垃圾桶的訊息。"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "此電郵未能通過其網域的認證需求。可能是因為遭人假冒或不當轉寄！"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "此邀請儲存於一個已停用的行事曆。"
@@ -5875,7 +5878,7 @@
         "刪除復原相關的資料。"
       ],
       "Do not ask again": [
-        "不要再詢問"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "不再顯示此內容"
@@ -6288,6 +6291,17 @@
         "列"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "要新增行事曆，請移除劑有的。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "要新增行事曆，請移除其他行事曆或升級您的 ${ BRAND_NAME } 方案到 ${ MAIL_SHORT_APP_NAME } 付費方案。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "您已達到您方案中行事曆的最大數量了。"
+      ]
+    },
     "Link": {
       "All mail": [
         "所有郵件"
@@ -6544,7 +6558,7 @@
         "已取消排定的傳送"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "排程已取消。郵件已移動到草稿。"
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "傳送未完成"
@@ -6746,7 +6760,7 @@
         "搜尋郵件內容"
       ],
       "Unlimited folders, labels and filters": [
-        "無限的資料夾、標籤與篩選器"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "多達 15 個電子郵件地址"
@@ -7402,7 +7416,7 @@
         "錯誤已回報"
       ],
       "Cancelling import": [
-        "正在取消匯入"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
@@ -7468,7 +7482,7 @@
         "鍵盤快捷鍵喜好設定已更新"
       ],
       "Label cleared": [
-        "標籤已清除"
+        "Label deleted"
       ],
       "Labels applied.": [
         "標籤已套用。"

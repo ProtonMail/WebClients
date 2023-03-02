@@ -332,7 +332,7 @@
         "Bild laden"
       ],
       "Log in": [
-        "Anmelden"
+        "Sign in"
       ],
       "Manage folders": [
         "Ordner verwalten"
@@ -915,7 +915,7 @@
         "Funktion"
       ],
       "Timezone": [
-        "Zeitzone"
+        "Time zone"
       ],
       "Title": [
         "Titel"
@@ -1889,7 +1889,7 @@
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
       "Email address invalid": [
-        "Ungültige E-Mail-Adresse"
+        "Invalid email address"
       ],
       "Email address is required": [
         "E-Mail-Adresse ist erforderlich"
@@ -2116,7 +2116,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Beim Lesen deiner Datei \"${ formattedFilename }\" ist ein Fehler aufgetreten. Format der Datei ungültig."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Das Hochladen deiner Datei ist fehlgeschlagen ${ formattedFilename }. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2157,7 +2157,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Beim Lesen der Datei ${ formattedFilename } ist ein Fehler aufgetreten. Die Datei hat nicht das richtige Format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Beim Hochladen der Datei ${ formattedFilename } ist ein Fehler aufgetreten. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2192,7 +2192,7 @@
         "Komponente mit ungültigem Format"
       ],
       "Custom timezone": [
-        "Benutzerdefinierte Zeitzone"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Bearbeitete Termine werden nicht unterstützt"
@@ -2264,7 +2264,7 @@
         "Zeitzone wird nicht unterstützt"
       ],
       "Timezone": [
-        "Zeitzone"
+        "Time zone"
       ],
       "To-do entry": [
         "Eintrag „Zu erledigen“"
@@ -2416,19 +2416,19 @@
     "file size format, long": {
       "Byte": [
         "Byte",
-        "Byte"
+        "Bytes"
       ],
       "Gigabyte": [
         "Gigabyte",
-        "Gigabyte"
+        "Gigabytes"
       ],
       "Kilobyte": [
         "Kilobyte",
-        "Kilobyte"
+        "Kilobytes"
       ],
       "Megabyte": [
         "Megabyte",
-        "Megabyte"
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -3271,10 +3271,10 @@
         "Link in die Zwischenablage kopiert"
       ],
       "Link failed to be loaded": [
-        "Link konnte nicht geladen werden"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Links konnten nicht geladen werden"
+        "Cannot load links"
       ],
       "Loading": [
         "Wird geladen"
@@ -3486,7 +3486,7 @@
         "Teilbarer Link für ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Geteilter Link konnte nicht geladen werden"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Die Signatur kann aufgrund eines Netzwerkfehlers nicht validiert werden, bitte versuche es später erneut."
@@ -3946,7 +3946,7 @@
         "Gerätename"
       ],
       "Do not ask again": [
-        "Nicht mehr fragen"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Trotzdem herunterladen"
@@ -4560,7 +4560,7 @@
         "Der Datei oder dem Ordner fehlt ein Name"
       ],
       "Link failed to be loaded": [
-        "Der Link konnte nicht geladen werden"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "${ itemsToMoveCount } Datei verschieben",
@@ -4587,7 +4587,7 @@
         "${ movingCount } Elemente verschieben"
       ],
       "Next page failed to be loaded": [
-        "Die nächste Seite konnte nicht geladen werden"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nicht genug Speicherplatz, um ${ formattedTotal } hochzuladen"
@@ -5155,7 +5155,7 @@
         "Fehler gemeldet"
       ],
       "Cancelling import": [
-        "Import wird abgebrochen"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
@@ -5534,7 +5534,7 @@
         "Elementdetails"
       ],
       "Items details": [
-        "Elementdetails"
+        "Item details"
       ],
       "Link confirmation": [
         "Linkbestätigung"
@@ -5711,7 +5711,7 @@
         "Der Link ist abgelaufen"
       ],
       "The link failed to be loaded": [
-        "Der Link konnte nicht geladen werden"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Diese Datei hat eine fehlende oder ungültige Signatur. Gehe zu Menü (⋮) → Details für weitere Informationen."

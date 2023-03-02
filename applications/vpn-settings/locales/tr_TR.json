@@ -204,7 +204,7 @@
         "Tamam"
       ],
       "Ok": [
-        "Tamam"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
@@ -1518,7 +1518,7 @@
         "Parola ile onayı aynı değil"
       ],
       "Payment process cancelled": [
-        "Ödeme işlemi iptal edildi"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Ödeme işleminin süresi geçmiş"
@@ -1557,7 +1557,7 @@
         "Sekme kapatıldı"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da bilgisayar ile oturum açın."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
@@ -1657,7 +1657,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Tek kullanımlık zamana dayalı parolayı devre dışı bırakmadan önce lütfen güvenlik anahtarı kullanan iki aşamalı doğrulamayı devre dışı bırakın"
+        "Tek kullanımlık zamana dayalı parolayı devre dışı bırakmadan önce lütfen güvenlik anahtarı kullanan iki adımlı doğrulamayı devre dışı bırakın"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
@@ -1668,7 +1668,7 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "Güvenlik anahtarı kullanan iki aşamalı kimlik doğrulaması devre dışı bırakıldı"
+        "Güvenlik anahtarı kullanan iki adımlı kimlik doğrulaması devre dışı bırakıldı"
       ],
       "Add a name to identify your security key with.": [
         "Güvenlik anahtarınızı tanımlayacak bir ad yazın."
@@ -1695,13 +1695,13 @@
         "Bu işlem, hesabınızla bağlantılı tüm güvenlik anahtarlarını siler."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Güvenlik anahtarı kullanarak iki aşamalı doğrulama yapmak için, kimlik doğrulama uygulaması üzerinden iki aşamalı doğrulamayı etkinleştirmeniz gerekir"
+        "Güvenlik anahtarı kullanarak iki adımlı doğrulama yapmak için, kimlik doğrulama uygulaması üzerinden iki adımlı doğrulamayı etkinleştirmeniz gerekir"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
       ],
       "Your two-factor authentication key is ready to use.": [
-        "İki aşamalı doğrulama anahtarınız kullanılmaya hazır."
+        "İki adımlı doğrulama anahtarınız kullanılmaya hazır."
       ]
     },
     "fido2: Label": {
@@ -1717,7 +1717,7 @@
         "Güvenlik anahtarı silinsin mi?"
       ],
       "Disable 2FA via security key?": [
-        "Güvenlik anahtarı kullanan iki aşamalı kimlik doğrulaması devre dışı bırakılsın mı?"
+        "Güvenlik anahtarı ile iki adımlı kimlik doğrulama devre dışı bırakılsın mı?"
       ],
       "Name your security key": [
         "Güvenlik anahtarınıza bir ad verin"
@@ -1892,7 +1892,7 @@
         "bir kurtarma yöntemi ekleyin"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki aşamalı doğrulama ile siz olduğunuzu doğrulamanız gerekir."
+        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki adımlı doğrulama ile siz olduğunuzu doğrulamanız gerekir."
       ],
       "Additional options": [
         "Ek seçenekler"
@@ -1910,7 +1910,7 @@
         "Tutar en az miktarın altında (${ amount })."
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "İki aşamalı doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
+        "İki adımlı doğrulamayı devre dışı bırakmak istediğinize emin misiniz?"
       ],
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
@@ -1969,6 +1969,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Tamam! ${ destination } alıcısına bir kod gönderdik."
       ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Hiçbir şey görmüyor musunuz? Pop-up engelleyicilerini kapatmayı unutmayın."
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
       ],
@@ -1988,7 +1991,7 @@
         "E-posta ayarı kaydedildi"
       ],
       "Enter code from your authenticator app": [
-        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Bunun yerine anahtarı el ile yazın"
@@ -2063,10 +2066,10 @@
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Daha önce hiç iki aşamalı doğrulama kullanmadıysanız, kesinlikle ${ guideButton }. Ardından ayarları yapmanızı öneririz."
+        "İki adımlı kimlik doğrulamayı daha önce kullanmadıysanız, kesinlikle ${ guideButton } kullanmanızı öneririz."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "İki aşamalı doğrulama aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki aşamalı doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
@@ -2081,7 +2084,7 @@
         "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki aşamalı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
+        "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki adımlı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Seçtiğiniz ülkedeki rastgele bir sunucuya bağlanmak için bir ülke yapılandırma dosyası yükleyin."
@@ -2105,7 +2108,7 @@
         "İnternet bağlantısı yeniden kuruldu."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Üçüncü taraf VPN uygulamalarında ${ VPN_APP_NAME } oturumunu nasıl açabileceğinizi öğrenin."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -2126,7 +2129,7 @@
         "Yükleniyor..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Adresinizi etkinleştirmek için ${ MAIL_APP_NAME } oturumu açın"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "tüm şifrelenmiş verilere erişimi kaybedeceksiniz"
@@ -2135,7 +2138,7 @@
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Hesabınızı kurmak için bu bilgileri iki aşamalı doğrulama aygıtınıza el ile yazın. ${ switchButton }."
+        "Hesabınızı kurmak için bu bilgileri iki adımlı doğrulama aygıtınıza el ile yazın. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -2176,6 +2179,12 @@
       "Plan upgrade required": [
         "Tarifenin yükseltilmesi gerekli"
       ],
+      "Please authenticate your card in the verification tab.": [
+        "Lütfen doğrulama sekmesinde kartınızı doğrulayın."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Lütfen doğrulama sekmesinde ödemenizi doğrulayın."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Lütfen hesabınızın 12 sözcüklü kurtarma ifadesini yazın."
       ],
@@ -2184,6 +2193,9 @@
       ],
       "Please provide an email address in case we need to contact you.": [
         "Sizinle iletişim kurmamız gerekirse kullanabileceğimiz bir e-posta adresi yazın."
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "Lütfen farklı bir ödeme yöntemi kullanarak tekrar deneyin veya bankanızla iletişime geçin."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
@@ -2210,7 +2222,7 @@
         "Öncelikli destek"
       ],
       "read our two-factor authentication guide first": [
-        "önce iki aşamalı doğrulama rehberimizi okuyun"
+        "önce iki adımlı doğrulama rehberimizi okuyun"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Güvenilir aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
@@ -2228,7 +2240,7 @@
         "Bunun yerine QR kodunu tarayın"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Hesabınızı kurmak için bu kodu iki aşamalı doğrulama aygıtınızla tarayın. ${ switchButton }."
+        "Hesabınızı kurmak için bu kodu iki adımlı doğrulama aygıtınızla tarayın. ${ switchButton }."
       ],
       "Securing your account": [
         "Hesabınız korunuyor"
@@ -2263,6 +2275,9 @@
       "The securest way to browse, stream, and be online.": [
         "Web üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrimiçi olmanın en güvenli yolu."
       ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Doğrulama işlemi yeni bir tarayıcı sekmesi açacaktır. Lütfen aktif pop-up engelleyicileri devre dışı bırakın."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ${ VPN_APP_NAME } sunucusunu seçmenizi sağlar."
       ],
@@ -2279,7 +2294,7 @@
         "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        "Bu işlem ayrıca, bu hesapla ilişkili iki aşamalı doğrulama yöntemlerini de devre dışı bırakır."
+        "Bu işlem ayrıca, bu hesapla ilişkili iki adımlı doğrulama yöntemlerini de devre dışı bırakır."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı avantajlarını kaybetmenize sebep olacak. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
@@ -2297,7 +2312,7 @@
         "Bu seçenek, tüm etkin oturumlarınızın kapatılmasını ve 2 aşamalı kimlik doğrulamasının devre dışı bırakılmasını sağlar."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME } account more secure so we recommend enabling it.": [
-        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki aşamalı doğrulamayı (2FA) etkinleştirir. ${ BRAND_NAME } hesabınızı daha güvenli kılacağından iki aşamalı doğrulamayı etkinleştirmenizi öneririz."
+        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki adımlı doğrulamayı (2FA) etkinleştirir. ${ BRAND_NAME } hesabınızı daha güvenli kılacağından iki adımlı doğrulamayı etkinleştirmenizi öneririz."
       ],
       "to continue to ${ toAppName }": [
         "${ toAppName } uygulamasına ilerlemek için"
@@ -2333,13 +2348,13 @@
         "Toplam VPN bağlantısı"
       ],
       "Two-factor authentication disabled": [
-        "İki aşamalı doğrulama devre dışı bırakıldı"
+        "İki adımlı doğrulama devre dışı bırakıldı"
       ],
       "Two-factor authentication enabled": [
-        "İki aşamalı doğrulama etkinleştirildi"
+        "İki adımlı doğrulama etkinleştirildi"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "İki parola kipinde iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
@@ -2371,6 +2386,9 @@
       "Verification can take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
       ],
+      "Verification may take a few minutes.": [
+        "Doğrulama birkaç dakika sürebilir."
+      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar derhal iade edilir."
       ],
@@ -2395,6 +2413,15 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Olabildiğince resmi ${ VPN_APP_NAME } uygulamalarını kullanmanızı öneririz."
       ],
+      "We couldn’t process your payment.": [
+        "Ödemenizi işleme koyamadık."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "Ödemenizi bankanızla doğrulamamız gerekiyor."
+      ],
       "We recommend using your recovery phrase instead.": [
         "Bunun yerine kurtarma ifadesini kullanmanızı öneririz."
       ],
@@ -2417,7 +2444,7 @@
         "Geçerli tarifenizi aynı fiyata daha fazlasını sunan iyileştirilmiş bir tarifeye yükseltiyoruz. Sistemlerimiz güncellenmekte olduğundan bunu değiştiremezsiniz. İşlem tamamlandığında size bir e-posta göndereceğiz."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
@@ -2466,13 +2493,16 @@
         "Bir ${ VPN_APP_NAME } sunucusuna macOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "${ VPN_APP_NAME } uygulamalarında ya da ${ VPN_APP_NAME } panosunda oturum açmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Bir kurtarma yöntemi belirlemediniz. Parolanızı unutursanız hesabınızı kurtaramazsınız. Kurtarma yöntemi olmadan ilerlemek istiyor musunuz?"
       ],
       "You have no saved payment methods.": [
         "Kayıtlı bir ödeme yönteminiz yok."
+      ],
+      "You may be redirected to your bank’s website.": [
+        "Bankanızın web sitesine yönlendirilebilirsiniz."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını devre dışı bırakmalı ya da silmelisiniz."
@@ -2508,7 +2538,7 @@
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
@@ -2930,7 +2960,7 @@
         "Parolanız (yönetici)"
       ],
       "ZIP code": [
-        "Posta kodu"
+        "Postal code"
       ]
     },
     "label": {
@@ -3321,7 +3351,7 @@
         "VPN üzerinden Tor"
       ],
       "Two-factor authentication": [
-        "İki aşamalı doğrulama"
+        "İki adımlı doğrulama"
       ],
       "Unlimited filters": [
         "Sınırsız süzgeç"
@@ -3330,7 +3360,7 @@
         "Sınırsız klasör"
       ],
       "Unlimited folders, labels and filters": [
-        "Sınırsız klasör, etiket ve süzgeç"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
@@ -3622,7 +3652,7 @@
         "Oturum açmak için bir cep telefonuna bir kod gönderilmesi gerekir. Böylece bir parola ele geçirilmiş olsa bile hesap güvende kalır."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Kullanıcı parolalarını ve kullanıcıların iki aşamalı doğrulamayı sıfırlayın"
+        "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulamayı sıfırlayın"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
@@ -3850,9 +3880,6 @@
       "Verify now this recovery email address: ${ email.Value }": [
         "Şu kurtarma e-posta adresini doğrulayın: ${ email.Value }"
       ],
-      "Verify now this recovery phone number address: ${ phone.Value }": [
-        "Şu kurtarma telefon numarasını doğrulayın: ${ phone.Value }"
-      ],
       "Verify recovery email?": [
         "Kurtarma e-postası doğrulansın mı?"
       ],
@@ -4015,8 +4042,8 @@
       ]
     },
     "Subscription change warning": {
-      "Subscription managed elsewhere": [
-        "Manage your subscription on Google Play"
+      "Manage your subscription on ${ subscriptionManagerShort }": [
+        "Aboneliğinizi ${ subscriptionManagerShort } üzerinden yönetin"
       ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
         "Aboneliğiniz bir uygulama içi satın alma ile yapılmış. Geçerli aboneliğinizi yönetmek için ${ subscriptionManager } hesabınızın Abonelik bölümüne bakın"
@@ -4045,7 +4072,7 @@
         "${ server.Domain } panonuza kopyalandı"
       ],
       "Account deleted. Logging out...": [
-        "Hesap silindi. Oturum kapatılıyor..."
+        "Account deleted. Signing out..."
       ],
       "Bug reported": [
         "Hata bildirildi"
@@ -4287,7 +4314,7 @@
         "Aygıt bağlandı!"
       ],
       "Disable two-factor authentication": [
-        "İki aşamalı doğrulamayı devre dışı bırak"
+        "İki adımlı doğrulamayı devre dışı bırak"
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
@@ -4382,6 +4409,9 @@
       "Pay invoice": [
         "Faturayı öde"
       ],
+      "Payment failed": [
+        "Ödeme başarısız oldu"
+      ],
       "Payment methods": [
         "Ödeme yöntemleri"
       ],
@@ -4446,7 +4476,7 @@
         "Yeni parola ayarla"
       ],
       "Set up two-factor authentication": [
-        "İki aşamalı doğrulamayı ayarla"
+        "İki adımlı doğrulamayı ayarla"
       ],
       "Settings": [
         "Ayarlar"
@@ -4473,10 +4503,10 @@
         "Toplam ödenen"
       ],
       "TV log in": [
-        "TV oturumu açma"
+        "TV sign in"
       ],
       "Two-factor authentication": [
-        "İki aşamalı doğrulama"
+        "İki adımlı doğrulama"
       ],
       "Type": [
         "Tür"
@@ -4493,8 +4523,17 @@
       "Verification": [
         "Doğrulama"
       ],
+      "Verification failed": [
+        "Doğrulama başarısız"
+      ],
       "Verify email address": [
         "E-posta adresini doğrula"
+      ],
+      "Verifying your card...": [
+        "Kartınız doğrulanıyor..."
+      ],
+      "Verifying your payment...": [
+        "Ödemeniz doğrulanıyor..."
       ],
       "Warning": [
         "Uyarı"
@@ -4530,7 +4569,7 @@
         "${ MAIL_APP_NAME } uygulamasını denemeye çağrıldınız"
       ],
       "ZIP / postal code": [
-        "ZIP / posta kodu"
+        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4596,7 +4635,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "E-posta adresini silmek istediğinize emin misiniz?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Telefon numarasını silmek istediğinize emin misiniz?"

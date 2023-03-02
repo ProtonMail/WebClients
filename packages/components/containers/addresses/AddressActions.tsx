@@ -71,7 +71,7 @@ const AddressActions = ({
                   },
                   permissions.canMakeDefault &&
                       onSetDefault && {
-                          text: c('Address action').t`Make default`,
+                          text: c('Address action').t`Set as default`,
                           onClick: () => onSetDefault(),
                       },
                   permissions.canEnable && {

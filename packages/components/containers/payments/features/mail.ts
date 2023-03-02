@@ -78,7 +78,7 @@ export const getNDomainsFeature = ({ n, fire }: { n: number; fire?: boolean }): 
 export const getFoldersAndLabelsFeature = (n: number): PlanCardFeatureDefinition => {
     if (n === Number.POSITIVE_INFINITY) {
         return {
-            featureName: c('new_plans: feature').t`Unlimited folders, labels and filters`,
+            featureName: c('new_plans: feature').t`Unlimited folders, labels, and filters`,
             tooltip: '',
             included: true,
             icon: 'tag',

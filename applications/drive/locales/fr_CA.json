@@ -329,7 +329,7 @@
         "Charger l'image"
       ],
       "Log in": [
-        "Se connecter"
+        "Sign in"
       ],
       "Manage folders": [
         "Gérer les dossiers"
@@ -891,7 +891,7 @@
         "Rôle"
       ],
       "Timezone": [
-        "Fuseau horaire"
+        "Time zone"
       ],
       "Title": [
         "Titre"
@@ -1637,7 +1637,7 @@
         "Domaine non disponible, veuillez réessayer plus tard"
       ],
       "Email address invalid": [
-        "Adresse courriel invalide"
+        "Invalid email address"
       ],
       "Email address is required": [
         "L'adresse électronique est nécessaire"
@@ -1858,7 +1858,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d'un fichier est de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -1899,7 +1899,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors du téléversement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -1934,7 +1934,7 @@
         "Élément au mauvais format"
       ],
       "Custom timezone": [
-        "Fuseau horaire personnalisé"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Événement édité non pris en charge"
@@ -2006,7 +2006,7 @@
         "Fuseau horaire non pris en charge"
       ],
       "Timezone": [
-        "Fuseau horaire"
+        "Time zone"
       ],
       "To-do entry": [
         "Tâche à réaliser"
@@ -2953,10 +2953,10 @@
         "Lien copié dans le presse-papier"
       ],
       "Link failed to be loaded": [
-        "Le lien n'a pas pu être chargé."
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Les liens n'ont pas pu être chargés."
+        "Cannot load links"
       ],
       "Loading": [
         "Chargement"
@@ -3168,7 +3168,7 @@
         "Lien partageable pour ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Le lien partagé n'a pas pu être chargé"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
@@ -3622,7 +3622,7 @@
         "Nom de l'appareil"
       ],
       "Do not ask again": [
-        "Ne plus demander"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Télécharger quand même"
@@ -4185,7 +4185,7 @@
         "Il manque un nom au fichier ou au dossier"
       ],
       "Link failed to be loaded": [
-        "Le lien n'a pas pu être chargé"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Déplacer ${ itemsToMoveCount } fichier",
@@ -4212,7 +4212,7 @@
         "Déplacer ${ movingCount } éléments"
       ],
       "Next page failed to be loaded": [
-        "La page suivante n'a pas pu être chargée"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Espace insuffisant pour téléverser ${ formattedTotal }"
@@ -4888,7 +4888,7 @@
         "Détails de l'élément"
       ],
       "Items details": [
-        "Détails des éléments"
+        "Item details"
       ],
       "Link confirmation": [
         "Confirmation du lien"
@@ -5065,7 +5065,7 @@
         "Le lien a expiré"
       ],
       "The link failed to be loaded": [
-        "Le lien n'a pas pu être chargé"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Ce fichier a une signature manquante ou non valide. Allez à Menu (⋮) → Détails pour plus d'informations."

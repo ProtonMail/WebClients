@@ -281,7 +281,7 @@
         "Carregar imagem"
       ],
       "Log in": [
-        "Iniciar sessão"
+        "Sign in"
       ],
       "Manage labels": [
         "Gerir etiquetas"
@@ -735,7 +735,7 @@
         "Papel"
       ],
       "Timezone": [
-        "Fuso horário"
+        "Time zone"
       ],
       "Title": [
         "Título"
@@ -1666,7 +1666,7 @@
         "Domínio indisponível, tente novamente mais tarde"
       ],
       "Email address invalid": [
-        "Endereço de email inválido"
+        "Invalid email address"
       ],
       "Email is not valid": [
         "Email inválido"
@@ -1760,7 +1760,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. O formato está errado."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -1798,7 +1798,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. O formato está errado."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -1830,7 +1830,7 @@
         "Componente com formato errado"
       ],
       "Custom timezone": [
-        "Fuso horário personalizado"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado não suportado"
@@ -1893,7 +1893,7 @@
         "Hora inicial fora dos limites"
       ],
       "Timezone": [
-        "Fuso horário"
+        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tarefas"
@@ -2854,7 +2854,7 @@
         "Eliminado"
       ],
       "Do not ask again": [
-        "Não perguntar novamente"
+        "Don't ask again"
       ],
       "Email": [
         "Email"

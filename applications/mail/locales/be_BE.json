@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Усе без зорачкі"
       ],
-      "Allow messages": [
-        "Дазволіць паведамленні"
-      ],
       "Apply": [
         "Ужыць"
       ],
@@ -552,7 +549,7 @@
         "Загрузка${ ellipsis }"
       ],
       "Log in": [
-        "Увайсці"
+        "Sign in"
       ],
       "Mailbox density": [
         "Шчыльнасць паштовай скрыні"
@@ -1911,7 +1908,7 @@
         "Роля"
       ],
       "Timezone": [
-        "Часавы пояс"
+        "Time zone"
       ],
       "Title": [
         "Пасада"
@@ -2838,9 +2835,6 @@
       "No labels": [
         "Няма метак"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакт. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
@@ -3070,7 +3064,7 @@
         "Адрас электроннай пошты адключаны"
       ],
       "Email address invalid": [
-        "Памылковы адрас электроннай пошты"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
@@ -3415,7 +3409,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3458,7 +3452,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3493,7 +3487,7 @@
         "Кампанент з няправільным фарматам"
       ],
       "Custom timezone": [
-        "Карыстальніцкі часавы пояс"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Адрэдагаваная падзея не падтрымліваецца"
@@ -3565,7 +3559,7 @@
         "Часавы пояс не падтрымліваецца"
       ],
       "Timezone": [
-        "Часавы пояс"
+        "Time zone"
       ],
       "To-do entry": [
         "Запіс спіса задач"
@@ -4866,8 +4860,8 @@
         "Неўзабаве міне"
       ],
       "file attached": [
-        "файл далучаны",
-        "файлы далучаны",
+        "attachment",
+        "attachments",
         "файлаў далучана",
         "файлы далучаны"
       ],
@@ -5256,7 +5250,7 @@
         "Захаванне чарнавіка…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Запланаваная адпраўка гэтага паведамлення будзе скасавана."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Планаванне паведамлення..."
@@ -5397,7 +5391,7 @@
         "Дадзены браўзер не падтрымлівае папярэдні прагляд дакументаў PDF. Спампуйце файл."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Гэта размова змяшчае запланаванае паведамленне. Адпраўка гэтага паведамлення будзе скасавана."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Гэта размова змяшчае паведамленні, якія не былі выдаленыя."
@@ -5412,7 +5406,7 @@
         "Гэтыя размовы будуць пазначаны як спам. Ці хочаце вы таксама адпісацца ад будучых лістоў?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Гэты ліст не прайшоў праверку на адпаведнасць нашым патрабаванням аўтэнтыфікацыі свайго дамена. Ён можа быць падроблены або перасланы неналежным чынам!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Гэта запрашэнне захавана ў адключаным календары."
@@ -6170,7 +6164,7 @@
         "Выдаліць інфармацыю звязаную з аднаўленнем."
       ],
       "Do not ask again": [
-        "Больш не пытаць"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Больш не паказваць"
@@ -6865,7 +6859,7 @@
         "Запланаваная адпраўка адроблена"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Планаванне скасавана. Паведамленне было перамешчана ў Чарнавікі."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Адпраўка адроблена"
@@ -7076,7 +7070,7 @@
         "Пошук змесціва паведамлення"
       ],
       "Unlimited folders, labels and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Да 15 адрасоў электроннай пошты"
@@ -7819,7 +7813,7 @@
         "Справаздача пра памылку адпраўлена"
       ],
       "Cancelling import": [
-        "Скасаванне імпартавання"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
@@ -7894,7 +7888,7 @@
         "Параметры спалучэнняў клавіш абноўлены"
       ],
       "Label cleared": [
-        "Метка ачышчана"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Меткі ўжыты."

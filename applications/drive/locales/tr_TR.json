@@ -332,7 +332,7 @@
         "Görsel yükle"
       ],
       "Log in": [
-        "Oturum aç"
+        "Sign in"
       ],
       "Manage folders": [
         "Klasör yönetimi"
@@ -915,7 +915,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Saat dilimi"
+        "Time zone"
       ],
       "Title": [
         "Başlık"
@@ -1886,7 +1886,7 @@
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Email address invalid": [
-        "E-posta adresi geçersiz"
+        "Invalid email address"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -2113,7 +2113,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya doğru biçimde değil."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -2154,7 +2154,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya doğru biçimde değil."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -2189,7 +2189,7 @@
         "Bileşen biçimi yanlış"
       ],
       "Custom timezone": [
-        "Özel saat dilimi"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Etkinlikleri düzenleme desteklenmiyor"
@@ -2261,7 +2261,7 @@
         "Saat dilimi desteklenmiyor"
       ],
       "Timezone": [
-        "Saat dilimi"
+        "Time zone"
       ],
       "To-do entry": [
         "Yapılacak iş kaydı"
@@ -2618,11 +2618,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -3254,10 +3260,10 @@
         "Bağlantı panoya kopyalandı"
       ],
       "Link failed to be loaded": [
-        "Bağlantı yüklenemedi"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Bağlantılar yüklenemedi"
+        "Cannot load links"
       ],
       "Loading": [
         "Yükleniyor"
@@ -3469,7 +3475,7 @@
         "${ boldNameText } için paylaşılabilir bağlantı"
       ],
       "Shared link failed to be loaded": [
-        "Paylaşılmış bağlantı yüklenemedi"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -3659,7 +3665,7 @@
         "Ne yapmak istersiniz?"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -3929,7 +3935,7 @@
         "Aygıt adı"
       ],
       "Do not ask again": [
-        "Bir daha sorma"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Yine de indir"
@@ -4187,7 +4193,7 @@
         "Araç çubuğu"
       ],
       "Two-factor authentication code": [
-        "İki aşamalı doğrulama kodu"
+        "İki adımlı doğrulama kodu"
       ],
       "Type": [
         "Tür"
@@ -4543,7 +4549,7 @@
         "Dosya ya da klasörün adı eksik"
       ],
       "Link failed to be loaded": [
-        "Bağlantı yüklenemedi"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "${ itemsToMoveCount } dosyayı taşı",
@@ -4570,7 +4576,7 @@
         "${ movingCount } ögeyi taşı"
       ],
       "Next page failed to be loaded": [
-        "Sonraki sayfa yüklenemedi"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal } yüklemek için yeterli alan yok"
@@ -4903,7 +4909,7 @@
         "Hata bildirildi"
       ],
       "Cancelling import": [
-        "İçe aktarma iptal ediliyor"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -5282,7 +5288,7 @@
         "Öge ayrıntıları"
       ],
       "Items details": [
-        "Öge bilgileri"
+        "Item details"
       ],
       "Link confirmation": [
         "Bağlantı onayı"
@@ -5459,7 +5465,7 @@
         "Bağlantının süresi geçmiş"
       ],
       "The link failed to be loaded": [
-        "Bağlantı yüklenemedi"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Bu dosyanın imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Ayrıntılar bölümüne gidin."
@@ -5477,7 +5483,7 @@
         "Çöpe at"
       ],
       "Two-factor authentication": [
-        "İki aşamalı doğrulama"
+        "İki adımlı doğrulama"
       ],
       "Type": [
         "Tür"

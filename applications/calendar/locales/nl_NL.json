@@ -276,11 +276,14 @@
       "Join calendar": [
         "Vervoeg agenda"
       ],
+      "Keep current time zone": [
+        "Behoudt huidige tijdzone"
+      ],
       "Load image": [
         "Afbeelding laden"
       ],
       "Log in": [
-        "Aanmelden"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Maak deze deelnemer optioneel"
@@ -427,7 +430,7 @@
         "Alles selecteren"
       ],
       "Select timezone": [
-        "Kies tijdzone"
+        "Select time zone"
       ],
       "Send": [
         "Verstuur"
@@ -1061,7 +1064,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Tijdzone"
+        "Time zone"
       ],
       "Title": [
         "Titel"
@@ -1985,7 +1988,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Niet opnieuw vragen"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2156,7 +2159,7 @@
         "E-mailadres uitgeschakeld"
       ],
       "Email address invalid": [
-        "E-mailadres is ongeldig"
+        "Invalid email address"
       ],
       "Email address is required": [
         "E-mailadres is vereist"
@@ -2416,7 +2419,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Er is een fout opgetreden bij het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2457,7 +2460,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2492,7 +2495,7 @@
         "Component met verkeerde indeling"
       ],
       "Custom timezone": [
-        "Aangepaste tijdzone"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Bewerkte afspraak niet ondersteund"
@@ -2564,7 +2567,7 @@
         "Tijdzone niet ondersteund"
       ],
       "Timezone": [
-        "Tijdzone"
+        "Time zone"
       ],
       "To-do entry": [
         "To-do item"
@@ -2620,6 +2623,12 @@
     "Event canceled status badge": {
       "canceled": [
         "geannuleerd"
+      ]
+    },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } deelnemer",
+        "${ numberOfAttendees } deelnemers"
       ]
     },
     "Event info. Organizer name": {
@@ -3743,6 +3752,11 @@
         "Klik voor details"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Alleen bekijken"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Sommige van uw agenda's tonen geen gegevens van oude afspraken."
@@ -3769,6 +3783,15 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "U kunt uw agenda's opnieuw delen in de instellingen."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "Maximaal ${ MAX_ATTENDEES } deelnemer toegelaten per uitnodiging",
+        "Maximaal ${ MAX_ATTENDEES } deelnemers toegelaten per uitnodiging"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Uitnodigingen maken in een gedeelde agenda is niet toegestaan"
       ]
     },
     "Input label": {
@@ -3896,7 +3919,7 @@
         "Beschrijving"
       ],
       "Do not ask again": [
-        "Niet opnieuw vragen"
+        "Don't ask again"
       ],
       "Email": [
         "E-mailadres"
@@ -4165,6 +4188,17 @@
         "Zijpaneel"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Om een nieuwe agenda toe te voegen moet u een bestaande verwijderen."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Om een nieuwe agenda toe te voegen moet u een andere agenda verwijderen of uw ${ BRAND_NAME }-abonnement upgraden naar een betaald ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "U heeft het maximale aantal agenda's beschikbaar voor uw abonnement bereikt."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Agenda's"
@@ -4177,6 +4211,9 @@
       ],
       "My calendars": [
         "Mijn agenda"
+      ],
+      "Other calendars": [
+        "Andere agenda's"
       ],
       "Pay invoice": [
         "Factuur betalen"
@@ -4226,9 +4263,21 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
+        "Alle berichten uit ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
         "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
         "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
       ]
     },
     "Message": {
@@ -4261,6 +4310,9 @@
       ],
       "Manage calendars": [
         "Agenda's beheren"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4277,6 +4329,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Kan niet meer agenda's toevoegen"
+      ],
       "How to import calendars from another service": [
         "Hoe u agenda's importeert uit een andere dienst"
       ],
@@ -5294,7 +5349,7 @@
         "Annulering verstuurd en de deelnemers zijn verwijderd uit alle afspraken"
       ],
       "Cancelling import": [
-        "Importeren annuleren"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
@@ -5478,7 +5533,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Zoek tijdzones"
+        "Search time zones"
       ]
     },
     "Title": {

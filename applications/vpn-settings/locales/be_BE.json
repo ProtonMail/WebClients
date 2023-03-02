@@ -204,7 +204,7 @@
         "Добра"
       ],
       "Ok": [
-        "Добра"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
@@ -1526,7 +1526,7 @@
         "Паролі не супадаюць"
       ],
       "Payment process cancelled": [
-        "Апрацоўка плацяжу скасавана"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Апрацоўка плацяжу завершана"
@@ -1565,7 +1565,7 @@
         "Укладка закрыта"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Ваш браўзер не дазваляе цалкам аўтарызаваць плацеж. Скарыстайцеся іншым браўзерам або ўвайдзіце з камп'ютара."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
@@ -2014,7 +2014,7 @@
         "Параметры адпраўкі пошты захаваны"
       ],
       "Enter code from your authenticator app": [
-        "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Увесці ключ уручную"
@@ -2092,7 +2092,7 @@
         "Калі вы ніколі раней не выкарыстоўвалі двухфактарную аўтэнтыфікацыю, то мы настойліва рэкамендуем вам ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
@@ -2131,7 +2131,7 @@
         "Злучэнне з інтэрнэтам адноўлена."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Даведайцеся, як увайсці ў ${ VPN_APP_NAME } з дапамогай старонніх праграм VPN."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "Даведацца больш"
@@ -2152,7 +2152,7 @@
         "Загрузка..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Увайдзіце ў ${ MAIL_APP_NAME }, каб актываваць свой адрас"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "страціце доступ да ўсіх бягучых зашыфраваных даных"
@@ -2365,7 +2365,7 @@
         "Двухфактарная аўтэнтыфікацыя ўключана"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Для рэжыму двух пароляў патрабуюцца два паролі: першы для ўваходу ва ўліковы запіс, а другі для расшыфроўкі вашай паштовай скрыні (дадатковая функцыя бяспекі)."
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Рэжым двух пароляў прадугледжвае выкарыстанне асобных пароляў для ўваходу і расшыфроўкі паштовай скрыні. Гэта дае магчымасць забяспечыць дадатковы ўзровень абароны ў некаторых сітуацыях. Разам з тым для большасці карыстальнікаў мы рэкамендуем выкарыстоўваць рэжым аднаго пароля. Для пераключэння ў рэжым двух пароляў спачатку задайце пароль для ўваходу, а потым пароль для паштовай скрыні."
@@ -2500,7 +2500,7 @@
         "Вы можаце выкарыстоўваць наступныя ўліковыя даныя для падлучэння да сервера ${ VPN_APP_NAME } з дапамогай старонняга кліента VPN з адкрытым зыходным кодам. Напрыклад, Tunnelblick для macOS або OpenVPN для GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Вы не можаце выкарыстоўваць уліковыя даныя OpenVPN / IKEv2 для ўваходу ў праграмы ${ VPN_APP_NAME } або на панэлі кіравання ${ VPN_APP_NAME }. ${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задалі метад для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без метаду аднаўлення?"
@@ -2542,7 +2542,7 @@
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
@@ -2966,7 +2966,7 @@
         "Ваш пароль (admin)"
       ],
       "ZIP code": [
-        "Паштовы індэкс"
+        "Postal code"
       ]
     },
     "label": {
@@ -3394,7 +3394,7 @@
         "Неабмежаваная колькасць папак"
       ],
       "Unlimited folders, labels and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
@@ -4110,11 +4110,8 @@
       ]
     },
     "Subscription change warning": {
-      "Subscription managed elsewhere": [
-        "Manage your subscription on Google Play"
-      ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Падпіска была здзейснена праз куплю ў праграме. Для кіравання вашай бягучай падпіскай, вам неабходна перайсці ў раздзел з падпіскамі вашага ўліковага запісу ${ subscriptionManager }"
+        "Падпіска была здзейснена праз куплю ў праграме. Для кіравання вашай бягучай падпіскай вам неабходна перайсці ў раздзел з падпіскамі вашага ўліковага запісу ${ subscriptionManager }"
       ]
     },
     "Subscription price": {
@@ -4140,7 +4137,7 @@
         "${ server.Domain } скапіяваны ў буфер абмену"
       ],
       "Account deleted. Logging out...": [
-        "Уліковы запіс выдалены. Адбываецца выхад..."
+        "Account deleted. Signing out..."
       ],
       "Bug reported": [
         "Справаздача пра памылку адпраўлена"
@@ -4568,7 +4565,7 @@
         "Агульны кошт"
       ],
       "TV log in": [
-        "Увайсці на тэлевізары"
+        "TV sign in"
       ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
@@ -4625,7 +4622,7 @@
         "Вы былі запрошаны паспрабаваць ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
-        "Паштовы індэкс"
+        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4701,7 +4698,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Вы сапраўды хочаце выдаліць гэты адрас?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Вы сапраўды хочаце выдаліць гэты нумар тэлефона?"
