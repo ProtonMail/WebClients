@@ -332,7 +332,7 @@
         "Φόρτωση εικόνας"
       ],
       "Log in": [
-        "Είσοδος"
+        "Sign in"
       ],
       "Manage folders": [
         "Διαχείριση φακέλων"
@@ -899,7 +899,7 @@
         "Ρόλος"
       ],
       "Timezone": [
-        "Ζώνη ώρας"
+        "Time zone"
       ],
       "Title": [
         "Τίτλος"
@@ -1862,7 +1862,7 @@
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
       "Email address invalid": [
-        "Η διεύθυνση E-mail δεν είναι έγκυρη"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
@@ -2065,7 +2065,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2106,7 +2106,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2141,7 +2141,7 @@
         "Συνθετικό λανθασμένης μορφής"
       ],
       "Custom timezone": [
-        "Προσαρμοσμένη ζώνη ώρας"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
@@ -2213,7 +2213,7 @@
         "Μη υποστηριζόμενη ζώνη ώρας"
       ],
       "Timezone": [
-        "Ζώνη ώρας"
+        "Time zone"
       ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
@@ -3125,10 +3125,10 @@
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
       "Link failed to be loaded": [
-        "Αποτυχία φόρτωσης συνδέσμου"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Αποτυχία φόρτωσης συνδέσμων"
+        "Cannot load links"
       ],
       "Loading": [
         "Φόρτωση"
@@ -3279,6 +3279,9 @@
       "Preview": [
         "Προεπισκόπηση"
       ],
+      "Preview failed to be loaded": [
+        "Η φόρτωση της προεπισκόπησης απέτυχε"
+      ],
       "Primary": [
         "Κύριο"
       ],
@@ -3337,7 +3340,7 @@
         "Κοινοποιήσιμος σύνδεσμος για το ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Αποτυχία φόρτωσης κοινόχρηστου σύνδεσμου"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
@@ -3666,6 +3669,9 @@
       "# of downloads": [
         "# λήψεων"
       ],
+      "${ BRAND_NAME } username": [
+        "όνομα χρήστη ${ BRAND_NAME }"
+      ],
       "(Expired)": [
         "(Ληγμένο)"
       ],
@@ -3735,6 +3741,9 @@
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
+      "Colors": [
+        "Χρώματα"
+      ],
       "Comment": [
         "Σχόλιο"
       ],
@@ -3776,10 +3785,13 @@
         "Όνομα συσκευής"
       ],
       "Do not ask again": [
-        "Να μην ερωτηθώ ξανά"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
+      ],
+      "Email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -3900,6 +3912,9 @@
       ],
       "Malware": [
         "Κακόβουλο λογισμικό"
+      ],
+      "Manage categories": [
+        "Διαχείριση κατηγοριών"
       ],
       "Merge a folder": [
         "Συγχώνευση φακέλου"
@@ -4368,7 +4383,7 @@
         "Το αρχείο ή ο φάκελος στερείται ονόματος"
       ],
       "Link failed to be loaded": [
-        "Ο σύνδεσμος απέτυχε να φορτώσει"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Μετακίνηση ${ itemsToMoveCount } αρχείου",
@@ -4395,7 +4410,7 @@
         "Μετακίνηση ${ movingCount } στοιχείων"
       ],
       "Next page failed to be loaded": [
-        "Η επόμενη σελίδα απέτυχε να φορτώσει"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
@@ -4689,7 +4704,7 @@
         "Το σφάλμα αναφέρθηκε"
       ],
       "Cancelling import": [
-        "Γίνεται ακύρωση εισαγωγής"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
@@ -4871,6 +4886,9 @@
       "All": [
         "Όλα"
       ],
+      "Are you sure you want to close the preview?": [
+        "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
+      ],
       "Back": [
         "Πίσω"
       ],
@@ -4987,6 +5005,9 @@
       "Edit contact group": [
         "Επεξεργασία ομάδας επαφών"
       ],
+      "Edit email settings": [
+        "Επεξεργασία ρυθμίσεων email"
+      ],
       "Edit image": [
         "Επεξεργασία εικόνας"
       ],
@@ -5065,7 +5086,7 @@
         "Λεπτομέρειες αντικειμένου"
       ],
       "Items details": [
-        "Λεπτομέρειες αντικειμένου"
+        "Item details"
       ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
@@ -5239,7 +5260,7 @@
         "Ο σύνδεσμος έληξε"
       ],
       "The link failed to be loaded": [
-        "Αποτυχία φόρτωσης συνδέσμου"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Αυτό το αρχείο έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."
@@ -5303,6 +5324,9 @@
       ],
       "Your 500 MB bonus": [
         "Το 500 MB μπόνους σας"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
       ],
       "Your welcome actions": [
         "Οι ευπρόσδεκτες ενέργειές σας"

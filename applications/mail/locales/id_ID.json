@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Semua yang Tidak Dibintangi"
       ],
-      "Allow messages": [
-        "Izinkan pesan"
-      ],
       "Apply": [
         "Terapkan"
       ],
@@ -543,7 +540,7 @@
         "Memuat${ ellipsis }"
       ],
       "Log in": [
-        "Masuk"
+        "Sign in"
       ],
       "Mailbox density": [
         "Kepadatan kotak surat"
@@ -1896,7 +1893,7 @@
         "Peran"
       ],
       "Timezone": [
-        "Zona waktu"
+        "Time zone"
       ],
       "Title": [
         "Gelar"
@@ -2808,9 +2805,6 @@
       "No labels": [
         "Tidak ada label"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
@@ -3031,7 +3025,7 @@
         "Alamat email dinonaktifkan"
       ],
       "Email address invalid": [
-        "Alamat email tidak valid"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Alamat email diperlukan"
@@ -3355,7 +3349,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Terjadi kesalahan pada saat membaca berkas ${ formattedFilename }. Format berkas tidak sesuai."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3395,7 +3389,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Terdapat kesalahan dalam membaca berkas ${ formattedFilename } milik Anda. Format berkas tidak sesuai."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3430,7 +3424,7 @@
         "Komponen dengan format yang salah"
       ],
       "Custom timezone": [
-        "Zona waktu khusus"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Acara yang telah diedit tidak didukung"
@@ -3502,7 +3496,7 @@
         "Zona waktu tidak didukung"
       ],
       "Timezone": [
-        "Zona waktu"
+        "Time zone"
       ],
       "To-do entry": [
         "Entri to-do"
@@ -4628,7 +4622,7 @@
         "Akan segera kedaluwarsa"
       ],
       "files attached": [
-        "berkas terlampir"
+        "attachment"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
@@ -4676,7 +4670,7 @@
         "Saya mengirimkan pesan ini kepada pengguna non-${ MAIL_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
+        "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
@@ -5003,7 +4997,7 @@
         "Menyimpan draf…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Pesan ini tidak lagi akan terkirim sesuai jadwal."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Menjadwalkan pesan..."
@@ -5147,7 +5141,7 @@
         "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Percakapan ini mengandung pesan yang terjadwal. Pesan ini tidak akan terkirim."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Percakapan ini berisi pesan yang tidak dibuang."
@@ -5156,7 +5150,7 @@
         "Percakapan ini berisi pesan yang dibuang."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Email ini tidak memenuhi syarat autentikasi domainnya. Email ini mungkin telah dipalsukan atau tidak diteruskan dengan benar!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Undangan ini disimpan di kalender nonaktif."
@@ -5222,7 +5216,7 @@
         "Kunci publik pengirim belum dipercaya."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Untuk mengimpor acara, buatlah kalender di ${ CALENDAR_APP_NAME } terlebih dahulu. Acara yang diimpor akan muncul pada kalender ini."
@@ -5582,7 +5576,7 @@
         "Teruskan"
       ],
       "Go to All Mail": [
-        "Ke Semua surat"
+        "Ke Semua Surat"
       ],
       "Go to Archive": [
         "Ke Arsip"
@@ -5603,7 +5597,7 @@
         "Ke Dibintangi"
       ],
       "Go to Trash": [
-        "Ke Tempat Sampah"
+        "Ke Sampah"
       ],
       "Insert link": [
         "Sisipkan tautan"
@@ -5875,7 +5869,7 @@
         "Hapus informasi terkait pemulihan."
       ],
       "Do not ask again": [
-        "Jangan tanyakan lagi"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Jangan tampilkan lagi"
@@ -6555,7 +6549,7 @@
         "Pengiriman yang terjadwal dibatalkan"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Penjadwalan dibatalkan. Pesan telah dipindahkan ke Draf."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Pengiriman dibatalkan"
@@ -6757,7 +6751,7 @@
         "Cari konten pesan"
       ],
       "Unlimited folders, labels and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Hingga 15 alamat email"
@@ -7413,7 +7407,7 @@
         "Bug berhasil dilaporkan"
       ],
       "Cancelling import": [
-        "Membatalkan impor"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
@@ -7479,7 +7473,7 @@
         "Preferensi pintasan keyboard diperbarui"
       ],
       "Label cleared": [
-        "Label dihapus"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Label berhasil diterapkan."

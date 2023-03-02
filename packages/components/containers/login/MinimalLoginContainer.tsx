@@ -208,7 +208,7 @@ const LoginForm = ({
                 <div className="flex flex-justify-space-between">
                     {needHelp}
                     <PrimaryButton type="submit" loading={loading} data-cy-login="submit">
-                        {c('Action').t`Log in`}
+                        {c('Action').t`Sign in`}
                     </PrimaryButton>
                 </div>
                 {footer}

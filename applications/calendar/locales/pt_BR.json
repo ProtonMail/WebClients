@@ -283,7 +283,7 @@
         "Carregar imagem"
       ],
       "Log in": [
-        "Iniciar sessão"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Torne este participante opcional"
@@ -430,7 +430,7 @@
         "Selecionar tudo"
       ],
       "Select timezone": [
-        "Selecionar fuso horário"
+        "Select time zone"
       ],
       "Send": [
         "Enviar"
@@ -1064,7 +1064,7 @@
         "Função"
       ],
       "Timezone": [
-        "Fuso horário"
+        "Time zone"
       ],
       "Title": [
         "Título"
@@ -1988,7 +1988,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Não perguntar novamente"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2159,7 +2159,7 @@
         "Endereço de e-mail desativado"
       ],
       "Email address invalid": [
-        "Endereço de e-mail inválido"
+        "Invalid email address"
       ],
       "Email address is required": [
         "O endereço de e-mail é obrigatório"
@@ -2419,7 +2419,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não está no formato correto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2460,7 +2460,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não tem o formato correto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2495,7 +2495,7 @@
         "Componente com formato errado"
       ],
       "Custom timezone": [
-        "Fuso horário personalizado"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado não suportado"
@@ -2567,7 +2567,7 @@
         "Fuso horário não suportado"
       ],
       "Timezone": [
-        "Fuso horário"
+        "Time zone"
       ],
       "To-do entry": [
         "Tarefas"
@@ -3755,6 +3755,11 @@
         "Clique para ver detalhes"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Somente leitura"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Alguns de seus calendários não exibirão detalhes de eventos criados anteriormente."
@@ -3787,6 +3792,9 @@
       "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
         "No máximo ${ MAX_ATTENDEES } participante é permitido por convite",
         "No máximo ${ MAX_ATTENDEES } participantes são permitidos por convite"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "A criação de convites em um calendário compartilhado não é permitida"
       ]
     },
     "Input label": {
@@ -3911,7 +3919,7 @@
         "Descrição"
       ],
       "Do not ask again": [
-        "Não perguntar novamente"
+        "Don't ask again"
       ],
       "Email": [
         "E-mail"
@@ -4178,6 +4186,14 @@
     "Landmarks": {
       "Side panel": [
         "Painel lateral"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Para adicionar um novo calendário, remova um existente."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Você alcançou o número máximo de calendários disponíveis no seu plano."
       ]
     },
     "Link": {
@@ -5345,7 +5361,7 @@
         "Cancelamento enviado e participantes removidos de todos os eventos"
       ],
       "Cancelling import": [
-        "Cancelando a importação"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
@@ -5529,7 +5545,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Pesquisar fusos horários"
+        "Search time zones"
       ]
     },
     "Title": {

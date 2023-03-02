@@ -457,7 +457,7 @@
         "正在载入验证"
       ],
       "Make default": [
-        "设为默认"
+        "Set as default"
       ],
       "Manage communication preferences": [
         "管理通讯偏好设置"
@@ -510,10 +510,10 @@
       "Not spam": [
         "非垃圾邮件"
       ],
-      "OK": [
-        "确定"
-      ],
       "Ok": [
+        "OK"
+      ],
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -694,7 +694,7 @@
         "选择邀请邮件的使用语言"
       ],
       "Select timezone": [
-        "选择时区"
+        "Select time zone"
       ],
       "send auto-reply email": [
         "自动回复"
@@ -935,7 +935,7 @@
         "生成缺失的密钥"
       ],
       "Make default": [
-        "设为默认"
+        "Set as default"
       ],
       "Saving": [
         "正在保存"
@@ -1629,7 +1629,7 @@
         "身份"
       ],
       "Timezone": [
-        "时区"
+        "Time zone"
       ],
       "Title": [
         "头衔"
@@ -2962,7 +2962,7 @@
         "密码不匹配"
       ],
       "Payment process cancelled": [
-        "支付已取消"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "已经支付过了"
@@ -3067,7 +3067,7 @@
         "地址可能拼写不正确"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "文件夹名称无效，请更改。"
@@ -3198,7 +3198,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -3238,7 +3238,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "读取文件 ${ formattedFilename } 失败，文件格式不对。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -3273,7 +3273,7 @@
         "组件格式错误"
       ],
       "Custom timezone": [
-        "自定义时区"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "不支持已编辑的事件"
@@ -3345,7 +3345,7 @@
         "不支持此时区"
       ],
       "Timezone": [
-        "时区"
+        "Time zone"
       ],
       "To-do entry": [
         "待办事项"
@@ -3359,7 +3359,7 @@
     },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "读取文件 ${ formattedFilename } 时失败。文件格式不正确。"
+        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上传文件 ${ formattedFilename } 时出错。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -4193,7 +4193,7 @@
         "已取消"
       ],
       "Cancelling": [
-        "正在取消"
+        "Canceling"
       ],
       "Completed": [
         "完成"
@@ -4664,7 +4664,7 @@
         "Discover ProtectBuy 图标"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "不要忘记这个密码：如果您忘记了这个密码，您将无法登录或解密您的邮件。"
+        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "不要忘记这个密码：如果您忘记了这个密码，您将无法管理您的机构。"
@@ -4745,7 +4745,7 @@
         "加密设置已更改"
       ],
       "Enter code from your authenticator app": [
-        "请输入您的双重验证应用中显示的验证码"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "手动输入密钥"
@@ -4877,7 +4877,7 @@
         "如果您忘记了账号或密码，${ boldAccountAndRecovery }是找回账户和数据的${ boldImperative }，若不事先设置，届时您很可能失去所有的邮件、文件和联系人信息。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "若双重验证设备丢失，您可以使用这些代码代替验证码登录账户。每段代码只能使用一次。"
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
@@ -4961,7 +4961,7 @@
         "网络连接已恢复。"
       ],
       "Invites successfully sent": [
-        "已成功发送邀请"
+        "Invite sent"
       ],
       "It appears some of your data is encrypted and locked.": [
         "您的部分数据被加密并锁定。"
@@ -4994,7 +4994,7 @@
         "大批量的导入可能需要几天才能完成。"
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "了解如何使用第三方 VPN 客户端登录到 ${ VPN_APP_NAME }。"
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "了解详情"
@@ -5036,7 +5036,7 @@
         "加载中..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "登录至 ${ MAIL_APP_NAME } 以激活您的地址"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "试图使用您的 ${ BRAND_NAME } 账户登录任何 ${ BRAND_NAME } 产品的操作都会被记录。"
@@ -5066,7 +5066,7 @@
         "更多"
       ],
       "More Info": [
-        "更多信息"
+        "Learn more"
       ],
       "Multi-user support not enabled.": [
         "未开启多用户功能。"
@@ -5414,7 +5414,7 @@
         "Import-Export 应用程序能让您对邮件进行本地备份，以及恢复先前的备份到您的账户。"
       ],
       "The name will be visible to your users while they are logged in.": [
-        "您的用户登录后即可看到机构名称。"
+        "The name will be visible to your users while they are signed in."
       ],
       "The securest way to browse, stream, and be online.": [
         "最安全的浏览、串流和冲浪方式。"
@@ -5564,7 +5564,7 @@
         "双重验证已开启"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "双密码模式下登录账户和解密邮箱需要分别设置密码。（高级功能）"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "双密码模式下登录和解密邮箱需要两套密码，某些情况下这样能略微提高安全性，但我们建议大部分用户使用单密码。若要开启双密码模式，请先设置一个登录密码，再设置一个邮箱密码。"
@@ -5726,7 +5726,7 @@
         "您可以定制并下载账单用于记账。"
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
+        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
       ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
@@ -5756,7 +5756,7 @@
         "您不能邀请其他 ${ MAIL_APP_NAME } 用户"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "您不能使用 OpenVPN / IKEv2 凭证登录 ${ VPN_APP_NAME } 客户端或 ${ VPN_APP_NAME } 总览。${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
@@ -5825,7 +5825,7 @@
         "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 账户是绑定在一起的，前往 ${ loginLink } 登录后可将它们一并删除。"
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
@@ -6583,7 +6583,7 @@
         "称呼"
       ],
       "Do not ask again": [
-        "不再询问"
+        "Don't ask again"
       ],
       "Do you have any suggestions for our team?": [
         "您对我们的团队有什么建议吗？"
@@ -7021,7 +7021,7 @@
         "时间格式"
       ],
       "Timezone": [
-        "时区"
+        "Time zone"
       ],
       "To: ${ to }": [
         "收件人：${ to }"
@@ -7114,7 +7114,7 @@
         "您的邀请链接"
       ],
       "ZIP code": [
-        "邮编"
+        "Postal code"
       ]
     },
     "label": {
@@ -7877,7 +7877,7 @@
         "文件夹数量不限"
       ],
       "Unlimited folders, labels and filters": [
-        "文件夹、标签、筛选规则不限量"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "标签数量不限"
@@ -7907,26 +7907,6 @@
       ],
       "Team management": [
         "团队管理"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: info": {
@@ -7998,6 +7978,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -9224,7 +9224,7 @@
         "${ server.Domain } 已复制到剪贴板"
       ],
       "Account deleted. Logging out...": [
-        "账户已删除，正在退出..."
+        "Account deleted. Signing out..."
       ],
       "Address added": [
         "地址已添加"
@@ -9545,7 +9545,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "搜索时区"
+        "Search time zones"
       ]
     },
     "Title": {
@@ -10366,7 +10366,7 @@
         "诚邀您体验 ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
-        "邮编"
+        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10682,7 +10682,7 @@
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
       ],
       "Are you sure you want to delete the address?": [
-        "您确定要删除该地址？"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "确定要删除此号码吗？"
@@ -10718,7 +10718,7 @@
         "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
       "Please provide at least one recipient": [
-        "请至少添加一位收件人"
+        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"

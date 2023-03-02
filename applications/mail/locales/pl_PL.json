@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Wszystkie niewyróżnione"
       ],
-      "Allow messages": [
-        "Zezwalaj na wiadomości"
-      ],
       "Apply": [
         "Zastosuj"
       ],
@@ -552,7 +549,7 @@
         "Ładowanie${ ellipsis }"
       ],
       "Log in": [
-        "Zaloguj się"
+        "Sign in"
       ],
       "Mailbox density": [
         "Układ skrzynki pocztowej"
@@ -1911,7 +1908,7 @@
         "Stanowisko"
       ],
       "Timezone": [
-        "Strefa czasowa"
+        "Time zone"
       ],
       "Title": [
         "Tytuł"
@@ -2838,9 +2835,6 @@
       "No labels": [
         "Brak etykiet"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
         "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
@@ -3070,7 +3064,7 @@
         "Adres e-mail został wyłączony"
       ],
       "Email address invalid": [
-        "Adres e-mail jest nieprawidłowy"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Adres e-mail jest wymagany"
@@ -3415,7 +3409,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Plik nie posiada odpowiedniego formatu."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3458,7 +3452,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Plik nie posiada odpowiedniego formatu."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3493,7 +3487,7 @@
         "Komponent posiada niewłaściwy format"
       ],
       "Custom timezone": [
-        "Strefa czasowa jest niestandardowa"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Edytowane wydarzenie nie jest obsługiwane"
@@ -3565,7 +3559,7 @@
         "Strefa czasowa nie jest obsługiwana"
       ],
       "Timezone": [
-        "Strefa czasowa"
+        "Time zone"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -4871,8 +4865,8 @@
         "Wygasa wkrótce"
       ],
       "file attached": [
-        "załącznik",
-        "załączniki",
+        "attachment",
+        "attachments",
         "załączników",
         "załączników"
       ],
@@ -5261,7 +5255,7 @@
         "Zapisywanie szkicu…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Zaplanowane wysyłanie tej wiadomości zostanie anulowane."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Planowanie wiadomości..."
@@ -5402,7 +5396,7 @@
         "Ta przeglądarka nie obsługuje podglądu dokumentów PDF. Pobierz plik."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Wątek zawiera zaplanowaną wiadomość. Wysłanie tej wiadomości zostanie anulowane."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Ten wątek zawiera nieusunięte wiadomości."
@@ -5417,7 +5411,7 @@
         "Wątki zostaną oznaczone jako spam. Czy chcesz anulować subskrypcję przyszłych wiadomości?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Ta wiadomość nie spełnia wymogów weryfikacyjnych domeny nadawcy. Może być sfałszowana lub nieprawidłowo przesłana!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Zaproszenie zostało zapisane w wyłączonym kalendarzu."
@@ -6175,7 +6169,7 @@
         "Usuń informacje o odzyskiwaniu."
       ],
       "Do not ask again": [
-        "Nie pytaj ponownie"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Nie pokazuj ponownie"
@@ -6870,7 +6864,7 @@
         "Zaplanowane wysyłanie zostało anulowane"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Planowanie zostało anulowane. Wiadomość została przeniesiona do Szkiców."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Wysyłanie zostało anulowane"
@@ -7081,7 +7075,7 @@
         "Wyszukiwanie zawartości wiadomości"
       ],
       "Unlimited folders, labels and filters": [
-        "Nieograniczona liczba folderów, etykiet i filtrów"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Do 15 adresów e-mail"
@@ -8074,7 +8068,7 @@
         "Błąd został zgłoszony"
       ],
       "Cancelling import": [
-        "Anulowanie procesu importowania"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
@@ -8149,7 +8143,7 @@
         "Ustawienia skrótów klawiszowych zostały zaktualizowane"
       ],
       "Label cleared": [
-        "Etykieta została wyczyszczona"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Etykiety zostały zastosowane."

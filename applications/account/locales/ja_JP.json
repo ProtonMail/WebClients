@@ -452,7 +452,7 @@
         "認証を読み込み中"
       ],
       "Make default": [
-        "既定にする"
+        "Set as default"
       ],
       "Manage communication preferences": [
         "コミュニケーション設定を管理する"
@@ -505,10 +505,10 @@
       "Not spam": [
         "迷惑メールでない"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -689,7 +689,7 @@
         "招待メールの言語を選択"
       ],
       "Select timezone": [
-        "タイムゾーンの選択"
+        "Select time zone"
       ],
       "send auto-reply email": [
         "自動返信メールを送信"
@@ -930,7 +930,7 @@
         "紛失した鍵の生成"
       ],
       "Make default": [
-        "既定にする"
+        "Set as default"
       ],
       "Saving": [
         "保存中"
@@ -1606,7 +1606,7 @@
         "役割"
       ],
       "Timezone": [
-        "タイムゾーン"
+        "Time zone"
       ],
       "Title": [
         "肩書き"
@@ -2916,7 +2916,7 @@
         "パスワードが一致しません"
       ],
       "Payment process cancelled": [
-        "支払い処理がキャンセルされました。"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "支払い処理は消費されました"
@@ -3021,7 +3021,7 @@
         "アドレスの綴りが違う可能性があります"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "このフォルダー名は無効です。別の名前を選択してください。"
@@ -3149,7 +3149,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "ファイル　${ formattedFilename }の読み取り中にエラーが発生しました。ファイルのフォーマットが正しくありません。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
@@ -3189,7 +3189,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
@@ -3224,7 +3224,7 @@
         "無効なコンポーネント形式です"
       ],
       "Custom timezone": [
-        "独自のタイムゾーン"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -3296,7 +3296,7 @@
         "タイムゾーンはサポートされていません"
       ],
       "Timezone": [
-        "タイムゾーン"
+        "Time zone"
       ],
       "To-do entry": [
         "To-do のエントリー"
@@ -3310,7 +3310,7 @@
     },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "ファイル「${ formattedFilename }」の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル「${ formattedFilename }」のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
@@ -4582,7 +4582,7 @@
         "Discover ProtectBuy ロゴ"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "このパスワードを忘れないでください。忘れてしまった場合は、ログインしたり、メッセージを復号することはできません。"
+        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "このパスワードを紛失しないように注意してください。紛失した場合、組織を管理できなくなります。"
@@ -4660,7 +4660,7 @@
         "暗号化の設定が更新されました。"
       ],
       "Enter code from your authenticator app": [
-        "認証アプリのコードを入力してください"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "代わりに手動で鍵を入力"
@@ -4789,7 +4789,7 @@
         "ログイン情報を失いアカウントをリセットすることになった場合、${ boldAccountAndRecovery }を両方用意することが${ boldImperative }。そうしないと、メール、連絡先、ファイルにアクセスできなくなる可能性があります。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "2 要素認証デバイスを紛失した場合、6 桁の 2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
@@ -4873,7 +4873,7 @@
         "インターネット接続が回復しました。"
       ],
       "Invites successfully sent": [
-        "招待は正常に送信されました"
+        "Invite sent"
       ],
       "It appears some of your data is encrypted and locked.": [
         "いくつかのデータの暗号化と復号を可能にします。"
@@ -4906,7 +4906,7 @@
         "巨大なインポートは数日かかる場合があります。"
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "サードパーティの VPN アプリケーションで ${ VPN_APP_NAME } にログインする方法を学ぶ"
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "詳細"
@@ -4948,7 +4948,7 @@
         "読み込み中..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "${ MAIL_APP_NAME } にログインしてアドレスをアクティブにします"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "すべての ${ BRAND_NAME } サービスへの、あなたの ${ BRAND_NAME } 認証情報による認証の試行がログに記録されます。"
@@ -4981,7 +4981,7 @@
         "詳細"
       ],
       "More Info": [
-        "より詳しく"
+        "Learn more"
       ],
       "Multi-user support not enabled.": [
         "複数ユーザー対応が有効になっていません。"
@@ -5311,7 +5311,7 @@
         "Import-Export アプリを使うことで、ローカルなバックアップ用にメッセージをエクスポートしたり、以前のバックアップをアカウントに戻すことができます。"
       ],
       "The name will be visible to your users while they are logged in.": [
-        "あなたのユーザがログインしている間は、この名前が表示されます。"
+        "The name will be visible to your users while they are signed in."
       ],
       "The securest way to browse, stream, and be online.": [
         "インターネットを一番安全に使うためのソフト"
@@ -5455,7 +5455,7 @@
         "2 要素認証が有効になりました"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "2 パスワードモードでは、アカウントへのログイン用とメールボックスの復号用の 2 つのパスワードを使用します。(高度な機能)"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "2 パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。2 パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
@@ -5614,7 +5614,7 @@
         "会計用に請求書をカスタマイズしてダウンロードする事ができます。"
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "アカウントにアクセスした IPや時刻を確認するために認証ログを有効にできます。アカウントへのログインの試みの失敗と共に、アクセス元IP アドレスと時刻が記録されます。"
+        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
       ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
@@ -5644,7 +5644,7 @@
         "${ MAIL_APP_NAME } のユーザーは招待できません"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "OpenVPN / IKEv2 認証情報は、${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードへのログインには使用できません。${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
@@ -5710,7 +5710,7 @@
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "${ VPN_APP_NAME } と ${ MAIL_APP_NAME } のアカウントはリンクしています。両アカウントを削除するには ${ loginLink } へログインしてアカウントを削除してください。"
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
@@ -6452,7 +6452,7 @@
         "表示名"
       ],
       "Do not ask again": [
-        "今後表示しない"
+        "Don't ask again"
       ],
       "Do you have any suggestions for our team?": [
         "私たちのチームに対する提案はありますか?"
@@ -6884,7 +6884,7 @@
         "時刻の表示形式"
       ],
       "Timezone": [
-        "タイムゾーン"
+        "Time zone"
       ],
       "Token name": [
         "トークン名"
@@ -6965,7 +6965,7 @@
         "あなたの招待リンク"
       ],
       "ZIP code": [
-        "郵便番号"
+        "Postal code"
       ]
     },
     "label": {
@@ -7719,7 +7719,7 @@
         "フォルダー制限なし"
       ],
       "Unlimited folders, labels and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "ラベル制限なし"
@@ -7749,23 +7749,6 @@
       ],
       "Team management": [
         "チームマネジメント"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: info": {
@@ -7825,6 +7808,23 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8947,7 +8947,7 @@
         "${ server.Domain } がクリップボードにコピーされました"
       ],
       "Account deleted. Logging out...": [
-        "アカウントは削除されました。ログアウト中..."
+        "Account deleted. Signing out..."
       ],
       "Address added": [
         "アドレスが追加されました"
@@ -9268,7 +9268,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "タイムゾーンの検索"
+        "Search time zones"
       ]
     },
     "Title": {
@@ -10086,7 +10086,7 @@
         "${ MAIL_APP_NAME } の試用に招待されました"
       ],
       "ZIP / postal code": [
-        "郵便番号"
+        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10372,7 +10372,7 @@
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
       ],
       "Are you sure you want to delete the address?": [
-        "本当にこのアドレスを削除してよろしいですか?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "本当にこの電話番号を削除しますか？"
@@ -10405,7 +10405,7 @@
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
       ],
       "Please provide at least one recipient": [
-        "少なくとも 1 件の宛先を提供してください"
+        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"

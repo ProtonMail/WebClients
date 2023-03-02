@@ -336,7 +336,7 @@
         "Загрузить изображение"
       ],
       "Log in": [
-        "Войти"
+        "Sign in"
       ],
       "Manage folders": [
         "Управление папками"
@@ -919,7 +919,7 @@
         "Роль"
       ],
       "Timezone": [
-        "Часовой пояс"
+        "Time zone"
       ],
       "Title": [
         "Должность"
@@ -1895,7 +1895,7 @@
         "Домен недоступен, повторите попытку позже"
       ],
       "Email address invalid": [
-        "Недействительный адрес электронной почты"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
@@ -2128,7 +2128,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Произошла ошибка при чтении вашего файла ${ formattedFilename }. Файл имеет неправильный формат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2171,7 +2171,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2206,7 +2206,7 @@
         "Неправильный формат компонента"
       ],
       "Custom timezone": [
-        "Настроить часовой пояс"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Отредактированное событие не поддерживается"
@@ -2278,7 +2278,7 @@
         "Часовой пояс не поддерживается"
       ],
       "Timezone": [
-        "Часовой пояс"
+        "Time zone"
       ],
       "To-do entry": [
         "Запись списка задач"
@@ -3372,10 +3372,10 @@
         "Ссылка скопирована в буфер обмена"
       ],
       "Link failed to be loaded": [
-        "Не удалось загрузить ссылку"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Не удалось загрузить ссылки"
+        "Cannot load links"
       ],
       "Loading": [
         "Загрузка"
@@ -3591,7 +3591,7 @@
         "Доступная для обмена ссылка для ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Сбой при загрузке ссылки для распространения"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
@@ -4055,7 +4055,7 @@
         "Название устройства"
       ],
       "Do not ask again": [
-        "Больше не спрашивать"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Все равно скачать"
@@ -4703,7 +4703,7 @@
         "У папки или файла отсутствует имя"
       ],
       "Link failed to be loaded": [
-        "Не удалось загрузить ссылку"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Переместить ${ itemsToMoveCount } файл",
@@ -4742,7 +4742,7 @@
         "Переместить ${ movingCount } элементов"
       ],
       "Next page failed to be loaded": [
-        "Не удалось загрузить следующую страницу"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостаточно места для загрузки ${ formattedTotal }"
@@ -5332,7 +5332,7 @@
         "Отчёт об ошибке отправлен"
       ],
       "Cancelling import": [
-        "Отмена импорта"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
@@ -5748,7 +5748,7 @@
         "Информация об элементе"
       ],
       "Items details": [
-        "Информация об элементах"
+        "Item details"
       ],
       "Link confirmation": [
         "Подтверждение ссылки"
@@ -5925,7 +5925,7 @@
         "Срок действия ссылки истек"
       ],
       "The link failed to be loaded": [
-        "Не удалось скачать ссылку"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "У этого файла отсутствует или недействительна подпись. Перейдите в Меню (⋮) → Подробности для получения дополнительной информации."

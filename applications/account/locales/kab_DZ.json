@@ -396,7 +396,7 @@
         "Asali n usenqed"
       ],
       "Make default": [
-        "Err-it d amezwer"
+        "Set as default"
       ],
       "Mark as default": [
         "Err-it d amezwer"
@@ -434,11 +434,11 @@
       "No": [
         "Ala"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "Ih"
-      ],
-      "Ok": [
-        "IH"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
@@ -603,7 +603,7 @@
         "Fren tutlayt i yimaylen n tinnubga"
       ],
       "Select timezone": [
-        "Fren iẓḍi usrid"
+        "Select time zone"
       ],
       "send auto-reply email": [
         "azen imayl n tririt tawurmant"
@@ -808,7 +808,7 @@
         "Sirew tisura ixuṣṣen"
       ],
       "Make default": [
-        "Err-it d amezwer"
+        "Set as default"
       ],
       "Saving": [
         "Asekles"
@@ -1217,7 +1217,7 @@
         "Tamlilt"
       ],
       "Timezone": [
-        "Iẓdi n wakud"
+        "Time zone"
       ],
       "Title": [
         "Azwel"
@@ -2274,7 +2274,7 @@
         "Awalen uffiren ur menṭaḍen ara"
       ],
       "Payment process cancelled": [
-        "Akala n uxelleṣ yettwasefsex"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Akala n uxelleṣ yekfa"
@@ -2355,7 +2355,7 @@
         "Yezmer tella tuccḍa deg tira n tansa"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Iminig i tesseqdaceḍ ur k-yettaǧǧa ara ad tfakkeḍ axelleṣ. Ma ulac aɣilif, seqdec iminig nniḍen neɣ qqen s uselkim."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Isem n ukaram d arameɣtu. Ttxil-k·m fren isem-nniḍen."
@@ -2478,7 +2478,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Tella tuccḍa deg tɣuri n ufaylu-inek·inem ${ formattedFilename }. Afaylu ur yesɛi ara amasal i ilaqen."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Tella-d tuccḍa deg usali n ufaylu-inek ·inem ${ formattedFilename }. Teɣzi tafellayt n ufaylu d ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2510,7 +2510,7 @@
         "Asuddis s yir amasal"
       ],
       "Custom timezone": [
-        "Iẓdi n wakud yugnen"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Aẓrag n tedyant ur yettusefrak ara"
@@ -2573,7 +2573,7 @@
         "Izḍi usrid ur yettusefrak ara"
       ],
       "Timezone": [
-        "Tamennaḍt tasragant"
+        "Time zone"
       ],
       "To-do entry": [
         "Anekcum n twuriwin"
@@ -3470,7 +3470,7 @@
         "Kkes aseɣwen?"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Ur Tettu ARA awal-agi uffir. Ma tettuḍ-t, ur tettizmireḍ ara ad tkecmed neɣ ad tzemkeḍ iznan-ik."
+        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Ur Sruḥuy ara awal-agi uffir. Ma tesruḥeṭ, ur tettizmireḍ ara ad tkecmed neɣ tzemkeḍ iznan-ik."
@@ -3615,7 +3615,7 @@
         "Ma tremdeḍ SPF akked DKIM, DMARC ad k-yeǧǧ ad temmleḍ amek ilaq imeẓlala n yimayl ad aznen imaylen ar taɣult-ik ma yella SPF akked DKIM ccḍen. Aya izmer ad yiwɛir i wid yettaznen ispamen ad ilin d kečč, maca izmer daɣen ad d-yeglu s wuguren ma yella ur yettwag ara akken iwata."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Ma tesruḥeḍ ibenk-ik n usesteb s snat n tarrayin, tingalin-agi zemren-t ad ttwasqedcent i tuqqna ar ulmiḍan-ik deg umdiq n tingalin n 6 n iwzilen. Yal tangalt ad tettwaseqdec kan yiwet n tikkelt."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ma tkemmleḍ deg usader deg lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ${ MAIL_APP_NAME } d ${ VPN_APP_NAME }."
@@ -3709,7 +3709,7 @@
         "Tektert tameqrant tezmer ad teṭṭef aṭas n wussan."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Issin amek ara teqqneḍ ɣer ${ VPN_APP_NAME } s yisnasen VPN n wis kraḍ."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "Issin ugar"
@@ -3748,7 +3748,7 @@
         "ugar"
       ],
       "More Info": [
-        "Ugar n telɣut"
+        "Learn more"
       ],
       "Multi-user support not enabled.": [
         "Tallelt n ddeqs n yiseqdacen ur termid ara."
@@ -3961,7 +3961,7 @@
         "Tansa n yimayl i teskecmeḍ nnig n tebdart d tansa-inek·inem s wudem amezwer. Zuɣer syen sres i wakken ad tsuddseḍ tansiwin-ik·im."
       ],
       "The name will be visible to your users while they are logged in.": [
-        "Isem ad d-yettban i yiseqdacen-ik•im mi ara qqnen."
+        "The name will be visible to your users while they are signed in."
       ],
       "The securest way to browse, stream, and be online.": [
         "Abrid uḍmin i tunigin, i usuddem d tunigin srid."
@@ -4024,7 +4024,7 @@
         "Asesteb s snat n tarrayin yermed"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Askar n sin wawalen uffiren yesra sin wawalen uffiren: yiwen i unekcum ɣer umiḍan-ik·im, wayeḍ i tukksa n uwgelhen i tbewwaḍt-ik·im n yimayl. (Leqqayen)"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Askar s sin n wawalen uffiren isseqdac awalen uffiren yemgaraden i tuqqna ar umiḍan-ik akked uwgelhen n tnaka-ik n urmas. Askar-agi yettmuddu tagnit fessusen seg idis n tɣellist, acu kan, ad nwelleh ɣef useqdec n uskar s yiwen n wawal uffir i tuget n iseqdacen. Akken ad tremdeḍ askar s sin n wawalen uffiren, fren awal uffir n tuqqna ar umiḍan-ik akked wawal uffir n uwgelhen i tnaka-ik n urmas sakin sit ɣef Sekles."
@@ -4129,7 +4129,7 @@
         "Tzemreḍ ad tsagneḍ daɣen ad d-tsadreḍ tifacturin-inek·inem i yiswan n usiḍen."
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Tzemreḍ ad tremdeḍ asniɣmes n tuqqniwin ar umiḍan-ik akken ad twaliḍ inekcumen ɣur-s akked tansiwin IP yellan deffir tuqqna. Ad nessekles i yal aɛraḍ n tuqqna, tansa IP taɣbalut, azemz d wakud, akked tuqqniwin yeccḍen."
+        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Tzemreḍ tura ad d-tremseḍ iznan ɣer tansa-inek·inem @pm.me. Leqqem ɣer uɣawas n lexlaṣ iwakken daɣen ad tazneḍ imaylen s useqdec n tansa @pm.me syei rnu tansiwin-nniḍen @pm.me."
@@ -4144,7 +4144,7 @@
         "Tzemreḍ ad tesqedceḍ inekcam-a akken ad teqqneḍ ɣer uqeddac ${ VPN_APP_NAME }, s useqdec n usnas VPN n wis kraḍ, n uɣbalu yeldin, akka am Tunnelblick i macOS neɣ OpenVPN i GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Ur tezmireḍ ara ad tesqedceḍ inekcam n tuqqna n OpenVPN / IKEv2 akken adteqqneḍ ɣer yisnasen n ${ VPN_APP_NAME } neɣ ɣer tfelwit n tedbelt n ${ VPN_APP_NAME }. ${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ur tesbaduḍ ara tarayt n tririt, tiririt n umiḍan-inek•inem ur tezmir ara ad d-ḍru ma yella tettuḍ awal-ik•im uffir. Tebɣiḍ ad tkemmleḍ s war tarayt n tririt?"
@@ -4183,7 +4183,7 @@
         "Amiḍan-ik·im ${ BRAND_NAME } icudd ɣer ${ externalEmailAddress }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Imiḍanen-ik·im ${ VPN_APP_NAME } d ${ MAIL_APP_NAME } ttwacudden. I wakken ad ten-tekkseḍ i sin, ttxil-k·m kcem ɣer ${ loginLink } syen kkes amiḍan-ik·im dinna."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ur yettɛṭṭil ara ad yesɛu talast. ${ payInvoiceLink }"
@@ -4839,7 +4839,7 @@
         "Isem ara d-yettwaskanen"
       ],
       "Do not ask again": [
-        "Ur sutur ara tikelt-nniḍen"
+        "Don't ask again"
       ],
       "Do you have any suggestions for our team?": [
         "Tesɛiḍ kra n yisumar i terbaɛt-nneɣ ?"
@@ -5181,7 +5181,7 @@
         "Amasal n usrag"
       ],
       "Timezone": [
-        "Iẓdi n wakud"
+        "Time zone"
       ],
       "Two-password mode": [
         "Askar n sin-wawalen-uffiren"
@@ -5244,7 +5244,7 @@
         "Awal-ik uffir (anedbal)"
       ],
       "ZIP code": [
-        "Tangalt Zip"
+        "Postal code"
       ]
     },
     "label": {
@@ -6564,7 +6564,7 @@
         "${ server.Domain } yettwanɣel deg tecfawit-inek·inem"
       ],
       "Account deleted. Logging out...": [
-        "Amiḍan yekkes. Tuffɣa..."
+        "Account deleted. Signing out..."
       ],
       "Address added": [
         "Tansa tettwarna"
@@ -6803,7 +6803,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Nadi timnaḍin tisraganin"
+        "Search time zones"
       ]
     },
     "Title": {
@@ -7468,7 +7468,7 @@
         "Addad n tririt-inek•inem"
       ],
       "ZIP / postal code": [
-        "ZIP / tangalt n lbuṣṭa"
+        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -7733,7 +7733,7 @@
         "${ BRAND_NAME } ad siweḍ aqettun n yisefka iwum yezmer, ad yebdu s yiznan-inek·inem n melmi kan."
       ],
       "Are you sure you want to delete the address?": [
-        "D tidet tebɣiḍ ad tekkseḍ tansa?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Tebɣiḍ s tidet ad tekkseḍ uṭṭun n tiliɣri?"
@@ -7763,7 +7763,7 @@
         "Ttxil-k·m ẓer belli s ufran n tarrayt-a n uxelleṣ, amiḍan-ik·im ur nezmir ara ad t-nleqqem din din. Ad nleqqem amiḍan-ik·im akken ara yettwag uxelleṣ."
       ],
       "Please provide at least one recipient": [
-        "Ma ulac aɣilif, mudd xarsum yiwen n unermis"
+        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."

@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Tutti Non Preferiti"
       ],
-      "Allow messages": [
-        "Consentire i messaggi"
-      ],
       "Apply": [
         "Applica"
       ],
@@ -546,7 +543,7 @@
         "Caricamento${ ellipsis }"
       ],
       "Log in": [
-        "Accedi"
+        "Sign in"
       ],
       "Mailbox density": [
         "Densità casella mail"
@@ -1906,7 +1903,7 @@
         "Ruolo"
       ],
       "Timezone": [
-        "Fuso orario"
+        "Time zone"
       ],
       "Title": [
         "Titolo"
@@ -2823,9 +2820,6 @@
       "No labels": [
         "Nessuna etichetta"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
@@ -3049,7 +3043,7 @@
         "Indirizzo email disabilitato"
       ],
       "Email address invalid": [
-        "Indirizzo email non valido"
+        "Invalid email address"
       ],
       "Email address is required": [
         "L'indirizzo email è obbligatorio"
@@ -3380,7 +3374,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Il file non ha il formato corretto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3421,7 +3415,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Il file non ha il formato corretto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3456,7 +3450,7 @@
         "Componente con formato errato"
       ],
       "Custom timezone": [
-        "Fuso orario personalizzato"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento modificato non supportato"
@@ -3528,7 +3522,7 @@
         "Fuso orario non supportato"
       ],
       "Timezone": [
-        "Fuso orario"
+        "Time zone"
       ],
       "To-do entry": [
         "Voce da fare"
@@ -4712,8 +4706,8 @@
         "Scade a breve"
       ],
       "file attached": [
-        "file allegato",
-        "file allegati"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "I filtri funzionano su tutte le email, incluse le email in arrivo e quelle inviate. Ogni filtro deve contenere almeno un nome, una condizione e un'azione."
@@ -5092,7 +5086,7 @@
         "Salvando la bozza…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "L'invio programmato di questo messaggio verrà annullato."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Pianificando il messaggio..."
@@ -5231,7 +5225,7 @@
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Questa conversazione contiene un messaggio pianificato. L'invio di questo messaggio verrà annullato."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Questa conversazione contiene messaggi non cestinati."
@@ -5244,7 +5238,7 @@
         "Queste conversazioni verranno segnalate come spam. Vorresti anche terminare la sottoscrizione a future email?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Quest'email ha fallito i requisiti d'autenticazione del suo dominio. Potrebbe esser falsificata o inoltrata impropriamente!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Questo invito è salvato in un calendario disabilitato."
@@ -5978,7 +5972,7 @@
         "Elimina le informazioni di ripristino."
       ],
       "Do not ask again": [
-        "Non chiedermelo più"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Non mostrare più"
@@ -6663,7 +6657,7 @@
         "Invio programmato annullato"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Pianificazione annullata. Il messaggio è stato spostato nelle Bozze."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Invio annullato"
@@ -6868,7 +6862,7 @@
         "Cerca il contenuto del messaggio"
       ],
       "Unlimited folders, labels and filters": [
-        "Cartelle, etichette e filtri illimitati"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Fino a 15 indirizzi email"
@@ -7785,7 +7779,7 @@
         "Bug segnalato"
       ],
       "Cancelling import": [
-        "Annullamento dell'importazione"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Codice inviato a ${ methodTo }"
@@ -7856,7 +7850,7 @@
         "Preferenze scorciatoie da tastiera aggiornate"
       ],
       "Label cleared": [
-        "Etichetta cancellata"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Etichette applicate."

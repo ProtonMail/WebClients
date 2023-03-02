@@ -287,7 +287,7 @@
         "Завантажити зображення"
       ],
       "Log in": [
-        "Увійти"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Зробити цього учасника необов'язковим"
@@ -434,7 +434,7 @@
         "Вибрати все"
       ],
       "Select timezone": [
-        "Вибрати часовий пояс"
+        "Select time zone"
       ],
       "Send": [
         "Надіслати"
@@ -1074,7 +1074,7 @@
         "Роль"
       ],
       "Timezone": [
-        "Часовий пояс"
+        "Time zone"
       ],
       "Title": [
         "Назва"
@@ -2010,7 +2010,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Не питати знову"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2189,7 +2189,7 @@
         "Адреса е-пошти вимкнена"
       ],
       "Email address invalid": [
-        "Недійсна адреса електронної пошти"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Адреса е-пошти обов'язкова"
@@ -2457,7 +2457,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2500,7 +2500,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Під час читання вашого файлу ${ formattedFilename } сталася помилка. Файл має неправильний формат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2535,7 +2535,7 @@
         "Компонент з неправильним форматом"
       ],
       "Custom timezone": [
-        "Власний часовий пояс"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Відредагована подія не підтримується"
@@ -2607,7 +2607,7 @@
         "Часовий пояс не підтримується"
       ],
       "Timezone": [
-        "Часовий пояс"
+        "Time zone"
       ],
       "To-do entry": [
         "Запис завдання"
@@ -3907,7 +3907,7 @@
         "На одне запрошення допускається не більше ${ MAX_ATTENDEES } учасників"
       ],
       "Creating invites in a shared calendar is not allowed": [
-        "Створення запрошень в спільному календарі не дозволено"
+        "Створення запрошень у спільному календарі не дозволено"
       ]
     },
     "Input label": {
@@ -4032,7 +4032,7 @@
         "Опис"
       ],
       "Do not ask again": [
-        "Не питати знову"
+        "Don't ask again"
       ],
       "Email": [
         "Е-пошта"
@@ -5317,7 +5317,7 @@
         "Лист про скасування надіслано, а учасників вилучено з усіх подій"
       ],
       "Cancelling import": [
-        "Скасування імпорту"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
@@ -5517,7 +5517,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Вибрати часовий пояс"
+        "Search time zones"
       ]
     },
     "Title": {

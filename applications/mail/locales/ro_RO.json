@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Toate fără stea"
       ],
-      "Allow messages": [
-        "Permitere mesaje"
-      ],
       "Apply": [
         "Aplicare"
       ],
@@ -549,7 +546,7 @@
         "Se încarcă${ ellipsis }"
       ],
       "Log in": [
-        "Conectare"
+        "Sign in"
       ],
       "Mailbox density": [
         "Densitate cutie poștală"
@@ -1906,7 +1903,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Fus orar"
+        "Time zone"
       ],
       "Title": [
         "Titlu"
@@ -2828,9 +2825,6 @@
       "No labels": [
         "Nu sunt etichete."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
@@ -3057,7 +3051,7 @@
         "Adresă de e-mail dezactivată"
       ],
       "Email address invalid": [
-        "Adresă de e-mail nevalidă"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Adresa de e-mail este obligatorie"
@@ -3395,7 +3389,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Mărimea maximă a unui fișier este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3437,7 +3431,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3472,7 +3466,7 @@
         "Componentă cu format greșit"
       ],
       "Custom timezone": [
-        "Fus orar personal"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evenimentul editat nu este suportat"
@@ -3544,7 +3538,7 @@
         "Fus orar nesuportat."
       ],
       "Timezone": [
-        "Fus orar"
+        "Time zone"
       ],
       "To-do entry": [
         "Intrare de făcut"
@@ -4785,8 +4779,8 @@
         "Expiră în curând"
       ],
       "file attached": [
-        "fişier ataşat",
-        "fișiere atașate",
+        "attachment",
+        "attachments",
         "fișiere atașate"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
@@ -5170,7 +5164,7 @@
         "Se salvează ciorna…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Trimiterea programată a acestui mesaj va fi anulată."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Se programează mesajul..."
@@ -5310,7 +5304,7 @@
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Această conversație conține un mesaj programat. Trimiterea acestui mesaj va fi anulată."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Această conversație conține mesaje neșterse."
@@ -5324,7 +5318,7 @@
         "Aceste conversații vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Acest e-mail nu respectă cerințele de autentificare ale domeniul său. Ar putea fi falsificat sau redirecționat eronat!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Această invitație este salvată într-un calendar dezactivat."
@@ -6070,7 +6064,7 @@
         "Ștergere informații privind recuperarea."
       ],
       "Do not ask again": [
-        "Nu mă mai întreba"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Nu mai arăta asta"
@@ -6760,7 +6754,7 @@
         "Trimitere programată anulată"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Programarea a fost anulată. Mesajul a fost mutat în «Ciorne»."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Trimitere anulată"
@@ -6968,7 +6962,7 @@
         "Căutare în conținut mesaj"
       ],
       "Unlimited folders, labels and filters": [
-        "Foldere, etichete și filtre nelimitate"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Până la 15 adrese de e-mail"
@@ -7682,7 +7676,7 @@
         "Eroare raportată"
       ],
       "Cancelling import": [
-        "Se anulează importarea"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
@@ -7755,7 +7749,7 @@
         "Preferințele combinațiilor de taste au fost actualizate"
       ],
       "Label cleared": [
-        "Etichetă eliminată"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Etichete aplicate."

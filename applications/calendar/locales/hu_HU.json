@@ -260,7 +260,7 @@
         "Kép betöltése"
       ],
       "Log in": [
-        "Bejelentkezés"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Résztvevő megjelölése választhatóként"
@@ -404,7 +404,7 @@
         "Összes kijelölése"
       ],
       "Select timezone": [
-        "Időzóna kiválasztása"
+        "Select time zone"
       ],
       "Send": [
         "Küldés"
@@ -971,7 +971,7 @@
         "Szerepkör"
       ],
       "Timezone": [
-        "Időzóna"
+        "Time zone"
       ],
       "Title": [
         "Beosztás"
@@ -1970,7 +1970,7 @@
         "Az e-mail cím le van tiltva"
       ],
       "Email address invalid": [
-        "Érvénytelen e-mail cím"
+        "Invalid email address"
       ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
@@ -2195,7 +2195,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2236,7 +2236,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2271,7 +2271,7 @@
         "A komponens formátuma hibás"
       ],
       "Custom timezone": [
-        "Egyéni időzóna"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Szerkesztett esemény nem támogatott"
@@ -2343,7 +2343,7 @@
         "Időzóna nem támogatott"
       ],
       "Timezone": [
-        "Időzóna"
+        "Time zone"
       ],
       "To-do entry": [
         "Tennivaló elem"
@@ -3548,7 +3548,7 @@
         "Leírás"
       ],
       "Do not ask again": [
-        "Ne kérdezze újra"
+        "Don't ask again"
       ],
       "Email": [
         "E-mail"
@@ -4615,7 +4615,7 @@
         "Lemondás elküldve és résztvevők eltávolítva az összes eseményről"
       ],
       "Cancelling import": [
-        "Importálás megszakítása"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
@@ -4799,7 +4799,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Időzóna keresése"
+        "Search time zones"
       ]
     },
     "Title": {

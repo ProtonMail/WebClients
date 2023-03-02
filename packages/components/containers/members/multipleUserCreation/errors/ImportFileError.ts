@@ -25,7 +25,7 @@ const getImportFileErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') 
     }
     if (errorType === IMPORT_ERROR_TYPE.FILE_CORRUPTED) {
         return c('Error importing users')
-            .t`An error occurred reading your file "${formattedFilename}". File doesn't have the right format.`;
+            .t`An error occurred reading your file "${ formattedFilename }". Incorrect file format.`;
     }
 };
 

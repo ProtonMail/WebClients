@@ -336,7 +336,7 @@
         "Załaduj obraz"
       ],
       "Log in": [
-        "Zaloguj się"
+        "Sign in"
       ],
       "Manage folders": [
         "Zarządzaj folderami"
@@ -919,7 +919,7 @@
         "Stanowisko"
       ],
       "Timezone": [
-        "Strefa czasowa"
+        "Time zone"
       ],
       "Title": [
         "Tytuł"
@@ -1892,7 +1892,7 @@
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
       "Email address invalid": [
-        "Adres e-mail jest nieprawidłowy"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Adres e-mail jest wymagany"
@@ -2125,7 +2125,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Plik nie posiada odpowiedniego formatu."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2168,7 +2168,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Plik nie posiada odpowiedniego formatu."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2203,7 +2203,7 @@
         "Komponent posiada niewłaściwy format"
       ],
       "Custom timezone": [
-        "Strefa czasowa jest niestandardowa"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Edytowane wydarzenie nie jest obsługiwane"
@@ -2275,7 +2275,7 @@
         "Strefa czasowa nie jest obsługiwana"
       ],
       "Timezone": [
-        "Strefa czasowa"
+        "Time zone"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -3368,10 +3368,10 @@
         "Link został skopiowany do schowka"
       ],
       "Link failed to be loaded": [
-        "Załadowanie linku nie powiodło się"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Załadowanie linków nie powiodło się"
+        "Cannot load links"
       ],
       "Loading": [
         "Ładowanie"
@@ -3587,7 +3587,7 @@
         "Link do ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Załadowanie linku nie powiodło się"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."
@@ -4051,7 +4051,7 @@
         "Nazwa urządzenia"
       ],
       "Do not ask again": [
-        "Nie pytaj ponownie"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Pobierz mimo to"
@@ -4699,7 +4699,7 @@
         "Plik lub folder nie posiada nazwy"
       ],
       "Link failed to be loaded": [
-        "Załadowanie linku nie powiodło się"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Przenieś plik",
@@ -4738,7 +4738,7 @@
         "Przenieś ${ movingCount } elementów"
       ],
       "Next page failed to be loaded": [
-        "Załadowanie następnej strony nie powiodło się"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
@@ -5331,7 +5331,7 @@
         "Błąd został zgłoszony"
       ],
       "Cancelling import": [
-        "Anulowanie procesu importowania"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
@@ -5747,7 +5747,7 @@
         "Szczegóły elementu"
       ],
       "Items details": [
-        "Szczegóły elementów"
+        "Item details"
       ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
@@ -5924,7 +5924,7 @@
         "Link wygasł"
       ],
       "The link failed to be loaded": [
-        "Załadowanie linku nie powiodło się"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Brak podpisu lub podpis jest nieprawidłowy. Przejdź do Menu (⋮) → Szczegóły, aby dowiedzieć się więcej."

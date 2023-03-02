@@ -143,7 +143,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                         </div>
                         <Alert className="mb1" type="warning">
                             {c('Info')
-                                .t`Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.`}
+                                .t`Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.`}
                             <br />
                             {c('Info')
                                 .t`Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.`}

@@ -287,7 +287,7 @@
         "Загрузіць відарыс"
       ],
       "Log in": [
-        "Увайсці"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Зрабіць гэтага ўдзельніка неабавязковым"
@@ -434,7 +434,7 @@
         "Выбраць усе"
       ],
       "Select timezone": [
-        "Выберыце часавы пояс"
+        "Select time zone"
       ],
       "Send": [
         "Адправіць"
@@ -1074,7 +1074,7 @@
         "Роля"
       ],
       "Timezone": [
-        "Часавы пояс"
+        "Time zone"
       ],
       "Title": [
         "Пасада"
@@ -2010,7 +2010,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Больш не пытаць"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2189,7 +2189,7 @@
         "Адрас электроннай пошты адключаны"
       ],
       "Email address invalid": [
-        "Памылковы адрас электроннай пошты"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
@@ -2457,7 +2457,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2500,7 +2500,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2535,7 +2535,7 @@
         "Кампанент з няправільным фарматам"
       ],
       "Custom timezone": [
-        "Карыстальніцкі часавы пояс"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Адрэдагаваная падзея не падтрымліваецца"
@@ -2607,7 +2607,7 @@
         "Часавы пояс не падтрымліваецца"
       ],
       "Timezone": [
-        "Часавы пояс"
+        "Time zone"
       ],
       "To-do entry": [
         "Запіс спіса задач"
@@ -4032,7 +4032,7 @@
         "Апісанне"
       ],
       "Do not ask again": [
-        "Больш не пытаць"
+        "Don't ask again"
       ],
       "Email": [
         "Электронная пошта"
@@ -5317,7 +5317,7 @@
         "Скасаванне адпраўлена і ўдзельнікі выдалены з усіх падзей"
       ],
       "Cancelling import": [
-        "Скасаванне імпартавання"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
@@ -5517,7 +5517,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Пошук часавага пояса"
+        "Search time zones"
       ]
     },
     "Title": {

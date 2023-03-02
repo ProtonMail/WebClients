@@ -387,7 +387,7 @@
         "A carregar verificação"
       ],
       "Make default": [
-        "Tornar predefinido"
+        "Set as default"
       ],
       "Manage labels": [
         "Gerir etiquetas"
@@ -425,10 +425,10 @@
       "Not spam": [
         "Não é spam"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
+        "OK"
+      ],
+      "OK": [
         "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -594,7 +594,7 @@
         "Selecione o idioma para os e-mails de convite"
       ],
       "Select timezone": [
-        "Seleccionar fuso horário"
+        "Select time zone"
       ],
       "send auto-reply email": [
         "enviar resposta automática"
@@ -1144,7 +1144,7 @@
         "Papel"
       ],
       "Timezone": [
-        "Fuso horário"
+        "Time zone"
       ],
       "Title": [
         "Título"
@@ -2296,7 +2296,7 @@
         "As senhas não coincidem"
       ],
       "Payment process cancelled": [
-        "Processo de pagamento cancelado"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Processo de pagamento concluído"
@@ -2360,7 +2360,7 @@
         "O endereço pode estar errado"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "O navegador que utiliza não permite que o pagamento seja completamente autorizado. Por favor, utilize outro navegador ou inicie sessão via computador."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta é inválido. Por favor, escolha um nome diferente."
@@ -2437,7 +2437,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. O formato está errado."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2475,7 +2475,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ocorreu um erro ao ler o ficheiro ${ formattedFilename }. O formato está errado."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2507,7 +2507,7 @@
         "Componente com formato errado"
       ],
       "Custom timezone": [
-        "Fuso horário personalizado"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado não suportado"
@@ -2570,7 +2570,7 @@
         "Hora inicial fora dos limites"
       ],
       "Timezone": [
-        "Fuso horário"
+        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tarefas"
@@ -3393,7 +3393,7 @@
         "Eliminar ligação?"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "NÃO se esqueça desta senha. Se a esquecer, não conseguirá iniciar sessão ou desencriptar as mensagens."
+        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO se esqueça desta senha. Caso se esqueça, não será capaz de gerir a sua organização."
@@ -3535,7 +3535,7 @@
         "Se tiver definido o SPF e o DKIM, o DMARC permitirá especificar de que forma outros serviços de e-mail devem entregar e-mails para o seu domínio, se as verificações SPF e DKIM falharem. Esta ação pode impedir a usurpação da sua identidade por parte de spammers, mas também pode causar problemas de entrega se não for executada corretamente."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Se perder o seu dispositivo com autenticação em dois passos, poderá utilizar estes códigos em vez do código 2FA de 6 algarismos para entrar na conta. Cada código só pode ser utilizado uma vez."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Se continuar com a regressão, perderá o acesso às funcionalidades pagas do ${ VPN_APP_NAME }."
@@ -3664,7 +3664,7 @@
         "mais"
       ],
       "More Info": [
-        "Mais informações"
+        "Learn more"
       ],
       "Multi-user support not enabled.": [
         "Suporte a multi-utilizador não activado."
@@ -3865,7 +3865,7 @@
         "Os endereços seguintes não foram criados."
       ],
       "The name will be visible to your users while they are logged in.": [
-        "O nome estará visível aos utilizadores enquanto estiverem em sessão."
+        "The name will be visible to your users while they are signed in."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estes ficheiros de configuração permitem escolher o servidor ${ VPN_APP_NAME } a que ligar ao usar uma aplicação de VPN de terceiros ou ao configurar uma ligação VPN num router."
@@ -3925,7 +3925,7 @@
         "Autenticação em dois passos activada"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "O modo de senha dupla requer duas senhas: uma para iniciar a sessão e outra para desencriptar a caixa de correio (avançado)."
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "O modo de duas senhas usa senhas separadas para iniciar a sessão e desencriptar a caixa de correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de senha única para a maioria dos utilizadores. Para mudar para o modo de duas senhas, primeiro insira a senha para o início de sessão e depois para a caixa de correio."
@@ -4012,7 +4012,7 @@
         "Pode personalizar e transferir as suas facturas para efeitos contabilísticos."
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Pode activar o diário de autenticações para saber quando é que a sua conta foi acedida e de que IP. Será gravado o endereço IP que acede à conta, a hora e as tentativas falhadas."
+        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode activar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -4676,7 +4676,7 @@
         "Nome a mostrar"
       ],
       "Do not ask again": [
-        "Não perguntar novamente"
+        "Don't ask again"
       ],
       "Domain": [
         "Domínio"
@@ -5027,7 +5027,7 @@
         "Formato da hora"
       ],
       "Timezone": [
-        "Fuso horário"
+        "Time zone"
       ],
       "To: ${ to }": [
         "Para: ${ to }"
@@ -5096,7 +5096,7 @@
         "A sua ligação de referência"
       ],
       "ZIP code": [
-        "Código postal"
+        "Postal code"
       ]
     },
     "label": {
@@ -6263,7 +6263,7 @@
     },
     "Success": {
       "Account deleted. Logging out...": [
-        "Conta eliminada. A terminar sessão..."
+        "Account deleted. Signing out..."
       ],
       "Address added": [
         "Endereço adicionado"
@@ -6480,7 +6480,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Procurar fusos horários"
+        "Search time zones"
       ]
     },
     "Title": {
@@ -7129,7 +7129,7 @@
         "O seu plano"
       ],
       "ZIP / postal code": [
-        "ZIP/Código postal"
+        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -7356,7 +7356,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Tem a certeza de que deseja eliminar este endereço?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Tem a certeza de que deseja eliminar este número de telefone?"

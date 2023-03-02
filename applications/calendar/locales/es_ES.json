@@ -283,7 +283,7 @@
         "Cargar imagen"
       ],
       "Log in": [
-        "Iniciar sesión"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Hacer opcional a este participante"
@@ -430,7 +430,7 @@
         "Seleccionar todo"
       ],
       "Select timezone": [
-        "Seleccionar zona horaria"
+        "Select time zone"
       ],
       "Send": [
         "Enviar"
@@ -1064,7 +1064,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Zona horaria"
+        "Time zone"
       ],
       "Title": [
         "Título"
@@ -1988,7 +1988,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "No preguntar de nuevo"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2159,7 +2159,7 @@
         "Dirección de correo electrónico deshabilitada"
       ],
       "Email address invalid": [
-        "La dirección de correo electrónico no es válida."
+        "Invalid email address"
       ],
       "Email address is required": [
         "Dirección de correo electrónico requerida"
@@ -2419,7 +2419,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Se ha producido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2460,7 +2460,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Se ha producido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2495,7 +2495,7 @@
         "Componente con formato incorrecto"
       ],
       "Custom timezone": [
-        "Zona horaria personalizada"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado no admitido"
@@ -2567,7 +2567,7 @@
         "Zona horaria no admitida"
       ],
       "Timezone": [
-        "Zona horaria"
+        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tareas"
@@ -3919,7 +3919,7 @@
         "Descripción"
       ],
       "Do not ask again": [
-        "No preguntar de nuevo"
+        "Don't ask again"
       ],
       "Email": [
         "Correo electrónico"
@@ -5131,7 +5131,7 @@
         "Cancelación enviada y participantes eliminados de todos los eventos"
       ],
       "Cancelling import": [
-        "Cancelación de la importación"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -5315,7 +5315,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Buscar zonas horarias"
+        "Search time zones"
       ]
     },
     "Title": {

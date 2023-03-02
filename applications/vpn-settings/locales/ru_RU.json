@@ -1526,7 +1526,7 @@
         "Пароли не совпадают"
       ],
       "Payment process cancelled": [
-        "Процесс оплаты отменён"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Процесс оплаты завершен"
@@ -1565,7 +1565,7 @@
         "Вкладка закрыта"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Ваш браузер не позволяет полностью авторизировать платеж. Пожалуйста, используйте другой браузер или войдите с компьютера."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
@@ -1998,6 +1998,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Готово! Мы отправили код на ${ destination }."
       ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Ничего не видно? Не забудьте отключить блокировку всплывающих окон."
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
       ],
@@ -2017,7 +2020,7 @@
         "Настройки отправки почты сохранены"
       ],
       "Enter code from your authenticator app": [
-        "Введите код из приложения для аутентификации"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Ввести ключ вручную"
@@ -2095,7 +2098,7 @@
         "Если вы никогда не использовали двухфакторную аутентификацию, мы настоятельно рекомендуем вам ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Если вы потеряете своё устройство для 2ФА, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации, чтобы войти в вашу учётную запись. Каждый код может быть использован только единожды."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
@@ -2134,7 +2137,7 @@
         "Подключение к Интернету восстановлено."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Узнайте, как войти в ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "Узнать больше"
@@ -2155,7 +2158,7 @@
         "Загрузка..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Войдите в ${ MAIL_APP_NAME }, чтобы активировать свой адрес"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "потеряете доступ ко всем текущим зашифрованным данным"
@@ -2205,6 +2208,12 @@
       "Plan upgrade required": [
         "Требуется улучшение тарифа"
       ],
+      "Please authenticate your card in the verification tab.": [
+        "Пожалуйста, подтвердите данные карты во вкладке проверки."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Пожалуйста, подтвердите платеж во вкладке проверки."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введите фразу восстановления из 12 слов, связанную с вашим аккаунтом."
       ],
@@ -2213,6 +2222,9 @@
       ],
       "Please provide an email address in case we need to contact you.": [
         "Пожалуйста, укажите адрес электронной почты для случая, если нам понадобится связаться с вами."
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "Пожалуйста, попробуйте другой способ оплаты или свяжитесь с вашим банком."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или обратитесь в PayPal для получения помощи."
@@ -2292,6 +2304,9 @@
       "The securest way to browse, stream, and be online.": [
         "Самый безопасный способ просматривать сайты, смотреть видео и находиться онлайн."
       ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Процесс проверки откроется в новой вкладке. Пожалуйста, отключите блокировку всплывающих окон."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
       ],
@@ -2368,7 +2383,7 @@
         "Двухфакторная аутентификация включена"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "В режиме с двумя паролями необходимы два пароля: один — для входа в учётную запись, другой — для расшифровки почтового ящика. (Расширенная функция безопасности)"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Режим с двумя паролями использует отдельные пароли для входа в систему и расшифровки почтового ящика. Это незначительно повышает безопасность в некоторых ситуациях, однако для большинства пользователей мы рекомендуем режим одного пароля. Для переключения в режим двух паролей сначала задайте пароль для входа, а затем – пароль почтового ящика."
@@ -2400,6 +2415,9 @@
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
       ],
+      "Verification may take a few minutes.": [
+        "Проверка может занять пару минут."
+      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
       ],
@@ -2423,6 +2441,15 @@
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы советуем вам по возможности использовать официальные приложения ${ VPN_APP_NAME }."
+      ],
+      "We couldn’t process your payment.": [
+        "Нам не удалось обработать ваш платеж."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "Нам нужно подтвердить ваш способ оплаты в вашем банке."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "Нам нужно подтвердить ваш платеж в вашем банке."
       ],
       "We recommend using your recovery phrase instead.": [
         "Мы рекомендуем использовать вместо этого вашу фразу восстановления."
@@ -2503,13 +2530,16 @@
         "Вы можете использовать следующие учетные данные для подключения к серверу ${ VPN_APP_NAME } с помощью стороннего приложения VPN с открытым исходным кодом, например, Tunnelblick для macOS или OpenVPN для GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Вы не можете использовать учётные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }.\n${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без метода восстановления?"
       ],
       "You have no saved payment methods.": [
         "У вас нет сохраненных способов оплаты."
+      ],
+      "You may be redirected to your bank’s website.": [
+        "Вы можете быть перенаправлены на сайт вашего банка."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Вы должны отключить или удалить всех дополнительных пользователей ${ MAIL_APP_NAME }, адреса и свои доменты перед переходом на более дешевую версию."
@@ -2545,7 +2575,7 @@
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить оба из них, войдите в систему по ссылке: ${ loginLink } и удалите по ней свой аккаунт."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
@@ -2969,7 +2999,7 @@
         "Ваш пароль (admin)"
       ],
       "ZIP code": [
-        "ZIP-код"
+        "Postal code"
       ]
     },
     "label": {
@@ -3397,7 +3427,7 @@
         "Неограниченное количество папок"
       ],
       "Unlimited folders, labels and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
@@ -3925,9 +3955,6 @@
       "Verify now this recovery email address: ${ email.Value }": [
         "Подтвердите этот адрес электронной почты для восстановления: ${ email.Value }"
       ],
-      "Verify now this recovery phone number address: ${ phone.Value }": [
-        "Подтвердите этот номер телефона для восстановления: ${ phone.Value }"
-      ],
       "Verify recovery email?": [
         "Подтвердить резервный адрес электронной почты?"
       ],
@@ -4363,8 +4390,8 @@
       ]
     },
     "Subscription change warning": {
-      "Subscription managed elsewhere": [
-        "Manage your subscription on Google Play"
+      "Manage your subscription on ${ subscriptionManagerShort }": [
+        "Измените подписку в ${ subscriptionManagerShort }"
       ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
         "Вы приобрели подписку с помощью покупки в приложении. Чтобы управлять вашей текущей подпиской, вам нужно зайти в раздел Подписок на вашем аккаунте ${ subscriptionManager }"
@@ -4393,7 +4420,7 @@
         "${ server.Domain } скопирован в ваш буфер обмена"
       ],
       "Account deleted. Logging out...": [
-        "Учётная запись удалена. Производится выход..."
+        "Account deleted. Signing out..."
       ],
       "Bug reported": [
         "Отчёт об ошибке отправлен"
@@ -4730,6 +4757,9 @@
       "Pay invoice": [
         "Оплатить счёт"
       ],
+      "Payment failed": [
+        "Сбой платежа"
+      ],
       "Payment methods": [
         "Способы оплаты"
       ],
@@ -4821,7 +4851,7 @@
         "Всего оплачено"
       ],
       "TV log in": [
-        "Вход на ТВ"
+        "TV sign in"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -4841,8 +4871,17 @@
       "Verification": [
         "Подтверждение"
       ],
+      "Verification failed": [
+        "Проверка не удалась"
+      ],
       "Verify email address": [
         "Подтвердить адрес электронной почты"
+      ],
+      "Verifying your card...": [
+        "Проверяем вашу карту..."
+      ],
+      "Verifying your payment...": [
+        "Проверяем ваш платеж..."
       ],
       "Warning": [
         "Предупреждение"
@@ -4878,7 +4917,7 @@
         "Вас пригласили попробовать ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
-        "Почтовый индекс"
+        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4954,7 +4993,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Вы уверены, что хотите удалить адрес?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Вы уверены, что хотите удалить номер телефона?"

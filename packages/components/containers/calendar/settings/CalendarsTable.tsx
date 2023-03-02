@@ -124,7 +124,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, addresses, user, onSetDe
                                                 size="small"
                                                 shape="outline"
                                                 className="mr0-5"
-                                            >{c('Action').t`Make default`}</Button>
+                                            >{c('Action').t`Set as default`}</Button>
                                         )}
                                     <Tooltip title={c('Calendar table settings button tooltip').t`Open settings`}>
                                         <ButtonLike

@@ -112,7 +112,7 @@ const UsernameSection = ({ app }: Props) => {
                             ) : (
                                 <Href
                                     url={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
-                                    title={c('Info').t`Log in to ${MAIL_APP_NAME} to activate your address`}
+                                    title={c('Info').t`Sign in to ${MAIL_APP_NAME} to activate your address`}
                                 >
                                     {c('Link').t`Not activated`}
                                 </Href>

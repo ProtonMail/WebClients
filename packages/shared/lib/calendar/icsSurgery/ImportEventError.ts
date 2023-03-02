@@ -50,7 +50,7 @@ const getErrorMessage = (errorType: IMPORT_EVENT_ERROR_TYPE, externalError?: Err
         return c('Error importing event').t`Free-busy time information`;
     }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_FORMAT) {
-        return c('Error importing event').t`Custom timezone`;
+        return c('Error importing event').t`Custom time zone`;
     }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
         return 'Timezone component ignored';

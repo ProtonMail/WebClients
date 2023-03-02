@@ -287,7 +287,7 @@
         "Načíst obrázek"
       ],
       "Log in": [
-        "Přihlásit se"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Nastavit tohoto účastníka jako volitelného"
@@ -434,7 +434,7 @@
         "Vybrat vše"
       ],
       "Select timezone": [
-        "Vybrat časové pásmo"
+        "Select time zone"
       ],
       "Send": [
         "Odeslat"
@@ -1074,7 +1074,7 @@
         "Role"
       ],
       "Timezone": [
-        "Časové pásmo"
+        "Time zone"
       ],
       "Title": [
         "Titul"
@@ -2010,7 +2010,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Příště se neptat"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2189,7 +2189,7 @@
         "E-mailová adresa je deaktivovaná"
       ],
       "Email address invalid": [
-        "E-mailová adresa je neplatná"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
@@ -2457,7 +2457,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2500,7 +2500,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2535,7 +2535,7 @@
         "Komponenta s nesprávným formátem"
       ],
       "Custom timezone": [
-        "Vlastní časové pásmo"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Upravená událost není podporována"
@@ -2607,7 +2607,7 @@
         "Časové pásmo není podporováno"
       ],
       "Timezone": [
-        "Časové pásmo"
+        "Time zone"
       ],
       "To-do entry": [
         "Úkoly"
@@ -4032,7 +4032,7 @@
         "Popis"
       ],
       "Do not ask again": [
-        "Příště se neptat"
+        "Don't ask again"
       ],
       "Email": [
         "E-mail"
@@ -5317,7 +5317,7 @@
         "Zrušení odesláno a účastníci byli odebrání ze všech událostí"
       ],
       "Cancelling import": [
-        "Ruším import"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
@@ -5517,7 +5517,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Hledat časová pásma"
+        "Search time zones"
       ]
     },
     "Title": {

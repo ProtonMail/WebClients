@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Все без звездочек"
       ],
-      "Allow messages": [
-        "Разрешить сообщения"
-      ],
       "Apply": [
         "Применить"
       ],
@@ -552,7 +549,7 @@
         "Загрузка${ ellipsis }"
       ],
       "Log in": [
-        "Войти"
+        "Sign in"
       ],
       "Mailbox density": [
         "Плотность почтового ящика"
@@ -1911,7 +1908,7 @@
         "Роль"
       ],
       "Timezone": [
-        "Часовой пояс"
+        "Time zone"
       ],
       "Title": [
         "Должность"
@@ -2841,9 +2838,6 @@
       "No labels": [
         "Нет ярлыков"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
@@ -3073,7 +3067,7 @@
         "Адрес электронной почты отключен"
       ],
       "Email address invalid": [
-        "Недействительный адрес электронной почты"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
@@ -3418,7 +3412,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Произошла ошибка при чтении вашего файла ${ formattedFilename }. Файл имеет неправильный формат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3461,7 +3455,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3496,7 +3490,7 @@
         "Неправильный формат компонента"
       ],
       "Custom timezone": [
-        "Настроить часовой пояс"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Отредактированное событие не поддерживается"
@@ -3568,7 +3562,7 @@
         "Часовой пояс не поддерживается"
       ],
       "Timezone": [
-        "Часовой пояс"
+        "Time zone"
       ],
       "To-do entry": [
         "Запись списка задач"
@@ -4872,8 +4866,8 @@
         "Срок действия истекает"
       ],
       "file attached": [
-        "файл прикреплен",
-        "файла прикреплено",
+        "attachment",
+        "attachments",
         "файлов прикреплено",
         "файлов прикреплено"
       ],
@@ -5262,7 +5256,7 @@
         "Сохранение черновика…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Запланированная отправка этого сообщения будет отменена."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Сообщение ставится в очередь..."
@@ -5403,7 +5397,7 @@
         "Браузер не поддерживает предварительный просмотр документов PDF. Пожалуйста, скачайте файл."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Эта цепочка писем содержит запланированное сообщение. Отправка этого сообщения будет отменена."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "В этой цепочке писем есть неудаленные сообщения."
@@ -5418,7 +5412,7 @@
         "Эти цепочки писем будут помечены как спам. Вы также хотите отписаться от будущих писем?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Это письмо не соответствует требованиям подтверждения подлинности домена. Оно может быть поддельным, либо было переслано ненадлежащим образом!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Это приглашение сохранено в неактивном календаре."
@@ -6176,7 +6170,7 @@
         "Удалите информацию, связанную с восстановлением."
       ],
       "Do not ask again": [
-        "Больше не спрашивать"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Больше не показывать"
@@ -6871,7 +6865,7 @@
         "Запланированная отправка отменена"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Запланированная отправка отменена. Сообщение перемещено в Черновики."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Отправка отменена"
@@ -7082,7 +7076,7 @@
         "Поиск содержимого сообщения"
       ],
       "Unlimited folders, labels and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "До 15 адресов электронной почты"
@@ -8072,7 +8066,7 @@
         "Отчёт об ошибке отправлен"
       ],
       "Cancelling import": [
-        "Отмена импорта"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
@@ -8147,7 +8141,7 @@
         "Настройки сочетаний клавиш обновлены"
       ],
       "Label cleared": [
-        "Ярлык очищен"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Ярлыки применены."

@@ -330,7 +330,7 @@
         "加载图片"
       ],
       "Log in": [
-        "登录"
+        "Sign in"
       ],
       "Manage folders": [
         "管理文件夹"
@@ -913,7 +913,7 @@
         "身份"
       ],
       "Timezone": [
-        "时区"
+        "Time zone"
       ],
       "Title": [
         "头衔"
@@ -1886,7 +1886,7 @@
         "域名不可用，请稍后再试"
       ],
       "Email address invalid": [
-        "邮箱格式不正确"
+        "Invalid email address"
       ],
       "Email address is required": [
         "邮箱地址必须填写"
@@ -2107,7 +2107,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2147,7 +2147,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "读取文件 ${ formattedFilename } 失败，文件格式不对。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2182,7 +2182,7 @@
         "组件格式错误"
       ],
       "Custom timezone": [
-        "自定义时区"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "不支持已编辑的事件"
@@ -2254,7 +2254,7 @@
         "不支持此时区"
       ],
       "Timezone": [
-        "时区"
+        "Time zone"
       ],
       "To-do entry": [
         "待办事项"
@@ -3177,10 +3177,10 @@
         "链接已复制到剪贴板"
       ],
       "Link failed to be loaded": [
-        "链接加载失败"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "链接加载失败"
+        "Cannot load links"
       ],
       "Loading": [
         "加载中"
@@ -3390,7 +3390,7 @@
         "${ boldNameText } 的共享链接"
       ],
       "Shared link failed to be loaded": [
-        "分享链接加载失败"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "由于网络错误，无法验证签名，请稍后重试。"
@@ -3839,7 +3839,7 @@
         "设备名称"
       ],
       "Do not ask again": [
-        "不再询问"
+        "Don't ask again"
       ],
       "Download anyway": [
         "仍要下载"
@@ -4408,7 +4408,7 @@
         "文件或文件夹缺少名称"
       ],
       "Link failed to be loaded": [
-        "链接加载失败"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } files": [
         "移动 ${ itemsToMoveCount } 个文件"
@@ -4429,7 +4429,7 @@
         "移动 ${ movingCount } 个项目"
       ],
       "Next page failed to be loaded": [
-        "下一页加载失败"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "没有足够的空间来上传这 ${ formattedTotal }"
@@ -5113,7 +5113,7 @@
         "详细信息"
       ],
       "Items details": [
-        "项目详细信息"
+        "Item details"
       ],
       "Link confirmation": [
         "确认打开链接"
@@ -5290,7 +5290,7 @@
         "该链接已过期"
       ],
       "The link failed to be loaded": [
-        "链接加载失败"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此文件的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"

@@ -283,7 +283,7 @@
         "Učitaj sliku"
       ],
       "Log in": [
-        "Prijavite se"
+        "Sign in"
       ],
       "Mark for deletion": [
         "Označi za brisanje"
@@ -728,7 +728,7 @@
         "Uloga"
       ],
       "Timezone": [
-        "Vremenska zona"
+        "Time zone"
       ],
       "Title": [
         "Naslov"
@@ -1495,7 +1495,7 @@
         "Potpis kontakta nije potvrđen"
       ],
       "Email address invalid": [
-        "Adresa e-pošte nije valjana"
+        "Invalid email address"
       ],
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
@@ -1631,7 +1631,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -1657,7 +1657,7 @@
         "Komponenta s pogrešnim formatom"
       ],
       "Custom timezone": [
-        "Prilagođena vremenska zona"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
@@ -1717,7 +1717,7 @@
         "Početno vrijeme je van granica"
       ],
       "Timezone": [
-        "Vremenska zona"
+        "Time zone"
       ],
       "To-do entry": [
         "Stavka liste zadataka"
@@ -2545,7 +2545,7 @@
         "Uređaj"
       ],
       "Do not ask again": [
-        "Ne pitaj ponovno"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Preuzmi svejedno"

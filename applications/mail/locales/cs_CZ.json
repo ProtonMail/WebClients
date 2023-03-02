@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Všechny bez hvězdičky"
       ],
-      "Allow messages": [
-        "Povolit zprávy"
-      ],
       "Apply": [
         "Použít"
       ],
@@ -552,7 +549,7 @@
         "Načítání${ ellipsis }"
       ],
       "Log in": [
-        "Přihlásit se"
+        "Sign in"
       ],
       "Mailbox density": [
         "Hustota mailové schránky"
@@ -1911,7 +1908,7 @@
         "Role"
       ],
       "Timezone": [
-        "Časové pásmo"
+        "Time zone"
       ],
       "Title": [
         "Titul"
@@ -2838,9 +2835,6 @@
       "No labels": [
         "Bez štítků"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
@@ -3070,7 +3064,7 @@
         "E-mailová adresa je deaktivovaná"
       ],
       "Email address invalid": [
-        "E-mailová adresa je neplatná"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
@@ -3415,7 +3409,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3458,7 +3452,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3493,7 +3487,7 @@
         "Komponenta s nesprávným formátem"
       ],
       "Custom timezone": [
-        "Vlastní časové pásmo"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Upravená událost není podporována"
@@ -3565,7 +3559,7 @@
         "Časové pásmo není podporováno"
       ],
       "Timezone": [
-        "Časové pásmo"
+        "Time zone"
       ],
       "To-do entry": [
         "Úkoly"
@@ -4866,8 +4860,8 @@
         "Brzy vyprší"
       ],
       "file attached": [
-        "soubor připojen",
-        "soubory připojeny",
+        "attachment",
+        "attachments",
         "souborů připojeno",
         "souborů připojeno"
       ],
@@ -5256,7 +5250,7 @@
         "Ukládám koncept…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Naplánované odeslání této zprávy bude zrušeno."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Plánování zprávy..."
@@ -5397,7 +5391,7 @@
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Tato konverzace obsahuje plánovanou zprávu. Odeslání této zprávy bude zrušeno."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Tato konverzace obsahuje zprávy, které nejsou v koši."
@@ -5412,7 +5406,7 @@
         "Tyto konverzace budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Zpráva nesplňuje požadavky na ověření domény odesílatele. Může být falešná, nebo špatně přeposlaná!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Tato pozvánka je uložena v zakázaném kalendáři."
@@ -6170,7 +6164,7 @@
         "Odstranit informace související s obnovením."
       ],
       "Do not ask again": [
-        "Příště se neptat"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Příště nezobrazovat"
@@ -6865,7 +6859,7 @@
         "Plánované odeslání zrušeno"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Plánování zrušeno. Zpráva byla přesunuta do Konceptů."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Odeslání zrušeno"
@@ -7076,7 +7070,7 @@
         "Hledat v obsahu zpráv"
       ],
       "Unlimited folders, labels and filters": [
-        "Neomezený počet složek, štítků a filtrů"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Až 15 e-mailových adres"
@@ -7819,7 +7813,7 @@
         "Chyba nahlášena"
       ],
       "Cancelling import": [
-        "Ruším import"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
@@ -7894,7 +7888,7 @@
         "Nastavení klávesových zkratek upraveno"
       ],
       "Label cleared": [
-        "Označení odstraněno"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Štítky použity."

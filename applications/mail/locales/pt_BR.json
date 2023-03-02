@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Todos sem estrela"
       ],
-      "Allow messages": [
-        "Permitir mensagens"
-      ],
       "Apply": [
         "Aplicar"
       ],
@@ -543,7 +540,7 @@
         "Carregando${ ellipsis }"
       ],
       "Log in": [
-        "Iniciar sessão"
+        "Sign in"
       ],
       "Mailbox density": [
         "Densidade da caixa de correio"
@@ -1898,7 +1895,7 @@
         "Função"
       ],
       "Timezone": [
-        "Fuso horário"
+        "Time zone"
       ],
       "Title": [
         "Título"
@@ -3038,7 +3035,7 @@
         "Endereço de e-mail desativado"
       ],
       "Email address invalid": [
-        "Endereço de e-mail inválido"
+        "Invalid email address"
       ],
       "Email address is required": [
         "O endereço de e-mail é obrigatório"
@@ -3369,7 +3366,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não está no formato correto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3410,7 +3407,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não tem o formato correto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3445,7 +3442,7 @@
         "Componente com formato errado"
       ],
       "Custom timezone": [
-        "Fuso horário personalizado"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado não suportado"
@@ -3517,7 +3514,7 @@
         "Fuso horário não suportado"
       ],
       "Timezone": [
-        "Fuso horário"
+        "Time zone"
       ],
       "To-do entry": [
         "Tarefas"
@@ -4706,8 +4703,8 @@
         "Expira em breve"
       ],
       "file attached": [
-        "arquivo anexado",
-        "arquivos anexados"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
@@ -5086,7 +5083,7 @@
         "Salvando rascunho…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "O envio agendado desta mensagem será cancelado."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Agendando mensagem..."
@@ -5225,7 +5222,7 @@
         "Este navegador não suporta pré-visualização de documentos PDF. Por favor, baixe o arquivo."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Esta conversa contém uma mensagem programada. O envio desta mensagem será cancelado."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Esta conversa contém mensagens que não estão na lixeira."
@@ -5238,7 +5235,7 @@
         "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Este e-mail falhou nos requisitos de autenticação de domínio. Ele pode ser falsificado ou encaminhado incorretamente!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Este convite está salvo em um calendário desativado."
@@ -5972,7 +5969,7 @@
         "Excluir a informação de recuperação."
       ],
       "Do not ask again": [
-        "Não perguntar novamente"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Não mostrar isso novamente"
@@ -6385,6 +6382,14 @@
         "Linha"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Para adicionar um novo calendário, remova um existente."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Você alcançou o número máximo de calendários disponíveis no seu plano."
+      ]
+    },
     "Link": {
       "All mail": [
         "Todos os e-mails"
@@ -6646,7 +6651,7 @@
         "Agendamento de envio desfeito"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Agendamento cancelado. A mensagem foi movida para Rascunhos."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Envio desfeito"
@@ -6851,7 +6856,7 @@
         "Pesquisar conteúdo da mensagem"
       ],
       "Unlimited folders, labels and filters": [
-        "Pastas, marcadores e filtros ilimitados"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Até 15 endereços de e-mail"
@@ -7774,7 +7779,7 @@
         "Relatório de erros enviado"
       ],
       "Cancelling import": [
-        "Cancelando a importação"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
@@ -7845,7 +7850,7 @@
         "Preferências de atalhos de teclado atualizadas"
       ],
       "Label cleared": [
-        "Marcador limpo"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Marcadores aplicado."
