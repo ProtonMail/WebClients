@@ -14,7 +14,7 @@ const getComponentText = (component: string) => {
         return c('Error importing event').t`Calendar`;
     }
     if (component === 'vtimezone') {
-        return c('Error importing event').t`Timezone`;
+        return c('Error importing event').t`Time zone`;
     }
     if (component === 'vtodo') {
         return c('Error importing event').t`Element`;

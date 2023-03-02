@@ -77,9 +77,6 @@
       "All Unstarred": [
         "すべての星印なし"
       ],
-      "Allow messages": [
-        "メッセージを許可"
-      ],
       "Apply": [
         "適用"
       ],
@@ -124,6 +121,9 @@
       ],
       "Carbon Copy, Blind Carbon Copy": [
         "CC, BCC"
+      ],
+      "CC BCC": [
+        "CC BCC"
       ],
       "Change page": [
         "ページの変更"
@@ -537,7 +537,7 @@
         "読み込み中${ ellipsis }"
       ],
       "Log in": [
-        "ログイン"
+        "Sign in"
       ],
       "Mailbox density": [
         "受信トレイの密度"
@@ -1884,7 +1884,7 @@
         "役割"
       ],
       "Timezone": [
-        "タイムゾーン"
+        "Time zone"
       ],
       "Title": [
         "肩書き"
@@ -3016,7 +3016,7 @@
         "メールアドレスが無効です"
       ],
       "Email address invalid": [
-        "メールアドレスが不正です"
+        "Invalid email address"
       ],
       "Email address is required": [
         "メールアドレスは必須です"
@@ -3334,7 +3334,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "ファイル　${ formattedFilename }の読み取り中にエラーが発生しました。ファイルのフォーマットが正しくありません。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
@@ -3374,7 +3374,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
@@ -3409,7 +3409,7 @@
         "無効なコンポーネント形式です"
       ],
       "Custom timezone": [
-        "独自のタイムゾーン"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -3481,7 +3481,7 @@
         "タイムゾーンはサポートされていません"
       ],
       "Timezone": [
-        "タイムゾーン"
+        "Time zone"
       ],
       "To-do entry": [
         "To-do のエントリー"
@@ -4590,7 +4590,7 @@
         "もうすぐ期限切れになります"
       ],
       "files attached": [
-        "個のファイル添付"
+        "attachment"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "フィルターは送信したメールと受信したメールを含むすべてのメールで動作します。各フィルターには少なくとも有効な名前、条件、動作が含まれている必要があります。"
@@ -4959,7 +4959,7 @@
         "下書きを保存しています…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "このメッセージの送信予約はキャンセルされました"
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "メッセージをスケジューリングしています..."
@@ -5103,7 +5103,7 @@
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "この会話には送信予約メッセージが含まれます。送信予約はキャンセルされます。"
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "このやりとりには、ごみ箱に入れられていないメールもあります。"
@@ -5112,7 +5112,7 @@
         "このやりとりには、ごみ箱に入っているメールもあります。"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "メールのドメイン認証に失敗しました。このメールは不適切に転送されたものか、なりすましの恐れがあります!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "招待は無効化されたカレンダーに保存されました。"
@@ -5828,7 +5828,7 @@
         "回復に関する情報を削除"
       ],
       "Do not ask again": [
-        "今後表示しない"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "次回から表示しない"
@@ -6468,7 +6468,7 @@
         "送信予約を取り消しました"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "送信予約がキャンセルされました。メッセージは下書きに移動されました。"
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "送信が取り消されました"
@@ -6667,7 +6667,7 @@
         "メッセージ内容の検索"
       ],
       "Unlimited folders, labels and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "15 件のメールアドレス"
@@ -7381,7 +7381,7 @@
         "キーボードショートカットの設定が更新されました"
       ],
       "Label cleared": [
-        "ラベルをクリアしました"
+        "Label deleted"
       ],
       "Labels applied.": [
         "ラベルが適用されました。"

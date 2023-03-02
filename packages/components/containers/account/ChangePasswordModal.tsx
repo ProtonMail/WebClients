@@ -519,7 +519,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                 <ModalFooter>
                     <Button onClick={handleFatalErrorClose}>{close || c('Action').t`Cancel`}</Button>
                     <Button color="norm" onClick={handleFatalErrorClose}>
-                        {submit || c('Action').t`Ok`}
+                        {submit || c('Action').t`OK`}
                     </Button>
                 </ModalFooter>
             </Modal>

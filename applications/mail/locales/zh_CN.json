@@ -77,9 +77,6 @@
       "All Unstarred": [
         "所有非星标邮件"
       ],
-      "Allow messages": [
-        "允许接收其邮件"
-      ],
       "Apply": [
         "应用"
       ],
@@ -540,7 +537,7 @@
         "正在加载${ ellipsis }"
       ],
       "Log in": [
-        "登录"
+        "Sign in"
       ],
       "Mailbox density": [
         "邮箱密度"
@@ -1890,7 +1887,7 @@
         "身份"
       ],
       "Timezone": [
-        "时区"
+        "Time zone"
       ],
       "Title": [
         "头衔"
@@ -3022,7 +3019,7 @@
         "邮件地址已禁用"
       ],
       "Email address invalid": [
-        "邮箱格式不正确"
+        "Invalid email address"
       ],
       "Email address is required": [
         "邮箱地址必须填写"
@@ -3343,7 +3340,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -3383,7 +3380,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "读取文件 ${ formattedFilename } 失败，文件格式不对。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -3418,7 +3415,7 @@
         "组件格式错误"
       ],
       "Custom timezone": [
-        "自定义时区"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "不支持已编辑的事件"
@@ -3490,7 +3487,7 @@
         "不支持此时区"
       ],
       "Timezone": [
-        "时区"
+        "Time zone"
       ],
       "To-do entry": [
         "待办事项"
@@ -4593,7 +4590,7 @@
         "即将过期"
       ],
       "files attached": [
-        "个附件"
+        "attachment"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
@@ -4959,7 +4956,7 @@
         "正在保存草稿…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "此邮件的定时发送将被取消。"
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "定时发送邮件中..."
@@ -5103,7 +5100,7 @@
         "您目前使用的浏览器不支持查看 PDF 文件，请下载后打开。"
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "此会话内包含一封定时发送的邮件，它将被取消发送。"
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "此会话包含不在废件箱中的邮件。"
@@ -5112,7 +5109,7 @@
         "此会话包含废件箱中的邮件。"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "不能确定此邮件是否来自该域名，这可能是欺诈邮件，也可能是投递过程出现了问题。"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "此邀请被保存到一个禁用的日历。"
@@ -5828,7 +5825,7 @@
         "删除恢复相关的数据"
       ],
       "Do not ask again": [
-        "不再询问"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "不再显示此内容"
@@ -6480,7 +6477,7 @@
         "定时发送已撤销"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "定时发送已取消，邮件已移至草稿箱。"
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "邮件发送已撤销"
@@ -6676,7 +6673,7 @@
         "搜索邮件全文"
       ],
       "Unlimited folders, labels and filters": [
-        "文件夹、标签、筛选规则不限量"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "最多 15 个邮箱地址"
@@ -7390,7 +7387,7 @@
         "快捷键设置已更改"
       ],
       "Label cleared": [
-        "标签已清除"
+        "Label deleted"
       ],
       "Labels applied.": [
         "标签已添加。"

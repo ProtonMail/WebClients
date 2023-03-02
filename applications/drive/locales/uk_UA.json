@@ -336,7 +336,7 @@
         "Завантажити зображення"
       ],
       "Log in": [
-        "Увійти"
+        "Sign in"
       ],
       "Manage folders": [
         "Керувати теками"
@@ -919,7 +919,7 @@
         "Роль"
       ],
       "Timezone": [
-        "Часовий пояс"
+        "Time zone"
       ],
       "Title": [
         "Назва"
@@ -1892,7 +1892,7 @@
         "Домен недоступний, повторіть спробу пізніше"
       ],
       "Email address invalid": [
-        "Недійсна адреса електронної пошти"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Адреса е-пошти обов'язкова"
@@ -2125,7 +2125,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2168,7 +2168,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Під час читання вашого файлу ${ formattedFilename } сталася помилка. Файл має неправильний формат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2203,7 +2203,7 @@
         "Компонент з неправильним форматом"
       ],
       "Custom timezone": [
-        "Власний часовий пояс"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Відредагована подія не підтримується"
@@ -2275,7 +2275,7 @@
         "Часовий пояс не підтримується"
       ],
       "Timezone": [
-        "Часовий пояс"
+        "Time zone"
       ],
       "To-do entry": [
         "Запис завдання"
@@ -3371,10 +3371,10 @@
         "Посилання скопійовано в буфер обміну"
       ],
       "Link failed to be loaded": [
-        "Не вдалося завантажити посилання"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Не вдалося завантажити посилання"
+        "Cannot load links"
       ],
       "Loading": [
         "Завантаження"
@@ -3590,7 +3590,7 @@
         "Посилання спільного доступу для ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Не вдалося завантажити спільне посилання"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
@@ -3686,7 +3686,7 @@
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Щоб увімкнути справді приватний пошук ${ DRIVE_APP_NAME } потрібно індексувати ваші файли локально."
+        "Щоб увімкнути повноцінний приватний пошук, ${ DRIVE_APP_NAME } повинен індексувати ваші файли локально."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Для забезпечення дійсно приватного пошуку нам необхідно індексувати ваші локальні файли. Ви й надалі можете користуватися ${ DRIVE_APP_NAME } як зазвичай – ми повідомимо, коли індексування завершиться."
@@ -4054,7 +4054,7 @@
         "Назва пристрою"
       ],
       "Do not ask again": [
-        "Не питати знову"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Все одно завантажити"
@@ -4702,7 +4702,7 @@
         "Файл чи тека не мають назви"
       ],
       "Link failed to be loaded": [
-        "Не вдалося завантажити посилання"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Перемістити ${ itemsToMoveCount } файл",
@@ -4741,7 +4741,7 @@
         "Перемістити ${ movingCount } елементів"
       ],
       "Next page failed to be loaded": [
-        "Не вдалося завантажити наступну сторінку"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостатньо місця для вивантаження ${ formattedTotal }"
@@ -5084,7 +5084,7 @@
         "Звіт про помилку надіслано"
       ],
       "Cancelling import": [
-        "Скасування імпорту"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
@@ -5500,7 +5500,7 @@
         "Подробиці елемента"
       ],
       "Items details": [
-        "Подробиці елемента"
+        "Item details"
       ],
       "Link confirmation": [
         "Підтвердження посилання"
@@ -5677,7 +5677,7 @@
         "Термін дії посилання завершився"
       ],
       "The link failed to be loaded": [
-        "Не вдалося завантажити посилання"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "У цьому файлі відсутній або недійсний підпис. Перейдіть до Меню (⋮) → Подробиці для отримання інформації."

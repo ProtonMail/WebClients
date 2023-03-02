@@ -332,7 +332,7 @@
         "Indlæs billede"
       ],
       "Log in": [
-        "Log ind"
+        "Sign in"
       ],
       "Manage folders": [
         "Administrer mapper"
@@ -915,7 +915,7 @@
         "Rolle"
       ],
       "Timezone": [
-        "Tidszone"
+        "Time zone"
       ],
       "Title": [
         "Titel"
@@ -1886,7 +1886,7 @@
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
       "Email address invalid": [
-        "Ugyldig e-mailadresse"
+        "Invalid email address"
       ],
       "Email address is required": [
         "E-mailadresse er påkrævet."
@@ -2113,7 +2113,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2154,7 +2154,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2189,7 +2189,7 @@
         "Komponent med forkert format"
       ],
       "Custom timezone": [
-        "Brugerdefineret tidszone"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Redigeret begivenhed understøttes ikke"
@@ -2261,7 +2261,7 @@
         "Tidszone understøttes ikke"
       ],
       "Timezone": [
-        "Tidszone"
+        "Time zone"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -3260,10 +3260,10 @@
         "Link kopieret til udklipsholder"
       ],
       "Link failed to be loaded": [
-        "Linket kunne ikke indlæses"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Linkene kunne ikke indlæses"
+        "Cannot load links"
       ],
       "Loading": [
         "Indlæser"
@@ -3475,7 +3475,7 @@
         "Delbart link til ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Delt link kunne ikke indlæses"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
@@ -3935,7 +3935,7 @@
         "Enhedsnavn"
       ],
       "Do not ask again": [
-        "Spørg ikke igen"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Download alligevel"
@@ -4549,7 +4549,7 @@
         "Der mangler et navn på en fil eller mappe"
       ],
       "Link failed to be loaded": [
-        "Link kunne ikke indlæses"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Flyt ${ itemsToMoveCount } fil",
@@ -4576,7 +4576,7 @@
         "Flyt ${ movingCount } elementer"
       ],
       "Next page failed to be loaded": [
-        "Næste side kunne ikke indlæses"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok plads til at uploade ${ formattedTotal }"
@@ -4909,7 +4909,7 @@
         "Fejl anmeldt"
       ],
       "Cancelling import": [
-        "Annullerer import"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
@@ -5291,7 +5291,7 @@
         "Elementdetaljer"
       ],
       "Items details": [
-        "Elementdetaljer"
+        "Item details"
       ],
       "Link confirmation": [
         "Linkbekræftelse"
@@ -5468,7 +5468,7 @@
         "Linket er udløbet"
       ],
       "The link failed to be loaded": [
-        "Linket kunne ikke indlæses"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denne fil har en manglende eller ugyldig signatur. Gå til Menu (⋮) → Detaljer for info."

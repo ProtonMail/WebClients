@@ -71,7 +71,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
         await call();
 
         createNotification({
-            text: c('Message notification').t`Scheduling cancelled. Message has been moved to Drafts.`,
+            text: c('Message notification').t`Scheduling canceled. Message has been moved to Drafts.`,
         });
         onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
 

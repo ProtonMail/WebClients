@@ -41,7 +41,7 @@ const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOuts
             {!isOutside && (
                 <Label className="flex">
                     <Checkbox checked={value} onChange={onToggle} className="mr0-5" />
-                    {c('Label').t`Do not ask again`}
+                    {c('Label').t`Don't ask again`}
                 </Label>
             )}
         </>

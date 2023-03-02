@@ -27,13 +27,13 @@ export const TimeZoneSelector = ({ loading = false, disabled = false, date, time
     return (
         <SearchableSelect
             disabled={loading || disabled}
-            title={c('Action').t`Select timezone`}
+            title={c('Action').t`Select time zone`}
             value={timezone}
             onChange={({ value }) => {
                 onChange(value);
             }}
             search
-            searchPlaceholder={c('Timezone search placeholder').t`Search timezones`}
+            searchPlaceholder={c('Timezone search placeholder').t`Search time zones`}
             {...rest}
         >
             {timezoneOptions}

@@ -21,25 +21,25 @@
         "Afegeix adreça"
       ],
       "Add contact": [
-        "Afegir contacte"
+        "Afegeix un contacte"
       ],
       "Add email": [
         "Afegeix correu electrònic"
       ],
       "Add group": [
-        "Afegir grup"
+        "Afegeix un grup"
       ],
       "Add new contact": [
-        "Afegir un contacte nou"
+        "Afegeix un contacte"
       ],
       "Add new group": [
-        "Afegir nou grup"
+        "Afegeix un grup"
       ],
       "Add phone number": [
         "Afegeix número de telèfon"
       ],
       "Add to group": [
-        "Afegir al grup"
+        "Afegeix al grup"
       ],
       "Apply": [
         "Aplica"
@@ -51,7 +51,7 @@
         "Requereix atenció"
       ],
       "Authenticate": [
-        "Autenticar"
+        "Autentica"
       ],
       "Back": [
         "Torna"
@@ -329,7 +329,7 @@
         "Carrega la imatge"
       ],
       "Log in": [
-        "Inicia sessió"
+        "Sign in"
       ],
       "Manage folders": [
         "Gestionar carpetes"
@@ -341,7 +341,7 @@
         "Gestiona l'enllaç"
       ],
       "Mark for deletion": [
-        "Marcar per eliminar"
+        "Marca la supressió"
       ],
       "Maximize transfers": [
         "Maximitzar les transferències"
@@ -368,7 +368,7 @@
         "Mou a la carpeta"
       ],
       "Move to trash": [
-        "Moure a la paperera"
+        "Mou a la paperera"
       ],
       "New": [
         "Nou"
@@ -587,7 +587,7 @@
         "Desbloqueja les dades"
       ],
       "Unmark for deletion": [
-        "Desmarcar la supressió"
+        "Desmarca la supressió"
       ],
       "Untrust": [
         "No confiable"
@@ -617,7 +617,7 @@
         "Puja una carpeta"
       ],
       "Upload picture": [
-        "Carregar imatge"
+        "Carrega imatge"
       ],
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
@@ -912,7 +912,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Zona Horària"
+        "Time zone"
       ],
       "Title": [
         "Títol"
@@ -1876,6 +1876,10 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
+      ],
       "Device name does not match": [
         "El nom del dispositiu no coincideix."
       ],
@@ -1883,7 +1887,7 @@
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Email address invalid": [
-        "Correu electrònic invàlid"
+        "Invalid email address"
       ],
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
@@ -2110,7 +2114,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2151,7 +2155,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2186,7 +2190,7 @@
         "Component amb format erroni"
       ],
       "Custom timezone": [
-        "Fus horari personalitzat"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Esdeveniment editat no compatible"
@@ -2258,7 +2262,7 @@
         "Fus horari no compatible"
       ],
       "Timezone": [
-        "Zona Horària"
+        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tasques"
@@ -2640,11 +2644,41 @@
       ]
     },
     "Import instructions": {
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
+        "Segons el vostre proveïdor de correu electrònic, és possible que hàgiu de generar un ${ knowledgeBaseLink } abans de poder importar a ${ BRAND_NAME }."
+      ],
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Amplieu el menú desplegable fent clic als 3 punts (...)."
+      ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Genereu la ${ boldAppPassword } i utilitzeu-la en lloc de la vostra contrasenya habitual quan us ho demani ${ BRAND_NAME }."
+      ],
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Aneu a ${ boldAccountInfo } sota el vostre perfil a ${ yahooMailLink }."
+      ],
       "Go to ${ boldAccountSecurity }.": [
         "Anar a ${ boldAccountSecurity }."
       ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "Obríeu els vostres contactes de ${ yahooMailLink }."
+      ],
       "Select ${ boldExportCSV }.": [
         "Selecciona ${ boldExportCSV }."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Per importar un calendari a ${ BRAND_NAME }, necessiteu ${ knowledgeBaseLink }. Descarregueu-lo de Yahoo en 3 senzills passos:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Per importar un calendari a ${ BRAND_NAME }, necessiteu ${ knowledgeBaseLink }. Descarregueu-lo abans de començar la importació."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Per importar contactes a ${ BRAND_NAME }, necessiteu un ${ knowledgeBaseLink }. Descarregueu-lo de Yahoo en 3 senzills passos:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Per importar contactes a ${ BRAND_NAME }, necessiteu un ${ knowledgeBaseLink }. Descarregueu-lo abans de començar la importació."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "Per importar correus electrònics a ${ BRAND_NAME }, necessiteu un ${ appPasswordLink } de Yahoo. Aconsegueix-ho seguint aquests passos:"
       ]
     },
     "Import instructions emphasis": {
@@ -2684,6 +2718,12 @@
     "Import instructions step": {
       "Go to ${ calendarViewLink } in Yahoo.": [
         "Vés a ${ calendarViewLink } a Yahoo."
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Passeu el cursor per sobre del calendari que voleu importar i obriu el menú desplegable."
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Seleccioneu ${ boldExport } per exportar el calendari com a fitxer ICS."
       ]
     },
     "Import provider": {
@@ -3095,7 +3135,7 @@
         "Importar bústia de correu"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importeu els seus correus electronics, calendaris, i contactes des d'un altra servei a ${ BRAND_NAME }. Us guiarem en cada pas del camí i xifrarem les vostres dades a mesura que es mouen. Benvingut al món de la privadesa."
+        "Importeu els vostres correus electrònics, calendaris, i contactes des d'un altre servei a ${ BRAND_NAME }. Us guiarem en cada pas del camí i xifrarem les vostres dades a mesura que es mouen. Us donem la benvinguda al món de la privadesa."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -3140,13 +3180,13 @@
         "Més informació"
       ],
       "Link copied to clipboard": [
-        "S'ha copiat l'enllaç al porta-retalls"
+        "S'ha copiat l'enllaç al porta-retalls."
       ],
       "Link failed to be loaded": [
-        "No s'ha pogut carregar l'enllaç"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "No s'han pogut carregar els enllaços"
+        "Cannot load links"
       ],
       "Loading": [
         "Carregant"
@@ -3324,7 +3364,7 @@
         "Enllaç per a compartir ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "L'enllaç compartit no s'ha pogut carregar."
+        "Cannot load shared link"
       ],
       "Signature issue": [
         "Problema de signatura"
@@ -3499,7 +3539,7 @@
         "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
-        "Perdràs tots els canvis sense desar."
+        "Perdreu tots els canvis sense desar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els vostres enllaços compartits de Drive es bloquejaran, i no podreu carregar-hi nous fitxers. Per a restablir el servei normal pagueu qualsevol factura vençuda."
@@ -3603,10 +3643,10 @@
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
       "Add email address": [
-        "Afegir adreça de correu electrònic"
+        "Afegeix una adreça de correu electrònic"
       ],
       "Add image URL": [
-        "Afegir URL de la imatge"
+        "Afegeix l'URL de la imatge"
       ],
       "Add to group": [
         "Afegeix al grup"
@@ -3715,7 +3755,7 @@
         "Nom del dispositiu"
       ],
       "Do not ask again": [
-        "No tornis a preguntar"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Baixa igualment"
@@ -3853,10 +3893,10 @@
         "Modificació"
       ],
       "Move to Archive": [
-        "Moure a l'arxiu"
+        "Mou a l'arxiu"
       ],
       "Move to Inbox": [
-        "Moure a la safata d'entrada"
+        "Mou a la safata d'entrada"
       ],
       "Name": [
         "Nom"
@@ -4317,7 +4357,7 @@
         "Falta un nom pel fitxer o carpeta"
       ],
       "Link failed to be loaded": [
-        "No s'ha pogut carregar l'enllaç"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Mou ${ itemsToMoveCount } fitxer",
@@ -4363,6 +4403,16 @@
       ],
       "Your settings have been changed successfully": [
         "La configuració s'ha modificat correctament"
+      ]
+    },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "A continuació, haureu d'iniciar la sessió al vostre compte de Google i autoritzar ${ BRAND_NAME } per accedir a les vostres dades."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Perquè la importació funcioni, seleccioneu tots els elements sol·licitats tal com es mostra al fitxer GIF."
       ]
     },
     "Onboarding Action": {
@@ -4421,7 +4471,7 @@
     },
     "Option": {
       "Add to existing group": [
-        "Afegir a grup existent"
+        "Afegeix a un grup existent"
       ],
       "Create new group": [
         "Crea un grup nou"
@@ -4517,7 +4567,7 @@
         "Buscar per nom de grup"
       ],
       "Search for name or email": [
-        "Cercar per nom o correu electrònic"
+        "Cerca per nom o correu electrònic"
       ],
       "Select": [
         "Seleccionar"
@@ -4593,7 +4643,7 @@
     },
     "Select files": {
       "Upload": [
-        "Carregar"
+        "Carrega"
       ]
     },
     "Side panel spotlight": {
@@ -4646,7 +4696,7 @@
         "Error notificat"
       ],
       "Cancelling import": [
-        "Cancel·lant importació"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
@@ -4685,6 +4735,9 @@
       ],
       "Recovery has started": [
         "Ha començat la recuperació"
+      ],
+      "The link to your file was successfully copied": [
+        "L'enllaç al vostre fitxer s’ha copiat."
       ],
       "Undo in progress": [
         "Desfer en curs"
@@ -4810,14 +4863,14 @@
         "Actiu"
       ],
       "Add contact group name": [
-        "Afegir nom de grup de contactes"
+        "Afegeix el nom del grup de contactes"
       ],
       "Add to ${ groupCount } group": [
         "Afegir a ${ groupCount } grup",
         "Afegir a ${ groupCount } grups"
       ],
       "Add to ${ groupName }": [
-        "Afegir a ${ groupName }"
+        "Afegeix a ${ groupName }"
       ],
       "Addresses": [
         "Adreces"
@@ -4927,7 +4980,7 @@
         "Baixa una carpeta no verificada?"
       ],
       "Drop to upload": [
-        "Arrossegar per carregar"
+        "Arrossega per carregar"
       ],
       "Duplicate file found": [
         "Trobat un fitxer duplicat"
@@ -5019,7 +5072,7 @@
         "Detalls de l'element"
       ],
       "Items details": [
-        "Detalls dels elements"
+        "Item details"
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
@@ -5175,7 +5228,7 @@
         "Ordenar fitxers/carpetes"
       ],
       "Start a new import": [
-        "Iniciar una nova importació"
+        "Inicia una nova importació"
       ],
       "Start import process": [
         "Iniciar el procés d'importació"
@@ -5196,7 +5249,7 @@
         "L'enllaç ha caducat"
       ],
       "The link failed to be loaded": [
-        "L'enllaç no s'ha pogut carregar"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A aquest fitxer li manca signatura o té una signatura no valida. Ves a (⋮) → Detalls per a més informació."

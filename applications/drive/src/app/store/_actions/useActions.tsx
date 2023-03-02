@@ -349,7 +349,7 @@ export default function useAction() {
                       }
                   })
                   .catch((err: any) => {
-                      showErrorNotification(err, c('Notification').t`Link failed to be loaded`);
+                      showErrorNotification(err, c('Notification').t`Cannot load link`);
                   });
           };
 

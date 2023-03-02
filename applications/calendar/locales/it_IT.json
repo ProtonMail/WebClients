@@ -283,7 +283,7 @@
         "Carica Immagine"
       ],
       "Log in": [
-        "Accedi"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Rendi questo partecipante facoltativo"
@@ -430,7 +430,7 @@
         "Seleziona tutti"
       ],
       "Select timezone": [
-        "Seleziona il fuso orario"
+        "Select time zone"
       ],
       "Send": [
         "Invia"
@@ -1064,7 +1064,7 @@
         "Ruolo"
       ],
       "Timezone": [
-        "Fuso orario"
+        "Time zone"
       ],
       "Title": [
         "Titolo"
@@ -1988,7 +1988,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Non chiederlo più"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2159,7 +2159,7 @@
         "Indirizzo email disabilitato"
       ],
       "Email address invalid": [
-        "Indirizzo email non valido"
+        "Invalid email address"
       ],
       "Email address is required": [
         "L'indirizzo email è obbligatorio"
@@ -2419,7 +2419,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Il file non ha il formato corretto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2460,7 +2460,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Il file non ha il formato corretto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2495,7 +2495,7 @@
         "Componente con formato errato"
       ],
       "Custom timezone": [
-        "Fuso orario personalizzato"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento modificato non supportato"
@@ -2567,7 +2567,7 @@
         "Fuso orario non supportato"
       ],
       "Timezone": [
-        "Fuso orario"
+        "Time zone"
       ],
       "To-do entry": [
         "Voce da fare"
@@ -3919,7 +3919,7 @@
         "Descrizione"
       ],
       "Do not ask again": [
-        "Non chiedermelo più"
+        "Don't ask again"
       ],
       "Email": [
         "Email"
@@ -5358,7 +5358,7 @@
         "Cancellazione inviata e partecipanti rimossi da tutti gli eventi"
       ],
       "Cancelling import": [
-        "Annullamento dell'importazione"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Codice inviato a ${ methodTo }"
@@ -5542,7 +5542,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Cerca fusi orari"
+        "Search time zones"
       ]
     },
     "Title": {

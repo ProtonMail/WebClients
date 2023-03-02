@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Tous les non-favoris"
       ],
-      "Allow messages": [
-        "Autoriser les messages"
-      ],
       "Apply": [
         "Appliquer"
       ],
@@ -546,7 +543,7 @@
         "Chargement${ ellipsis }"
       ],
       "Log in": [
-        "Se connecter"
+        "Sign in"
       ],
       "Mailbox density": [
         "Densité de la boîte aux lettres"
@@ -1865,7 +1862,7 @@
         "Rôle"
       ],
       "Timezone": [
-        "Fuseau horaire"
+        "Time zone"
       ],
       "Title": [
         "Titre"
@@ -2554,9 +2551,6 @@
       "No labels": [
         "Aucun label"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
@@ -2780,7 +2774,7 @@
         "Adresse courriel désactivée"
       ],
       "Email address invalid": [
-        "Adresse courriel invalide"
+        "Invalid email address"
       ],
       "Email address is required": [
         "L'adresse électronique est nécessaire"
@@ -3105,7 +3099,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d'un fichier est de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3146,7 +3140,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors du téléversement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3181,7 +3175,7 @@
         "Élément au mauvais format"
       ],
       "Custom timezone": [
-        "Fuseau horaire personnalisé"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Événement édité non pris en charge"
@@ -3253,7 +3247,7 @@
         "Fuseau horaire non pris en charge"
       ],
       "Timezone": [
-        "Fuseau horaire"
+        "Time zone"
       ],
       "To-do entry": [
         "Tâche à réaliser"
@@ -4387,8 +4381,8 @@
         "Expire bientôt"
       ],
       "file attached": [
-        "fichier joint",
-        "fichiers joints"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Les filtres fonctionnent sur tous les messages, y compris les courriels entrants et envoyés. Chaque filtre doit contenir au moins un nom, une condition et une action."
@@ -4760,7 +4754,7 @@
         "Enregistrement du brouillon…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "L'envoi programmé de ce message sera annulé."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Programmation du message..."
@@ -4899,7 +4893,7 @@
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Cette conversation contient un message programmé. L'envoi de ce message sera annulé."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Cette conversation contient des messages non mis à la corbeille."
@@ -4912,7 +4906,7 @@
         "Ces conversations seront marquées comme indésirables. Souhaitez-vous aussi vous désinscrire des futurs courriels?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Ce courriel a échoué aux exigences d'authentification de son nom de domaine. Il peut être falsifié ou mal transféré!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Cette invitation est enregistrée dans un calendrier désactivé."
@@ -5628,7 +5622,7 @@
         "Supprimer les informations liées à la récupération."
       ],
       "Do not ask again": [
-        "Ne plus demander"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Ne plus afficher"
@@ -6259,7 +6253,7 @@
         "Envoi programmé annulé"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Programmation annulée. Le message a été déplacé dans les brouillons."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Envoi annulé"
@@ -6455,7 +6449,7 @@
         "Domaines de messagerie personnalisés"
       ],
       "Unlimited folders, labels and filters": [
-        "Dossiers, labels et filtres illimités"
+        "Unlimited folders, labels, and filters"
       ]
     },
     "new_plans: label": {
@@ -7191,7 +7185,7 @@
         "Préférences des raccourcis clavier mises à jour"
       ],
       "Label cleared": [
-        "Label effacé"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Labels appliqués."

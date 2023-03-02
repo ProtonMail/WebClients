@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Tous les non-favoris"
       ],
-      "Allow messages": [
-        "Autoriser les messages"
-      ],
       "Apply": [
         "Appliquer"
       ],
@@ -546,7 +543,7 @@
         "Chargement${ ellipsis }"
       ],
       "Log in": [
-        "Se connecter"
+        "Sign in"
       ],
       "Mailbox density": [
         "Densité de la messagerie"
@@ -1537,13 +1534,13 @@
         "(présence facultative)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        "L'ajout d'occurrences à un événement n'est pas pris en charge pour le moment."
+        "L'ajout d'occurrences à un événement n'est pas possible pour le moment."
       ],
       "Event refreshing is not supported for the moment": [
         "L'actualisation de l'événement n'est pas prise en charge pour le moment."
       ],
       "Event rescheduling is not supported for the moment": [
-        "La replanification des événements n'est pas prise en charge pour le moment."
+        "La replanification d'événements n'est pas possible pour le moment."
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
         "Cette réponse ne peut pas être ajoutée à ${ CALENDAR_APP_NAME }. Pour le moment, seules les réponses à tous les événements d'une série sont prises en charge."
@@ -1901,7 +1898,7 @@
         "Rôle"
       ],
       "Timezone": [
-        "Fuseau horaire"
+        "Time zone"
       ],
       "Title": [
         "Fonction/Profession"
@@ -2787,6 +2784,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "Logo ${ MAIL_APP_NAME } et un signe plus"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } dans les paramètres."
       ],
@@ -2818,15 +2818,12 @@
       "No labels": [
         "Aucun label"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Activez la personnalisation de l'envoi programmé de messages et d'autres fonctionnalités en passant à un abonnement supérieur."
+        "Débloquez l'envoi programmé de messages personnalisé et d'autres fonctionnalités en passant à un abonnement supérieur."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
@@ -3034,6 +3031,14 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erreur de déchiffrement : le contenu chiffré de ce message n'a pas pu être déchiffré."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
+        "Désélectionnez au moins ${ calendarsToFixCount } calendriers."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Désélectionnez au moins ${ calendarsToFixCount } calendrier ou",
+        "Désélectionnez au moins ${ calendarsToFixCount } calendriers ou"
+      ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
@@ -3044,7 +3049,7 @@
         "L'adresse électronique est désactivée."
       ],
       "Email address invalid": [
-        "L'adresse électronique n'est pas valide."
+        "Invalid email address"
       ],
       "Email address is required": [
         "L'adresse électronique est nécessaire."
@@ -3111,6 +3116,10 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Le nombre maximum de (${ attachmentsCountLimit }) pièces jointes a été dépassé."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
+        "Fusionnez au moins ${ calendarsToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
       ],
       "Message needs to be sent first": [
         "Le message doit d'abord être envoyé."
@@ -3334,6 +3343,9 @@
       "You did not provide a file.": [
         "Vous n'avez pas fourni de fichier."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Vous avez atteint le nombre maximum de calendriers. Certains calendriers n'ont pas pu être importés."
+      ],
       "You must set a name": [
         "Vous devez définir un nom."
       ],
@@ -3375,7 +3387,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d'un fichier est de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3416,7 +3428,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3451,7 +3463,7 @@
         "L'élément n'a pas le bon format."
       ],
       "Custom timezone": [
-        "Fuseau horaire personnalisé"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "L'événement modifié n'est pas pris en charge."
@@ -3523,7 +3535,7 @@
         "Le fuseau horaire n'est pas pris en charge."
       ],
       "Timezone": [
-        "Fuseau horaire"
+        "Time zone"
       ],
       "To-do entry": [
         "Entrée de type tâche à réaliser"
@@ -4710,8 +4722,8 @@
         "Expire bientôt"
       ],
       "file attached": [
-        "fichier joint",
-        "fichiers joints"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Les filtres fonctionnent sur tous les messages, y compris les e-mails entrants et envoyés. Chaque filtre doit contenir au moins un nom, une condition et une action."
@@ -5090,7 +5102,7 @@
         "Enregistrement du brouillon…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "L'envoi programmé de ce message sera annulé."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Programmation du message..."
@@ -5106,6 +5118,9 @@
       ],
       "Select what you want to import.": [
         "Sélectionnez ce que vous voulez importer."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé, en fonction du nombre de calendriers disponibles dans votre abonnement."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Envoyez un message chiffré, protégé par un mot de passe, à une adresse électronique ${ boldText }."
@@ -5229,7 +5244,7 @@
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Téléchargez le fichier."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Cette conversation contient un message programmé. L'envoi de ce message sera annulé."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Cette conversation a des messages qui ne sont pas dans le dossier Corbeille."
@@ -5242,7 +5257,7 @@
         "Ces conversations seront marquées comme indésirables/spam. Voulez-vous aussi vous désinscrire des futurs e-mails ?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Cet e-mail a échoué aux exigences d'authentification de son domaine. Il a peut-être été falsifié ou transféré de manière incorrecte."
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Cette invitation est enregistrée dans un calendrier désactivé."
@@ -5591,7 +5606,7 @@
         "Votre message expirera demain."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
+        "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
       ],
       "Your recovery phrase": [
         "Votre phrase de récupération"
@@ -5913,7 +5928,7 @@
         "Enregistrer automatiquement les contacts"
       ],
       "Awful": [
-        "Affreuse"
+        "Affreux"
       ],
       "Bad": [
         "Mauvaise"
@@ -5979,7 +5994,7 @@
         "Supprimer les informations liées à la récupération."
       ],
       "Do not ask again": [
-        "Ne plus demander"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Ne plus afficher"
@@ -6312,7 +6327,7 @@
         "sans pièce jointe"
       ],
       "Wonderful": [
-        "Merveilleuse"
+        "Merveilleux"
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
@@ -6664,7 +6679,7 @@
         "L'envoi programmé a été annulé."
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "La programmation a été annulée. Le message a été déplacé dans le dossier Brouillons."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "L'envoi a été annulé."
@@ -6869,7 +6884,7 @@
         "Rechercher dans le contenu des messages"
       ],
       "Unlimited folders, labels and filters": [
-        "Dossiers, labels et filtres illimités"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Jusqu'à 15 adresses électroniques"
@@ -6881,6 +6896,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: label": {
@@ -7162,7 +7180,7 @@
     },
     "Property type": {
       "Address": [
-        "Addresse"
+        "Adresse"
       ],
       "Email": [
         "Adresse e-mail"
@@ -7190,6 +7208,14 @@
       ],
       "Work": [
         "Bureau"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "Officiel"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Message officiel de ${ BRAND_NAME }"
       ]
     },
     "Received email icon": {
@@ -7230,6 +7256,29 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Remarque : le service sera rechargé après que vous aurez cliqué sur le bouton Appliquer."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } jour",
+        "${ remainingDays } jours"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } heure",
+        "${ remainingHours } heures"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<1 heure"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } an",
+        "${ remainingYears } ans"
       ]
     },
     "Reply to calendar invitation": {
@@ -7789,7 +7838,7 @@
         "Le bug a été signalé."
       ],
       "Cancelling import": [
-        "Annulation de l'importation"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
@@ -7860,7 +7909,7 @@
         "Les préférences des raccourcis clavier ont été mises à jour."
       ],
       "Label cleared": [
-        "Le label a été effacé."
+        "Label deleted"
       ],
       "Labels applied.": [
         "Les labels ont été appliqués."
@@ -8574,7 +8623,7 @@
         "Attention"
       ],
       "Warning: suspected fake website": [
-        "Attention : site web suspect/frauduleux"
+        "Attention : site internet suspect/frauduleux"
       ],
       "Welcome": [
         "Bienvenue"

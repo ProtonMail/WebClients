@@ -330,7 +330,7 @@
         "載入圖像"
       ],
       "Log in": [
-        "登入"
+        "Sign in"
       ],
       "Manage folders": [
         "管理資料夾"
@@ -913,7 +913,7 @@
         "身份"
       ],
       "Timezone": [
-        "時區"
+        "Time zone"
       ],
       "Title": [
         "職銜"
@@ -1886,7 +1886,7 @@
         "網域無法使用，請稍後再試"
       ],
       "Email address invalid": [
-        "電郵位址無效"
+        "Invalid email address"
       ],
       "Email address is required": [
         "電郵位址為必填"
@@ -2110,7 +2110,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2150,7 +2150,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2185,7 +2185,7 @@
         "元件的格式有誤"
       ],
       "Custom timezone": [
-        "自訂時區"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "已編輯事件不受支援"
@@ -2257,7 +2257,7 @@
         "不支援的時區"
       ],
       "Timezone": [
-        "時區"
+        "Time zone"
       ],
       "To-do entry": [
         "待辦事項"
@@ -2394,6 +2394,15 @@
     "file size format": {
       "bytes": [
         "位元組"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
       ]
     },
     "file size format, long": {
@@ -3207,10 +3216,10 @@
         "連結已複製到剪貼簿"
       ],
       "Link failed to be loaded": [
-        "連結載入失敗"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "連結載入失敗"
+        "Cannot load links"
       ],
       "Loading": [
         "正在載入"
@@ -3420,7 +3429,7 @@
         "${ boldNameText } 的可供分享連結"
       ],
       "Shared link failed to be loaded": [
-        "共享連結載入失敗"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
@@ -3878,7 +3887,7 @@
         "裝置名稱"
       ],
       "Do not ask again": [
-        "不要再詢問"
+        "Don't ask again"
       ],
       "Download anyway": [
         "仍要下載"
@@ -4218,6 +4227,17 @@
         "側邊面板"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "要新增行事曆，請移除劑有的。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "要新增行事曆，請移除其他行事曆或升級您的 ${ BRAND_NAME } 方案到 ${ MAIL_SHORT_APP_NAME } 付費方案。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "您已達到您方案中行事曆的最大數量了。"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "清除瀏覽器快取"
@@ -4464,7 +4484,7 @@
         "檔案或資料夾缺少名稱"
       ],
       "Link failed to be loaded": [
-        "連結載入失敗"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } files": [
         "移動 ${ itemsToMoveCount } 個檔案"
@@ -4485,7 +4505,7 @@
         "移動 ${ movingCount } 個項目"
       ],
       "Next page failed to be loaded": [
-        "下一頁載入失敗"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "空間不足，無法上載 ${ formattedTotal }"
@@ -4813,7 +4833,7 @@
         "錯誤已回報"
       ],
       "Cancelling import": [
-        "正在取消匯入"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
@@ -5175,7 +5195,7 @@
         "項目詳細資訊"
       ],
       "Items details": [
-        "項目詳細資訊"
+        "Item details"
       ],
       "Link confirmation": [
         "外部連結確認"
@@ -5352,7 +5372,7 @@
         "連結已逾期"
       ],
       "The link failed to be loaded": [
-        "連結載入失敗"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此檔案的簽章遺失或無效。詳見功能表 (⋮) → 詳細資料。"

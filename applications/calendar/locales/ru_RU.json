@@ -287,7 +287,7 @@
         "Загрузить изображение"
       ],
       "Log in": [
-        "Войти"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Сделать участие этого пользователя необязательным"
@@ -434,7 +434,7 @@
         "Выделить все"
       ],
       "Select timezone": [
-        "Выберите часовой пояс"
+        "Select time zone"
       ],
       "Send": [
         "Отправить"
@@ -1074,7 +1074,7 @@
         "Роль"
       ],
       "Timezone": [
-        "Часовой пояс"
+        "Time zone"
       ],
       "Title": [
         "Должность"
@@ -2013,7 +2013,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Больше не спрашивать"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2192,7 +2192,7 @@
         "Адрес электронной почты отключен"
       ],
       "Email address invalid": [
-        "Недействительный адрес электронной почты"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
@@ -2460,7 +2460,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Произошла ошибка при чтении вашего файла ${ formattedFilename }. Файл имеет неправильный формат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2503,7 +2503,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2538,7 +2538,7 @@
         "Неправильный формат компонента"
       ],
       "Custom timezone": [
-        "Настроить часовой пояс"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Отредактированное событие не поддерживается"
@@ -2610,7 +2610,7 @@
         "Часовой пояс не поддерживается"
       ],
       "Timezone": [
-        "Часовой пояс"
+        "Time zone"
       ],
       "To-do entry": [
         "Запись списка задач"
@@ -4038,7 +4038,7 @@
         "Описание"
       ],
       "Do not ask again": [
-        "Больше не спрашивать"
+        "Don't ask again"
       ],
       "Email": [
         "Электронная почта"
@@ -5570,7 +5570,7 @@
         "Сообщение об отмене отправлено и участники удалены из всех событий"
       ],
       "Cancelling import": [
-        "Отмена импорта"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
@@ -5770,7 +5770,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Поиск часовых поясов"
+        "Search time zones"
       ]
     },
     "Title": {

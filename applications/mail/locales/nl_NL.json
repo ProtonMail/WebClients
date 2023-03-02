@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Berichten zonder ster"
       ],
-      "Allow messages": [
-        "Berichten toestaan"
-      ],
       "Apply": [
         "Toepassen"
       ],
@@ -490,6 +487,9 @@
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
       ],
+      "Inline": [
+        "Doorlopend"
+      ],
       "Insert": [
         "Invoegen"
       ],
@@ -543,7 +543,7 @@
         "Laden${ ellipsis }"
       ],
       "Log in": [
-        "Aanmelden"
+        "Sign in"
       ],
       "Mailbox density": [
         "Mailbox dichtheid"
@@ -949,6 +949,9 @@
       ],
       "Skip verification": [
         "Verificatie overslaan"
+      ],
+      "Some images could not be loaded with tracker protection.": [
+        "Sommige afbeeldingen konden niet geladen worden met bescherming tegen tracking."
       ],
       "Star": [
         "Ster"
@@ -1892,7 +1895,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Tijdzone"
+        "Time zone"
       ],
       "Title": [
         "Titel"
@@ -2809,9 +2812,6 @@
       "No labels": [
         "Geen labels"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
@@ -3035,7 +3035,7 @@
         "E-mailadres uitgeschakeld"
       ],
       "Email address invalid": [
-        "E-mailadres is ongeldig"
+        "Invalid email address"
       ],
       "Email address is required": [
         "E-mailadres is vereist"
@@ -3366,7 +3366,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Er is een fout opgetreden bij het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3407,7 +3407,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3442,7 +3442,7 @@
         "Component met verkeerde indeling"
       ],
       "Custom timezone": [
-        "Aangepaste tijdzone"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Bewerkte afspraak niet ondersteund"
@@ -3514,7 +3514,7 @@
         "Tijdzone niet ondersteund"
       ],
       "Timezone": [
-        "Tijdzone"
+        "Time zone"
       ],
       "To-do entry": [
         "To-do item"
@@ -4695,8 +4695,8 @@
         "Verloopt binnenkort"
       ],
       "file attached": [
-        "bestandsbijlage",
-        "bestandsbijlagen"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
@@ -5075,7 +5075,7 @@
         "Concept opslaan…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Geplande verzending van dit bericht zal worden geannuleerd."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Bericht plannen..."
@@ -5214,7 +5214,7 @@
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Dit gesprek bevat een gepland bericht. Het verzenden van dit bericht zal worden geannuleerd."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Dit gesprek bevat berichten die zich niet in de prullenbak bevinden."
@@ -5227,7 +5227,7 @@
         "Deze gesprekken worden gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Dit e-mailadres gebruikt foutieve domeininstellingen. Het kan een nepbericht zijn, of het is op de verkeerde manier doorgestuurd!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Deze uitnodiging is opgeslagen in een uitgeschakelde agenda."
@@ -5964,7 +5964,7 @@
         "Verwijder herstel-gerelateerde informatie."
       ],
       "Do not ask again": [
-        "Niet opnieuw vragen"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Toon dit niet opnieuw"
@@ -6377,6 +6377,17 @@
         "Rij"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Om een nieuwe agenda toe te voegen moet u een bestaande verwijderen."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Om een nieuwe agenda toe te voegen moet u een andere agenda verwijderen of uw ${ BRAND_NAME }-abonnement upgraden naar een betaald ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "U heeft het maximale aantal agenda's beschikbaar voor uw abonnement bereikt."
+      ]
+    },
     "Link": {
       "All mail": [
         "Alle e-mail"
@@ -6561,9 +6572,21 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
+        "Alle berichten uit ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
         "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
         "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
       ]
     },
     "Mailbox": {
@@ -6626,7 +6649,7 @@
         "Geplande verzending ongedaan gemaakt"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Planning geannuleerd. Bericht is verplaatst naar Concepten."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Verzenden ongedaan gemaakt"
@@ -6831,7 +6854,7 @@
         "Doorzoek berichtinhoud"
       ],
       "Unlimited folders, labels and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Tot wel 15 e-mailadressen"
@@ -7739,7 +7762,7 @@
         "Bug gemeld"
       ],
       "Cancelling import": [
-        "Importeren annuleren"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
@@ -7810,7 +7833,7 @@
         "Sneltoetsvoorkeuren bijgewerkt"
       ],
       "Label cleared": [
-        "Label gewist"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Labels toegepast."

@@ -330,7 +330,7 @@
         "Muat gambar"
       ],
       "Log in": [
-        "Masuk"
+        "Sign in"
       ],
       "Manage folders": [
         "Kelola folder"
@@ -913,7 +913,7 @@
         "Peran"
       ],
       "Timezone": [
-        "Zona waktu"
+        "Time zone"
       ],
       "Title": [
         "Gelar"
@@ -1883,7 +1883,7 @@
         "Domain tidak tersedia, coba lagi nanti"
       ],
       "Email address invalid": [
-        "Alamat email tidak valid"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Alamat email diperlukan"
@@ -2107,7 +2107,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Terjadi kesalahan pada saat membaca berkas ${ formattedFilename }. Format berkas tidak sesuai."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2147,7 +2147,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Terdapat kesalahan dalam membaca berkas ${ formattedFilename } milik Anda. Format berkas tidak sesuai."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2182,7 +2182,7 @@
         "Komponen dengan format yang salah"
       ],
       "Custom timezone": [
-        "Zona waktu khusus"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Acara yang telah diedit tidak didukung"
@@ -2254,7 +2254,7 @@
         "Zona waktu tidak didukung"
       ],
       "Timezone": [
-        "Zona waktu"
+        "Time zone"
       ],
       "To-do entry": [
         "Entri to-do"
@@ -3122,7 +3122,7 @@
         "Bagaimana cara pencarian terenkripsi bekerja?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
+        "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
@@ -3212,10 +3212,10 @@
         "Tautan disalin ke clipboard"
       ],
       "Link failed to be loaded": [
-        "Tautan gagal dimuat"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Tautan gagal dimuat"
+        "Cannot load links"
       ],
       "Loading": [
         "Memuat"
@@ -3425,7 +3425,7 @@
         "Tautan yang dapat dibagikan untuk ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Tautan yang dibagikan gagal dimuat"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
@@ -3524,7 +3524,7 @@
         "Untuk dapat melangsungkan pencarian yang benar-benar privat, kami perlu untuk mengindeks berkas Anda secara lokal. Anda tetap akan dapat menggunakan ${ DRIVE_APP_NAME } seperti biasa - kami akan memberitahukan Anda apabila proses ini telah selesai."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi Anda memang manusia."
+        "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Untuk mengimpor acara, buatlah kalender di ${ CALENDAR_APP_NAME } terlebih dahulu. Acara yang diimpor akan muncul pada kalender ini."
@@ -3883,7 +3883,7 @@
         "Nama perangkat"
       ],
       "Do not ask again": [
-        "Jangan tanyakan lagi"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Tetap unduh"
@@ -4480,7 +4480,7 @@
         "Berkas atau folder belum dinamai"
       ],
       "Link failed to be loaded": [
-        "Gagal memuat tautan"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } files": [
         "Pindahkan ${ itemsToMoveCount } berkas"
@@ -4501,7 +4501,7 @@
         "Pindah ${ movingCount } item"
       ],
       "Next page failed to be loaded": [
-        "Halaman berikutnya gagal dimuat"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
@@ -4829,7 +4829,7 @@
         "Bug berhasil dilaporkan"
       ],
       "Cancelling import": [
-        "Membatalkan impor"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
@@ -5188,7 +5188,7 @@
         "Rincian item"
       ],
       "Items details": [
-        "Rincian item"
+        "Item details"
       ],
       "Link confirmation": [
         "Konfirmasi tautan"
@@ -5365,7 +5365,7 @@
         "Tautan telah kedaluwarsa"
       ],
       "The link failed to be loaded": [
-        "Tautan gagal dimuat"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Berkas ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."

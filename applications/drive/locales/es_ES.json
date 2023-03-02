@@ -332,7 +332,7 @@
         "Cargar imagen"
       ],
       "Log in": [
-        "Iniciar sesión"
+        "Sign in"
       ],
       "Manage folders": [
         "Administrar carpetas"
@@ -915,7 +915,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Zona horaria"
+        "Time zone"
       ],
       "Title": [
         "Título"
@@ -1886,7 +1886,7 @@
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
       "Email address invalid": [
-        "La dirección de correo electrónico no es válida."
+        "Invalid email address"
       ],
       "Email address is required": [
         "Dirección de correo electrónico requerida"
@@ -2113,7 +2113,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Se ha producido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2154,7 +2154,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Se ha producido un error al leer el archivo ${ formattedFilename }. El archivo no tiene el formato correcto."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2189,7 +2189,7 @@
         "Componente con formato incorrecto"
       ],
       "Custom timezone": [
-        "Zona horaria personalizada"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado no admitido"
@@ -2261,7 +2261,7 @@
         "Zona horaria no admitida"
       ],
       "Timezone": [
-        "Zona horaria"
+        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tareas"
@@ -3263,10 +3263,10 @@
         "Enlace copiado al portapapeles"
       ],
       "Link failed to be loaded": [
-        "Error al cargar el enlace"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Error al cargar los enlaces"
+        "Cannot load links"
       ],
       "Loading": [
         "Cargando"
@@ -3478,7 +3478,7 @@
         "Enlace compartible para ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Error al cargar el enlace compartido"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Error al validar la firma debido a errores de red. Inténtalo de nuevo más tarde."
@@ -3938,7 +3938,7 @@
         "Nombre del dispositivo"
       ],
       "Do not ask again": [
-        "No preguntar de nuevo"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Descargar de todos modos"
@@ -4542,8 +4542,8 @@
         "Error al cargar los archivos: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "El archivo o la carpeta \"${ filename }\" y otros ${ count } se están cargando actualmente.",
-        "El archivo o la carpeta \"${ filename }\" y otros ${ count } se están cargando actualmente."
+        "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando",
+        "El archivo o carpeta \"${ filename }\" y ${ count } más ya se están cargando."
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "El archivo o la carpeta \"${ filename }\" ya se está cargando."
@@ -4552,7 +4552,7 @@
         "Falta el nombre del archivo o carpeta"
       ],
       "Link failed to be loaded": [
-        "Error al cargar el enlace"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Mover ${ itemsToMoveCount } archivo",
@@ -4579,7 +4579,7 @@
         "Mover ${ movingCount } elementos"
       ],
       "Next page failed to be loaded": [
-        "Error al cargar la siguiente página"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hay espacio suficiente para cargar ${ formattedTotal }."
@@ -4917,7 +4917,7 @@
         "Error reportado"
       ],
       "Cancelling import": [
-        "Cancelación de la importación"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -5296,7 +5296,7 @@
         "Detalles del elemento"
       ],
       "Items details": [
-        "Detalles del elemento"
+        "Item details"
       ],
       "Link confirmation": [
         "Confirmación de enlace"
@@ -5473,7 +5473,7 @@
         "El enlace ha expirado."
       ],
       "The link failed to be loaded": [
-        "Error al cargar el enlace"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Este archivo no tiene firma o no es válida. Ve a Menú (⋮) → Detalles para obtener información."

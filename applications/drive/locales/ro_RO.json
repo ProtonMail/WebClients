@@ -334,7 +334,7 @@
         "Încărcare imagine"
       ],
       "Log in": [
-        "Conectare"
+        "Sign in"
       ],
       "Manage folders": [
         "Gestionare foldere"
@@ -917,7 +917,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Fus orar"
+        "Time zone"
       ],
       "Title": [
         "Titlu"
@@ -1889,7 +1889,7 @@
         "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
       "Email address invalid": [
-        "Adresă de e-mail nevalidă"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Adresa de e-mail este obligatorie"
@@ -2119,7 +2119,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Mărimea maximă a unui fișier este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2161,7 +2161,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2196,7 +2196,7 @@
         "Componentă cu format greșit"
       ],
       "Custom timezone": [
-        "Fus orar personal"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evenimentul editat nu este suportat"
@@ -2268,7 +2268,7 @@
         "Fus orar nesuportat."
       ],
       "Timezone": [
-        "Fus orar"
+        "Time zone"
       ],
       "To-do entry": [
         "Intrare de făcut"
@@ -3313,10 +3313,10 @@
         "Legătura a fost copiată în memorie."
       ],
       "Link failed to be loaded": [
-        "Legătura nu s-a putut încărca."
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Legăturile nu s-a putut încărca."
+        "Cannot load links"
       ],
       "Loading": [
         "Se încarcă"
@@ -3530,7 +3530,7 @@
         "Legătură partajabilă pentru ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Legătura de partajare nu a putut fi încărcată."
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
@@ -3992,7 +3992,7 @@
         "Nume dispozitiv"
       ],
       "Do not ask again": [
-        "Nu mă mai întreba"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Descărcare așa"
@@ -4623,7 +4623,7 @@
         "Fișier sau folder fără nume."
       ],
       "Link failed to be loaded": [
-        "Legătura nu s-a putut încărca."
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Mutare un fișier.",
@@ -4656,7 +4656,7 @@
         "Mutare ${ movingCount } de elemente."
       ],
       "Next page failed to be loaded": [
-        "Nu s-a putut încărca pagina următoare."
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."
@@ -4994,7 +4994,7 @@
         "Eroare raportată"
       ],
       "Cancelling import": [
-        "Se anulează importarea"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
@@ -5393,7 +5393,7 @@
         "Detalii articol"
       ],
       "Items details": [
-        "Detalii articol"
+        "Item details"
       ],
       "Link confirmation": [
         "Legătură de confirmare"
@@ -5570,7 +5570,7 @@
         "Legătura a expirat"
       ],
       "The link failed to be loaded": [
-        "Legătura nu a putut fi încărcată"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Acest fișier are o semnătură lipsă sau nevalidă. Accesați Meniu (⋮) → Detalii pentru informații."

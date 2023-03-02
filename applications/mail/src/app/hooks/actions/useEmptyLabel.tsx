@@ -51,7 +51,11 @@ export const useEmptyLabel = () => {
             dispatch(backendActionFinished());
         }
         await call();
-        createNotification({ text: isLabel ? c('Success').t`Label cleared` : c('Success').t`Folder cleared` });
+        createNotification({
+            text: isLabel
+                ? c('empty messages: success').t`Label cleared`
+                : c('empty messages: success').t`Folder cleared`,
+        });
     };
 
     const modal = (
