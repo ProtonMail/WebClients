@@ -80,7 +80,10 @@ const ItemRowLayout = ({
             <div className={classnames(['item-senders flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
                 <ItemUnread element={element} labelID={labelID} className="mr0-2 item-unread-dot" />
                 <ItemAction element={element} className="mr0-5 flex-item-noshrink myauto" />
-                <span className="max-w100 text-ellipsis" data-testid="message-row:sender-address">
+                <span
+                    className="max-w100 text-ellipsis flex flex-align-items-center"
+                    data-testid="message-row:sender-address"
+                >
                     {senders}
                 </span>
             </div>
