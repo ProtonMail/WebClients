@@ -1518,7 +1518,7 @@
         "Die Passwörter stimmen nicht überein"
       ],
       "Payment process cancelled": [
-        "Bezahlvorgang abgebrochen"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Bezahlvorgang abgebrochen"
@@ -1557,7 +1557,7 @@
         "Tab geschlossen"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Der von dir verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwende einen anderen Browser oder melde dich über einen Computer an."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
@@ -1750,19 +1750,19 @@
     "file size format, long": {
       "Byte": [
         "Byte",
-        "Byte"
+        "Bytes"
       ],
       "Gigabyte": [
         "Gigabyte",
-        "Gigabyte"
+        "Gigabytes"
       ],
       "Kilobyte": [
         "Kilobyte",
-        "Kilobyte"
+        "Kilobytes"
       ],
       "Megabyte": [
         "Megabyte",
-        "Megabyte"
+        "Megabytes"
       ]
     },
     "Footer": {
@@ -1856,6 +1856,9 @@
         "${ number } Server",
         "${ number } Server"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } Speicherplatz"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } ist für die länderbasierte Verbindung notwendig."
       ],
@@ -1871,6 +1874,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "${ organization.BonusVPN } zusätzliche Verbindung für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
         "${ organization.BonusVPN } zusätzliche Verbindungen für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)"
+      ],
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
       ],
       "30-day money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
@@ -1990,7 +1996,7 @@
         "E-Mail-Einstellungen gespeichert"
       ],
       "Enter code from your authenticator app": [
-        "Code aus der Authenticator App eingeben"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Schlüssel stattdessen manuell eingeben"
@@ -2068,7 +2074,7 @@
         "Wenn du Zwei-Faktor-Authentifizierung noch nie zuvor verwendet hast, empfehlen wir dir dringend ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Wenn du dein bestätigtes 2-Faktor-Gerät verlierst, können diese Codes anstelle des 6-stelligen Zwei-Faktor-Authentifizierung-Codes verwendet werden, um dich wieder in deinem Konto anzumelden. Jeder Code kann nur einmal verwendet werden."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } und ${ VPN_APP_NAME }."
@@ -2107,7 +2113,7 @@
         "Internetverbindung wiederhergestellt."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Erfahre, wie du dich bei ${ VPN_APP_NAME } mit VPN-Anwendungen von Drittanbietern anmelden kannst."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -2128,7 +2134,7 @@
         "Wird geladen..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Melde dich bei ${ MAIL_APP_NAME } an, um deine Adresse zu aktivieren"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "den Zugriff auf alle derzeit verschlüsselten Daten"
@@ -2253,6 +2259,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
+      ],
       "Support for 1 custom email domain": [
         "Unterstützung für eine eigene E-Mail-Domain"
       ],
@@ -2338,13 +2347,16 @@
         "Zwei-Faktor-Authentifizierung aktiviert"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Der Modus mit zwei Passwörtern erfordert zwei Passwörter: eines zum Anmelden in Ihrem Konto und eines zum Entschlüsseln Ihres Postfachs. (Erweitert)"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Der Zwei-Passwörter-Modus verwendet getrennte Passwörter für die Anmeldung und die Entschlüsselung des Postfachs. Dies bietet in einigen Situationen einen kleinen Sicherheitsvorteil, wir empfehlen jedoch den Ein-Passwort-Modus für die meisten Benutzer. Um in den Zwei-Passwörter-Modus zu wechseln, legen Sie zuerst ein Anmeldepasswort und dann ein Postfachpasswort fest."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern"
       ],
       "Unlimited messages": [
         "Unbegrenzte Anzahl von Nachrichten"
@@ -2446,7 +2458,7 @@
         "Du kannst die folgenden Anmeldedaten verwenden, um dich mit einem ${ VPN_APP_NAME }-Server zu verbinden, indem du eine Open-Source-VPN-Anwendung eines Drittanbieters verwendest, wie Tunnelblick für macOS oder OpenVPN für GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder dem ${ VPN_APP_NAME }-Dashboard anzumelden. ${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
@@ -2488,7 +2500,7 @@
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. E-Mails werden nicht mehr an deinen Posteingang zugestellt. Deine Drive-Freigabelinks sind nicht mehr aktiv und du kannst keine neuen Dateien hochladen. Um dein Konto weiterhin zu nutzen, bezahle bitte alle überfälligen Rechnungen."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Deine ${ VPN_APP_NAME } und ${ MAIL_APP_NAME } Konten sind miteinander verknüpft. Um beide zu löschen, melde dich bitte unter ${ loginLink } an und lösche dort dein Konto."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
@@ -2910,7 +2922,7 @@
         "Ihr Passwort (Admin)"
       ],
       "ZIP code": [
-        "Postleitzahl"
+        "Postal code"
       ]
     },
     "label": {
@@ -3310,7 +3322,7 @@
         "Unbegrenzte Anzahl von Ordnern"
       ],
       "Unlimited folders, labels and filters": [
-        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
@@ -3827,6 +3839,9 @@
       "Verify now": [
         "Jetzt verifizieren"
       ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Verifizieren Sie jetzt ihre E-Mail-Adresse: ${ email.Value }"
+      ],
       "Verify recovery email?": [
         "Wiederherstellungs-E-Mail-Adresse verifizieren?"
       ],
@@ -4224,8 +4239,8 @@
       ]
     },
     "Subscription change warning": {
-      "Subscription managed elsewhere": [
-        "Manage your subscription on Google Play"
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Dein Abonnement wurde durch einen In-App-Kauf erworben. Um dein aktuelles Abonnement anzupassen, navigiere zum Abonnementbereich in deinem ${ subscriptionManager } Account"
       ]
     },
     "Subscription price": {
@@ -4251,7 +4266,7 @@
         "${ server.Domain } in die Zwischenablage kopiert"
       ],
       "Account deleted. Logging out...": [
-        "Konto gelöscht. Abmeldung wird ausgeführt…"
+        "Account deleted. Signing out..."
       ],
       "Bug reported": [
         "Fehler gemeldet"
@@ -4431,6 +4446,9 @@
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
+      ],
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Beenden des ${ MAIL_SHORT_APP_NAME } Abonnements"
       ],
       "Card verification": [
         "Kartenprüfung"
@@ -4676,7 +4694,7 @@
         "Insgesamt gezahlt"
       ],
       "TV log in": [
-        "TV-Anmeldung"
+        "TV sign in"
       ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
@@ -4733,7 +4751,7 @@
         "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
       ],
       "ZIP / postal code": [
-        "PLZ/Postleitzahl"
+        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4799,7 +4817,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Möchten Sie die Adresse wirklich löschen?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Möchtest du die Telefonnummer wirklich löschen?"

@@ -462,7 +462,7 @@
         "Učitavanje${ ellipsis }"
       ],
       "Log in": [
-        "Prijavite se"
+        "Sign in"
       ],
       "Mailbox density": [
         "Gustoća poštanskog sandučića"
@@ -1389,7 +1389,7 @@
         "Uloga"
       ],
       "Timezone": [
-        "Vremenska zona"
+        "Time zone"
       ],
       "Title": [
         "Naslov"
@@ -2276,7 +2276,7 @@
         "Adresa e-pošte je onemogućena"
       ],
       "Email address invalid": [
-        "Adresa e-pošte nije valjana"
+        "Invalid email address"
       ],
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
@@ -2509,7 +2509,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2535,7 +2535,7 @@
         "Komponenta s pogrešnim formatom"
       ],
       "Custom timezone": [
-        "Prilagođena vremenska zona"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
@@ -2595,7 +2595,7 @@
         "Početno vrijeme je van granica"
       ],
       "Timezone": [
-        "Vremenska zona"
+        "Time zone"
       ],
       "To-do entry": [
         "Stavka liste zadataka"
@@ -3352,8 +3352,8 @@
         "Ističe"
       ],
       "file attached": [
-        "privitak dodan",
-        "privitka dodana",
+        "attachment",
+        "attachments",
         "privitaka dodano"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
@@ -3703,7 +3703,7 @@
         "Ovaj razgovor sadrži poruke koje su u otpadu."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Ova poruka e-pošte nije prošla autentikaciju vlastite domene. Može biti lažna ili nepropisno proslijeđena!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Ova pozivnica je spremljena u onemogućeni kalendar."
@@ -4189,7 +4189,7 @@
         "Izbriši"
       ],
       "Do not ask again": [
-        "Ne pitaj ponovno"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Ne prikazuj ponovno"
@@ -5433,7 +5433,7 @@
         "Postavke tipkovnih prečaca su ažurirane"
       ],
       "Label cleared": [
-        "Oznaka očišćena"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Oznake su primijenjene."

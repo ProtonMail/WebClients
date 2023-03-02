@@ -332,7 +332,7 @@
         "Afbeelding laden"
       ],
       "Log in": [
-        "Aanmelden"
+        "Sign in"
       ],
       "Manage folders": [
         "Mappen beheren"
@@ -915,7 +915,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Tijdzone"
+        "Time zone"
       ],
       "Title": [
         "Titel"
@@ -1886,7 +1886,7 @@
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
       "Email address invalid": [
-        "E-mailadres is ongeldig"
+        "Invalid email address"
       ],
       "Email address is required": [
         "E-mailadres is vereist"
@@ -2113,7 +2113,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Er is een fout opgetreden bij het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2154,7 +2154,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Bestand heeft niet de juiste indeling."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2189,7 +2189,7 @@
         "Component met verkeerde indeling"
       ],
       "Custom timezone": [
-        "Aangepaste tijdzone"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Bewerkte afspraak niet ondersteund"
@@ -2261,7 +2261,7 @@
         "Tijdzone niet ondersteund"
       ],
       "Timezone": [
-        "Tijdzone"
+        "Time zone"
       ],
       "To-do entry": [
         "To-do item"
@@ -3260,10 +3260,10 @@
         "Link gekopieerd naar klembord"
       ],
       "Link failed to be loaded": [
-        "Link kon niet geladen worden"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Koppelingen konden niet worden geladen"
+        "Cannot load links"
       ],
       "Loading": [
         "Laden"
@@ -3475,7 +3475,7 @@
         "Deelbare koppeling voor ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "De gedeelde link kon niet worden geladen"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
@@ -3938,7 +3938,7 @@
         "Apparaatnaam"
       ],
       "Do not ask again": [
-        "Niet opnieuw vragen"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Toch downloaden"
@@ -4278,6 +4278,17 @@
         "Zijpaneel"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Om een nieuwe agenda toe te voegen moet u een bestaande verwijderen."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Om een nieuwe agenda toe te voegen moet u een andere agenda verwijderen of uw ${ BRAND_NAME }-abonnement upgraden naar een betaald ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "U heeft het maximale aantal agenda's beschikbaar voor uw abonnement bereikt."
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "browsercache legen"
@@ -4329,9 +4340,21 @@
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
+        "Alle berichten uit ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
       "Import all messages from ${ itemsToImportCount } label and label them as": [
         "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
         "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
       ]
     },
     "Message": {
@@ -4529,7 +4552,7 @@
         "Bestand of map heeft geen naam"
       ],
       "Link failed to be loaded": [
-        "Link kon niet geladen worden"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Verplaats ${ itemsToMoveCount } bestand",
@@ -4556,7 +4579,7 @@
         "Verplaats ${ movingCount } items"
       ],
       "Next page failed to be loaded": [
-        "Volgende pagina kon niet geladen worden"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
@@ -5112,7 +5135,7 @@
         "Bug gemeld"
       ],
       "Cancelling import": [
-        "Importeren annuleren"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
@@ -5491,7 +5514,7 @@
         "Gegevens van item"
       ],
       "Items details": [
-        "Details items"
+        "Item details"
       ],
       "Link confirmation": [
         "Link bevestigen"
@@ -5668,7 +5691,7 @@
         "De koppeling is verlopen"
       ],
       "The link failed to be loaded": [
-        "De link kon niet worden geladen"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Het bestand heeft een ontbrekende of ongeldige handtekening. Ga naar Menu (⋮) → Details voor info."

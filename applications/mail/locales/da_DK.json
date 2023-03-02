@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Alle ikke-stjernemarkerede"
       ],
-      "Allow messages": [
-        "Tillad beskeder"
-      ],
       "Apply": [
         "Anvend"
       ],
@@ -546,7 +543,7 @@
         "Indlæser${ ellipsis }"
       ],
       "Log in": [
-        "Log ind"
+        "Sign in"
       ],
       "Mailbox density": [
         "Postkasse-tæthed"
@@ -1901,7 +1898,7 @@
         "Rolle"
       ],
       "Timezone": [
-        "Tidszone"
+        "Time zone"
       ],
       "Title": [
         "Titel"
@@ -2818,9 +2815,6 @@
       "No labels": [
         "Ingen etiketter"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
@@ -3044,7 +3038,7 @@
         "E-mailadresse deaktiveret"
       ],
       "Email address invalid": [
-        "Ugyldig e-mailadresse"
+        "Invalid email address"
       ],
       "Email address is required": [
         "E-mailadresse er påkrævet."
@@ -3375,7 +3369,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3416,7 +3410,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Der opstod en fejl ved læsning af din fil ${ formattedFilename }. Filen har ikke det rigtige format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3451,7 +3445,7 @@
         "Komponent med forkert format"
       ],
       "Custom timezone": [
-        "Brugerdefineret tidszone"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Redigeret begivenhed understøttes ikke"
@@ -3523,7 +3517,7 @@
         "Tidszone understøttes ikke"
       ],
       "Timezone": [
-        "Tidszone"
+        "Time zone"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -4704,8 +4698,8 @@
         "Udløber snart"
       ],
       "file attached": [
-        "fil vedhæftet",
-        "filer vedhæftet"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
@@ -5084,7 +5078,7 @@
         "Gemmer kladde…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Planlagt afsendelse af denne besked aflyses."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Planlægger besked..."
@@ -5223,7 +5217,7 @@
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Denne samtale indeholder en planlagt besked. Afsendelsen af denne besked vil blive annulleret."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Denne samtale indeholder ikke-kasserede beskeder."
@@ -5236,7 +5230,7 @@
         "Disse samtaler vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Denne e-mail fejlede Reverse DNS Lookup. Den kan være falsk eller forkert videresendt!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Denne invitation er gemt i en deaktiveret kalender."
@@ -5970,7 +5964,7 @@
         "Slet gendannelsesrelaterede oplysninger."
       ],
       "Do not ask again": [
-        "Spørg ikke igen"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Vis ikke dette igen"
@@ -6655,7 +6649,7 @@
         "Planlagt afsendelse annulleret"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Planlægning annulleret. Besked er blevet flyttet til Kladder."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Afsendelse fortrudt"
@@ -6860,7 +6854,7 @@
         "Søg i beskedindhold"
       ],
       "Unlimited folders, labels and filters": [
-        "Ubegrænsede mapper, etiketter og filtre"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Op til 15 e-mailadresser"
@@ -7545,7 +7539,7 @@
         "Fejl anmeldt"
       ],
       "Cancelling import": [
-        "Annullerer import"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
@@ -7616,7 +7610,7 @@
         "Indstillinger for tastaturgenveje opdateret"
       ],
       "Label cleared": [
-        "Etiket ryddet"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Etiketter anvendt."

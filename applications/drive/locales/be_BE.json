@@ -336,7 +336,7 @@
         "Загрузіць відарыс"
       ],
       "Log in": [
-        "Увайсці"
+        "Sign in"
       ],
       "Manage folders": [
         "Кіраванне папкамі"
@@ -919,7 +919,7 @@
         "Роля"
       ],
       "Timezone": [
-        "Часавы пояс"
+        "Time zone"
       ],
       "Title": [
         "Пасада"
@@ -1892,7 +1892,7 @@
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
       "Email address invalid": [
-        "Памылковы адрас электроннай пошты"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
@@ -2125,7 +2125,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2168,7 +2168,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2203,7 +2203,7 @@
         "Кампанент з няправільным фарматам"
       ],
       "Custom timezone": [
-        "Карыстальніцкі часавы пояс"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Адрэдагаваная падзея не падтрымліваецца"
@@ -2275,7 +2275,7 @@
         "Часавы пояс не падтрымліваецца"
       ],
       "Timezone": [
-        "Часавы пояс"
+        "Time zone"
       ],
       "To-do entry": [
         "Запіс спіса задач"
@@ -3366,10 +3366,10 @@
         "Спасылка скапіявана ў буфер абмену"
       ],
       "Link failed to be loaded": [
-        "Не ўдалося загрузіць спасылку"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Не ўдалося загрузіць спасылкі"
+        "Cannot load links"
       ],
       "Loading": [
         "Загрузка"
@@ -3585,7 +3585,7 @@
         "Агульнадаступная спасылка для ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Не ўдалося загрузіць абагуленую спасылку"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
@@ -4049,7 +4049,7 @@
         "Назва прылады"
       ],
       "Do not ask again": [
-        "Больш не пытаць"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Усё роўна спампаваць"
@@ -4697,7 +4697,7 @@
         "Адсутнічае назва папкі або файла"
       ],
       "Link failed to be loaded": [
-        "Не ўдалося загрузіць спасылку"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Перамясціць ${ itemsToMoveCount } файл",
@@ -4736,7 +4736,7 @@
         "Перамясціць ${ movingCount } элементы"
       ],
       "Next page failed to be loaded": [
-        "Не ўдалося загрузіць наступную старонку"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недастаткова месца для запампоўвання ${ formattedTotal }"
@@ -5079,7 +5079,7 @@
         "Справаздача пра памылку адпраўлена"
       ],
       "Cancelling import": [
-        "Скасаванне імпартавання"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
@@ -5495,7 +5495,7 @@
         "Падрабязнасці элемента"
       ],
       "Items details": [
-        "Падрабязнасці элементаў"
+        "Item details"
       ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
@@ -5672,7 +5672,7 @@
         "Спасылка пратэрмінавана"
       ],
       "The link failed to be loaded": [
-        "Не ўдалося загрузіць спасылку"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Для гэтага файла адсутнічае подпіс або ён з'яўляецца памылковым. Перайдзіце ў Меню (⋮) → Падрабязнасці для атрымання інфармацыі."

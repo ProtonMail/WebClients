@@ -109,7 +109,7 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
     return (
         <>
             <SettingsParagraph>
-                {c('Info').t`The name will be visible to your users while they are logged in.`}
+                {c('Info').t`The name will be visible to your users while they are signed in.`}
             </SettingsParagraph>
             <Row>
                 <Label htmlFor="organization-name-edit-button">{c('Label').t`Organization name`}</Label>

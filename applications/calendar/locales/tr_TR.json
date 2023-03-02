@@ -283,7 +283,7 @@
         "Görsel yükle"
       ],
       "Log in": [
-        "Oturum aç"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Bu katılımcı isteğe bağlı olsun"
@@ -430,7 +430,7 @@
         "Tümünü seç"
       ],
       "Select timezone": [
-        "Saat dilimini seçin"
+        "Select time zone"
       ],
       "Send": [
         "Gönder"
@@ -1064,7 +1064,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Saat dilimi"
+        "Time zone"
       ],
       "Title": [
         "Başlık"
@@ -1988,7 +1988,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Bir daha sorma"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2159,7 +2159,7 @@
         "E-posta adresi devre dışı"
       ],
       "Email address invalid": [
-        "E-posta adresi geçersiz"
+        "Invalid email address"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -2419,7 +2419,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya doğru biçimde değil."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -2460,7 +2460,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya doğru biçimde değil."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -2495,7 +2495,7 @@
         "Bileşen biçimi yanlış"
       ],
       "Custom timezone": [
-        "Özel saat dilimi"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Etkinlikleri düzenleme desteklenmiyor"
@@ -2567,7 +2567,7 @@
         "Saat dilimi desteklenmiyor"
       ],
       "Timezone": [
-        "Saat dilimi"
+        "Time zone"
       ],
       "To-do entry": [
         "Yapılacak iş kaydı"
@@ -2953,11 +2953,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -3606,7 +3612,7 @@
         "Hafta"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "Which event would you like to delete?": [
         "Hangi etkinliği silmek istiyorsunuz?"
@@ -3910,7 +3916,7 @@
         "Açıklama"
       ],
       "Do not ask again": [
-        "Bir daha sorma"
+        "Don't ask again"
       ],
       "Email": [
         "E-posta"
@@ -4118,7 +4124,7 @@
         "Araç çubuğu"
       ],
       "Two-factor authentication code": [
-        "İki aşamalı doğrulama kodu"
+        "İki adımlı doğrulama kodu"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -5117,7 +5123,7 @@
         "İptal bilgilendirmesi gönderildi ve katılımcılar tüm etkinlliklerden çıkarıldı"
       ],
       "Cancelling import": [
-        "İçe aktarma iptal ediliyor"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -5301,7 +5307,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Saat dilimleri ara"
+        "Search time zones"
       ]
     },
     "Title": {
@@ -5635,7 +5641,7 @@
         "İçe aktarma işlemini başlatın"
       ],
       "Two-factor authentication": [
-        "İki aşamalı doğrulama"
+        "İki adımlı doğrulama"
       ],
       "Update event": [
         "Etkinliği güncelle"

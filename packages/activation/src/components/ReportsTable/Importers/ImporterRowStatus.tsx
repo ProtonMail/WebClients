@@ -44,7 +44,7 @@ const ImporterRowStatus = ({ processed, total, state, errorCode }: Props) => {
         case ApiImporterState.QUEUED:
             return <Badge type="primary">{c('Import status').t`Started`}</Badge>;
         case ApiImporterState.CANCELED:
-            return <Badge type="error">{c('Import status').t`Cancelling`}</Badge>;
+            return <Badge type="error">{c('Import status').t`Canceling`}</Badge>;
         case ApiImporterState.DELAYED:
             return (
                 <>

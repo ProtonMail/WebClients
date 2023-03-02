@@ -37,7 +37,7 @@ const pull = async ({
     }
 
     if (timer > DELAY_PULLING * 30) {
-        throw new Error(c('Error').t`Payment process cancelled`);
+        throw new Error(c('Error').t`Payment process canceled`);
     }
 
     const { Status } = await api({ ...getTokenStatus(Token), signal });

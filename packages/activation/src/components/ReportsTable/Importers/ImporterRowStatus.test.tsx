@@ -52,7 +52,7 @@ describe('ReportRowStatus', () => {
         easySwitchRender(
             <ImporterRowStatus processed={1} total={2} state={ApiImporterState.CANCELED} errorCode={undefined} />
         );
-        screen.getByText('Cancelling');
+        screen.getByText('Canceling');
     });
 
     it('Should display DELAYED status', () => {

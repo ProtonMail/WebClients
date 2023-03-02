@@ -330,7 +330,7 @@
         "画像を読み込む"
       ],
       "Log in": [
-        "ログイン"
+        "Sign in"
       ],
       "Manage folders": [
         "フォルダーを管理"
@@ -370,6 +370,9 @@
       ],
       "Move to trash": [
         "ごみ箱に移動"
+      ],
+      "New": [
+        "新規"
       ],
       "New upload": [
         "新規アップロード"
@@ -910,7 +913,7 @@
         "役割"
       ],
       "Timezone": [
-        "タイムゾーン"
+        "Time zone"
       ],
       "Title": [
         "肩書き"
@@ -1883,7 +1886,7 @@
         "ドメインが利用できません。再度お試しください。"
       ],
       "Email address invalid": [
-        "メールアドレスが不正です"
+        "Invalid email address"
       ],
       "Email address is required": [
         "メールアドレスは必須です"
@@ -2101,7 +2104,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "ファイル　${ formattedFilename }の読み取り中にエラーが発生しました。ファイルのフォーマットが正しくありません。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
@@ -2141,7 +2144,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
@@ -2176,7 +2179,7 @@
         "無効なコンポーネント形式です"
       ],
       "Custom timezone": [
-        "独自のタイムゾーン"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -2248,7 +2251,7 @@
         "タイムゾーンはサポートされていません"
       ],
       "Timezone": [
-        "タイムゾーン"
+        "Time zone"
       ],
       "To-do entry": [
         "To-do のエントリー"
@@ -2834,6 +2837,9 @@
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
       ],
+      "Also try looking in Trash.": [
+        "ごみ箱もご確認ください。"
+      ],
       "An active recovery file": [
         "復元ファイル"
       ],
@@ -3147,7 +3153,7 @@
         "最近、${ uploadName } のアップロードを試みたようです。アップロードが失敗した場合、${ replaceFile } してください。アップロードが進行中の場合、置き換えると進行中のアップロードがキャンセルされます。"
       ],
       "Items in the trash will stay here until you delete them permanently": [
-        "完全に削除しない限り、アイテムはごみ箱に残ります。"
+        "完全に削除しない限り、アイテムはごみ箱に残ります"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "ドラッグアンドドロップまたはファイルを選択することでアップロードできます。"
@@ -3177,10 +3183,10 @@
         "リンクがクリップボードにコピーされました"
       ],
       "Link failed to be loaded": [
-        "リンクの読み込みに失敗しました"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "リンクの読み込みに失敗しました"
+        "Cannot load links"
       ],
       "Loading": [
         "読み込み中"
@@ -3390,7 +3396,7 @@
         "${ boldNameText }の共有リンク"
       ],
       "Shared link failed to be loaded": [
-        "共有リンクの読み込みに失敗しました"
+        "Cannot load shared link"
       ],
       "Signature check will be ignored": [
         "署名確認は無視されます。"
@@ -3511,6 +3517,9 @@
       ],
       "Trash": [
         "ごみ箱"
+      ],
+      "Try searching by file name, date, or type.": [
+        "ファイル名、日付、種類で検索してみてください。"
       ],
       "Unknown error": [
         "不明なエラー"
@@ -3836,7 +3845,7 @@
         "デバイス名"
       ],
       "Do not ask again": [
-        "今後表示しない"
+        "Don't ask again"
       ],
       "Download anyway": [
         "無視してダウンロード"
@@ -4393,7 +4402,7 @@
         "ファイルまたはフォルダーに名前がありません"
       ],
       "Link failed to be loaded": [
-        "リンクの読み込みに失敗しました"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } files": [
         "${ itemsToMoveCount } 件のファイルを移動"
@@ -4414,7 +4423,7 @@
         "${ movingCount } 件のアイテムの移動"
       ],
       "Next page failed to be loaded": [
-        "次のページの読み込みに失敗しました"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }をアップロードする容量がありません"
@@ -5101,7 +5110,7 @@
         "アイテムの詳細"
       ],
       "Items details": [
-        "アイテムの詳細"
+        "Item details"
       ],
       "Link confirmation": [
         "リンクの確認"
@@ -5158,7 +5167,7 @@
         "設定メニューを開く"
       ],
       "Original size": [
-        "オリジナルサイズ"
+        "元のサイズ"
       ],
       "Other information": [
         "その他の情報"
@@ -5278,7 +5287,7 @@
         "リンクは期限切れです"
       ],
       "The link failed to be loaded": [
-        "リンクの読み込みに失敗しました"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "このファイルには、署名が存在しないか無効です。メニュー (⋮) → 詳細で、情報を確認できます。"

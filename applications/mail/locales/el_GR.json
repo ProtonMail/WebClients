@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Όλα μη επισημασμένα"
       ],
-      "Allow messages": [
-        "Επιτρέψτε τα μηνύματα"
-      ],
       "Apply": [
         "Εφαρμογή"
       ],
@@ -546,7 +543,7 @@
         "Γίνεται φόρτωση${ ellipsis }"
       ],
       "Log in": [
-        "Είσοδος"
+        "Sign in"
       ],
       "Mailbox density": [
         "Πυκνότητα θυρίδας"
@@ -1767,7 +1764,7 @@
         "Ρόλος"
       ],
       "Timezone": [
-        "Ζώνη ώρας"
+        "Time zone"
       ],
       "Title": [
         "Τίτλος"
@@ -2893,7 +2890,7 @@
         "Η διεύθυνση email έχει απενεργοποιηθεί"
       ],
       "Email address invalid": [
-        "Η διεύθυνση E-mail δεν είναι έγκυρη"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
@@ -3200,7 +3197,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3241,7 +3238,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Το αρχείο δεν έχει τη σωστή μορφή."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3276,7 +3273,7 @@
         "Συνθετικό λανθασμένης μορφής"
       ],
       "Custom timezone": [
-        "Προσαρμοσμένη ζώνη ώρας"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
@@ -3348,7 +3345,7 @@
         "Μη υποστηριζόμενη ζώνη ώρας"
       ],
       "Timezone": [
-        "Ζώνη ώρας"
+        "Time zone"
       ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
@@ -4355,6 +4352,9 @@
       "Email address": [
         "Διεύθυνση E-mail"
       ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "Το email προωθείται στο γραμματοκιβώτιό σας: η διεύθυνση email σας παραμένει κρυφή."
+      ],
       "Email tracker protection is disabled": [
         "Η προστασία από ιχνηλάτες είναι απενεργοποιημένη"
       ],
@@ -4428,8 +4428,8 @@
         "Λήγει σύντομα"
       ],
       "file attached": [
-        "συνημμένο αρχείο",
-        "συνημμένα αρχεία"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα, μια συνθήκη και μια ενέργεια."
@@ -4486,6 +4486,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δεν βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Εάν η εναλλακτική διεύθυνση του email σας πωληθεί, διαρρεύσει ή καταχραστεί, απλώς απενεργοποιήστε το για να σταματήσετε να λαμβάνετε ανεπιθύμητα μηνύματα."
       ],
       "Image description": [
         "Περιγραφή εικόνας"
@@ -4744,6 +4747,9 @@
       "Preview": [
         "Προεπισκόπηση"
       ],
+      "Preview failed to be loaded": [
+        "Η φόρτωση της προεπισκόπησης απέτυχε"
+      ],
       "Primary": [
         "Κύριο"
       ],
@@ -4802,7 +4808,7 @@
         "Αποθήκευση προχείρου…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Η προγραμματισμένη αποστολή αυτού του μηνύματος θα ακυρωθεί."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Γίνεται προγραμματισμός μηνύματος..."
@@ -4938,7 +4944,7 @@
         "Αυτός ο περιηγητής δεν υποστηρίζει προεπισκόπηση αρχείων PDF. Παρακαλούμε κατεβάστε το αρχείο."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Αυτή η συνομιλία περιέχει ένα προγραμματισμένο μήνυμα. Η αποστολή του θα ακυρωθεί."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Αυτή η συνομιλία περιέχει μη διαγραμμένα μηνύματα."
@@ -4951,7 +4957,7 @@
         "Αυτές οι συνομιλίες θα επισημανθούν ως ανεπιθύμητες. Θα θέλατε επίσης να κάνετε απεγγραφή από μελλοντικά μηνύματα;"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Αυτό το μήνυμα απέτυχε στις απαιτήσεις ταυτοποίησης του τομέα του. Ίσως έχει πλαστογραφηθεί ή προωθηθεί ακατάλληλα!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Αυτή η πρόσκληση είναι αποθηκευμένη σε ένα απενεργοποιημένο ημερολόγιο."
@@ -5101,11 +5107,17 @@
       "URL link": [
         "Σύνδεσμος URL"
       ],
+      "URL: ${ unsubscribeMethods.HttpClient }": [
+        "URL: ${ unsubscribeMethods.HttpClient }"
+      ],
       "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
         "Χρησιμοποιήστε το ${ CALENDAR_APP_NAME } για να διατηρήσετε την ατζέντα σας ιδιωτική."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Χρησιμοποιήστε συντομεύσεις πληκτρολογίου για να διαχειριστείτε το ηλεκτρονικό ταχυδρομείο σας γρηγορότερα."
+      ],
+      "Using SimpleLogin is easy": [
+        "Η χρήση του SimpleLogin είναι εύκολη"
       ],
       "Version ${ appVersion }": [
         "'Εκδοση ${ appVersion }"
@@ -5124,6 +5136,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
+      "Web URL": [
+        "Διεύθυνση URL"
       ],
       "Week": [
         "Εβδομάδα"
@@ -5543,6 +5558,9 @@
       " and ${ l }": [
         " και ${ l }"
       ],
+      "${ BRAND_NAME } username": [
+        "όνομα χρήστη ${ BRAND_NAME }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
@@ -5630,6 +5648,9 @@
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
+      "Colors": [
+        "Χρώματα"
+      ],
       "Conditions": [
         "Προϋποθέσεις"
       ],
@@ -5652,10 +5673,13 @@
         "Διαγραφή"
       ],
       "Do not ask again": [
-        "Να μην ερωτηθώ ξανά"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
+      ],
+      "Email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -5779,6 +5803,9 @@
       ],
       "Main": [
         "Κύριο"
+      ],
+      "Manage categories": [
+        "Διαχείριση κατηγοριών"
       ],
       "Manage my addresses": [
         "Διαχείριση διευθύνσεων"
@@ -6291,7 +6318,7 @@
     },
     "Message notification": {
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Ο προγραμματισμός ακυρώθηκε. Το μήνυμα έχει μεταφερθεί στα Πρόχειρα."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Η αποστολή αναιρέθηκε"
@@ -6493,7 +6520,7 @@
         "Αναζήτηση εντός περιεχομένου μηνυμάτων"
       ],
       "Unlimited folders, labels and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Έως 15 ηλ. διευθύνσεις"
@@ -6515,6 +6542,9 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } δημιουργήθηκε"
+      ],
+      "Block removed": [
+        "Η φραγή αφαιρέθηκε"
       ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
@@ -7111,7 +7141,7 @@
         "Το σφάλμα αναφέρθηκε"
       ],
       "Cancelling import": [
-        "Γίνεται ακύρωση εισαγωγής"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
@@ -7170,7 +7200,7 @@
         "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
       ],
       "Label cleared": [
-        "Η ετικέτα εκκαθαρίστηκε"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Οι ετικέτες εφαρμόστηκαν."
@@ -7390,6 +7420,9 @@
       "Archive": [
         "Αρχειοθετημένα"
       ],
+      "Are you sure you want to close the preview?": [
+        "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
+      ],
       "Are you sure you want to close?": [
         "Θέλετε σίγουρα να κλείσετε;"
       ],
@@ -7524,6 +7557,9 @@
       "Edit contact group": [
         "Επεξεργασία ομάδας επαφών"
       ],
+      "Edit email settings": [
+        "Επεξεργασία ρυθμίσεων email"
+      ],
       "Edit filter": [
         "Επεξεργασία φίλτρου"
       ],
@@ -7566,11 +7602,17 @@
       "Filter on...": [
         "Φιλτράρισμα σε..."
       ],
+      "Folder options": [
+        "Επιλογές φακέλων"
+      ],
       "Forward": [
         "Προώθηση"
       ],
       "Groups": [
         "Ομάδες"
+      ],
+      "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
+        "Απόκρυψη του email σας με το SimpleLogin από ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
@@ -7599,6 +7641,9 @@
       ],
       "Label as": [
         "Απόδοση ετικετών"
+      ],
+      "Label options": [
+        "Επιλογές ετικέτας"
       ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
@@ -7636,8 +7681,14 @@
       "Message list": [
         "Λίστα μηνυμάτων"
       ],
+      "Message will expire": [
+        "Το μήνυμα θα λήξει"
+      ],
       "More": [
         "Περισσότερα"
+      ],
+      "More actions": [
+        "Περισσότερες ενέργειες"
       ],
       "More options": [
         "Περισσότερες επιλογές"
@@ -7852,6 +7903,9 @@
       ],
       "What's new": [
         "Τι νέο υπάρχει"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {

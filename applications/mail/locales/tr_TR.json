@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Tüm yıldızsızlar"
       ],
-      "Allow messages": [
-        "İletilere izin ver"
-      ],
       "Apply": [
         "Uygula"
       ],
@@ -549,7 +546,7 @@
         "Yükleniyor${ ellipsis }"
       ],
       "Log in": [
-        "Oturum aç"
+        "Sign in"
       ],
       "Mailbox density": [
         "Posta kutusu yoğunluğu"
@@ -1904,7 +1901,7 @@
         "Rol"
       ],
       "Timezone": [
-        "Saat dilimi"
+        "Time zone"
       ],
       "Title": [
         "Başlık"
@@ -2821,9 +2818,6 @@
       "No labels": [
         "Henüz bir etiket yok"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo and a plus sign"
-      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
@@ -3047,7 +3041,7 @@
         "E-posta adresi devre dışı"
       ],
       "Email address invalid": [
-        "E-posta adresi geçersiz"
+        "Invalid email address"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -3378,7 +3372,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya doğru biçimde değil."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -3419,7 +3413,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya doğru biçimde değil."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -3454,7 +3448,7 @@
         "Bileşen biçimi yanlış"
       ],
       "Custom timezone": [
-        "Özel saat dilimi"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Etkinlikleri düzenleme desteklenmiyor"
@@ -3526,7 +3520,7 @@
         "Saat dilimi desteklenmiyor"
       ],
       "Timezone": [
-        "Saat dilimi"
+        "Time zone"
       ],
       "To-do entry": [
         "Yapılacak iş kaydı"
@@ -4090,11 +4084,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -4701,8 +4701,8 @@
         "Yakında geçersiz olacak"
       ],
       "file attached": [
-        "dosya eklendi",
-        "dosya eklendi"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve bir koşul ve işlem bulunmalıdır."
@@ -5081,7 +5081,7 @@
         "Taslak kaydediliyor…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Bu iletinin zamanlanmış gönderimi iptal edildi."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "İleti zamanlanıyor..."
@@ -5220,7 +5220,7 @@
         "Bu web tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Bu yazışmada zamanlanmış bir ileti var. Bu iletinin gönderimi iptal edilecek."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Bu yazışmada çöpe atılmamış iletiler var."
@@ -5233,7 +5233,7 @@
         "Bu yazışmalar istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Bu e-posta, etki alanının doğrulama gereksinimlerini karşılayamadı. E-posta, sahte ya da hatalı iletilmiş olabilir!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Bu davet, devre dışı bırakılmış bir takvime kaydedilmiş."
@@ -5429,7 +5429,7 @@
         "${ senderName } için güvenilen anahtarları etkinleştirdiğinizde, kişi bilgilerine herkese açık anahtarlar eklenir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki aşamalı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -5967,7 +5967,7 @@
         "Kurtarma ile ilgili bilgileri sil."
       ],
       "Do not ask again": [
-        "Bir daha sorma"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Bunu bir daha gösterme"
@@ -6267,7 +6267,7 @@
         "Araç çubuğu"
       ],
       "Two-factor authentication code": [
-        "İki aşamalı doğrulama kodu"
+        "İki adımlı doğrulama kodu"
       ],
       "Undisclosed Recipients": [
         "Gizli alıcılar"
@@ -6652,7 +6652,7 @@
         "Zamanlanmış gönderim geri alındı"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Zamanlama iptal edildi. İleti taslaklar kutusuna taşındı."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Gönderim geri alındı"
@@ -6857,7 +6857,7 @@
         "İleti içeriğinde arama"
       ],
       "Unlimited folders, labels and filters": [
-        "Sınırsız klasör, etiket ve süzgeç"
+        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "15 e-posta adresine kadar"
@@ -7542,7 +7542,7 @@
         "Hata bildirildi"
       ],
       "Cancelling import": [
-        "İçe aktarma iptal ediliyor"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -7613,7 +7613,7 @@
         "Klavye kısayol ayarları güncellendi"
       ],
       "Label cleared": [
-        "Etiket temizlendi"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Etiketler uygulandı."
@@ -8306,7 +8306,7 @@
         "Herkese açık anahtara güvenilsin mi?"
       ],
       "Two-factor authentication": [
-        "İki aşamalı doğrulama"
+        "İki adımlı doğrulama"
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"

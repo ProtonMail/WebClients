@@ -57,7 +57,7 @@ export default function usePublicAuth(token: string, urlPassword: string) {
             return;
         }
 
-        setError(c('Title').t`The link failed to be loaded`);
+        setError(c('Title').t`Cannot load link`);
         sendErrorReport(error);
     };
 

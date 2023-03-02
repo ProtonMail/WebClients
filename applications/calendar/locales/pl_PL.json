@@ -287,7 +287,7 @@
         "Załaduj obraz"
       ],
       "Log in": [
-        "Zaloguj się"
+        "Sign in"
       ],
       "Make this participant optional": [
         "Uczestnik opcjonalny"
@@ -434,7 +434,7 @@
         "Zaznacz wszystkie"
       ],
       "Select timezone": [
-        "Wybierz strefę czasową"
+        "Select time zone"
       ],
       "Send": [
         "Wyślij"
@@ -1074,7 +1074,7 @@
         "Stanowisko"
       ],
       "Timezone": [
-        "Strefa czasowa"
+        "Time zone"
       ],
       "Title": [
         "Tytuł"
@@ -2010,7 +2010,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "Nie pytaj ponownie"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2189,7 +2189,7 @@
         "Adres e-mail został wyłączony"
       ],
       "Email address invalid": [
-        "Adres e-mail jest nieprawidłowy"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Adres e-mail jest wymagany"
@@ -2457,7 +2457,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Plik nie posiada odpowiedniego formatu."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2500,7 +2500,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Plik nie posiada odpowiedniego formatu."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2535,7 +2535,7 @@
         "Komponent posiada niewłaściwy format"
       ],
       "Custom timezone": [
-        "Strefa czasowa jest niestandardowa"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Edytowane wydarzenie nie jest obsługiwane"
@@ -2607,7 +2607,7 @@
         "Strefa czasowa nie jest obsługiwana"
       ],
       "Timezone": [
-        "Strefa czasowa"
+        "Time zone"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -4032,7 +4032,7 @@
         "Opis"
       ],
       "Do not ask again": [
-        "Nie pytaj ponownie"
+        "Don't ask again"
       ],
       "Email": [
         "E-mail"
@@ -5567,7 +5567,7 @@
         "Powiadomienie o anulowaniu wydarzeń zostało wysłane. Uczestnicy zostali usunięci ze wszystkich wydarzeń"
       ],
       "Cancelling import": [
-        "Anulowanie procesu importowania"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
@@ -5767,7 +5767,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Szukaj stref czasowych"
+        "Search time zones"
       ]
     },
     "Title": {

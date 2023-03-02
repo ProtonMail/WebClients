@@ -29,6 +29,6 @@ export const cancelImporter = createAsyncThunk<void, { activeImporterID: ActiveI
         );
         await thunkApi.extra.eventManager.call();
 
-        thunkApi.extra.notificationManager.createNotification({ text: c('Success').t`Cancelling import` });
+        thunkApi.extra.notificationManager.createNotification({ text: c('Success').t`Canceling import` });
     }
 );

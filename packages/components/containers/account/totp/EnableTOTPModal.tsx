@@ -217,7 +217,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             return {
                 section: (
                     <>
-                        <div className="mb1">{c('Info').t`Enter code from your authenticator app`}</div>
+                        <div className="mb1">{c('Info').t`Enter the code from your authenticator app`}</div>
                         <InputFieldTwo
                             as={TotpInput}
                             autoFocus
@@ -258,7 +258,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                             <br />
                             <br />
                             {c('Info')
-                                .t`If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.`}
+                                .t`If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.`}
                         </div>
                         <div className="flex text-center">
                             {recoveryCodes.map((code) => {
