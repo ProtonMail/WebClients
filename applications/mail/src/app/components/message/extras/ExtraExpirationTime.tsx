@@ -1,79 +1,87 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
-import { AlertModal, Href, Icon, Tooltip, classnames, useModalState } from '@proton/components';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Button } from '@proton/atoms';
+import {
+    FeatureCode,
+    Icon,
+    Tooltip,
+    useApi,
+    useEventManager,
+    useFeature,
+    useNotifications,
+    useUser,
+} from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
+import { canSetExpiration } from '../../../helpers/expiration';
 import { useExpiration } from '../../../hooks/useExpiration';
+import { expireMessages } from '../../../logic/messages/expire/messagesExpireActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { useAppDispatch } from '../../../logic/store';
 
 interface Props {
     message: MessageState;
-    displayAsButton?: boolean;
-    marginBottom?: boolean;
-    onEditExpiration?: () => void;
 }
 
-const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = true, onEditExpiration }: Props) => {
-    const [expirationModalProps, setExpirationModalOpen] = useModalState();
-    const { onClose } = expirationModalProps;
-
-    const { isExpiration, delayMessage, buttonMessage, expireOnMessage, lessThanTwoHours } = useExpiration(message);
-    const isExpiringDraft = !!message.draftFlags?.expiresIn;
+const ExtraExpirationTime = ({ message }: Props) => {
+    const [user] = useUser();
+    const dispatch = useAppDispatch();
+    const { createNotification } = useNotifications();
+    const api = useApi();
+    const { call } = useEventManager();
+    const { isExpiration, delayMessage } = useExpiration(message);
+    const { feature } = useFeature(FeatureCode.SetExpiration);
+    const canExpire = canSetExpiration(feature?.Value, user, message.data?.LabelIDs);
+    const messageID = message.data?.ID || '';
+    const conversationID = message.data?.ConversationID;
 
     if (!isExpiration) {
         return null;
     }
 
-    if (displayAsButton) {
-        return (
-            <>
-                <Tooltip title={delayMessage}>
-                    <ButtonLike
-                        as="span"
-                        color={lessThanTwoHours ? 'danger' : undefined}
-                        data-testid="expiration-banner"
-                        className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
-                        onClick={() => setExpirationModalOpen(true)}
-                    >
-                        <Icon name="hourglass" className="flex-item-noshrink ml0-2" />
-                        <span className="ml0-5">{buttonMessage}</span>
-                    </ButtonLike>
-                </Tooltip>
-                <AlertModal
-                    title={c('Title').t`Message will expire`}
-                    buttons={<Button type="submit" onClick={onClose}>{c('Action').t`Got it`}</Button>}
-                    {...expirationModalProps}
-                >
-                    <div className="mr0-5">{expireOnMessage}</div>
-                    <Href href={getKnowledgeBaseUrl('/expiration')}>{c('Link').t`Learn more`}</Href>
-                </AlertModal>
-            </>
+    const handleClick = () => {
+        if (user.isFree) {
+            return;
+        }
+        void dispatch(
+            expireMessages({
+                IDs: [messageID],
+                conversationID,
+                expirationTime: null,
+                api,
+                call,
+            })
         );
-    }
+        createNotification({ text: c('Success').t`Self-destruction cancelled` });
+    };
 
     return (
-        <div
-            className={classnames([
-                'rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 flex flex-align-items-center flex-gap-0-5',
-                isExpiringDraft ? 'bg-info border-info' : 'bg-warning border-warning',
-                marginBottom && 'mb0-5',
-            ])}
-            data-testid="expiration-banner"
-        >
-            <Icon name="hourglass" className="flex-item-noshrink myauto" />
-            <span className="flex-item-fluid">{expireOnMessage}</span>
-            <span className="on-mobile-w100 flex-item-noshrink flex-align-items-start flex">
-                <Button
-                    size="small"
-                    shape="outline"
-                    color={isExpiringDraft ? 'info' : 'warning'}
-                    fullWidth
-                    className="rounded-sm"
-                    onClick={onEditExpiration}
-                    data-testid="message:expiration-banner-edit-button"
-                >{c('Action').t`Edit`}</Button>
-            </span>
+        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column">
+            <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5" data-testid="expiration-banner">
+                <Icon name="hourglass" className="mt0-4 flex-item-noshrink ml0-2" />
+                <span
+                    className={clsx(!canExpire && 'mt0-25', 'pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center')}
+                >
+                    {delayMessage}
+                </span>
+            </div>
+            {canExpire ? (
+                <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
+                    <Tooltip title={c('Cancel self-destruction of the message').t`Cancel self-destruction`}>
+                        <Button
+                            onClick={handleClick}
+                            size="small"
+                            color="weak"
+                            shape="outline"
+                            fullWidth
+                            className="rounded-sm"
+                            data-testid="unsubscribe-banner"
+                        >
+                            {c('Cancel self-destruction of the message').t`Cancel`}
+                        </Button>
+                    </Tooltip>
+                </span>
+            ) : null}
         </div>
     );
 };

@@ -6,8 +6,8 @@ import { InputTwo, Label, classnames, generateUID } from '@proton/components';
 
 import { MessageSendInfo } from '../../hooks/useSendInfo';
 import { MessageState } from '../../logic/messages/messagesTypes';
-import ExtraExpirationTime from '../message/extras/ExtraExpirationTime';
 import { MessageChange } from './Composer';
+import ComposerExpirationTime from './ComposerExpirationTime';
 import ComposerAddresses from './addresses/Addresses';
 import SelectSender from './addresses/SelectSender';
 
@@ -82,7 +82,7 @@ const ComposerMeta = ({
                     className="composer-light-field composer-meta-input-subject"
                 />
             </div>
-            <ExtraExpirationTime marginBottom message={message} onEditExpiration={onEditExpiration} />
+            <ComposerExpirationTime message={message} onEditExpiration={onEditExpiration} />
         </div>
     );
 };

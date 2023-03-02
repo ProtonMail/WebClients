@@ -4,6 +4,8 @@ import { globalReset } from '../actions';
 import { load as loadElements } from '../elements/elementsActions';
 import * as draftAction from './draft/messagesDraftActions';
 import * as draftReducer from './draft/messagesDraftReducers';
+import * as expireAction from './expire/messagesExpireActions';
+import * as expireReducer from './expire/messagesExpireReducers';
 import { updateFromElements } from './helpers/messagesReducer';
 import * as msgImageAction from './images/messagesImagesActions';
 import * as msgImageReducer from './images/messagesImagesReducers';
@@ -65,6 +67,10 @@ const messagesSlice = createSlice({
         builder.addCase(draftAction.endSending, draftReducer.endSending);
         builder.addCase(draftAction.deleteDraft, draftReducer.deleteDraft);
         builder.addCase(draftAction.cancelSendMessage.fulfilled, draftReducer.cancelSendSuccess);
+
+        builder.addCase(expireAction.expireMessages.pending, expireReducer.expirePending);
+        builder.addCase(expireAction.expireMessages.fulfilled, expireReducer.expireFullfilled);
+        builder.addCase(expireAction.expireMessages.rejected, expireReducer.expireRejected);
 
         builder.addCase(scheduledAction.updateScheduled, scheduledReducer.updateScheduled);
         builder.addCase(scheduledAction.cancelScheduled, scheduledReducer.cancelScheduled);

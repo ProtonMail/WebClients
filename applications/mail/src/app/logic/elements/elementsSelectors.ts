@@ -82,6 +82,13 @@ export const elementsAreUnread = createSelector([params, elements], (params, ele
     }, {});
 });
 
+export const expiringElements = createSelector([params, elements], (params, elements) => {
+    return elements.reduce<{ [elementID: string]: boolean }>((acc, element) => {
+        acc[element.ID] = !!element.ExpirationTime && element.ExpirationTime > 0;
+        return acc;
+    }, {});
+});
+
 /**
  * Define when we need to request the API to get more elements
  * Dynamic computations (dynamicTotal and dynamicPageLength) have been proved not to be reliable enough

@@ -15,6 +15,7 @@ interface Props {
     onMarkAs: (status: MARK_AS_STATUS) => void;
     onMove: (labelID: string) => void;
     onDelete: () => void;
+    conversationMode: boolean;
 }
 
 export const useItemContextMenu = ({
@@ -26,6 +27,7 @@ export const useItemContextMenu = ({
     onMarkAs,
     onMove,
     onDelete,
+    conversationMode,
 }: Props) => {
     const [selectedElement, setSelectedElement] = useState<Element>();
     const [isContextMenuOpen, setIsOpen] = useState(false);
@@ -71,6 +73,7 @@ export const useItemContextMenu = ({
             onDelete={onDelete}
             canShowBlockSender={canShowBlockSender}
             onBlockSender={handleClickBlockSender}
+            conversationMode={conversationMode}
         />
     );
 

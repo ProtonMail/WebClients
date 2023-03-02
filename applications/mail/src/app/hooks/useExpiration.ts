@@ -106,23 +106,23 @@ const getExpireOnTime = (expirationDate: number, dateString: string, formattedTi
     if (isToday(expirationDate)) {
         /*
          * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-         * Full sentence for reference: "This message will expire today at 12:30 PM"
+         * Full sentence for reference: "This message will self-destruct today at 12:30 PM"
          */
-        return c('Info').t`This message will expire today at ${formattedTime}`;
+        return c('Info').t`This message will self-destruct today at ${formattedTime}`;
     } else if (isTomorrow(expirationDate)) {
         /*
          * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-         * Full sentence for reference: "This message will expire tomorrow at 12:30 PM"
+         * Full sentence for reference: "This message will self-destruct tomorrow at 12:30 PM"
          */
-        return c('Info').t`This message will expire tomorrow at ${formattedTime}`;
+        return c('Info').t`This message will self-destruct tomorrow at ${formattedTime}`;
     } else {
         /*
          * translator: The variables here are the following.
          * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
          * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-         * Full sentence for reference: "This message will expire on Tuesday, May 11 at 12:30 PM"
+         * Full sentence for reference: "This message will self-destruct on Tuesday, May 11 at 12:30 PM"
          */
-        return c('Info').t`This message will expire on ${dateString} at ${formattedTime}`;
+        return c('Info').t`This message will self-destruct on ${dateString} at ${formattedTime}`;
     }
 };
 
@@ -158,7 +158,7 @@ export const useExpiration = (message: MessageState) => {
         setLessThanTwoHours(willExpireSoon);
 
         const { formattedDelay, formattedDelayShort } = formatDelay(nowDate, expirationDate, willExpireSoon);
-        setDelayMessage(c('Info').t`Expires in ${formattedDelay}`);
+        setDelayMessage(c('Info').t`This message will self-destruct in ${formattedDelay}`);
 
         if (willExpireSoon) {
             setButtonMessage(c('Info').t`Expires in less than ${formattedDelayShort}`);
