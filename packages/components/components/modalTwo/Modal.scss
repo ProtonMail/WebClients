@@ -35,6 +35,12 @@
 			align-items: stretch;
 			background: none;
 		}
+
+		@include media('print') {
+			position: absolute;
+			inset-block-end: unset;
+			padding: em(10);
+		}
 	}
 
 	&--fullscreen-on-mobile &-dialog {
