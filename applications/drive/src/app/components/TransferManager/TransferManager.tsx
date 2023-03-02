@@ -11,6 +11,7 @@ import {
     useToggle,
     useWindowSize,
 } from '@proton/components';
+import { useDrawerWidth } from '@proton/components/hooks/useDrawerWidth';
 import busy from '@proton/shared/lib/busy';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
@@ -261,8 +262,14 @@ const TransferManager = ({
         </>
     );
 
+    const drawerWidth = useDrawerWidth();
+
     return (
-        <div id="transfer-manager" className={clsx(['transfers-manager', minimized && 'transfers-manager--minimized'])}>
+        <div
+            id="transfer-manager"
+            className={clsx(['transfers-manager', minimized && 'transfers-manager--minimized'])}
+            style={{ 'margin-right': `${drawerWidth}px` }}
+        >
             <div ref={headerRef}>
                 <Header
                     downloads={downloads}
