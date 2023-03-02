@@ -51,14 +51,14 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
                 onValue?.(e.target.value);
                 rest.onChange?.(e);
             }}
-            className={clsx('field-two-input w100', inputClassName)}
+            className={clsx('input-element w100', inputClassName)}
         />
     );
 
     return (
         <div
             className={clsx(
-                'field-two-input-wrapper flex flex-nowrap flex-align-items-stretch flex-item-fluid relative',
+                'input flex flex-nowrap flex-align-items-stretch flex-item-fluid relative',
                 Boolean(error) && 'error',
                 disabled && 'disabled',
                 unstyled && 'unstyled',
@@ -70,7 +70,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
         >
             {prefix && (
                 <div
-                    className="field-two-input-adornment ml0-5 flex flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5"
+                    className="input-adornment ml0-5 flex flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5"
                     data-testid="input-prefix"
                 >
                     {prefix}
@@ -80,7 +80,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
             <div className="flex flex-item-fluid">{inputElement}</div>
 
             {suffix && (
-                <div className="field-two-input-adornment mr0-5 flex flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
+                <div className="input-adornment mr0-5 flex flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
                     {suffix}
                 </div>
             )}
