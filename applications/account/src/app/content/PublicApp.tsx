@@ -20,6 +20,7 @@ import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getIsVPNApp, getToApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -40,14 +41,14 @@ import {
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import HandleLogout from '../containers/HandleLogout';
 import LoginContainer from '../login/LoginContainer';
-import { AuthExtensionState } from '../public/AuthExtension';
-import AuthExtension from '../public/AuthExtension';
+import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
@@ -306,6 +307,13 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
         setForkState(newForkState);
         setActiveSessions(sessions);
+
+        if (newForkState.type === SSOType.Proton && newForkState.payload.type === FORK_TYPE.SIGNUP) {
+            history.replace(
+                `${SSO_PATHS.SIGNUP}${stringifySearchParams({ plan: newForkState.payload.plan || undefined }, '?')}`
+            );
+            return;
+        }
 
         history.replace(sessions.length >= 1 ? SSO_PATHS.SWITCH : '/login');
     };
