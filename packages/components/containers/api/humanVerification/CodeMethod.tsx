@@ -2,13 +2,14 @@ import { MutableRefObject, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Card } from '@proton/atoms';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
-import { LearnMore } from '../../../components';
+import { Icon, LearnMore } from '../../../components';
 import useLoading from '../../../hooks/useLoading';
 import useNotifications from '../../../hooks/useNotifications';
 import EmailMethodForm from './EmailMethodForm';
@@ -146,6 +147,14 @@ const CodeMethod = ({
                         <span>{c('Info').t`Your phone number will only be used for this one-time verification.`} </span>
                         <LearnMore url={getKnowledgeBaseUrl('/human-verification')} />
                     </Text>
+                    <Card bordered={false} rounded={true} className="mb1-75 flex flex-gap-0-5">
+                        <div className="flex-item-noshrink">
+                            <Icon name="info-circle" className="color-primary" />
+                        </div>
+                        <div className="flex-item-fluid">
+                            {c('Info').t`A phone number can only be used to verify one ${BRAND_NAME} account`}
+                        </div>
+                    </Card>
                     <PhoneMethodForm
                         isEmbedded={isEmbedded}
                         defaultCountry={defaultCountry}
