@@ -336,7 +336,7 @@
         "Načíst obrázek"
       ],
       "Log in": [
-        "Přihlásit se"
+        "Sign in"
       ],
       "Manage folders": [
         "Spravovat složky"
@@ -919,7 +919,7 @@
         "Role"
       ],
       "Timezone": [
-        "Časové pásmo"
+        "Time zone"
       ],
       "Title": [
         "Titul"
@@ -1892,7 +1892,7 @@
         "Doména není dostupná, zkuste to znovu později"
       ],
       "Email address invalid": [
-        "E-mailová adresa je neplatná"
+        "Invalid email address"
       ],
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
@@ -2125,7 +2125,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2168,7 +2168,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2203,7 +2203,7 @@
         "Komponenta s nesprávným formátem"
       ],
       "Custom timezone": [
-        "Vlastní časové pásmo"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Upravená událost není podporována"
@@ -2275,7 +2275,7 @@
         "Časové pásmo není podporováno"
       ],
       "Timezone": [
-        "Časové pásmo"
+        "Time zone"
       ],
       "To-do entry": [
         "Úkoly"
@@ -3366,10 +3366,10 @@
         "Odkaz zkopírován do schránky"
       ],
       "Link failed to be loaded": [
-        "Nepodařilo se načíst odkaz"
+        "Cannot load link"
       ],
       "Links failed to be loaded": [
-        "Nepodařilo se načíst odkazy"
+        "Cannot load links"
       ],
       "Loading": [
         "Načítání"
@@ -3585,7 +3585,7 @@
         "Odkaz ke sdílení ${ boldNameText }"
       ],
       "Shared link failed to be loaded": [
-        "Sdílený odkaz se nepodařilo načíst"
+        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
@@ -4049,7 +4049,7 @@
         "Název zařízení"
       ],
       "Do not ask again": [
-        "Příště se neptat"
+        "Don't ask again"
       ],
       "Download anyway": [
         "Přesto stáhnout"
@@ -4697,7 +4697,7 @@
         "Souboru nebo složce chybí název"
       ],
       "Link failed to be loaded": [
-        "Nepodařilo se načíst odkaz"
+        "Cannot load link"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Přesunout ${ itemsToMoveCount } soubor",
@@ -4736,7 +4736,7 @@
         "Přesunout ${ movingCount } položek"
       ],
       "Next page failed to be loaded": [
-        "Další stránku se nepodařilo načíst"
+        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Není dostatek místa pro nahrání ${ formattedTotal }"
@@ -5079,7 +5079,7 @@
         "Chyba nahlášena"
       ],
       "Cancelling import": [
-        "Ruším import"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
@@ -5495,7 +5495,7 @@
         "Podrobnosti položky"
       ],
       "Items details": [
-        "Podrobnosti položek"
+        "Item details"
       ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
@@ -5672,7 +5672,7 @@
         "Platnost odkazu vypršela"
       ],
       "The link failed to be loaded": [
-        "Odkaz se nepodařilo načíst"
+        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tento soubor má chybějící nebo neplatný podpis. Běžte do Menu (⋮) → Detaily pro info."

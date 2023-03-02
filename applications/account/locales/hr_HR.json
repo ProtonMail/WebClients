@@ -332,10 +332,10 @@
       "No": [
         "Ne"
       ],
-      "OK": [
-        "U redu"
-      ],
       "Ok": [
+        "OK"
+      ],
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -465,7 +465,7 @@
         "Odabir datoteka"
       ],
       "Select timezone": [
-        "Odaberite vremensku zonu"
+        "Select time zone"
       ],
       "send auto-reply email": [
         "pošalji automatski odgovor"
@@ -957,7 +957,7 @@
         "Uloga"
       ],
       "Timezone": [
-        "Vremenska zona"
+        "Time zone"
       ],
       "Title": [
         "Naslov"
@@ -1901,7 +1901,7 @@
         "Lozinke se ne poklapaju"
       ],
       "Payment process cancelled": [
-        "Proces plaćanja je otkazan"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Proces plaćanja je konzumiran"
@@ -1964,7 +1964,7 @@
         "Adresa bi mogla biti pogrešno napisana"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Preglednik koji koristite ne dopušta potpuno odobrenje plaćanja. Molimo koristite drugi preglednik ili se prijavite putem računala."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Naziv mape je predugačak. Odaberite drugi naziv."
@@ -2060,7 +2060,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Došlo je do pogreške prilikom čitanja vaše datoteke ${ formattedFilename }. Datoteka nema pravi format."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2086,7 +2086,7 @@
         "Komponenta s pogrešnim formatom"
       ],
       "Custom timezone": [
-        "Prilagođena vremenska zona"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
@@ -2146,7 +2146,7 @@
         "Početno vrijeme je van granica"
       ],
       "Timezone": [
-        "Vremenska zona"
+        "Time zone"
       ],
       "To-do entry": [
         "Stavka liste zadataka"
@@ -2832,7 +2832,7 @@
         "Dnevno"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći prijaviti ni dešifrirati vaše poruke."
+        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći upravljati vašom organizacijom."
@@ -2951,7 +2951,7 @@
         "Ako ste postavili SPF i DKIM, DMARC vam omogućuje da odredite kako bi drugi pružatelji usluge e-pošte trebali dostaviti e-poštu za vašu domenu, ako SPF i DKIM provjere nisu uspjele. Ovo može otežati pošiljateljima neželjenih poruka koji se pretvaraju da ste vi, ali može uzrokovati i probleme s isporukom ako se ne provede ispravno."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Ukoliko izgubite svoj uređaj za dvofaktorsku autentikaciju, ovi kôdovi se mogu upotrijebiti umjesto 6-znamenkastog kôda dvofaktorske autentikacije da bi se prijavili na vaš račun. Svaki kôd može se upotrijebiti samo jednom."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ${ MAIL_APP_NAME } i ${ VPN_APP_NAME } značajkama."
@@ -3053,7 +3053,7 @@
         "više"
       ],
       "More Info": [
-        "Više informacija"
+        "Learn more"
       ],
       "Multi-user support not enabled.": [
         "Višekorisnička podrška nije omogućena."
@@ -3209,7 +3209,7 @@
         "Adresa e-pošte koju stavite na vrh popisa je vaša zadana adresa e-pošte. Povucite i ispustite da biste promjenili redoslijed adresa."
       ],
       "The name will be visible to your users while they are logged in.": [
-        "Naziv će biti vidljiv vašim korisnicima dok su prijavljeni."
+        "The name will be visible to your users while they are signed in."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Vaš račun je suspendiran zbog mogućih kršenja pravila."
@@ -3275,7 +3275,7 @@
         "Omogućena je dvofaktorska autentikacija"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Način rada s dvije lozinke zahtjeva dvije lozinke: jednu za prijavu na račun i jednu za dešifriranje poštanskog sandučića. (Napredno)"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Način rada s dvije lozinke koristi zasebne lozinke za prijavu i dešifriranje sandučića e-pošte. To pruža manju sigurnosnu prednost u nekim situacijama, no za većinu korisnika preporučujemo način rada s jednom lozinkom. Da biste se prebacili na način rada s dvije lozinke, prvo postavite lozinku za prijavu te zatim postavite lozinku za sandučić e-pošte."
@@ -3347,7 +3347,7 @@
         "Račune možete prilagoditi i preuzeti za računovodstvene svrhe."
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Možete omogućiti zapisivanje pokušaja autentikacije da biste vidjeli kada se pristupa vašem računu i s koje je IP adrese. Snimit ćemo IP adresu koja je pristupila računu i vrijeme, kao i neuspješne pokušaje."
+        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
@@ -3386,7 +3386,7 @@
         "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Vaši ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } računi su povezani. Da biste ih izbrisali, prijavite se u ${ loginLink } i tamo Izbrišite svoj račun."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Vaš račun ima najmanje jednu neplaćenu fakturu. Vaš će pristup uskoro biti ograničen. ${ payInvoiceLink }"
@@ -3944,7 +3944,7 @@
         "Zaslonski naziv"
       ],
       "Do not ask again": [
-        "Ne pitaj ponovno"
+        "Don't ask again"
       ],
       "Domain": [
         "Domena"
@@ -4232,7 +4232,7 @@
         "Format vremena"
       ],
       "Timezone": [
-        "Vremenska zona"
+        "Time zone"
       ],
       "Two-password mode": [
         "Način rada s dvije lozinke"
@@ -5246,7 +5246,7 @@
     },
     "Success": {
       "Account deleted. Logging out...": [
-        "Račun je uklonjen. Odjavljivanje..."
+        "Account deleted. Signing out..."
       ],
       "Address added": [
         "Adresa je dodana"
@@ -5443,7 +5443,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Pretražite vremensku zonu"
+        "Search time zones"
       ]
     },
     "Title": {
@@ -5928,7 +5928,7 @@
         "Vaš plan"
       ],
       "ZIP / postal code": [
-        "Poštanski broj"
+        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -6111,7 +6111,7 @@
         "${ BRAND_NAME } će prenijeti što više podataka, počevši od vaših najnovijih poruka."
       ],
       "Are you sure you want to delete the address?": [
-        "Jeste li sigurni da želite ukloniti ovu adresu?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Jeste li sigurni da želite izbrisati broj telefona?"

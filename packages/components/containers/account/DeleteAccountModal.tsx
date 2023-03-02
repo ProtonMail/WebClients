@@ -54,7 +54,7 @@ const DeleteAccountModal = (props: Props) => {
     const { createNotification } = useNotifications();
 
     const defaultOnSuccess = async () => {
-        createNotification({ text: c('Success').t`Account deleted. Logging out...` });
+        createNotification({ text: c('Success').t`Account deleted. Signing out...` });
 
         // Add an artificial delay to show the notification.
         await wait(2500);

@@ -36,7 +36,7 @@ const ConfirmRemoveEmailModal = ({ hasReset, hasNotify, onConfirm, onClose, ...r
                             .t`By deleting this address, you will no longer be able to recover your account or receive daily email notifications.`}
                     <br />
                     <br />
-                    {c('Warning').t`Are you sure you want to delete the address?`}
+                    {c('Warning').t`Are you sure you want to delete this address?`}
                 </Alert>
             </ModalContent>
             <ModalFooter>

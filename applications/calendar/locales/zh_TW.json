@@ -281,7 +281,7 @@
         "載入圖像"
       ],
       "Log in": [
-        "登入"
+        "Sign in"
       ],
       "Make this participant optional": [
         "此參與者自由列席"
@@ -428,7 +428,7 @@
         "全選"
       ],
       "Select timezone": [
-        "選取時區"
+        "Select time zone"
       ],
       "Send": [
         "送出"
@@ -1059,7 +1059,7 @@
         "身份"
       ],
       "Timezone": [
-        "時區"
+        "Time zone"
       ],
       "Title": [
         "職銜"
@@ -1980,7 +1980,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "不要再次詢問"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2135,7 +2135,7 @@
         "電郵位址已停用"
       ],
       "Email address invalid": [
-        "電郵位址無效"
+        "Invalid email address"
       ],
       "Email address is required": [
         "電郵位址為必填"
@@ -2403,7 +2403,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2443,7 +2443,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式有誤。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2478,7 +2478,7 @@
         "元件的格式有誤"
       ],
       "Custom timezone": [
-        "自訂時區"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "已編輯事件不受支援"
@@ -2550,7 +2550,7 @@
         "不支援的時區"
       ],
       "Timezone": [
-        "時區"
+        "Time zone"
       ],
       "To-do entry": [
         "待辦事項"
@@ -2606,6 +2606,11 @@
     "Event canceled status badge": {
       "canceled": [
         "已取消"
+      ]
+    },
+    "Event form": {
+      "${ numberOfAttendees } participants": [
+        "${ numberOfAttendees } 個參與者"
       ]
     },
     "Event info. Organizer name": {
@@ -2707,6 +2712,15 @@
     "file size format": {
       "bytes": [
         "位元組"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
       ]
     },
     "file size format, long": {
@@ -3690,6 +3704,11 @@
         "點擊以查看詳細資料"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "僅能檢視"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "您的部份行事曆將不會顯示先前建立事件的詳細資訊。"
@@ -3716,6 +3735,14 @@
     "Info; reshare calendar modal; part 2": {
       "You can reshare your calendars in settings.": [
         "您可以在設定中重新分享您的行事曆。"
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
+        "您最多可以一次邀請 ${ MAX_ATTENDEES } 位參與者"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "不允許在分享的行事曆中建立邀請"
       ]
     },
     "Input label": {
@@ -3840,7 +3867,7 @@
         "描述"
       ],
       "Do not ask again": [
-        "不要再詢問"
+        "Don't ask again"
       ],
       "Email": [
         "電郵"
@@ -4108,6 +4135,17 @@
         "側邊面板"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "要新增行事曆，請移除劑有的。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "要新增行事曆，請移除其他行事曆或升級您的 ${ BRAND_NAME } 方案到 ${ MAIL_SHORT_APP_NAME } 付費方案。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "您已達到您方案中行事曆的最大數量了。"
+      ]
+    },
     "Link": {
       "Calendars": [
         "行事曆"
@@ -4120,6 +4158,9 @@
       ],
       "My calendars": [
         "我的行事曆"
+      ],
+      "Other calendars": [
+        "其他行事曆"
       ],
       "Pay invoice": [
         "繳付帳單"
@@ -4211,6 +4252,9 @@
       ],
       "Manage calendars": [
         "管理行事曆"
+      ],
+      "Upgrade": [
+        "升級"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4227,6 +4271,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "無法新增更多行事曆"
+      ],
       "How to import calendars from another service": [
         "如何從其它服務匯入行事曆"
       ],
@@ -4988,7 +5035,7 @@
         "取消已送出，並且已從全部事件中移除參與者"
       ],
       "Cancelling import": [
-        "正在取消匯入"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
@@ -5161,7 +5208,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "搜尋時區"
+        "Search time zones"
       ]
     },
     "Title": {

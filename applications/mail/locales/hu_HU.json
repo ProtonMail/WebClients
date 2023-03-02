@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Összes csillagozatlan"
       ],
-      "Allow messages": [
-        "Üzenetek engedélyezése"
-      ],
       "Apply": [
         "Alkalmazás"
       ],
@@ -546,7 +543,7 @@
         "Betöltés${ ellipsis }"
       ],
       "Log in": [
-        "Bejelentkezés"
+        "Sign in"
       ],
       "Mailbox density": [
         "Megjelenítés tömörsége"
@@ -1887,7 +1884,7 @@
         "Szerepkör"
       ],
       "Timezone": [
-        "Időzóna"
+        "Time zone"
       ],
       "Title": [
         "Beosztás"
@@ -2941,7 +2938,7 @@
         "Az e-mail cím le van tiltva"
       ],
       "Email address invalid": [
-        "Érvénytelen e-mail cím"
+        "Invalid email address"
       ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
@@ -3248,7 +3245,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3289,7 +3286,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3324,7 +3321,7 @@
         "A komponens formátuma hibás"
       ],
       "Custom timezone": [
-        "Egyéni időzóna"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Szerkesztett esemény nem támogatott"
@@ -3396,7 +3393,7 @@
         "Időzóna nem támogatott"
       ],
       "Timezone": [
-        "Időzóna"
+        "Time zone"
       ],
       "To-do entry": [
         "Tennivaló elem"
@@ -4505,8 +4502,8 @@
         "Hamarosan lejár"
       ],
       "file attached": [
-        "fájl csatolva",
-        "fájlok csatolva"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "A szűrők minden levélre vonatkoznak, a bejövő és az elküldött üzenetekre is. Minden szűrőnek szükséges legalább egy név, egy feltétel és egy művelet."
@@ -4864,7 +4861,7 @@
         "Piszkozat mentése…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        "Az üzenet időzített elküldése törlésre kerül."
+        "Scheduled send of this message will be canceled."
       ],
       "Scheduling message...": [
         "Üzenet ütemezése..."
@@ -5003,7 +5000,7 @@
         "Ez a böngésző nem támogatja a PDF fájlok megjelenítését. Töltse le a fájlt."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "Ez a beszélgetés egy időzítetten elküldendő üzenetet tartalmaz. Az üzenet küldése törlésre kerül."
+        "This conversation contains a scheduled message. Sending of this message will be canceled."
       ],
       "This conversation contains non-trashed messages.": [
         "Ez a beszélgetés nem-törölt üzeneteket is tartalmaz."
@@ -5016,7 +5013,7 @@
         "Ezek az beszélgetések levélszemétként lesznek megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Az e-mail nem felelt meg a domain név ellenőrzési követelményeinek. Lehet becsapós üzenet vagy hibásan továbbított!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Ez a meghívó egy letiltott naptárban van."
@@ -5735,7 +5732,7 @@
         "Helyreállítási információk törlése."
       ],
       "Do not ask again": [
-        "Ne kérdezze újra"
+        "Don't ask again"
       ],
       "Don't show this again": [
         "Ne jelenjen meg többet"
@@ -6378,7 +6375,7 @@
         "Ütemezett küldés visszavonva"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Az ütemezett elküldés törölve. Az üzenet a Vázlatok mappába került."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Küldés megszakítva"
@@ -6574,7 +6571,7 @@
         "Saját domain nevek"
       ],
       "Unlimited folders, labels and filters": [
-        "Korlátlan számú mappa, címke és szűrő"
+        "Unlimited folders, labels, and filters"
       ]
     },
     "new_plans: label": {
@@ -7234,7 +7231,7 @@
         "Hiba bejelentve"
       ],
       "Cancelling import": [
-        "Importálás megszakítása"
+        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
@@ -7305,7 +7302,7 @@
         "Gyorsbillentyű beállítások frissítve"
       ],
       "Label cleared": [
-        "Címke ürítve"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Címkék alkalmazva."

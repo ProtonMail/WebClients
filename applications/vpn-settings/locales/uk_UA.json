@@ -132,7 +132,7 @@
         "Змінити платіжні дані"
       ],
       "Edit display name": [
-        "Редагувати ім'я, що показується"
+        "Редагувати ім'я"
       ],
       "Edit email address": [
         "Змінити адресу е-пошти"
@@ -204,7 +204,7 @@
         "Застосувати"
       ],
       "Ok": [
-        "Гаразд"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -410,7 +410,7 @@
         "Ні, дякую"
       ],
       "Try free for 30 days": [
-        "Спробуйте безкоштовно 30 днів"
+        "Спробуйте безплатно протягом 30 днів"
       ]
     },
     "Addon": {
@@ -439,7 +439,7 @@
     },
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: пошта і календар для щоденних комунікацій з пріоритетом приватності для ваших повсякденних потреб."
+        "${ mailPlus }: зосереджені на приватності пошта і календар для ваших повсякденних потреб спілкування."
       ]
     },
     "Billing cycle": {
@@ -1526,7 +1526,7 @@
         "Паролі відрізняються"
       ],
       "Payment process cancelled": [
-        "Обробку платежу скасовано"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Обробку платежу завершено"
@@ -1565,7 +1565,7 @@
         "Вкладку закрито"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Браузер, який ви використовуєте, не дозволяє повністю авторизувати платіж. Будь ласка, скористайтеся іншим браузером або увійдіть за допомогою комп'ютера."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
@@ -1801,7 +1801,7 @@
         "(1-2 електронні листи на місяць)"
       ],
       "(during your first month)": [
-        "(впродовж першого місяця)"
+        "(упродовж першого місяця)"
       ]
     },
     "Go to sign in": {
@@ -1838,7 +1838,7 @@
     },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Спробуйте найкраще з ${ MAIL_APP_NAME } безкоштовно"
+        "Спробуйте безплатно найкращі функції ${ MAIL_APP_NAME }"
       ]
     },
     "Human verification method": {
@@ -2019,7 +2019,7 @@
         "Налаштування електронної пошти збережено"
       ],
       "Enter code from your authenticator app": [
-        "Введіть код зі своєї програми авторизації"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Ввести ключ вручну"
@@ -2097,7 +2097,7 @@
         "Якщо раніше ви ніколи не використовували двоетапну перевірку, ми наполегливо рекомендуємо вам ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Якщо ви втратите свій пристрій двоетапної перевірки, можна скористатися цими кодами замість 6-значного коду перевірки для авторизації в обліковому записі. Кожен код можна використати лише один раз."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
@@ -2136,7 +2136,7 @@
         "З'єднання з інтернетом відновлено."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні програми VPN."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "Докладніше"
@@ -2157,7 +2157,7 @@
         "Завантаження..."
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "втратите доступ до всіх наявних зашифрованих даних"
@@ -2175,7 +2175,7 @@
         "ММ/РР"
       ],
       "No credit card required": [
-        "Кредитна картка не потрібна"
+        "Банківська картка не потрібна"
       ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
@@ -2370,7 +2370,7 @@
         "Двоетапна перевірка увімкнена"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Двопарольний режим вимагає два паролі: перший для входу в обліковий запис та другий для розшифрування поштової скриньки."
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Двопарольний режим використовує окремі паролі для входу та розшифрування поштової скриньки. Це забезпечує додатковий рівень захисту в деяких ситуаціях. Однак, для більшості користувачів ми рекомендуємо використовувати однопарольний режим. Щоб перемкнутися на двопарольний режим, встановіть спочатку пароль входу, а потім пароль поштової скриньки."
@@ -2475,28 +2475,28 @@
         "Ви можете налаштувати і завантажити свої рахунки для бухгалтерського обліку."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календаря. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки."
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календаря. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої підписки."
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календаря. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки."
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календаря. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої підписки.",
-        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої підписки."
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Ви можете відкрити одночасно лише один сеанс чату. Будь ласка, закрийте попередні розмови перед початком нової."
@@ -2505,7 +2505,7 @@
         "Ви можете використовувати такі облікові дані для з'єднання з сервером ${ VPN_APP_NAME } через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Ви не можете використати облікові дані OpenVPN / IKEv2 для входу в застосунки ${ VPN_APP_NAME } чи панель керування ${ VPN_APP_NAME }. ${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ви не вказали спосіб відновлення, тому неможливо відновити обліковий запис при втраті пароля. Продовжити без способу відновлення?"
@@ -2547,7 +2547,7 @@
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Ваші облікові записи ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } пов'язані. Щоб видалити їх обидва, виконайте вхід у ${ loginLink } та видаліть свій обліковий запис."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має несплачені рахунки. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
@@ -2971,7 +2971,7 @@
         "Новий пароль (адмін)"
       ],
       "ZIP code": [
-        "Поштовий індекс"
+        "Postal code"
       ]
     },
     "label": {
@@ -2999,7 +2999,7 @@
         "Оголошення продукту ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } вітальні листи"
+        "Вітальні листи ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -3279,7 +3279,7 @@
         "Автовідповідь"
       ],
       "Calendar sharing": [
-        "Спільний доступ до Календаря"
+        "Спільний доступ до календаря"
       ],
       "Catch-all": [
         "Catch-all"
@@ -3399,7 +3399,7 @@
         "Необмежена кількість тек"
       ],
       "Unlimited folders, labels and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
@@ -3617,10 +3617,10 @@
         "Створіть кілька адрес електронної пошти для свого онлайн-життя, наприклад, JohnShopper@${ domain } для облікових записів для покупок, JohnNews@${ domain } для підписок на новини"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Створіть до ${ n } календаря чи додайте календарі ваших друзів, рідних, колег та організацій",
-        "Створіть до ${ n } календарів чи додайте календарі ваших друзів, рідних, колег та організацій",
-        "Створіть до ${ n } календарів чи додайте календарі ваших друзів, рідних, колег та організацій",
-        "Створіть до ${ n } календарів чи додайте календарі ваших друзів, рідних, колег та організацій"
+        "Створіть максимум ${ n } календар або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарі або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
@@ -3769,10 +3769,10 @@
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
       ],
       "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Створити до ${ MAX_CALENDARS_PAID } календаря",
-        "Створити до ${ MAX_CALENDARS_PAID } календарів",
-        "Створити до ${ MAX_CALENDARS_PAID } календарів",
-        "Створити до ${ MAX_CALENDARS_PAID } календарів"
+        "Створіть максимум ${ MAX_CALENDARS_PAID } календар",
+        "Створіть максимум ${ MAX_CALENDARS_PAID } календарі",
+        "Створіть максимум ${ MAX_CALENDARS_PAID } календарів",
+        "Створіть максимум ${ MAX_CALENDARS_PAID } календарів"
       ],
       "Everything in ${ vpnPlanName }": [
         "Усе в ${ vpnPlanName }"
@@ -3925,10 +3925,7 @@
         "Підтвердити зараз"
       ],
       "Verify now this recovery email address: ${ email.Value }": [
-        "Перевірте зараз цю адресу електронної пошти для відновлення: ${ email.Value }"
-      ],
-      "Verify now this recovery phone number address: ${ phone.Value }": [
-        "Перевірте зараз цей номер телефону для відновлення: ${ phone.Value }"
+        "Тепер підтвердьте цю адресу електронної пошти для відновлення: ${ email.Value }"
       ],
       "Verify recovery email?": [
         "Підтвердити резервну адресу електронної пошти?"
@@ -4118,11 +4115,8 @@
       ]
     },
     "Subscription change warning": {
-      "Subscription managed elsewhere": [
-        "Manage your subscription on Google Play"
-      ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Ви оформили підписку за допомогою купівлі в додатку. Щоб керувати своєю поточною підпискою, вам потрібно перейти до розділу Підписка у своєму ${ subscriptionManager } обліковому записі"
+        "Ви оформили передплату за допомогою покупки в додатку. Для керування поточною передплатою вам потрібно перейти до розділу \"Передплата\" у своєму обліковому записі ${ subscriptionManager }"
       ]
     },
     "Subscription price": {
@@ -4148,7 +4142,7 @@
         "${ server.Domain } скопійовано в буфер обміну"
       ],
       "Account deleted. Logging out...": [
-        "Обліковий запис видалено. Вихід із системи..."
+        "Account deleted. Signing out..."
       ],
       "Bug reported": [
         "Звіт про помилку надіслано"
@@ -4330,7 +4324,7 @@
         "Платіжний цикл"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "Скасування ${ MAIL_SHORT_APP_NAME } підписки"
+        "Скасувати передплату ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Перевірка картки"
@@ -4576,7 +4570,7 @@
         "Усього сплачено"
       ],
       "TV log in": [
-        "Вхід на ТБ"
+        "TV sign in"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -4633,7 +4627,7 @@
         "Ви запрошені спробувати ${ MAIL_APP_NAME }"
       ],
       "ZIP / postal code": [
-        "Поштовий індекс"
+        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4709,7 +4703,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "Ви впевнені, що хочете видалити цю адресу?"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Ви дійсно хочете видалити цей номер телефону?"

@@ -198,7 +198,7 @@
         "تایید"
       ],
       "Ok": [
-        "تایید"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "بازگشایی تنظیمات ${ CALENDAR_APP_NAME }"
@@ -1487,7 +1487,7 @@
         "گذرواژه‌ها مطابقت ندارند"
       ],
       "Payment process cancelled": [
-        "فرایند پرداخت لغو شد"
+        "Payment process canceled"
       ],
       "Payment process consumed": [
         "عملیات پرداخت انجام شد"
@@ -1526,7 +1526,7 @@
         "زبانه بسته شد"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "مرورگری که شما استفاده می‌کنید اجازه پرداخت کامل را نمی‌دهد. لطفا از مرورگر دیگری استفاده نمایید یا از طریق رایانه وارد شوید."
+        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "حداقل مبلغ اعتباری که می‌توان اضافه کرد ${ price } است"
@@ -1855,7 +1855,7 @@
         "تنظیمات رایانامه‌نگاری بروز شد"
       ],
       "Enter code from your authenticator app": [
-        "کد سامانه تایید کننده را وارد نمایید"
+        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "در عوض کلید را به صورت دستی وارد کنید"
@@ -1921,7 +1921,7 @@
         "اگر پیشتر هرگز از احراز هویت دو مرحله‌ای استفاده نکرده‌اید، اکیدا ${ guideButton } توصیه می‌کنیم."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "اگر دستگاه دو مرحله‌ای فعال‌شده‌ی خود را گم کنید، می‌توانید از این کدها به جای کد 6 رقمی 2FA برای ورود به حساب خود استفاده کنید. هر کد فقط یک‌بار قابل استفاده است."
+        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "اگر به تنزیل طرح خود ادامه دهید، دسترسی به ویژگی های خریدنی ${ MAIL_APP_NAME } و ${ VPN_APP_NAME } را از دست خواهید داد."
@@ -1960,7 +1960,7 @@
         "اتصال اینترنت برقرار شد."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "با نحوه ورود به ${ VPN_APP_NAME } با برنامه های VPN دیگر آشنا شوید."
+        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
       ],
       "Learn more": [
         "بیشتر بدانید"
@@ -1978,7 +1978,7 @@
         "در حال بارگذاری پیش‌نمایش"
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "برای فعال سازی آدرس خود در ${ MAIL_APP_NAME } وارد شوید"
+        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "از دست دادن دسترسی به همه داده‌های رمزگذاری شده کنونی"
@@ -2152,7 +2152,7 @@
         "تایید هویت دو مرحله‌ای فعال است"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "حالت دوگذرواژه به دو گذرواژه نیاز دارد: یکی برای ورود به حساب کاربری و دیگری برای رمزگشایی نامه‌دان. (پیشرفته)"
+        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "حالت دو گذرواژه از گذرواژه‌های عبور جداگانه برای رمزگشایی ورود به سیستم و نامه‌دان استفاده می‌کند. این در برخی شرایط یک مزیت امنیتی جزئی فراهم می‌کند، با این حال حالت تک گذرواژه را برای اکثر کاربران پیشنهاد می‌کنیم. برای تغییر حالت دو گذرواژه، ابتدا یک گذرواژه ورود به سیستم تنظیم کنید و سپس یک گذرواژه نامه‌دان تنظیم کنید."
@@ -2245,7 +2245,7 @@
         "میتوانید با استفاده از اطلاعات ذیل به یک سرور ${ VPN_APP_NAME } با استفاده از برنامه های VPN متن باز دیگر مانند Tunnelblick برای macOS یا OpenVPN برای لینوکس/GNU متصل شوید."
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "نمیتوانید از اطلاعات OpenVPN / IKEv2 برای ورود به برنامه های ${ VPN_APP_NAME } یا داشبورد ${ VPN_APP_NAME } استفاده کنید. ${ learnMore }"
+        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "شما یک روش بازیابی تنظیم نکرده‌اید بنابراین در صورت فراموش کردن گذرواژه، بازیابی حساب غیرممکن است. بدون روش بازیابی ادامه می‌دهید؟"
@@ -2278,7 +2278,7 @@
         "حتی پس از بستن مرورگر نیز در سیستم باقی خواهید ماند."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "حساب‌های کاربری ${ VPN_APP_NAME } و ${ MAIL_APP_NAME } شما به یکدیگر متصلند. برای حذف هردوی آنها، لطفا به ${ loginLink } وارد شوید و حساب‌تان را از آنجا حذف کنید."
+        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "حساب شما حداقل یک صورت‌حساب به تعویق افتاده دارد. دسترسی شما به زودی محدود خواهد شد. ${ payInvoiceLink }"
@@ -2680,7 +2680,7 @@
         "گذرواژه شما (مدیر)"
       ],
       "ZIP code": [
-        "کد پستی"
+        "Postal code"
       ]
     },
     "label": {
@@ -3049,7 +3049,7 @@
         "بی نهایت پوشه"
       ],
       "Unlimited folders, labels and filters": [
-        "پوشه‌ها، برچسب‌ها و فیلترهای نامحدود"
+        "Unlimited folders, labels, and filters"
       ],
       "Unlimited labels": [
         "بی نهایت برچسب"
@@ -3734,7 +3734,7 @@
         "${ server.Domain } در بریده‌دان شما کپی شد"
       ],
       "Account deleted. Logging out...": [
-        "حساب کاربری حذف شد. در حال خروج..."
+        "Account deleted. Signing out..."
       ],
       "Bug reported": [
         "اشکال گزارش شد"
@@ -4141,7 +4141,7 @@
         "گذر به حالت دوگذرواژه"
       ],
       "TV log in": [
-        "ورود تلویزیون"
+        "TV sign in"
       ],
       "Two-factor authentication": [
         "احراز هویت دو مرحله‌ای"
@@ -4186,7 +4186,7 @@
         "شما دعوت شده اید تا ${ MAIL_APP_NAME } را امتحان کنید"
       ],
       "ZIP / postal code": [
-        "کد پستی"
+        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4272,7 +4272,7 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "آیا مطمئن هستید که می‌خواهید نشانی را حذف کنید؟"
+        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "آیا مطمئن هستید که می‌خواهید شماره تماس را حذف کنید؟"

@@ -278,7 +278,7 @@
         "画像を読み込む"
       ],
       "Log in": [
-        "ログイン"
+        "Sign in"
       ],
       "Make this participant optional": [
         "この参加者の参加を任意にする"
@@ -425,7 +425,7 @@
         "すべて選択"
       ],
       "Select timezone": [
-        "タイムゾーンの選択"
+        "Select time zone"
       ],
       "Send": [
         "送信"
@@ -1056,7 +1056,7 @@
         "役割"
       ],
       "Timezone": [
-        "タイムゾーン"
+        "Time zone"
       ],
       "Title": [
         "肩書き"
@@ -1977,7 +1977,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "今後表示しない"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2132,7 +2132,7 @@
         "メールアドレスが無効です"
       ],
       "Email address invalid": [
-        "メールアドレスが不正です"
+        "Invalid email address"
       ],
       "Email address is required": [
         "メールアドレスは必須です"
@@ -2394,7 +2394,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "ファイル　${ formattedFilename }の読み取り中にエラーが発生しました。ファイルのフォーマットが正しくありません。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
@@ -2434,7 +2434,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
@@ -2469,7 +2469,7 @@
         "無効なコンポーネント形式です"
       ],
       "Custom timezone": [
-        "独自のタイムゾーン"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -2541,7 +2541,7 @@
         "タイムゾーンはサポートされていません"
       ],
       "Timezone": [
-        "タイムゾーン"
+        "Time zone"
       ],
       "To-do entry": [
         "To-do のエントリー"
@@ -3785,7 +3785,7 @@
         "詳細"
       ],
       "Do not ask again": [
-        "今後表示しない"
+        "Don't ask again"
       ],
       "Email": [
         "メールアドレス"
@@ -5069,7 +5069,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "タイムゾーンの検索"
+        "Search time zones"
       ]
     },
     "Title": {

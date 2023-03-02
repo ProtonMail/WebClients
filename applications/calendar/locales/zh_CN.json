@@ -281,7 +281,7 @@
         "加载图片"
       ],
       "Log in": [
-        "登录"
+        "Sign in"
       ],
       "Make this participant optional": [
         "可选择包含此参与者"
@@ -428,7 +428,7 @@
         "全选"
       ],
       "Select timezone": [
-        "选择时区"
+        "Select time zone"
       ],
       "Send": [
         "发送​​"
@@ -1059,7 +1059,7 @@
         "身份"
       ],
       "Timezone": [
-        "时区"
+        "Time zone"
       ],
       "Title": [
         "头衔"
@@ -1980,7 +1980,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Do not ask again": [
-        "不再询问"
+        "Don't ask again"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2135,7 +2135,7 @@
         "邮件地址已禁用"
       ],
       "Email address invalid": [
-        "邮箱格式不正确"
+        "Invalid email address"
       ],
       "Email address is required": [
         "邮箱地址必须填写"
@@ -2400,7 +2400,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2440,7 +2440,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "读取文件 ${ formattedFilename } 失败，文件格式不对。"
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2475,7 +2475,7 @@
         "组件格式错误"
       ],
       "Custom timezone": [
-        "自定义时区"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "不支持已编辑的事件"
@@ -2547,7 +2547,7 @@
         "不支持此时区"
       ],
       "Timezone": [
-        "时区"
+        "Time zone"
       ],
       "To-do entry": [
         "待办事项"
@@ -3831,7 +3831,7 @@
         "说明："
       ],
       "Do not ask again": [
-        "不再询问"
+        "Don't ask again"
       ],
       "Email": [
         "邮箱"
@@ -5141,7 +5141,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "搜索时区"
+        "Search time zones"
       ]
     },
     "Title": {

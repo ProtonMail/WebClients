@@ -3,5 +3,65 @@
     "plural-forms": "nplurals=2; plural=(n != 1);",
     "language": "en_US"
   },
-  "contexts": {}
+  "contexts": {
+    "Action": {
+      "Log in": [
+        "Sign in"
+      ],
+      "Select timezone": [
+        "Select time zone"
+      ]
+    },
+    "Contact field label": {
+      "Timezone": [
+        "Time zone"
+      ]
+    },
+    "Don't ask to update timezone checkbox label": {
+      "Do not ask again": [
+        "Don't ask again"
+      ]
+    },
+    "Error": {
+      "Email address invalid": [
+        "Invalid email address"
+      ],
+      "Invalid email address": [
+        "Invalid email address"
+      ]
+    },
+    "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      ]
+    },
+    "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      ]
+    },
+    "Error importing event": {
+      "Custom timezone": [
+        "Custom time zone"
+      ],
+      "Timezone": [
+        "Time zone"
+      ]
+    },
+    "Label": {
+      "Do not ask again": [
+        "Don't ask again"
+      ]
+    },
+    "Success": {
+      "Cancelling import": [
+        "Canceling import"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Search time zones"
+      ]
+    }
+  }
 }

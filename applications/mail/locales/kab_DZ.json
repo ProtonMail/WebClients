@@ -77,9 +77,6 @@
       "All Unstarred": [
         "Akk wid ur nelli d inurifen"
       ],
-      "Allow messages": [
-        "Sireg iznan"
-      ],
       "Apply": [
         "Snes"
       ],
@@ -486,7 +483,7 @@
         "Asali${ ellipsis }"
       ],
       "Log in": [
-        "Tuqqna"
+        "Sign in"
       ],
       "Mailbox density": [
         "Taččart n tnaka n urmas"
@@ -1618,7 +1615,7 @@
         "Tamlilt"
       ],
       "Timezone": [
-        "Iẓdi n wakud"
+        "Time zone"
       ],
       "Title": [
         "Azwel"
@@ -2589,7 +2586,7 @@
         "Tansa imayl tensa"
       ],
       "Email address invalid": [
-        "Tansa imayl mači d tameɣtut"
+        "Invalid email address"
       ],
       "Email is not valid": [
         "Imayl mačči d ameɣtu"
@@ -2857,7 +2854,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Tella tuccḍa deg tɣuri n ufaylu-inek·inem ${ formattedFilename }. Afaylu ur yesɛi ara amasal i ilaqen."
+        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Tella-d tuccḍa deg usali n ufaylu-inek ·inem ${ formattedFilename }. Teɣzi tafellayt n ufaylu d ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2889,7 +2886,7 @@
         "Asuddis s yir amasal"
       ],
       "Custom timezone": [
-        "Iẓdi n wakud yugnen"
+        "Custom time zone"
       ],
       "Edited event not supported": [
         "Aẓrag n tedyant ur yettusefrak ara"
@@ -2952,7 +2949,7 @@
         "Izḍi usrid ur yettusefrak ara"
       ],
       "Timezone": [
-        "Tamennaḍt tasragant"
+        "Time zone"
       ],
       "To-do entry": [
         "Anekcum n twuriwin"
@@ -3856,8 +3853,8 @@
         "Ad ifat"
       ],
       "file attached": [
-        "afaylu yeddan",
-        "afaylu yeddan"
+        "attachment",
+        "attachments"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Imsizedgen teddun ɣef meṛṛa imaylen, ula ɣef yimaylen yettwaremsen d wid yettwaznen. Yal amsizdeg ilaq ad yesɛu xerṣum isem, tawtilt d tigawt."
@@ -4256,7 +4253,7 @@
         "Adiwenni-a yegber iznan yellan deg iḍumman."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Imayl-agi yecceḍ deg usekyed n usesteb n taɣult-is. Ahat beddlen-t neɣ wwin-t s tuccḍa aniɣer nniḍen!"
+        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Leɛraḍa-agi tettwasekles deg uwitay yensan."
@@ -4867,7 +4864,7 @@
         "Kkes"
       ],
       "Do not ask again": [
-        "Ur sutur ara tikelt-nniḍen"
+        "Don't ask again"
       ],
       "Email": [
         "Imayl"
@@ -5408,7 +5405,7 @@
     },
     "Message notification": {
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Asɣiwes yettwasefsex. Izen yettusenkez ɣer yirewwayen."
+        "Scheduling canceled. Message has been moved to Drafts."
       ],
       "Sending undone": [
         "Tuzzna tettwasefsex"
@@ -6219,7 +6216,7 @@
         "Ismenyifen n yinegzumen n unasiw ttwaleqqmen"
       ],
       "Label cleared": [
-        "Tabzimt tettwaṣfeḍ"
+        "Label deleted"
       ],
       "Labels applied.": [
         "Tibzimin yettwasensen."

@@ -12,8 +12,8 @@ interface Props extends ModalProps {
 
 const MoveScheduledModal = ({ isMessage, onResolve, onReject, onCloseCustomAction, ...rest }: Props) => {
     const text = isMessage
-        ? c('Info').t`Scheduled send of this message will be cancelled.`
-        : c('Info').t`This conversation contains a scheduled message. Sending of this message will be cancelled.`;
+        ? c('Info').t`Scheduled send of this message will be canceled.`
+        : c('Info').t`This conversation contains a scheduled message. Sending of this message will be canceled.`;
 
     const handleClose = () => {
         onCloseCustomAction?.();

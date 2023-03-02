@@ -25,7 +25,7 @@ const TimeZoneField = ({ value, onChange }: Props) => {
         <SettingsLayout>
             <SettingsLayoutLeft>
                 <label htmlFor="timezone" className="text-semibold">
-                    {c('Label').t`Timezone`}
+                    {c('Label').t`Time zone`}
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
