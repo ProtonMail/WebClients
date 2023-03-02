@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { addDays } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
@@ -9,14 +10,18 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     DropdownSizeUnit,
+    FeatureCode,
     Icon,
     Tooltip,
     useApi,
     useEventManager,
+    useFeature,
     useFolders,
     useLoading,
     useMailSettings,
     useModalState,
+    useNotifications,
+    useUser,
 } from '@proton/components';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { WorkerDecryptionResult } from '@proton/crypto';
@@ -27,6 +32,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
+import { canSetExpiration, getExpirationTime } from '../../../helpers/expiration';
 import { getCurrentFolderID, getFolderName } from '../../../helpers/labels';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { MessageViewIcons } from '../../../helpers/message/icon';
@@ -37,6 +43,7 @@ import { useStar } from '../../../hooks/actions/useStar';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { useGetAttachment } from '../../../hooks/useAttachment';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
+import { expireMessages } from '../../../logic/messages/expire/messagesExpireActions';
 import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import { useAppDispatch } from '../../../logic/store';
 import { Element } from '../../../models/element';
@@ -44,6 +51,7 @@ import { Breakpoints } from '../../../models/utils';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
+import CustomExpirationModal from '../modals/CustomExpirationModal';
 import MessageDetailsModal from '../modals/MessageDetailsModal';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
 import MessagePermanentDeleteModal from '../modals/MessagePermanentDeleteModal';
@@ -93,9 +101,12 @@ const HeaderMoreDropdown = ({
     const location = useLocation();
     const api = useApi();
     const getAttachment = useGetAttachment();
+    const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
     const [loading, withLoading] = useLoading();
     const star = useStar();
+    const [user] = useUser();
+    const { feature } = useFeature(FeatureCode.SetExpiration);
     const { call } = useEventManager();
     const closeDropdown = useRef<() => void>();
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
@@ -103,16 +114,18 @@ const HeaderMoreDropdown = ({
     const markAs = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const [CustomExpirationModalProps, openCustomExpirationModal, renderCustomExpirationModal] = useModalState();
 
     const [messageDetailsModalProps, setMessageDetailsModalOpen] = useModalState();
     const [messageHeaderModalProps, setMessageHeaderModalOpen] = useModalState();
     const [messagePrintModalProps, setMessagePrintModalOpen, renderPrintModal] = useModalState();
     const [messagePhishingModalProps, setMessagePhishingModalOpen] = useModalState();
     const [messagePermanentDeleteModalProps, setMessagePermanentDeleteModalOpen] = useModalState();
-
+    const canExpire = canSetExpiration(feature?.Value, user, message.data?.LabelIDs);
     const isStarred = IsMessageStarred(message.data || ({} as Element));
-
+    const messageID = message.data?.ID || '';
     const staringText = isStarred ? c('Action').t`Unstar` : c('Action').t`Star`;
+    const willExpire = !!message.data?.ExpirationTime;
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
@@ -152,8 +165,41 @@ const HeaderMoreDropdown = ({
         }
     };
 
+    const handleExpire = (days: number) => {
+        const date = days ? addDays(new Date(), days) : undefined;
+        const expirationTime = getExpirationTime(date);
+        void dispatch(
+            expireMessages({
+                IDs: [messageID],
+                conversationID: message.data?.ConversationID,
+                expirationTime,
+                api,
+                call,
+            })
+        );
+
+        createNotification({
+            text: days ? c('Success').t`Self-destruction set` : c('Success').t`Self-destruction removed`,
+        });
+    };
+
+    const handleCustomExpiration = (expirationDate: Date) => {
+        const expirationTime = getExpirationTime(expirationDate);
+        void dispatch(
+            expireMessages({
+                IDs: [messageID],
+                conversationID: message.data?.ConversationID,
+                expirationTime,
+                api,
+                call,
+            })
+        );
+        openCustomExpirationModal(false);
+        createNotification({ text: c('Success').t`Self-destruction set` });
+    };
+
     const messageLabelIDs = message.data?.LabelIDs || [];
-    const selectedIDs = [message.data?.ID || ''];
+    const selectedIDs = [messageID];
     const isSpam = messageLabelIDs.includes(SPAM);
     const isInTrash = messageLabelIDs.includes(TRASH);
     const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
@@ -476,6 +522,43 @@ const HeaderMoreDropdown = ({
                                             <span className="flex-item-fluid myauto">{c('Action').t`Delete`}</span>
                                         </DropdownMenuButton>
                                     ) : null}
+                                    {canExpire ? (
+                                        <>
+                                            <hr className="my0-5" />
+                                            {willExpire ? (
+                                                <DropdownMenuButton
+                                                    className="text-left flex flex-nowrap flex-align-items-center"
+                                                    onClick={() => handleExpire(0)}
+                                                    data-testid="message-view-more-dropdown:remove-expiration"
+                                                >
+                                                    <Icon name="hourglass" className="mr0-5" />
+                                                    <span className="flex-item-fluid myauto">{c('Action')
+                                                        .t`Remove self-destruction`}</span>
+                                                </DropdownMenuButton>
+                                            ) : (
+                                                <>
+                                                    <DropdownMenuButton
+                                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                                        onClick={() => handleExpire(7)}
+                                                        data-testid="message-view-more-dropdown:expire-7-days"
+                                                    >
+                                                        <Icon name="hourglass" className="mr0-5" />
+                                                        <span className="flex-item-fluid myauto">{c('Action')
+                                                            .t`Self-destruct in 7 days`}</span>
+                                                    </DropdownMenuButton>
+                                                    <DropdownMenuButton
+                                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                                        onClick={() => openCustomExpirationModal(true)}
+                                                        data-testid="message-view-more-dropdown:expire-30-days"
+                                                    >
+                                                        <Icon name="hourglass" className="mr0-5" />
+                                                        <span className="flex-item-fluid myauto">{c('Action')
+                                                            .t`Self-destruct on ...`}</span>
+                                                    </DropdownMenuButton>
+                                                </>
+                                            )}
+                                        </>
+                                    ) : null}
 
                                     <hr className="my0-5" />
 
@@ -580,6 +663,9 @@ const HeaderMoreDropdown = ({
             {moveScheduledModal}
             {moveAllModal}
             {moveToSpamModal}
+            {renderCustomExpirationModal && (
+                <CustomExpirationModal onSubmit={handleCustomExpiration} {...CustomExpirationModalProps} />
+            )}
         </>
     );
 };

@@ -3,12 +3,17 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit } from '@proton/components';
+import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit, useModalState } from '@proton/components';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { getExpirationTime } from '../../helpers/expiration';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
+import { expireMessages } from '../../logic/messages/expire/messagesExpireActions';
+import { useAppDispatch } from '../../logic/store';
+import CustomExpirationModal from '../message/modals/CustomExpirationModal';
 
 interface Props {
     checkedIDs: string[];
@@ -27,6 +32,7 @@ interface Props {
     onDelete: () => void;
     canShowBlockSender: boolean;
     onBlockSender: () => Promise<void>;
+    conversationMode: boolean;
 }
 
 const ItemContextMenu = ({
@@ -38,10 +44,15 @@ const ItemContextMenu = ({
     onMarkAs,
     canShowBlockSender,
     onBlockSender,
+    conversationMode,
     ...rest
 }: Props) => {
+    const dispatch = useAppDispatch();
+    const { createNotification } = useNotifications();
+    const { call } = useEventManager();
+    const api = useApi();
+    const [modalProps, handleSetOpen, render] = useModalState();
     const elementsAreUnread = useSelector(elementsAreUnreadSelector);
-
     const buttonMarkAsRead = useMemo(() => {
         const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
         return !allRead;
@@ -62,6 +73,13 @@ const ItemContextMenu = ({
     const handleMarkAs = (status: MARK_AS_STATUS) => {
         onMarkAs(status);
         rest.close();
+    };
+
+    const handleCustomExpiration = (expirationDate: Date) => {
+        const expirationTime = getExpirationTime(expirationDate);
+        void dispatch(expireMessages({ IDs: checkedIDs, expirationTime, api, call }));
+        handleSetOpen(false);
+        createNotification({ text: c('Success').t`Self-destruction set` });
     };
 
     const inbox = (
@@ -154,36 +172,39 @@ const ItemContextMenu = ({
     const moveButtons = actions.map((action) => allMoveButtons[action]);
 
     return (
-        <ContextMenu size={{ maxHeight: DropdownSizeUnit.Viewport }} {...rest}>
-            {moveButtons}
-            {canShowBlockSender && (
-                <ContextMenuButton
-                    key="context-menu-block"
-                    testId="context-menu-block"
-                    icon="circle-slash"
-                    name={c('Action').t`Block sender`}
-                    action={onBlockSender}
-                />
-            )}
-            <ContextSeparator />
-            {buttonMarkAsRead ? (
-                <ContextMenuButton
-                    key="context-menu-read"
-                    testId="context-menu-read"
-                    icon="envelope-open"
-                    name={c('Action').t`Mark as read`}
-                    action={() => handleMarkAs(MARK_AS_STATUS.READ)}
-                />
-            ) : (
-                <ContextMenuButton
-                    key="context-menu-unread"
-                    testId="context-menu-unread"
-                    icon="envelope-dot"
-                    name={c('Action').t`Mark as unread`}
-                    action={() => handleMarkAs(MARK_AS_STATUS.UNREAD)}
-                />
-            )}
-        </ContextMenu>
+        <>
+            <ContextMenu size={{ maxHeight: DropdownSizeUnit.Viewport }} {...rest}>
+                {moveButtons}
+                {canShowBlockSender && (
+                    <ContextMenuButton
+                        key="context-menu-block"
+                        testId="context-menu-block"
+                        icon="circle-slash"
+                        name={c('Action').t`Block sender`}
+                        action={onBlockSender}
+                    />
+                )}
+                <ContextSeparator />
+                {buttonMarkAsRead ? (
+                    <ContextMenuButton
+                        key="context-menu-read"
+                        testId="context-menu-read"
+                        icon="envelope-open"
+                        name={c('Action').t`Mark as read`}
+                        action={() => handleMarkAs(MARK_AS_STATUS.READ)}
+                    />
+                ) : (
+                    <ContextMenuButton
+                        key="context-menu-unread"
+                        testId="context-menu-unread"
+                        icon="envelope-dot"
+                        name={c('Action').t`Mark as unread`}
+                        action={() => handleMarkAs(MARK_AS_STATUS.UNREAD)}
+                    />
+                )}
+            </ContextMenu>
+            {render && <CustomExpirationModal onSubmit={handleCustomExpiration} {...modalProps} />}
+        </>
     );
 };
 

@@ -270,3 +270,9 @@ export const unsubscribeMessages = (IDs: string[]) => ({
     url: 'mail/v4/messages/unsubscribe',
     data: { IDs },
 });
+
+export const setExpiration = (IDs: string[], ExpirationTime: number | null) => ({
+    method: 'put',
+    url: 'mail/v4/messages/expire',
+    data: { IDs, ExpirationTime },
+});

@@ -9,6 +9,7 @@ import range from '@proton/utils/range';
 
 import { MAX_ELEMENT_LIST_LOAD_RETRIES, PAGE_SIZE } from '../../constants';
 import { parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
+import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { newState } from './elementsSlice';
 import {
@@ -233,4 +234,83 @@ export const pollTaskRunningFulfilled = (state: Draft<ElementsState>, { payload 
 
 export const deleteDraft = (state: Draft<ElementsState>, { payload: ID }: PayloadAction<string>) => {
     delete state.elements[ID];
+};
+
+const previousExpiration: Record<string, number | undefined> = {};
+
+export const expireElementsPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        void,
+        string,
+        { arg: { IDs: string[]; expirationTime: number | null; conversationID?: string } }
+    >
+) => {
+    const { IDs, expirationTime, conversationID } = action.meta.arg;
+    const copyIDs = [...IDs]; // Copy the array to avoid mutating the original one
+
+    // Look to update the Conversation.ExpirationTime that contains the only message
+    if (conversationID) {
+        const conversation = state.elements[conversationID] as Conversation;
+
+        if (conversation && conversation.NumMessages === 1) {
+            copyIDs.push(conversationID);
+        }
+    }
+
+    copyIDs.forEach((ID) => {
+        const element = state.elements[ID];
+
+        if (element) {
+            previousExpiration[ID] = element.ExpirationTime;
+            element.ExpirationTime = expirationTime ? expirationTime : undefined;
+        }
+    });
+};
+
+export const expireElementsFulfilled = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<Promise<void>, string, { arg: { IDs: string[]; conversationID?: string } }>
+) => {
+    const { IDs, conversationID } = action.meta.arg;
+    const copyIDs = [...IDs]; // Copy the array to avoid mutating the original one
+
+    // Look to update the Conversation.ExpirationTime that contains the only message
+    if (conversationID) {
+        const conversation = state.elements[conversationID] as Conversation;
+
+        if (conversation && conversation.NumMessages === 1) {
+            copyIDs.push(conversationID);
+        }
+    }
+
+    copyIDs.forEach((ID) => {
+        delete previousExpiration[ID];
+    });
+};
+
+export const expireElementsRejected = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<unknown, string, { arg: { IDs: string[]; conversationID?: string } }>
+) => {
+    const { IDs, conversationID } = action.meta.arg;
+    const copyIDs = [...IDs]; // Copy the array to avoid mutating the original one
+
+    // Look to update the Conversation.ExpirationTime that contains the only message
+    if (conversationID) {
+        const conversation = state.elements[conversationID] as Conversation;
+
+        if (conversation && conversation.NumMessages === 1) {
+            copyIDs.push(conversationID);
+        }
+    }
+
+    copyIDs.forEach((ID) => {
+        const element = state.elements[ID];
+
+        if (element) {
+            element.ExpirationTime = previousExpiration[ID];
+            delete previousExpiration[ID];
+        }
+    });
 };

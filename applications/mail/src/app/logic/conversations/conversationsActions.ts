@@ -1,6 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getConversation } from '@proton/shared/lib/api/conversations';
+import { getConversation, setExpiration } from '@proton/shared/lib/api/conversations';
+import { Api } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { LabelChanges, UnreadStatus } from '../../helpers/labels';
@@ -71,3 +72,11 @@ export const eventDelete = createAction<string>('conversations/event/delete');
 export const eventConversationUpdate = createAction<{ ID: string; updatedConversation: Conversation }>(
     'conversations/event/update'
 );
+
+export const expireConversations = createAsyncThunk<
+    Promise<void>,
+    { IDs: string[]; expirationTime: number | null; api: Api; call: () => Promise<void> }
+>('conversations/setExpiration', async ({ IDs, expirationTime, api, call }) => {
+    await api(setExpiration(IDs, expirationTime));
+    await call();
+});

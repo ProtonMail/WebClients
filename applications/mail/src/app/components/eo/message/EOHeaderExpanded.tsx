@@ -13,11 +13,11 @@ import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../../models/utils';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
-import ExtraExpirationTime from '../../message/extras/ExtraExpirationTime';
 import ExtraImages from '../../message/extras/ExtraImages';
 import MailRecipients from '../../message/recipients/MailRecipients';
 import RecipientItem from '../../message/recipients/RecipientItem';
 import RecipientType from '../../message/recipients/RecipientType';
+import EOExpirationTime from './EOExpirationTime';
 
 interface Props {
     labelID: string;
@@ -136,7 +136,7 @@ const EOHeaderExpanded = ({
 
             <section className="message-header-extra border-top pt0-5 mx2 on-tiny-mobile-ml0 on-tiny-mobile-mr0">
                 <div className="mt0-5 flex flex-row">
-                    {messageLoaded && <ExtraExpirationTime message={message} displayAsButton />}
+                    {messageLoaded && <EOExpirationTime message={message} />}
                     <ExtraImages
                         messageImages={message.messageImages}
                         type="remote"

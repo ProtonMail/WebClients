@@ -322,3 +322,48 @@ export const updateFromLoadElements = (
         }
     });
 };
+
+const previousExpirationTime: Record<string, number | undefined> = {};
+
+export const expireConversationsPending = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<void, string, { arg: { IDs: string[]; expirationTime: number | null } }>
+) => {
+    const { IDs, expirationTime } = action.meta.arg;
+
+    IDs.forEach((ID) => {
+        const conversationState = getConversation(state, ID);
+
+        if (conversationState && conversationState.Conversation) {
+            previousExpirationTime[ID] = conversationState.Conversation.ExpirationTime;
+            conversationState.Conversation.ExpirationTime = expirationTime ? expirationTime : undefined;
+        }
+    });
+};
+
+export const expireConversationsFullfilled = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<Promise<void>, string, { arg: { IDs: string[] } }>
+) => {
+    const { IDs } = action.meta.arg;
+
+    IDs.forEach((ID) => {
+        delete previousExpirationTime[ID];
+    });
+};
+
+export const expireConversationsRejected = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<unknown, string, { arg: { IDs: string[] } }>
+) => {
+    const { IDs } = action.meta.arg;
+
+    IDs.forEach((ID) => {
+        const conversationState = getConversation(state, ID);
+
+        if (conversationState && conversationState.Conversation) {
+            conversationState.Conversation.ExpirationTime = previousExpirationTime[ID];
+            delete previousExpirationTime[ID];
+        }
+    });
+};
