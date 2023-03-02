@@ -2,7 +2,8 @@ import { HTMLAttributes, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { MemoizedIconRow as IconRow, InputTwo, Notifications, TextAreaTwo } from '@proton/components';
+import { Input } from '@proton/atoms';
+import { MemoizedIconRow as IconRow, Notifications, TextAreaTwo } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import {
@@ -127,7 +128,7 @@ const EventForm = ({
 
     const titleRow = (
         <IconRow id={TITLE_INPUT_ID} title={c('Label').t`Event title`}>
-            <InputTwo
+            <Input
                 id={TITLE_INPUT_ID}
                 placeholder={c('Placeholder').t`Add title`}
                 title={c('Title').t`Add event title`}
@@ -170,7 +171,7 @@ const EventForm = ({
 
     const locationRow = (
         <IconRow icon="map-pin" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
-            <InputTwo
+            <Input
                 id={LOCATION_INPUT_ID}
                 placeholder={c('Placeholder').t`Add location`}
                 maxLength={MAX_CHARS_API.LOCATION}

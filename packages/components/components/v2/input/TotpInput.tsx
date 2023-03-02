@@ -2,8 +2,9 @@ import { ChangeEvent, Fragment, KeyboardEvent, ReactNode, useEffect, useMemo, us
 
 import { c } from 'ttag';
 
+import { Input } from '@proton/atoms';
+
 import useElementRect from '../../../hooks/useElementRect';
-import InputTwo from './Input';
 
 const getIsValidValue = (value: string, type: TotpInputProps['type']) => {
     if (type === 'number') {
@@ -127,7 +128,7 @@ const TotpInput = ({
                                 }}
                             />
                         )}
-                        <InputTwo
+                        <Input
                             autoFocus={i === 0 ? autoFocus : undefined}
                             id={(() => {
                                 if (!id) {

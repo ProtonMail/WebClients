@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
-import { Button } from '@proton/atoms';
-import { ButtonGroup, Icon, IconName, InputTwo, Mark } from '@proton/components';
+import { Button, Input } from '@proton/atoms';
+import { ButtonGroup, Icon, IconName, Mark } from '@proton/components';
 import iconSvg from '@proton/styles/assets/img/icons/sprite-icons.svg';
 
 import { getTitle } from '../../helpers/title';
@@ -35,7 +35,7 @@ export const Icons = () => {
     return (
         <>
             <div className="flex flex-nowrap flex-gap-1">
-                <InputTwo
+                <Input
                     prefix={<Icon name="magnifier" />}
                     placeholder={`Search ${primaryIconNames.length} icons by name…`}
                     value={search}

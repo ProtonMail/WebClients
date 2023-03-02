@@ -2,19 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Input } from '@proton/atoms';
 import { Key } from '@proton/shared/lib/interfaces';
 
-import {
-    Alert,
-    InputTwo,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Row,
-} from '../../../components';
+import { Alert, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Row } from '../../../components';
 import { ContactClearDataExecutionProps } from './ContactClearDataExecutionModal';
 
 export interface ContactClearDataConfirmProps {
@@ -49,7 +40,7 @@ const ContactClearDataConfirmModal = ({ errorKey, onClearData, ...rest }: Props)
                         .jt`This action is irreversible. Please enter the word ${boldDanger} in the field to proceed.`}
                 </Alert>
                 <Row>
-                    <InputTwo
+                    <Input
                         value={dangerInput}
                         placeholder={dangerWord}
                         onChange={(event) => setDangerInput(event.target.value)}

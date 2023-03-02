@@ -2,22 +2,14 @@ import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Input } from '@proton/atoms';
 import { FORBIDDEN_LABEL_NAMES } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactGroup, IMPORT_GROUPS_ACTION, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    Alert,
-    InputTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Option,
-    SelectTwo,
-} from '../../../../components';
+import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Option, SelectTwo } from '../../../../components';
 import { useApi, useEventManager } from '../../../../hooks';
 import { submitCategories } from '../encryptAndSubmit';
 
@@ -94,7 +86,7 @@ const SelectGroup = ({
 
     if (action === IMPORT_GROUPS_ACTION.CREATE) {
         return (
-            <InputTwo
+            <Input
                 id="contact-group-create"
                 placeholder={c('Placeholder').t`Name`}
                 maxLength={100}

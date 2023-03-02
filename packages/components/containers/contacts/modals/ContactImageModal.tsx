@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useCallback, useEffect, useState } from 'react'
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Input } from '@proton/atoms';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
@@ -13,7 +13,6 @@ import {
     Field,
     FileInput,
     Form,
-    InputTwo,
     Label,
     ModalProps,
     ModalTwo,
@@ -135,7 +134,7 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: Props) =
                 <Row>
                     <Label htmlFor="contactImageModal-input-url">{c('Label').t`Add image URL`}</Label>
                     <Field>
-                        <InputTwo
+                        <Input
                             id="contactImageModal-input-url"
                             value={isBase64Str ? '' : imageUrl}
                             onChange={handleChange}

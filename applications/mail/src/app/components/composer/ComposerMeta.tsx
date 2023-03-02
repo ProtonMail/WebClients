@@ -2,7 +2,8 @@ import { ChangeEvent, MutableRefObject, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InputTwo, Label, generateUID } from '@proton/components';
+import { Input } from '@proton/atoms';
+import { Label, generateUID } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { MessageSendInfo } from '../../hooks/useSendInfo';
@@ -72,7 +73,7 @@ const ComposerMeta = ({
                 >
                     {c('Info').t`Subject`}
                 </Label>
-                <InputTwo
+                <Input
                     id={`subject-${uid}`}
                     value={message.data?.Subject || ''}
                     placeholder={c('Placeholder').t`Subject`}

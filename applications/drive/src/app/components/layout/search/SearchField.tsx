@@ -2,8 +2,8 @@ import React, { useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import { Icon, InputTwo, Spotlight, usePopperAnchor } from '@proton/components';
+import { Button, Href, Input } from '@proton/atoms';
+import { Icon, Spotlight, usePopperAnchor } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
@@ -95,7 +95,7 @@ export const SearchField = () => {
             >
                 <>
                     <div onClick={handleInputClick} role="search">
-                        <InputTwo
+                        <Input
                             value={searchParams}
                             placeholder={placeholderText}
                             // this handler has to be passed with `onFocus` prop, as before it used to trigger
