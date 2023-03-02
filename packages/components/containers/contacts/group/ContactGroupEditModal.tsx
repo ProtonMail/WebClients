@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Input } from '@proton/atoms';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -15,7 +15,6 @@ import {
     Autocomplete,
     ColorPicker,
     Field,
-    InputTwo,
     Label,
     ModalProps,
     ModalTwo,
@@ -145,7 +144,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                 <Row>
                     <Label htmlFor="contactGroupName">{c('Label for contact group name').t`Name`}</Label>
                     <Field className="flex-item-fluid">
-                        <InputTwo
+                        <Input
                             id="contactGroupName"
                             placeholder={c('Placeholder for contact group name').t`Name`}
                             value={model.name}

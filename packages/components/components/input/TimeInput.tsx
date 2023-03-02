@@ -3,6 +3,7 @@ import { ChangeEvent, MouseEvent, useEffect, useMemo, useRef, useState } from 'r
 import { Locale, addMinutes, format, parse, startOfDay } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { Input, InputProps } from '@proton/atoms';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
@@ -13,7 +14,6 @@ import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import { usePopperAnchor } from '../popper';
-import InputTwo, { InputTwoProps as InputProps } from '../v2/input/Input';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'p', { locale });
@@ -292,7 +292,7 @@ const TimeInput = ({
 
     return (
         <>
-            <InputTwo
+            <Input
                 type="text"
                 ref={anchorRef}
                 onFocus={() => open()}

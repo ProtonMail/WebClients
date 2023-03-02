@@ -3,12 +3,12 @@ import { AutoSizer, CellMeasurer, CellMeasurerCache, List } from 'react-virtuali
 
 import { c } from 'ttag';
 
+import { Input } from '@proton/atoms';
 import { generateUID } from '@proton/components/helpers';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
 import { Dropdown, DropdownButton } from '../../dropdown';
 import { Icon } from '../../icon';
-import InputTwo from '../input/Input';
 import CountrySelectRow from './CountrySelectRow';
 import { CountryOptionData } from './helper';
 
@@ -128,7 +128,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                 }}
             >
                 <form name="search" className="p1">
-                    <InputTwo
+                    <Input
                         id="search-keyword"
                         value={search}
                         onValue={setSearch}

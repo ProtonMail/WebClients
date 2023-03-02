@@ -2,15 +2,15 @@ import { ChangeEvent, Ref, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import { Input, InputProps } from '@proton/atoms';
 import { isContactNameValid } from '@proton/shared/lib/contacts/property';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { ErrorZone, InputTwo } from '../../../../components';
-import { InputTwoProps } from '../../../../components/v2/input/Input';
+import { ErrorZone } from '../../../../components';
 
-interface Props extends Omit<InputTwoProps, 'onChange'> {
+interface Props extends Omit<InputProps, 'onChange'> {
     vCardProperty: VCardProperty<string>;
     isSubmitted: boolean;
     onChange: (vCardProperty: VCardProperty) => void;
@@ -29,7 +29,7 @@ const ContactFieldFn = ({ vCardProperty, isSubmitted, onChange, ...rest }: Props
 
     return (
         <>
-            <InputTwo
+            <Input
                 ref={ref}
                 value={vCardProperty.value}
                 placeholder={label}
