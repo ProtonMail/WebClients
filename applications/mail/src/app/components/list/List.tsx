@@ -195,6 +195,7 @@ const List = (
         onMarkAs,
         onMove,
         onDelete,
+        conversationMode,
     });
 
     const unreads = useMemo(() => {

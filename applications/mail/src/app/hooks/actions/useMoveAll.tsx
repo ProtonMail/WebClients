@@ -21,7 +21,7 @@ export const useMoveAll = () => {
     });
 
     const handleSubmit = async () => {
-        dispatch(moveAll({ api, call, ...actionProps }));
+        void dispatch(moveAll({ api, call, ...actionProps }));
         modalProps.onClose?.();
     };
 
