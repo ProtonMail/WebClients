@@ -145,12 +145,7 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
 
                 item.children = [...prevItems, ...newItems].map(syncTreeWithCache);
                 item.children.sort((a, b) => {
-                    const nameA = a.link.name.toUpperCase();
-                    const nameB = b.link.name.toUpperCase();
-                    if (nameA < nameB) {
-                        return -1;
-                    }
-                    return nameA > nameB ? 1 : 0;
+                    return a.link.name.localeCompare(b.link.name, undefined, { numeric: true });
                 });
             }
             return { ...item };
