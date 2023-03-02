@@ -1,3 +1,112 @@
+@import '~@proton/styles/scss/lib';
+
 .input {
-	display: flex;
+	border-radius: var(--border-radius-md);
+	border: 1px solid var(--field-norm);
+	background-color: var(--field-background-color);
+	color: var(--field-text-color);
+	transition: 0.15s easing(ease-out-quint), visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
+
+	&:hover,
+	&.hover {
+		border-color: var(--field-hover);
+		background-color: var(--field-hover-background-color);
+		color: var(--field-hover-text-color);
+	}
+
+	&.focus,
+	&:not(.disabled):focus-within {
+		border-color: var(--focus-outline);
+		background-color: var(--field-focus-background-color);
+		color: var(--field-focus-text-color);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	}
+
+	&.error {
+		border-color: var(--signal-danger);
+	}
+
+	&.disabled {
+		border-color: var(--field-disabled);
+		background-color: var(--field-disabled-background-color);
+		color: var(--field-disabled-text-color);
+	}
+
+	&.unstyled {
+		&#{&} {
+			border-color: transparent;
+			border-radius: 0;
+			box-shadow: none;
+			background-color: transparent;
+			transition: none;
+		}
+	}
+
+	&-element {
+		min-block-size: rem(34);
+		padding-block: em(7); // 36px height with wrapper borders, same as buttons
+		padding-inline: em(16);
+		border-radius: var(--border-radius-md);
+		background: none;
+		color: inherit;
+		outline: none;
+		filter: none; // fixes Firefox autofill color
+
+		@include media('<=xsmall') {
+			padding-inline: em(8);
+		}
+
+		@include media('<=small') {
+			font-size: max(16px, em($base-font-size));
+		}
+
+		@include media('print') {
+			font-size: 10pt;
+		}
+
+		.is-drawer-app & {
+			font-size: em($base-font-size);
+		}
+
+		&:-moz-ui-invalid {
+			// fixes some Firefox issues with HTML5 validation
+			box-shadow: none;
+		}
+
+		&[type='search']::-webkit-search-cancel-button {
+			display: none;
+		}
+
+		select#{&}::-ms-expand {
+			display: none;
+		}
+	}
+
+	&-adornment {
+		color: var(--text-weak);
+		max-inline-size: 60vw; // arbitrary value to avoid issues in case of super long suffix - domain names suffix on mobile for example
+
+		.button:not([class*='button-underline']) {
+			&:first-child {
+				margin-inline-start: -0.25em;
+			}
+
+			&:last-child {
+				margin-inline-end: -0.25em;
+			}
+		}
+	}
+
+	&.disabled &-element::placeholder,
+	&.disabled &-adornment {
+		color: inherit;
+	}
+
+	& > *:not(:only-child, :first-child) > &-element {
+		padding-inline-start: 0.5em;
+	}
+
+	& > *:not(:only-child, :last-child) > &-element {
+		padding-inline-end: 0.5em;
+	}
 }
