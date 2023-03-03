@@ -1,6 +1,6 @@
 import React, { forwardRef, useMemo } from 'react';
 
-import { Locale, add, addDays, addSeconds, format, fromUnixTime, getUnixTime, nextMonday, set } from 'date-fns';
+import { Locale, addDays, addSeconds, format, fromUnixTime, getUnixTime, nextMonday } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -12,6 +12,7 @@ import clsx from '@proton/utils/clsx';
 
 import { SCHEDULED_SEND_BUFFER } from '../../../../constants';
 import ComposerScheduleSendUpsellModal from './UpsellModal/ScheduleSendUpsellModal';
+import { isScheduledDuringNight } from './helpers';
 import useScheduleSendFeature from './useScheduleSendFeature';
 
 interface Props {
@@ -41,21 +42,11 @@ const ScheduleSendActions = ({
     const { canScheduleSendCustom } = useScheduleSendFeature();
     const actions = useMemo(() => {
         const now = new Date();
+        const isNight = isScheduledDuringNight();
         const scheduledAt = scheduledAtUnixTimestamp ? fromUnixTime(scheduledAtUnixTimestamp) : undefined;
+        const today = now.setHours(8, 0, 0, 0);
         const tomorrow = addDays(now, 1).setHours(8, 0, 0, 0);
         const monday = nextMonday(now).setHours(8, 0, 0, 0);
-
-        const BUFFER_IN_MINUTES = SCHEDULED_SEND_BUFFER / 60;
-        const dayStart = set(now, {
-            hours: 0,
-            minutes: 0,
-            seconds: 0,
-        });
-        const dayStartOfMorning = add(dayStart, {
-            hours: 7,
-            minutes: 60 - BUFFER_IN_MINUTES,
-        });
-        const isNight = now > dayStart && now < dayStartOfMorning;
 
         const list: Actions = [
             {
@@ -65,8 +56,8 @@ const ScheduleSendActions = ({
                     : // translator: Full sentence is: 'Tomorrow | February 14th at 8:00'
                       c('Action').t`Tomorrow`,
                 testId: 'composer:schedule-send:tomorrow',
-                value: formatDate(tomorrow, dateLocale),
-                onSubmit: () => onScheduleSend(getUnixTime(tomorrow)),
+                value: isNight ? formatDate(today, dateLocale) : formatDate(tomorrow, dateLocale),
+                onSubmit: () => (isNight ? onScheduleSend(getUnixTime(today)) : onScheduleSend(getUnixTime(tomorrow))),
             },
             {
                 title: c('Action').t`Monday`,
