@@ -148,24 +148,26 @@ const InvitationRow = ({
                 <div key="status">{isInvitedAddressDisabled && <CalendarBadge {...getDisabledCalendarBadge()} />}</div>
             </TableCell>
             <TableCell>
-                {isAcceptButtonDisabled && (
-                    <Info
-                        title={
-                            isInvitedAddressDisabled
-                                ? c('Info').t`Enable this address to join this calendar`
-                                : c('Info').t`Remove one of your calendars to join this one`
-                        }
-                        className="mr0-5"
-                    />
-                )}
-                <ButtonGroup size="small">
-                    <Button loading={loadingAccept} disabled={isAcceptButtonDisabled} onClick={handleAccept}>
-                        {c('Action; accept invitation to share calendar').t`Accept`}
-                    </Button>
-                    <Button loading={loadingDecline} disabled={isDeclineButtonDisabled} onClick={handleDecline}>
-                        {c('Action; decline invitation to share calendar').t`Decline`}
-                    </Button>
-                </ButtonGroup>
+                <div className="flex flex-nowrap on-tablet-flex-justify-start flex-justify-end flex-align-items-center flex-gap-0-5">
+                    {isAcceptButtonDisabled && (
+                        <Info
+                            title={
+                                isInvitedAddressDisabled
+                                    ? c('Info').t`Enable this address to join this calendar`
+                                    : c('Info').t`Remove one of your calendars to join this one`
+                            }
+                            buttonClass="flex-item-noshrink"
+                        />
+                    )}
+                    <ButtonGroup size="small" className="flex-item-noshrink">
+                        <Button loading={loadingAccept} disabled={isAcceptButtonDisabled} onClick={handleAccept}>
+                            {c('Action; accept invitation to share calendar').t`Accept`}
+                        </Button>
+                        <Button loading={loadingDecline} disabled={isDeclineButtonDisabled} onClick={handleDecline}>
+                            {c('Action; decline invitation to share calendar').t`Decline`}
+                        </Button>
+                    </ButtonGroup>
+                </div>
             </TableCell>
         </TableRow>
     );
