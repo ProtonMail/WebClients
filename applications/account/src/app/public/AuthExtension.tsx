@@ -71,7 +71,7 @@ const AuthExtension = () => {
                             </div>
                         )}
 
-                        <h3 className="text-bold mb0 on-mobile-mt0-5">{payload?.title ?? defaults[type].title}</h3>
+                        <h1 className="h3 text-bold mb0 on-mobile-mt0-5">{payload?.title ?? defaults[type].title}</h1>
                         <Text className="mt1">{payload?.message ?? defaults[type].message}</Text>
                     </Content>
                 </div>
