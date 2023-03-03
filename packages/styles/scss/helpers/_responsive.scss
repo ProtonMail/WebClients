@@ -95,6 +95,14 @@
 			}
 		}
 
+		&-flex-justify-start {
+			justify-content: start;
+		}
+
+		&-flex-justify-end {
+			justify-content: start;
+		}
+
 		&-order-1 {
 			order: 1;
 		}
@@ -239,6 +247,10 @@
 		}
 
 		&-flex-justify-start {
+			justify-content: start;
+		}
+
+		&-flex-justify-end {
 			justify-content: start;
 		}
 
