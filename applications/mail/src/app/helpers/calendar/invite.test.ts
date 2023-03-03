@@ -326,7 +326,7 @@ END:VCALENDAR`;
             });
         });
 
-        test('should generate a DTSTAMP from the message if no DTSTAMP was present, and fix sequences that are too big', async () => {
+        test('should generate a DTSTAMP from the message if no DTSTAMP was present', async () => {
             const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
@@ -335,7 +335,6 @@ BEGIN:VEVENT
 UID:test-event
 DTSTART;TZID=/mozilla.org/20050126_1/Europe/Brussels:20021231T203000
 DTEND;TZID=/mozilla.org/20050126_1/Europe/Brussels:20030101T003000
-SEQUENCE:2205092022
 LOCATION:1CP Conference Room 4350
 ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
  S-ACTION;RSVP=TRUE:mailto:testme@pm.me
@@ -367,7 +366,7 @@ END:VCALENDAR`;
                 method: 'PUBLISH',
                 vevent: expect.objectContaining({
                     component: 'vevent',
-                    uid: { value: 'original-uid-test-event-sha1-uid-2d83f9ede40324edd0d2ec094e0015451031cf3c' },
+                    uid: { value: 'original-uid-test-event-sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186' },
                     dtstamp: {
                         value: { year: 2022, month: 10, day: 10, hours: 10, minutes: 0, seconds: 0, isUTC: true },
                     },
@@ -383,7 +382,7 @@ END:VCALENDAR`;
                 }),
                 originalVcalInvitation: parsedInvitation,
                 originalUniqueIdentifier: 'test-event',
-                legacyUid: 'sha1-uid-2d83f9ede40324edd0d2ec094e0015451031cf3c-original-uid-test-event',
+                legacyUid: 'sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186-original-uid-test-event',
                 hasMultipleVevents: false,
                 fileName: 'test.ics',
             });
@@ -603,6 +602,100 @@ END:VCALENDAR`;
                 originalUniqueIdentifier: 'case5544646879321797797898799',
                 hasMultipleVevents: false,
                 fileName: 'test.ics',
+            });
+        });
+
+        describe('should fix sequences out of bounds', () => {
+            test('if they are negative', async () => {
+                const invitation = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
+BEGIN:VEVENT
+UID:test-event
+DTSTART;TZID=/mozilla.org/20050126_1/Europe/Brussels:20021231T203000
+DTEND;TZID=/mozilla.org/20050126_1/Europe/Brussels:20030101T003000
+SEQUENCE:-1
+LOCATION:1CP Conference Room 4350
+ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
+ S-ACTION;RSVP=TRUE:mailto:testme@pm.me
+ATTENDEE;CN="testKrt";CUTYPE=INDIVIDUAL;EMAIL="aGmailOne@gmail.co
+ m";PARTSTAT=ACCEPTED;ROLE=CHAIR:mailto:aGmailOne@gmail.com
+TRANSP:OPAQUE
+ORGANIZER;CN="testKrt":mailto:aGmailOne@gmail.com
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1W2D
+ACTION:EMAIL
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+                const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+                const message = { Time: Date.UTC(2022, 9, 10, 10, 0, 0) / 1000 } as Message;
+                expect(
+                    await getSupportedEventInvitation({
+                        vcalComponent: parsedInvitation,
+                        message,
+                        icsBinaryString: invitation,
+                        icsFileName: 'test.ics',
+                        primaryTimezone: 'America/Sao_Paulo',
+                    })
+                ).toEqual(
+                    expect.objectContaining({
+                        vevent: expect.objectContaining({
+                            sequence: { value: 0 },
+                        }),
+                    })
+                );
+            });
+
+            test('if they are too big', async () => {
+                const invitation = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
+BEGIN:VEVENT
+UID:test-event
+DTSTART;TZID=/mozilla.org/20050126_1/Europe/Brussels:20021231T203000
+DTEND;TZID=/mozilla.org/20050126_1/Europe/Brussels:20030101T003000
+SEQUENCE:2205092022
+LOCATION:1CP Conference Room 4350
+ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
+ S-ACTION;RSVP=TRUE:mailto:testme@pm.me
+ATTENDEE;CN="testKrt";CUTYPE=INDIVIDUAL;EMAIL="aGmailOne@gmail.co
+ m";PARTSTAT=ACCEPTED;ROLE=CHAIR:mailto:aGmailOne@gmail.com
+TRANSP:OPAQUE
+ORGANIZER;CN="testKrt":mailto:aGmailOne@gmail.com
+BEGIN:VALARM
+TRIGGER:-PT15H
+ACTION:DISPLAY
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1W2D
+ACTION:EMAIL
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+                const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+                const message = { Time: Date.UTC(2022, 9, 10, 10, 0, 0) / 1000 } as Message;
+                expect(
+                    await getSupportedEventInvitation({
+                        vcalComponent: parsedInvitation,
+                        message,
+                        icsBinaryString: invitation,
+                        icsFileName: 'test.ics',
+                        primaryTimezone: 'America/Sao_Paulo',
+                    })
+                ).toEqual(
+                    expect.objectContaining({
+                        vevent: expect.objectContaining({
+                            sequence: { value: 57608374 },
+                        }),
+                    })
+                );
             });
         });
     });

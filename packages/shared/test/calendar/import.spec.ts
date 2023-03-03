@@ -202,7 +202,7 @@ END:VEVENT`;
     });
 
     it('should fix events with a sequence that is too big', () => {
-        const sequenceOutOfBounds = 2 ** 31;
+        const sequenceOutOfBounds = 2 ** 31 + 3;
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
@@ -223,7 +223,7 @@ END:VEVENT`;
                 value: { year: 2002, month: 3, day: 12, hours: 8, minutes: 30, seconds: 0, isUTC: false },
                 parameters: { tzid: 'America/New_York' },
             },
-            sequence: { value: 0 },
+            sequence: { value: 3 },
         });
     });
 
