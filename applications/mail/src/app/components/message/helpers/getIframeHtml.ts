@@ -2,20 +2,27 @@ import svg from '@proton/styles/assets/img/icons/email-sprite-icons.svg';
 
 import { locateHead } from '../../../helpers/message/messageHead';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID, MESSAGE_IFRAME_ROOT_ID } from '../constants';
+import {
+    MESSAGE_IFRAME_PRINT_CLASS,
+    MESSAGE_IFRAME_PRINT_FOOTER_ID,
+    MESSAGE_IFRAME_PRINT_HEADER_ID,
+    MESSAGE_IFRAME_ROOT_ID,
+} from '../constants';
 
 import cssStyles from '../MessageIframe.raw.scss';
 
-const getIframeHtml = (
-    emailContent: string,
-    message: MessageState,
-    isPlainText: boolean,
-    themeCSSVariables: string
-) => {
-    const messageHead = locateHead(message.messageDocument?.document) || '';
+type Options = {
+    emailContent: string;
+    messageDocument: Required<MessageState>['messageDocument']['document'];
+    isPlainText: boolean;
+    themeCSSVariables: string;
+    isPrint: boolean;
+};
 
-    const bodyStyles = message.messageDocument?.document?.querySelector('body')?.getAttribute('style');
-    const bodyClasses = message.messageDocument?.document?.querySelector('body')?.getAttribute('class');
+const getIframeHtml = ({ emailContent, messageDocument, isPlainText, themeCSSVariables, isPrint }: Options) => {
+    const messageHead = locateHead(messageDocument) || '';
+    const bodyStyles = messageDocument?.querySelector('body')?.getAttribute('style');
+    const bodyClasses = messageDocument?.querySelector('body')?.getAttribute('class');
 
     /**
      * About this line:
@@ -25,7 +32,13 @@ const getIframeHtml = (
     // Plain text needs content needs to have no spaces in order to be correctly displayed
     if (isPlainText) {
         const emailHead = `<head><style>${themeCSSVariables}</style><style>${cssStyles}</style>${messageHead}</head>`;
-        const emailBody = `<body><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text"><div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div><div style="width: 100% !important;padding-bottom:10px;!important">${emailContent}</div><div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div></div></body>`;
+        const emailBody = `<body><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text ${
+            isPrint ? MESSAGE_IFRAME_PRINT_CLASS : ''
+        }">${
+            isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''
+        }<div style="width: 100% !important;padding-bottom:10px;!important">${emailContent}</div>${
+            isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>` : ''
+        }</div></body>`;
 
         return `<html>${emailHead}${emailBody}</html>`;
     }
@@ -47,10 +60,9 @@ const getIframeHtml = (
           <style>${cssStyles}</style>
           ${messageHead}
         </head>
-        <body>
         ${svg}
-        <div id="${MESSAGE_IFRAME_ROOT_ID}">
-          <div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>
+        <div id="${MESSAGE_IFRAME_ROOT_ID}" ${isPrint ? `class="${MESSAGE_IFRAME_PRINT_CLASS}"` : ''}>
+          ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''}
           <div style="display: flex !important; width: 100% !important;">
           <div style="width: 100% !important;padding-bottom:10px;!important">
             ${bodyStyles || bodyClasses ? `<div class="${bodyClasses}" style="${bodyStyles}">` : ''}
@@ -58,7 +70,7 @@ const getIframeHtml = (
             ${bodyStyles || bodyClasses ? '</div>' : ''}
           </div>
           </div>
-          <div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>
+          ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>` : ''}
         </div>
         </body>
       </html>

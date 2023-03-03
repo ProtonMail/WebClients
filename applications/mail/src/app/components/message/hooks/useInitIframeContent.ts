@@ -16,6 +16,7 @@ interface Props {
     isPlainText: boolean;
     onContentLoaded: (iframeRootElement: HTMLDivElement) => void;
     onReady?: (iframe: RefObject<HTMLIFrameElement>) => void;
+    isPrint: boolean;
 }
 
 const useInitIframeContent = ({
@@ -26,6 +27,7 @@ const useInitIframeContent = ({
     onContentLoaded,
     isPlainText,
     onReady,
+    isPrint,
 }: Props) => {
     const [initStatus, setInitStatus] = useState<'start' | 'done'>('start');
     const hasBeenDone = useRef<boolean>(false);
@@ -44,7 +46,13 @@ const useInitIframeContent = ({
             }
 
             const doc = iframeRef.current?.contentDocument;
-            const iframeContent = getIframeHtml(emailContent, message, isPlainText, themeCSSVariables);
+            const iframeContent = getIframeHtml({
+                emailContent,
+                messageDocument: message.messageDocument?.document,
+                isPlainText,
+                themeCSSVariables,
+                isPrint,
+            });
             doc?.open();
             doc?.write(iframeContent);
             doc?.close();
