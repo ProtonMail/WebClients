@@ -3,8 +3,7 @@ import { AutoSizer, List } from 'react-virtualized';
 
 import { DENSITY } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
-
-import { classnames } from '../../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     rowCount: number;
@@ -28,7 +27,7 @@ const ContactSelectorList = ({
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     return (
-        <div ref={containerRef} className={classnames(['h-custom', className])} style={{ '--height-custom': `300px` }}>
+        <div ref={containerRef} className={clsx(['h-custom', className])} style={{ '--height-custom': `300px` }}>
             <AutoSizer>
                 {({ height, width }) => (
                     <List
