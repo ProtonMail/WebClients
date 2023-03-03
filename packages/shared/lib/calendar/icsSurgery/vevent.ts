@@ -16,7 +16,7 @@ import {
 } from '../../interfaces/calendar';
 import { dedupeAlarmsWithNormalizedTriggers } from '../alarms';
 import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '../attendees';
-import { ICAL_METHOD, MAX_CHARS_API } from '../constants';
+import { ICAL_METHOD, MAX_CHARS_API, MAX_ICAL_SEQUENCE } from '../constants';
 import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../helper';
 import { getHasConsistentRrule, getHasOccurrences, getSupportedRrule } from '../recurrence/rrule';
 import { durationToMilliseconds } from '../vcal';
@@ -225,10 +225,16 @@ export const getSupportedSequenceValue = (sequence = 0) => {
      * have INTEGER values, and the valid range for an integer is that of a 32-byte integer: -2147483648 to 2147483647,
      * cf. https://www.rfc-editor.org/rfc/rfc5545#section-3.3.8
      *
-     * Our BE does not support negative values, and we should not save anything bigger than 2147483687. We transform values
-     * outside this range into 0.
+     * Our BE does not support negative values, and we should not save anything bigger than 2147483687. We transform
+     * negative values into 0 and take the modulo of bigger ones.
      */
-    return sequence > 2147483647 || sequence < 0 ? 0 : sequence;
+    if (sequence < 0) {
+        return 0;
+    }
+    if (sequence >= MAX_ICAL_SEQUENCE) {
+        return sequence % MAX_ICAL_SEQUENCE;
+    }
+    return sequence;
 };
 
 export const withSupportedSequence = (vevent: VcalVeventComponent) => {
