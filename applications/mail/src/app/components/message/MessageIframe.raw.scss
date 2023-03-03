@@ -446,6 +446,11 @@ blockquote.protonmail_quote
 			color: var(--text-weak);
 		}
 	}
+
+	.proton-search-highlight {
+		background: transparent;
+		font: inherit;
+	}
 }
 
 @include media('print') {
@@ -497,6 +502,11 @@ blockquote.protonmail_quote
 	.proton-plain-text {
 		color: black;
 		background-color: white;
+	}
+
+	.proton-search-highlight {
+		background: transparent;
+		font: inherit;
 	}
 
 	.sr-only,
