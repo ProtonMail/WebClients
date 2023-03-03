@@ -15,7 +15,7 @@ import { TableCell, TableRow } from '../../../components';
 import './CalendarMemberGrid.scss';
 
 const permissionLabelMap = {
-    [MEMBER_PERMISSIONS.EDIT]: c('Calendar share permission label').t`Edit`,
+    [MEMBER_PERMISSIONS.EDIT]: c('Calendar share permission label').t`Edit event details`,
     [MEMBER_PERMISSIONS.FULL_VIEW]: c('Calendar share permission label').t`See all event details`,
     // [CalendarMemberPermissions.LIMITED]: c('Calendar share permission label').t`See only free/busy`,
 };
