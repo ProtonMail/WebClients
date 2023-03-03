@@ -1,36 +1,23 @@
 import { CSSProperties, ChangeEvent } from 'react';
 
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import clsx from '@proton/utils/clsx';
 
 import { Checkbox } from '../../../components';
-import { classnames } from '../../../helpers';
-import ContactGroupLabels from '../group/ContactGroupLabels';
 
 interface Props {
     style: CSSProperties;
     onCheck: (e: ChangeEvent<HTMLInputElement>, contactID: string) => void;
     contact: ContactEmail;
     checked: boolean;
-    contactGroupsMap?: { [key: string]: ContactGroup };
     isNarrow: boolean;
-    onGroupDetails: (contactGroupID: string) => void;
 }
 
-const ContactSelectorRow = ({
-    style,
-    onCheck,
-    contact,
-    checked,
-    contactGroupsMap = {},
-    isNarrow,
-    onGroupDetails,
-}: Props) => {
-    const contactGroups = contact.LabelIDs.map((ID: string) => contactGroupsMap[ID]);
-
+const ContactSelectorRow = ({ style, onCheck, contact, checked, isNarrow }: Props) => {
     return (
         <div style={style} className="flex">
             <div
-                className={classnames([
+                className={clsx([
                     'flex flex-nowrap flex-item-fluid h100 myauto contact-list-row pl1 pr1',
                     checked && 'contact-list-row--selected',
                 ])}
@@ -44,26 +31,14 @@ const ContactSelectorRow = ({
                     id={contact.ID}
                 >
                     <div
-                        className={classnames([
-                            'flex-item-fluid flex-align-items-center max-w100 h100',
-                            !isNarrow && 'flex',
-                        ])}
+                        className={clsx(['flex-item-fluid flex-align-items-center max-w100 h100', !isNarrow && 'flex'])}
                     >
-                        <div className={classnames(['pl1 flex', !isNarrow && 'w33'])}>
+                        <div className={clsx(['pl1 flex', !isNarrow && 'w45'])}>
                             <span className="inline-block text-ellipsis max-w100 pr1">{contact.Name}</span>
                         </div>
                         <div className="flex-item-fluid flex on-mobile-pl1">
                             <span className="inline-block text-ellipsis max-w100 pr1">{contact.Email}</span>
                         </div>
-                        {!isNarrow && contactGroups && (
-                            <div className="w33 text-right relative upper-layer">
-                                <ContactGroupLabels
-                                    className="flex-justify-end"
-                                    contactGroups={contactGroups}
-                                    onDetails={onGroupDetails}
-                                />
-                            </div>
-                        )}
                     </div>
                 </Checkbox>
             </div>
