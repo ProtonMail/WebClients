@@ -34,7 +34,7 @@ export const prepareHtml = async (
     mailSettings: MailSettings | undefined,
     onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>,
     onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
-    onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
+    onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void,
     onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void
 ): Promise<Preparation> => {
     const document = transformEscape(message.decryption?.decryptedBody, base64Cache);

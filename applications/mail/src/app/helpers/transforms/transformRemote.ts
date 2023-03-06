@@ -56,7 +56,7 @@ export const transformRemote = (
     mailSettings: Partial<MailSettings> | undefined,
     onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadRemoteImagesProxy?: (imagesToLoad: MessageRemoteImage[]) => void,
-    onLoadFakeImagesProxy?: (imagesToLoad: MessageRemoteImage[]) => void
+    onLoadFakeImagesProxy?: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void
 ) => {
     const showRemoteImages =
         message.messageImages?.showRemoteImages || hasShowRemote(mailSettings) || !!message.data?.Sender.IsProton;
@@ -130,7 +130,7 @@ export const transformRemote = (
             void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
         }
     } else if (useProxy && onLoadFakeImagesProxy) {
-        void loadFakeImages(remoteImages, onLoadFakeImagesProxy);
+        void loadFakeImages(remoteImages, onLoadFakeImagesProxy, true);
     }
 
     // We might found images elements that we do not add to remote images, e.g. img tag with only a srcset attribute
