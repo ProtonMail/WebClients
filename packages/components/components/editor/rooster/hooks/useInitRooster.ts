@@ -110,31 +110,31 @@ const useInitRooster = ({
     }, []);
 
     useEffect(() => {
-        function handleFocusEditor() {
+        const isEditorReady = editorRef.current !== undefined;
+
+        if (isEditorReady) {
+            return;
+        }
+
+        const onEditorClick = () => {
             editorRef.current?.focus();
             onFocus?.();
-        }
+        };
 
         void initRooster()
             .then((editorInstance) => {
                 editorRef.current = editorInstance;
             })
             .then(() => {
-                iframeRef.current?.contentDocument
-                    ?.getElementById(ROOSTER_EDITOR_WRAPPER_ID)
-                    ?.addEventListener('click', handleFocusEditor);
-
-                // Avoid to tab twice on Firefox
-                // cf. https://bugzilla.mozilla.org/show_bug.cgi?id=1483828
-                iframeRef.current?.contentDocument?.addEventListener('focus', handleFocusEditor);
+                const editorWrapper = iframeRef.current?.contentDocument?.getElementById(ROOSTER_EDITOR_WRAPPER_ID);
+                editorWrapper?.addEventListener('click', onEditorClick);
             });
 
         return () => {
-            iframeRef.current?.contentDocument?.removeEventListener('focus', handleFocusEditor);
-            iframeRef.current?.contentDocument
-                ?.getElementById(ROOSTER_EDITOR_WRAPPER_ID)
-                ?.removeEventListener('click', handleFocusEditor);
             editorRef.current?.dispose();
+
+            const editorWrapper = iframeRef.current?.contentDocument?.getElementById(ROOSTER_EDITOR_WRAPPER_ID);
+            editorWrapper?.removeEventListener('click', onEditorClick);
         };
     }, []);
 };
