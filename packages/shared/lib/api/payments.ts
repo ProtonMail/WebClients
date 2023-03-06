@@ -32,7 +32,10 @@ export const subscribe = (data: any, product: any) => ({
     url: 'payments/subscription',
     method: 'post',
     data,
-    headers: getProductHeaders(product),
+    headers: getProductHeaders(product, {
+        endpoint: 'payments/subscription',
+        product,
+    }),
 });
 
 export interface QueryInvoicesPayload {

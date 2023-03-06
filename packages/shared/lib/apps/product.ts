@@ -1,5 +1,7 @@
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 
+import { captureMessage } from '../helpers/sentry';
+
 export const otherProductParamValues = ['generic', 'business'] as const;
 export type OtherProductParam = (typeof otherProductParamValues)[number];
 export type ProductParam = APP_NAMES | OtherProductParam | 'none' | undefined;
@@ -17,9 +19,29 @@ const normalizeProduct = (product: ProductParam) => {
     return product.replace('proton-', '');
 };
 
-export const getProductHeaders = (product: ProductParam) => {
+export interface ProductHeaderContext {
+    endpoint?: string;
+    product?: any;
+    emptyProduct?: boolean;
+}
+
+function notifySentry(normalizedProduct: string | undefined, context?: ProductHeaderContext) {
+    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business'].includes('' + normalizedProduct);
+    if (!isAllowed) {
+        captureMessage('Wrong product header', { level: 'error', extra: { normalizedProduct, context } });
+    }
+}
+
+export const getProductHeaders = (product: ProductParam, context?: ProductHeaderContext) => {
     if (!product) {
+        notifySentry(undefined, {
+            ...context,
+            emptyProduct: true,
+        });
         return;
     }
-    return { 'x-pm-product': normalizeProduct(product) };
+    const normalizedProduct = normalizeProduct(product);
+    notifySentry(normalizedProduct, context);
+
+    return { 'x-pm-product': normalizedProduct };
 };
