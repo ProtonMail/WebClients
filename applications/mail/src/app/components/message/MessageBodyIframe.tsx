@@ -71,6 +71,7 @@ const MessageBodyIframe = ({
         onContentLoaded,
         isPlainText,
         onReady,
+        isPrint,
     });
 
     const { showToggle, iframeToggleDiv, showBlockquote, setShowBlockquote } = useIframeShowBlockquote({
