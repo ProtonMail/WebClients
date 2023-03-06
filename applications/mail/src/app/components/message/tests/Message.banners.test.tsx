@@ -19,7 +19,7 @@ describe('Message banners', () => {
 
         const banner = await waitFor(() => getByTestId('expiration-banner'));
 
-        expect(banner.textContent).toMatch(/This message will self-destruct in/);
+        expect(banner.textContent).toMatch(/This message will expire/);
     });
 
     it('should show the decrypted subject banner', async () => {

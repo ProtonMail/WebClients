@@ -95,7 +95,6 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
                         max={maxDate}
                         error={errorDate}
                         preventValueReset
-                        errorZoneClassName="hidden"
                         data-testid="message:expiration-date-input"
                         required
                     />

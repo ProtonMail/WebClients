@@ -1,3 +1,4 @@
+import { addDays, differenceInDays } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
@@ -17,10 +18,7 @@ import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
 
 const getNumberOfExpirationDays = (message?: MessageState) => {
-    const expirationInSeconds = message?.draftFlags?.expiresIn || 0;
-    const numberOfDaysAlreadySet = Math.floor(expirationInSeconds / 86400);
-
-    return message?.draftFlags?.expiresIn ? numberOfDaysAlreadySet : 28;
+    return message?.draftFlags?.expiresIn ? differenceInDays(message.draftFlags.expiresIn, new Date()) : 28;
 };
 
 const getExpirationText = (message?: MessageState) => {
@@ -69,7 +67,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
         }
 
         if (!isEdition) {
-            const valueInHours = DEFAULT_EO_EXPIRATION_DAYS * 24;
+            const expirationDate = addDays(new Date(), DEFAULT_EO_EXPIRATION_DAYS);
 
             onChange(
                 (message) => ({
@@ -78,11 +76,11 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                         Password: password,
                         PasswordHint: passwordHint,
                     },
-                    draftFlags: { expiresIn: valueInHours * 3600 },
+                    draftFlags: { expiresIn: expirationDate },
                 }),
                 true
             );
-            dispatch(updateExpires({ ID: message?.localID || '', expiresIn: valueInHours * 3600 }));
+            dispatch(updateExpires({ ID: message?.localID || '', expiresIn: expirationDate }));
         } else {
             onChange(
                 (message) => ({

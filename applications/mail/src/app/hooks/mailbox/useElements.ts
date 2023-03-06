@@ -37,7 +37,7 @@ import { RootState, useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { useElementsEvents } from '../events/useElementsEvents';
-import { useExpirationCheck } from '../useExpiration';
+import { useExpirationCheck } from '../useExpirationCheck';
 
 interface Options {
     conversationMode: boolean;

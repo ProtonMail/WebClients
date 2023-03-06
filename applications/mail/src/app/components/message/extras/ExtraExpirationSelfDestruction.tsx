@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/Button';
 import {
     FeatureCode,
     Icon,
@@ -23,8 +23,8 @@ interface Props {
     message: MessageState;
 }
 
-const ExtraExpirationTime = ({ message }: Props) => {
-    const { expirationMessage, expiresInLessThan24Hours, expirationDate } = useExpiration(message);
+const ExtraExpirationSelfDestruction = ({ message }: Props) => {
+    const { expirationMessage, expiresInLessThan24Hours } = useExpiration(message);
 
     const api = useApi();
     const [user] = useUser();
@@ -33,15 +33,10 @@ const ExtraExpirationTime = ({ message }: Props) => {
     const { feature } = useFeature(FeatureCode.SetExpiration);
 
     const dispatch = useAppDispatch();
-
     const canExpire = canSetExpiration(feature?.Value, user, message);
 
     const messageID = message.data?.ID || '';
     const conversationID = message.data?.ConversationID;
-
-    if (!expirationDate) {
-        return null;
-    }
 
     const handleClick = () => {
         if (user.isFree) {
@@ -62,37 +57,30 @@ const ExtraExpirationTime = ({ message }: Props) => {
     return (
         <div
             className={clsx(
-                'bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column',
+                'bg-norm rounded border flex flex-align-items-center py-2 px-2 mb-2 flex-gap-1',
                 expiresInLessThan24Hours && 'color-danger border-danger'
             )}
+            data-testid="expiration-banner"
         >
-            <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5" data-testid="expiration-banner">
-                <Icon name="hourglass" className="mt0-4 flex-item-noshrink ml0-2" />
-                <span
-                    className={clsx(!canExpire && 'mt0-25', 'pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center')}
-                >
-                    {expirationMessage}
-                </span>
-            </div>
-            {canExpire ? (
-                <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
+            <Icon name="hourglass" className="flex-item-noshrink" />
+            <span className="flex flex-item-fluid flex-align-items-center">{expirationMessage}</span>
+            {canExpire && (
+                <span className="flex-item-noshrink on-mobile-w100">
                     <Tooltip title={c('Cancel expiration of the message').t`Cancel expiration`}>
                         <Button
                             onClick={handleClick}
                             size="small"
-                            color="weak"
-                            shape="outline"
-                            fullWidth
-                            className="rounded-sm"
+                            color={expiresInLessThan24Hours ? 'danger' : 'weak'}
+                            shape="underline"
                             data-testid="unsubscribe-banner"
                         >
                             {c('Cancel expiration of the message').t`Cancel`}
                         </Button>
                     </Tooltip>
                 </span>
-            ) : null}
+            )}
         </div>
     );
 };
 
-export default ExtraExpirationTime;
+export default ExtraExpirationSelfDestruction;
