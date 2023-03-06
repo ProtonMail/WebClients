@@ -253,7 +253,7 @@ const ImagePreview = ({
                     </div>
                 )}
             </div>
-            {!isHiResImageRendered && (
+            {!isHiResImageRendered && !error && (
                 <div className="file-preview-loading w100 mb2 flex flex-justify-center flex-align-items-center">
                     <CircleLoader />
                     <span className="ml1">{c('Info').t`Loading...`}</span>
