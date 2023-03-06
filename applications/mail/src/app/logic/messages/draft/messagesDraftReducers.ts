@@ -140,7 +140,7 @@ export const draftSaved = (
 
 export const updateExpires = (
     state: Draft<MessagesState>,
-    { payload: { ID, expiresIn } }: PayloadAction<{ ID: string; expiresIn: number }>
+    { payload: { ID, expiresIn } }: PayloadAction<{ ID: string; expiresIn: Date | undefined }>
 ) => {
     const messageState = getMessage(state, ID);
 

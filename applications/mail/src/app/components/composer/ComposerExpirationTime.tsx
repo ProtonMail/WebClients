@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
-import { useExpiration } from '../../hooks/useExpiration';
+import { getExpiresOnMessage, getMessageExpirationDate } from '../../helpers/message/messageExpirationTime';
 import { MessageState } from '../../logic/messages/messagesTypes';
 
 interface Props {
@@ -13,12 +13,14 @@ interface Props {
 }
 
 const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
-    const { isExpiration, expireOnMessage } = useExpiration(message);
     const isExpiringDraft = !!message.draftFlags?.expiresIn;
+    const expirationDate = getMessageExpirationDate(message);
 
-    if (!isExpiration) {
+    if (!expirationDate) {
         return null;
     }
+
+    const expireOnMessage = getExpiresOnMessage(expirationDate);
 
     return (
         <div

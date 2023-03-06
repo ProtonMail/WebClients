@@ -165,9 +165,9 @@ export interface MessageDocument {
 
 export interface MessageDraftFlags {
     /**
-     * Expiration offset in seconds from time of delivery
+     * Date of expiration of the message
      */
-    expiresIn?: number;
+    expiresIn?: Date;
 
     /**
      * Original "To" address of the referring message. Only added for drafts.

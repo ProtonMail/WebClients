@@ -269,6 +269,7 @@ export type IconName =
     | 'three-dots-horizontal'
     | 'three-dots-vertical'
     | 'trash'
+    | 'trash-clock'
     | 'trash-cross'
     | 'trash-cross-filled'
     | 'tv'

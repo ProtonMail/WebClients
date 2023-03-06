@@ -1,5 +1,6 @@
 import { fireEvent, getByTestId as getByTestIdDefault } from '@testing-library/dom';
 import { act } from '@testing-library/react';
+import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -71,7 +72,7 @@ describe('Composer outside encryption', () => {
         fireEvent.click(setEncryptionButton);
 
         // The expiration banner is displayed
-        getByText(/This message will self-destruct on/);
+        getByText(/This message will expire/);
 
         // Trigger manual save to avoid unhandledPromiseRejection
         await act(async () => {
@@ -86,7 +87,7 @@ describe('Composer outside encryption', () => {
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
             draftFlags: {
-                expiresIn: 25 * 3600, // expires in 25 hours
+                expiresIn: addHours(new Date(), 25), // expires in 25 hours
             },
         });
 

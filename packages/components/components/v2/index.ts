@@ -1,4 +1,5 @@
 export { default as InputTwo } from './input/Input';
+export { default as DateInputTwo } from './input/DateInputTwo';
 export { default as TotpInput } from './input/TotpInput';
 export { default as TextAreaTwo } from './input/TextArea';
 export { default as PhoneInput } from './phone/LazyPhoneInput';
