@@ -1,3 +1,5 @@
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+
 import { SORT_DIRECTION } from '../../constants';
 import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER, FOLDER_PAGE_SIZE } from '../../drive/constants';
 import { AbuseReportPayload, CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
@@ -42,6 +44,7 @@ export const querySharedURLFileRevision = (
         return {
             ...query,
             params: pagination,
+            silence: [HTTP_ERROR_CODES.UNAUTHORIZED],
         };
     }
     return query;
@@ -61,6 +64,7 @@ export const querySharedURLChildren = (
         method: 'get',
         url: `drive/urls/${token}/folders/${linkId}/children`,
         params: { Page, PageSize, Sort, Desc, Thumbnails: 1 },
+        silence: [HTTP_ERROR_CODES.UNAUTHORIZED],
     };
 };
 
