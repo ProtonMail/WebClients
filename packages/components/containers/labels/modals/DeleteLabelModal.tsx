@@ -6,7 +6,7 @@ import { deleteLabel } from '@proton/shared/lib/api/labels';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces';
 
-import { AlertModal, ErrorButton, ModalProps } from '../../../components';
+import { ErrorButton, ModalProps, Prompt } from '../../../components';
 
 interface Props extends ModalProps {
     label: Label;
@@ -44,7 +44,7 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={
                 label.Type === LABEL_TYPE.MESSAGE_FOLDER
                     ? c('Title').t`Delete ${label.Name} folder`
@@ -60,7 +60,7 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
             <br />
             <br />
             {I18N[label.Type].confirm}
-        </AlertModal>
+        </Prompt>
     );
 };
 

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import noop from '@proton/utils/noop';
 
-import { AlertModal } from '../../../components';
+import { Prompt } from '../../../components';
 import { useLoading } from '../../../hooks';
 
 interface Props {
@@ -25,7 +25,7 @@ const InvalidVerificationCodeModal = ({
 }: Props) => {
     const [loading, withLoading] = useLoading();
     return (
-        <AlertModal
+        <Prompt
             open={open}
             title={c('Title').t`Invalid verification code`}
             onClose={onClose}
@@ -51,7 +51,7 @@ const InvalidVerificationCodeModal = ({
             ]}
         >
             {c('Info').t`Would you like to receive a new verification code or use an alternative verification method?`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, Checkbox, Label, ModalProps } from '@proton/components';
+import { Checkbox, Label, ModalProps, Prompt } from '@proton/components';
 
 import { Element } from '../../../models/element';
 
@@ -40,7 +40,7 @@ const MoveToSpamModal = ({ isMessage, elements, onResolve, onReject, ...rest }: 
     }, [isMessage, elements]);
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Move to spam`}
             buttons={[
                 <Button color="norm" onClick={() => onResolve({ unsubscribe: true, remember })}>{c('Action')
@@ -56,7 +56,7 @@ const MoveToSpamModal = ({ isMessage, elements, onResolve, onReject, ...rest }: 
                 <Checkbox id="remember-me" checked={remember} onChange={handleChange} />
                 {c('Label').t`Remember my choice`}
             </Label>
-        </AlertModal>
+        </Prompt>
     );
 };
 

@@ -18,6 +18,7 @@ const Toggle = (
         onChange,
         disabled,
         title,
+        children,
         ...rest
     }: ToggleProps,
     ref: Ref<HTMLInputElement>
@@ -29,10 +30,10 @@ const Toggle = (
     };
     const label = (name: IconName, condition: boolean) => {
         return (
-            <span className="toggle-label-text" aria-hidden="true">
-                <Icon name={name} alt="" size={16} className="toggle-label-img" />
+            <span className="toggle-container-text" aria-hidden="true">
+                <Icon name={name} alt="" size={16} className="toggle-container-img" />
                 {condition && (
-                    <span className="toggle-label-loader">
+                    <span className="toggle-container-loader">
                         <CircleLoader />
                     </span>
                 )}
@@ -41,29 +42,37 @@ const Toggle = (
     };
     return (
         <label
-            htmlFor={id}
             className={classnames([
+                children ? 'flex flex-align-items-center flex-nowrap flex-gap-0-5' : '',
                 'toggle-label',
                 className,
-                disabled && 'toggle-label--disabled',
-                checked && 'toggle-label--checked',
-                loading && 'toggle-label--loading',
             ])}
+            htmlFor={id}
             title={title}
         >
-            <input
-                disabled={loading || disabled}
-                id={id}
-                onChange={handleChange}
-                type="checkbox"
-                className={classnames(['toggle-checkbox sr-only', className])}
-                checked={checked}
-                aria-busy={loading}
-                ref={ref}
-                {...rest}
-            />
-            {label('cross', loading && !checked)}
-            {label('checkmark', loading && checked)}
+            <div
+                className={classnames([
+                    'toggle-container',
+                    disabled && 'toggle-container--disabled',
+                    checked && 'toggle-container--checked',
+                    loading && 'toggle-container--loading',
+                ])}
+            >
+                <input
+                    disabled={loading || disabled}
+                    id={id}
+                    onChange={handleChange}
+                    type="checkbox"
+                    className={classnames(['toggle-checkbox sr-only', className])}
+                    checked={checked}
+                    aria-busy={loading}
+                    ref={ref}
+                    {...rest}
+                />
+                {label('cross', loading && !checked)}
+                {label('checkmark', loading && checked)}
+            </div>
+            {children}
         </label>
     );
 };

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { AlertModal, ModalProps } from '../../../components';
+import { ModalProps, Prompt } from '../../../components';
 
 interface Props extends ModalProps {
     filterName: string;
@@ -18,7 +18,7 @@ const DeleteFilterModal = ({ filterName, handleDelete, ...rest }: Props) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Delete ${filterName}`}
             buttons={[
                 <Button color="danger" onClick={deleteFilter}>{c('Action').t`Delete`}</Button>,
@@ -30,7 +30,7 @@ const DeleteFilterModal = ({ filterName, handleDelete, ...rest }: Props) => {
                 .t`Please note that if you delete this filter, we will stop processing all the automated actions it triggers.`}
             <br />
             {c('Info').t`Are you sure you want to delete this filter?`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     Checkbox,
+    Prompt,
     useApi,
     useCalendarUserSettings,
     useEventManager,
@@ -62,7 +62,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
     const timezone = <b key={0}>{localTzid}</b>;
 
     return (
-        <AlertModal
+        <Prompt
             open={isOpen}
             onClose={onClose}
             title={c('Modal title').t`Time zone changed`}
@@ -85,13 +85,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
                     {c('Action').t`Keep current time zone`}
                 </Button>,
             ]}
-        >
-            <p>
-                {c('Info')
-                    .jt`Your system time zone seems to have changed to ${timezone}. Do you want to update your time zone preference?`}
-            </p>
-
-            <div className="flex flex-align-items-center flex-nowrap">
+            actions={
                 <Checkbox
                     id="autodetect-primary-timezone"
                     autoFocus
@@ -101,8 +95,13 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
                 >
                     {c("Don't ask to update timezone checkbox label").t`Don't ask again`}
                 </Checkbox>
-            </div>
-        </AlertModal>
+            }
+        >
+            <p>
+                {c('Info')
+                    .jt`Your system time zone seems to have changed to ${timezone}. Do you want to update your time zone preference?`}
+            </p>
+        </Prompt>
     );
 };
 

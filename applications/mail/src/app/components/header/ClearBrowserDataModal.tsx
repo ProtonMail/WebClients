@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, ModalProps } from '@proton/components';
+import { ModalProps, Prompt } from '@proton/components';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
@@ -15,7 +15,7 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Info').t`Disable message content search`}
             buttons={[
                 <Button color="norm" onClick={handleClear}>{c('Info').t`Clear data`}</Button>,
@@ -25,7 +25,7 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
         >
             {c('Info')
                 .t`Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
-    AlertModalProps,
     Checkbox,
     InputFieldTwo,
     PhoneInput,
+    Prompt,
+    PromptProps,
     useApi,
     useFormErrors,
     useLoading,
@@ -23,13 +23,13 @@ import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
 
-interface RecoveryConfirmModalProps extends Omit<AlertModalProps, 'buttons' | 'children' | 'title'> {
+interface RecoveryConfirmModalProps extends Omit<PromptProps, 'buttons' | 'children' | 'title'> {
     onConfirm: () => void;
 }
 
 const RecoveryConfirmModal = ({ onConfirm, ...rest }: RecoveryConfirmModalProps) => {
     return (
-        <AlertModal
+        <Prompt
             {...rest}
             title={c('Title').t`Warning`}
             buttons={[
@@ -45,7 +45,7 @@ const RecoveryConfirmModal = ({ onConfirm, ...rest }: RecoveryConfirmModalProps)
         >
             {c('Info')
                 .t`You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

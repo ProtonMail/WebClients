@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { AlertModal, AlertModalProps, SettingsLink } from '../../components';
+import { Prompt, PromptProps, SettingsLink } from '../../components';
 import { useFeature } from '../../hooks';
 import { FeatureCode } from '../features/FeaturesContext';
 
-const RecoverDataConfirmModal = (props: Omit<AlertModalProps, 'open' | 'title' | 'buttons' | 'children'>) => {
+const RecoverDataConfirmModal = (props: Omit<PromptProps, 'open' | 'title' | 'buttons' | 'children'>) => {
     const [dismissing, setDismissing] = useState(false);
     const { update: setDismissedRecoverDataCard } = useFeature(FeatureCode.DismissedRecoverDataCard);
 
@@ -27,7 +27,7 @@ const RecoverDataConfirmModal = (props: Omit<AlertModalProps, 'open' | 'title' |
     );
 
     return (
-        <AlertModal
+        <Prompt
             {...props}
             title={c('Title').t`Don't show again?`}
             buttons={[
@@ -53,7 +53,7 @@ const RecoverDataConfirmModal = (props: Omit<AlertModalProps, 'open' | 'title' |
                         .jt`The ${boldDataLocked} message will no longer be shown, but you can still unlock your data under ${encryptionAndKeysLink}.`
                 }
             </p>
-        </AlertModal>
+        </Prompt>
     );
 };
 

@@ -8,7 +8,7 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button';
-import { Alert, AlertModal, DropdownActions, useModalState } from '@proton/components/components';
+import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
 import { useFeature, useLoading } from '@proton/components/hooks';
 
@@ -97,7 +97,7 @@ const SyncRowActions = ({ syncId }: Props) => {
             />
 
             {renderDeleteModal && (
-                <AlertModal
+                <Prompt
                     title={c('account').t`Remove forward`}
                     buttons={[
                         <Button color="danger" onClick={handleDeleteSync}>
@@ -112,7 +112,7 @@ const SyncRowActions = ({ syncId }: Props) => {
                     <Alert className="mb1" type="error">
                         {c('account').t`You will stop the mail forwarding.`}
                     </Alert>
-                </AlertModal>
+                </Prompt>
             )}
         </>
     );

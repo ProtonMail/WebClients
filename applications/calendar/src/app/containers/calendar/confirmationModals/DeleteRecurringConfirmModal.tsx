@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert, AlertModal } from '@proton/components';
+import { Alert, Prompt } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
@@ -130,7 +130,7 @@ const DeleteRecurringConfirmModal = ({
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={title}
             buttons={[
                 <Button color="danger" onClick={handleConfirm}>
@@ -155,7 +155,7 @@ const DeleteRecurringConfirmModal = ({
                     data-test-id="delete-recurring-popover:delete-option-radio"
                 />
             ) : null}
-        </AlertModal>
+        </Prompt>
     );
 };
 

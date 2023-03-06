@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { AlertModal } from '../../components/alertModal';
+import { Prompt } from '../../components/prompt';
 
 interface Props {
     open: boolean;
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const FilterWarningModal = ({ open, onClose, onConfirm }: Props) => (
-    <AlertModal
+    <Prompt
         open={open}
         onClose={onClose}
         title={c('Title').t`Apply filter to existing messages`}
@@ -30,7 +30,7 @@ const FilterWarningModal = ({ open, onClose, onConfirm }: Props) => (
             {c('Message')
                 .t`All filter actions will be applied to all messages in your ${MAIL_APP_NAME} account. No auto-reply emails will be sent.`}
         </p>
-    </AlertModal>
+    </Prompt>
 );
 
 export default FilterWarningModal;

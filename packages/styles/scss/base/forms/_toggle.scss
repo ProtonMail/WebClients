@@ -4,6 +4,10 @@ $toggle-width: em(40) !default;
 $toggle-width-button: em(24) !default;
 
 .toggle-label {
+	max-block-size: $toggle-width-button;
+}
+
+.toggle-container {
 	&#{&} {
 		// specificity issue with flex helpers
 		position: relative;
@@ -14,6 +18,7 @@ $toggle-width-button: em(24) !default;
 		max-block-size: $toggle-width-button;
 		border-radius: #{math.div($toggle-width, 2)};
 		background-color: var(--background-norm);
+		flex-shrink: 0;
 	}
 
 	&::before {
@@ -41,7 +46,7 @@ $toggle-width-button: em(24) !default;
 		transition: 0.15s easing(ease-out-cubic);
 	}
 
-	& > .toggle-label-text {
+	& > .toggle-container-text {
 		position: absolute;
 		inset-block: 0;
 		z-index: 2;
@@ -61,21 +66,21 @@ $toggle-width-button: em(24) !default;
 			color: var(--interaction-norm-contrast);
 		}
 
-		.toggle-label-img {
+		.toggle-container-img {
 			margin: auto;
 			opacity: 0;
 			transition: opacity 0.15s easing(ease-out-cubic);
 		}
 
-		.toggle-label-loader {
+		.toggle-container-loader {
 			position: absolute;
 			inset: 0;
 			z-index: 1;
 			display: flex;
 			color: var(--interaction-norm-contrast);
-			animation: 0.25s easing(ease-out-cubic) forwards anime-toggle-label-loader-fade-in;
+			animation: 0.25s easing(ease-out-cubic) forwards anime-toggle-container-loader-fade-in;
 
-			@keyframes anime-toggle-label-loader-fade-in {
+			@keyframes anime-toggle-container-loader-fade-in {
 				from {
 					opacity: 0;
 				}
@@ -102,7 +107,7 @@ $toggle-width-button: em(24) !default;
 	 */
 	// checked
 	&--checked {
-		.toggle-label-text {
+		.toggle-container-text {
 			&:first-child {
 				z-index: 1;
 			}
@@ -110,7 +115,7 @@ $toggle-width-button: em(24) !default;
 			&:last-child {
 				z-index: 3;
 
-				.toggle-label-img {
+				.toggle-container-img {
 					opacity: 1;
 				}
 			}
@@ -134,7 +139,7 @@ $toggle-width-button: em(24) !default;
 		opacity: 0.5;
 
 		// disabled but not loading
-		&:not(.toggle-label--loading) {
+		&:not(.toggle-container--loading) {
 			box-shadow: none;
 			background-color: var(--background-strong);
 
@@ -142,7 +147,7 @@ $toggle-width-button: em(24) !default;
 				background-color: var(--field-norm);
 			}
 
-			&.toggle-label--checked {
+			&.toggle-container--checked {
 				&::before {
 					background-color: var(--interaction-norm);
 				}
@@ -150,18 +155,18 @@ $toggle-width-button: em(24) !default;
 		}
 
 		// disabled loading
-		&.toggle-label--loading {
-			.toggle-label-text .toggle-label-img {
+		&.toggle-container--loading {
+			.toggle-container-text .toggle-container-img {
 				opacity: 0;
 			}
 
-			&:not(.toggle-label--checked) {
+			&:not(.toggle-container--checked) {
 				&::before {
 					background-color: var(--field-hover);
 				}
 			}
 
-			&.toggle-label--checked {
+			&.toggle-container--checked {
 				&::before {
 					background-color: var(--interaction-norm-hover);
 				}
@@ -169,10 +174,18 @@ $toggle-width-button: em(24) !default;
 		}
 	}
 
-	&:not(.toggle-label--disabled) {
+	&:not(.toggle-container--disabled) {
 		&:hover {
 			&::before {
 				background-color: var(--field-hover);
+			}
+		}
+
+		@at-root {
+			.toggle-container:has(:hover) & {
+				&::before {
+					background-color: var(--field-hover);
+				}
 			}
 		}
 
@@ -194,24 +207,32 @@ $toggle-width-button: em(24) !default;
 			}
 		}
 
-		&.toggle-label--checked:hover {
+		&.toggle-container--checked:hover {
 			&::before {
 				background-color: var(--interaction-norm-hover);
 			}
 		}
 
-		&.toggle-label--loading {
-			.toggle-label-text .toggle-label-img {
+		@at-root {
+			.toggle-container:has(:hover) .toggle-container--checked.toggle-container--checked {
+				&::before {
+					background-color: var(--interaction-norm-hover);
+				}
+			}
+		}
+
+		&.toggle-container--loading {
+			.toggle-container-text .toggle-container-img {
 				opacity: 0;
 			}
 
-			&:not(.toggle-label--checked) {
+			&:not(.toggle-container--checked) {
 				&::before {
 					background-color: var(--field-hover);
 				}
 			}
 
-			&.toggle-label--checked {
+			&.toggle-container--checked {
 				&::before {
 					background-color: var(--interaction-norm-hover);
 				}
@@ -226,7 +247,7 @@ $toggle-width-button: em(24) !default;
 		margin-block-start: 0.25em;
 		font-size: 0.8em;
 
-		.toggle-label-img {
+		.toggle-container-img {
 			inline-size: rem(13);
 			block-size: rem(13);
 		}
