@@ -169,7 +169,7 @@ export const useSendMessage = () => {
                 // We need to remove the expiration also on FE side otherwise we will see on the UI that the message
                 // can expire (icon + banner) when it's not possible.
                 if (scheduledAt && expiresIn) {
-                    await dispatch(updateExpires({ ID: message.localID, expiresIn: 0 }));
+                    await dispatch(updateExpires({ ID: message.localID, expiresIn: undefined }));
                 }
 
                 const payload = sendFormatter({

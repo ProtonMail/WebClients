@@ -26,7 +26,7 @@ export const draftSaved = createAction<{ ID: string; message: Message; draftFlag
     'message/draft/saved'
 );
 
-export const updateExpires = createAction<{ ID: string; expiresIn: number }>('message/expires/update');
+export const updateExpires = createAction<{ ID: string; expiresIn: Date | undefined }>('message/expires/update');
 
 export const startSending = createAction<string>('messages/send/start');
 

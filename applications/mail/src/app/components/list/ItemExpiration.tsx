@@ -11,7 +11,7 @@ interface Props {
 }
 
 const ItemExpiration = ({ className, expirationTime }: Props) => {
-    const { tooltipMessage, shortMessage, willExpireToday } = useItemExpiration(expirationTime);
+    const { tooltipMessage, shortMessage, expiresInLessThan24Hours } = useItemExpiration(expirationTime);
 
     if (!expirationTime) {
         return null;
@@ -23,7 +23,7 @@ const ItemExpiration = ({ className, expirationTime }: Props) => {
                 className={clsx([
                     'pill-icon flex flex-align-items-center flex-nowrap',
                     className,
-                    willExpireToday && 'color-danger',
+                    expiresInLessThan24Hours && 'color-danger',
                 ])}
                 data-testid="item-expiration"
             >
