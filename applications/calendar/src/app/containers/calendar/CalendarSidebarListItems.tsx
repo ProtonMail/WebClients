@@ -4,11 +4,11 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     Checkbox,
     DropdownMenuLink,
     FeatureCode,
     Icon,
+    Prompt,
     SettingsLink,
     SidebarListItem,
     SidebarListItemContent,
@@ -366,7 +366,7 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
     return (
         <>
             {!!limitModal.props && (
-                <AlertModal
+                <Prompt
                     open={limitModal.isOpen}
                     title={limitModal.props.title}
                     buttons={[
@@ -381,7 +381,7 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                     {limitModal.props.body.split('\n').map((p) => (
                         <p>{p}</p>
                     ))}
-                </AlertModal>
+                </Prompt>
             )}
             {shareModalCalendar && (
                 <ShareCalendarModal

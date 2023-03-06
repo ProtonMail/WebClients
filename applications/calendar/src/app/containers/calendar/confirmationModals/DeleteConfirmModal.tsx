@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal } from '@proton/components';
+import { Prompt } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
@@ -62,7 +62,7 @@ const DeleteConfirmModal = ({ inviteActions, onConfirm, onClose, isOpen }: Props
         onClose();
     };
     return (
-        <AlertModal
+        <Prompt
             title={title}
             buttons={[
                 <Button color="danger" onClick={handleSubmit} type="submit">
@@ -74,7 +74,7 @@ const DeleteConfirmModal = ({ inviteActions, onConfirm, onClose, isOpen }: Props
             open={isOpen}
         >
             {alertText}
-        </AlertModal>
+        </Prompt>
     );
 };
 

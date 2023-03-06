@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import {
-    AlertModal,
     GenericError,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     PrimaryButton,
+    Prompt,
     SettingsLink,
     useApi,
     useCache,
@@ -181,7 +181,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
                 </Modal>
             )}
             {renderReshareModal && (
-                <AlertModal
+                <Prompt
                     {...reshareModal}
                     {...rest}
                     title={c('Title').t`Reshare your calendars`}
@@ -203,7 +203,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, onDone, ...rest }: Props) 
                             .t`Calendar sharing was disabled following your recent password reset.`}
                     </p>
                     <p>{c('Info; reshare calendar modal; part 2').t`You can reshare your calendars in settings.`}</p>
-                </AlertModal>
+                </Prompt>
             )}
             {renderReactivateModal && (
                 <Modal {...reactivateModal} {...rest}>

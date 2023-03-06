@@ -14,7 +14,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, AlertModal, Href, PrimaryButton, SettingsLink, useModalState } from '../../../components';
+import { Alert, Href, Prompt, PrimaryButton, SettingsLink, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { CalendarModal } from '../calendarModal/CalendarModal';
@@ -188,7 +188,7 @@ const MyCalendarsSection = ({
 
     return (
         <>
-            <AlertModal
+            <Prompt
                 open={deleteCalendarModal.isOpen}
                 title={c('Title').t`Delete calendar`}
                 buttons={[
@@ -200,7 +200,7 @@ const MyCalendarsSection = ({
             >
                 <div className="mb1">{c('Info').t`Are you sure you want to delete this calendar?`}</div>
                 {deleteCalendarModal.props?.defaultCalendarWarning}
-            </AlertModal>
+            </Prompt>
             {!!exportCalendarModal.props?.exportCalendar && (
                 <ExportModal
                     {...exportCalendarModal}

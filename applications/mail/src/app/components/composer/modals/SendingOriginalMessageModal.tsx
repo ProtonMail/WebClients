@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, ErrorButton } from '@proton/components';
+import { ErrorButton, Prompt } from '@proton/components';
 
 interface Props {
     onResolve: () => void;
@@ -10,7 +10,7 @@ interface Props {
 
 const SendingOriginalMessageModal = ({ onResolve, onReject, ...rest }: Props) => {
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Sending original message`}
             buttons={[
                 <ErrorButton onClick={onResolve} data-testid="send-original-message:confirm">{c('Action')
@@ -21,7 +21,7 @@ const SendingOriginalMessageModal = ({ onResolve, onReject, ...rest }: Props) =>
         >
             {c('Info')
                 .t`The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

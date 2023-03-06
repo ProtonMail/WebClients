@@ -6,7 +6,7 @@ import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { Alert, AlertModal, ErrorButton, ModalProps } from '../../../components';
+import { Alert, ErrorButton, ModalProps, Prompt } from '../../../components';
 import { useApi, useContacts, useEventManager, useLoading, useNotifications } from '../../../hooks';
 
 export interface ContactDeleteProps {
@@ -67,7 +67,7 @@ const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: P
               );
 
     return (
-        <AlertModal
+        <Prompt
             title={
                 <div className="text-ellipsis" title={title}>
                     {title}
@@ -86,7 +86,7 @@ const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: P
             <Alert className="mb1" type="error">
                 {text}
             </Alert>
-        </AlertModal>
+        </Prompt>
     );
 };
 

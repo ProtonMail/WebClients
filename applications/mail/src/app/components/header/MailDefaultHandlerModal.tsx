@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, ModalProps } from '@proton/components';
+import { ModalProps, Prompt } from '@proton/components';
 import { Href } from '@proton/components/components/link';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -18,7 +18,7 @@ const MailDefaultHandlerModal = (props: ModalProps) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Info').t`Default email application`}
             buttons={[
                 <Button color="norm" onClick={handleAskForPermission}>{c('Action').t`Set as default`}</Button>,
@@ -35,7 +35,7 @@ const MailDefaultHandlerModal = (props: ModalProps) => {
             >
                 {c('Info').t`Learn more`}
             </Href>
-        </AlertModal>
+        </Prompt>
     );
 };
 

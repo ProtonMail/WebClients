@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, AlertModal, ModalProps, PrimaryButton } from '@proton/components/components';
+import { Alert, ModalProps, PrimaryButton, Prompt } from '@proton/components/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface Props extends ModalProps {
@@ -12,7 +12,7 @@ interface Props extends ModalProps {
 
 const NoAttachmentsModal = ({ attachmentsFoundKeyword, onResolve, onReject, ...rest }: Props) => {
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`No attachment found`}
             buttons={[
                 <PrimaryButton onClick={onResolve}>{c('Action').t`Send anyway`}</PrimaryButton>,
@@ -24,7 +24,7 @@ const NoAttachmentsModal = ({ attachmentsFoundKeyword, onResolve, onReject, ...r
                 {c('Info')
                     .t`You wrote “${attachmentsFoundKeyword}”, but no attachment has been added. Do you want to send your message anyway?`}
             </Alert>
-        </AlertModal>
+        </Prompt>
     );
 };
 

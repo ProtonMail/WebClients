@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, AppLink, Checkbox, Label, ModalProps } from '@proton/components';
+import { AppLink, Checkbox, Label, ModalProps, Prompt } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { MailSettings, Recipient } from '@proton/shared/lib/interfaces';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
@@ -63,7 +63,7 @@ const BlockSenderModal = ({ senders, onConfirm, mailSettings, onResolve, onRejec
 
     return (
         <div onClick={(e) => e.stopPropagation()}>
-            <AlertModal
+            <Prompt
                 title={c('Title').t`Block sender`}
                 buttons={[
                     <Button
@@ -99,7 +99,7 @@ const BlockSenderModal = ({ senders, onConfirm, mailSettings, onResolve, onRejec
                         {c('Label').t`Don't show this again`}
                     </Label>
                 </div>
-            </AlertModal>
+            </Prompt>
         </div>
     );
 };

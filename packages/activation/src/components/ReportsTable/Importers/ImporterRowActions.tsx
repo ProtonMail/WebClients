@@ -14,7 +14,7 @@ import {
 } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms';
-import { Alert, AlertModal, DropdownActions, useModalState } from '@proton/components';
+import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components';
 import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
@@ -129,7 +129,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
             <DropdownActions size="small" list={list} />
 
             {renderCancelModal && (
-                <AlertModal
+                <Prompt
                     {...cancelModalProps}
                     title={c('Confirm modal title').t`Import is incomplete!`}
                     buttons={[
@@ -152,7 +152,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
                         {c('Warning')
                             .t`If you cancel this import, you won't be able to resume it. ${BRAND_NAME} saved all progress in your account. Cancel anyway?`}
                     </Alert>
-                </AlertModal>
+                </Prompt>
             )}
         </>
     );

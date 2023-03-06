@@ -2,9 +2,9 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     ErrorButton,
     Href,
+    Prompt,
     useAddresses,
     useApi,
     useEventManager,
@@ -87,7 +87,7 @@ export const useCompose = (
     const [sendingOriginalMessageModal, handleSendingOriginalMessage] = useModalTwo(SendingOriginalMessageModal);
 
     const storageCapacityModal = (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Storage capacity warning`}
             buttons={[
                 <ErrorButton onClick={() => goToSettings('/upgrade')}>{c('Action').t`Upgrade`}</ErrorButton>,
@@ -99,7 +99,7 @@ export const useCompose = (
                 .t`You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.`}
             <br />
             <Href href={getKnowledgeBaseUrl('/increase-storage-space')}>{c('Link').t`Learn more`}</Href>
-        </AlertModal>
+        </Prompt>
     );
 
     const handleCompose = useHandler(async (composeArgs: ComposeArgs) => {

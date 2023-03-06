@@ -5,7 +5,7 @@ import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { UNPAID_STATE } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { AlertModal, ModalProps, SettingsLink } from '../../components';
+import { ModalProps, Prompt, SettingsLink } from '../../components';
 import { useConfig, useUser } from '../../hooks';
 
 const DelinquentModal = (props: ModalProps) => {
@@ -29,7 +29,7 @@ const DelinquentModal = (props: ModalProps) => {
     }
 
     return (
-        <AlertModal
+        <Prompt
             title={title}
             buttons={[
                 <ButtonLike color="norm" as={SettingsLink} path={getInvoicesPathname(APP_NAME)} onClick={props.onClose}>
@@ -39,7 +39,7 @@ const DelinquentModal = (props: ModalProps) => {
             {...props}
         >
             <div>{message}</div>
-        </AlertModal>
+        </Prompt>
     );
 };
 

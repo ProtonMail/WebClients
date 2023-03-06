@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AlertModal, useAddresses, useModalState } from '@proton/components';
+import { Prompt, useAddresses, useModalState } from '@proton/components';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 
@@ -22,14 +22,14 @@ export const useDraftSenderVerification = ({ onChange }: Props) => {
     const [senderChangedModalProps, setSenderChangedModalOpen, render] = useModalState();
 
     const modal = render && (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Sender changed`}
             buttons={[<Button color="norm" onClick={senderChangedModalProps.onClose}>{c('Action').t`OK`}</Button>]}
             {...senderChangedModalProps}
         >
             {c('Info')
                 .t`The original sender of this message is no longer valid. Your message will be sent from your default address ${defaultEmail}.`}
-        </AlertModal>
+        </Prompt>
     );
 
     const verifyDraftSender = async (message: MessageState) => {

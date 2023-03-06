@@ -10,12 +10,12 @@ import { MnemonicData, generateMnemonicPayload, generateMnemonicWithSalt } from 
 import noop from '@proton/utils/noop';
 
 import {
-    AlertModal,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     ModalProps,
+    Prompt,
     useModalState,
 } from '../../components';
 import { useApi, useEventManager, useGetUserKeys, useLoading, useUser } from '../../hooks';
@@ -117,7 +117,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
                 />
             )}
             {step === STEPS.CONFIRM && (
-                <AlertModal
+                <Prompt
                     open={open}
                     title={c('Title').t`Generate new recovery phrase?`}
                     buttons={[
@@ -145,7 +145,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
                     onExit={onExit}
                 >
                     <p className="m0">{c('Info').t`Generating a new recovery phrase will deactivate your old one.`}</p>
-                </AlertModal>
+                </Prompt>
             )}
             {(step === STEPS.MNEMONIC_PHRASE || authenticating) && (
                 <Modal size="small" open={open} onClose={handleClose} onExit={onExit}>
