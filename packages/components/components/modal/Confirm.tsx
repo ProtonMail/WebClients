@@ -22,7 +22,7 @@ export interface ConfirmModalProps {
 }
 
 /**
- * @deprecated please use `AlertModal` instead
+ * @deprecated please use `Prompt` instead
  */
 const Confirm = ({
     onClose,

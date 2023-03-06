@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     ErrorButton,
+    Prompt,
     useApi,
     useEventManager,
     useFolders,
@@ -59,7 +59,7 @@ export const useEmptyLabel = () => {
     };
 
     const modal = (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Delete all messages`}
             buttons={[
                 <ErrorButton data-testid="confirm-empty-folder" onClick={handleSubmit}>
@@ -82,7 +82,7 @@ export const useEmptyLabel = () => {
                     {c('Info').t`Are you sure you want to delete all messages in this folder?`}
                 </>
             )}
-        </AlertModal>
+        </Prompt>
     );
 
     const emptyLabel = useCallback(

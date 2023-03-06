@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Alert, AlertModal, ModalProps } from '../../components';
+import { Alert, ModalProps, Prompt } from '../../components';
 
 interface Props extends ModalProps {
     hasMail: boolean;
@@ -15,7 +15,7 @@ const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: Props)
     const hasBundle = hasMail && hasVpn;
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Confirm downgrade`}
             buttons={[
                 <Button
@@ -58,7 +58,7 @@ const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: Props)
                     .filter(Boolean)
                     .join(' ')}
             </Alert>
-        </AlertModal>
+        </Prompt>
     );
 };
 

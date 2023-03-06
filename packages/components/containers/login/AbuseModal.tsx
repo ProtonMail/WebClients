@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { getAbuseURL } from '@proton/shared/lib/helpers/url';
 
-import { AlertModal, Href } from '../../components';
+import { Href, Prompt } from '../../components';
 
 interface Props {
     message?: string;
@@ -19,7 +19,7 @@ const AbuseModal = ({ message, open, onClose }: Props) => {
     );
 
     return (
-        <AlertModal
+        <Prompt
             open={open}
             title={c('Title').t`Account suspended`}
             onClose={onClose}
@@ -32,7 +32,7 @@ const AbuseModal = ({ message, open, onClose }: Props) => {
                     <div>{c('Info').jt`If you believe this is in error, please contact us ${contactLink}.`}</div>
                 </>
             )}
-        </AlertModal>
+        </Prompt>
     );
 };
 

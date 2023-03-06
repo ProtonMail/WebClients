@@ -23,7 +23,7 @@ import { Member } from '@proton/shared/lib/interfaces/Member';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import { AlertModal, AlertModalProps, LearnMore } from '../../components';
+import { LearnMore, Prompt, PromptProps } from '../../components';
 import { AuthModal } from '../password';
 
 export const validateMemberLogin = (
@@ -42,7 +42,7 @@ export const validateMemberLogin = (
     }
 };
 
-interface Props extends Omit<AlertModalProps, 'title' | 'children' | 'buttons'> {
+interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     member: Member;
     app: APP_NAMES;
 }
@@ -108,7 +108,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
     const memberAddress = <b key="member">{member.Addresses?.[0].Email || member.Name}</b>;
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Signed in to member account`}
             buttons={[
                 <ButtonLike as="a" color="norm" target="_blank" href={switchUrl} onClick={onClose}>
@@ -126,7 +126,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
                 {c('Info').t`You can now access and manage the account as an administrator.`}{' '}
                 <LearnMore url={getKnowledgeBaseUrl('/manage-public-users-organization')} />
             </div>
-        </AlertModal>
+        </Prompt>
     );
 };
 

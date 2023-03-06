@@ -6,7 +6,6 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import {
-    AlertModal,
     Challenge,
     ChallengeError,
     ChallengeRef,
@@ -19,6 +18,7 @@ import {
     ModalProps,
     Option,
     PasswordInputTwo,
+    Prompt,
     SelectTwo,
     useFormErrors,
     useLoading,
@@ -58,7 +58,7 @@ import './AccountStep.scss';
 
 const SignInPromptModal = ({ email, ...rest }: ModalProps & { email: string }) => {
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`You already have a ${BRAND_NAME} account`}
             buttons={[
                 <ButtonLike as={Link} color="norm" shape="solid" to="/login">{c('Action')
@@ -69,7 +69,7 @@ const SignInPromptModal = ({ email, ...rest }: ModalProps & { email: string }) =
         >
             {c('Info')
                 .t`Your existing ${BRAND_NAME} account can be used to access all ${BRAND_NAME} services. Please sign in with ${email}.`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

@@ -5,7 +5,7 @@ import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shar
 import { BRAND_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { AlertModal, AlertModalProps, Info, Toggle, useModalState } from '../../components';
+import { Info, Prompt, PromptProps, Toggle, useModalState } from '../../components';
 import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
@@ -13,13 +13,13 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import PGPSchemeSelect from './PGPSchemeSelect';
 
-interface AutomaticallySignModalProps extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {
+interface AutomaticallySignModalProps extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     onConfirm: (value: boolean) => void;
 }
 
 const AutomaticallySignModal = ({ onConfirm, ...rest }: AutomaticallySignModalProps) => {
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Automatically sign outgoing messages?`}
             buttons={[
                 <Button
@@ -40,7 +40,7 @@ const AutomaticallySignModal = ({ onConfirm, ...rest }: AutomaticallySignModalPr
         >
             {c('Info')
                 .t`PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

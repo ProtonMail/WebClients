@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { AlertModal, ModalProps } from '../../components';
+import { ModalProps, Prompt } from '../../components';
 
 interface Props extends ModalProps {
     isSaving?: boolean;
@@ -14,13 +14,13 @@ const CloseModal = ({ isSaving, handleDiscard, ...rest }: Props) => {
 
     if (isSaving) {
         return (
-            <AlertModal
+            <Prompt
                 title={c('Title').t`Your changes are not synced yet`}
                 buttons={[<Button onClick={onClose}>{c('Action').t`Cancel`}</Button>]}
                 {...rest}
             >
                 {c('Info').t`Please wait till your changes are synced with the server.`}
-            </AlertModal>
+            </Prompt>
         );
     }
 
@@ -30,7 +30,7 @@ const CloseModal = ({ isSaving, handleDiscard, ...rest }: Props) => {
     };
 
     return (
-        <AlertModal
+        <Prompt
             title={c('Title').t`Are you sure you want to close the preview?`}
             buttons={[
                 <Button color="danger" onClick={handleClose}>{c('Action').t`Discard`}</Button>,
@@ -41,7 +41,7 @@ const CloseModal = ({ isSaving, handleDiscard, ...rest }: Props) => {
             {c('Info').t`All your changes will be lost.`}
             <br />
             {c('Info').t`Are you sure you want to discard your changes?`}
-        </AlertModal>
+        </Prompt>
     );
 };
 

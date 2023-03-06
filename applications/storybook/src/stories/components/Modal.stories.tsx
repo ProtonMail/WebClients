@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { Button } from '@proton/atoms';
 import {
-    AlertModal,
     BasicModal,
+    Checkbox,
     Form,
     Icon,
     InputFieldTwo,
@@ -13,6 +13,7 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    Prompt,
     RadioGroup,
     Tooltip,
     useModalState,
@@ -23,7 +24,7 @@ import mdx from './Modal.mdx';
 
 export default {
     component: ModalTwo,
-    subcomponents: { ModalTwoHeader, AlertModal },
+    subcomponents: { ModalTwoHeader, Prompt },
     title: getTitle(__filename, false),
     parameters: {
         docs: {
@@ -408,41 +409,40 @@ export const FullscreenOnMobile = () => {
     );
 };
 
-export const Alert = () => {
+export const PromptBasic = () => {
     const [open, setOpen] = useState(false);
 
     return (
         <div className="text-center">
-            <Button onClick={() => setOpen(true)}>Open Alert Modal</Button>
-            <AlertModal
+            <Button onClick={() => setOpen(true)}>Open Prompt</Button>
+            <Prompt
                 title="Title"
                 subline="Subline"
                 open={open}
                 onClose={() => setOpen(false)}
                 buttons={[
-                    <Button className="mb0-5" color="danger">
-                        Continue
-                    </Button>,
+                    <Button color="danger">Continue</Button>,
                     <Button onClick={() => setOpen(false)}>Cancel</Button>,
                 ]}
+                actions={[<Checkbox>Accept me</Checkbox>]}
             >
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus
                     obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
                     blanditiis quos?
                 </p>
-            </AlertModal>
+            </Prompt>
         </div>
     );
 };
 
-export const AlertWithOnlyOneButton = () => {
+export const PromptWithOnlyOneButton = () => {
     const [open, setOpen] = useState(false);
 
     return (
         <div className="text-center">
-            <Button onClick={() => setOpen(true)}>Open Alert Modal with only one Button</Button>
-            <AlertModal
+            <Button onClick={() => setOpen(true)}>Open Prompt with only one Button</Button>
+            <Prompt
                 title="Title"
                 subline="Subline"
                 open={open}
@@ -454,7 +454,7 @@ export const AlertWithOnlyOneButton = () => {
                     obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero,
                     blanditiis quos?
                 </p>
-            </AlertModal>
+            </Prompt>
         </div>
     );
 };

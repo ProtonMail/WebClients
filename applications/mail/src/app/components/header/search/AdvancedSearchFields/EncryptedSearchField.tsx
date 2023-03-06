@@ -2,17 +2,7 @@ import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    AlertModal,
-    Info,
-    Label,
-    Progress,
-    Toggle,
-    Tooltip,
-    classnames,
-    useModalState,
-    useUser,
-} from '@proton/components';
+import { Info, Label, Progress, Prompt, Toggle, Tooltip, classnames, useModalState, useUser } from '@proton/components';
 import {
     ESIndexingState,
     esStorageHelpers,
@@ -164,7 +154,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
                 <div className="flex flex-nowrap flex-align-items-center mb1">
                     {esHeader}
                     {esCTA}
-                    <AlertModal
+                    <Prompt
                         title={c('Title').t`Enable message content search`}
                         buttons={[
                             <Button color="norm" onClick={handleEnableES}>{c('Action').t`Enable`}</Button>,
@@ -174,7 +164,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
                     >
                         {c('Info')
                             .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`}
-                    </AlertModal>
+                    </Prompt>
                 </div>
             </div>
             {showSubTitleSection && <div className="mb1">{subTitleSection}</div>}
