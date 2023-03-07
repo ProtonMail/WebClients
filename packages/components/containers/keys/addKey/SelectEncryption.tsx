@@ -40,6 +40,7 @@ const SelectEncryption = ({ encryptionType, setEncryptionType }: Props) => {
                     <Row key={i}>
                         <Radio
                             id={`encryptionChoice${id}`}
+                            data-testid={value}
                             name="encryptionType"
                             checked={value === encryptionType}
                             onChange={() => setEncryptionType(value)}
