@@ -4,6 +4,14 @@
     "language": "es_ES"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "El reenvío iniciará pronto. Los correos nuevos aparecerán en tu bandeja de entrada."
+      ],
+      "Mail forward stopped": [
+        "Se ha detenido el reenvío de correo."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introducción a ${ BRAND_NAME }"
@@ -228,7 +236,7 @@
         "Crear un grupo de contactos"
       ],
       "Create a new folder": [
-        "Crear una carpeta nueva"
+        "Crear una carpeta"
       ],
       "Create a new label": [
         "Crear una nueva etiqueta"
@@ -542,9 +550,6 @@
       "Loading${ ellipsis }": [
         "Cargando${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Densidad del buzón"
       ],
@@ -791,6 +796,9 @@
       "Remove expiration time": [
         "Eliminar tiempo de expiración"
       ],
+      "Remove self-destruction": [
+        "Eliminar la destrucción automatica"
+      ],
       "Remove this label": [
         "Eliminar esta etiqueta"
       ],
@@ -866,6 +874,15 @@
       "Select all messages": [
         "Seleccionar todos los mensajes"
       ],
+      "Self-destruct in 7 days": [
+        "Destrucción automatica en 7 dias"
+      ],
+      "Self-destruct message": [
+        "Destruir automaticamente el mensaje"
+      ],
+      "Self-destruct on ...": [
+        "Destrucción automatica el..."
+      ],
       "Send": [
         "Enviar"
       ],
@@ -897,7 +914,7 @@
         "Establecer tiempo de expiración"
       ],
       "Set recovery phrase": [
-        "Configura una frase de recuperación"
+        "Configurar una frase de recuperación"
       ],
       "Share via link": [
         "Compartir con un enlace"
@@ -938,6 +955,9 @@
       "Show preview": [
         "Mostrar vista previa"
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -954,7 +974,7 @@
         "Omitir verificación"
       ],
       "Some images could not be loaded with tracker protection.": [
-        "Algunas de las imágenes no han podido ser cargadas con la protección de rastreo."
+        "No se han podido cargar algunas de las imágenes con la protección contra el rastreo."
       ],
       "Star": [
         "Destacar"
@@ -1004,6 +1024,9 @@
       ],
       "Turn on tracker protection": [
         "Activar la protección contra rastreadores"
+      ],
+      "Unblock": [
+        "Desbloquear"
       ],
       "Underline": [
         "Subrayado"
@@ -1199,7 +1222,7 @@
     },
     "Alternative text for welcome image": {
       "Welcome": [
-        "Te damos la bienvenida"
+        "¡Te damos la bienvenida!"
       ]
     },
     "Amount of completed get started checklist items": {
@@ -1596,6 +1619,14 @@
         "Evento en progreso"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Cancel self-destruction": [
+        "Cancelar la destrucción automatica"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Minimizar"
@@ -1788,7 +1819,7 @@
         "Cifrado con PGP al destinatario verificado"
       ],
       "PGP-encrypted. ${ warningsText }": [
-        "Cifrado PGP. ${ warningsText }"
+        "Cifrado con PGP. ${ warningsText }"
       ],
       "PGP-signed": [
         "Firmado con PGP"
@@ -1897,8 +1928,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Zona horaria"
       ],
       "Title": [
         "Título"
@@ -2726,7 +2757,7 @@
         "Diariamente"
       ],
       "Daily, ${ timesString }": [
-        "Diariamente, ${ timesString }"
+        "Diariamente a las ${ timesString }"
       ],
       "Daily, ${ untilString }": [
         "Diariamente, ${ untilString }"
@@ -2736,8 +2767,8 @@
         "Cada ${ interval } días"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "Cada ${ interval } día, ${ timesString }",
-        "Cada ${ interval } días, ${ timesString }"
+        "Cada ${ interval } día a las ${ timesString }",
+        "Cada ${ interval } días a las ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Cada ${ interval } día, ${ untilString }",
@@ -2784,6 +2815,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "Signo de más y logo de ${ MAIL_APP_NAME }"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } en la configuración."
       ],
@@ -2967,6 +3001,14 @@
         "Actualización de un evento que comienza el ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Carpeta borrada"
+      ],
+      "Label cleared": [
+        "Etiqueta borrada"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Nombre del archivo de encabezados cifrado"
@@ -3000,6 +3042,10 @@
       "Choose a date in the future.": [
         "Elige una fecha en el futuro."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Elige una fecha dentro del siguiente ${ EXPIRATION_TIME_MAX_DAYS } día.",
+        "Elige una fecha dentro de los siguientes ${ EXPIRATION_TIME_MAX_DAYS } días."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Elige una fecha dentro del siguiente ${ SCHEDULED_MAX_DATE_DAYS } día.",
         "Elige una fecha dentro de los siguientes ${ SCHEDULED_MAX_DATE_DAYS } días."
@@ -3028,6 +3074,14 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error al descifrar: no se ha podido descifrar el contenido de este mensaje."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Anula la selección de al menos ${ calendarsToFixCount } calendario.",
+        "Anula la selección de al menos ${ calendarsToFixCount } calendarios."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Anula la selección de al menos ${ calendarsToFixCount } calendario o",
+        "Anula la selección de al menos ${ calendarsToFixCount } calendarios o"
+      ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
@@ -3036,9 +3090,6 @@
       ],
       "Email address disabled": [
         "Dirección de correo electrónico deshabilitada"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Dirección de correo electrónico requerida"
@@ -3088,6 +3139,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Contraseña de buzón incorrecta. Inténtalo de nuevo."
       ],
+      "Invalid email address": [
+        "Dirección de correo electrónico no válida"
+      ],
       "Invalid expiration time": [
         "El tiempo de expiración no es válido."
       ],
@@ -3105,6 +3159,10 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Número máximo de adjuntos (${ attachmentsCountLimit }) superado"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Combina al menos ${ calendarsToFixCount } calendario con un calendario ${ BRAND_NAME } existente.",
+        "Combina al menos ${ calendarsToFixCount } calendarios con un calendario ${ BRAND_NAME } existente."
       ],
       "Message needs to be sent first": [
         "Se debe primero enviar el mensaje."
@@ -3328,6 +3386,9 @@
       "You did not provide a file.": [
         "No has proporcionado ningún archivo."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Has alcanzado el número máximo de calendarios. No se han podido importar algunos calendarios."
+      ],
       "You must set a name": [
         "Debes establecer un nombre."
       ],
@@ -3368,8 +3429,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Se ha producido un error al leer el archivo ${ formattedFilename }. Formato de archivo incorrecto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3409,8 +3470,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Se ha producido un error al leer el archivo ${ formattedFilename }. Formato de archivo incorrecto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3419,7 +3480,7 @@
         "Se ha producido un error al cargar el archivo ${ formattedFilename }. No se ha seleccionado un archivo .csv o .vcf."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Se ha producido un error al cargar el archivo. Ningún archivo ha sido seleccionado."
+        "Se ha producido un error al cargar el archivo. No se ha seleccionado ningún archivo."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "El archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_CONTACTS_STRING } contactos."
@@ -3444,8 +3505,8 @@
       "Component with wrong format": [
         "Componente con formato incorrecto"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Zona horaria personalizada"
       ],
       "Edited event not supported": [
         "Evento editado no admitido"
@@ -3513,11 +3574,11 @@
       "Start time out of bounds": [
         "Hora inicial fuera de límites"
       ],
+      "Time zone": [
+        "Zona horaria"
+      ],
       "Time zone not supported": [
         "Zona horaria no admitida"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tareas"
@@ -3818,7 +3879,7 @@
         "Completa todos los pasos y consigue un total de ${ rewardInGb } GB en tu cuenta."
       ],
       "Expires soon": [
-        "Expira pronto."
+        "Expira pronto"
       ],
       "Expires today": [
         "Expira hoy."
@@ -4383,6 +4444,9 @@
       "(No Recipient)": [
         "(Sin destinatario)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Una frase de recuperación es una de las formas más seguras de proteger el acceso a tu cuenta. Puedes usarla para acceder a tu cuenta y recuperar tus datos cifrados si alguna vez olvidas tu contraseña."
       ],
@@ -4521,7 +4585,7 @@
         "Cierra esta pantalla para salir."
       ],
       "Confirm phishing report": [
-        "Confirmar denuncia de suplantación"
+        "Confirmar denuncia de suplantación de identidad"
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
@@ -4564,7 +4628,7 @@
         "Personalización anual"
       ],
       "Daily": [
-        "Diario"
+        "Diariamente"
       ],
       "Day": [
         "Día",
@@ -4688,9 +4752,6 @@
       "Expires": [
         "Expira"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Expira en ${ formattedDelay }."
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Expira en ${ formattedDelayShort }."
       ],
@@ -4715,6 +4776,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Para mensajes más nuevos que ${ oldestDate }"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Redirige correos entrantes desde otra cuenta a tu bandeja de entrada segura de ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Libera algo de espacio o añade más espacio de almacenamiento."
@@ -4788,8 +4852,8 @@
       "Import mailbox": [
         "Importar buzón"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importa tus correos electrónicos, calendarios y contactos de otro servicio a ${ BRAND_NAME }. Te guiaremos en cada paso del proceso y cifraremos tus datos a medida que se trasladen. Te damos la bienvenida al mundo de la privacidad."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importa tus correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
@@ -4861,7 +4925,7 @@
         "Cargando..."
       ],
       "Manage your folders": [
-        "Administra tus carpetas"
+        "Administrar tus carpetas"
       ],
       "Manage your labels": [
         "Administra tus etiquetas"
@@ -4930,7 +4994,7 @@
         "No se ha encontrado ningún grupo."
       ],
       "No label found": [
-        "Ninguna etiqueta encontrada"
+        "No se ha encontrado ninguna etiqueta."
       ],
       "No label selected": [
         "Ninguna etiqueta seleccionada"
@@ -5080,8 +5144,8 @@
       "Saving draft…": [
         "Guardando borrador…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
+      "Scheduled send of this message will be canceled.": [
+        "Se cancelará el envío programado de este mensaje."
       ],
       "Scheduling message...": [
         "Programando mensaje..."
@@ -5097,6 +5161,9 @@
       ],
       "Select what you want to import.": [
         "Selecciona lo que quieres importar."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selecciona los calendarios que deseas importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Enviar un mensaje encriptado y protegido por contraseña a una dirección de correo electrónico que no es de ${ boldText }."
@@ -5219,8 +5286,8 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descarga el archivo."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Esta conversación contiene un mensaje programado. Se ha cancelado el envío de este mensaje."
       ],
       "This conversation contains non-trashed messages.": [
         "Esta conversación contiene mensajes no borrados."
@@ -5232,8 +5299,8 @@
         "Esta conversación será marcada como spam. ¿Te gustaría también cancelar la suscripción para no recibir más correos?",
         "Estas conversaciones serán marcadas como spam. ¿Te gustaría también cancelar la suscripción para no recibir más correos?"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Se ha producido un error con los requisitos de autenticación del dominio de este correo electrónico. Puede estar falsificado o reenviado incorrectamente."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Esta invitación está guardada en un calendario deshabilitado."
@@ -5287,14 +5354,17 @@
       "This message will expire ${ formattedDate }": [
         "Este mensaje expirará el ${ formattedDate }."
       ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Este mensaje expirará el ${ dateString } a las ${ formattedTime }."
+      "This message will self-destruct in ${ formattedDelay }": [
+        "Este mensaje se destruirá automáticamente en ${ formattedDelay }."
       ],
-      "This message will expire today at ${ formattedTime }": [
-        "Este mensaje expira hoy a las ${ formattedTime }."
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "Este mensaje se destruirá automáticamente el ${ dateString } a las ${ formattedTime }."
       ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Este mensaje expira mañana a las ${ formattedTime }."
+      "This message will self-destruct today at ${ formattedTime }": [
+        "Este mensaje se destruirá automáticamente hoy a las ${ formattedTime }."
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "Este mensaje se destruirá automáticamente mañana a las ${ formattedTime }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta clave pública se usará automáticamente para cifrar el correo electrónico enviado a esta dirección."
@@ -5422,6 +5492,9 @@
       "When do you want your message to be sent?": [
         "¿Cuándo quieres que se envíe tu mensaje?"
       ],
+      "When do you want your message to self-destruct?": [
+        "¿Cuándo quieres que se destruye automaticamente tu mensaje?"
+      ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Cuando des tu correo electrónico, usa un alias Hide My Email único y desechable en vez de tu dirección de correo real."
       ],
@@ -5438,7 +5511,7 @@
         "¿Quieres recibir un nuevo código de verificación?"
       ],
       "Yearly": [
-        "Anual"
+        "Anualmente"
       ],
       "You are about to open another browser tab and visit:": [
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
@@ -5554,10 +5627,10 @@
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Tu correo electrónico solo se utilizará para esta verificación única."
+        "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
       "Your import will not be processed.": [
-        "Tu importación no será procesada."
+        "No se procesará tu importación."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
@@ -5582,7 +5655,7 @@
         "Tu mensaje expirará mañana."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Tu número de teléfono solo se utilizará para esta verificación única."
+        "Tu número de teléfono se utilizará solo para esta verificación única."
       ],
       "Your recovery phrase": [
         "Tu frase de recuperación"
@@ -5850,7 +5923,7 @@
         "Añadir correo electrónico"
       ],
       "Add image URL": [
-        "Añadir URL de imagen"
+        "Añadir URL de la imagen"
       ],
       "Add to group": [
         "Añadir al grupo"
@@ -5966,8 +6039,8 @@
       "Delete recovery-related information.": [
         "Eliminar la información de recuperación."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "No preguntar de nuevo"
       ],
       "Don't show this again": [
         "No mostrar esto de nuevo"
@@ -6306,6 +6379,16 @@
         "Tu contraseña (admin)"
       ]
     },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Fecha"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Hora"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "Color"
@@ -6382,10 +6465,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para añadir un nuevo calendario, elimina uno existente."
+        "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un nuevo calenario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calenario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -6651,8 +6734,8 @@
       "Scheduled sending undone": [
         "Envío programado anulado"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Programación cancelada. El mensaje se ha movido a Borradores."
       ],
       "Sending undone": [
         "Envío anulado"
@@ -6695,21 +6778,21 @@
         "Cada ${ interval } meses los ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Cada mes ${ onDayString }, ${ timesString } ${ interval }",
-        "Cada ${ interval } meses ${ onDayString }, ${ timesString }"
+        "Cada mes ${ onDayString } a las ${ timesString } ${ interval }",
+        "Cada ${ interval } meses ${ onDayString } a las ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Cada mes ${ onDayString }, ${ untilString } ${ interval }",
         "Cada ${ interval } meses ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
-        "Mensual ${ onDayString }"
+        "Mensualmente el ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensualmente ${ onDayString }, ${ timesString }"
+        "Mensualmente el ${ onDayString } a las ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensualmente ${ onDayString }, ${ untilString }"
+        "Mensualmente el ${ onDayString } a las ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -6856,8 +6939,8 @@
       "Search message content": [
         "Buscar contenido del mensaje"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
       ],
       "Up to 15 email addresses": [
         "Hasta 15 direcciones de correo electrónico"
@@ -6869,6 +6952,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: label": {
@@ -7180,6 +7266,14 @@
         "Trabajo"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Oficial"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Correo oficial de ${ BRAND_NAME }"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Mensaje cifrado y firmado de extremo a extremo"
@@ -7191,13 +7285,13 @@
         "Mensaje cifrado de extremo a extremo de un remitente verificado"
       ],
       "PGP-encrypted and signed message": [
-        "Mensaje cifrado y PGP firmado"
+        "Mensaje cifrado y firmado con PGP"
       ],
       "PGP-encrypted message": [
-        "Mensaje PGP cifrado"
+        "Mensaje cifrado con PGP"
       ],
       "PGP-encrypted message from verified sender": [
-        "Mensaje PGP cifrado de remitente verificado"
+        "Mensaje cifrado con PGP de remitente verificado"
       ],
       "PGP-signed message": [
         "Mensaje firmado con PGP"
@@ -7218,6 +7312,29 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Nota: el servicio se recargará después de hacer clic en el botón Aplicar."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } día",
+        "${ remainingDays } días"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } hora",
+        "${ remainingHours } horas"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<1 hora"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } año",
+        "${ remainingYears } años"
       ]
     },
     "Reply to calendar invitation": {
@@ -7546,8 +7663,8 @@
       "Bug reported": [
         "Error reportado"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Cancelando la importación"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -7608,17 +7725,11 @@
       "Fingerprint copied to clipboard": [
         "Huella digital copiada al portapapeles"
       ],
-      "Folder cleared": [
-        "Carpeta vaciada"
-      ],
       "Import record deleted": [
         "Se ha eliminado el registro importación."
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferencias de atajos de teclado actualizadas"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Etiquetas aplicadas."
@@ -7693,6 +7804,15 @@
       ],
       "Read receipt sent": [
         "Confirmación de lectura enviada"
+      ],
+      "Self-destruction cancelled": [
+        "Destrucción automatica cancelada"
+      ],
+      "Self-destruction removed": [
+        "Destrucción automatica eliminada"
+      ],
+      "Self-destruction set": [
+        "Destrucción automatica configurada"
       ],
       "Undo in progress": [
         "Deshacer en progreso"
@@ -8163,7 +8283,7 @@
         "Conversación siguiente"
       ],
       "Next message": [
-        "Siguiente mensaje"
+        "Mensaje siguiente"
       ],
       "No attachment found": [
         "No se ha encontrado ningún archivo adjunto."
@@ -8236,6 +8356,9 @@
       ],
       "Select contact group": [
         "Seleccionar grupo de contactos"
+      ],
+      "Self-destruct message": [
+        "Destruir automaticamente el mensaje"
       ],
       "Send email": [
         "Enviar correo electrónico"
@@ -8338,7 +8461,7 @@
         "¡Te damos la bienvenida!"
       ],
       "Welcome ${ userName }": [
-        "¡${ userName }, te damos la bienvenida!"
+        "¡Te damos la bienvenida ${ userName }!"
       ],
       "What would you like to import?": [
         "¿Qué te gustaría importar?"
@@ -8408,7 +8531,7 @@
         "La importación comenzará con los mensajes más recientes."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará todos los mensajes para que la búsqueda pueda ser local. Borrar los datos de tu navegador desactivará esta opción."
+        "Esta acción descargará todos los mensajes para que se puedan buscar localmente. Borrar los datos de tu navegador desactivará esta opción."
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago."
@@ -8546,8 +8669,8 @@
         "Cada ${ interval } semanas los ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Cada semana los ${ multipleDaysString }, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los ${ multipleDaysString }, ${ timesString }"
+        "Cada semana los ${ multipleDaysString } a las ${ timesString } ${ interval }",
+        "Cada ${ interval } semanas los ${ multipleDaysString } a las ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Cada semana los ${ multipleDaysString }, ${ untilString } ${ interval }",
@@ -8559,7 +8682,7 @@
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Cada semana todos los días, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas todos los días, ${ timesString }"
+        "Cada ${ interval } semanas todos los días a las ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Cada semana todos los días, ${ untilString } ${ interval }",
@@ -8570,8 +8693,8 @@
         "Cada ${ interval } semanas los viernes"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Cada semana los viernes, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los viernes, ${ timesString }"
+        "Cada semana los viernes a las ${ timesString } ${ interval }",
+        "Cada ${ interval } semanas los viernes a las ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
         "Cada semana los viernes, ${ untilString } ${ interval }",
@@ -8582,8 +8705,8 @@
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Cada semana los lunes, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los lunes, ${ timesString }"
+        "Cada semana los lunes a las ${ timesString } ${ interval }",
+        "Cada ${ interval } semanas los lunes a las ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
         "Cada semana los lunes, ${ untilString } ${ interval }",
@@ -8594,8 +8717,8 @@
         "Cada ${ interval } semanas los sábados"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Cada semana los sábados, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los sábados, ${ timesString }"
+        "Cada semana los sábados a las ${ timesString } ${ interval }",
+        "Cada ${ interval } semanas los sábados a las ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
         "Cada semana los sábados, ${ untilString } ${ interval }",
@@ -8606,8 +8729,8 @@
         "Cada ${ interval } semanas los domingos"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Cada semana los domingos, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los domingos, ${ timesString }"
+        "Cada semana los domingos a las ${ timesString } ${ interval }",
+        "Cada ${ interval } semanas los domingos a las ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
         "Cada semana los domingos, ${ untilString } ${ interval }",
@@ -8618,8 +8741,8 @@
         "Cada ${ interval } semanas los jueves"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Cada semana los jueves, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los jueves, ${ timesString }"
+        "Cada semana los jueves a las ${ timesString } ${ interval }",
+        "Cada ${ interval } semanas los jueves a las ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
         "Cada semana los jueves, ${ untilString } ${ interval }",
@@ -8630,8 +8753,8 @@
         "Cada ${ interval } semanas los martes"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Cada semana los martes, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los martes, ${ timesString }"
+        "Cada semana los martes a las ${ timesString } ${ interval }",
+        "Cada ${ interval } semanas los martes a las ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
         "Cada semana los martes, ${ untilString } ${ interval }",
@@ -8642,8 +8765,8 @@
         "Cada ${ interval } semanas los miércoles"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Cada semana los miércoles, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los miércoles, ${ timesString }"
+        "Cada semana los miércoles a las ${ timesString } ${ interval }",
+        "Cada ${ interval } semanas los miércoles a las ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Cada semana los miércoles, ${ untilString } ${ interval }",
@@ -8653,7 +8776,7 @@
         "Semanalmente los ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Semanalmente los ${ multipleDaysString }, ${ timesString }"
+        "Semanalmente los ${ multipleDaysString } a las ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Semanalmente los ${ multipleDaysString }, ${ untilString }"
@@ -8662,7 +8785,7 @@
         "Semanalmente todos los días"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Semanalmente todos los días, ${ timesString }"
+        "Semanalmente todos los días a las ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
         "Semanalmente todos los días, ${ untilString }"
@@ -8671,7 +8794,7 @@
         "Semanalmente los viernes"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Semanalmente los viernes, ${ timesString }"
+        "Semanalmente los viernes a las ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
         "Semanalmente los viernes, ${ untilString }"
@@ -8680,7 +8803,7 @@
         "Semanalmente los lunes"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Semanalmente los lunes, ${ timesString }"
+        "Semanalmente los lunes a las ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
         "Semanalmente los lunes, ${ untilString }"
@@ -8689,7 +8812,7 @@
         "Semanalmente los sábados"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Semanalmente los sábados, ${ timesString }"
+        "Semanalmente los sábados a las ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
         "Semanalmente los sábados, ${ untilString }"
@@ -8698,7 +8821,7 @@
         "Semanalmente los domingos"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Semanalmente los domingos, ${ timesString }"
+        "Semanalmente los domingos a las ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
         "Semanalmente los domingos, ${ untilString }"
@@ -8707,7 +8830,7 @@
         "Semanalmente los jueves"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Semanalmente los jueves, ${ timesString }"
+        "Semanalmente los jueves a las ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
         "Semanalmente los jueves, ${ untilString }"
@@ -8716,7 +8839,7 @@
         "Semanalmente los martes"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Semanalmente los martes, ${ timesString }"
+        "Semanalmente los martes a las ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
         "Semanalmente los martes, ${ untilString }"
@@ -8725,7 +8848,7 @@
         "Semanalmente los miércoles"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Semanalmente los miércoles, ${ timesString }"
+        "Semanalmente los miércoles a las ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Semanalmente los miércoles, ${ untilString }"
@@ -8760,18 +8883,18 @@
         "Cada ${ interval } años"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Cada año, ${ timesString } ${ interval }",
-        "Cada ${ interval } años, ${ timesString }"
+        "Cada año a las ${ timesString } ${ interval }",
+        "Cada ${ interval } años a las ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
         "Cada año, ${ untilString } ${ interval }",
         "Cada ${ interval } años, ${ untilString }"
       ],
       "Yearly": [
-        "Anual"
+        "Anualmente"
       ],
       "Yearly, ${ timesString }": [
-        "Anualmente, ${ timesString }"
+        "Anualmente a las ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"

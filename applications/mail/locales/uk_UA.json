@@ -4,6 +4,11 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "account": {
+      "Mail forward stopped": [
+        "Пересилання пошти зупинено"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Знайомство з ${ BRAND_NAME }"
@@ -548,9 +553,6 @@
       "Loading${ ellipsis }": [
         "Завантаження${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Щільність поштової скриньки"
       ],
@@ -797,6 +799,9 @@
       "Remove expiration time": [
         "Вилучити термін дії"
       ],
+      "Remove self-destruction": [
+        "Скасувати самознищення"
+      ],
       "Remove this label": [
         "Вилучити цю мітку"
       ],
@@ -872,6 +877,15 @@
       "Select all messages": [
         "Вибрати усі повідомлення"
       ],
+      "Self-destruct in 7 days": [
+        "Знищити через 7 днів"
+      ],
+      "Self-destruct message": [
+        "Повідомлення із самознищенням"
+      ],
+      "Self-destruct on ...": [
+        "Знищити ..."
+      ],
       "Send": [
         "Надіслати"
       ],
@@ -944,6 +958,9 @@
       "Show preview": [
         "Показати попередній перегляд"
       ],
+      "Sign in": [
+        "Увійти"
+      ],
       "Sign out": [
         "Вийти"
       ],
@@ -1012,6 +1029,9 @@
       ],
       "Turn on tracker protection": [
         "Увімкнути захист від стеження"
+      ],
+      "Unblock": [
+        "Розблокувати"
       ],
       "Underline": [
         "Підкреслений"
@@ -1606,6 +1626,14 @@
         "Подія триває"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Cancel self-destruction": [
+        "Скасувати самознищення"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Згорнути"
@@ -1907,8 +1935,8 @@
       "Role": [
         "Роль"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Часовий пояс"
       ],
       "Title": [
         "Назва"
@@ -2802,6 +2830,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "${ MAIL_APP_NAME } лого та знак плюс"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } у налаштуваннях."
       ],
@@ -2991,6 +3022,14 @@
         "Оновлення для події, що починається ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Теку очищено"
+      ],
+      "Label cleared": [
+        "Мітку очищено"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Зашифровані заголовки назв файлів"
@@ -3024,6 +3063,12 @@
       "Choose a date in the future.": [
         "Виберіть дату в майбутньому."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Виберіть дату в межах наступного ${ EXPIRATION_TIME_MAX_DAYS } дня.",
+        "Виберіть дату в межах наступних ${ EXPIRATION_TIME_MAX_DAYS } днів.",
+        "Виберіть дату в межах наступних ${ EXPIRATION_TIME_MAX_DAYS } днів.",
+        "Виберіть дату в межах наступних ${ EXPIRATION_TIME_MAX_DAYS } днів."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Виберіть дату в межах наступного ${ SCHEDULED_MAX_DATE_DAYS } дня.",
         "Виберіть дату в межах наступних ${ SCHEDULED_MAX_DATE_DAYS } днів.",
@@ -3054,6 +3099,18 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Помилка розшифрування: не вдалося розшифрувати вміст цього повідомлення."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або"
+      ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
       ],
@@ -3062,9 +3119,6 @@
       ],
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Адреса е-пошти обов'язкова"
@@ -3114,6 +3168,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Неправильний пароль поштової скриньки. Спробуйте знову."
       ],
+      "Invalid email address": [
+        "Недійсна адреса електронної пошти"
+      ],
       "Invalid expiration time": [
         "Недійсний термін дії"
       ],
@@ -3131,6 +3188,12 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Перевищено максимальну кількість (${ attachmentsCountLimit }) вкладень"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Об'єднайте принаймні ${ calendarsToFixCount } календар з наявним календарем ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Спершу необхідно надіслати повідомлення"
@@ -3366,6 +3429,9 @@
       "You did not provide a file.": [
         "Ви не надали файл."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Ви досягли максимальної кількості календарів. Деякі календарі не можуть бути імпортовані."
+      ],
       "You must set a name": [
         "Ви повинні вказати назву"
       ],
@@ -3408,9 +3474,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3451,9 +3514,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3486,8 +3546,8 @@
       "Component with wrong format": [
         "Компонент з неправильним форматом"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Власний часовий пояс"
       ],
       "Edited event not supported": [
         "Відредагована подія не підтримується"
@@ -3555,11 +3615,11 @@
       "Start time out of bounds": [
         "Час початку поза припустимим діапазоном"
       ],
+      "Time zone": [
+        "Часовий пояс"
+      ],
       "Time zone not supported": [
         "Часовий пояс не підтримується"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Запис завдання"
@@ -4525,6 +4585,9 @@
       "(No Recipient)": [
         "(Немає отримувача)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Фраза відновлення є одним із найнадійніших способів захисту вашого облікового запису. Ви можете використати її для доступу до свого облікового запису та відновлення зашифрованих даних у випадку втрати пароля."
       ],
@@ -4852,9 +4915,6 @@
       "Expires": [
         "Завершується"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Термін дії завершується ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Термін дії завершується ${ formattedDelayShort }"
       ],
@@ -4881,6 +4941,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Для повідомлень новіших ${ oldestDate }"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Перешліть вхідний лист з іншого облікового запису до вашої захищеної ${ MAIL_APP_NAME } поштової скриньки."
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -4959,9 +5022,6 @@
       ],
       "Import mailbox": [
         "Імпортувати поштову скриньку"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Імпортуйте свої листи, календарі та контакти з іншої служби до ${ BRAND_NAME }. Ми допоможемо вам пройти кожен крок та зашифрувати ваші дані після переміщення. Вітаємо у світі приватності."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
@@ -5254,9 +5314,6 @@
       "Saving draft…": [
         "Збереження чернетки…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
-      ],
       "Scheduling message...": [
         "Планування повідомлення..."
       ],
@@ -5271,6 +5328,9 @@
       ],
       "Select what you want to import.": [
         "Виберіть, що ви хочете імпортувати."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Надіслати зашифроване, захищене паролем повідомлення на електронну адресу ${ boldText }."
@@ -5395,9 +5455,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Цей браузер не підтримує перегляд PDF документів. Будь ласка, завантажте файл."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
-      ],
       "This conversation contains non-trashed messages.": [
         "Ця розмова містить не видалені повідомлення."
       ],
@@ -5409,9 +5466,6 @@
         "Ці розмови будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?",
         "Ці розмови будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?",
         "Ці розмови будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?"
-      ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Це запрошення збережено у вимкненому календарі."
@@ -5466,15 +5520,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Термін дії цього повідомлення завершиться ${ formattedDate }"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Термін дії цього повідомлення завершиться ${ dateString }, ${ formattedTime }"
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        "Термін дії цього повідомлення завершиться сьогодні ${ formattedTime }"
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Термін дії цього повідомлення завершиться завтра ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Відкритий ключ автоматично застосовуватиметься для шифрування листів, що надсилаються на цю адресу."
@@ -6168,8 +6213,8 @@
       "Delete recovery-related information.": [
         "Видалити інформацію повʼязану з відновленням."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Не питати знову"
       ],
       "Don't show this again": [
         "Більше не показувати"
@@ -6454,7 +6499,7 @@
         "Час"
       ],
       "To": [
-        "Кому"
+        "До"
       ],
       "To:": [
         "Кому:"
@@ -6506,6 +6551,16 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Дата"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Час"
       ]
     },
     "Label for contact group color": {
@@ -6863,8 +6918,8 @@
       "Scheduled sending undone": [
         "Заплановане надсилання скасовано"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Планування скасовано. Повідомлення переміщено до чернеток."
       ],
       "Sending undone": [
         "Надсилання скасовано"
@@ -7074,8 +7129,8 @@
       "Search message content": [
         "Пошук вмісту повідомлень"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Необмежена кількість тек, міток та фільтрів"
       ],
       "Up to 15 email addresses": [
         "До 15 адрес електронної пошти"
@@ -7404,6 +7459,14 @@
         "Робоча"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Офіційні"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Офіційний лист від ${ BRAND_NAME }"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Наскрізно зашифроване і підписане повідомлення"
@@ -7442,6 +7505,35 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Примітка: Після натискання кнопки Застосувати, сторінка перезавантажиться."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } день",
+        "${ remainingDays } дні",
+        "${ remainingDays } днів",
+        "${ remainingDays } днів"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } година",
+        "${ remainingHours } години",
+        "${ remainingHours } годин",
+        "${ remainingHours } годин"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "< 1 година"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } рік",
+        "${ remainingYears } роки",
+        "${ remainingYears } років",
+        "${ remainingYears } років"
       ]
     },
     "Reply to calendar invitation": {
@@ -7817,8 +7909,8 @@
       "Bug reported": [
         "Звіт про помилку надіслано"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Скасування імпорту"
       ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
@@ -7883,17 +7975,11 @@
       "Fingerprint copied to clipboard": [
         "Цифровий відбиток скопійовано до буфера обміну"
       ],
-      "Folder cleared": [
-        "Теку очищено"
-      ],
       "Import record deleted": [
         "Запис імпорту видалено"
       ],
       "Keyboard shortcuts preferences updated": [
         "Налаштування комбінацій клавіш оновлено"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Мітки застосовано."
@@ -7972,6 +8058,15 @@
       ],
       "Read receipt sent": [
         "Підтвердження прочитання надіслано"
+      ],
+      "Self-destruction cancelled": [
+        "Самознищення скасовано"
+      ],
+      "Self-destruction removed": [
+        "Самознищення вилучено"
+      ],
+      "Self-destruction set": [
+        "Самознищення встановлено"
       ],
       "Undo in progress": [
         "Скасовується"
@@ -8553,6 +8648,9 @@
       ],
       "Select contact group": [
         "Вибрати групу контактів"
+      ],
+      "Self-destruct message": [
+        "Повідомлення із самознищенням"
       ],
       "Send email": [
         "Надіслати лист"

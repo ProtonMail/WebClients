@@ -203,9 +203,6 @@
       "OK": [
         "Добра"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
       ],
@@ -1525,8 +1522,8 @@
       "Passwords do not match": [
         "Паролі не супадаюць"
       ],
-      "Payment process cancelled": [
-        "Payment process canceled"
+      "Payment process canceled": [
+        "Апрацоўка плацяжу скасавана"
       ],
       "Payment process consumed": [
         "Апрацоўка плацяжу завершана"
@@ -1564,8 +1561,8 @@
       "Tab closed": [
         "Укладка закрыта"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Ваш браўзер не дазваляе цалкам аўтарызаваць плацеж. Скарыстайцеся іншым браўзерам або ўвайдзіце з камп'ютара."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
@@ -1902,6 +1899,9 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Назва, якая дапаможа вам вызначыць, дзе вы яго выкарыстоўваеце, каб вы маглі лёгка адклікаць яго або падоўжыць яго пазней."
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй або асобай"
       ],
@@ -1995,6 +1995,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Гатова! Мы адправілі код на ${ destination }."
       ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падлучэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
@@ -2012,9 +2015,6 @@
       ],
       "Emailing preference saved": [
         "Параметры адпраўкі пошты захаваны"
-      ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Увесці ключ уручную"
@@ -2091,8 +2091,8 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Калі вы ніколі раней не выкарыстоўвалі двухфактарную аўтэнтыфікацыю, то мы настойліва рэкамендуем вам ${ guideButton }."
       ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
@@ -2130,8 +2130,8 @@
       "Internet connection restored.": [
         "Злучэнне з інтэрнэтам адноўлена."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Даведайцеся, як увайсці ў ${ VPN_APP_NAME } з дапамогай старонніх праграм VPN."
       ],
       "Learn more": [
         "Даведацца больш"
@@ -2150,9 +2150,6 @@
       ],
       "Loading...": [
         "Загрузка..."
-      ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "страціце доступ да ўсіх бягучых зашыфраваных даных"
@@ -2202,6 +2199,12 @@
       "Plan upgrade required": [
         "Патрабуецца паляпшэнне тарыфнага плана"
       ],
+      "Please authenticate your card in the verification tab.": [
+        "Прайдзіце аўтэнтыфікацыю са сваёй карткай на ўкладцы праверкі."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Прайдзіце аўтэнтыфікацыю свайго плацяжу на ўкладцы праверкі."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам."
       ],
@@ -2210,6 +2213,9 @@
       ],
       "Please provide an email address in case we need to contact you.": [
         "Пазначце адрас электроннай пошты на выпадак, калі нам спатрэбіцца звязацца з вамі."
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі PayPal."
@@ -2274,6 +2280,9 @@
       "Setting up your Drive": [
         "Наладжванне вашага Drive"
       ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Увайдзіце ў ${ MAIL_APP_NAME }, каб актываваць свой адрас"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
@@ -2288,6 +2297,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Самы бяспечны спосаб для прагляду старонак у інтэрнэце і трансляцый."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "З дапамогай гэтых файлаў канфігурацыі можна выбраць сервер ${ VPN_APP_NAME } для падлучэння пры выкарыстанні кліентаў VPN ад старонніх распрацоўшчыкаў або пры наладжванні злучэння VPN на маршрутызатары."
@@ -2364,8 +2376,8 @@
       "Two-factor authentication enabled": [
         "Двухфактарная аўтэнтыфікацыя ўключана"
       ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "Для рэжыму двух пароляў патрабуюцца два паролі: першы для ўваходу ва ўліковы запіс, а другі для расшыфроўкі вашай паштовай скрыні (дадатковая функцыя бяспекі)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Рэжым двух пароляў прадугледжвае выкарыстанне асобных пароляў для ўваходу і расшыфроўкі паштовай скрыні. Гэта дае магчымасць забяспечыць дадатковы ўзровень абароны ў некаторых сітуацыях. Разам з тым для большасці карыстальнікаў мы рэкамендуем выкарыстоўваць рэжым аднаго пароля. Для пераключэння ў рэжым двух пароляў спачатку задайце пароль для ўваходу, а потым пароль для паштовай скрыні."
@@ -2397,6 +2409,9 @@
       "Verification can take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
       ],
+      "Verification may take a few minutes.": [
+        "Праверка можа заняць некалькі хвілін."
+      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
       ],
@@ -2420,6 +2435,15 @@
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы рэкамендуем вам па магчымасці выкарыстоўваць афіцыйныя праграмы ${ VPN_APP_NAME }."
+      ],
+      "We couldn’t process your payment.": [
+        "Мы не можам апрацаваць ваш плацеж."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
       "We recommend using your recovery phrase instead.": [
         "Замест гэтага мы рэкамендуем выкарыстоўваць фразу аднаўлення."
@@ -2499,14 +2523,17 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Вы можаце выкарыстоўваць наступныя ўліковыя даныя для падлучэння да сервера ${ VPN_APP_NAME } з дапамогай старонняга кліента VPN з адкрытым зыходным кодам. Напрыклад, Tunnelblick для macOS або OpenVPN для GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Вы не можаце выкарыстоўваць уліковыя даныя OpenVPN / IKEv2 для ўваходу ў праграмы ${ VPN_APP_NAME } або на панэлі кіравання ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задалі метад для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без метаду аднаўлення?"
       ],
       "You have no saved payment methods.": [
         "У вас няма захаваных спосабаў аплаты."
+      ],
+      "You may be redirected to your bank’s website.": [
+        "Вы будзеце перанакіраваны на вэб-сайт вашага банка."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Перад тым, як панізіць свой тарыфны план, вам неабходна адключыць або выдаліць для ${ MAIL_APP_NAME } дадатковых карыстальнікаў, паштовыя адрасы і карыстальніцкія дамены."
@@ -2541,8 +2568,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
@@ -2964,9 +2991,6 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -3003,6 +3027,11 @@
       ],
       "Expired": [
         "Пратэрмінавана"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "Паштовы індэкс"
       ]
     },
     "Link": {
@@ -3393,8 +3422,8 @@
       "Unlimited folders": [
         "Неабмежаваная колькасць папак"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
       ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
@@ -3866,17 +3895,11 @@
       "Please describe the problem and include any error messages": [
         "Апішыце праблему і далучыце ўсе паведамленні з памылкамі"
       ],
-      "Postal code": [
-        "Паштовы індэкс"
-      ],
       "Select": [
         "Выбраць"
       ],
       "Select a reason": [
         "Выберыце прычыну"
-      ],
-      "ZIP": [
-        "Паштовы індэкс"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -3961,6 +3984,9 @@
       ],
       "Verify recovery phone?": [
         "Праверыць нумар тэлефона для аднаўлення доступу?"
+      ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Праверыць гэты нумар тэлефона для аднаўлення: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Праверка вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
@@ -4110,6 +4136,9 @@
       ]
     },
     "Subscription change warning": {
+      "Manage your subscription on ${ subscriptionManagerShort }": [
+        "Кіруйце вашай падпіскай у ${ subscriptionManagerShort }"
+      ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
         "Падпіска была здзейснена праз куплю ў праграме. Для кіравання вашай бягучай падпіскай вам неабходна перайсці ў раздзел з падпіскамі вашага ўліковага запісу ${ subscriptionManager }"
       ]
@@ -4136,8 +4165,8 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } скапіяваны ў буфер абмену"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
+      "Account deleted. Signing out...": [
+        "Уліковы запіс выдалены. Адбываецца выхад..."
       ],
       "Bug reported": [
         "Справаздача пра памылку адпраўлена"
@@ -4474,6 +4503,9 @@
       "Pay invoice": [
         "Аплаціць рахунак"
       ],
+      "Payment failed": [
+        "Збой плацяжу"
+      ],
       "Payment methods": [
         "Спосабы аплаты"
       ],
@@ -4585,8 +4617,17 @@
       "Verification": [
         "Праверка"
       ],
+      "Verification failed": [
+        "Збой праверкі"
+      ],
       "Verify email address": [
         "Праверыць адрас электроннай пошты"
+      ],
+      "Verifying your card...": [
+        "Праверка вашай карткі..."
+      ],
+      "Verifying your payment...": [
+        "Праверка вашага плацяжу..."
       ],
       "Warning": [
         "Папярэджанне"
@@ -4620,9 +4661,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вы былі запрошаны паспрабаваць ${ MAIL_APP_NAME }"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4697,11 +4735,11 @@
       ]
     },
     "Warning": {
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "Вы сапраўды хочаце выдаліць гэты нумар тэлефона?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Вы сапраўды хочаце выдаліць гэты адрас?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Выдаліўшы гэты адрас, вы больш не зможаце атрымліваць штодзённыя апавяшчэнні па электроннай пошце."

@@ -12,6 +12,14 @@
         "Omezené zobrazení (zobrazit pouze volný/zaneprázdněn)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Přeposílání bude brzy zahájeno. Nové e-maily se zobrazí ve vaší schránce."
+      ],
+      "Mail forward stopped": [
+        "Přeposílání e-mailů bylo zastaveno"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Úvod ${ BRAND_NAME }"
@@ -286,9 +294,6 @@
       "Load image": [
         "Načíst obrázek"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Nastavit tohoto účastníka jako volitelného"
       ],
@@ -433,8 +438,8 @@
       "Select all": [
         "Vybrat vše"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Vybrat časové pásmo"
       ],
       "Send": [
         "Odeslat"
@@ -468,6 +473,9 @@
       ],
       "Show time zones": [
         "Zobrazit časová pásma"
+      ],
+      "Sign in": [
+        "Přihlásit se"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -1073,8 +1081,8 @@
       "Role": [
         "Role"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Časové pásmo"
       ],
       "Title": [
         "Titul"
@@ -2009,8 +2017,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Příště se neptat"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2182,14 +2190,23 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této události selhalo."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo"
+      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
       "Email address disabled": [
         "E-mailová adresa je deaktivovaná"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
@@ -2259,6 +2276,12 @@
       ],
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Sloučit alespoň ${ calendarsToFixCount } kalendář s ${ BRAND_NAME } existujícím kalendářem",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendáře se ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
       ],
       "Missing key packet": [
         "Chybějící balíček klíčů"
@@ -2443,6 +2466,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Není možné odeslat soubory vCard více než 10 kontaktů"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Dosáhli jste maximálního počtu kalendářů. Některé kalendáře nebylo možné importovat."
+      ],
       "You must set a name": [
         "Musíte nastavit jméno"
       ],
@@ -2456,8 +2482,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2499,8 +2525,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2534,8 +2560,8 @@
       "Component with wrong format": [
         "Komponenta s nesprávným formátem"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Vlastní časové pásmo"
       ],
       "Edited event not supported": [
         "Upravená událost není podporována"
@@ -2603,11 +2629,11 @@
       "Start time out of bounds": [
         "Čas zahájení mimo hranice"
       ],
+      "Time zone": [
+        "Časové pásmo"
+      ],
       "Time zone not supported": [
         "Časové pásmo není podporováno"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Úkoly"
@@ -3278,6 +3304,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Účastníkům události bude zaslán e-mail o zrušení. Opravdu chcete tuto událost smazat?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce Vašeho účtu."
       ],
@@ -3464,9 +3493,6 @@
       "Import mailbox": [
         "Importovat poštovní schránku"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
-      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
       ],
@@ -3619,6 +3645,9 @@
       ],
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
@@ -4031,8 +4060,8 @@
       "Description": [
         "Popis"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Příště se neptat"
       ],
       "Email": [
         "E-mail"
@@ -5304,6 +5333,9 @@
       "Calendar updated": [
         "Kalendář aktualizován"
       ],
+      "Canceling import": [
+        "Ruším import"
+      ],
       "Cancellation sent and all events deleted": [
         "Zrušení odesláno a všechny události smazány"
       ],
@@ -5315,9 +5347,6 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Zrušení odesláno a účastníci byli odebrání ze všech událostí"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
@@ -5516,8 +5545,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Hledat časová pásma"
       ]
     },
     "Title": {

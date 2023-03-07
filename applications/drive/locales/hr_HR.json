@@ -282,9 +282,6 @@
       "Load image": [
         "Učitaj sliku"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mark for deletion": [
         "Označi za brisanje"
       ],
@@ -449,6 +446,9 @@
       ],
       "Show preview": [
         "Prikaži pregled"
+      ],
+      "Sign in": [
+        "Prijavite se"
       ],
       "Sign out": [
         "Odjava"
@@ -726,9 +726,6 @@
       ],
       "Role": [
         "Uloga"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Naslov"
@@ -1494,9 +1491,6 @@
       "Contact signature not verified": [
         "Potpis kontakta nije potvrđen"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
       ],
@@ -1517,6 +1511,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Netočna lozinka. Pokušajte ponovo."
+      ],
+      "Invalid email address": [
+        "Nevažeća adresa e-pošte"
       ],
       "Invalid name": [
         "Nevažeći naziv"
@@ -1630,9 +1627,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -1655,9 +1649,6 @@
     "Error importing event": {
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
@@ -1715,9 +1706,6 @@
       ],
       "Start time out of bounds": [
         "Početno vrijeme je van granica"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Stavka liste zadataka"
@@ -2543,9 +2531,6 @@
       ],
       "Device": [
         "Uređaj"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Download anyway": [
         "Preuzmi svejedno"

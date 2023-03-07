@@ -4,6 +4,14 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Пересылка скоро начнется. Новые письма будут появляться в вашем почтовом ящике."
+      ],
+      "Mail forward stopped": [
+        "Пересылка почты остановлена"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Введение в ${ BRAND_NAME }"
@@ -335,9 +343,6 @@
       "Load image": [
         "Загрузить изображение"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Управление папками"
       ],
@@ -538,6 +543,9 @@
       ],
       "Show preview": [
         "Показать предпросмотр"
+      ],
+      "Sign in": [
+        "Войти"
       ],
       "Sign out": [
         "Выйти"
@@ -918,8 +926,8 @@
       "Role": [
         "Роль"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Часовой пояс"
       ],
       "Title": [
         "Должность"
@@ -1888,14 +1896,23 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календаря или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или"
+      ],
       "Device name does not match": [
         "Название устройства не совпадает"
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
@@ -1939,6 +1956,9 @@
       "Incorrect password. Please try again.": [
         "Неверный пароль. Пожалуйста, попробуйте снова."
       ],
+      "Invalid email address": [
+        "Недействительный адрес электронной почты"
+      ],
       "Invalid name": [
         "Недопустимое имя"
       ],
@@ -1950,6 +1970,12 @@
       ],
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Объедините по крайней мере ${ calendarsToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
@@ -2116,6 +2142,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Вы не можете отправлять файлы vCard, содержащие более 10 контактов"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Вы достигли максимального количества календарей. Некоторые календари не удалось импортировать."
+      ],
       "You must set a name": [
         "Вы должны задать имя"
       ],
@@ -2127,8 +2156,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2170,8 +2199,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2205,8 +2234,8 @@
       "Component with wrong format": [
         "Неправильный формат компонента"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Настроить часовой пояс"
       ],
       "Edited event not supported": [
         "Отредактированное событие не поддерживается"
@@ -2274,11 +2303,11 @@
       "Start time out of bounds": [
         "Время начала находится вне границ"
       ],
+      "Time zone": [
+        "Часовой пояс"
+      ],
       "Time zone not supported": [
         "Часовой пояс не поддерживается"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Запись списка задач"
@@ -2864,6 +2893,9 @@
         "Найдено ${ contactsCount } контактов",
         "Найдено ${ contactsCount } контактов"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (восстановлен)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } завершен",
         "${ doneCount } завершены",
@@ -2981,6 +3013,9 @@
       "A number will be added to the folder name": [
         "К имени папки будет добавлен номер"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
@@ -3046,6 +3081,15 @@
       ],
       "Canceled": [
         "Отменено"
+      ],
+      "Cannot load link": [
+        "Не удалось загрузить ссылку"
+      ],
+      "Cannot load links": [
+        "Не удалось загрузить ссылки"
+      ],
+      "Cannot load shared link": [
+        "Не удалось загрузить общую ссылку"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
@@ -3254,6 +3298,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Для достижения наилучших результатов избегайте просмотра трансляций и действий, требующих большого объема памяти, или разделите загрузку на более мелкие пакеты."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
+      ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
       ],
@@ -3308,8 +3355,8 @@
       "Import mailbox": [
         "Импорт почтового ящика"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Импортируйте электронную почту, календари и контакты из другой службы в ${ BRAND_NAME }. Мы будем сопровождать вас на каждом шагу и шифровать ваши данные при переносе. Добро пожаловать в мир конфиденциальности."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Импортируйте ваши письма, календари и контакты в ${ BRAND_NAME } из другого сервиса."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
@@ -3370,12 +3417,6 @@
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Загрузка"
@@ -3557,6 +3598,9 @@
       "Report has been sent": [
         "Отчет был отправлен"
       ],
+      "Restored files ${ formattedDate }": [
+        "Файлы восстановлены ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "Поиск не может быть включен в этом браузере"
       ],
@@ -3575,6 +3619,9 @@
       "Select what you want to import.": [
         "Выберите то, что вы хотите импортировать."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учетом числа календарей, доступных в вашем тарифе."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -3589,9 +3636,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Доступная для обмена ссылка для ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
@@ -3642,7 +3686,7 @@
         "Пока здесь пусто"
       ],
       "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Этими файлами поделились с использованием сквозного шифрования. Чтобы сохранить их в безопасности — а все ваши документы, фотографии и файлы кофиденциальными, — храните их на собственном ${ DRIVE_APP_NAME }. Он прост в использовании и бесплатен."
+        "Этими файлами поделились используя сквозное шифрование. Чтобы сохранить их в безопасности и обеспечить конфиденциальность всех ваших документов, фотографий и файлов, храните их на своем ${ DRIVE_APP_NAME }. Это бесплатное и простое приложение."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -4054,8 +4098,8 @@
       "Device name": [
         "Название устройства"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Больше не спрашивать"
       ],
       "Download anyway": [
         "Все равно скачать"
@@ -4660,6 +4704,12 @@
       "All items will soon be permanently deleted from trash": [
         "Все элементы скоро будут окончательно удалены из корзины"
       ],
+      "Cannot load link": [
+        "Не удалось загрузить ссылку"
+      ],
+      "Cannot load next page": [
+        "Не удалось загрузить следующую страницу"
+      ],
       "Contact group created": [
         "Группа контактов создана"
       ],
@@ -4702,9 +4752,6 @@
       "File or folder is missing a name": [
         "У папки или файла отсутствует имя"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Переместить ${ itemsToMoveCount } файл",
         "Переместить ${ itemsToMoveCount } файла",
@@ -4740,9 +4787,6 @@
         "Переместить ${ movingCount } элемента",
         "Переместить ${ movingCount } элементов",
         "Переместить ${ movingCount } элементов"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостаточно места для загрузки ${ formattedTotal }"
@@ -5331,8 +5375,8 @@
       "Bug reported": [
         "Отчёт об ошибке отправлен"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Отмена импорта"
       ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
@@ -5552,6 +5596,9 @@
       "Browser might run out of memory": [
         "У браузера могла закончиться память"
       ],
+      "Cannot load link": [
+        "Не удалось загрузить ссылку"
+      ],
       "Change layout": [
         "Изменить вид"
       ],
@@ -5747,9 +5794,6 @@
       "Item details": [
         "Информация об элементе"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Подтверждение ссылки"
       ],
@@ -5923,9 +5967,6 @@
       ],
       "The link expired": [
         "Срок действия ссылки истек"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "У этого файла отсутствует или недействительна подпись. Перейдите в Меню (⋮) → Подробности для получения дополнительной информации."

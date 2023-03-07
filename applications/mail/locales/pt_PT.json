@@ -521,9 +521,6 @@
       "Loading${ ellipsis }": [
         "A carregar${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Densidade da caixa de correio"
       ],
@@ -883,6 +880,9 @@
       ],
       "Show preview": [
         "Mostrar pré-visualização"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Sign out": [
         "Terminar sessão"
@@ -1465,9 +1465,6 @@
       ],
       "Role": [
         "Papel"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Título"
@@ -2501,9 +2498,6 @@
       "Email address disabled": [
         "Endereço de email desactivado"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Email inválido"
       ],
@@ -2533,6 +2527,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorrecta. Por favor, tente novamente."
+      ],
+      "Invalid email address": [
+        "Endereço electrónico inválido"
       ],
       "Invalid expiration time": [
         "Tempo de validade inválido"
@@ -2675,9 +2672,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2713,9 +2707,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2744,9 +2735,6 @@
       ],
       "Component with wrong format": [
         "Componente com formato errado"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado não suportado"
@@ -2807,9 +2795,6 @@
       ],
       "Start time out of bounds": [
         "Hora inicial fora dos limites"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tarefas"
@@ -3976,9 +3961,6 @@
       "This conversation contains trashed messages.": [
         "Esta conversa contém mensagens enviadas para o lixo."
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
-      ],
       "This invitation is saved in a disabled calendar.": [
         "Este convite está gravado numa agenda desactivada."
       ],
@@ -4527,9 +4509,6 @@
       ],
       "Delete": [
         "Eliminar"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Email": [
         "Email"
@@ -5811,17 +5790,11 @@
       "Fingerprint copied to clipboard": [
         "Impressão digital copiada para a área de transferência"
       ],
-      "Folder cleared": [
-        "Pasta limpa"
-      ],
       "Import record deleted": [
         "Registo de importação eliminado"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferências de atalhos de teclado actualizadas"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Etiquetas aplicadas."

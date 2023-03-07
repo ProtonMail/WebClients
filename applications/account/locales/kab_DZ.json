@@ -395,9 +395,6 @@
       "Loading verification": [
         "Asali n usenqed"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Mark as default": [
         "Err-it d amezwer"
       ],
@@ -433,9 +430,6 @@
       ],
       "No": [
         "Ala"
-      ],
-      "Ok": [
-        "OK"
       ],
       "OK": [
         "Ih"
@@ -602,9 +596,6 @@
       "Select language for invitation emails": [
         "Fren tutlayt i yimaylen n tinnubga"
       ],
-      "Select timezone": [
-        "Select time zone"
-      ],
       "send auto-reply email": [
         "azen imayl n tririt tawurmant"
       ],
@@ -613,6 +604,9 @@
       ],
       "Send my username": [
         "Azen isem-im n useqdac"
+      ],
+      "Set as default": [
+        "Sbadu-t d amezwer"
       ],
       "Set catch-all": [
         "Sbadu catch-all"
@@ -806,9 +800,6 @@
       ],
       "Generate missing keys": [
         "Sirew tisura ixuṣṣen"
-      ],
-      "Make default": [
-        "Set as default"
       ],
       "Saving": [
         "Asekles"
@@ -1215,9 +1206,6 @@
       ],
       "Role": [
         "Tamlilt"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Azwel"
@@ -2273,9 +2261,6 @@
       "Passwords do not match": [
         "Awalen uffiren ur menṭaḍen ara"
       ],
-      "Payment process cancelled": [
-        "Payment process canceled"
-      ],
       "Payment process consumed": [
         "Akala n uxelleṣ yekfa"
       ],
@@ -2353,9 +2338,6 @@
       ],
       "The address might be misspelled": [
         "Yezmer tella tuccḍa deg tira n tansa"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Isem n ukaram d arameɣtu. Ttxil-k·m fren isem-nniḍen."
@@ -2477,9 +2459,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Tella-d tuccḍa deg usali n ufaylu-inek ·inem ${ formattedFilename }. Teɣzi tafellayt n ufaylu d ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2508,9 +2487,6 @@
       ],
       "Component with wrong format": [
         "Asuddis s yir amasal"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Aẓrag n tedyant ur yettusefrak ara"
@@ -2571,9 +2547,6 @@
       ],
       "Time zone not supported": [
         "Izḍi usrid ur yettusefrak ara"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Anekcum n twuriwin"
@@ -3399,9 +3372,6 @@
       "Center": [
         "Slemmes"
       ],
-      "Check the status of current and previous imports.": [
-        "Senqed addaden n waktaren imiranen d wid yezrin."
-      ],
       "Choose the look and feel of the application.": [
         "Fren talɣa d wudem n usnas."
       ],
@@ -3468,9 +3438,6 @@
       ],
       "Delete link?": [
         "Kkes aseɣwen?"
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Ur Sruḥuy ara awal-agi uffir. Ma tesruḥeṭ, ur tettizmireḍ ara ad tkecmed neɣ tzemkeḍ iznan-ik."
@@ -3614,9 +3581,6 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Ma tremdeḍ SPF akked DKIM, DMARC ad k-yeǧǧ ad temmleḍ amek ilaq imeẓlala n yimayl ad aznen imaylen ar taɣult-ik ma yella SPF akked DKIM ccḍen. Aya izmer ad yiwɛir i wid yettaznen ispamen ad ilin d kečč, maca izmer daɣen ad d-yeglu s wuguren ma yella ur yettwag ara akken iwata."
       ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ma tkemmleḍ deg usader deg lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ${ MAIL_APP_NAME } d ${ VPN_APP_NAME }."
       ],
@@ -3708,9 +3672,6 @@
       "Large imports can take several days.": [
         "Tektert tameqrant tezmer ad teṭṭef aṭas n wussan."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
-      ],
       "Learn more": [
         "Issin ugar"
       ],
@@ -3747,9 +3708,6 @@
       "more": [
         "ugar"
       ],
-      "More Info": [
-        "Learn more"
-      ],
       "Multi-user support not enabled.": [
         "Tallelt n ddeqs n yiseqdacen ur termid ara."
       ],
@@ -3776,9 +3734,6 @@
       ],
       "No folder selected": [
         "Ulac akaram yettwafranen"
-      ],
-      "No imports to display.": [
-        "Ulacaktaren ara yettwaskanen."
       ],
       "No label selected": [
         "Ulac tabzimt yettwafernen"
@@ -3960,9 +3915,6 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Tansa n yimayl i teskecmeḍ nnig n tebdart d tansa-inek·inem s wudem amezwer. Zuɣer syen sres i wakken ad tsuddseḍ tansiwin-ik·im."
       ],
-      "The name will be visible to your users while they are logged in.": [
-        "The name will be visible to your users while they are signed in."
-      ],
       "The securest way to browse, stream, and be online.": [
         "Abrid uḍmin i tunigin, i usuddem d tunigin srid."
       ],
@@ -4022,9 +3974,6 @@
       ],
       "Two-factor authentication enabled": [
         "Asesteb s snat n tarrayin yermed"
-      ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Askar s sin n wawalen uffiren isseqdac awalen uffiren yemgaraden i tuqqna ar umiḍan-ik akked uwgelhen n tnaka-ik n urmas. Askar-agi yettmuddu tagnit fessusen seg idis n tɣellist, acu kan, ad nwelleh ɣef useqdec n uskar s yiwen n wawal uffir i tuget n iseqdacen. Akken ad tremdeḍ askar s sin n wawalen uffiren, fren awal uffir n tuqqna ar umiḍan-ik akked wawal uffir n uwgelhen i tnaka-ik n urmas sakin sit ɣef Sekles."
@@ -4128,9 +4077,6 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Tzemreḍ ad tsagneḍ daɣen ad d-tsadreḍ tifacturin-inek·inem i yiswan n usiḍen."
       ],
-      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
-      ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
         "Tzemreḍ tura ad d-tremseḍ iznan ɣer tansa-inek·inem @pm.me. Leqqem ɣer uɣawas n lexlaṣ iwakken daɣen ad tazneḍ imaylen s useqdec n tansa @pm.me syei rnu tansiwin-nniḍen @pm.me."
       ],
@@ -4142,9 +4088,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Tzemreḍ ad tesqedceḍ inekcam-a akken ad teqqneḍ ɣer uqeddac ${ VPN_APP_NAME }, s useqdec n usnas VPN n wis kraḍ, n uɣbalu yeldin, akka am Tunnelblick i macOS neɣ OpenVPN i GNU/Linux."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ur tesbaduḍ ara tarayt n tririt, tiririt n umiḍan-inek•inem ur tezmir ara ad d-ḍru ma yella tettuḍ awal-ik•im uffir. Tebɣiḍ ad tkemmleḍ s war tarayt n tririt?"
@@ -4181,9 +4124,6 @@
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Amiḍan-ik·im ${ BRAND_NAME } icudd ɣer ${ externalEmailAddress }."
-      ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ur yettɛṭṭil ara ad yesɛu talast. ${ payInvoiceLink }"
@@ -4838,9 +4778,6 @@
       "Display name": [
         "Isem ara d-yettwaskanen"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Do you have any suggestions for our team?": [
         "Tesɛiḍ kra n yisumar i terbaɛt-nneɣ ?"
       ],
@@ -5180,9 +5117,6 @@
       "Time format": [
         "Amasal n usrag"
       ],
-      "Timezone": [
-        "Time zone"
-      ],
       "Two-password mode": [
         "Askar n sin-wawalen-uffiren"
       ],
@@ -5242,9 +5176,6 @@
       ],
       "Your password (admin)": [
         "Awal-ik uffir (anedbal)"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -6223,9 +6154,6 @@
       "Please insert link first": [
         "Ma ulac aɣilif, err qbel aseɣwen"
       ],
-      "Postal code": [
-        "Tangalt n lpusṭa"
-      ],
       "Search": [
         "Anadi"
       ],
@@ -6249,9 +6177,6 @@
       ],
       "yourdomain.com": [
         "taɣult-inek.com"
-      ],
-      "ZIP": [
-        "Tangalt n lpusṭa"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -6563,9 +6488,6 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } yettwanɣel deg tecfawit-inek·inem"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
-      ],
       "Address added": [
         "Tansa tettwarna"
       ],
@@ -6799,11 +6721,6 @@
       ],
       "vCard field": [
         "urti vCard"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
       ]
     },
     "Title": {
@@ -7386,9 +7303,6 @@
       "Start import process": [
         "Bdu akala n uktar"
       ],
-      "Start new import": [
-        "Bdu taktert tamaynutt"
-      ],
       "Status": [
         "Aẓayer"
       ],
@@ -7458,17 +7372,11 @@
       "Your current plan": [
         "Aɣawas-ik·im amiran"
       ],
-      "Your import history": [
-        "Azray n uktar-inek"
-      ],
       "Your plan": [
         "Aɣawas-ik·im"
       ],
       "Your recovery status": [
         "Addad n tririt-inek•inem"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -7732,9 +7640,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } ad siweḍ aqettun n yisefka iwum yezmer, ad yebdu s yiznan-inek·inem n melmi kan."
       ],
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "Tebɣiḍ s tidet ad tekkseḍ uṭṭun n tiliɣri?"
       ],
@@ -7761,9 +7666,6 @@
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ttxil-k·m ẓer belli s ufran n tarrayt-a n uxelleṣ, amiḍan-ik·im ur nezmir ara ad t-nleqqem din din. Ad nleqqem amiḍan-ik·im akken ara yettwag uxelleṣ."
-      ],
-      "Please provide at least one recipient": [
-        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."

@@ -542,9 +542,6 @@
       "Loading${ ellipsis }": [
         "Γίνεται φόρτωση${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Πυκνότητα θυρίδας"
       ],
@@ -937,6 +934,9 @@
       ],
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
+      ],
+      "Sign in": [
+        "Είσοδος"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -1762,9 +1762,6 @@
       ],
       "Role": [
         "Ρόλος"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Τίτλος"
@@ -2880,6 +2877,14 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Σφάλμα αποκρυπτογράφησης: η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου αυτού του μηνύματος απέτυχε."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο ή",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια ή"
+      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -2888,9 +2893,6 @@
       ],
       "Email address disabled": [
         "Η διεύθυνση email έχει απενεργοποιηθεί"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
@@ -2940,6 +2942,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Λανθασμένος κωδικός πρόσβασης θυρίδας. Παρακαλούμε δοκιμάστε ξανά."
       ],
+      "Invalid email address": [
+        "Μη έγκυρη διεύθυνση email"
+      ],
       "Invalid expiration time": [
         "Μη έγκυρος χρόνος λήξης"
       ],
@@ -2957,6 +2962,10 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Υπέρβαση μέγιστου αριθμού συνημμένων (${ attachmentsCountLimit })"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Το μήνυμα πρέπει πρώτα να αποσταλεί"
@@ -3196,9 +3205,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3237,9 +3243,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3271,9 +3274,6 @@
       ],
       "Component with wrong format": [
         "Συνθετικό λανθασμένης μορφής"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
@@ -3343,9 +3343,6 @@
       ],
       "Time zone not supported": [
         "Μη υποστηριζόμενη ζώνη ώρας"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
@@ -4415,9 +4412,6 @@
       "Expires": [
         "Λήγει"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Λήγει σε ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Λήγει σε ${ formattedDelayShort }"
       ],
@@ -4514,9 +4508,6 @@
       ],
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Εισάγετε τα email σας, τα ημερολόγια, και τις επαφές σας από μια άλλη υπηρεσία στην ${ BRAND_NAME }. Θα σας καθοδηγήσουμε σε κάθε βήμα της διαδικασίας και θα κρυπτογραφήσουμε τα δεδομένα κατά τη μετακίνηση. Καλώς ήρθατε στον κόσμο της ιδιωτικότητας."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
@@ -4807,9 +4798,6 @@
       "Saving draft…": [
         "Αποθήκευση προχείρου…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
-      ],
       "Scheduling message...": [
         "Γίνεται προγραμματισμός μηνύματος..."
       ],
@@ -4943,9 +4931,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Αυτός ο περιηγητής δεν υποστηρίζει προεπισκόπηση αρχείων PDF. Παρακαλούμε κατεβάστε το αρχείο."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
-      ],
       "This conversation contains non-trashed messages.": [
         "Αυτή η συνομιλία περιέχει μη διαγραμμένα μηνύματα."
       ],
@@ -4955,9 +4940,6 @@
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Αυτή η συνομιλία θα επισημανθεί ως ανεπιθύμητη. Θα θέλατε επίσης να κάνετε απεγγραφή από μελλοντικά μηνύματα;",
         "Αυτές οι συνομιλίες θα επισημανθούν ως ανεπιθύμητες. Θα θέλατε επίσης να κάνετε απεγγραφή από μελλοντικά μηνύματα;"
-      ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Αυτή η πρόσκληση είναι αποθηκευμένη σε ένα απενεργοποιημένο ημερολόγιο."
@@ -5010,15 +4992,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Αυτό το μήνυμα θα λήξει ${ formattedDate }"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Αυτό το μήνυμα θα λήξει την ${ dateString } στις ${ formattedTime }"
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        "Αυτό το μήνυμα θα λήξει σήμερα στις ${ formattedTime }"
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Αυτό το μήνυμα θα λήξει αύριο στις ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Αυτό το δημόσιο κλειδί θα χρησιμοποιηθεί αυτόματα για την κρυπτογράφηση email που αποστέλλεται σε αυτήν τη διεύθυνση."
@@ -5672,9 +5645,6 @@
       "Delete": [
         "Διαγραφή"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
       ],
@@ -6317,9 +6287,6 @@
       ]
     },
     "Message notification": {
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
-      ],
       "Sending undone": [
         "Η αποστολή αναιρέθηκε"
       ],
@@ -6518,9 +6485,6 @@
       ],
       "Search message content": [
         "Αναζήτηση εντός περιεχομένου μηνυμάτων"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "Έως 15 ηλ. διευθύνσεις"
@@ -7140,9 +7104,6 @@
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
       ],
-      "Cancelling import": [
-        "Canceling import"
-      ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
       ],
@@ -7190,17 +7151,11 @@
       "Fingerprint copied to clipboard": [
         "Το αποτύπωμα αντιγράφηκε στο πρόχειρο"
       ],
-      "Folder cleared": [
-        "Ο φάκελος διαγράφηκε"
-      ],
       "Import record deleted": [
         "Η εισαγωγή εγγραφής διαγράφηκε"
       ],
       "Keyboard shortcuts preferences updated": [
         "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Οι ετικέτες εφαρμόστηκαν."

@@ -4,145 +4,21 @@
     "language": "en_US"
   },
   "contexts": {
-    "Action": {
-      "Make default": [
-        "Set as default"
-      ],
-      "Ok": [
-        "OK"
-      ],
-      "Select timezone": [
-        "Select time zone"
-      ]
-    },
-    "Address action": {
-      "Make default": [
-        "Set as default"
-      ]
-    },
-    "Contact field label": {
-      "Timezone": [
-        "Time zone"
-      ]
-    },
     "Error": {
       "Invalid email address": [
         "Invalid email address"
-      ],
-      "Payment process cancelled": [
-        "Payment process canceled"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
-      ]
-    },
-    "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ]
-    },
-    "Error importing event": {
-      "Custom timezone": [
-        "Custom time zone"
-      ],
-      "Timezone": [
-        "Time zone"
-      ]
-    },
-    "Error importing users": {
-      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
-      ]
-    },
-    "Import status": {
-      "Cancelling": [
-        "Canceling"
       ]
     },
     "Info": {
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
       ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
-      ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
       "Invite successfully sent": [
         "Invite sent",
         "Invites sent"
-      ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
-      ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
-      ],
-      "More Info": [
-        "Learn more"
-      ],
-      "The name will be visible to your users while they are logged in.": [
-        "The name will be visible to your users while they are signed in."
-      ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
-      ],
-      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
-      ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
-      ]
-    },
-    "Label": {
-      "Do not ask again": [
-        "Don't ask again"
-      ],
-      "Timezone": [
-        "Time zone"
-      ],
-      "ZIP code": [
-        "Postal code"
-      ]
-    },
-    "new_plans: feature": {
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
-      ]
-    },
-    "Success": {
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
-      ],
-      "Cancelling import": [
-        "Canceling import"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
-      ]
-    },
-    "Title": {
-      "ZIP / postal code": [
-        "Postal code"
-      ]
-    },
-    "Warning": {
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
-      "Please provide at least one recipient": [
-        "Please add at least one recipient."
       ]
     }
   }
