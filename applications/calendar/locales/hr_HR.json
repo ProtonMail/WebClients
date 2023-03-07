@@ -243,9 +243,6 @@
       "Load image": [
         "Učitaj sliku"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Postavi ovog sudionika kao neobaveznim"
       ],
@@ -372,9 +369,6 @@
       "Select all": [
         "Odaberi sve"
       ],
-      "Select timezone": [
-        "Select time zone"
-      ],
       "Send": [
         "Pošalji"
       ],
@@ -404,6 +398,9 @@
       ],
       "Show time zones": [
         "Prikaži vremenske zone"
+      ],
+      "Sign in": [
+        "Prijavite se"
       ],
       "Sign out": [
         "Odjava"
@@ -750,9 +747,6 @@
       ],
       "Role": [
         "Uloga"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Naslov"
@@ -1609,9 +1603,6 @@
       "Email address disabled": [
         "Adresa e-pošte je onemogućena"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
       ],
@@ -1799,9 +1790,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -1824,9 +1812,6 @@
     "Error importing event": {
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
@@ -1884,9 +1869,6 @@
       ],
       "Start time out of bounds": [
         "Početno vrijeme je van granica"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Stavka liste zadataka"
@@ -2720,9 +2702,6 @@
       ],
       "Description": [
         "Opis"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Email": [
         "E-pošta"
@@ -3708,11 +3687,6 @@
     "Text": {
       "Settings": [
         "Postavke"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
       ]
     },
     "Title": {

@@ -186,10 +186,10 @@ const RecoveryCard = ({ ids }: Props) => {
                 {isDataRecoveryAvailable
                     ? // translator: Full sentence is 'If you lose your login details and need to reset your account, it’s imperative that you have both an account recovery and data recovery method in place, otherwise you might not be able to access any of your emails, contacts, or files.'
                       c('Info')
-                          .jt`If you lose your login details and need to reset your account, ${boldImperative} that you have both an ${boldAccountAndRecovery} in place, otherwise you might not be able to access any of your emails, contacts, or files.`
+                          .jt`If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.`
                     : // translator: Full sentence is 'If you lose your login details and need to reset your account, it’s imperative that you have an account recovery method in place.'
                       c('Info')
-                          .jt`If you lose your login details and need to reset your account, ${boldImperative} that you have an ${boldAccountRecovery} in place.`}
+                          .jt`If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.`}
                 <br />
                 <Href url={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
                     {c('Link').t`Why set recovery methods?`}

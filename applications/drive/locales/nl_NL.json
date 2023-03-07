@@ -331,9 +331,6 @@
       "Load image": [
         "Afbeelding laden"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Mappen beheren"
       ],
@@ -534,6 +531,9 @@
       ],
       "Show preview": [
         "Voorbeeld tonen"
+      ],
+      "Sign in": [
+        "Inloggen"
       ],
       "Sign out": [
         "Uitloggen"
@@ -914,8 +914,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Tijdzone"
       ],
       "Title": [
         "Titel"
@@ -1885,9 +1885,6 @@
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email address is required": [
         "E-mailadres is vereist"
       ],
@@ -1929,6 +1926,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Onjuist wachtwoord. Probeer het opnieuw."
+      ],
+      "Invalid email address": [
+        "Ongeldig e-mailadres"
       ],
       "Invalid name": [
         "Ongeldige naam"
@@ -2112,9 +2112,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2153,9 +2150,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2188,8 +2182,8 @@
       "Component with wrong format": [
         "Component met verkeerde indeling"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Aangepaste tijdzone"
       ],
       "Edited event not supported": [
         "Bewerkte afspraak niet ondersteund"
@@ -2257,11 +2251,11 @@
       "Start time out of bounds": [
         "Begintijd valt buiten de grenzen"
       ],
+      "Time zone": [
+        "Tijdzone"
+      ],
       "Time zone not supported": [
         "Tijdzone niet ondersteund"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "To-do item"
@@ -3196,9 +3190,6 @@
       "Import mailbox": [
         "Mailbox importeren"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importeer uw e-mails, agenda's en contacten vanuit een andere dienst naar ${ BRAND_NAME }. We zullen u bij elke stap leiden en uw gegevens versleutelen terwijl het wordt verplaatst. Welkom in de wereld van privacy."
-      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
@@ -3258,12 +3249,6 @@
       ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Laden"
@@ -3473,9 +3458,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Deelbare koppeling voor ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
@@ -3936,9 +3918,6 @@
       ],
       "Device name": [
         "Apparaatnaam"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Download anyway": [
         "Toch downloaden"
@@ -4551,9 +4530,6 @@
       "File or folder is missing a name": [
         "Bestand of map heeft geen naam"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Verplaats ${ itemsToMoveCount } bestand",
         "Verplaats ${ itemsToMoveCount } bestanden"
@@ -4577,9 +4553,6 @@
       "Move ${ movingCount } item": [
         "Verplaats ${ movingCount } item",
         "Verplaats ${ movingCount } items"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
@@ -5134,9 +5107,6 @@
       "Bug reported": [
         "Bug gemeld"
       ],
-      "Cancelling import": [
-        "Canceling import"
-      ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
@@ -5513,9 +5483,6 @@
       "Item details": [
         "Gegevens van item"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Link bevestigen"
       ],
@@ -5689,9 +5656,6 @@
       ],
       "The link expired": [
         "De koppeling is verlopen"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Het bestand heeft een ontbrekende of ongeldige handtekening. Ga naar Menu (⋮) → Details voor info."

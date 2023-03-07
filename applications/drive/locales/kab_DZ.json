@@ -307,9 +307,6 @@
       "Load image": [
         "Sali-d tugniwin"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage link": [
         "Sefrek aseɣwen"
       ],
@@ -489,6 +486,9 @@
       ],
       "Show preview": [
         "Sken taskant"
+      ],
+      "Sign in": [
+        "Qqen"
       ],
       "Sign out": [
         "Ffeɣ"
@@ -806,9 +806,6 @@
       ],
       "Role": [
         "Tamlilt"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Azwel"
@@ -1645,9 +1642,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Anadi n ugbur ur yezmir ara ad yettwarmad deg yiminig-a. Ttxil ffeɣ seg uskar n tunigin tusligin neɣ seqdec iminig-nniḍen."
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Imayl mačči d ameɣtu"
       ],
@@ -1668,6 +1662,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Awal uffir n tebbaḍt d arameɣtu. Ttxil ɛreḍ tikkelt-nniḍen."
+      ],
+      "Invalid email address": [
+        "Yir tansa imayl"
       ],
       "Invalid name": [
         "Yir isem"
@@ -1812,9 +1809,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Tella-d tuccḍa deg usali n ufaylu-inek ·inem ${ formattedFilename }. Teɣzi tafellayt n ufaylu d ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -1843,9 +1837,6 @@
       ],
       "Component with wrong format": [
         "Asuddis s yir amasal"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Aẓrag n tedyant ur yettusefrak ara"
@@ -1906,9 +1897,6 @@
       ],
       "Time zone not supported": [
         "Izḍi usrid ur yettusefrak ara"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Anekcum n twuriwin"
@@ -3005,9 +2993,6 @@
       "Deleted": [
         "Ittwakkes"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Download anyway": [
         "Sader akken yebɣu yili"
       ],
@@ -3452,9 +3437,6 @@
       "Failed to move, please try again": [
         "Asmutti ur yeddi, ttxil ɛreḍ tikkelt-nniḍen"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Smutti ${ itemsToMoveCount } n ufaylu",
         "Smutti ifuyla ${ itemsToMoveCount }"
@@ -3478,9 +3460,6 @@
       "Move ${ movingCount } item": [
         "Smutti aferdis  ${ movingCount }",
         "Smutti aferdis  ${ movingCount }"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ulac tallunt i usali n ${ formattedTotal }"
@@ -3997,9 +3976,6 @@
       "Item details": [
         "Talqayt n uferdis"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Aseɣwen n usentem"
       ],
@@ -4155,9 +4131,6 @@
       ],
       "The link expired": [
         "Yemmut useɣwen"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "Total size": [
         "Tiddi tuɣridt"

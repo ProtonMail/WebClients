@@ -23,6 +23,26 @@
         "Sınırlı görünüm (yalnızca serbest/meşgul)"
       ]
     },
+    "account": {
+      "Delete forward": [
+        "İletmeyi sil"
+      ],
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "İletme işlemi birazdan başlayacak ve yeni e-postalar gelen kutunuzda görünecek."
+      ],
+      "Mail forward stopped": [
+        "Posta iletimi durduruldu"
+      ],
+      "Reconnect": [
+        "Yeniden bağlan"
+      ],
+      "Remove forward": [
+        "İletmeyi kaldır"
+      ],
+      "You will stop the mail forwarding.": [
+        "E-posta iletmeyi durduracaksınız."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
@@ -459,9 +479,6 @@
       "Loading verification": [
         "Doğrulama yükleniyor"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Manage communication preferences": [
         "İletişim ayarları yönetimi"
       ],
@@ -512,9 +529,6 @@
       ],
       "Not spam": [
         "İstenmeyen değil"
-      ],
-      "Ok": [
-        "OK"
       ],
       "OK": [
         "Tamam"
@@ -696,8 +710,8 @@
       "Select language for invitation emails": [
         "Davet e-postalarının dilini seçin"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Saat dilimini seçin"
       ],
       "send auto-reply email": [
         "otomatik yanıt e-postası gönder"
@@ -707,6 +721,9 @@
       ],
       "Send my username": [
         "Kullanıcı adımı gönder"
+      ],
+      "Set as default": [
+        "Varsayılan olarak ayarla"
       ],
       "Set catch-all": [
         "Tümünü yakalayan ayarla"
@@ -904,6 +921,11 @@
         "Uzaklaştır"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "İletme sürdürülüyor"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Oturumu kapat"
@@ -950,11 +972,11 @@
       "Generate missing keys": [
         "Eksik anahtarları oluştur"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Saving": [
         "Kaydediliyor"
+      ],
+      "Set as default": [
+        "Varsayılan olarak ayarla"
       ]
     },
     "Address status": {
@@ -1266,8 +1288,8 @@
       ]
     },
     "Calendar share permission label": {
-      "Edit": [
-        "Düzenle"
+      "Edit event details": [
+        "Etkinlik bilgilerini düzenle"
       ],
       "See all event details": [
         "Tüm etkinlik bilgilerini görüntüleme"
@@ -1654,8 +1676,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Saat dilimi"
       ],
       "Title": [
         "Başlık"
@@ -2845,6 +2867,14 @@
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın",
+        "En az ${ calendarsToFixCount } takvimi kaldırın"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da",
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da"
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -2932,6 +2962,10 @@
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin"
+      ],
       "Missing key packet": [
         "Anahtar paketi eksik"
       ],
@@ -2989,8 +3023,8 @@
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
-      "Payment process cancelled": [
-        "Payment process canceled"
+      "Payment process canceled": [
+        "Ödeme işlemi iptal edildi"
       ],
       "Payment process consumed": [
         "Ödeme işleminin süresi geçmiş"
@@ -3096,8 +3130,8 @@
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da bilgisayar ile oturum açın."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
@@ -3198,6 +3232,9 @@
       "You have no invoices.": [
         "Herhangi bir faturanız yok."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek için lütfen tarifenizi yükseltin."
       ],
@@ -3219,6 +3256,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
       ],
+      "Your forward will not be processed.": [
+        "İletmeniz işlenmeyecek."
+      ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
       ],
@@ -3227,8 +3267,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -3268,8 +3308,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -3303,8 +3343,8 @@
       "Component with wrong format": [
         "Bileşen biçimi yanlış"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Özel saat dilimi"
       ],
       "Edited event not supported": [
         "Etkinlikleri düzenleme desteklenmiyor"
@@ -3372,11 +3412,11 @@
       "Start time out of bounds": [
         "Başlangıç zamanı sınırların dışında"
       ],
+      "Time zone": [
+        "Saat dilimi"
+      ],
       "Time zone not supported": [
         "Saat dilimi desteklenmiyor"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Yapılacak iş kaydı"
@@ -3389,8 +3429,8 @@
       ]
     },
     "Error importing users": {
-      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "\"${ formattedFilename }\" dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "\"${ formattedFilename }\" dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -4252,8 +4292,8 @@
       "Canceled": [
         "İptal edildi"
       ],
-      "Cancelling": [
-        "Canceling"
+      "Canceling": [
+        "İptal ediliyor"
       ],
       "Completed": [
         "Tamamlandı"
@@ -4453,6 +4493,9 @@
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Bir kurtarma dosyası, bir hesabı sıfırladığınızda verilerinizin kilidini açmanızı ve görüntülemenizi sağlar"
@@ -4682,8 +4725,8 @@
       "Center": [
         "Ortaya hizala"
       ],
-      "Check the status of current and previous imports.": [
-        "Var olan ve önceki içe aktarma işlemlerinin durumuna bakın."
+      "Check the status of imports and forwarding.": [
+        "İçe aktarma ve iletme durumunu denetleyin."
       ],
       "Choose the look and feel of the application.": [
         "Uygulamanın görünümünü ve tarzını seçin."
@@ -4773,11 +4816,11 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, kuruluşunuzu yönetemezsiniz."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "Bu parolayı UNUTMAYIN. Unutursanız, oturum açamaz veya iletilerinizin şifresini çözemezsiniz."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "${ VPN_APP_NAME } uygulamalarında veya ${ VPN_APP_NAME } panosunda OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanmayın. ${ learnMore }"
@@ -4796,7 +4839,7 @@
         "Tamam! ${ destination } alıcısına bir kod gönderdik."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "Hiçbir şey görmüyor musunuz? Pop-up engelleyicilerini kapatmayı unutmayın."
+        "Bir şey görmüyor musunuz? Açılır pencere engelleyicilerini kapatmayı unutmayın."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
@@ -4858,9 +4901,6 @@
       "Encryption setting updated": [
         "Şifreleme ayarları güncellendi"
       ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
-      ],
       "Enter key manually instead": [
         "Bunun yerine anahtarı el ile yazın"
       ],
@@ -4920,6 +4960,9 @@
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Visa, MasterCard ve Discover için kartınızın arkasındaki 3 rakam. American Express için kartınızın ön yüzündeki 4 rakam."
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Gelen postaları başka bir hesaptan güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -4985,13 +5028,13 @@
         "Hem SPF hem de DKIM ayarlarını yaptıysanız ve iki denetim de başarısız olursa, DMARC kullanarak diğer e-posta hizmetlerinin etki alanınız için nasıl e-posta sunması gerektiğini belirtebilirsiniz. Böylece istenmeyen e-posta göndericilerinin sizmiş gibi davranmasını zorlaştırabilirsiniz. Ancak bu işlem doğru şekilde yapılmazsa teslim sorunlarına da neden olabilir."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Oturum açma bilgilerinizi kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, bir ${ boldAccountRecovery } olması gerekir."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Oturum açma bilgilerinizi kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, bir ${ boldAccountAndRecovery } olması gerekir. Yoksa e-postalarınıza, kişilerinize ve dosyalarınıza erişemeyebilirsiniz."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "İki adımlı doğrulama aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki adımlı doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
@@ -5036,8 +5079,8 @@
       "Import mailbox": [
         "Posta kutusunu içe aktar"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki adımlı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
@@ -5115,8 +5158,8 @@
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Üçüncü taraf VPN uygulamalarında ${ VPN_APP_NAME } oturumunu nasıl açabileceğinizi öğrenin."
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -5157,9 +5200,6 @@
       "Loading...": [
         "Yükleniyor..."
       ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
-      ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Günlük kayıtlarında, ${ BRAND_NAME } kimlik doğrulama bilgilerinizi kullanan tüm ${ BRAND_NAME } hizmetleri için kimlik doğrulama girişimleri bulunur."
       ],
@@ -5189,9 +5229,6 @@
       ],
       "more": [
         "diğer"
-      ],
-      "More Info": [
-        "Learn more"
       ],
       "Multi-user support not enabled.": [
         "Çok kullanıcı desteği etkin değil."
@@ -5223,8 +5260,8 @@
       "No folder selected": [
         "Herhangi bir klasör seçilmemiş"
       ],
-      "No imports to display.": [
-        "Görüntülenecek bir içe aktarma işlemi yok."
+      "No imports or forwarding history.": [
+        "İçe aktarma veya iletme geçmişi yok."
       ],
       "No label selected": [
         "Herhangi bir etiket seçilmemiş"
@@ -5311,10 +5348,10 @@
         "Lütfen satırlardaki kullanıcılar için e-posta adreslerini yazın"
       ],
       "Please authenticate your card in the verification tab.": [
-        "Lütfen doğrulama sekmesinde kartınızı doğrulayın."
+        "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
       ],
       "Please authenticate your payment in the verification tab.": [
-        "Lütfen doğrulama sekmesinde ödemenizi doğrulayın."
+        "Lütfen doğrulama sekmesinden ödemenizi doğrulayın."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Lütfen dosyanızdaki sorunları denetleyin ya da ayrıntılı bilgi almak için müşteri desteği ekibimizle görüşün."
@@ -5356,7 +5393,7 @@
         "Lütfen eklemek istediğiniz bağlantı türünü seçin ve tüm alanları doldurun."
       ],
       "Please try again using a different payment method, or contact your bank.": [
-        "Lütfen farklı bir ödeme yöntemi kullanarak tekrar deneyin veya bankanızla iletişime geçin."
+        "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
@@ -5457,6 +5494,9 @@
       "Select what you want to import.": [
         "İçe aktarmak istediklerinizi seçin."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
       ],
@@ -5480,6 +5520,9 @@
       ],
       "Show original message": [
         "Özgün iletiyi göster"
+      ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Adresinizi etkinleştirmek için ${ MAIL_APP_NAME } adresinde oturum açın"
       ],
       "Signed up": [
         "Hesap açtı"
@@ -5565,14 +5608,14 @@
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Import-Export uygulaması, iletilerinizin yerel yedek olarak dışa aktarılmasını ve daha önce alınmış yedeklerin geri yüklenmesi için içe aktarılmasını sağlar."
       ],
-      "The name will be visible to your users while they are logged in.": [
-        "The name will be visible to your users while they are signed in."
+      "The name will be visible to your users while they are signed in.": [
+        "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
       "The securest way to browse, stream, and be online.": [
         "Web üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrimiçi olmanın en güvenli yolu."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Doğrulama işlemi yeni bir tarayıcı sekmesi açacaktır. Lütfen aktif pop-up engelleyicileri devre dışı bırakın."
+        "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri devre dışı bırakın."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Bu yapılandırma dosyaları, üçüncü taraf bir VPN uygulaması kullanırken veya bir yönelticide VPN bağlantısı kurarken bağlanacağınız ${ VPN_APP_NAME } sunucusunu seçmenizi sağlar."
@@ -5718,8 +5761,8 @@
       "Two-factor authentication enabled": [
         "İki adımlı doğrulama etkinleştirildi"
       ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "İki parola kipinde iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
@@ -5776,7 +5819,7 @@
         "Doğrulama işlemi birkaç dakika sürebilir."
       ],
       "Verification may take a few minutes.": [
-        "Doğrulama birkaç dakika sürebilir."
+        "Doğrulama işlemi birkaç dakika sürebilir."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar derhal iade edilir."
@@ -5803,7 +5846,7 @@
         "Olabildiğince resmi ${ VPN_APP_NAME } uygulamalarını kullanmanızı öneririz."
       ],
       "We couldn’t process your payment.": [
-        "Ödemenizi işleme koyamadık."
+        "Ödemenizi işleyemedik."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
@@ -5901,8 +5944,8 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Faturalarınızı muhasebe kullanımı için özelleştirebilir ve indirebilirsiniz."
       ],
-      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
+      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Hesabınıza ne zaman ve hangi IP adresinden erişildiğini görmek için kimlik doğrulama günlüğünü etkinleştirebilirsiniz. Başarısız oturum açma girişimlerinin yanında hesaba erişen IP adresini ve saatini de kaydedeceğiz."
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
@@ -5948,8 +5991,8 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } kullanıcılarını kaynak gösteremezsiniz"
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "${ VPN_APP_NAME } uygulamalarında ya da ${ VPN_APP_NAME } panosunda oturum açmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Bir kurtarma yöntemi belirlemediniz. Parolanızı unutursanız hesabınızı kurtaramazsınız. Kurtarma yöntemi olmadan ilerlemek istiyor musunuz?"
@@ -6023,8 +6066,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
@@ -6784,9 +6827,6 @@
       "Display name": [
         "Görüntülenecek ad"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
@@ -6795,6 +6835,9 @@
       ],
       "Domain name": [
         "Etki alanı adı"
+      ],
+      "Don't ask again": [
+        "Bir daha sorma"
       ],
       "Duration": [
         "Süre"
@@ -7222,8 +7265,8 @@
       "Time format": [
         "Saat biçimi"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Saat dilimi"
       ],
       "To: ${ to }": [
         "Kime: ${ to }"
@@ -7311,9 +7354,6 @@
       ],
       "Your referral link": [
         "Öneri bağlantınız"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -7425,6 +7465,11 @@
       ],
       "Row": [
         "Satır"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "Label/folder modal": {
@@ -8133,8 +8178,8 @@
       "Unlimited folders": [
         "Sınırsız klasör"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
@@ -8989,9 +9034,6 @@
       "Please insert link first": [
         "Lütfen önce bağlantıyı ekleyin"
       ],
-      "Postal code": [
-        "Posta kodu"
-      ],
       "Printer": [
         "Yazıcı"
       ],
@@ -9018,9 +9060,6 @@
       ],
       "yourdomain.com": [
         "etkialaniniz.com"
-      ],
-      "ZIP": [
-        "Posta kodu"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -9164,6 +9203,9 @@
       "Verify recovery phone?": [
         "Kurtarma telefonu doğrulansın mı?"
       ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Şu kurtarma telefon numarasını şimdi doğrulayın: ${ phone.Value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Telefon numaranızı doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
       ]
@@ -9245,8 +9287,11 @@
       ]
     },
     "Settings description": {
-      "Make the move to privacy. Effortlessly and securely.": [
-        "Gizliliğe geçin. Zahmetsizce ve güvenli bir şekilde."
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "Güvenli içe aktarma ve iletme araçlarımızla gizliliğe geçişinizi tamamlayın."
+      ],
+      "Complete the transition to privacy with our secure importing tools.": [
+        "Güvenli içe aktarma araçlarımızla gizliliğe geçişinizi tamamlayın."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Tek bir iletiye birden çok etiket uygulayabilirsiniz. Ancak iletiler genellikle yalnızca tek bir klasörde olabilir. Klasör ve etiketlerin sıralamasını sürükleyip bırakarak değiştirebilirsiniz."
@@ -9523,8 +9568,8 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } panonuza kopyalandı"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
+      "Account deleted. Signing out...": [
+        "Hesap silindi. Oturum kapatılıyor..."
       ],
       "Address added": [
         "Adres eklendi"
@@ -9556,8 +9601,8 @@
       "Calendar updated": [
         "Takvim güncellendi"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "İçe aktarma iptal ediliyor"
       ],
       "Catch-all address updated": [
         "Tümünü yakalayan adres güncellendi"
@@ -9853,8 +9898,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Saat dilimleri ara"
       ]
     },
     "Title": {
@@ -10274,6 +10319,9 @@
       "Gift code": [
         "Hediye kodu"
       ],
+      "History": [
+        "Geçmiş"
+      ],
       "How does it work?": [
         "Nasıl çalışır?"
       ],
@@ -10307,6 +10355,9 @@
       ],
       "Import key": [
         "Anahtarı içe aktar"
+      ],
+      "Import messages": [
+        "İletileri içe aktar"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } ile içe aktar"
@@ -10402,7 +10453,7 @@
         "Faturayı öde"
       ],
       "Payment failed": [
-        "Ödeme başarısız oldu"
+        "Ödeme yapılamadı"
       ],
       "Payment methods": [
         "Ödeme yöntemleri"
@@ -10521,6 +10572,9 @@
       "Set organization password": [
         "Kuruluş parolasını ayarla"
       ],
+      "Set up forwarding": [
+        "İletmeyi kur"
+      ],
       "Set up two-factor authentication": [
         "İki adımlı doğrulamayı ayarla"
       ],
@@ -10565,9 +10619,6 @@
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
-      ],
-      "Start new import": [
-        "Yeni içe aktarma başlat"
       ],
       "Status": [
         "Durum"
@@ -10629,7 +10680,7 @@
         "Doğrulama"
       ],
       "Verification failed": [
-        "Doğrulama başarısız"
+        "Doğrulanamadı"
       ],
       "Verify email address": [
         "E-posta adresini doğrula"
@@ -10673,9 +10724,6 @@
       "Your current plan": [
         "Geçerli tarifeniz"
       ],
-      "Your import history": [
-        "İçe aktarma geçmişiniz"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
@@ -10693,9 +10741,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } uygulamasını denemeye çağrıldınız"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11021,11 +11066,11 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "Telefon numarasını silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Bu adresi silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
@@ -11054,11 +11099,11 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Canlı sohbet yalnızca ücretli ${ VPN_APP_NAME } tarifelerindeki kullanıcıların yararlanabildiği bir özelliktir. Lütfen bunun yerine bir destek kaydı açın."
       ],
+      "Please add at least one recipient.": [
+        "Lütfen en az bir alıcı ekleyin."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
-      ],
-      "Please provide at least one recipient": [
-        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

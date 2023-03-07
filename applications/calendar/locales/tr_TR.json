@@ -12,6 +12,14 @@
         "Sınırlı görünüm (yalnızca serbest/meşgul)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "İletme işlemi birazdan başlayacak ve yeni e-postalar gelen kutunuzda görünecek."
+      ],
+      "Mail forward stopped": [
+        "Posta iletimi durduruldu"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
@@ -282,9 +290,6 @@
       "Load image": [
         "Görsel yükle"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Bu katılımcı isteğe bağlı olsun"
       ],
@@ -429,8 +434,8 @@
       "Select all": [
         "Tümünü seç"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Saat dilimini seçin"
       ],
       "Send": [
         "Gönder"
@@ -464,6 +469,9 @@
       ],
       "Show time zones": [
         "Saat dilimlerini göster"
+      ],
+      "Sign in": [
+        "Oturum aç"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -1063,8 +1071,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Saat dilimi"
       ],
       "Title": [
         "Başlık"
@@ -1987,8 +1995,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Bir daha sorma"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2152,14 +2160,19 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Şifre çözme sorunu: Bu etkinliğin içeriğinin şifresi çözülemedi."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın",
+        "En az ${ calendarsToFixCount } takvimi kaldırın"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da",
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da"
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Email address disabled": [
         "E-posta adresi devre dışı"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -2229,6 +2242,10 @@
       ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin"
       ],
       "Missing key packet": [
         "Anahtar paketi eksik"
@@ -2405,6 +2422,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
+      ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
       ],
@@ -2418,8 +2438,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -2459,8 +2479,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -2494,8 +2514,8 @@
       "Component with wrong format": [
         "Bileşen biçimi yanlış"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Özel saat dilimi"
       ],
       "Edited event not supported": [
         "Etkinlikleri düzenleme desteklenmiyor"
@@ -2563,11 +2583,11 @@
       "Start time out of bounds": [
         "Başlangıç zamanı sınırların dışında"
       ],
+      "Time zone": [
+        "Saat dilimi"
+      ],
       "Time zone not supported": [
         "Saat dilimi desteklenmiyor"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Yapılacak iş kaydı"
@@ -3174,6 +3194,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Etkinlik katılımcılarına bir iptal bilgilendirmesi e-postası gönderilecek. Bu etkinliği silmek ister misiniz?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
@@ -3312,6 +3335,9 @@
       "Existent, added and removed participants will be notified.": [
         "Var olan, eklenen ve çıkarılan katılımcılara bildirilecek."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Gelen postaları başka bir hesaptan güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
+      ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
       ],
@@ -3352,8 +3378,8 @@
       "Import mailbox": [
         "Posta kutusunu içe aktar"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
@@ -3505,6 +3531,9 @@
       ],
       "Select what you want to import.": [
         "İçe aktarmak istediklerinizi seçin."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
@@ -3915,8 +3944,8 @@
       "Description": [
         "Açıklama"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Bir daha sorma"
       ],
       "Email": [
         "E-posta"
@@ -5110,6 +5139,9 @@
       "Calendar updated": [
         "Takvim güncellendi"
       ],
+      "Canceling import": [
+        "İçe aktarma iptal ediliyor"
+      ],
       "Cancellation sent and all events deleted": [
         "İptal bilgilendirmesi gönderildi ve tüm etkinlikler silindi"
       ],
@@ -5121,9 +5153,6 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "İptal bilgilendirmesi gönderildi ve katılımcılar tüm etkinlliklerden çıkarıldı"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -5306,8 +5335,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Saat dilimleri ara"
       ]
     },
     "Title": {

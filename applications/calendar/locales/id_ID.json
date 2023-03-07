@@ -12,6 +12,14 @@
         "Tampilan terbatas (hanya tampilkan yang lowong/sibuk)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Penerusan email akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
+      ],
+      "Mail forward stopped": [
+        "Penerusan email diberhentikan"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Pengenalan ${ BRAND_NAME }"
@@ -280,9 +288,6 @@
       "Load image": [
         "Muat gambar"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Jadikan peserta ini opsional"
       ],
@@ -427,8 +432,8 @@
       "Select all": [
         "Pilih semua"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Pilih zona waktu"
       ],
       "Send": [
         "Kirim"
@@ -462,6 +467,9 @@
       ],
       "Show time zones": [
         "Tampilkan zona waktu"
+      ],
+      "Sign in": [
+        "Masuk"
       ],
       "Sign out": [
         "Keluar"
@@ -1058,8 +1066,8 @@
       "Role": [
         "Peran"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Zona waktu"
       ],
       "Title": [
         "Gelar"
@@ -1976,8 +1984,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Jangan tanyakan lagi"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2125,14 +2133,17 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Kesalahan dekripsi: Dekripsi isi acara gagal."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan atau"
+      ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
       "Email address disabled": [
         "Alamat email dinonaktifkan"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Alamat email diperlukan"
@@ -2202,6 +2213,9 @@
       ],
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "Gabungkan setidaknya ${ calendarsToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
       ],
       "Missing key packet": [
         "Paket kunci hilang"
@@ -2386,6 +2400,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Anda tidak dapat mengirim berkas vCard ke lebih dari 10 kontak"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Anda telah mencapai batas jumlah kalender yang diperkenankan. Sebagian kalender tidak dapat diimpor."
+      ],
       "You must set a name": [
         "Anda harus mengatur nama"
       ],
@@ -2399,8 +2416,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2439,8 +2456,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2474,8 +2491,8 @@
       "Component with wrong format": [
         "Komponen dengan format yang salah"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Zona waktu khusus"
       ],
       "Edited event not supported": [
         "Acara yang telah diedit tidak didukung"
@@ -2543,11 +2560,11 @@
       "Start time out of bounds": [
         "Waktu mulai di luar batas"
       ],
+      "Time zone": [
+        "Zona waktu"
+      ],
       "Time zone not supported": [
         "Zona waktu tidak didukung"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entri to-do"
@@ -3122,6 +3139,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Surel pembatalan akan dikirim ke peserta acara. Anda ingin menghapus acara ini?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
       ],
@@ -3257,6 +3277,9 @@
       "Existent, added and removed participants will be notified.": [
         "Peserta yang sudah ada, yang ditambahkan, dan dihapus akan diberi tahu."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
+      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -3296,8 +3319,8 @@
       "Import mailbox": [
         "Impor kotak surat"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Impor email, kalender, dan kontak yang Anda miliki dari layanan email Anda terdahulu ke ${ BRAND_NAME }. Kami akan memandu Anda untuk memindahkan dan mengenkripsi data selangkah demi selangkah. Selamat datang di dunia privasi."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Impor email, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
@@ -3448,6 +3471,9 @@
       ],
       "Select what you want to import.": [
         "Pilih hal apa saja yang hendak Anda impor."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
@@ -3857,8 +3883,8 @@
       "Description": [
         "Deskripsi"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Jangan tanyakan lagi"
       ],
       "Email": [
         "Email"
@@ -5013,6 +5039,9 @@
       "Calendar updated": [
         "Kalender berhasil diperbarui"
       ],
+      "Canceling import": [
+        "Membatalkan impor"
+      ],
       "Cancellation sent and all events deleted": [
         "Pembatalan terkirim dan semua acara berhasil dihapus"
       ],
@@ -5024,9 +5053,6 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Pembatalan terkirim dan peserta berhasil dihapus dari semua acara"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
@@ -5198,8 +5224,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Cari zona waktu"
       ]
     },
     "Title": {

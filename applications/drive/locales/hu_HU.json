@@ -322,9 +322,6 @@
       "Load image": [
         "Kép betöltése"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Mappák kezelése"
       ],
@@ -522,6 +519,9 @@
       ],
       "Show preview": [
         "Előnézet megmutatása"
+      ],
+      "Sign in": [
+        "Bejelentkezés"
       ],
       "Sign out": [
         "Kijelentkezés"
@@ -893,9 +893,6 @@
       ],
       "Role": [
         "Szerepkör"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Beosztás"
@@ -1785,9 +1782,6 @@
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
@@ -1823,6 +1817,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Hibás jelszó. Próbálja meg újra."
+      ],
+      "Invalid email address": [
+        "Érvénytelen e-mail cím"
       ],
       "Invalid name": [
         "Érvénytelen név"
@@ -1991,9 +1988,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2032,9 +2026,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2066,9 +2057,6 @@
       ],
       "Component with wrong format": [
         "A komponens formátuma hibás"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Szerkesztett esemény nem támogatott"
@@ -2138,9 +2126,6 @@
       ],
       "Time zone not supported": [
         "Időzóna nem támogatott"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Tennivaló elem"
@@ -2987,9 +2972,6 @@
       "Import mailbox": [
         "E-mail fiók importálása"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importálja e-mailjeit, naptárait és névjegyeit más szolgáltatóktól a ${ BRAND_NAME }hoz. Lépésről-lépésre követheti az útmutatót az adatok átköltöztetéséhez és titkosításához. Üdvözöljük a biztonságos magánszféra világában."
-      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
@@ -3040,12 +3022,6 @@
       ],
       "Link copied to clipboard": [
         "Hivatkozás a vágólapra másolva"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Betöltés"
@@ -3643,9 +3619,6 @@
       "Device name": [
         "Eszköz neve"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Download anyway": [
         "Letöltés mindenképpen"
       ],
@@ -4221,9 +4194,6 @@
       "File or folder is missing a name": [
         "A fájl vagy mappa neve hiányzik"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "${ itemsToMoveCount } fájl áthelyezése",
         "${ itemsToMoveCount } fájl áthelyezése"
@@ -4247,9 +4217,6 @@
       "Move ${ movingCount } item": [
         "${ movingCount } elem áthelyezése",
         "${ movingCount } elem áthelyezése"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nincs elég hely a feltöltéshez: ${ formattedTotal }"
@@ -4554,9 +4521,6 @@
       ],
       "Bug reported": [
         "Hiba bejelentve"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
@@ -4913,9 +4877,6 @@
       "Item details": [
         "Elem adatai"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Link jóváhagyása"
       ],
@@ -5080,9 +5041,6 @@
       ],
       "The link either does not exist or has expired": [
         "A hivatkozás nem létezik vagy leját"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A fájl aláírása hiányzik vagy hibás. Nyissa meg a Menü (⋮) → Részletek pontot a további információért."

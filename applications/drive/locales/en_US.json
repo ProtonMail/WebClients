@@ -4,37 +4,9 @@
     "language": "en_US"
   },
   "contexts": {
-    "Action": {
-      "Log in": [
-        "Sign in"
-      ]
-    },
-    "Contact field label": {
-      "Timezone": [
-        "Time zone"
-      ]
-    },
     "Error": {
-      "Email address invalid": [
+      "Invalid email address": [
         "Invalid email address"
-      ]
-    },
-    "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ]
-    },
-    "Error importing event": {
-      "Custom timezone": [
-        "Custom time zone"
-      ],
-      "Timezone": [
-        "Time zone"
       ]
     },
     "Info": {
@@ -44,43 +16,8 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
-      ],
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
-      ]
-    },
-    "Label": {
-      "Do not ask again": [
-        "Don't ask again"
-      ]
-    },
-    "Notification": {
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
-      ]
-    },
-    "Success": {
-      "Cancelling import": [
-        "Canceling import"
-      ]
-    },
-    "Title": {
-      "Items details": [
-        "Item details"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ]
     }
   }
