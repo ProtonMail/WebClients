@@ -7,6 +7,7 @@ import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     getSupportedTimezone,
+    guessTimezone,
     toAllowedTimeZone,
 } from '../../lib/date/timezone';
 import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from '../../lib/date/timezoneDatabase';
@@ -174,6 +175,7 @@ describe('getSupportedTimezone', () => {
     it('should convert time zones we do not support yet', () => {
         const expectedMap: SimpleMap<string> = {
             'Pacific/Kanton': 'Pacific/Fakaofo',
+            'Europe/Kyiv': 'Europe/Kiev',
         };
 
         Object.keys(expectedMap).forEach((tzid) => {
@@ -193,5 +195,71 @@ describe('getSupportedTimezone', () => {
         const results = unknown.map((tzid) => getSupportedTimezone(tzid));
         const expected = unknown.map(() => undefined);
         expect(results).toEqual(expected);
+    });
+});
+
+describe('guessTimeZone', () => {
+    const timeZoneList = listTimeZones();
+
+    describe('should guess right when the browser detects "Europe/Zurich"', () => {
+        beforeEach(() => {
+            spyOn<any>(Intl, 'DateTimeFormat').and.returnValue({
+                resolvedOptions: () => ({ timeZone: 'Europe/Zurich' }),
+            });
+        });
+
+        it('guesses "Europe/Zurich"', () => {
+            expect(guessTimezone(timeZoneList)).toBe('Europe/Zurich');
+        });
+    });
+
+    describe('should guess right when the browser detects "Europe/Kyiv"', () => {
+        beforeEach(() => {
+            spyOn<any>(Intl, 'DateTimeFormat').and.returnValue({
+                resolvedOptions: () => ({ timeZone: 'Europe/Kyiv' }),
+            });
+        });
+
+        it('guesses "Europe/Kiev"', () => {
+            expect(guessTimezone(timeZoneList)).toBe('Europe/Kiev');
+        });
+    });
+
+    describe('should guess right when the browser detects "Pacific/Kanton"', () => {
+        beforeEach(() => {
+            spyOn<any>(Intl, 'DateTimeFormat').and.returnValue({
+                resolvedOptions: () => ({ timeZone: 'Pacific/Kanton' }),
+            });
+        });
+
+        it('guesses "Pacific/Fakaofo"', () => {
+            expect(guessTimezone(timeZoneList)).toBe('Pacific/Fakaofo');
+        });
+    });
+
+    describe('should guess right when the browser detects unknown time zone with GMT+1', () => {
+        beforeEach(() => {
+            const baseTime = Date.UTC(2023, 2, 7, 9);
+
+            spyOn<any>(Intl, 'DateTimeFormat').and.returnValue({
+                resolvedOptions: () => ({ timeZone: 'unknown' }),
+            });
+            spyOn<any>(window, 'Date').and.returnValue({
+                getTime: () => baseTime,
+                getTimezoneOffset: () => -60,
+                getUTCFullYear: () => 2023,
+                getUTCMonth: () => 2,
+                getUTCDate: () => 7,
+                getUTCDay: () => 2,
+                getUTCHours: () => 9,
+                getUTCMinutes: () => 0,
+                getUTCSeconds: () => 0,
+                getUTCMilliseconds: () => 0,
+            });
+        });
+
+        it('guesses "Africa/Algiers", first in the list with that GMT offset', () => {
+            expect(guessTimezone(timeZoneList)).toBe('Africa/Algiers');
+        });
     });
 });

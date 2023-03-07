@@ -15,6 +15,7 @@ import {
     FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST,
     MANUAL_TIMEZONE_EQUIVALENCE,
     MANUAL_TIMEZONE_LINKS,
+    manualFindTimeZone,
     unsupportedTimezoneLinks,
 } from './timezoneDatabase';
 
@@ -99,11 +100,11 @@ export const toAllowedTimeZone = (tzid: string) => {
     return allowedTimeZone;
 };
 
-const guessTimezone = (timezones: string[]) => {
+export const guessTimezone = (timezones: string[]) => {
     try {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         // Ensure it exists.
-        return findTimeZone(timezone).name;
+        return manualFindTimeZone(timezone) || findTimeZone(timezone).name;
     } catch (error: any) {
         const date = new Date();
         const timezoneOffset = date.getTimezoneOffset();
