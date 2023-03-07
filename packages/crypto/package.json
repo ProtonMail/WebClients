@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "comlink": "^4.4.1",
-        "pmcrypto-v7": "npm:@protontech/pmcrypto@^7.4.1"
+        "pmcrypto-v7": "npm:@protontech/pmcrypto@^7.5.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -31,7 +31,7 @@
         "karma-mocha-reporter": "^2.2.5",
         "karma-webpack": "^5.0.0",
         "mocha": "^10.2.0",
-        "playwright": "^1.31.1",
+        "playwright": "^1.31.2",
         "prettier": "^2.8.4",
         "ts-loader": "^9.4.2",
         "typescript": "^4.9.5",
