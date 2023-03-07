@@ -93,7 +93,10 @@ const Item = ({
 
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
-    const [firstRecipient] = displayRecipients ? recipients : senders;
+    const firstRecipients = displayRecipients ? recipients : senders;
+    // Warning, spreading firstRecipients on Safari preview cause crash
+    // See MAILWEB-4079
+    const firstRecipient = firstRecipients[0];
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
