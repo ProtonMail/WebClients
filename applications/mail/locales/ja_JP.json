@@ -536,9 +536,6 @@
       "Loading${ ellipsis }": [
         "読み込み中${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "受信トレイの密度"
       ],
@@ -931,6 +928,9 @@
       ],
       "Show preview": [
         "プレビューを表示"
+      ],
+      "Sign in": [
+        "サインイン"
       ],
       "Sign out": [
         "サインアウト"
@@ -1582,6 +1582,11 @@
         "予定が開催中です"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "キャンセル"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "作成"
@@ -1883,8 +1888,8 @@
       "Role": [
         "役割"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "タイムゾーン"
       ],
       "Title": [
         "肩書き"
@@ -2946,6 +2951,14 @@
         "${ formattedStart } から始まる予定の更新"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "フォルダーをクリアしました"
+      ],
+      "Label cleared": [
+        "ラベルをクリアしました"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "暗号化されたヘッダーファイル名"
@@ -3006,6 +3019,12 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除するか"
+      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
@@ -3014,9 +3033,6 @@
       ],
       "Email address disabled": [
         "メールアドレスが無効です"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "メールアドレスは必須です"
@@ -3066,6 +3082,9 @@
       "Incorrect mailbox password. Please try again.": [
         "無効な受信トレイのパスワードです。再度お試しください。"
       ],
+      "Invalid email address": [
+        "メールアドレスが正しくありません"
+      ],
       "Invalid expiration time": [
         "無効な有効期限です"
       ],
@@ -3083,6 +3102,9 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "添付ファイルの最大数 (${ attachmentsCountLimit }) を超えました。"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Message needs to be sent first": [
         "メッセージを最初に送信する必要があります"
@@ -3267,6 +3289,9 @@
       "This message has already been sent. A new draft has been saved.": [
         "このメッセージは送信されています。下書きが保存されました。"
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "有効なフィルターが多すぎます。さらに有効なフィルターを使用するには有料プランにアップグレードしてください。"
       ],
@@ -3333,9 +3358,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
       ],
@@ -3373,9 +3395,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
       ],
@@ -3408,8 +3427,8 @@
       "Component with wrong format": [
         "無効なコンポーネント形式です"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "独自のタイムゾーン"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -3479,9 +3498,6 @@
       ],
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "To-do のエントリー"
@@ -4577,9 +4593,6 @@
       "Expires": [
         "期限"
       ],
-      "Expires in ${ formattedDelay }": [
-        "${ formattedDelay } に期限が切れます"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "${ formattedDelayShort } に期限が切れます"
       ],
@@ -4669,9 +4682,6 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートできます。データを移行し暗号化する手順をわかりやすく解説します。プライバシーの世界へようこそ。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -4958,9 +4968,6 @@
       "Saving draft…": [
         "下書きを保存しています…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
-      ],
       "Scheduling message...": [
         "メッセージをスケジューリングしています..."
       ],
@@ -5102,17 +5109,14 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
-      ],
       "This conversation contains non-trashed messages.": [
         "このやりとりには、ごみ箱に入れられていないメールもあります。"
       ],
       "This conversation contains trashed messages.": [
         "このやりとりには、ごみ箱に入っているメールもあります。"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "メールのドメイン認証に失敗しました。このメールは不適切に転送されたものか、なりすましの恐れがあります。"
       ],
       "This invitation is saved in a disabled calendar.": [
         "招待は無効化されたカレンダーに保存されました。"
@@ -5161,15 +5165,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "このメッセージの期限は ${ formattedDate } までです"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "このメッセージの有効期限は ${ dateString } の ${ formattedTime } までです"
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        "このメッセージの有効期限は今日の ${ formattedTime } までです"
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "このメッセージの有効期限は明日の ${ formattedTime } までです"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "この公開鍵は自動的に、このメールアドレスへ送信するメールの暗号化に使用されます。"
@@ -5827,8 +5822,8 @@
       "Delete recovery-related information.": [
         "回復に関する情報を削除"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "今後表示しない"
       ],
       "Don't show this again": [
         "次回から表示しない"
@@ -6155,6 +6150,11 @@
         "あなたのパスワード (管理者)"
       ]
     },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "日付"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "色"
@@ -6467,8 +6467,8 @@
       "Scheduled sending undone": [
         "送信予約を取り消しました"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "送信予約がキャンセルされました。メッセージは下書きに移動されました。"
       ],
       "Sending undone": [
         "送信が取り消されました"
@@ -6666,14 +6666,19 @@
       "Search message content": [
         "メッセージ内容の検索"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
       ],
       "Up to 15 email addresses": [
         "15 件のメールアドレス"
       ],
       "Up to 500 GB of storage": [
         "500 GB のストレージ"
+      ]
+    },
+    "new_plans: feature info": {
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
     },
     "new_plans: label": {
@@ -6980,6 +6985,11 @@
       ],
       "Work": [
         "勤務先"
+      ]
+    },
+    "protonbadge": {
+      "Official": [
+        "公式"
       ]
     },
     "Received email icon": {
@@ -7371,17 +7381,11 @@
       "Fingerprint copied to clipboard": [
         "フィンガープリントをクリップボードにコピーしました"
       ],
-      "Folder cleared": [
-        "フォルダーをクリアしました"
-      ],
       "Import record deleted": [
         "インポート記録が削除されました"
       ],
       "Keyboard shortcuts preferences updated": [
         "キーボードショートカットの設定が更新されました"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "ラベルが適用されました。"

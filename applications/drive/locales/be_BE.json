@@ -4,6 +4,14 @@
     "language": "be_BE"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Неўзабаве пачнецца перасылка. Новыя лісты будуць з'яўляцца ў вашай паштовай скрыні."
+      ],
+      "Mail forward stopped": [
+        "Перасылка пошты спынена"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Уводзіны ў ${ BRAND_NAME }"
@@ -335,9 +343,6 @@
       "Load image": [
         "Загрузіць відарыс"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Кіраванне папкамі"
       ],
@@ -538,6 +543,9 @@
       ],
       "Show preview": [
         "Папярэдні прагляд"
+      ],
+      "Sign in": [
+        "Увайсці"
       ],
       "Sign out": [
         "Выйсці"
@@ -918,8 +926,8 @@
       "Role": [
         "Роля"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Часавы пояс"
       ],
       "Title": [
         "Пасада"
@@ -1885,14 +1893,23 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або"
+      ],
       "Device name does not match": [
         "Назва прылады не супадае"
       ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
@@ -1936,6 +1953,9 @@
       "Incorrect password. Please try again.": [
         "Няправільны пароль. Паспрабуйце яшчэ раз."
       ],
+      "Invalid email address": [
+        "Памылковы адрас электроннай пошты"
+      ],
       "Invalid name": [
         "Памылковая назва"
       ],
@@ -1947,6 +1967,12 @@
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
@@ -2113,6 +2139,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Вы не можаце адправіць файлы vCard больш чым 10 кантактам"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Вы дасягнулі максімальнай колькасці календароў. Некаторыя календары не будуць імпартаваныя."
+      ],
       "You must set a name": [
         "Вы павінны задаць назву"
       ],
@@ -2124,8 +2153,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2167,8 +2196,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2202,8 +2231,8 @@
       "Component with wrong format": [
         "Кампанент з няправільным фарматам"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Карыстальніцкі часавы пояс"
       ],
       "Edited event not supported": [
         "Адрэдагаваная падзея не падтрымліваецца"
@@ -2271,11 +2300,11 @@
       "Start time out of bounds": [
         "Час пачатку па-за межамі дыяпазону"
       ],
+      "Time zone": [
+        "Часавы пояс"
+      ],
       "Time zone not supported": [
         "Часавы пояс не падтрымліваецца"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Запіс спіса задач"
@@ -2858,6 +2887,9 @@
         "Знойдзена ${ contactsCount } кантактаў",
         "Знойдзена ${ contactsCount } кантакты"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (адноўлены)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } завершаны",
         "${ doneCount } завершана",
@@ -2975,6 +3007,9 @@
       "A number will be added to the folder name": [
         "Да назвы папкі будзе дададзены нумар"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
@@ -3040,6 +3075,15 @@
       ],
       "Canceled": [
         "Скасавана"
+      ],
+      "Cannot load link": [
+        "Немагчыма загрузіць спасылку"
+      ],
+      "Cannot load links": [
+        "Немагчыма загрузіць спасылкі"
+      ],
+      "Cannot load shared link": [
+        "Немагчыма загрузіць абагуленую спасылку"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можаце ўспомніць свой пароль? Мы можам дапамагчы ачысціць даныя ўсіх кантактаў, якія былі зашыфраваны гэтым ключом і такім чынам ігнараваць гэту абвестку."
@@ -3248,6 +3292,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Абмяжуйце аперацыі, якія звязаны з праглядам трансляцый і інтэнсіўным спажываннем памяці, або запампоўвайце свае даныя пакетамі меншага аб'ёму."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Вызваліце ​​месца або павялічце памер сховішча."
       ],
@@ -3302,8 +3349,8 @@
       "Import mailbox": [
         "Імпартаванне паштовай скрыні"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Імпартуйце свае лісты, календары і кантакты з іншага сэрвісу ў ${ BRAND_NAME }. Мы будзем дапамагаць вам на кожным кроку і зашыфруем іх падчас перамяшчэння. Вітаем у свеце прыватнасці."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
@@ -3364,12 +3411,6 @@
       ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Загрузка"
@@ -3551,6 +3592,9 @@
       "Report has been sent": [
         "Скарга была адпраўлена"
       ],
+      "Restored files ${ formattedDate }": [
+        "Файлы адноўлены ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "Немагчыма ўключыць пошук у гэтым браўзеры"
       ],
@@ -3569,6 +3613,9 @@
       "Select what you want to import.": [
         "Выберыце, што вы хочаце імпартаваць."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
@@ -3583,9 +3630,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Агульнадаступная спасылка для ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
@@ -4048,8 +4092,8 @@
       "Device name": [
         "Назва прылады"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Больш не пытаць"
       ],
       "Download anyway": [
         "Усё роўна спампаваць"
@@ -4654,6 +4698,12 @@
       "All items will soon be permanently deleted from trash": [
         "Усе элементы неўзабаве будуць незваротна выдалены са сметніцы"
       ],
+      "Cannot load link": [
+        "Немагчыма загрузіць спасылку"
+      ],
+      "Cannot load next page": [
+        "Немагчыма загрузіць наступную старонку"
+      ],
       "Contact group created": [
         "Група кантактаў створана"
       ],
@@ -4696,9 +4746,6 @@
       "File or folder is missing a name": [
         "Адсутнічае назва папкі або файла"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Перамясціць ${ itemsToMoveCount } файл",
         "Перамясціць ${ itemsToMoveCount } файлы",
@@ -4734,9 +4781,6 @@
         "Перамясціць ${ movingCount } элементы",
         "Перамясціць ${ movingCount } элементаў",
         "Перамясціць ${ movingCount } элементы"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недастаткова месца для запампоўвання ${ formattedTotal }"
@@ -5078,8 +5122,8 @@
       "Bug reported": [
         "Справаздача пра памылку адпраўлена"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Скасаванне імпартавання"
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
@@ -5299,6 +5343,9 @@
       "Browser might run out of memory": [
         "Браўзеру магчыма не хапае памяці"
       ],
+      "Cannot load link": [
+        "Немагчыма загрузіць спасылку"
+      ],
       "Change layout": [
         "Змяніць выгляд"
       ],
@@ -5494,9 +5541,6 @@
       "Item details": [
         "Падрабязнасці элемента"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
@@ -5670,9 +5714,6 @@
       ],
       "The link expired": [
         "Спасылка пратэрмінавана"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Для гэтага файла адсутнічае подпіс або ён з'яўляецца памылковым. Перайдзіце ў Меню (⋮) → Падрабязнасці для атрымання інфармацыі."

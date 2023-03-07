@@ -4,6 +4,11 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "account": {
+      "Mail forward stopped": [
+        "Пересилання пошти зупинено"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Знайомство з ${ BRAND_NAME }"
@@ -335,9 +340,6 @@
       "Load image": [
         "Завантажити зображення"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -538,6 +540,9 @@
       ],
       "Show preview": [
         "Показати попередній перегляд"
+      ],
+      "Sign in": [
+        "Увійти"
       ],
       "Sign out": [
         "Вийти"
@@ -918,8 +923,8 @@
       "Role": [
         "Роль"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Часовий пояс"
       ],
       "Title": [
         "Назва"
@@ -1885,14 +1890,23 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або"
+      ],
       "Device name does not match": [
         "Назва пристрою відрізняється"
       ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Адреса е-пошти обов'язкова"
@@ -1936,6 +1950,9 @@
       "Incorrect password. Please try again.": [
         "Хибний пароль. Повторіть спробу."
       ],
+      "Invalid email address": [
+        "Недійсна адреса електронної пошти"
+      ],
       "Invalid name": [
         "Неприпустиме ім'я"
       ],
@@ -1947,6 +1964,12 @@
       ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Об'єднайте принаймні ${ calendarsToFixCount } календар з наявним календарем ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Відсутній пакунок ключів"
@@ -2113,6 +2136,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Ви не можете надіслати файли vCard для понад 10 контактів"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Ви досягли максимальної кількості календарів. Деякі календарі не можуть бути імпортовані."
+      ],
       "You must set a name": [
         "Ви повинні вказати назву"
       ],
@@ -2124,9 +2150,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2167,9 +2190,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2202,8 +2222,8 @@
       "Component with wrong format": [
         "Компонент з неправильним форматом"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Власний часовий пояс"
       ],
       "Edited event not supported": [
         "Відредагована подія не підтримується"
@@ -2271,11 +2291,11 @@
       "Start time out of bounds": [
         "Час початку поза припустимим діапазоном"
       ],
+      "Time zone": [
+        "Часовий пояс"
+      ],
       "Time zone not supported": [
         "Часовий пояс не підтримується"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Запис завдання"
@@ -2863,6 +2883,9 @@
         "Знайдено ${ contactsCount } контактів",
         "Знайдено ${ contactsCount } контактів"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (відновлені)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } завершено",
         "${ doneCount } завершено",
@@ -2980,6 +3003,9 @@
       "A number will be added to the folder name": [
         "Число буде додано до назви теки"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ до облікового запису обмежений через несплачені рахунки. Будь ласка, зверніться до свого адміністратора."
       ],
@@ -3045,6 +3071,15 @@
       ],
       "Canceled": [
         "Скасовано"
+      ],
+      "Cannot load link": [
+        "Не вдалося завантажити посилання"
+      ],
+      "Cannot load links": [
+        "Не вдалося завантажити посилання"
+      ],
+      "Cannot load shared link": [
+        "Не вдалося завантажити спільне посилання"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
@@ -3253,6 +3288,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Щоб досягти найкращих результатів, уникайте потокової передачі даних і дій, що вимагають багато пам'яті, або розбивайте вивантаження на менші частини."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Перешліть вхідний лист з іншого облікового запису до вашої захищеної ${ MAIL_APP_NAME } поштової скриньки."
+      ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
       ],
@@ -3306,9 +3344,6 @@
       ],
       "Import mailbox": [
         "Імпортувати поштову скриньку"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Імпортуйте свої листи, календарі та контакти з іншої служби до ${ BRAND_NAME }. Ми допоможемо вам пройти кожен крок та зашифрувати ваші дані після переміщення. Вітаємо у світі приватності."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
@@ -3369,12 +3404,6 @@
       ],
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Завантаження"
@@ -3556,6 +3585,9 @@
       "Report has been sent": [
         "Звіт надіслано"
       ],
+      "Restored files ${ formattedDate }": [
+        "Відновлені файли ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "Неможливо увімкнути пошук у цьому браузері"
       ],
@@ -3574,6 +3606,9 @@
       "Select what you want to import.": [
         "Виберіть, що ви хочете імпортувати."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
@@ -3588,9 +3623,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Посилання спільного доступу для ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
@@ -4053,8 +4085,8 @@
       "Device name": [
         "Назва пристрою"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Не питати знову"
       ],
       "Download anyway": [
         "Все одно завантажити"
@@ -4659,6 +4691,12 @@
       "All items will soon be permanently deleted from trash": [
         "Усі елементи скоро буде остаточно видалено з смітника"
       ],
+      "Cannot load link": [
+        "Не вдалося завантажити посилання"
+      ],
+      "Cannot load next page": [
+        "Не вдалося завантажити наступну сторінку"
+      ],
       "Contact group created": [
         "Групу контактів створено"
       ],
@@ -4701,9 +4739,6 @@
       "File or folder is missing a name": [
         "Файл чи тека не мають назви"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Перемістити ${ itemsToMoveCount } файл",
         "Перемістити ${ itemsToMoveCount } файли",
@@ -4739,9 +4774,6 @@
         "Перемістити ${ movingCount } елементи",
         "Перемістити ${ movingCount } елементів",
         "Перемістити ${ movingCount } елементів"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостатньо місця для вивантаження ${ formattedTotal }"
@@ -5083,8 +5115,8 @@
       "Bug reported": [
         "Звіт про помилку надіслано"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Скасування імпорту"
       ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
@@ -5304,6 +5336,9 @@
       "Browser might run out of memory": [
         "Браузер може вичерпати пам'ять"
       ],
+      "Cannot load link": [
+        "Не вдалося завантажити посилання"
+      ],
       "Change layout": [
         "Змінити вигляд"
       ],
@@ -5499,9 +5534,6 @@
       "Item details": [
         "Подробиці елемента"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Підтвердження посилання"
       ],
@@ -5675,9 +5707,6 @@
       ],
       "The link expired": [
         "Термін дії посилання завершився"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "У цьому файлі відсутній або недійсний підпис. Перейдіть до Меню (⋮) → Подробиці для отримання інформації."

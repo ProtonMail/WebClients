@@ -12,6 +12,14 @@
         "Ograniczony odczyt (informacja o stanie wolny/zajęty)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Przekierowanie rozpocznie się wkrótce. Nowe wiadomości pojawią się w skrzynce odbiorczej."
+      ],
+      "Mail forward stopped": [
+        "Przekierowanie poczty zostało zatrzymane"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Samouczek ${ BRAND_NAME }"
@@ -286,9 +294,6 @@
       "Load image": [
         "Załaduj obraz"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Uczestnik opcjonalny"
       ],
@@ -433,8 +438,8 @@
       "Select all": [
         "Zaznacz wszystkie"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Wybierz strefę czasową"
       ],
       "Send": [
         "Wyślij"
@@ -468,6 +473,9 @@
       ],
       "Show time zones": [
         "Pokaż strefy czasowe"
+      ],
+      "Sign in": [
+        "Zaloguj się"
       ],
       "Sign out": [
         "Wyloguj"
@@ -1073,8 +1081,8 @@
       "Role": [
         "Stanowisko"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Strefa czasowa"
       ],
       "Title": [
         "Tytuł"
@@ -2009,8 +2017,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Nie pytaj ponownie"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2182,14 +2190,23 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Błąd odszyfrowywania: odszyfrowanie tego wydarzenia nie powiodło się."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Odznacz co najmniej ${ calendarsToFixCount } kalendarz",
+        "Odznacz co najmniej ${ calendarsToFixCount } kalendarze",
+        "Odznacz co najmniej ${ calendarsToFixCount } kalendarzy",
+        "Odznacz co najmniej ${ calendarsToFixCount } kalendarzy"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Odznacz co najmniej ${ calendarsToFixCount } kalendarz lub",
+        "Odznacz co najmniej ${ calendarsToFixCount } kalendarze lub",
+        "Odznacz co najmniej ${ calendarsToFixCount } kalendarzy lub",
+        "Odznacz co najmniej ${ calendarsToFixCount } kalendarzy lub"
+      ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
       "Email address disabled": [
         "Adres e-mail został wyłączony"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Adres e-mail jest wymagany"
@@ -2259,6 +2276,12 @@
       ],
       "Label name cannot be empty.": [
         "Nazwa etykiety nie może być pusta."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Scal co najmniej ${ calendarsToFixCount } kalendarz z obecnym kalendarzem ${ BRAND_NAME }",
+        "Scal co najmniej ${ calendarsToFixCount } kalendarze z obecnymi kalendarzami ${ BRAND_NAME }",
+        "Scal co najmniej ${ calendarsToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }",
+        "Scal co najmniej ${ calendarsToFixCount } kalendarzy z obecnymi kalendarzami ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Brak pakietu klucza"
@@ -2443,6 +2466,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Jednocześnie możesz wysłać maksymalnie 10 plików vCard"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Osiągnięto maksymalną liczbę kalendarzy. Niektóre kalendarze nie mogły zostać zaimportowane."
+      ],
       "You must set a name": [
         "Musisz wpisać nazwę"
       ],
@@ -2456,8 +2482,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Format pliku jest nieprawidłowy."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2499,8 +2525,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Format pliku jest nieprawidłowy."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Wystąpił błąd podczas przesyłania pliku ${ formattedFilename }. Maksymalny rozmiar pliku wynosi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2534,8 +2560,8 @@
       "Component with wrong format": [
         "Komponent posiada niewłaściwy format"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Niestandardowa strefa czasowa"
       ],
       "Edited event not supported": [
         "Edytowane wydarzenie nie jest obsługiwane"
@@ -2603,11 +2629,11 @@
       "Start time out of bounds": [
         "Czas rozpoczęcia jest poza zakresem"
       ],
+      "Time zone": [
+        "Strefa czasowa"
+      ],
       "Time zone not supported": [
         "Strefa czasowa nie jest obsługiwana"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -3278,6 +3304,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Wiadomość o anulowaniu wydarzenia zostanie wysłana do jego uczestników. Czy chcesz usunąć to wydarzenie?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
       ],
@@ -3422,6 +3451,9 @@
       "Existent, added and removed participants will be notified.": [
         "Obecni, dodani i usunięci uczestnicy zostaną powiadomieni."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
       ],
@@ -3464,8 +3496,8 @@
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }. Poprowadzimy Cię na każdym kroku i zaszyfrujemy dane podczas ich przenoszenia. Witaj w świecie prywatności."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
@@ -4031,8 +4063,8 @@
       "Description": [
         "Opis"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Nie pytaj ponownie"
       ],
       "Email": [
         "E-mail"
@@ -5554,6 +5586,9 @@
       "Calendar updated": [
         "Kalendarz został zaktualizowany"
       ],
+      "Canceling import": [
+        "Anulowanie procesu importowania"
+      ],
       "Cancellation sent and all events deleted": [
         "Powiadomienie o anulowaniu wydarzeń zostało wysłane. Wszystkie wydarzenia zostały usunięte"
       ],
@@ -5565,9 +5600,6 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Powiadomienie o anulowaniu wydarzeń zostało wysłane. Uczestnicy zostali usunięci ze wszystkich wydarzeń"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
@@ -5766,8 +5798,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Szukaj stref czasowych"
       ]
     },
     "Title": {

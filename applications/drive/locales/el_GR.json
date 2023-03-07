@@ -331,9 +331,6 @@
       "Load image": [
         "Φόρτωση εικόνας"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Διαχείριση φακέλων"
       ],
@@ -534,6 +531,9 @@
       ],
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
+      ],
+      "Sign in": [
+        "Είσοδος"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -897,9 +897,6 @@
       ],
       "Role": [
         "Ρόλος"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Τίτλος"
@@ -1855,14 +1852,19 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο ή",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια ή"
+      ],
       "Device name does not match": [
         "Το όνομα της συσκευής δεν ταιριάζει"
       ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Η διεύθυνση email είναι υποχρεωτική"
@@ -1906,6 +1908,9 @@
       "Incorrect password. Please try again.": [
         "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
       ],
+      "Invalid email address": [
+        "Μη έγκυρη διεύθυνση email"
+      ],
       "Invalid name": [
         "Μη έγκυρο όνομα"
       ],
@@ -1917,6 +1922,10 @@
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -2064,9 +2073,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2105,9 +2111,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2139,9 +2142,6 @@
       ],
       "Component with wrong format": [
         "Συνθετικό λανθασμένης μορφής"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
@@ -2211,9 +2211,6 @@
       ],
       "Time zone not supported": [
         "Μη υποστηριζόμενη ζώνη ώρας"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
@@ -3061,9 +3058,6 @@
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Εισάγετε τα email σας, τα ημερολόγια, και τις επαφές σας από μια άλλη υπηρεσία στην ${ BRAND_NAME }. Θα σας καθοδηγήσουμε σε κάθε βήμα της διαδικασίας και θα κρυπτογραφήσουμε τα δεδομένα κατά τη μετακίνηση. Καλώς ήρθατε στον κόσμο της ιδιωτικότητας."
-      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
       ],
@@ -3123,12 +3117,6 @@
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Φόρτωση"
@@ -3338,9 +3326,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Κοινοποιήσιμος σύνδεσμος για το ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
@@ -3783,9 +3768,6 @@
       ],
       "Device name": [
         "Όνομα συσκευής"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
@@ -4382,9 +4364,6 @@
       "File or folder is missing a name": [
         "Το αρχείο ή ο φάκελος στερείται ονόματος"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Μετακίνηση ${ itemsToMoveCount } αρχείου",
         "Μετακίνηση ${ itemsToMoveCount} αρχείων"
@@ -4408,9 +4387,6 @@
       "Move ${ movingCount } item": [
         "Μετακίνηση ${ movingCount } στοιχείου",
         "Μετακίνηση ${ movingCount } στοιχείων"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
@@ -4702,9 +4678,6 @@
       ],
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
@@ -5085,9 +5058,6 @@
       "Item details": [
         "Λεπτομέρειες αντικειμένου"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
       ],
@@ -5258,9 +5228,6 @@
       ],
       "The link expired": [
         "Ο σύνδεσμος έληξε"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Αυτό το αρχείο έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."

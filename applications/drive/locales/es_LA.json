@@ -4,6 +4,14 @@
     "language": "es_LA"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "El reenvío iniciará pronto. Los correos nuevos aparecerán en su buzón."
+      ],
+      "Mail forward stopped": [
+        "Reenvío del correo detenido"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Presentando ${ BRAND_NAME }"
@@ -331,9 +339,6 @@
       "Load image": [
         "Cargar imagen"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Gestionar carpetas"
       ],
@@ -534,6 +539,9 @@
       ],
       "Show preview": [
         "Vista previa"
+      ],
+      "Sign in": [
+        "Iniciar sesión"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -914,8 +922,8 @@
       "Role": [
         "Profesión"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Zona horaria"
       ],
       "Title": [
         "Título"
@@ -1879,14 +1887,19 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La búsqueda de contenido no se puede habilitar en este navegador. Salga del modo de navegación privada o use otro navegador."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deseleccione al menos ${ calendarsToFixCount } calendario",
+        "Deseleccione al menos ${ calendarsToFixCount } calendarios"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deseleccione al menos ${ calendarsToFixCount } calendario o",
+        "Deseleccione al menos ${ calendarsToFixCount } calendarios o"
+      ],
       "Device name does not match": [
         "El nombre del dispositivo no coincide"
       ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Dirección de correo requerida"
@@ -1930,6 +1943,9 @@
       "Incorrect password. Please try again.": [
         "Contraseña incorrecta. Intente de nuevo."
       ],
+      "Invalid email address": [
+        "Dirección de correo inválida"
+      ],
       "Invalid name": [
         "Nombre inválido"
       ],
@@ -1941,6 +1957,10 @@
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fusione al menos ${ calendarsToFixCount } calendario con un calendario existente de ${ BRAND_NAME }",
+        "Fusione al menos ${ calendarsToFixCount } calendarios con calendarios existentes de ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Falta el paquete de claves"
@@ -2101,6 +2121,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "No puede enviar archivos vCards de más de 10 contactos"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Ha alcanzado el número máximo de calendarios. Algunos calendarios podrían no importarse."
+      ],
       "You must set a name": [
         "Debe establecer un nombre"
       ],
@@ -2112,8 +2135,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Ocurrió un error al leer el archivo ${ formattedFilename }. Formato de archivo incorrecto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2153,8 +2176,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Ocurrió un error al leer el archivo ${ formattedFilename }. Formato de archivo incorrecto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2188,8 +2211,8 @@
       "Component with wrong format": [
         "Componente con formato incorrecto"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Zona horaria personalizada"
       ],
       "Edited event not supported": [
         "Evento editado no compatible"
@@ -2257,11 +2280,11 @@
       "Start time out of bounds": [
         "Hora inicial fuera de límites"
       ],
+      "Time zone": [
+        "Zona horaria"
+      ],
       "Time zone not supported": [
         "Zona horaria no admitida"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tareas"
@@ -2801,6 +2824,9 @@
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contacto encontrado"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (restaurado)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } finalizada",
         "${ doneCount } finalizadas"
@@ -2884,6 +2910,9 @@
       "A number will be added to the folder name": [
         "Se añadirá un número al nombre de la carpeta"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acceso restringido a la cuenta por falta de pago. Contacte con la administración."
       ],
@@ -2945,6 +2974,15 @@
       ],
       "Canceled": [
         "Cancelada"
+      ],
+      "Cannot load link": [
+        "Error al cargar el enlace"
+      ],
+      "Cannot load links": [
+        "Error al cargar los enlaces"
+      ],
+      "Cannot load shared link": [
+        "Error al cargar el enlace compartido"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No recuerda su contraseña? Podemos ayudarle a limpiar los datos cifrados de todos los contactos cifrados con esta clave y en el proceso descartar la alerta."
@@ -3147,6 +3185,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para mejores resultados, evite las actividades de streaming o demandantes de memoria, o divida la carga de archivos en lotes más pequeños."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Redirija correos entrantes desde otra cuenta a su buzón seguro de ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Libere algo de espacio o añada más espacio de almacenamiento."
       ],
@@ -3199,8 +3240,8 @@
       "Import mailbox": [
         "Importar buzón"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importe sus correos, calendarios y contactos de otro servicio a ${ BRAND_NAME }. Le guiaremos en cada paso del camino y cifraremos sus datos a medida que se importan. Bienvenido al mundo de la privacidad."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importe sus correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando sus datos de ${ fromEmail } a ${ toEmail }."
@@ -3261,12 +3302,6 @@
       ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Cargando"
@@ -3444,6 +3479,9 @@
       "Report has been sent": [
         "El informe ha sido enviado"
       ],
+      "Restored files ${ formattedDate }": [
+        "Archivos restaurados ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "No se puede habilitar la búsqueda en este navegador"
       ],
@@ -3462,6 +3500,9 @@
       "Select what you want to import.": [
         "Seleccione lo que desea importar."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Seleccione los calendarios que desea importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en su plan."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."
       ],
@@ -3476,9 +3517,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Enlace compartible para ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No se pudo validar la firma por problemas de red. Intente de nuevo más tarde."
@@ -3937,8 +3975,8 @@
       "Device name": [
         "Nombre del dispositivo"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "No volver a preguntar"
       ],
       "Download anyway": [
         "Descargar de todos modos"
@@ -4511,6 +4549,12 @@
       "All items will soon be permanently deleted from trash": [
         "Todos los elementos serán eliminados permanentemente de la papelera"
       ],
+      "Cannot load link": [
+        "Error al cargar el enlace"
+      ],
+      "Cannot load next page": [
+        "Error al cargar la página siguiente"
+      ],
       "Contact group created": [
         "Grupo de contactos creado"
       ],
@@ -4551,9 +4595,6 @@
       "File or folder is missing a name": [
         "Falta el nombre del archivo o carpeta"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Mover ${ itemsToMoveCount } archivo",
         "Mover ${ itemsToMoveCount } archivos"
@@ -4577,9 +4618,6 @@
       "Move ${ movingCount } item": [
         "Mover ${ movingCount } elemento",
         "Mover ${ movingCount } elementos"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hay espacio suficiente para cargar ${ formattedTotal }"
@@ -5149,8 +5187,8 @@
       "Bug reported": [
         "Error reportado"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Cancelando la importación"
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
@@ -5344,6 +5382,9 @@
       "Browser might run out of memory": [
         "El navegador podría quedarse sin memoria"
       ],
+      "Cannot load link": [
+        "Error al cargar el enlace"
+      ],
       "Change layout": [
         "Cambiar diseño"
       ],
@@ -5528,9 +5569,6 @@
       "Item details": [
         "Detalles del elemento"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Confirmación de enlace"
       ],
@@ -5704,9 +5742,6 @@
       ],
       "The link expired": [
         "El enlace expiró"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Falta la clave del achivo o la firma es inválida. Vaya a Menú (⋮) → Detalles para más información."

@@ -4,6 +4,14 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Přeposílání bude brzy zahájeno. Nové e-maily se zobrazí ve vaší schránce."
+      ],
+      "Mail forward stopped": [
+        "Přeposílání e-mailů bylo zastaveno"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Úvod ${ BRAND_NAME }"
@@ -548,9 +556,6 @@
       "Loading${ ellipsis }": [
         "Načítání${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Hustota mailové schránky"
       ],
@@ -797,6 +802,9 @@
       "Remove expiration time": [
         "Odebrat dobu platnosti"
       ],
+      "Remove self-destruction": [
+        "Odebrat samozničení"
+      ],
       "Remove this label": [
         "Odebrat štítek"
       ],
@@ -872,6 +880,9 @@
       "Select all messages": [
         "Označit všechny zprávy"
       ],
+      "Self-destruct message": [
+        "Samozničující zprávy"
+      ],
       "Send": [
         "Odeslat"
       ],
@@ -944,6 +955,9 @@
       "Show preview": [
         "Zobrazit náhled"
       ],
+      "Sign in": [
+        "Přihlásit se"
+      ],
       "Sign out": [
         "Odhlásit se"
       ],
@@ -1012,6 +1026,9 @@
       ],
       "Turn on tracker protection": [
         "Zapnout ochranu proti sledování"
+      ],
+      "Unblock": [
+        "Odblokovat"
       ],
       "Underline": [
         "Podtržení"
@@ -1606,6 +1623,14 @@
         "Událost probíhá"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Cancel self-destruction": [
+        "Zrušit samozničení"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Sbalit"
@@ -1907,8 +1932,8 @@
       "Role": [
         "Role"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Časové pásmo"
       ],
       "Title": [
         "Titul"
@@ -2991,6 +3016,14 @@
         "Aktualizace události začínající v ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Složka vyčištěna"
+      ],
+      "Label cleared": [
+        "Štítek vyčištěn"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Název souboru šifrovaných hlaviček"
@@ -3024,6 +3057,12 @@
       "Choose a date in the future.": [
         "Vyberte budoucí datum."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Vyberte datum v příštím ${ EXPIRATION_TIME_MAX_DAYS } dni.",
+        "Vyberte datum v příštích ${ EXPIRATION_TIME_MAX_DAYS } dnech.",
+        "Vyberte datum v příštích ${ EXPIRATION_TIME_MAX_DAYS } dnech.",
+        "Vyberte datum v příštích ${ EXPIRATION_TIME_MAX_DAYS } dnech."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Vyberte datum v příštím ${ SCHEDULED_MAX_DATE_DAYS } dni.",
         "Vyberte datum v příštích ${ SCHEDULED_MAX_DATE_DAYS } dnech.",
@@ -3054,6 +3093,18 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této zprávy se nezdařilo."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo"
+      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -3062,9 +3113,6 @@
       ],
       "Email address disabled": [
         "E-mailová adresa je deaktivovaná"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
@@ -3114,6 +3162,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Nesprávné heslo k e-mailové schránce. Zkuste to znovu."
       ],
+      "Invalid email address": [
+        "Neplatná e-mailová adresa"
+      ],
       "Invalid expiration time": [
         "Neplatný čas pro vypršení platnosti"
       ],
@@ -3131,6 +3182,12 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Překročen maximální počet příloh (${ attachmentsCountLimit })"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Sloučit alespoň ${ calendarsToFixCount } kalendář s ${ BRAND_NAME } existujícím kalendářem",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendáře se ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
       ],
       "Message needs to be sent first": [
         "Nejdříve je potřeba zaslat zprávu"
@@ -3366,6 +3423,9 @@
       "You did not provide a file.": [
         "Neposkytli jste soubor."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Dosáhli jste maximálního počtu kalendářů. Některé kalendáře nebylo možné importovat."
+      ],
       "You must set a name": [
         "Musíte nastavit jméno"
       ],
@@ -3408,8 +3468,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3451,8 +3511,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3486,8 +3546,8 @@
       "Component with wrong format": [
         "Komponenta s nesprávným formátem"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Vlastní časové pásmo"
       ],
       "Edited event not supported": [
         "Upravená událost není podporována"
@@ -3555,11 +3615,11 @@
       "Start time out of bounds": [
         "Čas zahájení mimo hranice"
       ],
+      "Time zone": [
+        "Časové pásmo"
+      ],
       "Time zone not supported": [
         "Časové pásmo není podporováno"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Úkoly"
@@ -4520,6 +4580,9 @@
       "(No Recipient)": [
         "(Žádný příjemce)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Fráze pro obnovení účtu je jedním z nejbezpečnějších způsobů ochrany samotného účtu. Můžete ji použít pro přístup k účtu a obnovení zašifrovaných dat, pokud někdy zapomenete heslo."
       ],
@@ -4847,9 +4910,6 @@
       "Expires": [
         "Platnost do"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Vyprší za ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Vyprší za ${ formattedDelayShort }"
       ],
@@ -4954,9 +5014,6 @@
       ],
       "Import mailbox": [
         "Importovat poštovní schránku"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
@@ -5249,9 +5306,6 @@
       "Saving draft…": [
         "Ukládám koncept…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
-      ],
       "Scheduling message...": [
         "Plánování zprávy..."
       ],
@@ -5266,6 +5320,9 @@
       ],
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Odeslat šifrovanou, heslem chráněnou zprávu pro e-mailovou adresu ${ boldText }."
@@ -5390,9 +5447,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
-      ],
       "This conversation contains non-trashed messages.": [
         "Tato konverzace obsahuje zprávy, které nejsou v koši."
       ],
@@ -5405,8 +5459,8 @@
         "Tyto konverzace budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
         "Tyto konverzace budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "U tohoto e-mailu nebyly splněny požadavky na ověření domény odesílatele. E-mail může být podvržený a nebo nesprávně přeposlaný."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Tato pozvánka je uložena v zakázaném kalendáři."
@@ -5461,15 +5515,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Tato zpráva vyprší ${ formattedDate }"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Platnost této zprávy vyprší ${ dateString } v ${ formattedTime }"
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        "Platnost této zprávy vyprší dnes v ${ formattedTime }"
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Platnost této zprávy vyprší zítra v ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tento veřejný klíč bude automaticky využit pro šifrování zpráv odesílaných na tuto adresu."
@@ -6163,8 +6208,8 @@
       "Delete recovery-related information.": [
         "Odstranit informace související s obnovením."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Příště se neptat"
       ],
       "Don't show this again": [
         "Příště nezobrazovat"
@@ -6501,6 +6546,16 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Datum"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Čas"
       ]
     },
     "Label for contact group color": {
@@ -6858,8 +6913,8 @@
       "Scheduled sending undone": [
         "Plánované odeslání zrušeno"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Plánování zrušeno. Zpráva byla přesunuta do Konceptů."
       ],
       "Sending undone": [
         "Odeslání zrušeno"
@@ -7069,8 +7124,8 @@
       "Search message content": [
         "Hledat v obsahu zpráv"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
       ],
       "Up to 15 email addresses": [
         "Až 15 e-mailových adres"
@@ -7082,6 +7137,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získejte neomezený počet aliasů skrze SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7399,6 +7457,14 @@
         "Práce"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Oficiální"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Oficiální e-mail od ${ BRAND_NAME }"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Podepsaná zpráva s koncovým šifrováním"
@@ -7437,6 +7503,35 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Upozornění: služba bude znovu načtena, jakmile kliknete na tlačítko Uložit."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } den",
+        "${ remainingDays } dny",
+        "${ remainingDays } dní",
+        "${ remainingDays } dní"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } hodina",
+        "${ remainingHours } hodiny",
+        "${ remainingHours } hodin",
+        "${ remainingHours } hodin"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<1 hodina"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } rok",
+        "${ remainingYears } roky",
+        "${ remainingYears } let",
+        "${ remainingYears } let"
       ]
     },
     "Reply to calendar invitation": {
@@ -7812,8 +7907,8 @@
       "Bug reported": [
         "Chyba nahlášena"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Ruším import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
@@ -7878,17 +7973,11 @@
       "Fingerprint copied to clipboard": [
         "Otisk zkopírován do schránky"
       ],
-      "Folder cleared": [
-        "Složka vyčištěna"
-      ],
       "Import record deleted": [
         "Záznam o importu byl smazán"
       ],
       "Keyboard shortcuts preferences updated": [
         "Nastavení klávesových zkratek upraveno"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Štítky použity."
@@ -7967,6 +8056,15 @@
       ],
       "Read receipt sent": [
         "Potvrzení o přečtení bylo odesláno"
+      ],
+      "Self-destruction cancelled": [
+        "Samozničení zrušeno"
+      ],
+      "Self-destruction removed": [
+        "Samozničení odebráno"
+      ],
+      "Self-destruction set": [
+        "Samozničení nastaveno"
       ],
       "Undo in progress": [
         "Probíhá zrušení"
@@ -8548,6 +8646,9 @@
       ],
       "Select contact group": [
         "Vybrat skupinu kontaktů"
+      ],
+      "Self-destruct message": [
+        "Samozničující zprávy"
       ],
       "Send email": [
         "Odeslat e-mail"

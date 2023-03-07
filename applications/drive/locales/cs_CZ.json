@@ -4,6 +4,14 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Přeposílání bude brzy zahájeno. Nové e-maily se zobrazí ve vaší schránce."
+      ],
+      "Mail forward stopped": [
+        "Přeposílání e-mailů bylo zastaveno"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Úvod ${ BRAND_NAME }"
@@ -335,9 +343,6 @@
       "Load image": [
         "Načíst obrázek"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Spravovat složky"
       ],
@@ -538,6 +543,9 @@
       ],
       "Show preview": [
         "Zobrazit náhled"
+      ],
+      "Sign in": [
+        "Přihlásit se"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -918,8 +926,8 @@
       "Role": [
         "Role"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Časové pásmo"
       ],
       "Title": [
         "Titul"
@@ -1885,14 +1893,23 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete prosím režim soukromého režim prohlížeče, nebo vyzkoušejte jiný prohlížeč."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo"
+      ],
       "Device name does not match": [
         "Název zařízení se neshoduje"
       ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
@@ -1936,6 +1953,9 @@
       "Incorrect password. Please try again.": [
         "Nesprávné heslo. Zkuste to znovu."
       ],
+      "Invalid email address": [
+        "Neplatná e-mailová adresa"
+      ],
       "Invalid name": [
         "Neplatný název"
       ],
@@ -1947,6 +1967,12 @@
       ],
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Sloučit alespoň ${ calendarsToFixCount } kalendář s ${ BRAND_NAME } existujícím kalendářem",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendáře se ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
       ],
       "Missing key packet": [
         "Chybějící balíček klíčů"
@@ -2113,6 +2139,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Není možné odeslat soubory vCard více než 10 kontaktů"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Dosáhli jste maximálního počtu kalendářů. Některé kalendáře nebylo možné importovat."
+      ],
       "You must set a name": [
         "Musíte nastavit jméno"
       ],
@@ -2124,8 +2153,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2167,8 +2196,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2202,8 +2231,8 @@
       "Component with wrong format": [
         "Komponenta s nesprávným formátem"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Vlastní časové pásmo"
       ],
       "Edited event not supported": [
         "Upravená událost není podporována"
@@ -2271,11 +2300,11 @@
       "Start time out of bounds": [
         "Čas zahájení mimo hranice"
       ],
+      "Time zone": [
+        "Časové pásmo"
+      ],
       "Time zone not supported": [
         "Časové pásmo není podporováno"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Úkoly"
@@ -2858,6 +2887,9 @@
         "${ contactsCount } kontaktů nalezeno",
         "${ contactsCount } kontaktů nalezeno"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (obnoveno)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } ukončený",
         "${ doneCount } ukončené",
@@ -2975,6 +3007,9 @@
       "A number will be added to the folder name": [
         "K názvu složky bude přidáno číslo"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce Vašeho účtu."
       ],
@@ -3040,6 +3075,15 @@
       ],
       "Canceled": [
         "Zrušeno"
+      ],
+      "Cannot load link": [
+        "Odkaz se nepodařilo načíst"
+      ],
+      "Cannot load links": [
+        "Odkazy se nepodařilo načíst"
+      ],
+      "Cannot load shared link": [
+        "Sdílený odkaz se nepodařilo načíst"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
@@ -3302,9 +3346,6 @@
       "Import mailbox": [
         "Importovat poštovní schránku"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
-      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
       ],
@@ -3364,12 +3405,6 @@
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Načítání"
@@ -3551,6 +3586,9 @@
       "Report has been sent": [
         "Hlášení bylo odesláno"
       ],
+      "Restored files ${ formattedDate }": [
+        "Soubory obnoveny ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze zapnout vyhledávání"
       ],
@@ -3569,6 +3607,9 @@
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
@@ -3583,9 +3624,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Odkaz ke sdílení ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
@@ -4048,8 +4086,8 @@
       "Device name": [
         "Název zařízení"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Příště se neptat"
       ],
       "Download anyway": [
         "Přesto stáhnout"
@@ -4654,6 +4692,12 @@
       "All items will soon be permanently deleted from trash": [
         "Všechny položky budou brzy nevratně smazány z koše"
       ],
+      "Cannot load link": [
+        "Odkaz se nepodařilo načíst"
+      ],
+      "Cannot load next page": [
+        "Další stránku se nepodařilo načíst"
+      ],
       "Contact group created": [
         "Skupina kontaktů byla vytvořena"
       ],
@@ -4696,9 +4740,6 @@
       "File or folder is missing a name": [
         "Souboru nebo složce chybí název"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Přesunout ${ itemsToMoveCount } soubor",
         "Přesunout ${ itemsToMoveCount } soubory",
@@ -4734,9 +4775,6 @@
         "Přesunout ${ movingCount } položky",
         "Přesunout ${ movingCount } položek",
         "Přesunout ${ movingCount } položek"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Není dostatek místa pro nahrání ${ formattedTotal }"
@@ -5078,8 +5116,8 @@
       "Bug reported": [
         "Chyba nahlášena"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Ruším import"
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
@@ -5299,6 +5337,9 @@
       "Browser might run out of memory": [
         "Prohlížeči možná dochází paměť"
       ],
+      "Cannot load link": [
+        "Odkaz se nepodařilo načíst"
+      ],
       "Change layout": [
         "Změnit rozložení"
       ],
@@ -5494,9 +5535,6 @@
       "Item details": [
         "Podrobnosti položky"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
       ],
@@ -5670,9 +5708,6 @@
       ],
       "The link expired": [
         "Platnost odkazu vypršela"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tento soubor má chybějící nebo neplatný podpis. Běžte do Menu (⋮) → Detaily pro info."

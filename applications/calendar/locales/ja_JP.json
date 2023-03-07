@@ -277,9 +277,6 @@
       "Load image": [
         "画像を読み込む"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "この参加者の参加を任意にする"
       ],
@@ -424,9 +421,6 @@
       "Select all": [
         "すべて選択"
       ],
-      "Select timezone": [
-        "Select time zone"
-      ],
       "Send": [
         "送信"
       ],
@@ -459,6 +453,9 @@
       ],
       "Show time zones": [
         "タイムゾーンを表示"
+      ],
+      "Sign in": [
+        "サインイン"
       ],
       "Sign out": [
         "サインアウト"
@@ -1055,8 +1052,8 @@
       "Role": [
         "役割"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "タイムゾーン"
       ],
       "Title": [
         "肩書き"
@@ -1975,11 +1972,6 @@
         "無効なカレンダーの予定です。"
       ]
     },
-    "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "カレンダーを追加"
@@ -2125,14 +2117,17 @@
       "Decryption error: Decryption of this event's content failed.": [
         "復号エラー：この予定の内容の復号に失敗しました。"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除するか"
+      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
       "Email address disabled": [
         "メールアドレスが無効です"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "メールアドレスは必須です"
@@ -2202,6 +2197,9 @@
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Missing key packet": [
         "キーパケットが利用できません"
@@ -2365,6 +2363,9 @@
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
+      ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
       ],
@@ -2393,9 +2394,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
       ],
@@ -2433,9 +2431,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
       ],
@@ -2468,8 +2463,8 @@
       "Component with wrong format": [
         "無効なコンポーネント形式です"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "独自のタイムゾーン"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -2539,9 +2534,6 @@
       ],
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "To-do のエントリー"
@@ -3270,9 +3262,6 @@
       "Import mailbox": [
         "メールボックスのインポート"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートできます。データを移行し暗号化する手順をわかりやすく解説します。プライバシーの世界へようこそ。"
-      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
@@ -3784,8 +3773,8 @@
       "Description": [
         "詳細"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "今後表示しない"
       ],
       "Email": [
         "メールアドレス"
@@ -5065,11 +5054,6 @@
       ],
       "${ minutes } minutes": [
         "${ minutes } 分"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
       ]
     },
     "Title": {

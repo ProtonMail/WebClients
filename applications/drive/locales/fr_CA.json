@@ -328,9 +328,6 @@
       "Load image": [
         "Charger l'image"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Gérer les dossiers"
       ],
@@ -528,6 +525,9 @@
       ],
       "Show preview": [
         "Afficher un aperçu"
+      ],
+      "Sign in": [
+        "Se connecter"
       ],
       "Sign out": [
         "Se déconnecter"
@@ -889,9 +889,6 @@
       ],
       "Role": [
         "Rôle"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Titre"
@@ -1636,9 +1633,6 @@
       "Domain not available, try again later": [
         "Domaine non disponible, veuillez réessayer plus tard"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email address is required": [
         "L'adresse électronique est nécessaire"
       ],
@@ -1680,6 +1674,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Mot de passe incorrect. Veuillez réessayer."
+      ],
+      "Invalid email address": [
+        "Adresse courriel invalide"
       ],
       "Invalid name": [
         "Nom invalide"
@@ -1857,9 +1854,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d'un fichier est de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -1898,9 +1892,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors du téléversement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -1932,9 +1923,6 @@
       ],
       "Component with wrong format": [
         "Élément au mauvais format"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Événement édité non pris en charge"
@@ -2004,9 +1992,6 @@
       ],
       "Time zone not supported": [
         "Fuseau horaire non pris en charge"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Tâche à réaliser"
@@ -2892,9 +2877,6 @@
       "Import mailbox": [
         "Importer une boîte aux lettres"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importez vos courriels, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
-      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
       ],
@@ -2951,12 +2933,6 @@
       ],
       "Link copied to clipboard": [
         "Lien copié dans le presse-papier"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Chargement"
@@ -3166,9 +3142,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Lien partageable pour ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
@@ -3620,9 +3593,6 @@
       ],
       "Device name": [
         "Nom de l'appareil"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Download anyway": [
         "Télécharger quand même"
@@ -4184,9 +4154,6 @@
       "File or folder is missing a name": [
         "Il manque un nom au fichier ou au dossier"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Déplacer ${ itemsToMoveCount } fichier",
         "Déplacer ${ itemsToMoveCount } fichiers"
@@ -4210,9 +4177,6 @@
       "Move ${ movingCount } item": [
         "Déplacer ${ movingCount } élément",
         "Déplacer ${ movingCount } éléments"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Espace insuffisant pour téléverser ${ formattedTotal }"
@@ -4887,9 +4851,6 @@
       "Item details": [
         "Détails de l'élément"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Confirmation du lien"
       ],
@@ -5063,9 +5024,6 @@
       ],
       "The link expired": [
         "Le lien a expiré"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Ce fichier a une signature manquante ou non valide. Allez à Menu (⋮) → Détails pour plus d'informations."

@@ -279,9 +279,6 @@
       "Load image": [
         "Charger l'image"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Rendre ce·tte participant·e facultatif·ive"
       ],
@@ -423,9 +420,6 @@
       "Select all": [
         "Tout sélectionner"
       ],
-      "Select timezone": [
-        "Select time zone"
-      ],
       "Send": [
         "Envoyer"
       ],
@@ -458,6 +452,9 @@
       ],
       "Show time zones": [
         "Afficher les fuseaux horaires"
+      ],
+      "Sign in": [
+        "Se connecter"
       ],
       "Sign out": [
         "Se déconnecter"
@@ -1038,9 +1035,6 @@
       ],
       "Role": [
         "Rôle"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Titre"
@@ -1737,11 +1731,6 @@
         "L'événement appartient à un calendrier désactivé."
       ]
     },
-    "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Ajouter un calendrier"
@@ -1894,9 +1883,6 @@
       ],
       "Email address disabled": [
         "Adresse courriel désactivée"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "L'adresse électronique est nécessaire"
@@ -2149,9 +2135,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d'un fichier est de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2190,9 +2173,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors du téléversement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2224,9 +2204,6 @@
       ],
       "Component with wrong format": [
         "Élément au mauvais format"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Événement édité non pris en charge"
@@ -2296,9 +2273,6 @@
       ],
       "Time zone not supported": [
         "Fuseau horaire non pris en charge"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Tâche à réaliser"
@@ -3037,9 +3011,6 @@
       "Import mailbox": [
         "Importer une boîte aux lettres"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importez vos courriels, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
-      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
       ],
@@ -3573,9 +3544,6 @@
       ],
       "Delete recovery-related information.": [
         "Supprimer les informations liées à la récupération."
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Email": [
         "Courriel"
@@ -4872,11 +4840,6 @@
       "${ hoursInt }.5 hour": [
         "${ hoursInt },5 heure",
         "${ hoursInt },5 heures"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
       ]
     },
     "Title": {

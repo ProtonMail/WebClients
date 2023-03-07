@@ -4,6 +4,14 @@
     "language": "id_ID"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Penerusan email akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
+      ],
+      "Mail forward stopped": [
+        "Penerusan email diberhentikan"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Pengenalan ${ BRAND_NAME }"
@@ -539,9 +547,6 @@
       "Loading${ ellipsis }": [
         "Memuat${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Kepadatan kotak surat"
       ],
@@ -788,6 +793,9 @@
       "Remove expiration time": [
         "Hapus waktu kedaluawarsa"
       ],
+      "Remove self-destruction": [
+        "Hapus fungsi penghapusan otomatis"
+      ],
       "Remove this label": [
         "Hapus label ini"
       ],
@@ -863,6 +871,15 @@
       "Select all messages": [
         "Pilih semua pesan"
       ],
+      "Self-destruct in 7 days": [
+        "Hapus otomatis dalam 7 hari"
+      ],
+      "Self-destruct message": [
+        "Hapus pesan secara otomatis"
+      ],
+      "Self-destruct on ...": [
+        "Hapus secara otomatis pada ..."
+      ],
       "Send": [
         "Kirim"
       ],
@@ -935,6 +952,9 @@
       "Show preview": [
         "Tampilkan pratinjau"
       ],
+      "Sign in": [
+        "Masuk"
+      ],
       "Sign out": [
         "Keluar"
       ],
@@ -1000,6 +1020,9 @@
       ],
       "Turn on tracker protection": [
         "Aktifkan perlindungan pelacak"
+      ],
+      "Unblock": [
+        "Buka blokir"
       ],
       "Underline": [
         "Garis bawah"
@@ -1591,6 +1614,14 @@
         "Acara sedang berlangsung"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "Batal"
+      ],
+      "Cancel self-destruction": [
+        "Batalkan penghapusan otomatis"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Ciutkan"
@@ -1892,8 +1923,8 @@
       "Role": [
         "Peran"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Zona waktu"
       ],
       "Title": [
         "Gelar"
@@ -2775,6 +2806,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "Logo ${ MAIL_APP_NAME } dan tanda plus"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } di pengaturan."
       ],
@@ -2955,6 +2989,14 @@
         "Pembaruan acara mulai pada ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Pesan dihapus"
+      ],
+      "Label cleared": [
+        "Label dihapus"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Nama berkas Header Terenkripsi"
@@ -2988,6 +3030,9 @@
       "Choose a date in the future.": [
         "Pilih tanggal yang akan datang."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } days.": [
+        "Pilih tanggal yang berada dalam rentang ${ EXPIRATION_TIME_MAX_DAYS } hari ke depan."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
         "Pilih tanggal yang berjarak ${ SCHEDULED_MAX_DATE_DAYS } hari dari sekarang."
       ],
@@ -3015,6 +3060,12 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Kesalahan dekripsi: konten terenkripsi yang terdapat pada pesan ini gagal didekripsi."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan atau"
+      ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
@@ -3023,9 +3074,6 @@
       ],
       "Email address disabled": [
         "Alamat email dinonaktifkan"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Alamat email diperlukan"
@@ -3075,6 +3123,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Kata sandi kotak pesan salah. Silakan coba lagi."
       ],
+      "Invalid email address": [
+        "Alamat surel tidak valid"
+      ],
       "Invalid expiration time": [
         "Waktu kedaluwarsa tidak valid"
       ],
@@ -3092,6 +3143,9 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Jumlah lampiran maksimum (${ attachmentsCountLimit }) terlampaui"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "Gabungkan setidaknya ${ calendarsToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
       ],
       "Message needs to be sent first": [
         "Pesan perlu dikirim terlebih dahulu"
@@ -3309,6 +3363,9 @@
       "You did not provide a file.": [
         "Anda tidak menyertakan berkas."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Anda telah mencapai batas jumlah kalender yang diperkenankan. Sebagian kalender tidak dapat diimpor."
+      ],
       "You must set a name": [
         "Anda harus mengatur nama"
       ],
@@ -3348,8 +3405,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3388,8 +3445,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3423,8 +3480,8 @@
       "Component with wrong format": [
         "Komponen dengan format yang salah"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Zona waktu khusus"
       ],
       "Edited event not supported": [
         "Acara yang telah diedit tidak didukung"
@@ -3492,11 +3549,11 @@
       "Start time out of bounds": [
         "Waktu mulai di luar batas"
       ],
+      "Time zone": [
+        "Zona waktu"
+      ],
       "Time zone not supported": [
         "Zona waktu tidak didukung"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entri to-do"
@@ -4315,6 +4372,9 @@
       "(No Recipient)": [
         "(Tidak Ada Penerima)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Frasa pemulihan merupakan salah satu cara teraman untuk melindungi akun Anda. Seandainya Anda lupa kata sandi, fitur ini akan dapat digunakan untuk mengakses akun dan memulihkan data terenkripsi Anda."
       ],
@@ -4609,9 +4669,6 @@
       "Expires": [
         "Akan kedaluwarsa"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Akan kedaluwarsa dalam ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Akan kedaluwarsa dalam ${ formattedDelayShort }"
       ],
@@ -4635,6 +4692,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Untuk pesan yang lebih baru daripada ${ oldestDate }"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
       ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
@@ -4705,8 +4765,8 @@
       "Import mailbox": [
         "Impor kotak surat"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Impor email, kalender, dan kontak yang Anda miliki dari layanan email Anda terdahulu ke ${ BRAND_NAME }. Kami akan memandu Anda untuk memindahkan dan mengenkripsi data selangkah demi selangkah. Selamat datang di dunia privasi."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Impor email, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
@@ -4996,8 +5056,8 @@
       "Saving draft…": [
         "Menyimpan draf…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
+      "Scheduled send of this message will be canceled.": [
+        "Pengiriman terjadwal pesan ini akan dibatalkan."
       ],
       "Scheduling message...": [
         "Menjadwalkan pesan..."
@@ -5013,6 +5073,9 @@
       ],
       "Select what you want to import.": [
         "Pilih hal apa saja yang hendak Anda impor."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Kirimkan pesan yang terenkripsi dan terlindungi oleh kata sandi kepada alamat email ${ boldText }."
@@ -5140,8 +5203,8 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Percakapan ini mengandung pesan yang terjadwal. Pengiriman pesan ini akan dibatalkan."
       ],
       "This conversation contains non-trashed messages.": [
         "Percakapan ini berisi pesan yang tidak dibuang."
@@ -5149,8 +5212,8 @@
       "This conversation contains trashed messages.": [
         "Percakapan ini berisi pesan yang dibuang."
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Email ini tidak memenuhi syarat autentikasi domainnya. Email ini mungkin telah dipalsukan atau tidak diteruskan dengan benar."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Undangan ini disimpan di kalender nonaktif."
@@ -5200,14 +5263,17 @@
       "This message will expire ${ formattedDate }": [
         "Pesan ini akan kedaluwarsa pada ${ formattedDate }"
       ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Pesan ini akan kedaluwarsa pada ${ dateString } pukul ${ formattedTime }"
+      "This message will self-destruct in ${ formattedDelay }": [
+        "Pesan ini akan terhapus secara otomatis pada ${ formattedDelay }"
       ],
-      "This message will expire today at ${ formattedTime }": [
-        "Pesan ini akan kedaluwarsa hari ini pada pukul ${ formattedTime }"
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "Pesan ini akan terhapus secara otomatis pada ${ dateString } pukul ${ formattedTime }"
       ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Pesan ini akan kedaluwarsa besok pada pukul ${ formattedTime }"
+      "This message will self-destruct today at ${ formattedTime }": [
+        "Pesan ini akan terhapus secara otomatis pada hari ini pukul ${ formattedTime }"
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "Pesan ini akan terhapus secara otomatis pada hari esok pukul ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Kunci publik ini akan digunakan secara otomatis untuk mengenkripsi email-email yang dikirim ke alamat ini."
@@ -5334,6 +5400,9 @@
       ],
       "When do you want your message to be sent?": [
         "Kapankah Anda ingin pesan Anda terkirim?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Kapan Anda ingin pesan ini terhapus secara otomatis?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Pada saat Anda memberikan alamat email kepada orang lain, gunakanlah alamat email samaran yang dihasilkan oleh Hide My Email alih-alih alamat email asli Anda."
@@ -5868,8 +5937,8 @@
       "Delete recovery-related information.": [
         "Hapus informasi terkait pemulihan."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Jangan tanyakan lagi"
       ],
       "Don't show this again": [
         "Jangan tampilkan lagi"
@@ -6206,6 +6275,16 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Tanggal"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Waktu"
       ]
     },
     "Label for contact group color": {
@@ -6548,8 +6627,8 @@
       "Scheduled sending undone": [
         "Pengiriman yang terjadwal dibatalkan"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Penjadwalan dibatalkan. Pesan telah dipindahkan ke Draf."
       ],
       "Sending undone": [
         "Pengiriman dibatalkan"
@@ -6750,8 +6829,8 @@
       "Search message content": [
         "Cari konten pesan"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Tanpa batasan jumlah folder, label, dan filter"
       ],
       "Up to 15 email addresses": [
         "Hingga 15 alamat email"
@@ -6763,6 +6842,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
       ]
     },
     "new_plans: label": {
@@ -7071,6 +7153,14 @@
         "Kantor"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Resmi"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Email resmi dari ${ BRAND_NAME }"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Pesan ditandatangani dan dienkripsi ujung ke ujung"
@@ -7109,6 +7199,26 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Catatan: layanan akan dimuat setelah Anda menekan tombol Terapkan."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } days": [
+        "${ remainingDays } hari"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hours": [
+        "${ remainingHours } jam"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<1 jam"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } years": [
+        "${ remainingYears } tahun"
       ]
     },
     "Reply to calendar invitation": {
@@ -7406,8 +7516,8 @@
       "Bug reported": [
         "Bug berhasil dilaporkan"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Membatalkan impor"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
@@ -7463,17 +7573,11 @@
       "Fingerprint copied to clipboard": [
         "Sidik jari disalin ke clipboard"
       ],
-      "Folder cleared": [
-        "Folder dibersihkan"
-      ],
       "Import record deleted": [
         "Rekaman impor dihapus"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferensi pintasan keyboard diperbarui"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Label berhasil diterapkan."
@@ -7546,6 +7650,15 @@
       ],
       "Read receipt sent": [
         "Bukti baca telah terkirim"
+      ],
+      "Self-destruction cancelled": [
+        "Penghapusan otomatis dibatalkan"
+      ],
+      "Self-destruction removed": [
+        "Penghapusan otomatis dihapus"
+      ],
+      "Self-destruction set": [
+        "Waktu penghapusan otomatis diatur"
       ],
       "Undo in progress": [
         "Pengurungan sedang berlangsung"
@@ -8070,6 +8183,9 @@
       ],
       "Select contact group": [
         "Pilih grup kontak"
+      ],
+      "Self-destruct message": [
+        "Pesan hilang otomatis"
       ],
       "Send email": [
         "Kirim email"

@@ -36,7 +36,7 @@
         "Més informació: ${ safeTitle }"
       ],
       "refresh the page": [
-        "refresqueu la pàgina"
+        "refrescar la pàgina"
       ],
       "Request new code": [
         "Demana un nou codi"
@@ -57,7 +57,7 @@
         "Utilitzar el codi d'autenticació"
       ],
       "Use recovery code": [
-        "Utilitzar un codi de recuperació"
+        "Utilitza un codi de recuperació"
       ],
       "Verify": [
         "Verifica"
@@ -855,7 +855,7 @@
         "Número no vàlid"
       ],
       "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
+        "Les contrasenyes no coincideixen."
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -864,7 +864,7 @@
         "Aquest camp requereix el màxim de ${ maximumLength } caràcters."
       ],
       "This field is required": [
-        "Aquest camp és obligatori"
+        "Aquest camp és obligatori."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
@@ -887,7 +887,7 @@
         "Si us play, ${ refresh } o comproveu la vostra connexió."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Alguna cosa ha anat malament. Actualitzeu la pàgina o torneu-ho a provar més tard."
+        "S'ha produït un error. Refresqueu la pàgina o torneu-ho a provar més tard."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
         "S'ha produït un problema en connectar amb ${ BRAND_NAME }."
@@ -926,6 +926,9 @@
       ]
     },
     "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
@@ -966,7 +969,7 @@
         "Carregant"
       ],
       "No results found": [
-        "No s'han trobat resultats"
+        "No s'han trobat resultats."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
