@@ -3,10 +3,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { CardPayment, PaymentParameters, TokenPayment } from './interface';
+import { ExistingPayment, WrappedCardPayment } from './interface';
 import toDetails from './toDetails';
 import useCard from './useCard';
-import usePayPal from './usePayPal';
+import usePayPal, { OnPayResult } from './usePayPal';
 
 const { CARD, BITCOIN, CASH, PAYPAL, PAYPAL_CREDIT } = PAYMENT_METHOD_TYPES;
 
@@ -18,11 +18,11 @@ function isExistingPaymentMethod(paymentMethod: string) {
 interface Props {
     amount: number;
     currency: Currency;
-    onPay: (data: PaymentParameters) => void;
+    onPaypalPay: (data: OnPayResult) => void;
     defaultMethod?: PAYMENT_METHOD_TYPES | undefined;
 }
 
-const usePayment = ({ amount, currency, onPay, defaultMethod }: Props) => {
+const usePayment = ({ amount, currency, onPaypalPay, defaultMethod }: Props) => {
     const { card, setCard, errors: cardErrors, isValid } = useCard();
     const [method, setMethod] = useState<PAYMENT_METHOD_TYPE | undefined>(defaultMethod);
     const [cardSubmitted, setCardSubmitted] = useState(false);
@@ -32,30 +32,32 @@ const usePayment = ({ amount, currency, onPay, defaultMethod }: Props) => {
         amount,
         currency,
         type: PAYPAL,
-        onPay,
+        onPay: onPaypalPay,
     });
 
     const paypalCredit = usePayPal({
         amount,
         currency,
         type: PAYPAL_CREDIT,
-        onPay,
+        onPay: onPaypalPay,
     });
 
-    const paymentParameters = useMemo((): PaymentParameters<TokenPayment | CardPayment> => {
+    const paymentParameters = useMemo((): ExistingPayment | WrappedCardPayment | null => {
         if (!method) {
-            return {};
+            return null;
         }
 
         if (isExistingPaymentMethod(method)) {
-            return { PaymentMethodID: method };
+            const existingMethod: ExistingPayment = { PaymentMethodID: method };
+            return existingMethod;
         }
 
         if (method === CARD) {
-            return { Payment: { Type: CARD, Details: toDetails(card) } };
+            const wrappedCardPayment: WrappedCardPayment = { Payment: { Type: CARD, Details: toDetails(card) } };
+            return wrappedCardPayment;
         }
 
-        return {};
+        return null;
     }, [method, card]);
 
     const handleCardSubmit = () => {

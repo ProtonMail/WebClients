@@ -4,6 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { FeatureCode } from '@proton/components/containers';
+import {
+    AmountAndCurrency,
+    ExistingPayment,
+    TokenPaymentMethod,
+    WrappedCardPayment,
+} from '@proton/components/containers/payments/interface';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import { APP_NAMES, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
@@ -57,7 +63,7 @@ import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import Payment from '../Payment';
 import PaymentGiftCode from '../PaymentGiftCode';
-import { handlePaymentToken } from '../paymentTokenHelper';
+import { createPaymentToken } from '../paymentTokenHelper';
 import usePayment from '../usePayment';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanCustomization from './PlanCustomization';
@@ -101,7 +107,7 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
     [SUBSCRIPTION_STEPS.CHECKOUT]: SUBSCRIPTION_STEPS.CUSTOMIZATION,
 };
 
-const getCodes = ({ gift, coupon }: Model) => [gift, coupon].filter(isTruthy);
+const getCodes = ({ gift, coupon }: Model): string[] => [gift, coupon].filter(isTruthy);
 
 export const useProration = (
     model: Model,
@@ -255,7 +261,9 @@ const SubscriptionModal = ({
         }
     };
 
-    const handleSubscribe = async (params = {}) => {
+    const handleSubscribe = async (
+        params: (TokenPaymentMethod | WrappedCardPayment | ExistingPayment) & AmountAndCurrency
+    ) => {
         try {
             await handlePlanWarnings(model.planIDs);
         } catch (e) {
@@ -321,7 +329,7 @@ const SubscriptionModal = ({
         usePayment({
             amount: model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0, // Define amount only in the payment step to generate payment tokens
             currency: checkResult?.Currency || DEFAULT_CURRENCY,
-            onPay(params) {
+            onPaypalPay(params) {
                 return withLoading(handleSubscribe(params));
             },
         });
@@ -382,17 +390,25 @@ const SubscriptionModal = ({
 
     const handleCheckout = async () => {
         try {
-            const params = await handlePaymentToken({
-                params: {
-                    Amount: amountDue,
-                    Currency: model.currency,
-                    ...parameters,
-                },
-                createModal,
-                api,
-            });
+            if (!parameters) {
+                return;
+            }
 
-            return await handleSubscribe(params);
+            const amountAndCurrency: AmountAndCurrency = { Amount: amountDue, Currency: model.currency };
+
+            let params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment = parameters;
+            if (amountAndCurrency.Amount !== 0) {
+                params = await createPaymentToken(
+                    {
+                        params: parameters,
+                        createModal,
+                        api,
+                    },
+                    amountAndCurrency
+                );
+            }
+
+            return await handleSubscribe({ ...params, ...amountAndCurrency });
         } catch (e) {
             const error = getSentryError(e);
             if (error) {

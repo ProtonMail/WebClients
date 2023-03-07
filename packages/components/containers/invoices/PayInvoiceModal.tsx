@@ -10,8 +10,8 @@ import { Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../..
 import { useApi, useApiResult, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
 import Payment from '../payments/Payment';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
-import { PaymentParameters } from '../payments/interface';
-import { handlePaymentToken } from '../payments/paymentTokenHelper';
+import { AmountAndCurrency, ExistingPayment, TokenPaymentMethod, WrappedCardPayment } from '../payments/interface';
+import { createPaymentToken } from '../payments/paymentTokenHelper';
 import usePayment from '../payments/usePayment';
 import { Invoice } from './interface';
 
@@ -43,13 +43,30 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
 
     const { AmountDue, Amount, Currency, Credit } = result ?? {};
 
-    const handleSubmit = async (params: PaymentParameters) => {
-        const requestBody = await handlePaymentToken({
-            params: { ...params, Amount: AmountDue as number, Currency: Currency as Currency },
-            api,
-            createModal,
-        });
-        await api(payInvoice(invoice.ID, requestBody));
+    /**
+     * @param params must be null if user pays from the credit balance.
+     */
+    const handleSubmit = async (params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment | null) => {
+        const amountAndCurrency: AmountAndCurrency = { Amount: AmountDue as number, Currency: Currency as Currency };
+
+        let payInvoiceData: (TokenPaymentMethod & AmountAndCurrency) | AmountAndCurrency = {
+            ...amountAndCurrency,
+        };
+
+        if (params) {
+            let paymentToken = await createPaymentToken(
+                {
+                    params,
+                    api,
+                    createModal,
+                },
+                amountAndCurrency
+            );
+
+            payInvoiceData = { ...payInvoiceData, ...paymentToken };
+        }
+
+        await api(payInvoice(invoice.ID, payInvoiceData));
         await Promise.all([
             call(), // Update user.Delinquent to hide TopBanner
             fetchInvoices(),
@@ -62,7 +79,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         usePayment({
             amount: AmountDue as number,
             currency: Currency as Currency,
-            onPay: handleSubmit,
+            onPaypalPay: handleSubmit,
         });
 
     const submit =
@@ -78,6 +95,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                 if (!handleCardSubmit()) {
                     return;
                 }
+
                 withLoading(handleSubmit(parameters));
             }}
             loading={loading}

@@ -1,8 +1,10 @@
-import { Params } from '@proton/components/containers/payments/interface';
+import { PlanIDs } from 'proton-account/src/app/signup/interfaces';
+
+import { AmountAndCurrency, TokenPaymentMethod } from '@proton/components/containers/payments/interface';
 import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 
 import { getProductHeaders } from '../apps/product';
-import { Autopay, Currency } from '../interfaces';
+import { Autopay, Currency, Cycle } from '../interfaces';
 
 export const getSubscription = () => ({
     url: 'payments/subscription',
@@ -22,7 +24,15 @@ export const deleteSubscription = (data: FeedbackDowngradeData) => ({
     data,
 });
 
-export const checkSubscription = (data: any) => ({
+export type CheckSubscriptionParams = {
+    Plans: PlanIDs;
+    Currency: Currency;
+    Cycle: Cycle;
+    CouponCode?: string;
+    Codes?: string[];
+};
+
+export const checkSubscription = (data: CheckSubscriptionParams) => ({
     url: 'payments/subscription/check',
     method: 'post',
     data,
@@ -70,7 +80,7 @@ export const getInvoice = (invoiceID: string) => ({
     output: 'arrayBuffer',
 });
 
-export const checkInvoice = (invoiceID: string, GiftCode?: any) => ({
+export const checkInvoice = (invoiceID: string, GiftCode?: string) => ({
     url: `payments/invoices/${invoiceID}/check`,
     method: 'put',
     data: { GiftCode },
@@ -120,7 +130,12 @@ export const createPayPalPayment = (Amount: number, Currency: Currency) => ({
     data: { Amount, Currency },
 });
 
-export const payInvoice = (invoiceID: string, data: Params) => ({
+/**
+ * @param invoiceID
+ * @param data – does not have to include the payment token if user pays from the credits balance. In this case Amount
+ * must be set to 0 and payment token must not be supplied.
+ */
+export const payInvoice = (invoiceID: string, data: (TokenPaymentMethod & AmountAndCurrency) | AmountAndCurrency) => ({
     url: `payments/invoices/${invoiceID}`,
     method: 'post',
     data,
@@ -143,7 +158,12 @@ export const donate = (data: any) => ({
     data,
 });
 
-export const buyCredit = (data: any) => ({
+export interface GiftCodeData {
+    GiftCode: string;
+    Amount: number;
+}
+
+export const buyCredit = (data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData) => ({
     url: 'payments/credit',
     method: 'post',
     data,
@@ -155,7 +175,14 @@ export const validateCredit = (data: any) => ({
     data,
 });
 
-export const createToken = (data: any) => ({
+export interface CreateTokenData {
+    Payment?: any;
+    Amount?: number;
+    Currency?: Currency;
+    PaymentMethodID?: string;
+}
+
+export const createToken = (data: CreateTokenData) => ({
     url: 'payments/tokens',
     method: 'post',
     data,
