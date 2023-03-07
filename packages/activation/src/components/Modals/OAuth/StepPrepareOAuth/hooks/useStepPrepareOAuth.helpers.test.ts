@@ -1,7 +1,7 @@
 import { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { ImportType, MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
 import { ImporterCalendar, ImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
-import { mockAddresses } from '@proton/activation/src/tests/data/addresses';
+import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
 import { Label } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -259,7 +259,7 @@ describe('importerHasErrors test check and general behavior', () => {
             importerId: '1',
             emails: {
                 fields: {
-                    importAddress: mockAddresses[0],
+                    importAddress: generateMockAddress(0, true),
                     mapping: [dummyFolder, dummyFolder],
                     importPeriod: TIME_PERIOD.BIG_BANG,
                     importLabel: { Color: 'red', Name: 'name', Type: 1 },
@@ -306,7 +306,7 @@ describe('importerHasErrors test check and general behavior', () => {
             importerId: '1',
             emails: {
                 fields: {
-                    importAddress: mockAddresses[0],
+                    importAddress: generateMockAddress(0, true),
                     mapping: [dummyFolder, dummyFolder],
                     importPeriod: TIME_PERIOD.BIG_BANG,
                     importLabel: { Color: 'red', Name: 'name', Type: 1 },
@@ -353,7 +353,7 @@ describe('importerHasErrors test check and general behavior', () => {
             importerId: '1',
             emails: {
                 fields: {
-                    importAddress: mockAddresses[0],
+                    importAddress: generateMockAddress(0, true),
                     mapping: [dummyFolder, dummyFolder],
                     importPeriod: TIME_PERIOD.BIG_BANG,
                     importLabel: { Color: 'red', Name: 'name', Type: 1 },

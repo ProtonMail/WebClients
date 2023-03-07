@@ -7,7 +7,7 @@ import {
 } from '@proton/activation/src/interface';
 import { OauthDraftState } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 
-import { mockAddresses } from './addresses';
+import { generateMockAddress } from './addresses';
 
 export const prepareState: OauthDraftState = {
     step: 'started',
@@ -20,7 +20,7 @@ export const prepareState: OauthDraftState = {
             importedEmail: 'easyflavien@gmail.com',
             emails: {
                 fields: {
-                    importAddress: mockAddresses[0],
+                    importAddress: generateMockAddress(0, true),
                     importPeriod: TIME_PERIOD.LAST_3_MONTHS,
                     importCategoriesDestination: MailImportDestinationFolder.INBOX,
                     importLabel: {
