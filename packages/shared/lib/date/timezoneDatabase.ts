@@ -1305,4 +1305,13 @@ export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
     "nuku'alofa": 'Pacific/Tongatapu',
     'kiritimati island': 'Pacific/Kiritimati',
     'helsinki, kyiv, riga, sofia, tallinn, vilnius': 'Europe/Helsinki',
+    'europe/kyiv': 'Europe/Kiev',
+};
+
+/**
+ * This is a "hack" function that tries to transform IANA time zones detected by the browser into
+ * one supported by us. Returns undefined if no conversion is available
+ */
+export const manualFindTimeZone = (tzid: string) => {
+    return MANUAL_TIMEZONE_LINKS[tzid.toLowerCase()];
 };
