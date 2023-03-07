@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/components/index';
+
 import { SYNC_G_OAUTH_SCOPES, SYNC_SOURCE, SYNC_SUCCESS_NOTIFICATION } from '../../constants';
 import useOAuthPopup from '../../hooks/useOAuthPopup';
 import { ImportProvider, OAuthProps } from '../../interface';
@@ -12,6 +14,9 @@ const GmailForwarding = () => {
     const dispatch = useEasySwitchDispatch();
     const loadingState = useEasySwitchSelector(selectCreateSyncState);
     const isLoading = loadingState === 'pending';
+
+    const [user, loadingUser] = useUser();
+    const disabled = loadingUser || !user.hasNonDelinquentScope;
 
     const { triggerOAuthPopup } = useOAuthPopup({
         errorMessage: c('Error').t`Your forward will not be processed.`,
@@ -42,6 +47,7 @@ const GmailForwarding = () => {
             loading={isLoading}
             provider={ImportProvider.GOOGLE}
             onClick={handleSynchronizeClick}
+            disabled={disabled}
             className="mb1 mr1"
             data-testid="ProviderCard:googleCardForward"
         />
