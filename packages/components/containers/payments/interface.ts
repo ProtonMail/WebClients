@@ -1,39 +1,31 @@
-import { CYCLE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Currency, PlanIDs } from '@proton/shared/lib/interfaces';
-
-interface TokenPaymentDetails {
-    Token: string;
-}
-
-interface CardPaymentDetails {
-    Name: string;
-    Number: string;
-    ExpMonth: string;
-    ExpYear: string;
-    CVC: string;
-    ZIP: string;
-    Country: string;
-}
+import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 export interface CardPayment {
     Type: PAYMENT_METHOD_TYPES.CARD;
-    Details: CardPaymentDetails;
+    Details: {
+        Name: string;
+        Number: string;
+        ExpMonth: string;
+        ExpYear: string;
+        CVC: string;
+        ZIP: string;
+        Country: string;
+    };
 }
 
 export function isCardPayment(payment: any): payment is CardPayment {
     return payment?.Type === PAYMENT_METHOD_TYPES.CARD && !!payment?.Details;
 }
 
-interface TokenPaymentDetails {
-    Token: string;
-}
-
 export interface TokenPayment {
     Type: PAYMENT_METHOD_TYPES.TOKEN;
-    Details: TokenPaymentDetails;
+    Details: {
+        Token: string;
+    };
 }
 
-export function isTokenPayment(payment?: Payment): payment is TokenPayment {
+export function isTokenPayment(payment: any): payment is TokenPayment {
     return payment?.Type === PAYMENT_METHOD_TYPES.TOKEN || !!(payment as any)?.Details?.Token;
 }
 
@@ -47,14 +39,27 @@ export function isPaypalPayment(payment: any): payment is PaypalPayment {
     );
 }
 
-export type Payment = CardPayment | TokenPayment | PaypalPayment;
-
-export interface PaymentParameters<T extends Payment = Payment> {
-    PaymentMethodID?: string;
-    Payment?: T;
+export interface ExistingPayment {
+    PaymentMethodID: string;
 }
 
-export interface Params extends PaymentParameters {
+export function isExistingPayment(data: any): data is ExistingPayment {
+    return !!data && typeof data.PaymentMethodID === 'string';
+}
+
+export interface WrappedCardPayment {
+    Payment: CardPayment;
+}
+
+export interface TokenPaymentMethod {
+    Payment: TokenPayment;
+}
+
+export function isTokenPaymentMethod(data: any): data is TokenPaymentMethod {
+    return !!data && isTokenPayment(data.Payment);
+}
+
+export interface AmountAndCurrency {
     Amount: number;
     Currency: Currency;
 }
@@ -71,24 +76,7 @@ export interface CardModel {
 
 export interface PaymentTokenResult {
     Token: string;
-    ApprovalURL: string;
-    ReturnHost: string;
-    Status: number;
-}
-
-export interface EligibleOfferPlans {
-    name: string;
-    cycle: CYCLE;
-    /* Used for the redirect */
-    plan: string;
-    /* Used for the /check call */
-    planIDs: PlanIDs;
-    couponCode?: string;
-    popular?: boolean;
-}
-
-export interface EligibleOffer {
-    name: 'black-friday' | 'product-payer';
-    isVPNOnly?: boolean;
-    plans: EligibleOfferPlans[];
+    Status: PAYMENT_TOKEN_STATUS;
+    ApprovalURL?: string;
+    ReturnHost?: string;
 }
