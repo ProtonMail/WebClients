@@ -229,3 +229,8 @@ export interface PublicKeyReference extends KeyReference {}
 export interface PrivateKeyReference extends KeyReference {
     isPrivate: () => true;
 }
+
+export interface ComputeHashStreamOptions {
+    algorithm: 'unsafeSHA1';
+    dataStream: ReadableStream<Uint8Array>;
+}
