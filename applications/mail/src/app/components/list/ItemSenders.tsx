@@ -44,7 +44,7 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
             .join(', ');
     }, [sendersAsRecipientOrGroup]);
 
-    if (!loading && displayRecipients && !senders) {
+    if (!loading && displayRecipients && senders.length === 0) {
         return <>{c('Info').t`(No Recipient)`}</>;
     }
 
