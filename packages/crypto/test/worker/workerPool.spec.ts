@@ -8,6 +8,7 @@ import {
 import { generateKey } from 'pmcrypto-v7/lib/pmcrypto';
 
 import { VERIFICATION_STATUS } from '../../lib';
+import { arrayToHexString } from '../../lib/utils';
 import { CryptoWorkerPool } from '../../lib/worker/workerPool';
 
 chaiUse(chaiAsPromised);
@@ -63,6 +64,29 @@ describe('Worker Pool', () => {
         expect(binaryDecryptionResult.signatures).to.have.length(1);
         expect(binaryDecryptionResult.verificationErrors).to.not.exist;
         expect(binaryDecryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+    });
+
+    it('computeHashStream - the hash instance should not be disrupted with multiple workers', async () => {
+        const data = new Uint8Array(100).fill(1);
+        const dataStream = new ReadableStream<Uint8Array>({
+            pull: (controller) => {
+                for (let i = 0; i < 10; i++) {
+                    controller.enqueue(data.subarray(i, i + 10));
+                }
+                controller.close();
+            },
+        });
+
+        const testHashSHA1Streamed = await CryptoWorkerPool.computeHashStream({
+            algorithm: 'unsafeSHA1',
+            dataStream,
+        }).then(arrayToHexString);
+
+        const testHashSHA1 = await CryptoWorkerPool.computeHash({ algorithm: 'unsafeSHA1', data }).then(
+            arrayToHexString
+        );
+
+        expect(testHashSHA1Streamed).to.equal(testHashSHA1);
     });
 
     it('replaceUserIDs - the target key should be updated in all workers', async () => {

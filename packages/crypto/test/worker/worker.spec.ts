@@ -687,6 +687,39 @@ Z3SSOseslp6+4nnQ3zOqnisO
         );
     });
 
+    it('computeHashStream', async () => {
+        const emptyDataStream = new ReadableStream<Uint8Array>({
+            start: (controller) => {
+                for (let i = 0; i < 100; i++) {
+                    controller.enqueue(new Uint8Array());
+                }
+                controller.close();
+            },
+        });
+        const testHashSHA1Empty = await CryptoWorker.computeHashStream({
+            algorithm: 'unsafeSHA1',
+            dataStream: emptyDataStream,
+        }).then(arrayToHexString);
+        expect(testHashSHA1Empty).to.equal('da39a3ee5e6b4b0d3255bfef95601890afd80709');
+
+        // `data` and `dataStream` share the underlying buffer: this is to test that no byte transferring is taking place
+        const data = new Uint8Array(100).fill(1);
+        const dataStream = new ReadableStream<Uint8Array>({
+            pull: (controller) => {
+                for (let i = 0; i < 10; i++) {
+                    controller.enqueue(data.subarray(i, i + 10));
+                }
+                controller.close();
+            },
+        });
+        const testHashSHA1Streamed = await CryptoWorker.computeHashStream({ algorithm: 'unsafeSHA1', dataStream }).then(
+            arrayToHexString
+        );
+        const testHashSHA1 = await CryptoWorker.computeHash({ algorithm: 'unsafeSHA1', data }).then(arrayToHexString);
+        expect(testHashSHA1).to.equal('3f3feea4f73d400fe98b7518a4b21ad4fc80476d');
+        expect(testHashSHA1Streamed).to.equal(testHashSHA1);
+    });
+
     it('replaceUserIDs - the target key user IDs match the source key ones', async () => {
         const sourceKey = await openpgp_readKey({
             armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
