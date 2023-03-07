@@ -160,6 +160,7 @@ const Item = ({
                 data-shortcut-target="item-container"
                 data-shortcut-target-selected={isSelected}
                 data-testid={`message-item:${element.Subject}`}
+                data-testorder={element.Order}
             >
                 <ItemCheckbox
                     ID={element.ID}
