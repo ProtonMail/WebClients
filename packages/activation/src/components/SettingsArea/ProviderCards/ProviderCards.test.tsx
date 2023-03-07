@@ -3,10 +3,11 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 
 import { easySwitchRender } from '@proton/activation/src/tests/render';
+import { useUser } from '@proton/components/index';
 
 import ProviderCards from './ProviderCards';
 
-jest.mock('@proton/components/hooks/useUser', () => () => [
+const defaultUseUser = [
     {
         isAdmin: true,
         isFree: true,
@@ -21,7 +22,10 @@ jest.mock('@proton/components/hooks/useUser', () => () => [
         canPay: true,
     },
     false,
-]);
+];
+
+jest.mock('@proton/components/hooks/useUser');
+const mockUseUser = useUser as jest.MockedFunction<any>;
 
 jest.mock('@proton/components/hooks/useFeature', () => () => {
     return {
@@ -120,6 +124,7 @@ afterAll(() => {
 
 describe('Provider cards process testing', () => {
     it('Should display the four cards on the page without user data', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
         easySwitchRender(<ProviderCards />);
 
         const google = screen.getByTestId('ProviderCard:googleCard');
@@ -161,6 +166,7 @@ describe('Provider cards process testing', () => {
     });
 
     it('Should trigger yahoo auth error', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
         server.use(
             rest.get('/core/v4/features', (req, res, ctx) => {
                 return res(ctx.set('date', '01/01/2022'), ctx.json({}));
@@ -221,6 +227,7 @@ describe('Provider cards process testing', () => {
     });
 
     it('Should click on imap calendar product', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
         easySwitchRender(<ProviderCards />);
 
         const imap = screen.getByTestId('ProviderCard:imapCard');
@@ -237,6 +244,7 @@ describe('Provider cards process testing', () => {
     });
 
     it('Should click on every product in the imap modal', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
         easySwitchRender(<ProviderCards />);
 
         const imap = screen.getByTestId('ProviderCard:imapCard');
@@ -273,6 +281,7 @@ describe('Provider cards process testing', () => {
     });
 
     it('Should click on every product in the yahoo modal', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
         easySwitchRender(<ProviderCards />);
 
         const yahoo = screen.getByTestId('ProviderCard:yahooCard');
@@ -306,5 +315,37 @@ describe('Provider cards process testing', () => {
 
         await waitFor(() => screen.getByTestId('Instruction:yahooContactInstructions'));
         fireEvent.click(screen.getByTestId('Instruction:close'));
+    });
+
+    it('Should disable all cards if user is delinquent', () => {
+        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false }, false]);
+
+        easySwitchRender(<ProviderCards />);
+
+        const google = screen.getByTestId('ProviderCard:googleCard');
+        const yahoo = screen.getByTestId('ProviderCard:yahooCard');
+        const outlook = screen.getByTestId('ProviderCard:outlookCard');
+        const imap = screen.getByTestId('ProviderCard:imapCard');
+
+        expect(google).toBeDisabled();
+        expect(yahoo).toBeDisabled();
+        expect(outlook).toBeDisabled();
+        expect(imap).toBeDisabled();
+    });
+
+    it('Should disable all cards while user is loading', () => {
+        mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, true]);
+
+        easySwitchRender(<ProviderCards />);
+
+        const google = screen.getByTestId('ProviderCard:googleCard');
+        const yahoo = screen.getByTestId('ProviderCard:yahooCard');
+        const outlook = screen.getByTestId('ProviderCard:outlookCard');
+        const imap = screen.getByTestId('ProviderCard:imapCard');
+
+        expect(google).toBeDisabled();
+        expect(yahoo).toBeDisabled();
+        expect(outlook).toBeDisabled();
+        expect(imap).toBeDisabled();
     });
 });
