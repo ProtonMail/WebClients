@@ -4,6 +4,14 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "El reenviament començarà aviat. Els correus electrònics nous apareixeran a la vostra safata d'entrada."
+      ],
+      "Mail forward stopped": [
+        "El reenviament de correu s'ha aturat."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introducció a ${ BRAND_NAME }"
@@ -21,7 +29,7 @@
         "Afegeix"
       ],
       "Add address": [
-        "Afegeix adreça"
+        "Afegeix una adreça"
       ],
       "Add condition": [
         "Afegeix una condició"
@@ -87,7 +95,7 @@
         "Com programat"
       ],
       "Attach screenshot(s)": [
-        "Adjunta captura(es) de pantalla"
+        "Adjunta una o més captures de pantalla"
       ],
       "Attachment": [
         "Adjuntar"
@@ -141,7 +149,7 @@
         "Trieu un fitxer o arrossegueu-lo aquí"
       ],
       "Clear": [
-        "Netejar"
+        "Neteja"
       ],
       "Clear all formatting": [
         "Esborra tot el format"
@@ -258,7 +266,7 @@
         "Aplicació de correu electrònic per defecte"
       ],
       "Delete": [
-        "Esborra"
+        "Elimina"
       ],
       "Delete ${ selectedCount } contact": [
         "Eliminar ${ selectedCount } contacte",
@@ -287,7 +295,7 @@
         "Eliminar etiqueta"
       ],
       "Delete permanently": [
-        "Suprimir permanentment"
+        "Suprimeix permanentment"
       ],
       "Deselect": [
         "Anul·la la selecció"
@@ -332,10 +340,10 @@
         "Edita el xifrat"
       ],
       "Edit folder": [
-        "Editar carpeta"
+        "Edita la carpeta"
       ],
       "Edit label": [
-        "Editar etiqueta"
+        "Edita l'etiqueta"
       ],
       "Edit phone number": [
         "Edita el número de telèfon"
@@ -431,16 +439,16 @@
         "Ves a la pàgina anterior"
       ],
       "Go to settings": [
-        "Ves a la configuració"
+        "Aneu a les preferències"
       ],
       "Go to SimpleLogin": [
         "Ves a SimpleLogin"
       ],
       "Got it": [
-        "Entesos"
+        "D'acord"
       ],
       "Hide": [
-        "Amagar"
+        "Amaga"
       ],
       "Hide advanced PGP settings": [
         "Amagueu la configuració avançada del PGP"
@@ -507,7 +515,7 @@
         "Afegeix imatge"
       ],
       "Insert link": [
-        "Afegeix un enllaç"
+        "Insereix l'enllaç"
       ],
       "Italic": [
         "Cursiva"
@@ -516,22 +524,22 @@
         "Dreceres de teclat"
       ],
       "Label as": [
-        "Etiquetar com a"
+        "Etiqueta com a"
       ],
       "Label as...": [
-        "Etiquetar com a..."
+        "Etiqueta com a…"
       ],
       "label emails as": [
         "etiquetar correus electrònics com"
       ],
       "Learn more": [
-        "Saber-ne més"
+        "Més informació"
       ],
       "Load": [
         "Carrega"
       ],
       "Load embedded images": [
-        "Carregar imatges incrustades"
+        "Carrega imatges incrustades"
       ],
       "Load image": [
         "Carrega la imatge"
@@ -541,9 +549,6 @@
       ],
       "Loading${ ellipsis }": [
         "Carregant${ ellipsis }"
-      ],
-      "Log in": [
-        "Sign in"
       ],
       "Mailbox density": [
         "Densitat de la bústia de correu"
@@ -690,7 +695,7 @@
         "No s'ha desat"
       ],
       "OK": [
-        "D'acord"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Obrir ${ CALENDAR_APP_NAME }"
@@ -747,7 +752,7 @@
         "imprimeix"
       ],
       "Quit": [
-        "Sortir"
+        "Surt"
       ],
       "Quote": [
         "Cita"
@@ -759,7 +764,7 @@
         "Llegeix el missatge"
       ],
       "Read receipt sent": [
-        "S'ha enviat la confirmació de lectura"
+        "S'ha enviat la confirmació de lectura."
       ],
       "Reconnect": [
         "Reconnectar"
@@ -774,10 +779,10 @@
         "Afina"
       ],
       "refresh the page": [
-        "refresqueu la pàgina"
+        "refrescar la pàgina"
       ],
       "Refresh the page": [
-        "Actualitza la pàgina"
+        "Refresca la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -791,14 +796,17 @@
       "Remove expiration time": [
         "Elimina el temps de caducitat"
       ],
+      "Remove self-destruction": [
+        "Suprimeix la destrucció automàtica"
+      ],
       "Remove this label": [
         "Elimina aquesta etiqueta"
       ],
       "Reply": [
-        "Respondre"
+        "Respon"
       ],
       "Reply all": [
-        "Respondre a tothom"
+        "Respon a tothom"
       ],
       "Reply securely": [
         "Respon de manera segura"
@@ -866,6 +874,15 @@
       "Select all messages": [
         "Seleccionar tots els missatges"
       ],
+      "Self-destruct in 7 days": [
+        "Destrucció automàtica en 7 dies"
+      ],
+      "Self-destruct message": [
+        "Destrucció automàtica de missatges"
+      ],
+      "Self-destruct on ...": [
+        "Destrucció automàtica el..."
+      ],
       "Send": [
         "Enviar"
       ],
@@ -897,10 +914,10 @@
         "Definir el temps d'expiració"
       ],
       "Set recovery phrase": [
-        "Definineix la frase de recuperació"
+        "Estableix la frase de recuperació"
       ],
       "Share via link": [
-        "Compartir amb enllaç"
+        "Comparteix amb enllaç"
       ],
       "Sharing options": [
         "Opcions de compartició"
@@ -937,6 +954,9 @@
       ],
       "Show preview": [
         "Mostra visualització prèvia"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
       ],
       "Sign out": [
         "Tanca la sessió"
@@ -994,7 +1014,7 @@
         "Confia en la clau pública"
       ],
       "Try again": [
-        "Torna-ho a provar"
+        "Proveu de nou"
       ],
       "Try another method": [
         "Proveu amb un altre mètode"
@@ -1036,7 +1056,7 @@
         "No confiable"
       ],
       "Update": [
-        "Actualitzar"
+        "Actualitza"
       ],
       "Update recovery file": [
         "Actualitza el fitxer de recuperació"
@@ -1045,7 +1065,7 @@
         "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
-        "Actualitzar"
+        "Actualitza"
       ],
       "Upgrade now": [
         "Actualitzar ara"
@@ -1063,7 +1083,7 @@
         "Usar per enviar"
       ],
       "Use recovery code": [
-        "Utilitzar un codi de recuperació"
+        "Utilitza un codi de recuperació"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilitzeu el ratolí per redimensionar la vista. Si esteu utilitzant el teclat, podeu utilitzar les tecles d'esquerra i dreta per redimensionar."
@@ -1108,7 +1128,7 @@
         "Perquè no?"
       ],
       "Yes": [
-        "Si"
+        "Sí"
       ],
       "Yes, I'll attend": [
         "Sí, hi assistiré"
@@ -1221,7 +1241,7 @@
         "Fitxer ICS buit"
       ],
       "Invalid event": [
-        "Esdeveniment invàlid"
+        "Esdeveniment no vàlid"
       ],
       "Invalid ICS file": [
         "Fitxer ICS invàlid"
@@ -1599,6 +1619,14 @@
         "Esdeveniment en curs"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "Cancel·la"
+      ],
+      "Cancel self-destruction": [
+        "Cancel·la la destrucció automàtica"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Replega"
@@ -1657,13 +1685,13 @@
         "genciana"
       ],
       "fern": [
-        "falguera"
+        "verd falguera"
       ],
       "field drab": [
         "camp mongol"
       ],
       "forest": [
-        "bosc"
+        "verd bosc"
       ],
       "gainsboro": [
         "gris boira"
@@ -1693,10 +1721,10 @@
         "verd mogol"
       ],
       "ocean": [
-        "oceà"
+        "blau marí"
       ],
       "olive": [
-        "oliva"
+        "verd oliva"
       ],
       "outer space": [
         "espai exterior"
@@ -1729,7 +1757,7 @@
         "cogombre"
       ],
       "pine": [
-        "pi"
+        "verd pi"
       ],
       "pink": [
         "rosa"
@@ -1900,8 +1928,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Fus horari"
       ],
       "Title": [
         "Títol"
@@ -2787,6 +2815,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "Logotip ${ MAIL_APP_NAME } i un signe més"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } a la configuració"
       ],
@@ -2970,6 +3001,14 @@
         "Actualització d'un esdeveniment que comença el ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Carpeta netejada"
+      ],
+      "Label cleared": [
+        "Etiqueta netejada"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Nom de fitxer de les capçaleres xifrat"
@@ -3003,6 +3042,10 @@
       "Choose a date in the future.": [
         "Escolliu una data futura."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Escolliu una data dintre del proper ${ EXPIRATION_TIME_MAX_DAYS } dia.",
+        "Escolliu una data dintre dels propers ${ EXPIRATION_TIME_MAX_DAYS } dies."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Escolliu una data dintre del proper ${ SCHEDULED_MAX_DATE_DAYS } dia.",
         "Escolliu una data dintre dels propers ${ SCHEDULED_MAX_DATE_DAYS } dies."
@@ -3031,6 +3074,10 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error de desxifratge: ha fallat el desxifratge del contingut xifrat d’aquest missatge."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
         "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
@@ -3043,9 +3090,6 @@
       ],
       "Email address disabled": [
         "Correu electrònic deshabilitada"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
@@ -3095,6 +3139,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Contrasenya de bústia incorrecta. Torneu a provar-ho."
       ],
+      "Invalid email address": [
+        "Adreça de correu electrònic no vàlida"
+      ],
       "Invalid expiration time": [
         "Data de caducitat no vàlida"
       ],
@@ -3112,6 +3159,10 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "S'ha excedit el nombre màxim d'adjunts (${ attachmentsCountLimit })"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
+        "Combineu almenys ${ calendarsToFixCount } calendaris importats amb els vostres calendaris ${ BRAND_NAME } existents."
       ],
       "Message needs to be sent first": [
         "El missatge s'ha d'enviar prèviament"
@@ -3161,7 +3212,7 @@
         "La contrasenya és obligatòria."
       ],
       "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
+        "Les contrasenyes no coincideixen."
       ],
       "Please activate your content search again": [
         "Activeu de nou la vostra cerca de continguts."
@@ -3284,7 +3335,7 @@
         "Aquest camp requereix el màxim de ${ maximumLength } caràcters."
       ],
       "This field is required": [
-        "Aquest camp és obligatori"
+        "Aquest camp és obligatori."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
@@ -3335,6 +3386,9 @@
       "You did not provide a file.": [
         "No has proporcionat un arxiu."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "No es poden importar tots els calendaris perquè heu arribat al límit de calendaris."
+      ],
       "You must set a name": [
         "Heu d'establir un nom"
       ],
@@ -3375,8 +3429,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. Format de fitxer incorrecte."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3409,15 +3463,15 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "El xifratge ha fallat"
+        "Error en el xifratge"
       ],
       "vCard versions < 3.0 not supported": [
         "versions vCard < 3.0 no suportades"
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. Format de fitxer incorrecte."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3451,8 +3505,8 @@
       "Component with wrong format": [
         "Component amb format erroni"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Fus horari personalitzat"
       ],
       "Edited event not supported": [
         "Esdeveniment editat no compatible"
@@ -3461,7 +3515,7 @@
         "Element"
       ],
       "Encryption failed": [
-        "Ha fallat el xifratge"
+        "Error en el xifratge"
       ],
       "End time out of bounds": [
         "Hora de finalització fora de límits"
@@ -3520,11 +3574,11 @@
       "Start time out of bounds": [
         "Hora d’inici fora de límits"
       ],
+      "Time zone": [
+        "Fus horari"
+      ],
       "Time zone not supported": [
         "Fus horari no compatible"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tasques"
@@ -3541,7 +3595,7 @@
         "Error: ${ errorMessage }"
       ],
       "No results found": [
-        "No s'han trobat resultats"
+        "No s'han trobat resultats."
       ],
       "No results found for \"${ query }\"": [
         "No s'han trobat resultats per a \"${ query }\""
@@ -3553,7 +3607,7 @@
         "Si us play, ${ refresh } o comproveu la vostra connexió."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Alguna cosa ha anat malament. Actualitzeu la pàgina o torneu-ho a provar més tard."
+        "S'ha produït un error. Refresqueu la pàgina o torneu-ho a provar més tard."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
         "S'ha produït un problema en connectar amb ${ BRAND_NAME }."
@@ -3631,7 +3685,7 @@
     },
     "Event title": {
       "(no title)": [
-        "(No title)"
+        "(sense títol)"
       ]
     },
     "Feedback Modal Title": {
@@ -3916,7 +3970,7 @@
         "Contactes, grups i preferències"
       ],
       "Get help": [
-        "Obtenir ajuda"
+        "Obteniu ajuda"
       ],
       "Search": [
         "Cerca"
@@ -4040,7 +4094,7 @@
     },
     "Import contact. Contact identifier": {
       "unknown": [
-        "desconegut/da"
+        "desconegut"
       ]
     },
     "Import contacts warning": {
@@ -4387,6 +4441,9 @@
       "(No Recipient)": [
         "(Cap Destinatari)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Una frase de recuperació és una de les formes més segures de protegir el vostre compte. La podeu utilitzar per accedir al vostre compte i recuperar les vostres dades xifrades si mai oblideu la contrasenya."
       ],
@@ -4477,7 +4534,7 @@
         "Segur que voleu eliminar aquest missatge permanentment?"
       ],
       "Attach public key": [
-        "Adjuntar la clau pública"
+        "Adjunta la clau pública"
       ],
       "Attention required": [
         "Requereix atenció"
@@ -4692,9 +4749,6 @@
       "Expires": [
         "Caduca"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Caduca en ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Caduca en ${ formattedDelayShort }"
       ],
@@ -4719,6 +4773,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Per missatges més nous que ${ oldestDate }"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Transferiu els missatges entrants d'un altre compte vers la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
@@ -4792,8 +4849,8 @@
       "Import mailbox": [
         "Importar bústia de correu"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importeu els vostres correus electrònics, calendaris, i contactes des d'un altre servei a ${ BRAND_NAME }. Us guiarem en cada pas del camí i xifrarem les vostres dades a mesura que es mouen. Us donem la benvinguda al món de la privadesa."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -4946,7 +5003,7 @@
         "No hi ha previsualització disponible"
       ],
       "No results found": [
-        "No s'han trobat resultats"
+        "No s'han trobat resultats."
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "No s'han trobat rastrejadors, però algunes imatges no s'han pogut carregar amb la protecció de seguiment"
@@ -4982,7 +5039,7 @@
         "Número de telèfon"
       ],
       "Plain text": [
-        "Text plà"
+        "Text sense format"
       ],
       "Please add at least one recipient.": [
         "Afegiu almenys un destinatari."
@@ -5055,7 +5112,7 @@
         "S'ha descarregat la frase de recuperació"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+        "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Informar un missatge com a intent de pesca us enviarà el missatge, per poder analitzar-lo i millorar-ne els filtres. Això significa que podrem veure el contingut del missatge complet."
@@ -5084,8 +5141,8 @@
       "Saving draft…": [
         "Desant l'esborrany…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
+      "Scheduled send of this message will be canceled.": [
+        "L'enviament programat d'aquest missatge es cancel·larà."
       ],
       "Scheduling message...": [
         "Programant missatge..."
@@ -5101,6 +5158,9 @@
       ],
       "Select what you want to import.": [
         "Seleccioneu què voleu importar."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Envia un correu encriptat protegit amb contrasenya a una adreça de correu ${ boldText }."
@@ -5223,8 +5283,8 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Aquesta conversa conté un missatge programat. L'enviament d'aquest missatge es cancel·larà."
       ],
       "This conversation contains non-trashed messages.": [
         "Aquesta conversa conté missatges no esborrats."
@@ -5236,8 +5296,8 @@
         "Aquest missatge serà marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?",
         "Aquests missatges seran marcats com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Aquest correu no ha superat els requisits d'autentificació del domini. Pot ser que estigui falsejat o reenviat indegudament."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Aquesta invitació es desa en un calendari desactivat."
@@ -5291,14 +5351,17 @@
       "This message will expire ${ formattedDate }": [
         "Aquest missatge expirarà el ${ formattedDate }"
       ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Aquest missatge caducarà ${ dateString } a les ${ formattedTime }"
+      "This message will self-destruct in ${ formattedDelay }": [
+        "Aquest missatge es destruirà automàticament en ${ formattedDelay }."
       ],
-      "This message will expire today at ${ formattedTime }": [
-        "Aquest missatge caducarà avui a les ${ formattedTime }"
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "Aquest missatge es destruirà automàticament el ${ dateString } a les ${ formattedTime }."
       ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Aquest missatge caducarà demà a les ${ formattedTime }"
+      "This message will self-destruct today at ${ formattedTime }": [
+        "Aquest missatge es destruirà automàticament avui a les ${ formattedTime }."
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "Aquest missatge es destruirà automàticament demà a les ${ formattedTime }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Aquesta clau pública serà utilitzada automàticament per xifrar el correu electrónic enviat a aquenta adreça."
@@ -5425,6 +5488,9 @@
       ],
       "When do you want your message to be sent?": [
         "Quan voleu que s'enviï el vostre missatge?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Quan voleu que el vostre missatge es destrueix automàticament?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Quan doneu el vostre correu electrònic, utilitzeu un àlies Hide My Email únic, d'ún sol ús en compte de la vostra adreça de correu electrònic real."
@@ -5616,7 +5682,7 @@
         "Obsoleta"
       ],
       "Primary": [
-        "Primari"
+        "Principal"
       ],
       "Revoked": [
         "Revocat"
@@ -5702,7 +5768,7 @@
         "Vés a la Paperera"
       ],
       "Insert link": [
-        "Insereix enllaç"
+        "Insereix l'enllaç"
       ],
       "Jump to first": [
         "Moure a primera posició"
@@ -5741,7 +5807,7 @@
         "Mou a l'arxiu"
       ],
       "Move to Inbox": [
-        "Moure a la safata d'entrada"
+        "Mou a la safata d'entrada"
       ],
       "Move to Spam": [
         "Mou al correu brossa"
@@ -5884,7 +5950,7 @@
         "I"
       ],
       "ANY": [
-        "CUALSEVOL"
+        "QUALSEVOL"
       ],
       "App password": [
         "Contrasenya de l'aplicació"
@@ -5893,7 +5959,7 @@
         "Aplica el filtre als correus existents"
       ],
       "Attach screenshot(s)": [
-        "Adjunta captura/es de pantalla"
+        "Adjunta una o més captures de pantalla"
       ],
       "Attachments": [
         "Adjunts"
@@ -5959,7 +6025,7 @@
         "País"
       ],
       "Date": [
-        "Cita"
+        "Data"
       ],
       "Date:": [
         "Data:"
@@ -5970,8 +6036,8 @@
       "Delete recovery-related information.": [
         "Eliminar la informació de recuperació."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "No tornis a preguntar"
       ],
       "Don't show this again": [
         "No torna a mostrar"
@@ -6139,7 +6205,7 @@
         "Notificació"
       ],
       "OK": [
-        "Correcta"
+        "OK"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -6277,7 +6343,7 @@
         "Destinataris ocults"
       ],
       "Upload picture": [
-        "Carregar imatge"
+        "Carrega imatge"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Nom d'usuari o adreça de ${ MAIL_APP_NAME }"
@@ -6308,6 +6374,16 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Data"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Hora"
       ]
     },
     "Label for contact group color": {
@@ -6475,7 +6551,7 @@
         "Safata de sortida"
       ],
       "Pay invoice": [
-        "Pagar la factura"
+        "Paga la factura"
       ],
       "Privacy policy": [
         "Política de privacitat"
@@ -6655,8 +6731,8 @@
       "Scheduled sending undone": [
         "S'ha desfet l'enviament programat"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Programació cancel·lada. El missatge s'ha mogut a Esborranys."
       ],
       "Sending undone": [
         "Enviament desfet"
@@ -6670,7 +6746,7 @@
         "Automàtic"
       ],
       "Plain text": [
-        "Text plà"
+        "Text sense format"
       ]
     },
     "Modal title": {
@@ -6860,8 +6936,8 @@
       "Search message content": [
         "Cerca al contingut del missatge"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Carpetes, etiquetes i filtres sense límit"
       ],
       "Up to 15 email addresses": [
         "Fins a 15 adreces de correu electrònic"
@@ -6873,6 +6949,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gaudiu d'àlies il·limitats amb SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: label": {
@@ -7011,7 +7090,7 @@
     },
     "Participant name": {
       "You": [
-        "Tú"
+        "Vostè"
       ]
     },
     "PGP key encryption warning": {
@@ -7187,6 +7266,9 @@
     "protonbadge": {
       "Official": [
         "Oficial"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Missatge oficial de ${ BRAND_NAME }"
       ]
     },
     "Received email icon": {
@@ -7229,6 +7311,29 @@
         "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } dia",
+        "${ remainingDays } dies"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } hora",
+        "${ remainingHours } hores"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<1 hora"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } any",
+        "${ remainingYears } anys"
+      ]
+    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Resposta enviada"
@@ -7257,7 +7362,7 @@
         "No hi ha missatges programats"
       ],
       "No results found": [
-        "No s'han trobat resultats"
+        "No s'han trobat resultats."
       ],
       "No unread messages found": [
         "No s'han trobat missatges sense llegir"
@@ -7550,8 +7655,8 @@
       "Bug reported": [
         "Error notificat"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Cancel·lant la importació"
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
@@ -7612,17 +7717,11 @@
       "Fingerprint copied to clipboard": [
         "Empremta digital copiada al porta-retalls"
       ],
-      "Folder cleared": [
-        "Carpeta netetjada"
-      ],
       "Import record deleted": [
         "S'ha suprimit el registre d'importació"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferències de les dreceres de teclat actualitzades"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Etiquetes aplicades."
@@ -7687,7 +7786,7 @@
         "Número de telèfon copiat al porta-retalls"
       ],
       "Preference saved": [
-        "Preferències desades"
+        "Preferència desada"
       ],
       "Preferences saved": [
         "Preferències guardades"
@@ -7696,7 +7795,16 @@
         "Clau pública de confiança"
       ],
       "Read receipt sent": [
-        "Confirmació de lectura enviada"
+        "S'ha enviat la confirmació de lectura."
+      ],
+      "Self-destruction cancelled": [
+        "Destrucció automàtica cancel·lada"
+      ],
+      "Self-destruction removed": [
+        "Destrucció automàtica suprimida"
+      ],
+      "Self-destruction set": [
+        "Destrucció automàtica establerta"
       ],
       "Undo in progress": [
         "Desfer en curs"
@@ -8089,7 +8197,7 @@
         "Confirmació d'enllaç"
       ],
       "Load embedded images": [
-        "Carregar imatges incrustades"
+        "Carrega imatges incrustades"
       ],
       "Load remote content": [
         "Carrega el contingut remot"
@@ -8221,10 +8329,10 @@
         "Respon"
       ],
       "Reply all": [
-        "Respondre a tothom"
+        "Respon a tothom"
       ],
       "Report a problem": [
-        "Avisar d'un problema"
+        "Notifica un problema"
       ],
       "Request new code": [
         "Demanar un codi nou"
@@ -8240,6 +8348,9 @@
       ],
       "Select contact group": [
         "Seleccionar grup de contactes"
+      ],
+      "Self-destruct message": [
+        "Destrucció automàtica de missatges"
       ],
       "Send email": [
         "Enviar correu"

@@ -4,6 +4,14 @@
     "language": "de_DE"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Weiterleiten beginnt bald. Neue E-Mails werden in deinem Posteingang erscheinen."
+      ],
+      "Mail forward stopped": [
+        "E-Mail-Weiterleitung angehalten"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Vorstellung von ${ BRAND_NAME }"
@@ -539,9 +547,6 @@
       "Loading${ ellipsis }": [
         "Wird geladen ${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Postfach-Dichte"
       ],
@@ -788,6 +793,9 @@
       "Remove expiration time": [
         "Ablaufdatum entfernen"
       ],
+      "Remove self-destruction": [
+        "Selbstzerstörung entfernen"
+      ],
       "Remove this label": [
         "Kategorie entfernen"
       ],
@@ -863,6 +871,15 @@
       "Select all messages": [
         "Alle Nachrichten auswählen"
       ],
+      "Self-destruct in 7 days": [
+        "Selbstzerstören in 7 Tagen"
+      ],
+      "Self-destruct message": [
+        "Selbstzerstörende Nachricht"
+      ],
+      "Self-destruct on ...": [
+        "Selbstzerstören am ..."
+      ],
       "Send": [
         "Senden"
       ],
@@ -935,6 +952,9 @@
       "Show preview": [
         "Vorschau anzeigen"
       ],
+      "Sign in": [
+        "Anmelden"
+      ],
       "Sign out": [
         "Abmelden"
       ],
@@ -1001,6 +1021,9 @@
       ],
       "Turn on tracker protection": [
         "Tracker-Schutz aktivieren"
+      ],
+      "Unblock": [
+        "Entblocken"
       ],
       "Underline": [
         "Unterstreichen"
@@ -1593,6 +1616,14 @@
         "Termin hat begonnen"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Cancel self-destruction": [
+        "Selbstzerstörung abbrechen"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Reduzieren"
@@ -1894,8 +1925,8 @@
       "Role": [
         "Funktion"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Zeitzone"
       ],
       "Title": [
         "Titel"
@@ -2784,6 +2815,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "${ MAIL_APP_NAME } Logo und ein Pluszeichen"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } in den Einstellungen."
       ],
@@ -2967,6 +3001,14 @@
         "Aktualisierung zu einem Termin, der am ${ formattedStart } beginnt"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Ordner geleert"
+      ],
+      "Label cleared": [
+        "Kategorie geleert"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Verschlüsselter Header-Dateiname"
@@ -3000,6 +3042,10 @@
       "Choose a date in the future.": [
         "Wähle ein Datum, das in der Zukunft liegt."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Wähle ein Datum innerhalb des nächsten ${ EXPIRATION_TIME_MAX_DAYS } Tages.",
+        "Wähle ein Datum innerhalb der nächsten ${ EXPIRATION_TIME_MAX_DAYS } Tage."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Wähle ein Datum innerhalb des nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tages.",
         "Wähle ein Datum innerhalb der nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tage."
@@ -3028,6 +3074,14 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Entschlüsselungsfehler: Das Entschlüsseln des verschlüsselten Inhalts dieser Nachricht ist fehlgeschlagen."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Mindestens ${ calendarsToFixCount } Kalender abwählen",
+        "Mindestens ${ calendarsToFixCount } Kalender abwählen"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Mindestens ${ calendarsToFixCount } Kalender abwählen oder",
+        "Mindestens ${ calendarsToFixCount } Kalender abwählen oder"
+      ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
@@ -3036,9 +3090,6 @@
       ],
       "Email address disabled": [
         "E‐Mail‐Adresse deaktiviert"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "E-Mail-Adresse ist erforderlich"
@@ -3088,6 +3139,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Ungültiges Postfach-Passwort. Bitte versuche es erneut."
       ],
+      "Invalid email address": [
+        "Ungültige E-Mail-Adresse"
+      ],
       "Invalid expiration time": [
         "Ungültiges Ablaufdatum"
       ],
@@ -3105,6 +3159,10 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximale Anzahl von Anhängen (${ attachmentsCountLimit }) überschritten"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Mindestens ${ calendarsToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
+        "Mindestens ${ calendarsToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
       ],
       "Message needs to be sent first": [
         "Die Nachricht muss zuerst gesendet werden"
@@ -3319,7 +3377,7 @@
         "Es können keine Mails an mehr als 100 Empfänger gesendet werden"
       ],
       "You can't send vCard files of more than 10 contacts": [
-        "Du kannst keine vCard-Dateien mit mehr als 10 Kontakten versenden."
+        "Du kannst nur vCard-Dateien versenden, die höchstens 10 Kontakte enthalten."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen.",
@@ -3327,6 +3385,9 @@
       ],
       "You did not provide a file.": [
         "Du hast keine Datei angegeben."
+      ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Du hast die maximale Anzahl von Kalendern erreicht, die du in deinem Abonnement erstellen kannst. Einige Kalender konnten nicht importiert werden."
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
@@ -3368,8 +3429,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Beim Lesen der Datei ${ formattedFilename } ist ein Fehler aufgetreten. Ungültiges Dateiformat."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Das Hochladen deiner Datei ist fehlgeschlagen ${ formattedFilename }. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3409,8 +3470,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Beim Lesen der Datei ${ formattedFilename } ist ein Fehler aufgetreten. Ungültiges Dateiformat."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Beim Hochladen der Datei ${ formattedFilename } ist ein Fehler aufgetreten. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3444,8 +3505,8 @@
       "Component with wrong format": [
         "Komponente mit ungültigem Format"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Benutzerdefinierte Zeitzone"
       ],
       "Edited event not supported": [
         "Bearbeitete Termine werden nicht unterstützt"
@@ -3513,11 +3574,11 @@
       "Start time out of bounds": [
         "Startzeit außerhalb des Bereichs"
       ],
+      "Time zone": [
+        "Zeitzone"
+      ],
       "Time zone not supported": [
         "Zeitzone wird nicht unterstützt"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Eintrag „Zu erledigen“"
@@ -4388,6 +4449,9 @@
       "(No Recipient)": [
         "(Kein Empfänger)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Eine Wiederherstellungsphrase ist eine der sichersten Möglichkeiten, den Zugang zu deinem Konto zu schützen. Mit dieser kannst du auf dein Konto zugreifen und deine verschlüsselten Daten wiederherstellen, falls du dein Passwort einmal vergessen solltest."
       ],
@@ -4693,9 +4757,6 @@
       "Expires": [
         "Verfällt"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Läuft in ${ formattedDelay } ab"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Läuft in ${ formattedDelayShort } ab"
       ],
@@ -4720,6 +4781,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Für Nachrichten, die neuer sind als ${ oldestDate }"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
       ],
       "Free up some space or add more storage space.": [
         "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
@@ -4793,8 +4857,8 @@
       "Import mailbox": [
         "Postfach importieren"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importiere deine E-Mails, Kalender und Kontakte von einem anderen Dienst zu ${ BRAND_NAME }. Wir begleiten dich bei jedem Schritt und verschlüsseln deine Daten während des Transfers. Willkommen in der Welt der Privatsphäre."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importiere deine E-Mails, Kalender und Kontakte eines anderen Dienstes zu ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Deine Daten werden von ${ fromEmail } nach ${ toEmail } importiert."
@@ -5085,8 +5149,8 @@
       "Saving draft…": [
         "Entwurf wird gespeichert …"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
+      "Scheduled send of this message will be canceled.": [
+        "Der geplante Versand dieser Nachricht wird abgebrochen."
       ],
       "Scheduling message...": [
         "Nachricht wird geplant..."
@@ -5102,6 +5166,9 @@
       ],
       "Select what you want to import.": [
         "Wähle aus, was du importieren möchtest."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Sende eine verschlüsselte, passwortgeschützte Nachricht an eine ${ boldText } E-Mail-Adresse."
@@ -5224,8 +5291,8 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Diese Unterhaltung enthält eine geplante Nachricht. Das Versenden dieser Nachricht wurde abgebrochen."
       ],
       "This conversation contains non-trashed messages.": [
         "Diese Unterhaltung enthält nicht-gelöschte Nachrichten."
@@ -5237,8 +5304,8 @@
         "Diese Unterhaltung wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
         "Diese Unterhaltungen werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Diese E-Mail hat die Domain-Authentifizierungsanforderungen nicht bestanden. Sie könnte gefälscht oder unsachgemäß weitergeleitet worden sein."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Diese Einladung wurde in einem deaktivierten Kalender gespeichert."
@@ -5292,14 +5359,17 @@
       "This message will expire ${ formattedDate }": [
         "Diese Nachricht verfällt am ${ formattedDate }"
       ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Diese Nachricht verfällt am ${ dateString } um ${ formattedTime }"
+      "This message will self-destruct in ${ formattedDelay }": [
+        "Diese Nachricht wird sich in ${ formattedDelay } selbst zerstören."
       ],
-      "This message will expire today at ${ formattedTime }": [
-        "Diese Nachricht verfällt heute um ${ formattedTime }"
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "Diese Nachricht wird sich am ${ dateString } um ${ formattedTime } selbst zerstören."
       ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Diese Nachricht verfällt morgen um ${ formattedTime }"
+      "This message will self-destruct today at ${ formattedTime }": [
+        "Diese Nachricht wird sich heute um ${ formattedTime } selbst zerstören."
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "Diese Nachricht wird sich morgen um ${ formattedTime } selbst zerstören."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Dieser öffentliche Schlüssel wird automatisch für die Verschlüsselung von E-Mails verwendet, die an diese Adresse gesendet werden."
@@ -5426,6 +5496,9 @@
       ],
       "When do you want your message to be sent?": [
         "Wann soll diese Nachricht gesendet werden?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Wann soll sich die Nachricht selbst zerstören?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Wenn du deine E-Mail-Adresse weitergibst, verwendest du anstelle deiner echten E-Mail-Adresse einen eindeutigen und einmaligen Hide My Email-Alias."
@@ -5971,8 +6044,8 @@
       "Delete recovery-related information.": [
         "Wiederherstellungsbezogene Informationen löschen."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Nicht erneut fragen"
       ],
       "Don't show this again": [
         "Nicht erneut anzeigen"
@@ -6309,6 +6382,16 @@
       ],
       "Your password (admin)": [
         "Ihr Passwort (Admin)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Datum"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Zeit"
       ]
     },
     "Label for contact group color": {
@@ -6656,8 +6739,8 @@
       "Scheduled sending undone": [
         "Geplantes Senden wurde rückgängig gemacht"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Geplantes Senden abgebrochen. Nachricht wurde in Entwürfe verschoben."
       ],
       "Sending undone": [
         "Senden widerrufen"
@@ -6861,8 +6944,8 @@
       "Search message content": [
         "Nachrichteninhalt durchsuchen"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern."
       ],
       "Up to 15 email addresses": [
         "Bis zu 15 E-Mail-Adressen"
@@ -6874,6 +6957,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ]
     },
     "new_plans: label": {
@@ -7185,6 +7271,14 @@
         "Arbeit"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Offiziell"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Offizielle E-Mail von ${ BRAND_NAME }"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Ende-zu-Ende verschlüsselte und signierte Nachricht"
@@ -7223,6 +7317,29 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Hinweis: Der Dienst wird neu geladen, wenn du auf die Schaltfläche „Übernehmen“ klickst."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } Tag",
+        "${ remainingDays } Tage"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } Stunde",
+        "${ remainingHours } Stunden"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<1 Stunde"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } Jahr",
+        "${ remainingYears } Jahre"
       ]
     },
     "Reply to calendar invitation": {
@@ -7781,8 +7898,8 @@
       "Bug reported": [
         "Fehler gemeldet"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Import wird abgebrochen"
       ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
@@ -7843,17 +7960,11 @@
       "Fingerprint copied to clipboard": [
         "Fingerabdruck in die Zwischenablage kopiert"
       ],
-      "Folder cleared": [
-        "Ordner geleert"
-      ],
       "Import record deleted": [
         "Import-Eintrag gelöscht"
       ],
       "Keyboard shortcuts preferences updated": [
         "Tastaturkürzel-Einstellungen aktualisiert"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Kategorien angewendet."
@@ -7928,6 +8039,15 @@
       ],
       "Read receipt sent": [
         "Lesebestätigung gesendet"
+      ],
+      "Self-destruction cancelled": [
+        "Selbstzerstörung abgebrochen"
+      ],
+      "Self-destruction removed": [
+        "Selbstzerstörung entfernt"
+      ],
+      "Self-destruction set": [
+        "Selbstzerstörung gesetzt"
       ],
       "Undo in progress": [
         "Widerrufen wird ausgeführt"
@@ -8471,6 +8591,9 @@
       ],
       "Select contact group": [
         "Kontaktgruppe auswählen"
+      ],
+      "Self-destruct message": [
+        "Selbstzerstörende Nachricht"
       ],
       "Send email": [
         "Nachricht senden"

@@ -12,6 +12,14 @@
         "Абмежаваны прагляд (бачна толькі свабодны/заняты)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Неўзабаве пачнецца перасылка. Новыя лісты будуць з'яўляцца ў вашай паштовай скрыні."
+      ],
+      "Mail forward stopped": [
+        "Перасылка пошты спынена"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Уводзіны ў ${ BRAND_NAME }"
@@ -286,9 +294,6 @@
       "Load image": [
         "Загрузіць відарыс"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Зрабіць гэтага ўдзельніка неабавязковым"
       ],
@@ -433,8 +438,8 @@
       "Select all": [
         "Выбраць усе"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Выберыце часавы пояс"
       ],
       "Send": [
         "Адправіць"
@@ -468,6 +473,9 @@
       ],
       "Show time zones": [
         "Паказаць часавыя паясы"
+      ],
+      "Sign in": [
+        "Увайсці"
       ],
       "Sign out": [
         "Выйсці"
@@ -1073,8 +1081,8 @@
       "Role": [
         "Роля"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Часавы пояс"
       ],
       "Title": [
         "Пасада"
@@ -2009,8 +2017,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Больш не пытаць"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2182,14 +2190,23 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Памылка расшыфроўкі: Не ўдалося расшыфраваць змесціва гэтай падзеі."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або"
+      ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
       "Email address disabled": [
         "Адрас электроннай пошты адключаны"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Патрабуецца ўвесці адрас электроннай пошты"
@@ -2259,6 +2276,12 @@
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
@@ -2443,6 +2466,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Вы не можаце адправіць файлы vCard больш чым 10 кантактам"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Вы дасягнулі максімальнай колькасці календароў. Некаторыя календары не будуць імпартаваныя."
+      ],
       "You must set a name": [
         "Вы павінны задаць назву"
       ],
@@ -2456,8 +2482,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2499,8 +2525,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Падчас чытання вашага файла ${ formattedFilename } адбылася памылка. Файл мае няправільны фармат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Падчас запампоўвання вашага файла ${ formattedFilename } адбылася памылка. Максімальны памер файла складае ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2534,8 +2560,8 @@
       "Component with wrong format": [
         "Кампанент з няправільным фарматам"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Карыстальніцкі часавы пояс"
       ],
       "Edited event not supported": [
         "Адрэдагаваная падзея не падтрымліваецца"
@@ -2603,11 +2629,11 @@
       "Start time out of bounds": [
         "Час пачатку па-за межамі дыяпазону"
       ],
+      "Time zone": [
+        "Часавы пояс"
+      ],
       "Time zone not supported": [
         "Часавы пояс не падтрымліваецца"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Запіс спіса задач"
@@ -3278,6 +3304,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Ліст пра скасаванне будзе адпраўлены ўдзельнікам падзеі. Ці хочаце вы выдаліць гэту падзею?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
@@ -3422,6 +3451,9 @@
       "Existent, added and removed participants will be notified.": [
         "Існуючыя, дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Вызваліце ​​месца або павялічце памер сховішча."
       ],
@@ -3464,8 +3496,8 @@
       "Import mailbox": [
         "Імпартаванне паштовай скрыні"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Імпартуйце свае лісты, календары і кантакты з іншага сэрвісу ў ${ BRAND_NAME }. Мы будзем дапамагаць вам на кожным кроку і зашыфруем іх падчас перамяшчэння. Вітаем у свеце прыватнасці."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
@@ -3619,6 +3651,9 @@
       ],
       "Select what you want to import.": [
         "Выберыце, што вы хочаце імпартаваць."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
@@ -4031,8 +4066,8 @@
       "Description": [
         "Апісанне"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Больш не пытаць"
       ],
       "Email": [
         "Электронная пошта"
@@ -5304,6 +5339,9 @@
       "Calendar updated": [
         "Каляндар абноўлены"
       ],
+      "Canceling import": [
+        "Скасаванне імпартавання"
+      ],
       "Cancellation sent and all events deleted": [
         "Скасаванне адпраўлена і ўсе падзеі выдалены"
       ],
@@ -5315,9 +5353,6 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Скасаванне адпраўлена і ўдзельнікі выдалены з усіх падзей"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
@@ -5516,8 +5551,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Пошук часавых паясоў"
       ]
     },
     "Title": {

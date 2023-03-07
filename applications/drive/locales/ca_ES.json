@@ -4,6 +4,14 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "El reenviament començarà aviat. Els correus electrònics nous apareixeran a la vostra safata d'entrada."
+      ],
+      "Mail forward stopped": [
+        "El reenviament de correu s'ha aturat."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introducció a ${ BRAND_NAME }"
@@ -18,7 +26,7 @@
         "Afegeix"
       ],
       "Add address": [
-        "Afegeix adreça"
+        "Afegeix una adreça"
       ],
       "Add contact": [
         "Afegeix un contacte"
@@ -45,7 +53,7 @@
         "Aplica"
       ],
       "Attach screenshot(s)": [
-        "Adjunta captura(es) de pantalla"
+        "Adjunta una o més captures de pantalla"
       ],
       "Attention required": [
         "Requereix atenció"
@@ -87,7 +95,7 @@
         "Trieu un fitxer o arrossegueu-lo aquí"
       ],
       "Clear": [
-        "Netejar"
+        "Neteja"
       ],
       "Clear browser data": [
         "Netejar les dades del navegador"
@@ -171,7 +179,7 @@
         "Personalitzar importació"
       ],
       "Delete": [
-        "Esborra"
+        "Elimina"
       ],
       "Delete ${ selectedCount } contact": [
         "Eliminar ${ selectedCount } contacte",
@@ -188,7 +196,7 @@
         "Eliminar grup de contactes"
       ],
       "Delete permanently": [
-        "Suprimir permanentment"
+        "Suprimeix permanentment"
       ],
       "Deselect all": [
         "Desseleccionar-ho tot"
@@ -227,7 +235,7 @@
         "Edita l'adreça de correu"
       ],
       "Edit label": [
-        "Editar etiqueta"
+        "Edita l'etiqueta"
       ],
       "Edit phone number": [
         "Edita el número de telèfon"
@@ -239,7 +247,7 @@
         "Configuració del correu"
       ],
       "Empty trash": [
-        "Buidar paperera"
+        "Buida la paperera"
       ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
@@ -287,10 +295,10 @@
         "Ves al pare"
       ],
       "Go to settings": [
-        "Ves a la configuració"
+        "Aneu a les preferències"
       ],
       "Got it": [
-        "Entesos"
+        "D'acord"
       ],
       "Hide advanced PGP settings": [
         "Amagueu la configuració avançada del PGP"
@@ -323,13 +331,10 @@
         "Importar des de .csv o vCard"
       ],
       "Learn more": [
-        "Saber-ne més"
+        "Més informació"
       ],
       "Load image": [
         "Carrega la imatge"
-      ],
-      "Log in": [
-        "Sign in"
       ],
       "Manage folders": [
         "Gestionar carpetes"
@@ -383,7 +388,7 @@
         "Mes següent"
       ],
       "OK": [
-        "D'acord"
+        "OK"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -410,7 +415,7 @@
         "Mes anterior"
       ],
       "Quit": [
-        "Sortir"
+        "Surt"
       ],
       "Re-sign": [
         "Tornar a signar"
@@ -425,10 +430,10 @@
         "Recomana a un amic"
       ],
       "Refresh the page": [
-        "Actualitza la pàgina"
+        "Refresca la pàgina"
       ],
       "refresh the page": [
-        "refresqueu la pàgina"
+        "refrescar la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -482,7 +487,7 @@
         "Reprèn la càrrega"
       ],
       "Retry": [
-        "Reintentar"
+        "Reintenta"
       ],
       "Save": [
         "Desa"
@@ -506,7 +511,7 @@
         "Enviar comentaris"
       ],
       "Set recovery phrase": [
-        "Definineix la frase de recuperació"
+        "Estableix la frase de recuperació"
       ],
       "Share file": [
         "Comparteix el fitxer"
@@ -515,7 +520,7 @@
         "Comparteix un element"
       ],
       "Share via link": [
-        "Compartir amb enllaç"
+        "Comparteix amb enllaç"
       ],
       "Sharing options": [
         "Opcions de compartició"
@@ -531,6 +536,9 @@
       ],
       "Show preview": [
         "Mostra visualització prèvia"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
       ],
       "Sign out": [
         "Tanca la sessió"
@@ -599,13 +607,13 @@
         "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
-        "Actualitzar"
+        "Actualitza"
       ],
       "Upgrade now": [
         "Actualitzar ara"
       ],
       "Upload anyway": [
-        "Puja-ho igualment"
+        "Càrrega de totes maneres"
       ],
       "Upload file": [
         "Puja un fitxer"
@@ -629,7 +637,7 @@
         "Usar per enviar"
       ],
       "Use recovery code": [
-        "Utilitzar un codi de recuperació"
+        "Utilitza un codi de recuperació"
       ],
       "Verify": [
         "Verifica"
@@ -688,7 +696,7 @@
         "Fitxer ICS buit"
       ],
       "Invalid event": [
-        "Esdeveniment invàlid"
+        "Esdeveniment no vàlid"
       ],
       "Invalid ICS file": [
         "Fitxer ICS invàlid"
@@ -812,16 +820,16 @@
         "genciana"
       ],
       "fern": [
-        "falguera"
+        "verd falguera"
       ],
       "forest": [
-        "bosc"
+        "verd bosc"
       ],
       "ocean": [
-        "oceà"
+        "blau marí"
       ],
       "olive": [
-        "oliva"
+        "verd oliva"
       ],
       "pacific": [
         "pacífic"
@@ -830,7 +838,7 @@
         "cogombre"
       ],
       "pine": [
-        "pi"
+        "verd pi"
       ],
       "pink": [
         "rosa"
@@ -911,8 +919,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Fus horari"
       ],
       "Title": [
         "Títol"
@@ -1876,6 +1884,10 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
         "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
@@ -1885,9 +1897,6 @@
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
@@ -1931,6 +1940,9 @@
       "Incorrect password. Please try again.": [
         "Contrasenya incorrecta, torneu-ho a intentar."
       ],
+      "Invalid email address": [
+        "Adreça de correu electrònic no vàlida"
+      ],
       "Invalid name": [
         "Nom no vàlid"
       ],
@@ -1942,6 +1954,10 @@
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
+        "Combineu almenys ${ calendarsToFixCount } calendaris importats amb els vostres calendaris ${ BRAND_NAME } existents."
       ],
       "Missing key packet": [
         "Falta el paquet de claus"
@@ -1976,7 +1992,7 @@
         "La contrasenya és obligatòria."
       ],
       "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
+        "Les contrasenyes no coincideixen."
       ],
       "Please activate your content search again": [
         "Activeu de nou la vostra cerca de continguts."
@@ -2076,7 +2092,7 @@
         "Aquest camp requereix el màxim de ${ maximumLength } caràcters."
       ],
       "This field is required": [
-        "Aquest camp és obligatori"
+        "Aquest camp és obligatori."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
@@ -2102,6 +2118,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "No podeu enviar arxius vCard de més de 10 contactes."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "No es poden importar tots els calendaris perquè heu arribat al límit de calendaris."
+      ],
       "You must set a name": [
         "Heu d'establir un nom"
       ],
@@ -2113,8 +2132,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. Format de fitxer incorrecte."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2147,15 +2166,15 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "El xifratge ha fallat"
+        "Error en el xifratge"
       ],
       "vCard versions < 3.0 not supported": [
         "versions vCard < 3.0 no suportades"
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. Format de fitxer incorrecte."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2189,8 +2208,8 @@
       "Component with wrong format": [
         "Component amb format erroni"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Fus horari personalitzat"
       ],
       "Edited event not supported": [
         "Esdeveniment editat no compatible"
@@ -2199,7 +2218,7 @@
         "Element"
       ],
       "Encryption failed": [
-        "Ha fallat el xifratge"
+        "Error en el xifratge"
       ],
       "End time out of bounds": [
         "Hora de finalització fora de límits"
@@ -2258,11 +2277,11 @@
       "Start time out of bounds": [
         "Hora d’inici fora de límits"
       ],
+      "Time zone": [
+        "Fus horari"
+      ],
       "Time zone not supported": [
         "Fus horari no compatible"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tasques"
@@ -2297,7 +2316,7 @@
         "Si us play, ${ refresh } o comproveu la vostra connexió."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Alguna cosa ha anat malament. Actualitzeu la pàgina o torneu-ho a provar més tard."
+        "S'ha produït un error. Refresqueu la pàgina o torneu-ho a provar més tard."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
         "S'ha produït un problema en connectar amb ${ BRAND_NAME }."
@@ -2306,7 +2325,7 @@
         "També podeu ${ refresh } o tornar-ho a intentar més tard."
       ],
       "You may also refresh the page or try again later.": [
-        "També podeu actualitzar la pàgina o tornar-ho a provar més tard."
+        "També podeu refrescar la pàgina o provar de nou més tard."
       ]
     },
     "Error notification": {
@@ -2370,7 +2389,7 @@
     },
     "Event title": {
       "(no title)": [
-        "(No title)"
+        "(sense títol)"
       ]
     },
     "Feedback Modal Title": {
@@ -2459,7 +2478,7 @@
         "Contactes, grups i preferències"
       ],
       "Get help": [
-        "Obtenir ajuda"
+        "Obteniu ajuda"
       ]
     },
     "Hint": {
@@ -2571,7 +2590,7 @@
     },
     "Import contact. Contact identifier": {
       "unknown": [
-        "desconegut/da"
+        "desconegut"
       ]
     },
     "Import contacts warning": {
@@ -2799,6 +2818,9 @@
         "${ contactsCount } contacte trobat",
         "${ contactsCount } contactes trobats"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (restaurat)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } finalitzat",
         "${ doneCount } finalitzats"
@@ -2882,6 +2904,9 @@
       "A number will be added to the folder name": [
         "S'afegirà un número al nom de la carpeta"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accés al compte restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
@@ -2935,6 +2960,15 @@
       "Canceled": [
         "Cancel·lat"
       ],
+      "Cannot load link": [
+        "L'enllaç no s'ha pogut carregar."
+      ],
+      "Cannot load links": [
+        "No s'han pogut carregar els enllaços."
+      ],
+      "Cannot load shared link": [
+        "L'enllaç compartit no s'ha pogut carregar."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
       ],
@@ -2949,6 +2983,9 @@
       ],
       "Clear encrypted search data": [
         "Esborra les dades de la cerca xifrada"
+      ],
+      "Clears browser data related to the encrypted search.": [
+        "Esborra les dades del navegador relacionades amb la cerca xifrada."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
@@ -3062,7 +3099,7 @@
         "Calculant el temps restant..."
       ],
       "Failed": [
-        "Fallat"
+        "Error"
       ],
       "Failed to generate a secure link. Try again later.": [
         "No s'ha pogut generar un enllaç segur. Torna-ho a provar més tard."
@@ -3087,6 +3124,9 @@
       ],
       "Folder will not be uploaded": [
         "No es carregarà la carpeta"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Transferiu els missatges entrants d'un altre compte vers la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
@@ -3134,8 +3174,8 @@
       "Import mailbox": [
         "Importar bústia de correu"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importeu els vostres correus electrònics, calendaris, i contactes des d'un altre servei a ${ BRAND_NAME }. Us guiarem en cada pas del camí i xifrarem les vostres dades a mesura que es mouen. Us donem la benvinguda al món de la privadesa."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -3181,12 +3221,6 @@
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Carregant"
@@ -3246,7 +3280,7 @@
         "No hi ha previsualització disponible"
       ],
       "No results found": [
-        "No s'han trobat resultats"
+        "No s'han trobat resultats."
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Cap de les claus carregades és vàlida per al xifrat. Per a poder enviar missatges a aquesta adreça carregueu una clau vàlida o desactiveu \"Xifra correus electrònics\"."
@@ -3259,6 +3293,10 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Només es permet ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcter",
+        "Només es permeten ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcters"
       ],
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest fitxer."
@@ -3328,10 +3366,13 @@
         "El procés de recuperació pot trigar una estona."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+        "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Report has been sent": [
         "S'ha enviat l'informe"
+      ],
+      "Restored files ${ formattedDate }": [
+        "Fitxers restaurats ${ formattedDate }"
       ],
       "Search cannot be enabled in this browser": [
         "La cerca no es pot activar en aquest navegador"
@@ -3348,6 +3389,9 @@
       "Select what you want to import.": [
         "Seleccioneu què voleu importar."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
@@ -3362,9 +3406,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Enllaç per a compartir ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature issue": [
         "Problema de signatura"
@@ -3386,6 +3427,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "Cal transferir alguns fitxers. Si es tanca el gestor de transferències es finalitzaran totes les operacions."
       ],
       "There are no files yet": [
         "Encara no hi ha fitxers"
@@ -3620,7 +3664,7 @@
         "Obsoleta"
       ],
       "Primary": [
-        "Primari"
+        "Principal"
       ],
       "Revoked": [
         "Revocat"
@@ -3664,7 +3708,7 @@
         "Aplica-ho a tots els elements no verificats"
       ],
       "Attach screenshot(s)": [
-        "Adjunta captura/es de pantalla"
+        "Adjunta una o més captures de pantalla"
       ],
       "Audio file": [
         "Fitxer d’àudio"
@@ -3754,8 +3798,8 @@
       "Device name": [
         "Nom del dispositiu"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "No tornis a preguntar"
       ],
       "Download anyway": [
         "Baixa igualment"
@@ -3911,7 +3955,7 @@
         "Notificació"
       ],
       "OK": [
-        "Correcta"
+        "OK"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -4025,10 +4069,10 @@
         "Desbloqueja més tard"
       ],
       "Upload anyway": [
-        "Carregar de totes maneres"
+        "Càrrega de totes maneres"
       ],
       "Upload picture": [
-        "Carregar imatge"
+        "Carrega imatge"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Nom d'usuari o adreça de ${ MAIL_APP_NAME }"
@@ -4102,7 +4146,7 @@
         "Més informació"
       ],
       "Pay invoice": [
-        "Pagar la factura"
+        "Paga la factura"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -4177,7 +4221,7 @@
         "Automàtic"
       ],
       "Plain text": [
-        "Text plà"
+        "Text sense format"
       ]
     },
     "Modal title": {
@@ -4316,6 +4360,12 @@
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
       ],
+      "Cannot load link": [
+        "L'enllaç no s'ha pogut carregar."
+      ],
+      "Cannot load next page": [
+        "La pàgina següent no s'ha pogut carregar."
+      ],
       "Contact group created": [
         "Grup de contactes creat"
       ],
@@ -4356,9 +4406,6 @@
       "File or folder is missing a name": [
         "Falta un nom pel fitxer o carpeta"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Mou ${ itemsToMoveCount } fitxer",
         "Mou ${ itemsToMoveCount } fitxers"
@@ -4385,6 +4432,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
+      ],
+      "Root folder failed to be loaded": [
+        "La carpeta arrel no s'ha pogut carregar."
+      ],
+      "Subfolder failed to be loaded": [
+        "La subcarpeta no s'ha pogut carregar."
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "No s'ha pogut eliminar l'enllaç a \"${ name }\"."
@@ -4493,7 +4546,7 @@
     },
     "Participant name": {
       "You": [
-        "Tú"
+        "Vostè"
       ]
     },
     "PGP key encryption warning": {
@@ -4695,8 +4748,8 @@
       "Bug reported": [
         "Error notificat"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Cancel·lant la importació"
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
@@ -4728,7 +4781,7 @@
         "Número de telèfon copiat al porta-retalls"
       ],
       "Preference saved": [
-        "Preferències desades"
+        "Preferència desada"
       ],
       "Preferences saved": [
         "Preferències guardades"
@@ -4890,6 +4943,9 @@
       "Browser might run out of memory": [
         "És possible que el navegador arribi al límit de memòria"
       ],
+      "Cannot load link": [
+        "L'enllaç no s'ha pogut carregar."
+      ],
       "Change layout": [
         "Canvia la disposició"
       ],
@@ -5019,7 +5075,7 @@
         "Exportant contactes"
       ],
       "Failed": [
-        "Fallat"
+        "Error"
       ],
       "Feedback": [
         "Comentaris"
@@ -5070,9 +5126,6 @@
       ],
       "Item details": [
         "Detalls de l'element"
-      ],
-      "Items details": [
-        "Item details"
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
@@ -5171,7 +5224,7 @@
         "Canvia el nom del dispositiu"
       ],
       "Report a problem": [
-        "Avisar d'un problema"
+        "Notifica un problema"
       ],
       "Request new code": [
         "Demanar un codi nou"
@@ -5207,7 +5260,7 @@
         "Preferències"
       ],
       "Share via link": [
-        "Comparteix via enllaç"
+        "Comparteix amb enllaç"
       ],
       "Shared": [
         "Compartit"
@@ -5247,9 +5300,6 @@
       ],
       "The link expired": [
         "L'enllaç ha caducat"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A aquest fitxer li manca signatura o té una signatura no valida. Ves a (⋮) → Detalls per a més informació."

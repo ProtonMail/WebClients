@@ -329,9 +329,6 @@
       "Load image": [
         "加载图片"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "管理文件夹"
       ],
@@ -532,6 +529,9 @@
       ],
       "Show preview": [
         "显示预览"
+      ],
+      "Sign in": [
+        "登录"
       ],
       "Sign out": [
         "退出"
@@ -911,9 +911,6 @@
       ],
       "Role": [
         "身份"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "头衔"
@@ -1885,9 +1882,6 @@
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email address is required": [
         "邮箱地址必须填写"
       ],
@@ -1929,6 +1923,9 @@
       ],
       "Incorrect password. Please try again.": [
         "密码错误，请重试。"
+      ],
+      "Invalid email address": [
+        "无效的邮件地址"
       ],
       "Invalid name": [
         "名称无效"
@@ -2106,9 +2103,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -2146,9 +2140,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -2180,9 +2171,6 @@
       ],
       "Component with wrong format": [
         "组件格式错误"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "不支持已编辑的事件"
@@ -2252,9 +2240,6 @@
       ],
       "Time zone not supported": [
         "不支持此时区"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "待办事项"
@@ -3116,9 +3101,6 @@
       "Import mailbox": [
         "导入收件箱"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "其他邮箱中的邮件、日程和通讯录也可以轻松导入 ${ BRAND_NAME }，我们将全程指导您操作并自动为您加密数据。欢迎进入隐私优先的世界。"
-      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
@@ -3175,12 +3157,6 @@
       ],
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "加载中"
@@ -3388,9 +3364,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } 的共享链接"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "由于网络错误，无法验证签名，请稍后重试。"
@@ -3837,9 +3810,6 @@
       ],
       "Device name": [
         "设备名称"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Download anyway": [
         "仍要下载"
@@ -4407,9 +4377,6 @@
       "File or folder is missing a name": [
         "文件或文件夹缺少名称"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } files": [
         "移动 ${ itemsToMoveCount } 个文件"
       ],
@@ -4427,9 +4394,6 @@
       ],
       "Move ${ movingCount } items": [
         "移动 ${ movingCount } 个项目"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "没有足够的空间来上传这 ${ formattedTotal }"
@@ -5112,9 +5076,6 @@
       "Item details": [
         "详细信息"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "确认打开链接"
       ],
@@ -5288,9 +5249,6 @@
       ],
       "The link expired": [
         "该链接已过期"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此文件的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"

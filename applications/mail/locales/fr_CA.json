@@ -542,9 +542,6 @@
       "Loading${ ellipsis }": [
         "Chargement${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Densité de la boîte aux lettres"
       ],
@@ -931,6 +928,9 @@
       ],
       "Show preview": [
         "Afficher un aperçu"
+      ],
+      "Sign in": [
+        "Se connecter"
       ],
       "Sign out": [
         "Se déconnecter"
@@ -1861,9 +1861,6 @@
       "Role": [
         "Rôle"
       ],
-      "Timezone": [
-        "Time zone"
-      ],
       "Title": [
         "Titre"
       ]
@@ -2773,9 +2770,6 @@
       "Email address disabled": [
         "Adresse courriel désactivée"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email address is required": [
         "L'adresse électronique est nécessaire"
       ],
@@ -2823,6 +2817,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Mot de passe de la messagerie incorrect. Veuillez réessayer."
+      ],
+      "Invalid email address": [
+        "Adresse courriel invalide"
       ],
       "Invalid expiration time": [
         "Délai d'expiration invalide"
@@ -3098,9 +3095,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d'un fichier est de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3139,9 +3133,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Une erreur s'est produite lors du téléversement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3173,9 +3164,6 @@
       ],
       "Component with wrong format": [
         "Élément au mauvais format"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Événement édité non pris en charge"
@@ -3245,9 +3233,6 @@
       ],
       "Time zone not supported": [
         "Fuseau horaire non pris en charge"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Tâche à réaliser"
@@ -4368,9 +4353,6 @@
       "Expires": [
         "Expire"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Expire dans ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Expire dans ${ formattedDelayShort }"
       ],
@@ -4463,9 +4445,6 @@
       ],
       "Import mailbox": [
         "Importer une boîte aux lettres"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importez vos courriels, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
@@ -4753,9 +4732,6 @@
       "Saving draft…": [
         "Enregistrement du brouillon…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
-      ],
       "Scheduling message...": [
         "Programmation du message..."
       ],
@@ -4892,9 +4868,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
-      ],
       "This conversation contains non-trashed messages.": [
         "Cette conversation contient des messages non mis à la corbeille."
       ],
@@ -4904,9 +4877,6 @@
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Cette conversation sera marquée comme indésirable. Souhaitez-vous aussi vous désinscrire des futurs courriels?",
         "Ces conversations seront marquées comme indésirables. Souhaitez-vous aussi vous désinscrire des futurs courriels?"
-      ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Cette invitation est enregistrée dans un calendrier désactivé."
@@ -4959,15 +4929,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Ce message expirera le ${ formattedDate }"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Ce message expirera le ${ dateString } à ${ formattedTime }"
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        "Ce message expirera aujourd'hui à ${ formattedTime }"
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Ce message sera envoyé demain à ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Cette clé publique sera automatiquement utilisée pour chiffrer les courriels envoyés à cette adresse."
@@ -5621,9 +5582,6 @@
       "Delete recovery-related information.": [
         "Supprimer les informations liées à la récupération."
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Don't show this again": [
         "Ne plus afficher"
       ],
@@ -6252,9 +6210,6 @@
       "Scheduled sending undone": [
         "Envoi programmé annulé"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
-      ],
       "Sending undone": [
         "Envoi annulé"
       ],
@@ -6447,9 +6402,6 @@
     "new_plans: feature": {
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
       ]
     },
     "new_plans: label": {
@@ -7175,17 +7127,11 @@
       "Fingerprint copied to clipboard": [
         "Empreinte copiée dans le presse-papier"
       ],
-      "Folder cleared": [
-        "Dossier effacé"
-      ],
       "Import record deleted": [
         "Enregistrement supprimé"
       ],
       "Keyboard shortcuts preferences updated": [
         "Préférences des raccourcis clavier mises à jour"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Labels appliqués."

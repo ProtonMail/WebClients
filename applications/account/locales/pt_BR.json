@@ -23,6 +23,20 @@
         "Visualização limitada (vê apenas livre/ocupado)"
       ]
     },
+    "account": {
+      "Delete forward": [
+        "Excluir encaminhamento"
+      ],
+      "Reconnect": [
+        "Reconectar"
+      ],
+      "Remove forward": [
+        "Remover encaminhamento"
+      ],
+      "You will stop the mail forwarding.": [
+        "Você interromperá o encaminhamento de correspondência."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introdução do ${ BRAND_NAME }"
@@ -459,9 +473,6 @@
       "Loading verification": [
         "Carregando verificação"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Manage communication preferences": [
         "Gerenciar preferências de comunicação"
       ],
@@ -513,11 +524,8 @@
       "Not spam": [
         "Não é spam"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
-        "Aceitar"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -696,8 +704,8 @@
       "Select language for invitation emails": [
         "Selecione o idioma para os e-mails de convite"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Selecionar fuso horário"
       ],
       "send auto-reply email": [
         "enviar e-mail de resposta automática"
@@ -707,6 +715,9 @@
       ],
       "Send my username": [
         "Enviar meu nome de usuário"
+      ],
+      "Set as default": [
+        "Definir como padrão"
       ],
       "Set catch-all": [
         "Definir catch-all"
@@ -904,6 +915,11 @@
         "Diminuir zoom"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Continuar encaminhamento"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Revogar"
@@ -950,11 +966,11 @@
       "Generate missing keys": [
         "Gerar chaves ausentes"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Saving": [
         "Salvando"
+      ],
+      "Set as default": [
+        "Definir como padrão"
       ]
     },
     "Address status": {
@@ -1266,8 +1282,8 @@
       ]
     },
     "Calendar share permission label": {
-      "Edit": [
-        "Editar"
+      "Edit event details": [
+        "Editar detalhes do evento"
       ],
       "See all event details": [
         "Veja todos os detalhes do evento"
@@ -1654,8 +1670,8 @@
       "Role": [
         "Função"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Fuso horário"
       ],
       "Title": [
         "Título"
@@ -2845,6 +2861,14 @@
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarque pelo menos ${ calendarsToFixCount } calendário",
+        "Desmarque pelo menos ${ calendarsToFixCount } calendários"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarque ao menos ${ calendarsToFixCount } calendário ou",
+        "Desmarque ao menos ${ calendarsToFixCount } calendários ou"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
@@ -2932,6 +2956,10 @@
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente do ${ BRAND_NAME }",
+        "Mescle pelo menos ${ calendarsToFixCount } calendários com calendários existente do ${ BRAND_NAME }"
+      ],
       "Missing key packet": [
         "Pacote de chave ausente"
       ],
@@ -2989,8 +3017,8 @@
       "Passwords do not match": [
         "As senhas não correspondem"
       ],
-      "Payment process cancelled": [
-        "Payment process canceled"
+      "Payment process canceled": [
+        "Processo de pagamento cancelado"
       ],
       "Payment process consumed": [
         "Processo de pagamento concluído"
@@ -3096,8 +3124,8 @@
       "The address might be misspelled": [
         "O endereço pode estar incorreto"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "O nome da pasta é inválido. Por favor, escolha um nome diferente."
@@ -3198,6 +3226,9 @@
       "You have no invoices.": [
         "Você não tem faturas."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Você usou todos os endereços do seu plano. Por favor, faça o upgrade do seu plano para adicionar um novo endereço."
       ],
@@ -3219,6 +3250,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Sua conta ou organização tem uma fatura vencida. Por favor, pague todas as faturas pendentes."
       ],
+      "Your forward will not be processed.": [
+        "Seu encaminhamento não será processado."
+      ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
       ],
@@ -3227,8 +3261,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. Formato do aquivo incorreto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3268,8 +3302,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. Formato do aquivo incorreto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3303,8 +3337,8 @@
       "Component with wrong format": [
         "Componente com formato errado"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Fuso horário personalizado"
       ],
       "Edited event not supported": [
         "Evento editado não suportado"
@@ -3372,11 +3406,11 @@
       "Start time out of bounds": [
         "Hora de início fora dos limites"
       ],
+      "Time zone": [
+        "Fuso horário"
+      ],
       "Time zone not supported": [
         "Fuso horário não suportado"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Tarefas"
@@ -3389,8 +3423,8 @@
       ]
     },
     "Error importing users": {
-      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Ocorreu um erro ao ler o arquivo \"${ formattedFilename }\". Formato do aquivo incorreto."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o seu arquivo \"${ formattedFilename }\". O tamanho máximo permitido é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -4260,8 +4294,8 @@
       "Canceled": [
         "Cancelado"
       ],
-      "Cancelling": [
-        "Canceling"
+      "Canceling": [
+        "Cancelando"
       ],
       "Completed": [
         "Concluído"
@@ -4461,6 +4495,9 @@
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Um nome para te ajudar a identificar onde irá usá-lo, podendo facilmente revogar ou extender depois."
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Um número de telefone apenas pode ser utilizado para verificar uma conta ${ BRAND_NAME }"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Um arquivo de recuperação permite desbloquear e visualizar seus dados após uma redefinição de conta"
@@ -4690,8 +4727,8 @@
       "Center": [
         "Centralizar"
       ],
-      "Check the status of current and previous imports.": [
-        "Verificar o status das importações atuais e anteriores."
+      "Check the status of imports and forwarding.": [
+        "Verificar o estado das importações e encaminhamento."
       ],
       "Choose the look and feel of the application.": [
         "Escolha a aparência do aplicativo."
@@ -4781,11 +4818,11 @@
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO esqueça essa senha. Se você a esquecer, você não será capaz de gerenciar sua organização."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "NÃO esqueça esta senha. Se você esquecê-la, você não poderá acessar sua conta ou descriptografar suas mensagens."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Não use as credenciais do OpenVPN / IKEv2 nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
@@ -4865,9 +4902,6 @@
       ],
       "Encryption setting updated": [
         "Configuração de criptografia atualizada"
-      ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Em vez disso, digite a chave manualmente"
@@ -4993,13 +5027,13 @@
         "Se você configurou SPF e DKIM, DMARC permite que você especifique como outros serviços de e-mail devem entregar e-mail para seu domínio se as verificações de SPF e DKIM falharem. Isso pode tornar mais difícil para os remetentes de spam fingirem ser você, mas também pode causar problemas de entrega se não for feito corretamente."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Se você perder seu acesso e precisar redefinir a senha de sua conta, ${ boldImperative } que você tenha um ${ boldAccountRecovery } definido."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Se você perder seu acesso e precisar redefinir a senha de sua conta, ${ boldImperative } que você tenha um ${ boldAccountAndRecovery } definidos. Caso contrário, você pode ficar se acesso aos seus e-mails, contatos ou arquivos."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Se você perder seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser utilizados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser utilizado apenas uma vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -5044,8 +5078,8 @@
       "Import mailbox": [
         "Importar Caixa de Entrada"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importe seus e-mails, calendários e contatos de outro serviço para o ${ BRAND_NAME }. Nós te guiaremos em cada etapa do processo e encriptaremos seus dados conforme eles sejam migrados. Bem-vindo ao mundo da privacidade."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importe seus emails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: Por favor, certifique-se de salvar os códigos de recuperação. Caso contrário, você perderá permanentemente o acesso à sua conta se perder o dispositivo de autenticação de dois fatores."
@@ -5123,8 +5157,8 @@
       "Large imports can take several days.": [
         "Grandes importações podem levar vários dias."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
       ],
       "Learn more": [
         "Saiba mais"
@@ -5165,9 +5199,6 @@
       "Loading...": [
         "Carregando..."
       ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
-      ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Os registros incluem tentativas de autenticação para todos os serviços do ${ BRAND_NAME } que usam suas credenciais ${ BRAND_NAME }."
       ],
@@ -5197,9 +5228,6 @@
       ],
       "more": [
         "mais"
-      ],
-      "More Info": [
-        "Learn more"
       ],
       "Multi-user support not enabled.": [
         "Suporte a múltiplos usuários desativado."
@@ -5231,8 +5259,8 @@
       "No folder selected": [
         "Nenhuma pasta selecionada"
       ],
-      "No imports to display.": [
-        "Nenhuma importação para exibir."
+      "No imports or forwarding history.": [
+        "Sem histórico de importação ou encaminhamento."
       ],
       "No label selected": [
         "Nenhuma marcador selecionado"
@@ -5465,6 +5493,9 @@
       "Select what you want to import.": [
         "Selecione o que você deseja importar."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviado via e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -5488,6 +5519,9 @@
       ],
       "Show original message": [
         "Exibir mensagem original"
+      ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Inicie sessão no ${ MAIL_APP_NAME } para ativar seu endereço"
       ],
       "Signed up": [
         "Criar conta"
@@ -5572,9 +5606,6 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "O aplicativo Import-Export permite exportar mensagens para backups locais e restaurar backups anteriores para sua conta."
-      ],
-      "The name will be visible to your users while they are logged in.": [
-        "The name will be visible to your users while they are signed in."
       ],
       "The securest way to browse, stream, and be online.": [
         "A maneira mais segura de navegar, transmitir e estar online."
@@ -5726,8 +5757,8 @@
       "Two-factor authentication enabled": [
         "Autenticação de dois fatores ativada"
       ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "O modo de duas senhas requer duas senhas: uma para logar na sua conta e uma para descriptografar sua caixa de entrada. (Avançado)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "O modo de duas senhas usa senhas separadas para acessar e descriptografar a caixa de correio. Isso provê um pequeno benefício de segurança em algumas situações, porém recomendamos o modo de senha única para a maioria dos usuários. Para alternar para o modo de duas senhas, primeiro defina uma senha de acesso e depois uma senha para a caixa de correio."
@@ -5909,8 +5940,8 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Você pode personalizar e baixar suas faturas para fins contábeis."
       ],
-      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
+      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Você pode ativar o registro de autenticação para ver quando sua conta e de qual IP ela é acessada. Registramos o endereço IP que acessa a conta e a hora, bem como as tentativas sem êxito."
       ],
       "You can import one data type at a time.": [
         "Você pode importar um tipo de dado por vez."
@@ -5940,8 +5971,8 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Você não pode indicar usuários do ${ MAIL_APP_NAME }."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Não é possível utilizar as credenciais do OpenVPN/IKEv2 para iniciar sessão nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Você não definiu um método de recuperação, então a recuperação de conta não será possível se você esquecer sua senha. Continuar sem definir o método de recuperação?"
@@ -6014,9 +6045,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Sua conta ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode fazer upload de novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
-      ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -6776,9 +6804,6 @@
       "Display name": [
         "Nome de exibição"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Do you have any suggestions for our team?": [
         "Você tem alguma sugestão para nossa equipe?"
       ],
@@ -6787,6 +6812,9 @@
       ],
       "Domain name": [
         "Nome do domínio"
+      ],
+      "Don't ask again": [
+        "Não perguntar novamente"
       ],
       "Duration": [
         "Duração"
@@ -7214,8 +7242,8 @@
       "Time format": [
         "Formato de hora"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Fuso horário"
       ],
       "To: ${ to }": [
         "Para: ${ to }"
@@ -7303,9 +7331,6 @@
       ],
       "Your referral link": [
         "Seu link de referência"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -7419,6 +7444,11 @@
         "Linha"
       ]
     },
+    "Label, credit card": {
+      "ZIP code": [
+        "CEP"
+      ]
+    },
     "Label/folder modal": {
       "Create folder": [
         "Criar pasta"
@@ -7447,6 +7477,9 @@
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Para adicionar um novo calendário, remova um existente."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Para acrescentar um calendário novo, remova outro calendário ou atualize seu ${ BRAND_NAME } plano para um plano ${ MAIL_SHORT_APP_NAME } pago."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Você alcançou o número máximo de calendários disponíveis no seu plano."
@@ -8122,8 +8155,8 @@
       "Unlimited folders": [
         "Pastas ilimitadas"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Pastas ilimitadas, marcadores e filtros"
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
@@ -8978,9 +9011,6 @@
       "Please insert link first": [
         "Por favor insira o link primeiro"
       ],
-      "Postal code": [
-        "Código postal"
-      ],
       "Printer": [
         "Impressora"
       ],
@@ -9007,9 +9037,6 @@
       ],
       "yourdomain.com": [
         "seudominio.com"
-      ],
-      "ZIP": [
-        "CEP"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -9234,9 +9261,6 @@
       ]
     },
     "Settings description": {
-      "Make the move to privacy. Effortlessly and securely.": [
-        "Venha para a privacidade. Sem esforço e com segurança."
-      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Você pode adicionar múltiplas etiquetas a uma mesma mensagem, mas mensagens geralmente só podem estar em uma única pasta. Arraste e solte para reorganizar a ordem de suas pastas e etiquetas."
       ]
@@ -9755,8 +9779,8 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } copiado para a área de transferência"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
+      "Account deleted. Signing out...": [
+        "Conta excluída. Desconectando..."
       ],
       "Address added": [
         "Endereço adicionado"
@@ -9788,8 +9812,8 @@
       "Calendar updated": [
         "O calendário foi atualizado"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Cancelando a importação"
       ],
       "Catch-all address updated": [
         "Endereço catch-all atualizado"
@@ -10085,8 +10109,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Pesquisar fusos horários"
       ]
     },
     "Title": {
@@ -10506,6 +10530,9 @@
       "Gift code": [
         "Código de vale-presente"
       ],
+      "History": [
+        "Histórico"
+      ],
       "How does it work?": [
         "Como isso funciona?"
       ],
@@ -10539,6 +10566,9 @@
       ],
       "Import key": [
         "Importar chave"
+      ],
+      "Import messages": [
+        "Importar mensagens"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importar via ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -10753,6 +10783,9 @@
       "Set organization password": [
         "Defina a senha da organização"
       ],
+      "Set up forwarding": [
+        "Configurar encaminhamento"
+      ],
       "Set up two-factor authentication": [
         "Configurar autenticação de dois fatores"
       ],
@@ -10797,9 +10830,6 @@
       ],
       "Start import process": [
         "Iniciar processo de importação"
-      ],
-      "Start new import": [
-        "Iniciar uma nova importação"
       ],
       "Status": [
         "Status"
@@ -10905,9 +10935,6 @@
       "Your current plan": [
         "O seu plano atual"
       ],
-      "Your import history": [
-        "Importações atuais e anteriores"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"
       ],
@@ -10925,9 +10952,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Você foi convidado a experimentar o ${ MAIL_APP_NAME }."
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11253,11 +11277,11 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "O ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "Você tem certeza que deseja excluir o número de telefone?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Tem a certeza de que quer apagar esta endereço?"
       ],
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
@@ -11286,11 +11310,11 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Bate papo ao vivo é uma funcionalidade premium disponível apenas para aqueles com planos ${ VPN_APP_NAME } pagos. Por favor, abra um chamado."
       ],
+      "Please add at least one recipient.": [
+        "Insira pelo menos um destinatário."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."
-      ],
-      "Please provide at least one recipient": [
-        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."

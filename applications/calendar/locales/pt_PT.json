@@ -259,9 +259,6 @@
       "Load image": [
         "Carregar imagem"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Tornar este participante opcional"
       ],
@@ -400,9 +397,6 @@
       "Select all": [
         "Seleccionar tudo"
       ],
-      "Select timezone": [
-        "Select time zone"
-      ],
       "Send": [
         "Enviar"
       ],
@@ -432,6 +426,9 @@
       ],
       "Show time zones": [
         "Mostrar fusos horários"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Sign out": [
         "Terminar sessão"
@@ -839,9 +836,6 @@
       ],
       "Role": [
         "Papel"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Título"
@@ -1743,11 +1737,6 @@
         "O evento pertence a uma agenda desactivada."
       ]
     },
-    "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Adicionar agenda"
@@ -1891,9 +1880,6 @@
       ],
       "Email address disabled": [
         "Endereço de email desactivado"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email is not valid": [
         "Email inválido"
@@ -2058,9 +2044,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2096,9 +2079,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2127,9 +2107,6 @@
       ],
       "Component with wrong format": [
         "Componente com formato errado"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado não suportado"
@@ -2190,9 +2167,6 @@
       ],
       "Start time out of bounds": [
         "Hora inicial fora dos limites"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tarefas"
@@ -3155,9 +3129,6 @@
       ],
       "Description": [
         "Descrição"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Email": [
         "Email"
@@ -4256,11 +4227,6 @@
     "Text": {
       "Settings": [
         "Definições"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
       ]
     },
     "Title": {

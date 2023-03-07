@@ -451,9 +451,6 @@
       "Loading verification": [
         "認証を読み込み中"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Manage communication preferences": [
         "コミュニケーション設定を管理する"
       ],
@@ -504,9 +501,6 @@
       ],
       "Not spam": [
         "迷惑メールでない"
-      ],
-      "Ok": [
-        "OK"
       ],
       "OK": [
         "OK"
@@ -688,9 +682,6 @@
       "Select language for invitation emails": [
         "招待メールの言語を選択"
       ],
-      "Select timezone": [
-        "Select time zone"
-      ],
       "send auto-reply email": [
         "自動返信メールを送信"
       ],
@@ -699,6 +690,9 @@
       ],
       "Send my username": [
         "ユーザー名を送信"
+      ],
+      "Set as default": [
+        "既定にする"
       ],
       "Set catch-all": [
         "Catch-All を設定"
@@ -928,9 +922,6 @@
       ],
       "Generate missing keys": [
         "紛失した鍵の生成"
-      ],
-      "Make default": [
-        "Set as default"
       ],
       "Saving": [
         "保存中"
@@ -1605,8 +1596,8 @@
       "Role": [
         "役割"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "タイムゾーン"
       ],
       "Title": [
         "肩書き"
@@ -2771,6 +2762,12 @@
       "Contact signature not verified": [
         "連絡先の署名が検証されていません"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除するか"
+      ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
       ],
@@ -2858,6 +2855,9 @@
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
       ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
+      ],
       "Missing key packet": [
         "キーパケットが利用できません"
       ],
@@ -2914,9 +2914,6 @@
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
-      ],
-      "Payment process cancelled": [
-        "Payment process canceled"
       ],
       "Payment process consumed": [
         "支払い処理は消費されました"
@@ -3020,9 +3017,6 @@
       "The address might be misspelled": [
         "アドレスの綴りが違う可能性があります"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "このフォルダー名は無効です。別の名前を選択してください。"
       ],
@@ -3079,6 +3073,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
+      ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
@@ -3148,9 +3145,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
       ],
@@ -3188,9 +3182,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
       ],
@@ -3223,8 +3214,8 @@
       "Component with wrong format": [
         "無効なコンポーネント形式です"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "独自のタイムゾーン"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -3295,9 +3286,6 @@
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
       ],
-      "Timezone": [
-        "Time zone"
-      ],
       "To-do entry": [
         "To-do のエントリー"
       ],
@@ -3309,9 +3297,6 @@
       ]
     },
     "Error importing users": {
-      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
-      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル「${ formattedFilename }」のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
       ],
@@ -4503,9 +4488,6 @@
       "Center": [
         "中央揃え"
       ],
-      "Check the status of current and previous imports.": [
-        "現在の状態と以前のインポートを確認"
-      ],
       "Choose the look and feel of the application.": [
         "アプリケーションの外観を変更できます。"
       ],
@@ -4581,9 +4563,6 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "このパスワードを紛失しないように注意してください。紛失した場合、組織を管理できなくなります。"
       ],
@@ -4658,9 +4637,6 @@
       ],
       "Encryption setting updated": [
         "暗号化の設定が更新されました。"
-      ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "代わりに手動で鍵を入力"
@@ -4783,13 +4759,10 @@
         "SPF と DKIM の両方を設定した場合、SPF と DKIM の両方のチェックに失敗した場合に他のメールサービスがあなたのドメインのメールを配信する方法を DMARC で指定できます。これにより、あなたになりすますスパマーに対処できますが、適切に設定しないと配信に問題を引き起こす可能性があります。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "ログイン情報を失いアカウントをリセットすることになった場合、${ boldAccountRecovery }を両方用意することが${ boldImperative }。"
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "ログイン情報を失いアカウントをリセットすることになった場合、${ boldAccountAndRecovery }を両方用意することが${ boldImperative }。そうしないと、メール、連絡先、ファイルにアクセスできなくなる可能性があります。"
-      ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
@@ -4829,9 +4802,6 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートできます。データを移行し暗号化する手順をわかりやすく解説します。プライバシーの世界へようこそ。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントにアクセスできなくなります。"
@@ -4905,9 +4875,6 @@
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
-      ],
       "Learn more": [
         "詳細"
       ],
@@ -4947,9 +4914,6 @@
       "Loading...": [
         "読み込み中..."
       ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
-      ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "すべての ${ BRAND_NAME } サービスへの、あなたの ${ BRAND_NAME } 認証情報による認証の試行がログに記録されます。"
       ],
@@ -4980,9 +4944,6 @@
       "more": [
         "詳細"
       ],
-      "More Info": [
-        "Learn more"
-      ],
       "Multi-user support not enabled.": [
         "複数ユーザー対応が有効になっていません。"
       ],
@@ -5009,9 +4970,6 @@
       ],
       "No folder selected": [
         "フォルダーが選択されていません"
-      ],
-      "No imports to display.": [
-        "表示するインポートはありません。"
       ],
       "No label selected": [
         "ラベルが選択されていません"
@@ -5310,9 +5268,6 @@
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Import-Export アプリを使うことで、ローカルなバックアップ用にメッセージをエクスポートしたり、以前のバックアップをアカウントに戻すことができます。"
       ],
-      "The name will be visible to your users while they are logged in.": [
-        "The name will be visible to your users while they are signed in."
-      ],
       "The securest way to browse, stream, and be online.": [
         "インターネットを一番安全に使うためのソフト"
       ],
@@ -5453,9 +5408,6 @@
       ],
       "Two-factor authentication enabled": [
         "2 要素認証が有効になりました"
-      ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "2 パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。2 パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
@@ -5613,9 +5565,6 @@
       "You can customize and download your invoices for accounting purposes.": [
         "会計用に請求書をカスタマイズしてダウンロードする事ができます。"
       ],
-      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
-      ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
       ],
@@ -5642,9 +5591,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } のユーザーは招待できません"
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
@@ -5708,9 +5654,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
-      ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
@@ -6451,9 +6394,6 @@
       "Display name": [
         "表示名"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Do you have any suggestions for our team?": [
         "私たちのチームに対する提案はありますか?"
       ],
@@ -6462,6 +6402,9 @@
       ],
       "Domain name": [
         "ドメイン名"
+      ],
+      "Don't ask again": [
+        "今後表示しない"
       ],
       "Duration": [
         "期間"
@@ -6883,9 +6826,6 @@
       "Time format": [
         "時刻の表示形式"
       ],
-      "Timezone": [
-        "Time zone"
-      ],
       "Token name": [
         "トークン名"
       ],
@@ -6963,9 +6903,6 @@
       ],
       "Your referral link": [
         "あなたの招待リンク"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -7718,8 +7655,8 @@
       "Unlimited folders": [
         "フォルダー制限なし"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
       ],
       "Unlimited labels": [
         "ラベル制限なし"
@@ -8458,9 +8395,6 @@
       "Please insert link first": [
         "最初にリンクを挿入してください"
       ],
-      "Postal code": [
-        "郵便番号"
-      ],
       "Printer": [
         "プリンター"
       ],
@@ -8487,9 +8421,6 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
-      ],
-      "ZIP": [
-        "郵便番号"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -8701,9 +8632,6 @@
       ]
     },
     "Settings description": {
-      "Make the move to privacy. Effortlessly and securely.": [
-        "プライバシーが保護される環境に、簡単かつ確実に移行します。"
-      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "1 つのメッセージに複数のラベルを付けることはできますが、1 つのメッセージを複数のフォルダーに入れることはできません。フォルダーやラベルを並び替えるには、ドラッグ＆ドロップしてください。"
       ]
@@ -8945,9 +8873,6 @@
     "Success": {
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } がクリップボードにコピーされました"
-      ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
       ],
       "Address added": [
         "アドレスが追加されました"
@@ -9264,11 +9189,6 @@
       ],
       "${ minutes } minutes": [
         "${ minutes } 分"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
       ]
     },
     "Title": {
@@ -9968,9 +9888,6 @@
       "Start import process": [
         "インポートを開始"
       ],
-      "Start new import": [
-        "新しいインポートを始める"
-      ],
       "Status": [
         "状態"
       ],
@@ -10064,9 +9981,6 @@
       "Your current plan": [
         "現在のプラン"
       ],
-      "Your import history": [
-        "インポート履歴"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Mial Plusのトライアル期間が ${ textDate } に終了します。"
       ],
@@ -10084,9 +9998,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } の試用に招待されました"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10371,9 +10282,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
       ],
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "本当にこの電話番号を削除しますか？"
       ],
@@ -10403,9 +10311,6 @@
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"
-      ],
-      "Please provide at least one recipient": [
-        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"

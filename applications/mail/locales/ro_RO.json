@@ -4,6 +4,14 @@
     "language": "ro_RO"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Redirecționarea va începe curând. Noile mesaje vor apărea în folderul «Primite»."
+      ],
+      "Mail forward stopped": [
+        "Redirecționare mesaje oprită"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Prezentare ${ BRAND_NAME }"
@@ -545,9 +553,6 @@
       "Loading${ ellipsis }": [
         "Se încarcă${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Densitate cutie poștală"
       ],
@@ -794,6 +799,9 @@
       "Remove expiration time": [
         "Eliminare dată expirare"
       ],
+      "Remove self-destruction": [
+        "Eliminare autodistrugere"
+      ],
       "Remove this label": [
         "Eliminare etichetă"
       ],
@@ -869,6 +877,15 @@
       "Select all messages": [
         "Selectare toate mesajele"
       ],
+      "Self-destruct in 7 days": [
+        "Autodistrugere în 7 zile"
+      ],
+      "Self-destruct message": [
+        "Mesaj autodistructibil"
+      ],
+      "Self-destruct on ...": [
+        "Autodistrugere la..."
+      ],
       "Send": [
         "Trimitere"
       ],
@@ -941,6 +958,9 @@
       "Show preview": [
         "Afișare previzualizare"
       ],
+      "Sign in": [
+        "Autentificare"
+      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -1008,6 +1028,9 @@
       ],
       "Turn on tracker protection": [
         "Activare protecție împotriva urmăririi"
+      ],
+      "Unblock": [
+        "Deblocare"
       ],
       "Underline": [
         "Subliniat"
@@ -1601,6 +1624,14 @@
         "Eveniment în desfășurare"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "Anulare"
+      ],
+      "Cancel self-destruction": [
+        "Anulare autodistrugere"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Restrângere"
@@ -1902,8 +1933,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Fus orar"
       ],
       "Title": [
         "Titlu"
@@ -2793,6 +2824,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "Logo ${ MAIL_APP_NAME } și semnul plus"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } în setări."
       ],
@@ -2979,6 +3013,14 @@
         "Actualizarea unui eveniment care începe ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Folder golit"
+      ],
+      "Label cleared": [
+        "Etichetă eliminată"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Antete nume fișier criptate"
@@ -3012,6 +3054,11 @@
       "Choose a date in the future.": [
         "Alegeți o dată în viitor."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Alegeți o dată în următoarea ${ EXPIRATION_TIME_MAX_DAYS } zi.",
+        "Alegeți o dată în următoarele ${ EXPIRATION_TIME_MAX_DAYS } zile.",
+        "Alegeți o dată în următoarele ${ EXPIRATION_TIME_MAX_DAYS } de zile."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Alegeți o dată în următoarea zi.",
         "Alegeți o dată în următoarele ${ SCHEDULED_MAX_DATE_DAYS } zile.",
@@ -3041,6 +3088,16 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Eroare decriptare: decriptarea conținutului criptat al acestui mesaj a eșuat."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
+        "Deselectați cel puțin ${ calendarsToFixCount } calendare.",
+        "Deselectați cel puțin ${ calendarsToFixCount } de calendare."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselectați cel puțin ${ calendarsToFixCount } calendar sau",
+        "Deselectați cel puțin ${ calendarsToFixCount } calendare sau",
+        "Deselectați cel puțin ${ calendarsToFixCount } de calendare sau"
+      ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
@@ -3049,9 +3106,6 @@
       ],
       "Email address disabled": [
         "Adresă de e-mail dezactivată"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Adresa de e-mail este obligatorie"
@@ -3101,6 +3155,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Parolă mesaje incorectă. Reîncercați."
       ],
+      "Invalid email address": [
+        "Adresă de e-mail nevalidă."
+      ],
       "Invalid expiration time": [
         "Data expirării nu este validă."
       ],
@@ -3118,6 +3175,11 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Numărul maxim de atașamente (${ attachmentsCountLimit }) a fost depășit."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
+        "Îmbinați cel puțin ${ calendarsToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
+        "Îmbinați cel puțin ${ calendarsToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
       ],
       "Message needs to be sent first": [
         "Mesajul trebuie trimis mai întâi."
@@ -3347,6 +3409,9 @@
       "You did not provide a file.": [
         "Nu ați furnizat un fișier."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Ați atins maximul de calendare disponibile. Unele calendare nu au putut fi importate."
+      ],
       "You must set a name": [
         "Trebuie specificat un nume"
       ],
@@ -3388,8 +3453,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Mărimea maximă a unui fișier este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3430,8 +3495,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3465,8 +3530,8 @@
       "Component with wrong format": [
         "Componentă cu format greșit"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Fus orar personal"
       ],
       "Edited event not supported": [
         "Evenimentul editat nu este suportat"
@@ -3534,11 +3599,11 @@
       "Start time out of bounds": [
         "Timp de start în afara limitelor"
       ],
+      "Time zone": [
+        "Fus orar"
+      ],
       "Time zone not supported": [
         "Fus orar nesuportat."
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Intrare de făcut"
@@ -4450,6 +4515,9 @@
       "(No Recipient)": [
         "(Fără destinatar)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "O frază de recuperare este una dintre cele mai sigure modalități de a vă proteja accesul la cont. O puteți folosi pentru a vă accesa contul și pentru a vă recupera datele criptate dacă vă uitați vreodată parola."
       ],
@@ -4766,9 +4834,6 @@
       "Expires": [
         "Expiră"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Expiră peste ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Expiră peste ${ formattedDelayShort }"
       ],
@@ -4794,6 +4859,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Pentru mesaje mai noi de ${ oldestDate }"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Redirecționați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
@@ -4870,8 +4938,8 @@
       "Import mailbox": [
         "Importare mesaje"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importați e-mailurile, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }. Vă vom ghida la fiecare pas și vă vom cripta datele pe măsură ce acestea sunt mutate. Bine ați venit în lumea vieții private."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importați mesajele, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
@@ -5163,8 +5231,8 @@
       "Saving draft…": [
         "Se salvează ciorna…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
+      "Scheduled send of this message will be canceled.": [
+        "Trimiterea programată a acestui mesaj va fi anulată."
       ],
       "Scheduling message...": [
         "Se programează mesajul..."
@@ -5180,6 +5248,9 @@
       ],
       "Select what you want to import.": [
         "Selectați ce doriți să importați."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Trimitere mesaj criptat, protejat cu parolă, la o adresă de e-mail ${ boldText }."
@@ -5303,8 +5374,8 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Această conversație conține un mesaj programat. Trimiterea acestui mesaj va fi anulată."
       ],
       "This conversation contains non-trashed messages.": [
         "Această conversație conține mesaje neșterse."
@@ -5317,8 +5388,8 @@
         "Aceste conversații vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?",
         "Aceste conversații vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Acest e-mail nu respectă cerințele de autentificare ale domeniul său. Ar putea fi falsificat sau redirecționat eronat."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Această invitație este salvată într-un calendar dezactivat."
@@ -5373,14 +5444,17 @@
       "This message will expire ${ formattedDate }": [
         "Acest mesaj va expira ${ formattedDate }"
       ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Acest mesaj va expira ${ dateString } la ora ${ formattedTime }"
+      "This message will self-destruct in ${ formattedDelay }": [
+        "Acest mesaj se va autodistruge peste ${ formattedDelay }."
       ],
-      "This message will expire today at ${ formattedTime }": [
-        "Acest mesaj va expira astăzi la ora ${ formattedTime }"
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "Acest mesaj se va autodistruge ${ dateString } la ora ${ formattedTime }."
       ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Acest mesaj va expira mâine la ora ${ formattedTime }"
+      "This message will self-destruct today at ${ formattedTime }": [
+        "Acest mesaj se va autodistruge astăzi la ora ${ formattedTime }."
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "Acest mesaj se va autodistruge mâine la ora ${ formattedTime }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Această cheie publică va fi folosită automat pentru criptarea mesajelor trimise la această adresă."
@@ -5507,6 +5581,9 @@
       ],
       "When do you want your message to be sent?": [
         "Când doriți să fie trimis mesajul?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Când doriți să se autodistrugă mesajul?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Când furnizați adresa de e-mail, folosiți un alias unic, de unică folosință, în locul adresei de e-mail reale."
@@ -6063,8 +6140,8 @@
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Nu mă mai întreba"
       ],
       "Don't show this again": [
         "Nu mai arăta asta"
@@ -6401,6 +6478,16 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Data"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Ora"
       ]
     },
     "Label for contact group color": {
@@ -6753,8 +6840,8 @@
       "Scheduled sending undone": [
         "Trimitere programată anulată"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Programarea a fost anulată. Mesajul a fost mutat în «Ciorne»."
       ],
       "Sending undone": [
         "Trimitere anulată"
@@ -6961,8 +7048,8 @@
       "Search message content": [
         "Căutare în conținut mesaj"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Foldere, etichete și filtre nelimitate"
       ],
       "Up to 15 email addresses": [
         "Până la 15 adrese de e-mail"
@@ -6974,6 +7061,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: label": {
@@ -7288,6 +7378,14 @@
         "Serviciu"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Oficial"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Mesaj criptat în ambele părți și semnat"
@@ -7326,6 +7424,32 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } zi",
+        "${ remainingDays } zile",
+        "${ remainingDays } de zile"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } oră",
+        "${ remainingHours } ore",
+        "${ remainingHours } de ore"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<o oră"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } an",
+        "${ remainingYears } ani",
+        "${ remainingYears } de ani"
       ]
     },
     "Reply to calendar invitation": {
@@ -7675,8 +7799,8 @@
       "Bug reported": [
         "Eroare raportată"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Se anulează importarea"
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
@@ -7739,17 +7863,11 @@
       "Fingerprint copied to clipboard": [
         "Amprenta a fost copiată în memorie"
       ],
-      "Folder cleared": [
-        "Folder golit"
-      ],
       "Import record deleted": [
         "Înregistrare importare ștearsă"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferințele combinațiilor de taste au fost actualizate"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Etichete aplicate."
@@ -7826,6 +7944,15 @@
       ],
       "Read receipt sent": [
         "Confirmare de citire trimisă"
+      ],
+      "Self-destruction cancelled": [
+        "Autodistrugere anulată"
+      ],
+      "Self-destruction removed": [
+        "Autodistrugere eliminată"
+      ],
+      "Self-destruction set": [
+        "Autodistrugere setată"
       ],
       "Undo in progress": [
         "Anulare în desfășurare"
@@ -8388,6 +8515,9 @@
       ],
       "Select contact group": [
         "Selectare grup contacte"
+      ],
+      "Self-destruct message": [
+        "Mesaj autodistructibil"
       ],
       "Send email": [
         "Trimitere e-mail"

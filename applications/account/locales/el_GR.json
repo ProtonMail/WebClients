@@ -445,9 +445,6 @@
       "Loading verification": [
         "Αναμονή για επαλήθευση"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Manage communication preferences": [
         "Διαχείριση προτιμήσεων επικοινωνίας"
       ],
@@ -498,9 +495,6 @@
       ],
       "Not spam": [
         "Μη ενοχλητικό"
-      ],
-      "Ok": [
-        "OK"
       ],
       "OK": [
         "ΟΚ"
@@ -679,9 +673,6 @@
       "Select language for invitation emails": [
         "Επιλέξτε γλώσσα για τα προσκλητήρια email"
       ],
-      "Select timezone": [
-        "Select time zone"
-      ],
       "send auto-reply email": [
         "αποστολή μηνύματος αυτόματης απάντησης"
       ],
@@ -690,6 +681,9 @@
       ],
       "Send my username": [
         "Αποστολή του ονόματος χρήστη μου"
+      ],
+      "Set as default": [
+        "Ορισμός ως προεπιλογή"
       ],
       "Set catch-all": [
         "Ορίστε catch-all"
@@ -913,9 +907,6 @@
       ],
       "Generate missing keys": [
         "Δημιουργία των κλειδιών που λείπουν"
-      ],
-      "Make default": [
-        "Set as default"
       ],
       "Saving": [
         "Αποθήκευση"
@@ -1510,9 +1501,6 @@
       ],
       "Role": [
         "Ρόλος"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Τίτλος"
@@ -2622,6 +2610,14 @@
       "Contact signature not verified": [
         "Η υπογραφή επαφής δεν πιστοποιήθηκε"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο ή",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια ή"
+      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -2709,6 +2705,10 @@
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
+      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
@@ -2753,9 +2753,6 @@
       ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
-      ],
-      "Payment process cancelled": [
-        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Ήδη πραγματοποιημένη πληρωμή"
@@ -2857,9 +2854,6 @@
       ],
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να είναι κακογραμμένη"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Μη έγκυρο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
@@ -2980,9 +2974,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3021,9 +3012,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την αποστολή του αρχείου ${ formattedFilename }. Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3055,9 +3043,6 @@
       ],
       "Component with wrong format": [
         "Συνθετικό λανθασμένης μορφής"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Η επεξεργασμένη εκδήλωση δεν υποστηρίζεται"
@@ -3128,9 +3113,6 @@
       "Time zone not supported": [
         "Μη υποστηριζόμενη ζώνη ώρας"
       ],
-      "Timezone": [
-        "Time zone"
-      ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
       ],
@@ -3142,9 +3124,6 @@
       ]
     },
     "Error importing users": {
-      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
-      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση του αρχείου \"${ formattedFilename }\". Το μέγιστο μέγεθος αρχείου είναι ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -4181,9 +4160,6 @@
       "Center": [
         "Κέντρο"
       ],
-      "Check the status of current and previous imports.": [
-        "Ελέγξτε την κατάσταση των τρεχουσών και των προηγούμενων εισαγωγών."
-      ],
       "Choose the look and feel of the application.": [
         "Επιλέξετε την εμφάνιση και της αίσθηση της εφαρμογής."
       ],
@@ -4265,9 +4241,6 @@
       ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν τον ξεχάσετε, δεν θα είστε σε θέση να διαχειριστείτε τον οργανισμό σας."
@@ -4460,13 +4433,10 @@
         "Αν έχετε ρυθμίσει και SPF και DKIM, το DMARC σάς επιτρέπει να καθορίσετε τον τρόπο με τον οποίο άλλες υπηρεσίες ηλεκτρονικού ταχυδρομείου πρέπει να παραδίδουν ηλεκτρονικό ταχυδρομείο για τον domain σας, αν και οι δύο έλεγχοι SPF και DKIM απέτυχαν. Αυτό μπορεί να δυσκολέψει την αποστολή ανεπιθύμητων μηνυμάτων που υποτίθεται ότι είστε εσείς, αλλά μπορεί επίσης να προκαλέσει και προβλήματα παράδοσης εάν δεν γίνει σωστά."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Εάν χάσετε τα στοιχεία σύνδεσής σας και πρέπει να επαναφέρετε το λογαριασμό σας, ${ boldImperative } ότι έχετε ${ boldAccountRecovery } ορισμένα."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Εάν χάσετε τα στοιχεία σύνδεσής σας και πρέπει να επαναφέρετε το λογαριασμό σας, ${ boldImperative } ότι έχετε ${ boldAccountAndRecovery } ορισμένα, διαφορετικά ενδέχεται να μην μπορέσετε να αποκτήσετε πρόσβαση σε κανένα από τα μηνύματα ηλεκτρονικού ταχυδρομείου, τις επαφές ή τα αρχεία σας."
-      ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
@@ -4510,9 +4480,6 @@
       ],
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Εισάγετε τα email σας, τα ημερολόγια, και τις επαφές σας από μια άλλη υπηρεσία στην ${ BRAND_NAME }. Θα σας καθοδηγήσουμε σε κάθε βήμα της διαδικασίας και θα κρυπτογραφήσουμε τα δεδομένα κατά τη μετακίνηση. Καλώς ήρθατε στον κόσμο της ιδιωτικότητας."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Σημαντικό: Βεβαιωθείτε ότι έχετε αποθηκεύσει τους κωδικούς ανάκτησης. Διαφορετικά, μπορείτε να χάσετε μόνιμα την πρόσβαση στο λογαριασμό σας αν χάσετε τη συσκευή ελέγχου ταυτότητας δύο παραγόντων."
@@ -4590,9 +4557,6 @@
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
-      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -4629,9 +4593,6 @@
       "Loading...": [
         "Φόρτωση..."
       ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
-      ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Τα αρχεία καταγραφής περιλαμβάνουν προσπάθειες ταυτοποίησης για όλες τις υπηρεσίες ${ BRAND_NAME } που χρησιμοποιούν τα διαπιστευτήριά σας ${ BRAND_NAME }."
       ],
@@ -4659,9 +4620,6 @@
       "more": [
         "περισσότερα"
       ],
-      "More Info": [
-        "Learn more"
-      ],
       "Multi-user support not enabled.": [
         "Η υποστήριξη πολλαπλών χρηστών δεν είναι ενεργοποιημένη."
       ],
@@ -4688,9 +4646,6 @@
       ],
       "No folder selected": [
         "Δεν επιλέχθηκε φάκελος"
-      ],
-      "No imports to display.": [
-        "Δεν υπάρχουν εισαγωγές προς εμφάνιση."
       ],
       "No label selected": [
         "Δεν επιλέχθηκε ετικέτα"
@@ -4980,9 +4935,6 @@
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Η εφαρμογή Import-Export επιτρέπει την εξαγωγή μηνυμάτων για τοπικά αντίγραφα ασφαλείας και την επαναφορά προηγουμένων αντιγράφων ασφαλείας στον λογαριασμό σας."
       ],
-      "The name will be visible to your users while they are logged in.": [
-        "The name will be visible to your users while they are signed in."
-      ],
       "The securest way to browse, stream, and be online.": [
         "Ο πιο διασφαλισμένος τρόπος περιήγησης και μετάδοσης."
       ],
@@ -5102,9 +5054,6 @@
       ],
       "Two-factor authentication enabled": [
         "Ο έλεγχος ταυτότητας δύο παραγόντων ενεργοποιήθηκε"
-      ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Η λειτουργία δύο κωδικών πρόσβασης χρησιμοποιεί ξεχωριστούς κωδικούς πρόσβασης για την αποκρυπτογράφηση σύνδεσης και αποκωδικοποίησης. Αυτό παρέχει ένα μικρό πλεονέκτημα ασφαλείας σε ορισμένες περιπτώσεις, ωστόσο συνιστούμε τη λειτουργία ενός κωδικού πρόσβασης για τους περισσότερους χρήστες. Για να επιλέξτε τις ρυθμίσεις δύο κωδικών πρόσβασης, εισαγάγετε τον κωδικό σύνδεσης (login password) και έπειτα τον κωδικό θυρίδας (mailbox password)."
@@ -5247,9 +5196,6 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Μπορείτε να προσαρμόσετε και να κατεβάσετε τα τιμολόγιά σας για λογιστικούς σκοπούς."
       ],
-      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
-      ],
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
       ],
@@ -5271,9 +5217,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Δεν έχετε ορίσει μία μέθοδο ανάκτησης, με αποτέλεσμα η ανάκτηση λογαριασμού να είναι αδύνατη αν ξεχάσετε τον κωδικό πρόσβασής σας. Θέλετε να συνεχίσετε χωρίς μέθοδο ανάκτησης;"
@@ -5328,9 +5271,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Δεν μπορείτε πλέον να λάβετε μηνύματα στα εισερχόμενα σας. Οι σύνδεσμοι στο Drive έχουν απενεργοποιηθεί, και δεν μπορείτε να ανεβάσετε νέα αρχεία. Για να συνεχίσετε τις υπηρεσίες του λογαριασμού σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
-      ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
@@ -6046,9 +5986,6 @@
       "Display name": [
         "Εμφανιζόμενο Όνομα"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Do you have any suggestions for our team?": [
         "Έχετε να προτείνετε κάτι στην ομάδα μας;"
       ],
@@ -6466,9 +6403,6 @@
       "Time format": [
         "Μορφή ώρας"
       ],
-      "Timezone": [
-        "Time zone"
-      ],
       "To: ${ to }": [
         "Προς: ${ to }"
       ],
@@ -6549,9 +6483,6 @@
       ],
       "Your referral link": [
         "Ο σύνδεσμος παραπομπής σας"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -7282,9 +7213,6 @@
       "Unlimited folders": [
         "Απεριόριστοι φάκελοι"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
-      ],
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
       ],
@@ -7869,9 +7797,6 @@
       "Please insert link first": [
         "Παρακαλούμε εισάγετε πρώτα τον σύνδεσμο"
       ],
-      "Postal code": [
-        "Ταχυδρομικός κώδικας"
-      ],
       "Search": [
         "Αναζήτηση"
       ],
@@ -7892,9 +7817,6 @@
       ],
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
-      ],
-      "ZIP": [
-        "T.K"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -8070,9 +7992,6 @@
       ]
     },
     "Settings description": {
-      "Make the move to privacy. Effortlessly and securely.": [
-        "Κάντε τη μετάβαση στο απόρρητο. Αβίαστα και με ασφάλεια."
-      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Μπορείτε να εφαρμόσετε πολλαπλές ετικέτες σε ένα μήνυμα, αλλά τα μηνύματα μπορούν συνήθως να βρίσκονται μόνο σε έναν φάκελο. Σύρετε και αφήστε για να αναδιατάξετε τη σειρά των φακέλων και των ετικετών σας."
       ]
@@ -8328,9 +8247,6 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } αντιγράφηκε στο πρόχειρο σας"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
-      ],
       "Address added": [
         "Η διεύθυνση προστέθηκε"
       ],
@@ -8360,9 +8276,6 @@
       ],
       "Calendar updated": [
         "Το ημερολόγιο ενημερώθηκε"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Catch-all address updated": [
         "Έγινε ενημέρωση της διεύθυνσης catch-all"
@@ -8649,11 +8562,6 @@
       "${ minutes } minute": [
         "${ minutes } λεπτό",
         "${ minutes } λεπτά"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
       ]
     },
     "Title": {
@@ -9319,9 +9227,6 @@
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
       ],
-      "Start new import": [
-        "Εκκίνηση νέας εισαγωγής"
-      ],
       "Status": [
         "Κατάσταση"
       ],
@@ -9405,9 +9310,6 @@
       "Your current plan": [
         "Το τρέχον πακέτο σας"
       ],
-      "Your import history": [
-        "Τρέχουσα και προηγούμενες εισαγωγές"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του Mail Plus λήγει στις ${ textDate }"
       ],
@@ -9425,9 +9327,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Έχετε προσκληθεί να δοκιμάσετε το ${ MAIL_APP_NAME }"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -9729,9 +9628,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
-      ],
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
       ],
       "Are you sure you want to delete the phone number?": [
         "Θέλετε σίγουρα να διαγράψετε τον αριθμό τηλεφώνου;"

@@ -203,9 +203,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
       ],
@@ -1517,8 +1514,8 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
-      "Payment process cancelled": [
-        "Payment process canceled"
+      "Payment process canceled": [
+        "Proceso de pago cancelado"
       ],
       "Payment process consumed": [
         "Proceso de pago consumido"
@@ -1556,8 +1553,8 @@
       "Tab closed": [
         "Pestaña cerrada"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "El navegador que está usando no permite que el pago sea autorizado. Use un navegador diferente o inicie sesión a través de una computadora."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que se puede añadir es de ${ price }"
@@ -1879,6 +1876,9 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que le ayude a identificar dónde lo usa para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada con un único nombre de usuario, buzón y persona"
       ],
@@ -1993,9 +1993,6 @@
       "Emailing preference saved": [
         "Preferencia de correo guardada"
       ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
-      ],
       "Enter key manually instead": [
         "Ingrese la clave manualmente"
       ],
@@ -2071,8 +2068,8 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Si nunca ha usado la autenticación de dos factores anteriormente, le recomendamos encarecidamente ${ guideButton }."
       ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Si pierde su dispositivo habilitado para dos factores, estos códigos pueden usarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en su cuenta. Cada código solo se puede usar una vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -2110,8 +2107,8 @@
       "Internet connection restored.": [
         "Conexión a internet restaurada."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Aprenda cómo iniciar sesión en ${ VPN_APP_NAME } con aplicaciones VPN de terceros."
       ],
       "Learn more": [
         "Más información"
@@ -2130,9 +2127,6 @@
       ],
       "Loading...": [
         "Cargando..."
-      ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "Perderá acceso a todos los datos cifrados actuales"
@@ -2263,6 +2257,9 @@
       "Setting up your Drive": [
         "Configurando su Drive"
       ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Inicie sesión en ${ MAIL_APP_NAME } para activar su dirección"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, su cuenta tiene habilitadas funciones adicionales."
       ],
@@ -2356,8 +2353,8 @@
       "Two-factor authentication enabled": [
         "Autenticación de dos factores habilitada"
       ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión y otra para descifrar el buzón. (Avanzado)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "El modo de dos contraseñas usa contraseñas separadas para el inicio de sesión y el descifrado del buzón. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero defina una contraseña de inicio de sesión y luego una contraseña del buzón."
@@ -2495,8 +2492,8 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puede usar las siguientes credenciales para conectarse a un servidor de ${ VPN_APP_NAME } usando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "No puede usar las credenciales de OpenVPN/IKEv2 para iniciar sesión en las aplicaciones de ${ VPN_APP_NAME } o en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No definió un método de recuperación por lo que la recuperación de cuentas es imposible si olvida su contraseña. ¿Proceder sin método de recuperación?"
@@ -2540,8 +2537,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Su cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en su buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando su cuenta, por favor pague cualquier factura pendiente."
       ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Sus cuentas de ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminar ambas, inicie sesión en ${ loginLink } y elimine su cuenta allí."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Su cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
@@ -2961,9 +2958,6 @@
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -3000,6 +2994,11 @@
       ],
       "Expired": [
         "Expirado"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "Link": {
@@ -3362,8 +3361,8 @@
       "Unlimited folders": [
         "Carpetas ilimitadas"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
@@ -3829,17 +3828,11 @@
       "Please describe the problem and include any error messages": [
         "Describa el problema e incluya cualquier mensaje de error"
       ],
-      "Postal code": [
-        "Código postal"
-      ],
       "Select": [
         "Seleccionar"
       ],
       "Select a reason": [
         "Seleccione un motivo"
-      ],
-      "ZIP": [
-        "CP"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -3922,6 +3915,9 @@
       ],
       "Verify recovery phone?": [
         "¿Verificar el teléfono de recuperación?"
+      ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Verificar ahora este número telefónico de recuperación: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar su número de teléfono aumenta la seguridad de su cuenta y permite opciones de recuperación adicionales."
@@ -4312,8 +4308,8 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } copiado al portapapeles"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
+      "Account deleted. Signing out...": [
+        "Cuenta eliminada. Cerrando sesión..."
       ],
       "Bug reported": [
         "Error reportado"
@@ -4808,9 +4804,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Ha recibido una invitación para probar ${ MAIL_APP_NAME }"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4875,11 +4868,11 @@
       ]
     },
     "Warning": {
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "¿En verdad desea eliminar el número de teléfono?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "¿En verdad desea eliminar esta dirección?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Si elimina esta dirección, ya no podrá recibir notificaciones diarias de correo electrónico."

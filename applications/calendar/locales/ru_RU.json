@@ -12,6 +12,14 @@
         "Ограниченный просмотр (смотрите только свободные/занятые)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Пересылка скоро начнется. Новые письма будут появляться в вашем почтовом ящике."
+      ],
+      "Mail forward stopped": [
+        "Пересылка почты остановлена"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Введение в ${ BRAND_NAME }"
@@ -286,9 +294,6 @@
       "Load image": [
         "Загрузить изображение"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Сделать участие этого пользователя необязательным"
       ],
@@ -433,8 +438,8 @@
       "Select all": [
         "Выделить все"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Выберите часовой пояс"
       ],
       "Send": [
         "Отправить"
@@ -468,6 +473,9 @@
       ],
       "Show time zones": [
         "Показать часовые пояса"
+      ],
+      "Sign in": [
+        "Войти"
       ],
       "Sign out": [
         "Выйти"
@@ -917,7 +925,7 @@
         "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "С момента последнего обновления прошло более 12 часов - ${ CALENDAR_APP_NAME } попытается обновить календарь через несколько часов."
+        "С последнего обновления прошло более 12 часов - ${ CALENDAR_APP_NAME } попытается обновить календарь через несколько часов."
       ]
     },
     "Calendar view": {
@@ -1073,8 +1081,8 @@
       "Role": [
         "Роль"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Часовой пояс"
       ],
       "Title": [
         "Должность"
@@ -2012,8 +2020,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Больше не спрашивать"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2185,14 +2193,23 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Ошибка расшифровки: не удалось расшифровать содержимое этого события."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календаря или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или"
+      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
       "Email address disabled": [
         "Адрес электронной почты отключен"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
@@ -2262,6 +2279,12 @@
       ],
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Объедините по крайней мере ${ calendarsToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
@@ -2446,6 +2469,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Вы не можете отправлять файлы vCard, содержащие более 10 контактов"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Вы достигли максимального количества календарей. Некоторые календари не удалось импортировать."
+      ],
       "You must set a name": [
         "Вы должны задать имя"
       ],
@@ -2459,8 +2485,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2502,8 +2528,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2537,8 +2563,8 @@
       "Component with wrong format": [
         "Неправильный формат компонента"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Настроить часовой пояс"
       ],
       "Edited event not supported": [
         "Отредактированное событие не поддерживается"
@@ -2606,11 +2632,11 @@
       "Start time out of bounds": [
         "Время начала находится вне границ"
       ],
+      "Time zone": [
+        "Часовой пояс"
+      ],
       "Time zone not supported": [
         "Часовой пояс не поддерживается"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Запись списка задач"
@@ -3284,6 +3310,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Уведомление об отмене будет отправлено участникам. Вы хотите удалить это событие?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
@@ -3428,6 +3457,9 @@
       "Existent, added and removed participants will be notified.": [
         "Существующие, добавленные и удаленные участники будут уведомлены."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
+      ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
       ],
@@ -3470,8 +3502,8 @@
       "Import mailbox": [
         "Импорт почтового ящика"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Импортируйте электронную почту, календари и контакты из другой службы в ${ BRAND_NAME }. Мы будем сопровождать вас на каждом шагу и шифровать ваши данные при переносе. Добро пожаловать в мир конфиденциальности."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Импортируйте ваши письма, календари и контакты в ${ BRAND_NAME } из другого сервиса."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
@@ -3625,6 +3657,9 @@
       ],
       "Select what you want to import.": [
         "Выберите то, что вы хотите импортировать."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учетом числа календарей, доступных в вашем тарифе."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -4037,8 +4072,8 @@
       "Description": [
         "Описание"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Больше не спрашивать"
       ],
       "Email": [
         "Электронная почта"
@@ -5557,6 +5592,9 @@
       "Calendar updated": [
         "Календарь обновлен"
       ],
+      "Canceling import": [
+        "Отмена импорта"
+      ],
       "Cancellation sent and all events deleted": [
         "Сообщение об отмене отправлено и все события удалены"
       ],
@@ -5568,9 +5606,6 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Сообщение об отмене отправлено и участники удалены из всех событий"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
@@ -5769,8 +5804,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Найти часовой пояс"
       ]
     },
     "Title": {

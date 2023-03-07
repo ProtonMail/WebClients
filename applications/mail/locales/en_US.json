@@ -4,75 +4,15 @@
     "language": "en_US"
   },
   "contexts": {
-    "Action": {
-      "Log in": [
-        "Sign in"
-      ]
-    },
-    "Contact field label": {
-      "Timezone": [
-        "Time zone"
-      ]
-    },
     "Error": {
-      "Email address invalid": [
+      "Invalid email address": [
         "Invalid email address"
-      ]
-    },
-    "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ]
-    },
-    "Error importing event": {
-      "Custom timezone": [
-        "Custom time zone"
-      ],
-      "Timezone": [
-        "Time zone"
       ]
     },
     "Info": {
       "file attached": [
         "attachment",
         "attachments"
-      ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
-      ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
-      ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
-      ]
-    },
-    "Label": {
-      "Do not ask again": [
-        "Don't ask again"
-      ]
-    },
-    "Message notification": {
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
-      ]
-    },
-    "new_plans: feature": {
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
-      ]
-    },
-    "Success": {
-      "Cancelling import": [
-        "Canceling import"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ]
     }
   }

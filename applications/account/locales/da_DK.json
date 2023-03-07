@@ -456,9 +456,6 @@
       "Loading verification": [
         "Indlæser verifikation"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Manage communication preferences": [
         "Administrer kommunikationspræferencer"
       ],
@@ -509,9 +506,6 @@
       ],
       "Not spam": [
         "Ikke spam"
-      ],
-      "Ok": [
-        "OK"
       ],
       "OK": [
         "Ok"
@@ -693,8 +687,8 @@
       "Select language for invitation emails": [
         "Vælg sprog for invitationsmails"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Vælg tidszone"
       ],
       "send auto-reply email": [
         "send e-mail med auto-svar"
@@ -704,6 +698,9 @@
       ],
       "Send my username": [
         "Send mit brugernavn"
+      ],
+      "Set as default": [
+        "Angiv som standard"
       ],
       "Set catch-all": [
         "Indstil fang-alle"
@@ -943,9 +940,6 @@
       ],
       "Generate missing keys": [
         "Generér manglende nøgler"
-      ],
-      "Make default": [
-        "Set as default"
       ],
       "Saving": [
         "Gemmer"
@@ -1645,8 +1639,8 @@
       "Role": [
         "Rolle"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Tidszone"
       ],
       "Title": [
         "Titel"
@@ -2833,6 +2827,14 @@
       "Contact signature not verified": [
         "Kontaktsignatur ikke bekræftet"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Fravælg mindst ${ calendarsToFixCount } kalender",
+        "Fravælg mindst ${ calendarsToFixCount } kalendere"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Fravælg mindst ${ calendarsToFixCount } kalender eller",
+        "Fravælg mindst ${ calendarsToFixCount } kalendere eller"
+      ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
@@ -2920,6 +2922,10 @@
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
+        "Flet mindst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
+      ],
       "Missing key packet": [
         "Manglende nøglepakke"
       ],
@@ -2976,9 +2982,6 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
-      ],
-      "Payment process cancelled": [
-        "Payment process canceled"
       ],
       "Payment process consumed": [
         "Betalingsproces forbrugt"
@@ -3084,9 +3087,6 @@
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
-      ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
@@ -3186,6 +3186,9 @@
       "You have no invoices.": [
         "Du har ingen fakturaer."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal kalendere. Nogle kalendere kunne ikke importeres."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har brugt alle adresser i dit abonnement. Opgradér abonnementet for at tilføje en ny adresse."
       ],
@@ -3215,9 +3218,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3256,9 +3256,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3291,8 +3288,8 @@
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Brugerdefineret tidszone"
       ],
       "Edited event not supported": [
         "Redigeret begivenhed understøttes ikke"
@@ -3360,11 +3357,11 @@
       "Start time out of bounds": [
         "Starttid uden for grænserne"
       ],
+      "Time zone": [
+        "Tidszone"
+      ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -3377,9 +3374,6 @@
       ]
     },
     "Error importing users": {
-      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
-      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil \"${ formattedFilename }\". Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -4231,9 +4225,6 @@
       "Canceled": [
         "Annulleret"
       ],
-      "Cancelling": [
-        "Canceling"
-      ],
       "Completed": [
         "Fuldført"
       ],
@@ -4419,6 +4410,9 @@
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Med en gendannelsesfil kan du låse op for og se dine data efter en kontonulstilling"
@@ -4648,9 +4642,6 @@
       "Center": [
         "Centrér"
       ],
-      "Check the status of current and previous imports.": [
-        "Tjek status for nuværende og tidligere importer."
-      ],
       "Choose the look and feel of the application.": [
         "Vælg applikationens udseende."
       ],
@@ -4739,9 +4730,6 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke være i stand til at administrere din organisation."
       ],
@@ -4820,9 +4808,6 @@
       ],
       "Encryption setting updated": [
         "Krypteringsindstilling opdateret"
-      ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Indtast nøgle manuelt i stedet"
@@ -4948,13 +4933,10 @@
         "Har du indstillet både SPF og DKIM, giver DMARC dig mulighed for at specificere, hvordan andre e-mail-tjenester skal levere e-mail til dit domæne, hvis både SPF- og DKIM-tjeks er fejlet. Dette kan gøre det sværere for spammere at foregive at være dig, men kan også forårsage leveringsproblemer, hvis det ikke er korrekt udført."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Hvis du mister dine loginoplysninger og har brug for at nulstille din konto, ${ boldImperative } at du har en ${ boldAccountRecovery } indstillet."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Hvis du mister dine loginoplysninger og har brug for at nulstille din konto, ${ boldImperative } at du har både en ${ boldAccountAndRecovery } indstillet. Ellers kan du måske ikke få adgang til dine e-mails, kontakter eller filer."
-      ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -4998,9 +4980,6 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Vigtigt: Sørg for at du har gemt gendannelseskoderne. Ellers risikerer du at miste adgangen til din konto permanent, hvis du mister din 2FA-enhed."
@@ -5078,9 +5057,6 @@
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
-      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -5120,9 +5096,6 @@
       "Loading...": [
         "Indlæser..."
       ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
-      ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Logger omfatter godkendelsesforsøg for alle ${ BRAND_NAME }-tjenester, som benytter dine ${ BRAND_NAME }-legitimationsoplysninger."
       ],
@@ -5153,9 +5126,6 @@
       "more": [
         "mere"
       ],
-      "More Info": [
-        "Learn more"
-      ],
       "Multi-user support not enabled.": [
         "Understøttelse af flere brugere ikke aktiveret."
       ],
@@ -5182,9 +5152,6 @@
       ],
       "No folder selected": [
         "Ingen mappe valgt"
-      ],
-      "No imports to display.": [
-        "Ingen importer at vise."
       ],
       "No label selected": [
         "Ingen etiket valgt"
@@ -5405,6 +5372,9 @@
       "Select what you want to import.": [
         "Vælg, hvad du ønsker at importere."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
       ],
@@ -5506,9 +5476,6 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Med appen Import-Eksport kan du eksportere beskeder til lokale sikkerhedskopier og genskabe tidligere sikkerhedskopier på din konto."
-      ],
-      "The name will be visible to your users while they are logged in.": [
-        "The name will be visible to your users while they are signed in."
       ],
       "The securest way to browse, stream, and be online.": [
         "Den sikreste måde at surfe, streame og være online på."
@@ -5656,9 +5623,6 @@
       ],
       "Two-factor authentication enabled": [
         "To-faktor-godkendelse aktiveret"
-      ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "To-adgangskodetilstand benytter separate adgangskoder til indlogning og postkassedekryptering. Dette giver en lille sikkerhedsfordel i visse situationer, men brug af en-adgangskodetilstand anbefales til de fleste brugere. Angiv først én adgangskode til indlogning og dernæst én til postkassen for at skifte til to-adgangskodtilstand."
@@ -5822,9 +5786,6 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Du kan tilpasse og downloade dine fakturaer til bogholderiformål."
       ],
-      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
-      ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
       ],
@@ -5856,9 +5817,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan ikke henvise ${ MAIL_APP_NAME }-brugere"
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
@@ -5925,9 +5883,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Der leveres ikke længere e-mails til din indbakke. Dine Drive-links til deling er ikke længere aktive, og du kan ikke uploade nye filer. Hvis du fortsat vil bruge din konto, skal du betale eventuelle forfaldne fakturaer."
-      ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
@@ -6682,9 +6637,6 @@
       "Display name": [
         "Visningsnavn"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Do you have any suggestions for our team?": [
         "Har du forslag til vores team?"
       ],
@@ -6693,6 +6645,9 @@
       ],
       "Domain name": [
         "Domænenavn"
+      ],
+      "Don't ask again": [
+        "Spørg ikke igen"
       ],
       "Duration": [
         "Varighed"
@@ -7117,9 +7072,6 @@
       "Time format": [
         "Tidsformat"
       ],
-      "Timezone": [
-        "Time zone"
-      ],
       "To: ${ to }": [
         "Til: ${ to }"
       ],
@@ -7206,9 +7158,6 @@
       ],
       "Your referral link": [
         "Dit henvisningslink"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -8006,8 +7955,8 @@
       "Unlimited folders": [
         "Ubegrænsede mapper"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
       ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
@@ -8767,9 +8716,6 @@
       "Please insert link first": [
         "Indsæt link først"
       ],
-      "Postal code": [
-        "Postnummer"
-      ],
       "Printer": [
         "Printer"
       ],
@@ -8796,9 +8742,6 @@
       ],
       "yourdomain.com": [
         "ditdomæne.com"
-      ],
-      "ZIP": [
-        "Postnummer"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -9017,9 +8960,6 @@
       ]
     },
     "Settings description": {
-      "Make the move to privacy. Effortlessly and securely.": [
-        "Skift til privatliv. Ubesværet og sikkert."
-      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Du kan anvende flere etiketter på en enkelt besked, men beskeder kan normalt kun være i én enkelt mappe. Træk og slip for at omarrangere rækkefølgen af dine mapper og etiketter."
       ]
@@ -9279,9 +9219,6 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } kopieret til din udklipsholder"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
-      ],
       "Address added": [
         "Adresse tilføjet"
       ],
@@ -9312,8 +9249,8 @@
       "Calendar updated": [
         "Kalender opdateret"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Annullerer import"
       ],
       "Catch-all address updated": [
         "Fang-alt-adresse opdateret"
@@ -9609,8 +9546,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Søg i tidszoner"
       ]
     },
     "Title": {
@@ -10313,9 +10250,6 @@
       "Start import process": [
         "Start importeringsprocessen"
       ],
-      "Start new import": [
-        "Start ny import"
-      ],
       "Status": [
         "Status"
       ],
@@ -10411,9 +10345,6 @@
       "Your current plan": [
         "Dit nuværende abonnement"
       ],
-      "Your import history": [
-        "Din importhistorik"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Din Mail Plus prøveperiode slutter ${ textDate }"
       ],
@@ -10431,9 +10362,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blevet inviteret til at prøve ${ MAIL_APP_NAME }"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10751,9 +10679,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
       ],
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på, at du vil slette telefonnummeret?"
       ],
@@ -10786,9 +10711,6 @@
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
-      ],
-      "Please provide at least one recipient": [
-        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
