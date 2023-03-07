@@ -96,7 +96,7 @@ const Item = ({
     const firstRecipients = displayRecipients ? recipients : senders;
     // Warning, spreading firstRecipients on Safari preview cause crash
     // See MAILWEB-4079
-    const [firstRecipient] = Array.isArray(firstRecipients) ? firstRecipients : [];
+    const firstRecipient = firstRecipients[0];
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
