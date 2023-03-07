@@ -542,9 +542,6 @@
       "Loading${ ellipsis }": [
         "Indlæser${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Postkasse-tæthed"
       ],
@@ -938,6 +935,9 @@
       "Show preview": [
         "Vis en forhåndsvisning"
       ],
+      "Sign in": [
+        "Log ind"
+      ],
       "Sign out": [
         "Log ud"
       ],
@@ -1004,6 +1004,9 @@
       ],
       "Turn on tracker protection": [
         "Slå beskyttelse mod sporing til"
+      ],
+      "Unblock": [
+        "Fjern blokering"
       ],
       "Underline": [
         "Understreg"
@@ -1596,6 +1599,11 @@
         "Begivenhed i gang"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "Annuller"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Fold sammen"
@@ -1897,8 +1905,8 @@
       "Role": [
         "Rolle"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Tidszone"
       ],
       "Title": [
         "Titel"
@@ -2784,6 +2792,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "${ MAIL_APP_NAME } logo og et plus-tegn"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } i indstillinger."
       ],
@@ -2967,6 +2978,14 @@
         "Opdatering til en begivenhed med start den ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Mappe ryddet"
+      ],
+      "Label cleared": [
+        "Etiket ryddet"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Krypterede overskrifter filnavn"
@@ -3000,6 +3019,10 @@
       "Choose a date in the future.": [
         "Vælg en dato i fremtiden."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Vælg en dato indenfor den næste ${ EXPIRATION_TIME_MAX_DAYS } dag.",
+        "Vælg en dato indenfor de næste ${ EXPIRATION_TIME_MAX_DAYS } dage."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Vælg en dato indenfor den næste ${ SCHEDULED_MAX_DATE_DAYS } dag.",
         "Vælg en dato indenfor de næste ${ SCHEDULED_MAX_DATE_DAYS } dage."
@@ -3028,6 +3051,14 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne beskeds indhold mislykkedes."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Fravælg mindst ${ calendarsToFixCount } kalender",
+        "Fravælg mindst ${ calendarsToFixCount } kalendere"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Fravælg mindst ${ calendarsToFixCount } kalender eller",
+        "Fravælg mindst ${ calendarsToFixCount } kalendere eller"
+      ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
@@ -3036,9 +3067,6 @@
       ],
       "Email address disabled": [
         "E-mailadresse deaktiveret"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "E-mailadresse er påkrævet."
@@ -3088,6 +3116,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Forkert adgangskode til postkasse. Prøv venligst igen."
       ],
+      "Invalid email address": [
+        "Ugyldig e-mailadresse"
+      ],
       "Invalid expiration time": [
         "Ugyldigt udløbstidspunkt"
       ],
@@ -3105,6 +3136,10 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Det maksimale antal vedhæftninger (${ attachmentsCountLimit }) overskredet"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
+        "Flet mindst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
       ],
       "Message needs to be sent first": [
         "Beskeden skal sendes først"
@@ -3328,6 +3363,9 @@
       "You did not provide a file.": [
         "Du har ikke angivet en fil."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal kalendere. Nogle kalendere kunne ikke importeres."
+      ],
       "You must set a name": [
         "Du skal angive et navn"
       ],
@@ -3368,9 +3406,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3409,9 +3444,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3444,8 +3476,8 @@
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Brugerdefineret tidszone"
       ],
       "Edited event not supported": [
         "Redigeret begivenhed understøttes ikke"
@@ -3513,11 +3545,11 @@
       "Start time out of bounds": [
         "Starttid uden for grænserne"
       ],
+      "Time zone": [
+        "Tidszone"
+      ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -4380,6 +4412,9 @@
       "(No Recipient)": [
         "(Ingen modtager)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "En gendannelsessætning er en af de sikreste måder at beskytte adgangen til din konto. Du kan bruge den til at få adgang til din konto og gendanne dine krypterede data, hvis du nogensinde glemmer din adgangskode."
       ],
@@ -4685,9 +4720,6 @@
       "Expires": [
         "Udløber"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Udløber om ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Udløber om ${ formattedDelayShort }"
       ],
@@ -4784,9 +4816,6 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -5077,9 +5106,6 @@
       "Saving draft…": [
         "Gemmer kladde…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
-      ],
       "Scheduling message...": [
         "Planlægger besked..."
       ],
@@ -5094,6 +5120,9 @@
       ],
       "Select what you want to import.": [
         "Vælg, hvad du ønsker at importere."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Send en krypteret, adgangskodebeskyttet besked til en ${ boldText } e-mailadresse."
@@ -5216,9 +5245,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
-      ],
       "This conversation contains non-trashed messages.": [
         "Denne samtale indeholder ikke-kasserede beskeder."
       ],
@@ -5229,8 +5255,8 @@
         "Denne samtale vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?",
         "Disse samtaler vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Denne e-mail bestod ikke sit domænes godkendelseskrav. Den kan være falsk eller ukorrekt videresendt."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Denne invitation er gemt i en deaktiveret kalender."
@@ -5283,15 +5309,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Denne besked udløber ${ formattedDate }"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Denne besked udløber ${ dateString } kl. ${ formattedTime }"
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        "Denne besked udløber i dag ${ formattedTime }"
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Denne besked udløber i morgen ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denne offentlige nøgle vil automatisk blive brugt til kryptering af e-mail, der sendes til denne adresse."
@@ -5963,8 +5980,8 @@
       "Delete recovery-related information.": [
         "Slet gendannelsesrelaterede oplysninger."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Spørg ikke igen"
       ],
       "Don't show this again": [
         "Vis ikke dette igen"
@@ -6301,6 +6318,16 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Dato"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Tid"
       ]
     },
     "Label for contact group color": {
@@ -6648,9 +6675,6 @@
       "Scheduled sending undone": [
         "Planlagt afsendelse annulleret"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
-      ],
       "Sending undone": [
         "Afsendelse fortrudt"
       ],
@@ -6853,8 +6877,8 @@
       "Search message content": [
         "Søg i beskedindhold"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
       ],
       "Up to 15 email addresses": [
         "Op til 15 e-mailadresser"
@@ -6866,6 +6890,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7177,6 +7204,14 @@
         "Arbejde"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Officiel"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Officiel e-mail fra ${ BRAND_NAME }"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "End-to-end krypteret og signeret besked"
@@ -7215,6 +7250,29 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } dag",
+        "${ remainingDays } dage"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } time",
+        "${ remainingHours } timer"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "< 1 time"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } år",
+        "${ remainingYears } år"
       ]
     },
     "Reply to calendar invitation": {
@@ -7538,8 +7596,8 @@
       "Bug reported": [
         "Fejl anmeldt"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Annullerer import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
@@ -7600,17 +7658,11 @@
       "Fingerprint copied to clipboard": [
         "Fingeraftryk kopieret til udklipsholder"
       ],
-      "Folder cleared": [
-        "Mappe ryddet"
-      ],
       "Import record deleted": [
         "Importpost slettet"
       ],
       "Keyboard shortcuts preferences updated": [
         "Indstillinger for tastaturgenveje opdateret"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Etiketter anvendt."

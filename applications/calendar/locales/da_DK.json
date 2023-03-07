@@ -282,9 +282,6 @@
       "Load image": [
         "Indlæs billede"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Gør denne deltager valgfri"
       ],
@@ -429,8 +426,8 @@
       "Select all": [
         "Vælg alle"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Vælg tidszone"
       ],
       "Send": [
         "Send"
@@ -464,6 +461,9 @@
       ],
       "Show time zones": [
         "Vis tidszoner"
+      ],
+      "Sign in": [
+        "Log ind"
       ],
       "Sign out": [
         "Log ud"
@@ -1063,8 +1063,8 @@
       "Role": [
         "Rolle"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Tidszone"
       ],
       "Title": [
         "Titel"
@@ -1987,8 +1987,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Spørg ikke igen"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2152,14 +2152,19 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne begivenheds indhold mislykkedes."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Fravælg mindst ${ calendarsToFixCount } kalender",
+        "Fravælg mindst ${ calendarsToFixCount } kalendere"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Fravælg mindst ${ calendarsToFixCount } kalender eller",
+        "Fravælg mindst ${ calendarsToFixCount } kalendere eller"
+      ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
       "Email address disabled": [
         "E-mailadresse deaktiveret"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "E-mailadresse er påkrævet."
@@ -2229,6 +2234,10 @@
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
+        "Flet mindst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
       ],
       "Missing key packet": [
         "Manglende nøglepakke"
@@ -2405,6 +2414,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Du kan ikke sende vCard-filer med mere end 10 kontakter"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal kalendere. Nogle kalendere kunne ikke importeres."
+      ],
       "You must set a name": [
         "Du skal angive et navn"
       ],
@@ -2418,9 +2430,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2459,9 +2468,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2494,8 +2500,8 @@
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Brugerdefineret tidszone"
       ],
       "Edited event not supported": [
         "Redigeret begivenhed understøttes ikke"
@@ -2563,11 +2569,11 @@
       "Start time out of bounds": [
         "Starttid uden for grænserne"
       ],
+      "Time zone": [
+        "Tidszone"
+      ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -3174,6 +3180,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "En aflysningsmail vil blive sendt til deltagerne i arrangementet. Vil du slette denne begivenhed?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
       ],
@@ -3352,9 +3361,6 @@
       "Import mailbox": [
         "Importér postkasse"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
-      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
@@ -3505,6 +3511,9 @@
       ],
       "Select what you want to import.": [
         "Vælg, hvad du ønsker at importere."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -3910,8 +3919,8 @@
       "Description": [
         "Beskrivelse"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Spørg ikke igen"
       ],
       "Email": [
         "E-mail"
@@ -5105,6 +5114,9 @@
       "Calendar updated": [
         "Kalender opdateret"
       ],
+      "Canceling import": [
+        "Annullerer import"
+      ],
       "Cancellation sent and all events deleted": [
         "Aflysning sendt og alle begivenheder slettet"
       ],
@@ -5116,9 +5128,6 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Aflysning sendt og deltagere fjernet fra alle begivenheder"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
@@ -5301,8 +5310,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Søg i tidszoner"
       ]
     },
     "Title": {

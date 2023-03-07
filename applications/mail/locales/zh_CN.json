@@ -536,9 +536,6 @@
       "Loading${ ellipsis }": [
         "正在加载${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "邮箱密度"
       ],
@@ -931,6 +928,9 @@
       ],
       "Show preview": [
         "显示预览"
+      ],
+      "Sign in": [
+        "登录"
       ],
       "Sign out": [
         "退出"
@@ -1886,9 +1886,6 @@
       "Role": [
         "身份"
       ],
-      "Timezone": [
-        "Time zone"
-      ],
       "Title": [
         "头衔"
       ],
@@ -2809,7 +2806,7 @@
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
       "When do you want your message to be sent?": [
-        "您想要什么时候发送您的邮件？"
+        "您想何时发送邮件？"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
@@ -3018,9 +3015,6 @@
       "Email address disabled": [
         "邮件地址已禁用"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email address is required": [
         "邮箱地址必须填写"
       ],
@@ -3068,6 +3062,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "邮箱密码错误，请重试。"
+      ],
+      "Invalid email address": [
+        "无效的邮件地址"
       ],
       "Invalid expiration time": [
         "有效期不正确"
@@ -3339,9 +3336,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -3379,9 +3373,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -3413,9 +3404,6 @@
       ],
       "Component with wrong format": [
         "组件格式错误"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "不支持已编辑的事件"
@@ -3485,9 +3473,6 @@
       ],
       "Time zone not supported": [
         "不支持此时区"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "待办事项"
@@ -4577,9 +4562,6 @@
       "Expires": [
         "含有效期"
       ],
-      "Expires in ${ formattedDelay }": [
-        "${ formattedDelay } 后过期"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "${ formattedDelayShort } 后过期"
       ],
@@ -4666,9 +4648,6 @@
       ],
       "Import mailbox": [
         "导入收件箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "其他邮箱中的邮件、日程和通讯录也可以轻松导入 ${ BRAND_NAME }，我们将全程指导您操作并自动为您加密数据。欢迎进入隐私优先的世界。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
@@ -4955,9 +4934,6 @@
       "Saving draft…": [
         "正在保存草稿…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
-      ],
       "Scheduling message...": [
         "定时发送邮件中..."
       ],
@@ -5099,17 +5075,11 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "您目前使用的浏览器不支持查看 PDF 文件，请下载后打开。"
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
-      ],
       "This conversation contains non-trashed messages.": [
         "此会话包含不在废件箱中的邮件。"
       ],
       "This conversation contains trashed messages.": [
         "此会话包含废件箱中的邮件。"
-      ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "此邀请被保存到一个禁用的日历。"
@@ -5158,15 +5128,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "此邮件将于 ${ formattedDate } 过期"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "此邮件将于${ dateString } ${ formattedTime } 过期"
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        "此邮件将于今天 ${ formattedTime } 过期"
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "此邮件将于明天 ${ formattedTime } 过期"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "该公钥将自动用于加密发送到该地址的电子邮件。"
@@ -5289,7 +5250,7 @@
         "周"
       ],
       "When do you want your message to be sent?": [
-        "您想要什么时候发送您的邮件？"
+        "您想何时发送邮件？"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "在网上填写邮箱时，不必使用真实的邮箱地址，只需填写一个可销毁的 Hide My Email 临时邮箱。"
@@ -5367,7 +5328,7 @@
         "您还未填写邮件主题，确定要发送邮件吗？"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "你已经达到了100%的存储容量。考虑释放一些空间或升级您的帐户，以获得额外的存储空间来撰写新的信息。"
+        "您的存储空间已使用 100%，请考虑清理邮件或账户扩容，以便撰写新邮件。"
       ],
       "You have reached the maximum number of 5 replies.": [
         "您已经达到5回复的最大限制。"
@@ -5823,9 +5784,6 @@
       ],
       "Delete recovery-related information.": [
         "删除恢复相关的数据"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Don't show this again": [
         "不再显示此内容"
@@ -6476,9 +6434,6 @@
       "Scheduled sending undone": [
         "定时发送已撤销"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
-      ],
       "Sending undone": [
         "邮件发送已撤销"
       ],
@@ -6671,9 +6626,6 @@
       ],
       "Search message content": [
         "搜索邮件全文"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
       ],
       "Up to 15 email addresses": [
         "最多 15 个邮箱地址"
@@ -7211,7 +7163,7 @@
         "我们现已默认允许外链图片加载，并为您开启发件方追踪防护。这些选项可以在${ settingsLink }中更改。"
       ],
       "You can now schedule your messages to be sent later": [
-        "您现在可以计划稍后发送邮件"
+        "现已支持定时发送邮件"
       ],
       "You can now search the content of your encrypted emails.": [
         "您现在可以搜索加密电子邮件的内容了。"
@@ -7377,17 +7329,11 @@
       "Fingerprint copied to clipboard": [
         "指纹已复制到剪贴板"
       ],
-      "Folder cleared": [
-        "文件夹已清空"
-      ],
       "Import record deleted": [
         "导入记录已删除"
       ],
       "Keyboard shortcuts preferences updated": [
         "快捷键设置已更改"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "标签已添加。"

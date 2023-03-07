@@ -23,6 +23,17 @@
         "Omezené zobrazení (zobrazit pouze volný/zaneprázdněn)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Přeposílání bude brzy zahájeno. Nové e-maily se zobrazí ve vaší schránce."
+      ],
+      "Mail forward stopped": [
+        "Přeposílání e-mailů bylo zastaveno"
+      ],
+      "Reconnect": [
+        "Znovu připojit"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Úvod ${ BRAND_NAME }"
@@ -459,9 +470,6 @@
       "Loading verification": [
         "Načítání ověření"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Manage communication preferences": [
         "Spravovat nastavení komunikace"
       ],
@@ -512,9 +520,6 @@
       ],
       "Not spam": [
         "Není spam"
-      ],
-      "Ok": [
-        "OK"
       ],
       "OK": [
         "OK"
@@ -696,8 +701,8 @@
       "Select language for invitation emails": [
         "Vyberte jazyk pro e-maily s pozvánkami"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Vybrat časové pásmo"
       ],
       "send auto-reply email": [
         "odeslat automatickou odpověď"
@@ -707,6 +712,9 @@
       ],
       "Send my username": [
         "Poslat mé uživatelské jméno"
+      ],
+      "Set as default": [
+        "Nastavit jako výchozí"
       ],
       "Set catch-all": [
         "Nastavení doménového koše"
@@ -954,11 +962,11 @@
       "Generate missing keys": [
         "Vygenerovat chybějící klíče"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Saving": [
         "Ukládání"
+      ],
+      "Set as default": [
+        "Nastavit jako výchozí"
       ]
     },
     "Address status": {
@@ -1270,8 +1278,8 @@
       ]
     },
     "Calendar share permission label": {
-      "Edit": [
-        "Upravit"
+      "Edit event details": [
+        "Upravit detaily události"
       ],
       "See all event details": [
         "Zobrazit všechny detaily události"
@@ -1662,8 +1670,8 @@
       "Role": [
         "Role"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Časové pásmo"
       ],
       "Title": [
         "Titul"
@@ -2863,6 +2871,18 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo"
+      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -2950,6 +2970,12 @@
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Sloučit alespoň ${ calendarsToFixCount } kalendář s ${ BRAND_NAME } existujícím kalendářem",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendáře se ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
+      ],
       "Missing key packet": [
         "Chybějící balíček klíčů"
       ],
@@ -3007,8 +3033,8 @@
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
-      "Payment process cancelled": [
-        "Payment process canceled"
+      "Payment process canceled": [
+        "Platba byla zrušena"
       ],
       "Payment process consumed": [
         "Platba byla dokončena"
@@ -3118,8 +3144,8 @@
       "The address might be misspelled": [
         "Adresa může obsahovat překlep"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Prohlížeč, který používáte, neumožňuje úplnou autorizaci platby. Použijte jiný prohlížeč nebo se přihlaste pomocí počítače."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Název složky je neplatný. Zvolte prosím jiný název."
@@ -3220,6 +3246,9 @@
       "You have no invoices.": [
         "Nemáte žádné faktury."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Dosáhli jste maximálního počtu kalendářů. Některé kalendáře nebylo možné importovat."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Všechny adresy ve vašem tarifu jsou vyčerpány. Přejděte na vyšší tarif, abyste mohli přidat další adresu."
       ],
@@ -3241,6 +3270,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "U Vašeho účtu nebo organizace jsou vedeny faktury po splatnosti. Zaplaťte prosím všechny neuhrazené faktury."
       ],
+      "Your forward will not be processed.": [
+        "Vaše přeposílání nebude zpracováno."
+      ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
       ],
@@ -3249,8 +3281,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3292,8 +3324,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru ${ formattedFilename }. Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3327,8 +3359,8 @@
       "Component with wrong format": [
         "Komponenta s nesprávným formátem"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Vlastní časové pásmo"
       ],
       "Edited event not supported": [
         "Upravená událost není podporována"
@@ -3396,11 +3428,11 @@
       "Start time out of bounds": [
         "Čas zahájení mimo hranice"
       ],
+      "Time zone": [
+        "Časové pásmo"
+      ],
       "Time zone not supported": [
         "Časové pásmo není podporováno"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Úkoly"
@@ -3413,8 +3445,8 @@
       ]
     },
     "Error importing users": {
-      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Došlo k chybě při čtení souboru \"${ formattedFilename }\". Soubor nemá správný formát."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo k chybě při nahrávání souboru \"${ formattedFilename }\". Maximální velikost souboru je ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -4306,8 +4338,8 @@
       "Canceled": [
         "Zrušeno"
       ],
-      "Cancelling": [
-        "Canceling"
+      "Canceling": [
+        "Ruší se"
       ],
       "Completed": [
         "Dokončeno"
@@ -4546,6 +4578,9 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Název, který vám pomůže zapamatovat si jeho použití, abyste později mohli konfiguraci snadno zrušit nebo rozšířit."
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
+      ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Soubor pro obnovení vám umožňuje odemknout a zobrazit data po resetování účtu"
       ],
@@ -4780,8 +4815,8 @@
       "Center": [
         "Zarovnat na střed"
       ],
-      "Check the status of current and previous imports.": [
-        "Zkontrolovat stav aktuálních a předchozích importů."
+      "Check the status of imports and forwarding.": [
+        "Zkontrolujte stav importování a přeposílání."
       ],
       "Choose the look and feel of the application.": [
         "Vyberte si vzhled aplikace."
@@ -4873,11 +4908,11 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Heslo NEZAPOMEŇTE. Bez hesla nebudete moci spravovat svou organizaci."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "Nezapomeňte toto heslo. V případě, že ho zapomenete, nebudete se moci přihlásit nebo dešifrovat své zprávy."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Nepoužívejte pověření OpenVPN / IKEv2 v aplikacích ${ VPN_APP_NAME } ani na ovládacím panelu ${ VPN_APP_NAME }. ${ learnMore }"
@@ -4959,9 +4994,6 @@
       ],
       "Encryption setting updated": [
         "Nastavení šifrování bylo aktualizováno"
-      ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
       ],
       "Enter key manually instead": [
         "Místo toho vložte klíč ručně"
@@ -5087,13 +5119,13 @@
         "Pokud jste nastavili SPF i DKIM, DMARC Vám umožní určit, jak by ostatní e-mailoví poskytovatelé měli doručovat e-maily pro Vaši doménu v případě, že se nepodaří provést kontrolu SPF ani DKIM. Pro spammery je pak těžší předstírat Vaši totožnost, ale špatné nastavení může způsobit problémy s doručováním."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Pokud ztratíte své přihlašovací údaje a potřebujete resetovat svůj účet, ${ boldImperative } že máte ${ boldAccountRecovery } na svém místě."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Pokud ztratíte své přihlašovací údaje a potřebujete resetovat svůj účet, ${ boldImperative } že máte oba ${ boldAccountAndRecovery } na svém místě, jinak možná nebudete mít přístup k žádným svým e-mailům, kontaktům nebo souborům."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Ztratíte-li zařízení určené pro dvoufázové ověření, můžete pro přihlášení použít následující kódy místo 6-místného 2FA kódu. Každý kód může být použit pouze jednou."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
@@ -5139,9 +5171,6 @@
       ],
       "Import mailbox": [
         "Importovat poštovní schránku"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Důležité: Ujistěte se, že jste si uložili kódy pro obnovení. V opačném případě se již nikdy nebudete moci přihlásit, pokud ztratíte zařízení určené pro 2FA."
@@ -5221,8 +5250,8 @@
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Naučte se, jak se přihlásit ke službě ${ VPN_APP_NAME } pomocí VPN aplikací třetích stran."
       ],
       "Learn more": [
         "Zjistěte více"
@@ -5263,9 +5292,6 @@
       "Loading...": [
         "Načítání..."
       ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
-      ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Logy zaznamenávají pokusy o přihlášení do všech služeb ${ BRAND_NAME } s použitím vašich přístupových údajů ${ BRAND_NAME }."
       ],
@@ -5296,9 +5322,6 @@
       "more": [
         "více"
       ],
-      "More Info": [
-        "Learn more"
-      ],
       "Multi-user support not enabled.": [
         "Podpora více uživatelů není povolena."
       ],
@@ -5328,9 +5351,6 @@
       ],
       "No folder selected": [
         "Není vybrána žádná složka"
-      ],
-      "No imports to display.": [
-        "Žádné importy k zobrazení."
       ],
       "No label selected": [
         "Není vybrán žádný štítek"
@@ -5569,6 +5589,9 @@
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }u</a>."
       ],
@@ -5592,6 +5615,9 @@
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
+      ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Přihlaste se do ${ MAIL_APP_NAME } pro aktivaci adresy"
       ],
       "Signed up": [
         "Zaregistrováno"
@@ -5683,8 +5709,8 @@
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Aplikace Import-Export umožňuje exportovat zprávy pro místní zálohy a obnovit předchozí zálohy do účtu."
       ],
-      "The name will be visible to your users while they are logged in.": [
-        "The name will be visible to your users while they are signed in."
+      "The name will be visible to your users while they are signed in.": [
+        "Jméno bude viditelné vašim uživatelům, když budou přihlášeni."
       ],
       "The securest way to browse, stream, and be online.": [
         "Nejbezpečnější způsob, jak procházet, streamovat a být online."
@@ -5836,8 +5862,8 @@
       "Two-factor authentication enabled": [
         "Dvoufázové ověřování zapnuto"
       ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "Režim dvou hesel vyžaduje jedno heslo pro přihlášení k vašemu účtu a druhé heslo k dešifrování vaší e-mailové schránky. (Pokročilé)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Režim dvou hesel využívá dvě samostatná hesla pro přihlášení a dešifrování e-mailové schránky. V určitých situacích to zvyšuje bezpečnost, nicméně pro většinu uživatelů je vhodné používat režim jednoho hesla. Chcete-li přepnout do režimu dvou hesel, nejprve zadejte své přihlašovací heslo, a poté heslo k e-mailové schránce."
@@ -6019,8 +6045,8 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Pro účely účetnictví si můžete své faktury přizpůsobit a stáhnout."
       ],
-      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
+      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Můžete zapnout zaznamenávání přihlášení, aby jste měli přehled kdy a ze které IP adresy bylo přistoupeno k vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k vašemu účtu, stejně jako nepovedená přihlášení."
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
@@ -6076,8 +6102,8 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nelze doporučovat uživatelům ${ MAIL_APP_NAME }"
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Přihlašovací údaje OpenVPN / IKEv2 nelze použít pro přihlášení do aplikací ${ VPN_APP_NAME } nebo ovládacího panelu ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili jste e-mail pro obnovení, takže v případě ztráty hesla nebude možné účet obnovit. Pokračovat bez sekundárního e-mailu?"
@@ -6151,8 +6177,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
       ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } jsou propojeny. Chcete-li je odstranit, přihlaste se prosím na ${ loginLink } a smažte tam svůj účet."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
@@ -6918,9 +6944,6 @@
       "Display name": [
         "Zobrazované jméno"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Do you have any suggestions for our team?": [
         "Máte pro náš tým nějaké návrhy?"
       ],
@@ -6929,6 +6952,9 @@
       ],
       "Domain name": [
         "Název domény"
+      ],
+      "Don't ask again": [
+        "Příště se neptat"
       ],
       "Duration": [
         "Doba trvání"
@@ -7356,8 +7382,8 @@
       "Time format": [
         "Formát času"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Časové pásmo"
       ],
       "To: ${ to }": [
         "Komu: ${ to }"
@@ -7445,9 +7471,6 @@
       ],
       "Your referral link": [
         "Váš doporučující odkaz"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -7559,6 +7582,11 @@
       ],
       "Row": [
         "Řádek"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Label/folder modal": {
@@ -8318,8 +8346,8 @@
       "Unlimited folders": [
         "Neomezeně složek"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
       ],
       "Unlimited labels": [
         "Neomezeně štítků"
@@ -9196,9 +9224,6 @@
       "Please insert link first": [
         "Nejdříve prosím vložte odkaz"
       ],
-      "Postal code": [
-        "Poštovní směrovací číslo"
-      ],
       "Printer": [
         "Tiskárna"
       ],
@@ -9225,9 +9250,6 @@
       ],
       "yourdomain.com": [
         "vasedomena.cz"
-      ],
-      "ZIP": [
-        "PSČ"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -9373,6 +9395,9 @@
       "Verify recovery phone?": [
         "Ověřit telefon pro obnovení?"
       ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Ověřte nyní toto telefonní číslo určené pro obnovení: ${ phone.Value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ověřením telefonního čísla zvyšujete bezpečnost účtu a umožňujete další možnosti obnovení."
       ]
@@ -9454,9 +9479,6 @@
       ]
     },
     "Settings description": {
-      "Make the move to privacy. Effortlessly and securely.": [
-        "Přesuňte se do soukromí. Bez námahy a bezpečně."
-      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Na jednu zprávu můžete použít více štítků, ale zprávy mohou být obvykle pouze v jedné složce. Přetažením změníte pořadí složek a štítků."
       ]
@@ -9760,8 +9782,8 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } byl zkopírován do Vaší schránky"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
+      "Account deleted. Signing out...": [
+        "Účet byl smazán. Odhlašování..."
       ],
       "Address added": [
         "Adresa přidána"
@@ -9793,8 +9815,8 @@
       "Calendar updated": [
         "Kalendář aktualizován"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Ruším import"
       ],
       "Catch-all address updated": [
         "Záchytná adresa aktualizována"
@@ -10102,8 +10124,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Hledat časová pásma"
       ]
     },
     "Title": {
@@ -10527,6 +10549,9 @@
       "Gift code": [
         "Dárkový kód"
       ],
+      "History": [
+        "Historie"
+      ],
       "How does it work?": [
         "Jak to funguje?"
       ],
@@ -10562,6 +10587,9 @@
       ],
       "Import key": [
         "Importovat klíč"
+      ],
+      "Import messages": [
+        "Importovat zprávy"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importovat přes ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -10776,6 +10804,9 @@
       "Set organization password": [
         "Nastavit heslo organizace"
       ],
+      "Set up forwarding": [
+        "Nastavit přeposílání"
+      ],
       "Set up two-factor authentication": [
         "Nastavit dvoufázové ověření"
       ],
@@ -10820,9 +10851,6 @@
       ],
       "Start import process": [
         "Zahájit proces importu"
-      ],
-      "Start new import": [
-        "Zahájit nový import"
       ],
       "Status": [
         "Stav"
@@ -10932,9 +10960,6 @@
       "Your current plan": [
         "Váš aktuální tarif"
       ],
-      "Your import history": [
-        "Aktuální a minulé importy"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
       ],
@@ -10952,9 +10977,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Byli jste pozváni k vyzkoušení ${ MAIL_APP_NAME }"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11292,11 +11314,11 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
       ],
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "Jste si jistí, že chcete vymazat telefonní číslo?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Opravdu chcete smazat tuto adresu?"
       ],
       "Are you sure you want to discard your import?": [
         "Jste si jistí, že chcete zahodit váš import?"
@@ -11325,11 +11347,11 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } tarify. Prosím otevřete běžný požadavek na podporu."
       ],
+      "Please add at least one recipient.": [
+        "Zadejte alespoň jednoho příjemce."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Berte prosím na vědomí, že výběrem tohoto způsobu platby nemůže být váš účet navýšen okamžitě. Předplatné Vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
-      ],
-      "Please provide at least one recipient": [
-        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."

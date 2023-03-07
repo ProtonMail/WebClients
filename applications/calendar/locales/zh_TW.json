@@ -12,6 +12,14 @@
         "有限制的檢視（僅檢視有空／忙碌）"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "轉發將很快開始。新電子郵件將會出現在您的收件匣中。"
+      ],
+      "Mail forward stopped": [
+        "已停止郵件轉寄"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 介紹"
@@ -280,9 +288,6 @@
       "Load image": [
         "載入圖像"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "此參與者自由列席"
       ],
@@ -427,8 +432,8 @@
       "Select all": [
         "全選"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "選取時區"
       ],
       "Send": [
         "送出"
@@ -462,6 +467,9 @@
       ],
       "Show time zones": [
         "顯示時區"
+      ],
+      "Sign in": [
+        "登入"
       ],
       "Sign out": [
         "登出"
@@ -1058,8 +1066,8 @@
       "Role": [
         "身份"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "時區"
       ],
       "Title": [
         "職銜"
@@ -1979,8 +1987,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "不要再次詢問"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2128,14 +2136,17 @@
       "Decryption error: Decryption of this event's content failed.": [
         "解密失敗：此事件內容解密失敗。"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆或"
+      ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
       "Email address disabled": [
         "電郵位址已停用"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "電郵位址為必填"
@@ -2205,6 +2216,9 @@
       ],
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
       "Missing key packet": [
         "缺少金鑰封包"
@@ -2389,6 +2403,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "您不能傳送有超過 10 個聯絡人的 vCard 檔案"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "您已經達到行事曆的數量上限。有部分行事曆無法被匯入。"
+      ],
       "You must set a name": [
         "您必須設定名稱"
       ],
@@ -2402,8 +2419,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式不正確。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2442,8 +2459,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式不正確。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2477,8 +2494,8 @@
       "Component with wrong format": [
         "元件的格式有誤"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "自訂時區"
       ],
       "Edited event not supported": [
         "已編輯事件不受支援"
@@ -2546,11 +2563,11 @@
       "Start time out of bounds": [
         "開始時間超出界限"
       ],
+      "Time zone": [
+        "時區"
+      ],
       "Time zone not supported": [
         "不支援的時區"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "待辦事項"
@@ -3131,6 +3148,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "取消函即將傳送給各事件參與者。您要刪除此事件嗎？"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "電話號碼僅能用於驗證一個 ${ BRAND_NAME } 帳號"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
@@ -3266,6 +3286,9 @@
       "Existent, added and removed participants will be notified.": [
         "現有、已加入及已移除的參與者將獲通知。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
+      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -3305,8 +3328,8 @@
       "Import mailbox": [
         "匯入郵箱"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "從其它服務匯入您的電郵、行事曆或聯絡人到 ${ BRAND_NAME }。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "從其他裝置匯入您的電子郵件、行事曆與聯絡人到 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -3457,6 +3480,9 @@
       ],
       "Select what you want to import.": [
         "選擇您要匯入的檔案。"
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆建立一個新的行事曆。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
@@ -3866,8 +3892,8 @@
       "Description": [
         "描述"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "不要再次詢問"
       ],
       "Email": [
         "電郵"
@@ -5022,6 +5048,9 @@
       "Calendar updated": [
         "行事曆已更新"
       ],
+      "Canceling import": [
+        "正在取消匯入"
+      ],
       "Cancellation sent and all events deleted": [
         "取消已送出，並且已刪除全部事件"
       ],
@@ -5033,9 +5062,6 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "取消已送出，並且已從全部事件中移除參與者"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
@@ -5207,8 +5233,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "搜尋時區"
       ]
     },
     "Title": {

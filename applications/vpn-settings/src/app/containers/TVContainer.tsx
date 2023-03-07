@@ -99,7 +99,7 @@ const TVContainer = () => {
                         <VpnLogo />
                     </Href>
                 </div>
-                <h3 className="mb0 pl0-25 text-uppercase text-bold">{c('Title').t`TV log in`}</h3>
+                <h3 className="mb0 pl0-25 text-uppercase text-bold">{c('Title').t`TV sign in`}</h3>
             </div>
             <div className="flex flex-column flex-item-fluid flex-nowrap flex-item-noshrink">
                 <div className="mauto p2 flex-item-noshrink max-w30e">{render()}</div>

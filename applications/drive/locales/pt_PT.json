@@ -280,9 +280,6 @@
       "Load image": [
         "Carregar imagem"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage labels": [
         "Gerir etiquetas"
       ],
@@ -456,6 +453,9 @@
       ],
       "Show preview": [
         "Mostrar pré-visualização"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Sign out": [
         "Terminar sessão"
@@ -733,9 +733,6 @@
       ],
       "Role": [
         "Papel"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Título"
@@ -1665,9 +1662,6 @@
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Email inválido"
       ],
@@ -1685,6 +1679,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Senha incorrecta, tente novamente."
+      ],
+      "Invalid email address": [
+        "Endereço electrónico inválido"
       ],
       "Invalid name": [
         "Nome inválido"
@@ -1759,9 +1756,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -1797,9 +1791,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -1828,9 +1819,6 @@
       ],
       "Component with wrong format": [
         "Componente com formato errado"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Evento editado não suportado"
@@ -1891,9 +1879,6 @@
       ],
       "Start time out of bounds": [
         "Hora inicial fora dos limites"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tarefas"
@@ -2852,9 +2837,6 @@
       ],
       "Deleted": [
         "Eliminado"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Email": [
         "Email"

@@ -203,9 +203,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "OK"
-      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
       ],
@@ -1525,8 +1522,8 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
-      "Payment process cancelled": [
-        "Payment process canceled"
+      "Payment process canceled": [
+        "Отмена процесса оплаты"
       ],
       "Payment process consumed": [
         "Процесс оплаты завершен"
@@ -1564,8 +1561,8 @@
       "Tab closed": [
         "Вкладка закрыта"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Используемый браузер не позволяет полностью провести платеж. Пожалуйста, попробуйте другой браузер или войдите с компьютера."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
@@ -1905,6 +1902,9 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
@@ -2019,9 +2019,6 @@
       "Emailing preference saved": [
         "Настройки отправки почты сохранены"
       ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
-      ],
       "Enter key manually instead": [
         "Ввести ключ вручную"
       ],
@@ -2097,8 +2094,8 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Если вы никогда не использовали двухфакторную аутентификацию, мы настоятельно рекомендуем вам ${ guideButton }."
       ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода 2ФА для входа в учётную запись. Каждый код можно использовать только один раз."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
@@ -2136,8 +2133,8 @@
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Узнайте, как войти в ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
       ],
       "Learn more": [
         "Узнать больше"
@@ -2156,9 +2153,6 @@
       ],
       "Loading...": [
         "Загрузка..."
-      ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
       ],
       "lose access to all current encrypted data": [
         "потеряете доступ ко всем текущим зашифрованным данным"
@@ -2289,6 +2283,9 @@
       "Setting up your Drive": [
         "Настройка вашего Хранлища"
       ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Войдите в ${ MAIL_APP_NAME }, чтобы активировать свой адрес"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
       ],
@@ -2382,8 +2379,8 @@
       "Two-factor authentication enabled": [
         "Двухфакторная аутентификация включена"
       ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "В двухпарольном режиме требуются два пароля: один — для входа в учётную запись, другой — для расшифровки почтового ящика. (Расширенная функция безопасности)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Режим с двумя паролями использует отдельные пароли для входа в систему и расшифровки почтового ящика. Это незначительно повышает безопасность в некоторых ситуациях, однако для большинства пользователей мы рекомендуем режим одного пароля. Для переключения в режим двух паролей сначала задайте пароль для входа, а затем – пароль почтового ящика."
@@ -2529,8 +2526,8 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Вы можете использовать следующие учетные данные для подключения к серверу ${ VPN_APP_NAME } с помощью стороннего приложения VPN с открытым исходным кодом, например, Tunnelblick для macOS или OpenVPN для GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Вы не можете использовать учётные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }.\n${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без метода восстановления?"
@@ -2574,8 +2571,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
       ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны. Чтобы удалить их оба, пожалуйста, войдите по ссылке: ${ loginLink } и удалите свой аккаунт."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
@@ -2997,9 +2994,6 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -3036,6 +3030,11 @@
       ],
       "Expired": [
         "Истёкший"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "Почтовый индекс (для американских карт)"
       ]
     },
     "Link": {
@@ -3426,8 +3425,8 @@
       "Unlimited folders": [
         "Неограниченное количество папок"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
       ],
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
@@ -3899,17 +3898,11 @@
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
       ],
-      "Postal code": [
-        "Почтовый индекс"
-      ],
       "Select": [
         "Выбрать"
       ],
       "Select a reason": [
         "Выберите причину"
-      ],
-      "ZIP": [
-        "Почтовый индекс"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -3994,6 +3987,9 @@
       ],
       "Verify recovery phone?": [
         "Подтвердить телефон для восстановления?"
+      ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Подтвердите этот номер телефона для восстановления: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Подтверждение номера телефона повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
@@ -4419,8 +4415,8 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } скопирован в ваш буфер обмена"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
+      "Account deleted. Signing out...": [
+        "Аккаунт удален. Выходим из системы..."
       ],
       "Bug reported": [
         "Отчёт об ошибке отправлен"
@@ -4915,9 +4911,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вас пригласили попробовать ${ MAIL_APP_NAME }"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title for payment methods table": {
@@ -4992,11 +4985,11 @@
       ]
     },
     "Warning": {
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "Вы уверены, что хотите удалить номер телефона?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Вы уверены, что хотите удалить этот адрес?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Удалив этот адрес, вы больше не сможете получать ежедневные уведомления по электронной почте."

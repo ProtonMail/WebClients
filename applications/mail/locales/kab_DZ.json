@@ -482,9 +482,6 @@
       "Loading${ ellipsis }": [
         "Asali${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Taččart n tnaka n urmas"
       ],
@@ -826,6 +823,9 @@
       ],
       "Show preview": [
         "Sken taskant"
+      ],
+      "Sign in": [
+        "Qqen"
       ],
       "Sign out": [
         "Ffeɣ"
@@ -1613,9 +1613,6 @@
       ],
       "Role": [
         "Tamlilt"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Azwel"
@@ -2585,9 +2582,6 @@
       "Email address disabled": [
         "Tansa imayl tensa"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Imayl mačči d ameɣtu"
       ],
@@ -2629,6 +2623,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Awal uffir n tirawt d arameɣtu. Ttxil-k·m ɛreḍ tikkelt-nniḍen."
+      ],
+      "Invalid email address": [
+        "Yir tansa imayl"
       ],
       "Invalid expiration time": [
         "Yir akud n taggara"
@@ -2853,9 +2850,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Tella-d tuccḍa deg usali n ufaylu-inek ·inem ${ formattedFilename }. Teɣzi tafellayt n ufaylu d ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2884,9 +2878,6 @@
       ],
       "Component with wrong format": [
         "Asuddis s yir amasal"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Aẓrag n tedyant ur yettusefrak ara"
@@ -2947,9 +2938,6 @@
       ],
       "Time zone not supported": [
         "Izḍi usrid ur yettusefrak ara"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Anekcum n twuriwin"
@@ -3840,9 +3828,6 @@
       "Expires": [
         "Ad ifat di"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Ad yemmet deg ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Ad yemmet deg ${ formattedDelayShort }"
       ],
@@ -4252,9 +4237,6 @@
       "This conversation contains trashed messages.": [
         "Adiwenni-a yegber iznan yellan deg iḍumman."
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
-      ],
       "This invitation is saved in a disabled calendar.": [
         "Leɛraḍa-agi tettwasekles deg uwitay yensan."
       ],
@@ -4293,15 +4275,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Izen-agi ad yemmet deg ${ formattedDate }"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Izen-agi ad immet deg ${ dateString } ɣef ${ formattedTime }"
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        "Izen-agi ad immet ass-a ɣef ${ formattedTime }"
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Izen-agi ad immet azekka ɣef ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tasarut-a tazayezt ad tettwaseqdec s wudem awurman i uwgelhen n yimayl i yettwaznen ɣer tansa-a."
@@ -4863,9 +4836,6 @@
       "Delete": [
         "Kkes"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Email": [
         "Imayl"
       ],
@@ -5404,9 +5374,6 @@
       ]
     },
     "Message notification": {
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
-      ],
       "Sending undone": [
         "Tuzzna tettwasefsex"
       ],
@@ -6206,17 +6173,11 @@
       "Fingerprint copied to clipboard": [
         "Adriz n uḍad yettwanɣel ɣer tecfawit"
       ],
-      "Folder cleared": [
-        "Akaram yettwaṣfeḍ"
-      ],
       "Import record deleted": [
         "Kter asekles yettwakksen"
       ],
       "Keyboard shortcuts preferences updated": [
         "Ismenyifen n yinegzumen n unasiw ttwaleqqmen"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Tibzimin yettwasensen."

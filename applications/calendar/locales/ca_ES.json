@@ -12,6 +12,14 @@
         "Vista limitada (mostra només lliures/ocupats)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "El reenviament començarà aviat. Els correus electrònics nous apareixeran a la vostra safata d'entrada."
+      ],
+      "Mail forward stopped": [
+        "El reenviament de correu s'ha aturat."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introducció a ${ BRAND_NAME }"
@@ -26,7 +34,7 @@
         "Afegeix"
       ],
       "Add address": [
-        "Afegeix adreça"
+        "Afegeix una adreça"
       ],
       "Add contact": [
         "Afegeix un contacte"
@@ -44,7 +52,7 @@
         "Afegeix un grup"
       ],
       "Add notification": [
-        "Afegir notificació"
+        "Afegeix una notificació"
       ],
       "Add phone number": [
         "Afegeix número de telèfon"
@@ -56,7 +64,7 @@
         "Aplica"
       ],
       "Attach screenshot(s)": [
-        "Adjunta captura(es) de pantalla"
+        "Adjunta una o més captures de pantalla"
       ],
       "Attention required": [
         "Requereix atenció"
@@ -140,7 +148,7 @@
         "Crear un nou grup de contactes"
       ],
       "Create calendar": [
-        "Crear calendari"
+        "Crea un calendari"
       ],
       "Create event": [
         "Crea un esdeveniment"
@@ -155,7 +163,7 @@
         "Declina invitació"
       ],
       "Delete": [
-        "Esborra"
+        "Elimina"
       ],
       "Delete ${ selectedCount } contact": [
         "Eliminar ${ selectedCount } contacte",
@@ -190,7 +198,7 @@
         "Edita l'adreça de correu"
       ],
       "Edit label": [
-        "Editar etiqueta"
+        "Edita l'etiqueta"
       ],
       "Edit phone number": [
         "Edita el número de telèfon"
@@ -229,10 +237,10 @@
         "Ves al panell ${ index }"
       ],
       "Go to settings": [
-        "Ves a la configuració"
+        "Aneu a les preferències"
       ],
       "Got it": [
-        "Entesos"
+        "D'acord"
       ],
       "Hide advanced PGP settings": [
         "Amagueu la configuració avançada del PGP"
@@ -281,9 +289,6 @@
       ],
       "Load image": [
         "Carrega la imatge"
-      ],
-      "Log in": [
-        "Sign in"
       ],
       "Make this participant optional": [
         "Fer opcional aquest participant"
@@ -349,7 +354,7 @@
         "No, gràcies"
       ],
       "OK": [
-        "D'acord"
+        "OK"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -373,7 +378,7 @@
         "Any anterior"
       ],
       "Quit": [
-        "Sortir"
+        "Surt"
       ],
       "Re-sign": [
         "Tornar a signar"
@@ -388,10 +393,10 @@
         "Recomana a un amic"
       ],
       "refresh the page": [
-        "refresqueu la pàgina"
+        "refrescar la pàgina"
       ],
       "Refresh the page": [
-        "Actualitza la pàgina"
+        "Refresca la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -429,8 +434,8 @@
       "Select all": [
         "Seleccionar-ho tot"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Selecciona el fus horari"
       ],
       "Send": [
         "Enviar"
@@ -439,7 +444,7 @@
         "Enviar comentaris"
       ],
       "Set recovery phrase": [
-        "Definineix la frase de recuperació"
+        "Estableix la frase de recuperació"
       ],
       "Share": [
         "Compartir"
@@ -464,6 +469,9 @@
       ],
       "Show time zones": [
         "Mostrar el fus horari"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
       ],
       "Sign out": [
         "Tanca la sessió"
@@ -511,7 +519,7 @@
         "No confiable"
       ],
       "Update": [
-        "Actualitzar"
+        "Actualitza"
       ],
       "Update recovery file": [
         "Actualitza el fitxer de recuperació"
@@ -520,7 +528,7 @@
         "Actualitza la frase de recuperació"
       ],
       "Upgrade": [
-        "Actualitzar"
+        "Actualitza"
       ],
       "Upgrade now": [
         "Actualitzar ara"
@@ -538,7 +546,7 @@
         "Usar per enviar"
       ],
       "Use recovery code": [
-        "Utilitzar un codi de recuperació"
+        "Utilitza un codi de recuperació"
       ],
       "Verify": [
         "Verifica"
@@ -553,7 +561,7 @@
         "Mostra la factura"
       ],
       "Yes": [
-        "Si"
+        "Sí"
       ],
       "Yes, I'll attend": [
         "Sí, hi assistiré"
@@ -663,7 +671,7 @@
         "Fitxer ICS buit"
       ],
       "Invalid event": [
-        "Esdeveniment invàlid"
+        "Esdeveniment no vàlid"
       ],
       "Invalid ICS file": [
         "Fitxer ICS invàlid"
@@ -964,16 +972,16 @@
         "genciana"
       ],
       "fern": [
-        "falguera"
+        "verd falguera"
       ],
       "forest": [
-        "bosc"
+        "verd bosc"
       ],
       "ocean": [
-        "oceà"
+        "blau marí"
       ],
       "olive": [
-        "oliva"
+        "verd oliva"
       ],
       "pacific": [
         "pacífic"
@@ -982,7 +990,7 @@
         "cogombre"
       ],
       "pine": [
-        "pi"
+        "verd pi"
       ],
       "pink": [
         "rosa"
@@ -1063,8 +1071,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Fus horari"
       ],
       "Title": [
         "Títol"
@@ -1986,11 +1994,6 @@
         "L'esdeveniment pertany a un calendari deshabilitat."
       ]
     },
-    "Don't ask to update timezone checkbox label": {
-      "Do not ask again": [
-        "Don't ask again"
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Afegeix calendari"
@@ -2152,6 +2155,10 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Error de desxifratge: no s'ha pogut desxifrar el contingut d'aquest esdeveniment."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
         "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
@@ -2161,9 +2168,6 @@
       ],
       "Email address disabled": [
         "Correu electrònic deshabilitada"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
@@ -2234,6 +2238,10 @@
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
+        "Combineu almenys ${ calendarsToFixCount } calendaris importats amb els vostres calendaris ${ BRAND_NAME } existents."
+      ],
       "Missing key packet": [
         "Falta el paquet de claus"
       ],
@@ -2282,7 +2290,7 @@
         "La contrasenya és obligatòria."
       ],
       "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
+        "Les contrasenyes no coincideixen."
       ],
       "Please create an address first.": [
         "Creeu la vostra adreça primer."
@@ -2377,7 +2385,7 @@
         "Aquest camp requereix el màxim de ${ maximumLength } caràcters."
       ],
       "This field is required": [
-        "Aquest camp és obligatori"
+        "Aquest camp és obligatori."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
@@ -2409,6 +2417,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "No podeu enviar arxius vCard de més de 10 contactes."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "No es poden importar tots els calendaris perquè heu arribat al límit de calendaris."
+      ],
       "You must set a name": [
         "Heu d'establir un nom"
       ],
@@ -2422,8 +2433,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. Format de fitxer incorrecte."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2456,15 +2467,15 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "El xifratge ha fallat"
+        "Error en el xifratge"
       ],
       "vCard versions < 3.0 not supported": [
         "versions vCard < 3.0 no suportades"
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. Format de fitxer incorrecte."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2498,8 +2509,8 @@
       "Component with wrong format": [
         "Component amb format erroni"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Fus horari personalitzat"
       ],
       "Edited event not supported": [
         "Esdeveniment editat no compatible"
@@ -2508,7 +2519,7 @@
         "Element"
       ],
       "Encryption failed": [
-        "Ha fallat el xifratge"
+        "Error en el xifratge"
       ],
       "End time out of bounds": [
         "Hora de finalització fora de límits"
@@ -2567,11 +2578,11 @@
       "Start time out of bounds": [
         "Hora d’inici fora de límits"
       ],
+      "Time zone": [
+        "Fus horari"
+      ],
       "Time zone not supported": [
         "Fus horari no compatible"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entrada de tasques"
@@ -2597,7 +2608,7 @@
         "Si us play, ${ refresh } o comproveu la vostra connexió."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Alguna cosa ha anat malament. Actualitzeu la pàgina o torneu-ho a provar més tard."
+        "S'ha produït un error. Refresqueu la pàgina o torneu-ho a provar més tard."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
         "S'ha produït un problema en connectar amb ${ BRAND_NAME }."
@@ -2705,7 +2716,7 @@
     },
     "Event title": {
       "(no title)": [
-        "(No title)"
+        "(sense títol)"
       ]
     },
     "Feedback Modal Title": {
@@ -2794,7 +2805,7 @@
         "Contactes, grups i preferències"
       ],
       "Get help": [
-        "Obtenir ajuda"
+        "Obteniu ajuda"
       ],
       "Name": [
         "Nom"
@@ -2909,7 +2920,7 @@
     },
     "Import contact. Contact identifier": {
       "unknown": [
-        "desconegut/da"
+        "desconegut"
       ]
     },
     "Import contacts warning": {
@@ -3178,6 +3189,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Un correu electrònic serà enviat als participants de l'esdeveniment. Voleu esborrar aquest esdeveniment?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accés al compte restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
@@ -3316,6 +3330,9 @@
       "Existent, added and removed participants will be notified.": [
         "Els participants existents, afegits i eliminats seran notificats."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Transferiu els missatges entrants d'un altre compte vers la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
       ],
@@ -3356,8 +3373,8 @@
       "Import mailbox": [
         "Importar bústia de correu"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importeu els vostres correus electrònics, calendaris, i contactes des d'un altre servei a ${ BRAND_NAME }. Us guiarem en cada pas del camí i xifrarem les vostres dades a mesura que es mouen. Us donem la benvinguda al món de la privadesa."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -3438,7 +3455,7 @@
         "No s'ha trobat cap grup"
       ],
       "No results found": [
-        "No s'han trobat resultats"
+        "No s'han trobat resultats."
       ],
       "None of the participants can be notified about your changes:": [
         "Cap dels participants pot ser notificat dels canvis:"
@@ -3499,7 +3516,7 @@
         "La informació de recuperació es mantindrà en aquest dispositiu a menys que escolliu eliminar-la."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+        "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Removed participants will be notified.": [
         "Els participants eliminats seran notificats."
@@ -3509,6 +3526,9 @@
       ],
       "Select what you want to import.": [
         "Seleccioneu què voleu importar."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -3625,7 +3645,7 @@
         "Quin esdeveniment voleu actualitzar?"
       ],
       "Would you like to change your answer for all the events in this series?": [
-        "Voleu canviar la vostra resposta per a tots els esdeveniments de la sèrie?"
+        "Voleu canviar la vostra resposta per a tots els esdeveniments d'aquesta sèrie?"
       ],
       "Would you like to continue anyway?": [
         "Voleu continuar?"
@@ -3676,7 +3696,7 @@
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
-        "Heu desactivat les vostres claus i els esdeveniments enllaçats amb els calendaris següents ara es poden desxifrar."
+        "Heu reactivat les vostres claus i els esdeveniments enllaçats als següents calendaris ja es poden desxifrar."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Heu rebutjat aquesta invitació prèviament. Demaneu al propietari que us torni a convidar"
@@ -3748,7 +3768,7 @@
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Sembla que la vostra zona horària del sistema ha canviat a ${ timezone }. Voleu actualitzar la vostra preferència de fus horari?"
+        "Sembla que el fus horari del sistema ha canviat a ${ timezone }. Voleu actualitzar la vostra preferència de fus horari?"
       ]
     },
     "Info on errors": {
@@ -3822,7 +3842,7 @@
         "Obsoleta"
       ],
       "Primary": [
-        "Primari"
+        "Principal"
       ],
       "Revoked": [
         "Revocat"
@@ -3857,7 +3877,7 @@
         "Contrasenya de l'aplicació"
       ],
       "Attach screenshot(s)": [
-        "Adjunta captura/es de pantalla"
+        "Adjunta una o més captures de pantalla"
       ],
       "Authenticator app": [
         "Aplicació d'autenticació"
@@ -3919,8 +3939,8 @@
       "Description": [
         "Descripció"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "No tornis a preguntar"
       ],
       "Email": [
         "Correu electrònic"
@@ -3956,7 +3976,7 @@
         "Finalitza"
       ],
       "Event duration": [
-        "Durada de l'esdeveniment"
+        "Duració de l'esdeveniment"
       ],
       "Event notifications": [
         "Notificacions d'esdeveniment"
@@ -4055,7 +4075,7 @@
         "Notificacions"
       ],
       "OK": [
-        "Correcta"
+        "OK"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -4131,7 +4151,7 @@
         "Codi d'autenticació de dos factors"
       ],
       "Upload picture": [
-        "Carregar imatge"
+        "Carrega imatge"
       ],
       "URL": [
         "URL"
@@ -4217,7 +4237,7 @@
         "Altres calendaris"
       ],
       "Pay invoice": [
-        "Pagar la factura"
+        "Paga la factura"
       ],
       "Request an invite": [
         "Demana una invitació"
@@ -4302,7 +4322,7 @@
         "Automàtic"
       ],
       "Plain text": [
-        "Text plà"
+        "Text sense format"
       ]
     },
     "Modal action": {
@@ -4774,7 +4794,7 @@
     },
     "Participant name": {
       "You": [
-        "Tú"
+        "Vostè"
       ]
     },
     "Participants collapse button label": {
@@ -4819,10 +4839,10 @@
         "Afegeix un nom al calendari"
       ],
       "Add description": [
-        "Afegeix descripció"
+        "Afegeix una descripció"
       ],
       "Add location": [
-        "Afegeix ubicació"
+        "Afegeix una ubicació"
       ],
       "Add participants": [
         "Afegeix participants"
@@ -5028,7 +5048,7 @@
     },
     "Spotlight settings link": {
       "Go to settings": [
-        "Ana a preferències"
+        "Aneu a les preferències"
       ]
     },
     "Storage": {
@@ -5114,6 +5134,9 @@
       "Calendar updated": [
         "Calendari actualitzat"
       ],
+      "Canceling import": [
+        "Cancel·lant la importació"
+      ],
       "Cancellation sent and all events deleted": [
         "Cancel·lació enviada i tots els esdeveniments eliminats"
       ],
@@ -5125,9 +5148,6 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Cancel·lació enviada i participants eliminats de tots els esdeveniments"
-      ],
-      "Cancelling import": [
-        "Canceling import"
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
@@ -5207,7 +5227,7 @@
         "Número de telèfon copiat al porta-retalls"
       ],
       "Preference saved": [
-        "Preferències desades"
+        "Preferència desada"
       ],
       "Preferences saved": [
         "Preferències guardades"
@@ -5307,11 +5327,6 @@
       "${ minutes } minute": [
         "${ minutes } minut",
         "${ minutes } minuts"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
       ]
     },
     "Title": {
@@ -5555,7 +5570,7 @@
         "Suprimeix participants"
       ],
       "Report a problem": [
-        "Avisar d'un problema"
+        "Notifica un problema"
       ],
       "Request new code": [
         "Demanar un codi nou"
@@ -5603,10 +5618,10 @@
         "Seleccioneu l'hora per enviar aquesta notificació."
       ],
       "Select the time zone for the event end time": [
-        "Seleccioneu la zona horària per a l'hora de finalització de l'esdeveniment."
+        "Seleccioneu el fus horari per a l'hora de finalització de l'esdeveniment."
       ],
       "Select the time zone for the event start time": [
-        "Seleccioneu la zona horària per a l'hora d'inici de l'esdeveniment."
+        "Seleccioneu el fus horari per a l'hora d'inici de l'esdeveniment."
       ],
       "Select the way to send this notification": [
         "Seleccioneu la manera d’enviar aquesta notificació"

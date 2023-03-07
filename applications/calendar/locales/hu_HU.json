@@ -259,9 +259,6 @@
       "Load image": [
         "Kép betöltése"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Make this participant optional": [
         "Résztvevő megjelölése választhatóként"
       ],
@@ -403,9 +400,6 @@
       "Select all": [
         "Összes kijelölése"
       ],
-      "Select timezone": [
-        "Select time zone"
-      ],
       "Send": [
         "Küldés"
       ],
@@ -435,6 +429,9 @@
       ],
       "Show time zones": [
         "Időzónák megjelenítése"
+      ],
+      "Sign in": [
+        "Bejelentkezés"
       ],
       "Sign out": [
         "Kijelentkezés"
@@ -969,9 +966,6 @@
       ],
       "Role": [
         "Szerepkör"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Beosztás"
@@ -1969,9 +1963,6 @@
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
@@ -2194,9 +2185,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2235,9 +2223,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2269,9 +2254,6 @@
       ],
       "Component with wrong format": [
         "A komponens formátuma hibás"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Szerkesztett esemény nem támogatott"
@@ -2341,9 +2323,6 @@
       ],
       "Time zone not supported": [
         "Időzóna nem támogatott"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Tennivaló elem"
@@ -3053,9 +3032,6 @@
       "Import mailbox": [
         "E-mail fiók importálása"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importálja e-mailjeit, naptárait és névjegyeit más szolgáltatóktól a ${ BRAND_NAME }hoz. Lépésről-lépésre követheti az útmutatót az adatok átköltöztetéséhez és titkosításához. Üdvözöljük a biztonságos magánszféra világában."
-      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
@@ -3546,9 +3522,6 @@
       ],
       "Description": [
         "Leírás"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Email": [
         "E-mail"
@@ -4614,9 +4587,6 @@
       "Cancellation sent and participants removed from all events": [
         "Lemondás elküldve és résztvevők eltávolítva az összes eseményről"
       ],
-      "Cancelling import": [
-        "Canceling import"
-      ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
       ],
@@ -4795,11 +4765,6 @@
       "${ minutes } minute": [
         "${ minutes } perc",
         "${ minutes } perc"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
       ]
     },
     "Title": {

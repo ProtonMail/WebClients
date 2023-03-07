@@ -4,6 +4,14 @@
     "language": "id_ID"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Penerusan email akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
+      ],
+      "Mail forward stopped": [
+        "Penerusan email diberhentikan"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Pengenalan ${ BRAND_NAME }"
@@ -329,9 +337,6 @@
       "Load image": [
         "Muat gambar"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Kelola folder"
       ],
@@ -532,6 +537,9 @@
       ],
       "Show preview": [
         "Tampilkan pratinjau"
+      ],
+      "Sign in": [
+        "Masuk"
       ],
       "Sign out": [
         "Keluar"
@@ -912,8 +920,8 @@
       "Role": [
         "Peran"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Zona waktu"
       ],
       "Title": [
         "Gelar"
@@ -1876,14 +1884,17 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Pencarian konten tidak dapat dilangsungkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan atau"
+      ],
       "Device name does not match": [
         "Nama perangkat tidak sesuai"
       ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Alamat email diperlukan"
@@ -1927,6 +1938,9 @@
       "Incorrect password. Please try again.": [
         "Sandi salah. Silakan coba lagi."
       ],
+      "Invalid email address": [
+        "Alamat surel tidak valid"
+      ],
       "Invalid name": [
         "Nama tidak valid"
       ],
@@ -1938,6 +1952,9 @@
       ],
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "Gabungkan setidaknya ${ calendarsToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
       ],
       "Missing key packet": [
         "Paket kunci hilang"
@@ -2095,6 +2112,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Anda tidak dapat mengirim berkas vCard ke lebih dari 10 kontak"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Anda telah mencapai batas jumlah kalender yang diperkenankan. Sebagian kalender tidak dapat diimpor."
+      ],
       "You must set a name": [
         "Anda harus mengatur nama"
       ],
@@ -2106,8 +2126,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2146,8 +2166,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2181,8 +2201,8 @@
       "Component with wrong format": [
         "Komponen dengan format yang salah"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Zona waktu khusus"
       ],
       "Edited event not supported": [
         "Acara yang telah diedit tidak didukung"
@@ -2250,11 +2270,11 @@
       "Start time out of bounds": [
         "Waktu mulai di luar batas"
       ],
+      "Time zone": [
+        "Zona waktu"
+      ],
       "Time zone not supported": [
         "Zona waktu tidak didukung"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entri to-do"
@@ -2773,6 +2793,9 @@
       "${ contactsCount } contacts found": [
         "${ contactsCount } kontak ditemukan"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (dipulihkan)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } telah selesai terproses"
       ],
@@ -2839,6 +2862,9 @@
       "A number will be added to the folder name": [
         "Nomor akan ditambahkan ke nama folder"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan tidak dibayar. Silakan hubungi administrator Anda."
       ],
@@ -2898,6 +2924,15 @@
       ],
       "Canceled": [
         "Dibatalkan"
+      ],
+      "Cannot load link": [
+        "Tautan tidak dapat dimuat"
+      ],
+      "Cannot load links": [
+        "Tautan tidak dapat dimuat"
+      ],
+      "Cannot load shared link": [
+        "Tautan yang dibagikan tidak dapat dimuat"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
@@ -3097,6 +3132,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Untuk hasil yang maksimal, hindari streaming serta berbagai kegiatan lainnya yang boros akan memori atau pisah unggahan Anda ke dalam beberapa kelompok berkas kecil."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
+      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -3148,8 +3186,8 @@
       "Import mailbox": [
         "Impor kotak surat"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Impor email, kalender, dan kontak yang Anda miliki dari layanan email Anda terdahulu ke ${ BRAND_NAME }. Kami akan memandu Anda untuk memindahkan dan mengenkripsi data selangkah demi selangkah. Selamat datang di dunia privasi."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Impor email, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
@@ -3210,12 +3248,6 @@
       ],
       "Link copied to clipboard": [
         "Tautan disalin ke clipboard"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Memuat"
@@ -3391,6 +3423,9 @@
       "Report has been sent": [
         "Laporan telah dikirim"
       ],
+      "Restored files ${ formattedDate }": [
+        "Berkas yang dipulihkan ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "Pencarian tidak dapat diaktifkan pada browser ini"
       ],
@@ -3409,6 +3444,9 @@
       "Select what you want to import.": [
         "Pilih hal apa saja yang hendak Anda impor."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
@@ -3423,9 +3461,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Tautan yang dapat dibagikan untuk ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
@@ -3882,8 +3917,8 @@
       "Device name": [
         "Nama perangkat"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Jangan tanyakan lagi"
       ],
       "Download anyway": [
         "Tetap unduh"
@@ -4440,6 +4475,12 @@
       "All items will soon be permanently deleted from trash": [
         "Seluruh item akan dihapus secara permanen dari sampah"
       ],
+      "Cannot load link": [
+        "Tautan tidak dapat dimuat"
+      ],
+      "Cannot load next page": [
+        "Halaman selanjutnya tidak dapat dimuat"
+      ],
       "Contact group created": [
         "Grup kontak telah dibuat"
       ],
@@ -4479,9 +4520,6 @@
       "File or folder is missing a name": [
         "Berkas atau folder belum dinamai"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } files": [
         "Pindahkan ${ itemsToMoveCount } berkas"
       ],
@@ -4499,9 +4537,6 @@
       ],
       "Move ${ movingCount } items": [
         "Pindah ${ movingCount } item"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
@@ -4828,8 +4863,8 @@
       "Bug reported": [
         "Bug berhasil dilaporkan"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Membatalkan impor"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
@@ -5006,6 +5041,9 @@
       ],
       "Browser might run out of memory": [
         "Memori browser Anda mungkin tidak mencukupi"
+      ],
+      "Cannot load link": [
+        "Tautan tidak dapat dimuat"
       ],
       "Change layout": [
         "Ubah tata letak"
@@ -5187,9 +5225,6 @@
       "Item details": [
         "Rincian item"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Konfirmasi tautan"
       ],
@@ -5363,9 +5398,6 @@
       ],
       "The link expired": [
         "Tautan telah kedaluwarsa"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Berkas ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."

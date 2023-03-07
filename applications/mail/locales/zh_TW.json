@@ -4,6 +4,14 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "轉發將很快開始。新電子郵件將會出現在您的收件匣中。"
+      ],
+      "Mail forward stopped": [
+        "已停止郵件轉寄"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 介紹"
@@ -539,9 +547,6 @@
       "Loading${ ellipsis }": [
         "正在載入${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "信箱密集度"
       ],
@@ -788,6 +793,9 @@
       "Remove expiration time": [
         "移除到期時間"
       ],
+      "Remove self-destruction": [
+        "移除自毀"
+      ],
       "Remove this label": [
         "移除此標籤"
       ],
@@ -863,6 +871,15 @@
       "Select all messages": [
         "選取所有郵件"
       ],
+      "Self-destruct in 7 days": [
+        "7天內自毀"
+      ],
+      "Self-destruct message": [
+        "自毀訊息"
+      ],
+      "Self-destruct on ...": [
+        "自毀於……"
+      ],
       "Send": [
         "送出"
       ],
@@ -935,6 +952,9 @@
       "Show preview": [
         "顯示預覽"
       ],
+      "Sign in": [
+        "登入"
+      ],
       "Sign out": [
         "登出"
       ],
@@ -1000,6 +1020,9 @@
       ],
       "Turn on tracker protection": [
         "開啟追蹤保護"
+      ],
+      "Unblock": [
+        "解除封鎖"
       ],
       "Underline": [
         "底線"
@@ -1596,6 +1619,14 @@
         "活動進行中"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "取消"
+      ],
+      "Cancel self-destruction": [
+        "取消自毀"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "收合"
@@ -1897,8 +1928,8 @@
       "Role": [
         "身份"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "時區"
       ],
       "Title": [
         "職銜"
@@ -2783,6 +2814,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "${ MAIL_APP_NAME } 標誌與加號"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } 設定。"
       ],
@@ -2963,6 +2997,14 @@
         "原訂自 ${ formattedStart } 起一事有變"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "資料夾已清除"
+      ],
+      "Label cleared": [
+        "標籤已清除"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "已加密標頭檔案名稱"
@@ -2996,6 +3038,9 @@
       "Choose a date in the future.": [
         "選擇一個未來的日期。"
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } days.": [
+        "在接下來的${ EXPIRATION_TIME_MAX_DAYS }天內選擇一個日期。"
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
         "在接下來的${ SCHEDULED_MAX_DATE_DAYS }天內選擇一個日期。"
       ],
@@ -3023,6 +3068,12 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密錯誤：此郵件的加密內容解密失敗。"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆或"
+      ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
@@ -3031,9 +3082,6 @@
       ],
       "Email address disabled": [
         "電郵位址已停用"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "電郵位址為必填"
@@ -3083,6 +3131,9 @@
       "Incorrect mailbox password. Please try again.": [
         "郵箱密碼不正確。請再試一次."
       ],
+      "Invalid email address": [
+        "電郵位址無效"
+      ],
       "Invalid expiration time": [
         "無效的到期時間"
       ],
@@ -3100,6 +3151,9 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "可容許的附件數量 (${ attachmentsCountLimit }) 已達上限"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
       "Message needs to be sent first": [
         "需要先傳送郵件"
@@ -3317,6 +3371,9 @@
       "You did not provide a file.": [
         "您沒有提供檔案。"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "您已經達到行事曆的數量上限。有部分行事曆無法被匯入。"
+      ],
       "You must set a name": [
         "您必須設定名稱"
       ],
@@ -3356,8 +3413,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式不正確。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -3396,8 +3453,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式不正確。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -3431,8 +3488,8 @@
       "Component with wrong format": [
         "元件的格式有誤"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "自訂時區"
       ],
       "Edited event not supported": [
         "已編輯事件不受支援"
@@ -3500,11 +3557,11 @@
       "Start time out of bounds": [
         "開始時間超出界限"
       ],
+      "Time zone": [
+        "時區"
+      ],
       "Time zone not supported": [
         "不支援的時區"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "待辦事項"
@@ -4324,6 +4381,9 @@
       "(No Recipient)": [
         "(無收件人)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "電話號碼僅能用於驗證一個 ${ BRAND_NAME } 帳號"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "復原短語是保護帳號存取權限最安全的方法之一。如果您忘記了您的密碼，您可以用它來存取您的帳號並還原您的加密資料。"
       ],
@@ -4618,9 +4678,6 @@
       "Expires": [
         "到期日"
       ],
-      "Expires in ${ formattedDelay }": [
-        "到期前剩餘時間 ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "到期前剩餘時間 ${ formattedDelayShort }"
       ],
@@ -4644,6 +4701,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "自 ${ oldestDate } 起的郵件"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
       ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
@@ -4714,8 +4774,8 @@
       "Import mailbox": [
         "匯入郵箱"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "從其它服務匯入您的電郵、行事曆或聯絡人到 ${ BRAND_NAME }。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "從其他裝置匯入您的電子郵件、行事曆與聯絡人到 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -5005,8 +5065,8 @@
       "Saving draft…": [
         "正在儲存草稿…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
+      "Scheduled send of this message will be canceled.": [
+        "此郵件的寄送預定將被取消。"
       ],
       "Scheduling message...": [
         "排程傳送郵件中…"
@@ -5022,6 +5082,9 @@
       ],
       "Select what you want to import.": [
         "選擇您要匯入的檔案。"
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆建立一個新的行事曆。"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "傳送一封加密、密碼保護的郵件至 ${ boldText } 電郵位址。"
@@ -5149,8 +5212,8 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載該檔案。"
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "此交談包含了排定傳送的郵件。此郵件的傳送將會被取消。"
       ],
       "This conversation contains non-trashed messages.": [
         "此交談包含非垃圾訊息。"
@@ -5158,8 +5221,8 @@
       "This conversation contains trashed messages.": [
         "此交談含有已被移至垃圾桶的訊息。"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "此電郵未能通過其網域的認證需求。可能是因為遭人假冒或不當轉寄！"
       ],
       "This invitation is saved in a disabled calendar.": [
         "此邀請儲存於一個已停用的行事曆。"
@@ -5209,14 +5272,17 @@
       "This message will expire ${ formattedDate }": [
         "此郵件將在 ${ formattedDate } 到期"
       ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "此郵件將在 ${ dateString } ${ formattedTime } 過期"
+      "This message will self-destruct in ${ formattedDelay }": [
+        "此訊息將於 ${ formattedDelay } 自毀"
       ],
-      "This message will expire today at ${ formattedTime }": [
-        "此郵件將在今天 ${ formattedTime } 過期"
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "這封郵件將於 ${ dateString } 的 ${ formattedTime } 自毀"
       ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "此郵件將在明天 ${ formattedTime } 過期"
+      "This message will self-destruct today at ${ formattedTime }": [
+        "這封郵件將於今日的 ${ formattedTime } 自毀"
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "這封郵件將於明天的 ${ formattedTime } 自毀"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "將自動使用此公開金鑰加密寄送到此電郵位址的電郵。"
@@ -5343,6 +5409,9 @@
       ],
       "When do you want your message to be sent?": [
         "您想在什麼時候傳送郵件？"
+      ],
+      "When do you want your message to self-destruct?": [
+        "您想要郵件什麼時候自毀？"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "當發送電子郵件時，請使用唯一、即棄式 Hide My Email 別名，來代替您的真實電子郵件地址。"
@@ -5877,8 +5946,8 @@
       "Delete recovery-related information.": [
         "刪除復原相關的資料。"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "不要再次詢問"
       ],
       "Don't show this again": [
         "不再顯示此內容"
@@ -6215,6 +6284,16 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "日期"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "時間"
       ]
     },
     "Label for contact group color": {
@@ -6557,8 +6636,8 @@
       "Scheduled sending undone": [
         "已取消排定的傳送"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "排程已取消。郵件已移動到草稿。"
       ],
       "Sending undone": [
         "傳送未完成"
@@ -6759,8 +6838,8 @@
       "Search message content": [
         "搜尋郵件內容"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤和篩選器無上限"
       ],
       "Up to 15 email addresses": [
         "多達 15 個電子郵件地址"
@@ -6772,6 +6851,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7080,6 +7162,14 @@
         "工作"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "官方"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "來自 ${ BRAND_NAME } 的官方電子郵件"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "端對端加密並簽署郵件"
@@ -7118,6 +7208,26 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "請注意：點擊「套用」按鈕後，服務將會重新載入。"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } days": [
+        "${ remainingDays }天"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hours": [
+        "${ remainingHours }小時"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<1小時"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } years": [
+        "${ remainingYears }年"
       ]
     },
     "Reply to calendar invitation": {
@@ -7415,8 +7525,8 @@
       "Bug reported": [
         "錯誤已回報"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "正在取消匯入"
       ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
@@ -7472,17 +7582,11 @@
       "Fingerprint copied to clipboard": [
         "指紋已複製到剪貼簿"
       ],
-      "Folder cleared": [
-        "資料夾已清除"
-      ],
       "Import record deleted": [
         "匯入記錄已刪除"
       ],
       "Keyboard shortcuts preferences updated": [
         "鍵盤快捷鍵喜好設定已更新"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "標籤已套用。"
@@ -7555,6 +7659,15 @@
       ],
       "Read receipt sent": [
         "讀取回條已傳送"
+      ],
+      "Self-destruction cancelled": [
+        "自毀已取消"
+      ],
+      "Self-destruction removed": [
+        "已移除自毀"
+      ],
+      "Self-destruction set": [
+        "自毀設定"
       ],
       "Undo in progress": [
         "復原進行中"
@@ -8079,6 +8192,9 @@
       ],
       "Select contact group": [
         "選擇聯絡人群組"
+      ],
+      "Self-destruct message": [
+        "自毀郵件"
       ],
       "Send email": [
         "傳送電郵"

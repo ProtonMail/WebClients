@@ -461,9 +461,6 @@
       "Loading${ ellipsis }": [
         "Učitavanje${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Gustoća poštanskog sandučića"
       ],
@@ -781,6 +778,9 @@
       ],
       "Show preview": [
         "Prikaži pregled"
+      ],
+      "Sign in": [
+        "Prijavite se"
       ],
       "Sign out": [
         "Odjava"
@@ -1387,9 +1387,6 @@
       ],
       "Role": [
         "Uloga"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Naslov"
@@ -2275,9 +2272,6 @@
       "Email address disabled": [
         "Adresa e-pošte je onemogućena"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
       ],
@@ -2316,6 +2310,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno."
+      ],
+      "Invalid email address": [
+        "Nevažeća adresa e-pošte"
       ],
       "Invalid expiration time": [
         "Nevažeći datum isteka"
@@ -2508,9 +2505,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2533,9 +2527,6 @@
     "Error importing event": {
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
@@ -2593,9 +2584,6 @@
       ],
       "Start time out of bounds": [
         "Početno vrijeme je van granica"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Stavka liste zadataka"
@@ -3702,9 +3690,6 @@
       "This conversation contains trashed messages.": [
         "Ovaj razgovor sadrži poruke koje su u otpadu."
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
-      ],
       "This invitation is saved in a disabled calendar.": [
         "Ova pozivnica je spremljena u onemogućeni kalendar."
       ],
@@ -4187,9 +4172,6 @@
       ],
       "Delete": [
         "Izbriši"
-      ],
-      "Do not ask again": [
-        "Don't ask again"
       ],
       "Don't show this again": [
         "Ne prikazuj ponovno"
@@ -5423,17 +5405,11 @@
       "Fingerprint copied to clipboard": [
         "Otisak prsta je kopiran u međuspremnik"
       ],
-      "Folder cleared": [
-        "Mapa je očišćena"
-      ],
       "Import record deleted": [
         "Zapis uvoza je izbrisan"
       ],
       "Keyboard shortcuts preferences updated": [
         "Postavke tipkovnih prečaca su ažurirane"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Oznake su primijenjene."
