@@ -4,6 +4,14 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "İletme işlemi birazdan başlayacak ve yeni e-postalar gelen kutunuzda görünecek."
+      ],
+      "Mail forward stopped": [
+        "Posta iletimi durduruldu"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
@@ -545,9 +553,6 @@
       "Loading${ ellipsis }": [
         "Yükleniyor${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Posta kutusu yoğunluğu"
       ],
@@ -794,6 +799,9 @@
       "Remove expiration time": [
         "Geçerlilik süresini kaldır"
       ],
+      "Remove self-destruction": [
+        "Kendini yok etmeyi kaldır"
+      ],
       "Remove this label": [
         "Bu etiketi sil"
       ],
@@ -869,6 +877,15 @@
       "Select all messages": [
         "Tüm iletileri seç"
       ],
+      "Self-destruct in 7 days": [
+        "7 gün içinde kendini yok et"
+      ],
+      "Self-destruct message": [
+        "Kendini yok eden ileti"
+      ],
+      "Self-destruct on ...": [
+        "Kendini yok etme tarihi ..."
+      ],
       "Send": [
         "Gönder"
       ],
@@ -941,6 +958,9 @@
       "Show preview": [
         "Ön izlemeyi göster"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -1007,6 +1027,9 @@
       ],
       "Turn on tracker protection": [
         "İzleme korumasını aç"
+      ],
+      "Unblock": [
+        "Engellemeyi kaldır"
       ],
       "Underline": [
         "Altı çizili"
@@ -1599,6 +1622,14 @@
         "Etkinlik sürüyor"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "İptal"
+      ],
+      "Cancel self-destruction": [
+        "Kendini yok etmeyi iptal et"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Daralt"
@@ -1900,8 +1931,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Saat dilimi"
       ],
       "Title": [
         "Başlık"
@@ -2787,6 +2818,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "${ MAIL_APP_NAME } logosu ve artı simgesi"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "Ayarlar bölümünden ${ manageBlockedAddressesSettingsLink }."
       ],
@@ -2970,6 +3004,14 @@
         "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Klasör temizlendi"
+      ],
+      "Label cleared": [
+        "Etiket temizlendi"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Şifrelenmiş üst bilgiler dosya adı"
@@ -3003,6 +3045,10 @@
       "Choose a date in the future.": [
         "Gelecekte bir zaman seçin."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Sonraki ${ EXPIRATION_TIME_MAX_DAYS } gün içinde bir tarih seçin.",
+        "Sonraki ${ EXPIRATION_TIME_MAX_DAYS } gün içinde bir tarih seçin."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Gelecek ${ SCHEDULED_MAX_DATE_DAYS } gün içindeki bir tarih seçin.",
         "Gelecek ${ SCHEDULED_MAX_DATE_DAYS } gün içindeki bir tarih seçin."
@@ -3031,6 +3077,14 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Şifre çözme hatası: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın",
+        "En az ${ calendarsToFixCount } takvimi kaldırın"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da",
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da"
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -3039,9 +3093,6 @@
       ],
       "Email address disabled": [
         "E-posta adresi devre dışı"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -3091,6 +3142,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Posta kutusu parolası yanlış. Lütfen yeniden deneyin."
       ],
+      "Invalid email address": [
+        "E-posta adresi geçersiz"
+      ],
       "Invalid expiration time": [
         "Geçerlilik süresi geçersiz"
       ],
@@ -3108,6 +3162,10 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Eklenebilecek en fazla dosya sayısı (${ attachmentsCountLimit }) sınırı aşıldı"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin"
       ],
       "Message needs to be sent first": [
         "Öncelikle iletinin gönderilmesi gerekiyor"
@@ -3331,6 +3389,9 @@
       "You did not provide a file.": [
         "Bir dosya seçmediniz."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
+      ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
       ],
@@ -3371,8 +3432,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -3412,8 +3473,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -3447,8 +3508,8 @@
       "Component with wrong format": [
         "Bileşen biçimi yanlış"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Özel saat dilimi"
       ],
       "Edited event not supported": [
         "Etkinlikleri düzenleme desteklenmiyor"
@@ -3516,11 +3577,11 @@
       "Start time out of bounds": [
         "Başlangıç zamanı sınırların dışında"
       ],
+      "Time zone": [
+        "Saat dilimi"
+      ],
       "Time zone not supported": [
         "Saat dilimi desteklenmiyor"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Yapılacak iş kaydı"
@@ -4383,6 +4444,9 @@
       "(No Recipient)": [
         "(Alıcı yok)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Bir kurtarma ifadesi, hesabınıza erişimi korumanın en güvenli yollarından biridir. Hesabınıza erişmek ve parolanızı unutursanız şifrelenmiş verilerinizi kurtarmak için bu ifadeyi kullanabilirsiniz."
       ],
@@ -4688,9 +4752,6 @@
       "Expires": [
         "Geçerlilik sonu"
       ],
-      "Expires in ${ formattedDelay }": [
-        "${ formattedDelay } sonra geçersiz olacak"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "${ formattedDelayShort } sonra geçersiz olacak"
       ],
@@ -4715,6 +4776,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } tarihinden daha yeni iletiler için"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Gelen postaları başka bir hesaptan güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -4788,8 +4852,8 @@
       "Import mailbox": [
         "Posta kutusunu içe aktar"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
@@ -5080,8 +5144,8 @@
       "Saving draft…": [
         "Taslak kaydediliyor…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
+      "Scheduled send of this message will be canceled.": [
+        "Bu iletinin zamanlanmış gönderimi iptal edilecek."
       ],
       "Scheduling message...": [
         "İleti zamanlanıyor..."
@@ -5097,6 +5161,9 @@
       ],
       "Select what you want to import.": [
         "İçe aktarmak istediklerinizi seçin."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "${ boldText } e-posta adresine şifrelenmiş ve parola ile korunan bir ileti gönderin."
@@ -5219,8 +5286,8 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu web tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Bu yazışmada zamanlanmış bir ileti var. Bu iletinin gönderimi iptal edilecek."
       ],
       "This conversation contains non-trashed messages.": [
         "Bu yazışmada çöpe atılmamış iletiler var."
@@ -5232,8 +5299,8 @@
         "Bu yazışma istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?",
         "Bu yazışmalar istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Bu e-posta, etki alanının doğrulama gereksinimlerini karşılayamadı. E-posta, sahte ya da hatalı iletilmiş olabilir."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Bu davet, devre dışı bırakılmış bir takvime kaydedilmiş."
@@ -5287,14 +5354,17 @@
       "This message will expire ${ formattedDate }": [
         "Bu ileti ${ formattedDate } tarihinde geçersiz olacak"
       ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Bu ileti ${ dateString } tarihinde, ${ formattedTime } saatinde geçersiz olacak"
+      "This message will self-destruct in ${ formattedDelay }": [
+        "Bu ileti kendini ${ formattedDelay } sonra yok edecek"
       ],
-      "This message will expire today at ${ formattedTime }": [
-        "Bu ileti bugün ${ formattedTime } saatinde geçersiz olacak"
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "Bu ileti ${ dateString } tarihinde ${ formattedTime } saatinde kendini yok edecek"
       ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Bu ileti yarın ${ formattedTime } saatinde geçersiz olacak"
+      "This message will self-destruct today at ${ formattedTime }": [
+        "Bu ileti bugün ${ formattedTime } saatinde kendini yok edecek"
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "Bu ileti yarın ${ formattedTime } saatinde kendini yok edecek"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Bu herkese açık anahtar, bu adrese gönderilen e-postaların otomatik olarak şifrelenmesi için kullanılacak."
@@ -5421,6 +5491,9 @@
       ],
       "When do you want your message to be sent?": [
         "İletinizin ne zaman gönderilmesini istersiniz?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "İletinizin ne zaman kendini yok etmesini istersiniz?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "E-posta adresinizi başkalarına verirken, gerçek e-posta adresiniz yerine benzersiz, tek kullanımlık bir E-postamı gizle takma adı kullanın."
@@ -5966,8 +6039,8 @@
       "Delete recovery-related information.": [
         "Kurtarma ile ilgili bilgileri sil."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Bir daha sorma"
       ],
       "Don't show this again": [
         "Bunu bir daha gösterme"
@@ -6304,6 +6377,16 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Tarih"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Saat"
       ]
     },
     "Label for contact group color": {
@@ -6651,8 +6734,8 @@
       "Scheduled sending undone": [
         "Zamanlanmış gönderim geri alındı"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Zamanlama iptal edildi. İleti Taslaklar kutusuna taşındı."
       ],
       "Sending undone": [
         "Gönderim geri alındı"
@@ -6856,8 +6939,8 @@
       "Search message content": [
         "İleti içeriğinde arama"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
       ],
       "Up to 15 email addresses": [
         "15 e-posta adresine kadar"
@@ -6869,6 +6952,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
       ]
     },
     "new_plans: label": {
@@ -7180,6 +7266,14 @@
         "İş"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Resmi"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "${ BRAND_NAME } tarafından gelen resmi e-posta"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Uçtan uca şifrelenmiş ve imzalanmış ileti"
@@ -7218,6 +7312,29 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Not: Uygula düğmesine tıkladıktan sonra hizmet yeniden yüklenir."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } gün",
+        "${ remainingDays } gün"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } saat",
+        "${ remainingHours } saat"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<1 saat"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } yıl",
+        "${ remainingYears } yıl"
       ]
     },
     "Reply to calendar invitation": {
@@ -7541,8 +7658,8 @@
       "Bug reported": [
         "Hata bildirildi"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "İçe aktarma iptal ediliyor"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -7603,17 +7720,11 @@
       "Fingerprint copied to clipboard": [
         "Parmak izi panoya kopyalandı"
       ],
-      "Folder cleared": [
-        "Klasör temizlendi"
-      ],
       "Import record deleted": [
         "İçe aktarma kaydı silindi"
       ],
       "Keyboard shortcuts preferences updated": [
         "Klavye kısayol ayarları güncellendi"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Etiketler uygulandı."
@@ -7688,6 +7799,15 @@
       ],
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
+      ],
+      "Self-destruction cancelled": [
+        "Kendini yok etme iptal edildi"
+      ],
+      "Self-destruction removed": [
+        "Kendini yok etme kaldırıldı"
+      ],
+      "Self-destruction set": [
+        "Kendini yok etme ayarlandı"
       ],
       "Undo in progress": [
         "Geri alınıyor"
@@ -8231,6 +8351,9 @@
       ],
       "Select contact group": [
         "Kişi grubunu seç"
+      ],
+      "Self-destruct message": [
+        "Kendini yok eden ileti"
       ],
       "Send email": [
         "E-posta gönder"

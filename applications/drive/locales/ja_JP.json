@@ -329,9 +329,6 @@
       "Load image": [
         "画像を読み込む"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "フォルダーを管理"
       ],
@@ -532,6 +529,9 @@
       ],
       "Show preview": [
         "プレビューを表示"
+      ],
+      "Sign in": [
+        "サインイン"
       ],
       "Sign out": [
         "サインアウト"
@@ -912,8 +912,8 @@
       "Role": [
         "役割"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "タイムゾーン"
       ],
       "Title": [
         "肩書き"
@@ -1879,14 +1879,17 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除するか"
+      ],
       "Device name does not match": [
         "デバイス名が一致しません"
       ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "メールアドレスは必須です"
@@ -1930,6 +1933,9 @@
       "Incorrect password. Please try again.": [
         "パスワードが正しくありません。もう一度お試しください。"
       ],
+      "Invalid email address": [
+        "メールアドレスが正しくありません"
+      ],
       "Invalid name": [
         "無効な名前です"
       ],
@@ -1941,6 +1947,9 @@
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Missing key packet": [
         "キーパケットが利用できません"
@@ -2083,6 +2092,9 @@
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
+      ],
       "Try using only letters, numerals, and _.-": [
         "文字・数字・ _.- のみを使用してみてください"
       ],
@@ -2103,9 +2115,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } のアップロード中にエラーが発生しました。最大ファイルサイズは${ MAX_IMPORT_FILE_SIZE_STRING }です。"
       ],
@@ -2143,9 +2152,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
       ],
@@ -2178,8 +2184,8 @@
       "Component with wrong format": [
         "無効なコンポーネント形式です"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "独自のタイムゾーン"
       ],
       "Edited event not supported": [
         "編集された予定はサポートされていません"
@@ -2249,9 +2255,6 @@
       ],
       "Time zone not supported": [
         "タイムゾーンはサポートされていません"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "To-do のエントリー"
@@ -2882,6 +2885,15 @@
       "Canceled": [
         "キャンセル"
       ],
+      "Cannot load link": [
+        "リンクの読み込みに失敗しました"
+      ],
+      "Cannot load links": [
+        "リンクの読み込みに失敗しました"
+      ],
+      "Cannot load shared link": [
+        "共有リンクの読み込みに失敗しました"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
       ],
@@ -3122,9 +3134,6 @@
       "Import mailbox": [
         "メールボックスのインポート"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートできます。データを移行し暗号化する手順をわかりやすく解説します。プライバシーの世界へようこそ。"
-      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
@@ -3181,12 +3190,6 @@
       ],
       "Link copied to clipboard": [
         "リンクがクリップボードにコピーされました"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "読み込み中"
@@ -3394,9 +3397,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText }の共有リンク"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature check will be ignored": [
         "署名確認は無視されます。"
@@ -3844,8 +3844,8 @@
       "Device name": [
         "デバイス名"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "今後表示しない"
       ],
       "Download anyway": [
         "無視してダウンロード"
@@ -4362,6 +4362,12 @@
       "All items will soon be permanently deleted from trash": [
         "すべてのアイテムはまもなくごみ箱から完全に削除されます"
       ],
+      "Cannot load link": [
+        "リンクの読み込みに失敗しました"
+      ],
+      "Cannot load next page": [
+        "次のページの読み込みに失敗しました"
+      ],
       "Contact group created": [
         "連絡先グループが作成されました"
       ],
@@ -4401,9 +4407,6 @@
       "File or folder is missing a name": [
         "ファイルまたはフォルダーに名前がありません"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } files": [
         "${ itemsToMoveCount } 件のファイルを移動"
       ],
@@ -4421,9 +4424,6 @@
       ],
       "Move ${ movingCount } items": [
         "${ movingCount } 件のアイテムの移動"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }をアップロードする容量がありません"
@@ -4926,6 +4926,9 @@
       "Browser might run out of memory": [
         "ブラウザーのメモリが不足する可能性があります。"
       ],
+      "Cannot load link": [
+        "リンクの読み込みに失敗しました"
+      ],
       "Change layout": [
         "レイアウトを変更"
       ],
@@ -5109,9 +5112,6 @@
       "Item details": [
         "アイテムの詳細"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "リンクの確認"
       ],
@@ -5285,9 +5285,6 @@
       ],
       "The link expired": [
         "リンクは期限切れです"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "このファイルには、署名が存在しないか無効です。メニュー (⋮) → 詳細で、情報を確認できます。"

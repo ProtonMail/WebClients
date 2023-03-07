@@ -542,9 +542,6 @@
       "Loading${ ellipsis }": [
         "Betöltés${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Megjelenítés tömörsége"
       ],
@@ -937,6 +934,9 @@
       ],
       "Show preview": [
         "Előnézet megmutatása"
+      ],
+      "Sign in": [
+        "Bejelentkezés"
       ],
       "Sign out": [
         "Kijelentkezés"
@@ -1882,9 +1882,6 @@
       ],
       "Role": [
         "Szerepkör"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "Title": [
         "Beosztás"
@@ -2937,9 +2934,6 @@
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
       ],
-      "Email address invalid": [
-        "Invalid email address"
-      ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
@@ -2981,6 +2975,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra."
+      ],
+      "Invalid email address": [
+        "Érvénytelen e-mail cím"
       ],
       "Invalid expiration time": [
         "Érvénytelen időkorlát"
@@ -3244,9 +3241,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3285,9 +3279,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3319,9 +3310,6 @@
       ],
       "Component with wrong format": [
         "A komponens formátuma hibás"
-      ],
-      "Custom timezone": [
-        "Custom time zone"
       ],
       "Edited event not supported": [
         "Szerkesztett esemény nem támogatott"
@@ -3391,9 +3379,6 @@
       ],
       "Time zone not supported": [
         "Időzóna nem támogatott"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Tennivaló elem"
@@ -4489,9 +4474,6 @@
       "Expires": [
         "Lejár"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Lejár ennyi idő múlva: ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Lejár ennyi idő múlva: ${ formattedDelayShort }"
       ],
@@ -4588,9 +4570,6 @@
       ],
       "Import mailbox": [
         "E-mail fiók importálása"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importálja e-mailjeit, naptárait és névjegyeit más szolgáltatóktól a ${ BRAND_NAME }hoz. Lépésről-lépésre követheti az útmutatót az adatok átköltöztetéséhez és titkosításához. Üdvözöljük a biztonságos magánszféra világában."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
@@ -4860,9 +4839,6 @@
       "Saving draft…": [
         "Piszkozat mentése…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
-      ],
       "Scheduling message...": [
         "Üzenet ütemezése..."
       ],
@@ -4999,9 +4975,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ez a böngésző nem támogatja a PDF fájlok megjelenítését. Töltse le a fájlt."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
-      ],
       "This conversation contains non-trashed messages.": [
         "Ez a beszélgetés nem-törölt üzeneteket is tartalmaz."
       ],
@@ -5011,9 +4984,6 @@
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Ez az beszélgetés levélszemétként lesz megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?",
         "Ezek az beszélgetések levélszemétként lesznek megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?"
-      ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Ez a meghívó egy letiltott naptárban van."
@@ -5063,15 +5033,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Ez az üzenet időkorlátos, lejár: ${ formattedDate }"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Ez az üzenet időkorlátos, és ${ dateString } fog lejárni ekkor: ${ formattedTime }"
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        "Ez az üzenet időkorlátos, és ma fog lejárni, ekkor: ${ formattedTime }"
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Ez az üzenet időkorlátos, és holnap fog lejárni, ekkor: ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Erre a címre küldéskor automatikusan ez a nyilvános kulcs lesz használva a titkosításhoz."
@@ -5731,9 +5692,6 @@
       "Delete recovery-related information.": [
         "Helyreállítási információk törlése."
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Don't show this again": [
         "Ne jelenjen meg többet"
       ],
@@ -6374,9 +6332,6 @@
       "Scheduled sending undone": [
         "Ütemezett küldés visszavonva"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
-      ],
       "Sending undone": [
         "Küldés megszakítva"
       ],
@@ -6569,9 +6524,6 @@
     "new_plans: feature": {
       "Custom email domains": [
         "Saját domain nevek"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
       ]
     },
     "new_plans: label": {
@@ -7230,9 +7182,6 @@
       "Bug reported": [
         "Hiba bejelentve"
       ],
-      "Cancelling import": [
-        "Canceling import"
-      ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
       ],
@@ -7292,17 +7241,11 @@
       "Fingerprint copied to clipboard": [
         "Ujjlenyomat a vágólapra másolva"
       ],
-      "Folder cleared": [
-        "Mappa ürítve"
-      ],
       "Import record deleted": [
         "Importálási elem törölve"
       ],
       "Keyboard shortcuts preferences updated": [
         "Gyorsbillentyű beállítások frissítve"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Címkék alkalmazva."

@@ -4,6 +4,14 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "轉發將很快開始。新電子郵件將會出現在您的收件匣中。"
+      ],
+      "Mail forward stopped": [
+        "已停止郵件轉寄"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } 介紹"
@@ -329,9 +337,6 @@
       "Load image": [
         "載入圖像"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "管理資料夾"
       ],
@@ -532,6 +537,9 @@
       ],
       "Show preview": [
         "顯示預覽"
+      ],
+      "Sign in": [
+        "登入"
       ],
       "Sign out": [
         "登出"
@@ -912,8 +920,8 @@
       "Role": [
         "身份"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "時區"
       ],
       "Title": [
         "職銜"
@@ -1879,14 +1887,17 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其它瀏覽器。"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆或"
+      ],
       "Device name does not match": [
         "裝置名稱不符合"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "電郵位址為必填"
@@ -1930,6 +1941,9 @@
       "Incorrect password. Please try again.": [
         "密碼不正確。請再試一次。"
       ],
+      "Invalid email address": [
+        "電郵位址無效"
+      ],
       "Invalid name": [
         "無效的名稱"
       ],
@@ -1941,6 +1955,9 @@
       ],
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
       "Missing key packet": [
         "缺少金鑰封包"
@@ -2098,6 +2115,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "您不能傳送有超過 10 個聯絡人的 vCard 檔案"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "您已經達到行事曆的數量上限。有部分行事曆無法被匯入。"
+      ],
       "You must set a name": [
         "您必須設定名稱"
       ],
@@ -2109,8 +2129,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式不正確。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2149,8 +2169,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式不正確。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
@@ -2184,8 +2204,8 @@
       "Component with wrong format": [
         "元件的格式有誤"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "自訂時區"
       ],
       "Edited event not supported": [
         "已編輯事件不受支援"
@@ -2253,11 +2273,11 @@
       "Start time out of bounds": [
         "開始時間超出界限"
       ],
+      "Time zone": [
+        "時區"
+      ],
       "Time zone not supported": [
         "不支援的時區"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "待辦事項"
@@ -2777,6 +2797,9 @@
       "${ contactsCount } contacts found": [
         "找到 ${ contactsCount } 位聯絡人"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName }（已還原）"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } 項已完成"
       ],
@@ -2843,6 +2866,9 @@
       "A number will be added to the folder name": [
         "將在資料夾名稱中加入數字"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "電話號碼僅能用於驗證一個 ${ BRAND_NAME } 帳號"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
@@ -2868,7 +2894,7 @@
         "和"
       ],
       "And access it from anywhere": [
-        "並存任何地方存取"
+        "並從任何地方存取"
       ],
       "Anyone with this link can access your file.": [
         "任何人擁有此連結均可存取您的檔案。"
@@ -2902,6 +2928,15 @@
       ],
       "Canceled": [
         "已取消"
+      ],
+      "Cannot load link": [
+        "無法載入連結"
+      ],
+      "Cannot load links": [
+        "無法載入連結"
+      ],
+      "Cannot load shared link": [
+        "無法載入已分享的連結"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
@@ -3101,6 +3136,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
+      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -3152,8 +3190,8 @@
       "Import mailbox": [
         "匯入郵箱"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "從其它服務匯入您的電郵、行事曆或聯絡人到 ${ BRAND_NAME }。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "從其他裝置匯入您的電子郵件、行事曆與聯絡人到 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -3214,12 +3252,6 @@
       ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "正在載入"
@@ -3395,6 +3427,9 @@
       "Report has been sent": [
         "回報已傳送"
       ],
+      "Restored files ${ formattedDate }": [
+        "已還原的檔案 ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "此瀏覽器無法啟用搜索功能"
       ],
@@ -3413,6 +3448,9 @@
       "Select what you want to import.": [
         "選擇您要匯入的檔案。"
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆建立一個新的行事曆。"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -3427,9 +3465,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } 的可供分享連結"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
@@ -3886,8 +3921,8 @@
       "Device name": [
         "裝置名稱"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "不要再次詢問"
       ],
       "Download anyway": [
         "仍要下載"
@@ -4444,6 +4479,12 @@
       "All items will soon be permanently deleted from trash": [
         "所有項目將從「垃圾桶」中永久刪除"
       ],
+      "Cannot load link": [
+        "無法載入連結"
+      ],
+      "Cannot load next page": [
+        "無法載入下一頁"
+      ],
       "Contact group created": [
         "聯絡人群組已建立"
       ],
@@ -4483,9 +4524,6 @@
       "File or folder is missing a name": [
         "檔案或資料夾缺少名稱"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } files": [
         "移動 ${ itemsToMoveCount } 個檔案"
       ],
@@ -4503,9 +4541,6 @@
       ],
       "Move ${ movingCount } items": [
         "移動 ${ movingCount } 個項目"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "空間不足，無法上載 ${ formattedTotal }"
@@ -4832,8 +4867,8 @@
       "Bug reported": [
         "錯誤已回報"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "正在取消匯入"
       ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
@@ -5010,6 +5045,9 @@
       ],
       "Browser might run out of memory": [
         "瀏覽器或耗盡記憶體"
+      ],
+      "Cannot load link": [
+        "無法載入連結"
       ],
       "Change layout": [
         "變更版面配置"
@@ -5194,9 +5232,6 @@
       "Item details": [
         "項目詳細資訊"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "外部連結確認"
       ],
@@ -5370,9 +5405,6 @@
       ],
       "The link expired": [
         "連結已逾期"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此檔案的簽章遺失或無效。詳見功能表 (⋮) → 詳細資料。"

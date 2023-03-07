@@ -23,6 +23,26 @@
         "Tampilan terbatas (hanya tampilkan yang lowong/sibuk)"
       ]
     },
+    "account": {
+      "Delete forward": [
+        "Hapus penerusan email"
+      ],
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Penerusan email akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
+      ],
+      "Mail forward stopped": [
+        "Penerusan email diberhentikan"
+      ],
+      "Reconnect": [
+        "Hubungkan Ulang"
+      ],
+      "Remove forward": [
+        "Hapus penerusan email"
+      ],
+      "You will stop the mail forwarding.": [
+        "Anda akan menghentikan proses penerusan email."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Pengenalan ${ BRAND_NAME }"
@@ -76,7 +96,7 @@
         "Tambah notifikasi"
       ],
       "Add PayPal": [
-        "Tambahkan PayPal"
+        "Tambahkan akun PayPal"
       ],
       "Add sieve filter": [
         "Tambah filter sieve"
@@ -459,9 +479,6 @@
       "Loading verification": [
         "Memuat verifikasi"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Manage communication preferences": [
         "Kelola preferensi komunikasi"
       ],
@@ -512,9 +529,6 @@
       ],
       "Not spam": [
         "Bukan spam"
-      ],
-      "Ok": [
-        "OK"
       ],
       "OK": [
         "OK"
@@ -696,8 +710,8 @@
       "Select language for invitation emails": [
         "Tentukan bahasa email undangan"
       ],
-      "Select timezone": [
-        "Select time zone"
+      "Select time zone": [
+        "Pilih zona waktu"
       ],
       "send auto-reply email": [
         "kirim pesan balasan otomatis"
@@ -707,6 +721,9 @@
       ],
       "Send my username": [
         "Kirim nama pengguna saya"
+      ],
+      "Set as default": [
+        "Atur sebagai default"
       ],
       "Set catch-all": [
         "Tentukan alamat catch-all"
@@ -904,6 +921,11 @@
         "Perkecil"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Melanjutkan penerusan email"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Cabut"
@@ -948,11 +970,11 @@
       "Generate missing keys": [
         "Buat kunci yang hilang"
       ],
-      "Make default": [
-        "Set as default"
-      ],
       "Saving": [
         "Menyimpan"
+      ],
+      "Set as default": [
+        "Atur sebagai default"
       ]
     },
     "Address status": {
@@ -1264,8 +1286,8 @@
       ]
     },
     "Calendar share permission label": {
-      "Edit": [
-        "Sunting"
+      "Edit event details": [
+        "Sunting rincian acara"
       ],
       "See all event details": [
         "Lihat seluruh rincian acara"
@@ -1650,8 +1672,8 @@
       "Role": [
         "Peran"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Zona waktu"
       ],
       "Title": [
         "Gelar"
@@ -2836,6 +2858,12 @@
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan atau"
+      ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
@@ -2923,6 +2951,9 @@
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
       ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "Gabungkan setidaknya ${ calendarsToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
+      ],
       "Missing key packet": [
         "Paket kunci hilang"
       ],
@@ -2980,8 +3011,8 @@
       "Passwords do not match": [
         "Kata sandi tidak cocok"
       ],
-      "Payment process cancelled": [
-        "Payment process canceled"
+      "Payment process canceled": [
+        "Proses pembayaran dibatalkan"
       ],
       "Payment process consumed": [
         "Proses pembayaran telah melewati batas tenggat waktu"
@@ -3085,8 +3116,8 @@
       "The address might be misspelled": [
         "Alamat mungkin salah ketik"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer."
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Browser Anda tidak mengizinkan pembayaran yang ada untuk dapat diotorisir sepenuhnya. Silakan gunakan browser lain atau masuk via komputer."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Nama folder tidak valid. Silakan pilih nama lain."
@@ -3187,6 +3218,9 @@
       "You have no invoices.": [
         "Anda tidak memiliki tagihan apa pun."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Anda telah mencapai batas jumlah kalender yang diperkenankan. Sebagian kalender tidak dapat diimpor."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Anda telah menggunakan semua alamat dalam paket Anda. Mohon tingkatkan paket untuk menambah alamat baru."
       ],
@@ -3208,6 +3242,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi seluruh tagihan yang belum dibayar."
       ],
+      "Your forward will not be processed.": [
+        "Penerusan email Anda tidak akan diproses."
+      ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
       ],
@@ -3216,8 +3253,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Terjadi kesalahan pada saat mengunggah berkas ${ formattedFilename }. Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3256,8 +3293,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3291,8 +3328,8 @@
       "Component with wrong format": [
         "Komponen dengan format yang salah"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Zona waktu khusus"
       ],
       "Edited event not supported": [
         "Acara yang telah diedit tidak didukung"
@@ -3360,11 +3397,11 @@
       "Start time out of bounds": [
         "Waktu mulai di luar batas"
       ],
+      "Time zone": [
+        "Zona waktu"
+      ],
       "Time zone not supported": [
         "Zona waktu tidak didukung"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Entri to-do"
@@ -3377,8 +3414,8 @@
       ]
     },
     "Error importing users": {
-      "An error occurred reading your file \"${ formattedFilename }\". File doesn't have the right format.": [
-        "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format."
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Terdapat kesalahan pada saat mengunggah \"${ formattedFilename }\". Ukuran berkas tidak boleh melebihi ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -4230,8 +4267,8 @@
       "Canceled": [
         "Dibatalkan"
       ],
-      "Cancelling": [
-        "Canceling"
+      "Canceling": [
+        "Membatalkan"
       ],
       "Completed": [
         "Selesai"
@@ -4412,6 +4449,9 @@
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Sebuah nama untuk membantu Anda mengidentifikasi di mana Anda menggunakannya sehingga dapat dengan mudah mencabut atau memperpanjangnya nanti."
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Berkas pemulihan akan memungkinkan Anda untuk dapat mengakses dan melihat data Anda setelah pengaturan ulang akun"
@@ -4638,8 +4678,8 @@
       "Center": [
         "Rata tengah"
       ],
-      "Check the status of current and previous imports.": [
-        "Periksa status impor sekarang dan sebelumnya."
+      "Check the status of imports and forwarding.": [
+        "Periksa status proses impor dan penerusan email yang sedang berlangsung."
       ],
       "Choose the look and feel of the application.": [
         "Tentukan tema dan tampilan aplikasi Anda."
@@ -4728,11 +4768,11 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages."
-      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan dapat mengelola organisasi Anda."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "JANGAN lupakan kata sandi ini. Apabila Anda lupa, Anda tidak akan dapat masuk atau mendekripsi pesan Anda."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Jangan gunakan informasi kredensial OpenVPN / IKEv2 pada aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
@@ -4748,6 +4788,9 @@
       ],
       "Done! We sent a code to ${ destination }.": [
         "Berhasil! Kami telah mengirimkan kode Anda ke ${ destination }."
+      ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
@@ -4809,9 +4852,6 @@
       "Encryption setting updated": [
         "Pengaturan enkripsi diperbarui"
       ],
-      "Enter code from your authenticator app": [
-        "Enter the code from your authenticator app"
-      ],
       "Enter key manually instead": [
         "Masukkan kunci secara manual"
       ],
@@ -4871,6 +4911,9 @@
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Untuk Visa, MasterCard, dan Discover, 3 digit yang terdapat pada sisi belakang kartu. Untuk American Express, 4 digit yang terdapat pada sisi depan kartu."
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
       ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
@@ -4936,13 +4979,13 @@
         "Jika Anda telah menyetel SPF dan DKIM, DMARC memungkinkan Anda untuk menentukan bagaimana layanan email lain harus mengirimkan email untuk domain Anda jika pemeriksaan SPF dan DKIM gagal. Hal ini dapat mempersulit pelaku spam yang berpura-pura menjadi Anda, tetapi juga dapat menyebabkan masalah pengiriman jika tidak dilakukan dengan benar."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Apabila Anda kehilangan rincian login Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountRecovery } yang aktif."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Apabila Anda kehilangan rincian login Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda tidak lagi akan dapat mengakses seluruh email, kontak, serta berkas yang Anda miliki setelahnya."
+        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once."
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses autentikasi dua faktor, kode berikut akan dapat digunakan sebagai pengganti kode autentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
@@ -4986,8 +5029,8 @@
       "Import mailbox": [
         "Impor kotak surat"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Impor email, kalender, dan kontak yang Anda miliki dari layanan email Anda terdahulu ke ${ BRAND_NAME }. Kami akan memandu Anda untuk memindahkan dan mengenkripsi data selangkah demi selangkah. Selamat datang di dunia privasi."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Impor email, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat autentikasi dua faktor Anda."
@@ -5064,8 +5107,8 @@
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
       ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications."
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } melalui aplikasi VPN pihak ketiga."
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -5106,9 +5149,6 @@
       "Loading...": [
         "Memuat..."
       ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        "Sign in to ${ MAIL_APP_NAME } to activate your address"
-      ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME } credentials.": [
         "Catatan mencakup segala upaya autentikasi yang terhubung dengan kredensial ${ BRAND_NAME } Anda pada seluruh layanan ${ BRAND_NAME }."
       ],
@@ -5138,9 +5178,6 @@
       ],
       "more": [
         "lebih"
-      ],
-      "More Info": [
-        "Learn more"
       ],
       "Multi-user support not enabled.": [
         "Dukungan multi-pengguna tidak diaktifkan."
@@ -5172,8 +5209,8 @@
       "No folder selected": [
         "Tidak ada folder yang dipilih"
       ],
-      "No imports to display.": [
-        "Tidak ada impor untuk ditampilkan."
+      "No imports or forwarding history.": [
+        "Tidak ada riwayat impor atau penerusan email yang ditemukan."
       ],
       "No label selected": [
         "Tidak ada label yang dipilih"
@@ -5256,6 +5293,12 @@
       "Please add passwords for the users on rows": [
         "Silakan tambahkan kata sandi pengguna pada baris berikut"
       ],
+      "Please authenticate your card in the verification tab.": [
+        "Silakan otentikasi kartu Anda pada tab verifikasi."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Silakan otentikasi pembayaran Anda pada tab verifikasi."
+      ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Silakan periksa kembali berkas Anda atau hubungi layanan dukungan untuk informasi lebih lanjut."
       ],
@@ -5294,6 +5337,9 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Silakan pilih jenis tautan yang hendak Anda sisipkan dan isi semua kolom di bawah ini."
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "Silakan coba lagi dengan menggunakan metode pembayaran lainnya, atau hubungi bank Anda."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk medapatkan bantuan."
@@ -5394,6 +5440,9 @@
       "Select what you want to import.": [
         "Pilih hal apa saja yang hendak Anda impor."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -5417,6 +5466,9 @@
       ],
       "Show original message": [
         "Tampilkan pesan asli"
+      ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
       ],
       "Signed up": [
         "Terdaftar"
@@ -5499,11 +5551,14 @@
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Aplikasi Impor-Ekspor memungkinkan Anda untuk menyimpan salinan cadangan data-data Anda secara lokal dan mengembalikan salinan cadangan yang ada ke dalam akun Anda."
       ],
-      "The name will be visible to your users while they are logged in.": [
-        "The name will be visible to your users while they are signed in."
+      "The name will be visible to your users while they are signed in.": [
+        "Nama ini akan terlihat oleh para pengguna yang berada di bawah Anda ketika mereka masuk."
       ],
       "The securest way to browse, stream, and be online.": [
         "Cara paling aman untuk menjelajah, menonton, dan beraktivitas di internet."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
@@ -5649,8 +5704,8 @@
       "Two-factor authentication enabled": [
         "Autentikasi dua faktor diaktifkan"
       ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "Mode dua kata sandi mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi kotak surat Anda. (Fitur lanjutan)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Mode dua kata sandi menggunakan kata sandi terpisah untuk masuk akun dan dekripsi kotak pesan. Ini memberikan sedikit manfaat keamanan pada situasi tertentu, namun kami menyarankan mode satu kata sandi untuk sebagian besar pengguna. Untuk beralih ke mode dua kata sandi, atur dulu kata sandi masuk kemudian tentukan kata sandi kotak pesan."
@@ -5662,7 +5717,7 @@
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "Kecuali Anda keluar dari akun atau mengubah kata sandi Anda, sesi Anda akan tetap aktif. Seluruh sesi akan berakhir setelah 60 hari tidak aktif."
+        "Selama Anda tidak keluar dari akun atau mengubah kata sandi Anda, sesi Anda akan tetap aktif. Seluruh sesi akan berakhir setelah 60 hari tidak aktif."
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
@@ -5706,6 +5761,9 @@
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
       ],
+      "Verification may take a few minutes.": [
+        "Proses verifikasi dapat memakan waktu hingga beberapa menit."
+      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
       ],
@@ -5729,6 +5787,15 @@
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Kami menyarankan Anda untuk menggunakan aplikasi resmi ${ VPN_APP_NAME } apabila memungkinkan."
+      ],
+      "We couldn’t process your payment.": [
+        "Kami tidak dapat memproses pembayaran Anda."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "Kami perlu untuk mengotentikasi metode pembayaran Anda dengan bank Anda."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "Kami perlu untuk mengotentikasi pembayaran Anda dengan bank Anda."
       ],
       "We recommend using your recovery phrase instead.": [
         "Kami menyarankan Anda untuk menggunakan frasa pemulihan."
@@ -5820,8 +5887,8 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Anda dapat menyesuaikan dan mengunduh tagihan Anda untuk keperluan akuntansi."
       ],
-      "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
+      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Anda dapat mengaktifkan login autentikasi untuk melihat kapan saja dan oleh alamat IP mana saja akun Anda diakses. Kami akan mencatat alamat IP yang mengakses akun Anda dan waktunya, beserta dengan seluruh upaya akses yang gagal."
       ],
       "You can import one data type at a time.": [
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
@@ -5862,8 +5929,8 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Anda tidak dapat merujuk pengguna ${ MAIL_APP_NAME }"
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }"
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Anda tidak dapat menggunakan informasi kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Berhubung Anda belum mengatur metode pemulihan, akun Anda tidak akan dapat dipulihkan apabila ke depannya Anda kehilangan kata sandi Anda. Lanjutkan tanpa metode pemulihan?"
@@ -5873,6 +5940,9 @@
       ],
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
+      ],
+      "You may be redirected to your bank’s website.": [
+        "Anda mungkin akan dialihkan ke situs web bank Anda."
       ],
       "You may now start using the extension": [
         "Anda kini dapat mulai menggunakan ekstensi"
@@ -5934,8 +6004,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there."
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, silakan masuk ke ${ loginLink } dan hapus akun Anda di sana."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
@@ -6692,9 +6762,6 @@
       "Display name": [
         "Nama tampilan"
       ],
-      "Do not ask again": [
-        "Don't ask again"
-      ],
       "Do you have any suggestions for our team?": [
         "Apakah Anda memiliki saran untuk tim kami?"
       ],
@@ -6703,6 +6770,9 @@
       ],
       "Domain name": [
         "Nama domain"
+      ],
+      "Don't ask again": [
+        "Jangan tanyakan lagi"
       ],
       "Duration": [
         "Durasi"
@@ -6783,7 +6853,7 @@
         "Kode hadiah"
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Berikut adalah data DMARC dasar yang tidak melakukan apa pun kecuali mengirimkan laporan ke email Anda."
+        "Berikut merupakan rekaman DMARC dasar yang tidak memiliki fungsi apa pun selain dari mengirimkan laporan ke email Anda."
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
@@ -7130,8 +7200,8 @@
       "Time format": [
         "Format waktu"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Zona waktu"
       ],
       "To: ${ to }": [
         "Kepada: ${ to }"
@@ -7219,9 +7289,6 @@
       ],
       "Your referral link": [
         "Tautan rujukan Anda"
-      ],
-      "ZIP code": [
-        "Postal code"
       ]
     },
     "label": {
@@ -7333,6 +7400,11 @@
       ],
       "Row": [
         "Baris"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "Label/folder modal": {
@@ -8017,8 +8089,8 @@
       "Unlimited folders": [
         "Tanpa batasan jumlah folder"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Tanpa batasan jumlah folder, label, dan filter"
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
@@ -8862,9 +8934,6 @@
       "Please insert link first": [
         "Silakan sisipkan tautan terlebih dulu"
       ],
-      "Postal code": [
-        "Kode pos"
-      ],
       "Printer": [
         "Pencetak"
       ],
@@ -8891,9 +8960,6 @@
       ],
       "yourdomain.com": [
         "domainanda.com"
-      ],
-      "ZIP": [
-        "Kode pos"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -9036,6 +9102,9 @@
       "Verify recovery phone?": [
         "Verifikasi nomor telepon pemulihan?"
       ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Verifikasi nomor telepon pemulihan ini sekarang: ${ phone.Value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
@@ -9117,8 +9186,11 @@
       ]
     },
     "Settings description": {
-      "Make the move to privacy. Effortlessly and securely.": [
-        "Berpindahlah ke layanan yang mengedepankan privasi. Aman dan bebas repot."
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "Selesaikan transisi menuju privasi dengan perangkat impor dan penerusan pesan aman kami."
+      ],
+      "Complete the transition to privacy with our secure importing tools.": [
+        "Selesaikan transisi menuju privasi dengan perangkat impor aman kami."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Anda dapat menerapkan beberapa label ke sebuah pesan, tetapi pesan biasanya hanya dapat berada dalam satu folder saja. Tarik dan lepas untuk mengatur ulang urutan folder dan label Anda."
@@ -9352,6 +9424,9 @@
       ]
     },
     "Subscription change warning": {
+      "Manage your subscription on ${ subscriptionManagerShort }": [
+        "Kelola langganan Anda pada ${ subscriptionManagerShort }"
+      ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
         "Langganan Anda dibeli melalui pembelian dalam aplikasi. Untuk mengelola langganan Anda saat ini, tuju bagian Langganan pada akun ${ subscriptionManager } Anda"
       ]
@@ -9378,8 +9453,8 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } disalin ke clipboard Anda"
       ],
-      "Account deleted. Logging out...": [
-        "Account deleted. Signing out..."
+      "Account deleted. Signing out...": [
+        "Akun dihapus. Mengeluarkan Anda dari akun..."
       ],
       "Address added": [
         "Alamat ditambahkan"
@@ -9411,8 +9486,8 @@
       "Calendar updated": [
         "Kalender berhasil diperbarui"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Membatalkan impor"
       ],
       "Catch-all address updated": [
         "Alamat catch-all diperbarui"
@@ -9702,8 +9777,8 @@
       ]
     },
     "Timezone search placeholder": {
-      "Search timezones": [
-        "Search time zones"
+      "Search time zones": [
+        "Cari zona waktu"
       ]
     },
     "Title": {
@@ -10124,6 +10199,9 @@
       "Gift code": [
         "Kode hadiah"
       ],
+      "History": [
+        "Riwayat"
+      ],
       "How does it work?": [
         "Bagaimana caranya ini bekerja?"
       ],
@@ -10156,6 +10234,9 @@
       ],
       "Import key": [
         "Impor kunci"
+      ],
+      "Import messages": [
+        "Impor pesan"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Impor melalui ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -10249,6 +10330,9 @@
       ],
       "Pay invoice": [
         "Bayar tagihan"
+      ],
+      "Payment failed": [
+        "Pembayaran gagal"
       ],
       "Payment methods": [
         "Metode pembayaran"
@@ -10367,6 +10451,9 @@
       "Set organization password": [
         "Atur kata sandi organisasi"
       ],
+      "Set up forwarding": [
+        "Atur penerusan email"
+      ],
       "Set up two-factor authentication": [
         "Aktifkan autentikasi dua faktor"
       ],
@@ -10411,9 +10498,6 @@
       ],
       "Start import process": [
         "Mulai proses impor"
-      ],
-      "Start new import": [
-        "Mulai impor baru"
       ],
       "Status": [
         "Status"
@@ -10472,8 +10556,17 @@
       "Verification": [
         "Verifikasi"
       ],
+      "Verification failed": [
+        "Verifikasi gagal"
+      ],
       "Verify email address": [
         "Verifikasi alamat email"
+      ],
+      "Verifying your card...": [
+        "Memverifikasi kartu Anda..."
+      ],
+      "Verifying your payment...": [
+        "Memverifikasi pembayaran Anda..."
       ],
       "VPN apps": [
         "Aplikasi VPN"
@@ -10508,9 +10601,6 @@
       "Your current plan": [
         "Paket Anda saat ini"
       ],
-      "Your import history": [
-        "Riwayat impor Anda"
-      ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ],
@@ -10528,9 +10618,6 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Anda telah diundang untuk mencoba ${ MAIL_APP_NAME }"
-      ],
-      "ZIP / postal code": [
-        "Postal code"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10723,7 +10810,7 @@
         "Ketika Anda menambahkan label ke sebuah pesan dalam percakapan, itu akan secara otomatis diterapkan pada semua pesan mendatang yang Anda kirim atau terima dalam percakapan itu."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Ketika Anda mengklik sebuah tautan, fitur anti-phishing ini akan meminta Anda untuk mengonfirmasi alamat URL dari halaman web yang bersangkutan."
+        "Pada saat Anda mengklik tautan, fitur anti-phishing ini akan meminta Anda untuk mengonfirmasi alamat URL dari halaman web yang bersangkutan."
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Pada saat Anda memindahkan email ke spam, Anda akan secara otomatis membatalkan langganan milis Anda."
@@ -10850,11 +10937,11 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
-      "Are you sure you want to delete the address?": [
-        "Are you sure you want to delete this address?"
-      ],
       "Are you sure you want to delete the phone number?": [
         "Apakah Anda yakin untuk menghapus nomor telepon ini?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Apakah Anda yakin untuk menghapus alamat ini?"
       ],
       "Are you sure you want to discard your import?": [
         "Yakin ingin membuang impor Anda?"
@@ -10883,11 +10970,11 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
       ],
+      "Please add at least one recipient.": [
+        "Mohon tambahkan setidaknya satu nama penerima."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
-      ],
-      "Please provide at least one recipient": [
-        "Please add at least one recipient."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."

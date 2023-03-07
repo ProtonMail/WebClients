@@ -929,6 +929,9 @@
       ]
     },
     "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
       ],
@@ -999,10 +1002,10 @@
         "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Tu correo electrónico solo se utilizará para esta verificación única."
+        "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Tu número de teléfono solo se utilizará para esta verificación única."
+        "Tu número de teléfono se utilizará solo para esta verificación única."
       ]
     },
     "Label": {

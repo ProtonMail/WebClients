@@ -4,6 +4,14 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Пересылка скоро начнется. Новые письма будут появляться в вашем почтовом ящике."
+      ],
+      "Mail forward stopped": [
+        "Пересылка почты остановлена"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Введение в ${ BRAND_NAME }"
@@ -548,9 +556,6 @@
       "Loading${ ellipsis }": [
         "Загрузка${ ellipsis }"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Mailbox density": [
         "Плотность почтового ящика"
       ],
@@ -797,6 +802,9 @@
       "Remove expiration time": [
         "Удалить время истечения срока действия"
       ],
+      "Remove self-destruction": [
+        "Удалить самоуничтожение"
+      ],
       "Remove this label": [
         "Удалить этот ярлык"
       ],
@@ -872,6 +880,15 @@
       "Select all messages": [
         "Выбрать все сообщения"
       ],
+      "Self-destruct in 7 days": [
+        "Самоуничтожение через 7 дней"
+      ],
+      "Self-destruct message": [
+        "Самоуничтожающееся сообщение"
+      ],
+      "Self-destruct on ...": [
+        "Самоуничтожение ..."
+      ],
       "Send": [
         "Отправить"
       ],
@@ -944,6 +961,9 @@
       "Show preview": [
         "Показать предпросмотр"
       ],
+      "Sign in": [
+        "Войти"
+      ],
       "Sign out": [
         "Выйти"
       ],
@@ -1012,6 +1032,9 @@
       ],
       "Turn on tracker protection": [
         "Включите защиту от трекеров"
+      ],
+      "Unblock": [
+        "Разблокировать"
       ],
       "Underline": [
         "Подчёркнутый"
@@ -1606,6 +1629,14 @@
         "Событие происходит сейчас"
       ]
     },
+    "Cancel self-destruction of the message": {
+      "Cancel": [
+        "Отменить"
+      ],
+      "Cancel self-destruction": [
+        "Отменить самоуничтожение"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Свернуть"
@@ -1907,8 +1938,8 @@
       "Role": [
         "Роль"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Часовой пояс"
       ],
       "Title": [
         "Должность"
@@ -2805,6 +2836,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "Лого ${ MAIL_APP_NAME } и символ «плюс»"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } в настройках."
       ],
@@ -2994,6 +3028,14 @@
         "Обновить для события, начинающегося ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Папка очищена"
+      ],
+      "Label cleared": [
+        "Ярлык очищен"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Имя файла с зашифрованными заголовками"
@@ -3027,6 +3069,12 @@
       "Choose a date in the future.": [
         "Выберите дату в будущем."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Выберите дату в течение ${ EXPIRATION_TIME_MAX_DAYS } дня.",
+        "Выберите дату в течение ${ EXPIRATION_TIME_MAX_DAYS } дней.",
+        "Выберите дату в течение ${ EXPIRATION_TIME_MAX_DAYS } дней.",
+        "Выберите дату в течение ${ EXPIRATION_TIME_MAX_DAYS } дней."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дня.",
         "Выберите дату в течении ${ SCHEDULED_MAX_DATE_DAYS } дней.",
@@ -3057,6 +3105,18 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ошибка расшифровки: не удалось расшифровать зашифрованное содержимое сообщения."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календаря или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или"
+      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
@@ -3065,9 +3125,6 @@
       ],
       "Email address disabled": [
         "Адрес электронной почты отключен"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
@@ -3117,6 +3174,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова."
       ],
+      "Invalid email address": [
+        "Недействительный адрес электронной почты"
+      ],
       "Invalid expiration time": [
         "Недействительный срок действия"
       ],
@@ -3134,6 +3194,12 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Превышено максимальное количество вложений (${ attachmentsCountLimit })"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Объедините по крайней мере ${ calendarsToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Сначала нужно отправить сообщение"
@@ -3369,6 +3435,9 @@
       "You did not provide a file.": [
         "Вы не предоставили файл."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Вы достигли максимального количества календарей. Некоторые календари не удалось импортировать."
+      ],
       "You must set a name": [
         "Вы должны задать имя"
       ],
@@ -3411,8 +3480,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3454,8 +3523,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Произошла ошибка при чтении файла ${ formattedFilename }. Формат файла не поддерживается."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Произошла ошибка при загрузке файла ${ formattedFilename }. Максимальный размер: ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3489,8 +3558,8 @@
       "Component with wrong format": [
         "Неправильный формат компонента"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Настроить часовой пояс"
       ],
       "Edited event not supported": [
         "Отредактированное событие не поддерживается"
@@ -3558,11 +3627,11 @@
       "Start time out of bounds": [
         "Время начала находится вне границ"
       ],
+      "Time zone": [
+        "Часовой пояс"
+      ],
       "Time zone not supported": [
         "Часовой пояс не поддерживается"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Запись списка задач"
@@ -4526,6 +4595,9 @@
       "(No Recipient)": [
         "(Нет получателей)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Фраза для восстановления - это один из самых надежных способов защиты доступа к вашему аккаунту. С ее помощью можно получить доступ к аккаунту и восстановить зашифрованные данные, если вы вдруг забудете пароль."
       ],
@@ -4853,9 +4925,6 @@
       "Expires": [
         "Истекает"
       ],
-      "Expires in ${ formattedDelay }": [
-        "Истекает через ${ formattedDelay }"
-      ],
       "Expires in ${ formattedDelayShort }": [
         "Истекает через ${ formattedDelayShort }"
       ],
@@ -4882,6 +4951,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Для сообщений новее, чем ${ oldestDate }"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
       ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
@@ -4961,8 +5033,8 @@
       "Import mailbox": [
         "Импорт почтового ящика"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Импортируйте электронную почту, календари и контакты из другой службы в ${ BRAND_NAME }. Мы будем сопровождать вас на каждом шагу и шифровать ваши данные при переносе. Добро пожаловать в мир конфиденциальности."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Импортируйте ваши письма, календари и контакты в ${ BRAND_NAME } из другого сервиса."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
@@ -5255,8 +5327,8 @@
       "Saving draft…": [
         "Сохранение черновика…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        "Scheduled send of this message will be canceled."
+      "Scheduled send of this message will be canceled.": [
+        "Запланированная отправка этого сообщения будет отменена."
       ],
       "Scheduling message...": [
         "Сообщение ставится в очередь..."
@@ -5272,6 +5344,9 @@
       ],
       "Select what you want to import.": [
         "Выберите то, что вы хотите импортировать."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учетом числа календарей, доступных в вашем тарифе."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Отправьте зашифрованное, защищенное паролем сообщение на адрес электронной почты ${ boldText }."
@@ -5396,8 +5471,8 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Браузер не поддерживает предварительный просмотр документов PDF. Пожалуйста, скачайте файл."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        "This conversation contains a scheduled message. Sending of this message will be canceled."
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "В этой цепочке есть запланированное сообщение. Его отправка будет отменена."
       ],
       "This conversation contains non-trashed messages.": [
         "В этой цепочке писем есть неудаленные сообщения."
@@ -5411,8 +5486,8 @@
         "Эти цепочки писем будут помечены как спам. Вы также хотите отписаться от будущих писем?",
         "Эти цепочки писем будут помечены как спам. Вы также хотите отписаться от будущих писем?"
       ],
-      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded."
+      "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
+        "Это письмо не соответствует требованиям подтверждения подлинности домена. Оно может быть поддельным, либо было переслано ненадлежащим образом."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Это приглашение сохранено в неактивном календаре."
@@ -5468,14 +5543,17 @@
       "This message will expire ${ formattedDate }": [
         "Срок действия этого сообщения истекает ${ formattedDate }"
       ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Срок действия этого сообщения истечет ${ dateString } в ${ formattedTime }"
+      "This message will self-destruct in ${ formattedDelay }": [
+        "Это сообщение самоуничтожится через ${ formattedDelay }"
       ],
-      "This message will expire today at ${ formattedTime }": [
-        "Срок действия этого сообщения истекает сегодня в ${ formattedTime }"
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "Это сообщение самоуничтожится ${ dateString } в ${ formattedTime }"
       ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        "Срок действия этого сообщения истечет завтра в ${ formattedTime }"
+      "This message will self-destruct today at ${ formattedTime }": [
+        "Это сообщение самоуничтожится сегодня в ${ formattedTime }"
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "Это сообщение самоуничтожится завтра в ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Этот открытый ключ будет автоматически использован для шифрования электронной почты, отправленной на этот адрес."
@@ -5602,6 +5680,9 @@
       ],
       "When do you want your message to be sent?": [
         "Когда вы хотите, чтобы ваше сообщение было отправлено?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Когда вы хотите, чтобы ваше сообщение самоуничтожилось?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Сообщая свой адрес электронной почты, используйте уникальный, одноразовый псевдоним Hide My Email вместо своего настоящего адреса электронной почты."
@@ -6169,8 +6250,8 @@
       "Delete recovery-related information.": [
         "Удалите информацию, связанную с восстановлением."
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Больше не спрашивать"
       ],
       "Don't show this again": [
         "Больше не показывать"
@@ -6507,6 +6588,16 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Дата"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Время"
       ]
     },
     "Label for contact group color": {
@@ -6864,8 +6955,8 @@
       "Scheduled sending undone": [
         "Запланированная отправка отменена"
       ],
-      "Scheduling cancelled. Message has been moved to Drafts.": [
-        "Scheduling canceled. Message has been moved to Drafts."
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Запланированная отправка отменена. Сообщение перемещено в Черновики."
       ],
       "Sending undone": [
         "Отправка отменена"
@@ -7075,8 +7166,8 @@
       "Search message content": [
         "Поиск содержимого сообщения"
       ],
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
       ],
       "Up to 15 email addresses": [
         "До 15 адресов электронной почты"
@@ -7088,6 +7179,9 @@
     "new_plans: feature info": {
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Получите неограниченное количество псевдонимов с SimpleLogin, предоставляемого ${ BRAND_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: label": {
@@ -7405,6 +7499,14 @@
         "Рабочий"
       ]
     },
+    "protonbadge": {
+      "Official": [
+        "Официальный"
+      ],
+      "Official email from ${ BRAND_NAME }": [
+        "Официальное письмо от ${ BRAND_NAME }"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Подписанное сообщение, зашифрованное сквозным методом"
@@ -7443,6 +7545,35 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Примечание. Сервис будет перезагружен, когда вы нажмете кнопку «Применить»."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } день",
+        "${ remainingDays } дня",
+        "${ remainingDays } дней",
+        "${ remainingDays } дней"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } час",
+        "${ remainingHours } часа",
+        "${ remainingHours } часов",
+        "${ remainingHours } часов"
+      ]
+    },
+    "Remaining time before the message expire": {
+      "<1 hour": [
+        "<1 час"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } год",
+        "${ remainingYears } года",
+        "${ remainingYears } лет",
+        "${ remainingYears } лет"
       ]
     },
     "Reply to calendar invitation": {
@@ -8065,8 +8196,8 @@
       "Bug reported": [
         "Отчёт об ошибке отправлен"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Отмена импорта"
       ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
@@ -8131,17 +8262,11 @@
       "Fingerprint copied to clipboard": [
         "Цифровой отпечаток скопирован в буфер обмена"
       ],
-      "Folder cleared": [
-        "Папка очищена"
-      ],
       "Import record deleted": [
         "Запись об импорте удалена"
       ],
       "Keyboard shortcuts preferences updated": [
         "Настройки сочетаний клавиш обновлены"
-      ],
-      "Label cleared": [
-        "Label deleted"
       ],
       "Labels applied.": [
         "Ярлыки применены."
@@ -8220,6 +8345,15 @@
       ],
       "Read receipt sent": [
         "Уведомление о прочтении отправлено"
+      ],
+      "Self-destruction cancelled": [
+        "Самоуничтожение отменено"
+      ],
+      "Self-destruction removed": [
+        "Самоуничтожение отменено"
+      ],
+      "Self-destruction set": [
+        "Самоуничтожение установлено"
       ],
       "Undo in progress": [
         "Выполняется отмена"
@@ -8801,6 +8935,9 @@
       ],
       "Select contact group": [
         "Выбор группы контактов"
+      ],
+      "Self-destruct message": [
+        "Самоуничтожающееся сообщение"
       ],
       "Send email": [
         "Отправить электронное письмо"

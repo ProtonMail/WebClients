@@ -4,6 +4,14 @@
     "language": "ro_RO"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Redirecționarea va începe curând. Noile mesaje vor apărea în folderul «Primite»."
+      ],
+      "Mail forward stopped": [
+        "Redirecționare mesaje oprită"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Prezentare ${ BRAND_NAME }"
@@ -333,9 +341,6 @@
       "Load image": [
         "Încărcare imagine"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Gestionare foldere"
       ],
@@ -536,6 +541,9 @@
       ],
       "Show preview": [
         "Afișare previzualizare"
+      ],
+      "Sign in": [
+        "Autentificare"
       ],
       "Sign out": [
         "Deconectare"
@@ -916,8 +924,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Fus orar"
       ],
       "Title": [
         "Titlu"
@@ -1882,14 +1890,21 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Căutarea în conținutul mesajelor nu poate fi activată în acest navigator. Închideți modul de navigare privat sau folosiți alt navigator."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
+        "Deselectați cel puțin ${ calendarsToFixCount } calendare.",
+        "Deselectați cel puțin ${ calendarsToFixCount } de calendare."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselectați cel puțin ${ calendarsToFixCount } calendar sau",
+        "Deselectați cel puțin ${ calendarsToFixCount } calendare sau",
+        "Deselectați cel puțin ${ calendarsToFixCount } de calendare sau"
+      ],
       "Device name does not match": [
         "Numele dispozitivului nu se potrivește"
       ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "Adresa de e-mail este obligatorie"
@@ -1933,6 +1948,9 @@
       "Incorrect password. Please try again.": [
         "Parolă incorectă. Reîncercați."
       ],
+      "Invalid email address": [
+        "Adresă de e-mail nevalidă."
+      ],
       "Invalid name": [
         "Nume nevalid"
       ],
@@ -1944,6 +1962,11 @@
       ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
+        "Îmbinați cel puțin ${ calendarsToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
+        "Îmbinați cel puțin ${ calendarsToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
       ],
       "Missing key packet": [
         "Lipsește pachetul de chei."
@@ -2107,6 +2130,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Nu puteți trimite fișiere vCard pentru mai mult de 10 contacte."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Ați atins maximul de calendare disponibile. Unele calendare nu au putut fi importate."
+      ],
       "You must set a name": [
         "Trebuie specificat un nume"
       ],
@@ -2118,8 +2144,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Mărimea maximă a unui fișier este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2160,8 +2186,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "A apărut o eroare la încărcarea fișierului ${ formattedFilename }. Dimensiunea maximă a fișierului este de ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2195,8 +2221,8 @@
       "Component with wrong format": [
         "Componentă cu format greșit"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Fus orar personal"
       ],
       "Edited event not supported": [
         "Evenimentul editat nu este suportat"
@@ -2264,11 +2290,11 @@
       "Start time out of bounds": [
         "Timp de start în afara limitelor"
       ],
+      "Time zone": [
+        "Fus orar"
+      ],
       "Time zone not supported": [
         "Fus orar nesuportat."
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Intrare de făcut"
@@ -2828,6 +2854,9 @@
         "S-au găsit ${ contactsCount } contacte",
         "S-au găsit ${ contactsCount } de contacte"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (restaurate)"
+      ],
       "${ doneCount } finished": [
         "S-a transferat unul",
         "S-au transferat ${ doneCount }",
@@ -2928,6 +2957,9 @@
       "A number will be added to the folder name": [
         "Va fi adăugată o cifră la numele folderului."
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accesul la cont a fost restricționat din cauza facturilor neplătite. Contactați-vă administratorul."
       ],
@@ -2991,6 +3023,15 @@
       ],
       "Canceled": [
         "Anulat"
+      ],
+      "Cannot load link": [
+        "Legătura nu a putut fi încărcată"
+      ],
+      "Cannot load links": [
+        "Legăturile nu s-au putut încărca."
+      ],
+      "Cannot load shared link": [
+        "Legătura partajată nu a putut fi încărcată."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
@@ -3196,6 +3237,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pentru cele mai bune rezultate, evitați activitățile de redare în flux și cele care necesită multă memorie sau împărțiți încărcarea în mai puține fișiere."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Redirecționați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
       ],
@@ -3249,8 +3293,8 @@
       "Import mailbox": [
         "Importare mesaje"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importați e-mailurile, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }. Vă vom ghida la fiecare pas și vă vom cripta datele pe măsură ce acestea sunt mutate. Bine ați venit în lumea vieții private."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importați mesajele, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
@@ -3311,12 +3355,6 @@
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Se încarcă"
@@ -3496,6 +3534,9 @@
       "Report has been sent": [
         "Raportul a fost trimis."
       ],
+      "Restored files ${ formattedDate }": [
+        "Fișiere restaurate ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "Căutarea nu poate fi activată în acest navigator."
       ],
@@ -3514,6 +3555,9 @@
       "Select what you want to import.": [
         "Selectați ce doriți să importați."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
@@ -3528,9 +3572,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Legătură partajabilă pentru ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
@@ -3991,8 +4032,8 @@
       "Device name": [
         "Nume dispozitiv"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Nu mă mai întreba"
       ],
       "Download anyway": [
         "Descărcare așa"
@@ -4581,6 +4622,12 @@
       "All items will soon be permanently deleted from trash": [
         "Toate elementele vor fi eliminate permanent din «Gunoi»."
       ],
+      "Cannot load link": [
+        "Legătura nu s-a putut încărca."
+      ],
+      "Cannot load next page": [
+        "Nu s-a putut încărca pagina următoare."
+      ],
       "Contact group created": [
         "Grup de contacte creat"
       ],
@@ -4622,9 +4669,6 @@
       "File or folder is missing a name": [
         "Fișier sau folder fără nume."
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Mutare un fișier.",
         "Mutare ${ itemsToMoveCount } fișiere.",
@@ -4654,9 +4698,6 @@
         "Mutare un element.",
         "Mutare ${ movingCount } elemente.",
         "Mutare ${ movingCount } de elemente."
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."
@@ -4993,8 +5034,8 @@
       "Bug reported": [
         "Eroare raportată"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Se anulează importarea"
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
@@ -5201,6 +5242,9 @@
       "Browser might run out of memory": [
         "Navigatorul ar putea rămâne fără memorie"
       ],
+      "Cannot load link": [
+        "Legătura nu s-a putut încărca."
+      ],
       "Change layout": [
         "Schimbare aspect"
       ],
@@ -5392,9 +5436,6 @@
       "Item details": [
         "Detalii articol"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Legătură de confirmare"
       ],
@@ -5568,9 +5609,6 @@
       ],
       "The link expired": [
         "Legătura a expirat"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Acest fișier are o semnătură lipsă sau nevalidă. Accesați Meniu (⋮) → Detalii pentru informații."

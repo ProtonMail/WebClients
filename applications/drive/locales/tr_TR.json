@@ -4,6 +4,14 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "İletme işlemi birazdan başlayacak ve yeni e-postalar gelen kutunuzda görünecek."
+      ],
+      "Mail forward stopped": [
+        "Posta iletimi durduruldu"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } tanıtımı"
@@ -331,9 +339,6 @@
       "Load image": [
         "Görsel yükle"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Klasör yönetimi"
       ],
@@ -534,6 +539,9 @@
       ],
       "Show preview": [
         "Ön izlemeyi göster"
+      ],
+      "Sign in": [
+        "Oturum aç"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -914,8 +922,8 @@
       "Role": [
         "Rol"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Saat dilimi"
       ],
       "Title": [
         "Başlık"
@@ -1879,14 +1887,19 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Bu tarayıcıda içerik araması etkinleştirilemiyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın",
+        "En az ${ calendarsToFixCount } takvimi kaldırın"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da",
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da"
+      ],
       "Device name does not match": [
         "Aygıt adı eşleşmiyor"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -1930,6 +1943,9 @@
       "Incorrect password. Please try again.": [
         "Parola yanlış. Lütfen yeniden deneyin."
       ],
+      "Invalid email address": [
+        "E-posta adresi geçersiz"
+      ],
       "Invalid name": [
         "Ad geçersiz"
       ],
@@ -1941,6 +1957,10 @@
       ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin"
       ],
       "Missing key packet": [
         "Anahtar paketi eksik"
@@ -2101,6 +2121,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
+      ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
       ],
@@ -2112,8 +2135,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -2153,8 +2176,8 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "${ formattedFilename } dosyanız yüklenirken bir sorun çıktı. Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olabilir."
@@ -2188,8 +2211,8 @@
       "Component with wrong format": [
         "Bileşen biçimi yanlış"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Özel saat dilimi"
       ],
       "Edited event not supported": [
         "Etkinlikleri düzenleme desteklenmiyor"
@@ -2257,11 +2280,11 @@
       "Start time out of bounds": [
         "Başlangıç zamanı sınırların dışında"
       ],
+      "Time zone": [
+        "Saat dilimi"
+      ],
       "Time zone not supported": [
         "Saat dilimi desteklenmiyor"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Yapılacak iş kaydı"
@@ -2798,6 +2821,9 @@
         "${ contactsCount } kişi bulundu",
         "${ contactsCount } kişi bulundu"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (geri yüklendi)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } tamamlandı",
         "${ doneCount } tamamlandı"
@@ -2881,6 +2907,9 @@
       "A number will be added to the folder name": [
         "Klasör adına bir numara eklensin"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
@@ -2942,6 +2971,15 @@
       ],
       "Canceled": [
         "İptal edildi"
+      ],
+      "Cannot load link": [
+        "Bağlantı yüklenemedi"
+      ],
+      "Cannot load links": [
+        "Bağlantılar yüklenemedi"
+      ],
+      "Cannot load shared link": [
+        "Paylaşılmış bağlantı yüklenemedi"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -3144,6 +3182,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Gelen postaları başka bir hesaptan güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
+      ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
       ],
@@ -3196,8 +3237,8 @@
       "Import mailbox": [
         "Posta kutusunu içe aktar"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
@@ -3258,12 +3299,6 @@
       ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Yükleniyor"
@@ -3441,6 +3476,9 @@
       "Report has been sent": [
         "Şikayet gönderildi"
       ],
+      "Restored files ${ formattedDate }": [
+        "${ formattedDate } tarihli dosyalar geri yüklendi"
+      ],
       "Search cannot be enabled in this browser": [
         "Bu tarayıcıda arama etkinleştirilemez"
       ],
@@ -3459,6 +3497,9 @@
       "Select what you want to import.": [
         "İçe aktarmak istediklerinizi seçin."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
@@ -3473,9 +3514,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } için paylaşılabilir bağlantı"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -3934,8 +3972,8 @@
       "Device name": [
         "Aygıt adı"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Bir daha sorma"
       ],
       "Download anyway": [
         "Yine de indir"
@@ -4508,6 +4546,12 @@
       "All items will soon be permanently deleted from trash": [
         "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
       ],
+      "Cannot load link": [
+        "Bağlantı yüklenemedi"
+      ],
+      "Cannot load next page": [
+        "Sonraki sayfa yüklenemedi"
+      ],
       "Contact group created": [
         "Kişi grubu eklendi"
       ],
@@ -4548,9 +4592,6 @@
       "File or folder is missing a name": [
         "Dosya ya da klasörün adı eksik"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "${ itemsToMoveCount } dosyayı taşı",
         "${ itemsToMoveCount } dosyayı taşı"
@@ -4574,9 +4615,6 @@
       "Move ${ movingCount } item": [
         "${ movingCount } ögeyi taşı",
         "${ movingCount } ögeyi taşı"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal } yüklemek için yeterli alan yok"
@@ -4908,8 +4946,8 @@
       "Bug reported": [
         "Hata bildirildi"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "İçe aktarma iptal ediliyor"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -5103,6 +5141,9 @@
       "Browser might run out of memory": [
         "Web tarayıcı için bellek yetersiz olabilir"
       ],
+      "Cannot load link": [
+        "Bağlantı yüklenemedi"
+      ],
       "Change layout": [
         "Görünümü değiştir"
       ],
@@ -5287,9 +5328,6 @@
       "Item details": [
         "Öge ayrıntıları"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Bağlantı onayı"
       ],
@@ -5463,9 +5501,6 @@
       ],
       "The link expired": [
         "Bağlantının süresi geçmiş"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Bu dosyanın imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Ayrıntılar bölümüne gidin."

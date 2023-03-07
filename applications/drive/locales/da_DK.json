@@ -331,9 +331,6 @@
       "Load image": [
         "Indlæs billede"
       ],
-      "Log in": [
-        "Sign in"
-      ],
       "Manage folders": [
         "Administrer mapper"
       ],
@@ -534,6 +531,9 @@
       ],
       "Show preview": [
         "Vis en forhåndsvisning"
+      ],
+      "Sign in": [
+        "Log ind"
       ],
       "Sign out": [
         "Log ud"
@@ -914,8 +914,8 @@
       "Role": [
         "Rolle"
       ],
-      "Timezone": [
-        "Time zone"
+      "Time zone": [
+        "Tidszone"
       ],
       "Title": [
         "Titel"
@@ -1879,14 +1879,19 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Fravælg mindst ${ calendarsToFixCount } kalender",
+        "Fravælg mindst ${ calendarsToFixCount } kalendere"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Fravælg mindst ${ calendarsToFixCount } kalender eller",
+        "Fravælg mindst ${ calendarsToFixCount } kalendere eller"
+      ],
       "Device name does not match": [
         "Enhedens navn matcher ikke"
       ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
-      ],
-      "Email address invalid": [
-        "Invalid email address"
       ],
       "Email address is required": [
         "E-mailadresse er påkrævet."
@@ -1930,6 +1935,9 @@
       "Incorrect password. Please try again.": [
         "Forkert adgangskode, prøv venligst igen."
       ],
+      "Invalid email address": [
+        "Ugyldig e-mailadresse"
+      ],
       "Invalid name": [
         "Ugyldigt navn"
       ],
@@ -1941,6 +1949,10 @@
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
+        "Flet mindst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
       ],
       "Missing key packet": [
         "Manglende nøglepakke"
@@ -2101,6 +2113,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "Du kan ikke sende vCard-filer med mere end 10 kontakter"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Du har nået det maksimale antal kalendere. Nogle kalendere kunne ikke importeres."
+      ],
       "You must set a name": [
         "Du skal angive et navn"
       ],
@@ -2112,9 +2127,6 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2153,9 +2165,6 @@
       ]
     },
     "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "An error occurred reading your file ${ formattedFilename }. Incorrect file format."
-      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil ${ formattedFilename }. Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2188,8 +2197,8 @@
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
-      "Custom timezone": [
-        "Custom time zone"
+      "Custom time zone": [
+        "Brugerdefineret tidszone"
       ],
       "Edited event not supported": [
         "Redigeret begivenhed understøttes ikke"
@@ -2257,11 +2266,11 @@
       "Start time out of bounds": [
         "Starttid uden for grænserne"
       ],
+      "Time zone": [
+        "Tidszone"
+      ],
       "Time zone not supported": [
         "Tidszone understøttes ikke"
-      ],
-      "Timezone": [
-        "Time zone"
       ],
       "To-do entry": [
         "Gøremålindlæg"
@@ -2798,6 +2807,9 @@
         "${ contactsCount } kontakt fundet",
         "${ contactsCount } kontakter fundet"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (gendannet)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } færdig",
         "${ doneCount } færdig"
@@ -2881,6 +2893,9 @@
       "A number will be added to the folder name": [
         "Et nummer vil blive tilføjet mappens navn"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
       ],
@@ -2942,6 +2957,15 @@
       ],
       "Canceled": [
         "Annulleret"
+      ],
+      "Cannot load link": [
+        "Link kunne ikke indlæses"
+      ],
+      "Cannot load links": [
+        "Linkene kunne ikke indlæses"
+      ],
+      "Cannot load shared link": [
+        "Delt link kunne ikke indlæses"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
@@ -3196,9 +3220,6 @@
       "Import mailbox": [
         "Importér postkasse"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
-      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
@@ -3258,12 +3279,6 @@
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
-      ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
-      "Links failed to be loaded": [
-        "Cannot load links"
       ],
       "Loading": [
         "Indlæser"
@@ -3441,6 +3456,9 @@
       "Report has been sent": [
         "Anmeldelse sendt"
       ],
+      "Restored files ${ formattedDate }": [
+        "Gendannede filer ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "Søgning kan ikke aktiveres i denne browser"
       ],
@@ -3459,6 +3477,9 @@
       "Select what you want to import.": [
         "Vælg, hvad du ønsker at importere."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
@@ -3473,9 +3494,6 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Delbart link til ${ boldNameText }"
-      ],
-      "Shared link failed to be loaded": [
-        "Cannot load shared link"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
@@ -3934,8 +3952,8 @@
       "Device name": [
         "Enhedsnavn"
       ],
-      "Do not ask again": [
-        "Don't ask again"
+      "Don't ask again": [
+        "Spørg ikke igen"
       ],
       "Download anyway": [
         "Download alligevel"
@@ -4508,6 +4526,12 @@
       "All items will soon be permanently deleted from trash": [
         "Alle elementer slettes snart permanent fra papirkurven"
       ],
+      "Cannot load link": [
+        "Link kunne ikke indlæses"
+      ],
+      "Cannot load next page": [
+        "Næste side kunne ikke indlæses"
+      ],
       "Contact group created": [
         "Kontaktgruppe oprettet"
       ],
@@ -4548,9 +4572,6 @@
       "File or folder is missing a name": [
         "Der mangler et navn på en fil eller mappe"
       ],
-      "Link failed to be loaded": [
-        "Cannot load link"
-      ],
       "Move ${ itemsToMoveCount } file": [
         "Flyt ${ itemsToMoveCount } fil",
         "Flyt ${ itemsToMoveCount } filer"
@@ -4574,9 +4595,6 @@
       "Move ${ movingCount } item": [
         "Flyt ${ movingCount } element",
         "Flyt ${ movingCount } elementer"
-      ],
-      "Next page failed to be loaded": [
-        "Cannot load next page"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok plads til at uploade ${ formattedTotal }"
@@ -4908,8 +4926,8 @@
       "Bug reported": [
         "Fejl anmeldt"
       ],
-      "Cancelling import": [
-        "Canceling import"
+      "Canceling import": [
+        "Annullerer import"
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
@@ -5103,6 +5121,9 @@
       "Browser might run out of memory": [
         "Browseren løber måske tør for hukommelse"
       ],
+      "Cannot load link": [
+        "Link kunne ikke indlæses"
+      ],
       "Change layout": [
         "Skift layout"
       ],
@@ -5290,9 +5311,6 @@
       "Item details": [
         "Elementdetaljer"
       ],
-      "Items details": [
-        "Item details"
-      ],
       "Link confirmation": [
         "Linkbekræftelse"
       ],
@@ -5466,9 +5484,6 @@
       ],
       "The link expired": [
         "Linket er udløbet"
-      ],
-      "The link failed to be loaded": [
-        "Cannot load link"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denne fil har en manglende eller ugyldig signatur. Gå til Menu (⋮) → Detaljer for info."
