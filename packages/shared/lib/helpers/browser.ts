@@ -104,7 +104,6 @@ export const hasPDFSupport = () => {
     // mimeTypes is deprecated in favor of pdfViewerEnabled.
     return (
         (navigator.mimeTypes && 'application/pdf' in navigator.mimeTypes) ||
-        // @ts-ignore
         navigator.pdfViewerEnabled ||
         (isFirefox() && isDesktop()) ||
         isIos() ||

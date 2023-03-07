@@ -3620,6 +3620,7 @@ __metadata:
     codemirror: ^5.65.12
     cross-fetch: ^3.1.5
     date-fns: ^2.29.3
+    docx-preview: ^0.1.15
     dompurify: ^3.0.1
     emoji-mart: ^5.1.0
     eslint: ^8.35.0
@@ -13178,6 +13179,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"docx-preview@npm:^0.1.15":
+  version: 0.1.15
+  resolution: "docx-preview@npm:0.1.15"
+  dependencies:
+    jszip: ">=3.0.0"
+  checksum: c9507eab0d5004dd881f87e9c087cae57269f438f5584453c72c02ea5125da90579a1f6acfbf741a3c11776446ec24bad406d8dd6b35737036c266d2d2dc7f91
+  languageName: node
+  linkType: hard
+
 "dom-accessibility-api@npm:^0.5.6, dom-accessibility-api@npm:^0.5.9":
   version: 0.5.10
   resolution: "dom-accessibility-api@npm:0.5.10"
@@ -19770,7 +19780,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jszip@npm:^3.10.1":
+"jszip@npm:>=3.0.0, jszip@npm:^3.10.1":
   version: 3.10.1
   resolution: "jszip@npm:3.10.1"
   dependencies:
