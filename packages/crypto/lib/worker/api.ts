@@ -45,6 +45,7 @@ import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v7/lib/pmcrypto'
 
 import { arrayToHexString } from '../utils';
 import {
+    ComputeHashStreamOptions,
     KeyInfo,
     KeyReference,
     MessageInfo,
@@ -869,6 +870,18 @@ export class Api extends KeyManagementApi {
             case 'unsafeMD5':
                 hash = await unsafeMD5(data);
                 return hash;
+            default:
+                throw new Error(`Unsupported algorithm: ${algorithm}`);
+        }
+    }
+
+    // this function may be merged with `computeHash` once we add streaming support to all/most hash algos
+    async computeHashStream({ algorithm, dataStream }: ComputeHashStreamOptions) {
+        let hashStream;
+        switch (algorithm) {
+            case 'unsafeSHA1':
+                hashStream = await unsafeSHA1(dataStream);
+                return hashStream;
             default:
                 throw new Error(`Unsupported algorithm: ${algorithm}`);
         }
