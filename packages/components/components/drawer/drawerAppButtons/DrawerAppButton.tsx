@@ -12,7 +12,12 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
 
 const DrawerAppButton = ({ tooltipText, buttonContent, onClick, alt, ...rest }: Props) => {
     const button = (
-        <button className="drawer-sidebar-button rounded flex interactive" type="button" onClick={onClick} {...rest}>
+        <button
+            className="drawer-sidebar-button rounded flex interactive no-pointer-events-children"
+            type="button"
+            onClick={onClick}
+            {...rest}
+        >
             {buttonContent}
             {alt ? <span className="sr-only">{alt}</span> : null}
         </button>
