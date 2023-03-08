@@ -108,7 +108,7 @@ const ContactDetailsModal = ({
         loadingVCard;
 
     return (
-        <ModalTwo size="large" className="contacts-modal" {...rest}>
+        <ModalTwo size="large" className="contacts-modal" data-testid="contact-details-modal" {...rest}>
             <ModalTwoHeader title={c('Title').t`Contact details`} />
             <ModalTwoContent>
                 <ErrorBoundary
