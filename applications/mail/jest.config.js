@@ -2,7 +2,15 @@ module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     collectCoverage: true,
-    collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
+    collectCoverageFrom: [
+        'src/**/*.{js,jsx,ts,tsx}',
+        '!<rootDir>/src/service-worker.js',
+        '!<rootDir>/src/app/*.{js,jsx,ts,tsx}',
+        '!<rootDir>src/app/components/layout/*.{js,jsx,ts,tsx}',
+        '!<rootDir>/src/app/helpers/encryptedSearch/*.{js,jsx,ts,tsx}',
+        '!<rootDir>/src/app/containers/eo/*.{js,jsx,ts,tsx}',
+        '!<rootDir>/src/app/containers/eo/layout/*.{js,jsx,ts,tsx}',
+    ],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
         'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto-v7|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|@protontech/bip39|jsmimeparser|emoji-mart)/)',
