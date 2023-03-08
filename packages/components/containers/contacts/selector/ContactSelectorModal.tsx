@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -6,7 +6,8 @@ import { Button } from '@proton/atoms';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
+import clsx from '@proton/utils/clsx';
 
 import {
     Checkbox,
@@ -16,9 +17,10 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    Option,
     SearchInput,
+    SelectTwo,
 } from '../../../components';
-import { classnames } from '../../../helpers';
 import { useActiveBreakpoint, useContactEmailsSortedByName, useUserSettings } from '../../../hooks';
 import { useContactGroups } from '../../../hooks/useCategories';
 import { ContactEditProps } from '../edit/ContactEditModal';
@@ -46,6 +48,11 @@ interface ContactSelectorResolver {
     onReject: () => void;
 }
 
+const allContactsGroup: Pick<ContactGroup, 'Name' | 'ID'> = {
+    ID: 'default',
+    Name: c('Label').t`All contacts`,
+};
+
 type Props = ContactSelectorProps & ContactSelectorResolver & ModalProps;
 
 const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails, onEdit, ...rest }: Props) => {
@@ -55,6 +62,9 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
     const [contactEmails, loadingContactEmails] = useContactEmailsSortedByName();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
+    const [selectedGroup, setSelectedGroup] = useState<string>(allContactsGroup.ID);
+
+    const contactGroupsWithDefault = [allContactsGroup, ...contactGroups];
 
     const emailsFromInput = inputValue.map((e: any) => e.Address);
     const contactGroupsMap = toMap(contactGroups);
@@ -146,14 +156,23 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
         );
     };
 
+    const filterContactsByGroup = useMemo(() => {
+        const filteredContacts = contactEmails;
+        if (selectedGroup === allContactsGroup.ID) {
+            return filteredContacts;
+        }
+
+        return filteredContacts.filter((contact: ContactEmail) => contact.LabelIDs.includes(selectedGroup));
+    }, [selectedGroup]);
+
     useEffect(() => {
         searchInputRef?.current?.focus();
     }, []);
 
     useEffect(() => {
         setLastCheckedID('');
-        setFilteredContactEmails(contactEmails.filter(searchFilter));
-    }, [searchValue]);
+        setFilteredContactEmails(filterContactsByGroup.filter(searchFilter));
+    }, [searchValue, selectedGroup]);
 
     useEffect(() => {
         setCheckedContactEmails(contactEmails.filter((c: ContactEmail) => !!checkedContactEmailMap[c.ID]));
@@ -193,13 +212,28 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                     <ContactSelectorEmptyContacts onClose={rest.onClose} onEdit={onEdit} />
                 ) : (
                     <>
-                        <div className="mb0-5">
-                            <SearchInput
-                                ref={searchInputRef}
-                                value={searchValue}
-                                onChange={handleSearchValue}
-                                placeholder={c('Placeholder').t`Search name, email or group`}
-                            />
+                        <div className={clsx(['mb0-5 flex flex-nowrap flex-gap-1', isNarrow && 'flex-column'])}>
+                            <div className="flex-item-grow-2">
+                                <SearchInput
+                                    ref={searchInputRef}
+                                    value={searchValue}
+                                    onChange={handleSearchValue}
+                                    placeholder={c('Placeholder').t`Search name, email or group`}
+                                />
+                            </div>
+                            <div className={clsx([!isNarrow && 'w33'])}>
+                                <SelectTwo
+                                    onChange={({ value }) => setSelectedGroup(value)}
+                                    value={selectedGroup}
+                                    disabled={loadingContactGroups}
+                                >
+                                    {contactGroupsWithDefault.map((group) => (
+                                        <Option key={group.ID} value={group.ID} title={group.Name}>
+                                            {group.Name}
+                                        </Option>
+                                    ))}
+                                </SelectTwo>
+                            </div>
                         </div>
                         {filteredContactEmails.length ? (
                             <>
@@ -213,14 +247,11 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                             />
                                         </div>
                                         <div className="flex flex-item-fluid flex-align-self-center">
-                                            <div className="w33 pl1">
+                                            <div className="w45 pl1">
                                                 <strong className="text-uppercase">{c('Label').t`Name`}</strong>
                                             </div>
                                             <div className="flex-item-fluid">
                                                 <strong className="text-uppercase">{c('Label').t`Email`}</strong>
-                                            </div>
-                                            <div className="w33 pr0-5 text-right">
-                                                <strong className="text-uppercase">{c('Label').t`Group`}</strong>
                                             </div>
                                         </div>
                                     </div>
@@ -228,7 +259,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                 <ContactSelectorList
                                     rowCount={filteredContactEmails.length}
                                     userSettings={userSettings}
-                                    className={classnames([isNarrow && 'mt1'])}
+                                    className={clsx([isNarrow && 'mt1'])}
                                     rowRenderer={({ index, style }) => (
                                         <ContactSelectorRow
                                             onCheck={handleCheck}
@@ -236,9 +267,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                             key={filteredContactEmails[index].ID}
                                             contact={filteredContactEmails[index]}
                                             checked={!!checkedContactEmailMap[filteredContactEmails[index].ID]}
-                                            contactGroupsMap={contactGroupsMap}
                                             isNarrow={isNarrow}
-                                            onGroupDetails={onGroupDetails}
                                         />
                                     )}
                                 />
