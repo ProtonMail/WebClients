@@ -296,7 +296,7 @@ describe('Composer scheduled messages', () => {
         dateSpy.mockRestore();
     });
 
-    it('should disabled schedule send button if date is not valid', async () => {
+    it('should disable schedule send button display if date is not valid', async () => {
         setupMessage('Subject', [user as Recipient]);
         setupTest({ hasPaidMail: true });
 
@@ -329,7 +329,7 @@ describe('Composer scheduled messages', () => {
         expect(button.disabled).toBeTruthy();
 
         // set date input too far in the future
-        const laterDate = format(addDays(new Date(), 50), 'PP', { locale: enUS });
+        const laterDate = format(addDays(new Date(), 91), 'PP', { locale: enUS });
 
         fireEvent.change(dateInput, { target: { value: laterDate } });
         fireEvent.keyDown(dateInput, { key: 'Enter' });
