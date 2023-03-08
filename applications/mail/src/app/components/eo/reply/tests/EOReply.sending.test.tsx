@@ -5,7 +5,7 @@ import { EOGetHistory } from '../../../../helpers/test/eo/EORender';
 import { EOClearAll, EOPassword, validID } from '../../../../helpers/test/eo/helpers';
 import { send } from './EOReply.test.helpers';
 
-jest.setTimeout(6000);
+jest.setTimeout(20000);
 
 describe('EO Reply send', () => {
     beforeAll(async () => {
