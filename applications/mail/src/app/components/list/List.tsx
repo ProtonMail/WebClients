@@ -30,6 +30,7 @@ import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { usePaging } from '../../hooks/usePaging';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
+import useShowUpsellBanner from '../../hooks/useShowUpsellBanner';
 import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
 import { Filter, Sort } from '../../models/tools';
@@ -42,6 +43,7 @@ import EmptyView from '../view/EmptyView';
 import ESSlowToolbar from './ESSlowToolbar';
 import Item from './Item';
 import ListSettings from './ListSettings';
+import MailUpsellBanner from './MailUpsellBanner';
 import { ResizeHandle } from './ResizeHandle';
 import TaskRunningBanner from './TaskRunningBanner';
 import useEncryptedSearchList from './useEncryptedSearchList';
@@ -156,6 +158,8 @@ const List = (
     const [messageCounts] = useMessageCounts();
     const [conversationCounts] = useConversationCounts();
 
+    const { canDisplayUpsellBanner, needToShowUpsellBanner } = useShowUpsellBanner(labelID, showTaskRunningBanner);
+
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
     const { showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } = useEncryptedSearchList(
@@ -222,6 +226,9 @@ const List = (
                         labelID={labelID}
                     />
                     {showESSlowToolbar && <ESSlowToolbar />}
+                    {canDisplayUpsellBanner && (
+                        <MailUpsellBanner needToShowUpsellBanner={needToShowUpsellBanner} columnMode={columnLayout} />
+                    )}
                     {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
                     {elements.length === 0 ? (
                         <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />

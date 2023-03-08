@@ -3,15 +3,14 @@ import * as React from 'react';
 import { Location } from 'history';
 import { c, msgid } from 'ttag';
 
-import { Loader, usePlans, useTheme, useUser } from '@proton/components';
-import { DAY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Loader, useUser } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 import capitalize from '@proton/utils/capitalize';
 
 import { isConversationMode } from '../../helpers/mailSettings';
-import WelcomePaneBanner from './WelcomePaneBanner';
 
 interface ContainerProps {
     children: React.ReactNode;
@@ -32,13 +31,6 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const conversationMode = isConversationMode(MAILBOX_LABEL_IDS.INBOX, mailSettings, location);
 
     const [user, loadingUser] = useUser();
-    const [plans = [], loadingPlans] = usePlans();
-    const [theme] = useTheme();
-    const loading = loadingUser || loadingPlans;
-
-    // Display upsell banners if free user, and 3 days after the user signup, not before
-    const userCreateTime = user.CreateTime || 0;
-    const canDisplayBanner = Date.now() > userCreateTime * 1000 + 3 * DAY && !user.hasPaidMail;
 
     const unread = labelCount?.Unread || 0;
     const total = labelCount?.Total || 0;
@@ -71,7 +63,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
         ? c('Info').jt`You have ${unreadsLabel} in your inbox.`
         : c('Info').jt`You have ${totalLabel} in your inbox.`;
 
-    if (loading) {
+    if (loadingUser) {
         return (
             <Container>
                 <Loader />
@@ -81,7 +73,6 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     return (
         <>
-            {canDisplayBanner ? <WelcomePaneBanner plans={plans} theme={theme} /> : null}
             <Container>
                 <h1>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
                 <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
