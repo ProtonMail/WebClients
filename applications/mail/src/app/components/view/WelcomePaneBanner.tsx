@@ -5,17 +5,9 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import { MailShortcutsModal, Price, SettingsLink, useModalState, useModals } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
-import {
-    APP_UPSELL_REF_PATH,
-    BRAND_NAME,
-    CALENDAR_APP_NAME,
-    DRIVE_APP_NAME,
-    MAIL_APP_NAME,
-    PLANS,
-    VPN_APP_NAME,
-} from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
+import { Plan } from '@proton/shared/lib/interfaces';
 import { PROTON_DEFAULT_THEME, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -41,7 +33,8 @@ enum UPSELL_MAIL_BANNER_LINK_ID {
     PRIVACY_FIRST_INTERNET = 19,
     PRIVACY_FOR_ALL = 20,
     STORE_AND_SHARE_FILES = 21,
-    USE_PROTON_CALENDAR = 22,
+    PREMIUM_FEATURES = 23,
+    LVL_UP_PRIVACY = 24,
 }
 
 interface MessageOption {
@@ -54,9 +47,8 @@ interface MessageOption {
 interface Props {
     plans: Plan[];
     theme: ThemeTypes;
-    userSettings: UserSettings;
 }
-const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
+const WelcomePaneBanner = ({ plans, theme }: Props) => {
     const { createModal } = useModals();
     const [option, setOption] = useState<MessageOption>();
     const [{ Currency } = { Currency: undefined }] = plans;
@@ -72,6 +64,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
 
     const callToActionTexts = {
         upgrade: c('Action').t`Upgrade`,
+        business: c('Action').t`See business plans`,
         learnMore: c('Action').t`Learn more`,
         openShop: c('Action').t`Open shop`,
         openCalendar: c('Action').t`Open calendar`,
@@ -90,27 +83,6 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
                         WELCOME_PANE_OPTIONS_URLS.plansSelection,
                         UPSELL_MAIL_BANNER_LINK_ID.GET_MORE_STORAGE
                     )}
-                    className="text-bold link align-baseline color-inherit"
-                >
-                    {callToActionTexts.upgrade}
-                </SettingsLink>
-            ),
-        },
-        {
-            id: 1,
-            text: (
-                <Price
-                    currency={Currency}
-                    prefix={c('Info').t`Support privacy by upgrading for`}
-                    suffix={c('Info').t`per month.`}
-                    isDisplayedInSentence
-                >
-                    {getPrice()}
-                </Price>
-            ),
-            cta: (
-                <SettingsLink
-                    path={getLink(WELCOME_PANE_OPTIONS_URLS.plansSelection, UPSELL_MAIL_BANNER_LINK_ID.SUPPORT_PRIVACY)}
                     className="text-bold link align-baseline color-inherit"
                 >
                     {callToActionTexts.upgrade}
@@ -149,7 +121,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
         },
         {
             id: 4,
-            text: c('Info').t`Upgrade to configure a vacation auto-responder.`,
+            text: c('Info').t`Upgrade to use auto-reply when you're away.`,
             cta: (
                 <SettingsLink
                     path={getLink(WELCOME_PANE_OPTIONS_URLS.plansSelection, UPSELL_MAIL_BANNER_LINK_ID.AUTO_REPLY)}
@@ -161,27 +133,12 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
         },
         {
             id: 5,
-            text: c('Info').t`Upgrade to use ${MAIL_APP_NAME} with third-party desktop clients.`,
+            text: c('Info').t`Upgrade to use ${MAIL_APP_NAME} with Apple Mail, Outlook or Thunderbird.`,
             cta: (
                 <SettingsLink
                     path={getLink(
                         WELCOME_PANE_OPTIONS_URLS.plansSelection,
                         UPSELL_MAIL_BANNER_LINK_ID.THIRD_PARTY_CLIENTS
-                    )}
-                    className="text-bold link align-baseline color-inherit"
-                >
-                    {callToActionTexts.upgrade}
-                </SettingsLink>
-            ),
-        },
-        {
-            id: 6,
-            text: c('Info').t`${BRAND_NAME} doesn't make money by abusing privacy.`,
-            cta: (
-                <SettingsLink
-                    path={getLink(
-                        WELCOME_PANE_OPTIONS_URLS.plansSelection,
-                        UPSELL_MAIL_BANNER_LINK_ID.PROTON_DOES_NOT_ABUSE_PRIVACY
                     )}
                     className="text-bold link align-baseline color-inherit"
                 >
@@ -202,18 +159,6 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
                 >
                     {callToActionTexts.upgrade}
                 </SettingsLink>
-            ),
-        },
-        {
-            id: 8,
-            text: c('Info').t`Visit our shop to get ${BRAND_NAME} merchandise.`,
-            cta: (
-                <Href
-                    href={getLink(WELCOME_PANE_OPTIONS_URLS.protonShop, UPSELL_MAIL_BANNER_LINK_ID.PROTON_SHOP)}
-                    className="text-bold link align-baseline color-inherit"
-                >
-                    {callToActionTexts.openShop}
-                </Href>
             ),
         },
         {
@@ -240,19 +185,6 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
                 </SettingsLink>
             ),
         },
-        userSettings['2FA'] &&
-            userSettings['2FA'].Enabled !== 1 && {
-                id: 10,
-                text: c('Info').t`For increased security, activate 2FA.`,
-                cta: (
-                    <Href
-                        href={getLink(WELCOME_PANE_OPTIONS_URLS.proton2FA, UPSELL_MAIL_BANNER_LINK_ID.USE_2FA)}
-                        className="text-bold link align-baseline color-inherit"
-                    >
-                        {callToActionTexts.learnMore}
-                    </Href>
-                ),
-            },
         {
             id: 11,
             text: c('Info').t`Use keyboard shortcuts to manage your email faster.`,
@@ -279,7 +211,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
         },
         {
             id: 13,
-            text: c('Info').t`Upgrade to host emails from your own domain name.`,
+            text: c('Info').t`Upgrade to send emails from your custom email domain.`,
             cta: (
                 <SettingsLink
                     path={getLink(
@@ -303,7 +235,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
                     )}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {callToActionTexts.learnMore}
+                    {callToActionTexts.business}
                 </Href>
             ),
         },
@@ -363,7 +295,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
         },
         {
             id: 19,
-            text: c('Info').t`Store and share files securely with ${DRIVE_APP_NAME}.`,
+            text: c('Info').t`Secure your files with encrypted cloud storage for free, today.`,
             cta: (
                 <SettingsLink
                     path={getLink(
@@ -378,7 +310,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
         },
         {
             id: 20,
-            text: c('Info').t`You can use ${VPN_APP_NAME} for free today.`,
+            text: c('Info').t`You can use ${VPN_APP_NAME} for free, today.`,
             cta: (
                 <Href
                     href={getLink(WELCOME_PANE_OPTIONS_URLS.vpn, UPSELL_MAIL_BANNER_LINK_ID.USE_PROTON_VPN)}
@@ -388,16 +320,31 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
                 </Href>
             ),
         },
-        !userSettings.AppWelcome?.Calendar?.length && {
-            id: 21,
-            text: c('Info').t`Use ${CALENDAR_APP_NAME} to keep your agenda private.`,
+        {
+            id: 23,
+            text: c('Info').t`Upgrade to unlock premium features.`,
             cta: (
-                <Href
-                    href={getLink(WELCOME_PANE_OPTIONS_URLS.calendar, UPSELL_MAIL_BANNER_LINK_ID.USE_PROTON_CALENDAR)}
+                <SettingsLink
+                    path={getLink(
+                        WELCOME_PANE_OPTIONS_URLS.plansSelection,
+                        UPSELL_MAIL_BANNER_LINK_ID.PREMIUM_FEATURES
+                    )}
                     className="text-bold link align-baseline color-inherit"
                 >
-                    {callToActionTexts.openCalendar}
-                </Href>
+                    {callToActionTexts.upgrade}
+                </SettingsLink>
+            ),
+        },
+        {
+            id: 24,
+            text: c('Info').t`Upgrade to level up your privacy.`,
+            cta: (
+                <SettingsLink
+                    path={getLink(WELCOME_PANE_OPTIONS_URLS.plansSelection, UPSELL_MAIL_BANNER_LINK_ID.LVL_UP_PRIVACY)}
+                    className="text-bold link align-baseline color-inherit"
+                >
+                    {callToActionTexts.upgrade}
+                </SettingsLink>
             ),
         },
     ].filter(isTruthy);
