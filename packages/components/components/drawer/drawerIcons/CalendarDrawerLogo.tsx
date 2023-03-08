@@ -6,7 +6,16 @@ interface Props {
 
 const CalendarDrawerLogo = ({ monthDay }: Props) => {
     return (
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            focusable="false"
+            aria-hidden="true"
+            role="img"
+        >
             <path d="M10 11H20V18.5C20 19.8807 18.8807 21 17.5 21H10V11Z" fill="white"></path>
             <path
                 fillRule="evenodd"
