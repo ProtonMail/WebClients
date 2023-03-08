@@ -27,7 +27,7 @@ export const ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT = 'advancedsearchclose';
 export const UNDO_SEND_DELAY = 5000;
 
 export const SCHEDULED_MESSAGES_LIMIT = 100;
-export const SCHEDULED_MAX_DATE_DAYS = 30;
+export const SCHEDULED_MAX_DATE_DAYS = 90;
 export const EXPIRATION_TIME_MAX_DAYS = 666;
 /**
  * We can't schedule a message before this 120sec buffer
