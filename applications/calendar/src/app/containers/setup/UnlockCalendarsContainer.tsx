@@ -1,7 +1,7 @@
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
+import DummyCalendarContainerView from '../calendar/DummyCalendarContainerView';
 import UnlockCalendarsModal from './UnlockCalendarsModal';
 
 interface Props {
@@ -21,7 +21,7 @@ const UnlockCalendarsContainer = ({ calendars, calendarsToUnlock, onDone }: Prop
     return (
         <>
             <UnlockCalendarsModal calendars={calendarsToUnlock} unlockAll={unlockAll} onDone={onDone} />
-            <CalendarContainerViewBlurred />
+            <DummyCalendarContainerView />
         </>
     );
 };
