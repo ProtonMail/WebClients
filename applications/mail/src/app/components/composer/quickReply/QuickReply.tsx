@@ -328,7 +328,7 @@ const QuickReply = ({
                         </ErrorBoundary>
                     )}
 
-                    <Tooltip title={c('Action').t`Send quick reply`}>
+                    <Tooltip title={c('l10n_nightly_Action').t`Send quick reply`}>
                         <Button
                             color="norm"
                             icon
@@ -338,7 +338,7 @@ const QuickReply = ({
                             className="ml0-5"
                             data-testid="quick-reply-send-button"
                         >
-                            <Icon name="paper-plane" alt={c('Action').t`Send quick reply`} />
+                            <Icon name="paper-plane" alt={c('l10n_nightly_Action').t`Send quick reply`} />
                         </Button>
                     </Tooltip>
                 </div>
