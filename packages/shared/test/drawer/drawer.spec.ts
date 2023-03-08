@@ -14,6 +14,7 @@ import {
     getIsDrawerPostMessage,
     getIsIframedDrawerApp,
     getIsNativeDrawerApp,
+    isAppInView,
     isAuthorizedDrawerUrl,
     postMessageFromIframe,
 } from '../../lib/drawer/helpers';
@@ -249,6 +250,20 @@ describe('drawer helpers', () => {
             apps.forEach((app) => {
                 expect(getDisplayContactsInDrawer(app, drawerFeature)).toBeFalsy();
             });
+        });
+    });
+
+    describe('isAppInView', () => {
+        it('should be the app in view', () => {
+            const appInView = APPS.PROTONCONTACTS;
+            const currentApp = APPS.PROTONCONTACTS;
+            expect(isAppInView(currentApp, appInView)).toBeTruthy();
+        });
+
+        it('should not be the app in view', () => {
+            const appInView = APPS.PROTONCONTACTS;
+            const currentApp = APPS.PROTONCALENDAR;
+            expect(isAppInView(currentApp, appInView)).toBeFalsy();
         });
     });
 });

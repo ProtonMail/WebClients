@@ -39,7 +39,7 @@ const DrawerApp = ({ onCompose, onMailTo, contactCustomActions }: Props) => {
                     .map(([app, src]) => (
                         <iframe
                             key={app}
-                            id="drawer-app-iframe"
+                            id={`drawer-app-iframe-${app}`}
                             className={clsx(['drawer-app-view h100 w100', appInView !== app && 'hidden'])}
                             src={src}
                             title={c('Info').t`Calendar side panel`}

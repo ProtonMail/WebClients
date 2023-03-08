@@ -58,6 +58,7 @@ import { getGeneralSettingsPath } from '@proton/shared/lib/calendar/settingsRout
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
+import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -151,7 +152,7 @@ const CalendarContainerView = ({
 
     const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
     const displayContactsInHeader = useDisplayContactsWidget();
-    const { showDrawerSidebar } = useDrawer();
+    const { showDrawerSidebar, appInView } = useDrawer();
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const defaultView = getDefaultView(calendarUserSettings);
@@ -564,9 +565,11 @@ const CalendarContainerView = ({
 
     const noonDate = getNoonDateForTimeZoneOffset(utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate);
 
-    const drawerSidebarButtons = [drawerFeature?.Value.ContactsInCalendar && <ContactDrawerAppButton />].filter(
-        isTruthy
-    );
+    const drawerSidebarButtons = [
+        drawerFeature?.Value.ContactsInCalendar && (
+            <ContactDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)} />
+        ),
+    ].filter(isTruthy);
 
     const canShowDrawer = !isDrawerApp && drawerSidebarButtons.length > 0;
 
