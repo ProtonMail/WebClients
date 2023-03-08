@@ -1,8 +1,9 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
+import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { mockAddresses } from '@proton/activation/src/tests/data/addresses';
+import { generateMockAddressArray } from '@proton/activation/src/tests/data/addresses';
 import { prepareState } from '@proton/activation/src/tests/data/prepareState';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { ModalStateProps } from '@proton/components/index';
@@ -70,11 +71,15 @@ jest.mock('@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector', (
     selectOauthImportStateImporterData: jest.fn(),
 }));
 
-jest.mock('@proton/activation/src/hooks/useAvailableAddresses', () => () => ({
-    availableAddresses: mockAddresses,
+const addresses = generateMockAddressArray(3, true);
+const mockUseAddressValue = {
+    availableAddresses: addresses,
     loading: false,
-    defaultAddress: mockAddresses[0],
-}));
+    defaultAddress: addresses[0],
+};
+
+jest.mock('@proton/activation/src/hooks/useAvailableAddresses');
+const mockUseAvailableAddresses = useAvailableAddresses as jest.MockedFunction<any>;
 
 const mockSelectorImporterData = selectOauthImportStateImporterData as any as jest.Mock<
     ReturnType<typeof selectOauthImportStateImporterData>
@@ -82,6 +87,7 @@ const mockSelectorImporterData = selectOauthImportStateImporterData as any as je
 
 describe('CustomizeCalendarImportModal', () => {
     it('Should render customize calendar modal', () => {
+        mockUseAvailableAddresses.mockReturnValue(mockUseAddressValue);
         mockSelectorImporterData.mockImplementation(() => prepareState.mailImport?.importerData);
 
         const standardProps = {
@@ -99,6 +105,7 @@ describe('CustomizeCalendarImportModal', () => {
     });
 
     it('Should render calendar limit reached', () => {
+        mockUseAvailableAddresses.mockReturnValue(mockUseAddressValue);
         mockSelectorImporterData.mockImplementation(() => prepareState.mailImport?.importerData);
 
         const derivedValuesWithErrors = { ...derivedValuesNoErrors, calendarLimitReached: true };
@@ -117,6 +124,7 @@ describe('CustomizeCalendarImportModal', () => {
     });
 
     it('Should render different elements if cannot merge', () => {
+        mockUseAvailableAddresses.mockReturnValue(mockUseAddressValue);
         mockSelectorImporterData.mockImplementation(() => prepareState.mailImport?.importerData);
 
         const derivedValuesNoMerge = { ...derivedValuesNoErrors, canMerge: false };
@@ -135,6 +143,7 @@ describe('CustomizeCalendarImportModal', () => {
     });
 
     it('Should click the checkbox of a calendar', () => {
+        mockUseAvailableAddresses.mockReturnValue(mockUseAddressValue);
         mockSelectorImporterData.mockImplementation(() => prepareState.mailImport?.importerData);
 
         const standardProps = {

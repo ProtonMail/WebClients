@@ -1,7 +1,8 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
+import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import { MailImportState } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.interface';
-import { mockAddresses } from '@proton/activation/src/tests/data/addresses';
+import { generateMockAddressArray } from '@proton/activation/src/tests/data/addresses';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 
 import StepPrepare from './StepPrepareImap';
@@ -20,14 +21,18 @@ jest.mock('react-redux', () => ({
     useSelector: jest.fn().mockReturnValue({ mailImport: data }),
 }));
 
-jest.mock('@proton/activation/src/hooks/useAvailableAddresses', () => () => ({
-    availableAddresses: mockAddresses,
-    loading: false,
-    defaultAddress: mockAddresses[0],
-}));
+const addresses = generateMockAddressArray(3, true);
+
+jest.mock('@proton/activation/src/hooks/useAvailableAddresses');
+const mockUseAvailableAddresses = useAvailableAddresses as jest.MockedFunction<any>;
 
 describe('Step prepare basic rendering testing', () => {
     it('Should correctly render the step prepare', () => {
+        mockUseAvailableAddresses.mockReturnValue({
+            availableAddresses: addresses,
+            loading: false,
+            defaultAddress: addresses[0],
+        });
         easySwitchRender(<StepPrepare />);
 
         const customizeButton = screen.getByTestId('StepPrepare:customizeButton');
