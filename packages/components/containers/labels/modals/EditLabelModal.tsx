@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,6 +13,7 @@ import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import {
+    Form,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
@@ -122,7 +123,8 @@ const EditLabelModal = ({
         handleClose();
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: FormEvent) => {
+        e.stopPropagation();
         if (!onFormSubmit()) {
             return;
         }
@@ -179,7 +181,14 @@ const EditLabelModal = ({
     };
 
     return (
-        <ModalTwo size="small" data-testid="label-modal" {...rest} onClose={handleClose}>
+        <ModalTwo
+            as={Form}
+            onSubmit={handleSubmit}
+            size="small"
+            data-testid="label-modal"
+            {...rest}
+            onClose={handleClose}
+        >
             <ModalTwoHeader title={getTitle()} />
             <ModalTwoContent>
                 <NewLabelForm
@@ -193,9 +202,8 @@ const EditLabelModal = ({
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button data-testid="label-modal:cancel" onClick={handleClose}>{c('Action').t`Cancel`}</Button>
-                <Button data-testid="label-modal:save" color="norm" loading={loading} onClick={handleSubmit}>{c(
-                    'Action'
-                ).t`Save`}</Button>
+                <Button data-testid="label-modal:save" color="norm" loading={loading} type="submit">{c('Action')
+                    .t`Save`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
