@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { defaultESContext } from '@proton/encrypted-search';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl, getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl, getShopURL } from '@proton/shared/lib/helpers/url';
 
 import { ESDBStatusMail, EncryptedSearchFunctionsMail } from './models/encryptedSearch';
 
@@ -153,9 +153,9 @@ export const MAIL_EVENTLOOP_NAME = 'core';
 
 export const WELCOME_PANE_OPTIONS_URLS = {
     plansSelection: '/upgrade',
+    protonBusiness: '/upgrade?business',
     protonShop: getShopURL(),
     proton2FA: getKnowledgeBaseUrl('/two-factor-authentication-2fa'),
-    protonBusiness: getStaticURL('/business'),
     calendar: getAppHref('/', APPS.PROTONCALENDAR),
     vpn: getAppHref('/vpn/vpn-apps', APPS.PROTONACCOUNT),
 };
