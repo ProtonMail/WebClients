@@ -16,6 +16,8 @@ import {
     useUserSettings,
     useWelcomeFlags,
 } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
+import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
@@ -49,7 +51,7 @@ const PageContainer = (
     const [mailSettings] = useMailSettings();
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
-    const { showDrawerSidebar } = useDrawer();
+    const { showDrawerSidebar, appInView } = useDrawer();
 
     const { getFeature } = useFeatures([FeatureCode.Drawer, FeatureCode.LegacyMessageMigrationEnabled]);
     const { feature: drawerFeature } = getFeature(FeatureCode.Drawer);
@@ -69,8 +71,18 @@ const PageContainer = (
     };
 
     const drawerSidebarButtons = [
-        drawerFeature?.Value.ContactsInMail && <ContactDrawerAppButton onClick={markSpotlightAsSeen} />,
-        drawerFeature?.Value.CalendarInMail && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
+        drawerFeature?.Value.ContactsInMail && (
+            <ContactDrawerAppButton
+                onClick={markSpotlightAsSeen}
+                aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)}
+            />
+        ),
+        drawerFeature?.Value.CalendarInMail && (
+            <CalendarDrawerAppButton
+                onClick={markSpotlightAsSeen}
+                aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
+            />
+        ),
     ].filter(isTruthy);
 
     const canShowDrawer = drawerSidebarButtons.length > 0;

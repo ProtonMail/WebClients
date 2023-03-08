@@ -1,6 +1,14 @@
 const CalendarDrawerLogo = () => {
     return (
-        <svg width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+            width="28"
+            height="28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            focusable="false"
+            aria-hidden="true"
+            role="img"
+        >
             <path d="M24 8a3 3 0 0 0-3-3H8v18h13a3 3 0 0 0 3-3V8Z" fill="url(#a)" />
             <path d="M24 8a3 3 0 0 0-3-3H8v18h13a3 3 0 0 0 3-3V8Z" fill="url(#b)" />
             <path d="M8 5H7a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h1V5Z" fill="url(#c)" />

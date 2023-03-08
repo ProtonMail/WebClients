@@ -17,6 +17,8 @@ import {
     useToggle,
     useUser,
 } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
+import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -41,7 +43,7 @@ const DriveWindow = ({ children }: Props) => {
     const { isReadOnly } = useIsActiveLinkReadOnly();
 
     const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
-    const { showDrawerSidebar } = useDrawer();
+    const { showDrawerSidebar, appInView } = useDrawer();
     const location = useLocation();
 
     const drawerSpotlightSeenRef = useRef(false);
@@ -66,8 +68,18 @@ const DriveWindow = ({ children }: Props) => {
 
     const permissions = getDriveDrawerPermissions({ user, drawerFeature });
     const drawerSidebarButtons = [
-        permissions.contacts && <ContactDrawerAppButton onClick={markSpotlightAsSeen} />,
-        permissions.calendar && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
+        permissions.contacts && (
+            <ContactDrawerAppButton
+                onClick={markSpotlightAsSeen}
+                aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)}
+            />
+        ),
+        permissions.calendar && (
+            <CalendarDrawerAppButton
+                onClick={markSpotlightAsSeen}
+                aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
+            />
+        ),
     ].filter(isTruthy);
 
     const isNewUploadDisabled = location.pathname === '/devices' || isReadOnly;

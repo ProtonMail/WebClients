@@ -82,7 +82,7 @@ export const postMessageToIframe = (message: DRAWER_ACTION, iframedApp: APP_NAME
     if (!getIsAuthorizedApp(iframedApp)) {
         return;
     }
-    const iframe = document.getElementById('drawer-app-iframe') as HTMLIFrameElement | null;
+    const iframe = document.querySelector('[id^=drawer-app-iframe]') as HTMLIFrameElement | null;
     const targetOrigin = getAppHref('/', iframedApp, getLocalIDFromPathname(window.location.pathname));
 
     iframe?.contentWindow?.postMessage(message, targetOrigin);
@@ -149,4 +149,8 @@ export const closeDrawerFromChildApp = (parentApp: APP_NAMES, currentApp: APP_NA
         },
         parentApp
     );
+};
+
+export const isAppInView = (currentApp: DRAWER_APPS, appInView?: DRAWER_APPS) => {
+    return appInView ? appInView === currentApp : false;
 };
