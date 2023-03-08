@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -173,6 +173,23 @@ export default function SharedFolder({ token, rootLink }: Props) {
         void download([{ ...displayedLink, shareId: token }]);
     };
 
+    const { totalSize } = useMemo(
+        () =>
+            fileBrowserItems.reduce(
+                (previousValue, currentValue) => {
+                    if (previousValue.haveSubFolder || !currentValue.isFile) {
+                        return { haveSubFolder: true, totalSize: 0 };
+                    }
+                    return {
+                        ...previousValue,
+                        totalSize: previousValue.totalSize + currentValue.size,
+                    };
+                },
+                { haveSubFolder: false, totalSize: 0 }
+            ),
+        [fileBrowserItems]
+    );
+
     return (
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
             <SharedPageLayout FooterComponent={<SharedPageFooter rootItem={rootLink} items={fileBrowserItems} />}>
@@ -185,7 +202,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
                             onNavigate={setLinkId}
                             className="shared-folder-header-breadcrumbs pb0-25"
                         />
-                        <HeaderSubtitle size={undefined} />
+                        <HeaderSubtitle size={totalSize} />
                     </div>
                 </SharedPageHeader>
                 {shouldRenderPreviewContainer && (
