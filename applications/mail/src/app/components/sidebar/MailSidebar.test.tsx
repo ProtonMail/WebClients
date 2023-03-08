@@ -19,7 +19,6 @@ import {
     getHistory,
     minimalCache,
     render,
-    setFeatureFlags,
 } from '../../helpers/test/helper';
 import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
@@ -95,10 +94,6 @@ const setupTest = (labels: any[] = [], messageCounts: any[] = [], conversationCo
     addToCache('Labels', labels);
     addToCache('MessageCounts', messageCounts);
     addToCache('ConversationCounts', conversationCounts);
-};
-
-const setupScheduled = () => {
-    setFeatureFlags('ScheduledSend', true);
 };
 
 describe('MailSidebar', () => {
@@ -289,7 +284,6 @@ describe('MailSidebar', () => {
 
     it('should show scheduled sidebar item if scheduled messages', async () => {
         setupTest(systemFolders, [], [scheduledMessages]);
-        setupScheduled();
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
@@ -301,7 +295,6 @@ describe('MailSidebar', () => {
 
     it('should not show scheduled sidebar item without scheduled messages', async () => {
         setupTest([], [], []);
-        setupScheduled();
 
         const { queryByTestId } = await render(<MailSidebar {...props} />, false);
 
