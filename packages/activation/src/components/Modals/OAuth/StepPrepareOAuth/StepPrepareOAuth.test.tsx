@@ -4,7 +4,7 @@ import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface'
 import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { ImportType, MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
-import { mockAddresses } from '@proton/activation/src/tests/data/addresses';
+import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
 import { prepareState } from '@proton/activation/src/tests/data/prepareState';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 
@@ -42,7 +42,7 @@ const simpleFields: MailImportFields = {
     mapping: new MailImportFoldersParser(simpleProviderFolders, isLabelMapping).folders,
     importLabel: { Color: '#fff', Name: 'label', Type: 1 },
     importPeriod: TIME_PERIOD.LAST_MONTH,
-    importAddress: mockAddresses[0],
+    importAddress: generateMockAddress(1, true),
     importCategoriesDestination: MailImportDestinationFolder.INBOX,
 };
 

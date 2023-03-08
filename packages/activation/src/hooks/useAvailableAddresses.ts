@@ -1,5 +1,5 @@
 import { useAddresses } from '@proton/components/hooks';
-import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 
 const useAvailableAddresses = () => {
     const [addresses, loading] = useAddresses();
@@ -9,12 +9,13 @@ const useAvailableAddresses = () => {
             addr.Receive &&
             addr.Send &&
             addr.Keys.some((k) => k.Active) &&
-            addr.Status === ADDRESS_STATUS.STATUS_ENABLED
+            addr.Status === ADDRESS_STATUS.STATUS_ENABLED &&
+            addr.Type !== ADDRESS_TYPE.TYPE_EXTERNAL
     );
 
     return {
         availableAddresses,
-        defaultAddress: addresses[0],
+        defaultAddress: availableAddresses[0],
         loading,
     };
 };
