@@ -35,3 +35,6 @@ build
 .nyc_output
 tests/**/*.png
 !tests/**/*-linux.png
+# ignore Zone.identifier
+# https://github.com/microsoft/WSL/issues/7456
+*:Zone.Identifier
