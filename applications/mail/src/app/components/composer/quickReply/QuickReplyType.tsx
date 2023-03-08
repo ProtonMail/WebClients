@@ -48,7 +48,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
      * The list can contain the name of the contact of the address if the contact has no name
      * Full sentence for reference: "Quick reply to Michael Scott, dwight.schrutte@pm.me"
      */
-    const replyToString = c('Info').t`Quick reply to ${recipientsAsString}`;
+    const replyToString = c('l10n_nightly_Info').t`Quick reply to ${recipientsAsString}`;
 
     const iconName = replyType === REPLY ? 'arrow-up-and-left-big' : 'arrows-up-and-left-big';
 
