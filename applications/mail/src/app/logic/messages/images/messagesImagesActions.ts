@@ -12,6 +12,7 @@ import {
     LoadRemoteFromURLParams,
     LoadRemoteParams,
     LoadRemoteResults,
+    MessageRemoteImage,
 } from '../messagesTypes';
 
 export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedParams>(
@@ -109,3 +110,7 @@ export const loadFakeProxy = createAsyncThunk<LoadRemoteResults | undefined, Loa
 );
 
 export const loadRemoteDirectFromURL = createAction<LoadRemoteFromURLParams>('messages/remote/load/direct/url');
+
+export const failedRemoteDirectLoading = createAction<{ ID: string; image: MessageRemoteImage }>(
+    'messages/remote/failed/load/direct/url'
+);
