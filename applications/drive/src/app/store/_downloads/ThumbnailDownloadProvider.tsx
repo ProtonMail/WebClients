@@ -1,12 +1,13 @@
 import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 
+import { VERIFICATION_STATUS } from 'pmcrypto-v7/lib/constants';
+
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
 
 import useNavigate from '../../hooks/drive/useNavigate';
 import { logError } from '../../utils/errorHandling';
 import { createAsyncQueue } from '../../utils/parallelRunners';
 import { useLink } from '../_links';
-import useDownload from './useDownload';
 
 interface DownloadProviderState {
     addToDownloadQueue: (shareId: string, linkId: string, activeRevisionId?: string) => void;
@@ -37,9 +38,23 @@ const getDownloadIdString = ({
     This provider ensured that we load thumbnails by small portions, leaving a window for
     other requests to get to a queue in between them.
 */
-export const ThumbnailsDownloadProvider = ({ children }: any) => {
+export const ThumbnailsDownloadProvider = ({
+    children,
+    downloadThumbnail,
+}: {
+    downloadThumbnail: (
+        signal: AbortSignal,
+        shareId: string,
+        linkId: string,
+        downloadUrl: string,
+        downloadToken: string
+    ) => Promise<{
+        contents: Promise<Uint8Array[]>;
+        verifiedPromise: Promise<VERIFICATION_STATUS>;
+    }>;
+    children: React.ReactNode;
+}) => {
     const { loadLinkThumbnail } = useLink();
-    const { downloadThumbnail } = useDownload();
     const navigation = useNavigate();
 
     const asyncQueue = useMemo(() => createAsyncQueue(MAX_THREADS_PER_DOWNLOAD), []);
@@ -68,22 +83,7 @@ export const ThumbnailsDownloadProvider = ({ children }: any) => {
         controls.current[downloadId] = ac;
 
         return loadLinkThumbnail(ac.signal, shareId, linkId, async (downloadUrl: string, downloadToken: string) => {
-            const { contents, abortController, verifiedPromise } = await downloadThumbnail(
-                ac.signal,
-                shareId,
-                linkId,
-                downloadUrl,
-                downloadToken
-            );
-
-            ac.signal.addEventListener('abort', () => {
-                abortController.abort();
-            });
-            if (ac.signal.aborted) {
-                abortController.abort();
-            }
-
-            return { contents, verifiedPromise };
+            return downloadThumbnail(ac.signal, shareId, linkId, downloadUrl, downloadToken);
         })
             .catch(logError)
             .finally(() => {

@@ -2,17 +2,19 @@ import { useEffect, useState } from 'react';
 
 import { CollapsingBreadcrumbs } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
+import clsx from '@proton/utils/clsx';
 
-import { useLinkPathPublic } from '../../store/_views/useLinkPath';
+import { useLinkPathPublic } from '../../../store/_views/useLinkPath';
 
 interface Props {
     token: string;
     name: string;
     linkId: string;
-    setLinkId: (linkId: string) => void;
+    onNavigate?: (linkId: string) => void;
+    className?: string;
 }
 
-export default function SharedPageBreadcrumb({ token, name, linkId, setLinkId }: Props) {
+export default function Breadcrumbs({ token, name, linkId, onNavigate, className }: Props) {
     const { traverseLinksToRoot } = useLinkPathPublic(); // TODO: Get data using usePublicFolderView instead one day.
     const defaultBreadcrumbs: BreadcrumbInfo[] = [
         {
@@ -34,7 +36,7 @@ export default function SharedPageBreadcrumb({ token, name, linkId, setLinkId }:
                         key: item.linkId,
                         text: item.name,
                         collapsedText: item.name,
-                        onClick: item.linkId === linkId ? undefined : () => setLinkId(item.linkId),
+                        onClick: item.linkId === linkId || !onNavigate ? undefined : () => onNavigate(item.linkId),
                     };
                     return breadcrumb;
                 });
@@ -50,7 +52,7 @@ export default function SharedPageBreadcrumb({ token, name, linkId, setLinkId }:
         return () => {
             abortController.abort();
         };
-    }, [traverseLinksToRoot, setLinkId, token, linkId]);
+    }, [traverseLinksToRoot, onNavigate, token, linkId]);
 
-    return <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} />;
+    return <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} className={clsx(['text-4xl', className])} />;
 }
