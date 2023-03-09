@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,6 +7,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import SignatureIssueModal from '../components/SignatureIssueModal';
+import usePublicToken from '../hooks/drive/usePublicToken';
 import { DecryptedLink, PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
 
 export default function PublicSharedLinkContainer() {
@@ -40,11 +40,11 @@ function PublicShareLinkInitContainer() {
     }, [isLoading]);
 
     if (isLoading) {
-        return <LoadingPage stage="auth" />;
+        return <LoadingPage />;
     }
 
     if (error) {
-        return <ErrorPage error={error} />;
+        return <ErrorPage />;
     }
 
     if (isPasswordNeeded) {
@@ -81,30 +81,15 @@ function PublicSharedLink({ token }: { token: string }) {
     }, []);
 
     if (isLoading) {
-        return <LoadingPage stage="share" />;
+        return <LoadingPage />;
     }
 
     if (error || !link) {
-        return <ErrorPage error={error || c('Info').t`Cannot load link`} />;
+        return <ErrorPage />;
     }
 
     if (link.isFile) {
         return <SharedFilePage token={token} link={link} />;
     }
     return <SharedFolderPage token={token} rootLink={link} />;
-}
-
-/**
- * usePublicToken parses token and generate (URL) password from the URL.
- */
-function usePublicToken() {
-    const { pathname, hash } = useLocation();
-
-    const token = useMemo(() => pathname.replace(/\/urls\/?/, ''), [pathname]);
-    const urlPassword = useMemo(() => hash.replace('#', ''), [hash]);
-
-    return {
-        token,
-        urlPassword,
-    };
 }

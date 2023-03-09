@@ -19,7 +19,7 @@ export enum SortField {
     trashed = 'trashed',
 }
 
-interface SortParams<T extends SortField = SortField> {
+export interface SortParams<T extends SortField = SortField> {
     sortField: T;
     sortOrder: SORT_DIRECTION;
 }

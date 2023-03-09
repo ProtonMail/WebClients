@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Checkbox, Loader, TableHeaderCell, TableRowSticky } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
 import { SelectionState } from '../hooks/useSelectionControls';
@@ -74,7 +75,7 @@ const HeaderCell = <T,>({
     }
 
     if (item.type === HeaderCellsPresets.Placeholder) {
-        return <TableHeaderCell className="file-browser-list--icon-column" />;
+        return <TableHeaderCell className={clsx(['file-browser-list--icon-column', item.props?.className])} />;
     }
 
     const getSortDirectionForKey = (key: T) => (sortParams?.sortField === key ? sortParams.sortOrder : undefined);
