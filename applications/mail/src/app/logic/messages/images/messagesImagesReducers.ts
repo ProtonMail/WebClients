@@ -174,13 +174,16 @@ export const loadFakeProxyPending = (
     state: Draft<MessagesState>,
     {
         meta: {
-            arg: { ID, imageToLoad },
+            arg: { ID, imageToLoad, firstLoad },
         },
     }: PayloadAction<undefined, string, { arg: LoadRemoteParams }>
 ) => {
     const messageState = getMessage(state, ID);
 
-    if (messageState) {
+    // If we want to get the number of trackers but images are not already loaded (Auto show is OFF but use Proton proxy is ON)
+    // Then we want to display the correct number of trackers in the shield icon. But for that, we need to fill images with their original URLs
+    // Otherwise, we will not be able to display the correct number (they will all have a originalUrl = "", which will be considered as one tracker)
+    if (messageState && firstLoad) {
         getRemoteImages(messageState).forEach((image) => {
             if (imageToLoad.id === image.id) {
                 image.originalURL = image.url;
