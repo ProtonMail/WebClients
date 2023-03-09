@@ -6,6 +6,7 @@ import {
     ContactEmailsModel,
     ContactsModel,
     LabelsModel,
+    MailSettingsModel,
     UserModel,
     UserSettingsModel,
 } from '@proton/shared/lib/models';
@@ -31,7 +32,15 @@ const PrivateAppInner = ({ onLogout, locales }: Props) => {
             onLogout={onLogout}
             preloadModels={[UserModel, AddressesModel]}
             preloadFeatures={[FeatureCode.Drawer]}
-            eventModels={[UserModel, UserSettingsModel, AddressesModel, ContactsModel, ContactEmailsModel, LabelsModel]}
+            eventModels={[
+                UserModel,
+                UserSettingsModel,
+                AddressesModel,
+                ContactsModel,
+                ContactEmailsModel,
+                LabelsModel,
+                MailSettingsModel,
+            ]}
             fallback={<LoaderPage />}
             onInit={loadUserSettings}
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
