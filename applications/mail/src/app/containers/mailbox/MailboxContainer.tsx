@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { RefObject, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import {
@@ -20,6 +20,7 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import ConversationView from '../../components/conversation/ConversationView';
 import List from '../../components/list/List';
+import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
 import Toolbar from '../../components/toolbar/Toolbar';
 import PlaceholderView from '../../components/view/PlaceholderView';
@@ -155,6 +156,7 @@ const MailboxContainer = ({
     const onCompose = useOnCompose();
 
     useMailboxPageTitle(labelID, location);
+    useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, searchParameters]);
 
     const {
         checkedIDs,
