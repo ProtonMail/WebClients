@@ -120,6 +120,14 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
+    /*
+     * translator: Text displayed in a button to suggest the creation of a new label in the label dropdown
+     * This button is shown when the user search for a label which doesn't exist
+     * ${search} is a string containing the search the user made in the label dropdown
+     * Full sentence for reference: 'Create label "Dunder Mifflin"'
+     */
+    const createLabelButtonText = c('Title').t`Create label "${search}"`;
+
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
 
     const initialState = useMemo(
@@ -348,14 +356,17 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                         </li>
                     )}
                     {list.length === 0 && search && (
-                        <li
-                            key="empty"
-                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
-                            data-testid="label-dropdown:create-label-option"
-                            onClick={handleCreate}
-                        >
-                            <span className="text-ellipsis w100">{c('Title').t`Create label "${search}"`}</span>
-                        </li>
+                        <span className="flex w100">
+                            <Button
+                                key="create-new-label"
+                                className="w100 mr2 ml2 text-ellipsis"
+                                data-testid="label-dropdown:create-label-option"
+                                title={createLabelButtonText}
+                                onClick={handleCreate}
+                            >
+                                {createLabelButtonText}
+                            </Button>
+                        </span>
                     )}
                 </ul>
             </div>
