@@ -322,7 +322,11 @@ const WireGuardConfigurationSection = () => {
             return;
         }
 
-        setCurrentCertificate(certificate.id === currentCertificate ? undefined : certificate.id);
+        if (certificate.id === currentCertificate) {
+            return;
+        }
+
+        setCurrentCertificate(certificate.id);
     };
 
     const queryCertificate = (
