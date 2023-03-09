@@ -1,11 +1,20 @@
+import { ReadableStream } from 'web-streams-polyfill';
+
 import { querySharedURLFileRevision } from '@proton/shared/lib/api/drive/sharing';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
-import { SharedURLRevision } from '@proton/shared/lib/interfaces/drive/sharing';
+import { SharedURLRevision, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { usePublicSession } from '../_api';
 import { DecryptedLink, useLink, usePublicLinksListing } from '../_links';
-import initDownloadPure from './download/download';
-import { DownloadControls, DownloadEventCallbacks, LinkDownload, Pagination } from './interface';
+import initDownloadPure, { initDownloadStream } from './download/download';
+import downloadThumbnailPure from './download/downloadThumbnail';
+import {
+    DownloadControls,
+    DownloadEventCallbacks,
+    DownloadStreamControls,
+    LinkDownload,
+    Pagination,
+} from './interface';
 
 /**
  * usePublicDownload provides pure initDownload enhanced by retrieving
@@ -76,7 +85,47 @@ export default function usePublicDownload() {
         });
     };
 
+    const downloadThumbnail = async (
+        abortSignal: AbortSignal,
+        token: string,
+        linkId: string,
+        params: ThumbnailURLInfo
+    ) => {
+        const privateKey = await getLinkPrivateKey(abortSignal, token, linkId);
+        const sessionKey = await getLinkSessionKey(abortSignal, token, linkId);
+
+        if (!privateKey || !sessionKey) {
+            throw new Error('No keys found to decrypt the thumbnail');
+        }
+
+        const { contents } = await downloadThumbnailPure(params.BareURL, params.Token, async () => ({
+            sessionKeys: sessionKey,
+            privateKey,
+            addressPublicKeys: [],
+        }));
+
+        return contents;
+    };
+
+    const downloadStream = (
+        list: LinkDownload[],
+        eventCallbacks?: DownloadEventCallbacks
+    ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
+        const controls = initDownloadStream(list, {
+            getChildren,
+            getBlocks,
+            getKeys: async (abortSignal: AbortSignal, link: LinkDownload) => {
+                return getKeys(abortSignal, link.shareId, link.linkId);
+            },
+            ...eventCallbacks,
+        });
+        const stream = controls.start();
+        return { controls, stream };
+    };
+
     return {
         initDownload,
+        downloadThumbnail,
+        downloadStream,
     };
 }

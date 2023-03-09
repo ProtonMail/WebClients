@@ -151,7 +151,7 @@ export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
 
     return (
         <TableCell
-            className="m0 file-browser-list--icon-column flex flex-align-items-center"
+            className="m0 file-browser-list--icon-column file-browser-list--context-menu-column flex flex-align-items-center"
             data-testid="column-share-options"
         >
             {item.shareUrl ? (
