@@ -92,6 +92,14 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const canMoveToInbox = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], INBOX).length : true;
     const canMoveToSpam = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], SPAM).length : true;
 
+    /*
+     * translator: Text displayed in a button to suggest the creation of a new folder in the move dropdown
+     * This button is shown when the user search for a folder which doesn't exist
+     * ${search} is a string containing the search the user made in the folder dropdown
+     * Full sentence for reference: 'Create folder "Dunder Mifflin"'
+     */
+    const createFolderButtonText = c('Title').t`Create folder "${search}"`;
+
     const alwaysCheckboxDisabled = useMemo(() => {
         return !getSendersToFilter(elements).length || !selectedFolder;
     }, [getSendersToFilter, elements]);
@@ -248,14 +256,17 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         </li>
                     )}
                     {list.length === 0 && search && (
-                        <li
-                            key="empty"
-                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
-                            data-testid="folder-dropdown:create-folder-option"
-                            onClick={handleCreate}
-                        >
-                            <span className="text-ellipsis w100">{c('Title').t`Create folder "${search}"`}</span>
-                        </li>
+                        <span className="flex w100">
+                            <Button
+                                key="create-new-folder"
+                                className="w100 mr2 ml2 text-ellipsis"
+                                data-testid="folder-dropdown:create-folder-option"
+                                title={createFolderButtonText}
+                                onClick={handleCreate}
+                            >
+                                {createFolderButtonText}
+                            </Button>
+                        </span>
                     )}
                 </ul>
             </div>
