@@ -38,9 +38,7 @@ For additional details on how to interact with the monorepo, see the [yarn docs]
 
 ## Help us to translate the project
 
-You can help us to translate the application on crowdin.
-
--   [Crowdin Proton Mail & Calendar](https://crowdin.com/project/protonmail) (account, drive and vpn are inside too)
+You can learn more about it on [our blog post](https://proton.me/blog/translation-community).
 
 ## License
 
