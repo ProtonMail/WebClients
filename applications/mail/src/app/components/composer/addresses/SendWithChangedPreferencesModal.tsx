@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, classnames } from '@proton/components';
+import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     emails: string[];
@@ -26,7 +27,7 @@ const SendWithChangedPreferencesModal = ({ emails, onSubmit, onClose, ...rest }:
                     {emails.map((email, index) => (
                         <li
                             key={index} // eslint-disable-line react/no-array-index-key
-                            className={classnames([index !== emails.length && 'mb0-5'])}
+                            className={clsx([index !== emails.length && 'mb0-5'])}
                         >
                             <span className="block max-w100">{email}</span>
                         </li>

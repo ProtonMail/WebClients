@@ -1,6 +1,6 @@
 import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
 
-import { ItemCheckbox, classnames, useLabels, useMailSettings } from '@proton/components';
+import { ItemCheckbox, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
@@ -139,7 +139,7 @@ const Item = ({
                 draggable
                 onDragStart={(event) => onDragStart(event, element)}
                 onDragEnd={onDragEnd}
-                className={classnames([
+                className={clsx([
                     'flex-item-fluid flex flex-nowrap cursor-pointer opacity-on-hover-container',
                     columnLayout
                         ? 'item-container item-container-column'
@@ -171,7 +171,7 @@ const Item = ({
                     checked={checked}
                     onChange={handleCheck}
                     compactClassName="mr0-75 stop-propagation"
-                    normalClassName={classnames(['ml0-1', columnLayout ? 'mr0-6 mt0-1' : 'mr0-5'])}
+                    normalClassName={clsx(['ml0-1', columnLayout ? 'mr0-6 mt0-1' : 'mr0-5'])}
                 />
                 <ItemLayout
                     isCompactView={isCompactView}

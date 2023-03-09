@@ -3,8 +3,9 @@ import { MouseEvent, MutableRefObject, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Label, Tooltip, classnames, generateUID } from '@proton/components';
+import { Icon, Label, Tooltip, generateUID } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import clsx from '@proton/utils/clsx';
 
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -51,7 +52,7 @@ const AddressesEditor = ({
                     {c('Title').t`To`}
                 </Label>
                 <div
-                    className={classnames([
+                    className={clsx([
                         'flex flex-nowrap field flex-align-items-center flex-nowrap flex-item-fluid composer-to-editor composer-light-field',
                         expanded ? 'composer-editor-expanded' : 'composer-editor-collapsed',
                     ])}
@@ -80,7 +81,7 @@ const AddressesEditor = ({
                                 title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
                                 onClick={toggleExpanded}
                                 data-testid="composer:cc-bcc-button"
-                                className={classnames([
+                                className={clsx([
                                     'ml1 composer-addresses-ccbcc text-left text-cut text-no-decoration text-strong relative',
                                 ])}
                             >

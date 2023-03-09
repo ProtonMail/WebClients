@@ -2,7 +2,7 @@ import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Info, Label, Progress, Prompt, Toggle, Tooltip, classnames, useModalState, useUser } from '@proton/components';
+import { Info, Label, Progress, Prompt, Toggle, Tooltip, useModalState, useUser } from '@proton/components';
 import {
     ESIndexingState,
     esStorageHelpers,
@@ -12,6 +12,7 @@ import {
     isDBReadyAfterBuilding,
     wasIndexingDone,
 } from '@proton/encrypted-search';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 import { formatSimpleDate } from '../../../../helpers/date';
@@ -119,10 +120,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
         <Progress
             value={progressValue || 0}
             aria-describedby="timeRemaining"
-            className={classnames([
-                'mt1 mb1 flex-item-fluid',
-                getES.Pause(user.ID) ? 'progress-bar--disabled' : undefined,
-            ])}
+            className={clsx(['mt1 mb1 flex-item-fluid', getES.Pause(user.ID) ? 'progress-bar--disabled' : undefined])}
         />
     );
     const disablePauseResumeButton = wasIndexingDone(user.ID) && isBuilding;
@@ -185,7 +183,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
                         id="timeRemaining"
                         aria-live="polite"
                         aria-atomic="true"
-                        className={classnames([
+                        className={clsx([
                             'color-weak relative advanced-search-time-remaining',
                             isEstimating || getES.Pause(user.ID) ? 'visibility-hidden' : undefined,
                         ])}

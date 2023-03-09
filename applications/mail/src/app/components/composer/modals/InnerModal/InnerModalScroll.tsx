@@ -1,7 +1,7 @@
 import { ReactNode, Ref, forwardRef } from 'react';
 
 import { ScrollShadows } from '@proton/atoms';
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     children: ReactNode;
@@ -10,7 +10,7 @@ interface Props {
 const InnerModalScroll = forwardRef<HTMLDivElement, Props>(
     ({ children, className = '' }: Props, ref: Ref<HTMLDivElement>) => {
         return (
-            <div ref={ref} className={classnames(['inner-modal-content-inner', className])}>
+            <div ref={ref} className={clsx(['inner-modal-content-inner', className])}>
                 <ScrollShadows>{children}</ScrollShadows>
             </div>
         );

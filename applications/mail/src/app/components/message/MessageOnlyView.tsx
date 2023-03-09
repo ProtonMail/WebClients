@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Scroll } from '@proton/atoms';
-import { classnames, useHotkeys, useLabels } from '@proton/components';
+import { useHotkeys, useLabels } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOutsideFocusedMessage';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
@@ -136,9 +137,9 @@ const MessageOnlyView = ({
     }, [messageID, isMessageReady]);
 
     return (
-        <Scroll className={classnames([hidden && 'hidden'])}>
+        <Scroll className={clsx([hidden && 'hidden'])}>
             <ConversationHeader
-                className={classnames([hidden && 'hidden'])}
+                className={clsx([hidden && 'hidden'])}
                 loading={!messageLoaded}
                 element={message.data}
             />

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { classnames } from '@proton/components';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
 import { Participant } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     participant: Participant;
@@ -14,7 +14,7 @@ const ExtraEventParticipant = ({ participant, isOrganizer = false }: Props) => {
     const displayText = displayName !== displayEmail ? `${displayName} <${displayEmail}>` : displayEmail;
 
     return (
-        <div className={classnames(['text-ellipsis', isOrganizer && 'mb0-25'])}>
+        <div className={clsx(['text-ellipsis', isOrganizer && 'mb0-25'])}>
             {isOrganizer && <span className="mr0-25">{c('ICS widget label for event details').t`Organizer:`}</span>}
             <a href={buildMailTo(displayEmail)} title={displayText}>
                 {displayText}

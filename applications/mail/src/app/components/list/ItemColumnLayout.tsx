@@ -2,7 +2,6 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { classnames } from '@proton/components';
 import { useUserSettings } from '@proton/components/hooks/';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -212,7 +211,7 @@ const ItemColumnLayout = ({
             {!!resultJSX && (
                 <>
                     <div
-                        className={classnames([
+                        className={clsx([
                             'flex flex-nowrap flex-align-items-center item-secondline item-es-result max-w80 no-scroll',
                             isCompactView && 'mb0-75',
                         ])}

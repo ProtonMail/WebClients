@@ -2,9 +2,9 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useExpiringElement } from '../../hooks/useExpiration';
@@ -77,7 +77,7 @@ const ItemRowLayout = ({
             <div className="myauto flex w2e" data-testid={unread}>
                 <ItemStar element={element} />
             </div>
-            <div className={classnames(['item-senders flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
+            <div className={clsx(['item-senders flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
                 <ItemUnread element={element} labelID={labelID} className="mr0-2 item-unread-dot" />
                 <ItemAction element={element} className="mr0-5 flex-item-noshrink myauto" />
                 <span
@@ -93,7 +93,7 @@ const ItemRowLayout = ({
                     <span
                         role="heading"
                         aria-level={2}
-                        className={classnames(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
+                        className={clsx(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
                         title={Subject}
                         data-testid="message-row:subject"
                     >
@@ -104,7 +104,7 @@ const ItemRowLayout = ({
                         )}
                         {conversationMode && (
                             <NumMessages
-                                className={classnames(['mr0-25 flex-item-noshrink', unread && 'text-bold'])}
+                                className={clsx(['mr0-25 flex-item-noshrink', unread && 'text-bold'])}
                                 conversation={element}
                             />
                         )}
@@ -114,7 +114,7 @@ const ItemRowLayout = ({
                     {!!resultJSX && highlightData && (
                         <>
                             <span
-                                className={classnames(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
+                                className={clsx(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
                                 title={bodyTitle}
                                 aria-hidden="true"
                             >

@@ -1,8 +1,9 @@
 import { useHistory } from 'react-router-dom';
 
-import { LabelStack, classnames } from '@proton/components';
+import { LabelStack } from '@proton/components';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import orderBy from '@proton/utils/orderBy';
 
@@ -58,7 +59,7 @@ const ItemLabels = ({
     return (
         <LabelStack
             labels={labelsDescription}
-            className={classnames([className, isCollapsed && 'flex-justify-end'])}
+            className={clsx([className, isCollapsed && 'flex-justify-end'])}
             isStacked={isCollapsed}
             maxNumber={maxNumber}
             showDropDown={showDropdown}

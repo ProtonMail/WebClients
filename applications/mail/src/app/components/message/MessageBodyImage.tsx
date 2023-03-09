@@ -3,8 +3,9 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip, classnames, useApi } from '@proton/components';
+import { Icon, Tooltip, useApi } from '@proton/components';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { getAnchor } from '../../helpers/message/messageImages';
 import { loadRemoteProxy } from '../../logic/messages/images/messagesImagesActions';
@@ -143,10 +144,7 @@ const MessageBodyImage = ({
     const placeholder = (
         <span
             style={style}
-            className={classnames([
-                'proton-image-placeholder',
-                !!error && 'proton-image-placeholder--error border-danger',
-            ])}
+            className={clsx(['proton-image-placeholder', !!error && 'proton-image-placeholder--error border-danger'])}
         >
             {!showLoader ? <Icon name={icon} size={20} /> : null}
 
