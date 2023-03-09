@@ -141,7 +141,6 @@ const AddressesInput = ({
 
     const handleRecipientRemove = (toRemove: Recipient) => () => {
         onChange(recipients.filter((recipient) => recipient !== toRemove));
-        inputRef.current?.focus();
     };
 
     const handleRecipientChange = (toChange: Recipient) => (value: Recipient) => {
@@ -163,7 +162,6 @@ const AddressesInput = ({
 
     const handleGroupRemove = (toRemove?: RecipientGroup) => () => {
         onChange(recipientsWithoutGroup(recipients, toRemove?.group?.Path));
-        inputRef.current?.focus();
     };
 
     const handleInputKey = (event: React.KeyboardEvent<HTMLInputElement>) => {
