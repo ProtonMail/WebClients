@@ -29,11 +29,17 @@ export const splitBySeparator = (input: string) => {
         .map((value) => clearValue(value))
         .filter(isTruthy);
 };
-
 /**
  * Find in a string potential recipients separated by a space
  */
 export const findRecipientsWithSpaceSeparator = (input: string) => {
+    // Do nothing if the input does not contain a space
+    // Otherwise, executing the logic might break the behaviour we have
+    // For example it will detect as valid input "address@pm.m", but the user might want to type "address@pm.me"
+    if (!input.includes(' ')) {
+        return [];
+    }
+
     const emails = input.split(' ');
 
     const clearedEmails = emails.map((email) => email.trim()).filter((email) => email.length > 0);
@@ -80,7 +86,7 @@ export const handleRecipientInputChange = (
         return;
     }
 
-    const values = splitBySeparator(newValue);
+    const values = newValue.split(SEPARATOR_REGEX).map((value) => clearValue(value));
     if (values.length > 1) {
         onAddRecipients(values.map(inputToRecipient));
         setInput('');

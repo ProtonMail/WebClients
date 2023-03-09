@@ -81,6 +81,10 @@ describe('findRecipientsWithSpaceSeparator', () => {
         expect(findRecipientsWithSpaceSeparator(input1)).toEqual([]);
         expect(findRecipientsWithSpaceSeparator(input2)).toEqual([]);
     });
+
+    it('should not split recipients when input does not contain a space', () => {
+        expect(findRecipientsWithSpaceSeparator(address1)).toEqual([]);
+    });
 });
 
 describe('recipientToInput', () => {
