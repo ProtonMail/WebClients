@@ -12,7 +12,12 @@ const ReportsTableInfos = () => {
     const accounts = delayedImportAccounts.join(', ');
 
     const bandwidthLimitLink = (
-        <Href key="bandwidthLimitLink" url={getKnowledgeBaseUrl('/import-assistant/#delayed-import')}>
+        <Href
+            key="bandwidthLimitLink"
+            url={getKnowledgeBaseUrl(
+                '/manage-imports-easy-switch#:~:text=notification%20in%20advance.-,Delayed%20imports,-Some%20email%20providers'
+            )}
+        >
             {c('Import error link').t`bandwidth limit`}
         </Href>
     );
