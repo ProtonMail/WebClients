@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import clsx from '@proton/utils/clsx';
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { RecipientOrGroup } from '../../../models/address';
@@ -38,7 +39,7 @@ const MailRecipients = ({
     return (
         <div
             id="message-recipients"
-            className={classnames([
+            className={clsx([
                 'flex flex-nowrap flex-item-fluid message-recipient',
                 expanded && 'message-recipient-expanded',
             ])}
@@ -77,7 +78,7 @@ const MailRecipients = ({
                     >
                         <Icon
                             name="chevron-down"
-                            className={classnames(['navigation-icon--expand', expanded && 'rotateX-180'])}
+                            className={clsx(['navigation-icon--expand', expanded && 'rotateX-180'])}
                             alt={titleAction}
                         />
                     </Button>

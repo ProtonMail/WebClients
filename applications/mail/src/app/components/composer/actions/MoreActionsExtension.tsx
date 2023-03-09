@@ -6,7 +6,6 @@ import {
     DropdownMenuButton,
     EditorMetadata,
     Icon,
-    classnames,
     useAddresses,
     useMailSettings,
     useUserSettings,
@@ -18,6 +17,7 @@ import {
     isAttachPublicKey as testIsAttachPublicKey,
     isRequestReadReceipt as testIsRequestReadReceipt,
 } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -103,7 +103,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     data-testid="editor-to-html"
                 >
                     <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Rich text`}</span>
-                    <Icon name="checkmark" className={classnames(['ml1', getClassname(!editorMetadata.isPlainText)])} />
+                    <Icon name="checkmark" className={clsx(['ml1', getClassname(!editorMetadata.isPlainText)])} />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={4}
@@ -116,7 +116,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     data-testid="editor-to-plaintext"
                 >
                     <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Plain text`}</span>
-                    <Icon name="checkmark" className={classnames(['ml1', getClassname(editorMetadata.isPlainText)])} />
+                    <Icon name="checkmark" className={clsx(['ml1', getClassname(editorMetadata.isPlainText)])} />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-more-options" />,
             ]}
@@ -126,7 +126,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 data-testid="composer:attach-public-key-button"
             >
                 <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Attach public key`}</span>
-                <Icon name="checkmark" className={classnames(['ml1', getClassname(isAttachPublicKey)])} />
+                <Icon name="checkmark" className={clsx(['ml1', getClassname(isAttachPublicKey)])} />
             </DropdownMenuButton>
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
@@ -134,7 +134,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 data-testid="composer:read-receipt-button"
             >
                 <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Request read receipt`}</span>
-                <Icon name="checkmark" className={classnames(['ml1', getClassname(isReceiptRequest)])} />
+                <Icon name="checkmark" className={clsx(['ml1', getClassname(isReceiptRequest)])} />
             </DropdownMenuButton>
         </>
     );

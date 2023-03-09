@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { CircularProgress, FileIcon, FileNameDisplay, Icon, classnames, useLoading } from '@proton/components';
+import { CircularProgress, FileIcon, FileNameDisplay, Icon, useLoading } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import clsx from '@proton/utils/clsx';
 
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { AttachmentAction, AttachmentHandler } from './AttachmentList';
@@ -111,7 +112,7 @@ const AttachmentItem = ({
     return (
         <div className="message-attachmentList-item-container" data-testid="attachment-item">
             <div
-                className={classnames([
+                className={clsx([
                     'message-attachmentList-item flex border flex-nowrap pm_button p0 rounded overflow-hidden',
                     loading && 'message-attachmentList-item--loading',
                 ])}

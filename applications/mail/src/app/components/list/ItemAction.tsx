@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Icon, Tooltip, classnames } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import clsx from '@proton/utils/clsx';
 
 import { isMessage } from '../../helpers/elements';
 import { Element } from '../../models/element';
@@ -23,7 +24,7 @@ const ItemAction = ({ element, className }: Props) => {
     }
 
     return (
-        <div className={classnames(['flex flex-nowrap', className])}>
+        <div className={clsx(['flex flex-nowrap', className])}>
             {!!message.IsReplied && (
                 <Tooltip title={c('Alt').t`Replied to`}>
                     <Icon

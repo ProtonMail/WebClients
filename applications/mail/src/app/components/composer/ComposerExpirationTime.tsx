@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
-import { classnames } from '@proton/components/helpers';
+import clsx from '@proton/utils/clsx';
 
 import { useExpiration } from '../../hooks/useExpiration';
 import { MessageState } from '../../logic/messages/messagesTypes';
@@ -22,7 +22,7 @@ const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
 
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 flex flex-align-items-center flex-gap-0-5 mb0-5',
                 isExpiringDraft ? 'bg-info border-info' : 'bg-warning border-warning',
             ])}

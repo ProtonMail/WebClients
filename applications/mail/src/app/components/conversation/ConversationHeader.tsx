@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isConversation as testIsConversation } from '../../helpers/elements';
@@ -30,7 +30,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
 
     return (
         <header
-            className={classnames([
+            className={clsx([
                 'max-w100 message-conversation-summary upper-layer pt1-5 pb0-5 px0-5 mx1 flex-item-noshrink',
                 loading && 'message-conversation-summary-is-loading',
                 className,
@@ -40,7 +40,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
         >
             <div className="flex flex-nowrap">
                 <h1
-                    className={classnames([
+                    className={clsx([
                         'message-conversation-summary-header my0 h3 text-bold text-ellipsis-two-lines lh-rg flex-item-fluid',
                     ])}
                     title={element?.Subject}

@@ -3,8 +3,9 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, Tooltip, classnames, useMailSettings } from '@proton/components';
+import { Icon, Tooltip, useMailSettings } from '@proton/components';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
+import clsx from '@proton/utils/clsx';
 
 interface ButtonProps {
     onClick: () => void;
@@ -20,10 +21,7 @@ const TitleBarButton = ({ onClick, children, className = '', title, disabled = f
         <Tooltip title={title}>
             <button
                 type="button"
-                className={classnames([
-                    'composer-title-bar-button interactive-pseudo-inset relative flex p0-5',
-                    className,
-                ])}
+                className={clsx(['composer-title-bar-button interactive-pseudo-inset relative flex p0-5', className])}
                 onClick={onClick}
                 disabled={disabled}
                 data-testid={dataTestId}
@@ -108,7 +106,7 @@ const ComposerTitleBar = ({
             onDoubleClick={handleDoubleClick}
         >
             <span
-                className={classnames([
+                className={clsx([
                     'flex-item-fluid p0-5 pr1 pl0-75 text-ellipsis user-select-none',
                     (!maximized || minimized) && 'cursor-move',
                 ])}
@@ -117,7 +115,7 @@ const ComposerTitleBar = ({
                 {title}
             </span>
             <TitleBarButton
-                className={classnames(['no-mobile', minimized && 'rotateX-180'])}
+                className={clsx(['no-mobile', minimized && 'rotateX-180'])}
                 title={titleMinimize}
                 onClick={toggleMinimized}
                 dataTestId="composer:minimize-button"

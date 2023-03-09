@@ -11,10 +11,10 @@ import {
     Icon,
     Mark,
     SearchInput,
-    classnames,
     generateUID,
     usePopperAnchor,
 } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { ItemsGroup, useLocationFieldOptions } from './useLocationFieldOptions';
 
@@ -89,7 +89,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                             onClick={() => onChange(item.value)}
                                         >
                                             <div
-                                                className={classnames([
+                                                className={clsx([
                                                     'flex flex-nowrap flex-align-items-center',
                                                     isCustomFolder(item) && item.className,
                                                 ])}

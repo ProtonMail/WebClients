@@ -1,4 +1,5 @@
-import { Href, Icon, Loader, Tooltip, classnames } from '@proton/components';
+import { Href, Icon, Loader, Tooltip } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { getSendIconHref, getStatusIconName } from '../../helpers/message/icon';
 import { StatusIcon } from '../../models/crypto';
@@ -38,7 +39,7 @@ const EncryptionStatusIcon = ({
 
     if (isDetailsModal) {
         return (
-            <span className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
+            <span className={clsx(['inline-flex flex-item-noshrink align-middle', className])}>
                 {iconName && (
                     <Icon
                         size={16}
@@ -54,7 +55,7 @@ const EncryptionStatusIcon = ({
 
     return (
         <Tooltip title={tooltip}>
-            <span className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
+            <span className={clsx(['inline-flex flex-item-noshrink align-middle', className])}>
                 <Href href={href} className="flex flex-item-noshrink mauto" tabIndex={disabled ? -1 : undefined}>
                     {iconName && (
                         <Icon

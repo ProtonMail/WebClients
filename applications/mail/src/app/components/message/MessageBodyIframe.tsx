@@ -3,10 +3,11 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip, classnames } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasAttachments, isAutoFlaggedPhishing } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
@@ -110,7 +111,7 @@ const MessageBodyIframe = ({
                 scrolling="yes"
                 frameBorder="0"
                 ref={iframeRef}
-                className={classnames([initStatus !== 'start' ? 'w100' : 'w0 h0', isResizing && 'no-pointer-events'])}
+                className={clsx([initStatus !== 'start' ? 'w100' : 'w0 h0', isResizing && 'no-pointer-events'])}
                 data-testid="content-iframe"
                 data-subject={message.data?.Subject}
                 sandbox={getIframeSandboxAttributes(isPrint)}

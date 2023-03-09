@@ -6,10 +6,10 @@ import {
     DropdownButtonProps,
     DropdownProps,
     Tooltip,
-    classnames,
     generateUID,
     usePopperAnchor,
 } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends Omit<DropdownButtonProps<'button'>, 'title'> {
     autoClose?: boolean;
@@ -59,7 +59,7 @@ const ComposerMoreOptionsDropdown = ({
                     onClick={handleClick}
                     caretClassName="editor-toolbar-icon"
                     disabled={disabled}
-                    className={classnames([
+                    className={clsx([
                         'editor-toolbar-button interactive composer-toolbar-fontDropDown max-w100 flex flex-align-items-center flex-nowrap',
                         className,
                     ])}

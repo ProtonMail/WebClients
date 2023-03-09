@@ -13,10 +13,10 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    classnames,
     useMailSettings,
 } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
+import clsx from '@proton/utils/clsx';
 
 import { emailTrackerProtectionURL } from '../../../constants';
 import { Tracker, useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
@@ -99,7 +99,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                     return (
                         <Collapsible
                             key={tracker.name}
-                            className={classnames(['border-bottom border-weak', index === 0 && 'border-top'])}
+                            className={clsx(['border-bottom border-weak', index === 0 && 'border-top'])}
                         >
                             <CollapsibleHeader
                                 suffix={

@@ -13,7 +13,6 @@ import { c } from 'ttag';
 
 import {
     HotkeyTuple,
-    classnames,
     getCustomSizingClasses,
     useDropdownArrowNavigation,
     useFocusTrap,
@@ -21,6 +20,7 @@ import {
     useIsClosing,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
@@ -100,7 +100,7 @@ const SearchOverlay = ({
     }, [isOpen]);
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
-    const popperClassName = classnames(['overlay', isClosing && `is-dropdown-out`, className, 'no-outline']);
+    const popperClassName = clsx(['overlay', isClosing && `is-dropdown-out`, className, 'no-outline']);
 
     if (isClosed && !isOpen) {
         return null;
@@ -158,11 +158,7 @@ const SearchOverlay = ({
                     ref={contentRef}
                     style={contentStyle}
                     {...contentProps}
-                    className={classnames([
-                        'overlay-content',
-                        getCustomSizingClasses(contentStyle),
-                        contentProps?.className,
-                    ])}
+                    className={clsx(['overlay-content', getCustomSizingClasses(contentStyle), contentProps?.className])}
                 >
                     {children}
                 </div>
