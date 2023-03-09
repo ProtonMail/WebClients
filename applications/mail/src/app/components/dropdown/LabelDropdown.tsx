@@ -10,7 +10,6 @@ import {
     PrimaryButton,
     SearchInput,
     Tooltip,
-    classnames,
     generateUID,
     useLabels,
     useLoading,
@@ -22,6 +21,7 @@ import { LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import clsx from '@proton/utils/clsx';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { getLabelIDs } from '../../helpers/elements';
@@ -347,7 +347,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 </ul>
             </div>
             <hr className="m0 flex-item-noshrink" />
-            <div className={classnames(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
+            <div className={clsx(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
                     checked={always}

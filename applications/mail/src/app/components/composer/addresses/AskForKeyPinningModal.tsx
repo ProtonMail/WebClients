@@ -11,7 +11,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     PrimaryButton,
-    classnames,
     useApi,
     useLoading,
     useNotifications,
@@ -26,6 +25,7 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
+import clsx from '@proton/utils/clsx';
 
 interface Params {
     contact: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>;
@@ -123,7 +123,7 @@ const AskForKeyPinningModal = ({ contacts, onNotTrust, onError, onResolve, onRej
                         {contacts.map(({ contactID, emailAddress, bePinnedPublicKey }, index) => {
                             const fingerprint = bePinnedPublicKey.getFingerprint();
                             return (
-                                <li key={contactID} className={classnames([index !== totalContacts && 'mb0-5'])}>
+                                <li key={contactID} className={clsx([index !== totalContacts && 'mb0-5'])}>
                                     <span className="block max-w100 text-ellipsis">{`${emailAddress}: ${fingerprint}`}</span>
                                 </li>
                             );

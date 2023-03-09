@@ -3,7 +3,8 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Loader, Tooltip, classnames } from '@proton/components';
+import { Icon, Loader, Tooltip } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { EO_MAX_REPLIES_NUMBER, EO_REPLY_REDIRECT_PATH } from '../../../constants';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -45,7 +46,7 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
 
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'flex flex-align-items-center border-bottom px2 py1-5 on-tiny-mobile-pl0 on-tiny-mobile-pr0',
                 !canReply && 'flex-justify-space-between',
             ])}

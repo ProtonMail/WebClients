@@ -2,7 +2,8 @@ import { ChangeEvent, MutableRefObject, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InputTwo, Label, classnames, generateUID } from '@proton/components';
+import { InputTwo, Label, generateUID } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { MessageSendInfo } from '../../hooks/useSendInfo';
 import { MessageState } from '../../logic/messages/messagesTypes';
@@ -44,7 +45,7 @@ const ComposerMeta = ({
             <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center w100">
                 <Label
                     htmlFor={`from-${uid}`}
-                    className={classnames(['composer-meta-label pt0 text-semibold', disabled && 'placeholder'])}
+                    className={clsx(['composer-meta-label pt0 text-semibold', disabled && 'placeholder'])}
                 >
                     {c('Info').t`From`}
                 </Label>
@@ -67,7 +68,7 @@ const ComposerMeta = ({
             <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center mt0 mb0-5">
                 <Label
                     htmlFor={`subject-${uid}`}
-                    className={classnames(['composer-meta-label pt0 text-semibold', disabled && 'placeholder'])}
+                    className={clsx(['composer-meta-label pt0 text-semibold', disabled && 'placeholder'])}
                 >
                     {c('Info').t`Subject`}
                 </Label>

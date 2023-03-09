@@ -1,5 +1,5 @@
-import { classnames } from '@proton/components';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
@@ -13,7 +13,7 @@ const MessageFooter = ({ message, outsideKey }: Props) => {
     const attachments = getAttachments(message.data);
 
     return (
-        <div className={classnames(['message-attachments bg-norm color-norm p1'])} data-testid="message-attachments">
+        <div className={clsx(['message-attachments bg-norm color-norm p1'])} data-testid="message-attachments">
             <AttachmentList
                 attachments={attachments}
                 message={message as MessageStateWithData}

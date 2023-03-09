@@ -1,5 +1,6 @@
-import { Tooltip, classnames, useFolders, useMailSettings } from '@proton/components';
+import { Tooltip, useFolders, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { getLabelIDsToI18N } from '../../constants';
 import { getCurrentFolders } from '../../helpers/labels';
@@ -53,7 +54,7 @@ const ItemLocation = ({
             {infos.map((folderInfo) => (
                 <Tooltip title={showTooltip ? folderInfo.name : undefined} key={folderInfo.to}>
                     <span
-                        className={classnames(['flex flex-item-noshrink pt0-125', withDefaultMargin && 'mr0-25'])}
+                        className={clsx(['flex flex-item-noshrink pt0-125', withDefaultMargin && 'mr0-25'])}
                         data-testid={`item-location-${folderInfo.name}`}
                     >
                         <ItemIcon folderInfo={folderInfo} />

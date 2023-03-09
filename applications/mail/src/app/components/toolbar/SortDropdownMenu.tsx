@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, Icon, classnames } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { Sort } from '../../models/tools';
@@ -52,7 +53,7 @@ const SortDropdownMenu = ({ labelID, sort: { sort, desc }, onSort, isSearch, bor
                 data-testid="toolbar:sort-old-to-new"
                 aria-current={isOldToNew}
                 isSelected={isOldToNew}
-                className={classnames(['flex flex-row', borderBottom && hideSizeSorting && 'border-bottom'])}
+                className={clsx(['flex flex-row', borderBottom && hideSizeSorting && 'border-bottom'])}
                 onClick={() => onSort({ sort: TIME, desc: false })}
             >
                 <span className="text-left flex-item-fluid">{SORT_OPTIONS.OLD_TO_NEW}</span>
@@ -75,7 +76,7 @@ const SortDropdownMenu = ({ labelID, sort: { sort, desc }, onSort, isSearch, bor
                     data-testid="toolbar:sort-asc"
                     aria-current={isSmallToLarge}
                     isSelected={isSmallToLarge}
-                    className={classnames(['flex flex-row', borderBottom && 'border-bottom'])}
+                    className={clsx(['flex flex-row', borderBottom && 'border-bottom'])}
                     onClick={() => onSort({ sort: SIZE, desc: false })}
                 >
                     <span className="text-left flex-item-fluid">{SORT_OPTIONS.SMALL_TO_LARGE}</span>

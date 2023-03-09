@@ -3,10 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { FeatureCode, Icon, Tooltip, classnames, useFeature } from '@proton/components';
+import { FeatureCode, Icon, Tooltip, useFeature } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import clsx from '@proton/utils/clsx';
 
 import { getAttachmentCounts } from '../../helpers/message/messages';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
@@ -165,7 +166,7 @@ const AttachmentList = ({
 
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'flex flex-column relative w100 flex-nowrap',
                 className,
                 expanded && 'border-top border-weak',

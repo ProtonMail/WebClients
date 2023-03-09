@@ -3,9 +3,10 @@ import { FocusEvent, Fragment, MouseEvent, memo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Label, Tooltip, classnames } from '@proton/components';
+import { Icon, Label, Tooltip } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
@@ -34,11 +35,11 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
 
     return (
         <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center relative mt0 mb0">
-            <Label className={classnames(['composer-meta-label pr0-5 pt0 text-semibold', disabled && 'placeholder'])}>
+            <Label className={clsx(['composer-meta-label pr0-5 pt0 text-semibold', disabled && 'placeholder'])}>
                 {c('Title').t`To`}
             </Label>
             <div
-                className={classnames([
+                className={clsx([
                     'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row flex-align-items-center flex-nowrap flex-item-fluid w100',
                     disabled && 'disabled',
                 ])}
@@ -82,7 +83,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                                     return (
                                         <span
                                             key={i} // eslint-disable-line react/no-array-index-key
-                                            className={classnames(['mr0-5 align-top', cannotSend && 'color-danger'])}
+                                            className={clsx(['mr0-5 align-top', cannotSend && 'color-danger'])}
                                         >
                                             <span>
                                                 <span className="composer-addresses-addressIcon relative mr0-25">

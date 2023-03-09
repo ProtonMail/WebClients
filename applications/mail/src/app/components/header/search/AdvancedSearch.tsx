@@ -6,17 +6,7 @@ import { History } from 'history';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    DateInput,
-    Label,
-    Option,
-    PrimaryButton,
-    Radio,
-    SelectTwo,
-    classnames,
-    useAddresses,
-    useUser,
-} from '@proton/components';
+import { DateInput, Label, Option, PrimaryButton, Radio, SelectTwo, useAddresses, useUser } from '@proton/components';
 import { ESIndexingState, wasIndexingDone } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -24,6 +14,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import clsx from '@proton/utils/clsx';
 
 import { getOldestTimeMail } from '../../../helpers/encryptedSearch/esUtils';
 import { getHumanLabelID } from '../../../helpers/labels';
@@ -203,7 +194,7 @@ const AdvancedSearch = ({
                     }
                 />
             </div>
-            <div className={classnames(['pt1 px1-5 pb0'])}>
+            <div className={clsx(['pt1 px1-5 pb0'])}>
                 {showEncryptedSearch && (
                     <EncryptedSearchField esState={esState} showMore={showMore} toggleShowMore={toggleShowMore} />
                 )}
@@ -227,7 +218,7 @@ const AdvancedSearch = ({
                             </Button>
                         </div>
                         <div className="mb0-5 flex flex-justify-space-between on-mobile-flex-column">
-                            <div className={classnames(['flex-item-fluid', isNarrow ? 'on-mobile-pr0' : 'pr1'])}>
+                            <div className={clsx(['flex-item-fluid', isNarrow ? 'on-mobile-pr0' : 'pr1'])}>
                                 <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
                                     .t`From`}</Label>
                                 <DateInput

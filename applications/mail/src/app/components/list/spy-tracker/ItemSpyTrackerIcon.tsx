@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 
-import { FeatureCode, Tooltip, classnames, useSpotlightOnFeature } from '@proton/components';
+import { FeatureCode, Tooltip, useSpotlightOnFeature } from '@proton/components';
 import useUser from '@proton/components/hooks/useUser';
 import { MONTH } from '@proton/shared/lib/constants';
 import { isSent } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -54,7 +55,7 @@ const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
     }
 
     const spyTrackerIcon = (
-        <div className={classnames(['flex', className])} ref={anchorRef}>
+        <div className={clsx(['flex', className])} ref={anchorRef}>
             <SpyTrackerIcon
                 numberOfTrackers={numberOfTrackers}
                 needsMoreProtection={needsMoreProtection}

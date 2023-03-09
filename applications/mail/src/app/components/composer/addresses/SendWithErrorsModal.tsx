@@ -1,11 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, classnames } from '@proton/components';
+import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import {
     ENCRYPTION_PREFERENCES_ERROR_TYPES,
     EncryptionPreferencesError,
 } from '@proton/shared/lib/mail/encryptionPreferences';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     mapErrors: { [key: string]: EncryptionPreferencesError };
@@ -48,7 +49,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                         {emails.map((email, index) => (
                             <li
                                 key={index} // eslint-disable-line react/no-array-index-key
-                                className={classnames([index !== emails.length && 'mb0-5'])}
+                                className={clsx([index !== emails.length && 'mb0-5'])}
                             >
                                 <span className="block max-w100">{getErrorMessage(mapErrors[email], email)}</span>
                             </li>
@@ -80,7 +81,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                     {emails.map((email, index) => (
                         <li
                             key={index} // eslint-disable-line react/no-array-index-key
-                            className={classnames([index !== emails.length && 'mb0-5'])}
+                            className={clsx([index !== emails.length && 'mb0-5'])}
                         >
                             <span className="block max-w100">{getErrorMessage(mapErrors[email], email)}</span>
                         </li>

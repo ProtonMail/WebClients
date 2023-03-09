@@ -1,9 +1,10 @@
 import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
 
-import { classnames, useMailSettings, useTheme } from '@proton/components';
+import { useMailSettings, useTheme } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
+import clsx from '@proton/utils/clsx';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -114,7 +115,7 @@ const MessageBody = ({
     return (
         <div
             ref={bodyRef}
-            className={classnames([
+            className={clsx([
                 'message-content relative bg-norm color-norm overflow-hidden',
                 plain && 'plain',
                 isPrint && 'message-content-print',
@@ -138,7 +139,7 @@ const MessageBody = ({
             )}
             {contentMode && (
                 <div
-                    className={classnames([
+                    className={clsx([
                         'message-iframe',
                         !contentModeShow && 'message-iframe--hidden',
                         !isPrint && isIframeContentSet && 'p1',

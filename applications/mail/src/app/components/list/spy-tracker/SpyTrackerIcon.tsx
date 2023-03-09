@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import NumberOfElementsBubble from './NumberOfElementsBubble';
 
@@ -25,7 +26,7 @@ const SpyTrackerIcon = ({
 }: Props) => {
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'relative inline-flex item-spy-tracker-link flex-align-items-center',
                 isStandaloneIcon && 'mr0-1',
                 className,
@@ -36,7 +37,7 @@ const SpyTrackerIcon = ({
                 size={16}
                 alt={title}
                 data-testid="privacy:tracker-icon"
-                className={classnames([
+                className={clsx([
                     needsMoreProtection && numberOfTrackers === 0 ? 'color-weak' : 'color-primary',
                     'relative inline-flex item-spy-tracker-link flex-align-items-center',
                     !isStandaloneIcon && 'cursor-pointer',

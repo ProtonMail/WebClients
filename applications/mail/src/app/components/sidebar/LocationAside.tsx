@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
 
-import { ReloadSpinner, classnames, useMailSettings } from '@proton/components';
+import { ReloadSpinner, useMailSettings } from '@proton/components';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     unreadCount?: number;
@@ -51,7 +52,7 @@ const LocationAside = ({
         <>
             {active && (
                 <ReloadSpinner
-                    className={classnames([unreadCount > 0 ? 'mr0-5' : 'mr0-15'])}
+                    className={clsx([unreadCount > 0 ? 'mr0-5' : 'mr0-15'])}
                     refreshing={refreshing}
                     onRefresh={onRefresh}
                     data-testid="navigation-link:refresh-folder"
@@ -59,7 +60,7 @@ const LocationAside = ({
             )}
             {unreadCount > 0 ? (
                 <span
-                    className={classnames([
+                    className={clsx([
                         'navigation-counter-item flex-item-noshrink',
                         hideCountOnHover && 'hide-on-hover',
                         weak && 'navigation-counter-item--weak',

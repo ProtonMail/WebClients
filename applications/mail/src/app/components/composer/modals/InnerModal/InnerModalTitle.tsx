@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
     id: string;
@@ -10,7 +10,7 @@ interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HT
 const InnerModalTitle = ({ children, className, ...rest }: Props) => {
     return (
         <h1
-            className={classnames(['inner-modal-title outline-none', className])}
+            className={clsx(['inner-modal-title outline-none', className])}
             data-focus-trap-fallback="0"
             tabIndex={-1}
             {...rest}
