@@ -4,7 +4,8 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props extends ButtonLikeProps<'label'> {
     disabled?: boolean;
@@ -42,7 +43,7 @@ const AttachmentsButton = (
                 as="label"
                 color={isAttachments ? 'norm' : 'weak'}
                 shape="ghost"
-                className={classnames(['inline-flex', disabled && 'is-disabled'])}
+                className={clsx(['inline-flex', disabled && 'is-disabled'])}
                 ref={ref}
                 {...rest}
                 data-testid="composer:attachment-button"

@@ -12,11 +12,12 @@ import {
 
 import { c } from 'ttag';
 
-import { classnames, useHandler, useMailSettings, useSubscribeEventManager } from '@proton/components';
+import { useHandler, useMailSettings, useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
@@ -253,7 +254,7 @@ const Composer = (
                 handleCancelSend={handleCancelSend}
             />
             <div
-                className={classnames([
+                className={clsx([
                     'composer-blur-container flex flex-column flex-item-fluid max-w100',
                     // Only hide the editor not to unload it each time a modal is on top
                     innerModal === ComposerInnerModalStates.None ? 'flex' : 'hidden',

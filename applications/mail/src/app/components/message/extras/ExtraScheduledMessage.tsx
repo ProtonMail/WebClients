@@ -8,7 +8,6 @@ import { Button } from '@proton/atoms';
 import {
     Icon,
     Prompt,
-    classnames,
     useApi,
     useEventManager,
     useMailSettings,
@@ -19,6 +18,7 @@ import { cancelSend } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { LABEL_IDS_TO_HUMAN, PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
@@ -121,7 +121,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
             data-testid="message:schedule-banner"
         >
             <Icon name="clock" className="mt0-4 ml0-2 flex-item-noshrink" />
-            <span className={classnames(['pl0-5 pr0-5 flex-item-fluid mt0-25', isScheduleSentShortly && 'mb0-25'])}>
+            <span className={clsx(['pl0-5 pr0-5 flex-item-fluid mt0-25', isScheduleSentShortly && 'mb0-25'])}>
                 {getScheduleBannerMessage()}
             </span>
             {!isScheduleSentShortly ? (

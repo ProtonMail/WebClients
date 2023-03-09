@@ -12,11 +12,12 @@ import {
     useState,
 } from 'react';
 
-import { FeatureCode, classnames, useFeature } from '@proton/components';
+import { FeatureCode, useFeature } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { hasAttachments, isDraft, isOutbox, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { LOAD_RETRY_COUNT } from '../../constants';
@@ -374,7 +375,7 @@ const MessageView = (
     return (
         <article
             ref={elementRef}
-            className={classnames([
+            className={clsx([
                 'message-container mx0-5 my1 relative',
                 expanded && 'is-opened',
                 showFooter && 'has-attachments',

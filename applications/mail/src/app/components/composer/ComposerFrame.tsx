@@ -1,7 +1,8 @@
 import { DragEvent, useEffect, useRef, useState } from 'react';
 
-import { ErrorBoundary, classnames, useHandler, useMailSettings, useToggle, useWindowSize } from '@proton/components';
+import { ErrorBoundary, useHandler, useMailSettings, useToggle, useWindowSize } from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
@@ -115,7 +116,7 @@ const ComposerFrame = ({
         <div
             ref={composerFrameRef}
             data-id={composerIDRef.current}
-            className={classnames([
+            className={clsx([
                 `composer rounded flex flex-column outline-none ${customClasses}`,
                 !focus && 'composer--is-blur',
                 minimized && 'composer--is-minimized',

@@ -3,9 +3,10 @@ import { DragEvent, DragEventHandler, useEffect, useRef, useState } from 'react'
 import { Location } from 'history';
 import { c } from 'ttag';
 
-import { SimpleSidebarListItemHeader, classnames } from '@proton/components';
+import { SimpleSidebarListItemHeader } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
@@ -216,7 +217,7 @@ const MailSidebarSystemFolders = ({
                         onDragEnd={handleResetDragState}
                         onDragOver={handleDragOver(element.labelID)}
                         onDrop={handleDrop(element.labelID, draggedElementId)}
-                        className={classnames([getDnDClasses(element.labelID, draggedElementId)])}
+                        className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <SidebarItem
@@ -258,7 +259,7 @@ const MailSidebarSystemFolders = ({
                               onDragEnd={handleResetDragState}
                               onDragOver={handleDragOver(element.labelID)}
                               onDrop={handleDrop(element.labelID, draggedElementId)}
-                              className={classnames([getDnDClasses(element.labelID, draggedElementId)])}
+                              className={clsx([getDnDClasses(element.labelID, draggedElementId)])}
                           >
                               <SidebarItem
                                   {...getCommonProps(element.labelID)}

@@ -9,7 +9,6 @@ import {
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
-    classnames,
     useEventManager,
     useHotkeys,
     useItemsDroppable,
@@ -18,6 +17,7 @@ import {
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -134,7 +134,7 @@ const SidebarItem = ({
 
     return (
         <SidebarListItem
-            className={classnames([
+            className={clsx([
                 dragOver && 'navigation__dragover',
                 'hide-on-hover-container opacity-on-hover-container',
                 className,

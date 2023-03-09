@@ -3,9 +3,10 @@ import { MutableRefObject } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { EditorMetadata, FeatureCode, Icon, Tooltip, classnames, useFeature } from '@proton/components';
+import { EditorMetadata, FeatureCode, Icon, Tooltip, useFeature } from '@proton/components';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import { MessageState } from '../../../../logic/messages/messagesTypes';
@@ -85,7 +86,7 @@ const ComposerActions = ({
     return (
         <footer
             data-testid="composer:footer"
-            className={classnames(['composer-actions flex-item-noshrink flex max-w100', className])}
+            className={clsx(['composer-actions flex-item-noshrink flex max-w100', className])}
             onClick={addressesBlurRef.current}
         >
             <div className="flex flex-row-reverse flex-align-self-center w100 ml0-5 mr1-5 pl1-25 pr0-25 mb1">

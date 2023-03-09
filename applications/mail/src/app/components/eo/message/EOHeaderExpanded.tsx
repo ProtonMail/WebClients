@@ -2,10 +2,11 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, classnames, useToggle } from '@proton/components';
+import { Icon, useToggle } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { recipientsToRecipientOrGroup } from '../../../helpers/message/messageRecipients';
@@ -51,7 +52,7 @@ const EOHeaderExpanded = ({
 
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'message-header eo-message-header message-header-expanded is-outbound border-bottom',
                 showDetails && 'message-header--showDetails',
                 !messageLoaded && 'is-loading',
@@ -60,10 +61,10 @@ const EOHeaderExpanded = ({
         >
             <div className="flex flex-nowrap flex-align-items-center mx2 mb0-85 on-tiny-mobile-ml0 on-tiny-mobile-mr0">
                 <span className="flex flex-item-fluid flex-nowrap mr0-5">
-                    <div className={classnames(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
+                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
                         <RecipientType
                             label={c('Label Recipient').t`From`}
-                            className={classnames([
+                            className={clsx([
                                 'flex flex-align-items-start flex-nowrap',
                                 !messageLoaded && 'flex-item-fluid',
                             ])}

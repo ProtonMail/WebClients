@@ -12,11 +12,11 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     PrimaryButton,
-    classnames,
     generateUID,
 } from '@proton/components';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
+import clsx from '@proton/utils/clsx';
 
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { RecipientGroup } from '../../../models/address';
@@ -53,7 +53,7 @@ const AddressesGroupModalRow = ({ contact, uid, isChecked, messageSendInfo, onCh
             <span className="min-w1-4e inline-flex align-middle">
                 {(icon || loading) && <EncryptionStatusIcon loading={loading} {...icon} />}
             </span>
-            <Label htmlFor={id} className={classnames(['pt0 pl0-5', cannotSend && 'color-danger'])}>
+            <Label htmlFor={id} className={clsx(['pt0 pl0-5', cannotSend && 'color-danger'])}>
                 {contactToInput(contact)}
             </Label>
         </li>

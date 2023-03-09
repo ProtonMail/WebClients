@@ -13,7 +13,6 @@ import {
     Radio,
     SearchInput,
     Tooltip,
-    classnames,
     generateUID,
     useFolders,
     useLoading,
@@ -25,6 +24,7 @@ import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
@@ -234,7 +234,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                 </ul>
             </div>
             <hr className="m0 flex-item-noshrink" />
-            <div className={classnames(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
+            <div className={clsx(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
                     checked={always}

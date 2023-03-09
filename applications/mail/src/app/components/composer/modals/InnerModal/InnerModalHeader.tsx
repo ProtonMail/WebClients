@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import InnerModalModalCloseButton from './InnerModalCloseButton';
 import InnerModalTitle from './InnerModalTitle';
@@ -26,7 +26,7 @@ const InnerModalHeader = ({
     ...rest
 }: Props) => {
     return (
-        <header className={classnames(['inner-modal-header', className])} {...rest}>
+        <header className={clsx(['inner-modal-header', className])} {...rest}>
             {hasClose ? <InnerModalModalCloseButton closeTextModal={closeTextModal} onClose={onClose} /> : null}
             {typeof children === 'string' ? (
                 <InnerModalTitle id={modalTitleID} className={noEllipsis ? undefined : 'text-ellipsis'}>

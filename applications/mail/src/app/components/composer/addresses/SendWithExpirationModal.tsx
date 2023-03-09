@@ -1,9 +1,10 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Form, Href, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, classnames } from '@proton/components';
+import { Form, Href, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     emails: string[];
@@ -45,7 +46,7 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
                     {emails.map((email, index) => (
                         <li
                             key={index} // eslint-disable-line react/no-array-index-key
-                            className={classnames([index !== emails.length && 'mb0-5'])}
+                            className={clsx([index !== emails.length && 'mb0-5'])}
                         >
                             <span className="block max-w100">{email}</span>
                         </li>
