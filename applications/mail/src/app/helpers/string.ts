@@ -63,8 +63,14 @@ export const uniqID = () => {
     return `pt${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
 };
 
+const lineBreaksRegex = /(?:\r\n|\r|\n)/g;
+
 export const replaceLineBreaks = (content: string) => {
-    return content.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    return content.replace(lineBreaksRegex, '<br />');
+};
+
+export const removeLineBreaks = (content: string) => {
+    return content.replace(lineBreaksRegex, '');
 };
 
 /**
