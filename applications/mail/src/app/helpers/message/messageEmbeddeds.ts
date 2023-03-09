@@ -5,7 +5,7 @@ import unique from '@proton/utils/unique';
 
 import { ENCRYPTED_STATUS } from '../../constants';
 import { LoadEmbeddedResults, MessageEmbeddedImage, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { hash, toUnsignedString } from '../string';
+import { hash, removeLineBreaks, toUnsignedString } from '../string';
 import { querySelectorAll } from './messageContent';
 import { getEmbeddedImages, updateImages } from './messageImages';
 
@@ -39,12 +39,12 @@ export const readContentIDandLocation = ({ Headers = {} }: Attachment = {}) => {
     let cloc = '';
 
     if (Headers['content-id']) {
-        cid = trimQuotes(Headers['content-id']);
+        cid = removeLineBreaks(trimQuotes(Headers['content-id']));
     }
 
     // We can find an image without cid so base64 the location
     if (Headers['content-location']) {
-        cloc = trimQuotes(Headers['content-location']);
+        cloc = removeLineBreaks(trimQuotes(Headers['content-location']));
     }
 
     return { cid, cloc };
@@ -99,7 +99,6 @@ export const createEmbeddedImageFromUpload = (attachment: Attachment): MessageEm
  */
 export const findEmbedded = (cid: string, cloc: string, document: Element) => {
     let selector: string[] = [];
-
     // If cid and cloc are an empty string, it can give a false positive
     if (!cid && !cloc) {
         return [];
