@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { FolderIcon, HotkeyTuple, Icon, classnames } from '@proton/components';
+import { FolderIcon, HotkeyTuple, Icon } from '@proton/components';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import clsx from '@proton/utils/clsx';
 
 import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';
@@ -81,7 +82,7 @@ const SidebarFolder = ({
                         >
                             <Icon
                                 name="chevron-down"
-                                className={classnames([
+                                className={clsx([
                                     'navigation-icon navigation-icon--expand',
                                     !folder.Expanded && 'rotateZ-270',
                                 ])}

@@ -8,13 +8,13 @@ import {
     DropdownMenuButton,
     Icon,
     Tooltip,
-    classnames,
     useDragOver,
     useModalState,
     useNotifications,
     usePopperAnchor,
 } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import clsx from '@proton/utils/clsx';
 
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
@@ -93,7 +93,7 @@ const AddressesGroupItem = ({
     return (
         <>
             <div
-                className={classnames([
+                className={clsx([
                     'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation cursor-grab rounded',
                     dragged && 'composer-addresses-item-dragged',
                 ])}

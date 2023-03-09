@@ -1,16 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    SimpleDropdown,
-    classnames,
-    useActiveBreakpoint,
-} from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useActiveBreakpoint } from '@proton/components';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Filter } from '../../models/tools';
 
@@ -118,7 +112,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
                         size="small"
                         shape="ghost"
                         aria-pressed={isActive}
-                        className={classnames(['text-sm my0 mx0-25', isActive && 'no-pointer-events bg-strong'])}
+                        className={clsx(['text-sm my0 mx0-25', isActive && 'no-pointer-events bg-strong'])}
                         onClick={onClick}
                     >
                         {text}

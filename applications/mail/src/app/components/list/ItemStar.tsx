@@ -3,7 +3,8 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, IconSize, Tooltip, classnames, useLoading, useMailSettings } from '@proton/components';
+import { Icon, IconSize, Tooltip, useLoading, useMailSettings } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
 import { useStar } from '../../hooks/actions/useStar';
@@ -57,7 +58,7 @@ const ItemStar = ({ element, size }: Props) => {
             <button
                 data-testid={`item-star-${isStarred}`}
                 type="button"
-                className={classnames([
+                className={clsx([
                     'starbutton relative item-star flex stop-propagation',
                     isStarred && 'starbutton--is-starred',
                 ])}

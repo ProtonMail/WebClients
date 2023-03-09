@@ -3,7 +3,8 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
-import { DropdownMenu, DropdownMenuButton, EllipsisLoader, Icon, ToolbarButton, classnames } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, EllipsisLoader, Icon, ToolbarButton } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch as testIsSearch } from '../../helpers/elements';
@@ -67,7 +68,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                                             onClick={() => onPage(i + 1)}
                                             aria-label={c('Action').t`Page ${pageNumber}`}
                                             data-testid={`toolbar:page-number-${pageNumber}`}
-                                            className={classnames(['flex flex-row'])}
+                                            className={clsx(['flex flex-row'])}
                                         >
                                             <span className="text-left flex-item-fluid">{pageNumber}</span>
                                             {active ? <Icon name="checkmark" /> : null}
@@ -120,7 +121,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                                             onClick={() => onPage(i + 1)}
                                             aria-label={c('Action').t`Page ${pageNumber}`}
                                             data-testid={`toolbar:page-number-${pageNumber}`}
-                                            className={classnames(['flex flex-row'])}
+                                            className={clsx(['flex flex-row'])}
                                         >
                                             <span className="text-left flex-item-fluid">{pageNumber}</span>
                                             {active ? <Icon name="checkmark" className="mt0-2" /> : null}

@@ -2,12 +2,13 @@ import { RefObject, memo, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Scroll } from '@proton/atoms';
-import { classnames, useLabels, useToggle } from '@proton/components';
+import { useLabels, useToggle } from '@proton/components';
 import { isEditing } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
@@ -171,9 +172,9 @@ const ConversationView = ({
     return showConversationError ? (
         <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />
     ) : (
-        <Scroll className={classnames([hidden && 'hidden'])} customContainerRef={containerRef}>
+        <Scroll className={clsx([hidden && 'hidden'])} customContainerRef={containerRef}>
             <ConversationHeader
-                className={classnames([hidden && 'hidden'])}
+                className={clsx([hidden && 'hidden'])}
                 loading={loadingConversation}
                 element={conversation}
             />

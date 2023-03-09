@@ -16,10 +16,10 @@ import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { ErrorBoundary, useTheme } from '@proton/components/containers';
-import { classnames } from '@proton/components/helpers';
 import { useAddresses, useHandler, useMailSettings, useUserSettings } from '@proton/components/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
+import clsx from '@proton/utils/clsx';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { getFromAddress } from '../../../helpers/addresses';
@@ -282,7 +282,7 @@ const QuickReply = ({
                 </Tooltip>
             </div>
             <div
-                className={classnames([
+                className={clsx([
                     'border border-weak quick-reply-container bg-norm relative field textarea rounded-lg flex flex-nowrap flex-column mx1 mb1',
                     hasFocus && 'is-focused',
                     needsDarkStyle && 'quick-reply-container-dark-style',
@@ -317,7 +317,7 @@ const QuickReply = ({
                         <ErrorBoundary component={() => null}>
                             <Suspense fallback={null}>
                                 <ToolbarEmojiDropdown
-                                    className={classnames([
+                                    className={clsx([
                                         'button button-for-icon quick-reply-emoji-button ml0-25',
                                         needsDarkStyle && 'quick-reply-emoji-button-dark-style',
                                     ])}

@@ -1,8 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Progress, classnames } from '@proton/components';
+import { Icon, Progress } from '@proton/components';
 import gift from '@proton/styles/assets/img/illustrations/gift.svg';
+import clsx from '@proton/utils/clsx';
 
 interface GetStartedChecklistHeaderInterface {
     numberOfCompletedItems: number;
@@ -18,7 +19,7 @@ const GetStartedChecklistHeader = ({
     return (
         <div>
             <div className="flex flex-align-items-center flex-justify-space-between">
-                <span className={classnames(['flex flex-align-items-center', !onDismiss ? 'w100' : 'w80'])}>
+                <span className={clsx(['flex flex-align-items-center', !onDismiss ? 'w100' : 'w80'])}>
                     <span className="get-started_gift mr1">
                         {/*
                          * if we don't put an empty alt attribute here, some vocalizers
@@ -49,7 +50,7 @@ const GetStartedChecklistHeader = ({
                 )}
             </div>
 
-            <div className={classnames(['ml0-5', !onDismiss ? 'w100' : 'w80'])}>
+            <div className={clsx(['ml0-5', !onDismiss ? 'w100' : 'w80'])}>
                 <Progress className="progress-bar--success" value={numberOfCompletedItems} max={totalNumberOfItems} />
             </div>
         </div>

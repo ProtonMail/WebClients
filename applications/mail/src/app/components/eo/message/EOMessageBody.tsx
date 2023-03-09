@@ -1,8 +1,8 @@
 import { useMemo, useRef } from 'react';
 
-import { classnames } from '@proton/components';
 import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
@@ -39,7 +39,7 @@ const EOMessageBody = ({ message, messageLoaded, bodyLoaded, sourceMode: inputSo
     return (
         <div
             ref={bodyRef}
-            className={classnames([
+            className={clsx([
                 'message-content scroll-horizontal-if-needed relative bodyDecrypted bg-norm color-norm px2 py1 on-tiny-mobile-pl0 on-tiny-mobile-pr0',
                 plain && 'plain',
             ])}
