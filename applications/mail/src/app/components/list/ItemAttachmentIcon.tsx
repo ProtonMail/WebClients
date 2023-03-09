@@ -2,8 +2,9 @@ import { MouseEvent, createElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Icon, IconName, Tooltip, classnames } from '@proton/components';
+import { Icon, IconName, Tooltip } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import clsx from '@proton/utils/clsx';
 
 import { getNumAttachments } from '../../helpers/elements';
 import { Element } from '../../models/element';
@@ -33,7 +34,7 @@ const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paper-clip' }
           );
 
     const commonProps = {
-        className: classnames(['flex', className]),
+        className: clsx(['flex', className]),
         'data-testid': `item-attachment-icon-${icon}`,
     };
     const buttonProps = {

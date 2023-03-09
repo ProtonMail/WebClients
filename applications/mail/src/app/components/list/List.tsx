@@ -6,7 +6,6 @@ import { c, msgid } from 'ttag';
 import {
     MnemonicPromptModal,
     PaginationRow,
-    classnames,
     getCanReactiveMnemonic,
     useConversationCounts,
     useEventManager,
@@ -20,6 +19,7 @@ import {
 } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { ChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -204,10 +204,10 @@ const List = (
     }, [conversationMode, labelID, conversationCounts, messageCounts]);
 
     return (
-        <div className={classnames(['relative items-column-list relative', !show && 'hidden'])}>
+        <div className={clsx(['relative items-column-list relative', !show && 'hidden'])}>
             <div
                 ref={ref}
-                className={classnames(['h100 scroll-if-needed scroll-smooth-touch', isCompactView && 'list-compact'])}
+                className={clsx(['h100 scroll-if-needed scroll-smooth-touch', isCompactView && 'list-compact'])}
             >
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}{' '}

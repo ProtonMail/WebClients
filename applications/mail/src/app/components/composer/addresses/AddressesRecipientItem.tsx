@@ -8,7 +8,6 @@ import {
     DropdownMenuButton,
     Icon,
     Tooltip,
-    classnames,
     useContactModals,
     useDragOver,
     useNotifications,
@@ -18,6 +17,7 @@ import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { inputToRecipient, recipientToInput } from '@proton/shared/lib/mail/recipient';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { DRAG_ADDRESS_KEY } from '../../../constants';
@@ -171,7 +171,7 @@ const AddressesRecipientItem = ({
     return (
         <>
             <div
-                className={classnames([
+                className={clsx([
                     'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation rounded',
                     !valid && 'invalid',
                     cannotSend && 'color-danger invalid',
@@ -195,7 +195,7 @@ const AddressesRecipientItem = ({
                     )}
                     <Tooltip title={title}>
                         <span
-                            className={classnames([
+                            className={clsx([
                                 'composer-addresses-item-label myauto text-ellipsis pr0-5',
                                 icon || loading || !valid ? 'pl0-25' : 'pl0-5',
                             ])}

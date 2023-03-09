@@ -2,7 +2,6 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import {
     getHasOnlyIcsAttachments,
@@ -11,6 +10,7 @@ import {
     isExpiring,
     isScheduled,
 } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useExpiration } from '../../../hooks/useExpiration';
@@ -66,7 +66,7 @@ const HeaderCollapsed = ({
 
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'message-header message-header-collapsed px1-25 flex flex-nowrap flex-align-items-center',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',

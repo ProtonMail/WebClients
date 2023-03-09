@@ -1,6 +1,6 @@
 import { FormEvent, ReactNode } from 'react';
 
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 interface Props {
@@ -31,7 +31,7 @@ const InnerModalContent = ({
             onSubmit={handleSubmit}
             onReset={onReset}
             autoComplete={autoComplete}
-            className={classnames(['inner-modal-content', className])}
+            className={clsx(['inner-modal-content', className])}
             noValidate={noValidate}
             method="post"
             {...rest}

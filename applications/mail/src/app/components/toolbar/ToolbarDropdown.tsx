@@ -7,10 +7,10 @@ import {
     DropdownProps,
     DropdownSizeUnit,
     Tooltip,
-    classnames,
     generateUID,
     usePopperAnchor,
 } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 export interface DropdownRenderProps {
     onClose: () => void;
@@ -82,7 +82,7 @@ const ToolbarDropdown = ({
                     hasCaret={hasCaret}
                     disabled={disabled}
                     caretClassName="toolbar-icon"
-                    className={classnames([
+                    className={clsx([
                         'toolbar-button flex flex-align-items-center',
                         hasCaret && 'toolbar-button--dropdown',
                         className,
@@ -101,7 +101,7 @@ const ToolbarDropdown = ({
                 size={dropdownSize}
                 anchorRef={anchorRef}
                 onClose={close}
-                className={classnames(['toolbar-dropdown', dropDownClassName])}
+                className={clsx(['toolbar-dropdown', dropDownClassName])}
                 contentProps={children.contentProps}
             >
                 {children.render({ onClose: close, onLock: setLock, onOpenAdditionnal: setAdditionalOpen })}

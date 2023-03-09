@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { classnames } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -24,7 +24,7 @@ const EOReplyHeader = ({ message }: Props) => {
             <div className="message-header eo-message-header message-header-expanded is-outbound border-top border-bottom px2 py1 on-tiny-mobile-pl0 on-tiny-mobile-pr0">
                 <RecipientType
                     label={c('Label').t`From:`}
-                    className={classnames(['flex flex-align-items-start flex-nowrap mb0-85'])}
+                    className={clsx(['flex flex-align-items-start flex-nowrap mb0-85'])}
                 >
                     <RecipientItem
                         recipientOrGroup={{ recipient: message.data?.EORecipient }}
@@ -36,7 +36,7 @@ const EOReplyHeader = ({ message }: Props) => {
                 </RecipientType>
                 <RecipientType
                     label={c('Label').t`To:`}
-                    className={classnames(['flex flex-align-items-start flex-nowrap message-recipient-expanded'])}
+                    className={clsx(['flex flex-align-items-start flex-nowrap message-recipient-expanded'])}
                 >
                     <RecipientItem
                         recipientOrGroup={{ recipient: message.data?.Sender }}

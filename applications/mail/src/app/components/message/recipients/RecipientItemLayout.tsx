@@ -2,10 +2,11 @@ import { MouseEvent, ReactNode, RefObject, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ProtonBadgeType, classnames, useHotkeys } from '@proton/components';
+import { ProtonBadgeType, useHotkeys } from '@proton/components';
 import { highlightNode } from '@proton/encrypted-search';
 import { useCombinedRefs } from '@proton/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { RecipientOrGroup } from '../../../models/address';
@@ -119,7 +120,7 @@ const RecipientItemLayout = ({
     // had to use span instead of button, otherwise ellipsis can't work
     return (
         <span
-            className={classnames([
+            className={clsx([
                 'inline-flex flex-align-items-center flex-nowrap message-recipient-item max-w100 cursor-pointer',
                 isLoading && 'flex-item-fluid',
             ])}
@@ -133,13 +134,10 @@ const RecipientItemLayout = ({
             data-testid={customDataTestId ? customDataTestId : `recipient:details-dropdown-${title}`}
         >
             <span
-                className={classnames([
-                    'flex flex-align-items-center flex-nowrap max-w100',
-                    isLoading && 'flex-item-fluid',
-                ])}
+                className={clsx(['flex flex-align-items-center flex-nowrap max-w100', isLoading && 'flex-item-fluid'])}
             >
                 <span
-                    className={classnames([
+                    className={clsx([
                         'inline-flex flex-item-fluid flex-nowrap relative',
                         !isOutside && showDropdown && 'message-recipient-item-label-address',
                     ])}
@@ -152,7 +150,7 @@ const RecipientItemLayout = ({
                         )}
                         {icon}
                         <span
-                            className={classnames([
+                            className={clsx([
                                 'message-recipient-item-label',
                                 isLoading && 'inline-block',
                                 isNarrow && 'text-strong',
@@ -166,7 +164,7 @@ const RecipientItemLayout = ({
                         )}
                         {showAddress && (
                             <span
-                                className={classnames([
+                                className={clsx([
                                     'message-recipient-item-address ml0-25',
                                     isLoading && 'inline-block',
                                     isRecipient ? 'color-weak' : 'color-primary',

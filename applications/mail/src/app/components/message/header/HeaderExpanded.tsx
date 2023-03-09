@@ -7,7 +7,6 @@ import {
     ButtonGroup,
     Icon,
     Tooltip,
-    classnames,
     useAddresses,
     useContactModals,
     useMailSettings,
@@ -19,6 +18,7 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getHasOnlyIcsAttachments, getRecipients, isInternal, isScheduled } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
@@ -192,7 +192,7 @@ const HeaderExpanded = ({
 
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'message-header px1-25 message-header-expanded',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 !messageLoaded && 'is-loading',
@@ -223,7 +223,7 @@ const HeaderExpanded = ({
                 onClick={handleClick}
             >
                 <span className="flex flex-item-fluid flex-nowrap mr0-5">
-                    <div className={classnames(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
+                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
                         {isNarrow ? (
                             <span className="message-header-recipient-mobile">{from}</span>
                         ) : (

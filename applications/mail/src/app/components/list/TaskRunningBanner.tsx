@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, classnames } from '@proton/components';
+import { Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     className?: string;
@@ -9,7 +10,7 @@ interface Props {
 const TaskRunningBanner = ({ className }: Props) => {
     return (
         <div
-            className={classnames([
+            className={clsx([
                 'bg-weak rounded mx1 mb1 px1 py0-5 flex flex-wrap flex-justify-start flex-align-items-center',
                 className,
             ])}
