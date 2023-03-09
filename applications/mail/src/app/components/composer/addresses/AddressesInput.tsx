@@ -11,6 +11,8 @@ import {
     useContactGroups,
     useNotifications,
 } from '@proton/components';
+import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import clsx from '@proton/utils/clsx';
@@ -65,9 +67,11 @@ const AddressesInput = ({
 
     const { createNotification } = useNotifications();
 
-    const inputRef = useRef<HTMLInputElement>(null);
-
     const [recipientsOrGroups, setRecipientsOrGroups] = useState(() => getRecipientsOrGroups(recipients));
+
+    const prevRecipientsOrGroupsLengthRef = useRef(recipientsOrGroups.length);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => setRecipientsOrGroups(getRecipientsOrGroups(recipients)), [recipients]);
 
@@ -186,6 +190,28 @@ const AddressesInput = ({
         />
     );
 
+    useEffect(() => {
+        const status: 'addedItem' | 'deletedItem' | 'equal' = (() => {
+            if (recipientsOrGroups.length > prevRecipientsOrGroupsLengthRef.current) {
+                return 'addedItem';
+            } else if (recipientsOrGroups.length < prevRecipientsOrGroupsLengthRef.current) {
+                return 'deletedItem';
+            }
+            return 'equal';
+        })();
+
+        // Be sure we scroll to the bottom of the container when we add items
+        if (status === 'addedItem') {
+            void (async function scrollAtContainerBottom() {
+                // Tick processor needed to get scroll working
+                await wait(0);
+                scrollIntoView(containerRef.current, { block: 'end' });
+            })();
+        }
+
+        prevRecipientsOrGroupsLengthRef.current = recipientsOrGroups.length;
+    }, [recipientsOrGroups.length]);
+
     return (
         <div className={clsx(['composer-addresses-autocomplete w100 flex flex-item-fluid relative', classname])}>
             <div
@@ -195,9 +221,10 @@ const AddressesInput = ({
                     hasLighterFieldDesign && 'composer-light-field',
                 ])}
                 onClick={handleClick}
+                aria-hidden="true"
                 {...containerDragHandlers}
             >
-                <div className="flex-item-fluid flex flex-wrap max-w100 max-h100 relative">
+                <div className="flex-item-fluid flex flex-wrap max-w100 max-h100 relative" ref={containerRef}>
                     {recipientsOrGroups.map((recipientOrGroup, index) => (
                         <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
                             {index === placeholderPosition && dragPlaceholder}
