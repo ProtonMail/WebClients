@@ -5,7 +5,10 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms';
 import { Header, MainLogo, Unauthenticated, useConfig } from '@proton/components';
 import Footer from '@proton/components/components/footer/Footer';
+import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUser';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import clsx from '@proton/utils/clsx';
 
 import { DRIVE_LANDING_PAGE } from '../constant';
@@ -20,6 +23,9 @@ interface Props {
 
 export default function SharedPageLayout({ FooterComponent, children, className }: Props) {
     const { APP_NAME } = useConfig();
+
+    // This does not allow to get any user information but allow us to know if the user was already logged in Proton
+    const isLoggedIn = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
 
     const containerClassname = clsx([
         'shared-page-layout-bg flex-no-min-children flex-nowrap flex-column h100 scroll-if-needed relative',
@@ -36,9 +42,15 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                     </div>
 
                     <div className="flex flex-justify-end flex-item-fluid flex-item-centered-vert">
-                        <ButtonLike color="norm" shape="outline" as="a" href={DRIVE_LANDING_PAGE} target="_blank">
-                            {c('Action').t`Create account`}
-                        </ButtonLike>
+                        {isLoggedIn ? (
+                            <ButtonLike color="norm" shape="outline" as="a" href={APPS.PROTONDRIVE} target="_blank">
+                                {c('Action').t`Go to Drive`}
+                            </ButtonLike>
+                        ) : (
+                            <ButtonLike color="norm" shape="outline" as="a" href={DRIVE_LANDING_PAGE} target="_blank">
+                                {c('Action').t`Create account`}
+                            </ButtonLike>
+                        )}
                     </div>
                 </Header>
                 <main
