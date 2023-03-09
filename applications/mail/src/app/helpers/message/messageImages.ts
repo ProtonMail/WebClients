@@ -213,12 +213,13 @@ export const handleDispatchLoadFakeImagesProxy = (
     ID: string,
     imagesToLoad: MessageRemoteImage[],
     api: Api,
-    dispatch: (action: any) => void
+    dispatch: (action: any) => void,
+    firstLoad?: boolean
 ) => {
     // Make one call per image, it's possible that several images in the message have the same URL.
     const uniqueImages = uniqueBy(imagesToLoad, (image) => image.url);
     const dispatchResult = uniqueImages.map((image) => {
-        return dispatch(loadFakeProxy({ ID, imageToLoad: image, api }));
+        return dispatch(loadFakeProxy({ ID, imageToLoad: image, api, firstLoad }));
     });
     return dispatchResult as any as Promise<LoadRemoteResults[]>;
 };

@@ -347,6 +347,10 @@ export interface LoadRemoteParams {
     ID: string;
     imageToLoad: MessageRemoteImage;
     api: Api;
+    /**
+     * Used when fake loading images for the first time
+     */
+    firstLoad?: boolean;
 }
 
 export interface LoadRemoteFromURLParams {

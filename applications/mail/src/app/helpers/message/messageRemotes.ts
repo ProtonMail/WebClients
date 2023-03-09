@@ -109,13 +109,14 @@ export const loadRemoteImages = async (
 
 export const loadFakeImages = async (
     images: MessageRemoteImage[],
-    onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void
+    onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void,
+    firstLoad = false
 ) => {
     // Not really happy with this hack but we need to "wait" that the message transform process is finished
     // And update the message cache before updating image statuses
     await wait(0);
 
-    return onLoadFakeImagesProxy(images);
+    return onLoadFakeImagesProxy(images, firstLoad);
 };
 
 export const loadSkipProxyImages = async (
