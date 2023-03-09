@@ -11,6 +11,7 @@ export type SharedUrlInfo = {
     ExpireTime: number | null;
     ShareUrlID: string;
     Token: string;
+    NumAccesses?: number;
 };
 
 interface FileProperties {
