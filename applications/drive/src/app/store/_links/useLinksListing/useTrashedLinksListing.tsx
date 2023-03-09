@@ -60,7 +60,8 @@ export function useTrashedLinksListing() {
             queryVolumeTrash(volumeId, { Page: page, PageSize: PAGE_SIZE })
         );
 
-        const hasNextPage = Object.values(response.Trash).some((share) => share.LinkIDs.length === PAGE_SIZE);
+        const totalLinks = Object.values(response.Trash).reduce((acc, trash) => acc + trash.LinkIDs.length, 0);
+        const hasNextPage = totalLinks >= PAGE_SIZE;
 
         return {
             response,

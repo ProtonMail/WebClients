@@ -32,7 +32,7 @@ export default function useTrashView() {
     const { sortedList, sortParams, setSorting } = useSortingWithDefault(cachedTrashedLinks, DEFAULT_SORT);
 
     const loadTrashListing = async (signal: AbortSignal) => {
-        const defaultShare = await getDefaultShare();
+        const defaultShare = await getDefaultShare(signal);
         volumeId.current = defaultShare.volumeId;
         await linksListing.loadTrashedLinks(signal, defaultShare.volumeId);
     };

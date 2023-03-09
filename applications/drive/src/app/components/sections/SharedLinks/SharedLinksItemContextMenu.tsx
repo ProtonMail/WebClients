@@ -7,7 +7,6 @@ import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 import { StopSharingButton } from './ContextMenuButtons';
 
 export function SharedLinksItemContextMenu({
-    shareId,
     selectedLinks,
     anchorRef,
     isOpen,
@@ -15,7 +14,6 @@ export function SharedLinksItemContextMenu({
     open,
     close,
 }: ContextMenuProps & {
-    shareId: string;
     selectedLinks: DecryptedLink[];
 }) {
     const selectedLink = selectedLinks[0];
@@ -28,11 +26,13 @@ export function SharedLinksItemContextMenu({
 
     return (
         <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-            {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
-            <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
-            {isOnlyOneItem && <RenameButton shareId={shareId} link={selectedLink} close={close} />}
+            {hasPreviewAvailable && (
+                <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
+            )}
+            {<DownloadButton selectedLinks={selectedLinks} close={close} />}
+            {isOnlyOneItem && <RenameButton shareId={selectedLink.rootShareId} link={selectedLink} close={close} />}
             <DetailsButton selectedLinks={selectedLinks} close={close} />
-            {isOnlyOneItem && <ShareLinkButton shareId={shareId} link={selectedLink} close={close} />}
+            {isOnlyOneItem && <ShareLinkButton shareId={selectedLink.rootShareId} link={selectedLink} close={close} />}
             <StopSharingButton selectedLinks={selectedLinks} close={close} />
         </ItemContextMenu>
     );

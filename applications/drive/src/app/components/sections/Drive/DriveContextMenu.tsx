@@ -38,17 +38,21 @@ export function DriveItemContextMenu({
 
     return (
         <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-            {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
+            {hasPreviewAvailable && (
+                <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
+            )}
             {hasPreviewAvailable && <ContextSeparator />}
-            <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
-            {hasLink && <CopyLinkButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
-            {isOnlyOneItem && <ShareLinkButton shareId={shareId} link={selectedLink} close={close} />}
+            <DownloadButton selectedLinks={selectedLinks} close={close} />
+            {hasLink && (
+                <CopyLinkButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
+            )}
+            {isOnlyOneItem && <ShareLinkButton shareId={selectedLink.rootShareId} link={selectedLink} close={close} />}
             <ContextSeparator />
             {!isActiveLinkReadOnly ? (
                 <MoveToFolderButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
             ) : null}
             {isOnlyOneItem && !isActiveLinkReadOnly && (
-                <RenameButton shareId={shareId} link={selectedLink} close={close} />
+                <RenameButton shareId={selectedLink.rootShareId} link={selectedLink} close={close} />
             )}
             <DetailsButton selectedLinks={selectedLinks} close={close} />
             <ContextSeparator />
