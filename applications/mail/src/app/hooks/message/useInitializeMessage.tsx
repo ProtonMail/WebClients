@@ -154,8 +154,8 @@ export const useInitializeMessage = () => {
                 return handleDispatchLoadImagesProxy(localID, imagesToLoad, authentication, dispatch);
             };
 
-            const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[]) => {
-                return handleDispatchLoadFakeImagesProxy(localID, imagesToLoad, api, dispatch);
+            const handleLoadFakeImagesProxy = (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => {
+                return handleDispatchLoadFakeImagesProxy(localID, imagesToLoad, api, dispatch, firstLoad);
             };
 
             const handleLoadRemoteImagesDirect = (imagesToLoad: MessageRemoteImage[]) => {
