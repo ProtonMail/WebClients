@@ -70,8 +70,8 @@ const QuickReplyContainer = ({
      * Full sentence for reference: "Quick reply to Michael Scott, dwight.schrutte@pm.me"
      */
     const replyToString = isReferenceMessageInitialized
-        ? c('l10n_nightly_Info').t`Quick reply to ${recipientsAsString}`
-        : c('l10n_nightly_Info').t`Quick reply`;
+        ? c('loc_nightly_Info').t`Quick reply to ${recipientsAsString}`
+        : c('loc_nightly_Info').t`Quick reply`;
 
     return (
         <div className="quick-reply-wrapper bg-norm color-norm pt0-75 pb1">
@@ -98,7 +98,7 @@ const QuickReplyContainer = ({
                         icon
                         disabled
                     >
-                        <Icon name="paper-plane" alt={c('l10n_nightly_action').t`Send quick reply`} />
+                        <Icon name="paper-plane" alt={c('loc_nightly_action').t`Send quick reply`} />
                     </Button>
                 </div>
             ) : (
