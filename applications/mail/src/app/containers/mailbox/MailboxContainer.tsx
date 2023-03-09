@@ -156,7 +156,7 @@ const MailboxContainer = ({
     const onCompose = useOnCompose();
 
     useMailboxPageTitle(labelID, location);
-    useScrollToTop(listRef as RefObject<HTMLElement>, page, labelID);
+    useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, searchParameters]);
 
     const {
         checkedIDs,
