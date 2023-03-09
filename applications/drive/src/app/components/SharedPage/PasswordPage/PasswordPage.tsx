@@ -23,7 +23,7 @@ export default function PasswordPage({ submitPassword }: Props) {
     };
 
     return (
-        <SharedPageLayout className="password-page">
+        <SharedPageLayout>
             <div className="flex flex-item-fluid flex-align-items-center py2 mb4">
                 <div className="password-page--form-container ui-standard w100 relative shadow-lifted mw30r max-w100 center px2-25 py3 rounded">
                     <div className="flex flex-justify-center pb2">
