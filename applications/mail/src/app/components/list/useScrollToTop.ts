@@ -1,16 +1,16 @@
-import { RefObject, useEffect } from 'react';
+import { DependencyList, RefObject, useEffect } from 'react';
 
 // Scroll to top of list when page or label changes
-const useScrollToTop = (ref: RefObject<HTMLElement>, page: number, labelID: string) => {
+const useScrollToTop = (ref: RefObject<HTMLElement>, dependencies: DependencyList) => {
     const scrollTop = () => {
-        if (ref && ref.current) {
+        if (ref.current) {
             ref.current.scrollTop = 0;
         }
     };
 
     useEffect(() => {
         scrollTop();
-    }, [page, labelID]);
+    }, dependencies);
 };
 
 export default useScrollToTop;
