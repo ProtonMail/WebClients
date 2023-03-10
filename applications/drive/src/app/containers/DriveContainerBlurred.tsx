@@ -7,20 +7,17 @@ import {
     CollapsingBreadcrumbs,
     ContactDrawerAppButton,
     DrawerSidebar,
-    FeatureCode,
     MainLogo,
     ModalsChildren,
     PrivateAppContainer,
     PrivateMainArea,
     SidebarPrimaryButton,
     useActiveBreakpoint,
-    useFeature,
     useToggle,
     useUser,
 } from '@proton/components';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ListView } from '../components/FileBrowser';
@@ -44,7 +41,6 @@ const DriveContainerBlurred = () => {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: toggleExpanded } = useToggle();
     const { isDesktop } = useActiveBreakpoint();
-    const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
 
     const logo = <MainLogo to="/" />;
     const dummyUploadButton = (
@@ -92,7 +88,7 @@ const DriveContainerBlurred = () => {
 
     const Cells = isDesktop ? desktopCells : mobileCells;
 
-    const permissions = getDriveDrawerPermissions({ user, drawerFeature });
+    const permissions = getDriveDrawerPermissions({ user });
     const drawerSidebarButtons = [
         permissions.contacts && <ContactDrawerAppButton />,
         permissions.calendar && <CalendarDrawerAppButton />,

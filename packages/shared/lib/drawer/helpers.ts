@@ -1,10 +1,8 @@
-import { Feature } from '@proton/components/containers';
 import { isURLProtonInternal } from '@proton/components/helpers/url';
 
 import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';
 import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../constants';
-import { DrawerFeatureFlag } from '../interfaces/Drawer';
 import window from '../window';
 import { DRAWER_ACTION, DRAWER_APPS, DRAWER_EVENTS } from './interfaces';
 
@@ -125,16 +123,8 @@ export const addParentAppToUrl = (url: string, currentApp: APP_NAMES, replacePat
     return targetUrl.href;
 };
 
-export const getDisplayContactsInDrawer = (app: APP_NAMES, drawerFeature?: Feature<DrawerFeatureFlag>) => {
-    if (app === APPS.PROTONMAIL) {
-        return !!drawerFeature?.Value.ContactsInMail;
-    } else if (app === APPS.PROTONCALENDAR) {
-        return !!drawerFeature?.Value.ContactsInCalendar;
-    } else if (app === APPS.PROTONDRIVE) {
-        return !!drawerFeature?.Value.ContactsInDrive;
-    }
-
-    return false;
+export const getDisplayContactsInDrawer = (app: APP_NAMES) => {
+    return app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR || app === APPS.PROTONDRIVE;
 };
 
 export const closeDrawerFromChildApp = (parentApp: APP_NAMES, currentApp: APP_NAMES, closeDefinitely?: boolean) => {
@@ -155,24 +145,10 @@ export const isAppInView = (currentApp: DRAWER_APPS, appInView?: DRAWER_APPS) =>
     return appInView ? appInView === currentApp : false;
 };
 
-export const getDisplayCalendarInDrawer = (app: APP_NAMES, drawerFeature: Feature<DrawerFeatureFlag>) => {
-    if (app === APPS.PROTONMAIL) {
-        return !!drawerFeature?.Value.CalendarInMail;
-    } else if (app === APPS.PROTONDRIVE) {
-        return !!drawerFeature?.Value.CalendarInDrive;
-    }
-
-    return false;
-};
-
-export const getDisplayDrawerApp = (
-    currentApp: APP_NAMES,
-    toOpenApp: DRAWER_APPS,
-    drawerFeature: Feature<DrawerFeatureFlag>
-) => {
+export const getDisplayDrawerApp = (currentApp: APP_NAMES, toOpenApp: DRAWER_APPS) => {
     if (toOpenApp === APPS.PROTONCALENDAR) {
-        return getDisplayCalendarInDrawer(currentApp, drawerFeature);
+        return currentApp === APPS.PROTONMAIL || currentApp === APPS.PROTONDRIVE;
     } else if (toOpenApp === APPS.PROTONCONTACTS) {
-        return getDisplayContactsInDrawer(currentApp, drawerFeature);
+        return getDisplayContactsInDrawer(currentApp);
     }
 };
