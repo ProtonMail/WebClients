@@ -18,12 +18,12 @@ export const HeaderSubtitle = ({ size }: Props) => {
                 <Icon name="lock-open-check-filled" className="mr0-5" />
                 <span className="encryption-block-text">{c('Info').t`End-to-end encrypted`}</span>
             </div>
-            {size && (
+            {size ? (
                 <>
                     <span className="shared-folder-header-separator ml0-5 mr0-5">•</span>
                     <span className="shared-folder-header-share-size text-pre">{readableSize}</span>
                 </>
-            )}
+            ) : null}
         </div>
     );
 };
