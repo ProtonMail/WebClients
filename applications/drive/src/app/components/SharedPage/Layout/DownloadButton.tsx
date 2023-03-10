@@ -18,9 +18,10 @@ export interface DownloadButtonProps {
     rootItem: DecryptedLink;
     items: PublicLink[];
     className?: string;
+    onDownload?: () => void;
 }
 
-export function DownloadButton({ items, className, rootItem }: DownloadButtonProps) {
+export function DownloadButton({ items, className, rootItem, onDownload }: DownloadButtonProps) {
     const [downloadedSize, setDownloadedSize] = useState<number>(0);
     const [totalSize, setTotalSize] = useState<number>(0);
 
@@ -35,7 +36,10 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
 
     const downloadLinksProgresses = getDownloadsLinksProgresses();
 
-    const onDownload = () => {
+    const handleDownload = () => {
+        if (onDownload) {
+            onDownload();
+        }
         // To keep always only one download around.
         clearDownloads();
 
@@ -93,7 +97,7 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
         <Button
             className={clsx(['flex-item-centered-vert', className])}
             color="norm"
-            onClick={onDownload}
+            onClick={handleDownload}
             loading={isDownloading}
         >
             {isDownloading ? inProgressText : idleText}
