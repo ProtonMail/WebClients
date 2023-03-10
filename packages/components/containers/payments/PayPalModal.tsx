@@ -67,6 +67,7 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
 
     return (
         <Prompt
+            data-testid="addPPalModalTitle"
             title={c('Title').t`Add PayPal payment method`}
             onClose={onClose}
             buttons={[
