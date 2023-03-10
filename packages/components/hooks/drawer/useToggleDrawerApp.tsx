@@ -6,7 +6,6 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { addParentAppToUrl, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_APPS, DRAWER_EVENTS, IframeSrcMap, OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
-import window from '@proton/shared/lib/window';
 
 interface Props {
     appInView: DRAWER_APPS | undefined;

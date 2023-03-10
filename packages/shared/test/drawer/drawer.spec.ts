@@ -1,7 +1,5 @@
-import { Feature } from '@proton/components/containers';
 import { APPS, APPS_CONFIGURATION, APP_NAMES } from '@proton/shared/lib/constants';
 import { DRAWER_ACTION, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 
 import {
     addParentAppToUrl,
@@ -10,6 +8,7 @@ import {
     drawerIframeApps,
     drawerNativeApps,
     getDisplayContactsInDrawer,
+    getDisplayDrawerApp,
     getIsAuthorizedApp,
     getIsDrawerPostMessage,
     getIsIframedDrawerApp,
@@ -224,31 +223,17 @@ describe('drawer helpers', () => {
     describe('getDisplayContactsInDrawer', () => {
         it('should be possible to display contacts in Drawer', () => {
             const apps: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE];
-            const drawerFeature = {
-                Value: {
-                    ContactsInMail: true,
-                    ContactsInCalendar: true,
-                    ContactsInDrive: true,
-                } as DrawerFeatureFlag,
-            } as Feature;
 
             apps.forEach((app) => {
-                expect(getDisplayContactsInDrawer(app, drawerFeature)).toBeTruthy();
+                expect(getDisplayContactsInDrawer(app)).toBeTruthy();
             });
         });
 
-        it('should not be possible to display contacts in Drawer', function () {
-            const apps: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONACCOUNTLITE];
-            const drawerFeature = {
-                Value: {
-                    ContactsInMail: false,
-                    ContactsInCalendar: false,
-                    ContactsInDrive: false,
-                } as DrawerFeatureFlag,
-            } as Feature;
+        it('should not be possible to display contacts in Drawer', () => {
+            const apps: APP_NAMES[] = [APPS.PROTONACCOUNTLITE, APPS.PROTONACCOUNT];
 
             apps.forEach((app) => {
-                expect(getDisplayContactsInDrawer(app, drawerFeature)).toBeFalsy();
+                expect(getDisplayContactsInDrawer(app)).toBeFalsy();
             });
         });
     });
@@ -264,6 +249,40 @@ describe('drawer helpers', () => {
             const appInView = APPS.PROTONCONTACTS;
             const currentApp = APPS.PROTONCALENDAR;
             expect(isAppInView(currentApp, appInView)).toBeFalsy();
+        });
+    });
+
+    describe('getDisplayDrawerApp', () => {
+        it('should be possible to open calendar app', () => {
+            const apps: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONDRIVE];
+
+            apps.forEach((app) => {
+                expect(getDisplayDrawerApp(app, APPS.PROTONCALENDAR)).toBeTruthy();
+            });
+        });
+
+        it('should not be possible to open calendar app', () => {
+            const apps: APP_NAMES[] = [APPS.PROTONCALENDAR, APPS.PROTONCONTACTS, APPS.PROTONACCOUNT];
+
+            apps.forEach((app) => {
+                expect(getDisplayDrawerApp(app, APPS.PROTONCALENDAR)).toBeFalsy();
+            });
+        });
+
+        it('should be possible to open contact app', () => {
+            const apps: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE];
+
+            apps.forEach((app) => {
+                expect(getDisplayDrawerApp(app, APPS.PROTONCONTACTS)).toBeTruthy();
+            });
+        });
+
+        it('should not be possible to open contacts app', () => {
+            const apps: APP_NAMES[] = [APPS.PROTONCONTACTS, APPS.PROTONACCOUNT];
+
+            apps.forEach((app) => {
+                expect(getDisplayDrawerApp(app, APPS.PROTONCONTACTS)).toBeFalsy();
+            });
         });
     });
 });
