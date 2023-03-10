@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { NavigationControl } from '@proton/components/containers';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 
@@ -10,6 +11,7 @@ import { usePublicFileView } from '../../../store/_views/useFileView';
 import { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import UpsellFloatingModal from '../../UpsellFloatingModal';
 import Breadcrumbs from '../Layout/Breadcrumbs';
 import { HeaderSubtitle } from '../Layout/HeaderSubtitle';
 import SharedPageFooter from '../Layout/SharedPageFooter';
@@ -88,6 +90,17 @@ export default function SharedFolder({ token, rootLink }: Props) {
     const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
+    const [renderUpsellFloatingModal, handleToggleModal] = useModalTwo(UpsellFloatingModal);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            void handleToggleModal({});
+        }, 5000);
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, []);
 
     const onItemOpen = (item: DecryptedLink) => {
         if (item.isFile) {
@@ -192,8 +205,20 @@ export default function SharedFolder({ token, rootLink }: Props) {
 
     return (
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
-            <SharedPageLayout FooterComponent={<SharedPageFooter rootItem={rootLink} items={fileBrowserItems} />}>
-                <SharedPageHeader rootItem={rootLink} items={fileBrowserItems}>
+            <SharedPageLayout
+                FooterComponent={
+                    <SharedPageFooter
+                        rootItem={rootLink}
+                        items={fileBrowserItems}
+                        onDownload={() => handleToggleModal({ onlyOnce: true })}
+                    />
+                }
+            >
+                <SharedPageHeader
+                    rootItem={rootLink}
+                    items={fileBrowserItems}
+                    onDownload={() => handleToggleModal({ onlyOnce: true })}
+                >
                     <div className="max-w100">
                         <Breadcrumbs
                             token={token}
@@ -217,6 +242,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
                 )}
                 <SharedFileBrowser {...folderView} onItemOpen={onItemOpen} items={fileBrowserItems} />
             </SharedPageLayout>
+            {renderUpsellFloatingModal}
         </FileBrowserStateProvider>
     );
 }

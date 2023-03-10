@@ -1,10 +1,14 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
 
 import { DecryptedLink } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
+import UpsellFloatingModal from '../UpsellFloatingModal';
 import Breadcrumbs from './Layout/Breadcrumbs';
 import { HeaderSubtitle } from './Layout/HeaderSubtitle';
 import SharedPageFooter from './Layout/SharedPageFooter';
@@ -18,13 +22,33 @@ interface Props {
 
 export default function SharedFilePage({ token, link }: Props) {
     const { isLinkLoading, isContentLoading, error, contents } = usePublicFileView(token, link.linkId);
+    const [renderUpsellFloatingModal, handleToggleModal] = useModalTwo(UpsellFloatingModal);
 
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            void handleToggleModal({});
+        }, 5000);
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, []);
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
             <SharedPageLayout
-                FooterComponent={<SharedPageFooter rootItem={link} items={[{ id: link.linkId, ...link }]} />}
+                FooterComponent={
+                    <SharedPageFooter
+                        rootItem={link}
+                        items={[{ id: link.linkId, ...link }]}
+                        onDownload={() => handleToggleModal({ onlyOnce: true })}
+                    />
+                }
             >
-                <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]}>
+                <SharedPageHeader
+                    rootItem={link}
+                    items={[{ id: link.linkId, ...link }]}
+                    onDownload={() => handleToggleModal({ onlyOnce: true })}
+                >
                     <div className="max-w100">
                         <Breadcrumbs
                             token={token}
@@ -47,6 +71,7 @@ export default function SharedFilePage({ token, link }: Props) {
                     previewParams={{ img: { zoomControls: false } }}
                 />
             </SharedPageLayout>
+            {renderUpsellFloatingModal}
         </FileBrowserStateProvider>
     );
 }
