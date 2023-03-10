@@ -1,5 +1,5 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
-import { utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 
 import { base64StringToUint8Array } from '../../helpers/encoding';
 import { CalendarEventData } from '../../interfaces/calendar';
@@ -47,8 +47,7 @@ export const verifySignedCard = async (
     const verified = signature
         ? (
               await CryptoProxy.verifyMessage({
-                  textData: dataToVerify,
-                  stripTrailingSpaces: true,
+                  binaryData: stringToUtf8Array(dataToVerify), // not 'utf8' to avoid issues with trailing spaces and automatic normalisation of EOLs to \n
                   verificationKeys: publicKeys,
                   armoredSignature: signature,
               })
@@ -68,7 +67,7 @@ export const decryptCard = async (
 ) => {
     const { data: decryptedData, verified } = await CryptoProxy.decryptMessage({
         binaryMessage: dataToDecrypt,
-        format: 'binary',
+        format: 'binary', // not 'utf8' to avoid issues with trailing spaces and automatic normalisation of EOLs to \n
         verificationKeys: publicKeys,
         armoredSignature: signature || undefined,
         sessionKeys: [sessionKey],

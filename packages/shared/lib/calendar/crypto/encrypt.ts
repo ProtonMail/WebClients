@@ -19,8 +19,7 @@ export async function signPart(
     }
 
     const signature = await CryptoProxy.signMessage({
-        textData: dataToSign,
-        stripTrailingSpaces: true,
+        binaryData: stringToUtf8Array(dataToSign),
         signingKeys: [signingKey],
         detached: true,
     });
