@@ -1,3 +1,11 @@
+## Release 5.0.19.0 — March 22, 2023
+
+### Improvements
+
+-   Extend the time window to schedule messages to be sent up to 3 months
+-   Scroll down automatically when entering many recipients in the email composer
+-   Improve insert contact modal opened from the email composer 
+
 ## Release 5.0.18.0 — March 8, 2023
 
 ### New features
