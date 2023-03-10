@@ -228,7 +228,6 @@ jest.mock('./PlanCustomization');
 jest.mock('../Payment');
 jest.mock('./modal-components/SubscriptionCheckout');
 jest.mock('../../../components/portal/Portal', () => ({ children }: any) => <>{children}</>);
-jest.mock('../../../hooks/drawer/useOpenDrawerOnLoad', () => () => ({}));
 
 jest.mock('../paymentTokenHelper');
 

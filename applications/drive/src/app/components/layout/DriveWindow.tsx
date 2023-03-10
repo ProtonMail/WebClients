@@ -8,19 +8,16 @@ import {
     DrawerApp,
     DrawerSidebar,
     DrawerVisibilityButton,
-    FeatureCode,
     MainLogo,
     PrivateAppContainer,
     TopBanners,
     useDrawer,
-    useFeature,
     useOpenDrawerOnLoad,
     useToggle,
     useUser,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
-import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useIsActiveLinkReadOnly } from '../../store/_views/utils';
@@ -44,7 +41,6 @@ const DriveWindow = ({ children }: Props) => {
     const { isReadOnly } = useIsActiveLinkReadOnly();
 
     useOpenDrawerOnLoad();
-    const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
     const { showDrawerSidebar, appInView } = useDrawer();
     const location = useLocation();
 
@@ -68,7 +64,7 @@ const DriveWindow = ({ children }: Props) => {
     const logo = <MainLogo to="/" />;
     const header = <DriveHeaderPrivate isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
 
-    const permissions = getDriveDrawerPermissions({ user, drawerFeature });
+    const permissions = getDriveDrawerPermissions({ user });
     const drawerSidebarButtons = [
         permissions.contacts && (
             <ContactDrawerAppButton

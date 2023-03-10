@@ -62,7 +62,6 @@ export enum FeatureCode {
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     MailServiceWorker = 'MailServiceWorker',
     SetExpiration = 'SetExpiration',
-    Drawer = 'Drawer',
     SpotlightDrawer = 'SpotlightDrawer',
     RebrandingFeedbackEnabled = 'RebrandingFeedbackEnabled',
     RebrandingFeedback = 'RebrandingFeedback',

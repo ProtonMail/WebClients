@@ -55,8 +55,7 @@ const PageContainer = (
     const { showDrawerSidebar, appInView } = useDrawer();
 
     useOpenDrawerOnLoad();
-    const { getFeature } = useFeatures([FeatureCode.Drawer, FeatureCode.LegacyMessageMigrationEnabled]);
-    const { feature: drawerFeature } = getFeature(FeatureCode.Drawer);
+    const { getFeature } = useFeatures([FeatureCode.LegacyMessageMigrationEnabled]);
     const { feature: runLegacyMessageFeature } = getFeature(FeatureCode.LegacyMessageMigrationEnabled);
 
     const runLegacyMessageMigration = runLegacyMessageFeature?.Value;
@@ -73,18 +72,14 @@ const PageContainer = (
     };
 
     const drawerSidebarButtons = [
-        drawerFeature?.Value.ContactsInMail && (
-            <ContactDrawerAppButton
-                onClick={markSpotlightAsSeen}
-                aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)}
-            />
-        ),
-        drawerFeature?.Value.CalendarInMail && (
-            <CalendarDrawerAppButton
-                onClick={markSpotlightAsSeen}
-                aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
-            />
-        ),
+        <ContactDrawerAppButton
+            onClick={markSpotlightAsSeen}
+            aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)}
+        />,
+        <CalendarDrawerAppButton
+            onClick={markSpotlightAsSeen}
+            aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
+        />,
     ].filter(isTruthy);
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
