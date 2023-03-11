@@ -45,7 +45,7 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
         const { dateString, formattedTime } = formatDateToHuman(scheduleDate);
 
         const getNotificationText = () => {
-            if (isScheduledSendTodayMorning(scheduleDate)) {
+            if (isScheduledSendTodayMorning(scheduledAt)) {
                 /*
                  * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
                  * Full sentence for reference: "Message will be sent in the morning at 11:00 AM"
