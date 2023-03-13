@@ -8,6 +8,7 @@ export const organizationDefaultResponse = {
         DisplayName: '',
         PlanName: 'bundle2022',
         PlanFlags: 7,
+        TwoFactorRequired: 0,
         TwoFactorGracePeriod: null,
         Theme: null,
         Email: null,
