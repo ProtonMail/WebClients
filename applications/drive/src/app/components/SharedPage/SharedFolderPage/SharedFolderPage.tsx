@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { NavigationControl } from '@proton/components/containers';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
+import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import { DecryptedLink, useDownload, usePublicFolderView } from '../../../store';
 import { usePublicFileView } from '../../../store/_views/useFileView';
@@ -91,8 +92,12 @@ export default function SharedFolder({ token, rootLink }: Props) {
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
     const [renderUpsellFloatingModal, handleToggleModal] = useModalTwo(UpsellFloatingModal);
+    const { isNarrow } = useActiveBreakpoint();
 
     useEffect(() => {
+        if (isNarrow) {
+            return;
+        }
         const timeout = setTimeout(() => {
             void handleToggleModal({});
         }, 5000);
@@ -100,7 +105,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
         return () => {
             clearTimeout(timeout);
         };
-    }, []);
+    }, [isNarrow]);
 
     const onItemOpen = (item: DecryptedLink) => {
         if (item.isFile) {
