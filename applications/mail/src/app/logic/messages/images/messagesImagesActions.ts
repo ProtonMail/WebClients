@@ -47,16 +47,16 @@ export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults, LoadRemotePar
         }
 
         try {
-            let promise = REMOTE_PROXY_CACHE[imageToLoad.url];
+            const encodedImageUrl = encodeImageUri(imageToLoad.url);
+            let promise = REMOTE_PROXY_CACHE[encodedImageUrl];
 
             if (!promise) {
-                const encodedImageUrl = encodeImageUri(imageToLoad.url);
                 promise = api({
                     ...getImage(encodedImageUrl),
                     output: 'raw',
                     silence: true,
                 });
-                REMOTE_PROXY_CACHE[imageToLoad.url] = promise;
+                REMOTE_PROXY_CACHE[encodedImageUrl] = promise;
             }
 
             const response = await promise;
