@@ -166,9 +166,10 @@ interface Props extends Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'on
     onSuccess?: (data: { credentials: Credentials; response: Response }) => Promise<void> | void;
     onCancel: (() => void) | undefined;
     onError?: (error: any) => void;
+    prioritised2FAItem?: 'fido2' | 'totp';
 }
 
-const AuthModal = ({ config, onSuccess, onError, onClose, onCancel, ...rest }: Props) => {
+const AuthModal = ({ config, onSuccess, onError, onClose, onCancel, prioritised2FAItem = 'fido2', ...rest }: Props) => {
     const { APP_NAME } = useConfig();
     const [infoResult, setInfoResult] = useState<InfoAuthedResponse>();
     const api = useApi();
@@ -287,58 +288,73 @@ const AuthModal = ({ config, onSuccess, onError, onClose, onCancel, ...rest }: P
                         loading={submitting}
                     />
                 )}
-                {step === Step.TWO_FA && (
-                    <Tabs
-                        fullWidth
-                        value={tabIndex}
-                        onChange={(index) => {
-                            setTabIndex(index);
-                            setFidoError(false);
-                        }}
-                        tabs={[
-                            authTypes.fido2 &&
-                                fido2 && {
-                                    title: c('fido2: Label').t`Security key`,
-                                    content: (
-                                        <Form
-                                            id={FORM_ID}
-                                            onSubmit={() => {
-                                                withSubmitting(
-                                                    handleSubmit({
-                                                        password,
-                                                        twoFa: {
-                                                            type: 'fido2',
-                                                            payload: getAuthentication(fido2.AuthenticationOptions),
-                                                        },
-                                                    })
-                                                ).catch(noop);
-                                            }}
-                                        >
-                                            <AuthSecurityKeyContent error={fidoError} />
-                                        </Form>
-                                    ),
-                                },
-                            authTypes.totp && {
-                                title: c('Label').t`Authenticator app`,
-                                content: (
-                                    <TOTPForm
-                                        defaultType="totp"
-                                        hasBeenAutoSubmitted={hasBeenAutoSubmitted}
-                                        loading={submitting}
-                                        onSubmit={(payload) =>
-                                            withSubmitting(
-                                                handleSubmit({
-                                                    password,
-                                                    twoFa: { type: 'code', payload },
-                                                })
-                                            )
-                                        }
-                                    />
-                                ),
-                            },
-                        ].filter(isTruthy)}
-                    />
-                )}
+                {(() => {
+                    if (step !== Step.TWO_FA) {
+                        return null;
+                    }
+
+                    const fido2Tab = authTypes.fido2 &&
+                        fido2 && {
+                            title: c('fido2: Label').t`Security key`,
+                            content: (
+                                <Form
+                                    id={FORM_ID}
+                                    onSubmit={() => {
+                                        withSubmitting(
+                                            handleSubmit({
+                                                password,
+                                                twoFa: {
+                                                    type: 'fido2',
+                                                    payload: getAuthentication(fido2.AuthenticationOptions),
+                                                },
+                                            })
+                                        ).catch(noop);
+                                    }}
+                                >
+                                    <AuthSecurityKeyContent error={fidoError} />
+                                </Form>
+                            ),
+                        };
+
+                    const totpTab = authTypes.totp && {
+                        title: c('Label').t`Authenticator app`,
+                        content: (
+                            <TOTPForm
+                                defaultType="totp"
+                                hasBeenAutoSubmitted={hasBeenAutoSubmitted}
+                                loading={submitting}
+                                onSubmit={(payload) =>
+                                    withSubmitting(
+                                        handleSubmit({
+                                            password,
+                                            twoFa: { type: 'code', payload },
+                                        })
+                                    )
+                                }
+                            />
+                        ),
+                    };
+
+                    const tabs = (() => {
+                        if (prioritised2FAItem === 'totp') {
+                            return [totpTab, fido2Tab];
+                        }
+
+                        return [fido2Tab, totpTab];
+                    })().filter(isTruthy);
+
+                    return (
+                        <Tabs
+                            fullWidth
+                            value={tabIndex}
+                            onChange={(index) => {
+                                setTabIndex(index);
+                                setFidoError(false);
+                            }}
+                            tabs={tabs}
+                        />
+                    );
+                })()}
             </ModalContent>
             <ModalFooter>
                 {step === Step.TWO_FA ? (
