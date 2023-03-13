@@ -213,11 +213,7 @@ const SubscriptionModal = ({
 
         if (await shouldCalendarPreventDowngradePromise) {
             await new Promise<void>((resolve, reject) => {
-                const handleClose = () => {
-                    onClose?.();
-                    reject();
-                };
-                createModal(<CalendarDowngradeModal isDowngrade onConfirm={resolve} onClose={handleClose} />);
+                createModal(<CalendarDowngradeModal isDowngrade onConfirm={resolve} onClose={reject} />);
             });
         }
 
