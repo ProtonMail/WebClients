@@ -75,7 +75,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                         data-prevent-arrow-navigation
                     />
                 </div>
-                <div className="scroll-if-needed scroll-smooth-touch">
+                <div className="scroll-if-needed">
                     <DropdownMenu>
                         {options.map((group) =>
                             group.items.length ? (
