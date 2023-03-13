@@ -205,10 +205,7 @@ const List = (
 
     return (
         <div className={clsx(['relative items-column-list relative', !show && 'hidden'])}>
-            <div
-                ref={ref}
-                className={clsx(['h100 scroll-if-needed scroll-smooth-touch', isCompactView && 'list-compact'])}
-            >
+            <div ref={ref} className={clsx(['h100 scroll-if-needed', isCompactView && 'list-compact'])}>
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}{' '}
                     {c('Title').ngettext(msgid`${unreads} unread message`, `${unreads} unread messages`, unreads)}
