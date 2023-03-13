@@ -52,7 +52,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         </Route>
                         <Route path="/signup">
                             <AccountSignupContainer
-                                setupVPN={false}
                                 productParam={APPS.PROTONVPN_SETTINGS}
                                 clientType={CLIENT_TYPES.VPN}
                                 onLogin={async (args) => onLogin({ ...args, path: '/downloads?prompt' })}
