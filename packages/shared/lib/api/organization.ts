@@ -101,3 +101,19 @@ export const leaveOrganisation = () => ({
     url: 'core/v4/organizations/membership',
     method: 'delete',
 });
+
+export const queryEnforceTwoFA = (Require: number) => ({
+    url: `core/v4/organizations/require2fa`,
+    method: 'put',
+    data: { Require },
+});
+
+export const queryRemoveTwoFA = () => ({
+    url: `core/v4/organizations/require2fa`,
+    method: 'delete',
+});
+
+export const sendEmailReminderTwoFA = () => ({
+    url: 'core/v4/organizations/2fa/remind',
+    method: 'post',
+});

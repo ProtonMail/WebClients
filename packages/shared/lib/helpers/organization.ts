@@ -1,4 +1,4 @@
-import { ORGANIZATION_FLAGS } from '../constants';
+import { ORGANIZATION_FLAGS, ORGANIZATION_TWOFA_SETTING } from '../constants';
 import { Organization } from '../interfaces';
 import { hasBit } from './bitset';
 
@@ -28,6 +28,14 @@ export const isProtoneer = (organization: Partial<Organization> = {}) => {
 
 export const hasBonuses = (organization: Partial<Organization> = {}) => {
     return !!organization.Flags || !!organization.LoyaltyCounter;
+};
+
+export const hasTwoFARequiredForAdminOnly = (organization: Partial<Organization> = {}) => {
+    return organization.TwoFactorRequired === ORGANIZATION_TWOFA_SETTING.REQUIRED_ADMIN_ONLY;
+};
+
+export const hasTwoFARequiredForAll = (organization: Partial<Organization> = {}) => {
+    return organization.TwoFactorRequired === ORGANIZATION_TWOFA_SETTING.REQUIRED_ALL;
 };
 
 export const humanReadableFlags = (organization: Partial<Organization> = {}) => {

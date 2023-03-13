@@ -10,9 +10,16 @@ interface Props {
     organization?: Organization;
     subscription: Subscription;
     isOrgSpamBlockListEnabled: boolean;
+    isOrgTwoFactorEnabled: boolean;
 }
 
-export const getOrganizationAppRoutes = ({ user, organization, subscription, isOrgSpamBlockListEnabled }: Props) => {
+export const getOrganizationAppRoutes = ({
+    user,
+    organization,
+    subscription,
+    isOrgSpamBlockListEnabled,
+    isOrgTwoFactorEnabled,
+}: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser && user.Type !== UserType.EXTERNAL;
     const canHaveOrganization = !user.isMember && !user.isSubUser && user.Type !== UserType.EXTERNAL;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -67,7 +74,7 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription, isO
             orgKeys: <SectionConfig>{
                 text: subMenuTitle,
                 to: '/organization-keys',
-                icon: 'shield',
+                icon: 'buildings',
                 available: isPartOfFamily
                     ? hasOrganization //Show this section once the family is setup (only requires a name)
                     : (hasOrganizationKey || hasOrganization) && organization && !!organization.RequiresKey,
@@ -104,6 +111,29 @@ export const getOrganizationAppRoutes = ({ user, organization, subscription, isO
                     {
                         text: c('Title').t`Spam, block, and allow lists`,
                         id: 'spam',
+                    },
+                ],
+            },
+            security: <SectionConfig>{
+                text: c('Title').t`Authentication security`,
+                to: '/authentication-security',
+                icon: 'shield',
+                available:
+                    (hasOrganizationKey || hasOrganization) &&
+                    organization &&
+                    organization.MaxMembers > 1 &&
+                    isOrgTwoFactorEnabled,
+                subsections: [
+                    {
+                        id: 'two-factor-authentication-users',
+                    },
+                    {
+                        text: c('Title').t`Two-factor authentication reminders`,
+                        id: 'two-factor-authentication-reminders',
+                    },
+                    {
+                        text: c('Title').t`Two-factor authentication enforcement`,
+                        id: 'two-factor-authentication-enforcement',
                     },
                 ],
             },
