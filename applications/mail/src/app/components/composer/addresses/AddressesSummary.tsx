@@ -30,7 +30,12 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
 
     return (
         <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center relative mt0 mb0">
-            <Label className={clsx(['composer-meta-label pr0-5 pt0 text-semibold', disabled && 'placeholder'])}>
+            <Label
+                className={clsx([
+                    'composer-meta-label composer-meta-label-to pr0-5 text-semibold',
+                    disabled && 'placeholder',
+                ])}
+            >
                 {c('Title').t`To`}
             </Label>
             <div
