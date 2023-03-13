@@ -6,7 +6,7 @@ import { APPS, APP_NAMES, DAY } from '@proton/shared/lib/constants';
 import drawerImg from '@proton/styles/assets/img/illustrations/spotlight-drawer.svg';
 import clsx from '@proton/utils/clsx';
 
-import { Spotlight } from '../';
+import { Spotlight, useSpotlightShow } from '../';
 import { FeatureCode } from '../../containers';
 import { useConfig, useDrawer, useSpotlightOnFeature, useWelcomeFlags } from '../../hooks';
 import useUser from '../../hooks/useUser';
@@ -30,6 +30,7 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
     const { show: showSpotlight, onDisplayed: onDisplayedSpotlight } = useSpotlightOnFeature(
         FeatureCode.SpotlightDrawer
     );
+    const shouldShowSpotlight = useSpotlightShow(showSpotlight);
 
     // We don't want to show the spotlight if the user just created his account
     const userCreateTime = user.CreateTime || 0;
@@ -37,7 +38,7 @@ const DrawerSidebar = ({ buttons, spotlightSeenRef }: Props) => {
 
     const needSpotlightApps: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONDRIVE];
     const canShowSpotlight =
-        showSpotlight &&
+        shouldShowSpotlight &&
         isAccountOlderThanThreeDays &&
         needSpotlightApps.includes(APP_NAME) &&
         welcomeFlags.isDone &&
