@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
+import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import { DecryptedLink } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
@@ -23,8 +24,12 @@ interface Props {
 export default function SharedFilePage({ token, link }: Props) {
     const { isLinkLoading, isContentLoading, error, contents } = usePublicFileView(token, link.linkId);
     const [renderUpsellFloatingModal, handleToggleModal] = useModalTwo(UpsellFloatingModal);
+    const { isNarrow } = useActiveBreakpoint();
 
     useEffect(() => {
+        if (isNarrow) {
+            return;
+        }
         const timeout = setTimeout(() => {
             void handleToggleModal({});
         }, 5000);
@@ -32,7 +37,7 @@ export default function SharedFilePage({ token, link }: Props) {
         return () => {
             clearTimeout(timeout);
         };
-    }, []);
+    }, [isNarrow]);
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
             <SharedPageLayout
