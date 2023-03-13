@@ -269,7 +269,7 @@ export const MAX_IMPORT_FILE_SIZE_STRING = '10 MB';
 export const MAX_UID_CHARS_DISPLAY = 43;
 export const MAX_FILENAME_CHARS_DISPLAY = 100;
 export const IMPORT_CALENDAR_FAQ_URL = '/how-to-import-calendar-to-proton-calendar';
-export const IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL = `${IMPORT_CALENDAR_FAQ_URL}/#items_not_supported`;
+export const IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL = `${IMPORT_CALENDAR_FAQ_URL}/#data-not-supported`;
 
 export const TITLE_INPUT_ID = 'event-title-input';
 export const FREQUENCY_INPUT_ID = 'event-frequency-input';
