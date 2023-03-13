@@ -265,9 +265,7 @@ const AuthModal = ({ config, onSuccess, onError, onClose, onCancel, ...rest }: P
     return (
         <Modal {...rest} size="small" onClose={handleClose}>
             <ModalHeader
-                title={
-                    step === Step.TWO_FA ? c('Title').t`Two-factor authentication` : c('Title').t`Enter your password`
-                }
+                title={step === Step.TWO_FA ? c('Title').t`Sign in with 2FA` : c('Title').t`Enter your password`}
             />
             <ModalContent>
                 {step === Step.Password && (
