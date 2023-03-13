@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { ModalTwo, useActiveBreakpoint, useLoading, useModals } from '@proton/components';
+import { ModalTwo, useActiveBreakpoint, useLoading } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 import { DecryptedLink, useActions, useTreeForModals } from '../../store';
 import CreateFolderModal from '../CreateFolderModal';
@@ -18,7 +19,6 @@ interface Props {
 }
 
 const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => {
-    const { createModal } = useModals();
     const { moveLinks } = useActions();
     const {
         rootItems,
@@ -30,6 +30,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const { isNarrow } = useActiveBreakpoint();
+    const [createFolderModal, showCreateFolderModal] = useModalTwo(CreateFolderModal);
 
     const moveLinksToFolder = async (parentFolderId: string) => {
         await moveLinks(new AbortController().signal, shareId, selectedItems, parentFolderId);
@@ -59,15 +60,13 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
             return;
         }
 
-        createModal(
-            <CreateFolderModal
-                folder={{ shareId: shareId, linkId: targetLinkId }}
-                onCreateDone={async (newFolderId) => {
-                    expand(targetLinkId);
-                    setSelectedFolder(newFolderId);
-                }}
-            />
-        );
+        void showCreateFolderModal({
+            folder: { shareId: shareId, linkId: targetLinkId },
+            onCreateDone: async (newFolderId: string) => {
+                expand(targetLinkId);
+                setSelectedFolder(newFolderId);
+            },
+        });
     };
 
     const itemsToMove = selectedItems.map((item) => item.linkId);
@@ -105,36 +104,39 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
     );
 
     return (
-        <ModalTwo
-            onClose={onClose}
-            open={open}
-            size="large"
-            as="form"
-            onSubmit={(e: React.FormEvent) => {
-                e.preventDefault();
-                withLoading(handleSubmit()).catch(console.error);
-            }}
-            onReset={() => {
-                onClose?.();
-            }}
-        >
-            {isTreeLoaded ? (
-                <ModalContent
-                    isLoading={loading}
-                    isTreeLoaded={isTreeLoaded}
-                    title={title}
-                    rootItems={rootItems}
-                    selectedLinkId={selectedFolder}
-                    isMoveDisabled={isMoveDisabled}
-                    isMobile={isNarrow}
-                    toggleExpand={toggleExpand}
-                    onSelect={onSelect}
-                    onCreate={handleCreateNewFolderClick}
-                />
-            ) : (
-                <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
-            )}
-        </ModalTwo>
+        <>
+            <ModalTwo
+                onClose={onClose}
+                open={open}
+                size="large"
+                as="form"
+                onSubmit={(e: React.FormEvent) => {
+                    e.preventDefault();
+                    withLoading(handleSubmit()).catch(console.error);
+                }}
+                onReset={() => {
+                    onClose?.();
+                }}
+            >
+                {isTreeLoaded ? (
+                    <ModalContent
+                        isLoading={loading}
+                        isTreeLoaded={isTreeLoaded}
+                        title={title}
+                        rootItems={rootItems}
+                        selectedLinkId={selectedFolder}
+                        isMoveDisabled={isMoveDisabled}
+                        isMobile={isNarrow}
+                        toggleExpand={toggleExpand}
+                        onSelect={onSelect}
+                        onCreate={handleCreateNewFolderClick}
+                    />
+                ) : (
+                    <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
+                )}
+            </ModalTwo>
+            {createFolderModal}
+        </>
     );
 };
 
