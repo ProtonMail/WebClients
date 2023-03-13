@@ -79,7 +79,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             reset();
             setStep(Steps.Name);
         };
-        withLoading(run());
+        void withLoading(run());
     };
 
     const handleRegister = () => {
@@ -99,7 +99,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             reset();
             setStep(Steps.Ok);
         };
-        withLoading(run());
+        void withLoading(run());
     };
 
     const [authed, setAuthed] = useState(false);
@@ -119,7 +119,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     }
 
     const handleClose = () => {
-        silentApi(lockSensitiveSettings());
+        void silentApi(lockSensitiveSettings());
         onClose?.();
     };
 
