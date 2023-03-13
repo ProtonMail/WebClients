@@ -27,7 +27,10 @@ export const queryCreateUser = (
     url: 'core/v4/users',
     method: 'post',
     data,
-    headers: getProductHeaders(product),
+    headers: getProductHeaders(product, {
+        endpoint: 'core/v4/users',
+        product,
+    }),
 });
 
 export const getRecoveryMethods = (Username: string) => ({
@@ -54,7 +57,10 @@ export const queryCreateUserExternal = (
     url: 'core/v4/users/external',
     method: 'post',
     data,
-    headers: getProductHeaders(product),
+    headers: getProductHeaders(product, {
+        endpoint: 'core/v4/users/external',
+        product,
+    }),
 });
 
 export const queryUnlock = () => ({
