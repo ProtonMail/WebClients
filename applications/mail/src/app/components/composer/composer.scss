@@ -19,7 +19,7 @@
 	border-end-start-radius: 0;
 	border-end-end-radius: 0;
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		border-radius: 0;
 	}
 
@@ -76,7 +76,7 @@
 		&.label {
 			max-inline-size: 8em;
 			inline-size: 15%;
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				// temporary workaround
 				inline-size: 100%;
 				max-inline-size: 100%;
@@ -297,7 +297,7 @@
 	&-to-editor.composer-editor-collapsed .field:empty,
 	& &-addresses-container.field, // specificity :-] (only for composer)
 	& &-addresses-container.field &-addresses-input-container {
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			padding-inline-start: 0;
 			margin-inline-start: 0;
 		}
@@ -385,7 +385,7 @@
 		.inner-modal {
 			inline-size: rem(340);
 			max-block-size: 90%;
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				block-size: auto;
 			}
 
@@ -417,7 +417,7 @@
 			&#{&} {
 				// had to override button groups specificity
 				&#{&} {
-					@include respond-to($breakpoint-medium-landscape, 'min') {
+					@include media('>large') {
 						padding-inline: rem(3);
 					}
 				}
@@ -428,7 +428,7 @@
 	// Keep minimal size when activity label is empty
 	&-send-button {
 		min-inline-size: rem(40);
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			min-inline-size: 0;
 		}
 	}
@@ -495,7 +495,7 @@
 	}
 
 	&--is-maximized {
-		@include respond-to($breakpoint-medium-landscape, 'min') {
+		@include media('>large') {
 			.message-attachmentList-item-container {
 				inline-size: calc((100% / 3) - (1em / 3));
 			}

@@ -12,9 +12,9 @@ import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { MessageKeys, MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
 import { combineHeaders, splitMail } from '../mail';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
-import { getDocumentContent, getPlainTextContent } from './messageContent';
+import { getPlainTextContent } from './messageContent';
 import { insertActualEmbeddedImages } from './messageEmbeddeds';
-import { restoreAllPrefixedAttributes } from './messageImages';
+import { replaceProxyWithOriginalURLAttributes } from './messageImages';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     Password: undefined,
@@ -40,12 +40,8 @@ export const prepareExport = (message: MessageState) => {
     // Embedded images
     insertActualEmbeddedImages(document);
 
-    let content = getDocumentContent(document);
-
-    // Remote images
-    content = restoreAllPrefixedAttributes(content);
-
-    return content;
+    // Clean remote images
+    return replaceProxyWithOriginalURLAttributes(message, document);
 };
 
 const encryptBody = async (content: string, messageKeys: PublicPrivateKey) => {

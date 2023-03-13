@@ -29,6 +29,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Authenticate": [
         "S'authentifier"
       ],
@@ -128,6 +131,9 @@
       "Edit billing details": [
         "Modifier les informations de facturation"
       ],
+      "Edit display name": [
+        "Modifier le nom d’affichage"
+      ],
       "Edit email address": [
         "Modifier l'adresse électronique"
       ],
@@ -144,7 +150,7 @@
         "activer les notifications de bureau"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Découvrez d'autres abonnements ${ BRAND_NAME }"
+        "Découvrir les autres abonnements ${ BRAND_NAME }"
       ],
       "Extend": [
         "Prolonger"
@@ -344,6 +350,9 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
       "Use ${ label } theme": [
         "Utiliser le thème ${ label }"
       ],
@@ -397,17 +406,11 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Continuer avec l'abonnement Free"
-      ],
       "No, thanks": [
         "Non merci"
       ],
-      "Start my 30-day free trial": [
-        "Démarrer mon essai gratuit de 30 jours"
-      ],
       "Try free for 30 days": [
-        "Essayez gratuitement pendant 30 jours"
+        "Essai gratuit de 30 jours"
       ]
     },
     "Addon": {
@@ -425,32 +428,17 @@
         "Cela déconnectera tous les routeurs et les clients utilisant ce certificat."
       ]
     },
-    "Apps dropdown": {
-      "${ BRAND_NAME } applications": [
-        "applications ${ BRAND_NAME }"
-      ]
-    },
     "Badge": {
       "5 users": [
         "5 utilisateurs"
       ]
     },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus } : la solution de messagerie et de calendrier respectueuse de la vie privée pour vos besoins de communication quotidiens."
+      ]
+    },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Payable tous les 12 mois"
-      ],
-      "Payable every 15 months": [
-        "Payable tous les 15 mois"
-      ],
-      "Payable every 24 months": [
-        "Payable tous les 24 mois"
-      ],
-      "Payable every 30 months": [
-        "Payable tous les 30 mois"
-      ],
-      "Payable every month": [
-        "Payable tous les mois"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renouvelle automatiquement le ${ formattedEndTime }"
       ]
@@ -799,7 +787,7 @@
         "Congo"
       ],
       "Congo, Democratic Republic of the": [
-        "République démocratique du Congo"
+        "Congo - République démocratique du Congo"
       ],
       "Cook Islands": [
         "Îles Cook"
@@ -1786,6 +1774,9 @@
       ],
       "(1-2 emails per month)": [
         "(une à deux fois par mois)"
+      ],
+      "(during your first month)": [
+        "(au cours de votre premier mois)"
       ]
     },
     "Go to sign in": {
@@ -1818,6 +1809,11 @@
     "Header": {
       "Get help": [
         "Obtenir de l'aide"
+      ]
+    },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Essayez gratuitement le meilleur de ${ MAIL_APP_NAME }"
       ]
     },
     "Human verification method": {
@@ -1878,7 +1874,7 @@
         "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)"
       ],
       "10 email addresses": [
-        "10 adresses e-mail"
+        "10 adresses électroniques"
       ],
       "30-day money-back guarantee.": [
         "Remboursement garanti pendant 30 jours."
@@ -1913,6 +1909,9 @@
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
       ],
+      "American Express SafeKey logo": [
+        "Logo American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum de (${ amount })."
       ],
@@ -1922,11 +1921,17 @@
       "Are you sure you want to discard your changes?": [
         "Voulez-vous vraiment abandonner vos modifications ?"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Un abonnement Basic, Plus ou Visionary est nécessaire."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
+      ],
+      "Billing cycle: ${ text }": [
+        "Cycle de facturation : ${ text }"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Les transactions en Bitcoin peuvent prendre un certain temps pour être validées (jusqu'à 24 heures). Une fois confirmées, nous ajouterons les crédits sur votre compte. Après confirmation de la transaction, vous pourrez payer votre facture avec les crédits."
@@ -1949,6 +1954,9 @@
       "Continue anyway?": [
         "Continuer quand même ?"
       ],
+      "Country code": [
+        "Indicatif du pays"
+      ],
       "Creating your account": [
         "Création de votre compte"
       ],
@@ -1958,11 +1966,17 @@
       "Custom email domains": [
         "Domaines d'e-mails personnalisés"
       ],
+      "Discover ProtectBuy logo": [
+        "Logo Discover ProtectBuy"
+      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "N'utilisez pas les identifiants OpenVPN/IKEv2 dans les applications ${ VPN_APP_NAME } ou sur le tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Done! We sent a code to ${ destination }.": [
         "C'est fait, nous avons envoyé un code à ${ destination }."
+      ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Rien n'apparaît ? N'oubliez pas de désactiver les bloqueurs de fenêtres pop-up."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
@@ -2027,8 +2041,8 @@
       "expires ${ expirationDate }": [
         "expire le ${ expirationDate }"
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pour Visa et MasterCard, les 3 chiffres au verso de votre carte. Pour American Express, les 4 chiffres au recto de votre carte."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Pour Visa, MasterCard et Discover, les 3 chiffres au verso de votre carte. Pour American Express, les 4 chiffres au recto de votre carte."
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
@@ -2132,8 +2146,14 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Saisissez manuellement cette information dans votre dispositif d'authentification à deux facteurs pour configurer votre compte. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Logo Mastercard SecureCode"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ],
       "No credit card required": [
-        "Aucune carte bancaire nécessaire"
+        "Aucune carte de crédit nécessaire"
       ],
       "No payment is required at this time.": [
         "Aucun paiement n'est nécessaire pour le moment."
@@ -2162,14 +2182,17 @@
       "P2P": [
         "P2P"
       ],
-      "Payment can take a few minutes to fully verify.": [
-        "La vérification du paiement peut prendre quelques minutes."
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
       ],
       "Plan upgrade required": [
         "Un abonnement supérieur est nécessaire."
+      ],
+      "Please authenticate your card in the verification tab.": [
+        "Authentifiez votre carte dans l'onglet de vérification."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Authentifiez votre paiement dans l'onglet de vérification."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Saisissez la phrase de récupération de 12 mots associée à votre compte."
@@ -2180,17 +2203,14 @@
       "Please provide an email address in case we need to contact you.": [
         "Nous vous invitons à nous communiquer une adresse électronique au cas où nous aurions besoin de vous contacter."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Nous vous invitons à réessayer, à utiliser un autre mode de paiement ou à contacter votre banque pour obtenir de l'aide."
+      "Please try again using a different payment method, or contact your bank.": [
+        "Nous vous invitons à réessayer en utilisant un autre mode de paiement, ou bien à contacter votre banque."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Nous vous invitons à réessayer, à utiliser un autre mode de paiement ou à contacter PayPal pour obtenir de l'aide."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Nous vous invitons à vérifier le paiement dans le nouvel onglet qui a été ouvert."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Nous vous invitons à vérifier la carte dans le nouvel onglet qui a été ouvert."
       ],
       "Please wait till your changes are synced with the server.": [
         "Veuillez attendre que vos modifications soient synchronisées avec le serveur."
@@ -2220,7 +2240,7 @@
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualisez la page ou ${ link } pour résoudre automatiquement la plupart des problèmes."
+        "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Revoke certificate ${ name }": [
         "Révoquer le certificat ${ name }"
@@ -2253,7 +2273,7 @@
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
@@ -2263,6 +2283,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "Le moyen le plus sûr de naviguer, de faire du streaming et d'être en ligne."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ces fichiers de configuration vous permettent de choisir le serveur ${ VPN_APP_NAME } auquel vous vous connectez quand vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
@@ -2363,8 +2386,8 @@
       "Unsupported file": [
         "Le fichier n'est pas pris en charge."
       ],
-      "Update the URL in your password manager": [
-        "Mettez à jour l'URL dans votre gestionnaire de mots de passe."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Passez à la version supérieure pour bénéficier de fonctions, de produits et d'un espace de stockage premium à un tarif avantageux"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position : ${ formattedBestServerName }"
@@ -2375,8 +2398,8 @@
       "Verification can take a few minutes.": [
         "La vérification peut prendre quelques minutes."
       ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "La vérification ouvrira un nouvel onglet : veillez à désactiver les bloqueurs de pop-up."
+      "Verification may take a few minutes.": [
+        "La vérification peut prendre quelques minutes."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La vérification ouvrira un nouvel onglet : veillez à désactiver les bloqueurs de pop-up. Vous ne serez pas facturé, le montant utilisé pour vérifier la carte vous sera immédiatement remboursé."
@@ -2390,6 +2413,9 @@
       "Version ${ version }": [
         "Version ${ version }"
       ],
+      "Visa Secure logo": [
+        "Logo Visa Secure"
+      ],
       "Warning:": [
         "Attention :"
       ],
@@ -2398,6 +2424,15 @@
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Nous vous conseillons d'utiliser les applications officielles ${ VPN_APP_NAME } lorsque c'est possible."
+      ],
+      "We couldn’t process your payment.": [
+        "Nous n'avons pas pu traiter votre paiement."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "Nous devons authentifier votre mode de paiement auprès de votre banque."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "Nous devons authentifier votre paiement auprès de votre banque."
       ],
       "We recommend using your recovery phrase instead.": [
         "Nous vous suggérons d'utiliser une phrase de récupération à la place."
@@ -2447,6 +2482,22 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Vous pouvez personnaliser et télécharger vos factures à des fins comptables."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Vous pouvez garder ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens vers les calendriers partagés et tout utilisateur ${ BRAND_NAME } avec qui vous avez partagé vos calendriers avant d'annuler votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
+        "Vous pouvez garder jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à supprimer les liens vers les calendriers partagés et tout utilisateur ${ BRAND_NAME } avec qui vous avez partagé vos calendriers avant d'annuler votre abonnement à ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Veuillez supprimer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Veuillez supprimer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Vous pouvez garder ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens vers les calendriers partagés avant d'annuler votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
+        "Vous pouvez garder jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à supprimer les liens vers les calendriers partagés avant d'annuler votre abonnement à ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Vous pouvez garder ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens vers les calendriers partagés avant d'annuler votre abonnement.",
+        "Vous pouvez garder jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à supprimer les liens vers les calendriers partagés avant d'annuler votre abonnement."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Vous ne pouvez avoir qu'une seule session de chat ouverte à la fois. Nous vous invitons à fermer les conversations précédentes avant d'en entamer une nouvelle."
       ],
@@ -2462,6 +2513,9 @@
       "You have no saved payment methods.": [
         "Vous n'avez actuellement aucun mode de paiement enregistré."
       ],
+      "You may be redirected to your bank’s website.": [
+        "Vous serez peut-être redirigé vers le site internet de votre banque."
+      ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Vous devez désactiver ou supprimer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
       ],
@@ -2471,12 +2525,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal. Si ce n'est pas le cas, cliquez sur le lien ci-dessous."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -2485,9 +2533,6 @@
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Vous allez ${ loseAllData } dans votre compte ${ BRAND_NAME }. Pour le restaurer, vous devrez saisir votre ancien mot de passe."
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Vous serez bientôt redirigé vers votre banque pour vérifier votre paiement."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Vous avez besoin d'une adresse ${ BRAND_NAME } pour utiliser ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }."
@@ -2519,9 +2564,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Votre compte sera mis à jour une fois le paiement effectué."
       ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Votre banque exige la vérification 3-D Secure pour des raisons de sécurité."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
       ],
@@ -2536,32 +2578,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
-      ]
-    },
-    "info": {
-      "Create an email address": [
-        "Créer une adresse e-mail"
-      ],
-      "Day 27: Trial reminder": [
-        "Jour 27 : votre essai se termine bientôt."
-      ],
-      "Day 30: Trial ends": [
-        "Jour 30 : votre essai se termine."
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Profitez d'une messagerie électronique sécurisée et conviviale, dotée de nombreuses fonctionnalités avancées."
-      ],
-      "Try Mail Plus": [
-        "Essayer Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Nous vous enverrons un e-mail avant la fin de votre essai. Vous pouvez l'annuler à tout moment."
-      ],
-      "Your new email address is ready to go!": [
-        "Votre nouvelle adresse e-mail est prête !"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Votre abonnement commence le ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -2582,6 +2598,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Pour éviter toute interruption de service due à des factures impayées, assurez-vous d'avoir au moins un mode de paiement valide enregistré en permanence."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Voir seulement"
       ]
     },
     "Invoice state display as badge": {
@@ -2917,6 +2938,12 @@
       "Two-password mode": [
         "Mode deux mots de passe"
       ],
+      "Use a recovery email address": [
+        "Utiliser une adresse électronique de récupération"
+      ],
+      "Use a recovery phone number": [
+        "Utiliser un numéro de téléphone de récupération"
+      ],
       "User's new password": [
         "Nouveau mot de passe utilisateur"
       ],
@@ -2926,17 +2953,14 @@
       "Verification code": [
         "Code de vérification"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Nous sommes désolés de vous voir partir. Pouvez-vous nous expliquer les raisons de votre départ pour que nous puissions nous améliorer ?"
       ],
       "What happened?": [
         "Que s'est-il passé ?"
       ],
-      "What is the main reason you are cancelling?": [
-        "Quelle est la raison principale de votre annulation ?"
+      "What is the main reason you are canceling?": [
+        "Quelle est la raison principale de votre annulation ?"
       ],
       "What is the main reason you are deleting your account?": [
         "Quelle est la principale raison pour laquelle vous supprimez votre compte ?"
@@ -2974,6 +2998,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "Actualités des produits ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "E-mails de bienvenue ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -2989,7 +3016,7 @@
         "Ajouter un code cadeau"
       ],
       "clearing your browser cache": [
-        "vider le cache de votre navigateur"
+        "videz le cache de votre navigateur"
       ],
       "click here": [
         "cliquez ici"
@@ -3158,6 +3185,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendrier",
+        "${ n } calendriers"
+      ],
       "${ n } custom email domain": [
         "${ n } domaine de messagerie personnalisé",
         "${ n } domaines de messagerie personnalisés"
@@ -3190,10 +3221,6 @@
         "${ n } message par jour",
         "${ n } messages par jour"
       ],
-      "${ n } personal calendar": [
-        "${ n } calendrier personnel",
-        "${ n } calendriers personnels"
-      ],
       "${ n } VPN connection": [
         "${ n } connexion VPN",
         "${ n } connexions VPN"
@@ -3225,6 +3252,9 @@
       ],
       "Auto-reply": [
         "Réponse automatique"
+      ],
+      "Calendar sharing": [
+        "Partage de calendrier"
       ],
       "Catch-all": [
         "Catch-all"
@@ -3289,9 +3319,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "Bloqueur de publicités et de logiciels malveillants NetShield"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "E-mails protégés par mot de passe"
@@ -3560,9 +3587,9 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain } » pour les abonnements à des sites d'informations par exemple."
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Créez ${ n } calendrier personnalisé.",
-        "Créez jusqu'à ${ n } calendriers personnalisés."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Créez jusqu'à ${ n } calendrier ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations.",
+        "Créez jusqu'à ${ n } calendriers ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
@@ -3570,8 +3597,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Partagez facilement vos calendriers avec vos collègues, votre famille et vos amis via un lien."
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues via un lien."
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues."
       ],
       "End-to-end encrypted calendar": [
         "Calendrier chiffré de bout en bout"
@@ -3599,12 +3626,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Les jours ouvrés, l'équipe support client ${ BRAND_NAME } vous apporte son aide dans les 24 heures suivant votre demande."
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "En plus de cela, ajoutez jusqu'à 5 calendriers d'amis, de famille, de collègues et d'organisations."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "En plus de cela, ajoutez jusqu'à 5 calendriers d'amis, de famille, de collègues et d'organisations."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Une connexion VPN permet à un seul appareil de se connecter à ${ BRAND_NAME } VPN. Pour connecter en même temps un téléphone et un ordinateur portable à ${ BRAND_NAME } VPN par exemple, vous avez besoin de deux connexions VPN."
@@ -3716,9 +3737,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "Bénéficiez de plus de possibilités avec la prise en charge de 10 domaines de messagerie personnalisés."
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Créez ${ numberOfPersonalCalendars } calendrier personnel",
-        "Créez jusqu'à ${ numberOfPersonalCalendars } calendriers personnels"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Créez jusqu'à ${ MAX_CALENDARS_PAID } calendrier",
+        "Créez jusqu'à ${ MAX_CALENDARS_PAID } calendriers"
       ],
       "Everything in ${ vpnPlanName }": [
         "Tout ce qui est inclus dans l'abonnement ${ vpnPlanName }"
@@ -3750,17 +3771,11 @@
       ]
     },
     "Option": {
-      "Android": [
-        "Android"
-      ],
       "Country configs": [
         "Configurations pays"
       ],
       "Free server configs": [
         "Configurations des serveurs Free"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "J'ai trouvé un autre service que je préfère."
@@ -3768,17 +3783,11 @@
       "I use a different ${ BRAND_NAME } account": [
         "J'utilise un autre compte ${ BRAND_NAME }."
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Il manque une fonctionnalité essentielle dont j'ai besoin."
       ],
       "It's too expensive": [
         "C'est trop cher."
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Ma raison n'est pas proposée ici."
@@ -3791,29 +3800,14 @@
       ],
       "Standard server configs": [
         "Configurations standards des serveurs"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Carte de crédit/débit"
       ],
       "New credit/debit card": [
         "Nouvelle carte de crédit/débit"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Placeholder": {
@@ -3895,6 +3889,12 @@
       "Verify now": [
         "Vérifier maintenant"
       ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Vérifiez maintenant cette adresse électronique de récupération : ${ email.Value }"
+      ],
+      "Verify now this recovery phone number address: ${ phone.Value }": [
+        "Vérifier maintenant ce numéro de téléphone de récupération de votre compte : ${ phone.Value }"
+      ],
       "Verify recovery email?": [
         "Vérifier l'e-mail de récupération ?"
       ],
@@ -3939,6 +3939,11 @@
         "Vérifier votre numéro de téléphone améliore la sécurité de votre compte et offre des options de récupération supplémentaires."
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Créé par ${ ownerName }"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nom d'affichage"
@@ -3979,26 +3984,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } jour",
-        "${ days } jours"
-      ],
-      "${ hours } hour": [
         "${ hours } heure",
         "${ hours } heures"
       ],
+      "${ hours } hour": [
+        "${ days } jour",
+        "${ days } jours"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
+        "${ n } mois GRATUIT",
+        "${ n } mois GRATUITS"
       ],
       "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } secondes"
+        "pour ${ n } mois",
+        "pour ${ n } mois"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mois GRATUIT",
-        "${ n } mois GRATUITS"
+        "${ seconds } seconde",
+        "${ seconds } secondes"
       ]
     },
     "specialoffer: Deal details": {
@@ -4022,9 +4027,6 @@
       ],
       "Highest VPN speed": [
         "Vitesse VPN maximale"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Drive premium"
@@ -4110,8 +4112,8 @@
         "Facturé ${ amount } pour 30 mois"
       ],
       "for ${ n } month": [
-        "pour ${ n } mois",
-        "pour ${ n } mois"
+        "${ minutes } minute",
+        "${ minutes } minutes"
       ],
       "Get the deal": [
         "J'en profite"
@@ -4200,17 +4202,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
-      ],
       "Get up to ${ credits } in credits.": [
         "Recevez jusqu'à ${ credits } en crédits."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Essayez ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -4295,6 +4291,14 @@
         "VPN haut débit sur ${ maxVpn } appareils"
       ]
     },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Manage your subscription on Google Play"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Votre abonnement a été effectué par le biais d'un achat dans l'application. Pour gérer votre abonnement actuel, vous devez vous rendre dans la section Abonnement de votre compte ${ subscriptionManager }."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Pour"
@@ -4311,14 +4315,6 @@
       ],
       "Upcoming": [
         "À venir"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "La solution de messagerie et de calendrier respectueuse de la vie privée pour vos besoins de communication quotidiens."
-      ],
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Cette offre s'adresse uniquement aux nouveaux utilisateurs ${ BRAND_NAME }. Aucune carte de crédit n'est nécessaire."
       ]
     },
     "Success": {
@@ -4459,9 +4455,6 @@
       "2. Select protocol": [
         "2. Sélectionnez le protocole"
       ],
-      "3-D Secure verification failed": [
-        "La vérification 3-D Secure a échoué."
-      ],
       "3. Select config file and download": [
         "3. Sélectionnez le fichier de configuration et téléchargez"
       ],
@@ -4510,14 +4503,11 @@
       "Billing cycle": [
         "Cycle de facturation"
       ],
-      "Cancel Mail subscription": [
-        "Annuler l'abonnement Mail"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Annuler l'abonnement ${ MAIL_SHORT_APP_NAME }"
       ],
       "Card verification": [
         "Vérification de la carte"
-      ],
-      "Card verification in progress": [
-        "La vérification de la carte est en cours."
       ],
       "Change login password": [
         "Changer le mot de passe de connexion"
@@ -4621,9 +4611,6 @@
       "Gift code": [
         "Code cadeau"
       ],
-      "How your free trial works": [
-        "Comment fonctionne votre essai gratuit"
-      ],
       "Human verification": [
         "Vérification humaine"
       ],
@@ -4672,14 +4659,14 @@
       "Pay invoice": [
         "Payer la facture"
       ],
+      "Payment failed": [
+        "Le paiement n'a pas abouti."
+      ],
       "Payment methods": [
         "Modes de paiement"
       ],
       "Payment verification": [
         "Vérification du paiement"
-      ],
-      "Payment verification in progress": [
-        "La vérification du paiement est en cours."
       ],
       "Payments": [
         "Paiements"
@@ -4765,9 +4752,6 @@
       "Total paid": [
         "Total payé"
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Essayez gratuitement le meilleur de ${ MAIL_APP_NAME }."
-      ],
       "TV log in": [
         "Connexion à la télévision"
       ],
@@ -4789,8 +4773,17 @@
       "Verification": [
         "Vérification"
       ],
+      "Verification failed": [
+        "La vérification n'a pas abouti."
+      ],
       "Verify email address": [
         "Vérifiez l'adresse électronique"
+      ],
+      "Verifying your card...": [
+        "Vérification de votre carte..."
+      ],
+      "Verifying your payment...": [
+        "Vérification de votre paiement..."
       ],
       "Warning": [
         "Attention"
@@ -4812,6 +4805,9 @@
       ],
       "Your current plan": [
         "Votre abonnement actuel"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ],
       "Your plan": [
         "Votre abonnement"
@@ -4885,29 +4881,6 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } dans ${ numberOfCountries } pays",
         "${ numberOfServers } dans ${ numberOfCountries } pays"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

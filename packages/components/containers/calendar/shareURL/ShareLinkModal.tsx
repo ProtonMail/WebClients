@@ -6,12 +6,14 @@ import { Button } from '@proton/atoms';
 import { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import { useApi, useGetCalendarInfo, useNotifications } from '@proton/components/hooks';
 import { createPublicLink } from '@proton/shared/lib/api/calendars';
+import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
+import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import {
     buildLink,
     generateEncryptedPurpose,
     getCreatePublicLinkPayload,
     transformLinksFromAPI,
-} from '@proton/shared/lib/calendar/shareUrl/helpers';
+} from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
 import { ACCESS_LEVEL, CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
 import { splitKeys } from '@proton/shared/lib/keys';
 
@@ -50,9 +52,10 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
         try {
             setIsLoading(true);
             const { calendarKeys, passphrase, passphraseID } = await getCalendarInfo(calendarID);
+            const { publicKey } = getPrimaryCalendarKey(calendarKeys);
             const { publicKeys } = splitKeys(calendarKeys);
 
-            const encryptedPurpose = purpose ? await generateEncryptedPurpose({ purpose, publicKeys }) : null;
+            const encryptedPurpose = purpose ? await generateEncryptedPurpose({ purpose, publicKey }) : null;
 
             const { payload, passphraseKey, cacheKey } = await getCreatePublicLinkPayload({
                 accessLevel,
@@ -127,6 +130,7 @@ const ShareLinkModal = ({ calendarID, calendarName, onSubmit, onClose, isOpen, .
             <InputFieldTwo
                 value={purpose}
                 onValue={setPurpose}
+                maxLength={MAX_CHARS_CLEARTEXT.PURPOSE}
                 label={c('Input label').t`Label (optional)`}
                 assistiveText={c('Calendar link sharing label input assistive text').t`Only you can see the label`}
                 placeholder={c('Input placeholder').t`Add label`}

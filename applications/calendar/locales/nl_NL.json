@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -117,6 +120,9 @@
       ],
       "Continue import": [
         "Doorgaan met importeren"
+      ],
+      "Continue to ${ calendarAppBareName }": [
+        "Doorgaan naar ${ calendarAppBareName }"
       ],
       "Continue with Google": [
         "Ga verder met Google"
@@ -231,6 +237,9 @@
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
       ],
+      "Hide affected calendars": [
+        "Verberg betrokken agenda's"
+      ],
       "Hide folders": [
         "Mappen verbergen"
       ],
@@ -342,6 +351,9 @@
       "Open navigation": [
         "Navigatie openen"
       ],
+      "Open settings": [
+        "Instellingen openen"
+      ],
       "Preview contact": [
         "Contact tonen"
       ],
@@ -387,9 +399,6 @@
       "Remove this participant": [
         "Deze deelnemer verwijderen"
       ],
-      "Rename": [
-        "Hernoem"
-      ],
       "Report a problem": [
         "Meld een probleem"
       ],
@@ -434,6 +443,9 @@
       ],
       "Show advanced PGP settings": [
         "Geavanceerde PGP-instellingen tonen"
+      ],
+      "Show affected calendars": [
+        "Toon betrokken agenda's"
       ],
       "Show folders": [
         "Mappen weergeven"
@@ -506,6 +518,9 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Upgrade now": [
+        "Nu upgraden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -663,11 +678,6 @@
     "Attendee role": {
       "Optional": [
         "Optioneel"
-      ]
-    },
-    "Badge": {
-      "Coming soon": [
-        "Binnenkort beschikbaar"
       ]
     },
     "Beta access description": {
@@ -849,11 +859,6 @@
       ],
       "More options": [
         "Meer opties"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Met mij gedeeld"
       ]
     },
     "Calendar status": {
@@ -1086,9 +1091,6 @@
       ],
       "Work": [
         "Werk"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1702,7 +1704,7 @@
         "Singapore"
       ],
       "Sint Maarten": [
-        "Sint Maarten"
+        "Sint-Maarten"
       ],
       "Slovakia": [
         "Slowakije"
@@ -1982,7 +1984,7 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
+      "Do not ask again": [
         "Niet opnieuw vragen"
       ]
     },
@@ -2135,6 +2137,9 @@
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
       ],
+      "Contact name is too long": [
+        "Naam van contact is te lang"
+      ],
       "Contact signature could not be verified": [
         "Contacthandtekening kan niet geverifieerd worden"
       ],
@@ -2143,14 +2148,6 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Decoderingsfout: Inhoud van deze afspraak decoderen is mislukt."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deselecteer tenminste één agenda",
-        "Deselecteer tenminste ${ calendarToFixCount } agenda's"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Ten minste ${ calendarToFixCount } agenda deselecteren of",
-        "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -2229,10 +2226,6 @@
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
-        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
@@ -2328,9 +2321,6 @@
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Sommige namen van uw mappen zijn gereserveerd. Pas de import aan om deze namen te bewerken."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
@@ -2391,7 +2381,7 @@
       "This label name is not available. Please choose a different name.": [
         "Deze labelnaam is niet beschikbaar. Kies een andere naam."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
       "Trusted keys are not valid for sending": [
@@ -2409,11 +2399,8 @@
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "U kunt geen vCards van meer dan 10 contacten verzenden"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "U heeft het maximale aantal persoonlijke agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
+      "You can't send vCard files of more than 10 contacts": [
+        "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -2635,12 +2622,6 @@
         "geannuleerd"
       ]
     },
-    "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } deelnemer",
-        "${ numberOfParticipants } deelnemers"
-      ]
-    },
     "Event info. Organizer name": {
       "You": [
         "U"
@@ -2816,9 +2797,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mailadres"
       ],
@@ -2827,9 +2805,6 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2840,6 +2815,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
@@ -3060,9 +3038,6 @@
       ],
       "ICS file": [
         "ICS-bestand"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3077,6 +3052,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importeer uit ${ provider }"
+      ],
       "Other": [
         "Overig"
       ]
@@ -3111,10 +3089,6 @@
         "${ calendarsToBeCreatedCount } nieuwe agenda",
         "${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "Éen samengevoegde agenda",
-        "${ calendarsToBeMerged } samengevoegde agenda's"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } samengevoegde agenda",
         "${ calendarsToBeMergedCount } samengevoegde agenda's"
@@ -3138,13 +3112,13 @@
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
       ],
-      "${ numContactGroups } contact group": [
-        "Één contactgroep",
-        "${ numContactGroups } contactgroepen"
+      "${ numContact } contact": [
+        "${ numContact } contactpersoon",
+        "${ numContact } contactpersonen"
       ],
-      "${ numContacts } contact": [
-        "Één contactpersoon",
-        "${ numContacts } contactpersonen"
+      "${ numGroups } contact group": [
+        "${ numGroups } contactgroep",
+        "${ numGroups } contactgroepen"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } map gevonden",
@@ -3174,9 +3148,6 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } opslagruimte"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
@@ -3184,9 +3155,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadressen"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Een annuleringsmail wordt verzonden naar de verwijderde deelnemers."
@@ -3232,15 +3200,17 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Iedereen met deze link kan zien of u beschikbaar of bezet bent op uw agenda. Ze zien geen afspraakgegevens, zoals titel, locatie of deelnemers."
       ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Ten hoogste ${ MAX_ATTENDEES } deelnemer toegelaten per uitnodiging",
-        "Ten hoogste ${ MAX_ATTENDEES } deelnemers toegelaten per uitnodiging"
+      "Attention required": [
+        "Aandacht vereist"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Door de volledige agendadetails van deze agenda te delen, gaat u akkoord om ${ BRAND_NAME } toegang te verlenen tot versleutelde informatie van deze agenda."
+      ],
+      "Calendar side panel": [
+        "Agenda zijpaneel"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -3254,12 +3224,12 @@
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
       ],
-      "Continue with ${ planName }": [
-        "Ga door met ${ planName }"
+      "Country code": [
+        "Landcode"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Maak één nieuwe agenda",
-        "Maak ${ calendarsToBeCreated } nieuwe agenda's"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
@@ -3357,12 +3327,12 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda",
-        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda's"
       ],
       "Import from": [
         "Importeren van"
@@ -3375,6 +3345,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importeer uw e-mails, agenda's en contacten vanuit een andere dienst naar ${ BRAND_NAME }. We zullen u bij elke stap leiden en uw gegevens versleutelen terwijl het wordt verplaatst. Welkom in de wereld van privacy."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
@@ -3472,9 +3445,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
-      "Other options": [
-        "Andere opties"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
       ],
@@ -3512,9 +3482,6 @@
       "Primary": [
         "Primair"
       ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
       ],
@@ -3530,9 +3497,6 @@
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
@@ -3544,12 +3508,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Sommige antwoorden op voorvallen die eerder zijn bijgewerkt door de organisator zullen verloren gaan."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-mail domein"
       ],
       "support team": [
         "ondersteuningsteam"
@@ -3629,17 +3587,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Ongelimiteerde mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
-      ],
       "Update recurring event": [
         "Terugkerende afspraak updaten"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -3712,9 +3664,6 @@
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "U hebt uw sleutels opnieuw geactiveerd. Afspraken gekoppeld aan de volgende kalenders kunnen nu gedecodeerd worden."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "U hebt uw wachtwoord opnieuw ingesteld en afspraken gekoppeld aan de volgende agenda's konden niet worden ontsleuteld.\nAlle gedeelde agendakoppelingen die u eerder hebt gemaakt, werken niet meer.\nAlle actieve geabonneerde agenda's zullen na een paar minuten weer synchroniseren."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "U hebt deze uitnodiging eerder al geweigerd. Vraag de eigenaar naar een nieuwe uitnodiging"
@@ -3792,6 +3741,34 @@
     "Info on errors": {
       "Click for details": [
         "Klik voor details"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Sommige van uw agenda's tonen geen gegevens van oude afspraken."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Uw agenda's tonen geen gegevens van oude afspraken."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Dit is omdat uw wachtwoord onlangs gereset is zonder een herstelmethode."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "U kunt uw versleutelde gegevens herstellen met een herstelbestand, herstelzin of uw oude wachtwoord."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Agenda delen is uitgeschakeld na uw recente wachtwoord reset."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "U kunt uw agenda's opnieuw delen in de instellingen."
       ]
     },
     "Input label": {
@@ -3894,8 +3871,8 @@
       "Color": [
         "Kleur"
       ],
-      "Coming soon": [
-        "Binnenkort beschikbaar"
+      "Colors": [
+        "Kleuren"
       ],
       "Contacts": [
         "Contacten"
@@ -3981,9 +3958,6 @@
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Van: ${ importedEmail }"
-      ],
       "Good": [
         "Goed"
       ],
@@ -4037,12 +4011,6 @@
       ],
       "Manage categories": [
         "Beheer categorieën"
-      ],
-      "Manage folders": [
-        "Mappen beheren"
-      ],
-      "Manage labels": [
-        "Beheer labels"
       ],
       "Move to Archive": [
         "Verplaats naar Archief"
@@ -4126,9 +4094,6 @@
       "System information": [
         "Systeeminformatie"
       ],
-      "To: ${ emailAddress }": [
-        "Naar: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Aan: ${ to }"
       ],
@@ -4140,9 +4105,6 @@
       ],
       "Two-factor authentication code": [
         "Tweestapsverificatiecode"
-      ],
-      "Upload file": [
-        "Bestand uploaden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -4222,9 +4184,6 @@
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
-      "Subscribed calendars": [
-        "Abonneer op agenda's"
-      ],
       "Upgrade account": [
         "Account upgraden"
       ],
@@ -4237,12 +4196,18 @@
         "Open in ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Wat is een herstelmethode?"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Bijna daar"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Aantal aangemaakte agenda's: ${ createdCalendars } van de ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
@@ -4261,21 +4226,9 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ itemsToImportCount } map en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ itemsToImportCount } label en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
+        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
       ]
     },
     "Message": {
@@ -4308,17 +4261,6 @@
       ],
       "Manage calendars": [
         "Agenda's beheren"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Kan niet meer agenda's aanmaken. U hebt het maximum aantal persoonlijke agenda's binnen uw abonnement bereikt."
-      ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Kan niet meer agenda's toevoegen. U hebt het maximum aantal geabonneerde agenda's binnen uw plan bereikt."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Kan niet meer agenda's aanmaken. U hebt het maximum aantal persoonlijke agenda's binnen uw plan bereikt."
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4358,9 +4300,6 @@
       ],
       "Time zone changed": [
         "Tijdzone gewijzigd"
-      ],
-      "Unable to add more calendars": [
-        "Kan niet meer agenda's toevoegen"
       ]
     },
     "Modal title and action": {
@@ -4827,7 +4766,7 @@
         "Voeg een beschrijving toe"
       ],
       "Add location": [
-        "Add location"
+        "Locatie toevoegen"
       ],
       "Add participants": [
         "Personen toevoegen"
@@ -5035,26 +4974,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uur"
       ],
+      "${ hours } hour": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
+        "${ seconds } seconde",
+        "${ seconds } seconden"
       ]
     },
     "specialoffer: Deal details": {
@@ -5079,12 +5018,6 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
-      ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -5093,9 +5026,6 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -5166,8 +5096,8 @@
         "U betaalt ${ amount } voor 30 maanden"
       ],
       "for ${ n } month": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ],
       "Get the deal": [
         "Kies deze deal"
@@ -5198,12 +5128,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday Sale"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week Sale"
-      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -5256,9 +5180,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
-      ],
       "Easily accept invites": [
         "Accepteer eenvoudig uitnodigingen"
       ],
@@ -5270,15 +5191,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Uitnodigingen verschijnen nu in uw agenda als afspraken in afwachting. Open de afspraak om te antwoorden. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Abonneer op andere agenda's"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Probeer ${ DRIVE_APP_NAME }"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "U kunt zich abonneren op externe agenda's en de bijbehorende gebeurtenissen lezen."
       ]
     },
     "Spotlight settings link": {
@@ -5369,9 +5281,6 @@
       "Calendar updated": [
         "Agenda bijgewerkt"
       ],
-      "Canceling import": [
-        "Annuleer import"
-      ],
       "Cancellation sent and all events deleted": [
         "Annulering verzonden en alle afspraken zijn verwijderd"
       ],
@@ -5383,6 +5292,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Annulering verstuurd en de deelnemers zijn verwijderd uit alle afspraken"
+      ],
+      "Cancelling import": [
+        "Importeren annuleren"
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
@@ -5536,10 +5448,28 @@
         "Instellingen"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } u",
+        "${ hours } u"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 u",
+        "${ hoursInt },5 u"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uren"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 uur",
+        "${ hoursInt },5 uren"
       ],
       "${ minutes } minute": [
         "${ minutes } minuut",
@@ -5688,6 +5618,9 @@
       "Email settings": [
         "E-mailinstellingen"
       ],
+      "Encrypted event": [
+        "Versleutelde afspraak"
+      ],
       "Enter your password": [
         "Voer uw wachtwoord in"
       ],
@@ -5794,8 +5727,8 @@
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
-      "Reset calendar keys": [
-        "Agendasleutels resetten"
+      "Reshare your calendars": [
+        "Uw agenda's opnieuw delen"
       ],
       "Save changes": [
         "Aanpassingen opslaan"
@@ -5899,6 +5832,12 @@
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
       ],
+      "We've locked some calendars to protect your data": [
+        "We hebben sommige agenda's vergrendeld om uw data te beschermen"
+      ],
+      "We've locked your calendars to protect your data": [
+        "We hebben uw agenda's vergrendeld om uw data te beschermen"
+      ],
       "What would you like to import?": [
         "Wat zou u willen importeren?"
       ],
@@ -5911,8 +5850,8 @@
       "Your calendar link": [
         "Uw agendakoppeling"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -6317,8 +6256,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Elk jaar",
+        "Elke ${ interval } jaar"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Elke jaar, ${ timesString }",

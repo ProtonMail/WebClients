@@ -9,6 +9,7 @@ import { blackFridayVPN1Deal2022Config, useBlackFridayVPN1Deal2022 } from '../op
 import { blackFridayVPN2Deal2022Config, useBlackFridayVPN2Deal2022 } from '../operations/blackFridayVPN2Deal2022';
 import { blackFridayVPN3Deal2022Config, useBlackFridayVPN3Deal2022 } from '../operations/blackFridayVPN3Deal2022';
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
+import { mailTrial2023Config, useMailTrial2023 } from '../operations/mailTrial2023';
 import { specialOffer2022Config, useSpecialOffer2022 } from '../operations/specialOffer2022';
 
 const configs: Record<OfferId, OfferConfig> = {
@@ -20,6 +21,7 @@ const configs: Record<OfferId, OfferConfig> = {
     'black-friday-vpn-1-deal-2022': blackFridayVPN1Deal2022Config,
     'black-friday-vpn-2-deal-2022': blackFridayVPN2Deal2022Config,
     'black-friday-vpn-3-deal-2022': blackFridayVPN3Deal2022Config,
+    'mail-trial-2023': mailTrial2023Config,
 };
 
 const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => featureCode);
@@ -36,6 +38,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     const blackFridayVPN1Deal2022 = useBlackFridayVPN1Deal2022();
     const blackFridayVPN2Deal2022 = useBlackFridayVPN2Deal2022();
     const blackFridayVPN3Deal2022 = useBlackFridayVPN3Deal2022();
+    const mailTrial2023 = useMailTrial2023();
 
     const operations: OperationsMap = {
         'black-friday-mail-free-2022': blackFridayMailFree2022,
@@ -46,6 +49,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         'black-friday-vpn-3-deal-2022': blackFridayVPN3Deal2022,
         'go-unlimited-2022': goUnlimited2022,
         'special-offer-2022': specialOffer2022,
+        'mail-trial-2023': mailTrial2023,
     };
 
     const allOffers = Object.values(operations);

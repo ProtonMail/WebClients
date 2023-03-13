@@ -9,17 +9,32 @@ import { SignatureIssueLocation, SignatureIssues } from '../store';
 type Props = {
     loading: boolean;
     signatureIssues: SignatureIssues | undefined;
+    signatureNetworkError?: boolean;
     signatureAddress: string | undefined;
     isFile: boolean;
     name: string;
     className?: string;
 };
 
-export default function SignatureAlert({ loading, signatureIssues, className, ...props }: Props) {
+export default function SignatureAlert({
+    loading,
+    signatureIssues,
+    signatureNetworkError,
+    className,
+    ...props
+}: Props) {
     if (loading) {
         return (
             <Alert type="info" className={className}>
                 <TextLoader className="m0">{c('Info').t`Checking signatures`}</TextLoader>
+            </Alert>
+        );
+    }
+
+    if (signatureNetworkError) {
+        return (
+            <Alert type="warning" className={className}>
+                <span>{c('Info').t`Signature cannot be validated due to network error, please try again later.`}</span>
             </Alert>
         );
     }
@@ -46,7 +61,7 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
     );
 
     const emailAddress = (
-        <strong className="text-break" key="signatureAddress">
+        <strong className="text-break" key="signatureAddress" data-testId="signature-address">
             {signatureAddress}
         </strong>
     );
@@ -63,7 +78,7 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
 
     const locationTranslations: { [key in SignatureIssueLocation]: string } = {
         passphrase: c('Item').t`keys`,
-        hash: c('Item').t`name hash`,
+        hash: c('Item').t`hash key`,
         name: c('Item').t`name`,
         xattrs: c('Item').t`file attributes`,
         contentKeyPacket: c('Item').t`file data key`,

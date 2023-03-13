@@ -4,7 +4,7 @@ import { PublicKeyReference } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
-import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
 import { SimpleMap } from '@proton/shared/lib/interfaces';

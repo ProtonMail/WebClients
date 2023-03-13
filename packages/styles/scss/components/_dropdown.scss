@@ -9,8 +9,8 @@
 	--custom-max-width: 20em;
 	--custom-max-height: 30em;
 	--min-width: 10em;
-	--max-width: min(var(--custom-max-width), 100vw);
-	--max-height: min(var(--custom-max-height), 100vh);
+	--max-width: min(var(--custom-max-width, 100vw), 100vw);
+	--max-height: min(var(--custom-max-height, 100vh), 100vh);
 
 	position: fixed;
 	z-index: $layer-modals;

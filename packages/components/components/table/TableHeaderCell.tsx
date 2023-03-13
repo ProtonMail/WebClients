@@ -22,7 +22,7 @@ const TableHeaderCell = ({ children, direction, isLoading, onSort, ...rest }: Pr
                 <Icon
                     name="arrow-up"
                     size={16}
-                    className={`mr0-25 flex-item-noshrink ${direction === SORT_DIRECTION.DESC ? '' : 'rotateX-180'}`}
+                    className={`mr0-25 flex-item-noshrink ${direction === SORT_DIRECTION.ASC ? '' : 'rotateX-180'}`}
                 />
             )}
             {isLoading && <Loader className="flex flex-item-noshrink" />}

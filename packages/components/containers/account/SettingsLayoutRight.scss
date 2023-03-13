@@ -5,7 +5,7 @@
 
 	&-fixed-size {
 		max-inline-size: em(240);
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			max-inline-size: 100%;
 		}
 	}

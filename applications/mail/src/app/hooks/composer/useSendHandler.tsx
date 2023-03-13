@@ -13,6 +13,7 @@ import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { endSending, startSending } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { cancelScheduled } from '../../logic/messages/scheduled/scheduledActions';
 import { useAppDispatch } from '../../logic/store';
 import { MapSendInfo } from '../../models/crypto';
 import { useGetMessage } from '../message/useMessage';
@@ -24,6 +25,7 @@ import { useSendVerifications } from './useSendVerifications';
 export interface UseSendHandlerParameters {
     // Composer will be unmounted and modelMessage will continue changing after sending start
     getModelMessage: () => MessageState;
+    setModelMessage: (message: MessageState) => void;
     ensureMessageContent: () => void;
     mapSendInfo: MapSendInfo;
     promiseUpload?: Promise<void>;
@@ -42,6 +44,7 @@ export interface UseSendHandlerParameters {
 
 export const useSendHandler = ({
     getModelMessage,
+    setModelMessage,
     ensureMessageContent,
     mapSendInfo,
     promiseUpload,
@@ -150,9 +153,37 @@ export const useSendHandler = ({
         }
     });
 
-    const handleSend = useHandler(async () => {
+    type HandleSendOptions = {
+        /**
+         * If true will send message with its scheduled flag if there's one
+         * If false will reset message scheduled flag then send it
+         */
+        sendAsScheduled?: boolean;
+    };
+    const handleSend = useHandler(({ sendAsScheduled = false }: HandleSendOptions = {}) => async () => {
         const { localID, draftFlags } = getModelMessage();
-        const { scheduledAt } = draftFlags || {};
+
+        const scheduledAt = (() => {
+            if (!draftFlags?.scheduledAt) {
+                return undefined;
+            }
+
+            if (sendAsScheduled) {
+                return draftFlags.scheduledAt;
+            } else {
+                dispatch(cancelScheduled({ ID: localID }));
+                const modelMsg = getModelMessage();
+                setModelMessage({
+                    ...modelMsg,
+                    draftFlags: {
+                        ...modelMsg.draftFlags,
+                        scheduledAt: undefined,
+                    },
+                });
+                return undefined;
+            }
+        })();
+
         const notifManager = createSendingMessageNotificationManager();
 
         // If scheduledAt is set we already performed the preliminary verifications
@@ -171,7 +202,7 @@ export const useSendHandler = ({
         notifManager.ID = createNotification({
             text: <SendingMessageNotification scheduledAt={scheduledAt} manager={notifManager} />,
             expiration: -1,
-            disableAutoClose: true,
+            showCloseButton: false,
         });
 
         ensureMessageContent();

@@ -69,68 +69,6 @@
         "Faturayı görüntüle"
       ]
     },
-    "color": {
-      "carrot": [
-        "havuç"
-      ],
-      "cerise": [
-        "kiraz"
-      ],
-      "cobalt": [
-        "kobalt"
-      ],
-      "copper": [
-        "bakır"
-      ],
-      "enzian": [
-        "kantaron"
-      ],
-      "fern": [
-        "eğrelti otu"
-      ],
-      "forest": [
-        "orman"
-      ],
-      "ocean": [
-        "okyanus"
-      ],
-      "olive": [
-        "zeytin"
-      ],
-      "pacific": [
-        "pasifik"
-      ],
-      "pickle": [
-        "salatalık"
-      ],
-      "pine": [
-        "çam"
-      ],
-      "pink": [
-        "pembe"
-      ],
-      "plum": [
-        "erik"
-      ],
-      "purple": [
-        "mor"
-      ],
-      "reef": [
-        "resif"
-      ],
-      "sahara": [
-        "çöl"
-      ],
-      "slateblue": [
-        "arduvaz mavisi"
-      ],
-      "soil": [
-        "toprak"
-      ],
-      "strawberry": [
-        "çilek"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abhazya"
@@ -148,7 +86,7 @@
         "Amerikan Samoası"
       ],
       "Andorra": [
-        "Andorra"
+        "Andora"
       ],
       "Angola": [
         "Angola"
@@ -977,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-posta"
       ],
@@ -988,9 +923,6 @@
       ],
       "No verification method available": [
         "Kullanılabilecek bir doğrulama yöntemi yok"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -999,6 +931,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
+      ],
+      "Country code": [
+        "Ülke kodu"
       ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"

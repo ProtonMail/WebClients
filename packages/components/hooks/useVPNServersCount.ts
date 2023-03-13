@@ -1,52 +1,60 @@
 import { useEffect, useState } from 'react';
 
-import { queryVPNLogicalServerInfo } from '@proton/shared/lib/api/vpn';
-import { PLANS } from '@proton/shared/lib/constants';
-import { VPNServers } from '@proton/shared/lib/interfaces';
+import {
+    queryVPNCountriesCount,
+    queryVPNLogicalServerInfoCount,
+    queryVPNServersCount,
+} from '@proton/shared/lib/api/vpn';
+import {
+    VPNCountriesCount,
+    VPNLogicalsCount,
+    VPNServersCount,
+    VPNServersCountData,
+} from '@proton/shared/lib/interfaces';
 
 import useApi from './useApi';
 import useLoading from './useLoading';
 
-const DEFAULT_RESULT: VPNServers = {
-    free_vpn: 23,
-    [PLANS.VPN]: 1200,
+const DEFAULT_RESULT: VPNServersCountData = {
+    free: { countries: 3, servers: 150 },
+    paid: { countries: 190, servers: 1900 },
 };
-let cache: Promise<{ LogicalServers: any }> | undefined;
+let cache: Promise<[VPNServersCount, VPNCountriesCount, VPNLogicalsCount]> | undefined;
 
-const useVPNServersCount = (): [VPNServers, boolean] => {
+const useVPNServersCount = (): [VPNServersCountData, boolean] => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
-    const [result, setResult] = useState(DEFAULT_RESULT);
+    const [result, setResult] = useState<VPNServersCountData>(DEFAULT_RESULT);
 
     useEffect(() => {
         const query = async () => {
             if (!cache) {
-                cache = api<{ LogicalServers: any }>(queryVPNLogicalServerInfo());
+                cache = Promise.all([
+                    api<VPNServersCount>(queryVPNServersCount()),
+                    api<VPNCountriesCount>(queryVPNCountriesCount()),
+                    api<VPNLogicalsCount>(queryVPNLogicalServerInfoCount()),
+                ]);
             }
             const promise = cache;
 
-            const { LogicalServers: resultLogicalServerInfo } = await promise;
+            const [serversCount, countriesCount, logicalsCount] = await promise;
 
-            const countFreeVPNServers = resultLogicalServerInfo.filter(
-                (server: { Tier: number }) => server.Tier === 0
-            ).length;
+            const countFreeVPNCountries =
+                countriesCount.Counts.find((count) => count.MaxTier === 0)?.Count || DEFAULT_RESULT.free.countries;
+            const countFreeVpnServers = logicalsCount.Counts['0'];
 
-            const countBasicVPNServers = resultLogicalServerInfo.filter(
-                (server: { Tier: number }) => server.Tier === 1
-            ).length;
+            const countPaidVPNServers = Math.floor(serversCount.Servers / 50) * 50;
+            const countPaidVPNCountries = Math.floor(serversCount.Countries / 5) * 5;
 
-            const countPaidVPNServers = resultLogicalServerInfo.filter(
-                (server: { Tier: number }) => server.Tier === 2
-            ).length;
-
-            let countPlusVpnServersShow = countPaidVPNServers + countBasicVPNServers + countFreeVPNServers;
-
-            countPlusVpnServersShow = Math.floor(countPlusVpnServersShow / 100) * 100;
-
-            const updatedResult = {
-                ...DEFAULT_RESULT,
-                free_vpn: countFreeVPNServers,
-                [PLANS.VPN]: countPlusVpnServersShow,
+            const updatedResult: VPNServersCountData = {
+                free: {
+                    servers: countFreeVpnServers,
+                    countries: countFreeVPNCountries,
+                },
+                paid: {
+                    servers: countPaidVPNServers,
+                    countries: countPaidVPNCountries,
+                },
             };
 
             setResult(updatedResult);

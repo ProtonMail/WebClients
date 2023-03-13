@@ -69,68 +69,6 @@
         "Factuur bekijken"
       ]
     },
-    "color": {
-      "carrot": [
-        "wortel"
-      ],
-      "cerise": [
-        "kers"
-      ],
-      "cobalt": [
-        "kobalt"
-      ],
-      "copper": [
-        "koper"
-      ],
-      "enzian": [
-        "gentiaan"
-      ],
-      "fern": [
-        "varen"
-      ],
-      "forest": [
-        "bos"
-      ],
-      "ocean": [
-        "oceaan"
-      ],
-      "olive": [
-        "olijf"
-      ],
-      "pacific": [
-        "stille oceaan"
-      ],
-      "pickle": [
-        "augurk"
-      ],
-      "pine": [
-        "den"
-      ],
-      "pink": [
-        "roze"
-      ],
-      "plum": [
-        "pruim"
-      ],
-      "purple": [
-        "paars"
-      ],
-      "reef": [
-        "rif"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "leisteenblauw"
-      ],
-      "soil": [
-        "aarde"
-      ],
-      "strawberry": [
-        "aardbei"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abchazië"
@@ -742,7 +680,7 @@
         "Singapore"
       ],
       "Sint Maarten": [
-        "Sint Maarten"
+        "Sint-Maarten"
       ],
       "Slovakia": [
         "Slowakije"
@@ -977,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mailadres"
       ],
@@ -988,9 +923,6 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -999,6 +931,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
+      ],
+      "Country code": [
+        "Landcode"
       ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"

@@ -1,11 +1,14 @@
-import { Ref, forwardRef, memo } from 'react';
+import { Ref, forwardRef, memo, useRef } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import {
+    CalendarDrawerAppButton,
+    ContactDrawerAppButton,
     FeatureCode,
     LocationErrorBoundary,
     MailShortcutsModal,
-    useFeature,
+    useDrawer,
+    useFeatures,
     useFolders,
     useLabels,
     useMailSettings,
@@ -15,6 +18,7 @@ import {
 } from '@proton/components';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import isTruthy from '@proton/utils/isTruthy';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
@@ -45,12 +49,32 @@ const PageContainer = (
     const [mailSettings] = useMailSettings();
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
+    const { showDrawerSidebar } = useDrawer();
 
-    const runLegacyMessageMigration = !!useFeature(FeatureCode.LegacyMessageMigrationEnabled).feature?.Value;
+    const [{ feature: drawerFeature }, { feature: runLegacyMessageFeature }] = useFeatures([
+        FeatureCode.Drawer,
+        FeatureCode.LegacyMessageMigrationEnabled,
+    ]);
+
+    const runLegacyMessageMigration = runLegacyMessageFeature?.Value;
 
     useContactsListener();
     useConversationsEvent();
     useMessagesEvents();
+
+    const drawerSpotlightSeenRef = useRef(false);
+    const markSpotlightAsSeen = () => {
+        if (drawerSpotlightSeenRef) {
+            drawerSpotlightSeenRef.current = true;
+        }
+    };
+
+    const drawerSidebarButtons = [
+        drawerFeature?.Value.ContactsInMail && <ContactDrawerAppButton onClick={markSpotlightAsSeen} />,
+        drawerFeature?.Value.CalendarInMail && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
+    ].filter(isTruthy);
+
+    const canShowDrawer = drawerSidebarButtons.length > 0;
 
     /**
      * Incoming defaults
@@ -75,6 +99,9 @@ const PageContainer = (
             labelID={labelID}
             elementID={elementID}
             breakpoints={breakpoints}
+            drawerSidebarButtons={drawerSidebarButtons}
+            drawerSpotlightSeenRef={drawerSpotlightSeenRef}
+            showDrawerSidebar={showDrawerSidebar}
         >
             <MailStartupModals onboardingOpen={onboardingOpen} onOnboardingDone={() => setWelcomeFlagsDone()} />
             <LocationErrorBoundary>
@@ -87,6 +114,7 @@ const PageContainer = (
                     elementID={elementID}
                     messageID={messageID}
                     isComposerOpened={isComposerOpened}
+                    toolbarBordered={canShowDrawer && showDrawerSidebar}
                 />
                 <MailShortcutsModal {...mailShortcutsProps} />
             </LocationErrorBoundary>

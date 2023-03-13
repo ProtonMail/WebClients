@@ -147,17 +147,16 @@ const MainContainer = () => {
                 />
             }
             upsellButton={<TopNavbarUpsell offerProps={{ ignoreVisited: !!liteRedirect, ignoreOnboarding }} />}
-            logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
-            appsDropdown={null}
         />
     );
 
     const sidebar = (
         <Sidebar
+            appsDropdown={null}
             logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}

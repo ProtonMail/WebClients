@@ -116,6 +116,20 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
     const expirationTime = await publicKey.getExpirationTime();
     const userIDs = publicKey.getUserIDs();
     const keyContentHash = await SHA256(publicKey.write()).then(arrayToHexString);
+    // Allow comparing keys without third-party certification
+    let keyContentHashNoCerts: string;
+    // Check if third-party certs are present
+    if (publicKey.users.some((user) => user.otherCertifications.length > 0)) {
+        // @ts-ignore missing `clone()` definition
+        const publicKeyClone: PublicKey = publicKey.clone();
+        publicKeyClone.users.forEach((user) => {
+            user.otherCertifications = [];
+        });
+        keyContentHashNoCerts = await SHA256(publicKeyClone.write()).then(arrayToHexString);
+    } else {
+        keyContentHashNoCerts = keyContentHash;
+    }
+
     let isWeak: boolean;
     try {
         checkKeyStrength(publicKey);
@@ -125,7 +139,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
     }
     return {
         _idx: keyStoreID,
-        _keyContentHash: keyContentHash,
+        _keyContentHash: [keyContentHash, keyContentHashNoCerts],
         isPrivate: () => false,
         getFingerprint: () => fingerprint,
         getKeyID: () => hexKeyID,
@@ -135,7 +149,10 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
         getExpirationTime: () => expirationTime,
         getUserIDs: () => userIDs,
         isWeak: () => isWeak,
-        equals: (otherKey: KeyReference) => otherKey._keyContentHash === keyContentHash,
+        equals: (otherKey: KeyReference, ignoreOtherCerts = false) =>
+            ignoreOtherCerts
+                ? otherKey._keyContentHash[1] === keyContentHashNoCerts
+                : otherKey._keyContentHash[0] === keyContentHash,
         subkeys: publicKey.getSubkeys().map((subkey) => {
             const subkeyAlgoInfo = subkey.getAlgorithmInfo();
             const subkeyKeyID = subkey.getKeyID().toHex();

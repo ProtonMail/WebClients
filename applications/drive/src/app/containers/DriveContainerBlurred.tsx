@@ -26,8 +26,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import { ListView } from '../components/FileBrowser';
 import { ListViewHeaderItem } from '../components/FileBrowser/interface';
 import { DriveHeader } from '../components/layout/DriveHeader';
-import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
 import { getDriveDrawerPermissions } from '../components/layout/drawerPermissions';
+import DriveSidebar from '../components/layout/sidebar/DriveSidebar';
 import { DriveItem } from '../components/sections/Drive/Drive';
 import { ModifiedCell, NameCell, SizeCell } from '../components/sections/FileBrowser/contentCells';
 import headerItems from '../components/sections/FileBrowser/headerCells';
@@ -52,7 +52,7 @@ const DriveContainerBlurred = () => {
     );
     const dummyFolderTitle = c('Title').t`My files`;
 
-    const header = <DriveHeader logo={logo} isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
+    const header = <DriveHeader isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />;
 
     const sidebar = (
         <DriveSidebar

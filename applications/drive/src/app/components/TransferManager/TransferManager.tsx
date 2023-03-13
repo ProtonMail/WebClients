@@ -5,7 +5,6 @@ import { c, msgid } from 'ttag';
 
 import {
     Tabs,
-    classnames,
     useActiveBreakpoint,
     useElementRect,
     useRightToLeft,
@@ -14,6 +13,7 @@ import {
 } from '@proton/components';
 import busy from '@proton/shared/lib/busy';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import useConfirm from '../../hooks/util/useConfirm';
@@ -262,10 +262,7 @@ const TransferManager = ({
     );
 
     return (
-        <div
-            id="transfer-manager"
-            className={classnames(['transfers-manager', minimized && 'transfers-manager--minimized'])}
-        >
+        <div id="transfer-manager" className={clsx(['transfers-manager', minimized && 'transfers-manager--minimized'])}>
             <div ref={headerRef}>
                 <Header
                     downloads={downloads}

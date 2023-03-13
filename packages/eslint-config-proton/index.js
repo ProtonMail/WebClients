@@ -6,7 +6,7 @@ module.exports = {
         jest: true,
         node: true,
     },
-    extends: ['airbnb-typescript', 'prettier', 'plugin:monorepo-cop/recommended'],
+    extends: ['airbnb-typescript', 'prettier', 'plugin:monorepo-cop/recommended', 'plugin:jsx-a11y/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         project: './tsconfig.json',
@@ -20,6 +20,7 @@ module.exports = {
         'monorepo-cop',
         'deprecation',
         'no-only-tests',
+        'jsx-a11y',
     ],
     rules: {
         '@typescript-eslint/array-type': [
@@ -150,6 +151,29 @@ module.exports = {
         'es/no-regexp-lookbehind-assertions': 'error',
         'deprecation/deprecation': 'warn',
         'no-only-tests/no-only-tests': 'error',
+        /*
+         * jsx-a11y
+         * set up some as warning only, while waiting real feedback
+         * disabled some
+         */
+        'jsx-a11y/anchor-ambiguous-text': 'warn',
+        'jsx-a11y/anchor-is-valid': 'warn',
+        'jsx-a11y/click-events-have-key-events': 'warn',
+        'jsx-a11y/control-has-associated-label': 'warn',
+        'jsx-a11y/interactive-supports-focus': 'warn',
+        'jsx-a11y/label-has-associated-control': 'warn',
+        'jsx-a11y/media-has-caption': 'warn',
+        'jsx-a11y/mouse-events-have-key-events': 'warn',
+        'jsx-a11y/no-static-element-interactions': 'warn',
+        'jsx-a11y/no-interactive-element-to-noninteractive-role': 'warn',
+        'jsx-a11y/no-noninteractive-element-interactions': 'warn',
+        'jsx-a11y/no-noninteractive-tabindex': 'warn',
+        'jsx-a11y/no-aria-hidden-on-focusable': 'warn',
+        'jsx-a11y/prefer-tag-over-role': 'warn',
+        'jsx-a11y/img-redundant-alt': 'off',
+        'jsx-a11y/label-has-for': 'off',
+        'jsx-a11y/no-autofocus': 'off',
+        'jsx-a11y/no-onchange': 'off',
     },
     settings: {
         'import/resolver': {

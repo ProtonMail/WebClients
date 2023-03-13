@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import type { enums } from '@proton/crypto';
 
 import { EncryptionConfig } from './interfaces';
@@ -44,6 +42,7 @@ export const DRIVE_APP_NAME = `${BRAND_NAME} ${DRIVE_SHORT_APP_NAME}`;
 export const VPN_SHORT_APP_NAME = 'VPN';
 export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
+export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -59,7 +58,17 @@ export const APPS = {
     PROTONEXTENSION: 'proton-extension',
 } as const;
 
-export const APPS_CONFIGURATION = {
+interface AppConfiguration {
+    publicPath: string;
+    subdomain: string;
+    name: string;
+    bareName: string;
+    clientID: string;
+    icon: string;
+    settingsSlug: string;
+}
+
+export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     [APPS.PROTONACCOUNT]: {
         publicPath: '',
         subdomain: 'account',
@@ -125,10 +134,10 @@ export const APPS_CONFIGURATION = {
     },
     [APPS.PROTONEXTENSION]: {
         publicPath: '',
-        subdomain: 'extension',
+        subdomain: '',
         name: 'Proton Extension',
         bareName: 'Extension',
-        clientID: 'web-account',
+        clientID: 'browser-pass',
         icon: '',
         settingsSlug: '',
     },
@@ -159,7 +168,7 @@ export const APPS_CONFIGURATION = {
         icon: 'brand-proton',
         settingsSlug: '',
     },
-} as const;
+};
 
 export enum PRODUCT_BIT {
     Mail = 1,
@@ -168,8 +177,10 @@ export enum PRODUCT_BIT {
 }
 
 export type APP_KEYS = keyof typeof APPS;
-export type APP_NAMES = typeof APPS[APP_KEYS];
-export type APP_CLIENT_IDS = typeof APPS_CONFIGURATION[keyof typeof APPS_CONFIGURATION]['clientID'] | 'android_tv-vpn';
+export type APP_NAMES = (typeof APPS)[APP_KEYS];
+export type APP_CLIENT_IDS =
+    | (typeof APPS_CONFIGURATION)[keyof typeof APPS_CONFIGURATION]['clientID']
+    | 'android_tv-vpn';
 export const SSO_PATHS = {
     OAUTH_AUTHORIZE: '/oauth/authorize',
     OAUTH_CONFIRM_FORK: '/oauth/confirm',
@@ -182,6 +193,7 @@ export const SSO_PATHS = {
     SIGNUP: '/signup',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
+    TRIAL: '/trial',
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 
@@ -487,6 +499,32 @@ export enum ORGANIZATION_FLAGS {
     PROTON = 128,
 }
 
+export enum APP_UPSELL_REF_PATH {
+    MAIL_UPSELL_REF_PATH = 'upsell_mail-banner-',
+    CALENDAR_UPSELL_REF_PATH = 'upsell_calendar-banner-',
+    DRIVE_UPSELL_REF_PATH = 'upsell_drive-banner-',
+    VPN_UPSELL_REF_PATH = 'upsell_vpn-banner-',
+}
+
+export enum MAIL_UPSELL_PATHS {
+    AUTO_REPLY = 'auto-reply',
+    DOMAIN_NAMES = 'domain-names',
+    CATCH_ALL = 'catchall',
+    BRIDGE = 'bridge',
+    PM_ME = 'pm_me',
+}
+
+export enum CALENDAR_UPSELL_PATHS {
+    MULTI_CAL = 'multi_cal',
+    SHARE_CAL = 'share_cal',
+}
+
+export enum SHARED_UPSELL_PATHS {
+    MULTI_USER = 'multi_user',
+    CONTACT_GROUP = 'contact_groups',
+    STORAGE = 'storage',
+}
+
 export const LOYAL_BONUS_STORAGE = 5 * GIGA;
 export const LOYAL_BONUS_CONNECTION = 2;
 
@@ -519,16 +557,17 @@ export const PRODUCT_PAYER = {
     END: new Date(Date.UTC(2020, 11, 15, 6)),
 };
 
-export const MIN_PAYPAL_AMOUNT = 500;
+export const MIN_PAYPAL_AMOUNT = 499;
 export const MAX_PAYPAL_AMOUNT = 99999900;
 
 export enum NEWS {
-    ANNOUNCEMENTS = 1,
-    FEATURES = 2,
-    NEWSLETTER = 4,
-    BETA = 8,
-    BUSINESS = 16,
-    OFFERS = 32,
+    ANNOUNCEMENTS = 1 << 0,
+    FEATURES = 1 << 1,
+    NEWSLETTER = 1 << 2,
+    BETA = 1 << 3,
+    BUSINESS = 1 << 4,
+    OFFERS = 1 << 5,
+    ONBOARDING = 1 << 7,
 }
 
 export const CONTACT_EMAILS_LIMIT = 1000;
@@ -541,31 +580,6 @@ export enum LABEL_EXCLUSIVE {
     FOLDER = 1,
     LABEL = 0,
 }
-
-export const ACCENT_COLORNAMES = {
-    purple: { color: '#8080FF', getName: () => c('color').t`purple` },
-    pink: { color: '#DB60D6', getName: () => c('color').t`pink` },
-    strawberry: { color: '#EC3E7C', getName: () => c('color').t`strawberry` },
-    carrot: { color: '#F78400', getName: () => c('color').t`carrot` },
-    sahara: { color: '#936D58', getName: () => c('color').t`sahara` },
-    enzian: { color: '#5252CC', getName: () => c('color').t`enzian` },
-    plum: { color: '#A839A4', getName: () => c('color').t`plum` },
-    cerise: { color: '#BA1E55', getName: () => c('color').t`cerise` },
-    copper: { color: '#C44800', getName: () => c('color').t`copper` },
-    soil: { color: '#54473F', getName: () => c('color').t`soil` },
-    slateblue: { color: '#415DF0', getName: () => c('color').t`slateblue` },
-    pacific: { color: '#179FD9', getName: () => c('color').t`pacific` },
-    reef: { color: '#1DA583', getName: () => c('color').t`reef` },
-    fern: { color: '#3CBB3A', getName: () => c('color').t`fern` },
-    olive: { color: '#B4A40E', getName: () => c('color').t`olive` },
-    cobalt: { color: '#273EB2', getName: () => c('color').t`cobalt` },
-    ocean: { color: '#0A77A6', getName: () => c('color').t`ocean` },
-    pine: { color: '#0F735A', getName: () => c('color').t`pine` },
-    forest: { color: '#258723', getName: () => c('color').t`forest` },
-    pickle: { color: '#807304', getName: () => c('color').t`pickle` },
-};
-
-export const ACCENT_COLORS = Object.values(ACCENT_COLORNAMES).map(({ color }) => color);
 
 export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 
@@ -801,7 +815,6 @@ export enum TOKEN_TYPES {
     SMS = 'sms',
     INVITE = 'invite',
     COUPON = 'coupon',
-    PAYMENT = 'payment',
     CAPTCHA = 'captcha',
 }
 
@@ -966,3 +979,5 @@ export enum SIMPLE_LOGIN_EXTENSION_LINKS {
     MAIN_PAGE = 'https://simplelogin.io',
     DASHBOARD = 'https://app.simplelogin.io/dashboard/',
 }
+
+export const OPEN_OFFER_MODAL_EVENT = 'openoffermodal';

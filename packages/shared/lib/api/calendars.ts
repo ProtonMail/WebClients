@@ -89,7 +89,7 @@ export const getCalendarGroupReset = () => ({
     method: 'get',
 });
 
-export const resetCalendarGroup = (data: { CalendarKeys: CalendarKeysResetData }) => ({
+export const resetCalendars = (data: { CalendarKeys: CalendarKeysResetData }) => ({
     url: `${CALENDAR_V1}/keys/reset`,
     method: 'post',
     data,

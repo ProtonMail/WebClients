@@ -43,7 +43,8 @@ export interface ApiKeysConfig {
 
 export interface PinnedKeysConfig {
     pinnedKeys: PublicKeyReference[];
-    encrypt?: boolean;
+    encryptToPinned?: boolean;
+    encryptToUntrusted?: boolean;
     sign?: boolean;
     scheme?: PGP_SCHEMES;
     mimeType?: MimeTypeVcard;

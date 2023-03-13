@@ -86,6 +86,9 @@
       "Archive": [
         "Arşivle"
       ],
+      "As Scheduled": [
+        "Zamanlandığı gibi"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Yeni ileti oluştur"
+      ],
+      "Custom": [
+        "Özel"
       ],
       "Customize": [
         "Özelleştir"
@@ -530,9 +536,6 @@
       "Load": [
         "Yükle"
       ],
-      "Load anyway": [
-        "Yine de yükle"
-      ],
       "Load embedded images": [
         "Gömülü görseller yüklensin"
       ],
@@ -598,6 +601,9 @@
       ],
       "Minimize composer": [
         "Oluşturucuyu küçült"
+      ],
+      "Monday": [
+        "Pazartesi"
       ],
       "More": [
         "Diğer"
@@ -794,9 +800,6 @@
       "Remove this label": [
         "Bu etiketi sil"
       ],
-      "Rename": [
-        "Yeniden adlandır"
-      ],
       "Reply": [
         "Yanıtla"
       ],
@@ -844,9 +847,6 @@
       ],
       "Schedule message": [
         "İletiyi zamanla"
-      ],
-      "Schedule send": [
-        "Gönderimi zamanla"
       ],
       "Search": [
         "Arama"
@@ -959,8 +959,8 @@
       "Skip verification": [
         "Doğrulamayı atla"
       ],
-      "Some images failed to load with tracking protection.": [
-        "İzleme koruması nedeniyle bazı görseller yüklenemedi."
+      "Some images could not be loaded with tracker protection.": [
+        "İzleyici koruması nedeniyle bazı görseller yüklenemedi."
       ],
       "Star": [
         "Yıldız koy"
@@ -985,6 +985,9 @@
       ],
       "This message contains remote content.": [
         "Bu iletide uzak içerik var."
+      ],
+      "Tomorrow": [
+        "Yarın"
       ],
       "Trust": [
         "Güven"
@@ -1200,16 +1203,6 @@
         "Yazışma"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Hoş geldiniz"
@@ -1373,10 +1366,10 @@
         "${ participantName } bu etkinlik davetini kabul etti."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName }, yaptığınız daveti kabul etti ve yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi kabul etti ve yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } accepted your invitation and proposed a new time for this event.": [
-        "${ participantName }, yaptığınız daveti kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
         "${ participantName }, yinelenen etkinliğin bir tanesine yaptığınız daveti kabul etti."
@@ -1409,10 +1402,10 @@
         "${ participantName } bu etkinlik davetini reddetti."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName }, yaptığınız daveti reddetti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi reddetti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } declined your invitation and proposed a new time for this event.": [
-        "${ participantName }, yaptığınız daveti reddetti ve bu etkinlik için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi reddetti ve bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
         "${ participantName }, yinelenen etkinliğin bir tanesine yaptığınız daveti reddetti."
@@ -1436,7 +1429,7 @@
         "${ participantName }, yapıtığınız daveti kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName }, yaptığınız daveti kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, davetinizi kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName }, yapılmış bir daveti reddetmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
@@ -1454,7 +1447,7 @@
         "${ participantName }, yapıtığınız daveti reddetmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName }, yaptığınız daveti reddetmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, davetinizi reddetmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
         "${ participantName } daha önce yinelenen etkinliğin bir tanesine yapılmış daveti kabul etmişti."
@@ -1466,13 +1459,13 @@
         "${ participantName } daha önce yinelenen etkinliğin bir tanesine yapılmış daveti reddetmişti."
       ],
       "${ participantName } had previously declined your invitation.": [
-        "${ participantName } daha önce yaptığınız daveti reddetmişti."
+        "${ participantName } daha önce davetinizi reddetmişti."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName }, daha önce yinelenen etkinliğin bir tanesine yaptığınız daveti belirsiz olarak kabul etmişti."
+        "${ participantName }, daha önce yinelenen etkinliğin bir tanesine yaptığınız daveti kesin olmamakla birlikte kabul etmişti."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        "${ participantName } daha önce yaptığınız daveti belirsiz olarak kabul etmişti."
+        "${ participantName } daha önce yaptığınız daveti kesin olmamakla birlikte kabul etmişti."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
         "${ participantName }, bu etkinliğin olduğu bir gün için yeni saat önerisinde bulundu. Bu önerinin süresi dolmuş."
@@ -1493,22 +1486,22 @@
         "${ participantName }, bu etkinlik için yeni bir saat önerisinde bulundu. Bu öneri güncel değil. Herhangi bir takviminiz yok."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName }, yapılmış bir daveti belirsiz olarak kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, yapılmış bir daveti kesin olmamakla birlikte kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName }, yapılmış bir daveti belirsiz olarak kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, yapılmış bir daveti kesin olmamakla birlikte kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName }, yinelenen etkinliğin bir tanesine yapılmış daveti belirsiz olarak kabul etmişti."
+        "${ participantName }, yinelenen etkinliğin bir tanesine yapılmış daveti kesin olmamakla birlikte kabul etmişti."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "${ participantName } bu etkinliğe yapılmış daveti belirsiz olarak kabul etmişti."
+        "${ participantName } bu etkinliğe yapılmış daveti kesin olmamakla birlikte kabul etmişti."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName }, yaptığınız daveti belirsiz olarak kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, davetinizi kesin olmamakla birlikte kabul etmiş ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName }, yaptığınız daveti belirsiz olarak kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
+        "${ participantName }, davetinizi kesin olmamakla birlikte kabul etmiş ve bu etkinlik için yeni bir saat önerisinde bulunmuştu. Yanıt ve öneri güncel değil."
       ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } katılımcılar listesinde yok."
@@ -1520,28 +1513,28 @@
         "${ participantName }, bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName }, yapılmış bir daveti belirsiz olarak kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
+        "${ participantName }, yapılmış bir daveti kesin olmamakla birlikte kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        "${ participantName }, yapılmış bir daveti belirsiz olarak kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
+        "${ participantName }, yapılmış bir daveti kesin olmamakla birlikte kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName }, yinelenen etkinliğin bir tanesine yapılmış daveti belirsiz olarak kabul etti."
+        "${ participantName }, yinelenen etkinliğin bir tanesine yapılmış daveti kesin olmamakla birlikte kabul etti."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        "${ participantName } bu etkinlik davetini belirsiz olarak kabul etti."
+        "${ participantName } bu etkinlik davetini kesin olmamakla birlikte kabul etti."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName }, yaptığınız daveti belirsiz olarak kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi kesin olmamakla birlikte kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
-        "${ participantName }, yaptığınız daveti belirsiz olarak kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
+        "${ participantName }, davetinizi kesin olmamakla birlikte kabul etti ve bu etkinlik için yeni bir saat önerisinde bulundu."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName }, yinelenen etkinliğin bir tanesine yaptığınız daveti belirsiz olarak kabul etti."
+        "${ participantName }, yinelenen etkinliğin bir tanesine yaptığınız daveti kesin olmamakla birlikte kabul etti."
       ],
       "${ participantName } tentatively accepted your invitation.": [
-        "${ participantName } davetinizi belirsiz olarak kabul etti."
+        "${ participantName } davetinizi kesin olmamakla birlikte kabul etti."
       ],
       "(Attendance optional)": [
         "(Katılım isteğe bağlı)"
@@ -1595,58 +1588,10 @@
         "Bu daveti zaten reddetmişsiniz."
       ],
       "You already tentatively accepted this invitation.": [
-        "Bu daveti zaten belirsiz olarak kabul etmişsiniz."
+        "Bu daveti zaten kesin olmamakla birlikte kabul etmişsiniz."
       ],
       "Your email address is not in the participants list": [
         "E-posta adresiniz katılımcılar listesinde yok"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Eşitlenmemiş"
-      ],
-      "Syncing": [
-        "Eşitleniyor"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Takvimin şifresi çözülemedi"
-      ],
-      "Calendar is syncing": [
-        "Takvim eşitleniyor"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir."
-      ],
-      "Calendar is too big": [
-        "Takvim çok büyük"
-      ],
-      "Calendar link is not accessible": [
-        "Takvim bağlantısına erişilemiyor"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Takvim bağlantısına geçici olarak erişilemiyor"
-      ],
-      "Failed to sync calendar": [
-        "Takvim eşitlenemedi"
-      ],
-      "More than 12 hours passed since last update": [
-        "Son güncellemeden bu yana 12 saatten fazla zaman geçti"
-      ],
-      "Unsupported calendar format": [
-        "Takvim biçimi desteklenmiyor"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Takvim bağlantısına, takvim hizmeti sağlayıcısının ekosistemi dışından erişilemez."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Takvim bağlantısına geçici olarak erişilemiyor. Lütfen takvim hizmeti sağlayıcısı bağlantısının hala geçerli olduğunu doğrulayın."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. ${ CALENDAR_APP_NAME }, takvimi birkaç saat içinde güncellemeye çalışacak."
       ]
     },
     "Calendar widget banner": {
@@ -1989,9 +1934,6 @@
       ],
       "Work": [
         "İş"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2011,7 +1953,7 @@
         "Amerikan Samoası"
       ],
       "Andorra": [
-        "Andorra"
+        "Andora"
       ],
       "Angola": [
         "Angola"
@@ -2879,12 +2821,21 @@
       "No labels": [
         "Henüz bir etiket yok"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logo and a plus sign"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Tarifenizi yükselttiğinizde özel ileti zamanlaması ve diğer özelliklere erişebilirsiniz."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
+      ],
+      "When do you want your message to be sent?": [
+        "İletinizin ne zaman gönderilmesini istersiniz?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
@@ -2966,7 +2917,7 @@
         "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından reddedildi"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından belirsiz olarak kabul edildi"
+        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kesin olmamakla birlikte kabul edildi"
       ]
     },
     "Email reminder banner": {
@@ -3013,16 +2964,16 @@
         "${ formattedStart } tarihinde başlayan bir etkinliğin iptal bilgilendirmesi"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için davet"
+        "${ formattedStart } zamanındaki etkinlik daveti"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için davet"
+        "${ formattedStart } zamanında başlayan etkinlik daveti"
       ],
       "Update for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için güncelleme"
+        "${ formattedStart } zamanındaki etkinlik için güncelleme"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için güncelleme"
+        "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
     "Encrypted Headers": {
@@ -3068,6 +3019,9 @@
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
+      "Contact name is too long": [
+        "Kişi adı çok uzun"
+      ],
       "Contact signature could not be verified": [
         "Kişi imzası doğrulanamadı"
       ],
@@ -3082,14 +3036,6 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Şifre çözme hatası: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "En az ${ calendarToFixCount } takvimi kaldırın",
-        "En az ${ calendarToFixCount } takvimi kaldırın"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "En az ${ calendarToFixCount } takvimi kaldırın ya da",
-        "En az ${ calendarToFixCount } takvimi kaldırın ya da"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
@@ -3168,10 +3114,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Eklenebilecek en fazla dosya sayısı (${ attachmentsCountLimit }) sınırı aşıldı"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin",
-        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin"
       ],
       "Message needs to be sent first": [
         "Öncelikle iletinin gönderilmesi gerekiyor"
@@ -3285,9 +3227,6 @@
       "Some groups could not be deleted": [
         "Bazı gruplar silinemedi"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Bazı klasör adlarınız sistem kullanımına ayrılmış. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
@@ -3364,7 +3303,7 @@
       "This message has already been sent. A new draft has been saved.": [
         "Bu ileti zaten gönderildi. Yeni bir taslak kaydedildi."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
@@ -3388,7 +3327,7 @@
       "You can't send a mail to more than 100 recipients": [
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
       ],
-      "You can't send vCards of more than 10 contacts": [
+      "You can't send vCard files of more than 10 contacts": [
         "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
@@ -3397,9 +3336,6 @@
       ],
       "You did not provide a file.": [
         "Bir dosya seçmediniz."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Kişisel takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -3998,9 +3934,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-posta"
       ],
@@ -4009,9 +3942,6 @@
       ],
       "No verification method available": [
         "Kullanılabilecek bir doğrulama yöntemi yok"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4031,6 +3961,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
@@ -4253,9 +4186,6 @@
       ],
       "ICS file": [
         "ICS dosyası"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4270,6 +4200,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "${ provider } üzerinden içe aktar"
+      ],
       "Other": [
         "Diğer"
       ]
@@ -4306,10 +4239,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } birleştirilmiş takvim",
-        "${ calendarsToBeMerged } birleştirilmiş takvim"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
@@ -4357,13 +4286,13 @@
         "${ numberOfTrackers } e-posta izleyici engellendi",
         "${ numberOfTrackers } e-posta izleyici engellendi"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } kişi grubu",
-        "${ numContactGroups } kişi grubu"
+      "${ numContact } contact": [
+        "${ numContact } kişi",
+        "${ numContact } kişi"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } kişi",
-        "${ numContacts } kişi"
+      "${ numGroups } contact group": [
+        "${ numGroups } kişi grubu",
+        "${ numGroups } kişi grubu"
       ],
       "${ NumMessages } message in conversation": [
         "Yazışmada ${ NumMessages } ileti var",
@@ -4409,9 +4338,6 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } depolama alanı"
-      ],
       "${ total } conversation": [
         "${ total } yazışma",
         "${ total } yazışma"
@@ -4456,9 +4382,6 @@
       ],
       "(No Recipient)": [
         "(Alıcı yok)"
-      ],
-      "10 email addresses": [
-        "10 e-posta adresi"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Bir kurtarma ifadesi, hesabınıza erişimi korumanın en güvenli yollarından biridir. Hesabınıza erişmek ve parolanızı unutursanız şifrelenmiş verilerinizi kurtarmak için bu ifadeyi kullanabilirsiniz."
@@ -4567,6 +4490,9 @@
       "Body: ": [
         "İçerik: "
       ],
+      "Calendar side panel": [
+        "Takvim yan panosu"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
@@ -4597,15 +4523,15 @@
       "Confirm phishing report": [
         "Kimlik avı girişimi bildirimini onayla"
       ],
-      "Continue with ${ planName }": [
-        "${ planName } aboneliğini kullanmayı sürdür"
-      ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "${ calendarsToBeCreated } yeni takvim ekle",
-        "${ calendarsToBeCreated } yeni takvim ekle"
+      "Country code": [
+        "Ülke kodu"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } yeni takvim ekle",
+        "${ calendarsToBeCreatedCount } yeni takvim ekle"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
@@ -4805,9 +4731,9 @@
       "Group assignment applied": [
         "Grup ataması uygulandı"
       ],
-      "Has ${ numAttachments } attachment": [
-        "${ numAttachments } ek dosya var",
-        "${ numAttachments } ek dosya var"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "${ numAttachments } ek dosya var (${ numAttachmentsSize })",
+        "${ numAttachments } ek dosya var (${ numAttachmentsSize })"
       ],
       "here": [
         "buraya"
@@ -4846,12 +4772,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Otomatik yanıt içinde kullanılmasına izin verilmediğinden görseller kaldırıldı"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "${ selectedCalendarsCount } / ${ totalCalendarsCount } takvimi içe aktar",
-        "${ selectedCalendarsCount } / ${ totalCalendarsCount } takvimi içe aktar"
       ],
       "Import from": [
         "Şuradan içe aktar"
@@ -4864,6 +4790,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
@@ -4970,8 +4899,8 @@
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Çok sayıda ileti taşınıyor. Bu işlem biraz zaman alabilir."
+      "Moving messages. This may take a while.": [
+        "İletiler taşınıyor. Bu işlem biraz zaman alabilir."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
@@ -5032,9 +4961,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilir anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
-      ],
-      "Other options": [
-        "Diğer seçenekler"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
@@ -5102,9 +5028,6 @@
       ],
       "Print email": [
         "E-postayı yazdır"
-      ],
-      "Priority support": [
-        "Öncelikli destek"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta gönderenlere sızmasından korunun."
@@ -5175,9 +5098,6 @@
       "Select what you want to import.": [
         "İçe aktarmak istediklerinizi seçin."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "${ boldText } e-posta adresine şifrelenmiş ve parola ile korunan bir ileti gönderin."
       ],
@@ -5223,9 +5143,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da süresi geçmiş."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "${ DRIVE_APP_NAME } ile dosyaları güvenli bir şekilde saklayın ve paylaşın."
       ],
@@ -5240,9 +5157,6 @@
       ],
       "Subject: ": [
         "Konu: "
-      ],
-      "Support for 1 custom email domain": [
-        "1 özel e-posta etki alanı desteği"
       ],
       "Support privacy by upgrading for": [
         "Tarifenizi yükselterek gizliliği destekleyin"
@@ -5418,12 +5332,6 @@
       "Turn on to search the content of your messages": [
         "İletilerinizin içeriklerini arayabilmek için açın"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket, süzgeç"
-      ],
-      "Unlimited messages": [
-        "Sınırsız ileti"
-      ],
       "Unlock message": [
         "İletinin kilidini aç"
       ],
@@ -5435,6 +5343,9 @@
       ],
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
       ],
       "Upgrade to add more addresses to your account.": [
         "Hesabınıza daha fazla adres eklemek için yükseltin."
@@ -5466,9 +5377,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Üçüncü taraf masaüstü uygulamaları ile ${ MAIL_APP_NAME } kullanmak için yükseltin."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
-      ],
       "Upload picture": [
         "Görsel yükle"
       ],
@@ -5486,9 +5394,6 @@
       ],
       "Using SimpleLogin is easy": [
         "SimpleLogin kullanmak kolaydır"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Doğrulanmış ${ BRAND_NAME } iletisi"
       ],
       "Version ${ appVersion }": [
         "Sürüm ${ appVersion }"
@@ -5714,9 +5619,6 @@
       ],
       "Trusted": [
         "Güvenilmiş"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6037,14 +5939,11 @@
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
-      "Coming soon": [
-        "Çok yakında"
+      "Colors": [
+        "Renkler"
       ],
       "Conditions": [
         "Koşullar"
-      ],
-      "Confirm password": [
-        "Parolayı onayla"
       ],
       "Contacts": [
         "Kişiler"
@@ -6130,9 +6029,6 @@
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Nereden: ${ importedEmail }"
-      ],
       "Good": [
         "İyi"
       ],
@@ -6207,12 +6103,6 @@
       ],
       "Manage categories": [
         "Kategori yönetimi"
-      ],
-      "Manage folders": [
-        "Klasör yönetimi"
-      ],
-      "Manage labels": [
-        "Etiket yönetimi"
       ],
       "Manage my addresses": [
         "Adreslerimi yönet"
@@ -6367,9 +6257,6 @@
       "To:": [
         "Kime:"
       ],
-      "To: ${ emailAddress }": [
-        "Nereye: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Kime: ${ to }"
       ],
@@ -6384,9 +6271,6 @@
       ],
       "Undisclosed Recipients": [
         "Gizli alıcılar"
-      ],
-      "Upload file": [
-        "Dosya yükle"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -6494,6 +6378,17 @@
       ],
       "Row": [
         "Satır"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Yeni bir takvim eklemek için var olan bir takvimi kaldırın."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Yeni bir takvim eklemek için başka bir takvimi kaldırın ya da ${ BRAND_NAME } tarifenizi ${ MAIL_SHORT_APP_NAME } ücretli tarifesine yükseltin."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Tarifenizle kullanabileceğiniz en fazla takvim sayısına ulaştınız."
       ]
     },
     "Link": {
@@ -6659,8 +6554,9 @@
       "Almost there": [
         "Neredeyse tamam"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Eklenen takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
@@ -6679,21 +6575,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
       ]
     },
     "Mailbox": {
@@ -6942,6 +6838,39 @@
         "Hesap değiştirin ya da ekleyin"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Hide My Email aliases": [
+        "E-posta takma adlarım gizlensin"
+      ],
+      "Schedule messages at any time": [
+        "İletileri istediğiniz zamanda gönderin"
+      ],
+      "Search message content": [
+        "İleti içeriğinde arama"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Up to 15 email addresses": [
+        "15 e-posta adresine kadar"
+      ],
+      "Up to 500 GB of storage": [
+        "500 GB depolama alanına kadar"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "${ BRAND_NAME } SimpleLogin ile sınırsız takma ad edinin"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Bize deneyimlerinizi anlatın. (İsteğe bağlı)"
@@ -7105,9 +7034,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
-      ],
-      "Confirm password": [
-        "Parola onayı"
       ],
       "E.g., ": [
         "Örneğin, "
@@ -7464,9 +7390,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
-      ],
       "Email tracking protection": [
         "E-posta izleme koruması"
       ],
@@ -7481,9 +7404,6 @@
       ],
       "Schedule send": [
         "Gönderimi zamanla"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } uygulamasını deneyin"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Artık varsayılan olarak görseller yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
@@ -7621,7 +7541,7 @@
       "Bug reported": [
         "Hata bildirildi"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "İçe aktarma iptal ediliyor"
       ],
       "Code sent to ${ methodTo }": [
@@ -7853,17 +7773,9 @@
         "${ daysCountLeft } gün",
         "${ daysCountLeft } gün"
       ],
-      "${ hours } hour": [
-        "${ hours } saat",
-        "${ hours } saat"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } saat",
         "${ hoursCountLeft } saat"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } dakika",
-        "${ minutes } dakika"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } dakika",
@@ -7872,6 +7784,34 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } saniye",
         "${ secondsCountLeft } saniye"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } s",
+        "${ hours } s"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 s",
+        "${ hoursInt }.5 s"
+      ],
+      "${ minutes } min": [
+        "${ minutes } dk",
+        "${ minutes } dk"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 saat",
+        "${ hoursInt }.5 saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
       ]
     },
     "Title": {
@@ -8319,6 +8259,9 @@
       "Sending original message": [
         "Özgün ileti gönderiliyor"
       ],
+      "Set your own schedule": [
+        "Kendi zamanlamanızı yapın"
+      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -8401,8 +8344,8 @@
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8808,8 +8751,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "${ interval } yılda bir",
+        "${ interval } yılda bir"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } yılda bir, ${ timesString }",

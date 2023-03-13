@@ -1,7 +1,8 @@
 import { addContacts, labelContactEmails, labelContacts } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { createContactGroup } from '@proton/shared/lib/api/labels';
-import { ACCENT_COLORS, API_CODES, HOUR } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import { API_CODES, HOUR } from '@proton/shared/lib/constants';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';

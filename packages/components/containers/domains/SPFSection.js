@@ -20,7 +20,7 @@ const SPFSection = () => {
             </Alert>
             <Label>{c('Label')
                 .t`Please add the following TXT record. Note, DNS records can take several hours to update.`}</Label>
-            <Table>
+            <Table responsive="cards">
                 <TableHeader
                     cells={[
                         c('Header for domain modal').t`Type`,
@@ -30,6 +30,11 @@ const SPFSection = () => {
                 />
                 <TableBody>
                     <TableRow
+                        labels={[
+                            c('Header for domain modal').t`Type`,
+                            c('Header for domain modal').t`Host name`,
+                            c('Header for domain modal').t`Value / Data / Points to`,
+                        ]}
                         cells={[
                             <code key="txt">TXT</code>,
                             <code key="at">@</code>,

@@ -49,14 +49,14 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 disabled={isPrevDisabled}
                 onClick={onPrev}
                 title={c('Action').t`Previous`}
-                data-testid="preview:button:previous"
+                data-testid="file-preview:navigation:prev"
             >
                 <Icon name="chevron-left" size={16} alt={c('Action').t`Previous`} />
             </Button>
             <span className="ml0-5 mr0-5">
-                <span>{current}</span>
+                <span data-testid="preview:current-attachment">{current}</span>
                 <span className="ml0-25 mr0-25 color-weak text-sm">{c('Info').t`of`}</span>
-                <span>{total}</span>
+                <span data-testid="preview:all-attachments">{total}</span>
             </span>
             <Button
                 icon
@@ -65,7 +65,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 disabled={isNextDisabled}
                 onClick={onNext}
                 title={c('Action').t`Next`}
-                data-testid="preview:button:next"
+                data-testid="file-preview:navigation:next"
             >
                 <Icon name="chevron-right" size={16} alt={c('Action').t`Next`} />
             </Button>

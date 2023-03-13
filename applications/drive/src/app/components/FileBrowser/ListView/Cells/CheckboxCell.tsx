@@ -1,9 +1,11 @@
 import { memo } from 'react';
 
-import { Checkbox, TableCell, classnames } from '@proton/components';
+import { Checkbox, TableCell } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { stopPropagation } from '../../../../utils/stopPropagation';
 import { useFileBrowserCheckbox } from '../../hooks/useFileBrowserCheckbox';
+import { SelectionState } from '../../hooks/useSelectionControls';
 import { FileBrowserBaseItem } from '../../interface';
 import { useSelection } from '../../state/useSelection';
 
@@ -32,7 +34,7 @@ const CheckboxCellBase = ({
         <TableCell className="m0 flex file-browser-list-checkbox-cell" data-testid="column-checkbox">
             <div
                 role="presentation"
-                className={classnames(['flex flex-align-items-center', className])}
+                className={clsx(['flex flex-align-items-center', className])}
                 onTouchStart={stopPropagation}
                 onKeyDown={stopPropagation}
                 onClick={onCheckboxWrapperClick}
@@ -57,7 +59,9 @@ export const CheckboxCell = memo(({ item }: { item: FileBrowserBaseItem }) => {
 
     return (
         <CheckboxCellBase
-            className={selectionControls?.selectedItemIds.length ? undefined : 'opacity-on-hover-only-desktop'}
+            className={
+                selectionControls?.selectionState !== SelectionState.NONE ? undefined : 'opacity-on-hover-only-desktop'
+            }
             isDisabled={Boolean(item.isLocked)}
             isSelected={isSelected}
             onCheckboxChange={handleCheckboxChange}

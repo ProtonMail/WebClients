@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 
 import NotificationsContainer from '@proton/components/containers/notifications/Container';
-import { NotificationOptions } from '@proton/components/containers/notifications/interfaces';
+import { Notification } from '@proton/components/containers/notifications/interfaces';
 import createNotificationManager from '@proton/components/containers/notifications/manager';
 import NotificationsContext from '@proton/components/containers/notifications/notificationsContext';
+import noop from '@proton/utils/noop';
 
 import { useLongLivingState } from '../../hooks/useLongLivingState';
 
@@ -18,16 +19,16 @@ interface Props {
  * YET it's still relevant to try to prevent any async leak from your tests
  */
 const NotificationsTestProvider = ({ children }: Props) => {
-    const [notifications, setNotifications] = useLongLivingState<NotificationOptions[]>([]);
+    const [notifications, setNotifications] = useLongLivingState<Notification[]>([]);
     const managerRef = useRef<ReturnType<typeof createNotificationManager>>();
 
     if (!managerRef.current) {
-        managerRef.current = createNotificationManager(setNotifications as any);
+        managerRef.current = createNotificationManager(setNotifications as any, noop);
     }
 
     const manager = managerRef.current;
 
-    const { hideNotification, removeNotification } = manager;
+    const { hideNotification, removeNotification, removeDuplicate } = manager;
 
     return (
         <NotificationsContext.Provider value={manager}>
@@ -35,6 +36,7 @@ const NotificationsTestProvider = ({ children }: Props) => {
             <NotificationsContainer
                 notifications={notifications}
                 removeNotification={removeNotification}
+                removeDuplicate={removeDuplicate}
                 hideNotification={hideNotification}
             />
         </NotificationsContext.Provider>

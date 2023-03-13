@@ -3,16 +3,16 @@
 		color: var(--text-norm);
 		font-weight: var(--font-weight-semibold);
 
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			flex-wrap: nowrap;
 		}
 
 		&-day {
-			@include respond-to($breakpoint-small, 'max') {
+			@include media('<=small') {
 				inline-size: 100%;
 			}
 
-			@include respond-to($breakpoint-small, 'min') {
+			@include media('>small') {
 				margin-inline-end: rem(2);
 			}
 		}
@@ -25,7 +25,7 @@
 			block-size: 1.75em;
 			transition: 0.15s easing(ease-out-quint);
 
-			@include respond-to($breakpoint-small, 'min') {
+			@include media('>small') {
 				block-size: rem(28);
 				inline-size: rem(28);
 			}
@@ -40,10 +40,10 @@
 			background-color: var(--interaction-default-active);
 		}
 
-		@media not print {
+		@include media('screen') {
 			&[aria-current='date'] {
 				.calendar-grid-heading-day {
-					@include respond-to($breakpoint-small, 'min') {
+					@include media('>small') {
 						margin-inline-end: rem(6);
 					}
 				}
@@ -73,9 +73,9 @@
 			}
 		}
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			&[aria-pressed='true'] &-number {
-				@media not print {
+				@include media('screen') {
 					background-color: var(--primary);
 					color: var(--primary-contrast);
 				}

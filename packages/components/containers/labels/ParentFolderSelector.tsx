@@ -4,7 +4,7 @@ import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
-import { Loader, Option, SelectTwo } from '../../components';
+import { InputFieldTwo, Loader, Option, SelectTwo } from '../../components';
 import { OptionProps } from '../../components/select/Select';
 import { useFolders } from '../../hooks';
 
@@ -12,11 +12,12 @@ interface Props {
     id: string;
     className?: string;
     value: string | number;
+    label: string;
     onChange?: (parentID: string | number) => void;
     disableOptions: string[];
 }
 
-const ParentFolderSelector = ({ id, value, onChange, className, disableOptions = [] }: Props) => {
+const ParentFolderSelector = ({ id, value, label, onChange, className, disableOptions = [] }: Props) => {
     const [folders, loading] = useFolders();
 
     if (loading) {
@@ -46,11 +47,18 @@ const ParentFolderSelector = ({ id, value, onChange, className, disableOptions =
     );
 
     return (
-        <SelectTwo id={id} className={className} value={value} onChange={({ value }) => onChange?.(value)}>
+        <InputFieldTwo
+            as={SelectTwo}
+            label={label}
+            id={id}
+            className={className}
+            value={value}
+            onChange={({ value }: any) => onChange?.(value)}
+        >
             {options.map((option) => {
                 return <Option key={option.value} value={option.value} title={option.text.toString()} />;
             })}
-        </SelectTwo>
+        </InputFieldTwo>
     );
 };
 

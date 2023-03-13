@@ -3,7 +3,7 @@ import { ReactNode, Ref, useCallback, useEffect, useMemo, useState } from 'react
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import {
     AppLink,
     ContactDrawerAppButton,
@@ -24,7 +24,6 @@ import {
     RebrandingFeedbackModal,
     SettingsLink,
     Spotlight,
-    TextLoader,
     TimeZoneSelector,
     Tooltip,
     TopBanners,
@@ -462,7 +461,6 @@ const CalendarContainerView = ({
             {renderOnboardingModal && <CalendarOnboardingModal showGenericSteps {...onboardingModal} />}
             <PrivateHeader
                 userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModal(true)} />}
-                logo={logo}
                 settingsButton={
                     <Spotlight
                         type="new"
@@ -528,7 +526,6 @@ const CalendarContainerView = ({
             calendars={calendars}
             addresses={addresses}
             logo={logo}
-            isNarrow={isNarrow}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
@@ -552,7 +549,12 @@ const CalendarContainerView = ({
 
     const loader = isLoading ? (
         <div className="calendar-loader-container">
-            <TextLoader className="m0">{c('Info').t`Loading events`}</TextLoader>
+            <div className="notification" role="alert">
+                <span className="notification__content">
+                    <span>{c('Info').t`Loading events`}</span>
+                    <CircleLoader srLabelHidden={true} />
+                </span>
+            </div>
         </div>
     ) : null;
 
@@ -582,7 +584,6 @@ const CalendarContainerView = ({
             drawerApp={isDrawerApp ? null : <DrawerApp contactCustomActions={contactCustomActions} />}
             mainBordered={canShowDrawer && showDrawerSidebar}
         >
-            {loader}
             <div className="only-print p1">
                 {tzid} <br />
                 {calendars
@@ -627,6 +628,7 @@ const CalendarContainerView = ({
                 />
             )}
             <PrivateMainArea hasToolbar data-test-id="calendar-view:events-area">
+                {loader}
                 {children}
             </PrivateMainArea>
         </PrivateAppContainer>

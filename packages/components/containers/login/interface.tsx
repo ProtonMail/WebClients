@@ -50,7 +50,7 @@ export interface AuthCacheResult {
     setupVPN: boolean;
 }
 
-export type AuthFlows = 'signup' | 'reset' | 'switch' | undefined;
+export type AuthFlows = 'signup' | 'reset' | 'switch' | 'login' | undefined;
 
 export interface AppIntent {
     app: APP_NAMES;

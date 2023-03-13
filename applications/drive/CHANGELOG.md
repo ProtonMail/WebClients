@@ -1,3 +1,41 @@
+# Release 5.0.11.0 – February 22, 2023
+
+## Improved
+
+-   Added count of selected files
+-   Improved primary Sidebar upload button to include both file and folder uploads
+-   Added the actual size of the file in the details modal
+-   Empty trash button is active before everything is loaded
+-   Number of accesses changed to the more precise number of downloads
+-   Stop sharing is now always visible in sharing modal
+
+## Fixed
+
+-   Reversed the direction of the sorting arrow
+-   View with the empty search result
+-   Redirect after navigating to a non-existing folder
+-   Error logs when canceling the transfer
+
+# Release 5.0.10.0 – January 25, 2023
+
+## Improved
+
+-   Added ability to preview LaTeX and other source files
+-   Improved detection of Pages, Numbers, and Keynote files
+-   Sanity validation & automatic re-encryption to prevent bitflip issues
+-   Improved mobile web UX by remove floating action button & moving actions to toolbar
+-   Added empty trash action to toolbar in Trash section
+-   Improved UI by making the main CTA to always be "New Upload"
+
+## Fixed
+
+-   Resolved issue related to zip files that contained files over 4 GB when downloaded (support of 64-bit archives)
+-   Previewing in Trash now works as expected
+-   Restoration of deep folder structure from Trash
+-   Replacing file after previously failed upload
+-   Detection of duplicate files after previously failed upload
+-   Improved performance when uploads get stuck in the middle
+
 # Release 5.0.9.0 – December 14, 2022
 
 ## Improved

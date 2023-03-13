@@ -284,9 +284,6 @@
       "Edit subscription": [
         "Editar subscrição"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "enable desktop notifications": [
         "activar as notificações"
       ],
@@ -391,6 +388,9 @@
       ],
       "Make default": [
         "Tornar predefinido"
+      ],
+      "Manage labels": [
+        "Gerir etiquetas"
       ],
       "Mark as default": [
         "Marcar como predefinição"
@@ -505,9 +505,6 @@
       ],
       "Remove this notification": [
         "Remover esta notificação"
-      ],
-      "Rename": [
-        "Renomear"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -662,9 +659,6 @@
       "Sort": [
         "Ordenar"
       ],
-      "Spam": [
-        "Spam"
-      ],
       "Start import": [
         "Iniciar a importação"
       ],
@@ -718,6 +712,9 @@
       ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Upgrade now": [
+        "Atualizar agora"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -777,14 +774,6 @@
     "Action for user session": {
       "Revoke": [
         "Revogar"
-      ]
-    },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "Continuar com o plano gratuito"
-      ],
-      "No, thanks": [
-        "Não, obrigado"
       ]
     },
     "Addon": {
@@ -858,9 +847,6 @@
     "Badge": {
       "5 users": [
         "5 utilizadores"
-      ],
-      "Coming soon": [
-        "Em breve"
       ]
     },
     "Badge for domain": {
@@ -981,9 +967,16 @@
       ],
       "Send": [
         "Enviar"
-      ],
-      "Tweet": [
-        "Tweet"
+      ]
+    },
+    "Calendar access select label": {
+      "Add people or groups": [
+        "Adicionar pessoas ou grupos"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "Editar agenda"
       ]
     },
     "Calendar invite status label": {
@@ -994,6 +987,14 @@
     "Calendar permissions label": {
       "Permissions": [
         "Permissões"
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Partilhar agenda"
+      ],
+      "Share with anyone": [
+        "Partilhar com o qualquer pessoa"
       ]
     },
     "Calendar status": {
@@ -1165,17 +1166,11 @@
       "Other": [
         "Outro"
       ],
-      "Pager": [
-        "Pager"
-      ],
       "Personal": [
         "Pessoal"
       ],
       "Work": [
         "Trabalho"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1231,10 +1226,10 @@
         "Azerbaijão"
       ],
       "Bahamas": [
-        "Bahamas"
+        "Baamas"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Barém"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -1252,7 +1247,7 @@
         "Belize"
       ],
       "Benin": [
-        "Benin"
+        "Benim"
       ],
       "Bermuda": [
         "Bermuda"
@@ -1270,7 +1265,7 @@
         "Bósnia e Herzegovina"
       ],
       "Botswana": [
-        "Botswana"
+        "Botsuana"
       ],
       "Bouvet Island": [
         "Ilha Bouvet"
@@ -1330,7 +1325,7 @@
         "Colômbia"
       ],
       "Comoros": [
-        "Comoros"
+        "Comores"
       ],
       "Congo": [
         "Congo"
@@ -1366,7 +1361,7 @@
         "Dinamarca"
       ],
       "Djibouti": [
-        "Djibouti"
+        "Djibuti"
       ],
       "Dominica": [
         "Dominica"
@@ -1540,7 +1535,7 @@
         "Quénia"
       ],
       "Kiribati": [
-        "Kiribati"
+        "Quiribati"
       ],
       "Kosovo": [
         "Kosovo"
@@ -1561,7 +1556,7 @@
         "Líbano"
       ],
       "Lesotho": [
-        "Lesotho"
+        "Lesoto"
       ],
       "Liberia": [
         "Libéria"
@@ -1585,7 +1580,7 @@
         "Madagáscar"
       ],
       "Malawi": [
-        "Malawi"
+        "Malauí"
       ],
       "Malaysia": [
         "Malásia"
@@ -1639,7 +1634,7 @@
         "Moçambique"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Mianmar"
       ],
       "Namibia": [
         "Namíbia"
@@ -1861,7 +1856,7 @@
         "Togo"
       ],
       "Tokelau": [
-        "Tokelau"
+        "Toquelau"
       ],
       "Tonga": [
         "Tonga"
@@ -1933,7 +1928,7 @@
         "Saará Ocidental"
       ],
       "Yemen": [
-        "Yemen"
+        "Iémen"
       ],
       "Zambia": [
         "Zâmbia"
@@ -1943,11 +1938,6 @@
       ],
       "Åland Islands": [
         "Ilhas Åland"
-      ]
-    },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(via ${ entryCountryName })"
       ]
     },
     "Credits": {
@@ -2037,6 +2027,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Por favor, reveja como esses grupos devem ser importados."
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, por favor divida-o."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2060,6 +2053,9 @@
     "Domain spam notification": {
       "${ name } added": [
         "${ name } adicionado"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminado"
       ]
     },
     "Duration": {
@@ -2227,11 +2223,14 @@
       "Error in one of the conditions": [
         "Erro numa das condições"
       ],
-      "Filter with this name already exist": [
-        "Já existe um filtro com este nome"
-      ],
       "Filter with this name already exists": [
         "Já existe um filtro com este nome"
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "Credenciais de início de sessão incorrectas. Tente novamente."
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "Senha da caixa de correio incorrecta. Por favor, tente novamente."
       ],
       "Incorrect password": [
         "Senha incorrecta"
@@ -2280,6 +2279,9 @@
       ],
       "No active sessions": [
         "Sem sessões activas"
+      ],
+      "No public key for ${ BRAND_NAME } address": [
+        "Nenhuma chave pública para o endereço do ${ BRAND_NAME }"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Nenhuma das chaves WKD recuperadas para o utilizador é válida para o envio"
@@ -2630,6 +2632,9 @@
       "Invalid response": [
         "Resposta inválida"
       ],
+      "Unexpected error": [
+        "Erro inesperado"
+      ],
       "Unsupported invitation": [
         "Convite não suportado"
       ],
@@ -2904,20 +2909,8 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
-      "Manual": [
-        "Manual"
-      ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -3031,9 +3024,6 @@
       ],
       "ICS file": [
         "Ficheiro ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import provider": {
@@ -3047,9 +3037,6 @@
       ],
       "Canceled": [
         "Cancelada"
-      ],
-      "Canceling": [
-        "A cancelar"
       ],
       "Completed": [
         "Concluída"
@@ -3107,10 +3094,6 @@
         "${ calendarsToBeCreatedCount } nova agenda",
         "${ calendarsToBeCreatedCount } novas agendas"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } agenda unida",
-        "${ calendarsToBeMerged } agendas unidas"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeCreatedCount } agenda unida",
         "${ calendarsToBeCreatedCount } agendas unidas"
@@ -3142,14 +3125,6 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } grupo de contatos",
-        "${ numContactGroups } grupos de contatos"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } contacto",
-        "${ numContacts } contactos"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
         "${ providerFoldersNumLocalized } pastas encontradas"
@@ -3178,9 +3153,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "É requerida ${ vpnPlus } para ligação a nível de país."
       ],
@@ -3203,9 +3175,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ligação para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)",
         "+${ organization.BonusVPN } ligações para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
@@ -3357,6 +3326,9 @@
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar gravadas"
       ],
+      "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
+        "Ao partilhar todos os detalhes de evento desta agenda, aceita conceder acesso ao ${ BRAND_NAME } à informação encriptada nesta agenda."
+      ],
       "Center": [
         "Centrar"
       ],
@@ -3372,12 +3344,8 @@
       "Continue anyway?": [
         "Continuar mesmo assim?"
       ],
-      "Continue with ${ planName }": [
-        "Continuar com ${ planName }"
-      ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Criar ${ calendarsToBeCreated } nova agenda",
-        "Criar ${ calendarsToBeCreated } novas agendas"
+      "Country code": [
+        "Código de país"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
@@ -3485,6 +3453,9 @@
       "Enter key manually instead": [
         "Inserir a chave manualmente"
       ],
+      "Enter the code from your authenticator app": [
+        "Introduza o código da sua aplicação de autenticação."
+      ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Insira o código enviado para o seu número de telefone ${ phone }."
       ],
@@ -3520,9 +3491,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os emails, incluindo recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma acção."
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Para Visa e MasterCard, os 3 algarismos na parte de trás do seu cartão. Para American Express, os 4 algarismos na frente do seu cartão."
       ],
       "Free up some space or add more storage space.": [
         "Liberte algum espaço ou adicione mais espaço de armazenamento."
@@ -3583,10 +3551,6 @@
       ],
       "Image URL": [
         "URL da imagem"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } agenda",
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } agendas"
       ],
       "Import from": [
         "Importar de"
@@ -3759,15 +3723,6 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "A sua organização tem mais administradores. Deve comunicar-lhes a nova senha."
       ],
-      "Other options": [
-        "Outras opções"
-      ],
-      "P2P": [
-        "P2P"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "O pagamento pode levar alguns minutos até estar completo."
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
       ],
@@ -3804,26 +3759,17 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Por favor, seleccione o tipo de ligação que deseja inserir e preencha todos os campos."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Por favor, tente novamente, use um método de pagamento diferente ou contacte o seu banco para assistência."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Por favor, tente novamente, utilize um método de pagamento diferente, ou contacte o PayPal para assistência."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Por favor, verifique o pagamento no separador que abriu."
       ],
-      "Please verify the card in the new tab which was opened.": [
-        "Por favor, verifique o cartão no separador que abriu."
-      ],
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
       ],
       "Preview": [
         "Antever"
-      ],
-      "Priority support": [
-        "Suporte prioritário"
       ],
       "purchase additional storage": [
         "comprar armazenamento adicional"
@@ -3969,9 +3915,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total storage": [
         "Total de armazenamento"
       ],
@@ -3993,11 +3936,8 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "A não ser que termine a sessão ou altere a senha da conta, a sessão permanecerá activa. As sessões expiram após 60 dias de inactividade."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
+      "Unsaved changes": [
+        "Alterações não gravadas"
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
@@ -4016,9 +3956,6 @@
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "A verificação abrirá um novo separador, por favor desactive os bloqueadores de janelas."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "A verificação abrirá um novo separador, por favor desactive os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
@@ -4104,9 +4041,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua senha antiga."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Será brevemente redireccionado para o seu banco para verificar o pagamento."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redireccionado para o PayPal para verificar o pagamento."
       ],
@@ -4118,9 +4052,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "A conta será actualizada assim que o pagamento for aprovado."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "O seu banco requer verificação 3-D Secure por motivos de segurança."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu email só será usado para esta verificação única."
@@ -4594,6 +4525,12 @@
       "Attach screenshot(s)": [
         "Anexar capturas de ecrã"
       ],
+      "Authenticator app": [
+        "Aplicação de autenticação"
+      ],
+      "Auto-detect primary time zone": [
+        "Auto-detectar fuso horário primário"
+      ],
       "Auto-reply": [
         "Resposta automática"
       ],
@@ -4621,6 +4558,9 @@
       "BTC amount:": [
         "Quantia BTC:"
       ],
+      "Calendar": [
+        "Agenda"
+      ],
       "Card holder": [
         "Titular do cartão"
       ],
@@ -4641,6 +4581,9 @@
       ],
       "Color": [
         "Cor"
+      ],
+      "Colors": [
+        "Cores"
       ],
       "Composer": [
         "Compositor"
@@ -4713,6 +4656,9 @@
       ],
       "Default PGP scheme": [
         "Esquema PGP predefinido"
+      ],
+      "Default view": [
+        "Vista predefinida"
       ],
       "Delete": [
         "Eliminar"
@@ -4789,8 +4735,8 @@
       "Folder location": [
         "Localização da pasta"
       ],
-      "From: ${ importedEmail }": [
-        "De: ${ importedEmail }"
+      "From: ${ from }": [
+        "De: ${ from }"
       ],
       "Gift code": [
         "Código de oferta"
@@ -4801,11 +4747,17 @@
       "Hide password": [
         "Ocultar senha"
       ],
+      "I understand the risk": [
+        "Eu compreendo o risco."
+      ],
       "IF": [
         "SE"
       ],
       "If": [
         "Se"
+      ],
+      "Import all messages": [
+        "Importar todas as mensagens"
       ],
       "Import to email address": [
         "Importar para endereço de email"
@@ -4849,6 +4801,9 @@
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
+      "Main": [
+        "Principal"
+      ],
       "Manage categories": [
         "Gerir categorias"
       ],
@@ -4857,6 +4812,9 @@
       ],
       "Message": [
         "Mensagem"
+      ],
+      "Moderate NAT": [
+        "NAT moderado"
       ],
       "Move to": [
         "Mover para"
@@ -4873,6 +4831,9 @@
       "Name on card": [
         "Nome no cartão"
       ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Encaminhamento de porta)"
+      ],
       "New login password": [
         "Nova senha de início"
       ],
@@ -4887,6 +4848,9 @@
       ],
       "No label found": [
         "Nenhuma etiqueta encontrada"
+      ],
+      "Non-standard ports": [
+        "Portas não padrão"
       ],
       "Notification": [
         "Notificação"
@@ -5002,17 +4966,20 @@
       "Send crash reports": [
         "Enviar relatórios de erro fatal"
       ],
+      "Show secondary time zone": [
+        "Mostrar fuso horário secundário"
+      ],
       "Show sender images": [
         "Mostrar imagens do remetente"
+      ],
+      "Show week numbers": [
+        "Mostrar números de semana"
       ],
       "Sign external messages": [
         "Assinar mensagens externas"
       ],
       "Signature": [
         "Assinatura"
-      ],
-      "Spam": [
-        "Spam"
       ],
       "Starred": [
         "Com estrela"
@@ -5062,20 +5029,14 @@
       "Timezone": [
         "Fuso horário"
       ],
-      "To: ${ emailAddress }": [
-        "Para: ${ emailAddress }"
+      "To: ${ to }": [
+        "Para: ${ to }"
       ],
       "Two-password mode": [
         "Modo Senha dupla"
       ],
       "Undo send": [
         "Desfazer Enviar"
-      ],
-      "Upload file": [
-        "Enviar ficheiro"
-      ],
-      "URL": [
-        "URL"
       ],
       "Use folder colors": [
         "Usar cores da pasta"
@@ -5092,9 +5053,6 @@
       "Verification code": [
         "Código de verificação"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos a sua partida. Por favor, diga-nos porquê, para podermos melhorar o serviço."
       ],
@@ -5104,8 +5062,8 @@
       "What happened?": [
         "O que é que aconteceu?"
       ],
-      "What is the main reason you are cancelling?": [
-        "Qual é a principal razão para o cancelamento?"
+      "What is the main reason you are canceling?": [
+        "Qual é a principal razão do cancelamento?"
       ],
       "What is the main reason you are deleting your account?": [
         "Qual o principal motivo pelo qual está a eliminar a conta?"
@@ -5375,9 +5333,6 @@
       "Dollar": [
         "Dólar"
       ],
-      "Euro": [
-        "Euro"
-      ],
       "Swiss franc": [
         "Franco suíço"
       ]
@@ -5524,9 +5479,6 @@
       ],
       "Blocked": [
         "Bloqueado"
-      ],
-      "Spam": [
-        "Spam"
       ]
     },
     "New Label form": {
@@ -5562,6 +5514,9 @@
     "new_plans: Action": {
       "From ${ price } per user": [
         "A partir de ${ price } por utilizador"
+      ],
+      "Upgrade now": [
+        "Atualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -5584,10 +5539,6 @@
       "${ n } message per day": [
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
-      ],
-      "${ n } personal calendar": [
-        "${ n } agenda pessoal",
-        "${ n } agendas pessoais"
       ],
       "${ n } VPN connection": [
         "${ n } ligação VPN",
@@ -5792,9 +5743,6 @@
       "Add to existing group": [
         "Adicionar a um grupo existente"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "Sempre perguntar"
       ],
@@ -5816,17 +5764,11 @@
       "Free server configs": [
         "Configurações do servidor Free"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Encontrei outro serviço de que gosto mais"
       ],
       "Ignore group": [
         "Ignorar grupo"
-      ],
-      "iOS": [
-        "iOS"
       ],
       "It's missing a key feature that I need": [
         "Falta uma funcionalidade-chave de que eu necessito"
@@ -5837,23 +5779,11 @@
       "Left to Right": [
         "Da esquerda para a direita"
       ],
-      "macOS": [
-        "macOS"
-      ],
       "My reason isn't listed": [
         "O motivo não está na lista"
       ],
       "No parent folder": [
         "Nenhuma pasta-mãe"
-      ],
-      "Normal": [
-        "Normal"
-      ],
-      "Off": [
-        "Off"
-      ],
-      "On": [
-        "On"
       ],
       "Permanent": [
         "Permanente"
@@ -5873,23 +5803,11 @@
       "Right to Left": [
         "Da direita para a esquerda"
       ],
-      "Router": [
-        "Router"
-      ],
       "Secure Core configs": [
         "Configurações Secure Core"
       ],
       "Standard server configs": [
         "Configurações padrão do servidor"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -5949,9 +5867,6 @@
       ".dmg (10.12 or later)": [
         ".dmg (10.12 ou posterior)"
       ],
-      ".exe (64-bit)": [
-        ".exe (64-bit)"
-      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (para Fedora/openSUSE)"
       ],
@@ -5965,14 +5880,8 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "PGP key warning": {
@@ -6010,9 +5919,6 @@
       ],
       "domain.com": [
         "domínio.com"
-      ],
-      "E.g., ": [
-        "E.g., "
       ],
       "Email address": [
         "Endereço de email"
@@ -6090,6 +5996,14 @@
         "Gratuito"
       ]
     },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Fuso horário principal"
+      ],
+      "Secondary time zone": [
+        "Fuso horário secundário"
+      ]
+    },
     "Private Member": {
       "private": [
         "privado"
@@ -6098,9 +6012,6 @@
     "Property type": {
       "Address": [
         "Endereço"
-      ],
-      "Email": [
-        "Email"
       ],
       "Fax": [
         "Fax"
@@ -6117,9 +6028,6 @@
       "Other": [
         "Outro"
       ],
-      "Pager": [
-        "Pager"
-      ],
       "Phone": [
         "Telefone"
       ],
@@ -6133,9 +6041,6 @@
       ]
     },
     "Recovery method": {
-      "Email": [
-        "Email"
-      ],
       "Phone number": [
         "Número de telefone"
       ],
@@ -6159,6 +6064,9 @@
       ],
       "Remove calendar": [
         "Remover agenda"
+      ],
+      "Unsubscribe?": [
+        "Cancelar subscrição?"
       ]
     },
     "Restore administrator panel": {
@@ -6243,9 +6151,6 @@
     "Signup label": {
       "Display name": [
         "Nome a mostrar"
-      ],
-      "Email": [
-        "Email"
       ],
       "Username": [
         "Utilizador"
@@ -6573,25 +6478,12 @@
         "Campo vCard"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuto"
-      ]
-    },
     "Timezone search placeholder": {
       "Search timezones": [
         "Procurar fusos horários"
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
       ],
@@ -6600,9 +6492,6 @@
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
-      ],
-      "3-D Secure verification failed": [
-        "Falha na verificação 3-D Secure"
       ],
       "3. Select config file and download": [
         "3. Seleccionar configuração e transferir"
@@ -6702,9 +6591,6 @@
       ],
       "Card verification": [
         "Verificação do cartão"
-      ],
-      "Card verification in progress": [
-        "Verificação do cartão em curso"
       ],
       "Catch-All address": [
         "Endereço captura-tudo"
@@ -6854,9 +6740,6 @@
       "Edit user": [
         "Editar utilizador"
       ],
-      "Email": [
-        "Email"
-      ],
       "Email encryption keys": [
         "Chaves de encriptação de email"
       ],
@@ -6868,6 +6751,9 @@
       ],
       "Encryption and keys": [
         "Encriptação e chaves"
+      ],
+      "End date": [
+        "Data de fim"
       ],
       "Enter your password": [
         "Insira a sua senha"
@@ -6923,9 +6809,6 @@
       ],
       "Human verification": [
         "Verificação humana"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "Importar"
@@ -7035,9 +6918,6 @@
       ],
       "Payment verification": [
         "Verificação do pagamento"
-      ],
-      "Payment verification in progress": [
-        "Verificação do pagamento em curso"
       ],
       "PayPal verification failed": [
         "Falha na verificação PayPal"
@@ -7165,6 +7045,9 @@
       "Start a new import": [
         "Iniciar nova importação"
       ],
+      "Start date": [
+        "Data de início"
+      ],
       "Start import process": [
         "Iniciar o processo de importação"
       ],
@@ -7174,15 +7057,16 @@
       "Status": [
         "Estado"
       ],
-      "Subscribed calendars": [
-        "Agendas subscritas"
-      ],
       "Success": [
         "Sucesso"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
         "Conta ${ localSuccessfullyCreatedUsers.length } criada",
         "Contas ${ localSuccessfullyCreatedUsers.length } criadas"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Conta ${ successfullyCreatedUsers.length } criada",
+        "Contas ${ successfullyCreatedUsers.length } criadas"
       ],
       "Switch to one-password mode": [
         "Mudar para modo de senha única"
@@ -7210,6 +7094,9 @@
       ],
       "Upgrade plan": [
         "Atualizar plano"
+      ],
+      "Users": [
+        "Utilizadores"
       ],
       "Users and addresses": [
         "Utilizadores e endereços"
@@ -7320,6 +7207,16 @@
       ],
       "Role": [
         "Papel"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Criar agenda"
+      ]
+    },
+    "Title; edit calendar modal": {
+      "Edit calendar": [
+        "Editar agenda"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7457,29 +7354,6 @@
         "${ n } ligações VPN"
       ]
     },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
-      ]
-    },
     "Warning": {
       "Are you sure you want to delete the address?": [
         "Tem a certeza de que deseja eliminar este endereço?"
@@ -7511,14 +7385,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
       ],
+      "Skip verification?": [
+        "Saltar verificação?"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectámos um problema com sua configuração DNS. Por favor, certifique-se de que os seus registos coincidem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Tem de ${ activateLink } chaves da organização antes de adicionar um endereço de email a um membro não-privado."
-      ],
-      "You will not see this import record in the list anymore.": [
-        "Não voltará a ver este registo de importação na lista."
       ]
     },
     "Warning for domain modal": {
@@ -7745,8 +7619,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

@@ -1,8 +1,9 @@
-import { FeatureCode, useFeature, useMailSettings } from '@proton/components';
+import { useMailSettings } from '@proton/components';
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import useScheduleSendFeature from '../../composer/actions/scheduleSend/useScheduleSendFeature';
 import ExtraAskResign from '../extras/ExtraAskResign';
 import ExtraAutoReply from '../extras/ExtraAutoReply';
 import ExtraBlockedSender from '../extras/ExtraBlockedSender';
@@ -39,8 +40,7 @@ const HeaderExtra = ({
     const [mailSettings] = useMailSettings();
     const received = isReceived(message.data);
 
-    const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
-    const { feature: blockSenderFeature } = useFeature(FeatureCode.BlockSender);
+    const { canScheduleSend } = useScheduleSendFeature();
     const isScheduledMessage = isScheduled(message.data);
     const showCalendarWidget = messageLoaded && received;
 
@@ -55,7 +55,7 @@ const HeaderExtra = ({
             <ExtraErrors message={message} />
             <ExtraAutoReply message={message.data} />
             <ExtraUnsubscribe message={message.data} />
-            {blockSenderFeature?.Value === true && <ExtraBlockedSender message={message} />}
+            <ExtraBlockedSender message={message} />
             {message.verification && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
             <ExtraAskResign
                 message={message.data}
@@ -73,7 +73,7 @@ const HeaderExtra = ({
 
             {showCalendarWidget ? <EmailReminderWidget message={message.data} errors={message.errors} /> : null}
             {showCalendarWidget ? <ExtraEvents message={message} /> : null}
-            {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
+            {isScheduledMessage && canScheduleSend ? <ExtraScheduledMessage message={message} /> : null}
 
             <span className="inline-flex flex-row on-mobile-w100 hidden-empty">
                 <ExtraExpirationTime displayAsButton message={message} />

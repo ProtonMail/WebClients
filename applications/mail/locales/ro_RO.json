@@ -86,6 +86,9 @@
       "Archive": [
         "Arhivare"
       ],
+      "As Scheduled": [
+        "Ca programare"
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Creare mesaj"
+      ],
+      "Custom": [
+        "Personalizat"
       ],
       "Customize": [
         "Personalizare"
@@ -530,9 +536,6 @@
       "Load": [
         "Încărcare"
       ],
-      "Load anyway": [
-        "Continuare încărcare"
-      ],
       "Load embedded images": [
         "Încărcare imagini incluse"
       ],
@@ -598,6 +601,9 @@
       ],
       "Minimize composer": [
         "Micșorare panou editare"
+      ],
+      "Monday": [
+        "Luni"
       ],
       "More": [
         "Mai multe"
@@ -794,9 +800,6 @@
       "Remove this label": [
         "Eliminare etichetă"
       ],
-      "Rename": [
-        "Redenumire"
-      ],
       "Reply": [
         "Răspuns"
       ],
@@ -844,9 +847,6 @@
       ],
       "Schedule message": [
         "Mesaj programat"
-      ],
-      "Schedule send": [
-        "Trimitere programată"
       ],
       "Search": [
         "Căutare"
@@ -959,8 +959,8 @@
       "Skip verification": [
         "Ignorare verificare"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Încărcarea unor imagini a eșuat cu protecția de urmărire activată."
+      "Some images could not be loaded with tracker protection.": [
+        "Unele imagini nu au putut fi încărcate cu protecția împotriva urmăririi activată."
       ],
       "Star": [
         "Marcare cu stea"
@@ -985,6 +985,9 @@
       ],
       "This message contains remote content.": [
         "Acest mesaj conține conținut de la distanță."
+      ],
+      "Tomorrow": [
+        "Mâine"
       ],
       "Trust": [
         "Aprobare"
@@ -1031,7 +1034,7 @@
         "Dezabonare"
       ],
       "Unsubscribing": [
-        "Unsubscribing"
+        "Dezabonare"
       ],
       "Untrust": [
         "Dezaprobare"
@@ -1199,16 +1202,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Conversație"
-      ]
-    },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1603,54 +1596,6 @@
         "Adresa dvs. de e-mail nu se află în lista de participanți."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Nesincronizat"
-      ],
-      "Syncing": [
-        "Se sincronizează"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Calendarul nu a putut fi decriptat."
-      ],
-      "Calendar is syncing": [
-        "Calendarul se sincronizează."
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Calendarul se sincronizează: ar putea dura câteva minute ca să apară toate evenimentele din el."
-      ],
-      "Calendar is too big": [
-        "Calendarul este prea mare."
-      ],
-      "Calendar link is not accessible": [
-        "Legătura calendarului nu este accesibilă."
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Legătura calendarului nu este disponibilă momentan."
-      ],
-      "Failed to sync calendar": [
-        "Eșuare sincronizare calendar."
-      ],
-      "More than 12 hours passed since last update": [
-        "Au trecut mai mult de 12 ore de la ultima actualizare."
-      ],
-      "Unsupported calendar format": [
-        "Format de calendar neacceptat."
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Legătura calendarului nu este accesibilă din exteriorul ecosistemului furnizorului calendarului."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Legătura calendarului nu este accesibilă momentan. Verificați dacă legătura de la furnizorul calendarului încă e validă."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Au trecut mai mult de 12 ore de la ultima actualizare - ${ CALENDAR_APP_NAME } va încerca să actualizeze calendarul în câteva ore."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Evenimentul s-a încheiat deja"
@@ -1991,9 +1936,6 @@
       ],
       "Work": [
         "Serviciu"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2046,7 +1988,7 @@
         "Austria"
       ],
       "Azerbaijan": [
-        "Azerbaijan"
+        "Azerbaidjan"
       ],
       "Bahamas": [
         "Bahamas"
@@ -2148,7 +2090,7 @@
         "Columbia"
       ],
       "Comoros": [
-        "Comoros"
+        "Comore"
       ],
       "Congo": [
         "Congo"
@@ -2187,7 +2129,7 @@
         "Djibouti"
       ],
       "Dominica": [
-        "Dominica"
+        "Republica Dominicană"
       ],
       "Dominican Republic": [
         "Republica Dominicană"
@@ -2283,10 +2225,10 @@
         "Guernsey"
       ],
       "Guinea": [
-        "Guinea"
+        "Guineea"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bissau"
+        "Guineea-Bissau"
       ],
       "Guyana": [
         "Guiana"
@@ -2367,7 +2309,7 @@
         "Kuweit"
       ],
       "Kyrgyzstan": [
-        "Kyrgyzstan"
+        "Kârgâzstan"
       ],
       "Laos": [
         "Laos"
@@ -2436,7 +2378,7 @@
         "Mexic"
       ],
       "Moldova": [
-        "Moldova"
+        "Republica Moldova"
       ],
       "Monaco": [
         "Monaco"
@@ -2487,7 +2429,7 @@
         "Nigeria"
       ],
       "Niue": [
-        "Niue"
+        "Insula Niue"
       ],
       "Norfolk Island": [
         "Insula Norfolk"
@@ -2664,7 +2606,7 @@
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tajikistan"
+        "Tadjikistan"
       ],
       "Tanzania": [
         "Tanzania"
@@ -2673,7 +2615,7 @@
         "Tailanda"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timorul De Est"
       ],
       "Togo": [
         "Togo"
@@ -2886,13 +2828,22 @@
       "No labels": [
         "Nu sunt etichete."
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logo and a plus sign"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Deblocați programarea personalizată a mesajelor și alte avantaje trecând la un plan superior."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
+      ],
+      "When do you want your message to be sent?": [
+        "Când doriți să fie trimis mesajul?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
@@ -3078,6 +3029,9 @@
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
+      "Contact name is too long": [
+        "Numele de contact este prea lung."
+      ],
       "Contact signature could not be verified": [
         "Semnătura contactului nu a putut fi verificată"
       ],
@@ -3092,16 +3046,6 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Eroare decriptare: decriptarea conținutului criptat al acestui mesaj a eșuat."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deselectați cel puțin un calendar.",
-        "Deselectați cel puțin ${ calendarToFixCount } calendare.",
-        "Deselectați cel puțin ${ calendarToFixCount } de calendare."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Deselectați cel puțin un calendar sau",
-        "Deselectați cel puțin ${ calendarToFixCount } calendare sau",
-        "Deselectați cel puțin ${ calendarToFixCount } de calendare sau"
       ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
@@ -3180,11 +3124,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Numărul maxim de atașamente (${ attachmentsCountLimit }) a fost depășit."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Îmbinați cel puțin un calendar cu un calendar ${ BRAND_NAME } existent.",
-        "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
-        "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
       ],
       "Message needs to be sent first": [
         "Mesajul trebuie trimis mai întâi."
@@ -3302,9 +3241,6 @@
       "Some groups could not be deleted": [
         "Unele grupuri nu s-au putut șterge."
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Unele nume de foldere sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de foldere nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
@@ -3382,7 +3318,7 @@
       "This message has already been sent. A new draft has been saved.": [
         "Acest mesaj a fost deja trimis. A fost salvată o ciornă nouă."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
@@ -3406,8 +3342,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Nu puteți trimite cărți de vizită („vCard”) la mai mult de 10 persoane de contact."
+      "You can't send vCard files of more than 10 contacts": [
+        "Nu puteți trimite fișiere vCard pentru mai mult de 10 contacte."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Nu puteți deschide mai mult de o fereastră de compunere.",
@@ -3416,9 +3352,6 @@
       ],
       "You did not provide a file.": [
         "Nu ați furnizat un fișier."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
@@ -3649,7 +3582,7 @@
         "Încă nu aveți niciun contact. Începeți prin a crea un contact nou."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Puteți ${ refresh } sau reîncerca mai târziu."
+        "Puteți să ${ refresh } sau reîncerca mai târziu."
       ]
     },
     "Error notification": {
@@ -4026,9 +3959,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -4037,9 +3967,6 @@
       ],
       "No verification method available": [
         "Nu sunt metode de verificare disponibile"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4062,6 +3989,9 @@
         "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
@@ -4294,9 +4224,6 @@
       ],
       "ICS file": [
         "fișier ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4311,6 +4238,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importare din ${ provider }"
+      ],
       "Other": [
         "Altele"
       ]
@@ -4350,11 +4280,6 @@
         "Un calendar nou",
         "${ calendarsToBeCreatedCount } calendare noi",
         "${ calendarsToBeCreatedCount } de calendare noi"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "Un calendar îmbinat",
-        "${ calendarsToBeMerged } calendare îmbinate",
-        "${ calendarsToBeMerged } de calendare îmbinate"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "Un calendar îmbinat",
@@ -4412,15 +4337,15 @@
         "S-au blocat ${ numberOfTrackers } funcții de monitorizare prin e-mail",
         "S-au blocat ${ numberOfTrackers } de funcții de monitorizare prin e-mail"
       ],
-      "${ numContactGroups } contact group": [
-        "Un grup de contacte",
-        "${ numContactGroups } grupuri de contact",
-        "${ numContactGroups } de grupuri de contacte"
-      ],
-      "${ numContacts } contact": [
+      "${ numContact } contact": [
         "Un contact",
-        "${ numContacts } contacte",
-        "${ numContacts } de contacte"
+        "${ numContact } contacte",
+        "${ numContact } de contacte"
+      ],
+      "${ numGroups } contact group": [
+        "Un grup de contacte",
+        "${ numGroups } grupuri de contacte",
+        "${ numGroups } de grupuri de contacte"
       ],
       "${ NumMessages } message in conversation": [
         "Un mesaj în conversație",
@@ -4477,9 +4402,6 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } spațiu"
-      ],
       "${ total } conversation": [
         "o conversație",
         "${ total } conversații",
@@ -4533,9 +4455,6 @@
       ],
       "(No Recipient)": [
         "(Fără destinatar)"
-      ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "O frază de recuperare este una dintre cele mai sigure modalități de a vă proteja accesul la cont. O puteți folosi pentru a vă accesa contul și pentru a vă recupera datele criptate dacă vă uitați vreodată parola."
@@ -4649,6 +4568,9 @@
       "Body: ": [
         "Conținut: "
       ],
+      "Calendar side panel": [
+        "Panou lateral calendar"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
       ],
@@ -4679,16 +4601,16 @@
       "Confirm phishing report": [
         "Confirmare raportare înșelăciune"
       ],
-      "Continue with ${ planName }": [
-        "Continuare cu ${ planName }"
-      ],
       "Copied to clipboard": [
         "Copiat în memorie"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
+      "Country code": [
+        "Cod țară"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Creare un calendar",
-        "Creare ${ calendarsToBeCreated } calendare",
-        "Creare ${ calendarsToBeCreated } de calendare"
+        "Creare ${ calendarsToBeCreatedCount } calendare",
+        "Creare ${ calendarsToBeCreatedCount } de calendare"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și folderele care trebuie importate."
@@ -4894,10 +4816,10 @@
       "Group assignment applied": [
         "Atribuire grup aplicată"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Are un ataşament",
-        "Are ${ numAttachments } atașamente",
-        "Are ${ numAttachments } de atașamente"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Are un atașament (${ numAttachmentsSize })",
+        "Are ${ numAttachments } atașamente (${ numAttachmentsSize })",
+        "Are ${ numAttachments } de atașamente (${ numAttachmentsSize })"
       ],
       "here": [
         "aici"
@@ -4937,13 +4859,13 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } de calendare"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendar",
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendare",
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } de calendare"
       ],
       "Import from": [
         "Importare din"
@@ -4956,6 +4878,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importați e-mailurile, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }. Vă vom ghida la fiecare pas și vă vom cripta datele pe măsură ce acestea sunt mutate. Bine ați venit în lumea vieții private."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Se importă datele de la ${ fromEmail } la ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
@@ -5062,8 +4987,8 @@
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Se mută un număr mare de mesaje. Ar putea dura ceva timp."
+      "Moving messages. This may take a while.": [
+        "Se mută mesajele. Aceasta ar putea dura un timp."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
@@ -5124,9 +5049,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
-      ],
-      "Other options": [
-        "Alte opțiuni"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
@@ -5195,9 +5117,6 @@
       ],
       "Print email": [
         "Tipărire e-mail"
-      ],
-      "Priority support": [
-        "Asistență prioritară"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Împiedicați divulgarea adresei e-mail către liste de mesagerie sau mesaje nedorite cu ${ maskMyEmailButton }."
@@ -5268,9 +5187,6 @@
       "Select what you want to import.": [
         "Selectați ce doriți să importați."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Trimitere mesaj criptat, protejat cu parolă, la o adresă de e-mail ${ boldText }."
       ],
@@ -5316,9 +5232,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Stocați și partajați fișiere în siguranță cu ${ DRIVE_APP_NAME }."
       ],
@@ -5333,9 +5246,6 @@
       ],
       "Subject: ": [
         "Subiect: "
-      ],
-      "Support for 1 custom email domain": [
-        "Suport pentru un domeniu de e-mail personal"
       ],
       "Support privacy by upgrading for": [
         "Susțineți confidențialitatea migrând la"
@@ -5514,12 +5424,6 @@
       "Turn on to search the content of your messages": [
         "Activare căutarea în conținutul mesajelor."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited messages": [
-        "Mesaje nelimitate"
-      ],
       "Unlock message": [
         "Deblocare mesaj"
       ],
@@ -5531,6 +5435,9 @@
       ],
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
       "Upgrade to add more addresses to your account.": [
         "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
@@ -5562,9 +5469,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Treceți la alt plan pentru a utiliza ${ MAIL_APP_NAME } cu clienți desktop de la terți."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
-      ],
       "Upload picture": [
         "Încărcare imagine"
       ],
@@ -5582,9 +5486,6 @@
       ],
       "Using SimpleLogin is easy": [
         "Folosirea SimpleLogin este ușoară"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Mesaj ${ BRAND_NAME } verificat"
       ],
       "Version ${ appVersion }": [
         "Versiunea ${ appVersion }"
@@ -5819,9 +5720,6 @@
       ],
       "Trusted": [
         "Aprobată"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6144,14 +6042,11 @@
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
       ],
-      "Coming soon": [
-        "În curând"
+      "Colors": [
+        "Culori"
       ],
       "Conditions": [
         "Condiții"
-      ],
-      "Confirm password": [
-        "Confirmare parolă"
       ],
       "Contacts": [
         "Contacte"
@@ -6237,9 +6132,6 @@
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "De la: ${ importedEmail }"
-      ],
       "Good": [
         "Bună"
       ],
@@ -6314,12 +6206,6 @@
       ],
       "Manage categories": [
         "Gestionare categorii"
-      ],
-      "Manage folders": [
-        "Gestionare foldere"
-      ],
-      "Manage labels": [
-        "Gestionare etichete"
       ],
       "Manage my addresses": [
         "Gestionare adrese"
@@ -6474,9 +6360,6 @@
       "To:": [
         "Către:"
       ],
-      "To: ${ emailAddress }": [
-        "Către: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Către: ${ to }"
       ],
@@ -6491,9 +6374,6 @@
       ],
       "Undisclosed Recipients": [
         "Destinatari nedivulgați"
-      ],
-      "Upload file": [
-        "Încărcare fișier"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -6601,6 +6481,17 @@
       ],
       "Row": [
         "Rânduri"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Pentru a adăuga un calendar, eliminați altul existent."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Pentru a adăuga un calendar, eliminați altul existent sau modificați planul ${ BRAND_NAME } cu un plan ${ MAIL_SHORT_APP_NAME } cu plată."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ați atins maximul de calendare disponibile în acest plan."
       ]
     },
     "Link": {
@@ -6766,8 +6657,10 @@
       "Almost there": [
         "Aproape terminat"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Număr de calendare create: ${ createdCalendars } din ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Se conectează la furnizorul de e-mail"
@@ -6786,25 +6679,25 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importare toate mesajele dintr-un folder și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare cu"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importare toate mesajele dintr-un folder și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-o etichetă și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
       ]
     },
     "Mailbox": {
@@ -6832,13 +6725,13 @@
     },
     "Message": {
       "Fw:": [
-        "Fw:"
+        "Rd:"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "La ${ date }, ${ senderString } a scris:"
       ],
       "Re:": [
-        "Re:"
+        "Rs:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Perioada de probare a expirat. Accesul la cont va fi dezactivat în curând. ${ action }"
@@ -7056,6 +6949,39 @@
         "Schimbare sau adăugare cont"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Modernizare"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domenii personale de e-mail"
+      ],
+      "Hide My Email aliases": [
+        "Ascundere aliasuri e-mail"
+      ],
+      "Schedule messages at any time": [
+        "Programați mesajele oricând"
+      ],
+      "Search message content": [
+        "Căutare în conținut mesaj"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Up to 15 email addresses": [
+        "Până la 15 adrese de e-mail"
+      ],
+      "Up to 500 GB of storage": [
+        "Până la 500 GB spațiu de stocare"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Povestiți-ne despre experiența avută. (opțional)"
@@ -7219,9 +7145,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Modalitate de contactare"
-      ],
-      "Confirm password": [
-        "Confirmare parolă"
       ],
       "E.g., ": [
         "Ex.: "
@@ -7587,9 +7510,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
-      ],
       "Email tracking protection": [
         "Protejare e-mail împotriva urmăririi"
       ],
@@ -7604,9 +7524,6 @@
       ],
       "Schedule send": [
         "Trimitere programată"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Încercați ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
@@ -7764,8 +7681,8 @@
       "Bug reported": [
         "Eroare raportată"
       ],
-      "Canceling import": [
-        "Anulare importare"
+      "Cancelling import": [
+        "Se anulează importarea"
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
@@ -8001,20 +7918,10 @@
         "${ daysCountLeft } zile",
         "${ daysCountLeft } de zile"
       ],
-      "${ hours } hour": [
-        "O oră",
-        "${ hours } ore",
-        "${ hours } de ore"
-      ],
       "${ hoursCountLeft } hour": [
         "O oră",
         "${ hoursCountLeft } ore",
         "${ hoursCountLeft } de ore"
-      ],
-      "${ minutes } minute": [
-        "Un minut",
-        "${ minutes } minute",
-        "${ minutes } de minute"
       ],
       "${ minutesCountLeft } minute": [
         "Un minut",
@@ -8025,6 +7932,40 @@
         "O secundă",
         "${ secondsCountLeft } secunde",
         "${ secondsCountLeft } de secunde"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 de ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
       ]
     },
     "Title": {
@@ -8481,6 +8422,9 @@
       "Sending original message": [
         "Se trimite mesajul original"
       ],
+      "Set your own schedule": [
+        "Setare programare"
+      ],
       "Settings": [
         "Setări"
       ],
@@ -8564,8 +8508,8 @@
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9003,8 +8947,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Anual",
+        "La fiecare ${ interval } ani",
         "La fiecare ${ interval } de ani"
       ],
       "Every ${ interval } year, ${ timesString }": [

@@ -21,9 +21,15 @@ const UnsupportedPreview = ({ onDownload, type = 'file' }: Props) => {
                 className="mb1 w80p"
                 src={type === 'file' ? unsupportedPreviewSvg : corruptedPreviewSvg}
                 alt={c('Info').t`Unsupported file`}
+                data-testid="file-preview:unsupported-preview-image"
             />
 
-            <h2 className={classnames(['p0-25 text-bold', isNarrow && 'h3'])}>{c('Info').t`No preview available`}</h2>
+            <h2
+                className={classnames(['p0-25 text-bold', isNarrow && 'h3'])}
+                data-testid="file-preview:unsupported-preview-text"
+            >
+                {c('Info').t`No preview available`}
+            </h2>
 
             {onDownload && (
                 <PrimaryButton size={!isNarrow ? 'large' : undefined} className="text-bold" onClick={onDownload}>{c(

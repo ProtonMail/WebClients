@@ -2,19 +2,16 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
 import { Href, SettingsLink } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { reActivateKeySettingsURL, restoringEncryptedMessagesURL } from '../../constants';
 
 interface Props {
-    onDiscard: () => void;
     keyFound?: boolean;
 }
 
-const DecryptionErrorNotification = ({ onDiscard, keyFound = false }: Props) => {
+const DecryptionErrorNotification = ({ keyFound = false }: Props) => {
     const getNotificationText = () => {
         const learnMoreLink = (
             <Href
@@ -49,23 +46,7 @@ const DecryptionErrorNotification = ({ onDiscard, keyFound = false }: Props) => 
         return c('Error').jt`Your emails cannot be decrypted. This may be due to a password reset. ${learnMoreLink}`;
     };
 
-    return (
-        <>
-            <div className="flex flex-nowrap text-center relative">
-                <span className="flex-item-fluid">{getNotificationText()}</span>
-            </div>
-            <Button
-                icon
-                size="small"
-                shape="ghost"
-                className=" top right absolute"
-                onClick={onDiscard}
-                title={c('Action').t`Close this banner`}
-            >
-                <Icon name="cross" alt={c('Action').t`Close this banner`} />
-            </Button>
-        </>
-    );
+    return <span>{getNotificationText()}</span>;
 };
 
 export default DecryptionErrorNotification;

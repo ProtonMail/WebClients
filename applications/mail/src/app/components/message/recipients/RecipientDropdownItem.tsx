@@ -2,7 +2,7 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { ContactImage, Copy, useNotifications } from '@proton/components';
+import { ContactImage, Copy, ProtonBadgeType, useNotifications } from '@proton/components';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
@@ -54,10 +54,11 @@ const RecipientDropdownItem = ({
                         <>{getInitials(label)}</>
                     ) : (
                         <ContactImage
-                            email={displaySenderImage ? recipient.Address : ''}
+                            email={recipient.Address}
                             name={label}
                             className="rounded"
                             bimiSelector={bimiSelector}
+                            displaySenderImage={displaySenderImage}
                         />
                     )}
                 </span>
@@ -65,6 +66,7 @@ const RecipientDropdownItem = ({
             <div className="flex flex-column flex-item-fluid px0-5" data-testid="recipient:dropdown-item--contact-name">
                 <span className="text-ellipsis user-select" title={label}>
                     {label}
+                    {!isOutside && recipient && <ProtonBadgeType recipient={recipient} />}
                 </span>
                 {hasName && <span className="color-weak text-ellipsis user-select">{`<${recipient.Address}>`}</span>}
             </div>

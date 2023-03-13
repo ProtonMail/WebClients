@@ -4,9 +4,12 @@ import DOMPurify from 'dompurify';
 
 import { isElement } from '@proton/shared/lib/helpers/dom';
 
-import { CreateNotificationOptions, NotificationOptions } from './interfaces';
+import { CreateNotificationOptions, Notification, NotificationOffset } from './interfaces';
 
-function createNotificationManager(setNotifications: Dispatch<SetStateAction<NotificationOptions[]>>) {
+function createNotificationManager(
+    setNotifications: Dispatch<SetStateAction<Notification[]>>,
+    setNotificationOffset: Dispatch<NotificationOffset | undefined>
+) {
     let idx = 1;
     const intervalIds = new Map<number, any>();
 
@@ -55,11 +58,12 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
     const createNotification = ({
         id = idx++,
         key,
-        expiration = 3500,
+        expiration = 5000,
         type = 'success',
         text,
-        disableAutoClose,
-        deduplicate = type === 'error',
+        showCloseButton = true,
+        icon = type === 'warning' || type === 'error' ? 'exclamation-triangle-filled' : undefined,
+        deduplicate = true,
         ...rest
     }: CreateNotificationOptions) => {
         if (intervalIds.has(id)) {
@@ -89,20 +93,25 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
                     }
                 });
                 expiration = Math.max(5000, expiration);
-                disableAutoClose = true;
                 text = <div dangerouslySetInnerHTML={{ __html: sanitizedElement.innerHTML }} />;
             }
         }
 
         setNotifications((oldNotifications) => {
-            const newNotification: NotificationOptions = {
+            const newNotification: Notification = {
                 id,
-                key,
+                key: key!,
                 type,
                 text,
-                disableAutoClose,
                 ...rest,
                 isClosing: false,
+                showCloseButton,
+                icon,
+                duplicate: {
+                    key: 1,
+                    state: 'init',
+                    old: undefined,
+                },
             };
 
             if (deduplicate) {
@@ -113,8 +122,17 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
                     removeInterval(duplicateOldNotification.id);
                     return oldNotifications.map((oldNotification) => {
                         if (oldNotification === duplicateOldNotification) {
+                            const hasOldDuplicate =
+                                !!oldNotification.duplicate.old || oldNotification.duplicate.state === 'init';
                             return {
                                 ...newNotification,
+                                duplicate: {
+                                    old: hasOldDuplicate ? oldNotification.duplicate.old : oldNotification,
+                                    state: oldNotification.duplicate.state,
+                                    key: hasOldDuplicate
+                                        ? oldNotification.duplicate.key
+                                        : oldNotification.duplicate.key + 1,
+                                },
                                 key: duplicateOldNotification.key,
                             };
                         }
@@ -122,12 +140,30 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
                     });
                 }
             }
-            return [...oldNotifications, newNotification];
+            return [newNotification, ...oldNotifications];
         });
 
         intervalIds.set(id, expiration === -1 ? -1 : setTimeout(() => hideNotification(id), expiration));
 
         return id;
+    };
+
+    const removeDuplicate = (id: number) => {
+        return setNotifications((oldNotifications) => {
+            return oldNotifications.map((oldNotification) => {
+                if (oldNotification.id !== id) {
+                    return oldNotification;
+                }
+                return {
+                    ...oldNotification,
+                    duplicate: {
+                        old: undefined,
+                        state: 'removed',
+                        key: oldNotification.duplicate.key,
+                    },
+                };
+            });
+        });
     };
 
     const clearNotifications = () => {
@@ -141,6 +177,8 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
     };
 
     return {
+        setOffset: setNotificationOffset,
+        removeDuplicate,
         createNotification,
         removeNotification,
         hideNotification,

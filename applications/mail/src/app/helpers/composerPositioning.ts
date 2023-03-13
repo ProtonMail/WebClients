@@ -1,7 +1,5 @@
 import { getCustomSizingClasses } from '@proton/components';
 
-import { WindowSize } from '../models/utils';
-
 export const MAX_ACTIVE_COMPOSER_DESKTOP = 3;
 export const MAX_ACTIVE_COMPOSER_MOBILE = 1;
 
@@ -37,6 +35,11 @@ export const computeLeftPosition = (index: number, count: number, windowWidth: n
         rightPosition = COMPOSER_GUTTER + share * index;
     }
 
+    // Prevent negative value
+    if (rightPosition < 0) {
+        rightPosition = COMPOSER_GUTTER;
+    }
+
     return windowWidth - COMPOSER_WIDTH - rightPosition;
 };
 
@@ -53,8 +56,7 @@ interface ComputeComposerStyleOptions {
     minimized: boolean;
     maximized: boolean;
     isNarrow: boolean;
-    windowWidth: WindowSize['width'];
-    windowHeight: WindowSize['height'];
+    drawerOffset: number;
 }
 
 interface ComputeComposerStyleReturns {
@@ -68,9 +70,11 @@ export const computeComposerStyle = ({
     minimized,
     maximized,
     isNarrow,
-    windowWidth,
-    windowHeight,
+    drawerOffset,
 }: ComputeComposerStyleOptions): ComputeComposerStyleReturns => {
+    // Use window.innerWidth and innerHeight instead of useWindowSize to avoid composer cut off issue (CLIENT-4854)
+    const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth - drawerOffset;
     let style: Record<string, string | number> = {
         '--left-custom': `${computeLeftPosition(index, count, windowWidth)}px`,
         computeHeight: `${computeHeight(windowHeight)}px`,

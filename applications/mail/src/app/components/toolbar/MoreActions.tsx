@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
-import { useFeatures } from '@proton/components/hooks';
+import { useFeature } from '@proton/components/hooks';
 import noop from '@proton/utils/noop';
 
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
@@ -18,10 +18,7 @@ interface Props {
 
 const MoreActions = ({ selectedIDs }: Props) => {
     const externalCloseRef = useRef<() => void>(noop);
-    const [{ feature: blockSenderFeature }, { feature: blockSenderInToolbarFeature }] = useFeatures([
-        FeatureCode.BlockSender,
-        FeatureCode.BlockSenderInToolbar,
-    ]);
+    const { feature: blockSenderInToolbarFeature } = useFeature(FeatureCode.BlockSenderInToolbar);
 
     const closeDropdown = () => {
         externalCloseRef.current?.();
@@ -45,7 +42,7 @@ const MoreActions = ({ selectedIDs }: Props) => {
         </DropdownMenuButton>
     );
 
-    const dropdownMenuButtons = [blockSenderFeature?.Value && blockSenderMenuButton];
+    const dropdownMenuButtons = [blockSenderMenuButton];
 
     // If there is no sender to block, disable the button
     // If we add more actions in this dropdown, need to update this condition

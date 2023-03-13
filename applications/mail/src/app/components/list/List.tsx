@@ -26,7 +26,6 @@ import { useOnCompose } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useGetStartedChecklist, usePaidUserChecklist } from '../../containers/checklists';
 import { isMessage as testIsMessage } from '../../helpers/elements';
-import { isColumnMode } from '../../helpers/mailSettings';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { usePaging } from '../../hooks/usePaging';
@@ -264,7 +263,6 @@ const List = (
                                     {userSettings.Checklists?.includes('get-started') &&
                                         !isGetStartedChecklistDismissed && (
                                             <GetStartedChecklist
-                                                limitedMaxWidth={!isColumnMode(mailSettings)}
                                                 onDismiss={dismissGetStartedChecklist}
                                                 onItemSelection={(key: ChecklistKey) => () => {
                                                     switch (key) {
@@ -301,7 +299,6 @@ const List = (
                                     {userSettings.Checklists?.includes('paying-user') &&
                                         !isPaidUserChecklistDismissed && (
                                             <PaidUserGetStartedChecklist
-                                                limitedMaxWidth={!isColumnMode(mailSettings)}
                                                 onDismiss={dismissPaidUserChecklist}
                                                 onItemSelection={(key: ChecklistKey) => () => {
                                                     switch (key) {

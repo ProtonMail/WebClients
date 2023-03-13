@@ -113,7 +113,7 @@ const InviteSendEmail = () => {
 
     return (
         <div>
-            <h3 className="text-bold">{c('Label').t`Invite via email`}</h3>
+            <h2 className="h3 text-bold" id="id_desc_invite_email">{c('Label').t`Invite via email`}</h2>
             <div className="flex flex-gap-0-5 flex-nowrap flex-align-items-end on-mobile-flex-column rounded">
                 <div className="flex-item-fluid-auto">
                     <div
@@ -146,6 +146,7 @@ const InviteSendEmail = () => {
                                 hasAddOnBlur
                                 onAddRecipients={onAutocompleteAddRecipient}
                                 onKeyDown={onAutocompleteKeyDown}
+                                aria-labelledby="id_desc_invite_email"
                             />
                         </div>
                     </div>

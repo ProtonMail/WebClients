@@ -28,6 +28,7 @@ const getBankSvg = (type = '') => {
 const BANKS = {
     'American Express': 'american-express',
     'Diners Club': 'diners-club',
+    Discover: 'discover',
     JCB: 'jcb',
     Maestro: 'maestro',
     MasterCard: 'mastercard',

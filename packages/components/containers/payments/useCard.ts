@@ -6,7 +6,7 @@ import { CardModel } from './interface';
 
 const useCard = (initialCard = getDefaultCard()) => {
     const [card, update] = useState<CardModel>(initialCard);
-    const setCard = (key: string, value: string) => update((card) => ({ ...card, [key]: value }));
+    const setCard = (key: keyof CardModel, value: string) => update((card) => ({ ...card, [key]: value }));
     const errors = getErrors(card);
     const isValid = !Object.keys(errors).length;
 

@@ -1,6 +1,6 @@
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
-import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/recurrence/rruleEqual';
@@ -20,6 +20,7 @@ import noop from '@proton/utils/noop';
 
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
+import { getCanEditSharedEventData } from '../../../helpers/event';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
     CleanSendIcsActionData,
@@ -56,6 +57,7 @@ const getSaveSingleEventActionsHelper = async ({
     inviteActions,
     hasDefaultNotifications,
     personalEventsDeprecated,
+    canEditOnlyNotifications,
     isAttendee,
     onEquivalentAttendees,
     handleSyncActions,
@@ -79,6 +81,7 @@ const getSaveSingleEventActionsHelper = async ({
     inviteActions: InviteActions;
     hasDefaultNotifications: boolean;
     personalEventsDeprecated: boolean;
+    canEditOnlyNotifications: boolean;
     isAttendee: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }) => {
@@ -109,6 +112,7 @@ const getSaveSingleEventActionsHelper = async ({
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
         personalEventsDeprecated,
+        canEditOnlyNotifications,
         isAttendee,
         sendIcs,
         reencryptSharedEvent,
@@ -189,13 +193,22 @@ const getSaveEventActions = async ({
         tmpOriginalTarget: { data: { eventData: oldEventData, eventRecurrence, eventReadResult } } = { data: {} },
         tmpData,
         tmpData: {
-            calendar: { id: newCalendarID },
+            calendar: { id: newCalendarID, isOwned: isOwnedCalendar, isWritable: isCalendarWritable },
             member: { memberID: newMemberID, addressID: newAddressID },
             frequencyModel,
             hasDefaultNotifications,
         },
     } = temporaryEvent;
-    const isAttendee = !!tmpData.isAttendee;
+    const { isAttendee, isOrganizer, organizer, selfAddress: existingSelfAddress } = tmpData;
+    const isInvitation = !!organizer;
+    const canEditOnlyNotifications = !getCanEditSharedEventData({
+        isOwnedCalendar,
+        isCalendarWritable,
+        isOrganizer,
+        isAttendee,
+        isInvitation,
+        selfAddress: existingSelfAddress,
+    });
     const selfAddress = addresses.find(({ ID }) => ID === newAddressID);
     if (!selfAddress) {
         throw new Error('Wrong member data');
@@ -256,6 +269,7 @@ const getSaveEventActions = async ({
             },
             hasDefaultNotifications,
             personalEventsDeprecated,
+            canEditOnlyNotifications,
             isAttendee,
             selfAddress,
             inviteActions: updatedInviteActions,
@@ -315,6 +329,7 @@ const getSaveEventActions = async ({
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
             personalEventsDeprecated,
+            canEditOnlyNotifications,
             isAttendee,
             getCalendarKeys,
             onSaveConfirmation,
@@ -337,6 +352,7 @@ const getSaveEventActions = async ({
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
             personalEventsDeprecated,
+            canEditOnlyNotifications,
             isAttendee,
             getCalendarKeys,
             onSaveConfirmation,
@@ -394,9 +410,9 @@ const getSaveEventActions = async ({
         canOnlySaveAll:
             actualEventRecurrence.isSingleOccurrence ||
             hasModifiedCalendar ||
-            (isAttendee && !isSingleEdit) ||
+            (canEditOnlyNotifications && !isSingleEdit) ||
             (!isAttendee && (isSendInviteType || hasAttendees)),
-        canOnlySaveThis: isAttendee && isSingleEdit,
+        canOnlySaveThis: canEditOnlyNotifications && isSingleEdit,
         hasModifiedRrule,
         hasModifiedCalendar,
         inviteActions: updatedSaveInviteActions,
@@ -404,6 +420,7 @@ const getSaveEventActions = async ({
         recurrence: actualEventRecurrence,
         recurrences,
         isAttendee,
+        canEditOnlyNotifications,
         selfAttendeeToken,
     });
     const {
@@ -424,6 +441,7 @@ const getSaveEventActions = async ({
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
         personalEventsDeprecated,
+        canEditOnlyNotifications,
         isAttendee,
         sendIcs,
         reencryptSharedEvent,

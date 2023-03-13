@@ -86,6 +86,9 @@
       "Archive": [
         "封存"
       ],
+      "As Scheduled": [
+        "按排程"
+      ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "建立新訊息"
+      ],
+      "Custom": [
+        "自訂"
       ],
       "Customize": [
         "自訂"
@@ -524,9 +530,6 @@
       "Load": [
         "載入"
       ],
-      "Load anyway": [
-        "仍要載入"
-      ],
       "Load embedded images": [
         "載入內崁圖樣"
       ],
@@ -592,6 +595,9 @@
       ],
       "Minimize composer": [
         "最小化撰寫工具"
+      ],
+      "Monday": [
+        "週一"
       ],
       "More": [
         "更多"
@@ -788,9 +794,6 @@
       "Remove this label": [
         "移除此標籤"
       ],
-      "Rename": [
-        "重新命名"
-      ],
       "Reply": [
         "回覆"
       ],
@@ -838,9 +841,6 @@
       ],
       "Schedule message": [
         "排程訊息"
-      ],
-      "Schedule send": [
-        "排程送出"
       ],
       "Search": [
         "搜尋"
@@ -953,8 +953,8 @@
       "Skip verification": [
         "略過驗證"
       ],
-      "Some images failed to load with tracking protection.": [
-        "追蹤防護會導致某些圖像無法載入。"
+      "Some images could not be loaded with tracker protection.": [
+        "因有追蹤程式保護，因此某些影像無法載入。"
       ],
       "Star": [
         "星號"
@@ -979,6 +979,9 @@
       ],
       "This message contains remote content.": [
         "此郵件包含遠端內容。"
+      ],
+      "Tomorrow": [
+        "明天"
       ],
       "Trust": [
         "信任"
@@ -1196,11 +1199,6 @@
     "Alternative text for simple login image": {
       "Simple Login": [
         "簡易登入"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1591,54 +1589,6 @@
       ],
       "Your email address is not in the participants list": [
         "您的電郵位址不在參與者清單中"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "未同步"
-      ],
-      "Syncing": [
-        "正在同步"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "無法解密行事曆"
-      ],
-      "Calendar is syncing": [
-        "行事曆正在同步"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "行事曆同步中：僅需數分鐘即可顯示所有事件。"
-      ],
-      "Calendar is too big": [
-        "行事曆太大了"
-      ],
-      "Calendar link is not accessible": [
-        "行事曆無法存取"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "行事曆連結暫時無法存取"
-      ],
-      "Failed to sync calendar": [
-        "同步行事曆失敗"
-      ],
-      "More than 12 hours passed since last update": [
-        "距離上次更新已經過了12小時以上"
-      ],
-      "Unsupported calendar format": [
-        "不支援的行事曆格式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "行事曆連結無法從服務提供商生態系統外進行連線。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "從上次更新以來已經過了超過12小時 — ${ CALENDAR_APP_NAME } 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Calendar widget banner": {
@@ -2866,11 +2816,20 @@
       "No labels": [
         "沒有標籤"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logo and a plus sign"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "升級方案以解鎖自訂訊息排程與其他好處。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
+      ],
+      "When do you want your message to be sent?": [
+        "您想在什麼時候傳送郵件？"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -3052,6 +3011,9 @@
       "Contact could not be saved": [
         "無法儲存聯絡人"
       ],
+      "Contact name is too long": [
+        "聯絡人名稱太長"
+      ],
       "Contact signature could not be verified": [
         "無法驗證聯絡人簽章"
       ],
@@ -3066,12 +3028,6 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密錯誤：此郵件的加密內容解密失敗。"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
@@ -3150,9 +3106,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "可容許的附件數量 (${ attachmentsCountLimit }) 已達上限"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "請至少將 ${ calendarToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
       "Message needs to be sent first": [
         "需要先傳送郵件"
@@ -3265,9 +3218,6 @@
       "Some of the attachments could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe files with a program such as GnuPG.": [
         "附件未能解密。\n若您持有對應的私密金鑰，您仍可使用\n像是 GnuPG 的程式來解密檔案。"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "部份資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
@@ -3340,8 +3290,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "這個郵件已經傳送。新的草稿已儲存。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的 URL。"
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "使用中篩選器太多。請升級至付費方案以啟用更多篩選器。"
@@ -3364,17 +3314,14 @@
       "You can't send a mail to more than 100 recipients": [
         "您無法將電郵傳送給超過100位收件人"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "您無法傳送超過 10 個聯絡人的 vCard"
+      "You can't send vCard files of more than 10 contacts": [
+        "您不能傳送有超過 10 個聯絡人的 vCard 檔案"
       ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "您無法在同一時間開啟超過 ${ maxActiveComposer } 個撰寫新郵件視窗"
       ],
       "You did not provide a file.": [
         "您沒有提供檔案。"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "您已經達到個人行事曆的數量上限。有部分行事曆無法被匯入。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -3699,15 +3646,6 @@
     "file size format": {
       "bytes": [
         "位元組"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -3992,6 +3930,9 @@
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
+      ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
@@ -4218,9 +4159,6 @@
       ],
       "ICS file": [
         "ICS 檔案"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4235,6 +4173,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "從 ${ provider } 匯入"
+      ],
       "Other": [
         "其它"
       ]
@@ -4268,9 +4209,6 @@
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
-      ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } 個合併的行事曆"
       ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
@@ -4308,11 +4246,11 @@
       "${ numberOfTrackers } email trackers blocked": [
         "已封鎖 ${ numberOfTrackers } 個電郵追蹤程式"
       ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 個聯絡人群組"
+      "${ numContact } contacts": [
+        "${ numContact } 個聯絡人"
       ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 位聯絡人"
+      "${ numGroups } contact groups": [
+        "${ numGroups } 個聯絡人群組"
       ],
       "${ NumMessages } messages in conversation": [
         "對話中有 ${ NumMessages } 則訊息"
@@ -4346,9 +4284,6 @@
       ],
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個標籤"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } 儲存量"
       ],
       "${ total } conversations": [
         "${ total } 個交談"
@@ -4385,9 +4320,6 @@
       ],
       "(No Recipient)": [
         "(無收件人)"
-      ],
-      "10 email addresses": [
-        "10 個電郵位址"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "復原短語是保護帳號存取權限最安全的方法之一。如果您忘記了您的密碼，您可以用它來存取您的帳號並還原您的加密資料。"
@@ -4491,6 +4423,9 @@
       "Body: ": [
         "內文 : "
       ],
+      "Calendar side panel": [
+        "行事曆側面板"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
@@ -4521,14 +4456,14 @@
       "Confirm phishing report": [
         "確認網路釣魚報告"
       ],
-      "Continue with ${ planName }": [
-        "繼續使用 ${ planName }"
-      ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
       ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "建立 ${ calendarsToBeCreated } 個新行事曆"
+      "Country code": [
+        "國家代碼"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "建立 ${ calendarsToBeCreatedCount } 個新行事曆"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
@@ -4722,8 +4657,8 @@
       "Group assignment applied": [
         "已套用群組分配"
       ],
-      "Has ${ numAttachments } attachments": [
-        "有 ${ numAttachments } 份附件"
+      "Has ${ numAttachments } attachments (${ numAttachmentsSize })": [
+        "有 ${ numAttachments } 個附件 (${ numAttachmentsSize })"
       ],
       "here": [
         "這裡"
@@ -4761,11 +4696,11 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "圖像已被移除，因為自動回覆不支援"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "匯入 ${ selectedCalendarsCount } 個，共 ${ totalCalendarsCount } 個行事曆"
       ],
       "Import from": [
         "匯入自"
@@ -4778,6 +4713,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "從其它服務匯入您的電郵、行事曆或聯絡人到 ${ BRAND_NAME }。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
@@ -4884,8 +4822,8 @@
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "正在移動大量的郵件訊息。 此步驟會耗時一會兒。"
+      "Moving messages. This may take a while.": [
+        "正在移動訊息。這可能需要一段時間。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
@@ -4946,9 +4884,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
-      ],
-      "Other options": [
-        "其它選項"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
@@ -5015,9 +4950,6 @@
       ],
       "Print email": [
         "列印電郵"
-      ],
-      "Priority support": [
-        "優先支援"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "防止您的郵件地址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ maskMyEmailButton }。"
@@ -5088,9 +5020,6 @@
       "Select what you want to import.": [
         "選擇您要匯入的檔案。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "傳送一封加密、密碼保護的郵件至 ${ boldText } 電郵位址。"
       ],
@@ -5136,9 +5065,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "抱歉，此訊息不存在或已過期。"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "儲存空間共用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 。"
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "安全地儲存及分享檔案使用 ${ DRIVE_APP_NAME }。"
       ],
@@ -5153,9 +5079,6 @@
       ],
       "Subject: ": [
         "主旨 : "
-      ],
-      "Support for 1 custom email domain": [
-        "支援 1 個自訂電郵網域"
       ],
       "Support privacy by upgrading for": [
         "透過升級支援隱私"
@@ -5328,12 +5251,6 @@
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
       ],
-      "Unlimited folders, labels, and filters": [
-        "不限數量的資料夾、標籤與篩選器"
-      ],
-      "Unlimited messages": [
-        "無限制的郵件"
-      ],
       "Unlock message": [
         "解密鎖定訊息"
       ],
@@ -5345,6 +5262,9 @@
       ],
       "Updating message content search...": [
         "正在更新郵件內容搜尋..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
       "Upgrade to add more addresses to your account.": [
         "升級以加入更多電郵位址到您的帳號。"
@@ -5376,9 +5296,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "升級即可通過第三方客戶端使用 ${ MAIL_APP_NAME }。"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "今天就升級，不要錯過 ${ planName } 特賞限時福利！"
-      ],
       "Upload picture": [
         "上載圖像"
       ],
@@ -5396,9 +5313,6 @@
       ],
       "Using SimpleLogin is easy": [
         "使用 SimpleLogin 很簡單"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "驗證過的 ${ BRAND_NAME } 訊息"
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
@@ -5615,9 +5529,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -5936,14 +5847,11 @@
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
       ],
-      "Coming soon": [
-        "敬請期待"
+      "Colors": [
+        "色彩"
       ],
       "Conditions": [
         "條件"
-      ],
-      "Confirm password": [
-        "確認密碼"
       ],
       "Contacts": [
         "聯絡人"
@@ -6029,9 +5937,6 @@
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "寄件者：${ importedEmail }"
-      ],
       "Good": [
         "很好"
       ],
@@ -6106,12 +6011,6 @@
       ],
       "Manage categories": [
         "管理分類"
-      ],
-      "Manage folders": [
-        "管理資料夾"
-      ],
-      "Manage labels": [
-        "管理標籤"
       ],
       "Manage my addresses": [
         "管理我的電郵位址"
@@ -6266,9 +6165,6 @@
       "To:": [
         "收件者："
       ],
-      "To: ${ emailAddress }": [
-        "收件者：${ emailAddress }"
-      ],
       "To: ${ to }": [
         "收件者：${ to }"
       ],
@@ -6283,9 +6179,6 @@
       ],
       "Undisclosed Recipients": [
         "非公開收件者"
-      ],
-      "Upload file": [
-        "上載檔案"
       ],
       "Upload picture": [
         "上載圖像"
@@ -6558,8 +6451,8 @@
       "Almost there": [
         "快完成了"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
@@ -6578,17 +6471,17 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "匯入來自 ${ itemsToImportCount } 個資料夾的所有訊息，並加上標籤："
       ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部訊息，並加上標籤："
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ itemsToImportCount } 資料夾中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "從 ${ itemsToImportCount } 個資料夾中匯入來自 ${ selectedItemsToImportCount } 個的所有訊息，並加上標籤："
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
       ]
     },
     "Mailbox": {
@@ -6622,7 +6515,7 @@
         "在 ${ date }，${ senderString } 寫道："
       ],
       "Re:": [
-        "Re:"
+        "回复："
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費試用期已結束。您即將無法存取您的帳戶。${ action }"
@@ -6834,6 +6727,39 @@
         "切換或是加入帳號"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "自訂電郵網域"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email 別名"
+      ],
+      "Schedule messages at any time": [
+        "在任意時間排程訊息"
+      ],
+      "Search message content": [
+        "搜尋郵件內容"
+      ],
+      "Unlimited folders, labels and filters": [
+        "無限的資料夾、標籤與篩選器"
+      ],
+      "Up to 15 email addresses": [
+        "多達 15 個電子郵件地址"
+      ],
+      "Up to 500 GB of storage": [
+        "多達 500 GB 的儲存空間"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "與我們分享您的使用體驗。（選填）"
@@ -6997,9 +6923,6 @@
     "Placeholder": {
       "A way to contact you": [
         "您的聯絡方式"
-      ],
-      "Confirm password": [
-        "確認密碼"
       ],
       "E.g., ": [
         "例如： "
@@ -7347,9 +7270,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
-      ],
       "Email tracking protection": [
         "電郵追蹤防護"
       ],
@@ -7364,9 +7284,6 @@
       ],
       "Schedule send": [
         "排程傳送"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "試試看 ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我們將預設載入所有圖像，並且攔截寄件者進行追蹤。此功能可在 ${ settingsLink } 進行變更。"
@@ -7484,7 +7401,7 @@
       "Bug reported": [
         "錯誤已回報"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "正在取消匯入"
       ],
       "Code sent to ${ methodTo }": [
@@ -7708,20 +7625,36 @@
       "${ daysCountLeft } days": [
         "${ daysCountLeft } 天"
       ],
-      "${ hours } hours": [
-        "${ hours } 小時"
-      ],
       "${ hoursCountLeft } hours": [
         "${ hoursCountLeft } 小時"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分鐘"
       ],
       "${ minutesCountLeft } minutes": [
         "${ minutesCountLeft } 分鐘"
       ],
       "${ secondsCountLeft } seconds": [
         "${ secondsCountLeft } 秒"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } min": [
+        "${ minutes }分鐘"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes }分鐘"
       ]
     },
     "Title": {
@@ -8160,6 +8093,9 @@
       "Sending original message": [
         "原始郵件傳送中"
       ],
+      "Set your own schedule": [
+        "設定您自己的排程"
+      ],
       "Settings": [
         "設定"
       ],
@@ -8241,8 +8177,8 @@
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您專屬的免費試用即將結束，到期日為 ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8615,6 +8551,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "每 ${ interval } 年"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "每${ interval }年，${ timesString }"
       ],

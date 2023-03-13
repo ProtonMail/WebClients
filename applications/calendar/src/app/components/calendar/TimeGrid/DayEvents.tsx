@@ -1,6 +1,5 @@
 import { Ref, useMemo } from 'react';
 
-import { HOUR } from '@proton/shared/lib/constants';
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 
 import { CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
@@ -10,10 +9,10 @@ import { LayoutEvent, layout } from '../layout';
 import { toPercent } from '../mouseHelpers/mathHelpers';
 
 /**
- * Splits 2-day events into parts that represent the actual length in the UI
- * and determines whether those parts are less than an hour in length or not
+ * Compute event "duration" in the UI. If an event is split in 2 days in the UI,
+ * return the duration of the part passed in the arguments.
  */
-const getIsEventPartLessThanAnHour = ({ start, end, colEnd }: { start: Date; end: Date; colEnd: number }) => {
+const getEventPartDuration = ({ start, end, colEnd }: { start: Date; end: Date; colEnd: number }) => {
     const eventPartEnd = new Date(end);
     const eventPartStart = new Date(start);
 
@@ -27,7 +26,7 @@ const getIsEventPartLessThanAnHour = ({ start, end, colEnd }: { start: Date; end
         }
     }
 
-    return +eventPartEnd - +eventPartStart < HOUR;
+    return +eventPartEnd - +eventPartStart;
 };
 
 /**
@@ -115,7 +114,7 @@ const DayEvents = ({
 
         const eventRef = isThisSelected ? targetEventRef : undefined;
 
-        const isEventPartLessThanAnHour = getIsEventPartLessThanAnHour({ start, end, colEnd });
+        const eventPartDuration = getEventPartDuration({ start, end, colEnd });
         const isBeforeNow = getIsBeforeNow(event, now);
 
         const lineNumber =
@@ -128,8 +127,8 @@ const DayEvents = ({
 
         return (
             <PartDayEvent
-                isEventPartLessThanAnHour={isEventPartLessThanAnHour}
                 event={event}
+                eventPartDuration={eventPartDuration}
                 style={{
                     ...style,
                     '--line-number': lineNumber || 1,

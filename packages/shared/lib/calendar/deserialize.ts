@@ -1,7 +1,4 @@
-import { modelToValarmComponent } from 'proton-calendar/src/app/components/eventModal/eventForm/modelToValarm';
-
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 
 import { getIsAddressActive, getIsAddressExternal } from '../helpers/address';
 import { canonicalizeInternalEmail } from '../helpers/email';
@@ -17,6 +14,8 @@ import {
 } from '../interfaces/calendar';
 import { SimpleMap } from '../interfaces/utils';
 import { toSessionKey } from '../keys/sessionKey';
+import { modelToValarmComponent } from './alarms/modelToValarm';
+import { apiNotificationsToModel } from './alarms/notificationsToModel';
 import { getAttendeeEmail, toInternalAttendee } from './attendees';
 import { ICAL_ATTENDEE_STATUS } from './constants';
 import {

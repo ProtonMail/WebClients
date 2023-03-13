@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/tabindex-no-positive */
 import { fireEvent, render } from '@testing-library/react';
 
 import ButtonLike from './ButtonLike';
@@ -40,10 +41,10 @@ describe('<ButtonLike />', () => {
     });
 
     it('allows setting of tabIndex', () => {
-        const { container } = render(<ButtonLike tabIndex={10} />);
+        const { container } = render(<ButtonLike tabIndex={0} />);
         const rootElement = container.firstChild;
 
-        expect(rootElement).toHaveAttribute('tabIndex', '10');
+        expect(rootElement).toHaveAttribute('tabIndex', '0');
     });
 
     it('sets aria-busy attribute to false by default', () => {
@@ -108,7 +109,7 @@ describe('<ButtonLike />', () => {
         });
 
         it('sets tabIndex to -1', () => {
-            const { container } = render(<ButtonLike loading tabIndex={10} />);
+            const { container } = render(<ButtonLike loading tabIndex={0} />);
             const rootElement = container.firstChild;
 
             expect(rootElement).toHaveAttribute('tabIndex', '-1');
@@ -124,7 +125,7 @@ describe('<ButtonLike />', () => {
 
     describe('disabled', () => {
         it('sets tabIndex to -1', () => {
-            const { container } = render(<ButtonLike disabled tabIndex={10} />);
+            const { container } = render(<ButtonLike disabled tabIndex={0} />);
             const rootElement = container.firstChild;
 
             expect(rootElement).toHaveAttribute('tabIndex', '-1');

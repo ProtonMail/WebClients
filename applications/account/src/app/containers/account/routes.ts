@@ -159,7 +159,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Refer a friend`,
                 description: c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
                 to: '/referral',
-                icon: 'gift',
+                icon: 'heart',
                 available: !!isReferralProgramEnabled,
                 subsections: [
                     {

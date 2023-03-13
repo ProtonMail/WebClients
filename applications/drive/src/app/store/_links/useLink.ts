@@ -43,7 +43,7 @@ export default function useLink() {
                 // (it might be a helper function for a background job). Hence,
                 // there are potential cases when displaying such messages will
                 // confuse the user. Every higher-level caller should handle it
-                //based on the context.
+                // based on the context.
                 silence: true,
             },
             abortSignal
@@ -368,11 +368,13 @@ export function useLinkInner(
                     ),
                 }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
 
-                const fileModifyTimePromise = !encryptedLink.xAttr
+                const xattrPromise = !encryptedLink.xAttr
                     ? {
                           fileModifyTime: encryptedLink.metaDataModifyTime,
                           fileModifyTimeVerified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+                          originalSize: undefined,
                           originalDimensions: undefined,
+                          digests: undefined,
                       }
                     : getLinkPrivateKey(abortSignal, shareId, encryptedLink.linkId)
                           .then(async (privateKey) =>
@@ -389,16 +391,24 @@ export function useLinkInner(
                           .then(({ xattrs, verified }) => ({
                               fileModifyTime: xattrs.Common.ModificationTime || encryptedLink.metaDataModifyTime,
                               fileModifyTimeVerified: verified,
+                              originalSize: xattrs.Common?.Size,
                               originalDimensions: xattrs.Media
                                   ? {
                                         width: xattrs.Media.Width,
                                         height: xattrs.Media.Height,
                                     }
                                   : undefined,
+                              digests: xattrs.Common?.Digests
+                                  ? {
+                                        sha1: xattrs.Common.Digests.SHA1,
+                                    }
+                                  : undefined,
                           }));
 
-                const [{ name, nameVerified }, { fileModifyTime, fileModifyTimeVerified, originalDimensions }] =
-                    await Promise.all([namePromise, fileModifyTimePromise]);
+                const [
+                    { name, nameVerified },
+                    { fileModifyTime, fileModifyTimeVerified, originalSize, originalDimensions, digests },
+                ] = await Promise.all([namePromise, xattrPromise]);
 
                 const signatureIssues: SignatureIssues = {};
                 if (
@@ -426,8 +436,10 @@ export function useLinkInner(
                     // by detecting if share or token is used.
                     name: name === 'root' && !encryptedLink.parentLinkId ? c('Title').t`My files` : name,
                     fileModifyTime: fileModifyTime,
+                    originalSize,
                     originalDimensions,
                     signatureIssues: Object.keys(signatureIssues).length > 0 ? signatureIssues : undefined,
+                    digests,
                 };
             },
             ['decryptLink', shareId, encryptedLink.linkId],

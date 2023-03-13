@@ -2,18 +2,18 @@
 
 .contactGroupDropdown {
 	.dropdown-content {
-		@include respond-to($breakpoint-small, 'max') {
+		@include media('<=small') {
 			display: flex;
 			flex-flow: column nowrap;
 		}
 	}
 
 	&-list-container {
-		@include respond-to($breakpoint-small, 'max') {
+		@include media('<=small') {
 			min-block-size: 5em;
 		}
 
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			max-inline-size: 20em;
 			max-block-size: 15em;
 		}

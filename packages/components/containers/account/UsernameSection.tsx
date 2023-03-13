@@ -45,7 +45,7 @@ const UsernameSection = ({ app }: Props) => {
         <>
             {renderModal && tmpAddress && <EditDisplayNameModal {...modalProps} address={tmpAddress} />}
             <SettingsSection>
-                {user.Type === UserType.EXTERNAL && primaryAddress && (
+                {user.Type === UserType.EXTERNAL && primaryAddress && APP_NAME === APPS.PROTONACCOUNT && (
                     <Card className="mb2" rounded bordered={false}>
                         <div className="mb0-5">
                             {c('Info')
@@ -55,7 +55,7 @@ const UsernameSection = ({ app }: Props) => {
                         <ButtonLike
                             as={AppLink}
                             toApp={APPS.PROTONACCOUNT}
-                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}`}
+                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&type=settings`}
                             color="norm"
                         >
                             {c('Info').t`Get my ${BRAND_NAME} address`}
@@ -88,6 +88,7 @@ const UsernameSection = ({ app }: Props) => {
                                             setTmpAddress(primaryAddress);
                                             setModalOpen(true);
                                         }}
+                                        aria-label={c('Action').t`Edit display name`}
                                     >
                                         {c('Action').t`Edit`}
                                     </InlineLinkButton>

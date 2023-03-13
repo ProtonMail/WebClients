@@ -12,7 +12,7 @@ interface Props {
 
 const isEligible = ({ user, subscription, protonConfig }: Props) => {
     const isValidApp = protonConfig?.APP_NAME === APPS.PROTONMAIL || protonConfig?.APP_NAME === APPS.PROTONACCOUNT;
-    const createDate = fromUnixTime(subscription?.CreateTime || subscription?.PeriodStart || 0); // Subscription.CreateTime is not yet available
+    const createDate = subscription?.CreateTime ? fromUnixTime(subscription.CreateTime) : new Date();
     const plan = getPlan(subscription);
     return (
         [PLANS.MAIL, PLANS.VPN].includes(plan?.Name as PLANS) &&

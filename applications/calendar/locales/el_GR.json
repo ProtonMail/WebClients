@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
+      "Attention required": [
+        "Χρειάζεται προσοχή"
+      ],
       "Authenticate": [
         "Ταυτοποίηση"
       ],
@@ -117,6 +120,9 @@
       ],
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
+      ],
+      "Continue to ${ calendarAppBareName }": [
+        "Συνέχεια στο ${ calendarAppBareName }"
       ],
       "Continue with Google": [
         "Συνεχίστε με Google"
@@ -231,6 +237,9 @@
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
       ],
+      "Hide affected calendars": [
+        "Απόκρυψη επηρεαζόμενων ημερολογίων"
+      ],
       "Hide folders": [
         "Απόκρυψη φακέλων"
       ],
@@ -342,6 +351,9 @@
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
+      "Open settings": [
+        "Άνοιγμα ρυθμίσεων"
+      ],
       "Preview contact": [
         "Προεπισκόπηση Επαφής"
       ],
@@ -387,9 +399,6 @@
       "Remove this participant": [
         "Αφαίρεση αυτού του συμμετέχοντα"
       ],
-      "Rename": [
-        "Μετονομασία"
-      ],
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
@@ -412,7 +421,7 @@
         "Αναζήτηση χωρών"
       ],
       "See plan features": [
-        "Δείτε τα χαρακτηριστικά πακέτου"
+        "Προβολή χαρακτηριστικών προγράμματος"
       ],
       "Select all": [
         "Επιλογή όλων"
@@ -434,6 +443,9 @@
       ],
       "Show advanced PGP settings": [
         "Εμφάνιση προηγμένων ρυθμίσεων PGP"
+      ],
+      "Show affected calendars": [
+        "Εμφάνιση επηρεαζόμενων ημερολογίων"
       ],
       "Show folders": [
         "Εμφάνιση φακέλων"
@@ -458,6 +470,9 @@
       ],
       "Skip": [
         "Παράλειψη"
+      ],
+      "Skip verification": [
+        "Παράλειψη επαλήθευσης"
       ],
       "Start import": [
         "Έναρξη εισαγωγής"
@@ -503,6 +518,9 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -655,11 +673,6 @@
     "Attendee role": {
       "Optional": [
         "Προαιρετικό"
-      ]
-    },
-    "Badge": {
-      "Coming soon": [
-        "Ερχεται σύντομα"
       ]
     },
     "Beta access description": {
@@ -838,11 +851,6 @@
         "Περισσότερες επιλογές"
       ]
     },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Κοινοποιημένο με εμένα"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "Δεν συγχρονίστηκαν"
@@ -899,9 +907,12 @@
         "${ more } επιπλέον"
       ]
     },
-    "colon": {
-      ": ": [
-        ": "
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Σύμπτυξη"
+      ],
+      "Expand": [
+        "Ανάπτυξη"
       ]
     },
     "color": {
@@ -981,9 +992,6 @@
       "Birthday": [
         "Γενέθλια"
       ],
-      "Email": [
-        "Email"
-      ],
       "Gender": [
         "Φύλο"
       ],
@@ -1022,9 +1030,6 @@
       ],
       "Title": [
         "Τίτλος"
-      ],
-      "URL": [
-        "URL"
       ]
     },
     "Contact type label": {
@@ -1209,6 +1214,9 @@
       ],
       "Congo": [
         "Κογκό"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Κονγκό-Κινσάσα"
       ],
       "Cook Islands": [
         "Νήσοι Κουκ"
@@ -1398,6 +1406,9 @@
       ],
       "Japan": [
         "Ιαπωνία"
+      ],
+      "Jersey": [
+        "Βαϊλάτο του Τζέρσεϊ"
       ],
       "Jordan": [
         "Ιορδανία"
@@ -1895,6 +1906,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται συγχώνευση επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
+      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
+        "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφή. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
+        "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει\nμέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
       ],
@@ -1929,7 +1944,7 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
+      "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
       ]
     },
@@ -2091,16 +2106,8 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Σφάλμα αποκρυπτογράφησης: Αποτυχία αποκρυπτογράφησης του περιεχομένου γεγονότος."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο ή",
-        "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια ή"
-      ],
       "Domain not available, try again later": [
-        "Ο τομέας δεν είναι διαθέσιμος. Προσπαθήστε ξανά αργότερα."
+        "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
       "Email address disabled": [
         "Η διεύθυνση email έχει απενεργοποιηθεί"
@@ -2139,7 +2146,7 @@
         "Αποτυχία ανεβάσματος εικόνας"
       ],
       "IMAP server is required": [
-        "Ο διακομιστής IMAP είναι υποχρεωτικός"
+        "Απαιτείται διακομιστής IMAP"
       ],
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
@@ -2177,10 +2184,6 @@
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
-        "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
-      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
@@ -2214,7 +2217,7 @@
         "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList }"
       ],
       "Password is required": [
-        "Ο κωδικός πρόσβασης είναι υποχρεωτικός"
+        "Απαιτείται κωδικός πρόσβασης"
       ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
@@ -2227,7 +2230,7 @@
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
       ],
       "Port is required": [
-        "Η θύρα είναι υποχρεωτική"
+        "Απαιτείται θύρα"
       ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
@@ -2317,8 +2320,8 @@
       "This label name is not available. Please choose a different name.": [
         "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -2332,8 +2335,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από 100 παραλήπτες"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Δεν μπορείτε να στείλετε vCards για περισσότερες από 10 επαφές"
+      "You can't send vCard files of more than 10 contacts": [
+        "Δεν μπορείτε να στείλετε φακέλους vCard για περισσότερες από 10 επαφές"
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
@@ -2522,6 +2525,12 @@
       "Please ${ refresh } or check your connection.": [
         "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
+      ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο ${ BRAND_NAME }."
+      ],
       "You may also ${ refresh } or try again later.": [
         "Μπορείτε επίσης να ${ refresh } ή να δοκιμάσετε ξανά αργότερα."
       ],
@@ -2547,12 +2556,6 @@
     "Event canceled status badge": {
       "canceled": [
         "ακυρωμένες"
-      ]
-    },
-    "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } συμμετέχων",
-        "${ numberOfParticipants } συμμετέχοντες"
       ]
     },
     "Event info. Organizer name": {
@@ -2628,14 +2631,27 @@
       ]
     },
     "file size format": {
-      "GB": [
-        "GB"
+      "byte": [
+        "byte",
+        "bytes"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
       ],
-      "KB": [
-        "KB"
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
       ],
-      "MB": [
-        "MB"
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -2684,20 +2700,11 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
       "Manual": [
         "Χειροκίνητα"
       ],
       "No verification method available": [
         "Δεν υπάρχει διαθέσιμη μέθοδος επαλήθευσης"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2798,6 +2805,12 @@
       ]
     },
     "Import error": {
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
+        "Αδυναμία σύνδεσης του ${ BRAND_NAME } στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
+      ],
       "2-step verification is enabled in your external account.": [
         "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
@@ -2818,6 +2831,9 @@
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "Η διεύθυνση email και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
       ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
@@ -2877,9 +2893,6 @@
       ],
       "ICS file": [
         "αρχείο ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2928,17 +2941,20 @@
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
         "${ calendarsToBeCreatedCount } νέα ημερολόγια"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } συγχωνευμένο ημερολόγιο",
-        "${ calendarsToBeMerged } συγχωνευμένα ημερολόγια"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } επαφή περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
         "${ contactEmailsLength } Μέλη"
+      ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } επαφή βρέθηκε",
@@ -2948,13 +2964,13 @@
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } ομάδα επαφών",
-        "${ numContactGroups } ομάδες επαφών"
+      "${ numContact } contact": [
+        "${ numContact } επαφή",
+        "${ numContact } επαφές"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } επαφή",
-        "${ numContacts } επαφές"
+      "${ numGroups } contact group": [
+        "${ numGroups } ομάδα επαφών",
+        "${ numGroups } ομάδες επαφών"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
@@ -2983,9 +2999,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } αποθηκευτικός χώρος"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
@@ -3039,15 +3052,17 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει αν είστε ελεύθεροι ή απασχολημένοι στο ημερολόγιο σας. Όμως δεν μπορούν να δουν τις λεπτομέρειες των συμβάντων, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
       ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
-        "Το πολύ ${ MAX_ATTENDEES } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
+      "Attention required": [
+        "Χρειάζεται προσοχή"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Κοινοποιώντας όλες τις λεπτομέρειες των συμβάντων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στη ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
+      ],
+      "Calendar side panel": [
+        "Πλαϊνό πλαίσιο ημερολογίου"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας? Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
@@ -3061,12 +3076,12 @@
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
-      "Continue with ${ planName }": [
-        "Συνέχεια με ${ planName }"
+      "Country code": [
+        "Κωδικός χώρας"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Δημιουργήστε ${ calendarsToBeCreated } νέο ημερολόγιο",
-        "Δημιουργήστε ${ calendarsToBeCreated } νέα ημερολόγια"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέα ημερολόγια"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τους φακέλους που θα θέλατε να εισάγετε."
@@ -3110,11 +3125,26 @@
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
+      "Each code can only be used once": [
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
+      ],
+      "Emails are automatically signed": [
+        "Τα μηνύματα υπογράφονται αυτόματα"
+      ],
+      "Enter the code from your authenticator app": [
+        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Πληκτρολογείστε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
       "Existent and added participants will be notified.": [
         "Οι υπάρχοντες και πρόσθετοι συμμετέχοντες θα ειδοποιηθούν."
@@ -3149,12 +3179,12 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δεν βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Εισαγωγή ${ selectedCalendarsCount } από ${ totalCalendarsCount } ημερολόγιο",
-        "Εισαγωγή ${ selectedCalendarsCount } από ${ totalCalendarsCount } ημερολόγια"
       ],
       "Import from": [
         "Εισαγωγή από"
@@ -3167,6 +3197,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Εισάγετε τα email σας, τα ημερολόγια, και τις επαφές σας από μια άλλη υπηρεσία στην ${ BRAND_NAME }. Θα σας καθοδηγήσουμε σε κάθε βήμα της διαδικασίας και θα κρυπτογραφήσουμε τα δεδομένα κατά τη μετακίνηση. Καλώς ήρθατε στον κόσμο της ιδιωτικότητας."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
@@ -3249,6 +3282,9 @@
       "None of the participants can be notified about your changes:": [
         "Κανένας από τους συμμετέχοντες δεν μπορεί να ενημερωθεί για τις αλλαγές σας:"
       ],
+      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
+        "Κανένα από τα κλειδιά που ανεβάσατε είναι έγκυρα για κρυπτογράφηση. Για να μπορείτε να στέλνετε μηνύματα σε αυτήν τη διεύθυνση, παρακαλούμε να ανεβάσετε ένα έγκυρο κλειδί ή να απενεργοποιήσετε την \"Κρυπτογράφηση μηνυμάτων\"."
+      ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
@@ -3258,8 +3294,14 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν."
       ],
-      "Other options": [
-        "Άλλες επιλογές"
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
+      ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline είναι μόνο συμβατό με μορφοποίηση Απλού Κειμένου."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME στέλνει αυτόματα το μήνυμα με την παρούσα λειτουργία συνθέτη."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
@@ -3273,6 +3315,13 @@
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδα.",
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδες."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε στην ομάδα ${ groupName }."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που μπορούν να επανυπογραφούν με το πρωτεύον κλειδί κρυπτογράφησης."
       ],
@@ -3285,8 +3334,8 @@
       "Primary": [
         "Κύριο"
       ],
-      "Priority support": [
-        "Υποστήριξη κατά προτεραιότητα"
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
@@ -3300,9 +3349,6 @@
       "Select what you want to import.": [
         "Επιλέξτε τι θέλετε να εισάγετε."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
@@ -3314,9 +3360,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Μερικές από τις απαντήσεις σας σε περιστατικά που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα χαθούν."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
       ],
       "support team": [
         "ομάδα υποστήριξης"
@@ -3375,11 +3418,17 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας και δεν μπορεί να ανοίξει από το πρόγραμμα περιήγησης Edge. Εάν είστε βέβαιοι ότι ο σύνδεσμος είναι αυθεντικός, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης για να το ανοίξετε."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Για να εισάγετε γεγονότα, θα πρέπει πρώτα να δημιουργήσετε ένα ημερολόγιο στο ${ CALENDAR_APP_NAME }. Εδώ θα εμφανιστούν τα γεγονότα μετά την εισαγωγή."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Για να υπογράψουμε εκ νέου τις επαφές σας, πρέπει να ελέγξουμε κάθε επαφή με τη λίστα των κλειδιών κρυπτογράφησης που είναι διαθέσιμα στο λογαριασμό σας. Αν δεν βρεθεί αντιστοιχία, η επαφή σας θα επανσυνδεθεί με το πρωτεύον κλειδί κρυπτογράφησης."
@@ -3390,17 +3439,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Για να χρησιμοποιήσετε την Επαλήθευση διεύθυνσης, πρέπει να χαρακτηρίσετε Αξιόπιστα ένα ή περισσότερα διαθέσιμα δημόσια κλειδιά, συμπεριλαμβανομένου αυτού που θέλετε να χρησιμοποιήσετε για αποστολή. Αυτό αποτρέπει την απομίμηση των κρυπτογραφημένων κλειδιών."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
-      ],
-      "Unlimited messages": [
-        "Aπεριόριστα μηνύματα"
-      ],
       "Update recurring event": [
         "Ενημέρωση επαναλαμβανόμενου συμβάντος"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
       ],
       "We'll notify you when the import is done.": [
         "Θα σας ειδοποιήσουμε όταν ολοκληρωθεί η εισαγωγή."
@@ -3410,6 +3453,9 @@
       ],
       "Week": [
         "Εβδομάδα"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
       ],
       "Which event would you like to delete?": [
         "Ποιο γεγονός θα θέλατε να διαγράψετε;"
@@ -3471,9 +3517,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Έχετε επανενεργοποιήσει τα κλειδιά και τα συμβάντα που συνδέονται με τα ακόλουθα ημερολόγια μπορούν τώρα να αποκρυπτογραφηθούν."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Εχετε επαναφέρει τον κωδικό πρόσβασης σασ και σαν αποτέλεσμα γεγονότα συνδεδεμένα με τα ακόλουθα ημερολόγια, δε μπορέσανε να αποκρυπτωγραφηθούν.\nΟι συνδέσεις κοινόχρηστου ημερολογίου που δημιουργήσατε προηγουμένως δεν θα λειτουργούν πλέον.\nΟποιαδήποτε ενεργά εγγεγραμμένα ημερολόγια θα συγχρονιστούν ξανά μετά από λίγα λεπτά."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Έχετε προηγουμένως απορρίψει αυτήν την πρόσκληση. Παρακαλώ ρωτήστε τον κάτοχο για μια νέα πρόσκληση"
       ],
@@ -3504,8 +3547,20 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Θα ενημερώσετε όλα τα γεγονότα σε αυτή τη σειρά. Θα ειδοποιηθούν οι αποσυρθέντες συμμετέχοντες."
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Δεν μπορείτε πλέον να λάβετε μηνύματα στα εισερχόμενα σας. Οι σύνδεσμοι στο Drive έχουν απενεργοποιηθεί, και δεν μπορείτε να ανεβάσετε νέα αρχεία. Για να συνεχίσετε τις υπηρεσίες του λογαριασμού σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
+        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Ο λογαριασμός σας έχει περιορισμένες λειτουργίες, και όλες οι υπηρεσίες βρίσκονται σε φραγή έως ότου πραγματοποιηθεί η πληρωμή. ${ payInvoiceLink }"
+      ],
+      "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
+        "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο και τέθηκε σε περιορισμένη κατάσταση. Η συνεχής αποφυγή πληρωμών θα οδηγήσει σε φραγή εισερχόμενων μηνυμάτων και κοινοποίησης συνδέσμων. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Η διεύθυνση σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλα τα γεγονότα σε αυτή τη σειρά ούτως ή άλλως;"
@@ -3540,6 +3595,34 @@
         "Κάντε κλικ για λεπτομέρειες"
       ]
     },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Κάποια από τα ημερολόγιά σας δεν θα εμφανίζουν λεπτομέρειες για συμβάντα που δημιουργήθηκαν προηγουμένως."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Τα ημερολόγιά σας δεν θα εμφανίζουν λεπτομέρειες για συμβάντα που δημιουργήθηκαν προηγουμένως."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Αυτό συμβαίνει επειδή έγινε πρόσφατα επαναφορά του κωδικού πρόσβασής σας χωρίς τη χρήση μεθόδου ανάκτησης."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Μπορείτε να ανακτήσετε τα κρυπτογραφημένα δεδομένα σας με ένα αρχείο ανάκτησης, μια φράση ανάκτησης ή τον παλιό σας κωδικό πρόσβασης."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Η κοινή χρήση ημερολογίου απενεργοποιήθηκε μετά την πρόσφατη επαναφορά του κωδικού πρόσβασης."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Μπορείτε να αναδημοσιεύσετε τα ημερολόγιά σας στις ρυθμίσεις."
+      ]
+    },
     "Input label": {
       "Access": [
         "Πρόσβαση"
@@ -3568,9 +3651,6 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -3631,9 +3711,6 @@
       "Color": [
         "Χρώμα"
       ],
-      "Coming soon": [
-        "Ερχεται σύντομα"
-      ],
       "Contacts": [
         "Επαφές"
       ],
@@ -3655,9 +3732,6 @@
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
       ],
-      "Email": [
-        "Email"
-      ],
       "Email address": [
         "Διεύθυνση email"
       ],
@@ -3668,7 +3742,7 @@
         "Μηνύματα"
       ],
       "Emails (all messages)": [
-        "Μηνύματα ηλεκτρονικού ταχυδρομείου (όλα τα μηνύματα)"
+        "Μηνύματα (όλα τα μηνύματα)"
       ],
       "Emails (last 12 months)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίοι 12 μήνες)"
@@ -3714,9 +3788,6 @@
       ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
-      ],
-      "From: ${ importedEmail }": [
-        "Από: ${ importedEmail }"
       ],
       "Good": [
         "Καλή"
@@ -3768,12 +3839,6 @@
       ],
       "Main": [
         "Κύριο"
-      ],
-      "Manage folders": [
-        "Διαχείριση φακέλων"
-      ],
-      "Manage labels": [
-        "Διαχείριση ετικετών"
       ],
       "Move to Archive": [
         "Μεταφορά στα Αρχειοθετημένα"
@@ -3857,9 +3922,6 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
-      "To: ${ emailAddress }": [
-        "Προς: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Προς: ${ to }"
       ],
@@ -3872,14 +3934,8 @@
       "Two-factor authentication code": [
         "Κωδικός ταυτοποίησης δύο παραγόντων"
       ],
-      "Upload file": [
-        "Ανέβασμα αρχείου"
-      ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
-      ],
-      "URL": [
-        "URL"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Όνομα χρήστη ή διεύθυνση ${ MAIL_APP_NAME }"
@@ -3953,11 +4009,11 @@
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
       ],
-      "Subscribed calendars": [
-        "Εγγεγραμμένα ημερολόγια"
-      ],
       "Upgrade account": [
         "Αναβάθμιση λογαριασμού"
+      ],
+      "What’s this?": [
+        "Τι είναι αυτό?"
       ]
     },
     "Link to calendar app": {
@@ -3965,12 +4021,18 @@
         "Άνοιγμα σε ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Τι είναι μεθόδος ανάκτησης;"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Ακόμα λίγο"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendars } από ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Γίνεται σύνδεση με τον πάροχο ηλεκτρονικού ταχυδρομείου σας"
@@ -3989,21 +4051,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φακέλους και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φακέλους και επισημάνετέ τα ως"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέττες και επισημάνετέ τα ως ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτες και επισημάνετέ τα ως"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φάκελο και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φακέλους και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φάκελο και επισημάνετε τα με ετικέτα",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φακέλους και επισημάνετε τα με ετικέτα"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέττες και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτες και επισημάνετε τα ως"
       ]
     },
     "Message": {
@@ -4033,17 +4095,6 @@
       ],
       "Manage calendars": [
         "Διαχείριση ημερολογίων"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Δεν είναι δυνατή η προσθήκη περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των προσωπικών ημερολογίων που παρέχει το πλάνο που επιλέξατε."
-      ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Δεν είναι δυνατή η προσθήκη περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των εγγεγραμμένων ημερολογίων που παρέχει το πλάνο που επιλέξατε."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Δεν είναι δυνατή η δημιουργία περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των προσωπικών ημερολογίων που παρέχει το πλάνο που επιλέξατε."
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4083,9 +4134,6 @@
       ],
       "Time zone changed": [
         "Η ζώνη ώρας άλλαξε"
-      ],
-      "Unable to add more calendars": [
-        "Δεν είναι δυνατή η προσθήκη περισσότερων ημερολογίων"
       ]
     },
     "Modal title and action": {
@@ -4544,6 +4592,9 @@
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
       ],
+      "Group name": [
+        "Όνομα ομάδας"
+      ],
       "Image URL": [
         "URL εικόνας"
       ],
@@ -4586,6 +4637,10 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } από τις ${ countContacts } επαφές έχουν εξαχθεί με επιτυχία.",
+        "${ contactsExported.length } από τις ${ countContacts } επαφές έχουν εξαχθεί με επιτυχία."
+      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "Το ${ model.deleted.length } από την ${ totalBeDeleted } επαφή διαγράφηκε με επιτυχία.",
         "Το ${ model.deleted.length } από τις ${ totalBeDeleted } επαφές διαγράφηκε με επιτυχία."
@@ -4607,9 +4662,6 @@
     "Property type": {
       "Address": [
         "Διεύθυνση"
-      ],
-      "Email": [
-        "Email"
       ],
       "Fax": [
         "Φαξ"
@@ -4711,15 +4763,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Οι προσκλήσεις τώρα εμφανίζονται στο ημερολόγιό σας ως εκκρεμή συμβάντα. Απλά ανοίξτε ένα συμβάν για να απαντήσετε στην πρόσκληση. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Εγγραφή σε άλλα ημερολόγια"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Δοκιμή ${ DRIVE_APP_NAME }"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Μπορείτε να εγγραφείτε σε εξωτερικά ημερολόγια και να διαβάσετε τις εκδηλώσεις τους."
       ]
     },
     "Spotlight settings link": {
@@ -4770,6 +4813,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } επαφή φαίνεται πανομοιότυπη.",
+        "${ countMergeableContacts } επαφές φαίνονται πανομοιότυπες."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Ένα email ακύρωσης θα αποσταλεί στους καταργημένους συμμετέχοντες για όλες τις εκδηλώσεις αυτής της σειράς."
       ],
@@ -4806,9 +4853,6 @@
       "Calendar updated": [
         "Το ημερολόγιο ενημερώθηκε"
       ],
-      "Canceling import": [
-        "Γίνεται ακύρωση εισαγωγής"
-      ],
       "Cancellation sent and all events deleted": [
         "Η ακύρωση στάλθηκε και όλες οι εκδηλώσεις διαγράφηκαν"
       ],
@@ -4820,6 +4864,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Η ακύρωση εστάλη και οι συμμετέχοντες αφαιρέθηκαν από όλες τις εκδηλώσεις"
+      ],
+      "Cancelling import": [
+        "Γίνεται ακύρωση εισαγωγής"
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
@@ -4904,6 +4951,9 @@
       "Preferences saved": [
         "Οι προτιμήσεις αποθηκεύτηκαν"
       ],
+      "Undo in progress": [
+        "Αναίρεση σε εξέλιξη"
+      ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
       ]
@@ -4970,10 +5020,28 @@
         "Ρυθμίσεις"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ώ.",
+        "${ hours } ώ."
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ώ.",
+        "${ hoursInt }.5 ώ."
+      ],
+      "${ minutes } min": [
+        "${ minutes } λ.",
+        "${ minutes } λ."
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } ώρα",
         "${ hours } ώρες"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }μιση ώρα",
+        "${ hoursInt }μιση ώρες"
       ],
       "${ minutes } minute": [
         "${ minutes } λεπτό",
@@ -5119,6 +5187,9 @@
       "Email settings": [
         "Ρυθμίσεις Email"
       ],
+      "Encrypted event": [
+        "Κρυπτογραφημένο Γεγονός"
+      ],
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
       ],
@@ -5222,8 +5293,8 @@
       "Request new code": [
         "Αίτηση νέου κωδικού"
       ],
-      "Reset calendar keys": [
-        "Επαναφορά κλειδιών ημερολογίου"
+      "Reshare your calendars": [
+        "Αναδημοσίευση των ημερολογίων σας"
       ],
       "Save changes": [
         "Αποθήκευση αλλαγών"
@@ -5327,6 +5398,12 @@
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία κίβδηλης ιστοσελίδας"
       ],
+      "We've locked some calendars to protect your data": [
+        "Έχουμε κλειδώσει κάποια από τα ημερολόγιά σας για να προστατεύσουμε τα δεδομένα σας"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Έχουμε κλειδώσει τα ημερολόγιά σας για να προστατεύσουμε τα δεδομένα σας"
+      ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
       ],
@@ -5411,6 +5488,10 @@
       "Password must contain at least ${ length } character": [
         "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
         "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
       ]
     },
     "Video control": {
@@ -5479,6 +5560,9 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Αυτή η ενέργεια είναι μη αναστρέψιμη. Παρακαλώ εισάγετε τη λέξη ${ boldDanger } στο πεδίο για να συνεχίσετε."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Αυτή η λειτουργία απαιτεί έναν λογαριασμό ${ BRAND_NAME } επί πληρωμή"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας ${ BRAND_NAME }. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."
@@ -5714,8 +5798,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Κάθε ${ interval } χρόνο",
+        "Κάθε ${ interval } χρόνια"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Κάθε ${ interval } χρόνο, ${ timesString }",

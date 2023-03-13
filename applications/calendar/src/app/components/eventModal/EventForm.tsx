@@ -11,7 +11,7 @@ import {
     FREQUENCY,
     FREQUENCY_INPUT_ID,
     LOCATION_INPUT_ID,
-    MAX_LENGTHS_API,
+    MAX_CHARS_API,
     MAX_NOTIFICATIONS,
     NOTIFICATION_INPUT_ID,
     PARTICIPANTS_INPUT_ID,
@@ -22,6 +22,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 
+import { getCanChangeCalendarOfEvent } from '../../helpers/event';
 import createHandlers from './eventForm/createPropFactory';
 import { getOrganizerAndSelfAddressModel } from './eventForm/state';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
@@ -43,7 +44,10 @@ export interface EventFormProps {
     canEditSharedEventData?: boolean;
     isMinimal?: boolean;
     isCreateEvent: boolean;
+    isInvitation: boolean;
     setParticipantError?: (value: boolean) => void;
+    isOwnedCalendar?: boolean;
+    isCalendarWritable?: boolean;
     isDuplicating?: boolean;
     isDrawerApp?: boolean;
 }
@@ -60,12 +64,15 @@ const EventForm = ({
     isMinimal,
     canEditSharedEventData = true,
     isCreateEvent,
+    isInvitation,
     setParticipantError,
+    isOwnedCalendar = true,
+    isCalendarWritable = true,
     isDuplicating = false,
     isDrawerApp,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
-    const isOrganizerOfInvitationRef = useRef(!isCreateEvent && !!model.organizer);
+    const isOrganizerOfInvitationRef = useRef(!isCreateEvent && !!model.isOrganizer);
     const isOrganizerOfInvitation = isOrganizerOfInvitationRef.current;
 
     const {
@@ -74,18 +81,26 @@ const EventForm = ({
         start,
         isAllDay,
         isAttendee,
+        isOrganizer,
         fullDayNotifications,
         defaultFullDayNotification,
         partDayNotifications,
         defaultPartDayNotification,
         calendars,
-        calendar: { isSubscribed: isSubscribedCalendar },
     } = model;
     const isSingleEdit = !!model.rest?.['recurrence-id'];
 
     const isImportedEvent = uid && !getIsProtonUID(uid);
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
-    const canChangeCalendar = isAttendee ? !isSingleEdit : !isOrganizerOfInvitation;
+    const canChangeCalendar = getCanChangeCalendarOfEvent({
+        isCreateEvent,
+        isOwnedCalendar,
+        isCalendarWritable,
+        isSingleEdit,
+        isInvitation,
+        isAttendee,
+        isOrganizer,
+    });
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications = canAddNotifications || notifications.length;
@@ -116,7 +131,7 @@ const EventForm = ({
                 placeholder={c('Placeholder').t`Add title`}
                 title={c('Title').t`Add event title`}
                 autoFocus
-                maxLength={MAX_LENGTHS_API.TITLE}
+                maxLength={MAX_CHARS_API.TITLE}
                 {...createHandlers({ model, setModel, field: 'title' }).native}
             />
         </IconRow>
@@ -157,7 +172,7 @@ const EventForm = ({
             <InputTwo
                 id={LOCATION_INPUT_ID}
                 placeholder={c('Placeholder').t`Add location`}
-                maxLength={MAX_LENGTHS_API.LOCATION}
+                maxLength={MAX_CHARS_API.LOCATION}
                 title={c('Title').t`Add event location`}
                 {...createHandlers({ model, setModel, field: 'location' }).native}
             />
@@ -176,7 +191,7 @@ const EventForm = ({
                 minRows={2}
                 autoGrow
                 placeholder={c('Placeholder').t`Add description`}
-                maxLength={MAX_LENGTHS_API.EVENT_DESCRIPTION}
+                maxLength={MAX_CHARS_API.EVENT_DESCRIPTION}
                 className="max-h-custom"
                 title={c('Title').t`Add more information related to this event`}
                 {...createHandlers({ model, setModel, field: 'description' }).native}
@@ -285,7 +300,7 @@ const EventForm = ({
         setModel({
             ...model,
             attendees: value,
-            isOrganizer: !!value.length,
+            isOrganizer: isOrganizerOfInvitation ? true : !!value.length,
             organizer: isOrganizerOfInvitation ? model.organizer : newOrganizer,
             selfAddress: isOrganizerOfInvitation ? model.selfAddress : newSelfAddress,
         });
@@ -297,6 +312,7 @@ const EventForm = ({
                 placeholder={c('Placeholder').t`Add participants`}
                 id={PARTICIPANTS_INPUT_ID}
                 value={model.attendees}
+                isOwnedCalendar={model.calendar.isOwned}
                 onChange={handleChangeAttendees}
                 organizer={model.organizer}
                 addresses={addresses}
@@ -346,7 +362,7 @@ const EventForm = ({
             {canEditSharedEventData && !isImportedEvent && participantsRow}
             {canEditSharedEventData && locationRow}
             {!isMinimal && showNotifications && notificationsRow}
-            {!isSubscribedCalendar && calendars.length > 0 && calendarRow}
+            {calendars.length > 0 && calendarRow}
             {canEditSharedEventData && descriptionRow}
         </div>
     );

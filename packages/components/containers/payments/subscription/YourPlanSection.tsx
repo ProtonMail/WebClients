@@ -8,7 +8,6 @@ import {
     usePlans,
     useSubscription,
     useUser,
-    useVPNCountriesCount,
     useVPNServersCount,
 } from '../../../hooks';
 import { SettingsSectionWide } from '../../account';
@@ -32,7 +31,6 @@ const YourPlanSection = ({ app }: Props) => {
     const [calendars] = useCalendars();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-    const [vpnCountries] = useVPNCountriesCount();
     const [vpnServers] = useVPNServersCount();
     const [openSubscriptionModal] = useSubscriptionModal();
 
@@ -60,7 +58,6 @@ const YourPlanSection = ({ app }: Props) => {
                     organization={organization}
                     user={user}
                     addresses={addresses}
-                    vpnCountries={vpnCountries}
                     vpnServers={vpnServers}
                     openSubscriptionModal={openSubscriptionModal}
                 />

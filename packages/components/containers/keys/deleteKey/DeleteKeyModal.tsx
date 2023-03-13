@@ -29,7 +29,9 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
         try {
             await onDelete();
             const fp = <code key="0">{fingerprint}</code>;
-            createNotification({ text: c('Notification').jt`Key with fingerprint ${fp} has been deleted.` });
+            createNotification({
+                text: <span>{c('Notification').jt`Key with fingerprint ${fp} has been deleted.`}</span>,
+            });
         } finally {
             onClose?.();
         }

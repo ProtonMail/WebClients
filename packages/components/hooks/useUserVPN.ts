@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { getClientVPNInfo } from '@proton/shared/lib/api/vpn';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import useApi from './useApi';
 import useCache from './useCache';
@@ -25,7 +26,7 @@ export interface VPNUserInfo {
     Delinquent: number;
     HasPaymentMethod: number;
     Credit: number;
-    Currency: string;
+    Currency: Currency;
 }
 
 const useUserVPN = () => {

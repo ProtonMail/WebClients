@@ -194,11 +194,15 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
             <ModalHeader title={c('Title').t`Add address`} />
             <ModalContent>
                 <div className="mb1-5">
-                    <div className="text-semibold mb0-25">{c('Label').t`User`}</div>
+                    <div className="text-semibold mb0-25" id="label-user-select">{c('Label').t`User`}</div>
                     {member || members?.length === 1 ? (
                         <div className="text-ellipsis">{member?.Name || members?.[0].Name}</div>
                     ) : (
-                        <SelectTwo value={model.id} onChange={({ value }) => setModel({ ...model, id: value })}>
+                        <SelectTwo
+                            aria-describedby="label-user-select"
+                            value={model.id}
+                            onChange={({ value }) => setModel({ ...model, id: value })}
+                        >
                             {members.map((member) => (
                                 <Option value={member.ID} title={member.Name}>
                                     {member.Name}
@@ -213,6 +217,7 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                     autoFocus
                     value={model.address}
                     error={validator([requiredValidator(model.address)])}
+                    aria-describedby="user-domain-selected"
                     onValue={(address: string) => setModel({ ...model, address })}
                     label={c('Label').t`Address`}
                     placeholder={c('Placeholder').t`Address`}
@@ -221,7 +226,11 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                         loadingDomains ? (
                             <CircleLoader />
                         ) : domainOptions.length === 1 ? (
-                            <span className="text-ellipsis" title={`@${domainOptions[0].value}`}>
+                            <span
+                                className="text-ellipsis"
+                                id="user-domain-selected"
+                                title={`@${domainOptions[0].value}`}
+                            >
                                 @{domainOptions[0].value}
                             </span>
                         ) : (
@@ -232,9 +241,10 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                                 value={selectedDomain}
                                 onChange={({ value }) => setModel({ ...model, domain: value })}
                                 data-testid="settings:identity-section:add-address:domain-select"
+                                id="user-domain-selected"
                             >
                                 {domainOptions.map((option) => (
-                                    <Option key={option.value} value={option.value} title={option.text}>
+                                    <Option key={option.value} value={option.value} title={`@${option.text}`}>
                                         @{option.text}
                                     </Option>
                                 ))}

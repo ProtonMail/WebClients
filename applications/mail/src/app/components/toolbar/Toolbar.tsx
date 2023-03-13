@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useElementBreakpoints } from '../../hooks/useElementBreakpoints';
@@ -42,6 +43,7 @@ interface Props {
     onDelete: () => Promise<void>;
     labelDropdownToggleRef: Ref<() => void>;
     moveDropdownToggleRef: Ref<() => void>;
+    bordered?: boolean;
 }
 
 const Toolbar = ({
@@ -67,6 +69,7 @@ const Toolbar = ({
     onDelete,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
+    bordered,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
 
@@ -88,7 +91,10 @@ const Toolbar = ({
     return (
         <nav
             ref={toolbarRef}
-            className="toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between"
+            className={clsx(
+                'toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between',
+                bordered && 'toolbar--bordered'
+            )}
             data-shortcut-target="mailbox-toolbar"
             aria-label={c('Label').t`Toolbar`}
         >

@@ -41,6 +41,9 @@
       "Add new group": [
         "Adicionar novo grupo"
       ],
+      "Add participant": [
+        "Adicionar participante"
+      ],
       "Add phone number": [
         "Adicionar número de telefone"
       ],
@@ -104,6 +107,12 @@
       "Block messages from this sender": [
         "Bloquear mensagens deste remetente"
       ],
+      "Block sender": [
+        "Bloquear remetente"
+      ],
+      "Block senders": [
+        "Bloquear remetentes"
+      ],
       "Bold": [
         "Negrito"
       ],
@@ -154,6 +163,9 @@
       ],
       "Close": [
         "Fechar"
+      ],
+      "Close & discard": [
+        "Fechar e descartar"
       ],
       "Close composer": [
         "Fechar compositor"
@@ -229,6 +241,9 @@
       ],
       "Create new message": [
         "Criar nova mensagem"
+      ],
+      "Custom": [
+        "Personalizado"
       ],
       "Customize": [
         "Personalizar"
@@ -322,9 +337,6 @@
       "Email settings": [
         "Definições de email"
       ],
-      "Emoji": [
-        "Emoji"
-      ],
       "Enable": [
         "Activar"
       ],
@@ -333,6 +345,9 @@
       ],
       "Encryption": [
         "Criptografia"
+      ],
+      "exclude message content": [
+        "excluir conteúdo da mensagem"
       ],
       "Expand composer": [
         "Expandir compositor"
@@ -497,9 +512,6 @@
       "Load": [
         "Carregar"
       ],
-      "Load anyway": [
-        "Carregar mesmo assim"
-      ],
       "Load embedded images": [
         "Carregar imagens incorporadas"
       ],
@@ -520,6 +532,9 @@
       ],
       "Mailbox layout": [
         "Disposição da caixa de correio"
+      ],
+      "Manage labels": [
+        "Gerir etiquetas"
       ],
       "Mark as read": [
         "Marcar como lido"
@@ -559,6 +574,9 @@
       ],
       "Minimize composer": [
         "Minimizar compositor"
+      ],
+      "Monday": [
+        "Segunda-feira"
       ],
       "More": [
         "Mais"
@@ -643,6 +661,9 @@
       ],
       "Open calendar": [
         "Abrir agenda"
+      ],
+      "Open composer": [
+        "Abrir compositor"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -731,8 +752,11 @@
       "Remove this label": [
         "Remover esta etiqueta"
       ],
-      "Rename": [
-        "Renomear"
+      "Reply": [
+        "Responder"
+      ],
+      "Reply all": [
+        "Responder a todos"
       ],
       "Reply securely": [
         "Responder de forma segura"
@@ -769,9 +793,6 @@
       ],
       "Schedule message": [
         "Agendar mensagem"
-      ],
-      "Schedule send": [
-        "Agendar envio "
       ],
       "Search": [
         "Procurar"
@@ -904,6 +925,9 @@
       ],
       "This message contains remote content.": [
         "Esta mensagem contém conteúdo remoto."
+      ],
+      "Tomorrow": [
+        "Amanhã"
       ],
       "Trust": [
         "Confiar"
@@ -1318,9 +1342,9 @@
         "Esta resposta está desactualizada. Não tem agendamentos."
       ]
     },
-    "Calendar subscription not synced error": {
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "A sincronizar agenda: a exibição de todos os eventos, poderá demorar vários minutos."
+    "Calendar widget banner": {
+      "Event in progress": [
+        "Evento em curso"
       ]
     },
     "Collapsible tooltip": {
@@ -1360,9 +1384,6 @@
     "Composer size": {
       "Maximized": [
         "Maximizado"
-      ],
-      "Normal": [
-        "Normal"
       ]
     },
     "Condition for custom filter": {
@@ -1471,17 +1492,11 @@
       "Other": [
         "Outro"
       ],
-      "Pager": [
-        "Pager"
-      ],
       "Personal": [
         "Pessoal"
       ],
       "Work": [
         "Trabalho"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1537,10 +1552,10 @@
         "Azerbaijão"
       ],
       "Bahamas": [
-        "Bahamas"
+        "Baamas"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Barém"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -1558,7 +1573,7 @@
         "Belize"
       ],
       "Benin": [
-        "Benin"
+        "Benim"
       ],
       "Bermuda": [
         "Bermuda"
@@ -1576,7 +1591,7 @@
         "Bósnia e Herzegovina"
       ],
       "Botswana": [
-        "Botswana"
+        "Botsuana"
       ],
       "Bouvet Island": [
         "Ilha Bouvet"
@@ -1636,7 +1651,7 @@
         "Colômbia"
       ],
       "Comoros": [
-        "Comoros"
+        "Comores"
       ],
       "Congo": [
         "Congo"
@@ -1672,7 +1687,7 @@
         "Dinamarca"
       ],
       "Djibouti": [
-        "Djibouti"
+        "Djibuti"
       ],
       "Dominica": [
         "Dominica"
@@ -1846,7 +1861,7 @@
         "Quénia"
       ],
       "Kiribati": [
-        "Kiribati"
+        "Quiribati"
       ],
       "Kosovo": [
         "Kosovo"
@@ -1867,7 +1882,7 @@
         "Líbano"
       ],
       "Lesotho": [
-        "Lesotho"
+        "Lesoto"
       ],
       "Liberia": [
         "Libéria"
@@ -1891,7 +1906,7 @@
         "Madagáscar"
       ],
       "Malawi": [
-        "Malawi"
+        "Malauí"
       ],
       "Malaysia": [
         "Malásia"
@@ -1945,7 +1960,7 @@
         "Moçambique"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Mianmar"
       ],
       "Namibia": [
         "Namíbia"
@@ -2167,7 +2182,7 @@
         "Togo"
       ],
       "Tokelau": [
-        "Tokelau"
+        "Toquelau"
       ],
       "Tonga": [
         "Tonga"
@@ -2239,7 +2254,7 @@
         "Saará Ocidental"
       ],
       "Yemen": [
-        "Yemen"
+        "Iémen"
       ],
       "Zambia": [
         "Zâmbia"
@@ -2351,6 +2366,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
       ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, por favor divida-o."
+      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Pode marcar para eliminação os contactos que não deseja unir nem manter. A eliminação só ocorrerá depois de clicar no botão de união"
       ]
@@ -2376,16 +2394,6 @@
     "Download attachments": {
       "Download all": [
         "Transferir tudo"
-      ]
-    },
-    "Early Access Disabled": {
-      "Off": [
-        "Off"
-      ]
-    },
-    "Early Access Enabled": {
-      "On": [
-        "On"
       ]
     },
     "Email body for description (description part)": {
@@ -2475,6 +2483,9 @@
       "Contact could not be saved": [
         "Impossível gravar o contacto"
       ],
+      "Contact name is too long": [
+        "O nome do contacto é muito longo."
+      ],
       "Contact signature could not be verified": [
         "Impossível verificar a assinatura do contacto"
       ],
@@ -2519,6 +2530,12 @@
       ],
       "Image upload failed": [
         "Falha ao enviar a imagem"
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "Credenciais de início de sessão incorrectas. Tente novamente."
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "Senha da caixa de correio incorrecta. Por favor, tente novamente."
       ],
       "Invalid expiration time": [
         "Tempo de validade inválido"
@@ -2637,9 +2654,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Não pode enviar um email para mais de 100 destinatários"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Não pode enviar vCards de mais de 10 contactos"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Não pode abrir mais de ${ maxActiveComposer } janela de composição de cada vez.",
@@ -2853,6 +2867,9 @@
       "Invalid response": [
         "Resposta inválida"
       ],
+      "Unexpected error": [
+        "Erro inesperado"
+      ],
       "Unsupported invitation": [
         "Convite não suportado"
       ],
@@ -3007,6 +3024,9 @@
       ]
     },
     "forwardmessage": {
+      "From: ${ senderString }": [
+        "De: ${ senderString }"
+      ],
       "To: ${ toString }": [
         "Para: ${ toString }"
       ]
@@ -3066,26 +3086,17 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
-      "Manual": [
-        "Manual"
-      ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
         "${ totalAttendees } participante",
         "${ totalAttendees } participantes"
+      ],
+      "Organizer:": [
+        "Organizador:"
       ]
     },
     "Import calendar": {
@@ -3202,9 +3213,6 @@
       ],
       "ICS file": [
         "Ficheiro ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import provider": {
@@ -3241,10 +3249,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nova agenda",
         "${ calendarsToBeCreatedCount } novas agendas"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } agenda unida",
-        "${ calendarsToBeMerged } agendas unidas"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeCreatedCount } agenda unida",
@@ -3288,14 +3292,6 @@
         "${ numberOfTrackers } rastreador de e-mails encontrado",
         "${ numberOfTrackers } rastreadores de e-mails encontrados"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } grupo de contatos",
-        "${ numContactGroups } grupos de contatos"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } contacto",
-        "${ numContacts } contactos"
-      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } pasta encontrada",
         "${ providerFoldersNumLocalized } pastas encontradas"
@@ -3327,9 +3323,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
       ],
       "${ total } conversation": [
         "${ total } conversa",
@@ -3375,9 +3368,6 @@
       ],
       "(No Recipient)": [
         "(sem destinatário)"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Um pedido para cancelar a inscrição desta lista de discussão será enviado para o remetente do boletim informativo e processado automaticamente."
@@ -3483,15 +3473,11 @@
       "Confirm phishing report": [
         "Confirmar o relatório de phishing"
       ],
-      "Continue with ${ planName }": [
-        "Continuar com ${ planName }"
-      ],
       "Copied to clipboard": [
         "Copiado para a área de transferencia"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Criar ${ calendarsToBeCreated } nova agenda",
-        "Criar ${ calendarsToBeCreated } novas agendas"
+      "Country code": [
+        "Código de país"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
@@ -3583,6 +3569,9 @@
       "Encrypt message": [
         "Encriptar mensagem"
       ],
+      "Enter the code from your authenticator app": [
+        "Introduza o código da sua aplicação de autenticação."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Insira as credenciais da conta de email da qual deseja importar."
       ],
@@ -3636,10 +3625,6 @@
       "Group assignment applied": [
         "Atribuição de grupo aplicada"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Tem ${ numAttachments } anexo",
-        "Tem ${ numAttachments } anexos"
-      ],
       "here": [
         "aqui"
       ],
@@ -3664,10 +3649,6 @@
       ],
       "Image URL": [
         "URL da imagem"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } agenda",
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } agendas"
       ],
       "Import from": [
         "Importar de"
@@ -3807,9 +3788,6 @@
       "of": [
         "de"
       ],
-      "Other options": [
-        "Outras opções"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "O nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Por favor, verifique se é legítima."
       ],
@@ -3862,8 +3840,8 @@
       "Print email": [
         "Imprimir email"
       ],
-      "Priority support": [
-        "Suporte prioritário"
+      "Quick reply": [
+        "Resposta rápida"
       ],
       "Recipient: ": [
         "Destinatário: "
@@ -4025,6 +4003,12 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Esta mensagem está assinada pela chave anexada, que ainda não foi confiada."
       ],
+      "This message will be sent shortly": [
+        "Esta mensagem será enviada em breve."
+      ],
+      "This message will be sent today at ${ formattedTime }": [
+        "Esta mensagem será enviada hoje ás ${ formattedTime }"
+      ],
       "This message will expire ${ formattedDate }": [
         "Esta mensagem expirará em ${ formattedDate }"
       ],
@@ -4055,14 +4039,11 @@
       "Turn off content search. Activation progress won't be lost.": [
         "Desactivar a pesquisa de conteúdo. O progresso de activação não será perdido."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
-      ],
       "Unlock message": [
         "Desbloquear mensagem"
+      ],
+      "Unsaved changes": [
+        "Alterações não gravadas"
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
@@ -4155,6 +4136,9 @@
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Atingiu os 100% da sua capacidade de armazenamento. Considere libertar algum espaço ou actualizar a sua conta com espaço de armazenamento adicional para compor novas mensagens."
       ],
+      "You have reached the maximum number of 5 replies.": [
+        "Atingiu o número máximo de 5 resposta."
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -4206,6 +4190,11 @@
         "A sua frase de recuperação é uma série de 12 palavras numa ordem específica."
       ]
     },
+    "info": {
+      "Optional": [
+        "Opcional"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Clique para detalhes"
@@ -4229,9 +4218,6 @@
       ],
       "Trusted": [
         "Confiada"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -4433,16 +4419,6 @@
         "Atalhos de mensagem"
       ]
     },
-    "Keyboard Shortcuts Disabled": {
-      "Off": [
-        "Off"
-      ]
-    },
-    "Keyboard Shortcuts Enabled": {
-      "On": [
-        "On"
-      ]
-    },
     "Label": {
       " and ": [
         " e "
@@ -4492,6 +4468,9 @@
       "Attachments": [
         "Anexos"
       ],
+      "Authenticator app": [
+        "Aplicação de autenticação"
+      ],
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
       ],
@@ -4527,6 +4506,9 @@
       ],
       "City": [
         "Cidade"
+      ],
+      "Colors": [
+        "Cores"
       ],
       "Conditions": [
         "Condições"
@@ -4588,8 +4570,8 @@
       "From:": [
         "De:"
       ],
-      "From: ${ importedEmail }": [
-        "De: ${ importedEmail }"
+      "From: ${ from }": [
+        "De: ${ from }"
       ],
       "Good": [
         "Bom"
@@ -4600,11 +4582,17 @@
       "Hide password": [
         "Ocultar senha"
       ],
+      "I understand the risk": [
+        "Eu compreendo o risco."
+      ],
       "IF": [
         "SE"
       ],
       "If": [
         "Se"
+      ],
+      "Import all messages": [
+        "Importar todas as mensagens"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -4635,6 +4623,9 @@
       ],
       "Mailbox password": [
         "Senha da caixa de correio"
+      ],
+      "Main": [
+        "Principal"
       ],
       "Manage categories": [
         "Gerir categorias"
@@ -4777,17 +4768,17 @@
       "To:": [
         "Para:"
       ],
-      "To: ${ emailAddress }": [
-        "Para: ${ emailAddress }"
+      "To: ${ to }": [
+        "Para: ${ to }"
+      ],
+      "Toolbar": [
+        "Barra de ferramentas"
       ],
       "Two-factor authentication code": [
         "Código de autenticação em dois passos"
       ],
       "Undisclosed Recipients": [
         "Destinatários não divulgados"
-      ],
-      "Upload file": [
-        "Enviar ficheiro"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -4812,6 +4803,9 @@
       ],
       "without attachments": [
         "sem anexos"
+      ],
+      "Wonderful": [
+        "Maravilhoso"
       ],
       "Your password (admin)": [
         "A sua senha (admin)"
@@ -5251,6 +5245,11 @@
         "Trocar ou adicionar conta"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Atualizar agora"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
@@ -5348,12 +5347,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Uma forma de o contactar"
-      ],
-      "Confirm password": [
-        "Confirmar senha"
-      ],
-      "E.g., ": [
-        "E.g., "
       ],
       "Email address": [
         "Endereço de email"
@@ -5466,9 +5459,6 @@
       "Address": [
         "Endereço"
       ],
-      "Email": [
-        "Email"
-      ],
       "Fax": [
         "Fax"
       ],
@@ -5483,9 +5473,6 @@
       ],
       "Other": [
         "Outro"
-      ],
-      "Pager": [
-        "Pager"
       ],
       "Phone": [
         "Telefone"
@@ -5980,17 +5967,9 @@
         "${ daysCountLeft } dia",
         "${ daysCountLeft } dias"
       ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } hora",
         "${ hoursCountLeft } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuto"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuto",
@@ -6530,6 +6509,9 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
       ],
+      "Skip verification?": [
+        "Saltar verificação?"
+      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dos contactos a unir mostram erros. Por favor, reveja-os individualmente"
       ],
@@ -6766,8 +6748,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

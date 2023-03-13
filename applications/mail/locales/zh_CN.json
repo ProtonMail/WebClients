@@ -92,6 +92,9 @@
       "Attachment": [
         "上传为附件"
       ],
+      "Attention required": [
+        "需要关注"
+      ],
       "Authenticate": [
         "认证"
       ],
@@ -163,6 +166,9 @@
       ],
       "Close": [
         "关闭"
+      ],
+      "Close & discard": [
+        "放弃修改并关闭"
       ],
       "Close composer": [
         "关闭编辑窗"
@@ -238,6 +244,9 @@
       ],
       "Create new message": [
         "创建新邮件"
+      ],
+      "Custom": [
+        "其他"
       ],
       "Customize": [
         "定制"
@@ -518,9 +527,6 @@
       "Load": [
         "加载"
       ],
-      "Load anyway": [
-        "确定加载"
-      ],
       "Load embedded images": [
         "加载嵌入图像"
       ],
@@ -586,6 +592,9 @@
       ],
       "Minimize composer": [
         "最小化编辑窗"
+      ],
+      "Monday": [
+        "星期一"
       ],
       "More": [
         "更多"
@@ -782,9 +791,6 @@
       "Remove this label": [
         "移除此标签"
       ],
-      "Rename": [
-        "重命名"
-      ],
       "Reply": [
         "回复"
       ],
@@ -828,13 +834,10 @@
         "保存"
       ],
       "Saving${ ellipsis }": [
-        "保存${ ellipsis }"
+        "正在保存${ ellipsis }"
       ],
       "Schedule message": [
         "定时邮件"
-      ],
-      "Schedule send": [
-        "定时发送"
       ],
       "Search": [
         "搜索"
@@ -871,6 +874,9 @@
       ],
       "Send feedback": [
         "发送反馈"
+      ],
+      "Send quick reply": [
+        "发送快速回复"
       ],
       "Send read receipt": [
         "发送回执"
@@ -944,9 +950,6 @@
       "Skip verification": [
         "跳过验证"
       ],
-      "Some images failed to load with tracking protection.": [
-        "跟踪防护已阻止加载部分图像。"
-      ],
       "Star": [
         "星标"
       ],
@@ -970,6 +973,9 @@
       ],
       "This message contains remote content.": [
         "此邮件含有外链内容。"
+      ],
+      "Tomorrow": [
+        "明天"
       ],
       "Trust": [
         "信任"
@@ -1107,6 +1113,9 @@
     "action": {
       "Search messages": [
         "搜索邮件"
+      ],
+      "Send quick reply": [
+        "发送快速回复"
       ]
     },
     "Actions message": {
@@ -1179,16 +1188,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "会话"
-      ]
-    },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1579,54 +1578,6 @@
       ],
       "Your email address is not in the participants list": [
         "您的邮箱地址不在参与者列表中"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "未同步"
-      ],
-      "Syncing": [
-        "同步中"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "未能解密日历"
-      ],
-      "Calendar is syncing": [
-        "日历正在同步中"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "日历正在同步：可能需要几分钟的时间才能显示出所有的事件."
-      ],
-      "Calendar is too big": [
-        "日历文件太大"
-      ],
-      "Calendar link is not accessible": [
-        "日历链接不能被访问"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "日历链接暂时无法访问"
-      ],
-      "Failed to sync calendar": [
-        "同步日历失败"
-      ],
-      "More than 12 hours passed since last update": [
-        "离上一个更新已经超过了12小时"
-      ],
-      "Unsupported calendar format": [
-        "不受支持的日历格式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "日历链接不能从日历提供者的系统之外访问。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "日历链接暂时无法访问。请核实日历提供者的链接仍然有效。"
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "距上次更新已超过 12 小时，${ CALENDAR_APP_NAME } 将在数小时内尝试更新日历。"
       ]
     },
     "Calendar widget banner": {
@@ -2807,7 +2758,7 @@
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "遵循系统设置 (${ globalDefaultText })"
+        "遵循系统设置（${ globalDefaultText }）"
       ]
     },
     "Delinquent modal title": {
@@ -2859,6 +2810,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
+      ],
+      "When do you want your message to be sent?": [
+        "您想要什么时候发送您的邮件？"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
@@ -3040,6 +2994,9 @@
       "Contact could not be saved": [
         "无法保存联系人"
       ],
+      "Contact name is too long": [
+        "联系人名称过长"
+      ],
       "Contact signature could not be verified": [
         "无法验证联系人签名"
       ],
@@ -3055,12 +3012,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密失败：此邮件内容解密失败"
       ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "取消选择至少 ${ calendarToFixCount } 个日历"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "取消选择至少 ${ calendarToFixCount } 个日历或者"
-      ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
       ],
@@ -3072,6 +3023,9 @@
       ],
       "Email address invalid": [
         "邮箱格式不正确"
+      ],
+      "Email address is required": [
+        "邮箱地址必须填写"
       ],
       "Email is not valid": [
         "无效邮箱"
@@ -3109,6 +3063,9 @@
       "Image upload failed": [
         "图像上传失败"
       ],
+      "IMAP server is required": [
+        "IMAP 服务器必须填写"
+      ],
       "Incorrect login credentials. Please try again.": [
         "登录凭据不正确，请重试。"
       ],
@@ -3132,9 +3089,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "最多只能有 ${ attachmentsCountLimit } 个附件"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "将至少 ${ calendarToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Message needs to be sent first": [
         "需要先发送邮件"
@@ -3172,6 +3126,9 @@
       "Not a valid number": [
         "无效号码"
       ],
+      "Password is required": [
+        "密码必须填写"
+      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
@@ -3186,6 +3143,9 @@
       ],
       "Please set a password": [
         "请设置密码"
+      ],
+      "Port is required": [
+        "端口号必须填写"
       ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
@@ -3241,9 +3201,6 @@
       "Some of the attachments could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe files with a program such as GnuPG.": [
         "该附件无法解密。\n如果你有相应的私钥，你仍然能够解密\n用GnuPG等程序来处理该文件。"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "部分文件夹名称与系统内部名称冲突，请在导入内容中予以更改。"
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "部分文件夹名称不可用，请自定导入内容并予以更改。"
       ],
@@ -3295,6 +3252,9 @@
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此项超过了 ${ maximumLength } 个字符的长度限制。"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
@@ -3313,14 +3273,17 @@
       "This message has already been sent. A new draft has been saved.": [
         "此邮件已发送，已保存新草稿。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "此邮件可能含有当前浏览器无法正确打开的链接。"
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "此邮件含有浏览器不能打开的链接."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "启用的规则数量已达上限，开通付费账户即可使用更多筛选规则。"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
       "Unknown error": [
         "未知错误"
@@ -3334,17 +3297,11 @@
       "You can't send a mail to more than 100 recipients": [
         "收件人不能超过 100 个"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "您不能发送超过 10 个联系人的 vCard"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "您不能同时打开超过 ${ maxActiveComposer } 个编辑窗口"
       ],
       "You did not provide a file.": [
         "您尚未选择文件。"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "您已达到您账户等级所能创建的个人日历数上限。无法导入多出的日历。"
       ],
       "You must set a name": [
         "请输入名称（必填）"
@@ -3669,15 +3626,6 @@
     "file size format": {
       "bytes": [
         "B"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -3962,6 +3910,9 @@
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密并添加日程时出错。未能导入任何日程。"
+      ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
@@ -4188,9 +4139,6 @@
       ],
       "ICS file": [
         "ICS 文件"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4239,9 +4187,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "将 ${ calendarsToBeMerged } 份日历与现有日历合并"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
@@ -4278,11 +4223,8 @@
       "${ numberOfTrackers } email trackers blocked": [
         "已屏蔽 ${ numberOfTrackers } 个电子邮件跟踪器"
       ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 个联系人群组"
-      ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 名联系人"
+      "${ NumMessages } messages in conversation": [
+        "会话包含 ${ NumMessages } 封邮件"
       ],
       "${ numOccurrences } occurrences found": [
         "找到 ${ numOccurrences } 条结果"
@@ -4313,9 +4255,6 @@
       ],
       "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } 存储空间"
       ],
       "${ total } conversations": [
         "${ total } 条会话"
@@ -4352,9 +4291,6 @@
       ],
       "(No Recipient)": [
         "(无收件人)"
-      ],
-      "10 email addresses": [
-        "10 个电子邮件地址"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "恢复密语为您对账户的控制权提供了可靠保障。假如您不慎忘记密码，可以通过它找回账户并解锁所有加密的数据。"
@@ -4443,6 +4379,9 @@
       "Attach public key": [
         "附上公钥"
       ],
+      "Attention required": [
+        "需要关注"
+      ],
       "Background color": [
         "背景颜色"
       ],
@@ -4454,6 +4393,9 @@
       ],
       "Body: ": [
         "正文： "
+      ],
+      "Calendar side panel": [
+        "日历侧边栏"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
@@ -4485,14 +4427,8 @@
       "Confirm phishing report": [
         "确认钓鱼报告"
       ],
-      "Continue with ${ planName }": [
-        "升级至 ${ planName } 并继续"
-      ],
       "Copied to clipboard": [
         "已复制到剪贴板"
-      ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "新建 ${ calendarsToBeCreated } 份日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
@@ -4599,6 +4535,9 @@
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "邮件跟踪器会威胁到您的隐私，开启跟踪器防护可以避免发件人得知您在何时何地阅览了此邮件。"
       ],
+      "Emails are automatically signed": [
+        "自动对邮件进行数字签名"
+      ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "放在此文件夹中的邮件不会被删除，且仍可在 \"所有邮件\" 文件夹中找到。"
       ],
@@ -4619,6 +4558,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "输入第 ${ digit } 位验证码。"
       ],
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
@@ -4680,9 +4622,6 @@
       "Group assignment applied": [
         "已应用群组分配"
       ],
-      "Has ${ numAttachments } attachments": [
-        "含 ${ numAttachments } 个附件"
-      ],
       "here": [
         "此处"
       ],
@@ -4722,9 +4661,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "导入 ${ selectedCalendarsCount }/${ totalCalendarsCount } 份日历"
-      ],
       "Import from": [
         "导入自"
       ],
@@ -4733,6 +4669,9 @@
       ],
       "Import mailbox": [
         "导入收件箱"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
+        "其他邮箱中的邮件、日程和通讯录也可以轻松导入 ${ BRAND_NAME }，我们将全程指导您操作并自动为您加密数据。欢迎进入隐私优先的世界。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
@@ -4839,8 +4778,8 @@
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "正在移动大量邮件，可能需要一段时间。"
+      "Moving messages. This may take a while.": [
+        "正在移动邮件，可能需要一段时间。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
@@ -4902,14 +4841,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
-      "Other options": [
-        "其他选项"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
       ],
       "per month.": [
         "/月。"
+      ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "PGP/Inline 只能用于纯文本邮件。"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "PGP/MIME 可使用编辑器中指定的格式发送邮件。"
       ],
       "Phone number": [
         "电话号码"
@@ -4956,17 +4898,23 @@
       "Preview": [
         "预览"
       ],
+      "Preview failed to be loaded": [
+        "预览加载失败"
+      ],
       "Primary": [
         "主要"
       ],
       "Print email": [
         "打印邮件"
       ],
-      "Priority support": [
-        "优先享受客服"
-      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "使用 ${ maskMyEmailButton } 功能即可防止您的邮箱地址泄露，免受垃圾邮件干扰。"
+      ],
+      "Quick reply": [
+        "快速回复"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "快速回复 ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "收件人："
@@ -5028,9 +4976,6 @@
       "Select what you want to import.": [
         "选择需要导入的内容。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "向 ${ boldText } 邮箱发送加密且需要密码才能打开的邮件。"
       ],
@@ -5076,9 +5021,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "对不起，此消息不存在或已过期。"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "使用 ${ DRIVE_APP_NAME } 可以安全地存储、分享文件。"
       ],
@@ -5093,9 +5035,6 @@
       ],
       "Subject: ": [
         "主题："
-      ],
-      "Support for 1 custom email domain": [
-        "支持 1 个自有域名"
       ],
       "Support privacy by upgrading for": [
         "升级账户支持我们的隐私保护事业，仅需"
@@ -5182,7 +5121,7 @@
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
@@ -5241,6 +5180,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名。"
       ],
@@ -5264,12 +5206,6 @@
       ],
       "Turn on to search the content of your messages": [
         "开启以搜索您的邮件全文"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "文件夹、标签、筛选规则不限量"
-      ],
-      "Unlimited messages": [
-        "每日发送邮件不限量"
       ],
       "Unlock message": [
         "解锁邮件"
@@ -5313,9 +5249,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "开通付费账户即可通过第三方客户端使用 ${ MAIL_APP_NAME }。"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "立即升级账户即可继续享有下列 ${ planName } 权益。"
-      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -5333,9 +5266,6 @@
       ],
       "Using SimpleLogin is easy": [
         "SimpleLogin 便捷易用"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "已核实为 ${ BRAND_NAME } 官方邮件"
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
@@ -5552,9 +5482,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -5829,7 +5756,7 @@
         "附件"
       ],
       "Authenticator app": [
-        "验证器应用程序"
+        "身份验证应用"
       ],
       "Automatically save contacts": [
         "自动保存联系人"
@@ -5873,14 +5800,11 @@
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
-      "Coming soon": [
-        "即将推出"
+      "Colors": [
+        "颜色"
       ],
       "Conditions": [
         "条件"
-      ],
-      "Confirm password": [
-        "确认密码"
       ],
       "Contacts": [
         "通讯录"
@@ -5922,7 +5846,7 @@
         "电子邮件"
       ],
       "Emails (all messages)": [
-        "邮件（所有信息）"
+        "所有邮件"
       ],
       "Emails (last 12 months)": [
         "邮件（过去 12 个月）"
@@ -5965,9 +5889,6 @@
       ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
-      ],
-      "From: ${ importedEmail }": [
-        "来自：${ importedEmail }"
       ],
       "Good": [
         "很好"
@@ -6043,12 +5964,6 @@
       ],
       "Manage categories": [
         "管理分类"
-      ],
-      "Manage folders": [
-        "管理文件夹"
-      ],
-      "Manage labels": [
-        "管理标签"
       ],
       "Manage my addresses": [
         "管理邮箱地址"
@@ -6203,9 +6118,6 @@
       "To:": [
         "收件人："
       ],
-      "To: ${ emailAddress }": [
-        "导入到：${ emailAddress }"
-      ],
       "To: ${ to }": [
         "收件人：${ to }"
       ],
@@ -6220,9 +6132,6 @@
       ],
       "Undisclosed Recipients": [
         "非公开收件人"
-      ],
-      "Upload file": [
-        "上传文件"
       ],
       "Upload picture": [
         "上传图片"
@@ -6321,7 +6230,7 @@
     },
     "Landmarks": {
       "Side panel": [
-        "侧面板"
+        "侧边栏"
       ]
     },
     "Layout mode": {
@@ -6495,9 +6404,6 @@
       "Almost there": [
         "即将准备就绪"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
-      ],
       "Connecting to your email provider": [
         "正在连接到您的邮件提供商"
       ],
@@ -6512,17 +6418,6 @@
       ],
       "Your import is starting": [
         "正在启动导入"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从标签 ${ itemsToImportCount } 中导入所有消息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从 ${ selectedItemsToImportCount } / ${ itemsToImportCount } 个文件夹中导入 所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "从 ${ selectedItemsToImportCount } / ${ itemsToImportCount } 个标签中导入 所有信息，并将其标记为 ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -6768,6 +6663,28 @@
         "切换或添加账户"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "立即升级账户"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "自有域名"
+      ],
+      "Search message content": [
+        "搜索邮件全文"
+      ],
+      "Unlimited folders, labels and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ],
+      "Up to 15 email addresses": [
+        "最多 15 个邮箱地址"
+      ],
+      "Up to 500 GB of storage": [
+        "最高 500 GB 存储空间"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "您可以详细叙述您的使用体验。（非必填）"
@@ -6839,6 +6756,9 @@
       ],
       "Set up your organization": [
         "填写机构信息"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME }。"
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
@@ -6928,9 +6848,6 @@
     "Placeholder": {
       "A way to contact you": [
         "您的联系方式"
-      ],
-      "Confirm password": [
-        "确认密码"
       ],
       "E.g., ": [
         "例如："
@@ -7227,6 +7144,14 @@
         "全封闭加密存储"
       ]
     },
+    "Side panel spotlight": {
+      "Manage your contacts and view your calendar without leaving your app.": [
+        "无需切换应用即可管理联系人和日程。"
+      ],
+      "Try the new side panel": [
+        "体验新版侧边栏"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP 加密邮件，发件人验证失败：${ verificationErrorsMessage }"
@@ -7248,8 +7173,11 @@
       ]
     },
     "Signing preference for emails": {
+      "Don't sign": [
+        "无数字签名"
+      ],
       "Sign": [
-        "签名"
+        "数字签名"
       ]
     },
     "Sort option": {
@@ -7267,11 +7195,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
-      ],
       "Email tracking protection": [
         "邮件追踪防护"
+      ],
+      "Get up to ${ credits } in credits.": [
+        "最高可获 ${ credits } 余额奖励。"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "邀请好友注册 ${ BRAND_NAME }"
@@ -7281,9 +7209,6 @@
       ],
       "Schedule send": [
         "定时发送"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "体验 ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我们现已默认允许外链图片加载，并为您开启发件方追踪防护。这些选项可以在${ settingsLink }中更改。"
@@ -7341,6 +7266,9 @@
       "${ count } messages deleted": [
         "${ count } 封邮件已删除"
       ],
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 位联系人信息似乎完全相同。"
+      ],
       "${ elementsCount } conversations added to ${ labelName }.": [
         "${ elementsCount } 条会话已添加 ${ labelName } 标签。"
       ],
@@ -7397,9 +7325,6 @@
       ],
       "Bug reported": [
         "问题已反馈"
-      ],
-      "Canceling import": [
-        "正在取消导入"
       ],
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
@@ -7539,6 +7464,9 @@
       "Read receipt sent": [
         "回执已发送"
       ],
+      "Undo in progress": [
+        "正在撤销"
+      ],
       "Verification successful": [
         "验证成功"
       ]
@@ -7619,20 +7547,36 @@
       "${ daysCountLeft } days": [
         "${ daysCountLeft } 天"
       ],
-      "${ hours } hours": [
-        "${ hours } 小时"
-      ],
       "${ hoursCountLeft } hours": [
         "${ hoursCountLeft } 小时"
-      ],
-      "${ minutes } minutes": [
-        "${ minutes } 分钟"
       ],
       "${ minutesCountLeft } minutes": [
         "${ minutesCountLeft } 分钟"
       ],
       "${ secondsCountLeft } seconds": [
         "${ secondsCountLeft } 秒"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 小时"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 小时"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分钟"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours } 小时"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 小时"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分钟"
       ]
     },
     "Title": {
@@ -8152,8 +8096,8 @@
       "Your changes are not synced yet": [
         "您的改动尚未同步"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您的免费试用将在 ${ formattedEndDate } 后过期。"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "您的 Mail Plus 免费体验期将于 ${ textDate } 结束"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8195,8 +8139,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
+      "Hide side panel": [
+        "隐藏侧边栏"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
+      ],
+      "Show side panel": [
+        "显示侧边栏"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
@@ -8239,6 +8189,9 @@
     "Validation": {
       "Password must contain at least ${ length } characters": [
         "密码必须至少包含 ${ length } 个字符"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     },
     "Video control": {
@@ -8318,6 +8271,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
+      ],
+      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
+        "邮件服务器验证失败，如果您信任该服务器，可以跳过此项验证。"
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"
@@ -8514,6 +8470,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "每 ${ interval } 年"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"
       ],

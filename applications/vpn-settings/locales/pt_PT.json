@@ -323,6 +323,9 @@
       "Upgrade": [
         "Actualizar"
       ],
+      "Upgrade now": [
+        "Atualizar agora"
+      ],
       "Use ${ label } theme": [
         "Usar o tema ${ label }"
       ],
@@ -367,14 +370,6 @@
       ],
       "Zoom out": [
         "Reduzir"
-      ]
-    },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "Continuar com o plano gratuito"
-      ],
-      "No, thanks": [
-        "Não, obrigado"
       ]
     },
     "Addon": {
@@ -564,10 +559,10 @@
         "Azerbaijão"
       ],
       "Bahamas": [
-        "Bahamas"
+        "Baamas"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Barém"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -585,7 +580,7 @@
         "Belize"
       ],
       "Benin": [
-        "Benin"
+        "Benim"
       ],
       "Bermuda": [
         "Bermuda"
@@ -603,7 +598,7 @@
         "Bósnia e Herzegovina"
       ],
       "Botswana": [
-        "Botswana"
+        "Botsuana"
       ],
       "Bouvet Island": [
         "Ilha Bouvet"
@@ -663,7 +658,7 @@
         "Colômbia"
       ],
       "Comoros": [
-        "Comoros"
+        "Comores"
       ],
       "Congo": [
         "Congo"
@@ -699,7 +694,7 @@
         "Dinamarca"
       ],
       "Djibouti": [
-        "Djibouti"
+        "Djibuti"
       ],
       "Dominica": [
         "Dominica"
@@ -873,7 +868,7 @@
         "Quénia"
       ],
       "Kiribati": [
-        "Kiribati"
+        "Quiribati"
       ],
       "Kosovo": [
         "Kosovo"
@@ -894,7 +889,7 @@
         "Líbano"
       ],
       "Lesotho": [
-        "Lesotho"
+        "Lesoto"
       ],
       "Liberia": [
         "Libéria"
@@ -918,7 +913,7 @@
         "Madagáscar"
       ],
       "Malawi": [
-        "Malawi"
+        "Malauí"
       ],
       "Malaysia": [
         "Malásia"
@@ -972,7 +967,7 @@
         "Moçambique"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Mianmar"
       ],
       "Namibia": [
         "Namíbia"
@@ -1194,7 +1189,7 @@
         "Togo"
       ],
       "Tokelau": [
-        "Tokelau"
+        "Toquelau"
       ],
       "Tonga": [
         "Tonga"
@@ -1266,7 +1261,7 @@
         "Saará Ocidental"
       ],
       "Yemen": [
-        "Yemen"
+        "Iémen"
       ],
       "Zambia": [
         "Zâmbia"
@@ -1276,11 +1271,6 @@
       ],
       "Åland Islands": [
         "Ilhas Åland"
-      ]
-    },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(via ${ entryCountryName })"
       ]
     },
     "Credits": {
@@ -1325,6 +1315,12 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se o tempo na sua TV expirou, clique em Actualizar na sua TV e insira o seu código novamente."
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "Credenciais de início de sessão incorrectas. Tente novamente."
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "Senha da caixa de correio incorrecta. Por favor, tente novamente."
       ],
       "Invalid ${ name } code": [
         "Código ${ name } inválido"
@@ -1521,20 +1517,8 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "Email"
-      ],
-      "Manual": [
-        "Manual"
-      ],
       "No verification method available": [
         "Nenhum método de verificação disponível"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -1552,9 +1536,6 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "É requerida ${ vpnPlus } para ligação a nível de país."
       ],
@@ -1567,9 +1548,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } ligação para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)",
         "+${ organization.BonusVPN } ligações para o ${ VPN_APP_NAME } (permite ligar mais dispositivos à VPN)"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
@@ -1616,6 +1594,9 @@
       "Continue anyway?": [
         "Continuar mesmo assim?"
       ],
+      "Country code": [
+        "Código de país"
+      ],
       "Creating your account": [
         "A criar a sua conta"
       ],
@@ -1636,6 +1617,9 @@
       ],
       "Enter key manually instead": [
         "Inserir a chave manualmente"
+      ],
+      "Enter the code from your authenticator app": [
+        "Introduza o código da sua aplicação de autenticação."
       ],
       "Enter the code sent to your phone number ${ phone }.": [
         "Insira o código enviado para o seu número de telefone ${ phone }."
@@ -1660,9 +1644,6 @@
       ],
       "Expired": [
         "Expirado"
-      ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Para Visa e MasterCard, os 3 algarismos na parte de trás do seu cartão. Para American Express, os 4 algarismos na frente do seu cartão."
       ],
       "Free up some space or add more storage space.": [
         "Liberte algum espaço ou adicione mais espaço de armazenamento."
@@ -1757,12 +1738,6 @@
       "of": [
         "de"
       ],
-      "P2P": [
-        "P2P"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "O pagamento pode levar alguns minutos até estar completo."
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
       ],
@@ -1775,26 +1750,17 @@
       "Please provide an email address in case we need to contact you.": [
         "Por favor, forneça um endereço de email, caso necessitemos de o contactar."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Por favor, tente novamente, use um método de pagamento diferente ou contacte o seu banco para assistência."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Por favor, tente novamente, utilize um método de pagamento diferente, ou contacte o PayPal para assistência."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Por favor, verifique o pagamento no separador que abriu."
       ],
-      "Please verify the card in the new tab which was opened.": [
-        "Por favor, verifique o cartão no separador que abriu."
-      ],
       "Plus or Visionary subscription required": [
         "Requerida subscrição Plus ou Visionary"
       ],
       "Preview": [
         "Antever"
-      ],
-      "Priority support": [
-        "Suporte prioritário"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
@@ -1853,9 +1819,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total storage": [
         "Total de armazenamento"
       ],
@@ -1874,20 +1837,14 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
+      "Unsaved changes": [
+        "Alterações não gravadas"
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
-      ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "A verificação abrirá um novo separador, por favor desactive os bloqueadores de janelas."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "A verificação abrirá um novo separador, por favor desactive os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
@@ -1943,9 +1900,6 @@
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua senha antiga."
       ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Será brevemente redireccionado para o seu banco para verificar o pagamento."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redireccionado para o PayPal para verificar o pagamento."
       ],
@@ -1957,9 +1911,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "A conta será actualizada assim que o pagamento for aprovado."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "O seu banco requer verificação 3-D Secure por motivos de segurança."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu email só será usado para esta verificação única."
@@ -2072,6 +2023,9 @@
       "Attach screenshot(s)": [
         "Anexar capturas de ecrã"
       ],
+      "Authenticator app": [
+        "Aplicação de autenticação"
+      ],
       "Billing cycle": [
         "Ciclo de faturação"
       ],
@@ -2168,8 +2122,17 @@
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
+      "Main": [
+        "Principal"
+      ],
+      "Moderate NAT": [
+        "NAT moderado"
+      ],
       "Name on card": [
         "Nome no cartão"
+      ],
+      "NAT-PMP (Port Forwarding)": [
+        "NAT-PMP (Encaminhamento de porta)"
       ],
       "New login password": [
         "Nova senha de início"
@@ -2179,6 +2142,9 @@
       ],
       "New password": [
         "Nova senha"
+      ],
+      "Non-standard ports": [
+        "Portas não padrão"
       ],
       "OpenVPN / IKEv2 password": [
         "Senha OpenVPN/IKEv2"
@@ -2258,17 +2224,14 @@
       "Verification code": [
         "Código de verificação"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos a sua partida. Por favor, diga-nos porquê, para podermos melhorar o serviço."
       ],
       "What happened?": [
         "O que é que aconteceu?"
       ],
-      "What is the main reason you are cancelling?": [
-        "Qual é a principal razão para o cancelamento?"
+      "What is the main reason you are canceling?": [
+        "Qual é a principal razão do cancelamento?"
       ],
       "What is the main reason you are deleting your account?": [
         "Qual o principal motivo pelo qual está a eliminar a conta?"
@@ -2356,9 +2319,6 @@
       "Dollar": [
         "Dólar"
       ],
-      "Euro": [
-        "Euro"
-      ],
       "Swiss franc": [
         "Franco suíço"
       ]
@@ -2385,6 +2345,9 @@
     "new_plans: Action": {
       "From ${ price } per user": [
         "A partir de ${ price } por utilizador"
+      ],
+      "Upgrade now": [
+        "Atualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -2407,10 +2370,6 @@
       "${ n } message per day": [
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
-      ],
-      "${ n } personal calendar": [
-        "${ n } agenda pessoal",
-        "${ n } agendas pessoais"
       ],
       "${ n } VPN connection": [
         "${ n } ligação VPN",
@@ -2468,23 +2427,14 @@
       ]
     },
     "Option": {
-      "Android": [
-        "Android"
-      ],
       "Country configs": [
         "Configurações do país"
       ],
       "Free server configs": [
         "Configurações do servidor Free"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Encontrei outro serviço de que gosto mais"
-      ],
-      "iOS": [
-        "iOS"
       ],
       "It's missing a key feature that I need": [
         "Falta uma funcionalidade-chave de que eu necessito"
@@ -2492,40 +2442,19 @@
       "It's too expensive": [
         "É muito caro"
       ],
-      "macOS": [
-        "macOS"
-      ],
       "My reason isn't listed": [
         "O motivo não está na lista"
-      ],
-      "Router": [
-        "Router"
       ],
       "Secure Core configs": [
         "Configurações Secure Core"
       ],
       "Standard server configs": [
         "Configurações padrão do servidor"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Placeholder": {
@@ -2590,9 +2519,6 @@
       ]
     },
     "Recovery method": {
-      "Email": [
-        "Email"
-      ],
       "Phone number": [
         "Número de telefone"
       ],
@@ -2605,12 +2531,14 @@
         "Cancelar"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "Criado por ${ ownerName }"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nome a mostrar"
-      ],
-      "Email": [
-        "Email"
       ],
       "Username": [
         "Utilizador"
@@ -2794,9 +2722,6 @@
       "2. Select protocol": [
         "2. Seleccionar protocolo"
       ],
-      "3-D Secure verification failed": [
-        "Falha na verificação 3-D Secure"
-      ],
       "3. Select config file and download": [
         "3. Seleccionar configuração e transferir"
       ],
@@ -2838,9 +2763,6 @@
       ],
       "Card verification": [
         "Verificação do cartão"
-      ],
-      "Card verification in progress": [
-        "Verificação do cartão em curso"
       ],
       "Change login password": [
         "Alterar senha de início de sessão"
@@ -2902,11 +2824,11 @@
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
       ],
-      "Email": [
-        "Email"
-      ],
       "Email subscriptions": [
         "Subscrições de email"
+      ],
+      "End date": [
+        "Data de fim"
       ],
       "Enter your password": [
         "Insira a sua senha"
@@ -2977,9 +2899,6 @@
       "Payment verification": [
         "Verificação do pagamento"
       ],
-      "Payment verification in progress": [
-        "Verificação do pagamento em curso"
-      ],
       "Payments": [
         "Pagamentos"
       ],
@@ -3040,6 +2959,9 @@
       "Sign out": [
         "Terminar sessão"
       ],
+      "Start date": [
+        "Data de início"
+      ],
       "Status": [
         "Estado"
       ],
@@ -3063,6 +2985,9 @@
       ],
       "Unsupported browser": [
         "Navegador não suportado"
+      ],
+      "Users": [
+        "Utilizadores"
       ],
       "Verification": [
         "Verificação"
@@ -3126,29 +3051,6 @@
       "${ n } VPN connection": [
         "${ n } ligação VPN",
         "${ n } ligações VPN"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {

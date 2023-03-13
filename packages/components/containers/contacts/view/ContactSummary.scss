@@ -5,7 +5,7 @@
 	block-size: rem(25);
 }
 
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	.contact-modal-select {
 		max-inline-size: calc(100% - 3.3em);
 	}

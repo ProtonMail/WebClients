@@ -206,7 +206,3 @@ export const getFirstSenderAddress = (element: Element) => {
     const { Address = '' } = sender || {};
     return Address;
 };
-
-export const isFromProton = (element: Element) => {
-    return !!element.IsProton;
-};

@@ -196,7 +196,8 @@ const AttachmentList = ({
                     )}
                     {pureAttachmentsCount > 0 && (
                         <span className="mr0-5 color-weak">
-                            <span data-testid="attachment-list:pure-count">{pureAttachmentsCount}</span>&nbsp;
+                            <span data-testid="attachment-list:pure-attachment-number">{pureAttachmentsCount}</span>
+                            &nbsp;
                             <span>
                                 {c('Info').ngettext(msgid`file attached`, `files attached`, pureAttachmentsCount)}
                                 {embeddedAttachmentsCount > 0 && ','}
@@ -205,7 +206,7 @@ const AttachmentList = ({
                     )}
                     {embeddedAttachmentsCount > 0 && (
                         <span className="mr0-5 color-weak">
-                            <span data-testid="attachment-list:embedded-count">{embeddedAttachmentsCount}</span>&nbsp;
+                            <span data-testid="attachment-list:embedded-number">{embeddedAttachmentsCount}</span>&nbsp;
                             <span>
                                 {c('Info').ngettext(msgid`embedded image`, `embedded images`, embeddedAttachmentsCount)}
                             </span>

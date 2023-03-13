@@ -9,7 +9,7 @@ import ExpInput from './ExpInput';
 import { CardModel } from './interface';
 
 interface Props {
-    onChange: (key: string, value: string) => void;
+    onChange: (key: keyof CardModel, value: string) => void;
     loading?: boolean;
     card: CardModel;
     errors: Partial<CardModel>;
@@ -21,6 +21,9 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
         (key: keyof CardModel) =>
         ({ target }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) =>
             onChange(key, target.value);
+
+    // translator: this is the pattern for bank card expiration MM/YY, where MM stands for Month Month and YY Year Year. Please keep the slash in the middle.
+    const patternExpiration = c('Info').t`MM/YY`;
 
     return (
         <>
@@ -54,6 +57,8 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                         year={card.year}
                         error={errors.month}
                         disableChange={loading}
+                        hint={patternExpiration}
+                        placeholder={patternExpiration}
                         onChange={({ month, year }: { month: string; year: string }) => {
                             onChange('month', month);
                             onChange('year', year);
@@ -67,7 +72,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                                 <span className="mr0-25">{c('Label').t`Security code`}</span>
                                 <Info
                                     title={c('Info')
-                                        .t`For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.`}
+                                        .t`For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.`}
                                 />
                             </>
                         }

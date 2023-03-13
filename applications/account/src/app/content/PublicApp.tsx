@@ -218,11 +218,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             maybeLocalRedirect ||
             (toApp === APPS.PROTONVPN_SETTINGS ? getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug) : undefined);
 
-        if (getRequiresAddressSetup(toApp, user) && !localRedirect) {
+        if (getRequiresAddressSetup(toApp, user) && !localRedirect?.pathname.includes(SETUP_ADDRESS_PATH)) {
             const blob = loginPassword
                 ? await getEncryptedSetupBlob(getUIDApi(UID, api), loginPassword).catch(noop)
                 : undefined;
-            const path = `${SETUP_ADDRESS_PATH}?to=${toApp}#${blob || ''}`;
+            const params = new URLSearchParams();
+            params.set('to', toApp);
+            params.set('from', 'switch');
+            const path = `${SETUP_ADDRESS_PATH}?${params.toString()}#${blob || ''}`;
             return onLogin({
                 ...args,
                 path,
@@ -358,10 +361,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         history.push('/login');
     };
 
-    const toOAuthName =
+    const [toOAuthName, plan] =
         forkState?.type === SSOType.OAuth
-            ? forkState.payload.clientInfo.Name
-            : confirmForkData?.payload.clientInfo.Name;
+            ? [forkState.payload.clientInfo.Name, undefined]
+            : [confirmForkData?.payload.clientInfo.Name, forkState?.payload?.plan];
     const toInternalAppName = maybePreAppIntent && getToAppName(maybePreAppIntent);
     const toAppName = toOAuthName || toInternalAppName;
 
@@ -462,7 +465,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     onAddAccount={handleAddAccount}
                                                 />
                                             </Route>
-                                            <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
+                                            <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER, SSO_PATHS.TRIAL]}>
                                                 <SignupContainer
                                                     productParam={productParam}
                                                     clientType={clientType}
@@ -491,6 +494,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     onLogin={handleLogin}
                                                     onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
                                                     setupVPN={setupVPN}
+                                                    signupOptions={{plan}}
                                                 />
                                             </Route>
                                             <Redirect to={SSO_PATHS.LOGIN} />

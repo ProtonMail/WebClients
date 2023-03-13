@@ -16,6 +16,7 @@ RewriteRule ^reset-password$ /reset-password.html [NC,L]
 RewriteRule ^forgot-username$ /forgot-username.html [NC,L]
 RewriteRule ^signup$ /signup.html [NC,L]
 RewriteRule ^refer-a-friend$ /refer-a-friend.html [NC,L]
+RewriteRule ^trial$ /trial.html [NC,L]
 
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /index.html [NC,L]

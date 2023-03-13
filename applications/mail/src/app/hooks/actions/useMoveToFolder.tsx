@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { classnames, useApi, useEventManager, useLabels, useMailSettings, useNotifications } from '@proton/components';
+import { useApi, useEventManager, useLabels, useMailSettings, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
@@ -16,7 +16,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import MoveScheduledModal from '../../components/message/modals/MoveScheduledModal';
 import MoveToSpamModal from '../../components/message/modals/MoveToSpamModal';
-import MoveAllButton from '../../components/notifications/MoveAllButton';
+import MoveAllNotificationButton from '../../components/notifications/MoveAllNotificationButton';
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { PAGE_SIZE, SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
@@ -342,8 +342,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID) : undefined;
 
                 const moveAllButton = handleMoveAll ? (
-                    <MoveAllButton
-                        className={classnames([canUndo && 'mr1'])}
+                    <MoveAllNotificationButton
                         onMoveAll={handleMoveAll}
                         isMessage={isMessage}
                         isLabel={isLabel(fromLabelID, labels)}
@@ -352,11 +351,11 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
                 createNotification({
                     text: (
-                        <UndoActionNotification
-                            additionalButton={moveAllButton}
-                            onUndo={canUndo ? handleUndo : undefined}
-                        >
-                            {notificationText}
+                        <UndoActionNotification onUndo={canUndo ? handleUndo : undefined}>
+                            <span className="text-left">
+                                {notificationText}
+                                {moveAllButton}
+                            </span>
                         </UndoActionNotification>
                     ),
                     expiration: SUCCESS_NOTIFICATION_EXPIRATION,

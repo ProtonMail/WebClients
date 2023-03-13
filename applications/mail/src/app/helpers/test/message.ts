@@ -13,6 +13,11 @@ import { arrayToBase64, base64ToArray } from '../base64';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
 import { GeneratedKey, encryptSessionKey, generateSessionKey } from './crypto';
 
+// Helper to make testing easier
+export const removeLineBreaks = (text: string) => {
+    return text.replaceAll(/\n/g, '');
+};
+
 export const createDocument = (content: string): Element => {
     const document = window.document.createElement('div');
     document.innerHTML = content;

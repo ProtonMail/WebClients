@@ -33,7 +33,7 @@ const UserKeysSections = () => {
     const authentication = useAuthentication();
     const [userKeys, loadingUserKeys] = useUserKeys();
     const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
-    const isDeviceRecoveryAvailable = useIsDeviceRecoveryAvailable();
+    const [isDeviceRecoveryAvailable, loadingDeviceRecovery] = useIsDeviceRecoveryAvailable();
     const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
 
     const existingAlgorithms = userKeysDisplay.reduce<AlgorithmInfo[]>(
@@ -96,7 +96,7 @@ const UserKeysSections = () => {
     const canGenerateUserKey = !User.isSubUser && User.isPrivate && userKeysDisplay.length < 20;
 
     const children = (() => {
-        if (loadingUserKeys && !Array.isArray(userKeys)) {
+        if (loadingDeviceRecovery || (loadingUserKeys && !Array.isArray(userKeys))) {
             return (
                 <SettingsSectionWide>
                     <Loader />

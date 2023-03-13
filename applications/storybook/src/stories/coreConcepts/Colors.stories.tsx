@@ -23,7 +23,12 @@ const BaseColors = () => (
             <ColorItem
                 title="Background"
                 subtitle="Theme background colors"
-                colors={['var(--background-norm)', 'var(--background-weak)', 'var(--background-strong)']}
+                colors={[
+                    'var(--background-norm)',
+                    'var(--background-weak)',
+                    'var(--background-strong)',
+                    'var(--background-invert)',
+                ]}
             />
             <ColorItem
                 title="Text"

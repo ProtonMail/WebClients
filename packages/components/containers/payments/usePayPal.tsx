@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { createToken } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import { useApi, useLoading, useModals } from '../../hooks';
 import PaymentVerificationModal from './PaymentVerificationModal';
@@ -30,12 +31,12 @@ export interface PayPalHook {
 
 interface Props {
     amount: number;
-    currency: string;
+    currency: Currency;
     type: PAYMENT_METHOD_TYPE;
     onPay: (data: any) => void;
 }
 
-const usePayPal = ({ amount = 0, currency: Currency = '', type: Type, onPay }: Props) => {
+const usePayPal = ({ amount = 0, currency: Currency, type: Type, onPay }: Props) => {
     const api = useApi();
     const [model, setModel] = useState<Model>(DEFAULT_MODEL);
     const [loadingVerification, withLoadingVerification] = useLoading();

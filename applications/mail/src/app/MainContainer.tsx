@@ -10,7 +10,6 @@ import {
     useActiveBreakpoint,
     useFeatures,
 } from '@proton/components';
-import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 
 import { MAIN_ROUTE_PATH } from './constants';
@@ -30,13 +29,12 @@ const MainContainer = () => {
     const [{ feature: featureSw, loading: loadingSw }] = useFeatures([
         FeatureCode.MailServiceWorker,
         FeatureCode.EarlyAccessScope,
-        FeatureCode.ScheduledSend,
+        FeatureCode.ScheduledSendFreemium,
         FeatureCode.SpotlightScheduledSend,
         FeatureCode.BundlePromoShown,
         FeatureCode.SpotlightEncryptedSearch,
         FeatureCode.UsedMailMobileApp,
         FeatureCode.SpyTrackerProtection,
-        FeatureCode.ContextFiltering,
         FeatureCode.LegacyMessageMigrationEnabled,
     ]);
 
@@ -66,8 +64,6 @@ const MainContainer = () => {
             void action();
         }
     }, [featureSw, loadingSw]);
-
-    useCalendarsInfoCoreListener();
 
     return (
         <ReduxProvider store={store}>

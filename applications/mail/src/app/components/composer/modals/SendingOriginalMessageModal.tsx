@@ -13,7 +13,8 @@ const SendingOriginalMessageModal = ({ onResolve, onReject, ...rest }: Props) =>
         <AlertModal
             title={c('Title').t`Sending original message`}
             buttons={[
-                <ErrorButton onClick={onResolve}>{c('Action').t`OK`}</ErrorButton>,
+                <ErrorButton onClick={onResolve} data-testid="send-original-message:confirm">{c('Action')
+                    .t`OK`}</ErrorButton>,
                 <Button onClick={onReject}>{c('Action').t`Close`}</Button>,
             ]}
             {...rest}

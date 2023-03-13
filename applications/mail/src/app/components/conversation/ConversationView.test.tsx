@@ -32,6 +32,9 @@ describe('ConversationView', () => {
         columnLayout: true,
         isComposerOpened: false,
         containerRef: { current: null },
+        elementIDs: ['conversationID'],
+        loadingElements: false,
+        conversationMode: true,
     };
     const conversation = {
         ID: props.conversationID,

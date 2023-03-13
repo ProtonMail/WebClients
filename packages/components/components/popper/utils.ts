@@ -19,6 +19,15 @@ export const allPopperPlacements: PopperPlacement[] = [
     'left-start',
 ];
 
+export const verticalPopperPlacements: PopperPlacement[] = [
+    'top-start',
+    'top',
+    'top-end',
+    'bottom-end',
+    'bottom',
+    'bottom-start',
+];
+
 export const getInvertedRTLPlacement = (placement: PopperPlacement, rtl: boolean): PopperPlacement => {
     if (!rtl) {
         return placement;

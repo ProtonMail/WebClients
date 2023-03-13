@@ -101,6 +101,9 @@
       "Close transfers": [
         "Zatvori prijenose"
       ],
+      "Collapse folder": [
+        "Sažmi mapu"
+      ],
       "Compose": [
         "Nova poruka"
       ],
@@ -186,6 +189,9 @@
       "Download all": [
         "Preuzmi sve"
       ],
+      "Download anyway": [
+        "Preuzmi svejedno"
+      ],
       "Edit": [
         "Uredi"
       ],
@@ -210,6 +216,9 @@
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
       ],
+      "Expand": [
+        "Proširi"
+      ],
       "Export": [
         "Izvoz"
       ],
@@ -221,6 +230,9 @@
       ],
       "Forward as attachment": [
         "Proslijedi kao privitak"
+      ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Nabavite ${ DRIVE_APP_NAME }"
       ],
       "Get started": [
         "Započnite"
@@ -366,6 +378,9 @@
       "Rename": [
         "Preimenuj"
       ],
+      "Replace file": [
+        "Zamijeni datoteku"
+      ],
       "Report a problem": [
         "Prijavi problem"
       ],
@@ -462,6 +477,9 @@
       "Submit": [
         "Pošalji"
       ],
+      "Submit report": [
+        "Prijavi problem"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -491,6 +509,12 @@
       ],
       "Upgrade": [
         "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ],
+      "Upload anyway": [
+        "Učitaj svejedno"
       ],
       "Upload file": [
         "Učitaj datoteku"
@@ -644,14 +668,6 @@
         "Problem s pristupom web stanici"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Nije sinkronizirano"
-      ],
-      "Syncing": [
-        "Sinkronizacija"
-      ]
-    },
     "Collapsible tooltip": {
       "Expand": [
         "Proširi"
@@ -742,9 +758,6 @@
       ],
       "Work": [
         "Posao"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -766,9 +779,6 @@
       "Andorra": [
         "Andora"
       ],
-      "Angola": [
-        "Angola"
-      ],
       "Anguilla": [
         "Angvila"
       ],
@@ -778,14 +788,8 @@
       "Antigua and Barbuda": [
         "Antigva i Barbuda"
       ],
-      "Argentina": [
-        "Argentina"
-      ],
       "Armenia": [
         "Armenija"
-      ],
-      "Aruba": [
-        "Aruba"
       ],
       "Ascension Island": [
         "Otok Ascension"
@@ -805,23 +809,11 @@
       "Bahrain": [
         "Bahrein"
       ],
-      "Bangladesh": [
-        "Bangladesh"
-      ],
-      "Barbados": [
-        "Barbados"
-      ],
       "Belarus": [
         "Bjelorusija"
       ],
       "Belgium": [
         "Belgija"
-      ],
-      "Belize": [
-        "Belize"
-      ],
-      "Benin": [
-        "Benin"
       ],
       "Bermuda": [
         "Bermudi"
@@ -844,9 +836,6 @@
       "Bouvet Island": [
         "Otok Bouvet"
       ],
-      "Brazil": [
-        "Brazil"
-      ],
       "British Indian Ocean Territory": [
         "Britanski Indijskooceanski teritorij"
       ],
@@ -855,12 +844,6 @@
       ],
       "Bulgaria": [
         "Bugarska"
-      ],
-      "Burkina Faso": [
-        "Burkina Faso"
-      ],
-      "Burundi": [
-        "Burundi"
       ],
       "Cambodia": [
         "Kambodža"
@@ -918,9 +901,6 @@
       ],
       "Cuba": [
         "Kuba"
-      ],
-      "Curaçao": [
-        "Curaçao"
       ],
       "Cyprus": [
         "Cipar"
@@ -994,9 +974,6 @@
       "French Southern Territories": [
         "Francuske južne zemlje"
       ],
-      "Gabon": [
-        "Gabon"
-      ],
       "Gambia": [
         "Gambija"
       ],
@@ -1009,29 +986,17 @@
       "Ghana": [
         "Gana"
       ],
-      "Gibraltar": [
-        "Gibraltar"
-      ],
       "Greece": [
         "Grčka"
       ],
       "Greenland": [
         "Grenland"
       ],
-      "Grenada": [
-        "Grenada"
-      ],
       "Guadeloupe": [
         "Gvadalupa"
       ],
-      "Guam": [
-        "Guam"
-      ],
       "Guatemala": [
         "Gvatemala"
-      ],
-      "Guernsey": [
-        "Guernsey"
       ],
       "Guinea": [
         "Gvineja"
@@ -1042,20 +1007,11 @@
       "Guyana": [
         "Gvajana"
       ],
-      "Haiti": [
-        "Haiti"
-      ],
       "Heard Island and McDonald Islands": [
         "Otok Heard i otočje McDonald"
       ],
       "Holy See (Vatican City State)": [
         "Sveta Stolica (Država Vatikanskoga Grada)"
-      ],
-      "Honduras": [
-        "Honduras"
-      ],
-      "Hong Kong": [
-        "Hong Kong"
       ],
       "Hungary": [
         "Mađarska"
@@ -1068,9 +1024,6 @@
       ],
       "Indonesia": [
         "Indonezija"
-      ],
-      "Iran": [
-        "Iran"
       ],
       "Iraq": [
         "Irak"
@@ -1090,35 +1043,17 @@
       "Jamaica": [
         "Jamajka"
       ],
-      "Japan": [
-        "Japan"
-      ],
-      "Jersey": [
-        "Jersey"
-      ],
-      "Jordan": [
-        "Jordan"
-      ],
       "Kazakhstan": [
         "Kazahstan"
       ],
       "Kenya": [
         "Kenija"
       ],
-      "Kiribati": [
-        "Kiribati"
-      ],
-      "Kosovo": [
-        "Kosovo"
-      ],
       "Kuwait": [
         "Kuvajt"
       ],
       "Kyrgyzstan": [
         "Kirgistan"
-      ],
-      "Laos": [
-        "Laos"
       ],
       "Latvia": [
         "Latvija"
@@ -1159,12 +1094,6 @@
       "Maldives": [
         "Maldivi"
       ],
-      "Mali": [
-        "Mali"
-      ],
-      "Malta": [
-        "Malta"
-      ],
       "Marshall Islands": [
         "Maršalovi otoci"
       ],
@@ -1176,9 +1105,6 @@
       ],
       "Mauritius": [
         "Mauricijus"
-      ],
-      "Mayotte": [
-        "Mayotte"
       ],
       "Mexico": [
         "Meksiko"
@@ -1210,12 +1136,6 @@
       "Namibia": [
         "Namibija"
       ],
-      "Nauru": [
-        "Nauru"
-      ],
-      "Nepal": [
-        "Nepal"
-      ],
       "Netherlands": [
         "Nizozemska"
       ],
@@ -1228,14 +1148,8 @@
       "Nicaragua": [
         "Nikaragva"
       ],
-      "Niger": [
-        "Niger"
-      ],
       "Nigeria": [
         "Nigerija"
-      ],
-      "Niue": [
-        "Niue"
       ],
       "Norfolk Island": [
         "Otok Norfolk"
@@ -1252,29 +1166,14 @@
       "Norway": [
         "Norveška"
       ],
-      "Oman": [
-        "Oman"
-      ],
-      "Pakistan": [
-        "Pakistan"
-      ],
-      "Palau": [
-        "Palau"
-      ],
       "Palestine": [
         "Palestina"
-      ],
-      "Panama": [
-        "Panama"
       ],
       "Papua New Guinea": [
         "Papua Nova Gvineja"
       ],
       "Paraguay": [
         "Paragvaj"
-      ],
-      "Peru": [
-        "Peru"
       ],
       "Philippines": [
         "Filipini"
@@ -1285,17 +1184,11 @@
       "Poland": [
         "Poljska"
       ],
-      "Portugal": [
-        "Portugal"
-      ],
       "Puerto Rico": [
         "Portoriko"
       ],
       "Qatar": [
         "Katar"
-      ],
-      "Reunion": [
-        "Reunion"
       ],
       "Romania": [
         "Rumunjska"
@@ -1327,20 +1220,11 @@
       "Saint Vincent and the Grenadines": [
         "Sveti Vincent i Grenadini"
       ],
-      "Samoa": [
-        "Samoa"
-      ],
-      "San Marino": [
-        "San Marino"
-      ],
       "Sao Tome and Principe": [
         "Sveti Toma i Prinsipe"
       ],
       "Saudi Arabia": [
         "Saudijska Arabija"
-      ],
-      "Senegal": [
-        "Senegal"
       ],
       "Serbia": [
         "Srbija"
@@ -1348,14 +1232,8 @@
       "Seychelles": [
         "Sejšeli"
       ],
-      "Sierra Leone": [
-        "Sierra Leone"
-      ],
       "Singapore": [
         "Singapur"
-      ],
-      "Sint Maarten": [
-        "Sint Maarten"
       ],
       "Slovakia": [
         "Slovačka"
@@ -1390,9 +1268,6 @@
       "Sri Lanka": [
         "Šri Lanka"
       ],
-      "Sudan": [
-        "Sudan"
-      ],
       "Suriname": [
         "Surinam"
       ],
@@ -1414,29 +1289,14 @@
       "Tajikistan": [
         "Tadžikistan"
       ],
-      "Tanzania": [
-        "Tanzania"
-      ],
       "Thailand": [
         "Tajland"
       ],
       "Timor-Leste": [
         "Istočni Timor"
       ],
-      "Togo": [
-        "Togo"
-      ],
-      "Tokelau": [
-        "Tokelau"
-      ],
-      "Tonga": [
-        "Tonga"
-      ],
       "Trinidad and Tobago": [
         "Trinidad i Tobago"
-      ],
-      "Tristan da Cunha": [
-        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunis"
@@ -1444,17 +1304,8 @@
       "Turkey": [
         "Turska"
       ],
-      "Turkmenistan": [
-        "Turkmenistan"
-      ],
       "Turks and Caicos Islands": [
         "Otoci Turks i Caicos"
-      ],
-      "Tuvalu": [
-        "Tuvalu"
-      ],
-      "Uganda": [
-        "Uganda"
       ],
       "Ukraine": [
         "Ukrajina"
@@ -1473,12 +1324,6 @@
       ],
       "Uruguay": [
         "Urugvaj"
-      ],
-      "Uzbekistan": [
-        "Uzbekistan"
-      ],
-      "Vanuatu": [
-        "Vanuatu"
       ],
       "Venezuela": [
         "Venecuela"
@@ -1749,17 +1594,11 @@
       "This label name is not available. Please choose a different name.": [
         "Naziv oznake nije dostupan. Odaberite drugi naziv."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti."
-      ],
       "Unknown error": [
         "Nepoznata pogreška"
       ],
       "You can't send a mail to more than 100 recipients": [
         "Ne možete poslati e-poštu za više od 100 primatelja"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Ne možete slati vCards za više od 10 kontakata"
       ],
       "You must set a name": [
         "Morate postaviti naziv"
@@ -1974,17 +1813,6 @@
         "(bez naslova)"
       ]
     },
-    "file size format": {
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } ažurirano"
@@ -2029,9 +1857,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-pošta"
       ],
@@ -2040,9 +1865,6 @@
       ],
       "No verification method available": [
         "Nema dostupne metode za provjeru"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2186,9 +2008,6 @@
       ],
       "ICS file": [
         "ICS datoteka"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import provider": {
@@ -2248,12 +2067,6 @@
         "${ selectedFoldersCountLocalized } oznake odabrane",
         "${ selectedFoldersCountLocalized } oznaka odabrano"
       ],
-      "${ speed }/s": [
-        "${ speed }/s"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } prostora za pohranu"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt je uspješno ažuriran.",
         "${ updated } kontakta su uspješno ažurirana.",
@@ -2263,9 +2076,6 @@
         "(${ memberCount } član)",
         "(${ memberCount } člana)",
         "(${ memberCount } članova)"
-      ],
-      "10 email addresses": [
-        "10 adresa e-pošte"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
@@ -2506,9 +2316,6 @@
       "Primary": [
         "Glavno"
       ],
-      "Priority support": [
-        "Prioritetna podrška"
-      ],
       "Queued": [
         "Na čekanju"
       ],
@@ -2580,9 +2387,6 @@
       ],
       "Trash": [
         "Otpad"
-      ],
-      "Unlimited messages": [
-        "Neograničene poruke"
       ],
       "Unsupported file": [
         "Nepodržana datoteka"
@@ -2665,15 +2469,9 @@
       ],
       "Trusted": [
         "Pouzdan"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Broj pristupanja"
-      ],
       "(Expired)": [
         "(Isteklo)"
       ],
@@ -2710,6 +2508,9 @@
       "Browser version": [
         "Verzija preglednika"
       ],
+      "Calendar": [
+        "Kalendar"
+      ],
       "Calendars": [
         "Kalendari"
       ],
@@ -2740,8 +2541,14 @@
       "Deleted": [
         "Izbrisano"
       ],
+      "Device": [
+        "Uređaj"
+      ],
       "Do not ask again": [
         "Ne pitaj ponovno"
+      ],
+      "Download anyway": [
+        "Preuzmi svejedno"
       ],
       "Email": [
         "E-pošta"
@@ -2788,9 +2595,6 @@
       "Folder name": [
         "Naziv mape"
       ],
-      "From: ${ importedEmail }": [
-        "Od: ${ importedEmail }"
-      ],
       "Hide password": [
         "Sakrij lozinku"
       ],
@@ -2833,11 +2637,8 @@
       "Main": [
         "Glavno"
       ],
-      "Manage folders": [
-        "Upravljanje mapama"
-      ],
-      "Manage labels": [
-        "Upravljanje oznakama"
+      "Malware": [
+        "Zlonamjerni program"
       ],
       "Merge a folder": [
         "Spoji mapu"
@@ -2881,9 +2682,6 @@
       "Phone number": [
         "Broj telefona"
       ],
-      "Port": [
-        "Port"
-      ],
       "Post office box": [
         "Poštanski sandučić"
       ],
@@ -2904,6 +2702,9 @@
       ],
       "Replace folder": [
         "Zamijeni mapu"
+      ],
+      "Report Abuse": [
+        "Prijavi zlouporabu"
       ],
       "Reveal password": [
         "Prikaži lozinku"
@@ -2935,9 +2736,6 @@
       "Text": [
         "Tekst"
       ],
-      "To: ${ emailAddress }": [
-        "Za: ${ emailAddress }"
-      ],
       "Toolbar": [
         "Alatna traka"
       ],
@@ -2952,9 +2750,6 @@
       ],
       "Upload anyway": [
         "Učitaj svejedno"
-      ],
-      "Upload file": [
-        "Učitaj datoteku"
       ],
       "Upload picture": [
         "Učitaj sliku"
@@ -3062,6 +2857,9 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" moved to trash": [
+        "\"${ name }\" premješten u Otpad"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Sve stavke će uskoro biti trajno izbrisane iz otpada"
       ],
@@ -3103,11 +2901,25 @@
         "Premjesti ${ movingCount } stavku",
         "Premjesti ${ movingCount } stavke",
         "Premjesti ${ movingCount } stavki"
+      ],
+      "The link to \"${ name }\" was deleted": [
+        "Poveznica do \"${ name }\" je izbrisana."
+      ],
+      "Your settings have been changed successfully": [
+        "Vaše postavke su promijenjene."
       ]
     },
     "Onboarding Action": {
       "Next": [
         "Sljedeće"
+      ],
+      "Start using ${ DRIVE_APP_NAME }": [
+        "Započnite koristiti ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "Onboarding Info": {
+      "Upload a file": [
+        "Učitaj datoteku"
       ]
     },
     "Onboarding Proton": {
@@ -3122,6 +2934,11 @@
       ],
       "You can change this anytime in your settings.": [
         "Možete promijeniti bilo kada u vašim postavkama."
+      ]
+    },
+    "Onboarding Title": {
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Dobrodošli u ${ DRIVE_APP_NAME }"
       ]
     },
     "Option": {
@@ -3321,6 +3138,12 @@
       "Preferences saved": [
         "Postavke su spremljene"
       ],
+      "Recovery has started": [
+        "Oporavak je započet."
+      ],
+      "The link to your file was successfully copied": [
+        "Poveznica do vaše datoteke je uspješno kopirana."
+      ],
       "Verification successful": [
         "Uspješna provjera"
       ]
@@ -3387,22 +3210,7 @@
         "Postavke"
       ]
     },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } sat",
-        "${ hours } sata",
-        "${ hours } sati"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minute",
-        "${ minutes } minuta"
-      ]
-    },
     "Title": {
-      "# of accesses": [
-        "Broj pristupanja"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } član",
         "${ emailsCount } člana",
@@ -3467,6 +3275,9 @@
       "Date": [
         "Datum"
       ],
+      "Decrypting": [
+        "Dešifriranje"
+      ],
       "Delete ${ count } contact": [
         "Izbriši ${ count } kontakt",
         "Izbriši ${ count } kontakta",
@@ -3491,9 +3302,6 @@
       ],
       "Discard changes?": [
         "Odbaci promjene?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Duplicate file found": [
         "Pronađen je duplikat datoteke"

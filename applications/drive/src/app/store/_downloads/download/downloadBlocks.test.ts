@@ -75,6 +75,10 @@ const mockDownloadBlock = jest.fn(
 );
 
 describe('initDownload', () => {
+    beforeAll(() => {
+        jest.spyOn(global.console, 'warn').mockReturnValue();
+    });
+
     beforeEach(() => {
         mockDownloadBlock.mockClear();
         mockConstants.TIME_TO_RESET_RETRIES = TIME_TO_RESET_RETRIES_LOCAL;

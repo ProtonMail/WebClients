@@ -18,23 +18,24 @@ import {
     getCalendarWithReactivatedKeys,
     getDoesCalendarNeedUserAction,
     getIsCalendarDisabled,
+    getOwnedPersonalCalendars,
     getVisualCalendars,
-    getWritableCalendars,
 } from '@proton/shared/lib/calendar/calendar';
+import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import {
     CALENDAR_TYPE,
     ICAL_ATTENDEE_STATUS,
     ICAL_EVENT_STATUS,
     ICAL_METHOD,
 } from '@proton/shared/lib/calendar/constants';
-import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
+import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
-import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
 import {
     findAttendee,
     getInvitedVeventWithAlarms,
@@ -115,6 +116,7 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
     api,
     callEventManager,
     addresses,
+    isFreeUser,
     getAddressKeys,
     getCalendars,
     getCalendarUserSettings,
@@ -122,6 +124,7 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
     api: Api;
     callEventManager: () => Promise<void>;
     addresses: Address[];
+    isFreeUser: boolean;
     getAddressKeys: GetAddressKeys;
     getCalendars: () => Promise<CalendarWithOwnMembers[] | undefined>;
     getCalendarUserSettings: () => Promise<CalendarUserSettings>;
@@ -131,8 +134,11 @@ export const getOrCreatePersonalCalendarsAndSettings = async ({
         getCalendars(),
         getCalendarUserSettings(),
     ]);
-    let calendars = getWritableCalendars(getVisualCalendars(calendarsWithOwnMembers));
-    if (!calendars.length) {
+    let calendars = getVisualCalendars(calendarsWithOwnMembers);
+
+    const { isCalendarsLimitReached } = getHasUserReachedCalendarsLimit(calendars, isFreeUser);
+
+    if (!getOwnedPersonalCalendars(calendars).length && !isCalendarsLimitReached) {
         // create a calendar automatically
         try {
             const { calendar, updatedCalendarUserSettings } = await setupCalendarHelper({

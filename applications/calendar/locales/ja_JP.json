@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Attention required": [
+        "注意が必要です"
+      ],
       "Authenticate": [
         "認証"
       ],
@@ -117,6 +120,9 @@
       ],
       "Continue import": [
         "インポートを続行"
+      ],
+      "Continue to ${ calendarAppBareName }": [
+        "${ calendarAppBareName } で続行"
       ],
       "Continue with Google": [
         "Google で続行"
@@ -229,6 +235,9 @@
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
       ],
+      "Hide affected calendars": [
+        "影響のあるカレンダーを非表示"
+      ],
       "Hide folders": [
         "フォルダーを隠す"
       ],
@@ -340,6 +349,9 @@
       "Open navigation": [
         "ナビゲーションを開く"
       ],
+      "Open settings": [
+        "設定を開く"
+      ],
       "Preview contact": [
         "連絡先をプレビュー"
       ],
@@ -385,9 +397,6 @@
       "Remove this participant": [
         "この参加者を削除"
       ],
-      "Rename": [
-        "名前を変更"
-      ],
       "Report a problem": [
         "問題を報告"
       ],
@@ -432,6 +441,9 @@
       ],
       "Show advanced PGP settings": [
         "拡張 PGP 設定を表示"
+      ],
+      "Show affected calendars": [
+        "影響のあるカレンダーを表示"
       ],
       "Show folders": [
         "フォルダーを表示"
@@ -504,6 +516,9 @@
       ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -661,11 +676,6 @@
     "Attendee role": {
       "Optional": [
         "任意"
-      ]
-    },
-    "Badge": {
-      "Coming soon": [
-        "まもなく登場"
       ]
     },
     "Beta access description": {
@@ -845,11 +855,6 @@
       ],
       "More options": [
         "詳細設定を表示"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "私と共有"
       ]
     },
     "Calendar status": {
@@ -1971,8 +1976,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "再度表示しない"
+      "Do not ask again": [
+        "今後表示しない"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2108,6 +2113,9 @@
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
       ],
+      "Contact name is too long": [
+        "連絡先の名前が長すぎます"
+      ],
       "Contact signature could not be verified": [
         "連絡先の署名を確認できませんでした"
       ],
@@ -2116,12 +2124,6 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "復号エラー：この予定の内容の復号に失敗しました。"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
       ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
@@ -2200,9 +2202,6 @@
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "${ calendarToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Missing key packet": [
         "キーパケットが利用できません"
@@ -2306,9 +2305,6 @@
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "フォルダー名の中に予約済みのものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
@@ -2369,9 +2365,6 @@
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
-      ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
       ],
@@ -2386,12 +2379,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "10 件以上の連絡先の vCard を送信することはできません"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -2612,11 +2599,6 @@
         "中止"
       ]
     },
-    "Event form": {
-      "${ numberOfParticipants } participants": [
-        "${ numberOfParticipants } 人の参加者"
-      ]
-    },
     "Event info. Organizer name": {
       "You": [
         "あなた"
@@ -2786,9 +2768,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "メール"
       ],
@@ -2797,9 +2776,6 @@
       ],
       "No verification method available": [
         "検証方法がありません"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -3018,9 +2994,6 @@
       ],
       "ICS file": [
         "ICS ファイル"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3035,6 +3008,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "${ provider } からインポート"
+      ],
       "Other": [
         "その他"
       ]
@@ -3066,9 +3042,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } 個の結合されたカレンダー"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
@@ -3087,11 +3060,11 @@
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 件の連絡先グループ"
+      "${ numContact } contacts": [
+        "${ numContact } 件の連絡先"
       ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 件の連絡先"
+      "${ numGroups } contact groups": [
+        "${ numGroups } 件の連絡先グループ"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
@@ -3114,17 +3087,11 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } ストレージ"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 人のメンバー)"
-      ],
-      "10 email addresses": [
-        "10 件のメールアドレス"
       ],
       "A cancellation email will be sent to removed participants.": [
         "削除を行った参加者にはメールが送信されます。"
@@ -3168,14 +3135,17 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "このリンクを持っている人は誰でもカレンダー上であなたの予定の有無を確認できます。タイトル、場所、参加者などの予定詳細は表示されません。"
       ],
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "1 つの招待につき ${ MAX_ATTENDEES } 人までが許可されています"
+      "Attention required": [
+        "注意が必要です"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "このカレンダーの予定の詳細を共有すると、${ BRAND_NAME } がこのカレンダーの暗号化された情報にアクセスできるようになります。"
+      ],
+      "Calendar side panel": [
+        "カレンダーサイドパネル"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
@@ -3189,11 +3159,8 @@
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
       ],
-      "Continue with ${ planName }": [
-        "${ planName } で続行"
-      ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
+      "Country code": [
+        "国コード"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
@@ -3294,9 +3261,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "${ totalCalendarsCount } 個のうち ${ selectedCalendarsCount } 個のカレンダーをインポート"
-      ],
       "Import from": [
         "インポート元"
       ],
@@ -3343,7 +3307,7 @@
         "詳細"
       ],
       "Link copied to clipboard": [
-        "リンクをコピーしました"
+        "リンクがクリップボードにコピーされました"
       ],
       "Link created": [
         "リンクが作成されました"
@@ -3405,9 +3369,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
-      "Other options": [
-        "その他のオプション"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline は Plain Text 形式にのみ対応しています。"
       ],
@@ -3444,9 +3405,6 @@
       "Primary": [
         "プライマリー"
       ],
-      "Priority support": [
-        "優先的なサポート"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
       ],
@@ -3462,9 +3420,6 @@
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
@@ -3476,12 +3431,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "主催者が一度変更した行事に対する回答は失われます。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されています。"
-      ],
-      "Support for 1 custom email domain": [
-        "1 つの独自メールドメインをサポート"
       ],
       "support team": [
         "サポートチーム"
@@ -3561,17 +3510,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
       ],
-      "Unlimited folders, labels, and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited messages": [
-        "送信数制限なし"
-      ],
       "Update recurring event": [
         "定期的な予定の更新"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "次の ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
@@ -3644,9 +3584,6 @@
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "鍵が復活したため、以下のカレンダーに登録されている予定は復号できるようになりました。"
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "パスワードが変更されたため、以下のカレンダーに登録されていた予定を復号できませんでした。\nパスワードの変更前に共有したリンクにはアクセスできません。\n登録した他人のカレンダーは数分後に同期されます。"
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "一度招待を拒否しているため、主催者からもう一度招待される必要があります。"
@@ -3757,9 +3694,6 @@
       ],
       "Trusted": [
         "信頼済み"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -3826,8 +3760,8 @@
       "Color": [
         "色"
       ],
-      "Coming soon": [
-        "まもなく登場"
+      "Colors": [
+        "色"
       ],
       "Contacts": [
         "連絡先"
@@ -3907,9 +3841,6 @@
       "Frequency": [
         "頻度"
       ],
-      "From: ${ importedEmail }": [
-        "移行元: ${ importedEmail }"
-      ],
       "Good": [
         "いい"
       ],
@@ -3963,12 +3894,6 @@
       ],
       "Manage categories": [
         "カテゴリーを管理"
-      ],
-      "Manage folders": [
-        "フォルダーを管理"
-      ],
-      "Manage labels": [
-        "ラベルを管理"
       ],
       "Move to Archive": [
         "アーカイブに移動"
@@ -4051,17 +3976,11 @@
       "System information": [
         "システム情報"
       ],
-      "To: ${ emailAddress }": [
-        "移行先: ${ emailAddress }"
-      ],
       "Toolbar": [
         "ツールバー"
       ],
       "Two-factor authentication code": [
         "2 要素認証コード"
-      ],
-      "Upload file": [
-        "ファイルをアップロード"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -4141,9 +4060,6 @@
       "Request an invite": [
         "登録を申請"
       ],
-      "Subscribed calendars": [
-        "購読カレンダー"
-      ],
       "Upgrade account": [
         "アカウントをアップグレード"
       ],
@@ -4156,12 +4072,14 @@
         "${ CALENDAR_APP_NAME } で開く"
       ]
     },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "回復手段とは何ですか？"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "もう少しです"
-      ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "作成済みカレンダー数: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
@@ -4177,11 +4095,6 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ itemsToImportCount } つのラベルから${ periodFragment } の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
     "Message": {
@@ -4214,17 +4127,9 @@
       ],
       "Manage calendars": [
         "カレンダーを管理"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "これ以上のカレンダーを追加できません。このプランで作成できる個人用カレンダーの最大数に達しています。"
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "これ以上のカレンダーを追加できません。このプランで追加できる購読カレンダーの最大数に達しています。"
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "これ以上のカレンダーを作成できません。このプランで作成できる個人用カレンダーの最大数に達しています。"
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4264,9 +4169,6 @@
       ],
       "Time zone changed": [
         "タイムゾーンが変更されました。"
-      ],
-      "Unable to add more calendars": [
-        "カレンダーを追加できません"
       ]
     },
     "Modal title and action": {
@@ -4832,7 +4734,7 @@
     },
     "Select search results": {
       "No results found": [
-        "結果が見つかりませんでした"
+        "該当する結果が見つかりませんでした"
       ]
     },
     "Settings update growler warning": {
@@ -4887,9 +4789,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
-      ],
       "Easily accept invites": [
         "招待を簡単に了承できます"
       ],
@@ -4897,19 +4796,10 @@
         "最大${ credits }分のクレジットを獲得できます"
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "フレンドを ${ BRAND_NAME } に招待"
+        "友達を ${ BRAND_NAME } に招待"
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "招待は、保留中の予定としてカレンダーに表示されるようになりました。その予定を開いて、返信することができます。${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "他のカレンダーを購読"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } を試す"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "外部カレンダーを購読して、イベントを読み込むことができます。"
       ]
     },
     "Spotlight settings link": {
@@ -4995,9 +4885,6 @@
       ],
       "Calendar updated": [
         "カレンダーが更新されました。"
-      ],
-      "Canceling import": [
-        "インポートをキャンセル"
       ],
       "Cancellation sent and all events deleted": [
         "予定キャンセルの通知を送り、すべてのイベントは削除されました。"
@@ -5158,9 +5045,23 @@
         "設定"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 時間"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 時間"
       ],
       "${ minutes } minutes": [
         "${ minutes } 分"
@@ -5304,6 +5205,9 @@
       "Email settings": [
         "メールの設定"
       ],
+      "Encrypted event": [
+        "暗号化された予定"
+      ],
       "Enter your password": [
         "パスワードを入力"
       ],
@@ -5408,9 +5312,6 @@
       ],
       "Request new code": [
         "新しいコードを発行"
-      ],
-      "Reset calendar keys": [
-        "カレンダーの鍵のリセット"
       ],
       "Save changes": [
         "変更を保存"
@@ -5526,8 +5427,8 @@
       "Your calendar link": [
         "カレンダーのリンク"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "無料トライアルは ${ formattedEndDate } に終了します。"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mial Plusのトライアル期間が ${ textDate } に終了します。"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5897,6 +5798,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "${ interval } 年毎"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "${ interval } 年毎、${ timesString }"
       ],

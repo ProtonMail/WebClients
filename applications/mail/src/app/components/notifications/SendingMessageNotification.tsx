@@ -3,12 +3,13 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { formatDateToHuman } from '../../helpers/date';
-import UndoButton from './UndoButton';
+import UndoNotificationButton from './UndoNotificationButton';
 
 export const createSendingMessageNotificationManager = () => {
     const listeners = createListeners();
@@ -73,8 +74,8 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
 
         return (
             <>
-                <span className="mr1">{notification}</span>
-                {onUndo && <UndoButton className="mr1" onUndo={onUndo} />}
+                <span>{notification}</span>
+                {onUndo && <UndoNotificationButton className="mr1" onUndo={onUndo} />}
             </>
         );
     };
@@ -107,13 +108,17 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
         }
         return (
             <>
-                <span className="mr1">{c('Info').t`Message sent.`}</span>
-                <UndoButton onUndo={onUndo} />
+                <span>{c('Info').t`Message sent.`}</span>
+                <UndoNotificationButton onUndo={onUndo} />
             </>
         );
     }
 
-    return <>{scheduledAt ? c('Info').t`Scheduling message...` : c('Info').t`Sending message...`}</>;
+    return (
+        <>
+            {scheduledAt ? c('Info').t`Scheduling message...` : c('Info').t`Sending message...`} <CircleLoader />
+        </>
+    );
 };
 
 export default SendingMessageNotification;

@@ -36,12 +36,12 @@
 	}
 
 	&--hide-on-tablet {
-		@include respond-to($breakpoint-medium-drawer) {
+		@include media('<=#{em($breakpoint-for-drawer, 16)}') {
 			display: none;
 		}
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		display: none;
 	}
 }

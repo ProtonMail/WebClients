@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
-import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -18,15 +18,16 @@ import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from 
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 
-const { CALENDAR_URL } = MAX_LENGTHS_API;
+const { CALENDAR_URL } = MAX_CHARS_API;
 
 interface Props {
     open: boolean;
     onClose?: () => void;
+    onExit?: () => void;
     onCreateCalendar?: (id: string) => void;
 }
 
-const SubscribedCalendarModal = ({ open, onClose, onCreateCalendar }: Props) => {
+const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Props) => {
     const [, setCalendar] = useState<VisualCalendar | undefined>();
     const [calendarURL, setCalendarURL] = useState('');
     const [model, setModel] = useState(() => getDefaultModel());
@@ -80,7 +81,7 @@ const SubscribedCalendarModal = ({ open, onClose, onCreateCalendar }: Props) => 
     const handleProcessCalendar = async () => {
         const formattedModel = {
             ...model,
-            name: truncateMore({ string: calendarURL, charsToDisplay: MAX_LENGTHS_API.CALENDAR_NAME }),
+            name: truncateMore({ string: calendarURL, charsToDisplay: MAX_CHARS_API.CALENDAR_NAME }),
             url: calendarURL,
         };
         const calendarPayload = getCalendarPayload(formattedModel);
@@ -177,6 +178,7 @@ const SubscribedCalendarModal = ({ open, onClose, onCreateCalendar }: Props) => 
                     onSubmit();
                 }
             }}
+            onExit={onExit}
         >
             {loadingSetup ? (
                 <Loader />

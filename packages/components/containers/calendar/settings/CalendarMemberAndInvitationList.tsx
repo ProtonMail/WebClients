@@ -57,7 +57,7 @@ const CalendarMemberAndInvitationList = ({
     return (
         <>
             {members.length + invitations.length >= MAX_CALENDAR_MEMBERS && (
-                <Alert type="warning" className="mb0-75">
+                <Alert type="info" className="mb0-75">
                     {c('Maximum shared calendar members reached alert').ngettext(
                         msgid`You have reached the maximum of ${MAX_CALENDAR_MEMBERS} member.`,
                         `You have reached the maximum of ${MAX_CALENDAR_MEMBERS} members.`,
@@ -66,16 +66,12 @@ const CalendarMemberAndInvitationList = ({
                 </Alert>
             )}
 
-            <Table className="simple-table--has-actions">
-                <TableHeader className="no-mobile">
+            <Table hasActions responsive="cards">
+                <TableHeader>
                     <TableRow>
                         <TableHeaderCell>{c('Header').t`User`}</TableHeaderCell>
-                        {displayPermissions && (
-                            <TableHeaderCell className="no-mobile">{c('Header').t`Permissions`}</TableHeaderCell>
-                        )}
-                        {displayStatus && (
-                            <TableHeaderCell className="no-tablet no-mobile">{c('Header').t`Status`}</TableHeaderCell>
-                        )}
+                        {displayPermissions && <TableHeaderCell>{c('Header').t`Permissions`}</TableHeaderCell>}
+                        {displayStatus && <TableHeaderCell>{c('Header').t`Status`}</TableHeaderCell>}
                         <TableHeaderCell className="w15">{c('Header').t`Action`}</TableHeaderCell>
                     </TableRow>
                 </TableHeader>

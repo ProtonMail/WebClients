@@ -46,32 +46,36 @@ const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
     }
 
     return (
-        <Table>
+        <Table responsive="cards">
             <TableHeader>
                 <tr>
                     <TableCell type="header">{c('Header').t`Event`}</TableCell>
                     {logAuth === ADVANCED && <TableCell type="header">{logAuth === ADVANCED ? 'IP' : ''}</TableCell>}
+                    <TableCell className="text-right" type="header">{c('Header').t`App version`}</TableCell>
                     <TableCell className="text-right" type="header">{c('Header').t`Time`}</TableCell>
                 </tr>
             </TableHeader>
             <TableBody loading={loading} colSpan={3}>
-                {logs.map(({ Time: time, Event, Description, IP }, index) => {
+                {logs.map(({ Time: time, AppVersion, Event, Description, IP }, index) => {
                     const key = index.toString();
 
                     return (
                         <TableRow key={key}>
-                            <TableCell>
-                                <div className="flex">
+                            <TableCell label={c('Header').t`Event`}>
+                                <div className="inline-flex">
                                     <span className="flex-item-noshrink mr0-5">{getIcon(Event)}</span>
                                     <span className="flex-item-fluid">{Description}</span>
                                 </div>
                             </TableCell>
                             {logAuth === ADVANCED && (
-                                <TableCell>
+                                <TableCell label="IP">
                                     <code>{IP || '-'}</code>
                                 </TableCell>
                             )}
-                            <TableCell className="text-right">
+                            <TableCell label={c('Header').t`App version`} className="on-tablet-text-left text-right">
+                                <span className="flex-item-fluid">{AppVersion}</span>
+                            </TableCell>
+                            <TableCell label={c('Header').t`Time`} className="on-tablet-text-left text-right">
                                 <Time key={key} format="PPp">
                                     {time}
                                 </Time>

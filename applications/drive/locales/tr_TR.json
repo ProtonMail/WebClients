@@ -244,6 +244,9 @@
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştirmek"
       ],
+      "Enable drive search": [
+        "Drive aramasını etkinleştir"
+      ],
       "Expand": [
         "Genişlet"
       ],
@@ -369,6 +372,9 @@
       ],
       "Move to trash": [
         "Çöpe at"
+      ],
+      "New": [
+        "Yeni"
       ],
       "New upload": [
         "Yeni yükle"
@@ -598,6 +604,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
       "Upload anyway": [
         "Yine de yükle"
       ],
@@ -781,54 +790,6 @@
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Eşitlenmemiş"
-      ],
-      "Syncing": [
-        "Eşitleniyor"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Takvimin şifresi çözülemedi"
-      ],
-      "Calendar is syncing": [
-        "Takvim eşitleniyor"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir."
-      ],
-      "Calendar is too big": [
-        "Takvim çok büyük"
-      ],
-      "Calendar link is not accessible": [
-        "Takvim bağlantısına erişilemiyor"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Takvim bağlantısına geçici olarak erişilemiyor"
-      ],
-      "Failed to sync calendar": [
-        "Takvim eşitlenemedi"
-      ],
-      "More than 12 hours passed since last update": [
-        "Son güncellemeden bu yana 12 saatten fazla zaman geçti"
-      ],
-      "Unsupported calendar format": [
-        "Takvim biçimi desteklenmiyor"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Takvim bağlantısına, takvim hizmeti sağlayıcısının ekosistemi dışından erişilemez."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Takvim bağlantısına geçici olarak erişilemiyor. Lütfen takvim hizmeti sağlayıcısı bağlantısının hala geçerli olduğunu doğrulayın."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. ${ CALENDAR_APP_NAME }, takvimi birkaç saat içinde güncellemeye çalışacak."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Daralt"
@@ -984,9 +945,6 @@
       ],
       "Work": [
         "İş"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1006,7 +964,7 @@
         "Amerikan Samoası"
       ],
       "Andorra": [
-        "Andorra"
+        "Andora"
       ],
       "Angola": [
         "Angola"
@@ -1864,7 +1822,7 @@
         "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından reddedildi"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından belirsiz olarak kabul edildi"
+        "${ eventTitle } etkinliği davetiniz ${ emailAddress } tarafından kesin olmamakla birlikte kabul edildi"
       ]
     },
     "Email subject": {
@@ -1875,16 +1833,16 @@
         "${ formattedStart } tarihinde başlayan bir etkinliğin iptal bilgilendirmesi"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için davet"
+        "${ formattedStart } zamanındaki etkinlik daveti"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için davet"
+        "${ formattedStart } zamanında başlayan etkinlik daveti"
       ],
       "Update for an event on ${ formattedStart }": [
-        "${ formattedStart } tarihindeki bir etkinlik için güncelleme"
+        "${ formattedStart } zamanındaki etkinlik için güncelleme"
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "${ formattedStart } tarihinde başlayan bir etkinlik için güncelleme"
+        "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
     "Error": {
@@ -1912,19 +1870,14 @@
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
+      "Contact name is too long": [
+        "Kişi adı çok uzun"
+      ],
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Bu tarayıcıda içerik araması etkinleştirilemiyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "En az ${ calendarToFixCount } takvimi kaldırın",
-        "En az ${ calendarToFixCount } takvimi kaldırın"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "En az ${ calendarToFixCount } takvimi kaldırın ya da",
-        "En az ${ calendarToFixCount } takvimi kaldırın ya da"
       ],
       "Device name does not match": [
         "Aygıt adı eşleşmiyor"
@@ -1988,10 +1941,6 @@
       ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin",
-        "En az ${ calendarToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimiyle birleştirin"
       ],
       "Missing key packet": [
         "Anahtar paketi eksik"
@@ -2065,9 +2014,6 @@
       "Some groups could not be deleted": [
         "Bazı gruplar silinemedi"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Bazı klasör adlarınız sistem kullanımına ayrılmış. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
@@ -2140,7 +2086,7 @@
       "This label name is not available. Please choose a different name.": [
         "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
       ],
       "Try using only letters, numerals, and _.-": [
@@ -2152,11 +2098,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Bir iletiyi 100 üzerinde alıcıya gönderemezsiniz"
       ],
-      "You can't send vCards of more than 10 contacts": [
+      "You can't send vCard files of more than 10 contacts": [
         "En fazla 10 kişinin vCard dosyasını gönderebilirsiniz"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Kişisel takvim sayısı sınırına ulaştığınız için içe aktarılan takvimlerin tümü eklenemedi."
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -2528,9 +2471,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-posta"
       ],
@@ -2539,9 +2479,6 @@
       ],
       "No verification method available": [
         "Kullanılabilecek bir doğrulama yöntemi yok"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2552,6 +2489,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
@@ -2766,9 +2706,6 @@
       ],
       "ICS file": [
         "ICS dosyası"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2783,6 +2720,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "${ provider } üzerinden içe aktar"
+      ],
       "Other": [
         "Diğer"
       ]
@@ -2829,10 +2769,6 @@
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } birleştirilmiş takvim",
-        "${ calendarsToBeMerged } birleştirilmiş takvim"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
@@ -2876,13 +2812,13 @@
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } kişi grubu",
-        "${ numContactGroups } kişi grubu"
+      "${ numContact } contact": [
+        "${ numContact } kişi",
+        "${ numContact } kişi"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } kişi",
-        "${ numContacts } kişi"
+      "${ numGroups } contact group": [
+        "${ numGroups } kişi grubu",
+        "${ numGroups } kişi grubu"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } duraklatıldı",
@@ -2899,6 +2835,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seçilmiş"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } klasör seçildi",
@@ -2919,9 +2858,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } depolama alanı"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
@@ -2932,9 +2868,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
-      ],
-      "10 email addresses": [
-        "10 e-posta adresi"
       ],
       "A number will be added to the filename": [
         "Dosya adına bir numara eklensin"
@@ -2958,6 +2891,9 @@
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
+      ],
+      "Also try looking in Trash.": [
+        "Çöp kutusuna da bakmayı deneyin."
       ],
       "An active recovery file": [
         "Etkn bir kurtarma dosyası"
@@ -2995,8 +2931,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Toplu yüklemeler bilgisayarınızın başarımını düşürebilir. Yükleme sırasında yayın akışı izlemek gibi yoğun bellek kullanan işlemleri sınırlamayı deneyin. Ya da yüklemeleri gruplar halinde yapın."
+      "Calendar side panel": [
+        "Takvim yan panosu"
       ],
       "Canceled": [
         "İptal edildi"
@@ -3034,12 +2970,12 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } kullanmayı sürdür ve sürücünün kilidini daha sonra aç"
       ],
-      "Continue with ${ planName }": [
-        "${ planName } aboneliğini kullanmayı sürdür"
+      "Country code": [
+        "Ülke kodu"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "${ calendarsToBeCreated } yeni takvim ekle",
-        "${ calendarsToBeCreated } yeni takvim ekle"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } yeni takvim ekle",
+        "${ calendarsToBeCreatedCount } yeni takvim ekle"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
@@ -3120,6 +3056,9 @@
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
       ],
+      "Enable drive search": [
+        "Drive aramasını etkinleştir"
+      ],
       "Enabling drive search": [
         "Drive araması etkinleştiriliyor"
       ],
@@ -3196,6 +3135,9 @@
       "Folders you sync from your computer will appear here.": [
         "Bilgisayarınız ile eşitlediğiniz klasörler burada görüntülenir."
       ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
+      ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
       ],
@@ -3232,12 +3174,12 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "${ selectedCalendarsCount } / ${ totalCalendarsCount } takvimi içe aktar",
-        "${ selectedCalendarsCount } / ${ totalCalendarsCount } takvimi içe aktar"
       ],
       "Import from": [
         "Şuradan içe aktar"
@@ -3250,6 +3192,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } üzerine aktarın. Her adımda size rehberlik edeceğiz ve taşınırken verilerinizi şifreleyeceğiz. Gizliliğe saygı duyulan bir dünyaya hoş geldiniz."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
@@ -3277,6 +3222,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Yakın zamanda ${ uploadName } dosyasını yüklemeyi denemişsiniz gibi görünüyor. Yüklenemediyse, lütfen ${ replaceFile }in. Yükleme hala sürüyorsa, dosyanın değiştirilmesi süren yükleme işlemini iptal eder."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Çöp kutusundaki ögeler siz onları kalıcı olarak silene kadar tutulur"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Kolayca dosyaları sürükleyip bırakın ya da seçin"
@@ -3411,9 +3359,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Bu klasöre yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
       ],
-      "Other options": [
-        "Diğer seçenekler"
-      ],
       "Paused": [
         "Duraklatıldı"
       ],
@@ -3469,9 +3414,6 @@
       "Primary": [
         "Birincil"
       ],
-      "Priority support": [
-        "Öncelikli destek"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Gizli arama etkinleştirildi. Bu pencereyi kapatarak dosya ve klasörlerde arama yapabilirsiniz."
       ],
@@ -3511,9 +3453,6 @@
       "Select what you want to import.": [
         "İçe aktarmak istediklerinizi seçin."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
@@ -3531,6 +3470,9 @@
       ],
       "Shared link failed to be loaded": [
         "Paylaşılmış bağlantı yüklenemedi"
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Signature check will be ignored": [
         "İmza denetimi yok sayılacak"
@@ -3550,20 +3492,11 @@
       "Something went wrong, please try again later.": [
         "Bir şeyler ters gitti. Lütfen bir süre sonra yeniden deneyin."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
-      ],
-      "Support for 1 custom email domain": [
-        "1 özel e-posta etki alanı desteği"
-      ],
       "support team": [
         "destek ekibi"
       ],
       "Swiss privacy": [
         "İsviçre gizliliği"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Bir dosya ya da klasör yüklemek için + düğmesine dokunun"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -3573,6 +3506,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Şifrelenmiş veriler, verilerinizin güvenliğini sağlayan şifreleme ve imzaların ek yükü nedeniyle biraz daha büyüktür."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
@@ -3626,6 +3562,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Gerçek gizliliği koruyan aramayı etkinleştirmek için dosyalarınızın yerel dizinini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
@@ -3659,14 +3598,11 @@
       "Trash": [
         "Çöp kutusu"
       ],
+      "Try searching by file name, date, or type.": [
+        "Dosya adına, tarihine ya da türüne göre aramayı deneyin."
+      ],
       "Unknown error": [
         "Bilinmeyen hata"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Sınırsız klasör, etiket, süzgeç"
-      ],
-      "Unlimited messages": [
-        "Sınırsız ileti"
       ],
       "Unlock drive to recover files": [
         "Dosyaları kurtarmak için sürücünün kilidini açın"
@@ -3680,8 +3616,8 @@
       "Updating drive search...": [
         "Drive araması güncelleniyor..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
       ],
       "Uploaded": [
         "Yüklendi"
@@ -3834,14 +3770,14 @@
       "file data order": [
         "dosya verileri sıralaması"
       ],
+      "hash key": [
+        "karma anahtarı"
+      ],
       "keys": [
         "anahtarlar"
       ],
       "name": [
         "ad"
-      ],
-      "name hash": [
-        "ad karması"
       ],
       "thumbnail": [
         "küçük görsel"
@@ -3865,14 +3801,11 @@
       ],
       "Trusted": [
         "Güvenilmiş"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
-      "# of accesses": [
-        "erişilme sayısı"
+      "# of downloads": [
+        "indirme sayısı"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
@@ -3928,6 +3861,9 @@
       "Browser version": [
         "Tarayıcı sürümü"
       ],
+      "Calendar": [
+        "Takvim"
+      ],
       "Calendars": [
         "Takvimler"
       ],
@@ -3946,8 +3882,8 @@
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
-      "Coming soon": [
-        "Çok yakında"
+      "Colors": [
+        "Renkler"
       ],
       "Comment": [
         "Yorum"
@@ -4064,9 +4000,6 @@
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Nereden: ${ importedEmail }"
-      ],
       "Good": [
         "İyi"
       ],
@@ -4126,12 +4059,6 @@
       ],
       "Manage categories": [
         "Kategori yönetimi"
-      ],
-      "Manage folders": [
-        "Klasör yönetimi"
-      ],
-      "Manage labels": [
-        "Etiket yönetimi"
       ],
       "Merge a folder": [
         "Bir klasörü birleştir"
@@ -4250,9 +4177,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Bu işlem, kilitli sürücünüzdeki bütün dosyaları kalıcı olarak silecek."
       ],
-      "To: ${ emailAddress }": [
-        "Nereye: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Kime: ${ to }"
       ],
@@ -4282,9 +4206,6 @@
       ],
       "Upload anyway": [
         "Yine de yükle"
-      ],
-      "Upload file": [
-        "Dosya yükle"
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -4348,6 +4269,17 @@
         "Yan pano"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Yeni bir takvim eklemek için var olan bir takvimi kaldırın."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Yeni bir takvim eklemek için başka bir takvimi kaldırın ya da ${ BRAND_NAME } tarifenizi ${ MAIL_SHORT_APP_NAME } ücretli tarifesine yükseltin."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Tarifenizle kullanabileceğiniz en fazla takvim sayısına ulaştınız."
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "web tarayıcınızın ön belleğini temizlemek"
@@ -4378,8 +4310,9 @@
       "Almost there": [
         "Neredeyse tamam"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Eklenen takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
@@ -4398,21 +4331,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle",
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve ${ LABEL_MARKUP_PLACEHOLDER } olarak etiketle"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
       ]
     },
     "Message": {
@@ -4608,9 +4541,6 @@
       ],
       "File or folder is missing a name": [
         "Dosya ya da klasörün adı eksik"
-      ],
-      "Item failed to be verified": [
-        "Öge doğrulanamadı"
       ],
       "Link failed to be loaded": [
         "Bağlantı yüklenemedi"
@@ -4937,9 +4867,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
-      ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
@@ -4951,9 +4878,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } uygulamasını deneyin"
       ]
     },
     "Storage": {
@@ -4978,7 +4902,7 @@
       "Bug reported": [
         "Hata bildirildi"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "İçe aktarma iptal ediliyor"
       ],
       "Code sent to ${ methodTo }": [
@@ -5091,10 +5015,28 @@
         "Ayarlar"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } s",
+        "${ hours } s"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 s",
+        "${ hoursInt }.5 s"
+      ],
+      "${ minutes } min": [
+        "${ minutes } dk",
+        "${ minutes } dk"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } saat",
         "${ hours } saat"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 saat",
+        "${ hoursInt }.5 saat"
       ],
       "${ minutes } minute": [
         "${ minutes } dakika",
@@ -5102,8 +5044,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "erişilme sayısı"
+      "# of downloads": [
+        "indirme sayısı"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } üye",
@@ -5244,9 +5186,6 @@
       "Download unverified folder?": [
         "Doğrulanmamış klasör indirilsin mi?"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Drop to upload": [
         "Yüklemek için bırakın"
       ],
@@ -5276,6 +5215,9 @@
       ],
       "Empty trash": [
         "Çöp kutusunu boşalt"
+      ],
+      "Enable drive search": [
+        "Drive aramasını etkinleştir"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -5375,6 +5317,9 @@
       "Name": [
         "Ad"
       ],
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
       "Number of files": [
         "Dosya sayısı"
       ],
@@ -5392,6 +5337,9 @@
       ],
       "Open settings menu": [
         "Ayarlar menüsünü aç"
+      ],
+      "Original size": [
+        "Özgün boyut"
       ],
       "Other information": [
         "Diğer bilgiler"
@@ -5543,6 +5491,9 @@
       "Uploaded by": [
         "Yükleyen"
       ],
+      "Uploading a large file or folder": [
+        "Büyük bir dosya ya da klasör yükleniyor"
+      ],
       "View contacts": [
         "Kişileri görüntüle"
       ],
@@ -5576,8 +5527,8 @@
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mail Plus ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
       ],
       "Your welcome actions": [
         "Karşılama işlemleriniz"

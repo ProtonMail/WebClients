@@ -11,8 +11,7 @@ import {
     Organization,
     Subscription,
     UserModel,
-    VPNCountries,
-    VPNServers,
+    VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
@@ -40,8 +39,7 @@ interface Props {
     currency: Currency;
     subscription?: Subscription;
     organization?: Organization;
-    vpnServers?: VPNServers;
-    vpnCountries?: VPNCountries;
+    vpnServers: VPNServersCountData;
     addresses?: Address[];
     openSubscriptionModal: OpenSubscriptionModalCallback;
 }
@@ -50,7 +48,6 @@ const SubscriptionPanel = ({
     app,
     currency,
     vpnServers,
-    vpnCountries,
     subscription,
     organization,
     user,
@@ -123,7 +120,7 @@ const SubscriptionPanel = ({
                         } as const,
                         {
                             icon: 'earth',
-                            text: getFreeServers(vpnServers?.free_vpn, vpnCountries?.free_vpn.count),
+                            text: getFreeServers(vpnServers.free.servers, vpnServers.free.countries),
                         } as const,
                     ] as Item[]
                 ).map((item) => {
@@ -161,7 +158,7 @@ const SubscriptionPanel = ({
             },
             {
                 icon: 'earth',
-                text: getPlusServers(vpnServers?.[PLANS.VPN], vpnCountries?.[PLANS.VPN].count),
+                text: getPlusServers(vpnServers.paid.servers, vpnServers.paid.countries),
             },
         ];
         return (

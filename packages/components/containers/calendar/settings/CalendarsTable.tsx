@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { useAddresses } from '@proton/components/hooks';
 import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import {Address, UserModel} from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
@@ -30,37 +29,40 @@ import CalendarBadge from './CalendarBadge';
 interface Props {
     calendars: (VisualCalendar | SubscribedCalendar)[];
     defaultCalendarID?: string;
+    addresses: Address[];
     user: UserModel;
     onSetDefault?: (id: string) => Promise<void>;
 }
 
-const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault }: Props) => {
+const CalendarsTable = ({ calendars, defaultCalendarID, addresses, user, onSetDefault }: Props) => {
     const { hasNonDelinquentScope } = user;
-    const [addresses, loadingAddresses] = useAddresses();
     const [isLoading, setIsLoading] = useState<string>();
 
-    const hasSingleAddress = !loadingAddresses && addresses.length === 1;
+    const hasSingleAddress = addresses.length === 1;
 
     if (!calendars.length) {
         return null;
     }
 
+    const nameHeader = c('Header').t`Name`;
+    const statusHeader = (
+        <div className="flex flex-align-items-center">
+            <span className="mr0-5">{c('Header').t`Status`}</span>
+            <Info url={getKnowledgeBaseUrl('/calendar-status')} />
+        </div>
+    );
+
     return (
-        <Table className="simple-table--has-actions">
+        <Table hasActions responsive="cards">
             <TableHeader>
                 <TableRow>
-                    <TableHeaderCell className="text-left w50">{c('Header').t`Name`}</TableHeaderCell>
-                    <TableHeaderCell className="w20">
-                        <div className="flex flex-align-items-center">
-                            <span className="mr0-5">{c('Header').t`Status`}</span>
-                            <Info url={getKnowledgeBaseUrl('/calendar-status')} />
-                        </div>
-                    </TableHeaderCell>
+                    <TableHeaderCell className="text-left w50">{nameHeader}</TableHeaderCell>
+                    <TableHeaderCell className="w20">{statusHeader}</TableHeaderCell>
                     <TableHeaderCell>{c('Header').t`Actions`}</TableHeaderCell>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {(calendars || []).map((calendar, index) => {
+                {calendars.map((calendar, index) => {
                     const { ID, Name, Color, Email } = calendar;
 
                     const { isDisabled, isDefault, isSubscribed, badges } = getCalendarStatusBadges(
@@ -70,7 +72,7 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
 
                     return (
                         <TableRow key={ID}>
-                            <TableCell>
+                            <TableCell label={nameHeader}>
                                 <div key="id">
                                     <div className="grid-align-icon-center">
                                         <CalendarSelectIcon
@@ -92,7 +94,7 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
                                     </div>
                                 </div>
                             </TableCell>
-                            <TableCell>
+                            <TableCell label={statusHeader}>
                                 <div data-test-id="calendar-settings-page:calendar-status" key="status">
                                     {badges.map(({ statusType, badgeType, text, tooltipText }) => (
                                         <CalendarBadge
@@ -105,7 +107,7 @@ const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault 
                                 </div>
                             </TableCell>
                             <TableCell>
-                                <div className="flex flex-align-items-center flex-nowrap flex-justify-end">
+                                <div className="inline-flex">
                                     {!isSubscribed &&
                                         !isDisabled &&
                                         !isDefault &&

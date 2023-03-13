@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { ButtonLike, Card } from '@proton/atoms';
 import { PLANS } from '@proton/shared/lib/constants';
+import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { SettingsLink } from '../../components';
@@ -14,9 +15,10 @@ interface Props {
     className?: string;
     audience?: Audience;
     free?: boolean;
+    upsellPath?: string;
 }
 
-const UpgradeBanner = ({ free, className, children, audience }: Props) => {
+const UpgradeBanner = ({ free, className, children, audience, upsellPath }: Props) => {
     return (
         <Card className={classnames(['flex flex-align-items-center', className])} rounded>
             <p className="m0 mr2 flex-item-fluid">{children}</p>
@@ -24,15 +26,16 @@ const UpgradeBanner = ({ free, className, children, audience }: Props) => {
                 as={SettingsLink}
                 path={(() => {
                     if (!free && audience === Audience.B2B) {
-                        return `/dashboard?plan=${PLANS.BUNDLE_PRO}&target=compare`;
+                        return addUpsellPath(`/dashboard?plan=${PLANS.BUNDLE_PRO}&target=compare`, upsellPath);
                     }
                     if (audience === Audience.B2B) {
-                        return '/upgrade?business';
+                        return addUpsellPath('/upgrade?business', upsellPath);
                     }
-                    return '/upgrade';
+                    return addUpsellPath('/upgrade', upsellPath);
                 })()}
                 color="norm"
                 className="mtauto"
+                aria-label={c('Action').t`Upgrade your plan`}
             >{c('Action').t`Upgrade`}</ButtonLike>
         </Card>
     );

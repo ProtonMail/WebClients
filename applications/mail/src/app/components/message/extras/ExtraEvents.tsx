@@ -24,14 +24,15 @@ import {
     getCanCreateCalendar,
     getDefaultCalendar,
     getIsCalendarDisabled,
-    getMaxUserCalendarsDisabled,
+    getOwnedPersonalCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { getIsVcalendarWithErrors } from '@proton/shared/lib/calendar/vcalHelper';
+import { VcalCalendarComponentWithErrors, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
@@ -115,21 +116,30 @@ const ExtraEvents = ({ message }: Props) => {
             }
             const run = async () => {
                 const getCalData = async () => {
+                    const isFreeUser = !user.hasPaidMail;
                     const { calendars, calendarUserSettings } = await getOrCreatePersonalCalendarsAndSettings({
                         api,
                         callEventManager: call,
                         addresses,
+                        isFreeUser,
                         getAddressKeys,
                         getCalendars,
                         getCalendarUserSettings,
                     });
                     const defaultCalendar = getDefaultCalendar(calendars, calendarUserSettings.DefaultCalendarID);
-                    const disabledCalendars = calendars.filter(unary(getIsCalendarDisabled));
-                    const canCreateCalendar = getCanCreateCalendar(calendars, !user.hasPaidMail);
-                    const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, !user.hasPaidMail);
+                    const ownedPersonalCalendars = getOwnedPersonalCalendars(calendars);
+                    const disabledCalendars = ownedPersonalCalendars.filter(unary(getIsCalendarDisabled));
+                    const canCreateCalendar = getCanCreateCalendar({
+                        calendars,
+                        ownedPersonalCalendars,
+                        disabledCalendars,
+                        isFreeUser,
+                    });
+                    const maxUserCalendarsDisabled =
+                        !canCreateCalendar && ownedPersonalCalendars.length === disabledCalendars.length;
 
                     return {
-                        calendars,
+                        calendars: ownedPersonalCalendars,
                         defaultCalendar,
                         canCreateCalendar,
                         maxUserCalendarsDisabled,
@@ -172,6 +182,15 @@ const ExtraEvents = ({ message }: Props) => {
                                     if (!parsedVcalendar) {
                                         return;
                                     }
+                                    if (getIsVcalendarWithErrors(parsedVcalendar)) {
+                                        const externalError = (parsedVcalendar.components || []).find(
+                                            (component) => !!(component as VcalCalendarComponentWithErrors).error
+                                        )!.error;
+                                        return new EventInvitationError(
+                                            EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID,
+                                            { externalError }
+                                        );
+                                    }
                                     const { PrimaryTimezone: primaryTimezone } = await getCalendarUserSettings();
                                     const supportedEventInvitation = await getSupportedEventInvitation({
                                         vcalComponent: parsedVcalendar,
@@ -185,10 +204,9 @@ const ExtraEvents = ({ message }: Props) => {
                                     if (error instanceof EventInvitationError) {
                                         return error;
                                     }
-                                    return new EventInvitationError(
-                                        EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID,
-                                        error
-                                    );
+                                    return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                                        externalError: error,
+                                    });
                                 }
                             })
                         )

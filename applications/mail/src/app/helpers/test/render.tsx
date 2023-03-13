@@ -15,6 +15,7 @@ import {
     ModalsProvider,
     PrivateAuthenticationStore,
 } from '@proton/components';
+import SpotlightProvider from '@proton/components/components/spotlight/Provider';
 import ApiContext from '@proton/components/containers/api/apiContext';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
@@ -32,7 +33,7 @@ import { MailboxContainerContextProvider } from '../../containers/mailbox/Mailbo
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { store } from '../../logic/store';
 import { api, mockDomApi, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
-import { cache, minimalCache } from './cache';
+import { minimalCache, mockCache } from './cache';
 import NotificationsTestProvider from './notifications';
 
 interface RenderResult extends OriginalRenderResult {
@@ -40,7 +41,7 @@ interface RenderResult extends OriginalRenderResult {
 }
 
 export const authentication = {
-    getUID: jest.fn(),
+    getUID: jest.fn(() => 'uid'),
     getLocalID: jest.fn(),
     getPassword: jest.fn(),
     onLogout: jest.fn(),
@@ -74,35 +75,37 @@ const TestProvider = ({ children }: Props) => {
                 <NotificationsTestProvider>
                     <ModalsProvider>
                         <AuthenticationProvider store={authentication}>
-                            <CacheProvider cache={cache}>
+                            <CacheProvider cache={mockCache}>
                                 <FeaturesProvider>
-                                    <DrawerProvider>
-                                        <ExperimentsProvider>
-                                            <ModalsChildren />
-                                            <EventModelListener
-                                                models={[ConversationCountsModel, MessageCountsModel]}
-                                            />
-                                            <ReduxProvider store={store}>
-                                                <MailContentRefProvider mailContentRef={contentRef}>
-                                                    <MailboxContainerContextProvider
-                                                        isResizing={false}
-                                                        containerRef={contentRef}
-                                                        elementID={undefined}
-                                                    >
-                                                        <ComposeProvider onCompose={onCompose}>
-                                                            <Router history={history}>
-                                                                <Route path={MAIN_ROUTE_PATH}>
-                                                                    <EncryptedSearchProvider>
-                                                                        {children}
-                                                                    </EncryptedSearchProvider>
-                                                                </Route>
-                                                            </Router>
-                                                        </ComposeProvider>
-                                                    </MailboxContainerContextProvider>
-                                                </MailContentRefProvider>
-                                            </ReduxProvider>
-                                        </ExperimentsProvider>
-                                    </DrawerProvider>
+                                    <SpotlightProvider>
+                                        <DrawerProvider>
+                                            <ExperimentsProvider>
+                                                <ModalsChildren />
+                                                <EventModelListener
+                                                    models={[ConversationCountsModel, MessageCountsModel]}
+                                                />
+                                                <ReduxProvider store={store}>
+                                                    <MailContentRefProvider mailContentRef={contentRef}>
+                                                        <MailboxContainerContextProvider
+                                                            isResizing={false}
+                                                            containerRef={contentRef}
+                                                            elementID={undefined}
+                                                        >
+                                                            <ComposeProvider onCompose={onCompose}>
+                                                                <Router history={history}>
+                                                                    <Route path={MAIN_ROUTE_PATH}>
+                                                                        <EncryptedSearchProvider>
+                                                                            {children}
+                                                                        </EncryptedSearchProvider>
+                                                                    </Route>
+                                                                </Router>
+                                                            </ComposeProvider>
+                                                        </MailboxContainerContextProvider>
+                                                    </MailContentRefProvider>
+                                                </ReduxProvider>
+                                            </ExperimentsProvider>
+                                        </DrawerProvider>
+                                    </SpotlightProvider>
                                 </FeaturesProvider>
                             </CacheProvider>
                         </AuthenticationProvider>

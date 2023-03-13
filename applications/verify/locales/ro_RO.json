@@ -69,68 +69,6 @@
         "Afișare factură"
       ]
     },
-    "color": {
-      "carrot": [
-        "morcov"
-      ],
-      "cerise": [
-        "cireșiu"
-      ],
-      "cobalt": [
-        "cobalt"
-      ],
-      "copper": [
-        "cupru"
-      ],
-      "enzian": [
-        "gențiană"
-      ],
-      "fern": [
-        "ferigă"
-      ],
-      "forest": [
-        "pădure"
-      ],
-      "ocean": [
-        "ocean"
-      ],
-      "olive": [
-        "măsliniu"
-      ],
-      "pacific": [
-        "pacific"
-      ],
-      "pickle": [
-        "murături"
-      ],
-      "pine": [
-        "pin"
-      ],
-      "pink": [
-        "roz"
-      ],
-      "plum": [
-        "prună"
-      ],
-      "purple": [
-        "violet"
-      ],
-      "reef": [
-        "recif"
-      ],
-      "sahara": [
-        "Sahara"
-      ],
-      "slateblue": [
-        "ardezie albastră"
-      ],
-      "soil": [
-        "pământiu"
-      ],
-      "strawberry": [
-        "căpșună"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abhazia"
@@ -181,7 +119,7 @@
         "Austria"
       ],
       "Azerbaijan": [
-        "Azerbaijan"
+        "Azerbaidjan"
       ],
       "Bahamas": [
         "Bahamas"
@@ -283,7 +221,7 @@
         "Columbia"
       ],
       "Comoros": [
-        "Comoros"
+        "Comore"
       ],
       "Congo": [
         "Congo"
@@ -322,7 +260,7 @@
         "Djibouti"
       ],
       "Dominica": [
-        "Dominica"
+        "Republica Dominicană"
       ],
       "Dominican Republic": [
         "Republica Dominicană"
@@ -418,10 +356,10 @@
         "Guernsey"
       ],
       "Guinea": [
-        "Guinea"
+        "Guineea"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bissau"
+        "Guineea-Bissau"
       ],
       "Guyana": [
         "Guiana"
@@ -502,7 +440,7 @@
         "Kuweit"
       ],
       "Kyrgyzstan": [
-        "Kyrgyzstan"
+        "Kârgâzstan"
       ],
       "Laos": [
         "Laos"
@@ -571,7 +509,7 @@
         "Mexic"
       ],
       "Moldova": [
-        "Moldova"
+        "Republica Moldova"
       ],
       "Monaco": [
         "Monaco"
@@ -622,7 +560,7 @@
         "Nigeria"
       ],
       "Niue": [
-        "Niue"
+        "Insula Niue"
       ],
       "Norfolk Island": [
         "Insula Norfolk"
@@ -799,7 +737,7 @@
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tajikistan"
+        "Tadjikistan"
       ],
       "Tanzania": [
         "Tanzania"
@@ -808,7 +746,7 @@
         "Tailanda"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timorul De Est"
       ],
       "Togo": [
         "Togo"
@@ -955,7 +893,7 @@
         "A apărut o problemă la conectarea la ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Puteți ${ refresh } sau reîncerca mai târziu."
+        "Puteți să ${ refresh } sau reîncerca mai târziu."
       ]
     },
     "fido2: Error": {
@@ -977,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -988,9 +923,6 @@
       ],
       "No verification method available": [
         "Nu sunt metode de verificare disponibile"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -999,6 +931,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
+      ],
+      "Country code": [
+        "Cod țară"
       ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."

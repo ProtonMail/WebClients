@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 
 import { c } from 'ttag';
@@ -13,16 +13,15 @@ import {
 import CalendarSettingsBreadcrumbs from '@proton/components/containers/calendar/settings/CalendarSettingsBreadcrumbs';
 import { useApi, useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
-import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
+import { getIsOwnedCalendar, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import {
     CalendarMember,
     CalendarMemberInvitation,
-    GetAllInvitationsApiResponse,
     GetAllMembersApiResponse,
+    GetCalendarInvitationsResponse,
     MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
@@ -93,13 +92,15 @@ const CalendarSubpage = ({ calendars, subscribedCalendars, defaultCalendar, addr
             };
 
             const loadMembersAndInvitations = async () => {
+                // set loading state to true in case the component did not get unmounted
+                setLoadingShareData(true);
                 if (!getIsOwnedCalendar(calendar)) {
                     return;
                 }
 
                 const [{ Members }, { Invitations }] = await Promise.all([
                     api<GetAllMembersApiResponse>(getAllMembers(calendar.ID)),
-                    api<GetAllInvitationsApiResponse>(getCalendarInvitations(calendar.ID)),
+                    api<GetCalendarInvitationsResponse>(getCalendarInvitations(calendar.ID)),
                 ]);
                 // if failing here, leave user with loader in the section
 

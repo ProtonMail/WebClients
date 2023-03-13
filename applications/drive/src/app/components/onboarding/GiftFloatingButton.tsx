@@ -9,8 +9,8 @@ import {
     IconName,
     Row,
     Spotlight,
-    classnames,
     useActiveBreakpoint,
+    useAuthentication,
     useLocalState,
 } from '@proton/components';
 import { useDrawerWidth } from '@proton/components/hooks/useDrawerWidth';
@@ -21,6 +21,7 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
+import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../hooks/drive/useActiveShare';
 import { useFileUploadInput } from '../../store';
@@ -65,7 +66,7 @@ function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) =
     const spotlightContent = (
         <div className="flex flex-nowrap">
             <figure className="flex-item flex-item-noshrink mr1">
-                <img src={spotlightIcon} />
+                <img src={spotlightIcon} alt="" />
             </figure>
             <div className="flex-item">
                 <h6 className="text-semibold">{c('Title').t`You’ve got 1 GB of storage`}</h6>
@@ -104,7 +105,7 @@ function WelcomeActionsSpotlight({
     const spotlightContent = showPopup ? (
         <div className="flex flex-nowrap">
             <figure className="flex-item flex-item-noshrink mr1">
-                <img src={spotlightIcon} />
+                <img src={spotlightIcon} alt="" />
             </figure>
             <div className="flex-item">
                 <h6 className="text-semibold">{c('Title').t`Your 500 MB bonus`}</h6>
@@ -193,6 +194,7 @@ function WelcomeActions({
         handleClick,
         handleChange: handleFileChange,
     } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
+    const { getLocalID } = useAuthentication();
 
     const { openFileSharing } = useOpenModal();
 
@@ -233,7 +235,7 @@ function WelcomeActions({
                 action={() => {
                     const slug = getSlugFromApp(APPS.PROTONDRIVE);
                     const url = `/${slug}/recovery`;
-                    window.open(getAppHref(url, APPS.PROTONACCOUNT));
+                    window.open(getAppHref(url, APPS.PROTONACCOUNT, getLocalID()));
                     onActionDone();
                 }}
             />
@@ -258,13 +260,13 @@ function WelcomeAction({
 
     return (
         <Row
-            className={classnames(['flex flex-align-items-center rounded', !isDone && 'cursor-pointer'])}
+            className={clsx(['flex flex-align-items-center rounded', !isDone && 'cursor-pointer'])}
             onClick={isDone ? undefined : action}
             onMouseEnter={() => setOnHover(true)}
             onMouseLeave={() => setOnHover(false)}
         >
             <div
-                className={classnames([
+                className={clsx([
                     'flex-item-nowrap h-custom w-custom rounded mr0-5',
                     'flex flex-justify-center flex-align-items-center',
                     isDone ? 'bg-success' : 'bg-weak',
@@ -273,7 +275,7 @@ function WelcomeAction({
             >
                 <Icon name={icon} />
             </div>
-            <div className={classnames(['flex-item-fluid', isDone && 'text-strike color-weak'])}>
+            <div className={clsx(['flex-item-fluid', isDone && 'text-strike color-weak'])}>
                 {title}
                 {!isDone && text && <div className="color-weak">{text}</div>}
             </div>

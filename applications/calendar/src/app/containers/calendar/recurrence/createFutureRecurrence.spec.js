@@ -1,4 +1,4 @@
-import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 
 import { getFutureRecurrenceUID } from './createFutureRecurrence';
 
@@ -30,12 +30,12 @@ describe('create future recurrence', () => {
 
         expect(getFutureRecurrenceUID(`${chars180}${domain}`, new Date(Date.UTC(2000, 1, 1, 1, 1, 1)), false)).toBe(
             `${chars180.slice(
-                chars180.length + expectedOffsetPartday.length + domain.length - MAX_LENGTHS_API.UID
+                chars180.length + expectedOffsetPartday.length + domain.length - MAX_CHARS_API.UID
             )}${expectedOffsetPartday}${domain}`
         );
         expect(getFutureRecurrenceUID(`${chars180}${domain}`, new Date(Date.UTC(2000, 1, 1, 1, 1, 1)), true)).toBe(
             `${chars180.slice(
-                chars180.length + expectedOffsetAllday.length + domain.length - MAX_LENGTHS_API.UID
+                chars180.length + expectedOffsetAllday.length + domain.length - MAX_CHARS_API.UID
             )}${expectedOffsetAllday}${domain}`
         );
     });
@@ -144,7 +144,7 @@ describe('create future recurrence', () => {
             )
         ).toBe(
             `${chars180.slice(
-                chars180.length + expectedOffsetPartday.length + domain.length - MAX_LENGTHS_API.UID
+                chars180.length + expectedOffsetPartday.length + domain.length - MAX_CHARS_API.UID
             )}${expectedOffsetPartday}${domain}`
         );
 
@@ -156,7 +156,7 @@ describe('create future recurrence', () => {
             )
         ).toBe(
             `${chars180.slice(
-                chars180.length + expectedOffsetAllday.length + domain.length - MAX_LENGTHS_API.UID
+                chars180.length + expectedOffsetAllday.length + domain.length - MAX_CHARS_API.UID
             )}${expectedOffsetAllday}${domain}`
         );
 

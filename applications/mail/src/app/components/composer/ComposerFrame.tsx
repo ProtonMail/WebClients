@@ -1,12 +1,12 @@
 import { DragEvent, useEffect, useRef, useState } from 'react';
 
-import { ErrorBoundary, classnames, useHandler, useMailSettings, useToggle } from '@proton/components';
+import { ErrorBoundary, classnames, useHandler, useMailSettings, useToggle, useWindowSize } from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
-import { Breakpoints, WindowSize } from '../../models/utils';
+import { Breakpoints } from '../../models/utils';
 import Composer, { ComposerAction } from './Composer';
 import ComposerTitleBar from './ComposerTitleBar';
 
@@ -15,7 +15,6 @@ interface Props {
     index: number;
     count: number;
     focus: boolean;
-    windowSize: WindowSize;
     breakpoints: Breakpoints;
     onFocus: () => void;
     onClose: () => void;
@@ -28,7 +27,6 @@ const ComposerFrame = ({
     index,
     count,
     focus,
-    windowSize,
     breakpoints,
     onFocus,
     onClose: inputOnClose,
@@ -39,6 +37,8 @@ const ComposerFrame = ({
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
     const composerIDRef = useRef(composerID);
+    // Needed for rerenders when window size changes
+    const [, windowHeight] = useWindowSize();
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -48,18 +48,13 @@ const ComposerFrame = ({
         mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
-    // Add sidebar width to put composer to the left
-    // EXCEPT when windowSize < 1280 and app is open
-    // In this case sidebar is shown but hidden by the drawer which covers the app
-    const windowWidth = windowSize.width - drawerOffset;
     const { style, customClasses } = computeComposerStyle({
         index,
         count,
         minimized,
         maximized,
         isNarrow: breakpoints.isNarrow,
-        windowHeight: windowSize.height,
-        windowWidth: windowWidth,
+        drawerOffset,
     });
 
     const {
@@ -71,7 +66,7 @@ const ComposerFrame = ({
         maximized,
         minimized,
         totalComposers: count,
-        windowWidth: windowWidth,
+        drawerOffset,
     });
 
     // onClose handler can be called in a async handler
@@ -89,12 +84,12 @@ const ComposerFrame = ({
 
     // Automatic maximize if height too small
     useEffect(() => {
-        const shouldMaximized = shouldBeMaximized(windowSize.height);
+        const shouldMaximized = shouldBeMaximized(windowHeight);
 
         if (!maximized && shouldMaximized) {
             toggleMaximized();
         }
-    }, [windowSize.height]);
+    }, [windowHeight]);
 
     const handleClose = () => {
         composerRef?.current?.close();

@@ -14,9 +14,10 @@ const UNSUPPORTED_JS_LOADER = [
                     {
                         targets: { browsers: ['ie 11'] },
                         useBuiltIns: 'entry',
-                        corejs: { version: '3.25' },
+                        corejs: { version: '3.27' },
                     },
                 ],
+                [require.resolve('@babel/preset-typescript')],
             ],
             plugins: [],
         },
@@ -44,7 +45,7 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
                     {
                         targets: browserslist,
                         useBuiltIns: 'entry',
-                        corejs: { version: '3.23' },
+                        corejs: { version: '3.27' },
                         exclude: ['transform-typeof-symbol'], // Exclude transforms that make all code slower
                     },
                 ],
@@ -80,7 +81,7 @@ const getJsLoader = (options) => {
         test: /\.js$|\.tsx?$/,
         exclude: createRegex(
             excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
-            excludeFiles([...BABEL_EXCLUDE_FILES, 'unsupported.js'])
+            excludeFiles([...BABEL_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
         ),
         use: getBabelLoader(options),
     };
@@ -89,7 +90,7 @@ const getJsLoader = (options) => {
 const getJsLoaders = (options) => {
     return [
         {
-            test: /unsupported\.(js|tsx?)$/,
+            test: /(unsupported|pre)\.ts$/,
             use: UNSUPPORTED_JS_LOADER,
         },
         getJsLoader(options),

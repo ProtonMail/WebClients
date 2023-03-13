@@ -3,19 +3,18 @@ import { useEffect, useRef } from 'react';
 import {
     FeatureCode,
     RebrandingFeedbackModal,
-    ReferralModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
     useRebrandingFeedback,
     useSubscription,
 } from '@proton/components';
+import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
 const DriveStartupModals = () => {
     // Referral modal
     const [subscription] = useSubscription();
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
-    const [referralModal, setReferralModal, renderReferralModal] = useModalState();
     const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
 
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
@@ -33,7 +32,8 @@ const DriveStartupModals = () => {
         };
 
         if (shouldOpenReferralModal.open) {
-            openModal(setReferralModal);
+            onceRef.current = true;
+            document.dispatchEvent(new CustomEvent(OPEN_OFFER_MODAL_EVENT));
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         }
@@ -41,7 +41,6 @@ const DriveStartupModals = () => {
 
     return (
         <>
-            {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
             {renderRebrandingFeedbackModal && (
                 <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
             )}

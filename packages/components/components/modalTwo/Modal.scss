@@ -13,11 +13,11 @@
 	animation: 0.1s ease-out forwards;
 	animation-name: anime-modal-two-in;
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		padding: 2em;
 	}
 
-	@include respond-to($breakpoint-tiny) {
+	@include media('<=xsmall') {
 		padding: 1em;
 	}
 
@@ -30,7 +30,7 @@
 	}
 
 	&--fullscreen-on-mobile {
-		@include respond-to($breakpoint-tiny) {
+		@include media('<=xsmall') {
 			padding: 0;
 			align-items: stretch;
 			background: none;
@@ -38,7 +38,7 @@
 	}
 
 	&--fullscreen-on-mobile &-dialog {
-		@include respond-to($breakpoint-tiny) {
+		@include media('<=xsmall') {
 			flex: 1 0 100%;
 			border-radius: 0;
 		}
@@ -84,11 +84,11 @@
 		--size: #{rem(480)}; // medium
 		--margin: #{rem(32)};
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			--margin: #{rem(24)};
 		}
 
-		@include respond-to($breakpoint-tiny) {
+		@include media('<=xsmall') {
 			--margin: #{rem(16)};
 		}
 

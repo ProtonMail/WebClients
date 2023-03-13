@@ -12,48 +12,62 @@ import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
 import { ProtonConfig } from '../interfaces';
 
-const isLocalhost = (host: string) => host.startsWith('localhost');
-
-const isProduction = (host: string) => host.endsWith('.proton.me') || host === VPN_HOSTNAME;
-
-let authHeaders: { [key: string]: string } = {};
-
-export const setUID = (uid: string | undefined) => {
-    if (!uid) {
-        authHeaders = {};
-        return;
-    }
-    authHeaders = {
-        ...getUIDHeaders(uid),
-    };
+type SentryContext = {
+    authHeaders: { [key: string]: string };
+    enabled: boolean;
 };
 
-const getContentTypeHeaders = (input: RequestInfo | URL): HeadersInit => {
+type SentryConfig = {
+    host: string;
+    release: string;
+    environment: string;
+};
+
+type SentryOptions = {
+    sessionTracking?: boolean;
+    config: ProtonConfig;
+    uid?: string;
+    sentryConfig?: SentryConfig;
+    ignore?: (config: SentryConfig) => boolean;
+};
+
+const context: SentryContext = {
+    authHeaders: {},
+    enabled: true,
+};
+
+export const setUID = (uid: string | undefined) => {
+    context.authHeaders = uid ? getUIDHeaders(uid) : {};
+};
+
+export const setSentryEnabled = (enabled: boolean) => {
+    context.enabled = enabled;
+};
+
+export const getContentTypeHeaders = (input: RequestInfo | URL): HeadersInit => {
     const url = input.toString();
     /**
      * The sentry library does not append the content-type header to requests. The documentation states
      * what routes accept what content-type. Those content-type headers are also expected through our sentry tunnel.
      */
     if (url.includes('/envelope/')) {
-        return {
-            'content-type': 'application/x-sentry-envelope',
-        };
+        return { 'content-type': 'application/x-sentry-envelope' };
     }
+
     if (url.includes('/store/')) {
-        return {
-            'content-type': 'application/json',
-        };
+        return { 'content-type': 'application/json' };
     }
+
     return {};
 };
 
 const sentryFetch = (input: RequestInfo | URL, init?: RequestInit) => {
-    return window.fetch(input, {
+    return globalThis.fetch(input, {
         ...init,
         headers: {
             ...init?.headers,
             ...getContentTypeHeaders(input),
-            ...authHeaders,
+            ...context.authHeaders,
         },
     });
 };
@@ -62,19 +76,30 @@ const makeProtonFetchTransport = (options: BrowserTransportOptions) => {
     return makeFetchTransport(options, sentryFetch);
 };
 
-interface Arguments {
-    sessionTracking?: boolean;
-    config: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>;
-    uid?: string;
-}
+const isLocalhost = (host: string) => host.startsWith('localhost');
+const isProduction = (host: string) => host.endsWith('.proton.me') || host === VPN_HOSTNAME;
 
-let sentryEnabled = true;
-
-function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTracking = false }: Arguments) {
+const getDefaultSentryConfig = ({ APP_VERSION, COMMIT }: ProtonConfig): SentryConfig => {
     const { host } = window.location;
+    return {
+        host,
+        release: isProduction(host) ? APP_VERSION : COMMIT,
+        environment: host.split('.').splice(1).join('.'),
+    };
+};
+
+function main({
+    uid,
+    config,
+    sessionTracking = false,
+    sentryConfig = getDefaultSentryConfig(config),
+    ignore = ({ host }) => isLocalhost(host),
+}: SentryOptions) {
+    const { SENTRY_DSN, APP_VERSION } = config;
+    const { host, release, environment } = sentryConfig;
 
     // No need to configure it if we don't load the DSN
-    if (!SENTRY_DSN || isLocalhost(host)) {
+    if (!SENTRY_DSN || ignore(sentryConfig)) {
         return;
     }
 
@@ -86,8 +111,8 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
 
     init({
         dsn,
-        release: isProduction(host) ? APP_VERSION : COMMIT,
-        environment: host.split('.').splice(1).join('.'),
+        release,
+        environment,
         normalizeDepth: 5,
         transport: makeProtonFetchTransport,
         autoSessionTracking: sessionTracking,
@@ -107,7 +132,7 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
                 return null;
             }
 
-            if (!sentryEnabled) {
+            if (!context.enabled) {
                 return null;
             }
 
@@ -128,12 +153,15 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
 
             return event;
         },
+        // Some ignoreErrors and denyUrls are taken from this gist: https://gist.github.com/Chocksy/e9b2cdd4afc2aadc7989762c4b8b495a
+        // This gist is suggested in the Sentry documentation: https://docs.sentry.io/clients/javascript/tips/#decluttering-sentry
         ignoreErrors: [
             // Ignore random plugins/extensions
             'top.GLOBALS',
             'canvas.contentDocument',
             'MyApp_RemoveAllHighlights',
             'atomicFindClose',
+            // See http://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
             'conduitPage',
             // https://bugzilla.mozilla.org/show_bug.cgi?id=1678243
             'XDR encoding failure',
@@ -152,6 +180,39 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
             'ValidationError', // Validation error on user's side in Drive.
             'ChunkLoadError', // WebPack loading source code.
             /ResizeObserver loop/, // Chromium bug https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
+            // See: http://blog.errorception.com/2012/03/tale-of-unfindable-js-error.html
+            'originalCreateNotification',
+            'http://tt.epicplay.com',
+            "Can't find variable: ZiteReader",
+            'jigsaw is not defined',
+            'ComboSearch is not defined',
+            'http://loading.retry.widdit.com/',
+            // Facebook borked
+            'fb_xd_fragment',
+            // ISP "optimizing" proxy - `Cache-Control: no-transform` seems to reduce this. (thanks @acdha)
+            // See http://stackoverflow.com/questions/4113268/how-to-stop-javascript-injection-from-vodafone-proxy
+            'bmi_SafeAddOnload',
+            'EBCallBackMessageReceived',
+            // Avast extension error
+            '_avast_submit',
+        ],
+        denyUrls: [
+            // Google Adsense
+            /pagead\/js/i,
+            // Facebook flakiness
+            /graph\.facebook\.com/i,
+            // Facebook blocked
+            /connect\.facebook\.net\/en_US\/all\.js/i,
+            // Woopra flakiness
+            /eatdifferent\.com\.woopra-ns\.com/i,
+            /static\.woopra\.com\/js\/woopra\.js/i,
+            // Chrome extensions
+            /extensions\//i,
+            /^chrome:\/\//i,
+            // Other plugins
+            /127\.0\.0\.1:4001\/isrunning/i, // Cacaoweb
+            /webappstoolbarba\.texthelp\.com\//i,
+            /metrics\.itunes\.apple\.com\.edgesuite\.net\//i,
         ],
     });
 
@@ -170,10 +231,6 @@ export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>)
     if (!isLocalhost(window.location.host)) {
         sentryCaptureMessage(...args);
     }
-};
-
-export const setSentryEnabled = (enabled: boolean) => {
-    sentryEnabled = enabled;
 };
 
 export default main;

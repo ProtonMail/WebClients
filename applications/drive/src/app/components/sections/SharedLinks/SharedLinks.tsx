@@ -129,7 +129,6 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
                         sortField={sortParams.sortField}
                         sortOrder={sortParams.sortOrder}
                         itemCount={browserItems.length}
-                        onToggleAllSelected={selectionControls!.toggleAllSelected}
                         scrollAreaRef={scrollAreaRef}
                         activeSortingText={activeSortingText}
                     />

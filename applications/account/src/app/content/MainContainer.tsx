@@ -10,7 +10,6 @@ import {
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainAreaLoading,
-    ReferralModalContainer,
     SectionConfig,
     TopBanners,
     TopNavbarUpsell,
@@ -37,6 +36,7 @@ import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import AccountSidebar from './AccountSidebar';
+import AccountStartupModals from './AccountStartupModals';
 import SettingsSearch from './SettingsSearch';
 import { getRoutes } from './routes';
 
@@ -74,19 +74,17 @@ const MainContainer = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
 
-    const features = useFeatures([
+    // WARNING: if you change this list, you need to update the spread of the "features" variable
+    const features = useFeatures([ 
         FeatureCode.SpyTrackerProtection,
         FeatureCode.CalendarInviteLocale,
         FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
         FeatureCode.BulkUserUpload,
-        FeatureCode.ShowSenderImages,
         FeatureCode.SmtpToken,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.CalendarSubscription,
-        FeatureCode.ReferralProgram,
         FeatureCode.EasySwitch,
-        FeatureCode.EasySwitchGmailNewScope,
         FeatureCode.CalendarPersonalEventsDeprecated,
     ]);
     const [
@@ -95,7 +93,6 @@ const MainContainer = () => {
         calendarAutoImportInviteFeature,
         referralProgramFeature,
         bulkUserUploadFeature,
-        showSenderImages,
         smtpTokenFeature,
     ] = features;
 
@@ -103,7 +100,6 @@ const MainContainer = () => {
     const isInviteLocaleFeatureEnabled = calendarInviteLocaleFeature.feature?.Value === true;
     const isAutoImportInviteFeatureEnabled = calendarAutoImportInviteFeature.feature?.Value === true;
     const isBulkUserUploadEnabled = bulkUserUploadFeature.feature?.Value === true;
-    const isShowSenderImagesEnabled = showSenderImages.feature?.Value === true;
     const isSmtpTokenEnabled = smtpTokenFeature.feature?.Value === true;
 
     const { enabled, unavailable } = useCalendarSubscribeFeature();
@@ -121,7 +117,6 @@ const MainContainer = () => {
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isSmtpTokenEnabled,
         isBulkUserUploadEnabled,
-        isShowSenderImagesEnabled,
         isDataRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
     });
@@ -158,7 +153,6 @@ const MainContainer = () => {
             userDropdown={<UserDropdown />}
             // No onboarding in account
             upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} />}
-            logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
@@ -204,7 +198,7 @@ const MainContainer = () => {
 
     return (
         <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-            <ReferralModalContainer />
+            <AccountStartupModals />
             <Switch>
                 <Route path={anyAccountAppRoute}>
                     <AccountSettingsRouter

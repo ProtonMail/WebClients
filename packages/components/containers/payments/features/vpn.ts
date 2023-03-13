@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { BRAND_NAME, PLANS, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { Audience, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
+import { Audience, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
@@ -228,9 +228,9 @@ export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
-export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServers): PlanCardFeature[] => {
-    const freeServers = getFreeServers(serversCount.free_vpn, vpnCountries.free_vpn.count);
-    const plusServers = getPlusServers(serversCount[PLANS.VPN], vpnCountries[PLANS.VPN].count);
+export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeature[] => {
+    const freeServers = getFreeServers(serversCount.free.servers, serversCount.free.countries);
+    const plusServers = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
     return [
         {
             name: 'vpn',

@@ -132,7 +132,7 @@ describe('reactivate keys', () => {
         ]);
         const keyReactivationCall1 = api.calls.argsFor(0)[0];
         expect(keyReactivationCall1).toEqual({
-            url: 'keys/2',
+            url: 'core/v4/keys/2',
             method: 'put',
             data: {
                 PrivateKey: jasmine.any(String),
@@ -141,7 +141,7 @@ describe('reactivate keys', () => {
         });
         const keyReactivationCall2 = api.calls.argsFor(1)[0];
         expect(keyReactivationCall2).toEqual({
-            url: 'keys/b',
+            url: 'core/v4/keys/b',
             method: 'put',
             data: {
                 PrivateKey: jasmine.any(String),

@@ -70,22 +70,23 @@ const AddressesEditor = ({
                         anchorRef={toListAnchorRef}
                     />
                     <span className="flex flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50 flex-align-self-start pt0-5 composer-to-ccbcc-buttons sticky-top">
-                        <Button
-                            color="norm"
-                            tabIndex={-1}
-                            shape="ghost"
-                            size="small"
-                            icon
-                            title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
-                            onClick={toggleExpanded}
-                            data-testid="composer:cc-bcc-button"
-                            className={classnames([
-                                'ml1 composer-addresses-ccbcc text-left text-cut text-no-decoration text-strong relative',
-                                expanded && 'is-active',
-                            ])}
-                        >
-                            {c('Action').t`CC BCC`}
-                        </Button>
+                        {expanded ? null : (
+                            <Button
+                                color="norm"
+                                tabIndex={-1}
+                                shape="ghost"
+                                size="small"
+                                icon
+                                title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
+                                onClick={toggleExpanded}
+                                data-testid="composer:cc-bcc-button"
+                                className={classnames([
+                                    'ml1 composer-addresses-ccbcc text-left text-cut text-no-decoration text-strong relative',
+                                ])}
+                            >
+                                {c('Action').t`CC BCC`}
+                            </Button>
+                        )}
                         <Tooltip title={c('Action').t`Insert contacts`}>
                             <Button
                                 type="button"

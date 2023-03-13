@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Authenticate": [
         "S'authentifier"
       ],
@@ -117,6 +120,9 @@
       ],
       "Continue import": [
         "Continuer l'importation"
+      ],
+      "Continue to ${ calendarAppBareName }": [
+        "Continuer vers ${ calendarAppBareName }"
       ],
       "Continue with Google": [
         "Continuer avec Google"
@@ -231,6 +237,9 @@
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
+      "Hide affected calendars": [
+        "Masquer les calendriers concernés"
+      ],
       "Hide folders": [
         "Masquer les dossiers"
       ],
@@ -266,6 +275,9 @@
       ],
       "Join calendar": [
         "Rejoindre le calendrier"
+      ],
+      "Keep current time zone": [
+        "Garder le fuseau horaire actuel"
       ],
       "Load image": [
         "Charger l'image"
@@ -342,6 +354,9 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
+      "Open settings": [
+        "Ouvrir les paramètres"
+      ],
       "Preview contact": [
         "Aperçu du contact"
       ],
@@ -387,9 +402,6 @@
       "Remove this participant": [
         "Supprimer ce participant"
       ],
-      "Rename": [
-        "Renommer"
-      ],
       "Report a problem": [
         "Signaler un bug"
       ],
@@ -434,6 +446,9 @@
       ],
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
+      ],
+      "Show affected calendars": [
+        "Afficher les calendriers concernés"
       ],
       "Show folders": [
         "Afficher les dossiers"
@@ -505,6 +520,9 @@
         "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
         "Changer d'abonnement"
       ],
       "Upload picture": [
@@ -663,11 +681,6 @@
     "Attendee role": {
       "Optional": [
         "Facultatif"
-      ]
-    },
-    "Badge": {
-      "Coming soon": [
-        "Bientôt disponible"
       ]
     },
     "Beta access description": {
@@ -849,11 +862,6 @@
       ],
       "More options": [
         "Plus d’options"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Partagé avec moi"
       ]
     },
     "Calendar status": {
@@ -1086,9 +1094,6 @@
       ],
       "Work": [
         "Bureau"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1249,7 +1254,7 @@
         "Congo"
       ],
       "Congo, Democratic Republic of the": [
-        "République démocratique du Congo"
+        "Congo - République démocratique du Congo"
       ],
       "Cook Islands": [
         "Îles Cook"
@@ -1982,7 +1987,7 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
+      "Do not ask again": [
         "Ne plus demander"
       ]
     },
@@ -2135,6 +2140,9 @@
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
       ],
+      "Contact name is too long": [
+        "Le nom du contact est trop long."
+      ],
       "Contact signature could not be verified": [
         "La signature du contact n’a pu être vérifiée."
       ],
@@ -2143,14 +2151,6 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Erreur de déchiffrement : le contenu de cet événement n'a pas pu être déchiffré."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
       ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
@@ -2229,10 +2229,6 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
-        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
       ],
       "Missing key packet": [
         "Il manque le paquet de clés."
@@ -2328,9 +2324,6 @@
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Certains de vos noms de dossier sont réservés. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
@@ -2391,7 +2384,7 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible, veuillez en choisir un autre."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
       ],
       "Trusted keys are not valid for sending": [
@@ -2409,11 +2402,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
+      "You can't send vCard files of more than 10 contacts": [
+        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
       ],
       "You must set a name": [
         "Vous devez définir un nom."
@@ -2636,9 +2626,9 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } participant",
-        "${ numberOfParticipants } participants"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } participant",
+        "${ numberOfAttendees } participants"
       ]
     },
     "Event info. Organizer name": {
@@ -2841,6 +2831,9 @@
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } événement sur ${ totalToImport } a été importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } événements sur ${ totalToImport } ont été importés."
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. Aucun événement n'a pu être importé."
+      ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
       ],
@@ -2870,7 +2863,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Les invitations importées apparaissent dans ${ CALENDAR_APP_NAME } comme de simples événements sans les informations sur l'organisateur et les participants. Pour recevoir les mises à jour des événements et voir les participants, demandez aux organisateurs de vous inviter en utilisant votre adresse électronique ${ BRAND_NAME }."
+        "Les invitations importées apparaissent dans ${ CALENDAR_APP_NAME } sans les informations sur l'organisateur et les participants. Pour recevoir les mises à jour des événements et voir les participants, demandez aux organisateurs de vous inviter en utilisant votre adresse électronique ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Ce fichier contient une invitation à un événement :",
@@ -3060,9 +3053,6 @@
       ],
       "ICS file": [
         "fichier ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3077,6 +3067,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importer depuis ${ provider }"
+      ],
       "Other": [
         "Autre"
       ]
@@ -3111,10 +3104,6 @@
         "${ calendarsToBeCreatedCount } nouveau calendrier",
         "${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendrier fusionné",
-        "${ calendarsToBeMerged } calendriers fusionnés"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendrier fusionné",
         "${ calendarsToBeMergedCount } calendriers fusionnés"
@@ -3138,13 +3127,13 @@
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } groupe de contacts",
-        "${ numContactGroups } groupes de contacts"
+      "${ numContact } contact": [
+        "${ numContact } contact",
+        "${ numContact } contacts"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } contact",
-        "${ numContacts } contacts"
+      "${ numGroups } contact group": [
+        "${ numGroups } groupe de contacts",
+        "${ numGroups } groupes de contacts"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
@@ -3174,9 +3163,6 @@
         "${ selectedFoldersCountLocalized } label sélectionné",
         "${ selectedFoldersCountLocalized } labels sélectionnés"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } d'espace de stockage"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact a été mis à jour.",
         "${ updated } contacts ont été mis à jour."
@@ -3184,9 +3170,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
-      ],
-      "10 email addresses": [
-        "10 adresses e-mail"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Un message d’annulation sera envoyé aux participants supprimés."
@@ -3232,15 +3215,17 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Toute personne ayant ce lien peut voir sur votre calendrier si vous êtes libre ou occupé. Les informations de l'événement (comme le titre, le lieu ou les participants) ne sont pas visibles."
       ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Un maximum d'${ MAX_ATTENDEES } participant est autorisé par invitation.",
-        "Au maximum ${ MAX_ATTENDEES } participants sont autorisés par invitation."
+      "Attention required": [
+        "Attention requise"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "En partageant toutes les informations des événements de ce calendrier, vous acceptez d'accorder à ${ BRAND_NAME } l'accès aux informations chiffrées de ce calendrier."
+      ],
+      "Calendar side panel": [
+        "Panneau latéral du calendrier"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -3254,12 +3239,12 @@
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
       ],
-      "Continue with ${ planName }": [
-        "Continuer avec ${ planName }"
+      "Country code": [
+        "Indicatif du pays"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Créer ${ calendarsToBeCreated } nouveau calendrier",
-        "Créer ${ calendarsToBeCreated } nouveaux calendriers"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
+        "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
@@ -3357,12 +3342,12 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
+        "Importer ${ calendarCount } calendriers sur ${ totalCalendarsCount }"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importer ${ selectedCalendarsCount } calendrier sur ${ totalCalendarsCount }",
-        "Importer ${ selectedCalendarsCount } calendriers sur ${ totalCalendarsCount }"
       ],
       "Import from": [
         "Importer depuis"
@@ -3375,6 +3360,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importez vos e-mails, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
@@ -3472,9 +3460,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
       ],
-      "Other options": [
-        "Autres options"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline est uniquement compatible avec le format texte brut."
       ],
@@ -3512,14 +3497,11 @@
       "Primary": [
         "Principale"
       ],
-      "Priority support": [
-        "Assistance prioritaire"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualisez la page ou ${ link } pour résoudre automatiquement la plupart des problèmes."
+        "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Removed participants will be notified.": [
         "Les participants supprimés seront informés."
@@ -3529,9 +3511,6 @@
       ],
       "Select what you want to import.": [
         "Sélectionnez ce que vous voulez importer."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
@@ -3544,12 +3523,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Certaines de vos réponses à des événements précédemment mis à jour par l’organisateur seront perdues."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Prise en charge d'un nom de domaine personnalisé"
       ],
       "support team": [
         "équipe support"
@@ -3629,17 +3602,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pour utiliser la vérification d’adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celle que vous voulez utiliser pour l’envoi. Cela empêche la falsification des clés de chiffrement."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
-      ],
-      "Unlimited messages": [
-        "Messages illimités"
-      ],
       "Update recurring event": [
         "Mettre à jour l’événement récurrent"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Passez à l'offre supérieure dès aujourd'hui pour ne pas perdre ces avantages de ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Passez à la version supérieure pour bénéficier de fonctions, de produits et d'un espace de stockage premium à un tarif avantageux"
       ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons dès que l'importation sera terminée."
@@ -3712,9 +3679,6 @@
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Vous avez réactivé vos clés et les événements liés aux calendriers suivants peuvent être déchiffrés."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Vous avez réinitialisé votre mot de passe et les événements liés aux calendriers suivants n'ont pas pu être déchiffrés.\nLes liens vers les calendriers partagés que vous avez précédemment créés ne fonctionneront plus.\nLes calendriers auxquels vous êtes abonné se synchroniseront de nouveau après quelques minutes."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Vous avez déjà refusé cette invitation. Demandez à l'organisateur de vous réinviter."
@@ -3792,6 +3756,48 @@
     "Info on errors": {
       "Click for details": [
         "Cliquez pour plus de détails."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Voir seulement"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "Certains de vos calendriers n'afficheront pas les informations des événements précédemment créés."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "Vos calendriers n'afficheront pas les informations des événements précédemment créés."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Ceci s'explique par la réinitialisation récente de votre mot de passe sans méthode de récupération."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Vous pouvez récupérer vos données chiffrées avec un fichier de récupération, une phrase de récupération ou votre ancien mot de passe."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Le partage de calendrier a été désactivé suite à votre récente réinitialisation de mot de passe."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Vous pouvez repartager vos calendriers dans les paramètres."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "${ MAX_ATTENDEES } seul participant est autorisé par invitation.",
+        "Jusqu'à ${ MAX_ATTENDEES } participants sont autorisés par invitation."
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Il n'est pas permis de créer des invitations dans un calendrier partagé."
       ]
     },
     "Input label": {
@@ -3894,8 +3900,8 @@
       "Color": [
         "Couleur"
       ],
-      "Coming soon": [
-        "Bientôt disponible"
+      "Colors": [
+        "Couleurs"
       ],
       "Contacts": [
         "Contacts"
@@ -3981,9 +3987,6 @@
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "De : ${ importedEmail }"
-      ],
       "Good": [
         "Bonne"
       ],
@@ -4037,12 +4040,6 @@
       ],
       "Manage categories": [
         "Gérer les catégories"
-      ],
-      "Manage folders": [
-        "Gérer les dossiers"
-      ],
-      "Manage labels": [
-        "Gérer les labels"
       ],
       "Move to Archive": [
         "Déplacer dans le dossier Archives"
@@ -4126,9 +4123,6 @@
       "System information": [
         "Informations système"
       ],
-      "To: ${ emailAddress }": [
-        "À : ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "À : ${ to }"
       ],
@@ -4140,9 +4134,6 @@
       ],
       "Two-factor authentication code": [
         "Code d’authentification à deux facteurs"
-      ],
-      "Upload file": [
-        "Importer un fichier"
       ],
       "Upload picture": [
         "Importer une image"
@@ -4203,12 +4194,23 @@
         "Panneau latéral"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Pour ajouter un nouveau calendrier, supprimez d'abord un calendrier existant."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Pour ajouter un nouveau calendrier, vous devez d'abord supprimer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Vous avez atteint le nombre maximum de calendriers prévus dans votre abonnement."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Calendriers"
       ],
       "clearing your browser cache": [
-        "vider le cache de votre navigateur"
+        "videz le cache de votre navigateur"
       ],
       "Learn more": [
         "En savoir plus"
@@ -4216,14 +4218,14 @@
       "My calendars": [
         "Mes calendriers"
       ],
+      "Other calendars": [
+        "Autres calendriers"
+      ],
       "Pay invoice": [
         "Payer la facture"
       ],
       "Request an invite": [
         "Demander une invitation"
-      ],
-      "Subscribed calendars": [
-        "Calendriers souscrits"
       ],
       "Upgrade account": [
         "Passer à un abonnement supérieur"
@@ -4237,12 +4239,18 @@
         "Ouvrir dans ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Qu'est-ce qu'une méthode de récupération ?"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Nous y sommes presque."
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Nombre de calendriers créés : ${ createdCalendars } sur ${ calendarsToBeCreated }."
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }."
       ],
       "Connecting to your email provider": [
         "Connexion à votre fournisseur de messagerie"
@@ -4261,21 +4269,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label",
+        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }. "
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label",
+        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }. "
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label",
+        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label"
       ]
     },
     "Message": {
@@ -4308,17 +4316,9 @@
       ],
       "Manage calendars": [
         "Gérer les calendriers"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le maximum de calendriers personnels prévus dans votre abonnement."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Impossible d'ajouter d'autres calendriers. Vous avez atteint le nombre maximum de calendriers auxquels vous pouvez vous abonner dans le cadre de votre abonnement."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Impossible de créer d'autres calendriers. Vous avez atteint le maximum de calendriers personnels prévus dans votre abonnement."
+      "Upgrade": [
+        "Changer d'abonnement"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4335,6 +4335,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Il n'est pas possible d'ajouter d'autres calendriers."
+      ],
       "How to import calendars from another service": [
         "Comment importer des calendriers depuis un autre service"
       ],
@@ -4358,9 +4361,6 @@
       ],
       "Time zone changed": [
         "Le fuseau horaire est modifié."
-      ],
-      "Unable to add more calendars": [
-        "Impossible d'ajouter d'autres calendriers"
       ]
     },
     "Modal title and action": {
@@ -5035,26 +5035,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } jour",
-        "${ days } jours"
-      ],
-      "${ hours } hour": [
         "${ hours } heure",
         "${ hours } heures"
       ],
+      "${ hours } hour": [
+        "${ days } jour",
+        "${ days } jours"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
+        "${ n } mois GRATUIT",
+        "${ n } mois GRATUITS"
       ],
       "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } secondes"
+        "pour ${ n } mois",
+        "pour ${ n } mois"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mois GRATUIT",
-        "${ n } mois GRATUITS"
+        "${ seconds } seconde",
+        "${ seconds } secondes"
       ]
     },
     "specialoffer: Deal details": {
@@ -5078,9 +5078,6 @@
       ],
       "Highest VPN speed": [
         "Vitesse VPN maximale"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Drive premium"
@@ -5166,8 +5163,8 @@
         "Facturé ${ amount } pour 30 mois"
       ],
       "for ${ n } month": [
-        "pour ${ n } mois",
-        "pour ${ n } mois"
+        "${ minutes } minute",
+        "${ minutes } minutes"
       ],
       "Get the deal": [
         "J'en profite"
@@ -5256,9 +5253,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
-      ],
       "Easily accept invites": [
         "Acceptez facilement les invitations"
       ],
@@ -5270,15 +5264,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Les invitations sont maintenant affichées dans votre calendrier comme des événements en attente. Pour répondre, il suffit d'ouvrir un événement. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Abonnez-vous à d'autres calendriers"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Essayez ${ DRIVE_APP_NAME }"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Vous pouvez vous abonner à des calendriers externes et voir leurs événements."
       ]
     },
     "Spotlight settings link": {
@@ -5369,9 +5354,6 @@
       "Calendar updated": [
         "Le calendrier a été mis à jour."
       ],
-      "Canceling import": [
-        "Annulation de l'importation"
-      ],
       "Cancellation sent and all events deleted": [
         "L'annulation a été envoyée et tous les événements ont été supprimés."
       ],
@@ -5383,6 +5365,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "L'annulation a été envoyée et les participants ont été supprimés de tous les événements."
+      ],
+      "Cancelling import": [
+        "Annulation de l'importation"
       ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
@@ -5536,10 +5521,28 @@
         "Paramètres"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } heure",
         "${ hours } heures"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 heure",
+        "${ hoursInt },5 heures"
       ],
       "${ minutes } minute": [
         "${ minutes } minute",
@@ -5688,6 +5691,9 @@
       "Email settings": [
         "Paramètres d'adresse électronique"
       ],
+      "Encrypted event": [
+        "Événement chiffré"
+      ],
       "Enter your password": [
         "Saisissez votre mot de passe."
       ],
@@ -5719,8 +5725,8 @@
         "Vérification humaine"
       ],
       "Import as simple event?": [
-        "Importer comme simple événement ?",
-        "Importer comme simples événements ?"
+        "Importer l'événement sans les détails ?",
+        "Importer les événements sans les détails ?"
       ],
       "Import contacts": [
         "Importer les contacts"
@@ -5794,8 +5800,8 @@
       "Request new code": [
         "Demander un nouveau code"
       ],
-      "Reset calendar keys": [
-        "Réinitialiser les clés du calendrier"
+      "Reshare your calendars": [
+        "Repartager vos calendriers"
       ],
       "Save changes": [
         "Enregistrer les modifications"
@@ -5899,6 +5905,12 @@
       "Warning: suspected fake website": [
         "Attention : site web suspect/frauduleux"
       ],
+      "We've locked some calendars to protect your data": [
+        "Nous avons verrouillé certains calendriers pour protéger vos données."
+      ],
+      "We've locked your calendars to protect your data": [
+        "Nous avons verrouillé vos calendriers pour protéger vos données."
+      ],
       "What would you like to import?": [
         "Que voulez-vous importer ?"
       ],
@@ -5911,8 +5923,8 @@
       "Your calendar link": [
         "Lien de votre calendrier"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }."
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -6317,8 +6329,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Chaque ${ interval } an",
+        "Tous les ${ interval } ans"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Chaque ${ interval } an, ${ timesString }",

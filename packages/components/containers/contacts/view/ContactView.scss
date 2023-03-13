@@ -15,7 +15,7 @@
 	/*
 	 * Make summary elements wrap at 1500
 	 */
-	@include respond-to($breakpoint-large) {
+	@include media('<=xlarge') {
 		.contactsummary-contact-name-container {
 			display: flex;
 			flex-direction: column;
@@ -31,52 +31,50 @@
 	/*
 	* triger mobile adaptation around 1000px because... not enough space
 	*/
-	@include respond-to($breakpoint-medium-landscape) {
-		@include respond-to($breakpoint-medium, 'min') {
-			.contactsummary-container {
-				display: block;
-			}
+	@include media('>medium', '<=large') {
+		.contactsummary-container {
+			display: block;
+		}
 
-			.contactsummary-photo-container {
-				inline-size: auto;
-				margin-block-end: 0.5em;
-				margin-inline: auto;
-			}
+		.contactsummary-photo-container {
+			inline-size: auto;
+			margin-block-end: 0.5em;
+			margin-inline: auto;
+		}
 
-			.contactsummary-contact-name-container {
-				padding-inline-start: 0;
-			}
+		.contactsummary-contact-name-container {
+			padding-inline-start: 0;
+		}
 
-			.contactsummary-contact-name {
-				margin-block-end: 1em;
-				text-align: center;
-			}
+		.contactsummary-contact-name {
+			margin-block-end: 1em;
+			text-align: center;
+		}
 
-			.contactsummary-action-buttons {
-				text-align: center;
-			}
+		.contactsummary-action-buttons {
+			text-align: center;
+		}
 
-			.contact-view-contents,
-			.contact-view-cta {
-				padding-inline: 0;
-			}
+		.contact-view-contents,
+		.contact-view-cta {
+			padding-inline: 0;
+		}
 
-			.contact-summary-wrapper {
-				margin-inline: 0;
-			}
+		.contact-summary-wrapper {
+			margin-inline: 0;
+		}
 
-			.contact-view-row-left {
-				flex-direction: column;
-			}
+		.contact-view-row-left {
+			flex-direction: column;
+		}
 
-			.contact-view-row-label {
-				max-inline-size: 100%;
-			}
+		.contact-view-row-label {
+			max-inline-size: 100%;
+		}
 
-			.contact-view-row-content {
-				flex-basis: auto;
-				padding-inline-start: 0;
-			}
+		.contact-view-row-content {
+			flex-basis: auto;
+			padding-inline-start: 0;
 		}
 	}
 }

@@ -22,7 +22,7 @@ const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
 
     return (
         <>
-            <Table>
+            <Table responsive="cards">
                 <TableHeader
                     cells={[c('Label').t`User`, c('Label').t`Date`, c('Label').t`Activity`, c('Label').t`Credits`]}
                 />
@@ -32,6 +32,12 @@ const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
                             <TableRow
                                 key={referral.ReferralID}
                                 className={[ReferralState.REWARDED].includes(referral.State) ? 'text-bold' : ''}
+                                labels={[
+                                    c('Label').t`User`,
+                                    c('Label').t`Date`,
+                                    c('Label').t`Activity`,
+                                    c('Label').t`Credits`,
+                                ]}
                                 cells={[
                                     <UserCell key={`${referral.ReferralID}-date`} referral={referral} />,
                                     <DateCell key={`${referral.ReferralID}-date`} referral={referral} />,

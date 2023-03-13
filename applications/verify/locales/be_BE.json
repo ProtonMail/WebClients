@@ -1,0 +1,1087 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "be_BE"
+  },
+  "contexts": {
+    "Action": {
+      "Authenticate": [
+        "Аўтэнтыфікацыя"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Close": [
+        "Закрыць"
+      ],
+      "Continue": [
+        "Працягнуць"
+      ],
+      "Edit email address": [
+        "Рэдагаваць адрас электроннай пошты"
+      ],
+      "Edit phone number": [
+        "Рэдагаваць нумар тэлефона"
+      ],
+      "Edit sign-in details": [
+        "Рэдагаваць звесткі ўваходу"
+      ],
+      "Get verification code": [
+        "Атрымаць праверачны код"
+      ],
+      "More info: ${ safeTitle }": [
+        "Больш інфармацыі: ${ safeTitle }"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
+      ],
+      "Request new code": [
+        "Запытаць новы код"
+      ],
+      "Resend code": [
+        "Адправіць код яшчэ раз"
+      ],
+      "Search countries": [
+        "Пошук краін"
+      ],
+      "Submit": [
+        "Адправіць"
+      ],
+      "Try another method": [
+        "Паспрабуйце іншы метад"
+      ],
+      "Use authentication code": [
+        "Выкарыстаць код аўтэнтыфікацыі"
+      ],
+      "Use recovery code": [
+        "Выкарыстоўваць код аднаўлення"
+      ],
+      "Verify": [
+        "Праверыць"
+      ],
+      "Verify account": [
+        "Праверыць уліковы запіс"
+      ],
+      "View invoice": [
+        "Паглядзець рахунак"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Абхазія"
+      ],
+      "Afghanistan": [
+        "Афганістан"
+      ],
+      "Albania": [
+        "Албанія"
+      ],
+      "Algeria": [
+        "Алжыр"
+      ],
+      "American Samoa": [
+        "Амерыканскае Самоа"
+      ],
+      "Andorra": [
+        "Андора"
+      ],
+      "Angola": [
+        "Ангола"
+      ],
+      "Anguilla": [
+        "Ангілья"
+      ],
+      "Antarctica": [
+        "Антарктыда"
+      ],
+      "Antigua and Barbuda": [
+        "Антыгуа і Барбуда"
+      ],
+      "Argentina": [
+        "Аргенціна"
+      ],
+      "Armenia": [
+        "Арменія"
+      ],
+      "Aruba": [
+        "Аруба"
+      ],
+      "Ascension Island": [
+        "Востраў Узнясення"
+      ],
+      "Australia": [
+        "Аўстралія"
+      ],
+      "Austria": [
+        "Аўстрыя"
+      ],
+      "Azerbaijan": [
+        "Азербайджан"
+      ],
+      "Bahamas": [
+        "Багамскія астравы"
+      ],
+      "Bahrain": [
+        "Бахрэйн"
+      ],
+      "Bangladesh": [
+        "Бангладэш"
+      ],
+      "Barbados": [
+        "Барбадас"
+      ],
+      "Belarus": [
+        "Беларусь"
+      ],
+      "Belgium": [
+        "Бельгія"
+      ],
+      "Belize": [
+        "Беліз"
+      ],
+      "Benin": [
+        "Бенін"
+      ],
+      "Bermuda": [
+        "Бермудскія астравы"
+      ],
+      "Bhutan": [
+        "Бутан"
+      ],
+      "Bolivia": [
+        "Балівія"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Банайрэ, Сінт-Эстатыус і Саба"
+      ],
+      "Bosnia and Herzegovina": [
+        "Боснія і Герцагавіна"
+      ],
+      "Botswana": [
+        "Батсвана"
+      ],
+      "Bouvet Island": [
+        "Востраў Буве"
+      ],
+      "Brazil": [
+        "Бразілія"
+      ],
+      "British Indian Ocean Territory": [
+        "Брытанская тэрыторыя ў Індыйскім акіяне"
+      ],
+      "Brunei Darussalam": [
+        "Брунэй-Дарусалам"
+      ],
+      "Bulgaria": [
+        "Балгарыя"
+      ],
+      "Burkina Faso": [
+        "Буркіна-Фасо"
+      ],
+      "Burundi": [
+        "Бурундзі"
+      ],
+      "Cambodia": [
+        "Камбоджа"
+      ],
+      "Cameroon": [
+        "Камерун"
+      ],
+      "Canada": [
+        "Канада"
+      ],
+      "Cape Verde": [
+        "Каба-Вердэ"
+      ],
+      "Cayman Islands": [
+        "Кайманавы астравы"
+      ],
+      "Central African Republic": [
+        "Цэнтральна-Афрыканская Рэспубліка"
+      ],
+      "Chad": [
+        "Чад"
+      ],
+      "Chile": [
+        "Чылі"
+      ],
+      "China": [
+        "Кітай"
+      ],
+      "Christmas Island": [
+        "Востраў Каляд"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Какосавыя астравы (Кілінг)"
+      ],
+      "Colombia": [
+        "Калумбія"
+      ],
+      "Comoros": [
+        "Каморскія астравы"
+      ],
+      "Congo": [
+        "Конга"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Дэмакратычная Рэспубліка Конга"
+      ],
+      "Cook Islands": [
+        "Астравы Кука"
+      ],
+      "Costa Rica": [
+        "Коста-Рыка"
+      ],
+      "Croatia": [
+        "Харватыя"
+      ],
+      "Cuba": [
+        "Куба"
+      ],
+      "Curaçao": [
+        "Кюрасаа"
+      ],
+      "Cyprus": [
+        "Кіпр"
+      ],
+      "Czech Republic": [
+        "Рэспубліка Чэхія"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д’Івуар"
+      ],
+      "Denmark": [
+        "Данія"
+      ],
+      "Djibouti": [
+        "Джыбуці"
+      ],
+      "Dominica": [
+        "Дамініка"
+      ],
+      "Dominican Republic": [
+        "Дамініканская Рэспубліка"
+      ],
+      "Ecuador": [
+        "Эквадор"
+      ],
+      "Egypt": [
+        "Егіпет"
+      ],
+      "El Salvador": [
+        "Сальвадор"
+      ],
+      "Equatorial Guinea": [
+        "Экватарыяльная Гвінея"
+      ],
+      "Eritrea": [
+        "Эрытрэя"
+      ],
+      "Estonia": [
+        "Эстонія"
+      ],
+      "Eswatini": [
+        "Эсваціні"
+      ],
+      "Ethiopia": [
+        "Эфіопія"
+      ],
+      "Falkland Islands": [
+        "Фалклендскія астравы"
+      ],
+      "Faroe Islands": [
+        "Фарэрскія астравы"
+      ],
+      "Federated States of Micronesia": [
+        "Федэратыўныя Штаты Мікранезіі"
+      ],
+      "Fiji": [
+        "Фіджы"
+      ],
+      "Finland": [
+        "Фінляндыя"
+      ],
+      "France": [
+        "Францыя"
+      ],
+      "French Guiana": [
+        "Французская Гвіяна"
+      ],
+      "French Polynesia": [
+        "Французская Палінезія"
+      ],
+      "French Southern Territories": [
+        "Французскія Паўднёвыя тэрыторыі"
+      ],
+      "Gabon": [
+        "Габон"
+      ],
+      "Gambia": [
+        "Гамбія"
+      ],
+      "Georgia": [
+        "Грузія"
+      ],
+      "Germany": [
+        "Германія"
+      ],
+      "Ghana": [
+        "Гана"
+      ],
+      "Gibraltar": [
+        "Гібралтар"
+      ],
+      "Greece": [
+        "Грэцыя"
+      ],
+      "Greenland": [
+        "Грэнландыя"
+      ],
+      "Grenada": [
+        "Грэнада"
+      ],
+      "Guadeloupe": [
+        "Гвадэлупа"
+      ],
+      "Guam": [
+        "Гуам"
+      ],
+      "Guatemala": [
+        "Гватэмала"
+      ],
+      "Guernsey": [
+        "Гернсі"
+      ],
+      "Guinea": [
+        "Гвінея"
+      ],
+      "Guinea-Bissau": [
+        "Гвінея-Бісау"
+      ],
+      "Guyana": [
+        "Гаяна"
+      ],
+      "Haiti": [
+        "Гаіці"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Востраў Херд і Астравы Мак-Доналд"
+      ],
+      "Holy See (Vatican City State)": [
+        "Святы Прастол (Горад-дзяржава Ватыкан)"
+      ],
+      "Honduras": [
+        "Гандурас"
+      ],
+      "Hong Kong": [
+        "Ганконг"
+      ],
+      "Hungary": [
+        "Венгрыя"
+      ],
+      "Iceland": [
+        "Ісландыя"
+      ],
+      "India": [
+        "Індыя"
+      ],
+      "Indonesia": [
+        "Інданезія"
+      ],
+      "International": [
+        "Міжнародная"
+      ],
+      "Iran": [
+        "Іран"
+      ],
+      "Iraq": [
+        "Ірак"
+      ],
+      "Ireland": [
+        "Ірландыя"
+      ],
+      "Isle of Man": [
+        "Востраў Мэн"
+      ],
+      "Israel": [
+        "Ізраіль"
+      ],
+      "Italy": [
+        "Італія"
+      ],
+      "Jamaica": [
+        "Ямайка"
+      ],
+      "Japan": [
+        "Японія"
+      ],
+      "Jersey": [
+        "Джэрсі"
+      ],
+      "Jordan": [
+        "Іарданія"
+      ],
+      "Kazakhstan": [
+        "Казахстан"
+      ],
+      "Kenya": [
+        "Кенія"
+      ],
+      "Kiribati": [
+        "Кірыбаці"
+      ],
+      "Kosovo": [
+        "Косава"
+      ],
+      "Kuwait": [
+        "Кувейт"
+      ],
+      "Kyrgyzstan": [
+        "Кыргызстан"
+      ],
+      "Laos": [
+        "Лаос"
+      ],
+      "Latvia": [
+        "Латвія"
+      ],
+      "Lebanon": [
+        "Ліван"
+      ],
+      "Lesotho": [
+        "Лесота"
+      ],
+      "Liberia": [
+        "Ліберыя"
+      ],
+      "Libya": [
+        "Лівія"
+      ],
+      "Liechtenstein": [
+        "Ліхтэнштэйн"
+      ],
+      "Lithuania": [
+        "Літва"
+      ],
+      "Luxembourg": [
+        "Люксембург"
+      ],
+      "Macao": [
+        "Макаа"
+      ],
+      "Madagascar": [
+        "Мадагаскар"
+      ],
+      "Malawi": [
+        "Малаві"
+      ],
+      "Malaysia": [
+        "Малайзія"
+      ],
+      "Maldives": [
+        "Мальдывы"
+      ],
+      "Mali": [
+        "Малі"
+      ],
+      "Malta": [
+        "Мальта"
+      ],
+      "Marshall Islands": [
+        "Маршалавы астравы"
+      ],
+      "Martinique": [
+        "Марцініка"
+      ],
+      "Mauritania": [
+        "Маўрытанія"
+      ],
+      "Mauritius": [
+        "Маўрыкій"
+      ],
+      "Mayotte": [
+        "Маёта"
+      ],
+      "Mexico": [
+        "Мексіка"
+      ],
+      "Moldova": [
+        "Малдова"
+      ],
+      "Monaco": [
+        "Манака"
+      ],
+      "Mongolia": [
+        "Манголія"
+      ],
+      "Montenegro": [
+        "Чарнагорыя"
+      ],
+      "Montserrat": [
+        "Мантсерат"
+      ],
+      "Morocco": [
+        "Марока"
+      ],
+      "Mozambique": [
+        "Мазамбік"
+      ],
+      "Myanmar": [
+        "М’янма"
+      ],
+      "Namibia": [
+        "Намібія"
+      ],
+      "Nauru": [
+        "Науру"
+      ],
+      "Nepal": [
+        "Непал"
+      ],
+      "Netherlands": [
+        "Нідэрланды"
+      ],
+      "New Caledonia": [
+        "Новая Каледонія"
+      ],
+      "New Zealand": [
+        "Новая Зеландыя"
+      ],
+      "Nicaragua": [
+        "Нікарагуа"
+      ],
+      "Niger": [
+        "Нігер"
+      ],
+      "Nigeria": [
+        "Нігерыя"
+      ],
+      "Niue": [
+        "Ніуэ"
+      ],
+      "Norfolk Island": [
+        "Востраў Норфалк"
+      ],
+      "North Korea": [
+        "Паўночная Карэя"
+      ],
+      "North Macedonia": [
+        "Паўночная Македонія"
+      ],
+      "Northern Mariana Islands": [
+        "Паўночныя Марыянскія астравы"
+      ],
+      "Norway": [
+        "Нарвегія"
+      ],
+      "Oman": [
+        "Аман"
+      ],
+      "Pakistan": [
+        "Пакістан"
+      ],
+      "Palau": [
+        "Палау"
+      ],
+      "Palestine": [
+        "Палесціна"
+      ],
+      "Panama": [
+        "Панама"
+      ],
+      "Papua New Guinea": [
+        "Папуа-Новая Гвінея"
+      ],
+      "Paraguay": [
+        "Парагвай"
+      ],
+      "Peru": [
+        "Перу"
+      ],
+      "Philippines": [
+        "Філіпіны"
+      ],
+      "Pitcairn": [
+        "Астравы Піткэрн"
+      ],
+      "Poland": [
+        "Польшча"
+      ],
+      "Portugal": [
+        "Партугалія"
+      ],
+      "Puerto Rico": [
+        "Пуэрта-Рыка"
+      ],
+      "Qatar": [
+        "Катар"
+      ],
+      "Reunion": [
+        "Рэюньён"
+      ],
+      "Romania": [
+        "Румынія"
+      ],
+      "Russia": [
+        "Расія"
+      ],
+      "Rwanda": [
+        "Руанда"
+      ],
+      "Saint Barthélemy": [
+        "Сен-Бартэльмі"
+      ],
+      "Saint Helena": [
+        "Востраў Святой Алены"
+      ],
+      "Saint Kitts and Nevis": [
+        "Сэнт-Кітс і Нэвіс"
+      ],
+      "Saint Lucia": [
+        "Сент-Люсія"
+      ],
+      "Saint Martin (French Part)": [
+        "Сен-Мартэн (французская частка)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Сен-П’ер і Мікелон"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Сент-Вінсент і Грэнадзіны"
+      ],
+      "Samoa": [
+        "Самоа"
+      ],
+      "San Marino": [
+        "Сан-Марына"
+      ],
+      "Sao Tome and Principe": [
+        "Сан-Тамэ і Прынсіпі"
+      ],
+      "Saudi Arabia": [
+        "Саудаўская Аравія"
+      ],
+      "Senegal": [
+        "Сенегал"
+      ],
+      "Serbia": [
+        "Сербія"
+      ],
+      "Seychelles": [
+        "Сейшэльскія астравы"
+      ],
+      "Sierra Leone": [
+        "Сьера-Леонэ"
+      ],
+      "Singapore": [
+        "Сінгапур"
+      ],
+      "Sint Maarten": [
+        "Сінт-Мартэн"
+      ],
+      "Slovakia": [
+        "Славакія"
+      ],
+      "Slovenia": [
+        "Славенія"
+      ],
+      "Solomon Islands": [
+        "Саламонавы астравы"
+      ],
+      "Somalia": [
+        "Самалі"
+      ],
+      "South Africa": [
+        "Паўднёва-Афрыканская Рэспубліка"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Паўднёвая Джорджыя і Паўднёвыя Сандвічавы астравы"
+      ],
+      "South Korea": [
+        "Паўднёвая Карэя"
+      ],
+      "South Ossetia": [
+        "Паўднёвая Асеція"
+      ],
+      "South Sudan": [
+        "Паўднёвы Судан"
+      ],
+      "Spain": [
+        "Іспанія"
+      ],
+      "Sri Lanka": [
+        "Шры-Ланка"
+      ],
+      "Sudan": [
+        "Судан"
+      ],
+      "Suriname": [
+        "Сурынам"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Шпіцберген і Ян-Маен"
+      ],
+      "Sweden": [
+        "Швецыя"
+      ],
+      "Switzerland": [
+        "Швейцарыя"
+      ],
+      "Syria": [
+        "Сірыя"
+      ],
+      "Taiwan": [
+        "Тайвань"
+      ],
+      "Tajikistan": [
+        "Таджыкістан"
+      ],
+      "Tanzania": [
+        "Танзанія"
+      ],
+      "Thailand": [
+        "Тайланд"
+      ],
+      "Timor-Leste": [
+        "Тымор-Лешці"
+      ],
+      "Togo": [
+        "Тога"
+      ],
+      "Tokelau": [
+        "Такелау"
+      ],
+      "Tonga": [
+        "Тонга"
+      ],
+      "Trinidad and Tobago": [
+        "Трынідад і Табага"
+      ],
+      "Tristan da Cunha": [
+        "Трыстан-да-Кунья"
+      ],
+      "Tunisia": [
+        "Туніс"
+      ],
+      "Turkey": [
+        "Турцыя"
+      ],
+      "Turkmenistan": [
+        "Туркменістан"
+      ],
+      "Turks and Caicos Islands": [
+        "Астравы Цёркс і Кайкас"
+      ],
+      "Tuvalu": [
+        "Тувалу"
+      ],
+      "Uganda": [
+        "Уганда"
+      ],
+      "Ukraine": [
+        "Украіна"
+      ],
+      "United Arab Emirates": [
+        "Аб’яднаныя Арабскія Эміраты"
+      ],
+      "United Kingdom": [
+        "Вялікабрытанія"
+      ],
+      "United States": [
+        "ЗША"
+      ],
+      "United States Minor Outlying Islands": [
+        "Знешнія малыя астравы ЗША"
+      ],
+      "Uruguay": [
+        "Уругвай"
+      ],
+      "Uzbekistan": [
+        "Узбекістан"
+      ],
+      "Vanuatu": [
+        "Вануату"
+      ],
+      "Venezuela": [
+        "Венесуэла"
+      ],
+      "Vietnam": [
+        "В’етнам"
+      ],
+      "Virgin Islands, British": [
+        "Брытанскія Віргінскія астравы"
+      ],
+      "Virgin Islands, U.S.": [
+        "Амерыканскія Віргінскія астравы"
+      ],
+      "Wallis and Futuna": [
+        "Уоліс і Футуна"
+      ],
+      "Western Sahara": [
+        "Заходняя Сахара"
+      ],
+      "Yemen": [
+        "Емен"
+      ],
+      "Zambia": [
+        "Замбія"
+      ],
+      "Zimbabwe": [
+        "Зімбабвэ"
+      ],
+      "Åland Islands": [
+        "Аландскія астравы"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Пратэрмінаваны рахунак"
+      ]
+    },
+    "Error": {
+      "Email is not valid": [
+        "Несапраўдная электронная пошта"
+      ],
+      "Enter 6 digits": [
+        "Увядзіце 6 лічбаў"
+      ],
+      "Invalid verification code": [
+        "Памылковы праверачны код"
+      ],
+      "Not a valid number": [
+        "Несапраўдны нумар"
+      ],
+      "Passwords do not match": [
+        "Паролі не супадаюць"
+      ],
+      "Request timed out": [
+        "Перавышаны тэрмін чакання запыту"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
+      ],
+      "This field is required": [
+        "Абавязковае поле"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
+      ],
+      "Unknown error": [
+        "Невядомая памылка"
+      ]
+    },
+    "Error message": {
+      "Error: ${ errorMessage }": [
+        "Памылка: ${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "Вой, нешта пайшло не так"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "${ refresh } або праверце ваша злучэнне."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Нешта пайшло не так. Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+      ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Узнікла праблема з падлучэннем да ${ BRAND_NAME }."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Таксама вы можаце ${ refresh } або паспрабуйце яшчэ раз пазней."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ бяспекі"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ бяспекі"
+      ]
+    },
+    "Human verification method": {
+      "Email": [
+        "Электронная пошта"
+      ],
+      "Manual": [
+        "Уручную"
+      ],
+      "No verification method available": [
+        "Няма даступных спосабаў праверкі"
+      ]
+    },
+    "Info": {
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
+      ],
+      "Country code": [
+        "Код краіны"
+      ],
+      "Each code can only be used once": [
+        "Кожны код можа выкарыстоўвацца толькі адзін раз"
+      ],
+      "Enter the code from your authenticator app": [
+        "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Увядзіце праверачны код, які быў адпраўлены на ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Увядзіце праверачны код. Лічба ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Увядзіце свой пароль (адміністратара арганізацыі)."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Калі паведамлення няма ў папцы \"Уваходныя\", то магчыма, што яно трапіла ў папку \"Спам\"."
+      ],
+      "Internet connection lost": [
+        "Злучэнне з інтэрнэтам страчана"
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
+      "No results found": [
+        "Нічога не знойдзена"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
+      ],
+      "Session timed out": [
+        "Сеанс завяршыўся"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Мы адправім новы праверачны код на ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным метадам праверкі?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Ці хочаце вы атрымаць новы праверачны код?"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень, лісты больш не будуць трапляць у паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ]
+    },
+    "Label": {
+      "Authenticator app": [
+        "Праграма аўтэнтыфікацыі"
+      ],
+      "Code is 6 digits without spaces": [
+        "Код складаецца з 6 лічбаў без прабелаў"
+      ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
+      "Hide password": [
+        "Схаваць пароль"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Phone number": [
+        "Нумар тэлефона"
+      ],
+      "Reveal password": [
+        "Паказаць пароль"
+      ],
+      "Verification code": [
+        "Праверачны код"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "Request an invite": [
+        "Запытаць запрашэнне"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Пароль"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Код адпраўлены на ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Паспяхова праверана"
+      ]
+    },
+    "Title": {
+      "Enter your password": [
+        "Увядзіце пароль"
+      ],
+      "Human verification": [
+        "Антыспамавая праверка"
+      ],
+      "Invalid verification code": [
+        "Памылковы праверачны код"
+      ],
+      "Request new code": [
+        "Запытаць новы код"
+      ],
+      "Two-factor authentication": [
+        "Двухфактарная аўтэнтыфікацыя"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвал",
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвалы",
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвалаў",
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвалы"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)"
+      ]
+    }
+  }
+}

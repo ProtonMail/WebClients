@@ -15,7 +15,7 @@ import { TableCell, TableRow } from '../../../components';
 import './CalendarMemberGrid.scss';
 
 const permissionLabelMap = {
-    // [CalendarMemberPermissions.EDIT]: c('Calendar share permission label').t`Edit`,
+    [MEMBER_PERMISSIONS.EDIT]: c('Calendar share permission label').t`Edit`,
     [MEMBER_PERMISSIONS.FULL_VIEW]: c('Calendar share permission label').t`See all event details`,
     // [CalendarMemberPermissions.LIMITED]: c('Calendar share permission label').t`See only free/busy`,
 };
@@ -92,20 +92,24 @@ const CalendarMemberRow = ({
         <SelectTwo
             loading={isLoadingPermissionsUpdate}
             value={perms}
-            disabled={!canEdit}
+            // TODO: remove dummy true condition when change of permissions is implemented
+            disabled={true || !canEdit}
             onChange={handleChangePermissions}
         >
-            {availablePermissions.map(([value, label]) => (
-                <Option key={value} value={+value} title={label} />
-            ))}
+            {availablePermissions
+                .filter(([stringifiedPermission]) => +stringifiedPermission === perms)
+                .map(([value, label]) => (
+                    <Option key={value} value={+value} title={label} />
+                ))
+            }
         </SelectTwo>
     );
 
     return (
         <TableRow>
             <TableCell className="on-mobile-pl0">
-                <div className="flex flex-nowrap flex-align-items-baseline flex-gap-0-5 on-mobile-w40">
-                    <Avatar className="avatar--weak flex-item-noshrink no-mobile no-tablet">{getInitials(name)}</Avatar>
+                <div className="flex flex-nowrap flex-align-items-center flex-gap-0-5 on-mobile-w40">
+                    <Avatar className="avatar--weak flex-item-noshrink">{getInitials(name)}</Avatar>
 
                     <div>
                         <div className="text-ellipsis" title={name}>
@@ -116,32 +120,38 @@ const CalendarMemberRow = ({
                                 {email}
                             </div>
                         )}
-                        {displayStatus && (
-                            <div className="no-desktop">
-                                <MemberStatus status={status} />
-                            </div>
-                        )}
-
-                        {displayPermissions && !isStatusRejected && (
-                            <div className="no-desktop no-tablet on-mobile-inline-flex">{permissionsSelect}</div>
-                        )}
                     </div>
                 </div>
             </TableCell>
             {displayPermissions && (
-                <TableCell className="no-mobile">{!isStatusRejected && permissionsSelect}</TableCell>
+                <TableCell label={c('Header').t`Permissions`}>{!isStatusRejected && permissionsSelect}</TableCell>
             )}
             {displayStatus && (
-                <TableCell className="no-mobile no-tablet">
+                <TableCell>
                     <MemberStatus status={status} />
                 </TableCell>
             )}
-            <TableCell className="w5e">
+            <TableCell>
                 <Tooltip title={deleteLabel}>
-                    <Button icon shape="ghost" loading={isLoadingDelete} onClick={handleDelete} className="mlauto">
+                    <Button
+                        icon
+                        shape="ghost"
+                        loading={isLoadingDelete}
+                        onClick={handleDelete}
+                        className="mlauto no-mobile no-tablet"
+                    >
                         <Icon name="trash" alt={deleteLabel} />
                     </Button>
                 </Tooltip>
+                <Button
+                    shape="outline"
+                    size="small"
+                    loading={isLoadingDelete}
+                    onClick={handleDelete}
+                    className="no-desktop"
+                >
+                    {deleteLabel}
+                </Button>
             </TableCell>
         </TableRow>
     );

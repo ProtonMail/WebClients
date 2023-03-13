@@ -16,7 +16,7 @@
 	}
 }
 
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	// we show abbreviated version only on week/month view
 	.is-week-view,
 	.is-month-view {

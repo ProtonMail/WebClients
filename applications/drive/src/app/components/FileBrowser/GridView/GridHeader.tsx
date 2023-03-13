@@ -1,17 +1,19 @@
 import * as React from 'react';
 
-import { Checkbox, TableHeaderCell, TableRowSticky } from '@proton/components';
+import { c } from 'ttag';
+
+import { Checkbox, Loader, TableHeaderCell, TableRowSticky } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
 import SortDropdown from '../../sections/SortDropdown';
+import { SelectionState } from '../hooks/useSelectionControls';
 import { SortParams } from '../interface';
 import { useSelection } from '../state/useSelection';
 
 interface Props<T> {
     isLoading?: boolean;
     itemCount: number;
-    onToggleAllSelected: () => void;
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 
     // sorting
@@ -26,7 +28,6 @@ export const GridHeader = <T extends string>({
     isLoading,
     sortFields,
     onSort,
-    onToggleAllSelected,
     itemCount,
     scrollAreaRef,
     activeSortingText,
@@ -35,7 +36,6 @@ export const GridHeader = <T extends string>({
     sortOrder,
 }: Props<T>) => {
     const selection = useSelection();
-    const selectedItemIds = selection?.selectedItemIds || [];
 
     const handleSort = (key: T) => {
         if (!sortField || !sortOrder || !onSort) {
@@ -50,7 +50,7 @@ export const GridHeader = <T extends string>({
 
     const getSortDirectionForKey = (key: T) => (sortField === key ? sortOrder : undefined);
 
-    const allSelected = Boolean(itemCount) && itemCount === selectedItemIds.length;
+    const selectedCount = selection?.selectedItemIds.length;
 
     return (
         <thead onContextMenu={stopPropagation}>
@@ -58,14 +58,26 @@ export const GridHeader = <T extends string>({
                 <TableHeaderCell className="file-browser-header-checkbox-cell">
                     <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                         <Checkbox
-                            className="increase-click-surface"
+                            indeterminate={selection?.selectionState === SelectionState.SOME}
+                            className="increase-click-surface mr0-25"
                             disabled={!itemCount}
-                            checked={allSelected}
-                            onChange={onToggleAllSelected}
-                        />
+                            checked={selection?.selectionState !== SelectionState.NONE}
+                            onChange={
+                                selection?.selectionState === SelectionState.SOME
+                                    ? selection?.clearSelections
+                                    : selection?.toggleAllSelected
+                            }
+                        >
+                            {selectedCount ? (
+                                <span className="ml1">{c('Info').jt`${selectedCount} selected`}</span>
+                            ) : null}
+                        </Checkbox>
+                        {selection?.selectionState !== SelectionState.NONE && isLoading ? (
+                            <Loader className="flex flex-item-noshrink" />
+                        ) : null}
                     </div>
                 </TableHeaderCell>
-                {sortFields?.length && sortField && (
+                {selection?.selectionState === SelectionState.NONE && sortFields?.length && sortField && (
                     <>
                         <TableHeaderCell
                             className="w10e"
@@ -76,7 +88,12 @@ export const GridHeader = <T extends string>({
                             {activeSortingText}
                         </TableHeaderCell>
                         <TableHeaderCell>
-                            <SortDropdown sortFields={sortFields} sortField={sortField} onSort={onSort} />
+                            <SortDropdown
+                                className="file-browser-header-sort-cell"
+                                sortFields={sortFields}
+                                sortField={sortField}
+                                onSort={onSort}
+                            />
                         </TableHeaderCell>
                     </>
                 )}

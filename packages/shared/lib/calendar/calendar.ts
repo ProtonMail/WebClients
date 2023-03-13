@@ -1,5 +1,3 @@
-import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import unary from '@proton/utils/unary';
 
 import { hasBit, toggleBit } from '../helpers/bitset';
@@ -12,8 +10,10 @@ import {
     VisualCalendar,
 } from '../interfaces/calendar';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
-import { CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID, SETTINGS_VIEW } from './constants';
-import { reactivateCalendarsKeys } from './keys/reactivateCalendarKeys';
+import { getHasUserReachedCalendarsLimit } from './calendarLimits';
+import { CALENDAR_FLAGS, CALENDAR_TYPE, SETTINGS_VIEW } from './constants';
+import { reactivateCalendarsKeys } from './crypto/keys/reactivateCalendarKeys';
+import { getCanWrite } from './permissions';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);
@@ -49,8 +49,14 @@ export const getIsPersonalCalendar = (calendar: VisualCalendar | SubscribedCalen
     return calendar.Type === CALENDAR_TYPE.PERSONAL;
 };
 
-export const getIsOwnedCalendar = (calendar: VisualCalendar) => {
+export const getIsOwnedCalendar = (calendar: CalendarWithOwnMembers) => {
     return calendar.Owner.Email === calendar.Members[0].Email;
+};
+
+export const getIsSubscribedCalendar = (
+    calendar: Calendar | VisualCalendar | SubscribedCalendar
+): calendar is SubscribedCalendar => {
+    return calendar.Type === CALENDAR_TYPE.SUBSCRIPTION;
 };
 
 export const getPersonalCalendars = <T extends Calendar>(calendars: T[] = []): T[] => {
@@ -70,18 +76,20 @@ export const groupCalendarsByTaxonomy = (calendars: VisualCalendar[] = []) => {
         ownedPersonalCalendars: VisualCalendar[];
         sharedCalendars: VisualCalendar[];
         subscribedCalendars: VisualCalendar[];
+        unknownCalendars: VisualCalendar[];
     }>(
         (acc, calendar) => {
             if (getIsSubscribedCalendar(calendar)) {
                 acc.subscribedCalendars.push(calendar);
-            } else if (!getIsOwnedCalendar(calendar)) {
-                acc.sharedCalendars.push(calendar);
+            } else if (getIsPersonalCalendar(calendar)) {
+                const calendarsGroup = getIsOwnedCalendar(calendar) ? acc.ownedPersonalCalendars : acc.sharedCalendars;
+                calendarsGroup.push(calendar);
             } else {
-                acc.ownedPersonalCalendars.push(calendar);
+                acc.unknownCalendars.push(calendar);
             }
             return acc;
         },
-        { ownedPersonalCalendars: [], sharedCalendars: [], subscribedCalendars: [] }
+        { ownedPersonalCalendars: [], sharedCalendars: [], subscribedCalendars: [], unknownCalendars: [] }
     );
 };
 
@@ -99,15 +107,19 @@ export const getSubscribedCalendars = (calendars: VisualCalendar[] = []) => {
 
 enum CALENDAR_WEIGHT {
     PERSONAL = 0,
-    SHARED = 1,
-    SUBSCRIBED = 2,
+    SUBSCRIBED = 1,
+    SHARED = 2,
+    UNKNOWN = 3,
 }
 
 const getCalendarWeight = (calendar: VisualCalendar) => {
     if (getIsPersonalCalendar(calendar)) {
         return getIsOwnedCalendar(calendar) ? CALENDAR_WEIGHT.PERSONAL : CALENDAR_WEIGHT.SHARED;
     }
-    return CALENDAR_WEIGHT.SUBSCRIBED;
+    if (getIsSubscribedCalendar(calendar)) {
+        return CALENDAR_WEIGHT.SUBSCRIBED;
+    }
+    return CALENDAR_WEIGHT.UNKNOWN;
 };
 export const sortCalendars = (calendars: VisualCalendar[]) => {
     return [...calendars].sort((cal1, cal2) => {
@@ -116,13 +128,23 @@ export const sortCalendars = (calendars: VisualCalendar[]) => {
     });
 };
 
-export const getDefaultCalendar = (calendars: VisualCalendar[] = [], defaultCalendarID: string | null = '') => {
-    // only active owned personal calendars can be default
-    const activeOwnedCalendars = getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars));
-    if (!activeOwnedCalendars.length) {
+const getPreferredCalendar = (calendars: VisualCalendar[] = [], defaultCalendarID: string | null = '') => {
+    if (!calendars.length) {
         return;
     }
-    return activeOwnedCalendars.find(({ ID }) => ID === defaultCalendarID) || activeOwnedCalendars[0];
+    return calendars.find(({ ID }) => ID === defaultCalendarID) || calendars[0];
+};
+
+export const getPreferredActiveWritableCalendar = (
+    calendars: VisualCalendar[] = [],
+    defaultCalendarID: string | null = ''
+) => {
+    return getPreferredCalendar(getProbablyActiveCalendars(getWritableCalendars(calendars)), defaultCalendarID);
+};
+
+export const getDefaultCalendar = (calendars: VisualCalendar[] = [], defaultCalendarID: string | null = '') => {
+    // only active owned personal calendars can be default
+    return getPreferredCalendar(getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars)), defaultCalendarID);
 };
 
 export const getVisualCalendar = <T>(calendar: CalendarWithOwnMembers & T): VisualCalendar & T => {
@@ -143,22 +165,30 @@ export const getVisualCalendar = <T>(calendar: CalendarWithOwnMembers & T): Visu
 export const getVisualCalendars = <T>(calendars: (CalendarWithOwnMembers & T)[]): (VisualCalendar & T)[] =>
     calendars.map((calendar) => getVisualCalendar(calendar));
 
-export const getCanCreateCalendar = (calendars: Calendar[], isFreeUser: boolean) => {
-    const activeCalendars = getProbablyActiveCalendars(calendars);
-    const disabledCalendars = calendars.filter(unary(getIsCalendarDisabled));
+export const getCanCreateCalendar = ({
+    calendars,
+    ownedPersonalCalendars,
+    disabledCalendars,
+    isFreeUser,
+}: {
+    calendars: VisualCalendar[];
+    ownedPersonalCalendars: VisualCalendar[];
+    disabledCalendars: VisualCalendar[];
+    isFreeUser: boolean;
+}) => {
+    const { isCalendarsLimitReached } = getHasUserReachedCalendarsLimit(calendars, isFreeUser);
+    if (isCalendarsLimitReached) {
+        return false;
+    }
+    // TODO: The following if condition is very flaky. We should check that somewhere else
+    const activeCalendars = getProbablyActiveCalendars(ownedPersonalCalendars);
     const totalActionableCalendars = activeCalendars.length + disabledCalendars.length;
-    if (totalActionableCalendars < calendars.length) {
+    if (totalActionableCalendars < ownedPersonalCalendars.length) {
         // calendar keys need to be reactivated before being able to create a calendar
         return false;
     }
-    const calendarLimit = isFreeUser ? MAX_CALENDARS_FREE : MAX_CALENDARS_PAID;
-    return totalActionableCalendars < calendarLimit;
-};
 
-export const getMaxUserCalendarsDisabled = (disabledCalendars: Calendar[], isFreeUser: boolean) => {
-    const calendarLimit = isFreeUser ? MAX_CALENDARS_FREE : MAX_CALENDARS_PAID;
-
-    return disabledCalendars.length === calendarLimit;
+    return true;
 };
 
 export const getCalendarWithReactivatedKeys = async ({

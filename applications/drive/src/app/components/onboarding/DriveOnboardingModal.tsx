@@ -3,9 +3,9 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import {
     Icon,
-    InnerModal,
     Loader,
     ModalTwo,
+    ModalTwoContent,
     OnboardingContent,
     OnboardingModal,
     OnboardingStep,
@@ -29,11 +29,11 @@ const DriveOnboardingModal = (props: Props) => {
     if (isLoading) {
         return (
             <ModalTwo open={true} size="small">
-                <InnerModal className="mt2 mb2">
+                <ModalTwoContent className="mt2 mb2">
                     <div className="flex flex-column flex-align-items-center">
                         <Loader size="medium" className="mt1 mb1" />
                     </div>
-                </InnerModal>
+                </ModalTwoContent>
             </ModalTwo>
         );
     }

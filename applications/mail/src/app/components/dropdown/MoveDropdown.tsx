@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import {
     Checkbox,
-    FeatureCode,
     FolderIcon,
     Icon,
     IconName,
@@ -16,7 +15,6 @@ import {
     Tooltip,
     classnames,
     generateUID,
-    useFeature,
     useFolders,
     useLoading,
     useModalState,
@@ -69,7 +67,6 @@ interface Props {
 
 const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
-    const contextFilteringFeature = useFeature(FeatureCode.ContextFiltering);
 
     const [loading, withLoading] = useLoading();
     const [folders = []] = useFolders();
@@ -236,28 +233,19 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     )}
                 </ul>
             </div>
-            {contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false && (
-                <>
-                    <hr className="m0 flex-item-noshrink" />
-                    <div
-                        className={classnames([
-                            'px1 mt1 flex-item-noshrink',
-                            alwaysCheckboxDisabled && 'color-disabled',
-                        ])}
-                    >
-                        <Checkbox
-                            id={alwaysCheckID}
-                            checked={always}
-                            disabled={alwaysCheckboxDisabled}
-                            onChange={({ target }) => setAlways(target.checked)}
-                            data-testid="move-dropdown:always-move"
-                            data-prevent-arrow-navigation
-                        >
-                            {c('Label').t`Always move sender's emails`}
-                        </Checkbox>
-                    </div>
-                </>
-            )}
+            <hr className="m0 flex-item-noshrink" />
+            <div className={classnames(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
+                <Checkbox
+                    id={alwaysCheckID}
+                    checked={always}
+                    disabled={alwaysCheckboxDisabled}
+                    onChange={({ target }) => setAlways(target.checked)}
+                    data-testid="move-dropdown:always-move"
+                    data-prevent-arrow-navigation
+                >
+                    {c('Label').t`Always move sender's emails`}
+                </Checkbox>
+            </div>
             <div className="m1 flex-item-noshrink">
                 <PrimaryButton
                     className="w100"

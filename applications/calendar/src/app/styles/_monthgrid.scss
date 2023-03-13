@@ -20,7 +20,7 @@
 			background-color: var(--interaction-default-active);
 		}
 
-		@media not print {
+		@include media('screen') {
 			&[aria-current='date'] {
 				.calendar-monthgrid-day-number {
 					color: var(--primary);
@@ -46,7 +46,7 @@
 				}
 			}
 
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				&[aria-pressed='true'] &-number {
 					background-color: var(--primary);
 					color: var(--primary-contrast);

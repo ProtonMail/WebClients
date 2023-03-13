@@ -14,7 +14,7 @@ import {
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Currency, Cycle, Plan, PlanIDs, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, Plan, PlanIDs, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
@@ -29,8 +29,7 @@ interface Props {
     cycle: Cycle;
     plans: Plan[];
     onBack?: () => void;
-    vpnCountries: VPNCountries;
-    vpnServers: VPNServers;
+    vpnServers: VPNServersCountData;
     upsellPlanName: PLANS;
 }
 
@@ -63,7 +62,6 @@ const hasNoIcon = (features: PlanCardFeatureDefinition[]) => {
 const UpsellStep = ({
     plans,
     vpnServers,
-    vpnCountries,
     cycle,
     currency,
     onChangeCurrency,
@@ -75,7 +73,7 @@ const UpsellStep = ({
 
     const shortFreePlan = (() => {
         if (upsellPlanName === PLANS.VPN) {
-            return getFreeVPNPlan(vpnCountries, vpnServers);
+            return getFreeVPNPlan(vpnServers);
         }
 
         if (upsellPlanName === PLANS.DRIVE) {
@@ -85,7 +83,7 @@ const UpsellStep = ({
         return getFreePlan();
     })();
 
-    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnCountries, vpnServers, { boldStorageSize: true });
+    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnServers, { boldStorageSize: true });
     const upsellPlan = plansMap[upsellPlanName];
     const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 

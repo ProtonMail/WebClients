@@ -31,7 +31,7 @@ const RequestRecoveryForm = ({ onSubmit, defaultUsername = '', loading: outerLoa
                 if (loading || !onFormSubmit()) {
                     return;
                 }
-                withLoading(onSubmit(username)).catch(noop);
+                withLoading(onSubmit(username.trim())).catch(noop);
             }}
         >
             <InputFieldTwo

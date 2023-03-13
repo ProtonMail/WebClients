@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -241,6 +244,9 @@
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
+      "Enable drive search": [
+        "Drive doorzoeken inschakelen"
+      ],
       "Expand": [
         "Uitklappen"
       ],
@@ -366,6 +372,9 @@
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
+      ],
+      "New": [
+        "Nieuw"
       ],
       "New upload": [
         "Nieuwe upload"
@@ -595,6 +604,9 @@
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade now": [
+        "Nu upgraden"
+      ],
       "Upload anyway": [
         "Toch uploaden"
       ],
@@ -778,54 +790,6 @@
         "Blijf ${ MAIL_APP_NAME } gebruiken."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Niet gesynchroniseerd"
-      ],
-      "Syncing": [
-        "Synchroniseren"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Agenda kon niet ontsleuteld worden"
-      ],
-      "Calendar is syncing": [
-        "De agenda wordt gesynchroniseerd"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Agenda is aan het synchroniseren: het kan enkele minuten duren voordat alle afspraken verschijnen."
-      ],
-      "Calendar is too big": [
-        "De agenda is te groot"
-      ],
-      "Calendar link is not accessible": [
-        "Agendakoppeling is niet toegankelijk"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Agendakoppeling is tijdelijk ontoegankelijk"
-      ],
-      "Failed to sync calendar": [
-        "Synchronisatie van de agenda is mislukt"
-      ],
-      "More than 12 hours passed since last update": [
-        "Er zijn meer dan 12 uur verstreken sinds de laatste update"
-      ],
-      "Unsupported calendar format": [
-        "Niet-ondersteunde agenda-indeling"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Agendalink is niet toegankelijk van buiten de agendaproviders ecosysteem."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Meer dan 12 uur geleden sinds de laatste update — ${ CALENDAR_APP_NAME } probeert de agenda over enkele uren te updaten."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Inklappen"
@@ -981,9 +945,6 @@
       ],
       "Work": [
         "Werk"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1597,7 +1558,7 @@
         "Singapore"
       ],
       "Sint Maarten": [
-        "Sint Maarten"
+        "Sint-Maarten"
       ],
       "Slovakia": [
         "Slowakije"
@@ -1909,19 +1870,14 @@
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
       ],
+      "Contact name is too long": [
+        "Naam van contact is te lang"
+      ],
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deselecteer tenminste één agenda",
-        "Deselecteer tenminste ${ calendarToFixCount } agenda's"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Ten minste ${ calendarToFixCount } agenda deselecteren of",
-        "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
       ],
       "Device name does not match": [
         "Apparaatnaam komt niet overeen"
@@ -1985,10 +1941,6 @@
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
-        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
@@ -2062,9 +2014,6 @@
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Sommige namen van uw mappen zijn gereserveerd. Pas de import aan om deze namen te bewerken."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
@@ -2137,7 +2086,7 @@
       "This label name is not available. Please choose a different name.": [
         "Deze labelnaam is niet beschikbaar. Kies een andere naam."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
       "Try using only letters, numerals, and _.-": [
@@ -2149,11 +2098,8 @@
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "U kunt geen vCards van meer dan 10 contacten verzenden"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "U heeft het maximale aantal persoonlijke agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
+      "You can't send vCard files of more than 10 contacts": [
+        "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -2525,9 +2471,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mailadres"
       ],
@@ -2536,9 +2479,6 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2549,6 +2489,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
@@ -2769,9 +2712,6 @@
       ],
       "ICS file": [
         "ICS-bestand"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2786,6 +2726,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importeer uit ${ provider }"
+      ],
       "Other": [
         "Overig"
       ]
@@ -2832,10 +2775,6 @@
         "${ calendarsToBeCreatedCount } nieuwe agenda",
         "${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "Éen samengevoegde agenda",
-        "${ calendarsToBeMerged } samengevoegde agenda's"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } samengevoegde agenda",
         "${ calendarsToBeMergedCount } samengevoegde agenda's"
@@ -2879,13 +2818,13 @@
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
       ],
-      "${ numContactGroups } contact group": [
-        "Één contactgroep",
-        "${ numContactGroups } contactgroepen"
+      "${ numContact } contact": [
+        "${ numContact } contactpersoon",
+        "${ numContact } contactpersonen"
       ],
-      "${ numContacts } contact": [
-        "Één contactpersoon",
-        "${ numContacts } contactpersonen"
+      "${ numGroups } contact group": [
+        "${ numGroups } contactgroep",
+        "${ numGroups } contactgroepen"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } onderbroken",
@@ -2902,6 +2841,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } geselecteerd"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } map geselecteerd",
@@ -2922,9 +2864,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } opslagruimte"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
@@ -2935,9 +2874,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadressen"
       ],
       "A number will be added to the filename": [
         "Een nummer wordt toegevoegd aan de bestandsnaam"
@@ -2961,6 +2897,9 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
+      ],
+      "Also try looking in Trash.": [
+        "Probeer ook te zoeken in de Prullenbak."
       ],
       "An active recovery file": [
         "Een actief herstelbestand"
@@ -2989,14 +2928,17 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Weet u zeker dat u de geselecteerde items permanent wilt verwijderen uit de prullenbak?"
       ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Massa-uploads verminderen mogelijk de prestaties van uw computer. Overweeg om geheugenintensieve activiteiten zoals streaming te beperken tijdens het uploaden of probeer in te uploaden in partijen."
+      "Calendar side panel": [
+        "Agenda zijpaneel"
       ],
       "Canceled": [
         "Geannuleerd"
@@ -3034,12 +2976,12 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Blijf ${ DRIVE_APP_NAME } gebruiken en ontgrendel de schijf later"
       ],
-      "Continue with ${ planName }": [
-        "Ga door met ${ planName }"
+      "Country code": [
+        "Landcode"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Maak één nieuwe agenda",
-        "Maak ${ calendarsToBeCreated } nieuwe agenda's"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
@@ -3120,6 +3062,9 @@
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
       ],
+      "Enable drive search": [
+        "Drive doorzoeken inschakelen"
+      ],
       "Enabling drive search": [
         "Drive doorzoeken wordt ingeschakeld"
       ],
@@ -3196,6 +3141,9 @@
       "Folders you sync from your computer will appear here.": [
         "Mappen die u synchroniseert vanaf uw computer zullen hier verschijnen."
       ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
+      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -3232,12 +3180,12 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda",
-        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda's"
       ],
       "Import from": [
         "Importeren van"
@@ -3250,6 +3198,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importeer uw e-mails, agenda's en contacten vanuit een andere dienst naar ${ BRAND_NAME }. We zullen u bij elke stap leiden en uw gegevens versleutelen terwijl het wordt verplaatst. Welkom in de wereld van privacy."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
@@ -3277,6 +3228,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Items in de prullenbak blijven daar tot u ze permanent verwijdert"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Het is zo makkelijk als slepen en neerzetten of selecteren van bestanden"
@@ -3389,6 +3343,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Niet alle bestanden zijn overgeplaatst. Probeer de bestanden opnieuw te up- of downloaden."
       ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Opmerking: gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
+      ],
       "of": [
         "van"
       ],
@@ -3407,9 +3364,6 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
-      ],
-      "Other options": [
-        "Andere opties"
       ],
       "Paused": [
         "Gepauzeerd"
@@ -3466,9 +3420,6 @@
       "Primary": [
         "Primair"
       ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privézoeken ingeschakeld. U kunt dit dialoog nu afsluiten, en naar bestanden en folders zoeken."
       ],
@@ -3508,9 +3459,6 @@
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
@@ -3528,6 +3476,9 @@
       ],
       "Shared link failed to be loaded": [
         "De gedeelde link kon niet worden geladen"
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
       ],
       "Signature check will be ignored": [
         "Handtekeningcontrole zal genegeerd worden"
@@ -3547,20 +3498,11 @@
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-mail domein"
-      ],
       "support team": [
         "ondersteuningsteam"
       ],
       "Swiss privacy": [
         "Zwitserse privacy"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Tik de +-knop om een bestand of folder te uploaden."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
@@ -3570,6 +3512,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "De versleutelde gegevens zijn iets groter door de extra gegevens voor de versleuteling en de handtekening, die de beveiliging van uw gegevens garanderen."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
@@ -3623,6 +3568,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Om echt privé zoeken in te schakelen moet ${ DRIVE_APP_NAME } uw bestanden lokaal indexeren."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Om echt privé zoeken in te schakelen, moeten we uw bestanden lokaal indexeren. U kan ${ DRIVE_APP_NAME } normaal blijven gebruiken - we laten u weten wanneer het indexeren klaar is."
       ],
@@ -3656,14 +3604,11 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Try searching by file name, date, or type.": [
+        "Zoek ook op bestandsnaam, datum of type."
+      ],
       "Unknown error": [
         "Onbekende fout"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Ongelimiteerde mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
       ],
       "Unlock drive to recover files": [
         "Ontgrendel schijf om bestanden te herstellen"
@@ -3677,8 +3622,8 @@
       "Updating drive search...": [
         "Drive doorzoeken updaten..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
       "Uploaded": [
         "Geüpload"
@@ -3828,14 +3773,17 @@
       "file data key": [
         "bestandsgegevenssleutel"
       ],
+      "file data order": [
+        "bestandsgegevens volgorde"
+      ],
+      "hash key": [
+        "hash sleutel"
+      ],
       "keys": [
         "sleutels"
       ],
       "name": [
         "naam"
-      ],
-      "name hash": [
-        "naam hash"
       ],
       "thumbnail": [
         "miniatuur"
@@ -3865,8 +3813,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Aantal weergaven"
+      "# of downloads": [
+        "# downloads"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
@@ -3922,6 +3870,9 @@
       "Browser version": [
         "Browserversie"
       ],
+      "Calendar": [
+        "Agenda"
+      ],
       "Calendars": [
         "Agenda's"
       ],
@@ -3940,8 +3891,8 @@
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
-      "Coming soon": [
-        "Binnenkort beschikbaar"
+      "Colors": [
+        "Kleuren"
       ],
       "Comment": [
         "Reactie"
@@ -4058,9 +4009,6 @@
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Van: ${ importedEmail }"
-      ],
       "Good": [
         "Goed"
       ],
@@ -4120,12 +4068,6 @@
       ],
       "Manage categories": [
         "Beheer categorieën"
-      ],
-      "Manage folders": [
-        "Mappen beheren"
-      ],
-      "Manage labels": [
-        "Beheer labels"
       ],
       "Merge a folder": [
         "Map samenvoegen"
@@ -4244,9 +4186,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Dit zal alle bestanden op uw vergrendelde schijf permanent verwijderen."
       ],
-      "To: ${ emailAddress }": [
-        "Naar: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Aan: ${ to }"
       ],
@@ -4260,7 +4199,7 @@
         "Tweestapsverificatiecode"
       ],
       "Type": [
-        "Type"
+        "Soort"
       ],
       "Unknown file": [
         "Onbekend bestand"
@@ -4276,9 +4215,6 @@
       ],
       "Upload anyway": [
         "Toch uploaden"
-      ],
-      "Upload file": [
-        "Bestand uploaden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -4372,8 +4308,9 @@
       "Almost there": [
         "Bijna daar"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Aantal aangemaakte agenda's: ${ createdCalendars } van de ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
@@ -4392,21 +4329,9 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ itemsToImportCount } map en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ itemsToImportCount } label en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
+        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
       ]
     },
     "Message": {
@@ -4602,9 +4527,6 @@
       ],
       "File or folder is missing a name": [
         "Bestand of map heeft geen naam"
-      ],
-      "Item failed to be verified": [
-        "Item kon niet worden geverifieerd"
       ],
       "Link failed to be loaded": [
         "Link kon niet geladen worden"
@@ -4948,26 +4870,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uur"
       ],
+      "${ hours } hour": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
+        "${ seconds } seconde",
+        "${ seconds } seconden"
       ]
     },
     "specialoffer: Deal details": {
@@ -4992,12 +4914,6 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
-      ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -5006,9 +4922,6 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -5079,8 +4992,8 @@
         "U betaalt ${ amount } voor 30 maanden"
       ],
       "for ${ n } month": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ],
       "Get the deal": [
         "Kies deze deal"
@@ -5111,12 +5024,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday Sale"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week Sale"
-      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -5169,9 +5076,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
-      ],
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
@@ -5183,9 +5087,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Probeer ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5210,8 +5111,8 @@
       "Bug reported": [
         "Bug gemeld"
       ],
-      "Canceling import": [
-        "Annuleer import"
+      "Cancelling import": [
+        "Importeren annuleren"
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
@@ -5323,10 +5224,28 @@
         "Instellingen"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } u",
+        "${ hours } u"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 u",
+        "${ hoursInt },5 u"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uren"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 uur",
+        "${ hoursInt },5 uren"
       ],
       "${ minutes } minute": [
         "${ minutes } minuut",
@@ -5334,8 +5253,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Aantal weergaven"
+      "# of downloads": [
+        "# downloads"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } lid",
@@ -5439,7 +5358,7 @@
         "Uw e-mailimport aanpassen"
       ],
       "Date": [
-        "Date"
+        "Datum"
       ],
       "Decrypting": [
         "Ontsleutelen"
@@ -5476,9 +5395,6 @@
       "Download unverified folder?": [
         "Ongeverifieerde map downloaden?"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Drop to upload": [
         "Sleep hier om te uploaden"
       ],
@@ -5508,6 +5424,9 @@
       ],
       "Empty trash": [
         "Prullenbak leegmaken"
+      ],
+      "Enable drive search": [
+        "Drive doorzoeken inschakelen"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -5590,7 +5509,7 @@
         "Contacten worden samengevoegd"
       ],
       "MIME type": [
-        "MIME type"
+        "MIME-type"
       ],
       "Minicalendar": [
         "Mini-agenda"
@@ -5606,6 +5525,9 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "No results found": [
+        "Geen resultaten"
       ],
       "Number of files": [
         "Aantal bestanden"
@@ -5624,6 +5546,9 @@
       ],
       "Open settings menu": [
         "Open instellingenmenu"
+      ],
+      "Original size": [
+        "Originele grootte"
       ],
       "Other information": [
         "Andere informatie"
@@ -5775,6 +5700,9 @@
       "Uploaded by": [
         "Geüpload door"
       ],
+      "Uploading a large file or folder": [
+        "Groot bestand of map aan het uploaden"
+      ],
       "View contacts": [
         "Contacten weergeven"
       ],
@@ -5808,8 +5736,8 @@
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ],
       "Your welcome actions": [
         "Uw welkomstacties"

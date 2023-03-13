@@ -15,14 +15,14 @@ import { PublicKeyReference } from '@proton/crypto';
 import { addMember } from '@proton/shared/lib/api/calendars';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
+import { encryptPassphraseSessionKey } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
-import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/share';
+import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Address, Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { encryptPassphraseSessionKey } from '@proton/shared/lib/keys/calendarKeys';
 import {
     ENCRYPTION_PREFERENCES_ERROR_TYPES,
     EncryptionPreferencesError,
@@ -36,7 +36,6 @@ import {
     AddressesAutocompleteTwo,
     AddressesInput,
     AddressesInputItem,
-    Badge,
     Icon,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -117,6 +116,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
         if (!rest.open) {
             setRecipients([]);
             setInvalidRecipients({});
+            setPermissions(MEMBER_PERMISSIONS.FULL_VIEW);
         }
     }, [rest.open]);
 
@@ -438,12 +438,10 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                         label: (
                                             <span className="flex-item-fluid">
                                                 {c('Calendar sharing access option label')
-                                                    .t`Edit (view, create and edit event details)`}{' '}
-                                                <Badge type="info">{c('Badge').t`Coming soon`}</Badge>
+                                                    .t`Edit (view, create and edit event details)`}
                                             </span>
                                         ),
                                         value: MEMBER_PERMISSIONS.EDIT,
-                                        disabled: true,
                                     },
                                 ]}
                                 onChange={(value) => setPermissions(value)}

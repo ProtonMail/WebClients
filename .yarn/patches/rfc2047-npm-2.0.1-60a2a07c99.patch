@@ -1,0 +1,14 @@
+diff --git a/lib/rfc2047.js b/lib/rfc2047.js
+index 1b4c4ed092e6a9924eb66ed54c39492c4b4be879..f19de69025fb900da5009587210992dbd21082d0 100644
+--- a/lib/rfc2047.js
++++ b/lib/rfc2047.js
+@@ -68,7 +68,8 @@ function decodeEncodedWord(encodedText, encoding, charset) {
+             charset = 'CP949';
+         }
+         var decoded;
+-        if (iconv) {
++        // When iconv is not polyfilled, webpack sets it to {} so checking for `undefined` is not enough
++        if (iconv.Iconv) {
+             var converter;
+             try {
+                 converter = new iconv.Iconv(charset, 'utf-8//TRANSLIT');

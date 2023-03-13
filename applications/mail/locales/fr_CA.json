@@ -86,11 +86,17 @@
       "Archive": [
         "Archiver"
       ],
+      "As Scheduled": [
+        "Comme prévu"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
       "Attachment": [
         "Pièce jointe"
+      ],
+      "Attention required": [
+        "Attention requise"
       ],
       "Authenticate": [
         "S'authentifier"
@@ -163,6 +169,9 @@
       ],
       "Close": [
         "Fermer"
+      ],
+      "Close & discard": [
+        "Fermer et abandonner"
       ],
       "Close composer": [
         "Fermer le composeur"
@@ -238,6 +247,9 @@
       ],
       "Create new message": [
         "Créer un nouveau message"
+      ],
+      "Custom": [
+        "Personnalisé"
       ],
       "Customize": [
         "Personnaliser"
@@ -521,9 +533,6 @@
       "Load": [
         "Charger"
       ],
-      "Load anyway": [
-        "Charger quand même"
-      ],
       "Load embedded images": [
         "Charger les images intégrées"
       ],
@@ -544,6 +553,12 @@
       ],
       "Mailbox layout": [
         "Mise en page de la boîte aux lettres"
+      ],
+      "Manage folders": [
+        "Gérer les dossiers"
+      ],
+      "Manage labels": [
+        "Gérer les labels"
       ],
       "Mark as read": [
         "Marquer comme lu"
@@ -583,6 +598,9 @@
       ],
       "Minimize composer": [
         "Minimiser le composeur"
+      ],
+      "Monday": [
+        "Lundi"
       ],
       "More": [
         "Plus"
@@ -674,14 +692,14 @@
       "Not saved": [
         "Non enregistré"
       ],
-      "OK": [
-        "OK"
-      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Ouvrir ${ CALENDAR_APP_NAME }"
       ],
       "Open calendar": [
         "Ouvrir le calendrier"
+      ],
+      "Open composer": [
+        "Ouvrir l'éditeur"
       ],
       "Open get started checklist modal": [
         "Ouvrir la liste de vérification de démarrage"
@@ -694,9 +712,6 @@
       ],
       "Ordered list": [
         "Liste ordonnée"
-      ],
-      "Page ${ pageNumber }": [
-        "Page ${ pageNumber }"
       ],
       "Pause": [
         "Suspendre"
@@ -776,8 +791,11 @@
       "Remove this label": [
         "Supprimer ce label"
       ],
-      "Rename": [
-        "Renommer"
+      "Reply": [
+        "Répondre"
+      ],
+      "Reply all": [
+        "Répondre à tous"
       ],
       "Reply securely": [
         "Répondre en toute sécurité"
@@ -821,9 +839,6 @@
       "Schedule message": [
         "Programmer le message"
       ],
-      "Schedule send": [
-        "Programmer l'envoi"
-      ],
       "Search": [
         "Rechercher"
       ],
@@ -859,6 +874,9 @@
       ],
       "Send feedback": [
         "Envoyer un avis"
+      ],
+      "Send quick reply": [
+        "Envoyer une réponse rapide"
       ],
       "Send read receipt": [
         "Envoyer une confirmation de lecture"
@@ -932,9 +950,6 @@
       "Skip verification": [
         "Ignorer la vérification"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Certaines images n'ont pas pu être chargées avec la protection contre le suivi."
-      ],
       "Star": [
         "Ajouter aux favoris"
       ],
@@ -958,6 +973,9 @@
       ],
       "This message contains remote content.": [
         "Ce message comporte du contenu distant."
+      ],
+      "Tomorrow": [
+        "Demain"
       ],
       "Trust": [
         "Approuver"
@@ -1096,6 +1114,9 @@
     "action": {
       "Search messages": [
         "Rechercher des messages"
+      ],
+      "Send quick reply": [
+        "Envoyer une réponse rapide"
       ]
     },
     "Actions message": {
@@ -1165,19 +1186,9 @@
         "Retirer le message des favoris"
       ]
     },
-    "Alternative text for conversation image": {
-      "Conversation": [
-        "Conversation"
-      ]
-    },
     "Alternative text for simple login image": {
       "Simple Login": [
         "Connexion simple"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1571,54 +1582,6 @@
         "Votre adresse courriel n'est pas dans la liste des participants"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Non synchronisé"
-      ],
-      "Syncing": [
-        "Synchronisation en cours"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Le calendrier n'a pas pu être déchiffré"
-      ],
-      "Calendar is syncing": [
-        "Synchronisation du calendrier"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Le calendrier se synchronise: vous devrez peut être attendre plusieurs minutes avant de voir tous les événements."
-      ],
-      "Calendar is too big": [
-        "Le calendrier est trop gros"
-      ],
-      "Calendar link is not accessible": [
-        "Le lien du calendrier n’est pas accessible"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Le lien du calendrier est temporairement inaccessible"
-      ],
-      "Failed to sync calendar": [
-        "Échec de la synchronisation du calendrier"
-      ],
-      "More than 12 hours passed since last update": [
-        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour"
-      ],
-      "Unsupported calendar format": [
-        "Format de calendrier non pris en charge"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Le lien du calendrier n'est pas accessible depuis l'extérieur de l'écosystème du fournisseur de calendrier."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "La dernière mise à jour remonte à plus de 12 heures. ${ CALENDAR_APP_NAME } essaiera de mettre à jour le calendrier dans quelques heures."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Événement déjà terminé"
@@ -1648,9 +1611,6 @@
       "blue-gray": [
         "bleu gris"
       ],
-      "caramel": [
-        "caramel"
-      ],
       "carrot": [
         "carotte"
       ],
@@ -1659,9 +1619,6 @@
       ],
       "cinnabar": [
         "rouge cinabre"
-      ],
-      "cobalt": [
-        "cobalt"
       ],
       "copper": [
         "cuivre"
@@ -1699,9 +1656,6 @@
       "japanese laurel": [
         "laurier japonais"
       ],
-      "kiwi": [
-        "kiwi"
-      ],
       "lemon yellow": [
         "jaune citron"
       ],
@@ -1722,9 +1676,6 @@
       ],
       "ocean": [
         "océan"
-      ],
-      "olive": [
-        "olive"
       ],
       "outer space": [
         "bleu cosmique"
@@ -1780,9 +1731,6 @@
       "ruddy pink": [
         "rose bonbon"
       ],
-      "sahara": [
-        "sahara"
-      ],
       "satin sheen gold": [
         "or satiné brillant"
       ],
@@ -1831,9 +1779,6 @@
     "Composer size": {
       "Maximized": [
         "Maximisé"
-      ],
-      "Normal": [
-        "Normal"
       ]
     },
     "Condition for custom filter": {
@@ -1904,26 +1849,17 @@
       "Language": [
         "Langue"
       ],
-      "Logo": [
-        "Logo"
-      ],
       "Member": [
         "Membre"
       ],
       "Name": [
         "Nom"
       ],
-      "Note": [
-        "Note"
-      ],
       "Organization": [
         "Organisation"
       ],
       "Phone": [
         "Téléphone"
-      ],
-      "Photo": [
-        "Photo"
       ],
       "Role": [
         "Rôle"
@@ -1933,9 +1869,6 @@
       ],
       "Title": [
         "Titre"
-      ],
-      "URL": [
-        "URL"
       ]
     },
     "Contact type label": {
@@ -1959,17 +1892,11 @@
       ],
       "Work": [
         "Travail"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
       "Abkhazia": [
         "Abkhazie"
-      ],
-      "Afghanistan": [
-        "Afghanistan"
       ],
       "Albania": [
         "Albanie"
@@ -1983,12 +1910,6 @@
       "Andorra": [
         "Andorre"
       ],
-      "Angola": [
-        "Angola"
-      ],
-      "Anguilla": [
-        "Anguilla"
-      ],
       "Antarctica": [
         "Antarctique"
       ],
@@ -2000,9 +1921,6 @@
       ],
       "Armenia": [
         "Arménie"
-      ],
-      "Aruba": [
-        "Aruba"
       ],
       "Ascension Island": [
         "Île de l'Ascension"
@@ -2016,14 +1934,8 @@
       "Azerbaijan": [
         "Azerbaïdjan"
       ],
-      "Bahamas": [
-        "Bahamas"
-      ],
       "Bahrain": [
         "Bahreïn"
-      ],
-      "Bangladesh": [
-        "Bangladesh"
       ],
       "Barbados": [
         "Barbade"
@@ -2055,9 +1967,6 @@
       "Bosnia and Herzegovina": [
         "Bosnie-Herzégovine"
       ],
-      "Botswana": [
-        "Botswana"
-      ],
       "Bouvet Island": [
         "Île Bouvet"
       ],
@@ -2067,26 +1976,14 @@
       "British Indian Ocean Territory": [
         "Territoire britannique de l'océan Indien"
       ],
-      "Brunei Darussalam": [
-        "Brunei Darussalam"
-      ],
       "Bulgaria": [
         "Bulgarie"
-      ],
-      "Burkina Faso": [
-        "Burkina Faso"
-      ],
-      "Burundi": [
-        "Burundi"
       ],
       "Cambodia": [
         "Cambodge"
       ],
       "Cameroon": [
         "Cameroun"
-      ],
-      "Canada": [
-        "Canada"
       ],
       "Cape Verde": [
         "Cap-Vert"
@@ -2127,17 +2024,8 @@
       "Cook Islands": [
         "Îles Cook"
       ],
-      "Costa Rica": [
-        "Costa Rica"
-      ],
       "Croatia": [
         "Croatie"
-      ],
-      "Cuba": [
-        "Cuba"
-      ],
-      "Curaçao": [
-        "Curaçao"
       ],
       "Cyprus": [
         "Chypre"
@@ -2145,14 +2033,8 @@
       "Czech Republic": [
         "Tchéquie"
       ],
-      "Côte d'Ivoire": [
-        "Côte d'Ivoire"
-      ],
       "Denmark": [
         "Danemark"
-      ],
-      "Djibouti": [
-        "Djibouti"
       ],
       "Dominica": [
         "Dominique"
@@ -2178,9 +2060,6 @@
       "Estonia": [
         "Estonie"
       ],
-      "Eswatini": [
-        "Eswatini"
-      ],
       "Ethiopia": [
         "Éthiopie"
       ],
@@ -2199,9 +2078,6 @@
       "Finland": [
         "Finlande"
       ],
-      "France": [
-        "France"
-      ],
       "French Guiana": [
         "Guyane française"
       ],
@@ -2210,9 +2086,6 @@
       ],
       "French Southern Territories": [
         "Terres australes françaises"
-      ],
-      "Gabon": [
-        "Gabon"
       ],
       "Gambia": [
         "Gambie"
@@ -2223,12 +2096,6 @@
       "Germany": [
         "Allemagne"
       ],
-      "Ghana": [
-        "Ghana"
-      ],
-      "Gibraltar": [
-        "Gibraltar"
-      ],
       "Greece": [
         "Grèce"
       ],
@@ -2237,12 +2104,6 @@
       ],
       "Grenada": [
         "Grenade"
-      ],
-      "Guadeloupe": [
-        "Guadeloupe"
-      ],
-      "Guam": [
-        "Guam"
       ],
       "Guatemala": [
         "Guatémala"
@@ -2256,9 +2117,6 @@
       "Guinea-Bissau": [
         "Guinée-Bissau"
       ],
-      "Guyana": [
-        "Guyana"
-      ],
       "Haiti": [
         "Haïti"
       ],
@@ -2267,12 +2125,6 @@
       ],
       "Holy See (Vatican City State)": [
         "Saint-Siège (État de la Cité du Vatican)"
-      ],
-      "Honduras": [
-        "Honduras"
-      ],
-      "Hong Kong": [
-        "Hong Kong"
       ],
       "Hungary": [
         "Hongrie"
@@ -2285,12 +2137,6 @@
       ],
       "Indonesia": [
         "Indonésie"
-      ],
-      "International": [
-        "International"
-      ],
-      "Iran": [
-        "Iran"
       ],
       "Iraq": [
         "Irak"
@@ -2313,23 +2159,8 @@
       "Japan": [
         "Japon"
       ],
-      "Jersey": [
-        "Jersey"
-      ],
       "Jordan": [
         "Jordanie"
-      ],
-      "Kazakhstan": [
-        "Kazakhstan"
-      ],
-      "Kenya": [
-        "Kenya"
-      ],
-      "Kiribati": [
-        "Kiribati"
-      ],
-      "Kosovo": [
-        "Kosovo"
       ],
       "Kuwait": [
         "Koweït"
@@ -2337,17 +2168,11 @@
       "Kyrgyzstan": [
         "Kirghizistan"
       ],
-      "Laos": [
-        "Laos"
-      ],
       "Latvia": [
         "Lettonie"
       ],
       "Lebanon": [
         "Liban"
-      ],
-      "Lesotho": [
-        "Lesotho"
       ],
       "Liberia": [
         "Libéria"
@@ -2355,32 +2180,11 @@
       "Libya": [
         "Libye"
       ],
-      "Liechtenstein": [
-        "Liechtenstein"
-      ],
       "Lithuania": [
         "Lituanie"
       ],
-      "Luxembourg": [
-        "Luxembourg"
-      ],
-      "Macao": [
-        "Macao"
-      ],
-      "Madagascar": [
-        "Madagascar"
-      ],
-      "Malawi": [
-        "Malawi"
-      ],
       "Malaysia": [
         "Malaisie"
-      ],
-      "Maldives": [
-        "Maldives"
-      ],
-      "Mali": [
-        "Mali"
       ],
       "Malta": [
         "Malte"
@@ -2388,17 +2192,11 @@
       "Marshall Islands": [
         "Îles Marshall"
       ],
-      "Martinique": [
-        "Martinique"
-      ],
       "Mauritania": [
         "Mauritanie"
       ],
       "Mauritius": [
         "Île Maurice"
-      ],
-      "Mayotte": [
-        "Mayotte"
       ],
       "Mexico": [
         "Mexique"
@@ -2406,32 +2204,20 @@
       "Moldova": [
         "Moldavie"
       ],
-      "Monaco": [
-        "Monaco"
-      ],
       "Mongolia": [
         "Mongolie"
       ],
       "Montenegro": [
         "Monténégro"
       ],
-      "Montserrat": [
-        "Montserrat"
-      ],
       "Morocco": [
         "Maroc"
-      ],
-      "Mozambique": [
-        "Mozambique"
       ],
       "Myanmar": [
         "Birmanie"
       ],
       "Namibia": [
         "Namibie"
-      ],
-      "Nauru": [
-        "Nauru"
       ],
       "Nepal": [
         "Népal"
@@ -2444,12 +2230,6 @@
       ],
       "New Zealand": [
         "Nouvelle-Zélande"
-      ],
-      "Nicaragua": [
-        "Nicaragua"
-      ],
-      "Niger": [
-        "Niger"
       ],
       "Nigeria": [
         "Nigéria"
@@ -2472,32 +2252,14 @@
       "Norway": [
         "Norvège"
       ],
-      "Oman": [
-        "Oman"
-      ],
-      "Pakistan": [
-        "Pakistan"
-      ],
       "Palau": [
         "Palaos"
-      ],
-      "Palestine": [
-        "Palestine"
-      ],
-      "Panama": [
-        "Panama"
       ],
       "Papua New Guinea": [
         "Papouasie-Nouvelle-Guinée"
       ],
-      "Paraguay": [
-        "Paraguay"
-      ],
       "Peru": [
         "Pérou"
-      ],
-      "Philippines": [
-        "Philippines"
       ],
       "Pitcairn": [
         "Îles Pitcairn"
@@ -2505,14 +2267,8 @@
       "Poland": [
         "Pologne"
       ],
-      "Portugal": [
-        "Portugal"
-      ],
       "Puerto Rico": [
         "Porto Rico"
-      ],
-      "Qatar": [
-        "Qatar"
       ],
       "Reunion": [
         "La Réunion"
@@ -2522,9 +2278,6 @@
       ],
       "Russia": [
         "Russie"
-      ],
-      "Rwanda": [
-        "Rwanda"
       ],
       "Saint Barthélemy": [
         "Saint-Barthélémy"
@@ -2547,9 +2300,6 @@
       "Saint Vincent and the Grenadines": [
         "Saint-Vincent et les Grenadines"
       ],
-      "Samoa": [
-        "Samoa"
-      ],
       "San Marino": [
         "Saint-Marin"
       ],
@@ -2564,12 +2314,6 @@
       ],
       "Serbia": [
         "Serbie"
-      ],
-      "Seychelles": [
-        "Seychelles"
-      ],
-      "Sierra Leone": [
-        "Sierra Leone"
       ],
       "Singapore": [
         "Singapour"
@@ -2607,14 +2351,8 @@
       "Spain": [
         "Espagne"
       ],
-      "Sri Lanka": [
-        "Sri Lanka"
-      ],
       "Sudan": [
         "Soudan"
-      ],
-      "Suriname": [
-        "Suriname"
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard et Jan Mayen"
@@ -2643,20 +2381,8 @@
       "Timor-Leste": [
         "Timor oriental"
       ],
-      "Togo": [
-        "Togo"
-      ],
-      "Tokelau": [
-        "Tokelau"
-      ],
-      "Tonga": [
-        "Tonga"
-      ],
       "Trinidad and Tobago": [
         "Trinité-et-Tobago"
-      ],
-      "Tristan da Cunha": [
-        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunisie"
@@ -2670,14 +2396,8 @@
       "Turks and Caicos Islands": [
         "Îles Turques-et-Caïques"
       ],
-      "Tuvalu": [
-        "Tuvalu"
-      ],
       "Uganda": [
         "Ouganda"
-      ],
-      "Ukraine": [
-        "Ukraine"
       ],
       "United Arab Emirates": [
         "Émirats Arabes Unis"
@@ -2691,20 +2411,11 @@
       "United States Minor Outlying Islands": [
         "Îles mineures éloignées des États-Unis"
       ],
-      "Uruguay": [
-        "Uruguay"
-      ],
       "Uzbekistan": [
         "Ouzbékistan"
       ],
-      "Vanuatu": [
-        "Vanuatu"
-      ],
       "Venezuela": [
         "Vénézuéla"
-      ],
-      "Vietnam": [
-        "Vietnam"
       ],
       "Virgin Islands, British": [
         "Îles Vierges britanniques"
@@ -2723,9 +2434,6 @@
       ],
       "Zambia": [
         "Zambie"
-      ],
-      "Zimbabwe": [
-        "Zimbabwe"
       ],
       "Åland Islands": [
         "Îles d'Åland"
@@ -2812,9 +2520,6 @@
     "Density mode": {
       "Comfortable": [
         "Confortable"
-      ],
-      "Compact": [
-        "Compact"
       ]
     },
     "Description": {
@@ -2849,12 +2554,21 @@
       "No labels": [
         "Aucun label"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logo and a plus sign"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Activez la personnalisation de l'envoi programmé de messages et d'autres fonctionnalités en passant à un abonnement supérieur."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
+      ],
+      "When do you want your message to be sent?": [
+        "Quand voulez-vous que votre message soit envoyé?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus grand, veuillez le diviser en plus petits fichiers."
@@ -3038,6 +2752,9 @@
       "Contact could not be saved": [
         "Le contact n'a pas pu être enregistré"
       ],
+      "Contact name is too long": [
+        "Le nom du contact est trop long"
+      ],
       "Contact signature could not be verified": [
         "La signature du contact n'a pas pu être vérifiée"
       ],
@@ -3053,14 +2770,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erreur de déchiffrement: le déchiffrement du contenu chiffré de ce message a échoué."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
-      ],
       "Domain not available, try again later": [
         "Domaine non disponible, veuillez réessayer plus tard"
       ],
@@ -3072,6 +2781,9 @@
       ],
       "Email address invalid": [
         "Adresse courriel invalide"
+      ],
+      "Email address is required": [
+        "L'adresse électronique est nécessaire"
       ],
       "Email is not valid": [
         "L'adresse électronique n'est pas valide"
@@ -3109,6 +2821,9 @@
       "Image upload failed": [
         "Échec du téléversement de l'image"
       ],
+      "IMAP server is required": [
+        "Le serveur IMAP est nécessaire"
+      ],
       "Incorrect login credentials. Please try again.": [
         "Identifiants de connexion incorrects. Veuillez réessayer."
       ],
@@ -3132,10 +2847,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Nombre maximum de pièces jointes (${ attachmentsCountLimit }) dépassé"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant",
-        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants"
       ],
       "Message needs to be sent first": [
         "Le message doit d'abord être envoyé"
@@ -3181,6 +2892,9 @@
         "Un des groupes n'a pas de contacts: ${ noContactGroupList }",
         "Certains groupes n'ont pas de contacts: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Le mot de passe est nécessaire"
+      ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
       ],
@@ -3196,6 +2910,9 @@
       ],
       "Please set a password": [
         "Veuillez créer un mot de passe"
+      ],
+      "Port is required": [
+        "Le port est nécessaire"
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée"
@@ -3242,9 +2959,6 @@
       ],
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés"
-      ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Certains de vos noms de dossier sont réservés. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
@@ -3322,9 +3036,6 @@
       "This message has already been sent. A new draft has been saved.": [
         "Ce message a déjà été envoyé. Un nouveau brouillon a été enregistré."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel."
-      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Trop de filtres sont actifs. Nous vous invitons à passer à un abonnement payant pour activer plus de filtres."
       ],
@@ -3346,18 +3057,12 @@
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer de courrier à plus de 100 destinataires"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composeur à la fois",
         "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtres de composeur à la fois"
       ],
       "You did not provide a file.": [
         "Vous n'avez pas fourni de fichier."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
       ],
       "You must set a name": [
         "Vous devez définir un nom"
@@ -3919,23 +3624,14 @@
       "Default folders": [
         "Dossiers par défaut"
       ],
-      "Labels": [
-        "Labels"
-      ],
       "Network": [
         "Réseau"
       ],
       "Other category": [
         "Autre catégorie"
-      ],
-      "Services": [
-        "Services"
       ]
     },
     "Header": {
-      "Contacts": [
-        "Contacts"
-      ],
       "Contacts, groups and settings": [
         "Contacts, groupes et paramètres"
       ],
@@ -3956,9 +3652,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Courriel"
       ],
@@ -3967,9 +3660,6 @@
       ],
       "No verification method available": [
         "Aucune méthode de vérification disponible"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -3990,11 +3680,20 @@
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } sur ${ totalToImport } événement correctement importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } sur ${ totalToImport } événements correctement importés."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout des contacts: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Chiffrement et ajout d'événements à votre calendrier: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "L'événement a été importé. Il apparaîtra dans votre calendrier."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Les événements ont été importés. Ils apparaîtront dans votre calendrier."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Veuillez ne pas fermer l'onglet avant la fin du processus d'importation."
@@ -4028,17 +3727,26 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } contact chiffré et ajouté à votre liste de contacts",
         "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de votre contact. Aucun contact n’a pu être importé."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. ${ totalImported } contacts sur ${ totalToImport } ont été importés."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Une erreur s’est produite lors du chiffrement et de l’ajout de vos contacts. Aucun contact n’a pu être importé."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Le contact a été importé. Il apparaîtra dans votre liste de contacts."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Les contacts ont été importés. Ils apparaîtront dans votre liste de contacts."
       ]
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contact ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } contact",
-        "${ totalContacts } contacts"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4193,9 +3901,6 @@
       ],
       "ICS file": [
         "fichier ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4247,10 +3952,6 @@
         "${ calendarsToBeCreatedCount } nouveau calendrier",
         "${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendrier fusionné",
-        "${ calendarsToBeMerged } calendriers fusionnés"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendrier fusionné",
         "${ calendarsToBeMergedCount } calendriers fusionnés"
@@ -4297,14 +3998,6 @@
         "${ numberOfTrackers } traqueur de courriel bloqué",
         "${ numberOfTrackers } traqueurs de courriel bloqués"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } groupe de contacts",
-        "${ numContactGroups } groupes de contacts"
-      ],
-      "${ numContacts } contact": [
-        "${ numContacts } contact",
-        "${ numContacts } contacts"
-      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } message dans la conversation",
         "${ NumMessages } messages dans la conversation"
@@ -4349,17 +4042,6 @@
         "${ selectedFoldersCountLocalized } label sélectionné",
         "${ selectedFoldersCountLocalized } labels sélectionnés"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } de stockage"
-      ],
-      "${ total } conversation": [
-        "${ total } conversation",
-        "${ total } conversations"
-      ],
-      "${ total } message": [
-        "${ total } message",
-        "${ total } messages"
-      ],
       "${ unread } unread conversation": [
         "${ unread } conversation non lue",
         "${ unread } conversations non lues"
@@ -4396,9 +4078,6 @@
       ],
       "(No Recipient)": [
         "(aucun destinataire)"
-      ],
-      "10 email addresses": [
-        "10 adresses courriel"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Une phrase de récupération est l'un des moyens les plus sûrs de protéger l'accès à votre compte. Vous pouvez l'utiliser pour accéder à votre compte et récupérer vos données chiffrées si jamais vous oubliez votre mot de passe."
@@ -4492,6 +4171,9 @@
       "Attach public key": [
         "Attacher une clé publique"
       ],
+      "Attention required": [
+        "Attention requise"
+      ],
       "Background color": [
         "Couleur d'arrière-plan"
       ],
@@ -4534,15 +4216,11 @@
       "Confirm phishing report": [
         "Confirmer le signalement d'hameçonnage"
       ],
-      "Continue with ${ planName }": [
-        "Continuer avec ${ planName }"
-      ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Créer ${ calendarsToBeCreated } nouveau calendrier",
-        "Créer ${ calendarsToBeCreated } nouveaux calendriers"
+      "Country code": [
+        "Indicatif du pays"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Créez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous souhaitez importer."
@@ -4677,9 +4355,6 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Enter verification code. Digit ${ digit }."
-      ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
@@ -4742,9 +4417,9 @@
       "Group assignment applied": [
         "Affectation de groupe appliquée"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Possède ${ numAttachments } pièce jointe",
-        "Possède ${ numAttachments } pièces jointes"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Contient ${ numAttachments } pièce jointe (${ numAttachmentsSize })",
+        "Contient ${ numAttachments } pièces jointes (${ numAttachmentsSize })"
       ],
       "here": [
         "ici"
@@ -4785,10 +4460,6 @@
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendrier",
-        "Importer ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendriers"
       ],
       "Import from": [
         "Importer depuis"
@@ -4907,8 +4578,8 @@
       "Monthly ${ onDayString }": [
         "Mensuellement le ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Transfert de nombreux messages en cours, cela peut prendre un certain temps."
+      "Moving messages. This may take a while.": [
+        "Les messages sont en cours de déplacement. Ceci peut prendre un certain temps."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez le dossier parent dans lequel vous voulez le mettre. Si vous ne sélectionnez pas un dossier parent, ce nouveau dossier sera créé en tant que dossier de premier niveau."
@@ -4969,9 +4640,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme «compromises» par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
-      ],
-      "Other options": [
-        "Autres options"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Notre système a marqué ce message comme étant une tentative d'hameçonnage. Veuillez vérifier qu'il est légitime."
@@ -5040,11 +4708,14 @@
       "Print email": [
         "Imprimer le courriel"
       ],
-      "Priority support": [
-        "Assistance prioritaire"
-      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protégez votre adresse électronique des fuites vers les listes de diffusion ou les pourrielleurs avec ${ maskMyEmailButton }."
+      ],
+      "Quick reply": [
+        "Réponse rapide"
+      ],
+      "Quick reply to ${ recipientsAsString }": [
+        "Réponse rapide à ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinataire: "
@@ -5106,9 +4777,6 @@
       "Select what you want to import.": [
         "Sélectionnez ce que vous voulez importer."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Envoyez un message chiffré, protégé par un mot de passe, à une adresse électronique ${ boldText }."
       ],
@@ -5154,9 +4822,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Stockez et partagez des fichiers en toute sécurité avec ${ DRIVE_APP_NAME }."
       ],
@@ -5171,9 +4836,6 @@
       ],
       "Subject: ": [
         "Objet: "
-      ],
-      "Support for 1 custom email domain": [
-        "Prise en charge d'un nom de domaine personnalisé"
       ],
       "Support privacy by upgrading for": [
         "Soutenez la vie privée en passant à"
@@ -5349,12 +5011,6 @@
       "Turn on to search the content of your messages": [
         "Activer pour rechercher dans le contenu de vos messages"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
-      ],
-      "Unlimited messages": [
-        "Messages illimités"
-      ],
       "Unlock message": [
         "Débloquer le message"
       ],
@@ -5397,9 +5053,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Passez à l’offre supérieure pour utiliser ${ MAIL_APP_NAME } avec des logiciels client tiers."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Passez à l'offre supérieure dès aujourd'hui pour conserver les avantages suivants de ${ planName }."
-      ],
       "Upload picture": [
         "Téléverser une image"
       ],
@@ -5417,12 +5070,6 @@
       ],
       "Using SimpleLogin is easy": [
         "Utiliser SimpleLogin est facile"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Message de ${ BRAND_NAME } vérifié"
-      ],
-      "Version ${ appVersion }": [
-        "Version ${ appVersion }"
       ],
       "Visit our shop to get ${ BRAND_NAME } merchandise.": [
         "Rendez-vous dans notre boutique pour vous procurer des produits dérivés ${ BRAND_NAME }."
@@ -5645,9 +5292,6 @@
       ],
       "Trusted": [
         "Approuvée"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -5872,9 +5516,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible. Veuillez vérifier plus tard)"
       ],
-      "Actions": [
-        "Actions"
-      ],
       "Add email address": [
         "Ajouter une adresse courriel"
       ],
@@ -5968,26 +5609,14 @@
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces"
       ],
-      "Coming soon": [
-        "Bientôt disponible"
-      ],
-      "Conditions": [
-        "Conditions"
-      ],
-      "Confirm password": [
-        "Confirmer le mot de passe"
-      ],
-      "Contacts": [
-        "Contacts"
+      "Colors": [
+        "Couleurs"
       ],
       "Copy": [
         "Copier"
       ],
       "Country": [
         "Pays"
-      ],
-      "Date": [
-        "Date"
       ],
       "Date:": [
         "Date:"
@@ -6055,8 +5684,11 @@
       "From:": [
         "De:"
       ],
-      "From: ${ importedEmail }": [
-        "De: ${ importedEmail }"
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "De: ${ fromEmail }"
       ],
       "Good": [
         "Bonne"
@@ -6133,12 +5765,6 @@
       "Manage categories": [
         "Gérer les catégories"
       ],
-      "Manage folders": [
-        "Gérer les dossiers"
-      ],
-      "Manage labels": [
-        "Gérer les labels"
-      ],
       "Manage my addresses": [
         "Gérer mes adresses"
       ],
@@ -6160,17 +5786,8 @@
       "Name": [
         "Nom"
       ],
-      "Navigation": [
-        "Navigation"
-      ],
       "No label found": [
         "Aucun label trouvé"
-      ],
-      "Notification": [
-        "Notification"
-      ],
-      "OK": [
-        "OK"
       ],
       "Operating system": [
         "Système d'exploitation"
@@ -6201,9 +5818,6 @@
       ],
       "Phone number": [
         "Numéro de téléphone"
-      ],
-      "Port": [
-        "Port"
       ],
       "Post office box": [
         "Boîte postale"
@@ -6292,8 +5906,11 @@
       "To:": [
         "À:"
       ],
-      "To: ${ emailAddress }": [
-        "À: ${ emailAddress }"
+      "To: ${ to }": [
+        "À: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "À: ${ toEmail }"
       ],
       "Toolbar": [
         "Barre d'outils"
@@ -6303,9 +5920,6 @@
       ],
       "Undisclosed Recipients": [
         "Destinataires non divulgués"
-      ],
-      "Upload file": [
-        "Téléverser le fichier"
       ],
       "Upload picture": [
         "Importer une image"
@@ -6362,17 +5976,11 @@
     "Label to change composer mode": {
       "Maximized": [
         "Maximisé"
-      ],
-      "Normal": [
-        "Normal"
       ]
     },
     "Label to change density": {
       "Comfortable": [
         "Confortable"
-      ],
-      "Compact": [
-        "Compact"
       ]
     },
     "Label to change view layout": {
@@ -6460,9 +6068,6 @@
       ],
       "Inbox": [
         "Boîte de réception"
-      ],
-      "Labels": [
-        "Labels"
       ],
       "Learn more": [
         "En savoir plus"
@@ -6578,9 +6183,6 @@
       "Almost there": [
         "Nous y sommes presque"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Nombre de calendriers créés: ${ createdCalendars } sur ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Connexion à votre fournisseur de messagerie"
       ],
@@ -6595,20 +6197,6 @@
       ],
       "Your import is starting": [
         "Votre importation commence"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -6857,6 +6445,19 @@
         "Basculez vers ou ajoutez un compte"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Mettre à niveau maintenant"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Dossiers, labels et filtres illimités"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Parlez-nous de votre expérience (optionnel)"
@@ -7020,9 +6621,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Un moyen de vous contacter"
-      ],
-      "Confirm password": [
-        "Confirmer le mot de passe"
       ],
       "E.g., ": [
         "p. ex. "
@@ -7379,9 +6977,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
-      ],
       "Email tracking protection": [
         "Protection contre le suivi des courriels"
       ],
@@ -7396,9 +6991,6 @@
       ],
       "Schedule send": [
         "Programmer l'envoi"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Essayez ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer ceci dans les ${ settingsLink }."
@@ -7419,12 +7011,6 @@
       ]
     },
     "Step in filter modal": {
-      "Actions": [
-        "Actions"
-      ],
-      "Conditions": [
-        "Conditions"
-      ],
       "Name": [
         "Nom"
       ],
@@ -7535,9 +7121,6 @@
       ],
       "Bug reported": [
         "Bug signalé"
-      ],
-      "Canceling import": [
-        "Annulation de l'importation"
       ],
       "Code sent to ${ methodTo }": [
         "Code envoyé à ${ methodTo }"
@@ -7702,12 +7285,6 @@
       ]
     },
     "Table header": {
-      "Action": [
-        "Action"
-      ],
-      "Actions": [
-        "Actions"
-      ],
       "Address": [
         "Adresse"
       ],
@@ -7725,15 +7302,9 @@
       ],
       "Status": [
         "État"
-      ],
-      "Type": [
-        "Type"
       ]
     },
     "TableHeader": {
-      "Actions": [
-        "Actions"
-      ],
       "Address": [
         "Adresse"
       ],
@@ -7768,25 +7339,29 @@
         "${ daysCountLeft } jour",
         "${ daysCountLeft } jours"
       ],
-      "${ hours } hour": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } heure",
         "${ hoursCountLeft } heures"
       ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minute",
-        "${ minutesCountLeft } minutes"
-      ],
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } seconde",
         "${ secondsCountLeft } secondes"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } heure",
+        "${ hours } heures"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 heure",
+        "${ hoursInt },5 heures"
       ]
     },
     "Title": {
@@ -7873,9 +7448,6 @@
       ],
       "Contact group": [
         "Groupe de contacts"
-      ],
-      "Contacts": [
-        "Contacts"
       ],
       "Continue with partial import?": [
         "Poursuivre l'importation partielle?"
@@ -8022,9 +7594,6 @@
       ],
       "Human verification": [
         "Vérification de l'existence de l'utilisateur"
-      ],
-      "Image": [
-        "Image"
       ],
       "Import as simple event?": [
         "Importer comme simple événement?",
@@ -8234,6 +7803,9 @@
       "Sending original message": [
         "Envoi du message original"
       ],
+      "Set your own schedule": [
+        "Définissez votre propre horaire"
+      ],
       "Settings": [
         "Paramètres"
       ],
@@ -8315,9 +7887,6 @@
       ],
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8723,8 +8292,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Chaque année ${ interval }",
+        "Tous les ${ interval } ans"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Chaque ${ interval } année, à ${ timesString }",

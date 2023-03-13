@@ -326,7 +326,7 @@ END:VCALENDAR`;
             });
         });
 
-        test('should generate a DTSTAMP from the message if no DTSTAMP was present', async () => {
+        test('should generate a DTSTAMP from the message if no DTSTAMP was present, and fix sequences that are too big', async () => {
             const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
@@ -335,6 +335,7 @@ BEGIN:VEVENT
 UID:test-event
 DTSTART;TZID=/mozilla.org/20050126_1/Europe/Brussels:20021231T203000
 DTEND;TZID=/mozilla.org/20050126_1/Europe/Brussels:20030101T003000
+SEQUENCE:2205092022
 LOCATION:1CP Conference Room 4350
 ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
  S-ACTION;RSVP=TRUE:mailto:testme@pm.me
@@ -366,7 +367,7 @@ END:VCALENDAR`;
                 method: 'PUBLISH',
                 vevent: expect.objectContaining({
                     component: 'vevent',
-                    uid: { value: 'original-uid-test-event-sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186' },
+                    uid: { value: 'original-uid-test-event-sha1-uid-2d83f9ede40324edd0d2ec094e0015451031cf3c' },
                     dtstamp: {
                         value: { year: 2022, month: 10, day: 10, hours: 10, minutes: 0, seconds: 0, isUTC: true },
                     },
@@ -378,10 +379,11 @@ END:VCALENDAR`;
                         value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
                         parameters: { tzid: 'Europe/Brussels' },
                     },
+                    sequence: { value: 0 },
                 }),
                 originalVcalInvitation: parsedInvitation,
                 originalUniqueIdentifier: 'test-event',
-                legacyUid: 'sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186-original-uid-test-event',
+                legacyUid: 'sha1-uid-2d83f9ede40324edd0d2ec094e0015451031cf3c-original-uid-test-event',
                 hasMultipleVevents: false,
                 fileName: 'test.ics',
             });
@@ -868,6 +870,61 @@ END:VCALENDAR`;
             });
             const { vevent } = (await getSupportedEventInvitation(setup)) || {};
             expect(vevent).toEqual(localizedVevent('Asia/Seoul', setup.hashUid));
+        });
+    });
+
+    describe('getSupportedEventInvitation should throw', () => {
+        const generateVcalSetup = async ({
+            method = ICAL_METHOD.REQUEST,
+            primaryTimezone,
+            uid,
+        }: {
+            method?: ICAL_METHOD;
+            xWrTimezone?: string;
+            vtimezonesTzids?: string[];
+            primaryTimezone: string;
+            uid?: string;
+        }) => {
+            const vcal = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+METHOD:${method}
+BEGIN:VEVENT
+ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
+ S-ACTION;RSVP=TRUE:mailto:testme@pm.me
+ATTENDEE;CN="testKrt";CUTYPE=INDIVIDUAL;EMAIL="aGmailOne@gmail.co
+ m";PARTSTAT=ACCEPTED;ROLE=CHAIR:mailto:aGmailOne@gmail.com
+DTSTART:20200915T090000
+DTEND:20200915T100000
+ORGANIZER;CN="testKrt":mailto:aGmailOne@gmail.com
+${uid ? `UID:${uid}` : ''}
+DTSTAMP:20200821T081914Z
+SEQUENCE:1
+SUMMARY:Testing something
+RRULE:FREQ=DAILY;INTERVAL=2;COUNT=5
+END:VEVENT
+END:VCALENDAR`;
+            const parsedVcal = parse(vcal) as VcalVcalendar;
+
+            return {
+                vcalComponent: parsedVcal,
+                message: { Time: Math.round(Date.now() / 1000) } as Message,
+                icsBinaryString: vcal,
+                icsFileName: 'test.ics',
+                primaryTimezone,
+                hashUid: await generateVeventHashUID(vcal, uid),
+            };
+        };
+
+        test('when invitations do not have UID', async () => {
+            await expect(
+                getSupportedEventInvitation(
+                    await generateVcalSetup({
+                        method: ICAL_METHOD.REQUEST,
+                        primaryTimezone: 'Asia/Seoul',
+                    })
+                )
+            ).rejects.toThrowError('Invalid invitation');
         });
     });
 });

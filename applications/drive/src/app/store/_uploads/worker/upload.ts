@@ -1,10 +1,13 @@
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { retryHandler } from '@proton/shared/lib/api/helpers/withApiHandlers';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
 
+import { APP_NAME, APP_VERSION } from '../../../config';
 import { MAX_RETRIES_BEFORE_FAIL, MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_JOBS } from '../constants';
 import { UploadingBlockControl } from './interface';
 import { Pauser } from './pauser';
@@ -236,6 +239,10 @@ async function uploadBlockData(
 
         xhr.open('POST', url);
         xhr.setRequestHeader('pm-storage-token', token);
+        const appVersionHeaders = getAppVersionHeaders(getClientID(APP_NAME), APP_VERSION);
+        Object.keys(appVersionHeaders).forEach((header) => {
+            xhr.setRequestHeader(header, appVersionHeaders[header as keyof typeof appVersionHeaders]);
+        });
         xhr.send(
             serializeFormData({
                 Block: new Blob([content]),

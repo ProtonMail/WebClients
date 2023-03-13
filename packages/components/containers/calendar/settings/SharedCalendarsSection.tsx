@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -26,9 +26,14 @@ import {
     getDisabledCalendarBadge,
 } from '@proton/shared/lib/calendar/badges';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
+import {
+    getCalendarNameSubline,
+    getCalendarNameWithOwner,
+} from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -36,18 +41,27 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
     const {
         ID,
         Color,
-        Name,
+        Name: calendarName,
         Owner: { Email: ownerEmail },
         Email: memberEmail,
+        Permissions: memberPermissions,
     } = calendar;
-    const calendarNameWithOwner = `${Name} (${ownerEmail})`;
+    const calendarNameWithOwner = getCalendarNameWithOwner({ calendarName, ownerEmail });
 
     const { badges } = getCalendarStatusBadges(calendar);
     const filteredBadges = badges.filter(({ statusType }) => statusType === CALENDAR_STATUS_TYPE.DISABLED);
+    const subline = getCalendarNameSubline({ displayEmail, memberEmail, memberPermissions });
+
+    const statusHeader = (
+        <div className="flex flex-align-items-center">
+            <span className="mr0-5">{c('Header').t`Status`}</span>
+            <Info url={getKnowledgeBaseUrl('/calendar-status')} />
+        </div>
+    );
 
     return (
         <TableRow>
-            <TableCell>
+            <TableCell label={c('Header').t`Name`}>
                 <div className="grid-align-icon-center">
                     <CalendarSelectIcon color={Color} className="mr0-75 flex-item-noshrink keep-left" />
                     <div className="flex flex-align-items-center flex-nowrap overflow-hidden">
@@ -55,10 +69,10 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
                             {calendarNameWithOwner}
                         </div>
                     </div>
-                    {displayEmail && <div className="text-ellipsis text-sm m0 color-weak">{memberEmail}</div>}
+                    {subline && <div className="text-ellipsis text-sm m0 color-weak">{subline}</div>}
                 </div>
             </TableCell>
-            <TableCell>
+            <TableCell label={filteredBadges.length > 0 && statusHeader}>
                 <div data-test-id="calendar-settings-page:calendar-status" key="status">
                     {filteredBadges.map(({ statusType, badgeType, text, tooltipText }) => (
                         <CalendarBadge key={statusType} badgeType={badgeType} text={text} tooltipText={tooltipText} />
@@ -103,8 +117,12 @@ const InvitationRow = ({
     const [loadingAccept, withLoadingAccept] = useLoading();
     const [loadingDecline, withLoadingDecline] = useLoading();
 
-    const { Email: invitedEmail, Calendar } = invitation;
-    const calendarLabel = `${Calendar.Name} (${Calendar.SenderEmail})`;
+    const { Email: memberEmail, Calendar, Permissions: memberPermissions } = invitation;
+    const calendarNameWithOwner = getCalendarNameWithOwner({
+        calendarName: Calendar.Name,
+        ownerEmail: Calendar.SenderEmail,
+    });
+    const subline = getCalendarNameSubline({ displayEmail, memberEmail, memberPermissions });
 
     const handleAccept = () => withLoadingAccept(onAccept(invitation));
     const handleDecline = () => withLoadingDecline(onDecline(invitation));
@@ -119,11 +137,11 @@ const InvitationRow = ({
                 <div className="grid-align-icon-center">
                     <CalendarSelectIcon border color={Calendar.Color} className="mr0-75 flex-item-noshrink keep-left" />
                     <div className="flex flex-align-items-center flex-nowrap overflow-hidden">
-                        <div className="text-ellipsis" title={calendarLabel}>
-                            {calendarLabel}
+                        <div className="text-ellipsis" title={calendarNameWithOwner}>
+                            {calendarNameWithOwner}
                         </div>
                     </div>
-                    {displayEmail && <div className="text-ellipsis text-sm m0 color-weak">{invitedEmail}</div>}
+                    {subline && <div className="text-ellipsis text-sm m0 color-weak">{subline}</div>}
                 </div>
             </TableCell>
             <TableCell>
@@ -186,14 +204,15 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
         return null;
     }
 
+    const sharedWithMeTitle = c('Table header; invitations to share calendar').t`Shared with me`;
+
     return (
         <SettingsSectionWide>
-            <Table className="simple-table--has-actions">
+            <h4 className="no-desktop text-bold text-rg mb0-5">{sharedWithMeTitle}</h4>
+            <Table hasActions responsive="cards">
                 <TableHeader>
                     <TableRow>
-                        <TableHeaderCell className="text-left w50">
-                            {c('Table header; invitations to share calendar').t`Shared with me`}
-                        </TableHeaderCell>
+                        <TableHeaderCell className="text-left w50">{sharedWithMeTitle}</TableHeaderCell>
                         <TableHeaderCell className="w20">{''}</TableHeaderCell>
                         <TableHeaderCell>{''}</TableHeaderCell>
                     </TableRow>

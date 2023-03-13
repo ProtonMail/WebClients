@@ -25,7 +25,11 @@ export const reset = (state: Draft<MessagesState>) => {
 };
 
 export const initialize = (state: Draft<MessagesState>, action: PayloadAction<MessageState>) => {
-    state[action.payload.localID] = action.payload as any; // TS error with writing Element
+    const messageState = getMessage(state, action.payload.localID);
+
+    if (!messageState?.messageDocument?.initialized) {
+        state[action.payload.localID] = action.payload as any; // TS error with writing Element
+    }
 };
 
 export const reload = (state: Draft<MessagesState>, { payload: { ID } }: PayloadAction<{ ID: string }>) => {

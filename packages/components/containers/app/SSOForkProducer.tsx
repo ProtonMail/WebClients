@@ -123,7 +123,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
         };
 
         const runInternal = async () => {
-            const { app, state, localID, type } = getProduceForkParameters();
+            const { app, state, localID, type, plan } = getProduceForkParameters();
             if (!app || !state) {
                 onInvalidFork();
                 return;
@@ -141,6 +141,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                             keyPassword,
                             state,
                             app,
+                            plan,
                             persistent,
                             trusted,
                         },
@@ -148,7 +149,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                     return;
                 }
 
-                onActiveSessions({ type: SSOType.Proton, payload: { state, app, type } }, activeSessionsResult);
+                onActiveSessions({ type: SSOType.Proton, payload: { state, app, type, plan } }, activeSessionsResult);
             };
 
             if (localID === undefined) {
@@ -167,6 +168,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                         UID: validatedSession.UID,
                         state,
                         app,
+                        plan,
                         persistent: validatedSession.persistent,
                         trusted: validatedSession.trusted,
                     },

@@ -3,16 +3,21 @@
  */
 import ICAL from 'ical.js';
 
+import { parseWithRecovery } from '@proton/shared/lib/calendar/icsSurgery/ics';
+
 import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../constants';
 import {
     VcalCalendarComponent,
+    VcalCalendarComponentWithErrors,
     VcalDateOrDateTimeValue,
     VcalDateTimeValue,
     VcalDateValue,
     VcalDurationValue,
     VcalRrulePropertyValue,
+    VcalVcalendar,
+    VcalVcalendarWithErrors,
 } from '../interfaces/calendar';
-import { PROPERTIES, UNIQUE_PROPERTIES } from './vcalDefinition';
+import { UNIQUE_PROPERTIES } from './vcalDefinition';
 
 const getIcalDateValue = (value: any, tzid: string | undefined, isDate: boolean) => {
     const icalTimezone = value.isUTC ? ICAL.Timezone.utcTimezone : ICAL.Timezone.localTimezone;
@@ -290,10 +295,12 @@ export const fromIcalComponent = (component: any) => {
         component: component.name,
         ...(components.length && { components }),
         ...fromIcalProperties(component ? component.getAllProperties() : undefined),
-    };
+    } as VcalCalendarComponent;
 };
 
-export const fromIcalComponentWithErrors = (component: any): VcalCalendarComponent => {
+export const fromIcalComponentWithErrors = (
+    component: any
+): VcalCalendarComponent | VcalCalendarComponentWithErrors => {
     const components = component.getAllSubcomponents().map((subcomponent: any) => {
         try {
             return fromIcalComponentWithErrors(subcomponent);
@@ -305,7 +312,7 @@ export const fromIcalComponentWithErrors = (component: any): VcalCalendarCompone
         component: component.name,
         ...(components.length && { components }),
         ...fromIcalProperties(component ? component.getAllProperties() : undefined),
-    } as VcalCalendarComponent;
+    } as VcalCalendarComponentWithErrors;
 };
 
 /**
@@ -319,97 +326,17 @@ export const parse = (vcal = ''): VcalCalendarComponent => {
 };
 
 /**
- * If a vcalendar ics does not have the proper enclosing, add it
+ * Same as the parseWithRecovery function, but catching errors in individual components.
+ * This is useful in case we can parse some events but not all in a given ics
  */
-export const reformatVcalEnclosing = (vcal = '') => {
-    let sanitized = vcal;
-    if (!sanitized.startsWith('BEGIN:VCALENDAR')) {
-        sanitized = `BEGIN:VCALENDAR\r\n${sanitized}`;
-    }
-    if (!sanitized.endsWith('END:VCALENDAR')) {
-        sanitized = `${sanitized}\r\nEND:VCALENDAR`;
-    }
-    return sanitized;
-};
-
-/**
- * Naively extract lines in a vcalendar string
- */
-const getNaiveLines = (vcal = '', separator = '\r\n') => {
-    const separatedLines = vcal.split(separator);
-    if (separator === '\n') {
-        return separatedLines;
-    }
-    // split possible remaining line breaks
-    return separatedLines.flatMap((line) => line.split('\n'));
-};
-
-/**
- * Naively try to reformat badly formatted line breaks in a vcalendar string
- */
-export const reformatLineBreaks = (vcal = '') => {
-    // try to guess the line separator of the ics (some providers use '\n' instead of the RFC-compliant '\r\n')
-    const separator = vcal.includes('\r\n') ? '\r\n' : '\n';
-    const lines = getNaiveLines(vcal, separator);
-    return lines.reduce((acc, line) => {
-        // extract naively the vcal field in this line
-        const splitByParamsLine = line.split(';');
-        let field = '';
-        if (splitByParamsLine.length > 1) {
-            field = splitByParamsLine[0];
-        } else {
-            const splitByValue = line.split(':');
-            if (splitByValue.length > 1) {
-                field = splitByValue[0];
-            }
-        }
-        if (!field) {
-            // if not a field line, it should be folded
-            return `${acc}${separator} ${line}`;
-        }
-        // make sure we did not get a false positive for the field line
-        const lowerCaseField = field.toLowerCase();
-        if (
-            PROPERTIES.has(lowerCaseField) ||
-            lowerCaseField.startsWith('x-') ||
-            ['begin', 'end'].includes(lowerCaseField)
-        ) {
-            // field lines should not be folded
-            return acc ? `${acc}${separator}${line}` : line;
-        }
-        // fall back to folding
-        return `${acc}${separator} ${line}`;
-    }, '');
-};
-
-/**
- * Same as the parse function, but catching errors
- */
-export const parseWithErrors = (
-    vcal = '',
-    retry = { retryLineBreaks: true, retryEnclosing: true }
-): VcalCalendarComponent => {
-    const { retryLineBreaks, retryEnclosing } = retry;
+export const parseWithRecoveryAndErrors = (
+    vcal: string,
+    retry = { retryLineBreaks: true, retryEnclosing: true, retryDateTimes: true }
+): VcalVcalendar | VcalVcalendarWithErrors => {
     try {
-        if (!vcal) {
-            return {} as VcalCalendarComponent;
-        }
-        return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal)));
-    } catch (e: any) {
-        const message = e.message.toLowerCase();
-        // try to recover from line break errors
-        const couldBeLineBreakError =
-            message.includes('missing parameter value') || message.includes('invalid line (no token ";" or ":")');
-        if (couldBeLineBreakError && retryLineBreaks) {
-            const reformattedVcal = reformatLineBreaks(vcal);
-            return parseWithErrors(reformattedVcal, { ...retry, retryLineBreaks: false });
-        }
-        // try to recover from enclosing errors
-        if (message.includes('invalid ical body') && retryEnclosing) {
-            const reformattedVcal = reformatVcalEnclosing(vcal);
-            return parseWithErrors(reformattedVcal, { ...retry, retryEnclosing: false });
-        }
-        throw e;
+        return parseWithRecovery(vcal, retry) as VcalVcalendar;
+    } catch (e) {
+        return fromIcalComponentWithErrors(new ICAL.Component(ICAL.parse(vcal))) as VcalVcalendarWithErrors;
     }
 };
 

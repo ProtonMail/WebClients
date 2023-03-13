@@ -23,15 +23,17 @@ import { Icon, Loader } from '../../components';
 import {
     useApi,
     useConfig,
+    useFeature,
+    useLoad,
     useLoading,
     useOrganization,
     usePlans,
     useSubscription,
     useUser,
-    useVPNCountriesCount,
     useVPNServersCount,
 } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
+import { FeatureCode } from '../index';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
@@ -53,7 +55,6 @@ const PlansSection = () => {
     const [plans = [], loadingPlans] = usePlans();
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const [vpnServers] = useVPNServersCount();
-    const [vpnCountries] = useVPNCountriesCount();
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const api = useApi();
@@ -66,6 +67,7 @@ const PlansSection = () => {
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
         return getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription));
     });
+    const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const [open] = useSubscriptionModal();
     const isLoading = Boolean(loadingPlans || loadingSubscription || loadingOrganization);
     const [selectedCurrency, setCurrency] = useState<Currency>();
@@ -73,6 +75,8 @@ const PlansSection = () => {
 
     const [cycle, setCycle] = useState(DEFAULT_CYCLE);
     const { CouponCode } = subscription;
+
+    useLoad();
 
     const handleModal = async (newPlanIDs: PlanIDs) => {
         if (!hasPlanIDs(newPlanIDs)) {
@@ -129,7 +133,6 @@ const PlansSection = () => {
                 plans={plans}
                 plansMap={plansMap}
                 vpnServers={vpnServers}
-                vpnCountries={vpnCountries}
                 currency={currency}
                 cycle={cycle}
                 onChangeCycle={setCycle}
@@ -144,6 +147,7 @@ const PlansSection = () => {
                 selectedProductPlans={selectedProductPlans}
                 onChangeSelectedProductPlans={setSelectedProductPlans}
                 organization={organization}
+                calendarSharingEnabled={calendarSharingEnabled}
             />
             <Button
                 color="norm"

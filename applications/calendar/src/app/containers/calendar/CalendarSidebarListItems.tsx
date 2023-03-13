@@ -33,7 +33,12 @@ import ShareLinkModal from '@proton/components/containers/calendar/shareURL/Shar
 import ShareLinkSuccessModal from '@proton/components/containers/calendar/shareURL/ShareLinkSuccessModal';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/shared/lib/api/calendars';
-import { getIsCalendarDisabled, getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
+import {
+    getIsCalendarDisabled,
+    getIsCalendarWritable,
+    getIsOwnedCalendar,
+    getIsPersonalCalendar,
+} from '@proton/shared/lib/calendar/calendar';
 import {
     CALENDAR_SETTINGS_SECTION_ID,
     COLORS,
@@ -55,8 +60,8 @@ import {
     CalendarMember,
     CalendarMemberInvitation,
     CalendarUrlsResponse,
-    GetAllInvitationsApiResponse,
     GetAllMembersApiResponse,
+    GetCalendarInvitationsResponse,
     MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
@@ -140,6 +145,7 @@ const CalendarSidebarListItems = ({
         const isPersonalCalendar = getIsPersonalCalendar(calendar);
         const isCalendarDisabled = getIsCalendarDisabled(calendar);
         const isOwnedCalendar = getIsOwnedCalendar(calendar);
+        const isCalendarWritable = getIsCalendarWritable(calendar);
 
         const left = (
             <Checkbox
@@ -151,7 +157,6 @@ const CalendarSidebarListItems = ({
                 disabled={loading}
                 id={`calendar-${ID}`}
                 name={`calendar-${Name}`}
-                aria-describedby={`calendar-${Name}`}
                 onChange={({ target: { checked } }) => onChangeVisibility(ID, checked)}
             />
         );
@@ -188,13 +193,6 @@ const CalendarSidebarListItems = ({
                                     <div className="flex-item-noshrink">
                                         &nbsp;({c('Disabled calendar name suffix').t`Disabled`})
                                     </div>
-                                )}
-                                {!isOwnedCalendar && (
-                                    <Tooltip title={c('Calendar sidebar; Calendar info').t`Shared with me`}>
-                                        <div className="flex-item-noshrink ml0-25">
-                                            <Icon name="users" />
-                                        </div>
-                                    </Tooltip>
                                 )}
                             </div>
 
@@ -247,7 +245,7 @@ const CalendarSidebarListItems = ({
                                                     {c('Action').t`Share`}
                                                 </DropdownMenuLink>
                                             ))}
-                                        {isPersonalCalendar && isOwnedCalendar && !isCalendarDisabled && (
+                                        {isCalendarWritable && !isCalendarDisabled && (
                                             <DropdownMenuButton
                                                 className="text-left"
                                                 onClick={() => {
@@ -297,7 +295,7 @@ const CalendarSidebarListItems = ({
     const fetchMembersAndInvitations = async (calendarID: string) => {
         const [{ Members }, { Invitations }] = await Promise.all([
             api<GetAllMembersApiResponse>(getAllMembers(calendarID)),
-            api<GetAllInvitationsApiResponse>(getCalendarInvitations(calendarID)),
+            api<GetCalendarInvitationsResponse>(getCalendarInvitations(calendarID)),
         ]);
 
         // filter out owner and accepted invitations
@@ -482,7 +480,7 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                         onExitImportModal?.();
                         setImportModalCalendar(null);
                     }}
-                    defaultCalendar={importModalCalendar}
+                    initialCalendar={importModalCalendar}
                     calendars={calendars}
                 />
             )}

@@ -159,7 +159,11 @@ const MessageView = (
             return;
         }
 
-        setExpanded(value);
+        // Do not allow message expand during sending. Because if the user expands it during this step,
+        // he will have a flash due to messageDocument computation after receiving API response
+        if (!message.draftFlags?.sending) {
+            setExpanded(value);
+        }
     };
 
     const toggleOriginalMessage = () => setOriginalMessageMode(!originalMessageMode);

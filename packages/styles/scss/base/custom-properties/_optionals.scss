@@ -48,8 +48,8 @@
 		scrollbar-thumb-color      : rgba(grey, 0.25),
 		scrollbar-thumb-hover-color: rgba(grey, 0.5),
 
-		tooltip-background-color: black,
-		tooltip-text-color      : white,
+		tooltip-background-color: var(--background-invert),
+		tooltip-text-color      : var(--text-invert),
 
 		email-item-unread-background-color     : var(--background-norm),
 		email-item-unread-text-color           : var(--text-norm),

@@ -19,10 +19,9 @@ interface Props {
     filter: Filter;
     index: number;
     onApplyFilter: (filterID: string) => void;
-    canApplyFilters: boolean;
 }
 
-function FilterItemRow({ filter, index, onApplyFilter, canApplyFilters, ...rest }: Props) {
+function FilterItemRow({ filter, index, onApplyFilter, ...rest }: Props) {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
@@ -77,8 +76,8 @@ function FilterItemRow({ filter, index, onApplyFilter, canApplyFilters, ...rest 
     };
 
     const list: DropdownActionProps[] = isSieve(filter)
-        ? [editSieveAction, ...(canApplyFilters ? [applyFilterAction] : []), deleteFilterAction]
-        : [editAction, ...(canApplyFilters ? [applyFilterAction] : []), editSieveAction, deleteFilterAction];
+        ? [editSieveAction, applyFilterAction, deleteFilterAction]
+        : [editAction, applyFilterAction, editSieveAction, deleteFilterAction];
 
     return (
         <>

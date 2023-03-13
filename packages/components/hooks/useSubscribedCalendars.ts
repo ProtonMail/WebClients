@@ -1,11 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { getSubscriptionParameters } from '@proton/shared/lib/api/calendars';
-import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
-import {
-    getIsCalendarSubscriptionEventManagerUpdate,
-    getIsSubscribedCalendar,
-} from '@proton/shared/lib/calendar/subscribe/helpers';
+import { getIsSubscribedCalendar, getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarSubscriptionEventManagerUpdate } from '@proton/shared/lib/calendar/subscribe/helpers';
 import {
     getIsCalendarEventManagerCreate,
     getIsCalendarEventManagerDelete,

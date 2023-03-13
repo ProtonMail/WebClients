@@ -24,10 +24,14 @@ export const Basic = () => {
                 <Checkbox id="tofu">Tofu</Checkbox>
             </div>
             <div className="my1">
-                <Checkbox id="spaghetti">Spaghetti</Checkbox>
+                <Checkbox id="spaghetti" checked>
+                    Spaghetti
+                </Checkbox>
             </div>
             <div className="my1">
-                <Checkbox id="upsetti">Upsetti</Checkbox>
+                <Checkbox id="upsetti" checked disabled>
+                    Upsetti
+                </Checkbox>
             </div>
             <div className="my1">
                 <Checkbox id="overflow">
@@ -72,6 +76,14 @@ export const Colors = () => {
     return (
         <Checkbox id="red" backgroundColor="rgb(255, 50, 50)" borderColor="rgb(200, 80, 80)" color="rgb(255, 255, 255)">
             I'm red
+        </Checkbox>
+    );
+};
+
+export const Indeterminate = () => {
+    return (
+        <Checkbox id="Indeterminate" indeterminate>
+            I'm Indeterminate
         </Checkbox>
     );
 };

@@ -13,7 +13,7 @@ import { EDITOR_DEFAULT_METADATA } from './constants';
 import { EditorActions, EditorMetadata, SetEditorToolbarConfig } from './interface';
 import DefaultFontModal from './modals/DefaultFontModal';
 import InsertImageModal from './modals/InsertImageModal';
-import InsertLinkModal from './modals/InsertLinkModal';
+import InsertLinkModal from './modals/InsertLinkModal/InsertLinkModal';
 import PlainTextEditor from './plainTextEditor/PlainTextEditor';
 import RoosterEditor from './rooster/RoosterEditor';
 import EditorToolbar from './toolbar/Toolbar';
@@ -187,17 +187,20 @@ const Editor = ({
                     />
                 )}
             </div>
-            {modalDefaultFont.render && metadata.supportDefaultFontSelector && (
-                <DefaultFontModal {...modalDefaultFont.props} {...modalDefaultFont.modalsStateProps} />
-            )}
-            {modalImage.render && <InsertImageModal {...modalImage.props} {...modalImage.modalsStateProps} />}
-            {modalLink.render && modalLink.props && (
-                <InsertLinkModal
-                    {...modalLink.props}
-                    mailSettings={mailSettings}
-                    modalStateProps={modalLink.modalsStateProps}
-                />
-            )}
+
+            <div
+                onSubmit={(e) => {
+                    e.stopPropagation();
+                }}
+            >
+                {modalDefaultFont.render && metadata.supportDefaultFontSelector && (
+                    <DefaultFontModal {...modalDefaultFont.props} {...modalDefaultFont.modalsStateProps} />
+                )}
+                {modalImage.render && <InsertImageModal {...modalImage.props} {...modalImage.modalsStateProps} />}
+                {modalLink.render && modalLink.props && (
+                    <InsertLinkModal {...modalLink.props} modalStateProps={modalLink.modalsStateProps} />
+                )}
+            </div>
         </>
     );
 };

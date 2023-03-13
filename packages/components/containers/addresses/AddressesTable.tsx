@@ -25,7 +25,7 @@ const AddressesTable = ({
     organizationKey,
 }: AddressesTableProps) => {
     return (
-        <Table className="simple-table--has-actions">
+        <Table hasActions>
             <TableHeader
                 cells={[
                     c('Header for addresses table').t`Address`,

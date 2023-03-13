@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { RefObject, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -37,6 +37,7 @@ interface Props {
     onUpgrade: () => void;
     onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
     isDrawer?: boolean;
+    searchInputRef?: RefObject<HTMLInputElement>;
 }
 
 const ContactsWidgetContainer = ({
@@ -54,6 +55,7 @@ const ContactsWidgetContainer = ({
     onUpgrade,
     onSelectEmails,
     isDrawer = false,
+    searchInputRef,
 }: Props) => {
     const [user, loadingUser] = useUser();
     const [userKeys] = useUserKeys();
@@ -139,7 +141,7 @@ const ContactsWidgetContainer = ({
         if (selectedIDs.length > 100) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`You can't send vCards of more than 10 contacts`,
+                text: c('Error').t`You can't send vCard files of more than 10 contacts`,
             });
             return;
         }
@@ -208,6 +210,7 @@ const ContactsWidgetContainer = ({
                 <label htmlFor="id_contact-widget-search" className="sr-only">{c('Placeholder')
                     .t`Search for name or email`}</label>
                 <SearchInput
+                    ref={searchInputRef}
                     autoFocus={!isDrawer}
                     value={search}
                     onChange={setSearch}

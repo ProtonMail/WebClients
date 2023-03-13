@@ -248,6 +248,9 @@
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
       ],
+      "Enable drive search": [
+        "Увімкнути пошук на диску"
+      ],
       "Expand": [
         "Розгорнути"
       ],
@@ -373,6 +376,9 @@
       ],
       "Move to trash": [
         "Перемістити до смітника"
+      ],
+      "New": [
+        "Додати"
       ],
       "New upload": [
         "Нове вивантаження"
@@ -602,6 +608,9 @@
       "Upgrade": [
         "Покращити"
       ],
+      "Upgrade now": [
+        "Покращити"
+      ],
       "Upload anyway": [
         "Все одно вивантажити"
       ],
@@ -785,54 +794,6 @@
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Не синхронізовано"
-      ],
-      "Syncing": [
-        "Синхронізація"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Не вдалося розшифрувати календар"
-      ],
-      "Calendar is syncing": [
-        "Календар синхронізується"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
-      ],
-      "Calendar is too big": [
-        "Календар завеликий"
-      ],
-      "Calendar link is not accessible": [
-        "Календар за посиланням недоступний"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Посилання календаря тимчасово недоступне"
-      ],
-      "Failed to sync calendar": [
-        "Не вдалося синхронізувати календар"
-      ],
-      "More than 12 hours passed since last update": [
-        "Понад 12 годин минуло після попередньої синхронізації"
-      ],
-      "Unsupported calendar format": [
-        "Непідтримуваний формат календаря"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Від часу останнього оновлення минуло понад 12 годин — ${ CALENDAR_APP_NAME } спробує оновити календар за кілька годин."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Згорнути"
@@ -964,7 +925,7 @@
         "Назва"
       ],
       "URL": [
-        "URL"
+        "URL-адреса"
       ]
     },
     "Contact type label": {
@@ -988,9 +949,6 @@
       ],
       "Work": [
         "Робочий"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1918,23 +1876,14 @@
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
       ],
+      "Contact name is too long": [
+        "Ім'я контакту задовге"
+      ],
       "Contact signature not verified": [
         "Підпис для контакту не перевірено"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Приберіть принаймні ${ calendarToFixCount } календар",
-        "Приберіть принаймні ${ calendarToFixCount } календарі",
-        "Приберіть принаймні ${ calendarToFixCount } календарів",
-        "Приберіть принаймні ${ calendarToFixCount } календаря"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Приберіть принаймні ${ calendarToFixCount } календар або",
-        "Приберіть принаймні ${ calendarToFixCount } календарі або",
-        "Приберіть принаймні ${ calendarToFixCount } календарів або",
-        "Приберіть принаймні ${ calendarToFixCount } календаря або"
       ],
       "Device name does not match": [
         "Назва пристрою відрізняється"
@@ -1998,12 +1947,6 @@
       ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Відсутній пакунок ключів"
@@ -2083,9 +2026,6 @@
       "Some groups could not be deleted": [
         "Не вдається видалити деякі групи"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Назви деяких ваших тек зарезервовані. Налаштуйте імпорт для зміни цих назв."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
@@ -2158,7 +2098,7 @@
       "This label name is not available. Please choose a different name.": [
         "Назва мітки недоступна. Оберіть іншу назву."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
       ],
       "Try using only letters, numerals, and _.-": [
@@ -2170,11 +2110,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Ви не можете надіслати лист понад 100 отримувачам"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Ви не можете надіслати vCards для понад 10 контактів"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
+      "You can't send vCard files of more than 10 contacts": [
+        "Ви не можете надіслати файли vCard для понад 10 контактів"
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -2231,7 +2168,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+        "Під час читання вашого файлу ${ formattedFilename } сталася помилка. Файл має неправильний формат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2565,9 +2502,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Е-пошта"
       ],
@@ -2576,9 +2510,6 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2593,6 +2524,9 @@
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Під час шифрування та додавання події сталася помилка. Неможливо імпортувати подію."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Сталася помилка під час шифрування й додавання ваших подій. Жодна подія не може бути імпортована."
@@ -2821,9 +2755,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2838,6 +2769,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Імпорт з ${ provider }"
+      ],
       "Other": [
         "Інший"
       ]
@@ -2895,12 +2829,6 @@
         "${ calendarsToBeCreatedCount } нові календарі",
         "${ calendarsToBeCreatedCount } нових календарів",
         "${ calendarsToBeCreatedCount } нових календарів"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } об'єднаний календар",
-        "${ calendarsToBeMerged } об'єднані календарі",
-        "${ calendarsToBeMerged } об'єднаних календарів",
-        "${ calendarsToBeMerged } об'єднаних календарів"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } об'єднаний календар",
@@ -2965,17 +2893,17 @@
         "Знайдено ${ groupCounts } груп",
         "Знайдено ${ groupCounts } груп"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } група контактів",
-        "${ numContactGroups } групи контактів",
-        "${ numContactGroups } груп контактів",
-        "${ numContactGroups } груп контактів"
+      "${ numContact } contact": [
+        "${ numContact } контакт",
+        "${ numContact } контакти",
+        "${ numContact } контактів",
+        "${ numContact } контактів"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } контакт",
-        "${ numContacts } контакти",
-        "${ numContacts } контактів",
-        "${ numContacts } контакта"
+      "${ numGroups } contact group": [
+        "${ numGroups } група контактів",
+        "${ numGroups } групи контактів",
+        "${ numGroups } груп контактів",
+        "${ numGroups } груп контактів"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } призупинено",
@@ -3000,6 +2928,9 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } вибрано"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } вибрана тека",
@@ -3028,9 +2959,6 @@
       "${ speed }/s": [
         "${ speed }/с"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } сховища"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
         "${ updated } контакти успішно оновлені.",
@@ -3045,9 +2973,6 @@
         "(${ memberCount } учасники)",
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
-      ],
-      "10 email addresses": [
-        "10 адрес е-пошти"
       ],
       "A number will be added to the filename": [
         "Число буде додано до назви файлу"
@@ -3075,6 +3000,9 @@
       ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
+      ],
+      "Also try looking in Trash.": [
+        "Також пошукайте у смітнику."
       ],
       "An active recovery file": [
         "Активний файл відновлення"
@@ -3112,8 +3040,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Масове завантаження може знизити швидкодію комп’ютера. Спробуйте обмежити дії, які потребують значного обсягу пам’яті, як-от потокове передавання під час завантаження. Або спробуйте завантажувати пакетами."
+      "Calendar side panel": [
+        "Бічна панель календаря"
       ],
       "Canceled": [
         "Скасовано"
@@ -3151,14 +3079,14 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Продовжити користуватися ${ DRIVE_APP_NAME } та розблокувати сховище згодом"
       ],
-      "Continue with ${ planName }": [
-        "Продовжити з ${ planName }"
+      "Country code": [
+        "Код країни"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Створити ${ calendarsToBeCreated } новий календар",
-        "Створити ${ calendarsToBeCreated } нові календарі",
-        "Створити ${ calendarsToBeCreated } нових календарів",
-        "Створити ${ calendarsToBeCreated } нових календарів"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Створити ${ calendarsToBeCreatedCount } новий календар",
+        "Створити ${ calendarsToBeCreatedCount } нові календарі",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також теки, які ви бажаєте імпортувати."
@@ -3241,6 +3169,9 @@
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
       ],
+      "Enable drive search": [
+        "Увімкнути пошук на диску"
+      ],
       "Enabling drive search": [
         "Увімкнення пошуку на диску"
       ],
@@ -3319,6 +3250,9 @@
       "Folders you sync from your computer will appear here.": [
         "Тут з'являться теки, які ви синхронізуєте з комп'ютера."
       ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Щоб досягти найкращих результатів, уникайте потокової передачі даних і дій, що вимагають багато пам'яті, або розбивайте вивантаження на менші частини."
+      ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
       ],
@@ -3355,14 +3289,14 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календаря",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів"
       ],
       "Import from": [
         "Імпортувати з"
@@ -3375,6 +3309,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Імпортуйте свої листи, календарі та контакти з іншої служби до ${ BRAND_NAME }. Ми допоможемо вам пройти кожен крок та зашифрувати ваші дані після переміщення. Вітаємо у світі приватності."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
@@ -3402,6 +3339,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Схоже, що ви нещодавно намагалися завантажити ${ uploadName }. Якщо не вдалося завантажити, ${ replaceFile }. Якщо завантаження досі триває, заміна файлу скасує поточне завантаження."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Елементи залишатимуться у смітнику, доки ви не видалите їх остаточно"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Це так само просто, як перетягування або вибір файлів"
@@ -3538,9 +3478,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Лише люди з посиланням та паролем можуть отримати доступ до цієї теки."
       ],
-      "Other options": [
-        "Інші варіанти"
-      ],
       "Paused": [
         "Зупинено"
       ],
@@ -3598,9 +3535,6 @@
       "Primary": [
         "Основний"
       ],
-      "Priority support": [
-        "Пріоритетна підтримка"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Приватний пошук увімкнено. Тепер ви можете закрити це діалогове вікно та здійснити пошук файлів і тек."
       ],
@@ -3640,9 +3574,6 @@
       "Select what you want to import.": [
         "Виберіть, що ви хочете імпортувати."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більш ніж 20 календарів."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
@@ -3660,6 +3591,9 @@
       ],
       "Shared link failed to be loaded": [
         "Не вдалося завантажити спільне посилання"
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
       ],
       "Signature check will be ignored": [
         "Перевіркою підпису буде знехтувано"
@@ -3679,20 +3613,11 @@
       "Something went wrong, please try again later.": [
         "Сталася помилка, повторіть спробу пізніше."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Підтримка 1 власного домену е-пошти"
-      ],
       "support team": [
         "командою підтримки"
       ],
       "Swiss privacy": [
         "Швейцарська приватність"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Торкніться кнопки +, щоб вивантажити файл або теку"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
@@ -3702,6 +3627,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Програма повинна локально розшифрувати ваші контакти для можливості їх експортування. Після завершення процесу буде згенеровано файл VCF і ви зможете його завантажити."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Зашифровані дані трохи більші через витрату додаткових ресурсів на шифрування та підписи, які забезпечують безпеку ваших даних."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Можливо ці елементи було підроблено: ${ items }. Відкрийте лише якщо довіряєте їм."
@@ -3757,6 +3685,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Щоб увімкнути справді приватний пошук ${ DRIVE_APP_NAME } потрібно індексувати ваші файли локально."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Для забезпечення дійсно приватного пошуку нам необхідно індексувати ваші локальні файли. Ви й надалі можете користуватися ${ DRIVE_APP_NAME } як зазвичай – ми повідомимо, коли індексування завершиться."
       ],
@@ -3790,14 +3721,11 @@
       "Trash": [
         "Смітник"
       ],
+      "Try searching by file name, date, or type.": [
+        "Спробуйте пошук за назвою, датою або типом файлу."
+      ],
       "Unknown error": [
         "Невідома помилка"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited messages": [
-        "Необмежена кількість повідомлень"
       ],
       "Unlock drive to recover files": [
         "Розблокувати сховище, щоб відновити файли"
@@ -3811,8 +3739,8 @@
       "Updating drive search...": [
         "Оновлення пошуку на диску..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Оновіть тарифний план сьогодні, щоб не втратити ці переваги ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
       "Uploaded": [
         "Вивантажено"
@@ -3965,14 +3893,14 @@
       "file data order": [
         "порядок файлів даних"
       ],
+      "hash key": [
+        "хеш-ключ"
+      ],
       "keys": [
         "ключі"
       ],
       "name": [
         "назва"
-      ],
-      "name hash": [
-        "хеш назви"
       ],
       "thumbnail": [
         "мініатюра"
@@ -3996,14 +3924,11 @@
       ],
       "Trusted": [
         "Надійний"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# доступів"
+      "# of downloads": [
+        "# завантажень"
       ],
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
@@ -4059,6 +3984,9 @@
       "Browser version": [
         "Версія браузера"
       ],
+      "Calendar": [
+        "Календар"
+      ],
       "Calendars": [
         "Календарі"
       ],
@@ -4077,8 +4005,8 @@
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
-      "Coming soon": [
-        "Незабаром з'явиться"
+      "Colors": [
+        "Кольори"
       ],
       "Comment": [
         "Коментар"
@@ -4197,9 +4125,6 @@
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Від: ${ importedEmail }"
-      ],
       "Good": [
         "Добре"
       ],
@@ -4259,12 +4184,6 @@
       ],
       "Manage categories": [
         "Керувати категоріями"
-      ],
-      "Manage folders": [
-        "Керувати теками"
-      ],
-      "Manage labels": [
-        "Керувати мітками"
       ],
       "Merge a folder": [
         "Об'єднати теку"
@@ -4383,9 +4302,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Це остаточно видалить усі файли у вашому сховищі."
       ],
-      "To: ${ emailAddress }": [
-        "Кому: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Кому: ${ to }"
       ],
@@ -4415,9 +4331,6 @@
       ],
       "Upload anyway": [
         "Все одно вивантажити"
-      ],
-      "Upload file": [
-        "Вивантажити файл"
       ],
       "Upload picture": [
         "Завантажити зображення"
@@ -4481,6 +4394,17 @@
         "Бічна панель"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Щоб додати новий календар, вилучіть наявний."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Щоб додати новий календар, вилучіть інший календар або змініть свій тарифний план ${ BRAND_NAME } на платний ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ви досягли максимальної кількості календарів для вашого тарифного плану."
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "очищення кешу браузера"
@@ -4511,8 +4435,11 @@
       "Almost there": [
         "Майже готово"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Кількість створених календарів: ${ createdCalendars } з ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Підключення до вашого постачальника електронної пошти"
@@ -4531,29 +4458,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
       ]
     },
     "Message": {
@@ -4773,9 +4700,6 @@
       ],
       "File or folder is missing a name": [
         "Файл чи тека не мають назви"
-      ],
-      "Item failed to be verified": [
-        "Не вдалося верифікувати елемент"
       ],
       "Link failed to be loaded": [
         "Не вдалося завантажити посилання"
@@ -5122,9 +5046,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
-      ],
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
       ],
@@ -5136,9 +5057,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Тепер ви можете легко шукати файли на Drive, зберігаючи безпеку даних."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Спробувати ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5165,7 +5083,7 @@
       "Bug reported": [
         "Звіт про помилку надіслано"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Скасування імпорту"
       ],
       "Code sent to ${ methodTo }": [
@@ -5282,12 +5200,38 @@
         "Налаштування"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } година",
         "${ hours } години",
         "${ hours } годин",
-        "${ hours } годин"
+        "${ hours } години"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 годин",
+        "${ hoursInt }.5 години"
       ],
       "${ minutes } minute": [
         "${ minutes } хвилина",
@@ -5297,8 +5241,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# доступів"
+      "# of downloads": [
+        "# завантажень"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } учасник",
@@ -5486,6 +5430,9 @@
       "Empty trash": [
         "Спорожнити смітник"
       ],
+      "Enable drive search": [
+        "Увімкнути пошук на диску"
+      ],
       "Enter your password": [
         "Введіть свій пароль"
       ],
@@ -5588,6 +5535,9 @@
       "Name": [
         "Назва"
       ],
+      "No results found": [
+        "Результатів не знайдено"
+      ],
       "Number of files": [
         "Кількість файлів"
       ],
@@ -5605,6 +5555,9 @@
       ],
       "Open settings menu": [
         "Відкрити меню налаштувань"
+      ],
+      "Original size": [
+        "Оригінальний розмір"
       ],
       "Other information": [
         "Інша інформація"
@@ -5756,6 +5709,9 @@
       "Uploaded by": [
         "Вивантажено"
       ],
+      "Uploading a large file or folder": [
+        "Вивантаження великого файлу або теки"
+      ],
       "View contacts": [
         "Переглянути контакти"
       ],
@@ -5789,8 +5745,8 @@
       "Your changes are not synced yet": [
         "Ваші зміни ще не синхронізовані"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
       ],
       "Your welcome actions": [
         "Ваші дії"

@@ -11,25 +11,25 @@
         "test": "NODE_ENV=test karma start test/karma.conf.js"
     },
     "dependencies": {
-        "@noble/ed25519": "1.7.1",
+        "@noble/ed25519": "1.7.3",
         "@proton/shared": "workspace:packages/shared",
         "@types/pkijs": "0.0.14",
-        "pkijs": "^3.0.10",
+        "pkijs": "^3.0.14",
         "pmcrypto": "npm:@protontech/pmcrypto@^6.7.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@types/jasmine": "^4.3.1",
-        "eslint": "^8.31.0",
+        "eslint": "^8.35.0",
         "jasmine": "4.5.0",
         "jasmine-core": "4.5.0",
         "karma": "^6.4.1",
         "karma-chrome-launcher": "^3.1.1",
         "karma-jasmine": "^5.1.0",
         "karma-webpack": "^5.0.0",
-        "playwright": "^1.29.2",
+        "playwright": "^1.31.1",
         "ts-loader": "^9.4.2",
-        "typescript": "^4.9.4",
+        "typescript": "^4.9.5",
         "webpack": "^5.75.0"
     }
 }

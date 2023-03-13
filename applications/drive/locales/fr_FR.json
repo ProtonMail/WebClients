@@ -244,6 +244,9 @@
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
+      "Enable drive search": [
+        "Activer la recherche dans Drive"
+      ],
       "Expand": [
         "Développer"
       ],
@@ -369,6 +372,9 @@
       ],
       "Move to trash": [
         "Déplacer dans le dossier Corbeille"
+      ],
+      "New": [
+        "Nouveau"
       ],
       "New upload": [
         "Importer"
@@ -598,6 +604,9 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
       "Upload anyway": [
         "Charger quand même"
       ],
@@ -781,54 +790,6 @@
         "Continuer à utiliser ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Non synchronisé"
-      ],
-      "Syncing": [
-        "Synchronisation en cours"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Le calendrier n'a pas pu être déchiffré."
-      ],
-      "Calendar is syncing": [
-        "Le calendrier est en cours de synchronisation."
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Le calendrier se synchronise : vous devrez peut-être attendre plusieurs minutes avant de voir tous les événements."
-      ],
-      "Calendar is too big": [
-        "Le calendrier est trop volumineux."
-      ],
-      "Calendar link is not accessible": [
-        "Le lien du calendrier n’est pas accessible."
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Le lien du calendrier est temporairement inaccessible."
-      ],
-      "Failed to sync calendar": [
-        "Le calendrier n'a pas pu être synchronisé."
-      ],
-      "More than 12 hours passed since last update": [
-        "La dernière mise à jour remonte à plus de 12 heures."
-      ],
-      "Unsupported calendar format": [
-        "Le format de calendrier n'est pas pris en charge."
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Le lien vers le calendrier n'est pas accessible en dehors de l'écosystème du fournisseur du calendrier."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Le lien du calendrier est temporairement inaccessible. Vérifiez que le lien du fournisseur de calendrier est toujours valide."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "La dernière mise à jour remonte à plus de 12 heures. ${ CALENDAR_APP_NAME } essaiera de mettre à jour le calendrier dans quelques heures."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Réduire"
@@ -984,9 +945,6 @@
       ],
       "Work": [
         "Bureau"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1147,7 +1105,7 @@
         "Congo"
       ],
       "Congo, Democratic Republic of the": [
-        "République démocratique du Congo"
+        "Congo - République démocratique du Congo"
       ],
       "Cook Islands": [
         "Îles Cook"
@@ -1912,19 +1870,14 @@
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
       ],
+      "Contact name is too long": [
+        "Le nom du contact est trop long."
+      ],
       "Contact signature not verified": [
         "La signature du contact n'a pas été vérifiée."
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La recherche dans le contenu ne peut pas être activée dans ce navigateur. Nous vous invitons à quitter la navigation privée ou à essayer avec un autre navigateur."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
-        "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
       ],
       "Device name does not match": [
         "Le nom de l'appareil ne correspond pas."
@@ -1988,10 +1941,6 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
-        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
       ],
       "Missing key packet": [
         "Il manque le paquet de clés."
@@ -2065,9 +2014,6 @@
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Certains de vos noms de dossier sont réservés. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de dossiers ne sont pas disponibles. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
@@ -2140,7 +2086,7 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible, veuillez en choisir un autre."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
       ],
       "Try using only letters, numerals, and _.-": [
@@ -2152,11 +2098,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Vous ne pouvez pas envoyer d’e-mail à plus de 100 destinataires."
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Vous avez atteint le nombre maximum de calendriers personnels. Certains calendriers n'ont pas pu être importés."
+      "You can't send vCard files of more than 10 contacts": [
+        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
       ],
       "You must set a name": [
         "Vous devez définir un nom."
@@ -2553,6 +2496,9 @@
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. ${ totalImported } événement sur ${ totalToImport } a été importé.",
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. ${ totalImported } événements sur ${ totalToImport } ont été importés."
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. Aucun événement n'a pu être importé."
+      ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Une erreur s'est produite lors du chiffrement et de l'ajout de vos événements. Aucun événement n'a pu être importé."
       ],
@@ -2582,7 +2528,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Les invitations importées apparaissent dans ${ CALENDAR_APP_NAME } comme de simples événements sans les informations sur l'organisateur et les participants. Pour recevoir les mises à jour des événements et voir les participants, demandez aux organisateurs de vous inviter en utilisant votre adresse électronique ${ BRAND_NAME }."
+        "Les invitations importées apparaissent dans ${ CALENDAR_APP_NAME } sans les informations sur l'organisateur et les participants. Pour recevoir les mises à jour des événements et voir les participants, demandez aux organisateurs de vous inviter en utilisant votre adresse électronique ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Ce fichier contient une invitation à un événement :",
@@ -2772,9 +2718,6 @@
       ],
       "ICS file": [
         "fichier ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2789,6 +2732,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importer depuis ${ provider }"
+      ],
       "Other": [
         "Autre"
       ]
@@ -2835,10 +2781,6 @@
         "${ calendarsToBeCreatedCount } nouveau calendrier",
         "${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendrier fusionné",
-        "${ calendarsToBeMerged } calendriers fusionnés"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendrier fusionné",
         "${ calendarsToBeMergedCount } calendriers fusionnés"
@@ -2882,13 +2824,13 @@
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } groupe de contacts",
-        "${ numContactGroups } groupes de contacts"
+      "${ numContact } contact": [
+        "${ numContact } contact",
+        "${ numContact } contacts"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } contact",
-        "${ numContacts } contacts"
+      "${ numGroups } contact group": [
+        "${ numGroups } groupe de contacts",
+        "${ numGroups } groupes de contacts"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } en pause",
@@ -2905,6 +2847,9 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } calendrier sur ${ providerCalendars.length }",
         "${ selectedCalendarsTotal } calendriers sur ${ providerCalendars.length }"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } sélectionné(s)"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } dossier sélectionné",
@@ -2925,9 +2870,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } d'espace de stockage"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact a été mis à jour.",
         "${ updated } contacts ont été mis à jour."
@@ -2938,9 +2880,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
-      ],
-      "10 email addresses": [
-        "10 adresses e-mail"
       ],
       "A number will be added to the filename": [
         "Un numéro sera ajouté au nom du fichier."
@@ -2964,6 +2903,9 @@
       ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
+      ],
+      "Also try looking in Trash.": [
+        "Vérifiez aussi dans le dossier Corbeille."
       ],
       "An active recovery file": [
         "Un fichier de récupération actif"
@@ -3001,8 +2943,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Les chargements en masse peuvent réduire les performances de votre ordinateur. Pendant le chargement, envisagez de limiter les activités gourmandes en mémoire comme le streaming. Vous pouvez aussi essayer de charger par lots."
+      "Calendar side panel": [
+        "Panneau latéral du calendrier"
       ],
       "Canceled": [
         "Annulé"
@@ -3040,12 +2982,12 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuer à utiliser ${ DRIVE_APP_NAME } et déverrouiller le disque plus tard"
       ],
-      "Continue with ${ planName }": [
-        "Continuer avec ${ planName }"
+      "Country code": [
+        "Indicatif du pays"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Créer ${ calendarsToBeCreated } nouveau calendrier",
-        "Créer ${ calendarsToBeCreated } nouveaux calendriers"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
+        "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
@@ -3126,6 +3068,9 @@
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
       ],
+      "Enable drive search": [
+        "Activer la recherche dans Drive"
+      ],
       "Enabling drive search": [
         "Activation de la recherche dans Drive"
       ],
@@ -3202,6 +3147,9 @@
       "Folders you sync from your computer will appear here.": [
         "Les dossiers que vous synchronisez depuis votre ordinateur apparaissent ici."
       ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
+      ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
       ],
@@ -3238,12 +3186,12 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
+        "Importer ${ calendarCount } calendriers sur ${ totalCalendarsCount }"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importer ${ selectedCalendarsCount } calendrier sur ${ totalCalendarsCount }",
-        "Importer ${ selectedCalendarsCount } calendriers sur ${ totalCalendarsCount }"
       ],
       "Import from": [
         "Importer depuis"
@@ -3256,6 +3204,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importez vos e-mails, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
@@ -3283,6 +3234,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Il semble que vous ayez récemment essayé de charger ${ uploadName }. Si le chargement a échoué, nous vous invitons à ${ replaceFile }. Si le chargement est toujours en cours, remplacer le fichier annulera le chargement en cours."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Les éléments dans le dossier Corbeille y resteront jusqu'à ce que vous les supprimiez définitivement."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Il suffit de glisser-déposer ou de sélectionner des fichiers."
@@ -3396,7 +3350,7 @@
         "Certains fichiers n'ont pas été transférés. Essayez à nouveau de les charger/télécharger."
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
-        "Remarque : les données peuvent encore être disponibles localement sur les appareils où vous avez installé ${ DRIVE_APP_NAME }."
+        "Remarque : les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
       ],
       "of": [
         "sur"
@@ -3416,9 +3370,6 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
-      ],
-      "Other options": [
-        "Autres options"
       ],
       "Paused": [
         "En pause"
@@ -3475,9 +3426,6 @@
       "Primary": [
         "Principale"
       ],
-      "Priority support": [
-        "Assistance prioritaire"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "La recherche privée est activée. Vous pouvez fermer cette fenêtre et rechercher des fichiers et dossiers."
       ],
@@ -3494,7 +3442,7 @@
         "Le processus de récupération peut prendre un certain temps."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualisez la page ou ${ link } pour résoudre automatiquement la plupart des problèmes."
+        "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Report has been sent": [
         "Le rapport a été envoyé."
@@ -3517,9 +3465,6 @@
       "Select what you want to import.": [
         "Sélectionnez ce que vous voulez importer."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
@@ -3537,6 +3482,9 @@
       ],
       "Shared link failed to be loaded": [
         "Le lien partagé n'a pas pu être chargé."
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
       ],
       "Signature check will be ignored": [
         "La vérification de signature sera ignorée."
@@ -3556,20 +3504,11 @@
       "Something went wrong, please try again later.": [
         "Un problème est survenu, réessayez plus tard."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Prise en charge d'un nom de domaine personnalisé"
-      ],
       "support team": [
         "équipe support"
       ],
       "Swiss privacy": [
         "Confidentialité suisse"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Tapotez sur le bouton + pour charger un fichier ou un dossier."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
@@ -3579,6 +3518,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Nous devons déchiffrer vos contacts localement avant de pouvoir les exporter. À la fin du processus, un fichier VCF sera généré et vous pourrez le télécharger."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Les données chiffrées sont légèrement plus volumineuses en raison du chiffrement et des signatures, qui garantissent la sécurité de vos données."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Les éléments suivants ont peut-être été falsifiés : ${ items }. N'ouvrez que si vous avez confiance."
@@ -3632,6 +3574,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Pour que la recherche soit réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Pour permettre une recherche vraiment privée, nous devons indexer vos fichiers localement. Vous pouvez utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons quand l'indexation sera terminée."
       ],
@@ -3665,14 +3610,11 @@
       "Trash": [
         "Corbeille"
       ],
+      "Try searching by file name, date, or type.": [
+        "Essayez une recherche par nom, date ou type de fichier."
+      ],
       "Unknown error": [
         "Erreur inconnue"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
-      ],
-      "Unlimited messages": [
-        "Messages illimités"
       ],
       "Unlock drive to recover files": [
         "Déverrouillez le disque pour récupérer des fichiers"
@@ -3686,8 +3628,8 @@
       "Updating drive search...": [
         "Actualisation de la recherche dans Drive..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Passez à l'offre supérieure dès aujourd'hui pour ne pas perdre ces avantages de ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Passez à la version supérieure pour bénéficier de fonctions, de produits et d'un espace de stockage premium à un tarif avantageux"
       ],
       "Uploaded": [
         "Importé"
@@ -3840,14 +3782,14 @@
       "file data order": [
         "ordre des données du fichier"
       ],
+      "hash key": [
+        "clé de hachage"
+      ],
       "keys": [
         "clés"
       ],
       "name": [
         "nom"
-      ],
-      "name hash": [
-        "somme de contrôle du nom"
       ],
       "thumbnail": [
         "miniature"
@@ -3877,8 +3819,8 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Nombre d'accès"
+      "# of downloads": [
+        "Nombre de téléchargements"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
@@ -3934,6 +3876,9 @@
       "Browser version": [
         "Version du navigateur"
       ],
+      "Calendar": [
+        "Calendrier"
+      ],
       "Calendars": [
         "Calendriers"
       ],
@@ -3952,8 +3897,8 @@
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
       ],
-      "Coming soon": [
-        "Bientôt disponible"
+      "Colors": [
+        "Couleurs"
       ],
       "Comment": [
         "Commentaire"
@@ -4070,9 +4015,6 @@
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "De : ${ importedEmail }"
-      ],
       "Good": [
         "Bonne"
       ],
@@ -4132,12 +4074,6 @@
       ],
       "Manage categories": [
         "Gérer les catégories"
-      ],
-      "Manage folders": [
-        "Gérer les dossiers"
-      ],
-      "Manage labels": [
-        "Gérer les labels"
       ],
       "Merge a folder": [
         "Fusionner un dossier"
@@ -4256,9 +4192,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Supprimez définitivement tous les fichiers dans votre disque verrouillé."
       ],
-      "To: ${ emailAddress }": [
-        "À : ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "À : ${ to }"
       ],
@@ -4288,9 +4221,6 @@
       ],
       "Upload anyway": [
         "Envoyer quand même"
-      ],
-      "Upload file": [
-        "Importer un fichier"
       ],
       "Upload picture": [
         "Importer une image"
@@ -4354,9 +4284,20 @@
         "Panneau latéral"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Pour ajouter un nouveau calendrier, supprimez d'abord un calendrier existant."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Pour ajouter un nouveau calendrier, vous devez d'abord supprimer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Vous avez atteint le nombre maximum de calendriers prévus dans votre abonnement."
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
-        "vider le cache de votre navigateur"
+        "videz le cache de votre navigateur"
       ],
       "Learn more": [
         "En savoir plus"
@@ -4384,8 +4325,9 @@
       "Almost there": [
         "Nous y sommes presque."
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Nombre de calendriers créés : ${ createdCalendars } sur ${ calendarsToBeCreated }."
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }."
       ],
       "Connecting to your email provider": [
         "Connexion à votre fournisseur de messagerie"
@@ -4404,21 +4346,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label",
+        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label",
+        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }. "
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label",
+        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label ${ LABEL_MARKUP_PLACEHOLDER }. "
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label",
+        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label"
       ]
     },
     "Message": {
@@ -4614,9 +4556,6 @@
       ],
       "File or folder is missing a name": [
         "Il manque un nom au fichier ou au dossier."
-      ],
-      "Item failed to be verified": [
-        "L'élément n'a pas pu être vérifié."
       ],
       "Link failed to be loaded": [
         "Le lien n'a pas pu être chargé."
@@ -4960,26 +4899,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } jour",
-        "${ days } jours"
-      ],
-      "${ hours } hour": [
         "${ hours } heure",
         "${ hours } heures"
       ],
+      "${ hours } hour": [
+        "${ days } jour",
+        "${ days } jours"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
+        "${ n } mois GRATUIT",
+        "${ n } mois GRATUITS"
       ],
       "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } secondes"
+        "pour ${ n } mois",
+        "pour ${ n } mois"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mois GRATUIT",
-        "${ n } mois GRATUITS"
+        "${ seconds } seconde",
+        "${ seconds } secondes"
       ]
     },
     "specialoffer: Deal details": {
@@ -5003,9 +4942,6 @@
       ],
       "Highest VPN speed": [
         "Vitesse VPN maximale"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Drive premium"
@@ -5091,8 +5027,8 @@
         "Facturé ${ amount } pour 30 mois"
       ],
       "for ${ n } month": [
-        "pour ${ n } mois",
-        "pour ${ n } mois"
+        "${ minutes } minute",
+        "${ minutes } minutes"
       ],
       "Get the deal": [
         "J'en profite"
@@ -5181,9 +5117,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
-      ],
       "Encrypted search is here": [
         "La recherche chiffrée se trouve ici."
       ],
@@ -5195,9 +5128,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Vous pouvez maintenant facilement rechercher des fichiers Drive tout en gardant vos données en sécurité."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Essayez ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5222,7 +5152,7 @@
       "Bug reported": [
         "Le bug a été signalé."
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Annulation de l'importation"
       ],
       "Code sent to ${ methodTo }": [
@@ -5335,10 +5265,28 @@
         "Paramètres"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } heure",
         "${ hours } heures"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 heure",
+        "${ hoursInt },5 heures"
       ],
       "${ minutes } minute": [
         "${ minutes } minute",
@@ -5346,8 +5294,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Nombre d'accès"
+      "# of downloads": [
+        "Nombre de téléchargements"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } membre",
@@ -5521,6 +5469,9 @@
       "Empty trash": [
         "Vider le dossier Corbeille"
       ],
+      "Enable drive search": [
+        "Activer la recherche dans Drive"
+      ],
       "Enter your password": [
         "Saisissez votre mot de passe."
       ],
@@ -5565,8 +5516,8 @@
         "Vérification humaine"
       ],
       "Import as simple event?": [
-        "Importer comme simple événement ?",
-        "Importer comme simples événements ?"
+        "Importer l'événement sans les détails ?",
+        "Importer les événements sans les détails ?"
       ],
       "Import contacts": [
         "Importer les contacts"
@@ -5619,6 +5570,9 @@
       "Name": [
         "Nom"
       ],
+      "No results found": [
+        "Aucun résultat n'a été trouvé."
+      ],
       "Number of files": [
         "Nombre de fichiers"
       ],
@@ -5636,6 +5590,9 @@
       ],
       "Open settings menu": [
         "Ouvrir le menu des paramètres"
+      ],
+      "Original size": [
+        "Taille d'origine"
       ],
       "Other information": [
         "Autres informations"
@@ -5787,6 +5744,9 @@
       "Uploaded by": [
         "Chargé par"
       ],
+      "Uploading a large file or folder": [
+        "Chargement d'un fichier ou d'un dossier volumineux"
+      ],
       "View contacts": [
         "Afficher les contacts"
       ],
@@ -5820,8 +5780,8 @@
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }."
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Votre essai gratuit Mail Plus se termine le ${ textDate }."
       ],
       "Your welcome actions": [
         "Vos actions de bienvenue"

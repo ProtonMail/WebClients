@@ -155,7 +155,8 @@ export const getContactPublicKeyModel = async ({
 }: Omit<PublicKeyConfigs, 'mailSettings'>): Promise<ContactPublicKeyModel> => {
     const {
         pinnedKeys = [],
-        encrypt,
+        encryptToPinned,
+        encryptToUntrusted,
         sign,
         scheme: vcardScheme,
         mimeType: vcardMimeType,
@@ -213,6 +214,16 @@ export const getContactPublicKeyModel = async ({
         obsoleteFingerprints,
         compromisedFingerprints,
     });
+
+    let encrypt: boolean | undefined = undefined;
+    if (pinnedKeys.length > 0) {
+        // Some old contacts with pinned WKD keys did not store the `x-pm-encrypt` flag,
+        // since encryption was always enabled.
+        encrypt = encryptToPinned !== false;
+    } else if (isExternalUser && apiKeys.length > 0) {
+        // Enable encryption by default for contacts with no `x-pm-encrypt-untrusted` flag.
+        encrypt = encryptToUntrusted !== false;
+    }
 
     return {
         encrypt,

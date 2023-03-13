@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
+import { MAX_CHARS_CLEARTEXT } from '@proton/shared/lib/calendar/constants';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 
 import { BasicModal, Form, InputFieldTwo } from '../../../components';
@@ -71,7 +72,7 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, ...rest }: EditLin
                 assistiveText={c('Info').t`Only you can see the labels.`}
                 placeholder={c('Shared calendar label input placeholder').t`Add label`}
                 id="your-calendar-url-label"
-                maxLength={50}
+                maxLength={MAX_CHARS_CLEARTEXT.PURPOSE}
                 autoFocus
                 value={purpose}
                 // @ts-ignore

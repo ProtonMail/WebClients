@@ -1,16 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { CYCLE, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
+import { CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 
-import { useModalState } from '../../components/modalTwo';
-import { OfferModal } from '../../containers';
-import useFetchOffer from '../../containers/offers/hooks/useFetchOffer';
-import useOfferFlags from '../../containers/offers/hooks/useOfferFlags';
+import { OfferModal, useOfferModal } from '../../containers';
 import { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import { useSubscription, useUser, useWelcomeFlags } from '../../hooks';
@@ -25,28 +22,40 @@ interface Props {
 }
 
 const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props) => {
-    const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
-    const { isVisited, loading } = useOfferFlags(offerConfig);
+    const [welcomeFlags] = useWelcomeFlags();
     const onceRef = useRef(false);
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const history = useHistory();
     const location = useLocation();
-    const [fetchOffer, setFetchOffer] = useState(false);
-    const [welcomeFlags] = useWelcomeFlags();
-
-    const defaultCurrency = user?.Currency || DEFAULT_CURRENCY;
-    const [currency, setCurrency] = useState<Currency>(defaultCurrency);
-
-    const [offer, loadingOffer] = useFetchOffer({
-        offerConfig: fetchOffer ? offerConfig : undefined,
+    const { isVisited, loading } = useOfferFlags(offerConfig);
+    const {
+        offer,
+        loadingOffer,
+        setFetchOffer,
+        renderOfferModal,
+        offerModalProps,
+        setOfferModalOpen,
         currency,
-        onError: () => {
-            // This is like a retry. Resetting the offer config so that the calls get retried if the user clicks the button again.
-            setFetchOffer(false);
-        },
-    });
+        onChangeCurrency,
+    } = useOfferModal(offerConfig);
 
+    // Listen custom event to open offer modal
+    useEffect(() => {
+        const open = () => {
+            if (renderOfferModal) {
+                return;
+            }
+            setOfferModalOpen(true);
+            setFetchOffer(true);
+        };
+        document.addEventListener(OPEN_OFFER_MODAL_EVENT, open);
+        return () => {
+            document.removeEventListener(OPEN_OFFER_MODAL_EVENT, open);
+        };
+    }, [renderOfferModal]);
+
+    // Auto-popup offer modal
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const autoOffer = searchParams.get('offer') === 'auto';
@@ -107,7 +116,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
             {renderOfferModal && offer && (
                 <OfferModal
                     currency={currency}
-                    onChangeCurrency={setCurrency}
+                    onChangeCurrency={onChangeCurrency}
                     offer={offer}
                     offerConfig={offerConfig}
                     modalProps={{

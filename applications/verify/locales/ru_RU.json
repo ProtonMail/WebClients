@@ -69,68 +69,6 @@
         "Посмотреть счет"
       ]
     },
-    "color": {
-      "carrot": [
-        "морковный"
-      ],
-      "cerise": [
-        "вишневый"
-      ],
-      "cobalt": [
-        "кобальтовый"
-      ],
-      "copper": [
-        "медный"
-      ],
-      "enzian": [
-        "горечавка"
-      ],
-      "fern": [
-        "папоротниковый"
-      ],
-      "forest": [
-        "лесной"
-      ],
-      "ocean": [
-        "океанический"
-      ],
-      "olive": [
-        "оливковый"
-      ],
-      "pacific": [
-        "тихоокеанский"
-      ],
-      "pickle": [
-        "огуречный"
-      ],
-      "pine": [
-        "сосновый"
-      ],
-      "pink": [
-        "розовый"
-      ],
-      "plum": [
-        "сливовый"
-      ],
-      "purple": [
-        "фиолетовый"
-      ],
-      "reef": [
-        "коралловый"
-      ],
-      "sahara": [
-        "сахара"
-      ],
-      "slateblue": [
-        "сланцево-синий"
-      ],
-      "soil": [
-        "землистый"
-      ],
-      "strawberry": [
-        "клубничный"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Абхазия"
@@ -923,7 +861,7 @@
         "Время запроса истекло"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Длина этого поля превысила максимум ${ maximumLength } символов."
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -977,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Эл. почта"
       ],
@@ -990,7 +925,7 @@
         "Нет доступных способов проверки"
       ],
       "SMS": [
-        "SMS"
+        "СМС"
       ]
     },
     "Info": {
@@ -999,6 +934,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
+      ],
+      "Country code": [
+        "Код страны"
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"

@@ -1,3 +1,4 @@
+import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
 import { protonizer as purifyHTML } from '@proton/shared/lib/sanitize';
 
 import { Base64Cache } from '../../hooks/useBase64Cache';
@@ -59,7 +60,10 @@ export const attachBase64 = (element: Element, cache: Base64Cache) => {
  * @param action Type of action
  */
 export const transformEscape = (content = '', cache?: Base64Cache) => {
-    const value = removeBase64(content, cache);
+    // We are removing all comments from the HTML string,
+    // so that we can avoid having potential issues when removing Base 64 images wrongly formatted
+    const withoutComment = removeHTMLComments(content);
+    const value = removeBase64(withoutComment, cache);
     const document = purifyHTML(value, true);
     return document;
 };

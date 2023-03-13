@@ -86,11 +86,17 @@
       "Archive": [
         "Archiveren"
       ],
+      "As Scheduled": [
+        "Zoals gepland"
+      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
       "Attachment": [
         "Bijlage"
+      ],
+      "Attention required": [
+        "Aandacht vereist"
       ],
       "Authenticate": [
         "Authenticeren"
@@ -242,6 +248,9 @@
       "Create new message": [
         "Nieuw bericht maken"
       ],
+      "Custom": [
+        "Aangepast"
+      ],
       "Customize": [
         "Personaliseer"
       ],
@@ -308,7 +317,7 @@
         "Downloaden"
       ],
       "Download ${ attachmentName }": [
-        "Download ${ attachmentName }"
+        "${ attachmentName } downloaden"
       ],
       "Edit": [
         "Bewerken"
@@ -481,9 +490,6 @@
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
       ],
-      "Inline": [
-        "Inline"
-      ],
       "Insert": [
         "Invoegen"
       ],
@@ -523,9 +529,6 @@
       ],
       "Load": [
         "Laden"
-      ],
-      "Load anyway": [
-        "Toch laden"
       ],
       "Load embedded images": [
         "Ingesloten afbeeldingen laden"
@@ -592,6 +595,9 @@
       ],
       "Minimize composer": [
         "Opstelvenster minimaliseren"
+      ],
+      "Monday": [
+        "Maandag"
       ],
       "More": [
         "Meer"
@@ -695,9 +701,6 @@
       "Open composer": [
         "Open het opstelvenster"
       ],
-      "Open get started checklist modal": [
-        "Open get started checklist modal"
-      ],
       "Open navigation": [
         "Navigatie openen"
       ],
@@ -788,9 +791,6 @@
       "Remove this label": [
         "Label verwijderen"
       ],
-      "Rename": [
-        "Hernoem"
-      ],
       "Reply": [
         "Antwoord"
       ],
@@ -838,9 +838,6 @@
       ],
       "Schedule message": [
         "Bericht plannen"
-      ],
-      "Schedule send": [
-        "Ingepland versturen"
       ],
       "Search": [
         "Zoeken"
@@ -953,9 +950,6 @@
       "Skip verification": [
         "Verificatie overslaan"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Sommige afbeeldingen konden niet geladen worden met bescherming tegen tracking."
-      ],
       "Star": [
         "Ster"
       ],
@@ -979,6 +973,9 @@
       ],
       "This message contains remote content.": [
         "Dit bericht bevat externe inhoud."
+      ],
+      "Tomorrow": [
+        "Morgen"
       ],
       "Trust": [
         "Vertrouwen"
@@ -1192,16 +1189,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Gesprek"
-      ]
-    },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1595,54 +1582,6 @@
         "Het e-mailadres staat niet in de lijst met deelnemers"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Niet gesynchroniseerd"
-      ],
-      "Syncing": [
-        "Synchroniseren"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Agenda kon niet ontsleuteld worden"
-      ],
-      "Calendar is syncing": [
-        "De agenda wordt gesynchroniseerd"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Agenda is aan het synchroniseren: het kan enkele minuten duren voordat alle afspraken verschijnen."
-      ],
-      "Calendar is too big": [
-        "De agenda is te groot"
-      ],
-      "Calendar link is not accessible": [
-        "Agendakoppeling is niet toegankelijk"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Agendakoppeling is tijdelijk ontoegankelijk"
-      ],
-      "Failed to sync calendar": [
-        "Synchronisatie van de agenda is mislukt"
-      ],
-      "More than 12 hours passed since last update": [
-        "Er zijn meer dan 12 uur verstreken sinds de laatste update"
-      ],
-      "Unsupported calendar format": [
-        "Niet-ondersteunde agenda-indeling"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Agendalink is niet toegankelijk van buiten de agendaproviders ecosysteem."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Meer dan 12 uur geleden sinds de laatste update — ${ CALENDAR_APP_NAME } probeert de agenda over enkele uren te updaten."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Het evenement is al afgelopen"
@@ -1983,9 +1922,6 @@
       ],
       "Work": [
         "Werk"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2599,7 +2535,7 @@
         "Singapore"
       ],
       "Sint Maarten": [
-        "Sint Maarten"
+        "Sint-Maarten"
       ],
       "Slovakia": [
         "Slowakije"
@@ -2873,12 +2809,21 @@
       "No labels": [
         "Geen labels"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logo and a plus sign"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Ontgrendel aangepaste berichten inplannen en andere voordelen als u uw abonnement upgrade."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
+      ],
+      "When do you want your message to be sent?": [
+        "Wanneer wilt u dat uw bericht wordt verstuurd?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
@@ -3062,6 +3007,9 @@
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
       ],
+      "Contact name is too long": [
+        "Naam van contact is te lang"
+      ],
       "Contact signature could not be verified": [
         "Contacthandtekening kan niet geverifieerd worden"
       ],
@@ -3076,14 +3024,6 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ontsleutelingsfout: decodering van de gecodeerde inhoud van dit bericht is mislukt."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deselecteer tenminste één agenda",
-        "Deselecteer tenminste ${ calendarToFixCount } agenda's"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Ten minste ${ calendarToFixCount } agenda deselecteren of",
-        "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -3162,10 +3102,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximum aantal bijlagen (${ attachmentsCountLimit }) overschreden"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
-        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
       "Message needs to be sent first": [
         "Bericht moet eerst verzonden worden"
@@ -3279,9 +3215,6 @@
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Sommige namen van uw mappen zijn gereserveerd. Pas de import aan om deze namen te bewerken."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sommige namen van mappen zijn niet beschikbaar. Pas de import aan om deze namen te bewerken."
       ],
@@ -3358,7 +3291,7 @@
       "This message has already been sent. A new draft has been saved.": [
         "Dit bericht is al verzonden. Er is een nieuw concept opgeslagen."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
@@ -3382,8 +3315,8 @@
       "You can't send a mail to more than 100 recipients": [
         "U kunt geen e-mail verzenden naar meer dan 100 ontvangers"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "U kunt geen vCards van meer dan 10 contacten verzenden"
+      "You can't send vCard files of more than 10 contacts": [
+        "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "U kunt niet meer dan één opstelvenster tegelijk openen",
@@ -3391,9 +3324,6 @@
       ],
       "You did not provide a file.": [
         "U heeft geen bestand geselecteerd."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "U heeft het maximale aantal persoonlijke agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -3992,9 +3922,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mailadres"
       ],
@@ -4003,9 +3930,6 @@
       ],
       "No verification method available": [
         "Geen verificatiemethode beschikbaar"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4025,6 +3949,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. Er kon geen enkele afspraak worden geïmporteerd."
@@ -4253,9 +4180,6 @@
       ],
       "ICS file": [
         "ICS-bestand"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4270,6 +4194,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importeer uit ${ provider }"
+      ],
       "Other": [
         "Overig"
       ]
@@ -4306,10 +4233,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nieuwe agenda",
         "${ calendarsToBeCreatedCount } nieuwe agenda's"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "Éen samengevoegde agenda",
-        "${ calendarsToBeMerged } samengevoegde agenda's"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } samengevoegde agenda",
@@ -4357,13 +4280,13 @@
         "Één e-mail tracker geblokkeerd",
         "${ numberOfTrackers } e-mail trackers geblokkeerd"
       ],
-      "${ numContactGroups } contact group": [
-        "Één contactgroep",
-        "${ numContactGroups } contactgroepen"
+      "${ numContact } contact": [
+        "${ numContact } contactpersoon",
+        "${ numContact } contactpersonen"
       ],
-      "${ numContacts } contact": [
-        "Één contactpersoon",
-        "${ numContacts } contactpersonen"
+      "${ numGroups } contact group": [
+        "${ numGroups } contactgroep",
+        "${ numGroups } contactgroepen"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } bericht in het gesprek",
@@ -4409,9 +4332,6 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } opslagruimte"
-      ],
       "${ total } conversation": [
         "${ total } gesprek",
         "${ total } gesprekken"
@@ -4456,9 +4376,6 @@
       ],
       "(No Recipient)": [
         "(Geen ontvanger)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadressen"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Een herstelzin is een van de veiligste manieren om de toegang tot uw account te beveiligen. U kunt het gebruiken om toegang te krijgen tot uw account en uw versleutelde gegevens te herstellen als u ooit uw wachtwoord vergeet."
@@ -4552,6 +4469,9 @@
       "Attach public key": [
         "Openbare sleutel bijvoegen"
       ],
+      "Attention required": [
+        "Aandacht vereist"
+      ],
       "Background color": [
         "Achtergrondkleur"
       ],
@@ -4563,6 +4483,9 @@
       ],
       "Body: ": [
         "Tekst: "
+      ],
+      "Calendar side panel": [
+        "Agenda zijpaneel"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -4594,15 +4517,15 @@
       "Confirm phishing report": [
         "Phishingrapport bevestigen"
       ],
-      "Continue with ${ planName }": [
-        "Ga door met ${ planName }"
-      ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Maak één nieuwe agenda",
-        "Maak ${ calendarsToBeCreated } nieuwe agenda's"
+      "Country code": [
+        "Landcode"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
@@ -4802,9 +4725,9 @@
       "Group assignment applied": [
         "Groep toewijzing toegepast"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Heeft ${ numAttachments } bijlage",
-        "Heeft ${ numAttachments } bijlagen"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Heeft ${ numAttachments } bijlage (${ numAttachmentsSize })",
+        "Heeft ${ numAttachments } bijlagen (${ numAttachmentsSize })"
       ],
       "here": [
         "hier"
@@ -4843,12 +4766,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Afbeeldingen werden verwijderd omdat ze niet toegelaten zijn in automatisch antwoord"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda",
-        "Importeer ${ selectedCalendarsCount } van ${ totalCalendarsCount } agenda's"
       ],
       "Import from": [
         "Importeren van"
@@ -4861,6 +4784,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importeer uw e-mails, agenda's en contacten vanuit een andere dienst naar ${ BRAND_NAME }. We zullen u bij elke stap leiden en uw gegevens versleutelen terwijl het wordt verplaatst. Welkom in de wereld van privacy."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
@@ -4967,8 +4893,8 @@
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Er wordt een grote hoeveelheid berichten verplaatst. Dit kan enkele ogenblikken duren."
+      "Moving messages. This may take a while.": [
+        "Berichten aan het verplaatsen. Dit kan even duren."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
@@ -5029,9 +4955,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
-      ],
-      "Other options": [
-        "Andere opties"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
@@ -5099,9 +5022,6 @@
       ],
       "Print email": [
         "E-mail afdrukken"
-      ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Voorkom dat uw e-mailadres gelekt wordt naar nieuwsbrieven of spammers met ${ maskMyEmailButton }."
@@ -5172,9 +5092,6 @@
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Verzend een versleuteld, met wachtwoord beveiligd bericht naar een ${ boldText } e-mailadres."
       ],
@@ -5220,9 +5137,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Bewaar en deel bestanden veilig met ${ DRIVE_APP_NAME }."
       ],
@@ -5237,9 +5151,6 @@
       ],
       "Subject: ": [
         "Onderwerp: "
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-mail domein"
       ],
       "Support privacy by upgrading for": [
         "Ondersteuning van privacy door opwaardering voor"
@@ -5415,12 +5326,6 @@
       "Turn on to search the content of your messages": [
         "Zet aan om de inhoud van uw berichten te doorzoeken"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Ongelimiteerde mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
-      ],
       "Unlock message": [
         "Bericht ontgrendelen"
       ],
@@ -5432,6 +5337,9 @@
       ],
       "Updating message content search...": [
         "Zoeken naar berichtinhoud bijwerken..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
       "Upgrade to add more addresses to your account.": [
         "Upgrade om meer adressen aan uw account toe te voegen."
@@ -5463,9 +5371,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Upgrade om ${ MAIL_APP_NAME } te gebruiken met desktop clients van derden."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
-      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -5483,9 +5388,6 @@
       ],
       "Using SimpleLogin is easy": [
         "Het gebruik van SimpleLogin is eenvoudig"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Geverifieerd ${ BRAND_NAME }-bericht"
       ],
       "Version ${ appVersion }": [
         "Versie ${ appVersion }"
@@ -6034,14 +5936,11 @@
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
-      "Coming soon": [
-        "Binnenkort beschikbaar"
+      "Colors": [
+        "Kleuren"
       ],
       "Conditions": [
         "Voorwaarden"
-      ],
-      "Confirm password": [
-        "Bevestig wachtwoord"
       ],
       "Contacts": [
         "Contacten"
@@ -6053,7 +5952,7 @@
         "Land"
       ],
       "Date": [
-        "Date"
+        "Datum"
       ],
       "Date:": [
         "Datum:"
@@ -6126,9 +6025,6 @@
       ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
-      ],
-      "From: ${ importedEmail }": [
-        "Van: ${ importedEmail }"
       ],
       "Good": [
         "Goed"
@@ -6204,12 +6100,6 @@
       ],
       "Manage categories": [
         "Beheer categorieën"
-      ],
-      "Manage folders": [
-        "Mappen beheren"
-      ],
-      "Manage labels": [
-        "Beheer labels"
       ],
       "Manage my addresses": [
         "Mijn adressen beheren"
@@ -6364,9 +6254,6 @@
       "To:": [
         "Aan:"
       ],
-      "To: ${ emailAddress }": [
-        "Naar: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Aan: ${ to }"
       ],
@@ -6381,9 +6268,6 @@
       ],
       "Undisclosed Recipients": [
         "Niet-openbaar gemaakte ontvangers"
-      ],
-      "Upload file": [
-        "Bestand uploaden"
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -6656,8 +6540,9 @@
       "Almost there": [
         "Bijna daar"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Aantal aangemaakte agenda's: ${ createdCalendars } van de ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
@@ -6676,21 +6561,9 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ itemsToImportCount } map en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ itemsToImportCount } label en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importeer alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
+        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
       ]
     },
     "Mailbox": {
@@ -6939,6 +6812,39 @@
         "Account toevoegen of wisselen"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Aangepaste e-maildomeinen"
+      ],
+      "Hide My Email aliases": [
+        "Hide My Email-aliassen"
+      ],
+      "Schedule messages at any time": [
+        "Plan berichten in op ieder moment"
+      ],
+      "Search message content": [
+        "Doorzoek berichtinhoud"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Up to 15 email addresses": [
+        "Tot wel 15 e-mailadressen"
+      ],
+      "Up to 500 GB of storage": [
+        "Tot wel 500 GB Opslag"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Vertel ons over uw ervaring. (Optioneel)"
@@ -7102,9 +7008,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Een manier om u te contacteren"
-      ],
-      "Confirm password": [
-        "Bevestig wachtwoord"
       ],
       "E.g., ": [
         "Bijv., "
@@ -7478,26 +7381,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uur"
       ],
+      "${ hours } hour": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
       ],
       "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
+        "voor ${ n } maand",
+        "voor ${ n } maanden"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
+        "${ seconds } seconde",
+        "${ seconds } seconden"
       ]
     },
     "specialoffer: Deal details": {
@@ -7522,12 +7425,6 @@
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
       ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
-      ],
-      "Premium Drive": [
-        "Premium Drive"
-      ],
       "Premium early access": [
         "Premium vroege toegang"
       ],
@@ -7536,9 +7433,6 @@
       ],
       "Premium Mail, Calendar and Drive": [
         "Premium Mail, Calendar en Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
@@ -7609,8 +7503,8 @@
         "U betaalt ${ amount } voor 30 maanden"
       ],
       "for ${ n } month": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ],
       "Get the deal": [
         "Kies deze deal"
@@ -7641,12 +7535,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday Sale"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week Sale"
-      ],
       "End of year offer": [
         "Eindejaarsaanbieding"
       ],
@@ -7699,9 +7587,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
-      ],
       "Email tracking protection": [
         "Bescherming tegen e-mailtracking"
       ],
@@ -7716,9 +7601,6 @@
       ],
       "Schedule send": [
         "Gepland versturen"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Probeer ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "We laden afbeelding nu standaard en blokkeren trackers van afzenders. Dit kan gewijzigd worden via de ${ settingsLink }."
@@ -7856,8 +7738,8 @@
       "Bug reported": [
         "Bug gemeld"
       ],
-      "Canceling import": [
-        "Annuleer import"
+      "Cancelling import": [
+        "Importeren annuleren"
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
@@ -8088,17 +7970,9 @@
         "${ daysCountLeft } dag",
         "${ daysCountLeft } dagen"
       ],
-      "${ hours } hour": [
-        "${ hours } uur",
-        "${ hours } uren"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } uur",
         "${ hoursCountLeft } uren"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuut",
@@ -8107,6 +7981,34 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } seconde",
         "${ secondsCountLeft } seconden"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } u",
+        "${ hours } u"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 u",
+        "${ hoursInt },5 u"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 uur",
+        "${ hoursInt },5 uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ]
     },
     "Title": {
@@ -8554,6 +8456,9 @@
       "Sending original message": [
         "Oorspronkelijk bericht wordt verzonden"
       ],
+      "Set your own schedule": [
+        "Maak uw eigen planning"
+      ],
       "Settings": [
         "Instellingen"
       ],
@@ -8636,8 +8541,8 @@
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uw Mail Plus proefversie eindigt op ${ textDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9043,8 +8948,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Elk jaar",
+        "Elke ${ interval } jaar"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Elke jaar, ${ timesString }",

@@ -46,7 +46,7 @@
 		}
 	}
 
-	@include respond-to($breakpoint-tiny, 'max') {
+	@include media('<=xsmall') {
 		$connector-max-width: em(40); // smaller for mobile
 		&-item {
 			max-inline-size: calc($connector-max-width + $dot-size - $connector-gap);

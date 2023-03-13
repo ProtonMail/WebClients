@@ -15,7 +15,8 @@
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "proton-pack dev-server --appMode=standalone",
-        "test": "jest --runInBand --ci"
+        "test": "jest --runInBand --ci",
+        "test:dev": "jest --watch --coverage=false"
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
@@ -23,14 +24,14 @@
         "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
-        "@types/react": "^17.0.52",
-        "@types/react-dom": "^17.0.18",
+        "@types/react": "^17.0.53",
+        "@types/react-dom": "^17.0.19",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "ttag": "^1.7.24"
     },
     "devDependencies": {
-        "@babel/preset-typescript": "^7.18.6",
+        "@babel/preset-typescript": "^7.21.0",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^5.16.5",
@@ -38,11 +39,11 @@
         "@types/jest": "^28.1.8",
         "babel-jest": "^28.1.3",
         "cross-env": "^7.0.3",
-        "eslint": "^8.31.0",
+        "eslint": "^8.35.0",
         "jest": "^28.1.3",
         "jest-environment-jsdom": "^28.1.3",
         "jest-junit": "^14.0.1",
-        "prettier": "^2.8.2",
-        "typescript": "^4.9.4"
+        "prettier": "^2.8.4",
+        "typescript": "^4.9.5"
     }
 }

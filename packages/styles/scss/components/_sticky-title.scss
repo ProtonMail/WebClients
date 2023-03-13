@@ -25,7 +25,7 @@ $sticky-title-height: rem(100) !default;
 	margin-inline-start: auto;
 	margin-inline-end: auto;
 
-	@include respond-to($breakpoint-large, 'min') {
+	@include media('>xlarge') {
 		max-inline-size: 75vw;
 	}
 
@@ -40,7 +40,7 @@ $sticky-title-height: rem(100) !default;
 			// temporary margin by hand until better global solution found
 			margin-block-start: em(54);
 
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				// full alignment not possible
 				margin-block-start: 0;
 			}
@@ -55,7 +55,7 @@ $sticky-title-height: rem(100) !default;
 }
 
 // not sticky on mobile
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	.sticky-title:not(.on-mobile-remain-sticky) {
 		position: static;
 		box-shadow: none;

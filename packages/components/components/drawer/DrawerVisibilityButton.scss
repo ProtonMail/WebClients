@@ -39,11 +39,11 @@
 		// not needed for now
 	}
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		display: none;
 	}
 
-	@media print {
+	@include media('print') {
 		display: none;
 	}
 }

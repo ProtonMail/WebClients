@@ -118,9 +118,14 @@ export interface DecryptedLink extends Link {
     // of any request and not filled automatically. To get this value, use
     // `loadLinkThumbnail` from `useDrive`.
     cachedThumbnailUrl?: string;
+    originalSize?: number;
     // In case of image it might contain dimensions stored in XAttributes.
     originalDimensions?: {
         width: number;
         height: number;
+    };
+    // Digests stored in XAttributes
+    digests?: {
+        sha1: string;
     };
 }

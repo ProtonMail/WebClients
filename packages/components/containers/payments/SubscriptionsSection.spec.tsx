@@ -66,7 +66,7 @@ describe('SubscriptionsSection', () => {
             Title: 'Mail Plus',
             MaxDomains: 1,
             MaxAddresses: 10,
-            MaxCalendars: 20,
+            MaxCalendars: 25,
             MaxSpace: 16106127360,
             MaxMembers: 1,
             MaxVPN: 0,
@@ -98,7 +98,7 @@ describe('SubscriptionsSection', () => {
             Title: 'Mail Essentials',
             MaxDomains: 3,
             MaxAddresses: 10,
-            MaxCalendars: 20,
+            MaxCalendars: 25,
             MaxSpace: 16106127360,
             MaxMembers: 1,
             MaxVPN: 0,
@@ -166,7 +166,7 @@ describe('SubscriptionsSection', () => {
             Title: 'Proton Unlimited',
             MaxDomains: 3,
             MaxAddresses: 15,
-            MaxCalendars: 20,
+            MaxCalendars: 25,
             MaxSpace: 536870912000,
             MaxMembers: 1,
             MaxVPN: 10,
@@ -230,7 +230,7 @@ describe('SubscriptionsSection', () => {
             Title: 'Business',
             MaxDomains: 10,
             MaxAddresses: 15,
-            MaxCalendars: 20,
+            MaxCalendars: 25,
             MaxSpace: 536870912000,
             MaxMembers: 1,
             MaxVPN: 10,
@@ -262,7 +262,7 @@ describe('SubscriptionsSection', () => {
             Title: 'Enterprise',
             MaxDomains: 10,
             MaxAddresses: 15,
-            MaxCalendars: 20,
+            MaxCalendars: 25,
             MaxSpace: 1099511627776,
             MaxMembers: 1,
             MaxVPN: 10,
@@ -326,7 +326,7 @@ describe('SubscriptionsSection', () => {
             Title: '+1 User',
             MaxDomains: 0,
             MaxAddresses: 10,
-            MaxCalendars: 20,
+            MaxCalendars: 25,
             MaxSpace: 16106127360,
             MaxMembers: 1,
             MaxVPN: 0,
@@ -358,7 +358,7 @@ describe('SubscriptionsSection', () => {
             Title: '+1 User for Business',
             MaxDomains: 0,
             MaxAddresses: 15,
-            MaxCalendars: 20,
+            MaxCalendars: 25,
             MaxSpace: 536870912000,
             MaxMembers: 1,
             MaxVPN: 10,
@@ -422,7 +422,7 @@ describe('SubscriptionsSection', () => {
             Title: '+1 User for Enterprise',
             MaxDomains: 0,
             MaxAddresses: 15,
-            MaxCalendars: 20,
+            MaxCalendars: 25,
             MaxSpace: 1099511627776,
             MaxMembers: 1,
             MaxVPN: 10,
@@ -564,7 +564,7 @@ describe('SubscriptionsSection', () => {
                     Title: 'Mail Plus',
                     MaxDomains: 1,
                     MaxAddresses: 10,
-                    MaxCalendars: 20,
+                    MaxCalendars: 25,
                     MaxSpace: 16106127360,
                     MaxMembers: 1,
                     MaxVPN: 0,
@@ -606,7 +606,7 @@ describe('SubscriptionsSection', () => {
                     Title: 'Mail Plus',
                     MaxDomains: 1,
                     MaxAddresses: 10,
-                    MaxCalendars: 20,
+                    MaxCalendars: 25,
                     MaxSpace: 16106127360,
                     MaxMembers: 1,
                     MaxVPN: 0,
@@ -661,7 +661,7 @@ describe('SubscriptionsSection', () => {
     });
 
     it('should render current upcoming subscription', () => {
-        subscription.upcoming = upcoming;
+        subscription.UpcomingSubscription = upcoming;
 
         const { container } = render(<SubscriptionsSection />);
 
@@ -680,7 +680,7 @@ describe('SubscriptionsSection', () => {
     });
 
     it('should show renewal date as end of the upcoming subscription if there is one', () => {
-        subscription.upcoming = upcoming;
+        subscription.UpcomingSubscription = upcoming;
         const { container } = render(<SubscriptionsSection />);
         expect(container).toHaveTextContent('* Renews automatically on Dec 21, 2024');
     });

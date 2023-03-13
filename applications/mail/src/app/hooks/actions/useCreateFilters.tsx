@@ -2,8 +2,16 @@ import { useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { useAddresses, useApi, useFilters, useFolders, useLabels, useNotifications } from '@proton/components';
-import { InlineLinkButton, useAppLink } from '@proton/components/components';
+import {
+    NotificationButton,
+    useAddresses,
+    useApi,
+    useFilters,
+    useFolders,
+    useLabels,
+    useNotifications,
+} from '@proton/components';
+import { useAppLink } from '@proton/components/components';
 import { Filter } from '@proton/components/containers/filters/interfaces';
 import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
@@ -125,14 +133,14 @@ export const useCreateFilters = () => {
             notificationID = createNotification({
                 text: (
                     <>
-                        <span className="mr1">{notificationText}</span>
-                        <InlineLinkButton
+                        <span>{notificationText}</span>
+                        <NotificationButton
                             onClick={() => {
                                 appLink('/mail/filters', APPS.PROTONACCOUNT);
                             }}
                         >
                             {c('Action').t`Edit`}
-                        </InlineLinkButton>
+                        </NotificationButton>
                     </>
                 ),
             });

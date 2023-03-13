@@ -25,12 +25,11 @@ import { generateVeventHashUID, getOriginalUID } from '../helper';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { getSupportedCalscale } from '../icsSurgery/vcal';
 import { getLinkedDateTimeProperty, getSupportedEvent, withSupportedDtstamp } from '../icsSurgery/vevent';
-import { parseWithErrors, serialize } from '../vcal';
+import { parseWithRecoveryAndErrors, serialize } from '../vcal';
 import {
     getHasDtStart,
     getHasRecurrenceId,
     getIcalMethod,
-    getIsCalendar,
     getIsEventComponent,
     getIsFreebusyComponent,
     getIsJournalComponent,
@@ -52,8 +51,8 @@ export const parseIcs = async (ics: File) => {
         if (!icsAsString) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_EMPTY, filename);
         }
-        const parsedVcalendar = parseWithErrors(icsAsString);
-        if (!getIsCalendar(parsedVcalendar)) {
+        const parsedVcalendar = parseWithRecoveryAndErrors(icsAsString);
+        if (parsedVcalendar.component?.toLowerCase() !== 'vcalendar') {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
         const { method, components, calscale, 'x-wr-timezone': xWrTimezone } = parsedVcalendar;

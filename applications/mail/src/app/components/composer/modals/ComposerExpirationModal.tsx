@@ -3,7 +3,7 @@ import { ChangeEvent, useMemo, useState } from 'react';
 import { isToday, isTomorrow } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Checkbox, FeatureCode, Href, generateUID, useFeatures, useNotifications } from '@proton/components';
+import { Checkbox, Href, generateUID, useNotifications } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -88,14 +88,10 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         setPasswordHint,
         isPasswordSet,
         setIsPasswordSet,
-        isMatching,
-        setIsMatching,
         validator,
         onFormSubmit,
     } = useExternalExpiration(message);
-    const [{ feature: EORedesignFeature, loading }] = useFeatures([FeatureCode.EORedesign]);
 
-    const isEORedesign = EORedesignFeature?.Value;
     const isExpirationSet = message?.draftFlags?.expiresIn;
 
     const [uid] = useState(generateUID('password-modal'));
@@ -180,10 +176,6 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         return getExpirationText(days, hours);
     }, [days, hours]);
 
-    if (loading) {
-        return null;
-    }
-
     return (
         <ComposerInnerModal
             title={
@@ -243,35 +235,29 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
 
             <p className="mt0 color-weak">{expirationText}</p>
 
-            {isEORedesign && (
-                <div className="flex flex-nowrap mb1">
-                    <Checkbox
-                        className="mr1 inline-block"
-                        checked={isSendOutside}
-                        onChange={() => setIsSendOutside(!isSendOutside)}
-                    />
-                    <span>
-                        {
-                            // translator: full sentence "I'm sending this message to a non-Proton Mail user."
-                            c('Info').t`I'm sending this message to a non-${MAIL_APP_NAME} user.`
-                        }
-                        <Href href={getKnowledgeBaseUrl('/expiration/')} className="ml0-25">{c('Link')
-                            .t`Learn more`}</Href>
-                    </span>
-                </div>
-            )}
+            <div className="flex flex-nowrap mb1">
+                <Checkbox
+                    className="mr1 inline-block"
+                    checked={isSendOutside}
+                    onChange={() => setIsSendOutside(!isSendOutside)}
+                />
+                <span>
+                    {
+                        // translator: full sentence "I'm sending this message to a non-Proton Mail user."
+                        c('Info').t`I'm sending this message to a non-${MAIL_APP_NAME} user.`
+                    }
+                    <Href href={getKnowledgeBaseUrl('/expiration/')} className="ml0-25">{c('Link').t`Learn more`}</Href>
+                </span>
+            </div>
 
             {isSendOutside && (
                 <PasswordInnerModalForm
-                    message={message}
                     password={password}
                     setPassword={setPassword}
                     passwordHint={passwordHint}
                     setPasswordHint={setPasswordHint}
                     isPasswordSet={isPasswordSet}
                     setIsPasswordSet={setIsPasswordSet}
-                    isMatching={isMatching}
-                    setIsMatching={setIsMatching}
                     validator={validator}
                 />
             )}

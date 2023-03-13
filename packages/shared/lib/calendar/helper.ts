@@ -11,7 +11,7 @@ import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
 } from '../interfaces/calendar';
-import { ACTION_VIEWS, MAXIMUM_DATE_UTC, MAX_LENGTHS_API, MINIMUM_DATE_UTC } from './constants';
+import { ACTION_VIEWS, MAXIMUM_DATE_UTC, MAX_CHARS_API, MINIMUM_DATE_UTC } from './constants';
 import { propertyToUTCDate } from './vcalConverter';
 import { getIsPropertyAllDay } from './vcalHelper';
 
@@ -49,7 +49,7 @@ export const generateVeventHashUID = async (binaryString: string, uid = '', lega
     }
     const join = '-';
     const uidLength = uid.length;
-    const availableLength = MAX_LENGTHS_API.UID - ORIGINAL_UID_PREFIX.length - hashUid.length - join.length;
+    const availableLength = MAX_CHARS_API.UID - ORIGINAL_UID_PREFIX.length - hashUid.length - join.length;
     const croppedUID = uid.substring(uidLength - availableLength, uidLength);
     return legacyFormat
         ? `${hashUid}${join}${ORIGINAL_UID_PREFIX}${croppedUID}`
@@ -84,7 +84,7 @@ export const getHasLegacyHashUID = (uid = '') => {
 
 export const getSupportedUID = (uid: string) => {
     const uidLength = uid.length;
-    return uid.substring(uidLength - MAX_LENGTHS_API.UID, uidLength);
+    return uid.substring(uidLength - MAX_CHARS_API.UID, uidLength);
 };
 
 const getIsWellFormedDateTime = (property: VcalDateTimeProperty) => {

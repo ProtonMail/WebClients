@@ -50,6 +50,7 @@ interface SaveRecurringArguments {
     updateAllPossibilities: UpdateAllPossibilities;
     hasDefaultNotifications: boolean;
     personalEventsDeprecated: boolean;
+    canEditOnlyNotifications: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     sendIcs: (data: SendIcsActionData) => Promise<{
@@ -84,6 +85,7 @@ const getSaveRecurringEventActions = async ({
     inviteActions,
     hasDefaultNotifications,
     personalEventsDeprecated,
+    canEditOnlyNotifications,
     isAttendee,
     sendIcs,
     reencryptSharedEvent,
@@ -140,8 +142,8 @@ const getSaveRecurringEventActions = async ({
                     reencryptSharedEvent,
                 });
             }
-            if (isAttendee) {
-                // the attendee edits notifications. We must do it through the updatePersonalPart route
+            if (canEditOnlyNotifications) {
+                // We change notifications through the updatePersonalPart route
                 return getUpdatePersonalPartActions({
                     eventComponent: newVeventComponent,
                     hasDefaultNotifications,
@@ -326,8 +328,8 @@ const getSaveRecurringEventActions = async ({
                 sendActions,
             };
         }
-        if (isAttendee && !isSwitchCalendar) {
-            // the attendee edits notifications. We must do it through the updatePersonalPart route
+        if (canEditOnlyNotifications && !isSwitchCalendar) {
+            // We change notifications through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,
                 hasDefaultNotifications,

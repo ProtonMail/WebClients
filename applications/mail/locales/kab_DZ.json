@@ -698,8 +698,8 @@
       "Remove this label": [
         "Kkes tabzimt-a"
       ],
-      "Rename": [
-        "Beddel isem"
+      "Reply": [
+        "Err"
       ],
       "Reply securely": [
         "Err s wudem aɣelsan"
@@ -734,11 +734,11 @@
       "Save": [
         "Sekles"
       ],
+      "Saving${ ellipsis }": [
+        "Asekles${ ellipsis }"
+      ],
       "Schedule message": [
         "Sɣiwes izen"
-      ],
-      "Schedule send": [
-        "Sɣiwes tuzna"
       ],
       "Search": [
         "Anadi"
@@ -1099,6 +1099,9 @@
       ]
     },
     "Beta access description": {
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "Anekcum Biṭa ad k•kem-yeǧǧ ad tesqedceḍ lqem Biṭa n ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, akked ${ DRIVE_APP_NAME } send ad d-ffɣen i uzayez. Ayagi yebɣa ad d-yini tzemreḍ ad tiliḍ d amezwaru ara isqedcen ifarisen, ad teṭṭfeḍ ileqman imaynuten, yerna ad tesqedceḍ tiwuriwin timaynutin."
+      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
       ]
@@ -1379,6 +1382,9 @@
       "Event rescheduling is not supported for the moment": [
         "Allus n usɣiwen n tedyant ur yettwasefrak ara taswiɛt-a"
       ],
+      "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
+        "Tiririt-a ulamek ad tettwarnu ɣer ${ CALENDAR_APP_NAME } acku taswiɛt-a nessefrak kan tiririyin i tedyanin akk n yiwen n uzrar."
+      ],
       "This event has been canceled.": [
         "Tadyant-a tettusefsex."
       ],
@@ -1393,6 +1399,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "Tinubga-a d taqburt. Tadyant-a tettuleqqem."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Asumer-a n wakud amaynut ur yemsaḍa ara d yifutas n tinubga-inek·inem. Ttxil senqed ifutas n tinubga deg uwtay-inek·inem."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Tiririt-a ur temsaḍa ara d yifutas n tinubga-inek·inem. Ttxil senqed ifutas n tinubga deg uwtay-inek·inem."
@@ -1419,37 +1428,20 @@
         "Tansa-inek·inem n yimayl ulac-itt deg tebdart n yittekkiyen"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Ur yemtawi ara"
-      ],
-      "Syncing": [
-        "Amtawi"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar is syncing": [
-        "Awitay yemtawi"
-      ],
-      "Calendar is too big": [
-        "Awitay meqqer nezzeh"
-      ],
-      "Calendar link is not accessible": [
-        "Ulac anekcum ɣer useɣwen n uwitay"
-      ],
-      "Failed to sync calendar": [
-        "Tuccḍa deg umtawi n uwitay"
-      ],
-      "More than 12 hours passed since last update": [
-        "Ugar n 12 n yisragen i yezrin ɣef uleqqem aneggaru"
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Tadyant tekfa yakan"
       ],
       "Event in progress": [
         "Tadyant tetteddu"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Fneẓ"
+      ],
+      "Expand": [
+        "Snefli"
       ]
     },
     "color": {
@@ -1476,9 +1468,6 @@
       ],
       "japanese laurel": [
         "ilili n Japun"
-      ],
-      "kiwi": [
-        "kiwi"
       ],
       "mughal green": [
         "adal"
@@ -1601,9 +1590,6 @@
       "Gender": [
         "Taswit"
       ],
-      "Geo": [
-        "Geo"
-      ],
       "Language": [
         "Tutlayt"
       ],
@@ -1636,15 +1622,9 @@
       ],
       "Title": [
         "Azwel"
-      ],
-      "URL": [
-        "URL"
       ]
     },
     "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
       "Main": [
         "Agejdan"
       ],
@@ -1662,9 +1642,6 @@
       ],
       "Work": [
         "Amahil"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1704,9 +1681,6 @@
       "Armenia": [
         "Aṛminya"
       ],
-      "Aruba": [
-        "Aruba"
-      ],
       "Australia": [
         "Ustṛalya"
       ],
@@ -1715,9 +1689,6 @@
       ],
       "Azerbaijan": [
         "Tazerbiǧanit"
-      ],
-      "Bahamas": [
-        "Bahamas"
       ],
       "Bahrain": [
         "Baḥrin"
@@ -1739,12 +1710,6 @@
       ],
       "Benin": [
         "Binin"
-      ],
-      "Bermuda": [
-        "Bermuda"
-      ],
-      "Bhutan": [
-        "Bhutan"
       ],
       "Bolivia": [
         "Bulivya"
@@ -1775,9 +1740,6 @@
       ],
       "Burkina Faso": [
         "Burkina Fasu"
-      ],
-      "Burundi": [
-        "Burundi"
       ],
       "Cambodia": [
         "Cambudya"
@@ -1881,12 +1843,6 @@
       "Faroe Islands": [
         "Tigzirin n Faṛwi"
       ],
-      "Fiji": [
-        "Fiji"
-      ],
-      "Finland": [
-        "Finland"
-      ],
       "France": [
         "Fransa"
       ],
@@ -1913,9 +1869,6 @@
       ],
       "Ghana": [
         "Ɣana"
-      ],
-      "Gibraltar": [
-        "Gibraltar"
       ],
       "Greece": [
         "Legrig"
@@ -1944,9 +1897,6 @@
       "Guinea-Bissau": [
         "Ginya bisaw"
       ],
-      "Guyana": [
-        "Guyana"
-      ],
       "Haiti": [
         "Hayti"
       ],
@@ -1973,9 +1923,6 @@
       ],
       "International": [
         "Agraɣlan"
-      ],
-      "Iran": [
-        "Iran"
       ],
       "Iraq": [
         "Ɛiraq"
@@ -2010,9 +1957,6 @@
       "Kenya": [
         "Kinya"
       ],
-      "Kiribati": [
-        "Kiribati"
-      ],
       "Kosovo": [
         "Kuṣuvu"
       ],
@@ -2037,9 +1981,6 @@
       "Liberia": [
         "Libirya"
       ],
-      "Libya": [
-        "Libya"
-      ],
       "Liechtenstein": [
         "Lictencṭayn"
       ],
@@ -2055,20 +1996,11 @@
       "Madagascar": [
         "Madagaskaṛ"
       ],
-      "Malawi": [
-        "Malawi"
-      ],
       "Malaysia": [
         "Malizya"
       ],
       "Maldives": [
         "Maldiv"
-      ],
-      "Mali": [
-        "Mali"
-      ],
-      "Malta": [
-        "Malta"
       ],
       "Marshall Islands": [
         "Tigzirin n Marcal"
@@ -2157,17 +2089,11 @@
       "Oman": [
         "Uman"
       ],
-      "Pakistan": [
-        "Pakistan"
-      ],
       "Palau": [
         "Palawu"
       ],
       "Palestine": [
         "Filasṭin"
-      ],
-      "Panama": [
-        "Panama"
       ],
       "Papua New Guinea": [
         "Ɣinya Tamaynut Tapaput"
@@ -2205,17 +2131,8 @@
       "Russia": [
         "Rruss"
       ],
-      "Rwanda": [
-        "Rwanda"
-      ],
       "Saint Barthélemy": [
         "San Baṛtilimi"
-      ],
-      "Saint Helena": [
-        "Saint Helena"
-      ],
-      "Saint Kitts and Nevis": [
-        "Saint Kitts and Nevis"
       ],
       "Saint Lucia": [
         "Sant Lusi"
@@ -2283,12 +2200,6 @@
       "Spain": [
         "Spanya"
       ],
-      "Sri Lanka": [
-        "Sri Lanka"
-      ],
-      "Sudan": [
-        "Sudan"
-      ],
       "Suriname": [
         "Surinam"
       ],
@@ -2306,9 +2217,6 @@
       ],
       "Taiwan": [
         "Taywan"
-      ],
-      "Tajikistan": [
-        "Tajikistan"
       ],
       "Tanzania": [
         "Tanẓanya"
@@ -2342,12 +2250,6 @@
       ],
       "Turks and Caicos Islands": [
         "Ṭurk d Tegzirin n Kaykus"
-      ],
-      "Tuvalu": [
-        "Tuvalu"
-      ],
-      "Uganda": [
-        "Uganda"
       ],
       "Ukraine": [
         "Ukran"
@@ -2469,6 +2371,11 @@
         "Seqdec amezwer amatu (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Seqdec amezwer amatu (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Tafaturt ur nettwaxelleṣ ara"
@@ -2483,6 +2390,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Tukksa n uwgelhen i yinermasen… Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tsidreḍ afaylu s yinermisen-inek m meṛṛa ttusifḍen."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Tukksa n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
       ],
@@ -2494,6 +2404,12 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Asmezdi n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
+      ],
+      "No folders": [
+        "Ulac ikaramen"
+      ],
+      "No labels": [
+        "Ulac tibzimin"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seqdec tawuri Zuɣer Sers iwakken ad tesmizzwireḍ tazwart n usmezdi gar yinermisen. Kkes afran i yinermisen ur tebɣiḍ ara ad tesmezdiḍ."
@@ -2895,9 +2811,6 @@
       "You can't send a mail to more than 100 recipients": [
         "Ur tezmireḍ ara ad tazneḍ tabrat i wugar n 100 n yinermasen"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Ur tezmireḍ ara ad tazneḍ tikarḍiwin vCards i wugar n 100 n yinermisen"
-      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Ur tezmireḍ ara ad teldiḍ ugar n ${ maxActiveComposer } n usfaylu n umsuddes ɣef tikkelt",
         "Ur tezmireḍ ara ad teldiḍ ugar n ${ maxActiveComposer } n yifuyla n umsuddes ɣef tikkelt"
@@ -2969,6 +2882,9 @@
       "Calendar": [
         "Awitay"
       ],
+      "Calendar time zone not supported": [
+        "Izḍi usrid n uwitay ur yettusefrak ara"
+      ],
       "Component with wrong format": [
         "Asuddis s yir amasal"
       ],
@@ -3032,6 +2948,9 @@
       "Start time out of bounds": [
         "Akud n beddu akkin i tlisa"
       ],
+      "Time zone not supported": [
+        "Izḍi usrid ur yettusefrak ara"
+      ],
       "Timezone": [
         "Tamennaḍt tasragant"
       ],
@@ -3060,6 +2979,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Ma ulac aɣilif ${ refresh } neɣ senqed tuqqna."
+      ],
+      "There was a problem connecting to ${ BRAND_NAME }.": [
+        "Yella-d wugur tuqqna ɣer ${ BRAND_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Ur tesεiḍ ara εad anermis. Bdu s tmerna n unermis amaynut"
@@ -3132,6 +3054,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "ibiten",
+        "ibiten"
+      ],
       "GB": [
         "GAṬ"
       ],
@@ -3140,6 +3066,12 @@
       ],
       "MB": [
         "KAṬ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Ibit",
+        "Ibiten"
       ]
     },
     "Filter": {
@@ -3173,6 +3105,18 @@
       ]
     },
     "Filter modal type": {
+      "If the attachments": [
+        "Ma ifuyla yeddan"
+      ],
+      "If the recipient": [
+        "Ma aɣerwaḍ"
+      ],
+      "If the sender": [
+        "Ma amazan"
+      ],
+      "If the subject": [
+        "Ma asentel"
+      ],
       "Select…": [
         "Fren…"
       ],
@@ -3230,6 +3174,11 @@
     "Font Size Default": {
       "Default": [
         "Amezwar"
+      ]
+    },
+    "forwardmessage": {
+      "Subject: ${ subject }": [
+        "Asentel: ${ subject }"
       ]
     },
     "Get started checklist completion": {
@@ -3325,9 +3274,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Imayl"
       ],
@@ -3336,9 +3282,6 @@
       ],
       "No verification method available": [
         "Ulac tarrayt n usenqed"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -3351,8 +3294,17 @@
       ]
     },
     "Import calendar": {
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyanin-ik·im. Ulac tadyant ara d-yettwaktaren."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Awgelhen d tmerna n yinermisen: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Tettwakter tedyant akken iwata. Tadyant yettwaktaren ad d-tban tura deg uwitay-ik·im."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Ttwaktarent tedyanin akken iwata. Tidyanin yettwaktaren ad d-banent tura deg uwitay-ik·im."
       ]
     },
     "Import calendar warning": {
@@ -3364,6 +3316,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "Anermis ${ totalImported }/${ totalToImport } yettwawgelhen syenyettwarna ɣer tebdart-inek·inem n yinermisen",
         "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n urmis-inek·inem. Ulac anermis ara d-yettwaktaren."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n yinermisen. ${ totalImported } ɣef ${ totalToImport } n yinermsen i d-yettwaketren akken iwata."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n yinermisen-ik·im. Ulac anermis ara d-yettwaktaren."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Anermis yettwakter akken iwata. Anermis yettwaketren ad d-iban deg tebdart-ik·im n yinermisen."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Inermisen ttwaketren akken iwata. Inermisen yettwaketren ad d-banen deg tebdart-ik·im n yinermisen."
       ]
     },
     "Import contact error": {
@@ -3383,6 +3350,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "${ CONTACTS_APP_NAME } ur issefrak ara ${ forNow }:"
+      ],
       "for now": [
         "ɣer tura"
       ]
@@ -3441,6 +3411,17 @@
         "Timerna n uneḍruy n uwitay tecceḍ"
       ]
     },
+    "Import instructions": {
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Ddu ɣer ${ boldAccountInfo } ddaw umaɣnu-inek•inem deg ${ yahooMailLink }."
+      ],
+      "Go to ${ boldAccountSecurity }.": [
+        "Ddu ɣer ${ boldAccountSecurity }."
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Fren ${ boldExportCSV }."
+      ]
+    },
     "Import instructions emphasis": {
       "Account info": [
         "Talɣut n umiḍan"
@@ -3470,9 +3451,14 @@
       ],
       "ICS file": [
         "Afaylu ICS"
+      ]
+    },
+    "Import instructions step": {
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Ddu ɣer ${ calendarViewLink } deg Yahoo."
       ],
-      "Yahoo": [
-        "Yahoo"
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Fren ${ boldExport } i usifeḍ n uwitay am ufaylu ICS."
       ]
     },
     "Import provider": {
@@ -3499,10 +3485,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } n uwitay amaynut",
         "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } n uwitay yettwamezdi",
-        "${ calendarsToBeMerged } n yiwitayen ttwamezdin"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
@@ -3535,13 +3517,13 @@
         "${ messagesNotAuthorizedToMove } izen ulamek ad yettusenkez.",
         "${ messagesNotAuthorizedToMove } iznan ulamek ad ttwasnekzen."
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } n ugraw n unermes",
-        "${ numContactGroups } n yigrawen n unermes"
+      "${ numberOfTrackers } email tracker blocked": [
+        "${ numberOfTrackers } n umeḍfar n yimayl iweḥlen",
+        "${ numberOfTrackers } n yimeḍfaren n yimayl iweḥlen"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } n unermis",
-        "${ numContacts } n yinermisen"
+      "${ numContact } contact": [
+        "${ numContact } n unermis",
+        "${ numContact } inermisen"
       ],
       "${ numOccurrences } occurrence found": [
         "${ numOccurrences } n temseḍriwt i yettwafen",
@@ -3578,9 +3560,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
         "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } n uḥraz"
       ],
       "${ total } conversation": [
         "${ total } udiwenni",
@@ -3622,9 +3601,6 @@
       ],
       "(No Recipient)": [
         "(Ulac iɣerwaḍen)"
-      ],
-      "10 email addresses": [
-        "10 n tansiwin n yimayl"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Tafyirt n tririt d yiwen gar yiberdan iɣellsanen n ummesten n unekcum ɣer umiḍan-ik·im. Tzemreḍ ad tt-tesqedceḍ akkenad tkecmeḍɣer umiḍan-ik·im, daɣen, ad d-terreḍ isefka-inek·inem iwgelhanen ma tettuḍ awal-ik·im uffir."
@@ -3745,15 +3721,12 @@
       "Confirm phishing report": [
         "Sentem aneqqis n ukellex"
       ],
-      "Continue with ${ planName }": [
-        "Kemmel s ${ planName }"
-      ],
       "Copied to clipboard": [
         "Nɣel ɣer tecfawt"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Snulfu-d ${ calendarsToBeCreated } n uwitay amaynut",
-        "Snulfu-d ${ calendarsToBeCreated } n yiwitayen imaynuten"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Rnu ${ calendarsToBeCreatedCount } n uwitay amaynut",
+        "Rnu ${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked yikaramen i tebɣiḍ ad tketreḍ."
@@ -3913,10 +3886,6 @@
       "Group assignment applied": [
         "Afares n ugraw yettusnes"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Ɣur-s ${ numAttachments } tceqquft yeddan",
-        "Ɣur-s ${ numAttachments } n tceqqufin yeddan"
-      ],
       "here": [
         "da"
       ],
@@ -3942,12 +3911,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Tugniwin ttwakksent acku ur ttusirgent ara deg tririt tawurmant"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Kter ${ calendarCount } n uwitay ${ totalCalendarsCount }",
+        "Kter ${ calendarCount } n yiwitayen ${ totalCalendarsCount }"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Kter ${ contactsFragment } yerna ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n uwitay",
-        "Taktert n ${ selectedCalendarsCount } seg ${ totalCalendarsCount } n yiwitayen"
       ],
       "Import from": [
         "Kter si"
@@ -4105,9 +4074,6 @@
       "of": [
         "si"
       ],
-      "Other options": [
-        "Ugar n iɣewwaṛen"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Anagraw-nneɣ yecreḍ izen-agi am uneɛruḍ n ukellex. Ttxil-k m senqed belli izen-agi iṣeḥḥa."
       ],
@@ -4149,9 +4115,6 @@
       ],
       "Print email": [
         "Ziggez imayl"
-      ],
-      "Priority support": [
-        "Tallalt yezwaren"
       ],
       "Recipient: ": [
         "Aɣerwaḍ: "
@@ -4376,9 +4339,6 @@
       "Turn on to search the content of your messages": [
         "Sermed akked ad tnadiḍ deg ugbur n yiznan-inek•inem"
       ],
-      "Unlimited messages": [
-        "Iznan war talast"
-      ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
       ],
@@ -4420,9 +4380,6 @@
       ],
       "URL link": [
         "Aseɣwen URL"
-      ],
-      "URL: ${ unsubscribeMethods.HttpClient }": [
-        "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Seqdec inegzumen n unasiw akken ad tesferkeḍ Imaylen-ik·im s tɣawla."
@@ -4586,9 +4543,6 @@
       ],
       "Trusted": [
         "Yettwamen"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -4894,9 +4848,6 @@
       "Conditions": [
         "Tiwtilin"
       ],
-      "Confirm password": [
-        "Sentem awal uffir"
-      ],
       "Contacts": [
         "Inermisen"
       ],
@@ -4957,9 +4908,6 @@
       "From:": [
         "Sɣur:"
       ],
-      "From: ${ importedEmail }": [
-        "Sɣur: ${ importedEmail }"
-      ],
       "Good": [
         "Ilha"
       ],
@@ -4968,6 +4916,9 @@
       ],
       "Hide password": [
         "Ffer awal uffir"
+      ],
+      "How would you describe your experience with the new ${ BRAND_NAME }?": [
+        "Amek ara tgelmeḍ tarmit-inek•inem akked ${ BRAND_NAME } amaynut?"
       ],
       "IF": [
         "MA"
@@ -5016,12 +4967,6 @@
       ],
       "Mailbox password": [
         "Awal uffir n tnaka n yimayl"
-      ],
-      "Manage folders": [
-        "Sefrek ikaramen"
-      ],
-      "Manage labels": [
-        "Sefrek tibzimin"
       ],
       "Manage my addresses": [
         "Sefrek tansiwin-inu"
@@ -5167,17 +5112,11 @@
       "To:": [
         "Ɣer:"
       ],
-      "To: ${ emailAddress }": [
-        "I: ${ emailAddress }"
-      ],
       "Two-factor authentication code": [
         "Tangalt n usesteb s snat n tarrayin"
       ],
       "Undisclosed Recipients": [
         "Iɣerwaḍen ur ttwaskanen ara"
-      ],
-      "Upload file": [
-        "Sali afaylu"
       ],
       "Upload picture": [
         "Sali-d tugna"
@@ -5450,6 +5389,9 @@
       "Fw:": [
         "Welleh:"
       ],
+      "On ${ date }, ${ senderString } wrote:": [
+        "Deg ${ date }, ${ senderString } t/yura :"
+      ],
       "Re:": [
         "Err:"
       ]
@@ -5647,6 +5589,21 @@
         "ISem n tebzimt"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Beddel neɣ rnu umiḍan"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Tiɣula n yimayl tudmawanin"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Mmeslay-aɣ-d ɣef tirmut-ik•im. (d afrayan)"
@@ -5764,9 +5721,6 @@
       "A way to contact you": [
         "Ttawil akken ad ken-nermes"
       ],
-      "Confirm password": [
-        "Sentem awal uffir"
-      ],
       "E.g., ": [
         "D am., "
       ],
@@ -5784,6 +5738,9 @@
       ],
       "Filter labels": [
         "Sizdeg tibzimin"
+      ],
+      "Group name": [
+        "Isem n ugraw"
       ],
       "Hint": [
         "Amatar"
@@ -5879,9 +5836,6 @@
       ],
       "Email": [
         "Imayl"
-      ],
-      "Fax": [
-        "Fax"
       ],
       "Home": [
         "Asebter agejdan"
@@ -6062,6 +6016,12 @@
       ]
     },
     "Signature verification warning": {
+      "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "Izen i yettwawgelhen n PGP. Asenqed n umazan yecceḍ: ${ verificationErrorsMessage }"
+      ],
+      "PGP-signed message. Sender verification failed: ${ verificationErrorsMessage }": [
+        "Izen i yettuzemlen n PGP. Asenqed n umazan yecceḍ: ${ verificationErrorsMessage }"
+      ],
       "Sender could not be verified: Message not signed": [
         "Amazan ur izmir ara ad ittwasenqed/ Izen ur yettwazmel ara"
       ],
@@ -6073,6 +6033,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "Asenqed n tsura yettwamnen n umazan yecceḍ"
+      ]
+    },
+    "Signing preference for emails": {
+      "Sign": [
+        "Zmel"
       ]
     },
     "Sort option": {
@@ -6087,6 +6052,11 @@
       ],
       "Smallest first": [
         "Ameẓẓyan maḍi qbel"
+      ]
+    },
+    "Spotlight": {
+      "Schedule send": [
+        "Sɣiwes tuzna"
       ]
     },
     "Status": {
@@ -6191,9 +6161,6 @@
       ],
       "Bug reported": [
         "Abug yettwazen"
-      ],
-      "Canceling import": [
-        "Asefsex n tektert"
       ],
       "Code sent to ${ methodTo }": [
         "Tangalt tettwazen ɣer ${ methodTo }"
@@ -6394,17 +6361,9 @@
         "${ daysCountLeft } n wass",
         "${ daysCountLeft } n wussan"
       ],
-      "${ hours } hour": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } n usrag",
         "${ hoursCountLeft } n yisragen"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } n tesdat",
-        "${ minutes } n tesdatin"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } n tesdat",
@@ -6593,6 +6552,9 @@
       ],
       "Enter your password": [
         "Sekcem awal-ik uffir"
+      ],
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Sekcem isem n useqdac neɣ tansa umayl n ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Tuccḍa"
@@ -6876,9 +6838,6 @@
       ],
       "What's new": [
         "Acu d amaynut"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Aneɛruḍ-inek n baṭel ad yekfu deg ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6926,6 +6885,9 @@
       "The import will start with the most recent messages.": [
         "Aktar ad yebdu seg yiznan n melmi kan."
       ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Tigawt-a ad d-tsader meṛṛa iznan i wakken ad tzemreḍ ad ten-tnadiḍ s wudem adigan. Asfaḍ n yisefka n yiminig-ik·im neɣ tuffɣa ad tsens taxtiṛt-a."
+      ],
       "This feature is only available for paid users": [
         "Tamahilt-agi tella kan i yiseqdacen s lexlaṣ"
       ],
@@ -6970,6 +6932,12 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
+        "${ BRAND_NAME } ad ismezdi akk ikaramen s yiwen n yisem. Akken ur d-yettili ara waya, beddel ismawen send ad tketreḍ."
+      ],
+      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
+        "${ BRAND_NAME } ad siweḍ aqettun n yisefka iwum yezmer, ad yebdu s yiznan-inek·inem n melmi kan."
+      ],
       "Are you sure you want to discard your import?": [
         "D tidet tebɣiḍ ad tesfesxeḍ taktert-ik m?"
       ],
@@ -7017,6 +6985,12 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Tigawt-agi ur tettwassefsax ara. Ttxil-k•m sekcem awal ${ boldDanger } deg wurti akken ad tkemmeleḍ."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Tamahilt-a tesra amiḍan n ${ BRAND_NAME } yettuxellṣen"
+      ],
+      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
+        "Akter-a izmer ad iεeddi tallunt n usekles i yellan akka tura deg umiḍan-inek·inem ${ BRAND_NAME }. ttxil fren ayen ara tketreḍ."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ad nesḥisef imi ur neqqin ara akka tura. Ma ulac uɣilif semmed tiferkit-agi ukessar akken ad gelmeḍ ugur-inek•inem, akken ad t-nmuqel sakin ad k•m-nenermes ticki ara neqqen."
@@ -7241,8 +7215,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Yal ${ interval } n useggas",
+        "Yal ${ interval } n yiseggasen"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Yal ${ interval } n useggas, ${ timesString }",

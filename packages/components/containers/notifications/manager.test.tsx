@@ -2,15 +2,17 @@ import { useState } from 'react';
 
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { NotificationOptions } from './interfaces';
+import noop from '@proton/utils/noop';
+
+import { Notification } from './interfaces';
 import createNotificationManager from './manager';
 
 describe('notification manager', () => {
     it('should create a notification', () => {
-        const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+        const { result } = renderHook(() => useState<Notification[]>([]));
         const [, setState] = result.current;
 
-        const manager = createNotificationManager(setState);
+        const manager = createNotificationManager(setState, noop);
         expect(result.current[0]).toStrictEqual([]);
         act(() => {
             manager.createNotification({
@@ -24,10 +26,10 @@ describe('notification manager', () => {
     describe('deduplication', () => {
         describe('when deduplicate true', () => {
             it('should remove duplicate notifications', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -46,18 +48,18 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
         });
 
         describe('when deduplicate false', () => {
             it('should not remove duplicate notifications', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -75,19 +77,19 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
         });
 
         describe('when deduplicate is undefined', () => {
-            it('should not deduplicate a success notification', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+            it('should deduplicate a success notification', () => {
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -104,17 +106,16 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
 
-            it('should not deduplicate a warning notification', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+            it('should deduplicate a warning notification', () => {
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -131,17 +132,16 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
 
-            it('should not deduplicate a info notification', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+            it('should deduplicate a info notification', () => {
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -158,17 +158,16 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
 
             it('should deduplicate an error notification', () => {
-                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const { result } = renderHook(() => useState<Notification[]>([]));
                 const [, setState] = result.current;
 
-                const manager = createNotificationManager(setState);
+                const manager = createNotificationManager(setState, noop);
                 act(() => {
                     manager.createNotification({
                         text: 'foo',
@@ -185,17 +184,17 @@ describe('notification manager', () => {
                 });
 
                 expect(result.current[0]).toStrictEqual([
-                    expect.objectContaining({ text: 'foo' }),
                     expect.objectContaining({ text: 'bar' }),
+                    expect.objectContaining({ text: 'foo' }),
                 ]);
             });
         });
 
         it('should deduplicate react elements using the provided key', () => {
-            const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+            const { result } = renderHook(() => useState<Notification[]>([]));
             const [, setState] = result.current;
 
-            const manager = createNotificationManager(setState);
+            const manager = createNotificationManager(setState, noop);
             act(() => {
                 manager.createNotification({
                     text: <div>text</div>,
@@ -220,18 +219,18 @@ describe('notification manager', () => {
             });
 
             expect(result.current[0]).toStrictEqual([
-                expect.objectContaining({ text: <div>text</div>, key: 'item1' }),
-                expect.objectContaining({ text: 'bar', key: 'item2' }),
                 expect.objectContaining({ text: <div>text</div> }),
+                expect.objectContaining({ text: 'bar', key: 'item2' }),
+                expect.objectContaining({ text: <div>text</div>, key: 'item1' }),
             ]);
         });
     });
 
     it('should allow to create notifications with raw html text and deduplicate it', () => {
-        const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+        const { result } = renderHook(() => useState<Notification[]>([]));
         const [, setState] = result.current;
 
-        const manager = createNotificationManager(setState);
+        const manager = createNotificationManager(setState, noop);
         act(() => {
             manager.createNotification({
                 text: 'Foo <a href="https://foo.bar">text</a>',

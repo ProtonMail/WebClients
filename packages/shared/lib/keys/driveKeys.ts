@@ -2,9 +2,9 @@ import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from
 import { arrayToHexString, stringToUtf8Array } from '@proton/crypto/lib/utils';
 
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/crypto/encrypt';
+import { generatePassphrase } from '../calendar/crypto/keys/calendarKeys';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
-import { generatePassphrase } from './calendarKeys';
 
 interface UnsignedEncryptionPayload {
     message: string | Uint8Array;

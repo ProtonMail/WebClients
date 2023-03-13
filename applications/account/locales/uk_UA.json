@@ -309,6 +309,9 @@
       "Edit billing details": [
         "Змінити платіжні дані"
       ],
+      "Edit display name": [
+        "Редагувати ім'я, що показується"
+      ],
       "Edit email address": [
         "Змінити адресу е-пошти"
       ],
@@ -597,9 +600,6 @@
       "Remove this notification": [
         "Вилучити це сповіщення"
       ],
-      "Rename": [
-        "Перейменувати"
-      ],
       "Report a problem": [
         "Повідомити про проблему"
       ],
@@ -828,6 +828,12 @@
       "Upgrade": [
         "Покращити"
       ],
+      "Upgrade now": [
+        "Покращити"
+      ],
+      "Upgrade your plan": [
+        "Покращити свій тарифний план"
+      ],
       "Upload picture": [
         "Вивантажити зображення"
       ],
@@ -904,17 +910,11 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Залишити безплатний тарифний план"
-      ],
       "No, thanks": [
         "Ні, дякую"
       ],
-      "Start my 30-day free trial": [
-        "Розпочати 30-денний безплатний пробний період"
-      ],
       "Try free for 30 days": [
-        "Спробуйте безплатно протягом 30 днів"
+        "Спробуйте безкоштовно 30 днів"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1032,9 +1032,6 @@
     "Badge": {
       "5 users": [
         "5 користувачів"
-      ],
-      "Coming soon": [
-        "Незабаром з'явиться"
       ]
     },
     "Badge for domain": {
@@ -1053,22 +1050,12 @@
         "Поточний сеанс"
       ]
     },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: пошта і календар для щоденних комунікацій з пріоритетом приватності для ваших повсякденних потреб."
+      ]
+    },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Сплачується щороку"
-      ],
-      "Payable every 15 months": [
-        "Сплачується кожні 15 місяців"
-      ],
-      "Payable every 24 months": [
-        "Сплачується кожні два роки"
-      ],
-      "Payable every 30 months": [
-        "Сплачується кожні 30 місяців"
-      ],
-      "Payable every month": [
-        "Сплачується щомісяця"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Поновлюється автоматично ${ formattedEndTime }"
       ]
@@ -1222,23 +1209,6 @@
         "Запрошення надіслано"
       ]
     },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Ви досягли максимальної кількості особистих календарів у межах свого тарифного плану."
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Ви досягли максимальної кількості доступних вам особистих календарів. Щоб погодитися на запрошення до календарів у черзі, необхідно вилучити деякі з ваших календарів."
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Ви досягли максимальної кількості доступних вам спільних календарів. Щоб погодитися на запрошення до календарів у черзі, необхідно вилучити деякі з ваших календарів."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS } підписного календаря.",
-        "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS } підписні календарі.",
-        "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS } підписних календарів.",
-        "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS } підписних календарів."
-      ]
-    },
     "Calendar link purpose update success message": {
       "Label added": [
         "Мітку додано"
@@ -1300,6 +1270,9 @@
       ]
     },
     "Calendar share permission label": {
+      "Edit": [
+        "Змінити"
+      ],
       "See all event details": [
         "Переглянути всі подробиці події"
       ]
@@ -1696,7 +1669,7 @@
         "Назва"
       ],
       "URL": [
-        "URL"
+        "URL-адреса"
       ]
     },
     "Contact type label": {
@@ -1720,9 +1693,6 @@
       ],
       "Work": [
         "Робочий"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2893,18 +2863,6 @@
       "Contact signature not verified": [
         "Підпис для контакту не перевірено"
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Приберіть принаймні ${ calendarToFixCount } календар",
-        "Приберіть принаймні ${ calendarToFixCount } календарі",
-        "Приберіть принаймні ${ calendarToFixCount } календарів",
-        "Приберіть принаймні ${ calendarToFixCount } календаря"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Приберіть принаймні ${ calendarToFixCount } календар або",
-        "Приберіть принаймні ${ calendarToFixCount } календарі або",
-        "Приберіть принаймні ${ calendarToFixCount } календарів або",
-        "Приберіть принаймні ${ calendarToFixCount } календаря або"
-      ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
       ],
@@ -2934,9 +2892,6 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не вдалося отримати активні сеанси. ${ refresh } або повторіть спробу пізніше."
-      ],
-      "Filter with this name already exist": [
-        "Фільтр з цією назвою вже існує"
       ],
       "Filter with this name already exists": [
         "Фільтр з цією назвою вже існує"
@@ -2994,12 +2949,6 @@
       ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Відсутній пакунок ключів"
@@ -3145,9 +3094,6 @@
       "Signature verification failed": [
         "Неможливо перевірити підпис"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Назви деяких ваших тек зарезервовані. Налаштуйте імпорт для зміни цих назв."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
@@ -3232,7 +3178,7 @@
       "This label name is not available. Please choose a different name.": [
         "Назва мітки недоступна. Оберіть іншу назву."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
       ],
       "Trusted keys are not valid for sending": [
@@ -3273,9 +3219,6 @@
       ],
       "You have no invoices.": [
         "У вас немає рахунків."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ви вже використали усі адреси з вашого тарифного плану. Для додавання нової адреси необхідно покращити тарифний план."
@@ -3350,7 +3293,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+        "Під час читання вашого файлу ${ formattedFilename } сталася помилка. Файл має неправильний формат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3916,6 +3859,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 електронні листи на місяць)"
+      ],
+      "(during your first month)": [
+        "(впродовж першого місяця)"
       ]
     },
     "Go to sign in": {
@@ -3954,6 +3900,9 @@
       ],
       "Actions": [
         "Дії"
+      ],
+      "App version": [
+        "Версія програми"
       ],
       "Event": [
         "Подія"
@@ -4043,6 +3992,11 @@
         "Назва токена"
       ]
     },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Спробуйте найкраще з ${ MAIL_APP_NAME } безкоштовно"
+      ]
+    },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Знайдено ${ items.length } пропозицію. Використовуйте клавіатуру для вибору.",
@@ -4055,9 +4009,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Е-пошта"
       ],
@@ -4066,9 +4017,6 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -4083,6 +4031,9 @@
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Під час шифрування та додавання події сталася помилка. Неможливо імпортувати подію."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Сталася помилка під час шифрування й додавання ваших подій. Жодна подія не може бути імпортована."
@@ -4316,9 +4267,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4338,6 +4286,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Імпорт з ${ provider }"
+      ],
       "Other": [
         "Інший"
       ]
@@ -4354,10 +4305,13 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% зупинено"
       ],
+      "Active": [
+        "Активно"
+      ],
       "Canceled": [
         "Скасовано"
       ],
-      "Canceling": [
+      "Cancelling": [
         "Скасування"
       ],
       "Completed": [
@@ -4417,17 +4371,14 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Продовживши, ви втратите доступ до усіх зашифрованих даних вашого облікового запису."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "Зібрано кредитів ${ BRAND_NAME } ${ planName }"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } призупинив імпортування, тому що втрачено з'єднання з вашим іншим провайдером е-пошти. Будь ласка, повторіть з'єднання."
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } призупинив імпортування, тому що у вашому обліковому записі вичерпується вільний простір. Ви можете:"
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } спробує відновити імпортування одразу, як провайдер вашої електронної пошти скине ${ bandwithLimitLink } вашого облікового запису. Вам не потрібно нічого робити. Якщо ви скасуєте імпортування, ви більше не зможете його продовжити й доведеться почати спочатку."
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } спробує відновити імпорт одразу, як провайдер вашої електронної пошти скине ${ bandwidthLimitLink } вашого облікового запису. Вам не потрібно нічого робити. Якщо ви скасуєте імпорт, ви більше не зможете його продовжити й доведеться почати спочатку."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
@@ -4440,12 +4391,6 @@
         "${ calendarsToBeCreatedCount } нові календарі",
         "${ calendarsToBeCreatedCount } нових календарів",
         "${ calendarsToBeCreatedCount } нових календарів"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } об'єднаний календар",
-        "${ calendarsToBeMerged } об'єднані календарі",
-        "${ calendarsToBeMerged } об'єднаних календарів",
-        "${ calendarsToBeMerged } об'єднаних календарів"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } об'єднаний календар",
@@ -4495,17 +4440,17 @@
         "${ numberOfNonPrivateKeys } вивантажених файлів не є чинним приватними ключами. Перевірте їх та повторіть спробу.",
         "${ numberOfNonPrivateKeys } вивантажені файли не є чинним приватними ключами. Перевірте їх та повторіть спробу."
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } група контактів",
-        "${ numContactGroups } групи контактів",
-        "${ numContactGroups } груп контактів",
-        "${ numContactGroups } груп контактів"
+      "${ numContact } contact": [
+        "${ numContact } контакт",
+        "${ numContact } контакти",
+        "${ numContact } контактів",
+        "${ numContact } контактів"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } контакт",
-        "${ numContacts } контакти",
-        "${ numContacts } контактів",
-        "${ numContacts } контакта"
+      "${ numGroups } contact group": [
+        "${ numGroups } група контактів",
+        "${ numGroups } групи контактів",
+        "${ numGroups } груп контактів",
+        "${ numGroups } груп контактів"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знайдено ${ providerFoldersNumLocalized } теку",
@@ -4552,6 +4497,12 @@
       "${ storageSize } storage": [
         "${ storageSize } сховища"
       ],
+      "${ userFound } user found": [
+        "${ userFound } користувача знайдено",
+        "${ userFound } користувачів знайдено",
+        "${ userFound } користувачів знайдено",
+        "${ userFound } користувачів знайдено"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } вимагає з'єднання на рівні країни."
       ],
@@ -4586,7 +4537,7 @@
         "1. Запросіть друзів до ${ BRAND_NAME }"
       ],
       "10 email addresses": [
-        "10 адрес е-пошти"
+        "10 адрес електронної пошти"
       ],
       "2. They try ${ planName }": [
         "2. Вони випробовують ${ planName }"
@@ -4708,6 +4659,9 @@
       "Already used": [
         "Вже використано"
       ],
+      "American Express SafeKey logo": [
+        "Логотип American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Сума нижче найменшої (${ amount })."
       ],
@@ -4807,6 +4761,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
       ],
+      "Billing cycle: ${ text }": [
+        "Платіжний цикл: ${ text }"
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Підтвердження транзакцій з Bitcoin можуть тривати деякий час (до 24 годин). Після підтвердження ми додамо кошти до вашого облікового запису. Після підтвердження транзакції ви можете сплатити свій рахунок, використавши ці кошти."
       ],
@@ -4843,17 +4800,20 @@
       "Continue anyway?": [
         "Все одно продовжити?"
       ],
-      "Continue with ${ planName }": [
-        "Продовжити з ${ planName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Продовживши, ви пов'яжете обліковий запис ${ BRAND_NAME } з ${ name }."
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Створити ${ calendarsToBeCreated } новий календар",
-        "Створити ${ calendarsToBeCreated } нові календарі",
-        "Створити ${ calendarsToBeCreated } нових календарів",
-        "Створити ${ calendarsToBeCreated } нових календарів"
+      "Copy your referral link": [
+        "Скопіюйте своє реферальне посилання"
+      ],
+      "Country code": [
+        "Код країни"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Створити ${ calendarsToBeCreatedCount } новий календар",
+        "Створити ${ calendarsToBeCreatedCount } нові календарі",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також теки, які ви бажаєте імпортувати."
@@ -4878,6 +4838,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Кредит на невикористану частину попередньої передплати тарифного плану"
+      ],
+      "Credits earned": [
+        "Зароблені кредити"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Наразі весь доступний обсяг сховища призначено обліковому запису адміністратора. Зменште призначений обсяг, щоб звільнити місце для додаткових користувачів. Ви можете збільшити загальний обсяг сховища в будь-який час, покращивши свій тарифний план."
@@ -4911,6 +4874,9 @@
       ],
       "Delete link?": [
         "Видалити посилання?"
+      ],
+      "Discover ProtectBuy logo": [
+        "Логотип Discover ProtectBuy"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його забудете, то не зможете увійти або розшифрувати свої повідомлення."
@@ -5056,8 +5022,8 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву, умову та дію."
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Для Visa та MasterCard - 3 цифри на зворотній стороні картки. Для American Express - 4 цифри на лицьовій стороні картки."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Для Visa, MasterCard та Discover — 3 цифри на зворотній стороні картки. Для American Express — 4 цифри на лицьовій стороні картки."
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -5158,14 +5124,14 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Зображення були вилучені, оскільки вони не дозволені в автовідповіді"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календаря",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів"
       ],
       "Import from": [
         "Імпортувати з"
@@ -5184,6 +5150,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "ВАЖЛИВО: Деякі реєстратори не схвалюють значення CNAME, які закінчуються крапкою (попри те, що інші це вимагають). Якщо ваш реєстратор не схвалює записи CNAME, видаліть крапку в кінці кожного значення CNAME і спробуйте знову."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
@@ -5311,11 +5280,17 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Логотип Mastercard SecureCode"
+      ],
       "Member": [
         "Учасник"
       ],
       "Merged": [
         "Об'єднано"
+      ],
+      "MM/YY": [
+        "ММ/РР"
       ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
@@ -5348,7 +5323,7 @@
         "Немає ключів шифрування контакту"
       ],
       "No credit card required": [
-        "Кредитна картка не обов'язкова"
+        "Кредитна картка не потрібна"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Немає налаштованого способу відновлення даних. Ви ризикуєте втратити доступ до своїх даних"
@@ -5407,9 +5382,6 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашій організації є інші адміністратори. Ви відповідальні за передачу їм нового пароля."
       ],
-      "Other options": [
-        "Інші варіанти"
-      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Застарілий файл відновлення; оновіть для гарантії доступу до своїх даних"
       ],
@@ -5419,9 +5391,6 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Застаріла фраза відновлення; оновіть для гарантії доступу до своїх даних"
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Передплачено на ${ rewardMonths } місяць",
         "Передплачено на ${ rewardMonths } місяці",
@@ -5430,9 +5399,6 @@
       ],
       "Paid for a monthly plan": [
         "Передплачено місячний тарифний план"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Повна перевірка оплати може тривати кілька хвилин."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
@@ -5497,17 +5463,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Виберіть тип посилання, яке ви хочете вставити й заповніть усі поля."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Будь ласка, спробуйте ще раз. Використайте інший спосіб оплати, або зв'яжіться зі своїм банком для допомоги."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Будь ласка, спробуйте ще раз, використайте інший спосіб оплати, або зв'яжіться з PayPal для отримання допомоги."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Підтвердьте платіж у новій вкладці, яку було відкрито."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Підтвердьте картку в новій вкладці, яку було відкрито."
       ],
       "Please wait till your changes are synced with the server.": [
         "Будь ласка, зачекайте, поки ваші зміни будуть синхронізовані з сервером."
@@ -5602,9 +5562,6 @@
       "Select what you want to import.": [
         "Виберіть, що ви хочете імпортувати."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більш ніж 20 календарів."
-      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -5657,7 +5614,7 @@
         "Сховище для користувачів"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }."
       ],
       "Storage used by this user": [
         "Сховище, використане цим користувачем"
@@ -5666,7 +5623,7 @@
         "Зберігайте цей пароль і файл у надійному місці. Вам потрібно буде знову імпортувати ваш ключ."
       ],
       "Support for 1 custom email domain": [
-        "Підтримка 1 власного домену е-пошти"
+        "Підтримка 1 власного домену електронної пошти"
       ],
       "support team": [
         "командою підтримки"
@@ -5851,9 +5808,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Поповніть свій рахунок кредитом, який ви зможете використати для передплати нового тарифного плану чи поновлення поточного плану. Ви отримаєте один кредит за кожен витрачений ${ i18nCurrency }."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Усього адрес електронної пошти"
       ],
@@ -5905,11 +5859,8 @@
       "Update recovery phrase": [
         "Оновити фразу відновлення"
       ],
-      "Update the URL in your password manager": [
-        "Оновіть URL-адресу у своєму менеджері паролів"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Оновіть тарифний план сьогодні, щоб не втратити ці переваги ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -5932,9 +5883,6 @@
       "Verification can take a few minutes.": [
         "Перевірка може тривати декілька хвилин."
       ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту."
-      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться."
       ],
@@ -5946,6 +5894,9 @@
       ],
       "Version ${ version }": [
         "Версія ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Логотип Visa Secure"
       ],
       "Warning:": [
         "Попередження:"
@@ -6052,6 +6003,30 @@
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календаря. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календаря. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі та будь-яких ${ BRAND_NAME } користувачів, з якими ви ділилися своїми календарями, перед скасуванням вашої підписки."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календаря. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої ${ MAIL_SHORT_APP_NAME } підписки."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календаря. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої підписки.",
+        "Ви можете мати до ${ MAX_CALENDARS_FREE } календарів. Будь ласка, вилучіть посилання на спільні календарі перед скасуванням вашої підписки."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Тепер ви можете отримати доступ і керувати обліковим записом як адміністратор."
       ],
@@ -6085,8 +6060,8 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ви не вказали спосіб відновлення, тому неможливо відновити обліковий запис при втраті пароля. Продовжити без способу відновлення?"
       ],
-      "You have no personal calendars to export.": [
-        "У вас немає особистих календарів для експорту."
+      "You have no calendars to export.": [
+        "Ви не маєте календарів для експорту."
       ],
       "You have no saved payment methods.": [
         "У вас немає збережених способів оплати."
@@ -6106,12 +6081,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Ваш обліковий запис PayPal повинен мати пов'язану кредитну картку чи банківський рахунок. Якщо у вас цього немає, будь ласка, натисніть кнопку внизу."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Перед скасуванням передплати Пошти ви повинні вилучити будь-які додаткові особисті календарі та будь-які посилання на спільні календарі."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Для можливості скасування передплати ви повинні вилучити будь-які додаткові особисті календарі та будь-які посилання на спільні календарі."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Вам необхідно мати активний особистий календар для імпорту ваших подій з ICS."
       ],
@@ -6129,9 +6098,6 @@
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Ви ${ loseAllData } у вашому обліковому записі ${ BRAND_NAME }. Щоб відновити його, вам потрібно буде ввести свій старий пароль."
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Вас невдовзі буде перенаправлено до вашого банку для підтвердження платежу."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
@@ -6177,9 +6143,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "З міркувань безпеки, ваш банк вимагає перевірки 3-D Secure."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
@@ -6231,32 +6194,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
       ],
-      "Create an email address": [
-        "Створіть адресу електронної пошти"
-      ],
-      "Day 27: Trial reminder": [
-        "День 27: Нагадування про пробний період"
-      ],
-      "Day 30: Trial ends": [
-        "День 30: Пробний період закінчився"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Насолоджуйтеся безпечною, простою для користування електронною поштою з великою кількістю преміумфункцій."
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Try Mail Plus": [
-        "Спробувати Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Ми надішлемо вам електронний лист до закінчення пробного періоду. Скасовуйте будь-коли."
-      ],
-      "Your new email address is ready to go!": [
-        "Ваша нова адреса електронної пошти готова до користування!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Ваша передплата починається ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6303,6 +6242,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Щоб уникнути будь-яких переривань роботи сервісу через несплачені рахунки, будь ласка, переконайтеся, що у вас є збережений принаймні 1 дійсний спосіб оплати."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Тільки перегляд"
       ]
     },
     "Input label": {
@@ -6796,6 +6740,9 @@
       "BTC amount:": [
         "Сума в BTC:"
       ],
+      "Calendar": [
+        "Календар"
+      ],
       "Calendars": [
         "Календарі"
       ],
@@ -6826,8 +6773,8 @@
       "Color": [
         "Колір"
       ],
-      "Coming soon": [
-        "Незабаром з'явиться"
+      "Colors": [
+        "Кольори"
       ],
       "Composer": [
         "Редактор"
@@ -7033,9 +6980,6 @@
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Від: ${ importedEmail }"
-      ],
       "Gift code": [
         "Подарунковий код"
       ],
@@ -7128,12 +7072,6 @@
       ],
       "Manage categories": [
         "Керувати категоріями"
-      ],
-      "Manage folders": [
-        "Керувати теками"
-      ],
-      "Manage labels": [
-        "Керувати мітками"
       ],
       "Mark as": [
         "Позначити як"
@@ -7396,9 +7334,6 @@
       "Timezone": [
         "Часовий пояс"
       ],
-      "To: ${ emailAddress }": [
-        "Кому: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Кому: ${ to }"
       ],
@@ -7419,9 +7354,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Вивантажте 1 чи більше файлів відновлення чи ключів шифрування"
-      ],
-      "Upload file": [
-        "Вивантажити файл"
       ],
       "URL": [
         "URL-адреса"
@@ -7447,9 +7379,6 @@
       "Verification code": [
         "Код підтвердження"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Нам шкода, що ви йдете. Будь ласка, розкажіть чому ви покидаєте нас, щоб допомогти нам вдосконалитися."
       ],
@@ -7459,7 +7388,7 @@
       "What happened?": [
         "Що сталося?"
       ],
-      "What is the main reason you are cancelling?": [
+      "What is the main reason you are canceling?": [
         "Яка основна причина скасування?"
       ],
       "What is the main reason you are deleting your account?": [
@@ -7559,6 +7488,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "Оголошення продукту ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } вітальні листи"
       ]
     },
     "Label in domain modal": {
@@ -7627,6 +7559,17 @@
       ],
       "Preference saved": [
         "Налаштування збережено"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Щоб додати новий календар, вилучіть наявний."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Щоб додати новий календар, вилучіть інший календар або змініть свій тарифний план ${ BRAND_NAME } на платний ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ви досягли максимальної кількості календарів для вашого тарифного плану."
       ]
     },
     "Link": {
@@ -7699,9 +7642,6 @@
       "Terms": [
         "Умови"
       ],
-      "Terms and conditions": [
-        "Положення й умови"
-      ],
       "Trouble signing in?": [
         "Проблеми з входом?"
       ],
@@ -7728,8 +7668,11 @@
       "Almost there": [
         "Майже готово"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Кількість створених календарів: ${ createdCalendars } з ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Підключення до вашого постачальника електронної пошти"
@@ -7756,29 +7699,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -8140,6 +8083,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } календар",
+        "${ n } календарі",
+        "${ n } календарів",
+        "${ n } календарів"
+      ],
       "${ n } custom email domain": [
         "${ n } власний домен",
         "${ n } власні домени",
@@ -8188,12 +8137,6 @@
         "${ n } повідомлень на добу",
         "${ n } повідомлення на добу"
       ],
-      "${ n } personal calendar": [
-        "${ n } особистий календар",
-        "${ n } особисті календарі",
-        "${ n } особистих календарів",
-        "${ n } особистих календарів"
-      ],
       "${ n } VPN connection": [
         "${ n } VPN-з'єднання",
         "${ n } VPN-з'єднання",
@@ -8229,6 +8172,9 @@
       ],
       "Auto-reply": [
         "Автовідповідь"
+      ],
+      "Calendar sharing": [
+        "Спільний доступ до Календаря"
       ],
       "Catch-all": [
         "Catch-all"
@@ -8295,9 +8241,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "NetShield — блокувальник зловмисних програм та реклами"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
@@ -8383,6 +8326,26 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -8452,26 +8415,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8577,11 +8520,11 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Створіть кілька адрес електронної пошти для свого онлайн-життя, наприклад, JohnShopper@${ domain } для облікових записів для покупок, JohnNews@${ domain } для підписок на новини"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Створіть ${ n } власний календар.",
-        "Створіть ${ n } власні календарі.",
-        "Створіть ${ n } власних календарів.",
-        "Створіть ${ n } власних календарів."
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Створіть до ${ n } календаря чи додайте календарі ваших друзів, рідних, колег та організацій",
+        "Створіть до ${ n } календарів чи додайте календарі ваших друзів, рідних, колег та організацій",
+        "Створіть до ${ n } календарів чи додайте календарі ваших друзів, рідних, колег та організацій",
+        "Створіть до ${ n } календарів чи додайте календарі ваших друзів, рідних, колег та організацій"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
@@ -8589,8 +8532,8 @@
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Легко діліться календарями за посиланням зі своїми колегами, сім'єю та друзями"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Легко діліться календарями за посиланням зі своєю сім'єю, друзями та колегами"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Легко діліться календарями з родиною, друзями чи колегами"
       ],
       "End-to-end encrypted calendar": [
         "Наскрізно зашифрований календар"
@@ -8618,12 +8561,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Отримуйте допомогу від команди підтримки клієнтів ${ BRAND_NAME } упродовж 24 годин після запиту в робочі дні"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Разом з тим, додайте до 5 календарів від колег, організацій, сім'ї та друзів."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Крім того, додавайте до 5 календарів від друзів, сім'ї, колег та організацій."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "Одне VPN-з'єднання дає змогу користуватися ${ BRAND_NAME } VPN на одному пристрої в будь-який час. Наприклад, щоб під'єднати до ${ BRAND_NAME } VPN телефон і ноутбук одночасно, необхідно два VPN-з'єднання."
@@ -8743,11 +8680,11 @@
       "Cover more ground with support for 10 custom email domains": [
         "Охоплюйте більше з підтримкою 10 власних доменів електронної пошти"
       ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Створіть ${ numberOfPersonalCalendars } особистий календар",
-        "Створіть ${ numberOfPersonalCalendars } особисті календарі",
-        "Створіть ${ numberOfPersonalCalendars } особистих календарів",
-        "Створіть ${ numberOfPersonalCalendars } особистих календарів"
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Створити до ${ MAX_CALENDARS_PAID } календаря",
+        "Створити до ${ MAX_CALENDARS_PAID } календарів",
+        "Створити до ${ MAX_CALENDARS_PAID } календарів",
+        "Створити до ${ MAX_CALENDARS_PAID } календарів"
       ],
       "Everything in ${ vpnPlanName }": [
         "Усе в ${ vpnPlanName }"
@@ -8972,9 +8909,6 @@
       "Add to existing group": [
         "Додати до наявної групи"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "Запитувати щоразу"
       ],
@@ -8996,9 +8930,6 @@
       "Free server configs": [
         "Конфігурації безплатного сервера"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Я використовую інший сервіс, який мені більше подобається"
       ],
@@ -9008,9 +8939,6 @@
       "Ignore group": [
         "Ігнорувати групу"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Мені бракує важливої функції"
       ],
@@ -9019,9 +8947,6 @@
       ],
       "Left to Right": [
         "Зліва направо"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Моєї причини немає в переліку"
@@ -9064,15 +8989,6 @@
       ],
       "Standard server configs": [
         "Конфігурації сервера"
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -9174,17 +9090,11 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Банківська картка"
       ],
       "New credit/debit card": [
         "Нова кредитна/платіжна картка"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -9388,6 +9298,12 @@
       ],
       "Verify now": [
         "Підтвердити зараз"
+      ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Перевірте зараз цю адресу електронної пошти для відновлення: ${ email.Value }"
+      ],
+      "Verify now this recovery phone number address: ${ phone.Value }": [
+        "Перевірте зараз цей номер телефону для відновлення: ${ phone.Value }"
       ],
       "Verify recovery email?": [
         "Підтвердити резервну адресу електронної пошти?"
@@ -9632,17 +9548,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
-      ],
       "Get up to ${ credits } in credits.": [
         "Отримайте до ${ credits } кредиту."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запросіть друзів до ${ BRAND_NAME }"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Спробувати ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -9699,6 +9609,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Додайте загальнодоступні, зовнішні чи спільні календарі за URL-адресою."
+      ],
+      "Add public, external, or shared calendars.": [
+        "Додайте загальнодоступні, зовнішні чи спільні календарі."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9798,6 +9711,14 @@
         "Високошвидкісна VPN на ${ maxVpn } пристроях"
       ]
     },
+    "Subscription change warning": {
+      "Subscription managed elsewhere": [
+        "Manage your subscription on Google Play"
+      ],
+      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
+        "Ви оформили підписку за допомогою купівлі в додатку. Щоб керувати своєю поточною підпискою, вам потрібно перейти до розділу Підписка у своєму ${ subscriptionManager } обліковому записі"
+      ]
+    },
     "Subscription price": {
       "For": [
         "За"
@@ -9814,14 +9735,6 @@
       ],
       "Upcoming": [
         "Невдовзі"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Створена для приватності електронна пошта й календар для ваших повсякденних потреб спілкування."
-      ],
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Ця пропозиція лише для новачків у ${ BRAND_NAME }. Кредитна картка не потрібна."
       ]
     },
     "Success": {
@@ -9861,7 +9774,7 @@
       "Calendar updated": [
         "Календар оновлено"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Скасування імпорту"
       ],
       "Catch-all address updated": [
@@ -10129,12 +10042,38 @@
         "SMTP-токенів не знайдено"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } година",
         "${ hours } години",
         "${ hours } годин",
-        "${ hours } годин"
+        "${ hours } години"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 годин",
+        "${ hoursInt }.5 години"
       ],
       "${ minutes } minute": [
         "${ minutes } хвилина",
@@ -10149,9 +10088,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Комбінації клавіш ${ MAIL_APP_NAME }"
       ],
@@ -10166,9 +10102,6 @@
       ],
       "2. Select protocol": [
         "2. Виберіть протокол"
-      ],
-      "3-D Secure verification failed": [
-        "Не вдалося пройти перевірку 3-D Secure"
       ],
       "3. Select config file and download": [
         "3. Виберіть файл конфігурації та завантажте"
@@ -10287,14 +10220,11 @@
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
       ],
-      "Cancel Mail subscription": [
-        "Скасувати передплату Пошти"
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "Скасування ${ MAIL_SHORT_APP_NAME } підписки"
       ],
       "Card verification": [
         "Перевірка картки"
-      ],
-      "Card verification in progress": [
-        "Триває перевірка картки"
       ],
       "Catch-All address": [
         "Catch-All адреса"
@@ -10584,17 +10514,11 @@
       "How to refer a friend and get credits": [
         "Як запросити друзів і отримати кредити"
       ],
-      "How your free trial works": [
-        "Як працює безплатний пробний період"
-      ],
       "Human verification": [
         "Перевірка \"Я не робот\""
       ],
       "Identity and addresses": [
         "Облікові дані та адреси"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "Імпорт"
@@ -10648,7 +10572,7 @@
         "Макет"
       ],
       "Length": [
-        "Довжина"
+        "Тривалість"
       ],
       "Link confirmation": [
         "Підтвердження посилання"
@@ -10692,9 +10616,6 @@
       "Open pagination": [
         "Показати нумерацію сторінок"
       ],
-      "OpenVPN / IKEv2": [
-        "OpenVPN / IKEv2"
-      ],
       "OpenVPN configuration files": [
         "Файли конфігурації OpenVPN"
       ],
@@ -10703,6 +10624,9 @@
       ],
       "Organization and keys": [
         "Організація та ключі"
+      ],
+      "Other calendars": [
+        "Інші календарі"
       ],
       "Password": [
         "Пароль"
@@ -10718,9 +10642,6 @@
       ],
       "Payment verification": [
         "Перевірка платежу"
-      ],
-      "Payment verification in progress": [
-        "Триває перевірка платежу"
       ],
       "PayPal verification failed": [
         "Не вдалося пройти перевірку PayPal"
@@ -10884,9 +10805,6 @@
       "Status": [
         "Стан"
       ],
-      "Subscribed calendars": [
-        "Підписки на календарі"
-      ],
       "Success": [
         "Успішно"
       ],
@@ -10922,9 +10840,6 @@
       ],
       "Track your referrals": [
         "Відстежуйте свої запрошення"
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Випробуйте найкраще у ${ MAIL_APP_NAME } безплатно"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -10971,9 +10886,6 @@
       "What's new": [
         "Що нового"
       ],
-      "WireGuard": [
-        "WireGuard"
-      ],
       "WireGuard configuration": [
         "Конфігурація WireGuard"
       ],
@@ -10989,11 +10901,11 @@
       "Your current plan": [
         "Поточний тарифний план"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
-      ],
       "Your import history": [
         "Історія імпортувань"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
       ],
       "Your plan": [
         "Ваш тарифний план"
@@ -11057,7 +10969,7 @@
         "Адреса"
       ],
       "Catch-All": [
-        "Catch-All"
+        "Catch-all"
       ],
       "Status": [
         "Стан"
@@ -11158,8 +11070,8 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Встановлює цей нижній колонтитул в електронних листах, який ви надсилаєте: ${ signature } Посилання вказує на реферальне посилання. Нижній колонтитул з'явиться під вашим підписом. Ви можете персоналізувати свій підпис у будь-який час у налаштуваннях."
       ],
-      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
-        "Показувати зображення кожного відправника у списку повідомлень. Якщо фото недоступне, показуватимуться ініціали відправника."
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Показувати зображення відправників у списку повідомлень. Якщо фото недоступне, показуватимуться ініціали відправника."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Підписи, створені з цим ключем вважаються недійсними, а цей ключ не можна використовувати для шифрування"
@@ -11270,14 +11182,8 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Перейдіть на платний тарифний план Пошти, щоб створити ${ MAX_CALENDARS_PAID } календар та мати окремі календарі для роботи, для обміну з друзями та для себе.",
-        "Перейдіть на платний тарифний план Пошти, щоб створити ${ MAX_CALENDARS_PAID } календарі та мати окремі календарі для роботи, для обміну з друзями та для себе.",
-        "Перейдіть на платний тарифний план Пошти, щоб створити ${ MAX_CALENDARS_PAID } календарів та мати окремі календарі для роботи, для обміну з друзями та для себе.",
-        "Перейдіть на платний тарифний план Пошти, щоб створити ${ MAX_CALENDARS_PAID } календарів та мати окремі календарі для роботи, друзів та для себе."
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "Перейдіть на платний тарифний план Mail, щоб ділитися своїм календарем."
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Оновіться до ${ MAIL_SHORT_APP_NAME } платного тарифного плану, щоб поділитись своїм календарем."
       ]
     },
     "User referee invited via email": {
@@ -11346,29 +11252,6 @@
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах",
         "${ numberOfServers } в ${ numberOfCountries } країнах"
-      ]
-    },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Warning": {
@@ -11450,7 +11333,7 @@
       "You will lose any customization you made so far.": [
         "Ви втратите будь-які попередні налаштування."
       ],
-      "You will not see this import record in the list anymore.": [
+      "You will not see this import record in the list any more.": [
         "Ви більше не побачите цей запис імпорту в списку."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
@@ -11746,8 +11629,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Щороку",
+        "Кожні ${ interval } роки",
         "Кожні ${ interval } років",
         "Кожні ${ interval } років"
       ],

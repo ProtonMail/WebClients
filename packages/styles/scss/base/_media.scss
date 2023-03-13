@@ -1,7 +1,7 @@
 /**
  * reduced motion MQ: for vestibular disorders
  */
-@media (prefers-reduced-motion: reduce) {
+@include media('reduced-motion') {
 	*,
 	*::before,
 	*::after {

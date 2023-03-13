@@ -3,7 +3,6 @@ import { ReadableStream, TransformStream } from 'web-streams-polyfill';
 
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 
-import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { adjustName, adjustWindowsLinkName, splitLinkName } from '../../_links';
 import { StartedNestedLinkDownload } from './interface';
 
@@ -114,7 +113,5 @@ export default class ArchiveGenerator {
 
     cancel() {
         this.canceled = true;
-        const error = new TransferCancel({ message: `Transfer canceled` });
-        void this.writer.abort(error);
     }
 }

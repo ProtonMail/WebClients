@@ -11,7 +11,6 @@ import {
     MailDensityModal,
     MailShortcutsModal,
     MailViewLayoutModal,
-    MainLogo,
     PrivateHeader,
     RebrandingFeedbackModal,
     Tooltip,
@@ -86,7 +85,6 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const backUrl = setParamsInUrl(location, { labelID });
     const showBackButton = breakpoints.isNarrow && elementID;
     const labelName = getLabelName(labelID, labels, folders);
-    const logo = <MainLogo to="/inbox" data-testid="main-logo" />;
 
     const clearDataButton =
         dbExists || esEnabled ? (
@@ -110,7 +108,6 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
         <>
             <PrivateHeader
                 userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModalOpen(true)} />}
-                logo={logo}
                 backUrl={showBackButton && backUrl ? backUrl : undefined}
                 title={labelName}
                 settingsButton={

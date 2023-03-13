@@ -94,3 +94,11 @@ export const shortHumanSize = (bytes = 0) => {
     }
     return humanSize(bytes, undefined, false, 1);
 };
+
+/**
+ * Produces always readable version in bytes. Useful for titles where we
+ * might want to display the exact size.
+ */
+export const bytesSize = (bytes = 0) => {
+    return `${bytes} ${getSizeFormat('B', bytes)}`;
+};

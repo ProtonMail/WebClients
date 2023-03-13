@@ -1,4 +1,3 @@
-import React from 'react';
 import { Router } from 'react-router-dom';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
@@ -11,7 +10,6 @@ import {
     CALENDAR_FLAGS,
     CALENDAR_TYPE,
     MAX_CALENDARS_PAID,
-    MAX_SUBSCRIBED_CALENDARS,
     SETTINGS_VIEW,
 } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
@@ -35,6 +33,11 @@ jest.mock('@proton/components/containers/calendar/calendarModal/CalendarModal', 
 jest.mock('@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal', () => ({
     __esModule: true,
     default: jest.fn(({ open }) => <span>{open ? 'SubscribedCalendarModal' : null}</span>),
+}));
+
+jest.mock('@proton/components/containers/calendar/CalendarLimitReachedModal', () => ({
+    __esModule: true,
+    default: jest.fn(({ open }) => <span>{open ? 'CalendarLimitReachedModal' : null}</span>),
 }));
 
 jest.mock('@proton/components/hooks/useModals', () => ({
@@ -148,7 +151,6 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
         return { subscribedCalendars, loading: false };
     });
     const defaultProps: CalendarSidebarProps = {
-        // expanded: false,
         onToggleExpand: jest.fn(),
         logo: <span>mockedLogo</span>,
         addresses: [],
@@ -166,8 +168,8 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
             InviteLocale: null,
             AutoImportInvite: 0,
         },
-        // onCreateEvent: jest.fn(),
     };
+
     return (
         <Router history={createMemoryHistory()}>
             <CacheProvider cache={createCache()}>
@@ -178,94 +180,134 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
 }
 
 describe('CalendarSidebar', () => {
-    it('renders ', async () => {
-        const { rerender } = render(renderComponent());
+    it('renders with no subscribed calendars', async () => {
+        const { getByText, queryByText, getByTestId, getByRole } = render(renderComponent());
 
         expect(mockedUseSubscribedCalendars).toHaveBeenCalled();
 
-        expect(screen.getByText(/mockedLogo/)).toBeInTheDocument();
-        expect(screen.getByText(/mockedMiniCalendar/)).toBeInTheDocument();
+        expect(getByText(/mockedLogo/)).toBeInTheDocument();
+        expect(getByText(/mockedMiniCalendar/)).toBeInTheDocument();
 
-        const myCalendarsButton = screen.getByTestId('calendar-sidebar:my-calendars-button');
+        const myCalendarsButton = getByTestId('calendar-sidebar:my-calendars-button');
         expect(myCalendarsButton).toBeInTheDocument();
-        expect(screen.queryByText(/Subscribed calendars/)).not.toBeInTheDocument();
+        expect(queryByText(/Subscribed calendars/)).not.toBeInTheDocument();
 
-        expect(screen.getByText(/calendar3/)).toBeInTheDocument();
-        expect(screen.getByText(/Add calendar/)).toBeInTheDocument();
+        expect(getByText(/calendar3/)).toBeInTheDocument();
+        expect(getByText(/Add calendar/)).toBeInTheDocument();
 
-        const manageCalendarsLink = screen.getByRole(/link/) as HTMLAnchorElement;
+        const manageCalendarsLink = getByRole(/link/) as HTMLAnchorElement;
 
         expect(manageCalendarsLink.href).toBe('http://localhost/calendar/calendars');
 
         fireEvent.click(myCalendarsButton);
 
-        expect(screen.queryByText(/calendar3/)).not.toBeInTheDocument();
+        await waitFor(() => {
+            expect(screen.queryByText(/calendar3/)).not.toBeInTheDocument();
+        });
+    });
 
-        rerender(
+    it('renders with one subscribed calendar', async () => {
+        const { getByTestId, getByText, queryByText } = render(
             renderComponent({
                 calendars: [{ ...mockCalendar, Type: CALENDAR_TYPE.SUBSCRIPTION }],
             })
         );
 
-        const subscribedCalendarsButton = screen.getByTestId('calendar-sidebar:subscribed-calendars-button');
+        const subscribedCalendarsButton = getByTestId('calendar-sidebar:other-calendars-button');
 
-        expect(screen.getByTestId('calendar-sidebar:my-calendars-button')).toBeInTheDocument();
+        expect(getByTestId('calendar-sidebar:my-calendars-button')).toBeInTheDocument();
         expect(subscribedCalendarsButton).toBeInTheDocument();
 
-        expect(screen.getByText(/calendar3/)).toBeInTheDocument();
+        expect(getByText(/calendar3/)).toBeInTheDocument();
+
         fireEvent.click(subscribedCalendarsButton);
-        expect(screen.queryByText(/calendar3/)).not.toBeInTheDocument();
+
+        await waitFor(() => {
+            expect(queryByText(/calendar3/)).not.toBeInTheDocument();
+        });
     });
 
-    it('displays modals when adding calendars', async () => {
-        const { rerender } = render(renderComponent());
+    it('displays create calendar modal', async () => {
+        const { queryByText, getByText } = render(renderComponent());
 
-        const getCalendarModal = () => screen.queryByText(/^CalendarModal/);
-        const getSubscribedCalendarModal = () => screen.queryByText(/^SubscribedCalendarModal/);
+        const getCalendarModal = () => queryByText(/^CalendarModal/);
+        const getSubscribedCalendarModal = () => queryByText(/^SubscribedCalendarModal/);
+        const getCalendarLimitReachedModal = () => queryByText(/^CalendarLimitReachedModal/);
 
         expect(getCalendarModal()).not.toBeInTheDocument();
         expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
+        expect(getCalendarLimitReachedModal()).not.toBeInTheDocument();
 
-        const addCalendarElem = screen.getByText(/Add calendar$/) as HTMLSpanElement;
-        const getCreatePersonalCalendarButton = () => screen.queryByText(/Create calendar/) as HTMLButtonElement;
-        const getCreateSubscribedCalendarButton = () =>
-            screen.queryByText(/Add calendar from URL/) as HTMLButtonElement;
+        const addCalendarElem = () => getByText(/Add calendar$/) as HTMLSpanElement;
+        const getCreatePersonalCalendarButton = () => queryByText(/Create calendar/) as HTMLButtonElement;
 
-        fireEvent.click(addCalendarElem);
+        fireEvent.click(addCalendarElem());
 
         fireEvent.click(getCreatePersonalCalendarButton());
 
         await waitFor(() => {
             expect(getCalendarModal()).toBeInTheDocument();
+            expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
         });
+    });
 
-        rerender(renderComponent());
-        fireEvent.click(addCalendarElem);
+    it('displays add subscribed calendar modal', async () => {
+        const { queryByText, getByText } = render(renderComponent());
+
+        const addCalendarElem = () => getByText(/Add calendar$/) as HTMLSpanElement;
+        const getCreateSubscribedCalendarButton = () => queryByText(/Add calendar from URL/) as HTMLButtonElement;
+
+        const getCalendarModal = () => queryByText(/^CalendarModal/);
+        const getSubscribedCalendarModal = () => queryByText(/^SubscribedCalendarModal/);
+        const getCalendarLimitReachedModal = () => queryByText(/^CalendarLimitReachedModal/);
+
+        fireEvent.click(addCalendarElem());
         fireEvent.click(getCreateSubscribedCalendarButton());
 
-        expect(getCalendarModal()).toBeInTheDocument();
+        await waitFor(() => {
+            expect(getSubscribedCalendarModal()).toBeInTheDocument();
+            expect(getCalendarModal()).not.toBeInTheDocument();
+            expect(getCalendarLimitReachedModal()).not.toBeInTheDocument();
+        });
+    });
 
-        rerender(renderComponent({ calendars: generateOwnedPersonalCalendars(MAX_CALENDARS_PAID) }));
-        fireEvent.click(addCalendarElem);
-        fireEvent.click(getCreatePersonalCalendarButton());
+    it('displays calendars limit reached modal with the max of personal calendars', async () => {
+        const { getByText, queryByText } = render(
+            renderComponent({ calendars: generateOwnedPersonalCalendars(MAX_CALENDARS_PAID) })
+        );
 
-        expect(getCalendarModal()).toBeInTheDocument();
+        const addCalendarElem = () => getByText(/Add calendar$/) as HTMLSpanElement;
 
-        expect(
-            screen.getByText(
-                /Unable to create more calendars. You have reached the maximum of personal calendars within your plan./
-            )
-        ).toBeInTheDocument();
+        const getCalendarModal = () => queryByText(/^CalendarModal/);
+        const getSubscribedCalendarModal = () => queryByText(/^SubscribedCalendarModal/);
+        const getCalendarLimitReachedModal = () => queryByText(/^CalendarLimitReachedModal/);
 
-        rerender(renderComponent({ calendars: generateSubscribedCalendars(MAX_SUBSCRIBED_CALENDARS) }));
-        fireEvent.click(addCalendarElem);
-        fireEvent.click(getCreateSubscribedCalendarButton());
+        fireEvent.click(addCalendarElem());
 
-        expect(getSubscribedCalendarModal()).toBeInTheDocument();
-        expect(
-            screen.getByText(
-                /Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan./
-            )
-        ).toBeInTheDocument();
+        await waitFor(() => {
+            expect(getCalendarLimitReachedModal()).toBeInTheDocument();
+            expect(getCalendarModal()).not.toBeInTheDocument();
+            expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
+        });
+    });
+
+    it('allows to create personal calendar when the user is at the max of subscribed calendars', async () => {
+        const { getByText, queryByText } = render(
+            renderComponent({ calendars: generateSubscribedCalendars(MAX_CALENDARS_PAID - 1) })
+        );
+
+        const addCalendarElem = () => getByText(/Add calendar$/) as HTMLSpanElement;
+
+        const getCalendarModal = () => queryByText(/^CalendarModal/);
+        const getSubscribedCalendarModal = () => queryByText(/^SubscribedCalendarModal/);
+        const getCalendarLimitReachedModal = () => queryByText(/^CalendarLimitReachedModal/);
+
+        fireEvent.click(addCalendarElem());
+
+        await waitFor(() => {
+            expect(getCalendarModal()).toBeInTheDocument();
+            expect(getCalendarLimitReachedModal()).not.toBeInTheDocument();
+            expect(getSubscribedCalendarModal()).not.toBeInTheDocument();
+        });
     });
 });

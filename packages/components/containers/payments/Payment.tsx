@@ -35,7 +35,7 @@ interface Props {
     paypal: any;
     paypalCredit: any;
     card: CardModel;
-    onCard: (key: string, value: string) => void;
+    onCard: (key: keyof CardModel, value: string) => void;
     cardErrors: Partial<CardModel>;
     noMaxWidth?: boolean;
     paymentMethodStatus?: PaymentMethodStatus;
@@ -157,7 +157,7 @@ const Payment = ({
                                 type={customPaymentMethod.Type}
                                 details={customPaymentMethod.Details}
                             />
-                            {customPaymentMethod.Type === PAYMENT_METHOD_TYPES.CARD ? <Alert3DS /> : null}
+                            {customPaymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && <Alert3DS />}
                         </>
                     )}
                     {children}

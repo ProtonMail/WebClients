@@ -68,7 +68,10 @@ export const produceExtensionFork = ({
                     window.removeEventListener('message', messageListenerRef.current);
                     messageListenerRef.current = undefined;
 
-                    resolve({ type: 'success' });
+                    resolve({
+                        type: 'success',
+                        payload: event.data.payload,
+                    });
                 }
             };
 
@@ -165,6 +168,7 @@ export interface ProduceForkParameters {
     state: string;
     app: APP_NAMES;
     type?: FORK_TYPE;
+    plan?: string;
 }
 
 export interface ProduceForkParametersFull extends ProduceForkParameters {
@@ -177,12 +181,14 @@ export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> =
     const state = searchParams.get('state') || '';
     const localID = searchParams.get('u') || '';
     const type = searchParams.get('t') || '';
+    const plan = searchParams.get('plan') || '';
 
     return {
         state: state.slice(0, 100),
         localID: getValidatedLocalID(localID),
         app: getValidatedApp(app),
         type: getValidatedForkType(type),
+        plan,
     };
 };
 

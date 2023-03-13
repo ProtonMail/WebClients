@@ -39,15 +39,15 @@ $modal-tiny-width: em(288) !default;
 	.field-container--full {
 		inline-size: calc(100% - var(--label-width, #{$label-width}));
 
-		@include respond-to(1360) {
+		@include media('<=#{em(1360, 16)}') {
 			inline-size: $field-container;
 		}
 
-		@include respond-to(830) {
+		@include media('<=#{em(830, 16)}') {
 			inline-size: calc(100% - var(--label-width, #{$label-width}));
 		}
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			inline-size: 100%;
 		}
 	}
@@ -262,7 +262,7 @@ $label-shorter-width: 10em !default;
 	inline-size: var(--label-shorter-width, $label-shorter-width);
 }
 
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	.modal--shorter-labels .on-mobile-flex-column .label {
 		inline-size: 100%;
 	}
@@ -273,7 +273,7 @@ $label-shorter-width: 10em !default;
 	padding-block-start: rem(20);
 }
 
-@media (max-height: $breakpoint-low-height-modal) {
+@include media('height<=#{$breakpoint-low-height-modal}') {
 	.modal {
 		max-block-size: $modal-full-dimension;
 	}
@@ -289,7 +289,7 @@ $label-shorter-width: 10em !default;
 }
 
 // small viewports
-@media (max-width: $modal-breakpoint-width) {
+@include media('<=#{$modal-breakpoint-width}') {
 	.modal:not(.modal--tiny) {
 		margin: 1%;
 		min-inline-size: 0;
@@ -305,7 +305,7 @@ $label-shorter-width: 10em !default;
 	}
 }
 
-@include respond-to($breakpoint-large, 'min') {
+@include media('>xlarge') {
 	.modal--full {
 		max-inline-size: $modal-full-max-width;
 		margin-inline: auto;

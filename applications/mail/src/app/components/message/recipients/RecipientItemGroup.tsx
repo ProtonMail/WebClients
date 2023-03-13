@@ -32,21 +32,10 @@ interface Props {
     globalIcon?: StatusIcon;
     showDropdown?: boolean;
     isOutside?: boolean;
-    displaySenderImage: boolean;
-    bimiSelector?: string;
     customDataTestId?: string;
 }
 
-const RecipientItemGroup = ({
-    displaySenderImage,
-    bimiSelector,
-    group,
-    mapStatusIcons,
-    globalIcon,
-    showDropdown,
-    isOutside,
-    customDataTestId,
-}: Props) => {
+const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, isOutside, customDataTestId }: Props) => {
     const { getGroupLabel, getRecipientLabel } = useRecipientLabel();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -118,12 +107,12 @@ const RecipientItemGroup = ({
                         {group.recipients.map((recipient) => {
                             return (
                                 <RecipientDropdownItem
-                                    displaySenderImage={displaySenderImage}
+                                    displaySenderImage={!!recipient?.DisplaySenderImage}
                                     recipient={recipient}
                                     label={getRecipientLabel(recipient)}
                                     closeDropdown={close}
                                     key={recipient.Address}
-                                    bimiSelector={bimiSelector}
+                                    bimiSelector={recipient?.BimiSelector || undefined}
                                     isOutside={isOutside}
                                 />
                             );
@@ -157,6 +146,7 @@ const RecipientItemGroup = ({
                 </Dropdown>
             }
             isOutside={isOutside}
+            recipientOrGroup={{ group }}
             customDataTestId={customDataTestId}
         />
     );

@@ -8,12 +8,7 @@ import { CacheProvider } from '@proton/components/containers/cache';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import useCalendars from '@proton/components/hooks/useCalendars';
-import {
-    CALENDAR_DISPLAY,
-    CALENDAR_FLAGS,
-    CALENDAR_TYPE,
-    MAX_LENGTHS_API,
-} from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_DISPLAY, CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
@@ -515,13 +510,13 @@ describe.skip('MainContainer', () => {
             const locationInput = screen.queryByTitle(/Add event location/) as HTMLInputElement;
 
             // Using paste since it is much faster
-            userEvent.paste(titleInput, '1'.repeat(MAX_LENGTHS_API.TITLE + 2));
-            userEvent.paste(descriptionTextarea, '1'.repeat(MAX_LENGTHS_API.EVENT_DESCRIPTION + 2));
-            userEvent.paste(locationInput, '1'.repeat(MAX_LENGTHS_API.LOCATION + 2));
+            userEvent.paste(titleInput, '1'.repeat(MAX_CHARS_API.TITLE + 2));
+            userEvent.paste(descriptionTextarea, '1'.repeat(MAX_CHARS_API.EVENT_DESCRIPTION + 2));
+            userEvent.paste(locationInput, '1'.repeat(MAX_CHARS_API.LOCATION + 2));
 
-            expect(descriptionTextarea.value.length).toBe(MAX_LENGTHS_API.EVENT_DESCRIPTION);
-            expect(titleInput.value.length).toBe(MAX_LENGTHS_API.TITLE);
-            expect(locationInput.value.length).toBe(MAX_LENGTHS_API.LOCATION);
+            expect(descriptionTextarea.value.length).toBe(MAX_CHARS_API.EVENT_DESCRIPTION);
+            expect(titleInput.value.length).toBe(MAX_CHARS_API.TITLE);
+            expect(locationInput.value.length).toBe(MAX_CHARS_API.LOCATION);
 
             // fireEvent.focus(screen.getByTitle(/Select event end date/));
             // const now = new Date();

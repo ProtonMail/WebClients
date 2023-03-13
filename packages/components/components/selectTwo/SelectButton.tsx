@@ -28,6 +28,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
         };
 
         return (
+            // eslint-disable-next-line jsx-a11y/role-supports-aria-props
             <button
                 ref={ref}
                 type="button"

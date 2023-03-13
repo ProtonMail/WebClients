@@ -242,6 +242,9 @@
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
       ],
+      "Enable drive search": [
+        "Aktifkan pencarian drive"
+      ],
       "Expand": [
         "Lebarkan"
       ],
@@ -367,6 +370,9 @@
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
+      ],
+      "New": [
+        "Baru"
       ],
       "New upload": [
         "Unggahan baru"
@@ -573,7 +579,7 @@
         "Coba metode lain"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Coba simpan kembali. Penyimpanan gagal akibat: ${ saveError }"
+        "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
       ],
       "Undo": [
         "Urungkan"
@@ -595,6 +601,9 @@
       ],
       "Upgrade": [
         "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ],
       "Upload anyway": [
         "Tetap unggah"
@@ -779,54 +788,6 @@
         "Lanjut dengan ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Tidak disinkronkan"
-      ],
-      "Syncing": [
-        "Menyinkronkan"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender tidak dapat didekripsi"
-      ],
-      "Calendar is syncing": [
-        "Kalender sedang menyinkronkan data"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalender sedang menyinkronkan data: proses ini dapat berlangsung hingga beberapa menit sebelum seluruh acara dapat dimunculkan."
-      ],
-      "Calendar is too big": [
-        "Ukuran kalender terlalu besar"
-      ],
-      "Calendar link is not accessible": [
-        "Tautan kalender tidak dapat diakses"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Tautan kalender untuk sementara tidak dapat diakses"
-      ],
-      "Failed to sync calendar": [
-        "Gagal menyinkronkan kalender"
-      ],
-      "More than 12 hours passed since last update": [
-        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir"
-      ],
-      "Unsupported calendar format": [
-        "Format kalender tidak didukung"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Tautan kalender tidak dapat diakses dari luar ekosistem penyedia kalender."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Tautan kalender untuk sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — ${ CALENDAR_APP_NAME } akan mencoba untuk memperbarui kalender dalam beberapa jam."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Ciutkan"
@@ -876,7 +837,7 @@
         "merah jambu"
       ],
       "plum": [
-        "plum"
+        "plem"
       ],
       "purple": [
         "ungu"
@@ -982,9 +943,6 @@
       ],
       "Work": [
         "Kantor"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1085,7 +1043,7 @@
         "Pulau Bouvet"
       ],
       "Brazil": [
-        "Brasil"
+        "Brazil"
       ],
       "British Indian Ocean Territory": [
         "Teritori Samudera Hindia Inggris"
@@ -1205,7 +1163,7 @@
         "Eswatini"
       ],
       "Ethiopia": [
-        "Ethiopia"
+        "Etiopia"
       ],
       "Falkland Islands": [
         "Kepulauan Falkland"
@@ -1358,7 +1316,7 @@
         "Kuwait"
       ],
       "Kyrgyzstan": [
-        "Kirgizstan"
+        "Kyrgyzstan"
       ],
       "Laos": [
         "Laos"
@@ -1568,7 +1526,7 @@
         "Saint Pierre dan Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        "Saint Vincent dan Grenadines"
+        "Saint Vincent dan Grenadine"
       ],
       "Samoa": [
         "Samoa"
@@ -1712,7 +1670,7 @@
         "Amerika Serikat"
       ],
       "United States Minor Outlying Islands": [
-        "Pulau-Pulau Terluar Amerika Serikat"
+        "Kepulauan Terluar Kecil Amerika Serikat"
       ],
       "Uruguay": [
         "Uruguay"
@@ -1909,17 +1867,14 @@
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
       ],
+      "Contact name is too long": [
+        "Nama kontak terlalu panjang"
+      ],
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Pencarian konten tidak dapat dilangsungkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan atau"
       ],
       "Device name does not match": [
         "Nama perangkat tidak sesuai"
@@ -1984,9 +1939,6 @@
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
       ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
-      ],
       "Missing key packet": [
         "Paket kunci hilang"
       ],
@@ -2045,7 +1997,7 @@
         "Verifikasi tanda tangan gagal"
       ],
       "Some contacts could not be deleted": [
-        "Beberapa kontak tidak dapat dihapus"
+        "Sebagian kontak tidak dapat dihapus"
       ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
@@ -2055,9 +2007,6 @@
       ],
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "Grup tidak memiliki kontak: ${ noContactGroupList } "
-      ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama folder yang bersangkutan dengan menyesuaikan parameter impor Anda."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
@@ -2131,8 +2080,8 @@
       "This label name is not available. Please choose a different name.": [
         "Nama label ini tidak dapat digunakan. Mohon pilih nama lain."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Pesan ini terindikasi memiliki tautan yang tidak dapat dibuka dengan benar oleh browser Anda."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Pesan ini terindikasi memiliki tautan/URL yang tidak dapat dibuka dengan benar oleh browser Anda."
       ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
@@ -2143,11 +2092,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Anda tidak dapat mengirim email ke lebih dari 100 penerima"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Anda tidak dapat mengirim vCard ke lebih dari 10 kontak"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Anda telah mencapai batas jumlah kalender personal milik Anda. Sebagian kalender tidak dapat diimpor."
+      "You can't send vCard files of more than 10 contacts": [
+        "Anda tidak dapat mengirim berkas vCard ke lebih dari 10 kontak"
       ],
       "You must set a name": [
         "Anda harus mengatur nama"
@@ -2517,25 +2463,22 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Email"
       ],
       "Manual": [
-        "Manual"
+        "Penuntun"
       ],
       "No verification method available": [
         "Metode verifikasi tidak tersedia"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Ada kesalahan saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
@@ -2755,9 +2698,6 @@
       ],
       "ICS file": [
         "Berkas ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2772,6 +2712,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Impor dari ${ provider }"
+      ],
       "Other": [
         "Lainnya"
       ]
@@ -2812,9 +2755,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } kalender baru"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } kalender yang tergabung"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
       ],
@@ -2848,11 +2788,11 @@
       "${ groupCounts } groups found": [
         "ditemukan ${ groupCounts } grup"
       ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } grup kontak"
+      "${ numContact } contacts": [
+        "${ numContact } kontak"
       ],
-      "${ numContacts } contacts": [
-        "${ numContacts } kontak"
+      "${ numGroups } contact groups": [
+        "${ numGroups } grup kontak"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } dijeda"
@@ -2865,6 +2805,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } dari ${ providerCalendars.length } calendar"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } terpilih"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } folder terpilih"
@@ -2881,9 +2824,6 @@
       "${ speed }/s": [
         "${ speed }/dtk"
       ],
-      "${ storageSize } storage": [
-        "Kuota penyimpanan ${ storageSize }"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -2892,9 +2832,6 @@
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } anggota)"
-      ],
-      "10 email addresses": [
-        "10 alamat email"
       ],
       "A number will be added to the filename": [
         "Nomor akan ditambahkan ke nama berkas"
@@ -2916,6 +2853,9 @@
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang belum Anda simpan akan hilang."
+      ],
+      "Also try looking in Trash.": [
+        "Cobalah juga untuk mencari di Sampah."
       ],
       "An active recovery file": [
         "Berkas pemulihan yang aktif"
@@ -2953,8 +2893,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Mengunggah banyak berkas secara bersamaan dapat menurunkan performa komputer Anda. Cobalah untuk membatasi aktivitas yang membutuhkan banyak memori (seperti streaming) selama proses pengunggahan berlangsung, atau bagi unggahan Anda ke dalam beberapa batch."
+      "Calendar side panel": [
+        "Panel samping kalender"
       ],
       "Canceled": [
         "Dibatalkan"
@@ -2992,11 +2932,11 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Lanjut gunakan ${ DRIVE_APP_NAME } tanpa membuka kunci berkas"
       ],
-      "Continue with ${ planName }": [
-        "Lanjut dengan ${ planName }"
+      "Country code": [
+        "Kode negara"
       ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "Buat ${ calendarsToBeCreated } kalender baru"
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder-folder yang hendak Anda impor."
@@ -3076,6 +3016,9 @@
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
       ],
+      "Enable drive search": [
+        "Aktifkan pencarian drive"
+      ],
       "Enabling drive search": [
         "Mengaktifkan pencarian drive"
       ],
@@ -3151,6 +3094,9 @@
       "Folders you sync from your computer will appear here.": [
         "Folder yang Anda sinkronkan dari komputer Anda akan muncul pada layar ini."
       ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Untuk hasil yang maksimal, hindari streaming serta berbagai kegiatan lainnya yang boros akan memori atau pisah unggahan Anda ke dalam beberapa kelompok berkas kecil."
+      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -3187,11 +3133,11 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "Impor ${ selectedCalendarsCount } dari ${ totalCalendarsCount } kalender yang tersedia"
       ],
       "Import from": [
         "Impor dari"
@@ -3204,6 +3150,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Impor email, kalender, dan kontak yang Anda miliki dari layanan email Anda terdahulu ke ${ BRAND_NAME }. Kami akan memandu Anda untuk memindahkan dan mengenkripsi data selangkah demi selangkah. Selamat datang di dunia privasi."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
@@ -3231,6 +3180,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sepertinya baru-baru ini Anda mencoba untuk mengunggah ${ uploadName }. Apabila unggahan gagal, silakan ${ replaceFile }. Apabila unggahan masih berlangsung, mengubah berkas akan membatalkan unggahan yang telah ada."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Item di sampah akan tetap ada di sini sampai Anda menghapusnya secara permanen"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Mengunggah berkas semudah menarik atau memilih berkas"
@@ -3364,9 +3316,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Hanya orang-orang yang memiliki tautan dan kata sandi yang dapat mengakses folder ini."
       ],
-      "Other options": [
-        "Pilihan lainnya"
-      ],
       "Paused": [
         "Dijeda"
       ],
@@ -3421,9 +3370,6 @@
       "Primary": [
         "Utama"
       ],
-      "Priority support": [
-        "Dukungan prioritas"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Pencarian pribadi diaktifkan. Anda kini dapat menutup kotak dialog ini dan mulai mencari berkas dan folder tertentu."
       ],
@@ -3463,9 +3409,6 @@
       "Select what you want to import.": [
         "Pilih hal apa saja yang hendak Anda impor."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
@@ -3483,6 +3426,9 @@
       ],
       "Shared link failed to be loaded": [
         "Tautan yang dibagikan gagal dimuat"
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
       ],
       "Signature check will be ignored": [
         "Proses verifikasi tanda tangan akan diabaikan"
@@ -3502,20 +3448,11 @@
       "Something went wrong, please try again later.": [
         "Ada sesuatu yang salah, silakan coba lagi nanti."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
-      ],
-      "Support for 1 custom email domain": [
-        "Dukungan 1 domain email khusus"
-      ],
       "support team": [
         "tim dukungan"
       ],
       "Swiss privacy": [
         "Privasi Swiss"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Ketuk tombol + untuk mengunggah berkas atau folder"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
@@ -3525,6 +3462,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon hanya buka berkas/folder apabila Anda mempercayai sumbernya."
@@ -3577,6 +3517,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Untuk mengaktifkan mode pencarian yang sepenuhnya privat, ${ DRIVE_APP_NAME } perlu untuk terlebih dahulu mengindeks berkas Anda secara lokal."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Untuk dapat melangsungkan pencarian yang benar-benar privat, kami perlu untuk mengindeks berkas Anda secara lokal. Anda tetap akan dapat menggunakan ${ DRIVE_APP_NAME } seperti biasa - kami akan memberitahukan Anda apabila proses ini telah selesai."
       ],
@@ -3610,14 +3553,11 @@
       "Trash": [
         "Sampah"
       ],
+      "Try searching by file name, date, or type.": [
+        "Cobalah untuk mencari berdasarkan nama, tanggal pembuatan, atau tipe berkas."
+      ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ],
-      "Unlimited messages": [
-        "Tanpa batasan jumlah pesan"
       ],
       "Unlock drive to recover files": [
         "Buka kunci drive untuk memulihkan berkas-berkas yang ada"
@@ -3631,8 +3571,8 @@
       "Updating drive search...": [
         "Memperbarui pencarian drive..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ planName } berikut."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
       "Uploaded": [
         "Diunggah"
@@ -3785,14 +3725,14 @@
       "file data order": [
         "urutan data berkas"
       ],
+      "hash key": [
+        "kunci hash"
+      ],
       "keys": [
         "kunci"
       ],
       "name": [
         "nama"
-      ],
-      "name hash": [
-        "hash nama"
       ],
       "thumbnail": [
         "thumbnail"
@@ -3816,14 +3756,11 @@
       ],
       "Trusted": [
         "Tepercaya"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# akses"
+      "# of downloads": [
+        "# unduhan"
       ],
       "${ BRAND_NAME } username": [
         "Pengguna ${ BRAND_NAME }"
@@ -3879,6 +3816,9 @@
       "Browser version": [
         "Versi peramban"
       ],
+      "Calendar": [
+        "Kalender"
+      ],
       "Calendars": [
         "Kalender"
       ],
@@ -3897,8 +3837,8 @@
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
-      "Coming soon": [
-        "Segera hadir"
+      "Colors": [
+        "Warna"
       ],
       "Comment": [
         "Komentar"
@@ -4014,9 +3954,6 @@
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Dari: ${ importedEmail }"
-      ],
       "Good": [
         "Baik"
       ],
@@ -4076,12 +4013,6 @@
       ],
       "Manage categories": [
         "Kelola kategori"
-      ],
-      "Manage folders": [
-        "Kelola folder"
-      ],
-      "Manage labels": [
-        "Kelola label"
       ],
       "Merge a folder": [
         "Gabungkan folder"
@@ -4200,9 +4131,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Tindakan ini akan menghapus seluruh berkas yang terdapat pada drive milik Anda yang terkunci secara permanen."
       ],
-      "To: ${ emailAddress }": [
-        "Ke: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Kepada: ${ to }"
       ],
@@ -4210,7 +4138,7 @@
         "Kepada: ${ toEmail }"
       ],
       "Toolbar": [
-        "Toolbar"
+        "Bilah Alat"
       ],
       "Two-factor authentication code": [
         "Kode autentikasi dua faktor"
@@ -4232,9 +4160,6 @@
       ],
       "Upload anyway": [
         "Tetap unggah"
-      ],
-      "Upload file": [
-        "Unggah berkas"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -4298,6 +4223,17 @@
         "Panel samping"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Untuk menambah kalender baru, hapus kalender yang ada."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Untuk menambah kalender baru, hapus kalender lainnya atau tingkatkan ${ BRAND_NAME } paket ke ${ MAIL_SHORT_APP_NAME } paket berbayar."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Anda telah mencapai jumlah kalender maksimum yang tersedia dalam paket Anda."
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
@@ -4328,8 +4264,8 @@
       "Almost there": [
         "Hampir selesai"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Jumlah kalender yang terbuat: ${ createdCalendars } dari ${ calendarsToBeCreated }"
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
@@ -4348,17 +4284,17 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari folder ${ itemsToImportCount } dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "Impor semua pesan dari ${ itemsToImportCount } folder dan berikan label sebagai"
       ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "Impor semua pesan dari ${ itemsToImportCount } label dan berikan label sebagai"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "Impor semua pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan berikan label sebagai"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan labeli mereka sebagai ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "Impor semua pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan berikan label sebagai"
       ]
     },
     "Message": {
@@ -4542,9 +4478,6 @@
       ],
       "File or folder is missing a name": [
         "Berkas atau folder belum dinamai"
-      ],
-      "Item failed to be verified": [
-        "Item gagal diverifikasi"
       ],
       "Link failed to be loaded": [
         "Gagal memuat tautan"
@@ -4861,9 +4794,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
-      ],
       "Encrypted search is here": [
         "Pencarian terenkripsi kini telah hadir"
       ],
@@ -4875,9 +4805,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Kini Anda dapat mencari berkas Drive dengan mudah seraya menjaga data Anda tetap aman."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Coba ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -4901,8 +4828,8 @@
       "Bug reported": [
         "Bug berhasil dilaporkan"
       ],
-      "Canceling import": [
-        "Membatalkan proses impor"
+      "Cancelling import": [
+        "Membatalkan impor"
       ],
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
@@ -5009,17 +4936,31 @@
         "Pengaturan"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } j"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 j"
+      ],
+      "${ minutes } min": [
+        "${ minutes } mnt"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } jam"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 jam"
       ],
       "${ minutes } minutes": [
         "${ minutes } menit"
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# akses"
+      "# of downloads": [
+        "# unduhan"
       ],
       "${ emailsCount } members": [
         "${ emailsCount } anggota"
@@ -5153,9 +5094,6 @@
       "Download unverified folder?": [
         "Unduh folder yang tidak terverifikasi?"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Drop to upload": [
         "Letakkan untuk mengunggah"
       ],
@@ -5185,6 +5123,9 @@
       ],
       "Empty trash": [
         "Kosongkan sampah"
+      ],
+      "Enable drive search": [
+        "Aktifkan pencarian drive"
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
@@ -5282,6 +5223,9 @@
       "Name": [
         "Nama"
       ],
+      "No results found": [
+        "Tidak ada hasil yang ditemukan"
+      ],
       "Number of files": [
         "Jumlah berkas"
       ],
@@ -5299,6 +5243,9 @@
       ],
       "Open settings menu": [
         "Buka menu pengaturan"
+      ],
+      "Original size": [
+        "Ukuran asli"
       ],
       "Other information": [
         "Informasi lainnya"
@@ -5450,6 +5397,9 @@
       "Uploaded by": [
         "Diupload oleh"
       ],
+      "Uploading a large file or folder": [
+        "Mengunggah berkas atau folder berukuran besar"
+      ],
       "View contacts": [
         "Lihat kontak"
       ],
@@ -5483,8 +5433,8 @@
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Uji coba Mail Plus Anda akan berakhir pada ${ textDate }"
       ],
       "Your welcome actions": [
         "Hadiah selamat datang Anda"

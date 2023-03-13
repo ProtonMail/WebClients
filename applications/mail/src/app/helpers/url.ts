@@ -11,7 +11,7 @@ import { PartialMessageState } from '../logic/messages/messagesTypes';
  * @param emailsStr
  */
 export const toAddresses = (emailsStr: string): Recipient[] => {
-    const emails = sanitizeString(emailsStr).split(',');
+    const emails = emailsStr.split(',');
 
     // Remove potential unwanted HTML entities such as '&shy;' from the address
     const escaped = emails.map((email) => {
@@ -27,11 +27,15 @@ export const toAddresses = (emailsStr: string): Recipient[] => {
 
         // The first value of regex.exec is the entire match, but we want groups results
         if (findNameAndAddress && findNameAndAddress.length === 3) {
-            return { Name: findNameAndAddress[1], Address: findNameAndAddress[2] };
+            return {
+                Name: sanitizeString(findNameAndAddress[1]).trim(),
+                Address: sanitizeString(findNameAndAddress[2]).trim(),
+            };
         }
 
+        const sanitizedElement = sanitizeString(element).trim();
         // Element is an address only
-        return { Name: element, Address: element };
+        return { Name: sanitizedElement, Address: sanitizedElement };
     });
 };
 
@@ -52,7 +56,7 @@ export const mailtoParser = (mailto: string): PartialMessageState => {
         j = mailto.length;
     }
 
-    const to = sanitizeString(mailto.substring(7, j));
+    const to = mailto.substring(7, j);
 
     const url = new URL(mailto);
 

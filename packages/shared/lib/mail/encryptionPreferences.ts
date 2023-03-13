@@ -218,6 +218,8 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
 
 const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicKeyModel): EncryptionPreferences => {
     const {
+        encrypt,
+        sign,
         emailAddress,
         publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
         scheme,
@@ -232,8 +234,8 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
     const hasApiKeys = true;
     const hasPinnedKeys = !!pinnedKeys.length;
     const result = {
-        encrypt: true,
-        sign: true,
+        encrypt,
+        sign,
         scheme,
         mimeType,
         apiKeys,

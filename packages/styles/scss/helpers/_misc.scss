@@ -12,7 +12,7 @@
  */
 $breakpoint-2-columns: 1180 !default;
 
-@include respond-to($breakpoint-2-columns) {
+@include media('<=#{em($breakpoint-2-columns, 16)}') {
 	.boxes-placeholder-container {
 		flex-direction: column;
 

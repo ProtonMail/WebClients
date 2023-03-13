@@ -187,8 +187,12 @@ export type KeyID = string;
 export interface KeyReference {
     /** Internal unique key identifier for the key store */
     readonly _idx: any;
-    /** (Internal) key content identifier to determine equality */
-    readonly _keyContentHash: string;
+    /**
+     * (Internal) key content identifier to determine equality.
+     * First entry includes the full key.
+     * Second entry does not include 3rd party certifications (e.g. from Proton CA).
+     **/
+    readonly _keyContentHash: [string, string];
     getFingerprint(): string;
     /**
      * Key ID of primary key in hex format.
@@ -213,8 +217,9 @@ export interface KeyReference {
     /**
      * Compare public key content. Keys are considered equal if they have same key and subkey material,
      * as well as same certification signatures, namely same expiration time, capabilities, algorithm preferences etc.
+     * @param [ignoreOtherCerts] - whether third-party certifications (e.g. from Proton CA) should be ignored.
      */
-    equals(otherKey: KeyReference): boolean;
+    equals(otherKey: KeyReference, ignoreOtherCerts?: boolean): boolean;
     subkeys: {
         getAlgorithmInfo(): AlgorithmInfo;
         getKeyID(): KeyID;

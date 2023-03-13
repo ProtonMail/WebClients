@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { Field, Label, Row } from '../../components';
+import { Field, Row } from '../../components';
 import PaymentSelector from './PaymentSelector';
 
 interface Props {
@@ -20,7 +20,7 @@ const AmountRow = ({ method, amount, onChangeAmount, currency, onChangeCurrency 
     }
     return (
         <Row>
-            <Label>{c('Label').t`Amount`}</Label>
+            <span className="label" id="id_desc_amount">{c('Label').t`Amount`}</span>
             <Field>
                 <PaymentSelector
                     amount={amount}

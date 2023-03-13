@@ -1,8 +1,8 @@
-import { ACCENT_COLORS, BASE_SIZE } from '../constants';
+import { ACCENT_COLORS } from '../colors';
+import { BASE_SIZE } from '../constants';
 
-export const MAX_CALENDARS_FREE = 1;
-export const MAX_SUBSCRIBED_CALENDARS = 5;
-export const MAX_CALENDARS_PAID = 20; // Only paid mail
+export const MAX_CALENDARS_FREE = 3;
+export const MAX_CALENDARS_PAID = 25; // Only paid mail
 
 export const MAX_DEFAULT_NOTIFICATIONS = 5;
 export const MAX_NOTIFICATIONS = 10;
@@ -125,7 +125,7 @@ export enum ATTENDEE_STATUS_API {
     ACCEPTED = 3,
 }
 
-export const MAX_LENGTHS_API = {
+export const MAX_CHARS_API = {
     UID: 191,
     CALENDAR_NAME: 100,
     CALENDAR_DESCRIPTION: 255,
@@ -133,6 +133,10 @@ export const MAX_LENGTHS_API = {
     EVENT_DESCRIPTION: 3000,
     LOCATION: 255,
     CALENDAR_URL: 10000,
+};
+
+export const MAX_CHARS_CLEARTEXT = {
+    PURPOSE: 500,
 };
 
 export const MINIMUM_DATE = new Date(1970, 0, 1);
@@ -361,7 +365,7 @@ export const CALENDAR_SETTINGS_SECTION_ID = {
     INVITATIONS: 'invitations',
     THEME: 'theme',
     PERSONAL_CALENDARS: 'my-calendars',
-    SUBSCRIBED_CALENDARS: 'other-calendars',
+    OTHER_CALENDARS: 'other-calendars',
     IMPORT: 'import',
     EXPORT: 'export',
     SHARE: 'share',

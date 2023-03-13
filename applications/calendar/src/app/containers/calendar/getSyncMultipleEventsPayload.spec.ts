@@ -14,7 +14,7 @@ jest.mock('@proton/shared/lib/calendar/apiModels', () => ({
     getHasSharedKeyPacket: jest.fn(() => true),
 }));
 
-jest.mock('@proton/shared/lib/calendar/crypto/helpers', () => ({
+jest.mock('@proton/shared/lib/calendar/crypto/keys/helpers', () => ({
     getCreationKeys: jest.fn(() => ({})),
 }));
 

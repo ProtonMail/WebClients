@@ -460,7 +460,7 @@
         "Gör till standard"
       ],
       "Manage communication preferences": [
-        "Hantera kommunikationsinställningar"
+        "Hantera kommunikationspreferenser"
       ],
       "Manage folders": [
         "Hantera mappar"
@@ -514,7 +514,7 @@
         "OK"
       ],
       "Ok": [
-        "Ok"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -596,9 +596,6 @@
       ],
       "Remove this notification": [
         "Ta bort denna avisering"
-      ],
-      "Rename": [
-        "Ändra namn"
       ],
       "Report a problem": [
         "Rapportera ett problem"
@@ -828,6 +825,9 @@
       "Upgrade": [
         "Uppgradera"
       ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
       "Upload picture": [
         "Ladda upp bild"
       ],
@@ -904,14 +904,8 @@
       ]
     },
     "Action in trial plan": {
-      "Continue with free plan": [
-        "Fortsätt med gratispaket"
-      ],
       "No, thanks": [
         "Nej tack"
-      ],
-      "Start my 30-day free trial": [
-        "Starta min 30-dagars gratis provperiod"
       ],
       "Try free for 30 days": [
         "Prova gratis i 30 dagar"
@@ -1028,9 +1022,6 @@
     "Badge": {
       "5 users": [
         "5 användare"
-      ],
-      "Coming soon": [
-        "Kommer snart"
       ]
     },
     "Badge for domain": {
@@ -1050,21 +1041,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "Att betalas var 12:e månad"
-      ],
-      "Payable every 15 months": [
-        "Att betalas var 15:e månad"
-      ],
-      "Payable every 24 months": [
-        "Att betalas var 24:e månad"
-      ],
-      "Payable every 30 months": [
-        "Att betalas var 30:e månad"
-      ],
-      "Payable every month": [
-        "Att betalas varje månad"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "Förnyas automatiskt den ${ formattedEndTime }"
       ]
@@ -1218,21 +1194,6 @@
         "Inbjudan skickad"
       ]
     },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Du har nått det maximala antalet personliga kalendrar som du kan skapa med ditt paket."
-      ],
-      "You have reached the maximum number of personal calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Du har uppnått maximalt antal personliga kalendrar som du kan ha. För att godkänna väntande kalenderinbjudningar behöver du ta bort några av dina kalendrar."
-      ],
-      "You have reached the maximum number of shared calendars you can have. To accept pending calendar invitations, you need to remove some of your calendars.": [
-        "Du har uppnått maximalt antal delade kalendrar som du kan ha. För att godkänna väntande kalenderinbjudningar behöver du ta bort några av dina kalendrar."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Du har nått det maximala antalet av ${ MAX_SUBSCRIBED_CALENDARS } prenumererad kalender.",
-        "Du har nått det maximala antalet av ${ MAX_SUBSCRIBED_CALENDARS } prenumererade kalendrar."
-      ]
-    },
     "Calendar link purpose update success message": {
       "Label added": [
         "Etikett tillagd"
@@ -1300,7 +1261,7 @@
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "Redigera (visa, skapa och redigera händelseinformation)"
+        "Redigera (visa, skapa och redigera händelsedetaljer)"
       ],
       "View (see all event details)": [
         "Vy (se alla händelsedetaljer)"
@@ -1427,7 +1388,7 @@
         "morot"
       ],
       "cerise": [
-        "cerise"
+        "körsbär"
       ],
       "cinnabar": [
         "cinnober"
@@ -1650,7 +1611,7 @@
         "Kön"
       ],
       "Geo": [
-        "Geo"
+        "Geolokalisering"
       ],
       "Language": [
         "Språk"
@@ -1710,9 +1671,6 @@
       ],
       "Work": [
         "Arbete"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2612,7 +2570,7 @@
         "Filen ska ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer."
       ],
       "Track the status and activity of your referrals.": [
-        "Spåra status och aktiviteter för dina rekommendationer."
+        "Spåra status och aktivitet för dina hänvisningar."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsätta bjuda in vänner, men du kommer inte kunna tjäna fler krediter"
@@ -2648,6 +2606,9 @@
       ],
       "${ name } failed to move to spam list": [
         "${ name } misslyckades att flyttas till skräppostlista"
+      ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } misslyckades att flyttas till icke-skräppostlistan"
       ],
       "${ name } failed to move to your block list": [
         "${ name } kunde inte flyttas till din blockeringslista"
@@ -2763,6 +2724,9 @@
       "${ name } failed to move to spam list": [
         "${ name } misslyckades att flyttas till skräppostlista"
       ],
+      "${ name } failed to move to the not-spam list": [
+        "${ name } misslyckades att flyttas till icke-skräppostlistan"
+      ],
       "${ name } failed to move to your block list": [
         "${ name } kunde inte flyttas till din blockeringslista"
       ],
@@ -2856,7 +2820,7 @@
         "Kalendergräns nådd"
       ],
       "Checkout expired, please try again": [
-        "Utcheckningen är inte giltig längre, vänligen försök igen"
+        "Kassan löpt ut, försök igen"
       ],
       "Condition incomplete": [
         "Villkor ofullständig"
@@ -2866,14 +2830,6 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Avmarkera minst ${ calendarToFixCount } kalender",
-        "Avmarkera minst ${ calendarToFixCount } kalendrar"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Avmarkera minst ${ calendarToFixCount } kalender eller",
-        "Avmarkera minst ${ calendarToFixCount } kalendrar eller"
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
@@ -2904,9 +2860,6 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Misslyckades att hämta aktiva sessioner. ${ refresh } eller försök igen senare."
-      ],
-      "Filter with this name already exist": [
-        "Filter med detta namn finns redan"
       ],
       "Filter with this name already exists": [
         "Filter med detta namn finns redan"
@@ -2964,10 +2917,6 @@
       ],
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Slå samman minst ${ calendarToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
-        "Slå samman minst ${ calendarToFixCount } kalendrar med en befintlig ${ BRAND_NAME }-kalender"
       ],
       "Missing key packet": [
         "Saknar nyckelpaket"
@@ -3109,9 +3058,6 @@
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Vissa av dina mappnamn är reserverade. Anpassa importen för att redigera dessa namn."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Vissa av dina mappnamn är inte tillgängliga. Anpassa importen för att redigera dessa namn."
       ],
@@ -3137,7 +3083,7 @@
         "Adressen kan vara felstavad"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Den webbläsare du använder tillåter inte att betalningen godkänns till fullo. Använd en annan webbläsare eller logga in via en dator."
+        "Webbläsaren du använder tillåter inte att betalningen är fullständigt auktoriserad. Använd en annan webbläsare eller logga in via en dator."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Mappnamnet är ogiltigt. Välj ett annat namn."
@@ -3149,7 +3095,7 @@
         "Nycklarna i din återställningsfil kan inte valideras. Kontakta support."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "Nycklarna i din återställningsfil kan inte valideras. Vänligen ladda upp dem en i taget för mer information."
+        "Nycklarna i dina återställningsfiler kan inte valideras. Ladda upp individuellt för mer information."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Etikettnamnet är ogiltigt. Välj ett annat namn."
@@ -3196,8 +3142,8 @@
       "This label name is not available. Please choose a different name.": [
         "Detta etikettnamn är inte tillgängligt. Välj ett annat namn."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt med din nuvarande webbläsare."
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
       ],
       "Trusted keys are not valid for sending": [
         "Betrodda nycklar är inte giltiga för att skicka"
@@ -3230,16 +3176,13 @@
         "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Fel verifieringskod. Kontrollera att du kopierade verifieringskoden korrekt och försök igen. Det kan ta upp till 24 timmar innan ändringarna träder i kraft."
+        "Fel verifieringskod. Se till att du kopierade verifieringskoden korrekt och försök igen. Det kan ta upp till 24 timmar innan ändringarna träder i kraft."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Du har förlorat åtkomst till din organisationsnyckel. Utan återställning kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare, eller få tillgång till icke-privata användarkonto."
       ],
       "You have no invoices.": [
         "Du har inga fakturor."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Du har nått det maximala antalet personliga kalendrar. Vissa kalendrar kunde inte importeras."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress."
@@ -3255,6 +3198,9 @@
       ],
       "You must set a name": [
         "Du måste ange ett namn"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Du måste ha en anpassad domänadress för att generera en SMTP-inlämningstoken."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ditt konto eller organisation har en förfallen faktura. Vänligen betala alla obetalda fakturor."
@@ -3540,7 +3486,7 @@
         "Oväntat fel"
       ],
       "Unsupported invitation": [
-        "Inbjudan stöds ej"
+        "Inbjudan stöds inte"
       ],
       "Unsupported response": [
         "Svar stöds inte"
@@ -3669,7 +3615,7 @@
         "Är du säker på att du vill ta bort säkerhetsnyckel ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Mata in en säkerhetsnyckel kopplad till ditt ${ BRAND_NAME } konto."
+        "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
       ],
       "Insert your security key into your device's USB port.": [
         "Sätt in din säkerhetsnyckel i din enhets USB-port."
@@ -3753,7 +3699,7 @@
         "Kilobyte"
       ],
       "Megabyte": [
-        "Megabyte",
+        "Kilobyte",
         "Megabyte"
       ]
     },
@@ -3845,11 +3791,6 @@
         "Standard"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Integritet som standard."
-      ]
-    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-postmeddelande per månad)"
@@ -3859,6 +3800,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-postmeddelanden per månad)"
+      ],
+      "(during your first month)": [
+        "(under din första månad)"
       ]
     },
     "Go to sign in": {
@@ -3897,6 +3841,9 @@
       ],
       "Actions": [
         "Åtgärder"
+      ],
+      "App version": [
+        "App-version"
       ],
       "Event": [
         "Händelse"
@@ -3981,6 +3928,14 @@
       ],
       "Last used": [
         "Senast använd"
+      ],
+      "Token name": [
+        "Tokennamn"
+      ]
+    },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Prova den bästa av ${ MAIL_APP_NAME } gratis"
       ]
     },
     "Hint": {
@@ -3993,9 +3948,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-post"
       ],
@@ -4004,9 +3956,6 @@
       ],
       "No verification method available": [
         "Ingen verifieringsmetod tillgänglig"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -4018,6 +3967,9 @@
         "Ett fel uppstod vid kryptering och skapande av din händelse. ${ totalImported } av ${ totalToImport } händelse lyckades importeras.",
         "Ett fel uppstod vid kryptering och skapande av dina händelser. ${ totalImported } av ${ totalToImport } händelse lyckades importeras."
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Ett fel uppstod när din händelse krypterades och lades till. Ingen händelse kunde importeras."
+      ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Ett fel uppstod vid kryptering och när dina händelser skulle läggas till. Ingen händelse kunde importeras."
       ],
@@ -4026,6 +3978,12 @@
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Krypterar och lägger till händelser i din kalender: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Händelse har importerats. Den importerade händelsen kommer nu att visas i din kalender."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Händelser har importerats. De importerade händelserna kommer nu att visas i din kalender."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Stäng inte fliken innan importprocessen är klar."
@@ -4059,6 +4017,15 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontakt krypterad och tillagd i din kontaktlista",
         "${ totalImported }/${ totalToImport } kontakter krypterade och tillagda i din kontaktlista"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Ett fel uppstod när din kontakt skulle krypteras och läggas till. Ingen kontakt kunde importeras."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Ett fel inträffade vid kryptering och när dina kontakter skulle läggas till. ${ totalImported } av ${ totalToImport } kontakter har importerats."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Ett fel uppstod när dina kontakter krypterades och lades till. Ingen kontakt kunde importeras."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontakten har importerats. Den importerade kontakten kommer nu att visas i din kontaktlista."
@@ -4227,9 +4194,6 @@
       ],
       "ICS file": [
         "ICS-fil"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4249,6 +4213,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importera från ${ provider }"
+      ],
       "Other": [
         "Annat"
       ]
@@ -4265,10 +4232,13 @@
       "${ percentageValue }% paused": [
         "${ percentageValue }% pausad"
       ],
+      "Active": [
+        "Aktiv"
+      ],
       "Canceled": [
         "Avbruten"
       ],
-      "Canceling": [
+      "Cancelling": [
         "Avbryter"
       ],
       "Completed": [
@@ -4326,17 +4296,14 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du kommer att förlora åtkomst till alla nuvarande krypterade data på ditt konto om du fortsätter."
       ],
-      "${ BRAND_NAME } ${ planName } credits earned": [
-        "${ BRAND_NAME } ${ planName }-krediter intjänade"
-      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } pausade en import eftersom den förlorade anslutningen till din andra e-postleverantör. Återanslut."
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } pausade en import eftersom ditt konto har ont om lagringsutrymme. Du kan:"
       ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } kommer att försöka återuppta importen så snart din e-postleverantör återställer kontots ${ bandwithLimitLink }. Du behöver inte göra någonting. Om du avbryter din import kommer du inte att kunna återuppta den och du kommer att behöva börja om från början."
+      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
+        "${ BRAND_NAME } försöker att fortsätta importen så snart din epostleverantör återställer ditt kontos ${ bandwidthLimitLink }. Du behöver inte göra någonting. Om du avbryter din import kommer du inte att kunna fortsätta den och du behöver starta om på nytt."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
@@ -4347,10 +4314,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nya kalendrar"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } sammanslagen kalender",
-        "${ calendarsToBeMerged } sammanslagna kalendrar"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } sammanslagen kalender",
@@ -4390,13 +4353,13 @@
         "${ numberOfNonPrivateKeys } uppladdad fil är inte en giltig privat nyckel. Verifiera och försök igen.",
         "${ numberOfNonPrivateKeys } uppladdade filer är inte giltiga privata nycklar. Verifiera och försök igen."
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } kontaktgrupp",
-        "${ numContactGroups } kontaktgrupper"
+      "${ numContact } contact": [
+        "${ numContact } kontakt",
+        "${ numContact } kontakter"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } kontakt",
-        "${ numContacts } kontakter"
+      "${ numGroups } contact group": [
+        "${ numGroups } kontaktgrupp",
+        "${ numGroups } kontaktgrupper"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mapp hittades",
@@ -4426,9 +4389,6 @@
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagringsutrymme"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } krävs för anslutning på landsnivå."
       ],
@@ -4457,9 +4417,6 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Bjud in vänner till ${ BRAND_NAME }"
-      ],
-      "10 email addresses": [
-        "10 e-postadresser"
       ],
       "2. They try ${ planName }": [
         "2. De provar ${ planName }"
@@ -4575,8 +4532,14 @@
       "Already used": [
         "Redan använd"
       ],
+      "American Express SafeKey logo": [
+        "Logga för American Express SafeKey"
+      ],
       "Amount below minimum (${ amount }).": [
         "Belopp under minimum (${ amount })."
+      ],
+      "An error occurred while communicating with the extension": [
+        "Ett fel uppstod i kommunikationen med tillägget."
       ],
       "and": [
         "och"
@@ -4671,6 +4634,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Innan du kan börja skicka och ta emot e-postmeddelanden från dina nya adresser måste du skapa krypteringsnycklar för dem."
       ],
+      "Billing cycle: ${ text }": [
+        "Faktureringsperiod: ${ text }"
+      ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Bitcoin-transaktioner kan ta lite tid att bekräfta (upp till 24 timmar). När de har bekräftats kommer vi att lägga till krediter till ditt konto. Efter transaktionsbekräftelsen kan du betala din faktura med krediterna."
       ],
@@ -4707,15 +4673,18 @@
       "Continue anyway?": [
         "Fortsätt ändå?"
       ],
-      "Continue with ${ planName }": [
-        "Fortsätt med ${ planName }"
-      ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Om du fortsätter ansluts ditt ${ BRAND_NAME } till ${ name }."
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Skapa ${ calendarsToBeCreated } ny kalender",
-        "Skapa ${ calendarsToBeCreated } nya kalendrar"
+      "Copy your referral link": [
+        "Kopiera din hänvisningslänk"
+      ],
+      "Country code": [
+        "Landskod"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Skapa ${ calendarsToBeCreatedCount } ny kalender",
+        "Skapa ${ calendarsToBeCreatedCount } nya kalendrar"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Skapa en etikett för de importerade meddelandena, ett tidsintervall för denna import och de mappar du vill importera."
@@ -4740,6 +4709,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit för den oanvända delen av din tidigare paketprenumeration"
+      ],
+      "Credits earned": [
+        "Intjänade krediter"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "För närvarande är allt tillgängligt lagringsutrymme allokerat till administratörkontot. Minska allokeringen hos administratörkontot för att frigöra plats för ytterligare användare. Du kan när som helst öka det totala lagringsutrymmet genom att uppgradera ditt konto."
@@ -4773,6 +4745,9 @@
       ],
       "Delete link?": [
         "Ta bort länk?"
+      ],
+      "Discover ProtectBuy logo": [
+        "Logga för Discover ProtectBuy"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
         "Glöm INTE detta lösenord. Om du glömmer det kommer du inte kunna logga in eller dekryptera dina meddelanden."
@@ -4884,7 +4859,7 @@
         "Ange verifieringskoden som skickades till ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Skriv in verifieringskoden. Siffra ${ digit }."
+        "Ange verifieringskod. Siffra ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Ange dina kontodetaljer för ${ BRAND_NAME }."
@@ -4916,8 +4891,8 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter fungerar på all e-post, såväl inkommande som skickade. Varje filter måste innehålla minst ett namn, ett villkor och en åtgärd."
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "För Visa och MasterCard, de tre siffrorna på baksidan av ditt kort. För American Express, de fyra siffrorna på framsidan av ditt kort."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "För Visa, MasterCard och Discover, de 3 siffrorna på baksidan av ditt kort. För American Express, de 4 siffrorna på framsidan av ditt kort."
       ],
       "Free up some space or add more storage space.": [
         "Frigör lite utrymme eller lägg till mer lagringsutrymme."
@@ -5018,12 +4993,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Bilder har tagits bort eftersom de inte är tillåtna i autosvar"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
+        "Importera ${ calendarCount } av ${ totalCalendarsCount } kalendrar"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importera ${ contactsFragment } och ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importera ${ selectedCalendarsCount } av ${ totalCalendarsCount } kalender",
-        "Importera ${ selectedCalendarsCount } av ${ totalCalendarsCount } kalendrar"
       ],
       "Import from": [
         "Importera från"
@@ -5042,6 +5017,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "VIKTIGT: Vissa registratorer accepterar inte CNAME-värden med en punkt i slutet (medan andra kräver det). Om din registrator inte accepterar dina CNAME-poster, ta bort punkten i slutet av varje CNAME-värde och försök igen."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importerar din data från ${ fromEmail } till ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerar din data från ${ importedEmailAddress } till ${ toEmail }."
@@ -5167,11 +5145,17 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att konfigurera ditt konto. ${ switchButton }."
       ],
+      "Mastercard SecureCode logo": [
+        "Logga för Mastercard SecureCode"
+      ],
       "Member": [
         "Medlem"
       ],
       "Merged": [
         "Sammanslagna"
+      ],
+      "MM/YY": [
+        "MM/ÅÅ"
       ],
       "Monthly ${ onDayString }": [
         "En gång i månaden ${ onDayString }"
@@ -5202,9 +5186,6 @@
       ],
       "No contact encryption keys exist": [
         "Inga krypteringsnycklar för kontakter finns"
-      ],
-      "No credit card required": [
-        "Inget kreditkort krävs"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Ingen dataåterställningsmetod inställd, du riskerar att förlora åtkomst till dina data"
@@ -5263,9 +5244,6 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Andra administratörer finns i din organisation, du är ansvarig för att kommunicera det nya lösenordet till dem."
       ],
-      "Other options": [
-        "Andra alternativ"
-      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Föråldrad återställningsfil, uppdatera för att säkerställa åtkomst till dina data"
       ],
@@ -5275,18 +5253,12 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Föråldrad återställningsfras, uppdatera för att säkerställa åtkomst till dina data"
       ],
-      "P2P": [
-        "P2P"
-      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Betalat för ett ${ rewardMonths }-månadspaket",
         "Betalat för ett ${ rewardMonths }-månadspaket"
       ],
       "Paid for a monthly plan": [
         "Betalade för ett månadspaket"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "Betalningen kan ta några minuter att verifiera."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar skyddas med TLS-kryptering och Schweiziska integritetslagar."
@@ -5347,17 +5319,11 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Välj den typ av länk du vill infoga och fyll i alla fält."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "Försök igen, använd en annan betalningsmetod eller ring din bank för hjälp."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Försök igen, använd en annan betalningsmetod eller kontakta PayPal för hjälp."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Verifiera betalningen i den nya fliken som öppnades."
-      ],
-      "Please verify the card in the new tab which was opened.": [
-        "Verifiera kortet i den nya fliken som öppnades."
       ],
       "Please wait till your changes are synced with the server.": [
         "Vänta tills dina ändringar har synkroniserats med servern."
@@ -5373,9 +5339,6 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
-      ],
-      "Priority support": [
-        "Prioriterad support"
       ],
       "Public link invite": [
         "Offentlig länkinbjudan"
@@ -5452,9 +5415,6 @@
       "Select what you want to import.": [
         "Välj vad du vill importera."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender upp till begränsningen 20 kalendrar."
-      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Skickat med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> säker e-post."
       ],
@@ -5485,6 +5445,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
+        "SMTP tillåter tjänster eller enheter från tredje part att skicka e-post via ${ MAIL_APP_NAME }. Det är en ny funktion som är tillgänglig för utvalda Business-användare. Skicka e-post till ${ emailLink } för att begära åtkomst."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
+        "SMTP tillåter tjänster eller enheter från tredje part att skicka e-post via ${ MAIL_APP_NAME }. För att använda denna funktion, börja med att generera en ny token."
+      ],
       "Some keys successfully reactivated": [
         "Några nycklar har återaktiverats"
       ],
@@ -5500,17 +5466,11 @@
       "Storage for users": [
         "Lagringsutrymme för användare"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, och ${ DRIVE_APP_NAME }."
-      ],
       "Storage used by this user": [
         "Lagringsutrymme som används av denna användare"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Förvara detta lösenord och fil på ett säkert ställe. Du behöver dem igen för att importera din nyckel."
-      ],
-      "Support for 1 custom email domain": [
-        "Stöd för 1 anpassad e-postdomän"
       ],
       "support team": [
         "supportteam"
@@ -5689,9 +5649,6 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Fyll på ditt konto med krediter som du kan använda för att prenumerera på en ny plan eller förnya din nuvarande plan. Du får en kredit för varje ${ i18nCurrency } som spenderas."
       ],
-      "Tor": [
-        "Tor"
-      ],
       "Total email addresses": [
         "Totalt antal e-postadresser"
       ],
@@ -5725,12 +5682,6 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Om du inte loggar ut från ditt konto eller ändrar ditt lösenord kommer din session att förbli aktiv. Sessioner löper ut efter 60 dagars inaktivitet."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Obegränsade mappar, etiketter och filter"
-      ],
-      "Unlimited messages": [
-        "Obegränsade meddelanden"
-      ],
       "Unsaved changes": [
         "Osparade ändringar"
       ],
@@ -5743,11 +5694,8 @@
       "Update recovery phrase": [
         "Uppdatera återställningsfras"
       ],
-      "Update the URL in your password manager": [
-        "Uppdatera URL i din lösenordshanterare"
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Uppgradera idag för att undvika att förlora följande ${ planName }-förmåner."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -5770,9 +5718,6 @@
       "Verification can take a few minutes.": [
         "Verifiering kan ta några minuter."
       ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "Verifiering kommer att öppna en ny flik, inaktivera alla popup-blockerare."
-      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifiering kommer att öppna en ny flik, vänligen inaktivera alla popup-blockerare. Du kommer inte att debiteras. Eventuellt belopp som används för att verifiera kortet kommer att återbetalas omedelbart."
       ],
@@ -5784,6 +5729,9 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
+      ],
+      "Visa Secure logo": [
+        "Logga för Visa Secure"
       ],
       "Warning:": [
         "Varning:"
@@ -5921,9 +5869,6 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har inte angett en återställningsmetod så kontoåterställning är omöjlig om du glömmer ditt lösenord. Fortsätt utan återställningsmetod?"
       ],
-      "You have no personal calendars to export.": [
-        "Du har inga personliga kalendrar att exportera."
-      ],
       "You have no saved payment methods.": [
         "Du har inga sparade betalningsmetoder."
       ],
@@ -5942,12 +5887,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du måste ha ett kreditkort eller bankkonto kopplat till ditt PayPal-konto. Om ditt PayPal-konto inte har det, klicka på knappen nedan."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "Du måste ta bort eventuella ytterligare personliga kalendrar och eventuella delade kalenderlänkar innan du kan avbryta din Mail-prenumeration."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Du måste ta bort eventuella ytterligare personliga kalendrar och eventuella delade kalenderlänkar innan du kan avsluta din prenumeration."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Du måste ha en aktiv personlig kalender för att importera dina händelser från ICS."
       ],
@@ -5965,9 +5904,6 @@
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Du kommer att ${ loseAllData } på ditt ${ BRAND_NAME }-konto. För att återställa det måste du ange ditt gamla lösenord."
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "Du kommer snart att omdirigeras till din bank för att verifiera din betalning."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du behöver en ${ BRAND_NAME }-adress för att använda ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -6013,9 +5949,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ditt konto kommer att uppdateras när betalningen är klargjord."
-      ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "Din bank kräver verifiering med 3-D Secure av säkerhetsskäl."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
@@ -6065,32 +5998,8 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
       ],
-      "Create an email address": [
-        "Skapa en e-postadress"
-      ],
-      "Day 27: Trial reminder": [
-        "Dag 27: Provperiod påminnelse"
-      ],
-      "Day 30: Trial ends": [
-        "Dag 30: Provperiod slutar"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Njut av säker, enkel-att-använda e-posthantering med mängder av premiumfunktioner."
-      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Try Mail Plus": [
-        "Prova Mail Plus"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "Vi skickar ett e-postmeddelande till dig innan din provperiod slutar. Avbryt när som helst."
-      ],
-      "Your new email address is ready to go!": [
-        "Din nya e-postadress är klar att användas!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "Din prenumeration startar den ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6275,7 +6184,7 @@
         "Ta bort permanent"
       ],
       "Discard draft": [
-        "Ignorera utkast"
+        "Kasta utkast"
       ],
       "Expand / contract composer": [
         "Expandera / kollapsa redigeringsfönster"
@@ -6626,6 +6535,9 @@
       "BTC amount:": [
         "BTC-belopp:"
       ],
+      "Calendar": [
+        "Kalender"
+      ],
       "Calendars": [
         "Kalendrar"
       ],
@@ -6656,8 +6568,8 @@
       "Color": [
         "Färg"
       ],
-      "Coming soon": [
-        "Kommer snart"
+      "Colors": [
+        "Färger"
       ],
       "Composer": [
         "Redigeringsfönster"
@@ -6863,9 +6775,6 @@
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Från: ${ importedEmail }"
-      ],
       "Gift code": [
         "Presentkod"
       ],
@@ -6959,12 +6868,6 @@
       "Manage categories": [
         "Hantera kategorier"
       ],
-      "Manage folders": [
-        "Hantera mappar"
-      ],
-      "Manage labels": [
-        "Hantera etiketter"
-      ],
       "Mark as": [
         "Markera som"
       ],
@@ -6972,7 +6875,7 @@
         "Meddelande"
       ],
       "Moderate NAT": [
-        "Moderate NAT"
+        "Måttlig NAT"
       ],
       "Move to": [
         "Flytta till"
@@ -7226,14 +7129,14 @@
       "Timezone": [
         "Tidszon"
       ],
-      "To: ${ emailAddress }": [
-        "Till: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Till: ${ to }"
       ],
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
+      ],
+      "Token name": [
+        "Tokennamn"
       ],
       "Two-password mode": [
         "Två-lösenordsläge"
@@ -7246,9 +7149,6 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Ladda upp 1 eller flera återställningsfiler eller krypteringsnycklar"
-      ],
-      "Upload file": [
-        "Ladda upp fil"
       ],
       "URL": [
         "URL"
@@ -7274,9 +7174,6 @@
       "Verification code": [
         "Verifieringskod"
       ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Tråkigt att du lämnar oss. Vill du vara snäll och berätta varför du lämnar oss för att hjälpa oss bli bättre."
       ],
@@ -7286,7 +7183,7 @@
       "What happened?": [
         "Vad hände?"
       ],
-      "What is the main reason you are cancelling?": [
+      "What is the main reason you are canceling?": [
         "Vad är den främsta anledningen till att du avbryter?"
       ],
       "What is the main reason you are deleting your account?": [
@@ -7375,6 +7272,9 @@
       "${ BRAND_NAME } company announcements": [
         "${ BRAND_NAME } företagsnyheter"
       ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business nyhetsbrev"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME } nyhetsbrev"
       ],
@@ -7383,6 +7283,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } produktnyheter"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME }-välkomstmeddelande"
       ]
     },
     "Label in domain modal": {
@@ -7451,6 +7354,17 @@
       ],
       "Preference saved": [
         "Preferens sparad"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "För att lägga till en ny kalender, ta bort en befintlig."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "För att lägga till en ny kalender, ta bort en annan kalender eller uppgradera ditt ${ BRAND_NAME }-paket till ett betalt paket för ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du har nått det maximala antalet tillgängliga kalendrar i ditt paket."
       ]
     },
     "Link": {
@@ -7523,9 +7437,6 @@
       "Terms": [
         "Villkor"
       ],
-      "Terms and conditions": [
-        "Användarvillkor"
-      ],
       "Trouble signing in?": [
         "Problem att logga in?"
       ],
@@ -7552,8 +7463,9 @@
       "Almost there": [
         "Nästan framme"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Antal skapade kalendrar: ${ createdCalendars } av ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Antal skapade kalendrar: ${ createdCalendarCount } av ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Ansluter till din e-postleverantör"
@@ -7580,9 +7492,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importera alla meddelanden från ${ itemsToImportCount } etikett och märk dem som ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importera alla meddelanden från ${ itemsToImportCount } etiketter och märk dem som ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importera alla meddelanden från ${ itemsToImportCount } mapp och märk dem som",
+        "Importera alla meddelanden från ${ itemsToImportCount } mappar och märk dem som"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importera alla meddelanden från ${ itemsToImportCount } etikett och märk dem som",
+        "Importera alla meddelanden från ${ itemsToImportCount } etiketter och märk dem som"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } mapp och märk dem som",
+        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } mappar och märk dem som"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etikett och märk dem som",
+        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etiketter och märk dem som"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -7823,9 +7747,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Inbox": [
         "Inkorg"
       ],
@@ -7962,10 +7883,6 @@
         "${ n } meddelande per dag",
         "${ n } meddelanden per dag"
       ],
-      "${ n } personal calendar": [
-        "${ n } personlig kalender",
-        "${ n } personliga kalendrar"
-      ],
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
@@ -7998,8 +7915,8 @@
       "Auto-reply": [
         "Automatiskt svar"
       ],
-      "Catch-all": [
-        "Catch-all"
+      "Calendar sharing": [
+        "Kalenderdelning"
       ],
       "Centralized billing": [
         "Centraliserad fakturering"
@@ -8020,7 +7937,7 @@
         "Program för att redigera dokument (dokument, kalkylark, presentationer)"
       ],
       "Easy Switch import assistant": [
-        "Easy Switch import assistant"
+        "Easy Switch-importassistent"
       ],
       "Email client support (via IMAP/SMTP)": [
         "E-postklient-stöd (via IMAP/SMTP)"
@@ -8050,9 +7967,6 @@
       "HTML signatures": [
         "HTML-signaturer"
       ],
-      "Kill switch/always-on VPN": [
-        "Kill switch/always-on VPN"
-      ],
       "Limited support": [
         "Begränsad support"
       ],
@@ -8061,9 +7975,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "NetShield blockering av skadlig kod och reklam"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
@@ -8149,6 +8060,26 @@
         "Teamhantering"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gör integritet till din standard för säkerhetskopiering, lagring, delning och hämtning."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Uppgradera till företagspaketet med åtkomst till alla ${ BRAND_NAME } premiumtjänster."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Uppgradera till det ultimata integritetspaketet och få tillgång till alla premium ${ BRAND_NAME }-tjänster."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din provperiod slutar ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -8218,26 +8149,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på din nuvarande prenumeration. Om du nedgraderar ditt konto så förlorar du kampanjpriset och det kommer inte vara tillgängligt om du prövar att prenumerera igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gör integritet till din standard för säkerhetskopiering, lagring, delning och hämtning."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till företagspaketet med åtkomst till alla ${ BRAND_NAME } premiumtjänster."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Uppgradera till det ultimata integritetspaketet och få tillgång till alla premium ${ BRAND_NAME }-tjänster."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din provperiod slutar ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8341,18 +8252,14 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain } för nyhetsprenumerationer"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "Skapa upp till ${ n } anpassad kalender.",
-        "Skapa upp till ${ n } anpassade kalendrar."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Försvarar mot hot mot VPN-integriteten genom att skicka din Internet-trafik via flera servrar"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Dela enkelt dina kalendrar med dina kollegor, familj och vänner via en länk"
       ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Dela enkelt din kalender med din familj, vänner eller kollegor via en länk"
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Dela enkelt dina kalendrar med din familj, vänner eller kollegor"
       ],
       "End-to-end encrypted calendar": [
         "End-to-end-krypterad kalender"
@@ -8380,12 +8287,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Få support från ${ BRAND_NAME }s kundservice inom 24 timmar efter förfrågan på vardagar"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "Utöver det kan du lägga till upp till fem kalendrar från kollegor, organisationer, familj och vänner."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "Utöver det kan du lägga till upp till fem kalendrar från vänner, familj, kollegor och organisationer."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "En VPN-anslutning låter en enhet ansluta till ${ BRAND_NAME } VPN när som helst. Till exempel, för att ansluta en mobil och en bärbar dator till ${ BRAND_NAME } VPN samtidigt så behöver du två VPN-anslutningar."
@@ -8504,10 +8405,6 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Få mer gjort med stöd för 10 anpassade e-postdomäner"
-      ],
-      "Create ${ numberOfPersonalCalendars } personal calendar": [
-        "Skapa ${ numberOfPersonalCalendars } personlig kalender",
-        "Skapa upp till ${ numberOfPersonalCalendars } personliga kalendrar"
       ],
       "Everything in ${ vpnPlanName }": [
         "Allt i ${ vpnPlanName }"
@@ -8722,9 +8619,6 @@
       "Add to existing group": [
         "Lägg till i befintlig grupp"
       ],
-      "Android": [
-        "Android"
-      ],
       "Ask each time": [
         "Fråga varje gång"
       ],
@@ -8746,9 +8640,6 @@
       "Free server configs": [
         "Konfiguration för gratisserver"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
       "I found another service that I like better": [
         "Jag hittade en annan tjänst som jag gillar bättre"
       ],
@@ -8758,9 +8649,6 @@
       "Ignore group": [
         "Ignorera grupp"
       ],
-      "iOS": [
-        "iOS"
-      ],
       "It's missing a key feature that I need": [
         "Det saknas en nyckelfunktion som jag behöver"
       ],
@@ -8769,9 +8657,6 @@
       ],
       "Left to Right": [
         "Vänster till höger"
-      ],
-      "macOS": [
-        "macOS"
       ],
       "My reason isn't listed": [
         "Min anledning är inte listad"
@@ -8814,15 +8699,6 @@
       ],
       "Standard server configs": [
         "Konfiguration för standardserver "
-      ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
-      "Windows": [
-        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -8918,17 +8794,11 @@
       ]
     },
     "Payment method option": {
-      "Bitcoin": [
-        "Bitcoin"
-      ],
       "Credit/debit card": [
         "Kredit/betalkort"
       ],
       "New credit/debit card": [
         "Nytt kredit-/betalkort"
-      ],
-      "PayPal": [
-        "PayPal"
       ]
     },
     "Personal calendar section description": {
@@ -8970,7 +8840,7 @@
         "Bekräfta lösenord"
       ],
       "domain.com": [
-        "domain.com"
+        "domän.com"
       ],
       "E.g., ": [
         "T.ex., "
@@ -8979,7 +8849,7 @@
         "E-postadress"
       ],
       "example@domain.com": [
-        "example@domain.com"
+        "exempel@domän.com"
       ],
       "Feedback": [
         "Feedback"
@@ -9039,7 +8909,7 @@
         "dindomän.com"
       ],
       "ZIP": [
-        "ZIP"
+        "Postnummer"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -9055,8 +8925,8 @@
         "Välj antalet användare som ska inkluderas i ditt paket. Varje ytterligare användare kostar ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Om du behöver mer än ${ maxUsers } användarkonto, vänligen ${ contact } vårt säljteam.",
-        "Om du behöver fler än ${ maxUsers } användarkonton, vänligen ${ contact } vårt säljteam."
+        "Skulle du behöva fler än ${ maxUsers } användarkonto, ${ contact } vårt säljteam.",
+        "Skulle du behöva fler än ${ maxUsers } användarkonton, ${ contact } vårt säljteam."
       ]
     },
     "Price": {
@@ -9372,17 +9242,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } är slut som beta! Ge dina filer samma säkerhet som dina e-postmeddelanden får."
-      ],
       "Get up to ${ credits } in credits.": [
         "Få upp till ${ credits } i krediter."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Bjud in vänner till ${ BRAND_NAME }"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Prova ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -9420,7 +9284,7 @@
         "Kalender-URL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "För att prenumerera på en extern eller offentlig kalender och dess uppdateringar anger du dess URL. En skrivskyddad version av kalendern kommer att läggas till i dina prenumererade kalendrar.\n${ kbLink }"
+        "För att prenumerera på en extern eller offentlig kalender och dess uppdateringar, ange URL:en. En skrivskyddad version av kalendern kommer att läggas till i dina prenumererade kalendrar.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -9530,14 +9394,6 @@
         "Kommande"
       ]
     },
-    "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "E-post och kalender-lösningen för dina behov av vardagskommunikation som sätter integriteten i första rummet."
-      ],
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "Detta erbjudande gäller endast nya användare av ${ BRAND_NAME }. Inget kreditkort krävs."
-      ]
-    },
     "Success": {
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } kopierades till ditt urklipp"
@@ -9575,7 +9431,7 @@
       "Calendar updated": [
         "Kalender uppdaterad"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Avbryter import"
       ],
       "Catch-all address updated": [
@@ -9615,7 +9471,7 @@
         "Om du har angett en giltig telefon för återställning kommer vi att skicka dig ett sms med dina användarnamn inom någon minut."
       ],
       "Import record deleted": [
-        "Raderade importdetaljer"
+        "Importpost borttagen"
       ],
       "Invoice customized": [
         "Faktura anpassad"
@@ -9843,10 +9699,28 @@
         "Inga SMTP-tokens hittades"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } timme",
+        "${ hours } timmar"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 t",
+        "${ hoursInt }.5 t"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } timme",
         "${ hours } timmar"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 timme",
+        "${ hoursInt }.5 timmar"
       ],
       "${ minutes } minute": [
         "${ minutes } minut",
@@ -9859,9 +9733,6 @@
       ]
     },
     "Title": {
-      "${ MAIL_APP_NAME } Bridge": [
-        "${ MAIL_APP_NAME } Bridge"
-      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } tangentbordsgenvägar"
       ],
@@ -9876,9 +9747,6 @@
       ],
       "2. Select protocol": [
         "2. Välj protokoll"
-      ],
-      "3-D Secure verification failed": [
-        "3-D Secure verifikation misslyckades"
       ],
       "3. Select config file and download": [
         "3. Välj konfigurationsfil och ladda ner"
@@ -9997,14 +9865,8 @@
       "Bridge for ${ platform }": [
         "Bridge för ${ platform }"
       ],
-      "Cancel Mail subscription": [
-        "Avsluta Mail-prenumeration"
-      ],
       "Card verification": [
         "Kortverifiering"
-      ],
-      "Card verification in progress": [
-        "Kortverifiering pågår"
       ],
       "Catch-All address": [
         "Catch all-adress"
@@ -10290,17 +10152,11 @@
       "How to refer a friend and get credits": [
         "Hur man hänvisar en vän och får krediter"
       ],
-      "How your free trial works": [
-        "Hur din gratis provperiod fungerar"
-      ],
       "Human verification": [
-        "Mänsklig verifikation"
+        "Mänsklig verifiering"
       ],
       "Identity and addresses": [
         "Identitet och adresser"
-      ],
-      "IMAP/SMTP": [
-        "IMAP/SMTP"
       ],
       "Import": [
         "Importera"
@@ -10422,9 +10278,6 @@
       ],
       "Payment verification": [
         "Betalningsverifiering"
-      ],
-      "Payment verification in progress": [
-        "Betalningsverifiering pågår"
       ],
       "PayPal verification failed": [
         "Verifiering av PayPal misslyckades"
@@ -10588,9 +10441,6 @@
       "Status": [
         "Status"
       ],
-      "Subscribed calendars": [
-        "Prenumererade kalendrar"
-      ],
       "Success": [
         "Lyckades"
       ],
@@ -10622,9 +10472,6 @@
       ],
       "Track your referrals": [
         "Spåra dina hänvisningar"
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Prova det bästa med ${ MAIL_APP_NAME } gratis"
       ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
@@ -10671,9 +10518,6 @@
       "What's new": [
         "Vad som är nytt"
       ],
-      "WireGuard": [
-        "WireGuard"
-      ],
       "WireGuard configuration": [
         "WireGuard-konfiguration"
       ],
@@ -10689,11 +10533,11 @@
       "Your current plan": [
         "Ditt nuvarande paket"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Din gratis provperiod slutar snart, den ${ formattedEndDate }"
-      ],
       "Your import history": [
         "Din importhistorik"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Din gratis provperiod för Mail Plus slutar den ${ textDate }"
       ],
       "Your plan": [
         "Ditt paket"
@@ -10755,9 +10599,6 @@
     "Title header for addresses domain table": {
       "Address": [
         "Adress"
-      ],
-      "Catch-All": [
-        "Catch-All"
       ],
       "Status": [
         "Status"
@@ -10858,8 +10699,8 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Ställer in följande sidfot för e-posten du skickar: ${ signature } Länken pekar på din refereringslänk. Sidfoten kommer att synas under din signatur. Du kan närsomhelst anpassa din signatur i inställningarna."
       ],
-      "Show each sender's image in the message list. Then sender's initial will be shown if a photo is not available.": [
-        "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte är tillgängligt."
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Visa varje avsändares bild i meddelandelistan. Avsändarens initialer kommer att visas om ett foto inte finns tillgängligt."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer skapade med den här nyckeln behandlas som ogiltiga, och den här nyckeln kan inte användas för kryptering"
@@ -10967,15 +10808,6 @@
         "Uppgradera till ${ planName } för att ansluta till upp till ${ n } enheter till VPN samtidigt"
       ]
     },
-    "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Uppgradera till ett betalt paket för att skapa upp till ${ MAX_CALENDARS_PAID }-kalender, så att du kan skapa kalendrar för jobbet, för att dela med vänner och bara för dig själv.",
-        "Uppgradera till ett betalt paket för att skapa upp till ${ MAX_CALENDARS_PAID }-kalendrar så att du kan skapa kalendrar för jobbet, för att dela med vänner och bara för dig själv."
-      ],
-      "Upgrade to a Mail paid plan to share your calendar.": [
-        "Uppgradera till ett betalt paket för Mail för att dela din kalender."
-      ]
-    },
     "User referee invited via email": {
       "Invited via email": [
         "Inbjuden via e-post"
@@ -11034,29 +10866,6 @@
         "${ numberOfServers } i ${ numberOfCountries } länder"
       ]
     },
-    "VPNClient": {
-      "Android": [
-        "Android"
-      ],
-      "Android TV": [
-        "Android TV"
-      ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "GNU/Linux": [
-        "GNU/Linux"
-      ],
-      "iOS": [
-        "iOS"
-      ],
-      "macOS": [
-        "macOS"
-      ],
-      "Windows": [
-        "Windows"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } kommer att slå ihop alla mappar med samma namn. Ändra på namnen innan importeringen för att undvika det här."
@@ -11071,7 +10880,7 @@
         "Är du säker på att du vill ta bort telefonnumret?"
       ],
       "Are you sure you want to discard your import?": [
-        "Är du säker på att du vill ignorera dina ändringar?"
+        "Är du säker på att du vill kasta din import?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Genom att ta bort denna adress kommer du inte längre att kunna få dagliga e-postaviseringar."
@@ -11136,7 +10945,7 @@
       "You will lose any customization you made so far.": [
         "Du kommer förlora alla anpassningar du gjort hittills."
       ],
-      "You will not see this import record in the list anymore.": [
+      "You will not see this import record in the list any more.": [
         "Du kommer inte att se denna importpost i listan längre."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
@@ -11204,7 +11013,7 @@
         "Var ${ interval }:e vecka på måndag"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Varje ${ interval } vecka på måndag, ${ timesString }",
+        "Varje vecka på måndag, ${ timesString }",
         "Var ${ interval }:e vecka på måndag, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
@@ -11228,12 +11037,8 @@
         "Var ${ interval }:e vecka på söndag"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Varje ${ interval } vecka på söndag, ${ timesString }",
+        "Varje vecka på söndag, ${ timesString }",
         "Var ${ interval }:e vecka på söndag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Varje ${ interval } vecka på söndag, ${ untilString }",
-        "Var ${ interval }:e vecka på söndag, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Varje vecka på torsdag",
@@ -11378,8 +11183,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Varje år",
+        "Vart ${ interval }:e år"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Varje år, ${ timesString }",

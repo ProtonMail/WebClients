@@ -86,6 +86,9 @@
       "Archive": [
         "Arquivar"
       ],
+      "As Scheduled": [
+        "Como Agendado"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -245,6 +248,9 @@
       "Create new message": [
         "Criar nova mensagem"
       ],
+      "Custom": [
+        "Personalizar"
+      ],
       "Customize": [
         "Personalizar"
       ],
@@ -281,7 +287,7 @@
         "Excluir pasta"
       ],
       "Delete label": [
-        "Remover marcador"
+        "Excluir marcador"
       ],
       "Delete permanently": [
         "Excluir permanentemente"
@@ -457,12 +463,6 @@
       "Hide messages": [
         "Ocultar mensagens"
       ],
-      "Hide My Email": [
-        "Hide My Email"
-      ],
-      "Hide my email": [
-        "Esconder meu e-mail"
-      ],
       "I have a question": [
         "Eu tenho uma dúvida"
       ],
@@ -530,9 +530,6 @@
       "Load": [
         "Carregar"
       ],
-      "Load anyway": [
-        "Carregar mesmo assim"
-      ],
       "Load embedded images": [
         "Carregar imagens incorporadas"
       ],
@@ -598,6 +595,9 @@
       ],
       "Minimize composer": [
         "Minimizar compositor"
+      ],
+      "Monday": [
+        "Segunda-feira"
       ],
       "More": [
         "Mais"
@@ -690,7 +690,7 @@
         "Não salvo"
       ],
       "OK": [
-        "OK"
+        "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -794,9 +794,6 @@
       "Remove this label": [
         "Remover este marcador"
       ],
-      "Rename": [
-        "Renomear"
-      ],
       "Reply": [
         "Responder"
       ],
@@ -845,9 +842,6 @@
       "Schedule message": [
         "Agendar mensagem"
       ],
-      "Schedule send": [
-        "Agendar envio"
-      ],
       "Search": [
         "Pesquisar"
       ],
@@ -888,7 +882,7 @@
         "Enviar resposta rápida"
       ],
       "Send read receipt": [
-        "Enviar recibo de leitura"
+        "Enviar confirmação de leitura"
       ],
       "Set": [
         "Definir"
@@ -959,8 +953,8 @@
       "Skip verification": [
         "Pular verificação"
       ],
-      "Some images failed to load with tracking protection.": [
-        "Algumas imagens falharam ao carregar com proteção contra rastreamento."
+      "Some images could not be loaded with tracker protection.": [
+        "Algumas imagens com proteção de rastreamento falharam ao tentarem ser carregadas."
       ],
       "Star": [
         "Favorito"
@@ -985,6 +979,9 @@
       ],
       "This message contains remote content.": [
         "Esta mensagem contém conteúdo remoto."
+      ],
+      "Tomorrow": [
+        "Amanhã"
       ],
       "Trust": [
         "Confiar"
@@ -1045,7 +1042,7 @@
         "Atualizar frase de recuperação"
       ],
       "Upgrade": [
-        "Upgrade"
+        "Fazer upgrade"
       ],
       "Upgrade now": [
         "Atualizar agora"
@@ -1200,16 +1197,6 @@
         "Conversa"
       ]
     },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
-      ]
-    },
     "Alternative text for welcome image": {
       "Welcome": [
         "Bem-vindo"
@@ -1259,7 +1246,7 @@
     },
     "Attachment signature verification": {
       "Sender verification failed": [
-        "A verificação do remetente falhou"
+        "Falha na verificação do remetente"
       ],
       "Sender verification passed": [
         "Verificação do remetente bem-sucedida"
@@ -1356,7 +1343,7 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        "Participará?"
+        "Participar?"
       ]
     },
     "Calendar invite info": {
@@ -1599,54 +1586,6 @@
       ],
       "Your email address is not in the participants list": [
         "Seu endereço de e-mail não está na lista de participantes"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "Não sincronizado"
-      ],
-      "Syncing": [
-        "Sincronizando"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "O calendário não pôde ser descriptografado"
-      ],
-      "Calendar is syncing": [
-        "Calendário está sincronizando"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "O calendário está sincronizando: pode levar vários minutos até que todos os seus eventos sejam exibidos."
-      ],
-      "Calendar is too big": [
-        "Calendário é grande demais"
-      ],
-      "Calendar link is not accessible": [
-        "Link do calendário está inacessível"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "O link do calendário está temporariamente inacessível"
-      ],
-      "Failed to sync calendar": [
-        "Falha ao sincronizar calendário"
-      ],
-      "More than 12 hours passed since last update": [
-        "Mais de 12 horas se passaram desde a última atualização"
-      ],
-      "Unsupported calendar format": [
-        "Formato de calendário não suportado"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "O link do calendário não está acessível para fora do ecossistema do provedor do calendário."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "O link do calendário está temporariamente inacessível. Por favor, verifique se o link do provedor do calendário ainda é válido."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Mais de 12 horas se passaram desde a última atualização — O ${ CALENDAR_APP_NAME } vai tentar atualizar o calendário em algumas horas."
       ]
     },
     "Calendar widget banner": {
@@ -1989,9 +1928,6 @@
       ],
       "Work": [
         "Trabalho"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2017,7 +1953,7 @@
         "Angola"
       ],
       "Anguilla": [
-        "Anguilla"
+        "Anguila"
       ],
       "Antarctica": [
         "Antártica"
@@ -2104,7 +2040,7 @@
         "Bulgária"
       ],
       "Burkina Faso": [
-        "Burkina Faso"
+        "Burquina Faso"
       ],
       "Burundi": [
         "Burundi"
@@ -2182,7 +2118,7 @@
         "Dinamarca"
       ],
       "Djibouti": [
-        "Djibouti"
+        "Djibuti"
       ],
       "Dominica": [
         "Dominica"
@@ -2596,7 +2532,7 @@
         "Sérvia"
       ],
       "Seychelles": [
-        "Seychelles"
+        "Seicheles"
       ],
       "Sierra Leone": [
         "Serra Leoa"
@@ -2671,7 +2607,7 @@
         "Tailândia"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timor Leste"
       ],
       "Togo": [
         "Togo"
@@ -2883,8 +2819,14 @@
         "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contato. Se o seu arquivo for maior, divida-o em arquivos menores.",
         "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Desbloqueie o agendamento de mensagens personalizado e outros benefícios ao fazer upgrade do seu plano."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e solte para classificar a prioridade de mesclagem dos contatos. Desmarque os contatos que você não deseja mesclar."
+      ],
+      "When do you want your message to be sent?": [
+        "Quando você deseja que sua mensagem seja enviada?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, por favor divida-o em arquivos menores."
@@ -3068,6 +3010,9 @@
       "Contact could not be saved": [
         "O contato não pôde ser salvo"
       ],
+      "Contact name is too long": [
+        "Nome do contato é muito longo"
+      ],
       "Contact signature could not be verified": [
         "A assinatura do contato não pôde ser verificada"
       ],
@@ -3082,14 +3027,6 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erro ao descriptografar: a decodificação do conteúdo criptografado desta mensagem falhou."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Desmarque ao menos ${ calendarToFixCount } calendário",
-        "Desmarque ao menos ${ calendarToFixCount } calendários"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Desmarque ao menos ${ calendarToFixCount } calendário ou",
-        "Desmarque ao menos ${ calendarToFixCount } calendários ou"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
@@ -3134,7 +3071,7 @@
         "Falha na criptografia do anexo. Por favor, tente novamente."
       ],
       "Filter with this name already exists": [
-        "Já existe um filtro com este nome"
+        "Já existe um filtro com este nome."
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode ser vazio."
@@ -3168,10 +3105,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Número máximo de anexos (${ attachmentsCountLimit }) excedido"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Mescle ao menos ${ calendarToFixCount } calendário com um calendário existente do ${ BRAND_NAME }",
-        "Mescle ao menos ${ calendarToFixCount } calendários com calendários existente do ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "A mensagem precisa ser enviada primeiro"
@@ -3285,9 +3218,6 @@
       "Some groups could not be deleted": [
         "Alguns grupos não puderam ser excluídos"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Alguns dos seus nomes de pastas estão reservados. Por favor, personalize a importação para editar esses nomes."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de pastas estão indisponíveis. Por favor, personalize a importação para editar esses nomes."
       ],
@@ -3364,7 +3294,7 @@
       "This message has already been sent. A new draft has been saved.": [
         "Esta mensagem já foi enviada. Um novo rascunho foi salvo."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
@@ -3388,8 +3318,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Você não pode enviar um e-mail para mais de 100 destinatários"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Você não pode enviar vCards de mais de 10 contatos"
+      "You can't send vCard files of more than 10 contacts": [
+        "Você não pode enviar arquivos vCards de mais de 10 contatos"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Você não pode abrir mais de ${ maxActiveComposer } janela do compositor por vez",
@@ -3397,9 +3327,6 @@
       ],
       "You did not provide a file.": [
         "Você não escolheu um arquivo."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Você atingiu o número máximo de calendários pessoais. Alguns calendários não puderam ser importados."
       ],
       "You must set a name": [
         "Você deve especificar um nome"
@@ -3486,10 +3413,10 @@
         "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O arquivo não tem o formato correto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocorreu um erro ao carregar o arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocorreu um erro ao carregar seu arquivo ${ formattedFilename }. Nenhum arquivo .csv ou .vcf foi selecionado"
+        "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. Nenhum arquivo .csv ou .vcf foi selecionado"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Ocorreu um erro ao carregar o seu arquivo. Nenhum arquivo foi selecionado."
@@ -3501,7 +3428,7 @@
         "O arquivo ${ formattedFilename } não tem contatos para serem importados."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "O arquivo ${ formattedFilename } está vazio."
+        "O seu arquivo ${ formattedFilename } está vazio."
       ]
     },
     "Error importing event": {
@@ -3871,7 +3798,7 @@
     },
     "forwardmessage": {
       "Date: On ${ date }": [
-        "Data: On ${ date }"
+        "Data: em ${ date }"
       ],
       "From: ${ senderString }": [
         "De: ${ senderString }"
@@ -4003,9 +3930,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -4036,6 +3960,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado com sucesso.",
         "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados com sucesso."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento pôde ser importado."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seus eventos. Nenhum evento pôde ser importado."
@@ -4264,9 +4191,6 @@
       ],
       "ICS file": [
         "Arquivo ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4281,6 +4205,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importar de ${ provider }"
+      ],
       "Other": [
         "Outro"
       ]
@@ -4317,10 +4244,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
         "${ calendarsToBeCreatedCount } novos calendários"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } calendário mesclado",
-        "${ calendarsToBeMerged } calendários mesclados"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendário mesclado",
@@ -4365,16 +4288,16 @@
         "${ messagesNotAuthorizedToMove } mensagens não puderam ser movidas."
       ],
       "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } rastreador de e-mails encontrado",
-        "${ numberOfTrackers } rastreadores de e-mails encontrados"
+        "${ numberOfTrackers } rastreador de e-mails bloqueado",
+        "${ numberOfTrackers } rastreadores de e-mails bloqueados"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } grupo de contatos",
-        "${ numContactGroups } grupos de contatos"
+      "${ numContact } contact": [
+        "${ numContact } contato",
+        "${ numContact } contatos"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } contato",
-        "${ numContacts } contatos"
+      "${ numGroups } contact group": [
+        "${ numGroups } grupo de contatos",
+        "${ numGroups } grupos de contatos"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } mensagem em conversa",
@@ -4419,9 +4342,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } marcador selecionado",
         "${ selectedFoldersCountLocalized } marcadores selecionados"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
       ],
       "${ total } conversation": [
         "${ total } conversa",
@@ -4468,11 +4388,8 @@
       "(No Recipient)": [
         "(Nenhum destinatário)"
       ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
-      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "Uma frase de recuperação é uma das formas mais seguras de proteger o acesso à sua conta. Você pode usá-la para acessar sua conta e recuperar seus dados criptografados, se alguma vez esquecer sua senha."
+        "Uma frase de recuperação é uma das formas mais seguras de proteger o acesso à sua conta. Você pode usá-la para acessar sua conta e recuperar seus dados criptografados caso você esqueça sua senha."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Um pedido para cancelar a inscrição desta lista de discussão será enviado para o remetente do boletim informativo e processado automaticamente."
@@ -4578,6 +4495,9 @@
       "Body: ": [
         "Corpo: "
       ],
+      "Calendar side panel": [
+        "Painel lateral de calendário"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
       ],
@@ -4608,15 +4528,15 @@
       "Confirm phishing report": [
         "Confirmar denúncia de phishing"
       ],
-      "Continue with ${ planName }": [
-        "Continuar com ${ planName }"
-      ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Criar ${ calendarsToBeCreated } novo calendário",
-        "Criar ${ calendarsToBeCreated } novos calendários"
+      "Country code": [
+        "Código do país"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Criar ${ calendarsToBeCreatedCount } novo calendário",
+        "Criar ${ calendarsToBeCreatedCount } novos calendários"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que deseja de importar."
@@ -4816,9 +4736,9 @@
       "Group assignment applied": [
         "Atribuição de grupo aplicada"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Contém ${ numAttachments } anexo",
-        "Contém ${ numAttachments } anexos"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Contém ${ numAttachments } anexo (${ numAttachmentsSize })",
+        "Contém ${ numAttachments } anexos (${ numAttachmentsSize })"
       ],
       "here": [
         "aqui"
@@ -4834,7 +4754,7 @@
         "Como Hide My Email funciona"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
-        "Estou enviando essa mensagem para um não-usuário do ${ MAIL_APP_NAME } ."
+        "Estou enviando essa mensagem para um não-usuário do ${ MAIL_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -4857,12 +4777,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "As imagens foram removidas porque não são permitidas na resposta automática"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } e ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendário",
-        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendários"
       ],
       "Import from": [
         "Importar de"
@@ -4875,6 +4795,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importe seus e-mails, calendários e contatos de outro serviço para o ${ BRAND_NAME }. Nós te guiaremos em cada etapa do processo e encriptaremos seus dados conforme eles sejam migrados. Bem-vindo ao mundo da privacidade."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importando seus dados de ${ fromEmail } para ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
@@ -4981,8 +4904,8 @@
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Movendo muitas mensagens. Isso pode demorar um pouco."
+      "Moving messages. This may take a while.": [
+        "Movendo mensagens. Isso pode demorar um pouco."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
@@ -5044,9 +4967,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
-      "Other options": [
-        "Outras opções"
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Por favor, verifique se é legítimo."
       ],
@@ -5094,7 +5014,7 @@
         "Por favor, selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Por favor, espera que suas alterações serão sincronizadas com o servidor."
+        "Por favor, aguarde até que suas alterações sejam sincronizadas com o servidor."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
@@ -5113,9 +5033,6 @@
       ],
       "Print email": [
         "Imprimir e-mail"
-      ],
-      "Priority support": [
-        "Suporte prioritário"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Proteja seu e-mail de vazamento para listas de e-mail ou spammers com ${ maskMyEmailButton }."
@@ -5186,9 +5103,6 @@
       "Select what you want to import.": [
         "Selecione o que você deseja importar."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Enviar uma mensagem criptografada protegida com senha para um endereço de e-mail ${ boldText }."
       ],
@@ -5234,9 +5148,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "O espaço de armazenamento é compartilhado através do ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Armazene e compartilhe arquivos seguramente com ${ DRIVE_APP_NAME }."
       ],
@@ -5251,9 +5162,6 @@
       ],
       "Subject: ": [
         "Assunto: "
-      ],
-      "Support for 1 custom email domain": [
-        "Suporte para 1 domínio de e-mail personalizado"
       ],
       "Support privacy by upgrading for": [
         "Apoie a privacidade atualizando para"
@@ -5286,7 +5194,7 @@
         "O remetente original desta mensagem não é mais válido. Sua mensagem será enviada do seu endereço padrão ${ defaultEmail }."
       ],
       "The sender has requested a read receipt.": [
-        "O remetente solicitou um recibo de leitura."
+        "O remetente solicitou uma confirmação de leitura."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "A verificação de ${ contactName } falhou: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar uma mensagem para ${ contactAddress } ou editar o contato."
@@ -5308,7 +5216,7 @@
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação fará o download de todas as mensagens para que possam ser pesquisadas localmente. Limpar os dados do seu navegador desativará esta opção."
+        "Esta ação baixará todas as mensagens para poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -5326,8 +5234,8 @@
         "Esta conversa contém mensagens na lixeira."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Essas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
-        "Essas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
+        "Esta mensagem será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
+        "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Este e-mail falhou nos requisitos de autenticação de domínio. Ele pode ser falsificado ou encaminhado incorretamente!"
@@ -5364,7 +5272,7 @@
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Esta mensagem será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
-        "Essas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
+        "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Esta mensagem será movida para Rascunhos para que você possa editá-la. Você precisará reagendar quando ela será enviada."
@@ -5429,12 +5337,6 @@
       "Turn on to search the content of your messages": [
         "Ative para pesquisar o conteúdo de suas mensagens"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Pastas ilimitadas, marcadores e filtros"
-      ],
-      "Unlimited messages": [
-        "Mensagens ilimitadas"
-      ],
       "Unlock message": [
         "Desbloquear mensagem"
       ],
@@ -5446,6 +5348,9 @@
       ],
       "Updating message content search...": [
         "Atualizando pesquisa de conteúdo de mensagens..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
       "Upgrade to add more addresses to your account.": [
         "Atualize para adicionar mais endereços à sua conta."
@@ -5477,9 +5382,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Atualize para usar o ${ MAIL_APP_NAME } com clientes de desktop de terceiros."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Faça upgrade hoje para não perder os benefícios ${ planName }."
-      ],
       "Upload picture": [
         "Carregar imagem"
       ],
@@ -5497,9 +5399,6 @@
       ],
       "Using SimpleLogin is easy": [
         "Usar o SimpleLogin é fácil"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Mensagem verificada do ${ BRAND_NAME }"
       ],
       "Version ${ appVersion }": [
         "Versão ${ appVersion }"
@@ -5556,7 +5455,7 @@
         "Você pode adicioná-la como anexo ou exibi-la no corpo do e-mail."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "Você pode mesclar calendários importados com calendários existentes de ${ BRAND_NAME } ."
+        "Você pode mesclar calendários importados com calendários existentes de ${ BRAND_NAME }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
@@ -5657,7 +5556,7 @@
         "Sua conta tem pelo menos uma fatura vencida. Sua conta é restrita. O não pagamento contínuo bloqueará seus e-mails e links de compartilhamento. ${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta do ${ BRAND_NAME } ."
+        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta do ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
@@ -5725,9 +5624,6 @@
       ],
       "Trusted": [
         "Confiável"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -5735,7 +5631,7 @@
         "Ao clicar em \"Confiar na chave\", será associada esta chave pública a este remetente.\ne os e-mails deste endereço serão automaticamente verificados criptograficamente."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "Ao clicar em \"Trust Key\" será criado um novo contato e esta chave pública será associada a este remetente. Os e-mails deste endereço serão automaticamente verificados de forma criptográfica."
+        "Ao clicar em \"Confiar na chave\" será criado um novo contato e esta chave pública será associada a este remetente. Os e-mails deste endereço serão automaticamente verificados de forma criptográfica."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Você deseja confiar na chave pública primária com a seguinte impressão digital?",
@@ -6048,14 +5944,11 @@
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
       ],
-      "Coming soon": [
-        "Em breve"
+      "Colors": [
+        "Cores"
       ],
       "Conditions": [
         "Condições"
-      ],
-      "Confirm password": [
-        "Confirmar senha"
       ],
       "Contacts": [
         "Contatos"
@@ -6141,9 +6034,6 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "De: ${ importedEmail }"
-      ],
       "Good": [
         "Bom"
       ],
@@ -6219,12 +6109,6 @@
       "Manage categories": [
         "Gerenciar categorias"
       ],
-      "Manage folders": [
-        "Gerenciar pastas"
-      ],
-      "Manage labels": [
-        "Gerenciar marcadores"
-      ],
       "Manage my addresses": [
         "Gerenciar meus endereços"
       ],
@@ -6256,7 +6140,7 @@
         "Notificação"
       ],
       "OK": [
-        "OK"
+        "Aceitar"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -6378,9 +6262,6 @@
       "To:": [
         "Para:"
       ],
-      "To: ${ emailAddress }": [
-        "Para: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Para: ${ to }"
       ],
@@ -6395,9 +6276,6 @@
       ],
       "Undisclosed Recipients": [
         "Destinatários ocultos"
-      ],
-      "Upload file": [
-        "Enviar arquivo"
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -6483,7 +6361,7 @@
         "Criar marcador"
       ],
       "Edit folder": [
-        "Editar a pasta"
+        "Editar pasta"
       ],
       "Edit label": [
         "Editar marcador"
@@ -6670,8 +6548,9 @@
       "Almost there": [
         "Quase lá"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Total de calendários criados: ${ createdCalendars } de ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Quantidade de calendários criados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Conectando-se ao seu provedor de e-mail"
@@ -6690,21 +6569,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ itemsToImportCount } pasta e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ itemsToImportCount } pastas e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens de ${ itemsToImportCount } pasta e marcá-las como",
+        "Importar todas as mensagens de ${ itemsToImportCount } pastas e marcá-las como"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ itemsToImportCount } marcador e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ itemsToImportCount } marcadores e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ itemsToImportCount } marcador e marcá-las como",
+        "Importar todas as mensagens de ${ itemsToImportCount } marcadores e marcá-las como"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pasta e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pastas e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pasta e marcá-las como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pastas e marcá-las como"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcador e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcador e marcá-las como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como"
       ]
     },
     "Mailbox": {
@@ -6953,6 +6832,39 @@
         "Mudar ou adicionar conta"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domínios de e-mail personalizados"
+      ],
+      "Hide My Email aliases": [
+        "Alias de Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Agende mensagens a qualquer momento"
+      ],
+      "Search message content": [
+        "Pesquisar conteúdo da mensagem"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Up to 15 email addresses": [
+        "Até 15 endereços de e-mail"
+      ],
+      "Up to 500 GB of storage": [
+        "Até 500 GB de armazenamento"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Obtenha aliases ilimitados com SimpleLogin do ${ BRAND_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Nos conte sobre sua experiência. (Opcional)"
@@ -7116,9 +7028,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Uma maneira de entrar em contato com você"
-      ],
-      "Confirm password": [
-        "Confirmar senha"
       ],
       "E.g., ": [
         "Ex., "
@@ -7492,26 +7401,26 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } dia",
-        "${ days } dias"
-      ],
-      "${ hours } hour": [
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ hours } hour": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
       "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
       ],
       "${ seconds } second": [
-        "${ seconds } segundo",
-        "${ seconds } segundos"
+        "por ${ n } mês",
+        "por ${ n } meses"
       ]
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } mês GRÁTIS",
-        "${ n } meses GRÁTIS"
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {
@@ -7623,8 +7532,8 @@
         "Com o preço de ${ amount } por 30 meses"
       ],
       "for ${ n } month": [
-        "por ${ n } mês",
-        "por ${ n } meses"
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ],
       "Get the deal": [
         "Aproveite a oferta"
@@ -7713,9 +7622,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "O ${ DRIVE_APP_NAME } saiu do beta! Dê aos seus arquivos a mesma segurança que seus e-mails recebem."
-      ],
       "Email tracking protection": [
         "Proteção de rastreamento de e-mail"
       ],
@@ -7730,9 +7636,6 @@
       ],
       "Schedule send": [
         "Envio agendado"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Experimente ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Agora carregamos imagens por padrão e impedimos que os remetentes rastreiem você. Isso pode ser alterado no ${ settingsLink }."
@@ -7814,16 +7717,16 @@
         "${ elementsCount } conversas marcadas como não lidas."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } conversa movida para ${ folderName } e o remetente adicionado à sua lista de não spam.",
-        "${ elementsCount } conversas movidas para ${ folderName } e os remetentes adicionados à sua lista de não spam."
+        "${ elementsCount } conversa movida para ${ folderName } e remetente adicionado à sua lista de não spam.",
+        "${ elementsCount } conversas movidas para ${ folderName } e remetentes adicionados à sua lista de não spam."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } conversa movida para ${ folderName }.",
         "${ elementsCount } conversas movidas para ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } conversação movida para o spam e o remetente adicionado à sua lista de spam.",
-        "${ elementsCount } conversações movidas para o spam e os remetentes adicionados à sua lista de spam."
+        "${ elementsCount } conversa movida para o spam e o remetente adicionado à sua lista de spam.",
+        "${ elementsCount } conversas movidas para o spam e os remetentes adicionados à sua lista de spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
@@ -7846,8 +7749,8 @@
         "${ elementsCount } mensagens marcadas como não lidas."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } mensagem movida para o ${ folderName } e o remetente adicionado à sua lista de permitidos.",
-        "${ elementsCount } mensagens movidas para o ${ folderName } e os remetentes adicionados à sua lista de permitidos."
+        "${ elementsCount } mensagem movida para ${ folderName } e remetente adicionado à sua lista de permitidos.",
+        "${ elementsCount } mensagens movidas para ${ folderName } e remetentes adicionados à sua lista de permitidos."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } mensagem movida para ${ folderName }.",
@@ -7870,7 +7773,7 @@
       "Bug reported": [
         "Relatório de erros enviado"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Cancelando a importação"
       ],
       "Code sent to ${ methodTo }": [
@@ -8102,17 +8005,9 @@
         "${ daysCountLeft } dia",
         "${ daysCountLeft } dias"
       ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } hora",
         "${ hoursCountLeft } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minuto",
@@ -8121,6 +8016,34 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } segundo",
         "${ secondsCountLeft } segundos"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hora",
+        "${ hoursInt }.5 horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ]
     },
     "Title": {
@@ -8298,7 +8221,7 @@
         "Editar grupo de contatos"
       ],
       "Edit email settings": [
-        "Editar configurações de e-mail"
+        "Editar configurações do e-mail"
       ],
       "Edit filter": [
         "Editar filtro"
@@ -8316,7 +8239,7 @@
         "Conteúdo de e-mail"
       ],
       "Email settings": [
-        "Configurações de e-mail"
+        "Configurações do e-mail"
       ],
       "Enable message content search": [
         "Ativar a pesquisa em conteúdo de mensagens"
@@ -8568,6 +8491,9 @@
       "Sending original message": [
         "Enviando mensagem original"
       ],
+      "Set your own schedule": [
+        "Defina sua própria agenda"
+      ],
       "Settings": [
         "Configurações"
       ],
@@ -8650,8 +8576,8 @@
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Sua avaliação gratuita termina em breve, em ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Sua avaliação gratuita do Mail Plus termina em ${ textDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8709,7 +8635,7 @@
         "A importação começará com as mensagens mais recentes."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação baixará todas as mensagens para que elas possam ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
+        "Esta ação baixará todas as mensagens para poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
       ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"
@@ -8823,10 +8749,10 @@
         "Essa ação é irreversível. Digite a palavra ${ boldDanger } no campo para continuar."
       ],
       "This feature requires a paid ${ BRAND_NAME } account": [
-        "Este recurso requer um plano pago do ${ BRAND_NAME }"
+        "Este recurso requer um plano pago do ${ BRAND_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta do ${ BRAND_NAME }. Por favor, considere realizar sua importação de forma personalizada."
+        "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta do ${ BRAND_NAME }. Considere realizar sua importação de forma personalizada."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."
@@ -9057,8 +8983,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

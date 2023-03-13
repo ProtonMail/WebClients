@@ -54,10 +54,7 @@ export const getToApp = (toApp: APP_NAMES | undefined, user: User) => {
         if (Subscribed === PRODUCT_BIT.VPN) {
             return APPS.PROTONVPN_SETTINGS;
         }
-        if (!Subscribed || Subscribed === PRODUCT_BIT.Drive) {
-            return APPS.PROTONDRIVE;
-        }
-        return externalApps[0];
+        return APPS.PROTONDRIVE;
     }
     return DEFAULT_APP;
 };

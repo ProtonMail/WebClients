@@ -4,12 +4,14 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
-import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/lib/calendar/shareUrl/helpers';
+import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
+import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
@@ -47,10 +49,11 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) => {
     const [links, setLinks] = useState<CalendarLink[]>([]);
     const [isLoadingLinks, withLoadingLinks] = useLoading();
-    const [isLoadingMap, setIsLoadingMap] = useState<Partial<Record<string, boolean>>>({});
+    const [isLoadingMap, setIsLoadingMap] = useState<Partial<SimpleMap<boolean>>>({});
     const api = useApi();
     const { createNotification } = useNotifications();
     const getCalendarInfo = useGetCalendarInfo();
+    const isMounted = useIsMounted();
 
     const notifyLinkCopied = () => {
         createNotification({ type: 'info', text: c('Info').t`Link copied to clipboard` });
@@ -132,6 +135,9 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
             const { privateKeys } = splitKeys(calendarKeys);
 
             try {
+                if (!isMounted()) {
+                    return;
+                }
                 const { CalendarUrls } = await api<{ CalendarUrls: CalendarUrl[] }>(getPublicLinks(calendarID));
                 const links = await transformLinksFromAPI({
                     calendarUrls: CalendarUrls,
@@ -141,6 +147,9 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                 });
                 const sortedLinks = sortLinks(links);
 
+                if (!isMounted()) {
+                    return;
+                }
                 setLinks(sortedLinks);
             } catch (e: any) {
                 handleError(e);
@@ -158,13 +167,15 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                 {c('Calendar settings link share description')
                     .t`Create a link to your calendar and share it with anyone outside ${BRAND_NAME}. Only you can add or remove events.`}
             </SettingsParagraph>
-            <Button
-                onClick={() => updateModal('shareLinkModal', { isOpen: true })}
-                color="norm"
-                disabled={maxLinksReached || !canShare}
-            >
-                {c('Action').t`Create link`}
-            </Button>
+            {!maxLinksReached && (
+                <Button
+                    onClick={() => updateModal('shareLinkModal', { isOpen: true })}
+                    color="norm"
+                    disabled={!canShare}
+                >
+                    {c('Action').t`Create link`}
+                </Button>
+            )}
         </>
     );
 
@@ -187,10 +198,10 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
 
                         return tryLoadingAction(urlID, async () => {
                             const { calendarKeys } = await getCalendarInfo(calendarID);
-                            const { publicKeys } = splitKeys(calendarKeys);
+                            const { publicKey } = getPrimaryCalendarKey(calendarKeys);
                             const purpose = untrimmedPurpose.trim();
                             const encryptedPurpose = purpose
-                                ? await generateEncryptedPurpose({ purpose, publicKeys })
+                                ? await generateEncryptedPurpose({ purpose, publicKey })
                                 : null;
 
                             await api<void>(editPublicLink({ calendarID, urlID, encryptedPurpose }));
@@ -244,7 +255,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                     content
                 ) : (
                     <>
-                        <h3 className="text-bold" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PUBLICLY}>
+                        <h3 className="text-bold mb0-5" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PUBLICLY}>
                             {c('Calendar settings section title').t`Share with anyone`}
                         </h3>
                         {content}
@@ -252,7 +263,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                 )}
             </div>
             {maxLinksReached && (
-                <Alert className="mb0-75" type="warning">
+                <Alert className="mb0-75" type="info">
                     {c('Maximum calendar links reached warning').ngettext(
                         msgid`You can create up to ${MAX_LINKS_PER_CALENDAR} link per calendar. To create a new link to this calendar, delete one from the list below.`,
                         `You can create up to ${MAX_LINKS_PER_CALENDAR} links per calendar. To create a new link to this calendar, delete one from the list below.`,

@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
+      "Attention required": [
+        "Требуется внимание"
+      ],
       "Authenticate": [
         "Аутентифицировать"
       ],
@@ -117,6 +120,9 @@
       ],
       "Continue import": [
         "Продолжить импорт"
+      ],
+      "Continue to ${ calendarAppBareName }": [
+        "Продолжить с ${ calendarAppBareName }"
       ],
       "Continue with Google": [
         "Продолжить с Google"
@@ -235,6 +241,9 @@
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
       ],
+      "Hide affected calendars": [
+        "Скрыть затронутые календари"
+      ],
       "Hide folders": [
         "Скрыть папки"
       ],
@@ -270,6 +279,9 @@
       ],
       "Join calendar": [
         "Присоединиться к календарю"
+      ],
+      "Keep current time zone": [
+        "Оставить текущий часовой пояс"
       ],
       "Load image": [
         "Загрузить изображение"
@@ -346,6 +358,9 @@
       "Open navigation": [
         "Открыть панель навигации"
       ],
+      "Open settings": [
+        "Открыть настройки"
+      ],
       "Preview contact": [
         "Предпросмотр контакта"
       ],
@@ -391,9 +406,6 @@
       "Remove this participant": [
         "Удалить этого участника"
       ],
-      "Rename": [
-        "Переименовать"
-      ],
       "Report a problem": [
         "Сообщить о проблеме"
       ],
@@ -438,6 +450,9 @@
       ],
       "Show advanced PGP settings": [
         "Показать расширенные настройки PGP"
+      ],
+      "Show affected calendars": [
+        "Показать затронутые календари"
       ],
       "Show folders": [
         "Показать папки"
@@ -510,6 +525,9 @@
       ],
       "Upgrade": [
         "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ],
       "Upload picture": [
         "Загрузить картинку"
@@ -669,11 +687,6 @@
         "Необязательно"
       ]
     },
-    "Badge": {
-      "Coming soon": [
-        "Скоро появится"
-      ]
-    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Бета-доступ позволит вам использовать бета-версию ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME } до их публичного выпуска. Это означает, что вы сможете первыми опробовать новые продукты, получать обновления и использовать новые функции."
@@ -822,7 +835,7 @@
         "Управляйте ссылками"
       ],
       "Manage members": [
-        "Управление участниками"
+        "Управляйте участниками"
       ],
       "Unable to create more calendar links": [
         "Невозможно создать больше ссылок на календарь"
@@ -857,11 +870,6 @@
       ],
       "More options": [
         "Дополнительные параметры"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "Поделились со мной"
       ]
     },
     "Calendar status": {
@@ -930,10 +938,10 @@
     },
     "Calendar view; more events collapsed": {
       "${ more } more": [
-        "Еще ${ more }",
-        "Еще ${ more }",
-        "Еще ${ more }",
-        "Еще ${ more }"
+        "Ещё ${ more }",
+        "Ещё ${ more }",
+        "Ещё ${ more }",
+        "Ещё ${ more }"
       ]
     },
     "Collapsible tooltip": {
@@ -2004,8 +2012,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "Не спрашивать снова"
+      "Do not ask again": [
+        "Больше не спрашивать"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2098,7 +2106,7 @@
         "Отмена события, начинающегося ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Приглашение на мероприятие, начинающееся ${ formattedStart }"
+        "Приглашение на событие, начинающееся ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Приглашение на событие, начинающееся ${ formattedStart }"
@@ -2165,6 +2173,9 @@
       "Contact could not be saved": [
         "Невозможно сохранить контакт"
       ],
+      "Contact name is too long": [
+        "Имя контакта слишком длинное"
+      ],
       "Contact signature could not be verified": [
         "Подпись контакта не может быть проверена"
       ],
@@ -2173,18 +2184,6 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Ошибка расшифровки: не удалось расшифровать содержимое этого события."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
@@ -2263,12 +2262,6 @@
       ],
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
       ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
@@ -2372,9 +2365,6 @@
       "Some groups could not be deleted": [
         "Некоторые группы не могут быть удалены"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Имена некоторых ваших папок зарезервированы. Пожалуйста, настройте импорт для изменения этих имен."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Имена некоторых ваших папок недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
       ],
@@ -2421,7 +2411,7 @@
         "Произошла ошибка при экспорте визитных карточек контактов"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Длина этого поля превысила максимум ${ maximumLength } символов."
+        "Длина этого поля превысила максимальные ${ maximumLength } символов."
       ],
       "This field is required": [
         "Это обязательное поле"
@@ -2435,7 +2425,7 @@
       "This label name is not available. Please choose a different name.": [
         "Это имя ярлыка недоступно. Пожалуйста, выберите другое имя."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
       ],
       "Trusted keys are not valid for sending": [
@@ -2453,11 +2443,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Нельзя отправить письмо более чем 100 получателям"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Нельзя отправить визитные карточки более чем 10 контактов"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Вы достигли максимального количества личных календарей. Некоторые календари не удалось импортировать."
+      "You can't send vCard files of more than 10 contacts": [
+        "Вы не можете отправлять файлы vCard, содержащие более 10 контактов"
       ],
       "You must set a name": [
         "Вы должны задать имя"
@@ -2584,7 +2571,7 @@
         "Запись журнала"
       ],
       "Malformed all-day event": [
-        "Неправильное мероприятие на весь день"
+        "Неправильный формат события на весь день"
       ],
       "Malformed end time": [
         "Неправильный формат времени окончания"
@@ -2682,11 +2669,11 @@
       ]
     },
     "Event form": {
-      "${ numberOfParticipants } participant": [
-        "${ numberOfParticipants } участник",
-        "${ numberOfParticipants } участника",
-        "${ numberOfParticipants } участников",
-        "${ numberOfParticipants } участников"
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } участник",
+        "${ numberOfAttendees } участника",
+        "${ numberOfAttendees } участников",
+        "${ numberOfAttendees } участников"
       ]
     },
     "Event info. Organizer name": {
@@ -2876,9 +2863,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Эл. почта"
       ],
@@ -2889,7 +2873,7 @@
         "Нет доступных способов проверки"
       ],
       "SMS": [
-        "SMS"
+        "СМС"
       ]
     },
     "Import calendar": {
@@ -2904,6 +2888,9 @@
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
         "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Произошла ошибка при шифровании и добавлении ваших событий. Не удалось импортировать ни одно событие."
@@ -2937,10 +2924,10 @@
         "Импортированные приглашения появляются в ${ CALENDAR_APP_NAME } как простые события без сведений об организаторах и участниках. Чтобы получать обновления событий и видеть участников, попросите организаторов пригласить вас, используя ваш адрес электронной почты ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
-        "Этот файл содержит приглашение на мероприятие:",
-        "Этот файл содержит приглашения на мероприятие:",
-        "Этот файл содержит приглашения на мероприятие:",
-        "Этот файл содержит приглашения на мероприятие:"
+        "Этот файл содержит приглашение на событие:",
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:"
       ],
       "This file contains an invitation response:": [
         "Этот файл содержит ответ на приглашение:",
@@ -3132,9 +3119,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3149,6 +3133,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Импортировать из ${ provider }"
+      ],
       "Other": [
         "Другой"
       ]
@@ -3189,12 +3176,6 @@
         "${ calendarsToBeCreatedCount } новых календарей",
         "${ calendarsToBeCreatedCount } новых календарей"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } объединенный календарь",
-        "${ calendarsToBeMerged } объединенных календаря",
-        "${ calendarsToBeMerged } объединенных календарей",
-        "${ calendarsToBeMerged } объединенных календарей"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } объединенный календарь",
         "${ calendarsToBeMergedCount } объединенных календаря",
@@ -3228,17 +3209,17 @@
         "Найдено ${ groupCounts } групп",
         "Найдено ${ groupCounts } группы"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } группа контактов",
-        "${ numContactGroups } группы контактов",
-        "${ numContactGroups } групп контактов",
-        "${ numContactGroups } групп контактов"
+      "${ numContact } contact": [
+        "${ numContact } контакт",
+        "${ numContact } контакта",
+        "${ numContact } контактов",
+        "${ numContact } контактов"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } контакт",
-        "${ numContacts } контакта",
-        "${ numContacts } контактов",
-        "${ numContacts } контактов"
+      "${ numGroups } contact group": [
+        "${ numGroups } группа контактов",
+        "${ numGroups } группы контактов",
+        "${ numGroups } групп контактов",
+        "${ numGroups } групп контактов"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
@@ -3282,9 +3263,6 @@
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } хранилища"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
         "${ updated } контакта успешно обновлено.",
@@ -3296,9 +3274,6 @@
         "(${ memberCount } участника)",
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
-      ],
-      "10 email addresses": [
-        "10 адресов электронной почты"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Сообщение об отмене будет отправлено удаленным участникам."
@@ -3348,17 +3323,17 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Каждый, кто имеет эту ссылку, может увидеть все подробности события из этого календаря, такие как название, местоположение или участников."
       ],
-      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
-        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участника",
-        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников",
-        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников",
-        "Одно приглашение распространяется максимум на ${ MAX_ATTENDEES } участников"
+      "Attention required": [
+        "Требуется внимание"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Предоставляя полную информацию о подробностях события из этого календаря, вы соглашаетесь предоставить ${ BRAND_NAME } доступ к зашифрованной информации этого календаря."
+      ],
+      "Calendar side panel": [
+        "Боковая панель календаря"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
@@ -3372,14 +3347,14 @@
       "Close this screen to exit.": [
         "Закройте этот экран, чтобы выйти."
       ],
-      "Continue with ${ planName }": [
-        "Продолжить с ${ planName }"
+      "Country code": [
+        "Код страны"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Создать ${ calendarsToBeCreated } новый календарь",
-        "Создать ${ calendarsToBeCreated } новых календаря",
-        "Создать ${ calendarsToBeCreated } новых календарей",
-        "Создать ${ calendarsToBeCreated } новых календарей"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Создать ${ calendarsToBeCreatedCount } новый календарь",
+        "Создать ${ calendarsToBeCreatedCount } новых календаря",
+        "Создать ${ calendarsToBeCreatedCount } новых календарей",
+        "Создать ${ calendarsToBeCreatedCount } новых календарей"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
@@ -3477,14 +3452,14 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календаря",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Импортировать ${ contactsFragment } и ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календаря",
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей",
-        "Импортируйте ${ selectedCalendarsCount } из ${ totalCalendarsCount } календарей"
       ],
       "Import from": [
         "Импортировать из"
@@ -3497,6 +3472,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Импортируйте электронную почту, календари и контакты из другой службы в ${ BRAND_NAME }. Мы будем сопровождать вас на каждом шагу и шифровать ваши данные при переносе. Добро пожаловать в мир конфиденциальности."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Импорт данных из ${ fromEmail } в ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
@@ -3594,9 +3572,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
-      "Other options": [
-        "Другие возможности"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline совместимо только с форматом Plain Text."
       ],
@@ -3636,9 +3611,6 @@
       "Primary": [
         "Основной"
       ],
-      "Priority support": [
-        "Приоритетная поддержка"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
       ],
@@ -3654,9 +3626,6 @@
       "Select what you want to import.": [
         "Выберите то, что вы хотите импортировать."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -3668,12 +3637,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Некоторые ваши ответы на события, ранее обновленные организатором, будут потеряны."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Поддержка 1 пользовательского домена электронной почты"
       ],
       "support team": [
         "служба поддержки"
@@ -3753,17 +3716,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Чтобы использовать проверку адреса, вы должны доверять одному или нескольким из доступных публичных ключей, включая тот, который вы хотите использовать для отправки. Это предотвращает подделку ключей шифрования."
       ],
-      "Unlimited folders, labels, and filters": [
-        "Неограниченное количество папок, меток и фильтров"
-      ],
-      "Unlimited messages": [
-        "Неограниченное количество сообщений"
-      ],
       "Update recurring event": [
         "Обновить повторяющееся событие"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Улучшите сегодня, чтобы не потерять следующие преимущества ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
       ],
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
@@ -3837,9 +3794,6 @@
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Вы повторно активировали свои ключи, и события, связанные со следующими календарями, теперь могут быть расшифрованы."
       ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "Вы сбросили пароль, и события, связанные со следующими календарями, не могут быть расшифрованы.\nВсе созданные ранее ссылки на общие календари больше не будут работать.\nВсе активные подписанные календари снова синхронизируются через несколько минут."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Вы ранее отклонили это приглашение. Попросите владельца повторно пригласить вас"
       ],
@@ -3889,7 +3843,7 @@
         "Ваш адрес отключен. Участникам мероприятия нельзя отправить письмо об отмене. Всё равно хотите удалить все события в этой серии?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Ваш адрес отключен. Сообщение об отмене не может быть отправлено участникам мероприятия. Вы всё равно хотите удалить это мероприятие?"
+        "Ваш адрес отключён. Сообщение об отмене не может быть отправлено участникам события. Вы всё равно хотите удалить это событие?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт ${ BRAND_NAME }."
@@ -3916,6 +3870,50 @@
     "Info on errors": {
       "Click for details": [
         "Нажмите, чтобы узнать подробности"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Только просмотр"
+      ]
+    },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "В некоторых календарях не будет отображаться информация о ранее созданных событиях."
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "В ваших календарях не будет отображаться информация о ранее созданных событиях."
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "Это произошло потому, что ваш пароль был недавно сброшен без использования способа восстановления."
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "Вы можете восстановить зашифрованные данные с помощью файла восстановления, фразы восстановления или старого пароля."
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "Общий доступ к календарю был отключен после недавнего сброса пароля."
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "Вы можете настроить совместное использования ваших календарей в настройках."
+      ]
+    },
+    "Information about why calendar event cannot be saved": {
+      "At most ${ MAX_ATTENDEES } participant is allowed per invitation": [
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участника",
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участников",
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участников",
+        "На одно приглашение допускается не более ${ MAX_ATTENDEES } участников"
+      ],
+      "Creating invites in a shared calendar is not allowed": [
+        "Создание приглашений в общем календаре не разрешается"
       ]
     },
     "Input label": {
@@ -3949,9 +3947,6 @@
       ],
       "Trusted": [
         "Надежный"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -4018,8 +4013,8 @@
       "Color": [
         "Цвет"
       ],
-      "Coming soon": [
-        "Скоро появится"
+      "Colors": [
+        "Цвета"
       ],
       "Contacts": [
         "Контакты"
@@ -4105,9 +4100,6 @@
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "От: ${ importedEmail }"
-      ],
       "Good": [
         "Хорошо"
       ],
@@ -4161,12 +4153,6 @@
       ],
       "Manage categories": [
         "Управлять категориями"
-      ],
-      "Manage folders": [
-        "Управление папками"
-      ],
-      "Manage labels": [
-        "Управление ярлыками"
       ],
       "Move to Archive": [
         "Переместить в Архив"
@@ -4252,9 +4238,6 @@
       "System information": [
         "Сведения о системе"
       ],
-      "To: ${ emailAddress }": [
-        "Кому: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Кому: ${ to }"
       ],
@@ -4266,9 +4249,6 @@
       ],
       "Two-factor authentication code": [
         "Код двухфакторной аутентификации"
-      ],
-      "Upload file": [
-        "Загрузить файл"
       ],
       "Upload picture": [
         "Загрузить изображение"
@@ -4329,6 +4309,17 @@
         "Боковая панель"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Чтобы добавить новый календарь, удалите существующий."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Чтобы добавить новый календарь, удалите другой календарь или улучшите свой тариф ${ BRAND_NAME } до платного тарифа ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Вы достигли максимального количества календарей, доступных в вашем тарифе."
+      ]
+    },
     "Link": {
       "Calendars": [
         "Календари"
@@ -4342,14 +4333,14 @@
       "My calendars": [
         "Мои календари"
       ],
+      "Other calendars": [
+        "Другие календари"
+      ],
       "Pay invoice": [
         "Оплатить счёт"
       ],
       "Request an invite": [
         "Запросить приглашение"
-      ],
-      "Subscribed calendars": [
-        "Подписанные календари"
       ],
       "Upgrade account": [
         "Повысить учётную запись"
@@ -4363,12 +4354,20 @@
         "Открыть в ${ CALENDAR_APP_NAME }"
       ]
     },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "Что такое способ восстановления?"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "Почти готово"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Количество созданных календарей: ${ createdCalendars } из ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Подключение к поставщику услуг электронной почты"
@@ -4387,29 +4386,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все сообщения с ${ itemsToImportCount } ярлыком и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ itemsToImportCount } ярлыками и пометить их ярлыком ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыка и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения, находящиеся в ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как"
       ]
     },
     "Message": {
@@ -4442,17 +4441,9 @@
       ],
       "Manage calendars": [
         "Управление календарями"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Невозможно добавить больше календарей. Вы достигли максимального количества личных календарей в пределах вашего тарифа."
       ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Невозможно добавить больше календарей. Вы достигли максимального количества подписанных календарей в пределах вашего тарифа."
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Невозможно создать больше календарей. Вы достигли максимального количества личных календарей в пределах вашего тарифа."
+      "Upgrade": [
+        "Улучшить"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4469,6 +4460,9 @@
       ]
     },
     "Modal title": {
+      "Cannot add more calendars": [
+        "Невозможно добавить больше календарей"
+      ],
       "How to import calendars from another service": [
         "Как импортировать календари из другой службы"
       ],
@@ -4492,9 +4486,6 @@
       ],
       "Time zone changed": [
         "Часовой пояс изменен"
-      ],
-      "Unable to add more calendars": [
-        "Невозможно добавить больше календарей"
       ]
     },
     "Modal title and action": {
@@ -5233,36 +5224,36 @@
     },
     "specialoffer: Countdown unit": {
       "${ days } day": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дня"
-      ],
-      "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
         "${ hours } часа"
       ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минуты"
+      "${ hours } hour": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
       ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунды"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
+      "${ minutes } minute": [
         "${ n } месяц БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО",
         "${ n } месяцев БЕСПЛАТНО",
         "${ n } месяца БЕСПЛАТНО"
+      ],
+      "${ seconds } second": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
       ]
     },
     "specialoffer: Deal details": {
@@ -5286,9 +5277,6 @@
       ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
-      ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar, Drive"
       ],
       "Premium Drive": [
         "Платная версия Drive"
@@ -5374,10 +5362,10 @@
         "Оплата ${ amount } за 30 месяцев."
       ],
       "for ${ n } month": [
-        "за ${ n } месяц ",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяца"
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минуты"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -5466,9 +5454,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } вышел из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронной почте."
-      ],
       "Easily accept invites": [
         "Легко принимайте приглашения"
       ],
@@ -5480,15 +5465,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "Теперь приглашения появляются в вашем календаре как ожидающие события. Просто откройте событие, чтобы ответить. ${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "Подписаться на другие календари"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Попробуйте ${ DRIVE_APP_NAME }"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "Можно подписаться на внешние календари и читать события из них."
       ]
     },
     "Spotlight settings link": {
@@ -5581,9 +5557,6 @@
       "Calendar updated": [
         "Календарь обновлен"
       ],
-      "Canceling import": [
-        "Импорт отменяется"
-      ],
       "Cancellation sent and all events deleted": [
         "Сообщение об отмене отправлено и все события удалены"
       ],
@@ -5595,6 +5568,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "Сообщение об отмене отправлено и участники удалены из всех событий"
+      ],
+      "Cancelling import": [
+        "Отмена импорта"
       ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
@@ -5752,18 +5728,44 @@
         "Настройки"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч"
+      ],
+      "${ minutes } min": [
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } час",
         "${ hours } часа",
         "${ hours } часов",
         "${ hours } часов"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часов",
+        "${ hoursInt }.5 часов"
+      ],
       "${ minutes } minute": [
         "${ minutes } минута",
         "${ minutes } минуты",
         "${ minutes } минут",
-        "${ minutes } минут"
+        "${ minutes } минута"
       ]
     },
     "Timezone search placeholder": {
@@ -5916,6 +5918,9 @@
       "Email settings": [
         "Настройки эл. почты"
       ],
+      "Encrypted event": [
+        "Зашифрованное событие"
+      ],
       "Enter your password": [
         "Введите свой пароль"
       ],
@@ -6024,8 +6029,8 @@
       "Request new code": [
         "Запросить новый код"
       ],
-      "Reset calendar keys": [
-        "Сбросить ключи календаря"
+      "Reshare your calendars": [
+        "Cовместное использование ваших календарей"
       ],
       "Save changes": [
         "Сохранить изменения"
@@ -6129,6 +6134,12 @@
       "Warning: suspected fake website": [
         "Предупреждение: предполагаемый поддельный сайт"
       ],
+      "We've locked some calendars to protect your data": [
+        "Мы закрыли некоторые календари, чтобы защитить ваши данные"
+      ],
+      "We've locked your calendars to protect your data": [
+        "Мы закрыли ваши календари, чтобы защитить ваши данные"
+      ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
       ],
@@ -6141,8 +6152,8 @@
       "Your calendar link": [
         "Ссылка на календарь"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -6157,7 +6168,7 @@
     },
     "Title; edit calendar modal": {
       "Edit calendar": [
-        "Изменить календарь"
+        "Редактировать календарь"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6336,7 +6347,7 @@
         "Чтобы получить доступ к этому общему календарю, включите этот адрес или попросите ${ boldCalendarOwnerEmail } отправить приглашение на активный адрес."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "Вы не можете присоединиться к этому календарю, потому что приглашенный вами адрес электронной почты (${ boldInvitedAddress }) отключен."
+        "Вы не можете присоединиться к этому календарю, потому что ваш приглашенный адрес электронной почты (${ boldInvitedAddress }) отключен."
       ]
     },
     "Weekly recurring event, frequency": {
@@ -6609,8 +6620,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Каждый ${ interval } год",
+        "Каждые ${ interval } года",
         "Каждые ${ interval } лет",
         "Каждые ${ interval } лет"
       ],

@@ -14,7 +14,7 @@ import {
     getProbablyActiveCalendars,
     getVisualCalendar,
 } from '@proton/shared/lib/calendar/calendar';
-import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
+import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import {
     CalendarNotificationSettings,

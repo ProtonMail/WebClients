@@ -58,7 +58,7 @@ export const creationDate = {
 
 export const accessCount = {
     type: 'numAccesses',
-    getText: () => c('Label').t`# of accesses`,
+    getText: () => c('Label').t`# of downloads`,
     props: {
         className: 'w15',
     },

@@ -58,6 +58,9 @@
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
+      "Attention required": [
+        "需要您的處理"
+      ],
       "Authenticate": [
         "驗證"
       ],
@@ -117,6 +120,9 @@
       ],
       "Continue import": [
         "繼續匯入"
+      ],
+      "Continue to ${ calendarAppBareName }": [
+        "繼續使用 ${ calendarAppBareName }"
       ],
       "Continue with Google": [
         "繼續以 Google 帳號登入"
@@ -229,6 +235,9 @@
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
       ],
+      "Hide affected calendars": [
+        "隱藏受影響的行事曆"
+      ],
       "Hide folders": [
         "隱藏資料夾"
       ],
@@ -264,6 +273,9 @@
       ],
       "Join calendar": [
         "加入日曆"
+      ],
+      "Keep current time zone": [
+        "維持目前時區"
       ],
       "Load image": [
         "載入圖像"
@@ -340,6 +352,9 @@
       "Open navigation": [
         "開啟導覽"
       ],
+      "Open settings": [
+        "開啟設定"
+      ],
       "Preview contact": [
         "預覽聯絡人"
       ],
@@ -385,9 +400,6 @@
       "Remove this participant": [
         "移除此參與者"
       ],
-      "Rename": [
-        "重新命名"
-      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -432,6 +444,9 @@
       ],
       "Show advanced PGP settings": [
         "顯示進階 PGP 設定"
+      ],
+      "Show affected calendars": [
+        "顯示受影響的行事曆"
       ],
       "Show folders": [
         "顯示資料夾"
@@ -504,6 +519,9 @@
       ],
       "Upgrade": [
         "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ],
       "Upload picture": [
         "上載圖像"
@@ -661,11 +679,6 @@
     "Attendee role": {
       "Optional": [
         "自由列席"
-      ]
-    },
-    "Badge": {
-      "Coming soon": [
-        "敬請期待"
       ]
     },
     "Beta access description": {
@@ -845,11 +858,6 @@
       ],
       "More options": [
         "更多選項"
-      ]
-    },
-    "Calendar sidebar; Calendar info": {
-      "Shared with me": [
-        "與我分享"
       ]
     },
     "Calendar status": {
@@ -1971,8 +1979,8 @@
       ]
     },
     "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        "毋需重複詢問"
+      "Do not ask again": [
+        "不要再次詢問"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2108,6 +2116,9 @@
       "Contact could not be saved": [
         "無法儲存聯絡人"
       ],
+      "Contact name is too long": [
+        "聯絡人名稱太長"
+      ],
       "Contact signature could not be verified": [
         "無法驗證聯絡人簽章"
       ],
@@ -2116,12 +2127,6 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "解密失敗：此事件內容解密失敗。"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
@@ -2200,9 +2205,6 @@
       ],
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "請至少將 ${ calendarToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
       "Missing key packet": [
         "缺少金鑰封包"
@@ -2306,9 +2308,6 @@
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "部份群組無聯絡人：${ noContactGroupList }"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "部份資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
@@ -2369,8 +2368,8 @@
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱不適用。請選擇其它名稱。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的 URL。"
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密鑰用於寄送時無效"
@@ -2387,11 +2386,8 @@
       "You can't send a mail to more than 100 recipients": [
         "您無法將電郵傳送給超過100位收件人"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "您無法傳送超過 10 個聯絡人的 vCard"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "您已經達到個人行事曆的數量上限。有部分行事曆無法被匯入。"
+      "You can't send vCard files of more than 10 contacts": [
+        "您不能傳送有超過 10 個聯絡人的 vCard 檔案"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -2612,11 +2608,6 @@
         "已取消"
       ]
     },
-    "Event form": {
-      "${ numberOfParticipants } participants": [
-        "${ numberOfParticipants } 個參與者"
-      ]
-    },
     "Event info. Organizer name": {
       "You": [
         "您"
@@ -2716,15 +2707,6 @@
     "file size format": {
       "bytes": [
         "位元組"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
       ]
     },
     "file size format, long": {
@@ -2805,6 +2787,9 @@
     "Import calendar": {
       "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
       ],
       "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
         "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
@@ -3024,9 +3009,6 @@
       ],
       "ICS file": [
         "ICS 檔案"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3041,6 +3023,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "從 ${ provider } 匯入"
+      ],
       "Other": [
         "其它"
       ]
@@ -3072,9 +3057,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } 個合併的行事曆"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
@@ -3093,11 +3075,11 @@
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 個群組"
       ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 個聯絡人群組"
+      "${ numContact } contacts": [
+        "${ numContact } 個聯絡人"
       ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 位聯絡人"
+      "${ numGroups } contact groups": [
+        "${ numGroups } 個聯絡人群組"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -3120,17 +3102,11 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個標籤"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } 儲存量"
-      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 個成員)"
-      ],
-      "10 email addresses": [
-        "10 個電郵位址"
       ],
       "A cancellation email will be sent to removed participants.": [
         "取消函將傳送給已移除的參與者。"
@@ -3174,14 +3150,17 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "任何擁有此連結的人僅能知道您忙碌與否，他們沒辦法看到事件細節，例如標題、地點或是參與者。"
       ],
-      "At most ${ MAX_ATTENDEES } participants are allowed per invitation": [
-        "您最多可以一次邀請 ${ MAX_ATTENDEES } 位參與者"
+      "Attention required": [
+        "需要您的處理"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "為分享此行事曆的完整事件細節，您允許 ${ BRAND_NAME } 存取此加密行事曆的資料。"
+      ],
+      "Calendar side panel": [
+        "行事曆側面板"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
@@ -3195,11 +3174,11 @@
       "Close this screen to exit.": [
         "關閉此螢幕以離開。"
       ],
-      "Continue with ${ planName }": [
-        "繼續使用 ${ planName }"
+      "Country code": [
+        "國家代碼"
       ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "建立 ${ calendarsToBeCreated } 個新行事曆"
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "建立 ${ calendarsToBeCreatedCount } 個新行事曆"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
@@ -3297,11 +3276,11 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "匯入 ${ selectedCalendarsCount } 個，共 ${ totalCalendarsCount } 個行事曆"
       ],
       "Import from": [
         "匯入自"
@@ -3314,6 +3293,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "從其它服務匯入您的電郵、行事曆或聯絡人到 ${ BRAND_NAME }。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
@@ -3411,9 +3393,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
-      "Other options": [
-        "其它選項"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 僅與純文字格式相容。"
       ],
@@ -3450,9 +3429,6 @@
       "Primary": [
         "主要"
       ],
-      "Priority support": [
-        "優先支援"
-      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
       ],
@@ -3468,9 +3444,6 @@
       "Select what you want to import.": [
         "選擇您要匯入的檔案。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -3482,12 +3455,6 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您對召集人先前更新的事件所作的某些回答將會遺失。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "儲存空間共用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 。"
-      ],
-      "Support for 1 custom email domain": [
-        "支援 1 個自訂電郵網域"
       ],
       "support team": [
         "支援團隊"
@@ -3567,17 +3534,11 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
       ],
-      "Unlimited folders, labels, and filters": [
-        "不限數量的資料夾、標籤與篩選器"
-      ],
-      "Unlimited messages": [
-        "無限制的郵件"
-      ],
       "Update recurring event": [
         "更新週期性事件"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "今天就升級，不要錯過 ${ planName } 特賞限時福利！"
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
@@ -3650,9 +3611,6 @@
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新啟用您的金鑰，因此連結到下列行事曆中的事件現已能解密。"
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "您已重設您的密碼，因此與下列行事曆連結的事件無法解密。\n任何您先前創建的已分享行事曆連結將不再運作。\n任何使用中已訂購授權的行事曆將於數分鐘後再次同步。"
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "您先前回絕了此邀請。請要求擁有者重新邀請"
@@ -3732,6 +3690,34 @@
         "點擊以查看詳細資料"
       ]
     },
+    "Info; reset calendar keys modal; part 1": {
+      "Some of your calendars will not show details of previously created events.": [
+        "您的部份行事曆將不會顯示先前建立事件的詳細資訊。"
+      ],
+      "Your calendars will not show details of previously created events.": [
+        "您的行事曆將不會顯示先前建立事件的詳細資訊。"
+      ]
+    },
+    "Info; reset calendar keys modal; part 2": {
+      "This is because your password was recently reset without using a recovery method.": [
+        "這是因為您的密碼最近在沒有使用還原方法的情況下被重設。"
+      ]
+    },
+    "Info; reset calendar keys modal; part 3": {
+      "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
+        "您也可以使用還原檔案、還原密語或還原密碼還原您的加密資料。"
+      ]
+    },
+    "Info; reshare calendar modal; part 1": {
+      "Calendar sharing was disabled following your recent password reset.": [
+        "在您最近的密碼重設後，已停用行事曆分享。"
+      ]
+    },
+    "Info; reshare calendar modal; part 2": {
+      "You can reshare your calendars in settings.": [
+        "您可以在設定中重新分享您的行事曆。"
+      ]
+    },
     "Input label": {
       "Access": [
         "存取"
@@ -3763,9 +3749,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
@@ -3832,8 +3815,8 @@
       "Color": [
         "色彩"
       ],
-      "Coming soon": [
-        "敬請期待"
+      "Colors": [
+        "色彩"
       ],
       "Contacts": [
         "聯絡人"
@@ -3919,9 +3902,6 @@
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "寄件者：${ importedEmail }"
-      ],
       "Good": [
         "很好"
       ],
@@ -3975,12 +3955,6 @@
       ],
       "Manage categories": [
         "管理分類"
-      ],
-      "Manage folders": [
-        "管理資料夾"
-      ],
-      "Manage labels": [
-        "管理標籤"
       ],
       "Move to Archive": [
         "移至「封存」"
@@ -4063,9 +4037,6 @@
       "System information": [
         "系統資訊"
       ],
-      "To: ${ emailAddress }": [
-        "收件者：${ emailAddress }"
-      ],
       "To: ${ to }": [
         "收件者：${ to }"
       ],
@@ -4077,9 +4048,6 @@
       ],
       "Two-factor authentication code": [
         "雙重驟驗證碼"
-      ],
-      "Upload file": [
-        "上載檔案"
       ],
       "Upload picture": [
         "上載圖像"
@@ -4159,9 +4127,6 @@
       "Request an invite": [
         "請求邀請"
       ],
-      "Subscribed calendars": [
-        "已訂購授權的行事曆"
-      ],
       "Upgrade account": [
         "升級帳號"
       ],
@@ -4174,12 +4139,17 @@
         "於 ${ CALENDAR_APP_NAME } 開啟"
       ]
     },
+    "Link; reset calendar keys modal": {
+      "What's a recovery method?": [
+        "有什麼還原方法？"
+      ]
+    },
     "Loading info": {
       "Almost there": [
         "快完成了"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
@@ -4198,17 +4168,17 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "匯入來自 ${ itemsToImportCount } 個資料夾的所有訊息，並加上標籤："
       ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "匯入帶有 ${ itemsToImportCount } 個標籤的全部郵件，並加上標籤：${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部訊息，並加上標籤："
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ itemsToImportCount } 資料夾中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "從 ${ itemsToImportCount } 個資料夾中匯入來自 ${ selectedItemsToImportCount } 個的所有訊息，並加上標籤："
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤 ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
       ]
     },
     "Message": {
@@ -4216,7 +4186,7 @@
         "轉寄:"
       ],
       "Re:": [
-        "Re:"
+        "回复："
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費試用期已結束。您即將無法存取您的帳戶。${ action }"
@@ -4241,17 +4211,6 @@
       ],
       "Manage calendars": [
         "管理行事曆"
-      ]
-    },
-    "Modal for limit of calendars reached": {
-      "Unable to add more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "無法新增更多行事曆。您已達到您的方案中的個人行事曆上限。"
-      ],
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "無法新增更多行事曆。您已達到您的方案中的個人行事曆上限。"
-      ],
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "無法建立更多行事曆。您已達到您的方案中的個人行事曆上限。"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4291,9 +4250,6 @@
       ],
       "Time zone changed": [
         "時區已變更"
-      ],
-      "Unable to add more calendars": [
-        "無法加入更多行事曆"
       ]
     },
     "Modal title and action": {
@@ -4919,9 +4875,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
-      ],
       "Easily accept invites": [
         "簡單地同意邀請"
       ],
@@ -4933,15 +4886,6 @@
       ],
       "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
         "現在，邀請會在您的行事曆中以擱置中事件的方式顯示。只要開啟事件回應就可以了。${ goToSettingsLink }"
-      ],
-      "Subscribe to other calendars": [
-        "訂閱其他行事曆"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "試試看 ${ DRIVE_APP_NAME }"
-      ],
-      "You can subscribe to external calendars and read their events.": [
-        "您可以訂閱外部行事曆並讀取其活動。"
       ]
     },
     "Spotlight settings link": {
@@ -5031,9 +4975,6 @@
       "Calendar updated": [
         "行事曆已更新"
       ],
-      "Canceling import": [
-        "正在取消匯入"
-      ],
       "Cancellation sent and all events deleted": [
         "取消已送出，並且已刪除全部事件"
       ],
@@ -5045,6 +4986,9 @@
       ],
       "Cancellation sent and participants removed from all events": [
         "取消已送出，並且已從全部事件中移除參與者"
+      ],
+      "Cancelling import": [
+        "正在取消匯入"
       ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
@@ -5193,12 +5137,26 @@
         "設定"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } min": [
+        "${ minutes }分鐘"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
-        "${ hours } 小時"
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5小時"
       ],
       "${ minutes } minutes": [
-        "${ minutes } 分鐘"
+        "${ minutes }分鐘"
       ]
     },
     "Timezone search placeholder": {
@@ -5339,6 +5297,9 @@
       "Email settings": [
         "電郵設定"
       ],
+      "Encrypted event": [
+        "已加密的事件"
+      ],
       "Enter your password": [
         "請輸入您的密碼"
       ],
@@ -5444,8 +5405,8 @@
       "Request new code": [
         "重新傳送驗證碼"
       ],
-      "Reset calendar keys": [
-        "重設行事曆金鑰"
+      "Reshare your calendars": [
+        "重新分享您的行事曆"
       ],
       "Save changes": [
         "儲存變更"
@@ -5549,6 +5510,12 @@
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
       ],
+      "We've locked some calendars to protect your data": [
+        "我們已鎖定部份行事曆以保護您的資料"
+      ],
+      "We've locked your calendars to protect your data": [
+        "我們已鎖定您的行事曆以保護您的資料"
+      ],
       "What would you like to import?": [
         "您打算要匯入什麼資料呢？"
       ],
@@ -5561,8 +5528,8 @@
       "Your calendar link": [
         "您的行事曆連結"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您專屬的免費試用即將結束，到期日為 ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "您的 Mail Plus 免費方案將於 ${ textDate } 結束"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5935,6 +5902,9 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "每 ${ interval } 年"
+      ],
       "Every ${ interval } years, ${ timesString }": [
         "每${ interval }年，${ timesString }"
       ],

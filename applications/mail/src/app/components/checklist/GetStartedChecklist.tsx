@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { ChecklistItem, Loader, SettingsLink, classnames, useApi } from '@proton/components';
+import { ChecklistItem, Loader, SettingsLink, useApi } from '@proton/components';
 import { useDateCountdown } from '@proton/hooks';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS } from '@proton/shared/lib/constants';
@@ -31,7 +31,7 @@ const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => 
 
     return (
         <div className="p1 text-center">
-            <img className="mb1-5 mt1-5" src={gift} width={48} />
+            <img className="mb1-5 mt1-5" src={gift} width={48} alt="" />
             <p className="h3 mb0 text-bold">{c('Get started checklist completion').t`You're all set!`}</p>
             <p className="color-weak mt0-5 mb1-5">
                 <span className="get-started_completion-text inline-block">
@@ -53,12 +53,11 @@ const GetStartedChecklistComplete = ({ rewardInGb }: { rewardInGb: number }) => 
 };
 
 interface GetStartedChecklistProps {
-    limitedMaxWidth?: boolean;
     onItemSelection: (key: ChecklistKey) => () => void;
     onDismiss?: () => void;
 }
 
-const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: GetStartedChecklistProps) => {
+const GetStartedChecklist = ({ onDismiss, onItemSelection }: GetStartedChecklistProps) => {
     const { expires, checklist, loading, rewardInGb, userWasRewarded } = useGetStartedChecklist();
     const { expired, days } = useDateCountdown(expires);
 
@@ -111,7 +110,7 @@ const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: Ge
     const { length: totalNumberOfItems } = checklistItems;
 
     return (
-        <div className={classnames(['p1', limitedMaxWidth && 'get-started_root--limited-width mauto'])}>
+        <div className="p1">
             <GetStartedChecklistHeader
                 numberOfCompletedItems={numberOfCompletedItems}
                 totalNumberOfItems={totalNumberOfItems}

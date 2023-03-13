@@ -1,19 +1,23 @@
-import { AnimationEvent, MouseEvent, ReactNode } from 'react';
+import { AnimationEvent, MouseEvent, ReactNode, Ref, cloneElement, forwardRef, isValidElement } from 'react';
 
+import { Icon, IconName } from '../../components/icon';
 import { classnames } from '../../helpers';
-import { NotificationType } from './interfaces';
+import { NotificationCloseButton } from './NotificationButton';
+import { CustomNotificationProps, NotificationType } from './interfaces';
+import NotificationContext from './notificationContext';
 
 const TYPES_CLASS = {
-    error: 'bg-danger',
-    warning: 'bg-warning',
-    info: 'bg-info',
-    success: 'bg-success',
+    error: 'notification--error',
+    warning: 'notification--warning',
+    info: 'notification--info',
+    success: 'notification--success',
 };
 
 const CLASSES = {
     NOTIFICATION: 'notification',
     NOTIFICATION_IN: 'notification--in',
     NOTIFICATION_OUT: 'notification--out',
+    NOTIFICATION_OUT_DUPLICATE: 'notification--out-duplicate',
 };
 
 const ANIMATIONS = {
@@ -25,12 +29,24 @@ interface Props {
     children: ReactNode;
     type: NotificationType;
     isClosing: boolean;
+    isDuplicate?: boolean;
     onExit: () => void;
-    onClick?: (e: MouseEvent<HTMLDivElement>) => void;
+    onClick?: (e: MouseEvent<HTMLElement>) => void;
+    onClose?: () => void;
+    onEnter: () => void;
+    showCloseButton?: boolean;
+    icon?: IconName;
+    top: number | undefined;
 }
 
-const Notification = ({ children, type, isClosing, onClick, onExit }: Props) => {
+const NotificationBase = (
+    { children, type, top, isClosing, isDuplicate, onClick, showCloseButton, onClose, onExit, onEnter, icon }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     const handleAnimationEnd = ({ animationName }: AnimationEvent<HTMLDivElement>) => {
+        if (animationName === ANIMATIONS.NOTIFICATION_IN) {
+            onEnter();
+        }
         if (animationName === ANIMATIONS.NOTIFICATION_OUT && isClosing) {
             onExit();
         }
@@ -38,23 +54,34 @@ const Notification = ({ children, type, isClosing, onClick, onExit }: Props) => 
 
     return (
         <div
+            ref={ref}
             aria-atomic="true"
             role="alert"
             className={classnames([
-                'p1',
-                'mb0-5',
-                'text-break',
                 CLASSES.NOTIFICATION,
                 CLASSES.NOTIFICATION_IN,
                 TYPES_CLASS[type] || TYPES_CLASS.success,
-                isClosing && CLASSES.NOTIFICATION_OUT,
+                isClosing && (isDuplicate ? CLASSES.NOTIFICATION_OUT_DUPLICATE : CLASSES.NOTIFICATION_OUT),
+                icon && 'notification--has-icon',
+                onClose && 'notification--has-close-button',
             ])}
             onClick={onClick}
             onAnimationEnd={handleAnimationEnd}
+            style={{
+                '--top-custom': top === undefined ? '-999px' : `${top}px`,
+            }}
         >
-            {children}
+            <NotificationContext.Provider value={{ type }}>
+                {icon && <Icon name={icon} className="notification__icon" />}
+                <span className="notification__content">
+                    {isValidElement<CustomNotificationProps>(children) ? cloneElement(children, { onClose }) : children}
+                </span>
+                {showCloseButton && <NotificationCloseButton onClick={onClose} />}
+            </NotificationContext.Provider>
         </div>
     );
 };
+
+const Notification = forwardRef<HTMLDivElement, Props>(NotificationBase);
 
 export default Notification;

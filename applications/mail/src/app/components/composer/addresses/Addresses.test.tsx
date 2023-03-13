@@ -128,7 +128,7 @@ describe('Addresses', () => {
     it('should add a contact from insert contact modal', async () => {
         minimalCache();
         addToCache('ContactEmails', contactEmails);
-        addApiMock('keys', () => ({}));
+        addApiMock('core/v4/keys', () => ({}));
 
         const { getByTestId, getAllByTestId, rerender } = await render(<Addresses {...props} />, false);
 

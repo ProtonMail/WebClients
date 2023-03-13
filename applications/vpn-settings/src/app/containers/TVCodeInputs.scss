@@ -24,7 +24,7 @@
 		}
 	}
 }
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	.code-input-div {
 		.field,
 		.field:focus,

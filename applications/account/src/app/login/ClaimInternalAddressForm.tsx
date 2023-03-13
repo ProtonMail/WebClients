@@ -19,7 +19,12 @@ const ClaimInternalAddressForm = ({ username = '', domain, onSubmit, onEdit }: P
     return (
         <div>
             <span className="text-semibold">{c('Info').t`The following address is available:`}</span>
-            <Card className="mt0-5 mb1 text-center" bordered={false} rounded>{`${username}@${domain}`}</Card>
+            <Card
+                data-testid="card:internal-address"
+                className="mt0-5 mb1 text-center"
+                bordered={false}
+                rounded
+            >{`${username}@${domain}`}</Card>
             <Button
                 size="large"
                 color="norm"

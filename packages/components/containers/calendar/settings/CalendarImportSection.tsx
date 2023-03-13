@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton, EasySwitchProvider } from '@proton/activation';
-import { EASY_SWITCH_SOURCE, ImportType } from '@proton/activation/interface';
+import { EASY_SWITCH_SOURCE, ImportType } from '@proton/activation/src/interface';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -15,11 +15,11 @@ import { ImportModal } from '../importModal';
 
 interface Props {
     calendars: VisualCalendar[];
-    defaultCalendar?: VisualCalendar;
+    initialCalendar?: VisualCalendar;
     user: UserModel;
 }
 
-const CalendarImportSection = ({ calendars, defaultCalendar, user }: Props) => {
+const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
     const { hasNonDelinquentScope } = user;
 
     const activeWritableCalendars = getWritableCalendars(getProbablyActiveCalendars(calendars));
@@ -31,10 +31,10 @@ const CalendarImportSection = ({ calendars, defaultCalendar, user }: Props) => {
 
     return (
         <SettingsSection>
-            {renderImportModal && defaultCalendar && (
+            {renderImportModal && initialCalendar && (
                 <ImportModal
                     isOpen={importModal.open}
-                    defaultCalendar={defaultCalendar}
+                    initialCalendar={initialCalendar}
                     calendars={calendars}
                     {...importModal}
                 />

@@ -8,6 +8,7 @@ import {
     Alert,
     Details,
     FileNameDisplay,
+    Icon,
     InputFieldTwo,
     InputTwo,
     Label,
@@ -278,33 +279,33 @@ function GeneratedLinkState({
                     </Details>
                 </div>
             </ModalTwoContent>
-            {additionalSettingsExpanded && (
-                <ModalTwoFooter>
-                    <div className="flex flex-justify-space-between w100">
-                        <Button
-                            loading={deleting}
-                            disabled={saving}
-                            onClick={onDeleteLinkClick}
-                            className="on-mobile-mb0-5"
-                        >{c('Action').t`Stop sharing`}</Button>
-                        <div className="mlauto">
-                            <Button type="reset" disabled={saving || deleting}>{c('Action').t`Close`}</Button>
-                            <PrimaryButton
-                                loading={saving}
-                                disabled={isSaveDisabled}
-                                className="ml1"
-                                type="submit"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    void handleSubmit();
-                                }}
-                            >
-                                {c('Action').t`Save`}
-                            </PrimaryButton>
-                        </div>
+            <ModalTwoFooter>
+                <div className="flex flex-justify-space-between w100">
+                    <Button
+                        loading={deleting}
+                        disabled={saving}
+                        onClick={onDeleteLinkClick}
+                        className="on-mobile-mb0-5 inline-flex flex-align-items-center"
+                    >
+                        <Icon name="link-slash" className="mr0-5" />
+                        {c('Action').t`Stop sharing`}
+                    </Button>
+                    <div className="mlauto">
+                        <PrimaryButton
+                            loading={saving}
+                            disabled={isSaveDisabled}
+                            className="ml1"
+                            type="submit"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                void handleSubmit();
+                            }}
+                        >
+                            {c('Action').t`Save`}
+                        </PrimaryButton>
                     </div>
-                </ModalTwoFooter>
-            )}
+                </div>
+            </ModalTwoFooter>
         </>
     );
 }

@@ -30,16 +30,40 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
         <>
             <div className="flex flex-gap-1 flex-justify-space-between mb1 on-mobile-flex-column">
                 <div className="flex-item-fluid on-mobile-mb0-5">
-                    <AmountButton className="w100" onSelect={handleButton} value={500} amount={amount} />
+                    <AmountButton
+                        aria-describedby="id_desc_amount id_desc_currency"
+                        className="w100"
+                        onSelect={handleButton}
+                        value={500}
+                        amount={amount}
+                    />
                 </div>
                 <div className="flex-item-fluid on-mobile-mb0-5">
-                    <AmountButton className="w100" onSelect={handleButton} value={1000} amount={amount} />
+                    <AmountButton
+                        aria-describedby="id_desc_amount id_desc_currency"
+                        className="w100"
+                        onSelect={handleButton}
+                        value={1000}
+                        amount={amount}
+                    />
                 </div>
                 <div className="flex-item-fluid on-mobile-mb0-5">
-                    <AmountButton className="w100" onSelect={handleButton} value={5000} amount={amount} />
+                    <AmountButton
+                        aria-describedby="id_desc_amount id_desc_currency"
+                        className="w100"
+                        onSelect={handleButton}
+                        value={5000}
+                        amount={amount}
+                    />
                 </div>
                 <div className="flex-item-fluid on-mobile-mb0-5">
-                    <AmountButton className="w100" onSelect={handleButton} value={10000} amount={amount} />
+                    <AmountButton
+                        aria-describedby="id_desc_amount id_desc_currency"
+                        className="w100"
+                        onSelect={handleButton}
+                        value={10000}
+                        amount={amount}
+                    />
                 </div>
             </div>
             <div className="flex flex-gap-1 flex-justify-space-between on-mobile-flex-column">
@@ -72,10 +96,16 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                         value={inputValue}
                         id="otherAmount"
                         placeholder={c('Placeholder').t`Other`}
+                        aria-describedby="id_desc_amount id_desc_currency"
                     />
                 </div>
                 <div className="flex-item-fluid on-mobile-mb0-5">
-                    <CurrencySelector className="w100" currency={currency} onSelect={onChangeCurrency} />
+                    <CurrencySelector
+                        className="w100"
+                        id="id_desc_currency"
+                        currency={currency}
+                        onSelect={onChangeCurrency}
+                    />
                 </div>
             </div>
         </>

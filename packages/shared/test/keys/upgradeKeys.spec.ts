@@ -81,7 +81,7 @@ describe('upgrade keys v2', () => {
             expect(decryptedAddressesKeys.every((key) => key.privateKey.isPrivate())).toBe(true);
             expect(decryptedAddressesKeys.length).toBe(3 as any);
             expect(newKeysArgs).toEqual({
-                url: 'keys/private/upgrade',
+                url: 'core/v4/keys/private/upgrade',
                 method: 'post',
                 data: jasmine.objectContaining({
                     KeySalt: jasmine.any(String),
@@ -170,7 +170,7 @@ describe('upgrade keys v2', () => {
             expect(decryptedKeys.length).toBe(5);
             expect(newKeysArgs.data.Keys[0].PrivateKey);
             expect(newKeysArgs).toEqual({
-                url: 'keys/private/upgrade',
+                url: 'core/v4/keys/private/upgrade',
                 method: 'post',
                 data: jasmine.objectContaining({
                     KeySalt: jasmine.any(String),
@@ -244,7 +244,7 @@ describe('upgrade keys v2', () => {
             expect(decryptedKeys.every((key) => key.isPrivate())).toBe(true);
             expect(newKeysArgs.data.Keys[0].PrivateKey);
             expect(newKeysArgs).toEqual({
-                url: 'keys/private/upgrade',
+                url: 'core/v4/keys/private/upgrade',
                 method: 'post',
                 data: jasmine.objectContaining({
                     KeySalt: jasmine.any(String),
@@ -317,7 +317,7 @@ describe('upgrade keys v2', () => {
             expect(decryptedKeys.every((key) => key.isPrivate())).toBe(true);
             expect(newKeysArgs.data.Keys[0].PrivateKey);
             expect(newKeysArgs).toEqual({
-                url: 'keys/private/upgrade',
+                url: 'core/v4/keys/private/upgrade',
                 method: 'post',
                 data: jasmine.objectContaining({
                     KeySalt: jasmine.any(String),

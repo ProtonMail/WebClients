@@ -2,7 +2,7 @@ import { enUS } from 'date-fns/locale';
 
 import truncate from '@proton/utils/truncate';
 
-import { ICAL_CALSCALE, ICAL_METHOD, MAX_LENGTHS_API } from '../../lib/calendar/constants';
+import { ICAL_CALSCALE, ICAL_METHOD, MAX_CHARS_API } from '../../lib/calendar/constants';
 import { getSupportedEvent } from '../../lib/calendar/icsSurgery/vevent';
 import {
     extractSupportedEvent,
@@ -14,6 +14,7 @@ import { parse } from '../../lib/calendar/vcal';
 import { getIcalMethod } from '../../lib/calendar/vcalHelper';
 import { omit } from '../../lib/helpers/object';
 import {
+    VcalCalendarComponentWithErrors,
     VcalDateTimeProperty,
     VcalVcalendar,
     VcalVeventComponent,
@@ -197,6 +198,32 @@ END:VEVENT`;
                 parameters: { tzid: 'America/New_York' },
             },
             sequence: { value: 11 },
+        });
+    });
+
+    it('should fix events with a sequence that is too big', () => {
+        const sequenceOutOfBounds = 2 ** 31;
+        const vevent = `BEGIN:VEVENT
+DTSTAMP:19980309T231000Z
+UID:test-event
+DTSTART;TZID=America/New_York:20020312T083000
+DTEND;TZID=America/New_York:20020312T082959
+SEQUENCE:${sequenceOutOfBounds}
+END:VEVENT`;
+        const event = parse(vevent) as VcalVeventComponent;
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
+            component: 'vevent',
+            uid: { value: 'test-event' },
+            dtstamp: {
+                value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2002, month: 3, day: 12, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            sequence: { value: 0 },
         });
     });
 
@@ -882,7 +909,7 @@ END:VEVENT`;
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et. Ac tincidunt vitae semper quis lectus nulla at volutpat. Egestas congue quisque egestas diam in arcu. Cras adipiscing enim eu turpis. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Pulvinar mattis nunc sed blandit libero volutpat sed. Enim nec dui nunc mattis enim ut tellus elementum. Vulputate dignissim suspendisse in est ante in nibh mauris. Malesuada pellentesque elit eget gravida cum. Amet aliquam id diam maecenas ultricies. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Adipiscing elit duis tristique sollicitudin nibh sit. Pulvinar proin gravida hendrerit lectus. Sit amet justo donec enim diam. Purus sit amet luctus venenatis lectus magna. Iaculis at erat pellentesque adipiscing commodo. Morbi quis commodo odio aenean. Sed cras ornare arcu dui vivamus arcu felis bibendum. Viverra orci sagittis eu volutpat. Tempor orci eu lobortis elementum nibh tellus molestie nunc non. Turpis egestas integer eget aliquet. Venenatis lectus magna fringilla urna porttitor. Neque gravida in fermentum et sollicitudin. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Et magnis dis parturient montes nascetur ridiculus mus mauris. Massa sapien faucibus et molestie ac feugiat sed lectus. Et malesuada fames ac turpis. Tristique nulla aliquet enim tortor at auctor urna. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Enim eu turpis egestas pretium aenean pharetra magna ac. Lacus luctus accumsan tortor posuere ac ut. Volutpat ac tincidunt vitae semper quis lectus nulla. Egestas sed sed risus pretium quam vulputate dignissim suspendisse in. Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Pharetra et ultrices neque ornare aenean euismod. Vitae aliquet nec ullamcorper sit amet risus nullam eget felis. Egestas congue quisque egestas diam in arcu cursus euismod. Tellus rutrum tellus pellentesque eu. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Morbi tristique senectus et netus et malesuada fames ac. Risus sed vulputate odio ut enim blandit volutpat. Pellentesque sit amet porttitor eget. Pharetra convallis posuere morbi leo urna molestie at. Tempor commodo ullamcorper a lacus vestibulum sed. Convallis tellus id interdum velit laoreet id donec ultrices. Nec ultrices dui sapien eget mi proin sed libero enim. Sit amet mauris commodo quis imperdiet massa. Sagittis purus sit amet volutpat consequat mauris nunc. Neque aliquam vestibulum morbi blandit cursus risus at ultrices. Id aliquet risus feugiat in ante metus dictum at tempor. Dignissim sodales ut eu sem integer vitae justo. Laoreet sit amet cursus sit. Eget aliquet nibh praesent tristique. Scelerisque varius morbi enim nunc faucibus. In arcu cursus euismod quis viverra nibh. At volutpat diam ut venenatis tellus in. Sodales neque sodales ut etiam sit amet nisl. Turpis in eu mi bibendum neque egestas congue quisque. Eu consequat ac felis donec et odio. Rutrum quisque non tellus orci ac auctor augue mauris augue. Mollis nunc sed id semper risus. Euismod in pellentesque massa placerat duis ultricies lacus sed turpis. Tellus orci ac auctor augue mauris augue neque gravida. Mi sit amet mauris commodo quis imperdiet massa. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Ipsum faucibus vitae aliquet nec ullamcorper sit amet. Massa tincidunt dui ut ornare lectus sit.';
         const longUID =
             'this-is-gonna-be-a-loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong-uid@proton.me';
-        const croppedUID = longUID.substring(longUID.length - MAX_LENGTHS_API.UID, longUID.length);
+        const croppedUID = longUID.substring(longUID.length - MAX_CHARS_API.UID, longUID.length);
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:this-is-gonna-be-a-loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong-uid@proton.me
@@ -893,15 +920,15 @@ DESCRIPTION:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius
 LOCATION:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et. Ac tincidunt vitae semper quis lectus nulla at volutpat. Egestas congue quisque egestas diam in arcu. Cras adipiscing enim eu turpis. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Pulvinar mattis nunc sed blandit libero volutpat sed. Enim nec dui nunc mattis enim ut tellus elementum. Vulputate dignissim suspendisse in est ante in nibh mauris. Malesuada pellentesque elit eget gravida cum. Amet aliquam id diam maecenas ultricies. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Adipiscing elit duis tristique sollicitudin nibh sit. Pulvinar proin gravida hendrerit lectus. Sit amet justo donec enim diam.
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(croppedUID.length === MAX_LENGTHS_API.UID);
+        expect(croppedUID.length === MAX_CHARS_API.UID);
         expect(
             getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
         ).toEqual({
             ...omit(event, ['dtend']),
             uid: { value: croppedUID },
-            summary: { value: truncate(loremIpsum, MAX_LENGTHS_API.TITLE) },
-            location: { value: truncate(loremIpsum, MAX_LENGTHS_API.LOCATION) },
-            description: { value: truncate(loremIpsum, MAX_LENGTHS_API.EVENT_DESCRIPTION) },
+            summary: { value: truncate(loremIpsum, MAX_CHARS_API.TITLE) },
+            location: { value: truncate(loremIpsum, MAX_CHARS_API.LOCATION) },
+            description: { value: truncate(loremIpsum, MAX_CHARS_API.EVENT_DESCRIPTION) },
             sequence: { value: 0 },
         });
     });
@@ -1387,6 +1414,115 @@ END:VCALENDAR`;
             xWrTimezone: undefined,
             components: [expectedVtimezone, expectedVevent],
         });
+    });
+
+    it('should parse an ics with errors in some events', async () => {
+        const icsString = `BEGIN:VCALENDAR
+PRODID:-//github.com/rianjs/ical.net//NONSGML ical.net 4.0//EN
+BEGIN:VTIMEZONE
+TZID:UTC
+X-LIC-LOCATION:UTC
+BEGIN:STANDARD
+DTSTART:20200101T000000
+RRULE:FREQ=YEARLY;BYDAY=1WE;BYMONTH=1
+TZNAME:UTC
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CN=Ham Burger;RSVP=TRUE:mailto:hamburgerc@pm.me
+CLASS:PUBLIC
+DESCRIPTION:\\nHi there\\,\\nThis is a very weird description
+  with tabs and \\n\t\t\tline
+ jumps\\n\t\t\ta few\\n\t\t\tjumps\\n\t\t\tyaaay
+DTEND:20210430T203000
+DTSTAMP:20210429T171519Z
+DTSTART:20210430T183000
+ORGANIZER;CN=:mailto:belzebu@evil.com
+SEQUENCE:0
+SUMMARY:Another one bites the dust
+UID:81383944-3775313411-20210429T131519@howdyhow.com
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:We can't recover from the bad DTSTART
+DTSTAMP:20210429T171519Z
+DTSTART:20210430T18:35:00
+SUMMARY:I'm broken
+UID:oh-no@howdyhow.com
+END:VEVENT
+END:VCALENDAR`;
+        const ics = new File([new Blob([icsString])], 'invite.ics');
+        const expectedVtimezone = {
+            component: 'vtimezone',
+            components: [
+                {
+                    component: 'standard',
+                    dtstart: {
+                        value: { year: 2020, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0, isUTC: false },
+                    },
+                    rrule: { value: { freq: 'YEARLY', byday: '1WE', bymonth: 1 } },
+                    tzname: [{ value: 'UTC' }],
+                    tzoffsetfrom: [{ value: '+00:00' }],
+                    tzoffsetto: [{ value: '+00:00' }],
+                },
+            ],
+            tzid: { value: 'UTC' },
+            'x-lic-location': [{ value: 'UTC' }],
+        } as VcalVtimezoneComponent;
+        const expectedVevent = {
+            component: 'vevent',
+            uid: { value: '81383944-3775313411-20210429T131519@howdyhow.com' },
+            class: { value: 'PUBLIC' },
+            dtstamp: {
+                value: { year: 2021, month: 4, day: 29, hours: 17, minutes: 15, seconds: 19, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2021, month: 4, day: 30, hours: 18, minutes: 30, seconds: 0, isUTC: false },
+            },
+            dtend: {
+                value: { year: 2021, month: 4, day: 30, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+            },
+            summary: {
+                value: 'Another one bites the dust',
+            },
+            description: {
+                value: '\nHi there,\nThis is a very weird description with tabs and \n\t\t\tlinejumps\n\t\t\ta few\n\t\t\tjumps\n\t\t\tyaaay',
+            },
+            sequence: { value: 0 },
+            organizer: {
+                value: 'mailto:belzebu@evil.com',
+                parameters: { cn: '' },
+            },
+            attendee: [
+                {
+                    value: 'mailto:hamburgerc@pm.me',
+                    parameters: { cn: 'Ham Burger', rsvp: 'TRUE' },
+                },
+            ],
+            components: [
+                {
+                    component: 'valarm',
+                    action: { value: 'DISPLAY' },
+                    description: { value: 'Reminder' },
+                    trigger: { value: { weeks: 0, days: 0, hours: 1, minutes: 0, seconds: 0, isNegative: true } },
+                },
+            ],
+        };
+
+        const { method, calscale, xWrTimezone, components } = await parseIcs(ics);
+        expect(method).toEqual(ICAL_METHOD.PUBLISH);
+        expect(calscale).toEqual(ICAL_CALSCALE.GREGORIAN);
+        expect(xWrTimezone).toBe(undefined);
+        expect(components[0]).toEqual(expectedVtimezone);
+        expect(components[1]).toEqual(expectedVevent);
+        expect((components[2] as VcalCalendarComponentWithErrors).error).toBeDefined();
+        expect((components[2] as VcalCalendarComponentWithErrors).icalComponent).toBeDefined();
     });
 
     it('should trim calscale and method', async () => {

@@ -189,7 +189,19 @@
 		word-break: break-word;
 	}
 
-	@include respond-to($breakpoint-small) {
+	// in this case, we remove 2 lines ellipsis for a simple ellipsis
+	// because it's creating bad truncation of content in some cases
+	&--title-small-fit &-title {
+		display: block;
+		/* stylelint-disable-next-line */
+		-webkit-box-orient: unset;
+		/* stylelint-disable-next-line */
+		-webkit-line-clamp: unset;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	@include media('<=small') {
 		&-title,
 		&-timestring {
 			font-size: rem(12);

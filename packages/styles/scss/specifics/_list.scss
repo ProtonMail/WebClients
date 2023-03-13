@@ -178,7 +178,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	margin-inline: em(8);
 	border-radius: var(--border-radius-lg);
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		margin-inline: em(2);
 	}
 }
@@ -196,7 +196,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	.item-weight {
 		min-inline-size: 5em;
 
-		@include respond-to(1200) {
+		@include media('<=#{em(1200, 16)}') {
 			display: none;
 		}
 	}
@@ -205,7 +205,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		inline-size: rem(200);
 		color: var(--text-norm);
 
-		@include respond-to($breakpoint-medium-landscape) {
+		@include media('<=large') {
 			inline-size: rem(128);
 		}
 	}
@@ -254,7 +254,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	}
 }
 
-@media (hover: hover) and (pointer: fine) and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)}) {
+@include media('mouse', '>small') {
 	.item-hover-action-buttons {
 		margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover :D
 	}
@@ -283,7 +283,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 		// just a 12 margin only for first element, not on mobile
 		&-wrapper:first-child .item-container {
-			@include respond-to($breakpoint-small, 'min') {
+			@include media('>small') {
 				margin-block-start: em(12);
 			}
 		}
@@ -355,7 +355,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		margin-inline: 0;
 		border-radius: 0;
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			padding-inline-start: em(12);
 		}
 

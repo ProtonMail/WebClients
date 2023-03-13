@@ -1,4 +1,3 @@
-import React from 'react';
 import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
@@ -10,11 +9,11 @@ import { useApi, useEventManager, useLoading, useNotifications } from '@proton/c
 import { removeCalendar, removeMember, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
     getIsOwnedCalendar,
+    getIsSubscribedCalendar,
     getOwnedPersonalCalendars,
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 

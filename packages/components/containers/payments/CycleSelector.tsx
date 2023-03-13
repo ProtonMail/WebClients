@@ -34,12 +34,18 @@ const CycleSelector = ({
         return (
             <ButtonGroup>
                 {options.map(({ text, value }) => {
+                    // translator: this text is only for screen readers, "Billing cycle: ${text}" (${text} contains: "1 month", "12 months" or "24 months")
+                    const billingCycleVocalizedText = c('Info').t`Billing cycle: ${text}`;
+                    const isSelected = cycle === value;
+
                     return (
                         <Button
-                            className={classnames([cycle === value && 'is-selected'])}
+                            className={classnames([isSelected && 'is-selected'])}
                             key={value}
                             onClick={() => onSelect(value as Cycle)}
                             disabled={disabled}
+                            aria-label={billingCycleVocalizedText}
+                            aria-pressed={isSelected}
                         >
                             {text}
                         </Button>

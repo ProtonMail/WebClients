@@ -382,7 +382,7 @@ const WireGuardConfigurationSection = () => {
 
         downloadFile(
             new Blob([certificate.config || '']),
-            normalize((certificate.name || certificate.publicKeyFingerprint) + '-' + serverName) + '.conf'
+            normalize((certificate.name || 'wg') + '-' + serverName) + '.conf'
         );
     };
 
@@ -738,7 +738,7 @@ const WireGuardConfigurationSection = () => {
                         </div>
                     )}
                     <form onSubmit={handleFormSubmit} className="mt2">
-                        <h3 className="mt2">{c('Title').t`1. Give a name to the config to be generated`}</h3>
+                        <h3 className="mt2 mb0-5">{c('Title').t`1. Give a name to the config to be generated`}</h3>
                         <InputFieldTwo
                             id="certificate-device-name"
                             ref={nameInputRef}
@@ -755,7 +755,7 @@ const WireGuardConfigurationSection = () => {
                             placeholder={c('Label').t`Choose a name for the generated certificate file`}
                             maxLength={100}
                         />
-                        <h3 className="mt2">{c('Title').t`2. Select platform`}</h3>
+                        <h3 className="mt2 mb0-5">{c('Title').t`2. Select platform`}</h3>
                         <div className="flex on-mobile-flex-column">
                             {[
                                 {
@@ -798,9 +798,9 @@ const WireGuardConfigurationSection = () => {
                                 );
                             })}
                         </div>
-                        <h3 className="mt2">{c('Title').t`3. Select VPN options`}</h3>
+                        <h3 className="mt2 mb0-5">{c('Title').t`3. Select VPN options`}</h3>
                         {getFeatureKeys().map((key) => (
-                            <div className="my1" key={'feature-' + key}>
+                            <div className="mb1" key={'feature-' + key}>
                                 <label className="field-two-container w100" htmlFor={'feature-' + key}>
                                     {isFeatureSelection(featuresConfig[key]) ? (
                                         <>
@@ -843,12 +843,12 @@ const WireGuardConfigurationSection = () => {
                         ))}
                         {logical && (
                             <>
-                                <h3 className="mt2">{c('Title').t`4. Select a server to connect to`}</h3>
+                                <h3 className="mt2 mb0-5">{c('Title').t`4. Select a server to connect to`}</h3>
 
-                                <div className="my2">
+                                <div className="mb2">
                                     {bestServerName && (
                                         <>
-                                            <p>
+                                            <p className="mt0">
                                                 {c('Info')
                                                     .jt`Use the best server according to current load and position: ${formattedBestServerName}`}
                                             </p>

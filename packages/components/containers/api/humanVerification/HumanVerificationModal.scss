@@ -10,7 +10,7 @@ $width-hv-modal: 730 !default;
 		max-inline-size: rem($width-hv-modal);
 
 		// below this value, we get back to normal modal
-		@include respond-to($width-hv-modal) {
+		@include media('<=#{em($width-hv-modal, 16)}') {
 			max-inline-size: 98%;
 		}
 	}

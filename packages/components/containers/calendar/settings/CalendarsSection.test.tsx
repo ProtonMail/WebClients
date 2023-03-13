@@ -1,4 +1,3 @@
-import React from 'react';
 import { Router } from 'react-router-dom';
 
 import { render, screen } from '@testing-library/react';
@@ -6,7 +5,7 @@ import { createMemoryHistory } from 'history';
 
 import createCache from '@proton/shared/lib/helpers/cache';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { generateSimpleCalendar } from '@proton/testing/lib/builders';
 
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
@@ -49,21 +48,16 @@ jest.mock('@proton/components/hooks/useAddresses', () => ({
 
 function renderComponent(props?: Partial<CalendarsSectionProps>) {
     const defaultProps: CalendarsSectionProps = {
+        addresses: [],
         calendars: [],
+        children: null,
         // defaultCalendarID?: string,
         user: { hasPaidMail: false } as UserModel,
         // loading?: boolean,
-        canAdd: true,
-        // isFeatureUnavailable?: boolean,
-        add: 'add',
-        description: 'description',
-        onAdd: jest.fn(),
         // onSetDefault?: (id: string) => Promise<void>,
         onEdit: jest.fn(),
         onDelete: jest.fn(),
         // onExport?: (calendar: Calendar) => void,
-        canUpgradeCalendarsLimit: true,
-        calendarsLimitReachedText: 'calendarLimitReachedText',
     };
 
     return (
@@ -79,11 +73,13 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
 
 describe('CalendarsSection', () => {
     it('renders properly', () => {
-        render(renderComponent({ calendars: [{ ID: '1', Name: 'calendar1' } as VisualCalendar] }));
+        render(
+            renderComponent({
+                calendars: [generateSimpleCalendar(1, { name: 'calendar1' })],
+            })
+        );
 
         expect(screen.getByText('calendar1')).toBeInTheDocument();
-        expect(screen.getByText('description')).toBeInTheDocument();
-        expect(screen.getByText('add')).toBeInTheDocument();
     });
 
     it('does not render a table when no calendars are provided', () => {

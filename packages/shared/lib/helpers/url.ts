@@ -1,4 +1,5 @@
 import { APPS, APPS_CONFIGURATION, APP_NAMES, DOH_DOMAINS, LINK_TYPES } from '../constants';
+import window from '../window';
 
 const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'tel:': LINK_TYPES.PHONE,
@@ -52,7 +53,10 @@ const getSearchFromHash = (search: string) => {
     return searchHash;
 };
 
-export const stringifySearchParams = (params: { [key: string]: string | string[] | undefined }) => {
+export const stringifySearchParams = (
+    params: { [key: string]: string | string[] | undefined },
+    prefix?: string | undefined
+) => {
     const urlSearchParams = new URLSearchParams();
 
     Object.entries(params)
@@ -68,7 +72,9 @@ export const stringifySearchParams = (params: { [key: string]: string | string[]
             urlSearchParams.set(key, stringifiedValue);
         });
 
-    return urlSearchParams.toString();
+    const urlSearch = urlSearchParams.toString();
+
+    return urlSearch !== '' && prefix !== undefined ? prefix + urlSearch : urlSearch;
 };
 
 /**
@@ -295,4 +301,17 @@ export const isAppFromURL = (url: string | undefined, app: APP_NAMES) => {
         return segments[0] === APPS_CONFIGURATION[app].subdomain;
     }
     return false;
+};
+
+export const formatURLForAjaxRequest = () => {
+    const url = new URL(window.location.href);
+    if (url.search.includes('?')) {
+        url.search = `${url.search}&load=ajax`;
+    } else {
+        url.search = '?load=ajax';
+    }
+
+    url.hash = '';
+
+    return url;
 };

@@ -3,7 +3,7 @@
 		border: 1px solid var(--border-norm); // inconsistent with borders...
 		max-block-size: 50vh;
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			max-block-size: none;
 		}
 

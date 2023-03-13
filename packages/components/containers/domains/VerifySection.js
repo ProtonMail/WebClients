@@ -21,7 +21,7 @@ const VerifySection = ({ domain }) => {
                     .t`After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.`}
             </Alert>
             <Label>{c('Label for domain modal').t`Please add the following TXT record:`}</Label>
-            <Table>
+            <Table responsive="cards">
                 <TableHeader
                     cells={[
                         c('Header for domain modal').t`Type`,
@@ -31,6 +31,11 @@ const VerifySection = ({ domain }) => {
                 />
                 <TableBody>
                     <TableRow
+                        labels={[
+                            c('Header for domain modal').t`Type`,
+                            c('Header for domain modal').t`Host name`,
+                            c('Header for domain modal').t`Value / Data / Points to`,
+                        ]}
                         cells={[
                             <code key="txt">TXT</code>,
                             <code key="at">@</code>,

@@ -8,7 +8,6 @@ import {
     DropdownCaret,
     DropdownMenu,
     DropdownMenuButton,
-    IconName,
     generateUID,
     usePopperAnchor,
 } from '@proton/components';
@@ -16,20 +15,16 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { SortParams } from '../FileBrowser/interface';
 
-export interface MenuItem<T> {
-    name: string;
-    icon: IconName;
-    sortField: T;
-}
-
 export default function SortDropdown<T extends string>({
     sortFields,
     sortField,
     onSort,
+    className,
 }: {
     sortFields?: T[];
     sortField: SortParams<T>['sortField'];
     onSort?: (sortParams: SortParams<T>) => void;
+    className?: string;
 }) {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -48,6 +43,7 @@ export default function SortDropdown<T extends string>({
     return (
         <>
             <Button
+                className={className}
                 aria-describedby={uid}
                 ref={anchorRef}
                 aria-expanded={isOpen}
@@ -86,7 +82,7 @@ export function translateSortField(sortField: string): string {
         metaDataModifyTime: c('Label').t`Modified`,
         linkCreateTime: c('Label').t`Created`,
         linkExpireTime: c('Label').t`Expires`,
-        numAccesses: c('Label').t`# of accesses`,
+        numAccesses: c('Label').t`# of downloads`,
         trashed: c('Label').t`Deleted`,
     };
     return translations[sortField];

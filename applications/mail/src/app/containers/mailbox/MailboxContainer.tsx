@@ -11,6 +11,7 @@ import {
     useItemsSelection,
     useLabels,
 } from '@proton/components';
+import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
@@ -62,6 +63,7 @@ interface Props {
     elementID?: string;
     messageID?: string;
     isComposerOpened: boolean;
+    toolbarBordered?: boolean;
 }
 
 const MailboxContainer = ({
@@ -72,6 +74,7 @@ const MailboxContainer = ({
     elementID,
     messageID,
     isComposerOpened,
+    toolbarBordered,
 }: Props) => {
     const location = useLocation();
     const history = useHistory();
@@ -168,6 +171,8 @@ const MailboxContainer = ({
     // Launch two calendar-specific API calls here to boost calendar widget performance
     useCalendars();
     useCalendarUserSettings();
+    // listen to calendar "core" updates
+    useCalendarsInfoCoreListener();
 
     const elementsLength = loading ? placeholderCount : elements.length;
     const showToolbar = !breakpoints.isNarrow || !elementID;
@@ -322,6 +327,7 @@ const MailboxContainer = ({
                             onDelete={handleDelete}
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
+                            bordered={toolbarBordered}
                         />
                     </ErrorBoundary>
                 )}
@@ -399,11 +405,16 @@ const MailboxContainer = ({
                                         columnLayout={columnLayout}
                                         isComposerOpened={isComposerOpened}
                                         containerRef={messageContainerRef}
+                                        elementIDs={elementIDs}
+                                        loadingElements={loading}
+                                        conversationMode={conversationMode}
                                     />
                                 ) : (
                                     <MessageOnlyView
                                         hidden={showPlaceholder}
                                         labelID={labelID}
+                                        elementIDs={elementIDs}
+                                        loadingElements={loading}
                                         mailSettings={mailSettings}
                                         messageID={elementID as string}
                                         onBack={handleBack}

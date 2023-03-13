@@ -23,13 +23,11 @@ import { SearchField } from './search/SearchField';
 interface Props {
     isHeaderExpanded: boolean;
     toggleHeaderExpanded: () => void;
-    logo: ReactNode;
     searchBox?: ReactNode;
     title?: string;
 }
 
 export const DriveHeader = ({
-    logo,
     isHeaderExpanded,
     toggleHeaderExpanded,
     title = c('Title').t`Drive`,
@@ -51,7 +49,6 @@ export const DriveHeader = ({
                     ) : null
                 }
                 userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModal(true)} />}
-                logo={logo}
                 title={title}
                 contactsButton={displayContactsInHeader && <TopNavbarListItemContactsDropdown />}
                 settingsButton={

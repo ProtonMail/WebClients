@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,10 +15,11 @@ import ContactsWidgetGroupsContainer from '@proton/components/containers/contact
 import ContactsWidgetSettingsContainer from '@proton/components/containers/contacts/widget/ContactsWidgetSettingsContainer';
 import { CONTACT_WIDGET_TABS, CustomAction } from '@proton/components/containers/contacts/widget/types';
 import { useUser } from '@proton/components/hooks';
+import useDrawerContactFocus from '@proton/components/hooks/useDrawerContactFocus';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-enum CONTACT_TAB {
+export enum CONTACT_TAB {
     CONTACT = 'contact',
     CONTACT_GROUP = 'contact-group',
     SETTINGS = 'settings',
@@ -32,6 +33,7 @@ interface Props {
 
 const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: Props) => {
     const [{ hasPaidMail }] = useUser();
+    const searchInputRef = useRef<HTMLInputElement>(null);
 
     const options: SelectedDrawerOption[] = [
         { text: c('Title').t`Contacts`, value: CONTACT_TAB.CONTACT },
@@ -43,6 +45,8 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
 
     const [importModal, onImport] = useModalTwo<void, void>(ContactImportModal, false);
     const { modals: mergeModals, onMerge } = useContactMergeModals();
+
+    const { onFocusSearchInput } = useDrawerContactFocus(searchInputRef, tab);
 
     const {
         modals,
@@ -89,6 +93,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                         onUpgrade={onUpgrade}
                         onSelectEmails={onSelectEmails}
                         isDrawer
+                        searchInputRef={searchInputRef}
                     />
                 );
             case CONTACT_TAB.CONTACT_GROUP:
@@ -141,6 +146,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                 options={options}
                 content={getContent(tab.value as CONTACT_TAB)}
                 footerButtons={getFooterButtons(tab.value as CONTACT_TAB)}
+                onAnimationEnd={onFocusSearchInput}
             />
             {modals}
             {importModal}

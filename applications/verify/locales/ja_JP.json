@@ -69,68 +69,6 @@
         "請求書を参照する"
       ]
     },
-    "color": {
-      "carrot": [
-        "キャロット"
-      ],
-      "cerise": [
-        "セリース"
-      ],
-      "cobalt": [
-        "コバルト"
-      ],
-      "copper": [
-        "コパー"
-      ],
-      "enzian": [
-        "エンツィアン"
-      ],
-      "fern": [
-        "ファーン"
-      ],
-      "forest": [
-        "フォレスト"
-      ],
-      "ocean": [
-        "オーシャン"
-      ],
-      "olive": [
-        "オリーブ"
-      ],
-      "pacific": [
-        "パシフィック"
-      ],
-      "pickle": [
-        "ピックル"
-      ],
-      "pine": [
-        "パイン"
-      ],
-      "pink": [
-        "ピンク"
-      ],
-      "plum": [
-        "プラム"
-      ],
-      "purple": [
-        "パープル"
-      ],
-      "reef": [
-        "リーフ"
-      ],
-      "sahara": [
-        "サハラ"
-      ],
-      "slateblue": [
-        "スレートブルー"
-      ],
-      "soil": [
-        "ソイル"
-      ],
-      "strawberry": [
-        "ストロベリー"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "アブハジア"
@@ -977,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "メール"
       ],
@@ -988,9 +923,6 @@
       ],
       "No verification method available": [
         "検証方法がありません"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -999,6 +931,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
+      ],
+      "Country code": [
+        "国コード"
       ],
       "Each code can only be used once": [
         "各コードは 1 回のみ使用可能です"

@@ -248,6 +248,9 @@
       "enable desktop notifications": [
         "povolit upozornění"
       ],
+      "Enable drive search": [
+        "Povolit hledání na disku"
+      ],
       "Expand": [
         "Rozbalit"
       ],
@@ -312,7 +315,7 @@
         "Importovat"
       ],
       "import": [
-        "import"
+        "importovat"
       ],
       "Import calendars": [
         "Importovat kalendáře"
@@ -373,6 +376,9 @@
       ],
       "Move to trash": [
         "Přesunout do koše"
+      ],
+      "New": [
+        "Nový"
       ],
       "New upload": [
         "Nové nahrávání"
@@ -602,6 +608,9 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
       "Upload anyway": [
         "Přesto nahrát"
       ],
@@ -785,54 +794,6 @@
         "Pokračovat s ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Nesynchronizováno"
-      ],
-      "Syncing": [
-        "Synchronizace"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalendář se nepodařilo dešifrovat"
-      ],
-      "Calendar is syncing": [
-        "Kalendář se synchronizuje"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Synchronizace kalendáře: načtení všech událostí může trvat několik minut."
-      ],
-      "Calendar is too big": [
-        "Kalendář je příliš velký"
-      ],
-      "Calendar link is not accessible": [
-        "Odkaz na kalendář není přístupný"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Odkaz na kalendář je dočasně nedostupný"
-      ],
-      "Failed to sync calendar": [
-        "Synchronizace kalendáře selhala"
-      ],
-      "More than 12 hours passed since last update": [
-        "Od poslední aktualizace uběhlo už více jak 12 hodin"
-      ],
-      "Unsupported calendar format": [
-        "Nepodporovaný formát kalendáře"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Odkaz na kalendář není přístupný mimo ekosystém poskytovatele kalendáře."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Odkaz na kalendář je dočasně nedostupný. Zkontrolujte, zda je odkaz od poskytovatele kalendáře stále platný."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Od poslední aktualizace uplynulo více než 12 hodin — ${ CALENDAR_APP_NAME } se pokusí kalendář aktualizovat během několika hodin."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Sbalit"
@@ -988,9 +949,6 @@
       ],
       "Work": [
         "Práce"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1918,23 +1876,14 @@
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
       ],
+      "Contact name is too long": [
+        "Jméno kontaktu je moc dlouhé"
+      ],
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete prosím režim soukromého režim prohlížeče, nebo vyzkoušejte jiný prohlížeč."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře nebo",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
-        "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo"
       ],
       "Device name does not match": [
         "Název zařízení se neshoduje"
@@ -1998,12 +1947,6 @@
       ],
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Sloučit alespoň ${ calendarToFixCount } kalendář s existujícím ${ BRAND_NAME } kalendářem",
-        "Sloučit alespoň ${ calendarToFixCount } kalendáře s existujícími ${ BRAND_NAME } kalendáři",
-        "Sloučit alespoň ${ calendarToFixCount } kalendářů s existujícími ${ BRAND_NAME } kalendáři",
-        "Sloučit alespoň ${ calendarToFixCount } kalendářů s existujícími ${ BRAND_NAME } kalendáři"
       ],
       "Missing key packet": [
         "Chybějící balíček klíčů"
@@ -2083,9 +2026,6 @@
       "Some groups could not be deleted": [
         "Některé skupiny není možné odstranit"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Některé z vašich názvů složek jsou rezervovány. Přizpůsobte prosím import a upravte tyto názvy."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Některé názvy složek nejsou k dispozici. Přizpůsobte prosím import a upravte tyto názvy."
       ],
@@ -2158,7 +2098,7 @@
       "This label name is not available. Please choose a different name.": [
         "Tento název štítku není k dispozici. Zvolte prosím jiný název."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
       ],
       "Try using only letters, numerals, and _.-": [
@@ -2170,11 +2110,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Nemůžete odeslat mail více než 100 příjemcům najednou"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Není možné odeslat vCard s více než 10 kontakty"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Dosáhli jste maximálního počtu osobních kalendářů. Některé kalendáře nebylo možné importovat."
+      "You can't send vCard files of more than 10 contacts": [
+        "Není možné odeslat soubory vCard více než 10 kontaktů"
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -2560,9 +2497,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -2571,9 +2505,6 @@
       ],
       "No verification method available": [
         "Nejsou k dispozici žádné metody ověřování"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2588,6 +2519,9 @@
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } ze ${ totalToImport } událostí byly úspěšně importovány.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Nastala chyba při šifrování a přidávání vaší události. Událost nemůže být importována."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Nastala chyba při šifrování a přidávání vašich událostí. Události nemohly být importovány."
@@ -2816,9 +2750,6 @@
       ],
       "ICS file": [
         "Soubor ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2833,6 +2764,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importovat z ${ provider }"
+      ],
       "Other": [
         "Ostatní"
       ]
@@ -2890,12 +2824,6 @@
         "${ calendarsToBeCreatedCount } nové kalendáře",
         "${ calendarsToBeCreatedCount } nových kalendářů",
         "${ calendarsToBeCreatedCount } nových kalendářů"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } sloučený kalendář",
-        "${ calendarsToBeMerged } sloučené kalendáře",
-        "${ calendarsToBeMerged } sloučených kalendářů",
-        "${ calendarsToBeMerged } sloučených kalendářů"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } sloučený kalendář",
@@ -2960,17 +2888,17 @@
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } skupina kontaktů",
-        "${ numContactGroups } skupiny kontaktů",
-        "${ numContactGroups } skupin kontaktů",
-        "${ numContactGroups } skupin kontaktů"
+      "${ numContact } contact": [
+        "${ numContact } kontakt",
+        "${ numContact } kontakty",
+        "${ numContact } kontaktů",
+        "${ numContact } kontaktů"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } kontakt",
-        "${ numContacts } kontakty",
-        "${ numContacts } kontaktů",
-        "${ numContacts } kontaktů"
+      "${ numGroups } contact group": [
+        "${ numGroups } skupina kontaktů",
+        "${ numGroups } skupiny kontaktů",
+        "${ numGroups } skupin kontaktů",
+        "${ numGroups } skupin kontaktů"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } pozastaven",
@@ -2995,6 +2923,9 @@
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
+      ],
+      "${ selectedCount } selected": [
+        "Vybráno: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } vybraná složka",
@@ -3023,9 +2954,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } úložiště"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontakty úspěšně aktualizovány.",
@@ -3040,9 +2968,6 @@
         "(${ memberCount } členové)",
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
-      ],
-      "10 email addresses": [
-        "10 e-mailových adres"
       ],
       "A number will be added to the filename": [
         "K názvu souboru bude přidáno číslo"
@@ -3070,6 +2995,9 @@
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
+      ],
+      "Also try looking in Trash.": [
+        "Zkuste se podívat také do Koše."
       ],
       "An active recovery file": [
         "Aktivní soubor pro obnovení"
@@ -3107,8 +3035,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Hromadné nahrávání může dočasně snížit dostupný výkon počítače. Během nahrávání zvažte omezit aplikace vyžadující hodně paměti, například streamování. Nebo nahrávejte menší počet souborů najednou."
+      "Calendar side panel": [
+        "Postranní panel kalendáře"
       ],
       "Canceled": [
         "Zrušeno"
@@ -3146,14 +3074,14 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Pokračujte v používání ${ DRIVE_APP_NAME } a odemkněte disk později"
       ],
-      "Continue with ${ planName }": [
-        "Pokračovat s ${ planName }"
+      "Country code": [
+        "Kód země"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Vytvořit ${ calendarsToBeCreated } nový kalendář",
-        "Vytvořit ${ calendarsToBeCreated } nové kalendáře",
-        "Vytvořit ${ calendarsToBeCreated } nových kalendářů",
-        "Vytvořit ${ calendarsToBeCreated } nových kalendářů"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Vytvořit ${ calendarsToBeCreatedCount } nový kalendář",
+        "Vytvořit ${ calendarsToBeCreatedCount } nové kalendáře",
+        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů",
+        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a složky, které chcete importovat."
@@ -3236,6 +3164,9 @@
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
       ],
+      "Enable drive search": [
+        "Povolit hledání na disku"
+      ],
       "Enabling drive search": [
         "Zapínání vyhledávání na disku"
       ],
@@ -3314,6 +3245,9 @@
       "Folders you sync from your computer will appear here.": [
         "Zde se zobrazí složky synchronizované z počítače."
       ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Chcete-li dosáhnout nejlepších výsledků, vyhněte se streamování a činnostem náročným na paměť nebo rozdělte nahrávání na menší části."
+      ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
       ],
@@ -3350,14 +3284,14 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendáře",
+        "Importovat ${ calendarCount } ze ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendáře",
-        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů",
-        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů",
-        "Importovat ${ selectedCalendarsCount } z ${ totalCalendarsCount } kalendářů"
       ],
       "Import from": [
         "Importovat z"
@@ -3370,6 +3304,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importujte e-maily, kalendáře a kontakty z jiné služby do služby ${ BRAND_NAME }. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Import vašich dat z ${ fromEmail } do ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
@@ -3397,6 +3334,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Vypadá to, že jste se nedávno pokusili nahrát ${ uploadName }. Pokud se nahrávání nezdařilo, nahrajte prosím ${ replaceFile }. Pokud nahrávání stále probíhá, nahrazení zruší probíhající nahrávání."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Položky v koši zde zůstanou, dokud je trvale neodstraníte"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Je to stejně snadné jako přesouvání nebo výběr souborů"
@@ -3533,9 +3473,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Kdokoli s tímto odkazem a heslem má přístup k této složce."
       ],
-      "Other options": [
-        "Další volby"
-      ],
       "Paused": [
         "Pozastaveno"
       ],
@@ -3593,9 +3530,6 @@
       "Primary": [
         "Hlavní"
       ],
-      "Priority support": [
-        "Prioritní podpora"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Soukromé vyhledávání zapnuto. Tento dialog můžete zavřít a vyhledávat soubory a složky."
       ],
@@ -3635,9 +3569,6 @@
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
@@ -3655,6 +3586,9 @@
       ],
       "Shared link failed to be loaded": [
         "Sdílený odkaz se nepodařilo načíst"
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
       ],
       "Signature check will be ignored": [
         "Výsledek kontroly podpisu bude ignorován"
@@ -3674,20 +3608,11 @@
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Podpora 1 vlastní e-mailové domény"
-      ],
       "support team": [
         "tým podpory"
       ],
       "Swiss privacy": [
         "Švýcarské soukromí"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Klepnutím na tlačítko + nahrajete soubor nebo složku"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -3697,6 +3622,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Šifrovaná data jsou o něco větší kvůli režii šifrování a podpisů, které zajišťují bezpečnost vašich dat."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "S následujícími položkami mohl někdo bez dovolení manipulovat: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
@@ -3752,6 +3680,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Aby bylo možné povolit soukromé vyhledávání, musí ${ DRIVE_APP_NAME } indexovat vaše soubory lokálně."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Abychom umožnili skutečně soukromé vyhledávání, musíme vaše soubory indexovat lokálně. Stále můžete normálně používat ${ DRIVE_APP_NAME } –⁠ dáme vám vědět, až bude indexování dokončeno."
       ],
@@ -3785,14 +3716,11 @@
       "Trash": [
         "Koš"
       ],
+      "Try searching by file name, date, or type.": [
+        "Zkuste vyhledávat podle názvu souboru, data nebo typu."
+      ],
       "Unknown error": [
         "Neznámá chyba"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Neomezený počet složek, štítků a filtrů"
-      ],
-      "Unlimited messages": [
-        "Neomezený počet zpráv"
       ],
       "Unlock drive to recover files": [
         "Odemknutí disku pro obnovení souborů"
@@ -3806,8 +3734,8 @@
       "Updating drive search...": [
         "Aktulizace vyhledání na disku..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Navyšte účet ještě dnes, abyste nepřišli o následující výhody ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
       "Uploaded": [
         "Nahrané"
@@ -3960,14 +3888,14 @@
       "file data order": [
         "pořadí dat v souboru"
       ],
+      "hash key": [
+        "hash klíč"
+      ],
       "keys": [
         "klíče"
       ],
       "name": [
         "název"
-      ],
-      "name hash": [
-        "hash názvu"
       ],
       "thumbnail": [
         "miniatura"
@@ -3991,14 +3919,11 @@
       ],
       "Trusted": [
         "Důvěryhodný"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
-      "# of accesses": [
-        "# přístupů"
+      "# of downloads": [
+        "počet stažení"
       ],
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
@@ -4054,6 +3979,9 @@
       "Browser version": [
         "Verze prohlížeče"
       ],
+      "Calendar": [
+        "Kalendář"
+      ],
       "Calendars": [
         "Kalendáře"
       ],
@@ -4072,8 +4000,8 @@
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
       ],
-      "Coming soon": [
-        "Již brzy"
+      "Colors": [
+        "Barvy"
       ],
       "Comment": [
         "Komentář"
@@ -4192,9 +4120,6 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Od: ${ importedEmail }"
-      ],
       "Good": [
         "Dobré"
       ],
@@ -4254,12 +4179,6 @@
       ],
       "Manage categories": [
         "Zpravovat kategorie"
-      ],
-      "Manage folders": [
-        "Správa složek"
-      ],
-      "Manage labels": [
-        "Správa štítků"
       ],
       "Merge a folder": [
         "Sloučit složku"
@@ -4378,9 +4297,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Tím se trvale odstraní všechny soubory na uzamčeném disku."
       ],
-      "To: ${ emailAddress }": [
-        "Pro: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Komu: ${ to }"
       ],
@@ -4410,9 +4326,6 @@
       ],
       "Upload anyway": [
         "Přesto nahrát"
-      ],
-      "Upload file": [
-        "Nahrát soubor"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -4476,6 +4389,17 @@
         "Postranní panel"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Chcete-li přidat nový kalendář, odstraňte stávající."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Chcete-li přidat nový kalendář, odstraňte jiný kalendář nebo navyšte tarif ${ BRAND_NAME } na placený tarif ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Dosáhli jste maximálního počtu kalendářů dostupných ve vašem tarifu."
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "vyprazdňuji cache ve vašem prohlížeči"
@@ -4506,8 +4430,11 @@
       "Almost there": [
         "Téměř hotovo"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Počet vytvořených kalendářů: ${ createdCalendars } z ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Připojování k Vašemu poskytovateli e-mailu"
@@ -4526,29 +4453,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny vybrané zprávy z ${ selectedItemsToImportCount } ze složky ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy z ${ selectedItemsToImportCount } ze složek ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy z ${ selectedItemsToImportCount } ze složek ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy z ${ selectedItemsToImportCount } ze složek ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny vybrané zprávy se štítkem ${ selectedItemsToImportCount } z ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy se štítky ${ selectedItemsToImportCount } z ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy se štítky ${ selectedItemsToImportCount } z ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny vybrané zprávy se štítky ${ selectedItemsToImportCount } z ${ itemsToImportCount } a označit je štítkem ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítku celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
       ]
     },
     "Message": {
@@ -4768,9 +4695,6 @@
       ],
       "File or folder is missing a name": [
         "Souboru nebo složce chybí název"
-      ],
-      "Item failed to be verified": [
-        "Položku se nepodařilo ověřit"
       ],
       "Link failed to be loaded": [
         "Nepodařilo se načíst odkaz"
@@ -5117,9 +5041,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
-      ],
       "Encrypted search is here": [
         "Vyhledávání v šifrovaných datech je zde"
       ],
@@ -5131,9 +5052,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nyní můžete jednoduše vyhledávat soubory na Disku, zatímco jsou vaše data zabezpečena."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Vyzkoušejte ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5160,7 +5078,7 @@
       "Bug reported": [
         "Chyba nahlášena"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Ruším import"
       ],
       "Code sent to ${ methodTo }": [
@@ -5277,12 +5195,38 @@
         "Nastavení"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } hodina",
         "${ hours } hodiny",
         "${ hours } hodin",
         "${ hours } hodin"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny"
       ],
       "${ minutes } minute": [
         "${ minutes } minuta",
@@ -5292,8 +5236,8 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "# přístupů"
+      "# of downloads": [
+        "počet stažení"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } člen",
@@ -5481,6 +5425,9 @@
       "Empty trash": [
         "Vyprázdnit koš"
       ],
+      "Enable drive search": [
+        "Povolit hledání na disku"
+      ],
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
@@ -5583,6 +5530,9 @@
       "Name": [
         "Jméno"
       ],
+      "No results found": [
+        "Nebyly nalezeny žádné výsledky"
+      ],
       "Number of files": [
         "Počet souborů"
       ],
@@ -5600,6 +5550,9 @@
       ],
       "Open settings menu": [
         "Otevřít menu nastavení"
+      ],
+      "Original size": [
+        "Původní velikost"
       ],
       "Other information": [
         "Další informace"
@@ -5751,6 +5704,9 @@
       "Uploaded by": [
         "Nahráno uživatelem"
       ],
+      "Uploading a large file or folder": [
+        "Nahrávání velkého souboru nebo složky"
+      ],
       "View contacts": [
         "Zobrazit kontakty"
       ],
@@ -5784,8 +5740,8 @@
       "Your changes are not synced yet": [
         "Vaše změny zatím nejsou synchronizovány"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Vaše bezplatná zkušební verze služby Mail Plus končí ${ textDate }"
       ],
       "Your welcome actions": [
         "Akce na uvítanou"

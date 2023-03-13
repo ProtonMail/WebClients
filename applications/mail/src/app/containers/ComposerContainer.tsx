@@ -3,7 +3,7 @@ import { useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useBeforeUnload, useHandler, useWindowSize } from '@proton/components';
+import { useBeforeUnload, useHandler } from '@proton/components';
 import { useDrawerWidth } from '@proton/components/hooks/useDrawerWidth';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
@@ -11,7 +11,7 @@ import { MAX_ACTIVE_COMPOSER_DESKTOP, MAX_ACTIVE_COMPOSER_MOBILE } from '../help
 import { useCompose } from '../hooks/composer/useCompose';
 import { useGetMessage } from '../hooks/message/useMessage';
 import { useClickMailContent } from '../hooks/useClickMailContent';
-import { Breakpoints, WindowSize } from '../models/utils';
+import { Breakpoints } from '../models/utils';
 import { ComposeProvider } from './ComposeProvider';
 
 import '../components/composer/composer.scss';
@@ -25,8 +25,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const [messageIDs, setMessageIDs] = useState<string[]>([]);
     const [focusedMessageID, setFocusedMessageID] = useState<string>();
     const [composerIndex, setComposerIndex] = useState(0);
-    const [width, height] = useWindowSize();
-    const windowSize: WindowSize = { width, height };
     const store = useStore();
     const getMessage = useGetMessage();
     useClickMailContent(() => setFocusedMessageID(undefined));
@@ -104,7 +102,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
                         composerID={composerIndex}
                         count={messageIDs.length}
                         focus={messageID === focusedMessageID}
-                        windowSize={windowSize}
                         breakpoints={breakpoints}
                         onFocus={handleFocus(messageID)}
                         onClose={handleClose(messageID)}

@@ -61,7 +61,10 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
                     setFolder(folder);
                 }
             })
-            .catch(console.warn);
+            .catch((err) => {
+                console.warn(err);
+                navigateToRoot();
+            });
     }, [folderPromise]);
 
     // In case we open preview, folder doesn't need to change.

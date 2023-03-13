@@ -8,7 +8,7 @@ body.embedded {
 	font-size: 1em;
 	background: none;
 
-	@include respond-to($breakpoint-small, 'max') {
+	@include media('<=small') {
 		.dropdown {
 			background: none;
 			padding: 10%;
@@ -26,11 +26,11 @@ body.embedded {
 	justify-content: center;
 	background-color: var(--background-norm);
 
-	@include respond-to($breakpoint-small, 'max') {
+	@include media('<=small') {
 		padding-inline: 1em;
 	}
 
-	@include respond-to($breakpoint-tiny, 'min') {
+	@include media('>xsmall') {
 		background: top center / cover no-repeat #f7f5ff;
 	}
 
@@ -39,48 +39,35 @@ body.embedded {
 		 * depending on viewport width and orientation
 		 */
 
-	@media (orientation: landscape)
-			and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+	@include media('landscape', '>xsmall', '<=small') {
 		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-landscape.jpg);
 	}
 
-	@media (orientation: portrait)
-			and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+	@include media('portrait', '>xsmall', '<=small') {
 		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-portrait.jpg);
 	}
 
-	@media (orientation: landscape)
-			and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+	@include media('landscape', '>small', '<=medium') {
 		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-landscape.jpg);
 	}
 
-	@media (orientation: portrait)
-			and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+	@include media('portrait', '>small', '<=medium') {
 		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-portrait.jpg);
 	}
 
-	@media (orientation: landscape)
-			and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+	@include media('landscape', '>medium', '<=large') {
 		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-landscape.jpg);
 	}
 
-	@media (orientation: portrait)
-			and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+	@include media('portrait', '>medium', '<=large') {
 		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-portrait.jpg);
 	}
 
-	@media (min-width: #{em($breakpoint-medium-landscape + 1, $root-default-font-size)})
-			and (max-width: #{em($breakpoint-large, $root-default-font-size)}) {
+	@include media('>large', '<=xlarge') {
 		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1500.jpg);
 	}
 
-	@media (min-width: #{em($breakpoint-large + 1, $root-default-font-size)}) {
+	@include media('>xlarge') {
 		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-2000.jpg);
 	}
 }
@@ -90,11 +77,11 @@ body.embedded {
 	padding-block: 2em 2.5em;
 	border-radius: var(--border-radius-lg);
 
-	@include respond-to($breakpoint-small) {
+	@include media('<=small') {
 		padding-inline: em(20);
 	}
 
-	@include respond-to($breakpoint-tiny, 'max') {
+	@include media('<=xsmall') {
 		padding-inline: 2px;
 	}
 }

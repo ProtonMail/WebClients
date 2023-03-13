@@ -6,7 +6,7 @@ import {
     getIsCalendarUrlEventManagerUpdate,
     transformLinkFromAPI,
     transformLinksFromAPI,
-} from '@proton/shared/lib/calendar/shareUrl/helpers';
+} from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
 import { getIsCalendarEventManagerDelete } from '@proton/shared/lib/eventManager/helpers';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';

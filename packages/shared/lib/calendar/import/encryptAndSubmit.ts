@@ -16,7 +16,7 @@ import {
 } from '../../interfaces/calendar';
 import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '../constants';
-import { getCreationKeys } from '../crypto/helpers';
+import { getCreationKeys } from '../crypto/keys/helpers';
 import { getIsSuccessSyncApiResponse } from '../helper';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { createCalendarEvent } from '../serialize';

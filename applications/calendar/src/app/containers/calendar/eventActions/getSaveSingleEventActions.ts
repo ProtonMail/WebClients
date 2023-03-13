@@ -2,7 +2,7 @@ import { PublicKeyReference } from '@proton/crypto';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
-import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getUpdatedInviteVevent } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -42,6 +42,7 @@ interface SaveEventHelperArguments {
     hasDefaultNotifications: boolean;
     personalEventsDeprecated: boolean;
     selfAddress?: Address;
+    canEditOnlyNotifications: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
@@ -71,6 +72,7 @@ const getSaveSingleEventActions = async ({
     hasDefaultNotifications,
     personalEventsDeprecated,
     selfAddress,
+    canEditOnlyNotifications,
     isAttendee,
     inviteActions,
     getCalendarKeys,
@@ -187,8 +189,8 @@ const getSaveSingleEventActions = async ({
             });
         }
 
-        if (isAttendee) {
-            // the attendee edits notifications. We must do it through the updatePersonalPart route
+        if (canEditOnlyNotifications) {
+            // We change notifications through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,
                 hasDefaultNotifications,
@@ -217,6 +219,7 @@ const getSaveSingleEventActions = async ({
                 type: SAVE_CONFIRMATION_TYPES.SINGLE,
                 inviteActions,
                 isAttendee: false,
+                canEditOnlyNotifications: false,
             });
             const {
                 veventComponent: cleanVeventComponent,
@@ -279,6 +282,7 @@ const getSaveSingleEventActions = async ({
             type: SAVE_CONFIRMATION_TYPES.SINGLE,
             inviteActions,
             isAttendee: false,
+            canEditOnlyNotifications: false,
         });
         const { inviteActions: cleanInviteActions, vevent: cleanVevent } = await onSendPrefsErrors({
             inviteActions,

@@ -2,11 +2,14 @@ import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { retryHandler } from '@proton/shared/lib/api/helpers/withApiHandlers';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { DOWNLOAD_RETRIES_ON_TIMEOUT, DOWNLOAD_TIMEOUT, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
+import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
+import { APP_NAME, APP_VERSION } from '../../../config';
 import { MAX_TOO_MANY_REQUESTS_WAIT } from '../constants';
 
 // Stream wrapper has outdated types
@@ -41,6 +44,7 @@ export default async function downloadBlock(
             credentials: 'omit',
             headers: {
                 'pm-storage-token': token,
+                ...getAppVersionHeaders(getClientID(APP_NAME), APP_VERSION),
             },
         })
             .then((result) => {

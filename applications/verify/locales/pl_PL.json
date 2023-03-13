@@ -69,68 +69,6 @@
         "Pokaż fakturę"
       ]
     },
-    "color": {
-      "carrot": [
-        "marchewkowy"
-      ],
-      "cerise": [
-        "wiśniowy"
-      ],
-      "cobalt": [
-        "kobaltowy"
-      ],
-      "copper": [
-        "miedziany"
-      ],
-      "enzian": [
-        "atramentowy"
-      ],
-      "fern": [
-        "paprotkowy"
-      ],
-      "forest": [
-        "leśny"
-      ],
-      "ocean": [
-        "morski"
-      ],
-      "olive": [
-        "oliwkowy"
-      ],
-      "pacific": [
-        "pacyficzny"
-      ],
-      "pickle": [
-        "khaki"
-      ],
-      "pine": [
-        "sosnowy"
-      ],
-      "pink": [
-        "różowy"
-      ],
-      "plum": [
-        "śliwkowy"
-      ],
-      "purple": [
-        "fioletowy"
-      ],
-      "reef": [
-        "rafa koralowa"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "slateblue"
-      ],
-      "soil": [
-        "ziemisty"
-      ],
-      "strawberry": [
-        "truskawkowy"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abchazja"
@@ -977,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Adres e-mail"
       ],
@@ -988,9 +923,6 @@
       ],
       "No verification method available": [
         "Brak dostępnych metod weryfikacji"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -999,6 +931,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
+      ],
+      "Country code": [
+        "Kod kraju"
       ],
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"

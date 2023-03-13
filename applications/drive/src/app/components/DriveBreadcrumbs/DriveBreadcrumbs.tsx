@@ -36,9 +36,8 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
 
         traverseLinksToRoot(abortController.signal, activeFolder.shareId, activeFolder.linkId)
             .then((pathItems) => {
-                const breadcrumbs = pathItems.map(({ linkId, name, isRoot, link }) => {
+                const breadcrumbs = pathItems.map(({ linkId, name, isRoot, link, isReadOnly }) => {
                     const handleDrop = getHandleItemDrop(linkId);
-
                     const breadcrumb: BreadcrumbInfo = {
                         key: linkId,
                         text: name,
@@ -60,9 +59,15 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                                 ? undefined
                                 : () => navigateToLink(activeFolder.shareId, linkId, false),
                         onDragLeave: () => {
+                            if (isReadOnly) {
+                                return;
+                            }
                             setDropTarget(undefined);
                         },
                         onDragOver: (e) => {
+                            if (isReadOnly) {
+                                return;
+                            }
                             e.stopPropagation();
                             e.preventDefault();
                             if (dropTarget !== linkId) {
@@ -70,6 +75,9 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                             }
                         },
                         onDrop: async (e) => {
+                            if (isReadOnly) {
+                                return;
+                            }
                             setDropTarget(undefined);
                             try {
                                 await handleDrop(e);

@@ -23,14 +23,12 @@ import {
     useActiveBreakpoint,
     useApiWithoutResult,
     useEventManager,
-    useFeature,
     useFilters,
     useFolders,
     useLabels,
     useLoading,
     useNotifications,
 } from '../../../hooks';
-import { FeatureCode } from '../../features';
 import { getDefaultFolders, noFolderValue } from '../constants';
 import {
     Actions,
@@ -113,7 +111,6 @@ const modelHasChanged = (a: SimpleFilterModalModel, b: SimpleFilterModalModel): 
 };
 
 const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
-    const { feature: applyFiltersFeature } = useFeature(FeatureCode.ApplyFilters);
     const { isNarrow } = useActiveBreakpoint();
     const [filters = []] = useFilters();
     const [labels = [], loadingLabels] = useLabels();
@@ -347,7 +344,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
                         onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
                     />
                     {loadingLabels || loadingFolders ? <Loader /> : renderStep()}
-                    {applyFiltersFeature?.Value === true && [Step.ACTIONS, Step.PREVIEW].includes(model.step) && (
+                    {[Step.ACTIONS, Step.PREVIEW].includes(model.step) && (
                         <div className="mt1">
                             <Checkbox
                                 id="applyfilter"

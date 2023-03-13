@@ -17,6 +17,8 @@ interface FormatOptions {
     locale?: Locale;
 }
 
+export const YEAR_REGEX = /[0-9]{4}/i;
+
 /**
  * Get a list with the names of the days of the week according to current locale, where Sunday is the start of the week.
  */

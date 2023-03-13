@@ -88,7 +88,7 @@ const getApi = (value) => {
     return API_TARGETS[value] || API_TARGETS.prod;
 };
 
-const getConfigData = ({ api, apiProxy, publicPath }) => {
+const getConfigData = ({ api, apiProxy, publicPath, version }) => {
     const pkg = require(path.join(process.cwd(), 'package.json'));
     const appName = pkg.name;
     if (!appName) {
@@ -99,7 +99,8 @@ const getConfigData = ({ api, apiProxy, publicPath }) => {
 
     const appData = {
         appName,
-        version: getVersionNumberFromTag(process.env.CI_COMMIT_TAG || getGitTagVersion(appName)) || '5.0.999.999',
+        version:
+            version || getVersionNumberFromTag(process.env.CI_COMMIT_TAG || getGitTagVersion(appName)) || '5.0.999.999',
         locales: LOCALES,
         api,
         apiProxy,

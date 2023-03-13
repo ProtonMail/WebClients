@@ -15,7 +15,7 @@ import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vca
 import { getSupportedEvent, withSupportedDtstamp } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import { findAttendee, getParticipant } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
-import { parseWithErrors, serialize } from '@proton/shared/lib/calendar/vcal';
+import { parseWithRecoveryAndErrors, serialize } from '@proton/shared/lib/calendar/vcal';
 import {
     buildVcalOrganizer,
     getDtendProperty,
@@ -26,7 +26,6 @@ import {
     getHasDtStart,
     getHasRecurrenceId,
     getIcalMethod,
-    getIsCalendar,
     getIsEventComponent,
     getIsProtonReply,
     getIsRecurring,
@@ -373,16 +372,12 @@ export const getEventTimeStatus = (vevent: VcalVeventComponent, now: number) => 
     return EVENT_TIME_STATUS.FUTURE;
 };
 
-export const parseVcalendar = (data: string): VcalVcalendar | undefined => {
+export const parseVcalendar = (data: string) => {
     try {
         if (!data) {
             return;
         }
-        const parsedVcalendar = parseWithErrors(data) as VcalVcalendar;
-        if (!getIsCalendar(parsedVcalendar)) {
-            return;
-        }
-        return parsedVcalendar;
+        return parseWithRecoveryAndErrors(data);
     } catch (e: any) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.PARSING_ERROR);
     }
@@ -630,6 +625,9 @@ export const getSupportedEventInvitation = async ({
             legacyUid = await generateVeventHashUID(icsBinaryString, originalUID, true);
         }
         completeVevent.uid = { value: sha1Uid };
+    } else if (!originalUID) {
+        // Invitations without UID should be considered invalid
+        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     } else if (!completeVevent.organizer) {
         // The ORGANIZER field is mandatory in an invitation
         const guessOrganizerEmail = ICAL_METHODS_ATTENDEE.includes(supportedMethod)

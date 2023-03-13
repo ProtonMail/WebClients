@@ -1,7 +1,7 @@
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 
 import { CacheProvider } from '../../cache';
@@ -48,7 +48,7 @@ describe('SubscribedCalendarModal', () => {
 
         const submitButton = screen.getByText('Add calendar', { selector: 'button' });
         const input = screen.getByLabelText('Calendar URL');
-        const limitA = 'a'.repeat(MAX_LENGTHS_API.CALENDAR_URL);
+        const limitA = 'a'.repeat(MAX_CHARS_API.CALENDAR_URL);
         const googlePublicNoProtocolLong = `calendar.google.com/public/${limitA}`;
         const googlePublicNoProtocolShort = `calendar.google.com/public/a`;
         const googlePublicNoExtensionLong = `https://${googlePublicNoProtocolLong}`;

@@ -86,6 +86,9 @@
       "Archive": [
         "Архівувати"
       ],
+      "As Scheduled": [
+        "Як заплановано"
+      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Створити повідомлення"
+      ],
+      "Custom": [
+        "Власний"
       ],
       "Customize": [
         "Налаштувати"
@@ -461,11 +467,8 @@
       "Hide messages": [
         "Приховати повідомлення"
       ],
-      "Hide My Email": [
-        "Hide My Email"
-      ],
       "Hide my email": [
-        "Сховати мою е‑адресу"
+        "Hide My Email"
       ],
       "I have a question": [
         "У мене є питання"
@@ -536,9 +539,6 @@
       "Load": [
         "Завантажити"
       ],
-      "Load anyway": [
-        "Все одно завантажити"
-      ],
       "Load embedded images": [
         "Завантажити вбудовані зображення"
       ],
@@ -604,6 +604,9 @@
       ],
       "Minimize composer": [
         "Згорнути редактор"
+      ],
+      "Monday": [
+        "Понеділок"
       ],
       "More": [
         "Більше"
@@ -800,9 +803,6 @@
       "Remove this label": [
         "Вилучити цю мітку"
       ],
-      "Rename": [
-        "Перейменувати"
-      ],
       "Reply": [
         "Відповісти"
       ],
@@ -850,9 +850,6 @@
       ],
       "Schedule message": [
         "Запланувати повідомлення"
-      ],
-      "Schedule send": [
-        "Запланувати надсилання"
       ],
       "Search": [
         "Пошук"
@@ -965,8 +962,8 @@
       "Skip verification": [
         "Пропустити перевірку"
       ],
-      "Some images failed to load with tracking protection.": [
-        "У зв'язку із захистом від стеження, не вдалося завантажити деякі зображення."
+      "Some images could not be loaded with tracker protection.": [
+        "Деякі зображення неможливо завантажити, якщо увімкнено захист від стеження."
       ],
       "Star": [
         "Позначити зірочкою"
@@ -991,6 +988,9 @@
       ],
       "This message contains remote content.": [
         "Це повідомлення містить зовнішній вміст."
+      ],
+      "Tomorrow": [
+        "Завтра"
       ],
       "Trust": [
         "Довіряти"
@@ -1206,16 +1206,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Розмова"
-      ]
-    },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1611,54 +1601,6 @@
         "Ваша адреса електронної пошти відсутня в переліку учасників"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Не синхронізовано"
-      ],
-      "Syncing": [
-        "Синхронізація"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Не вдалося розшифрувати календар"
-      ],
-      "Calendar is syncing": [
-        "Календар синхронізується"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
-      ],
-      "Calendar is too big": [
-        "Календар завеликий"
-      ],
-      "Calendar link is not accessible": [
-        "Календар за посиланням недоступний"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Посилання календаря тимчасово недоступне"
-      ],
-      "Failed to sync calendar": [
-        "Не вдалося синхронізувати календар"
-      ],
-      "More than 12 hours passed since last update": [
-        "Понад 12 годин минуло після попередньої синхронізації"
-      ],
-      "Unsupported calendar format": [
-        "Непідтримуваний формат календаря"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Від часу останнього оновлення минуло понад 12 годин — ${ CALENDAR_APP_NAME } спробує оновити календар за кілька годин."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Подія вже завершилася"
@@ -1975,7 +1917,7 @@
         "Назва"
       ],
       "URL": [
-        "URL"
+        "URL-адреса"
       ]
     },
     "Contact type label": {
@@ -1999,9 +1941,6 @@
       ],
       "Work": [
         "Робочий"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2899,14 +2838,23 @@
       "No labels": [
         "Немає міток"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logo and a plus sign"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Користуйтеся власним розкладом листування та іншими перевагами після оновлення тарифного плану."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "When do you want your message to be sent?": [
+        "Коли ви хочете надіслати своє повідомлення?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
@@ -3094,6 +3042,9 @@
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
       ],
+      "Contact name is too long": [
+        "Ім'я контакту задовге"
+      ],
       "Contact signature could not be verified": [
         "Не вдається перевірити підпис контакту"
       ],
@@ -3108,18 +3059,6 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Помилка розшифрування: не вдалося розшифрувати вміст цього повідомлення."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Приберіть принаймні ${ calendarToFixCount } календар",
-        "Приберіть принаймні ${ calendarToFixCount } календарі",
-        "Приберіть принаймні ${ calendarToFixCount } календарів",
-        "Приберіть принаймні ${ calendarToFixCount } календаря"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Приберіть принаймні ${ calendarToFixCount } календар або",
-        "Приберіть принаймні ${ calendarToFixCount } календарі або",
-        "Приберіть принаймні ${ calendarToFixCount } календарів або",
-        "Приберіть принаймні ${ calendarToFixCount } календаря або"
       ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
@@ -3198,12 +3137,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Перевищено максимальну кількість (${ attachmentsCountLimit }) вкладень"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarToFixCount } календарі з наявними календарями ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "Спершу необхідно надіслати повідомлення"
@@ -3325,9 +3258,6 @@
       "Some groups could not be deleted": [
         "Не вдається видалити деякі групи"
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Назви деяких ваших тек зарезервовані. Налаштуйте імпорт для зміни цих назв."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
       ],
@@ -3406,7 +3336,7 @@
       "This message has already been sent. A new draft has been saved.": [
         "Це повідомлення вже було надіслане. Нову чернетку збережено."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
@@ -3430,8 +3360,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Ви не можете надіслати лист понад 100 отримувачам"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Ви не можете надіслати vCards для понад 10 контактів"
+      "You can't send vCard files of more than 10 contacts": [
+        "Ви не можете надіслати файли vCard для понад 10 контактів"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Не можна відкрити понад ${ maxActiveComposer } вікно редактора одночасно",
@@ -3441,9 +3371,6 @@
       ],
       "You did not provide a file.": [
         "Ви не надали файл."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості особистих календарів. Деякі календарі не імпортовані."
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -3531,7 +3458,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
+        "Під час читання вашого файлу ${ formattedFilename } сталася помилка. Файл має неправильний формат."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -4065,9 +3992,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "Е-пошта"
       ],
@@ -4076,9 +4000,6 @@
       ],
       "No verification method available": [
         "Немає доступних способів перевірки"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4104,6 +4025,9 @@
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
         "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Під час шифрування та додавання події сталася помилка. Неможливо імпортувати подію."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Сталася помилка під час шифрування й додавання ваших подій. Жодна подія не може бути імпортована."
@@ -4340,9 +4264,6 @@
       ],
       "ICS file": [
         "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4357,6 +4278,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Імпорт з ${ provider }"
+      ],
       "Other": [
         "Інший"
       ]
@@ -4399,12 +4323,6 @@
         "${ calendarsToBeCreatedCount } нові календарі",
         "${ calendarsToBeCreatedCount } нових календарів",
         "${ calendarsToBeCreatedCount } нових календарів"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } об'єднаний календар",
-        "${ calendarsToBeMerged } об'єднані календарі",
-        "${ calendarsToBeMerged } об'єднаних календарів",
-        "${ calendarsToBeMerged } об'єднаних календарів"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } об'єднаний календар",
@@ -4472,17 +4390,17 @@
         "Заблоковано ${ numberOfTrackers } елементів стеження",
         "Заблоковано ${ numberOfTrackers } елементи стеження"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } група контактів",
-        "${ numContactGroups } групи контактів",
-        "${ numContactGroups } груп контактів",
-        "${ numContactGroups } груп контактів"
+      "${ numContact } contact": [
+        "${ numContact } контакт",
+        "${ numContact } контакти",
+        "${ numContact } контактів",
+        "${ numContact } контактів"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } контакт",
-        "${ numContacts } контакти",
-        "${ numContacts } контактів",
-        "${ numContacts } контакта"
+      "${ numGroups } contact group": [
+        "${ numGroups } група контактів",
+        "${ numGroups } групи контактів",
+        "${ numGroups } груп контактів",
+        "${ numGroups } груп контактів"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } повідомлення у розмові",
@@ -4550,9 +4468,6 @@
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } сховища"
-      ],
       "${ total } conversation": [
         "${ total } розмова",
         "${ total } розмови",
@@ -4615,9 +4530,6 @@
       ],
       "(No Recipient)": [
         "(Немає отримувача)"
-      ],
-      "10 email addresses": [
-        "10 адрес е-пошти"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Фраза відновлення є одним із найнадійніших способів захисту вашого облікового запису. Ви можете використати її для доступу до свого облікового запису та відновлення зашифрованих даних у випадку втрати пароля."
@@ -4736,6 +4648,9 @@
       "Body: ": [
         "Вміст: "
       ],
+      "Calendar side panel": [
+        "Бічна панель календаря"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
       ],
@@ -4766,17 +4681,17 @@
       "Confirm phishing report": [
         "Підтвердити звіт про шахрайство"
       ],
-      "Continue with ${ planName }": [
-        "Продовжити з ${ planName }"
-      ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Створити ${ calendarsToBeCreated } новий календар",
-        "Створити ${ calendarsToBeCreated } нові календарі",
-        "Створити ${ calendarsToBeCreated } нових календарів",
-        "Створити ${ calendarsToBeCreated } нових календарів"
+      "Country code": [
+        "Код країни"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Створити ${ calendarsToBeCreatedCount } новий календар",
+        "Створити ${ calendarsToBeCreatedCount } нові календарі",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також теки, які ви бажаєте імпортувати."
@@ -4988,11 +4903,11 @@
       "Group assignment applied": [
         "Призначення групи застосовано"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Має ${ numAttachments } вкладення",
-        "Має ${ numAttachments } вкладення",
-        "Має ${ numAttachments } вкладень",
-        "Має ${ numAttachments } вкладень"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })",
+        "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })",
+        "Містить ${ numAttachments } вкладень (${ numAttachmentsSize })",
+        "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })"
       ],
       "here": [
         "тут"
@@ -5033,14 +4948,14 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Зображення були вилучені, оскільки вони не дозволені в автовідповіді"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календаря",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ selectedCalendarsCount } з ${ totalCalendarsCount } календарів"
       ],
       "Import from": [
         "Імпортувати з"
@@ -5053,6 +4968,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Імпортуйте свої листи, календарі та контакти з іншої служби до ${ BRAND_NAME }. Ми допоможемо вам пройти кожен крок та зашифрувати ваші дані після переміщення. Вітаємо у світі приватності."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
@@ -5159,8 +5077,8 @@
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Переміщення великої кількості повідомлень. Це може тривати деякий час."
+      "Moving messages. This may take a while.": [
+        "Переміщення повідомлень. Це може тривати деякий час."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
@@ -5221,9 +5139,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один або кілька ваших довірених ключів були позначені «скомпрометованими» їх власником. Ми радимо вам не довіряти цим ключам."
-      ],
-      "Other options": [
-        "Інші варіанти"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
@@ -5294,9 +5209,6 @@
       "Print email": [
         "Друкувати лист"
       ],
-      "Priority support": [
-        "Пріоритетна підтримка"
-      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Захистіть свою електронну пошту від потрапляння до списків розсилки або спамерів за допомогою ${ maskMyEmailButton }."
       ],
@@ -5366,9 +5278,6 @@
       "Select what you want to import.": [
         "Виберіть, що ви хочете імпортувати."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більш ніж 20 календарів."
-      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Надіслати зашифроване, захищене паролем повідомлення на електронну адресу ${ boldText }."
       ],
@@ -5414,9 +5323,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Перепрошуємо, цього повідомлення не існує, або термін його дії завершився."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Безпечно розміщуйте та діліться файлами за допомогою ${ DRIVE_APP_NAME }."
       ],
@@ -5431,9 +5337,6 @@
       ],
       "Subject: ": [
         "Тема: "
-      ],
-      "Support for 1 custom email domain": [
-        "Підтримка 1 власного домену е-пошти"
       ],
       "Support privacy by upgrading for": [
         "Підтримайте приватність передплативши"
@@ -5615,12 +5518,6 @@
       "Turn on to search the content of your messages": [
         "Увімкніть, щоб шукати вміст своїх повідомлень"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток і фільтрів"
-      ],
-      "Unlimited messages": [
-        "Необмежена кількість повідомлень"
-      ],
       "Unlock message": [
         "Розблокувати повідомлення"
       ],
@@ -5632,6 +5529,9 @@
       ],
       "Updating message content search...": [
         "Оновлення пошуку вмісту повідомлень..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
@@ -5663,9 +5563,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Передплатіть тарифний план, щоб використовувати ${ MAIL_APP_NAME } зі сторонніми комп'ютерними клієнтами."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Оновіть тарифний план сьогодні, щоб не втратити ці переваги ${ planName }."
-      ],
       "Upload picture": [
         "Вивантажити зображення"
       ],
@@ -5683,9 +5580,6 @@
       ],
       "Using SimpleLogin is easy": [
         "Користуватися SimpleLogin легко"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Підтверджене повідомлення ${ BRAND_NAME }"
       ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
@@ -5929,9 +5823,6 @@
       ],
       "Trusted": [
         "Надійний"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -6256,14 +6147,11 @@
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
-      "Coming soon": [
-        "Незабаром з'явиться"
+      "Colors": [
+        "Кольори"
       ],
       "Conditions": [
         "Умови"
-      ],
-      "Confirm password": [
-        "Підтвердити пароль"
       ],
       "Contacts": [
         "Контакти"
@@ -6349,9 +6237,6 @@
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "Від: ${ importedEmail }"
-      ],
       "Good": [
         "Добре"
       ],
@@ -6426,12 +6311,6 @@
       ],
       "Manage categories": [
         "Керувати категоріями"
-      ],
-      "Manage folders": [
-        "Керувати теками"
-      ],
-      "Manage labels": [
-        "Керувати мітками"
       ],
       "Manage my addresses": [
         "Керувати моїми адресами"
@@ -6586,9 +6465,6 @@
       "To:": [
         "Кому:"
       ],
-      "To: ${ emailAddress }": [
-        "Кому: ${ emailAddress }"
-      ],
       "To: ${ to }": [
         "Кому: ${ to }"
       ],
@@ -6603,9 +6479,6 @@
       ],
       "Undisclosed Recipients": [
         "Приховані отримувачі"
-      ],
-      "Upload file": [
-        "Вивантажити файл"
       ],
       "Upload picture": [
         "Завантажити зображення"
@@ -6713,6 +6586,17 @@
       ],
       "Row": [
         "Рядок"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Щоб додати новий календар, вилучіть наявний."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Щоб додати новий календар, вилучіть інший календар або змініть свій тарифний план ${ BRAND_NAME } на платний ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ви досягли максимальної кількості календарів для вашого тарифного плану."
       ]
     },
     "Link": {
@@ -6878,8 +6762,11 @@
       "Almost there": [
         "Майже готово"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Кількість створених календарів: ${ createdCalendars } з ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Підключення до вашого постачальника електронної пошти"
@@ -6898,29 +6785,29 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
       ]
     },
     "Mailbox": {
@@ -7175,6 +7062,39 @@
         "Перемкнути або додати обліковий запис"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Власні домени електронної пошти"
+      ],
+      "Hide My Email aliases": [
+        "Псевдоніми Hide My Email"
+      ],
+      "Schedule messages at any time": [
+        "Заплануйте надсилання повідомлень в будь-який час"
+      ],
+      "Search message content": [
+        "Пошук вмісту повідомлень"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Up to 15 email addresses": [
+        "До 15 адрес електронної пошти"
+      ],
+      "Up to 500 GB of storage": [
+        "До 500 ГБ сховища"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Отримайте необмежену кількість псевдонімів із SimpleLogin від ${ BRAND_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Розкажіть нам про своє враження. (Необов'язково)"
@@ -7338,9 +7258,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Спосіб зв'язку з вами"
-      ],
-      "Confirm password": [
-        "Підтвердити пароль"
       ],
       "E.g., ": [
         "Наприклад, "
@@ -7715,9 +7632,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
-      ],
       "Email tracking protection": [
         "Захист від стеження електронної пошти"
       ],
@@ -7732,9 +7646,6 @@
       ],
       "Schedule send": [
         "Запланувати надсилання"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Спробувати ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Відтепер ми типово завантажуємо зображення і не даємо відправникам відстежувати вас.\nЦе можна змінити в ${ settingsLink }."
@@ -7912,7 +7823,7 @@
       "Bug reported": [
         "Звіт про помилку надіслано"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Скасування імпорту"
       ],
       "Code sent to ${ methodTo }": [
@@ -8154,23 +8065,11 @@
         "${ daysCountLeft } днів",
         "${ daysCountLeft } днів"
       ],
-      "${ hours } hour": [
-        "${ hours } година",
-        "${ hours } години",
-        "${ hours } годин",
-        "${ hours } годин"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } година",
         "${ hoursCountLeft } години",
         "${ hoursCountLeft } годин",
         "${ hoursCountLeft } годин"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвилина",
-        "${ minutes } хвилини",
-        "${ minutes } хвилин",
-        "${ minutes } хвилин"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } хвилина",
@@ -8183,6 +8082,46 @@
         "${ secondsCountLeft } секунди",
         "${ secondsCountLeft } секунд",
         "${ secondsCountLeft } секунд"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } години"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 годин",
+        "${ hoursInt }.5 години"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
       ]
     },
     "Title": {
@@ -8648,6 +8587,9 @@
       "Sending original message": [
         "Надсилання оригінального повідомлення"
       ],
+      "Set your own schedule": [
+        "Налаштувати власний розклад"
+      ],
       "Settings": [
         "Налаштування"
       ],
@@ -8732,8 +8674,8 @@
       "Your changes are not synced yet": [
         "Ваші зміни ще не синхронізовані"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Ваша безплатна пробна версія Mail Plus завершується ${ textDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9203,8 +9145,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly",
+        "Щороку",
+        "Кожні ${ interval } роки",
         "Кожні ${ interval } років",
         "Кожні ${ interval } років"
       ],

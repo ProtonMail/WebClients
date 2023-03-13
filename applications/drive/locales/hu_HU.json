@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
+      "Attention required": [
+        "Figyelem szükséges"
+      ],
       "Authenticate": [
         "Azonosítás"
       ],
@@ -322,6 +325,12 @@
       "Log in": [
         "Bejelentkezés"
       ],
+      "Manage folders": [
+        "Mappák kezelése"
+      ],
+      "Manage labels": [
+        "Címkék kezelése"
+      ],
       "Manage link": [
         "Hivatkozás kezelése"
       ],
@@ -583,6 +592,9 @@
       "Upgrade": [
         "Csomagváltás"
       ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ],
       "Upload anyway": [
         "Feltöltés mindenképpen"
       ],
@@ -758,54 +770,6 @@
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Nincs szinkronizálva"
-      ],
-      "Syncing": [
-        "Szinkronizálás"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "A naptár visszafejtése nem sikerült"
-      ],
-      "Calendar is syncing": [
-        "A naptár szinkronizál"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "A naptár szinkronizál: több percig is eltarthat, mire az összes esemény látható lesz."
-      ],
-      "Calendar is too big": [
-        "A naptár túl nagy"
-      ],
-      "Calendar link is not accessible": [
-        "A naptár hivatkozás nem érhető el"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "A naptár hivatkozás átmenetileg nem érhető el"
-      ],
-      "Failed to sync calendar": [
-        "A naptár szinkronizálása nem sikerült"
-      ],
-      "More than 12 hours passed since last update": [
-        "Több mint 12 óra telt el a legutóbbi frissítés óta"
-      ],
-      "Unsupported calendar format": [
-        "Nem támogatott naptár formátum"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "A naptár hivatkozás nem érhető el a naptárszolgáltató rendszerén kívül."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "A naptár hivatkozás átmenetileg nem érhető el. Ellenőrizze, hogy a naptárszolgáltatónál még mindig érvényes ez a hivatkozás."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Több mint 12 óra telt el a legutóbbi frissítés óta — a ${ CALENDAR_APP_NAME } néhány órán belül megpróbálja frissíteni a naptárat."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Összecsukás"
@@ -935,15 +899,9 @@
       ],
       "Title": [
         "Beosztás"
-      ],
-      "URL": [
-        "URL"
       ]
     },
     "Contact type label": {
-      "Fax": [
-        "Fax"
-      ],
       "Main": [
         "Elsődleges"
       ],
@@ -961,9 +919,6 @@
       ],
       "Work": [
         "Munkahelyi"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -982,15 +937,6 @@
       "American Samoa": [
         "Amerikai Szamoa"
       ],
-      "Andorra": [
-        "Andorra"
-      ],
-      "Angola": [
-        "Angola"
-      ],
-      "Anguilla": [
-        "Anguilla"
-      ],
       "Antarctica": [
         "Antarktisz"
       ],
@@ -1002,9 +948,6 @@
       ],
       "Armenia": [
         "Örményország"
-      ],
-      "Aruba": [
-        "Aruba"
       ],
       "Ascension Island": [
         "Ascension-sziget"
@@ -1027,23 +970,8 @@
       "Bangladesh": [
         "Banglades"
       ],
-      "Barbados": [
-        "Barbados"
-      ],
       "Belarus": [
         "Fehéroroszország"
-      ],
-      "Belgium": [
-        "Belgium"
-      ],
-      "Belize": [
-        "Belize"
-      ],
-      "Benin": [
-        "Benin"
-      ],
-      "Bermuda": [
-        "Bermuda"
       ],
       "Bhutan": [
         "Bhután"
@@ -1056,9 +984,6 @@
       ],
       "Bosnia and Herzegovina": [
         "Bosznia-Hercegovina"
-      ],
-      "Botswana": [
-        "Botswana"
       ],
       "Bouvet Island": [
         "Bouvet-sziget"
@@ -1074,12 +999,6 @@
       ],
       "Bulgaria": [
         "Bulgária"
-      ],
-      "Burkina Faso": [
-        "Burkina Faso"
-      ],
-      "Burundi": [
-        "Burundi"
       ],
       "Cambodia": [
         "Kambodzsa"
@@ -1101,9 +1020,6 @@
       ],
       "Chad": [
         "Csád"
-      ],
-      "Chile": [
-        "Chile"
       ],
       "China": [
         "Kína"
@@ -1129,17 +1045,11 @@
       "Cook Islands": [
         "Cook-szigetek"
       ],
-      "Costa Rica": [
-        "Costa Rica"
-      ],
       "Croatia": [
         "Horvátország"
       ],
       "Cuba": [
         "Kuba"
-      ],
-      "Curaçao": [
-        "Curaçao"
       ],
       "Cyprus": [
         "Ciprus"
@@ -1162,9 +1072,6 @@
       "Dominican Republic": [
         "Dominikai Köztársaság"
       ],
-      "Ecuador": [
-        "Ecuador"
-      ],
       "Egypt": [
         "Egyiptom"
       ],
@@ -1173,9 +1080,6 @@
       ],
       "Equatorial Guinea": [
         "Egyenlítői-Guinea"
-      ],
-      "Eritrea": [
-        "Eritrea"
       ],
       "Estonia": [
         "Észtország"
@@ -1213,12 +1117,6 @@
       "French Southern Territories": [
         "Francia déli területek"
       ],
-      "Gabon": [
-        "Gabon"
-      ],
-      "Gambia": [
-        "Gambia"
-      ],
       "Georgia": [
         "Grúzia"
       ],
@@ -1237,23 +1135,11 @@
       "Greenland": [
         "Grönland"
       ],
-      "Grenada": [
-        "Grenada"
-      ],
-      "Guadeloupe": [
-        "Guadeloupe"
-      ],
       "Guam": [
         "Guam"
       ],
       "Guatemala": [
         "Guatemala"
-      ],
-      "Guernsey": [
-        "Guernsey"
-      ],
-      "Guinea": [
-        "Guinea"
       ],
       "Guinea-Bissau": [
         "Bissau-Guinea"
@@ -1349,7 +1235,7 @@
         "Libanon"
       ],
       "Lesotho": [
-        "Lesotho"
+        "Lesothói Királyság"
       ],
       "Liberia": [
         "Libéria"
@@ -1358,7 +1244,7 @@
         "Líbia"
       ],
       "Liechtenstein": [
-        "Liechtenstein"
+        "Lichtenstein"
       ],
       "Lithuania": [
         "Litvánia"
@@ -1409,7 +1295,7 @@
         "Moldova"
       ],
       "Monaco": [
-        "Monaco"
+        "Monakó"
       ],
       "Mongolia": [
         "Mongólia"
@@ -1493,7 +1379,7 @@
         "Pápua Új-Guinea"
       ],
       "Paraguay": [
-        "Paraguay"
+        "Paraguayi Köztársaság"
       ],
       "Peru": [
         "Peru"
@@ -1538,7 +1424,7 @@
         "Saint Christopher és Nevis Államszövetség"
       ],
       "Saint Lucia": [
-        "Saint Lucia"
+        "Szent Lucia"
       ],
       "Saint Martin (French Part)": [
         "Saint Martin (francia rész)"
@@ -1884,19 +1770,14 @@
       "Contact could not be saved": [
         "A névjegy mentése nem sikerült"
       ],
+      "Contact name is too long": [
+        "A névjegynél megadott név túl hosszú"
+      ],
       "Contact signature not verified": [
         "Névjegy aláírása nincs ellenőrizve"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál",
-        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy",
-        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy"
       ],
       "Device name does not match": [
         "Az eszköznév nem egyezik"
@@ -1954,10 +1835,6 @@
       ],
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Fűzzön össze legalább ${ calendarToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
-        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő ${ BRAND_NAME } naptárakkal"
       ],
       "Missing key packet": [
         "Hiányzó kulcs csomag"
@@ -2024,9 +1901,6 @@
       ],
       "Some groups could not be deleted": [
         "Néhány csoport törlése nem sikerült"
-      ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Bizonyos mappák neve fenntartott. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bizonyos mappák neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
@@ -2097,9 +1971,6 @@
       "This label name is not available. Please choose a different name.": [
         "Ez a címkenév nem érhető el. Adjon meg egy másik nevet."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ez az üzenet olyan URL hivatkozásokat tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Próbáljon csak betűket, számokat és _.-t használni"
       ],
@@ -2108,12 +1979,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nem küldhet üzenetet több mint 100 címzettnek"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Egyszerre nem küldhet el több mint 10 vCard névjegyet"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Elérte a csomagjában maximálisan létrehozható személyes naptárak számát. Néhány naptár importálása nem sikerült."
       ],
       "You must set a name": [
         "Meg kell adnia egy nevet"
@@ -2409,39 +2274,6 @@
         "Hitelesítési kulcs"
       ]
     },
-    "file size format": {
-      "byte": [
-        "byte",
-        "byte"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Byte"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabyte"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobyte"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabyte"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } frissítve"
@@ -2485,9 +2317,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -2496,9 +2325,6 @@
       ],
       "No verification method available": [
         "Nincs elérhető ellenőrzési módszer"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2510,11 +2336,20 @@
         "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
         "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
       ],
+      "An error occurred while encrypting and adding your events. No event could be imported.": [
+        "Hiba történt az események titkosításakor és tárolásakor. Az események nem kerültek importálásra."
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Névjegyek titkosítása és tárolása: ${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
         "Események titkosítása és tárolása a naptárában: ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "Esemény sikeresen importálva. Az importált esemény azonnal elérhető a naptárában."
+      ],
+      "Events successfully imported. The imported events will now appear in your calendar.": [
+        "Események sikeresen importálva. Az importált események azonnal elérhetők a naptárában."
       ],
       "Please don't close the tab before the importing process is finished.": [
         "Ne zárja be a böngészőfület mielőtt az importálás befejeződik."
@@ -2548,6 +2383,21 @@
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez",
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
+      ],
+      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
+        "Hiba történt a névjegy titkosításakor és tárolásakor. A névjegy nem került importálásra."
+      ],
+      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
+        "Hiba történt a névjegyek titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } névjegyből sikeresen importálva."
+      ],
+      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
+        "Hiba történt a névjegyek titkosításakor és tárolásakor. Nem került importálásra névjegy."
+      ],
+      "Contact successfully imported. The imported contact will now appear in your contact list.": [
+        "Névjegy sikeresen importálva. Az importált névjegy azonnal elérhető a névjegyeknél."
+      ],
+      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
+        "Névjegyek sikeresen importálva. Az importált névjegyek azonnal elérhetők a névjegyeknél."
       ]
     },
     "Import contact error": {
@@ -2567,6 +2417,9 @@
       ]
     },
     "Import contacts warning": {
+      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
+        "A ${ CONTACTS_APP_NAME } ${ forNow } nem támogatja:"
+      ],
       "for now": [
         "egyenlőre"
       ]
@@ -2678,9 +2531,6 @@
       ],
       "ICS file": [
         "ICS fájl"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2741,10 +2591,6 @@
         "${ calendarsToBeCreatedCount } új naptár",
         "${ calendarsToBeCreatedCount } új naptár"
       ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } egyesített naptár",
-        "${ calendarsToBeMerged } egyesített naptár"
-      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } egyesített naptár",
         "${ calendarsToBeMergedCount } egyesített naptár"
@@ -2788,13 +2634,13 @@
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } névjegy csoport",
-        "${ numContactGroups } névjegy csoport"
+      "${ numContact } contact": [
+        "${ numContact } névjegy",
+        "${ numContact } névjegy"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } névjegy",
-        "${ numContacts } névjegy"
+      "${ numGroups } contact group": [
+        "${ numGroups } névjegy csoport",
+        "${ numGroups } névjegy csoport"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } felfüggesztve",
@@ -2831,9 +2677,6 @@
       "${ speed }/s": [
         "${ speed }/mp"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } tárhely"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegy sikeresen frissítve."
@@ -2844,9 +2687,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
-      ],
-      "10 email addresses": [
-        "10 e-mail cím"
       ],
       "A number will be added to the filename": [
         "Egy számot ad a fájl nevéhez"
@@ -2898,14 +2738,17 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Biztos, hogy véglegesen törli a kijelölt elemeket a lomtárból?"
       ],
+      "Attention required": [
+        "Figyelem szükséges"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "A tömeges feltöltések csökkenthetik számítógépének teljesítményét. Fontolja meg az olyan memória-intenzív tevékenységek, mint a videózás, korlátozását feltöltés közben. Vagy próbáljon meg tételekben feltölteni."
+      "Calendar side panel": [
+        "Naptár oldalsó panel"
       ],
       "Canceled": [
         "Megszakítva"
@@ -2943,12 +2786,12 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "A ${ DRIVE_APP_NAME } használatának folytatása, a tárhely feloldása később"
       ],
-      "Continue with ${ planName }": [
-        "Folytatás ezzel: ${ planName }"
+      "Country code": [
+        "Országkód"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Létrehozandó ${ calendarsToBeCreated } új naptár",
-        "Létrehozandó ${ calendarsToBeCreated } új naptár"
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } új naptár létrehozása",
+        "${ calendarsToBeCreatedCount } új naptár létrehozása"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó mappákat."
@@ -3128,12 +2971,12 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból",
+        "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból",
-        "Importálandó ${ selectedCalendarsCount } a(z) ${ totalCalendarsCount } naptárból"
       ],
       "Import from": [
         "Importálás innen"
@@ -3273,6 +3116,9 @@
       "Not a valid URL": [
         "Érvénytelen URL-cím"
       ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Megjegyzés: az adatok még mindig elérhetők lehetnek helyileg olyan eszközökön, ahol telepítette a ${ DRIVE_APP_NAME } alkalmazást."
+      ],
       "of": [
         "/"
       ],
@@ -3287,9 +3133,6 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Csak azok férhetnek hozzá a mappához, akik a hivatkozást és a jelszót is ismerik."
-      ],
-      "Other options": [
-        "Más opciók"
       ],
       "Paused": [
         "Felfüggesztve"
@@ -3334,9 +3177,6 @@
       "Primary": [
         "Elsődleges"
       ],
-      "Priority support": [
-        "Elsőbbségi támogatás"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privát keresés engedélyezve. Bezárhatja ezt a párbeszédet és kereshet fájlokat és mappákat."
       ],
@@ -3376,9 +3216,6 @@
       "Select what you want to import.": [
         "Válassza ki, mit szeretne importálni."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
@@ -3406,20 +3243,11 @@
       "Something went wrong, please try again later.": [
         "Hiba történt. Kérjük, próbálkozzon később."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "A tárhely megosztott a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } között."
-      ],
-      "Support for 1 custom email domain": [
-        "Egy saját e-mail domain név használata"
-      ],
       "support team": [
         "ügyfélszolgálat"
       ],
       "Swiss privacy": [
         "Svájci adatbiztonság"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Bökjön a + gombra, hogy feltöltsön egy fájlt vagy mappát"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
@@ -3503,11 +3331,8 @@
       "Trash": [
         "Lomtár"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Korlátlan számú mappa, címke és szűrő"
-      ],
-      "Unlimited messages": [
-        "Korlátlan számú üzenet"
+      "Unknown error": [
+        "Ismeretlen hiba"
       ],
       "Unlock drive to recover files": [
         "A tárhelyek feloldása a fájlok helyreállításához"
@@ -3520,9 +3345,6 @@
       ],
       "Updating drive search...": [
         "Felhőtárban keresés frissítése..."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Váltson ma nagyobb csomagra, hogy elkerülje az alábbi ${ planName } előnyök elvesztését."
       ],
       "Uploaded": [
         "Feltöltve"
@@ -3678,9 +3500,6 @@
       "name": [
         "név"
       ],
-      "name hash": [
-        "név ellenőrzőösszeg"
-      ],
       "thumbnail": [
         "miniatűr"
       ]
@@ -3703,15 +3522,9 @@
       ],
       "Trusted": [
         "Megbízható"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Elérések száma"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } felhasználónév"
       ],
@@ -3766,6 +3579,9 @@
       "Browser version": [
         "Böngésző verziója"
       ],
+      "Calendar": [
+        "Naptár"
+      ],
       "Calendars": [
         "Naptárak"
       ],
@@ -3784,8 +3600,8 @@
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
       ],
-      "Coming soon": [
-        "Hamarosan"
+      "Colors": [
+        "Színek"
       ],
       "Comment": [
         "Hozzászólás"
@@ -3893,8 +3709,11 @@
       "Folder name": [
         "Mappa neve"
       ],
-      "From: ${ importedEmail }": [
-        "Forrás: ${ importedEmail }"
+      "From: ${ from }": [
+        "Feladó: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Feladó: ${ fromEmail }"
       ],
       "Good": [
         "Jó"
@@ -3955,12 +3774,6 @@
       ],
       "Manage categories": [
         "Kategóriák kezelése"
-      ],
-      "Manage folders": [
-        "Mappák kezelése"
-      ],
-      "Manage labels": [
-        "Címkék kezelése"
       ],
       "Merge a folder": [
         "Egy mappa összefűzése"
@@ -4079,8 +3892,11 @@
       "This will permanently delete all files in your locked drive.": [
         "Ez véglegesen törli a zárolt tárhelyen található összes fájlját."
       ],
-      "To: ${ emailAddress }": [
-        "Ide: ${ emailAddress }"
+      "To: ${ to }": [
+        "Címzett: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Címzett: ${ toEmail }"
       ],
       "Toolbar": [
         "Eszköztár"
@@ -4105,9 +3921,6 @@
       ],
       "Upload anyway": [
         "Feltöltés mindenképpen"
-      ],
-      "Upload file": [
-        "Fájl feltöltése"
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -4198,9 +4011,6 @@
       "Almost there": [
         "Majdnem kész"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Már ennyi naptárt hozott létre: ${ createdCalendars } ennyiből: ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Csatlakozás az e-mailszolgáltatójához"
       ],
@@ -4215,20 +4025,6 @@
       ],
       "Your import is starting": [
         "Az importálás indul"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Az összes üzenet importálása ${ itemsToImportCount } címkéből és megcímkézés így: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összesen ${ itemsToImportCount } mappa van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összesen ${ itemsToImportCount } címke van), és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -4425,9 +4221,6 @@
       "File or folder is missing a name": [
         "A fájl vagy mappa neve hiányzik"
       ],
-      "Item failed to be verified": [
-        "Az elem hitelesítése sikertelen"
-      ],
       "Link failed to be loaded": [
         "A hivatkozás betöltése nem sikerült"
       ],
@@ -4492,6 +4285,11 @@
         "A beállítások módosítása sikeresen megtörtént"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
+        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze a ${ BRAND_NAME }nak az adatokhoz való hozzáférést."
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
@@ -4506,6 +4304,9 @@
       ]
     },
     "Onboarding Info": {
+      "Create a share link": [
+        "Megosztási hivatkozás készítése"
+      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Teljesítse az alábbit a következő ${ expiresInDays } napon belül:",
         "Teljesítse az alábbiakat a következő ${ expiresInDays } napon belül:"
@@ -4678,9 +4479,6 @@
       "Email": [
         "E-mail"
       ],
-      "Fax": [
-        "Fax"
-      ],
       "Home": [
         "Otthoni"
       ],
@@ -4722,9 +4520,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
-      ],
       "Encrypted search is here": [
         "A titkosított keresés megérkezett"
       ],
@@ -4736,9 +4531,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Most már könnyedén tud Drive fájljai közt keresni adatai biztonságban tartásával."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
       ]
     },
     "Storage": {
@@ -4763,7 +4555,7 @@
       "Bug reported": [
         "Hiba bejelentve"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Importálás megszakítása"
       ],
       "Code sent to ${ methodTo }": [
@@ -4876,10 +4668,28 @@
         "Beállítások"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ó",
+        "${ hours } ó"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ó",
+        "${ hoursInt }.5 ó"
+      ],
+      "${ minutes } min": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
         "${ hours } óra",
         "${ hours } óra"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 óra",
+        "${ hoursInt }.5 óra"
       ],
       "${ minutes } minute": [
         "${ minutes } perc",
@@ -4887,9 +4697,6 @@
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Elérések száma"
-      ],
       "${ emailsCount } member": [
         "${ emailsCount } tag",
         "${ emailsCount } tag"
@@ -5013,9 +4820,6 @@
       ],
       "Download unverified folder?": [
         "Ellenőrizetlen mappa letöltése?"
-      ],
-      "Drive": [
-        "Drive"
       ],
       "Drop to upload": [
         "Húzza a fájlokat ide a feltöltéshez"
@@ -5342,9 +5146,6 @@
       ],
       "Your changes are not synced yet": [
         "Módosításai még nincsenek szinkronizálva"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {

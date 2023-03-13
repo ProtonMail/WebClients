@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'functions/im-to-em' as *;
 
 $base-font-size: 14 !default; // if "14" then 1em = 14px
 $base-line-height: math.div(20, $base-font-size) !default; // Design specs says 20px
@@ -21,27 +22,19 @@ $use-other-line-height-helpers: true !default;
 $font-family-monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
 	monospace !default;
 
-// main breakpoints
-$breakpoint-large: 1500 !default;
-$breakpoint-medium-drawer: 1280; // Temporary breakpoint used to display the drawer app. When useActiveBreakpoints will be refactored, this breakpoint will disappear
-$breakpoint-medium-landscape: 1100 !default;
-$breakpoint-medium: 910 !default;
-$breakpoint-small: 680 !default;
-$breakpoint-tiny: 450 !default;
-
 // Breakpoints for include-media
-$breakpoints: (
-	// 1500px
-	'xlarge': 93.75em,
-	// 1100px
-	'large': 68.75em,
-	// 910px
-	'medium': 56.875em,
-	// 680px
-	'small': 42.5em,
-	// 450px
-	'xsmall': 28.125em
+$breakpoints: im-to-em(
+	(
+		'xlarge': 1500px,
+		'large': 1100px,
+		'medium': 910px,
+		'small': 680px,
+		'xsmall': 450px,
+	)
 ) !default;
+
+// specific breakpoints
+$breakpoint-for-drawer: 1280px; // Temporary breakpoint used to display the drawer app. When useActiveBreakpoints will be refactored, this breakpoint will disappear
 
 // Media expressions for include-media
 $media-expressions: (
@@ -51,6 +44,7 @@ $media-expressions: (
 	'touch': '(hover: hover) and (pointer: coarse), (hover: none)',
 	'landscape': '(orientation: landscape)',
 	'portrait': '(orientation: portrait)',
+	'reduced-motion': '(prefers-reduced-motion: reduce)',
 ) !default;
 
 // RTL

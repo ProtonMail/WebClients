@@ -106,7 +106,7 @@ $treeview-indentation-margin: rem(30) !default;
 	}
 }
 
-@include respond-to($breakpoint-medium) {
+@include media('<=medium') {
 	.treeview-toggle,
 	.treeview-actions {
 		inline-size: em(100);

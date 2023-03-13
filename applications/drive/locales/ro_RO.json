@@ -246,6 +246,9 @@
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
+      "Enable drive search": [
+        "Activare căutare în unitate"
+      ],
       "Expand": [
         "Extindere"
       ],
@@ -371,6 +374,9 @@
       ],
       "Move to trash": [
         "Mutare în «Gunoi»"
+      ],
+      "New": [
+        "Nou"
       ],
       "New upload": [
         "Încărcare nouă"
@@ -600,6 +606,9 @@
       "Upgrade": [
         "Modernizare"
       ],
+      "Upgrade now": [
+        "Modernizare"
+      ],
       "Upload anyway": [
         "Încărcare așa"
       ],
@@ -783,54 +792,6 @@
         "Continuare utilizare ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Nesincronizat"
-      ],
-      "Syncing": [
-        "Se sincronizează"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Calendarul nu a putut fi decriptat."
-      ],
-      "Calendar is syncing": [
-        "Calendarul se sincronizează."
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Calendarul se sincronizează: ar putea dura câteva minute ca să apară toate evenimentele din el."
-      ],
-      "Calendar is too big": [
-        "Calendarul este prea mare."
-      ],
-      "Calendar link is not accessible": [
-        "Legătura calendarului nu este accesibilă."
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Legătura calendarului nu este disponibilă momentan."
-      ],
-      "Failed to sync calendar": [
-        "Eșuare sincronizare calendar."
-      ],
-      "More than 12 hours passed since last update": [
-        "Au trecut mai mult de 12 ore de la ultima actualizare."
-      ],
-      "Unsupported calendar format": [
-        "Format de calendar neacceptat."
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Legătura calendarului nu este accesibilă din exteriorul ecosistemului furnizorului calendarului."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Legătura calendarului nu este accesibilă momentan. Verificați dacă legătura de la furnizorul calendarului încă e validă."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Au trecut mai mult de 12 ore de la ultima actualizare - ${ CALENDAR_APP_NAME } va încerca să actualizeze calendarul în câteva ore."
-      ]
-    },
     "Collapsible tooltip": {
       "Collapse": [
         "Restrângere"
@@ -986,9 +947,6 @@
       ],
       "Work": [
         "Serviciu"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -1041,7 +999,7 @@
         "Austria"
       ],
       "Azerbaijan": [
-        "Azerbaijan"
+        "Azerbaidjan"
       ],
       "Bahamas": [
         "Bahamas"
@@ -1143,7 +1101,7 @@
         "Columbia"
       ],
       "Comoros": [
-        "Comoros"
+        "Comore"
       ],
       "Congo": [
         "Congo"
@@ -1182,7 +1140,7 @@
         "Djibouti"
       ],
       "Dominica": [
-        "Dominica"
+        "Republica Dominicană"
       ],
       "Dominican Republic": [
         "Republica Dominicană"
@@ -1278,10 +1236,10 @@
         "Guernsey"
       ],
       "Guinea": [
-        "Guinea"
+        "Guineea"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bissau"
+        "Guineea-Bissau"
       ],
       "Guyana": [
         "Guiana"
@@ -1362,7 +1320,7 @@
         "Kuweit"
       ],
       "Kyrgyzstan": [
-        "Kyrgyzstan"
+        "Kârgâzstan"
       ],
       "Laos": [
         "Laos"
@@ -1431,7 +1389,7 @@
         "Mexic"
       ],
       "Moldova": [
-        "Moldova"
+        "Republica Moldova"
       ],
       "Monaco": [
         "Monaco"
@@ -1482,7 +1440,7 @@
         "Nigeria"
       ],
       "Niue": [
-        "Niue"
+        "Insula Niue"
       ],
       "Norfolk Island": [
         "Insula Norfolk"
@@ -1659,7 +1617,7 @@
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tajikistan"
+        "Tadjikistan"
       ],
       "Tanzania": [
         "Tanzania"
@@ -1668,7 +1626,7 @@
         "Tailanda"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timorul De Est"
       ],
       "Togo": [
         "Togo"
@@ -1915,21 +1873,14 @@
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
+      "Contact name is too long": [
+        "Numele de contact este prea lung."
+      ],
       "Contact signature not verified": [
         "Semnătura contactului nu a fost verificată"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Căutarea în conținutul mesajelor nu poate fi activată în acest navigator. Închideți modul de navigare privat sau folosiți alt navigator."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Deselectați cel puțin un calendar.",
-        "Deselectați cel puțin ${ calendarToFixCount } calendare.",
-        "Deselectați cel puțin ${ calendarToFixCount } de calendare."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Deselectați cel puțin un calendar sau",
-        "Deselectați cel puțin ${ calendarToFixCount } calendare sau",
-        "Deselectați cel puțin ${ calendarToFixCount } de calendare sau"
       ],
       "Device name does not match": [
         "Numele dispozitivului nu se potrivește"
@@ -1993,11 +1944,6 @@
       ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Îmbinați cel puțin un calendar cu un calendar ${ BRAND_NAME } existent.",
-        "Îmbinați cel puțin ${ calendarToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
-        "Îmbinați cel puțin ${ calendarToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
       ],
       "Missing key packet": [
         "Lipsește pachetul de chei."
@@ -2074,9 +2020,6 @@
       "Some groups could not be deleted": [
         "Unele grupuri nu s-au putut șterge."
       ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Unele nume de foldere sunt rezervate. Modificați opțiunile de importare pentru a edita aceste nume."
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de foldere nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
@@ -2149,7 +2092,7 @@
       "This label name is not available. Please choose a different name.": [
         "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
       ],
       "Try using only letters, numerals, and _.-": [
@@ -2161,11 +2104,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Nu puteți trimite un e-mail la mai mult de 100 de destinatari"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Nu puteți trimite cărți de vizită („vCard”) la mai mult de 10 persoane de contact."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Nu se pot crea calendare noi pentru toate calendarele importate din cauza limitei de calendare personale."
+      "You can't send vCard files of more than 10 contacts": [
+        "Nu puteți trimite fișiere vCard pentru mai mult de 10 contacte."
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
@@ -2369,7 +2309,7 @@
         "A apărut o problemă la conectarea la ${ BRAND_NAME }."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Puteți ${ refresh } sau reîncerca mai târziu."
+        "Puteți să ${ refresh } sau reîncerca mai târziu."
       ],
       "You may also refresh the page or try again later.": [
         "Puteți împrospăta pagina sau încercați mai târziu."
@@ -2544,9 +2484,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -2555,9 +2492,6 @@
       ],
       "No verification method available": [
         "Nu sunt metode de verificare disponibile"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2570,6 +2504,9 @@
         "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
         "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentelor. Niciun eveniment nu a putut fi importat."
@@ -2794,9 +2731,6 @@
       ],
       "ICS file": [
         "fișier ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2811,6 +2745,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importare din ${ provider }"
+      ],
       "Other": [
         "Altele"
       ]
@@ -2862,11 +2799,6 @@
         "Un calendar nou",
         "${ calendarsToBeCreatedCount } calendare noi",
         "${ calendarsToBeCreatedCount } de calendare noi"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "Un calendar îmbinat",
-        "${ calendarsToBeMerged } calendare îmbinate",
-        "${ calendarsToBeMerged } de calendare îmbinate"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "Un calendar îmbinat",
@@ -2921,15 +2853,15 @@
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
       ],
-      "${ numContactGroups } contact group": [
-        "Un grup de contacte",
-        "${ numContactGroups } grupuri de contact",
-        "${ numContactGroups } de grupuri de contacte"
-      ],
-      "${ numContacts } contact": [
+      "${ numContact } contact": [
         "Un contact",
-        "${ numContacts } contacte",
-        "${ numContacts } de contacte"
+        "${ numContact } contacte",
+        "${ numContact } de contacte"
+      ],
+      "${ numGroups } contact group": [
+        "Un grup de contacte",
+        "${ numGroups } grupuri de contacte",
+        "${ numGroups } de grupuri de contacte"
       ],
       "${ pausedCount } paused": [
         "Unul suspendat",
@@ -2950,6 +2882,9 @@
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
+      ],
+      "${ selectedCount } selected": [
+        "Selectate: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "S-a selectat un folder",
@@ -2974,9 +2909,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } spațiu"
-      ],
       "${ updated } contact updated successfully.": [
         "S-a actualizat un contact.",
         "S-au actualizat ${ updated } contacte.",
@@ -2989,9 +2921,6 @@
         "(Un membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
-      ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
       ],
       "A number will be added to the filename": [
         "Va fi adăugată o cifră la numele fișierelor."
@@ -3017,6 +2946,9 @@
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
+      ],
+      "Also try looking in Trash.": [
+        "Puteți căuta și în «Gunoi»."
       ],
       "An active recovery file": [
         "Un fișier de recuperare activ"
@@ -3054,8 +2986,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Încărcările în masă pot reduce performanța computerului. Luați în considerare limitarea activităților cu consum de memorie, cum ar fi redarea transmisiilor în flux în timpul încărcării. Sau încercați să încărcați în mai multe loturi."
+      "Calendar side panel": [
+        "Panou lateral calendar"
       ],
       "Canceled": [
         "Anulat"
@@ -3093,13 +3025,13 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuare utilizare ${ DRIVE_APP_NAME } și deblocare unitate mai târziu"
       ],
-      "Continue with ${ planName }": [
-        "Continuare cu ${ planName }"
+      "Country code": [
+        "Cod țară"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Creare un calendar",
-        "Creare ${ calendarsToBeCreated } calendare",
-        "Creare ${ calendarsToBeCreated } de calendare"
+        "Creare ${ calendarsToBeCreatedCount } calendare",
+        "Creare ${ calendarsToBeCreatedCount } de calendare"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și folderele care trebuie importate."
@@ -3181,6 +3113,9 @@
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
       ],
+      "Enable drive search": [
+        "Activare căutare în unitate"
+      ],
       "Enabling drive search": [
         "Se activează căutarea în unitate."
       ],
@@ -3258,6 +3193,9 @@
       "Folders you sync from your computer will appear here.": [
         "Folderele sincronizate de pe calculator vor apărea aici."
       ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Pentru cele mai bune rezultate, evitați activitățile de redare în flux și cele care necesită multă memorie sau împărțiți încărcarea în mai puține fișiere."
+      ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
       ],
@@ -3294,13 +3232,13 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } de calendare"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendar",
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } calendare",
-        "Importare ${ selectedCalendarsCount } din ${ totalCalendarsCount } de calendare"
       ],
       "Import from": [
         "Importare din"
@@ -3313,6 +3251,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importați e-mailurile, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }. Vă vom ghida la fiecare pas și vă vom cripta datele pe măsură ce acestea sunt mutate. Bine ați venit în lumea vieții private."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Se importă datele de la ${ fromEmail } la ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
@@ -3340,6 +3281,9 @@
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Se pare că ați încercat recent să încărcați ${ uploadName }. Dacă încărcarea a eșuat, ${ replaceFile }. Dacă încă este în desfășurare, înlocuirea va anula încărcarea în desfășurare."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Elementele din gunoi vor sta aici până când le veți șterge permanent."
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Este simplu, doar atrageți și plasați sau selectați un fișier."
@@ -3475,9 +3419,6 @@
       "Only the people with the link and the password can access this folder.": [
         "Numai persoanele care au legătura și parola pot accesa acest folder."
       ],
-      "Other options": [
-        "Alte opțiuni"
-      ],
       "Paused": [
         "Suspendat"
       ],
@@ -3534,9 +3475,6 @@
       "Primary": [
         "Primară"
       ],
-      "Priority support": [
-        "Asistență prioritară"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Căutarea privată este activată. Acum puteți închide acest dialog și căuta fișiere sau foldere."
       ],
@@ -3576,9 +3514,6 @@
       "Select what you want to import.": [
         "Selectați ce doriți să importați."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
@@ -3596,6 +3531,9 @@
       ],
       "Shared link failed to be loaded": [
         "Legătura de partajare nu a putut fi încărcată."
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
       ],
       "Signature check will be ignored": [
         "Verificarea semnăturii va fi ignorată"
@@ -3615,20 +3553,11 @@
       "Something went wrong, please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ],
-      "Support for 1 custom email domain": [
-        "Suport pentru un domeniu de e-mail personal"
-      ],
       "support team": [
         "echipa de asistență"
       ],
       "Swiss privacy": [
         "Confidențialitate elvețiană"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "Atingeți butonul „+” pentru a încărca un fișier sau folder"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
@@ -3638,6 +3567,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplicația trebuie să decripteze local contactele înainte de a putea fi exportate. La sfârșitul procesului, va fi generat un fișier VCF pe care îl veți putea descărca."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Datele criptate ocupă puțin mai mult spațiu datorită criptării și a semnăturilor, ceea ce asigură securitatea acestora."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Este posibil ca următoarele elemente să fi fost falsificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
@@ -3692,6 +3624,9 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Pentru a permite o căutare cu adevărat privată, ${ DRIVE_APP_NAME } trebuie să vă indexeze fișierele la nivel local."
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Pentru a permite o căutare cu adevărat privată, trebuie indexate fișierele la nivel local. Puteți utiliza în continuare ${ DRIVE_APP_NAME } în mod normal - vă vom anunța când indexarea este finalizată."
       ],
@@ -3725,14 +3660,11 @@
       "Trash": [
         "Gunoi"
       ],
+      "Try searching by file name, date, or type.": [
+        "Puteți căuta după nume fișier, dată sau tip."
+      ],
       "Unknown error": [
         "Eroare necunoscută."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited messages": [
-        "Mesaje nelimitate"
       ],
       "Unlock drive to recover files": [
         "Deblocare unitate pentru recuperarea fișierelor"
@@ -3746,8 +3678,8 @@
       "Updating drive search...": [
         "Actualizare căutare în unitate..."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Treceți la un plan superior astăzi pentru a evita pierderea beneficiilor din ${ planName }."
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
       "Uploaded": [
         "Încărcat"
@@ -3900,14 +3832,14 @@
       "file data order": [
         "ordine fișiere date"
       ],
+      "hash key": [
+        "cheie hash"
+      ],
       "keys": [
         "chei"
       ],
       "name": [
         "nume"
-      ],
-      "name hash": [
-        "hash nume"
       ],
       "thumbnail": [
         "miniatură"
@@ -3931,14 +3863,11 @@
       ],
       "Trusted": [
         "Aprobată"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
-      "# of accesses": [
-        "Nr. de accesări"
+      "# of downloads": [
+        "Descărcări"
       ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
@@ -3994,6 +3923,9 @@
       "Browser version": [
         "Versiune navigator"
       ],
+      "Calendar": [
+        "Calendar"
+      ],
       "Calendars": [
         "Calendare"
       ],
@@ -4012,8 +3944,8 @@
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
       ],
-      "Coming soon": [
-        "În curând"
+      "Colors": [
+        "Culori"
       ],
       "Comment": [
         "Comentariu"
@@ -4131,9 +4063,6 @@
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
-      "From: ${ importedEmail }": [
-        "De la: ${ importedEmail }"
-      ],
       "Good": [
         "Bună"
       ],
@@ -4193,12 +4122,6 @@
       ],
       "Manage categories": [
         "Gestionare categorii"
-      ],
-      "Manage folders": [
-        "Gestionare foldere"
-      ],
-      "Manage labels": [
-        "Gestionare etichete"
       ],
       "Merge a folder": [
         "Îmbinare folder"
@@ -4300,7 +4223,7 @@
         "Omitere folder"
       ],
       "Spam": [
-        "Spam"
+        "Nedorite"
       ],
       "Stolen data": [
         "Date furate"
@@ -4316,9 +4239,6 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Acest lucru va șterge definitiv toate fișierele de pe unitatea blocată."
-      ],
-      "To: ${ emailAddress }": [
-        "Către: ${ emailAddress }"
       ],
       "To: ${ to }": [
         "Către: ${ to }"
@@ -4349,9 +4269,6 @@
       ],
       "Upload anyway": [
         "Încărcare așa"
-      ],
-      "Upload file": [
-        "Încărcare fișier"
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -4415,6 +4332,17 @@
         "Panou lateral"
       ]
     },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Pentru a adăuga un calendar, eliminați altul existent."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Pentru a adăuga un calendar, eliminați altul existent sau modificați planul ${ BRAND_NAME } cu un plan ${ MAIL_SHORT_APP_NAME } cu plată."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Ați atins maximul de calendare disponibile în acest plan."
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "golind bufferul navigatorului"
@@ -4445,8 +4373,10 @@
       "Almost there": [
         "Aproape terminat"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Număr de calendare create: ${ createdCalendars } din ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Se conectează la furnizorul de e-mail"
@@ -4465,25 +4395,25 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importare toate mesajele dintr-un folder și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-o etichetă și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare ca ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare cu"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-un folder și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importare toate mesajele dintr-un folder și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importare toate mesajele dintr-o etichetă și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }.",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
       ]
     },
     "Message": {
@@ -4691,9 +4621,6 @@
       ],
       "File or folder is missing a name": [
         "Fișier sau folder fără nume."
-      ],
-      "Item failed to be verified": [
-        "Elementul nu a putut fi verificat."
       ],
       "Link failed to be loaded": [
         "Legătura nu s-a putut încărca."
@@ -5030,9 +4957,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
-      ],
       "Encrypted search is here": [
         "Căutarea criptată este aici"
       ],
@@ -5044,9 +4968,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Acum puteți căuta cu ușurință fișierele din unitate, păstrând în același timp datele în siguranță."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Încercați ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -5072,8 +4993,8 @@
       "Bug reported": [
         "Eroare raportată"
       ],
-      "Canceling import": [
-        "Anulare importare"
+      "Cancelling import": [
+        "Se anulează importarea"
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
@@ -5187,21 +5108,43 @@
         "Setări"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hour": [
-        "O oră",
+        "${ hours } oră",
         "${ hours } ore",
         "${ hours } de ore"
       ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 de ore"
+      ],
       "${ minutes } minute": [
-        "Un minut",
+        "${ minutes } minut",
         "${ minutes } minute",
         "${ minutes } de minute"
       ]
     },
     "Title": {
-      "# of accesses": [
-        "Nr. de accesări"
+      "# of downloads": [
+        "Descărcări"
       ],
       "${ emailsCount } member": [
         "Un membru",
@@ -5227,7 +5170,7 @@
         "Cont suspendat"
       ],
       "Active": [
-        "Active"
+        "Activ"
       ],
       "Add contact group name": [
         "Adăugare nume grup contacte"
@@ -5382,6 +5325,9 @@
       "Empty trash": [
         "Golire gunoi"
       ],
+      "Enable drive search": [
+        "Activare căutare în unitate"
+      ],
       "Enter your password": [
         "Introduceţi parola"
       ],
@@ -5482,6 +5428,9 @@
       "Name": [
         "Nume"
       ],
+      "No results found": [
+        "Nu s-au găsit rezultate."
+      ],
       "Number of files": [
         "Număr de fişiere"
       ],
@@ -5499,6 +5448,9 @@
       ],
       "Open settings menu": [
         "Deschidere meniu setări"
+      ],
+      "Original size": [
+        "Dimensiune originală"
       ],
       "Other information": [
         "Alte informații"
@@ -5650,6 +5602,9 @@
       "Uploaded by": [
         "Încărcat de"
       ],
+      "Uploading a large file or folder": [
+        "Se încarcă un fișier sau folder mare"
+      ],
       "View contacts": [
         "Afișare contacte"
       ],
@@ -5683,8 +5638,8 @@
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Perioada de probare gratuită se încheie în curând, la ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Perioada de încercare pentru Mail Plus se încheie la ${ textDate } "
       ],
       "Your welcome actions": [
         "Acțiuni de bun venit"

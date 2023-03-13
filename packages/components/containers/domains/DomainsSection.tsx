@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { DomainsModel } from '@proton/shared/lib/models';
@@ -56,6 +56,10 @@ const DomainsSectionInternal = () => {
         await loadModels([DomainsModel], { api, cache, useCache: false });
     };
 
+    const reviewText = c('Action').t`Review`;
+    const setCatchAllText = c('Action').t`Set catch-all`;
+    const deleteText = c('Action').t`Delete`;
+
     return (
         <SettingsSectionWide>
             {renderNewDomain && <DomainModal {...newDomainModalProps} />}
@@ -94,7 +98,7 @@ const DomainsSectionInternal = () => {
                         >{c('Action').t`Refresh status`}</Button>
                     </div>
                     {!!domains?.length && domainsAddressesMap && (
-                        <Table className="simple-table--has-actions">
+                        <Table hasActions responsive="cards">
                             <TableHeader
                                 cells={[
                                     c('Header for addresses table').t`Domain`,
@@ -108,6 +112,11 @@ const DomainsSectionInternal = () => {
                                     return (
                                         <TableRow
                                             key={domain.ID}
+                                            labels={[
+                                                c('Header for addresses table').t`Domain`,
+                                                c('Header for addresses table').t`Status`,
+                                                '',
+                                            ]}
                                             cells={[
                                                 <DomainName domain={domain} />,
                                                 <DomainStatus domain={domain} domainAddresses={domainAddresses} />,
@@ -115,7 +124,8 @@ const DomainsSectionInternal = () => {
                                                     size="small"
                                                     list={[
                                                         {
-                                                            text: c('Action').t`Review`,
+                                                            text: reviewText,
+                                                            'aria-label': `${reviewText} ${domain.DomainName}`,
                                                             onClick: () => {
                                                                 setTmpDomainProps({ domain, domainAddresses });
                                                                 setEditDomainModalOpen(true);
@@ -124,14 +134,16 @@ const DomainsSectionInternal = () => {
                                                         Array.isArray(domainAddresses) &&
                                                             domainAddresses.length &&
                                                             ({
-                                                                text: c('Action').t`Set catch-all`,
+                                                                text: setCatchAllText,
+                                                                'aria-label': `${setCatchAllText} (${domain.DomainName})`,
                                                                 onClick: () => {
                                                                     setTmpDomainProps({ domain, domainAddresses });
                                                                     setCatchAllDomainModalOpen(true);
                                                                 },
                                                             } as const),
                                                         {
-                                                            text: c('Action').t`Delete`,
+                                                            text: deleteText,
+                                                            'aria-label': `${deleteText} ${domain.DomainName}`,
                                                             actionType: 'delete',
                                                             onClick: () => {
                                                                 setTmpDomainProps({ domain, domainAddresses });
@@ -163,7 +175,7 @@ const DomainsSectionUpgrade = () => {
     return (
         <SettingsSectionWide>
             <DomainsSectionText />
-            <UpgradeBanner>
+            <UpgradeBanner upsellPath={`${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${MAIL_UPSELL_PATHS.DOMAIN_NAMES}`}>
                 {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
             </UpgradeBanner>
         </SettingsSectionWide>

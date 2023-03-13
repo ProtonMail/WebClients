@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ACCENT_COLORNAMES } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 
 import { SpamItem, SpamListAction, SpamListActionName, SpamLocation } from './Spams.interfaces';
 
@@ -59,11 +59,7 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
 };
 
 export type HandleSpamListActionClick = (type: SpamListActionName, item: SpamItem) => void;
-export const getActionsByLocation = (
-    item: SpamItem,
-    onClick: HandleSpamListActionClick,
-    blockSenderFeatureEnabled: boolean
-): SpamListAction[] => {
+export const getActionsByLocation = (item: SpamItem, onClick: HandleSpamListActionClick): SpamListAction[] => {
     const actions: Record<SpamListActionName, SpamListAction> = {
         block: { name: c('Action').t`Block`, onClick: () => onClick('block', item) },
         unblock: { name: c('Action').t`Remove Block`, onClick: () => onClick('delete', item) },
@@ -76,9 +72,9 @@ export const getActionsByLocation = (
         case 'BLOCKED':
             return [actions.unblock, actions.spam];
         case 'SPAM':
-            return [actions.unspam, ...(blockSenderFeatureEnabled ? [actions.block] : []), actions.delete];
+            return [actions.unspam, actions.block, actions.delete];
         case 'NON_SPAM':
-            return [actions.spam, ...(blockSenderFeatureEnabled ? [actions.block] : []), actions.delete];
+            return [actions.spam, actions.block, actions.delete];
         default:
             throw new Error('Invalid use case');
     }
@@ -87,11 +83,11 @@ export const getActionsByLocation = (
 export const getLabelByLocation = (location: SpamLocation): { name: string; color: string } => {
     switch (location) {
         case 'BLOCKED':
-            return { name: c('Label').t`Blocked`, color: ACCENT_COLORNAMES.strawberry.color };
+            return { name: c('Label').t`Blocked`, color: ACCENT_COLORS_MAP.purple.color };
         case 'NON_SPAM':
-            return { name: c('Label').t`Not spam`, color: ACCENT_COLORNAMES.reef.color };
+            return { name: c('Label').t`Not spam`, color: ACCENT_COLORS_MAP.reef.color };
         case 'SPAM':
-            return { name: c('Label').t`Spam`, color: ACCENT_COLORNAMES.carrot.color };
+            return { name: c('Label').t`Spam`, color: ACCENT_COLORS_MAP.carrot.color };
         default:
             throw new Error('Invalid use case');
     }

@@ -7,23 +7,20 @@ import { SpamNavItem } from './Spams.interfaces';
 interface Props {
     onChange: (type: SpamNavItem) => void;
     selected: SpamNavItem;
-    showBlockSender: boolean;
 }
 
-const getNav = (showBlockSender: boolean): [type: SpamNavItem, getName: () => string][] => {
+const getNav = (): [type: SpamNavItem, getName: () => string][] => {
     return [
         ['ALL', () => c('Navigation').t`All`],
         ['SPAM', () => c('Navigation').t`Spam`],
         ['NON_SPAM', () => c('Navigation').t`Not spam`],
-        ...(showBlockSender
-            ? [['BLOCKED', () => c('Navigation').t`Blocked`] as [type: SpamNavItem, getName: () => string]]
-            : []),
+        ['BLOCKED', () => c('Navigation').t`Blocked`],
     ];
 };
 
-const SpamFiltersNav = ({ selected, onChange, showBlockSender }: Props) => (
+const SpamFiltersNav = ({ selected, onChange }: Props) => (
     <ul className="unstyled block">
-        {getNav(showBlockSender).map(([type, getName]) => (
+        {getNav().map(([type, getName]) => (
             <li
                 key={type}
                 onClick={() => onChange(type)}

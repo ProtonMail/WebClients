@@ -1,4 +1,3 @@
-import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
@@ -6,6 +5,11 @@ import {
     DEFAULT_PART_DAY_NOTIFICATIONS,
 } from '@proton/shared/lib/calendar/alarms/notificationDefaults';
 import { apiNotificationsToModel, notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
+import {
+    getIsCalendarWritable,
+    getIsOwnedCalendar,
+    getIsSubscribedCalendar,
+} from '@proton/shared/lib/calendar/calendar';
 import {
     DAILY_TYPE,
     DEFAULT_EVENT_DURATION,
@@ -18,7 +22,6 @@ import {
     YEARLY_TYPE,
 } from '@proton/shared/lib/calendar/constants';
 import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { Address, RequireOnly, Address as tsAddress } from '@proton/shared/lib/interfaces';
@@ -127,6 +130,7 @@ const getCalendarsModel = (Calendar: VisualCalendar, Calendars: VisualCalendar[]
             permissions: calendar.Permissions,
             isSubscribed: getIsSubscribedCalendar(calendar),
             isOwned: getIsOwnedCalendar(calendar),
+            isWritable: getIsCalendarWritable(calendar),
         })),
         calendar: {
             id: Calendar.ID,
@@ -134,6 +138,7 @@ const getCalendarsModel = (Calendar: VisualCalendar, Calendars: VisualCalendar[]
             permissions: Calendar.Permissions,
             isSubscribed: getIsSubscribedCalendar(Calendar),
             isOwned: getIsOwnedCalendar(Calendar),
+            isWritable: getIsCalendarWritable(Calendar),
         },
     };
 };

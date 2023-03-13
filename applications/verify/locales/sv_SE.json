@@ -69,68 +69,6 @@
         "Visa faktura"
       ]
     },
-    "color": {
-      "carrot": [
-        "morot"
-      ],
-      "cerise": [
-        "cerise"
-      ],
-      "cobalt": [
-        "kobolt"
-      ],
-      "copper": [
-        "koppar"
-      ],
-      "enzian": [
-        "lila"
-      ],
-      "fern": [
-        "ormbunke"
-      ],
-      "forest": [
-        "skog"
-      ],
-      "ocean": [
-        "hav"
-      ],
-      "olive": [
-        "oliv"
-      ],
-      "pacific": [
-        "stilla havet"
-      ],
-      "pickle": [
-        "gurka"
-      ],
-      "pine": [
-        "tall"
-      ],
-      "pink": [
-        "rosa"
-      ],
-      "plum": [
-        "plommon"
-      ],
-      "purple": [
-        "lila"
-      ],
-      "reef": [
-        "rev"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "skifferblå"
-      ],
-      "soil": [
-        "jord"
-      ],
-      "strawberry": [
-        "jordgubb"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abchazien"
@@ -965,7 +903,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Mata in en säkerhetsnyckel kopplad till ditt ${ BRAND_NAME } konto."
+        "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
       ],
       "Security key": [
         "Säkerhetsnyckel"
@@ -977,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-post"
       ],
@@ -988,9 +923,6 @@
       ],
       "No verification method available": [
         "Ingen verifieringsmetod tillgänglig"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -999,6 +931,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
+      ],
+      "Country code": [
+        "Landskod"
       ],
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
@@ -1010,7 +945,7 @@
         "Ange verifieringskoden som skickades till ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Skriv in verifieringskoden. Siffra ${ digit }."
+        "Ange verifieringskod. Siffra ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Ange ditt eget lösenord (som organisationsadministratör)."
@@ -1122,7 +1057,7 @@
         "Ange ditt lösenord"
       ],
       "Human verification": [
-        "Mänsklig verifikation"
+        "Mänsklig verifiering"
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"

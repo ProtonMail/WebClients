@@ -17,7 +17,7 @@
 	}
 
 	&-day {
-		@media not print {
+		@include media('screen') {
 			&[aria-current='true'] {
 				font-weight: var(--font-weight-bold);
 				color: var(--primary);

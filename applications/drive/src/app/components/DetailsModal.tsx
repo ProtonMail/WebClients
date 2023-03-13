@@ -6,13 +6,15 @@ import { Button } from '@proton/atoms';
 import {
     Alert,
     FileNameDisplay,
+    Icon,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
     Row,
+    Tooltip,
 } from '@proton/components';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
+import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useLinkDetailsView } from '../store';
 import { formatAccessCount } from '../utils/formatters';
@@ -29,8 +31,10 @@ interface Props {
 }
 
 interface RowProps {
-    label: string;
+    label: React.ReactNode;
+    title?: string;
     children: ReactNode;
+    dataTestId?: string;
 }
 
 export default function DetailsModal({ shareId, linkId, onClose, open }: Props) {
@@ -41,6 +45,7 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
         error,
         link,
         signatureIssues,
+        signatureNetworkError,
         numberOfAccesses,
     } = useLinkDetailsView(shareId, linkId);
 
@@ -57,12 +62,16 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
             );
         }
 
+        const sizeTooltipMessage = c('Info')
+            .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`;
+
         const isShared = link.shareUrl && !link.shareUrl.isExpired ? c('Info').t`Yes` : c('Info').t`No`;
         return (
             <ModalTwoContent>
                 <SignatureAlert
                     loading={isSignatureIssuesLoading}
                     signatureIssues={signatureIssues}
+                    signatureNetworkError={signatureNetworkError}
                     signatureAddress={link.signatureAddress}
                     isFile={link.isFile}
                     name={link.name}
@@ -91,12 +100,36 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
                         <DetailsRow label={c('Title').t`MIME type`}>
                             <MimeTypeCell mimeType={link.mimeType} />
                         </DetailsRow>
-                        <DetailsRow label={c('Title').t`Size`}>{humanSize(link.size)}</DetailsRow>
+                        <DetailsRow
+                            label={
+                                <>
+                                    {c('Title').t`Size`}
+                                    <Tooltip title={sizeTooltipMessage} className="ml0-25 mb0-25">
+                                        <Icon name="info-circle" size={14} alt={sizeTooltipMessage} />
+                                    </Tooltip>
+                                </>
+                            }
+                        >
+                            <span title={bytesSize(link.size)}>{humanSize(link.size)}</span>
+                        </DetailsRow>
+                        {link.originalSize && (
+                            <DetailsRow label={c('Title').t`Original size`}>
+                                <span title={bytesSize(link.originalSize)}>{humanSize(link.originalSize)}</span>
+                            </DetailsRow>
+                        )}
                     </>
                 )}
-                <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
+                <DetailsRow label={c('Title').t`Shared`} dataTestId={'drive:is-shared'}>
+                    {isShared}
+                </DetailsRow>
                 {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
-                    <DetailsRow label={c('Title').t`# of accesses`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
+                    <DetailsRow label={c('Title').t`# of downloads`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
+                )}
+                {link.digests && (
+                    // This should not be visible in the UI, but needed for e2e
+                    <span data-testid="drive:file-digest" className="hidden" aria-hidden="true">
+                        {link.digests.sha1}
+                    </span>
                 )}
             </ModalTwoContent>
         );
@@ -113,11 +146,11 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
     );
 }
 
-function DetailsRow({ label, children }: RowProps) {
+function DetailsRow({ label, title, children, dataTestId }: RowProps) {
     return (
-        <Row>
+        <Row title={title}>
             <span className="label cursor-default">{label}</span>
-            <div className="pt0-5">
+            <div className="pt0-5" data-testid={dataTestId}>
                 <b>{children}</b>
             </div>
         </Row>

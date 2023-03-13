@@ -47,6 +47,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Attention required": [
+        "注意が必要です"
+      ],
       "Authenticate": [
         "認証"
       ],
@@ -238,6 +241,9 @@
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
+      ],
+      "Enable drive search": [
+        "ドライブ検索を有効にする"
       ],
       "Expand": [
         "展開"
@@ -593,6 +599,9 @@
       "Upgrade": [
         "アップグレード"
       ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ],
       "Upload anyway": [
         "とにかくアップロード"
       ],
@@ -774,54 +783,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } を使って続行します。"
-      ]
-    },
-    "Calendar status": {
-      "Not synced": [
-        "未同期"
-      ],
-      "Syncing": [
-        "同期中"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "カレンダーを復号できませんでした"
-      ],
-      "Calendar is syncing": [
-        "カレンダーの同期中"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "カレンダーを同期しています: すべての予定が表示されるまでしばらくお待ちください。"
-      ],
-      "Calendar is too big": [
-        "カレンダーが大きすぎます"
-      ],
-      "Calendar link is not accessible": [
-        "カレンダーのリンクにアクセスできません"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "カレンダーのリンクが一時的にアクセスできません"
-      ],
-      "Failed to sync calendar": [
-        "カレンダーの同期に失敗しました"
-      ],
-      "More than 12 hours passed since last update": [
-        "最後のアップデートから12時間以上経過しています"
-      ],
-      "Unsupported calendar format": [
-        "非対応のカレンダー形式"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "カレンダーの公開リンクは、当該カレンダーのアカウントを所持していないと見ることはできません。"
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "公開リンクには現在アクセスできません。リンクがまだ有効かどうかをご確認ください。"
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "前回の更新から12時間以上経過 — ${ CALENDAR_APP_NAME } は数時間後にカレンダーの更新を試行します。"
       ]
     },
     "Collapsible tooltip": {
@@ -1906,17 +1867,14 @@
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
       ],
+      "Contact name is too long": [
+        "連絡先の名前が長すぎます"
+      ],
       "Contact signature not verified": [
         "連絡先の署名が検証されていません"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendars or": [
-        "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
       ],
       "Device name does not match": [
         "デバイス名が一致しません"
@@ -1980,9 +1938,6 @@
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
-      ],
-      "Merge at least ${ calendarToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
-        "${ calendarToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
       ],
       "Missing key packet": [
         "キーパケットが利用できません"
@@ -2052,9 +2007,6 @@
       ],
       "Some groups have no contacts: ${ noContactGroupList } ": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
-      ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "フォルダー名の中に予約済みのものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
@@ -2128,9 +2080,6 @@
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
-      ],
       "Try using only letters, numerals, and _.-": [
         "文字・数字・ _.- のみを使用してみてください"
       ],
@@ -2139,12 +2088,6 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "100 人以上の受信者にメールを送信することはできません"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "10 件以上の連絡先の vCard を送信することはできません"
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "個人カレンダーの制限のためすべてのインポートされたカレンダーのための新しいカレンダーを作成できません。"
       ],
       "You must set a name": [
         "名前を設定してください"
@@ -2509,9 +2452,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "メール"
       ],
@@ -2520,9 +2460,6 @@
       ],
       "No verification method available": [
         "検証方法がありません"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Import calendar": {
@@ -2741,9 +2678,6 @@
       ],
       "ICS file": [
         "ICS ファイル"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -2758,6 +2692,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "${ provider } からインポート"
+      ],
       "Other": [
         "その他"
       ]
@@ -2798,9 +2735,6 @@
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
-      "${ calendarsToBeMerged } merged calendars": [
-        "${ calendarsToBeMerged } 個の結合されたカレンダー"
-      ],
       "${ calendarsToBeMergedCount } merged calendars": [
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
@@ -2834,11 +2768,11 @@
       "${ groupCounts } groups found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
-      "${ numContactGroups } contact groups": [
-        "${ numContactGroups } 件の連絡先グループ"
+      "${ numContact } contacts": [
+        "${ numContact } 件の連絡先"
       ],
-      "${ numContacts } contacts": [
-        "${ numContacts } 件の連絡先"
+      "${ numGroups } contact groups": [
+        "${ numGroups } 件の連絡先グループ"
       ],
       "${ pausedCount } paused": [
         "一時停止 ${ pausedCount } 件"
@@ -2851,6 +2785,9 @@
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } 件選択済み"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
@@ -2867,9 +2804,6 @@
       "${ speed }/s": [
         "${ speed }/秒"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } ストレージ"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
@@ -2878,9 +2812,6 @@
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } 人のメンバー)"
-      ],
-      "10 email addresses": [
-        "10 件のメールアドレス"
       ],
       "A number will be added to the filename": [
         "ファイル名の最後に番号が付加されます"
@@ -2930,14 +2861,17 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "選択したアイテムをごみ箱から完全に削除してよろしいですか？"
       ],
+      "Attention required": [
+        "注意が必要です"
+      ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "多くのアップロードを一度に行うと、コンピューターの動作が重くなる可能性があります。アップロード中はストリーム等のメモリを多く使用するソフトの使用を控えることをご検討ください。もしくは、ファイルを複数回に分けてアップロードしてください。"
+      "Calendar side panel": [
+        "カレンダーサイドパネル"
       ],
       "Canceled": [
         "キャンセル"
@@ -2975,11 +2909,8 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } の使用を継続し、ドライブは後で開く"
       ],
-      "Continue with ${ planName }": [
-        "${ planName } で続行"
-      ],
-      "Create ${ calendarsToBeCreated } new calendars": [
-        "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
+      "Country code": [
+        "国コード"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
@@ -3058,6 +2989,9 @@
       ],
       "Emails are automatically signed": [
         "電子メールは自動的に署名されます"
+      ],
+      "Enable drive search": [
+        "ドライブ検索を有効にする"
       ],
       "Enabling drive search": [
         "ドライブ内検索をオンにしています"
@@ -3173,9 +3107,6 @@
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
       ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendars": [
-        "${ totalCalendarsCount } 個のうち ${ selectedCalendarsCount } 個のカレンダーをインポート"
-      ],
       "Import from": [
         "インポート元"
       ],
@@ -3215,6 +3146,9 @@
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "最近、${ uploadName } のアップロードを試みたようです。アップロードが失敗した場合、${ replaceFile } してください。アップロードが進行中の場合、置き換えると進行中のアップロードがキャンセルされます。"
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "完全に削除しない限り、アイテムはごみ箱に残ります。"
+      ],
       "It’s as easy as drag and drop or selecting files": [
         "ドラッグアンドドロップまたはファイルを選択することでアップロードできます。"
       ],
@@ -3240,7 +3174,7 @@
         "詳細"
       ],
       "Link copied to clipboard": [
-        "リンクをコピーしました"
+        "リンクがクリップボードにコピーされました"
       ],
       "Link failed to be loaded": [
         "リンクの読み込みに失敗しました"
@@ -3326,6 +3260,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "一部転送が完了していないファイルがあります。当該ファイルの再ダウンロード・アップロードをお試しください。"
       ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "補足: データはまだ ${ DRIVE_APP_NAME } をインストールしているデバイスで開くことができる場合があります。"
+      ],
       "of": [
         " / "
       ],
@@ -3343,9 +3280,6 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "リンクとパスワードを知っている人のみがフォルダーにアクセスすることができます。"
-      ],
-      "Other options": [
-        "その他のオプション"
       ],
       "Paused": [
         "一時停止"
@@ -3401,9 +3335,6 @@
       "Primary": [
         "プライマリー"
       ],
-      "Priority support": [
-        "優先的なサポート"
-      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "プライベート検索が有効化されました。このダイアログを閉じ、ファイルまたはフォルダーを検索することができます。"
       ],
@@ -3443,9 +3374,6 @@
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
@@ -3482,20 +3410,11 @@
       "Something went wrong, please try again later.": [
         "問題が発生しました。後ほど再度お試しください。"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されています。"
-      ],
-      "Support for 1 custom email domain": [
-        "1 つの独自メールドメインをサポート"
-      ],
       "support team": [
         "サポートチーム"
       ],
       "Swiss privacy": [
         "スイス法準拠のプライバシー"
-      ],
-      "Tap the + button to upload a file or folder": [
-        "＋ボタンをタップするとファイルやフォルダーをアップロードできます。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
@@ -3557,8 +3476,11 @@
       "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "厳格なプライベート検索を有効にするために、${ DRIVE_APP_NAME } はローカルにファイルのインデックスを作成する必要があります。"
+      ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "ローカルにファイルのインデックスを作成することで、本当の意味でのプライベート検索を実現します。インデックス作成中も、通常通り ${ DRIVE_APP_NAME } をご利用いただけます。インデックス作成が完了したらお知らせします。"
+        "厳格なプライベート検索を有効にするために、ローカルにファイルのインデックスを作成する必要があります。インデックス作成中も、通常通り ${ DRIVE_APP_NAME } をご利用いただけます。インデックス作成が完了したらお知らせします。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
@@ -3593,12 +3515,6 @@
       "Unknown error": [
         "不明なエラー"
       ],
-      "Unlimited folders, labels, and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
-      ],
-      "Unlimited messages": [
-        "送信数制限なし"
-      ],
       "Unlock drive to recover files": [
         "回復用ファイルを使ってドライブを開く"
       ],
@@ -3610,9 +3526,6 @@
       ],
       "Updating drive search...": [
         "ドライブ内検索の更新中..."
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "次の ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
       "Uploaded": [
         "アップロード完了"
@@ -3765,14 +3678,14 @@
       "file data order": [
         "ファイルデータオーダー"
       ],
+      "hash key": [
+        "ハッシュキー"
+      ],
       "keys": [
         "鍵"
       ],
       "name": [
         "名前"
-      ],
-      "name hash": [
-        "名前ハッシュ"
       ],
       "thumbnail": [
         "サムネイル"
@@ -3796,14 +3709,11 @@
       ],
       "Trusted": [
         "信頼済み"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Label": {
-      "# of accesses": [
-        "アクセス数"
+      "# of downloads": [
+        "ダウンロード数"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
@@ -3859,6 +3769,9 @@
       "Browser version": [
         "ブラウザのバージョン"
       ],
+      "Calendar": [
+        "カレンダー"
+      ],
       "Calendars": [
         "カレンダー"
       ],
@@ -3877,8 +3790,8 @@
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
       ],
-      "Coming soon": [
-        "まもなく登場"
+      "Colors": [
+        "色"
       ],
       "Comment": [
         "コメント"
@@ -3988,9 +3901,6 @@
       "Folder name": [
         "フォルダー名"
       ],
-      "From: ${ importedEmail }": [
-        "移行元: ${ importedEmail }"
-      ],
       "Good": [
         "いい"
       ],
@@ -4050,12 +3960,6 @@
       ],
       "Manage categories": [
         "カテゴリーを管理"
-      ],
-      "Manage folders": [
-        "フォルダーを管理"
-      ],
-      "Manage labels": [
-        "ラベルを管理"
       ],
       "Merge a folder": [
         "フォルダーを統合"
@@ -4174,9 +4078,6 @@
       "This will permanently delete all files in your locked drive.": [
         "開くことのできないドライブ内のすべてのデータが削除されます。"
       ],
-      "To: ${ emailAddress }": [
-        "移行先: ${ emailAddress }"
-      ],
       "Toolbar": [
         "ツールバー"
       ],
@@ -4200,9 +4101,6 @@
       ],
       "Upload anyway": [
         "無視してアップロードする"
-      ],
-      "Upload file": [
-        "ファイルをアップロード"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -4296,9 +4194,6 @@
       "Almost there": [
         "もう少しです"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "作成済みカレンダー数: ${ createdCalendars } / ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
       ],
@@ -4313,11 +4208,6 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } labels and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "${ itemsToImportCount } つのラベルから${ periodFragment } の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
     "Message": {
@@ -4501,9 +4391,6 @@
       ],
       "File or folder is missing a name": [
         "ファイルまたはフォルダーに名前がありません"
-      ],
-      "Item failed to be verified": [
-        "アイテムの検証に失敗しました"
       ],
       "Link failed to be loaded": [
         "リンクの読み込みに失敗しました"
@@ -4820,9 +4707,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
-      ],
       "Encrypted search is here": [
         "暗号化検索が利用できます"
       ],
@@ -4830,13 +4714,10 @@
         "最大${ credits }分のクレジットを獲得できます"
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "フレンドを ${ BRAND_NAME } に招待"
+        "友達を ${ BRAND_NAME } に招待"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "データの安全性を保ったまま、Drive内のファイルを検索できるようになりました。"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } を試す"
       ]
     },
     "Storage": {
@@ -4859,9 +4740,6 @@
       ],
       "Bug reported": [
         "バグの報告が送信されました"
-      ],
-      "Canceling import": [
-        "インポートをキャンセル"
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
@@ -4968,17 +4846,31 @@
         "設定"
       ]
     },
-    "Time unit": {
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 時間"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
       "${ hours } hours": [
         "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 時間"
       ],
       "${ minutes } minutes": [
         "${ minutes } 分"
       ]
     },
     "Title": {
-      "# of accesses": [
-        "アクセス数"
+      "# of downloads": [
+        "ダウンロード数"
       ],
       "${ emailsCount } members": [
         "${ emailsCount } メンバー"
@@ -5145,6 +5037,9 @@
       "Empty trash": [
         "ごみ箱を空にする"
       ],
+      "Enable drive search": [
+        "ドライブ検索を有効にする"
+      ],
       "Enter your password": [
         "パスワードを入力"
       ],
@@ -5241,6 +5136,9 @@
       "Name": [
         "名前"
       ],
+      "No results found": [
+        "該当する結果が見つかりませんでした"
+      ],
       "Number of files": [
         "ファイル数"
       ],
@@ -5258,6 +5156,9 @@
       ],
       "Open settings menu": [
         "設定メニューを開く"
+      ],
+      "Original size": [
+        "オリジナルサイズ"
       ],
       "Other information": [
         "その他の情報"
@@ -5409,6 +5310,9 @@
       "Uploaded by": [
         "アップロードしたユーザー"
       ],
+      "Uploading a large file or folder": [
+        "大きなファイルまたはフォルダーをアップロードしています"
+      ],
       "View contacts": [
         "連絡先を表示"
       ],
@@ -5442,8 +5346,8 @@
       "Your changes are not synced yet": [
         "変更は同期されていません"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "無料トライアルは ${ formattedEndDate } に終了します。"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Mial Plusのトライアル期間が ${ textDate } に終了します。"
       ],
       "Your welcome actions": [
         "ウェルカムアクション"

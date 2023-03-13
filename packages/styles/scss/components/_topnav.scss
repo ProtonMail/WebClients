@@ -15,7 +15,7 @@
 	margin-inline-end: 0.25em;
 
 	/* Decrease margins (was 1em) */
-	@include respond-to(1500) {
+	@include media('<=#{em(1500, 16)}') {
 		margin-inline-end: 1px;
 	}
 }
@@ -25,7 +25,7 @@
 }
 
 .topnav-vr {
-	@include respond-to($breakpoint-medium-landscape) {
+	@include media('<=large') {
 		display: none;
 	}
 }
@@ -121,29 +121,29 @@
 	}
 }
 
-@include respond-to($breakpoint-large) {
+@include media('<=xlarge') {
 	@include collapse-all-four-except-upgrade;
 }
 
 // special fix for Hungarian looooooooong text
 [lang='hu'] {
-	@include respond-to(1650) {
+	@include media('<=#{em(1650, 16)}') {
 		@include collapse-all-four-except-upgrade;
 	}
-	@include respond-to(1050) {
+	@include media('<=#{em(1050, 16)}') {
 		@include collapse-all-four-no-exception;
 	}
 }
 
-@include respond-to(940) {
+@include media('<=#{em(940, 16)}') {
 	@include collapse-all-four-no-exception;
 }
 
-@include respond-to(800) {
+@include media('<=#{em(800, 16)}') {
 	@include collapse-all-items-no-exception;
 }
 
-@include respond-to($breakpoint-small) {
+@include media('<=small') {
 	.topnav-icon {
 		// Specificity -_-v
 		&#{&} {
@@ -177,7 +177,7 @@
 	}
 }
 
-@include respond-to($breakpoint-tiny) {
+@include media('<=xsmall') {
 	.topnav-list--four-elements .topnav-link,
 	.topnav-link {
 		padding-inline: rem(2);

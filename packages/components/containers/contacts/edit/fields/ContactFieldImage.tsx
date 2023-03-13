@@ -21,7 +21,7 @@ const ContactFieldImage = ({ vCardProperty, onChange, onSelectImage }: Props) =>
     return (
         <div>
             {vCardProperty.value ? (
-                <img className="max-w13e" src={formatImage(vCardProperty.value)} referrerPolicy="no-referrer" />
+                <img className="max-w13e" alt="" src={formatImage(vCardProperty.value)} referrerPolicy="no-referrer" />
             ) : (
                 <Button onClick={handleChangeImage}>{c('Action').t`Upload picture`}</Button>
             )}

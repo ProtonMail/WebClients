@@ -8,15 +8,17 @@ This project is a monorepo hosting the proton web clients. It includes the web a
 -   <img src="./applications/account/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Account</span>
 -   <img src="./applications/vpn-settings/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton VPN</span>
 
-Technically, this monorepo is based on Yarn 2 & Yarn Workspaces, with unified versioning for all packages inside.
+Technically, this monorepo is based on Yarn 3 & Yarn Workspaces, with unified versioning for all packages inside.
 
 ## Getting Started
 
 You'll need to have the following environment to work with this project
 
 -   Node.js LTS
--   Yarn 2
+-   Yarn 3
 -   git
+
+You can find more detailed version-constrains for Node.js and yarn in `package.json`.
 
 ```shell
 # Clone the project

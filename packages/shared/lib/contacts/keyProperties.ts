@@ -54,12 +54,13 @@ export const getKeyInfoFromProperties = async (
         .sort(compareVCardPropertyByPref)
         .map(async ({ value }) => getKeyVCard(value));
     const pinnedKeys = (await Promise.all(pinnedKeyPromises)).filter(isTruthy);
-    const encrypt = getByGroup(vCardContact['x-pm-encrypt'])?.value;
+    const encryptToPinned = getByGroup(vCardContact['x-pm-encrypt'])?.value;
+    const encryptToUntrusted = getByGroup(vCardContact['x-pm-encrypt-untrusted'])?.value;
     const scheme = getByGroup(vCardContact['x-pm-scheme'])?.value;
     const mimeType = getByGroup(vCardContact['x-pm-mimetype'])?.value;
     const sign = getByGroup(vCardContact['x-pm-sign'])?.value;
 
-    return { pinnedKeys, encrypt, scheme, mimeType, sign };
+    return { pinnedKeys, encryptToPinned, encryptToUntrusted, scheme, mimeType, sign };
 };
 
 interface VcardPublicKey {

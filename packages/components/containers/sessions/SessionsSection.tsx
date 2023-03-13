@@ -98,7 +98,7 @@ const SessionsSection = () => {
                     onSelect={onSelect}
                 />
             </div>
-            <Table className="simple-table--has-actions">
+            <Table hasActions responsive="cards">
                 <TableHeader cells={[c('Title').t`App`, c('Title').t`Date`, c('Title').t`Action`]} />
                 <TableBody loading={loading} colSpan={3}>
                     {list.map((session) => {
@@ -106,6 +106,7 @@ const SessionsSection = () => {
                         return (
                             <TableRow
                                 key={key}
+                                labels={[c('Title').t`App`, c('Title').t`Date`, '']}
                                 cells={[
                                     session.LocalizedClientName,
                                     <Time format="PPp" key={1}>

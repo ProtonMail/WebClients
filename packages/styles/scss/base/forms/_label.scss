@@ -25,7 +25,7 @@
 .form--icon-labels .label {
 	--label-width: 2.4em;
 
-	@include respond-to($breakpoint-tiny) {
+	@include media('<=xsmall') {
 		--label-width: 1.75em;
 	}
 }

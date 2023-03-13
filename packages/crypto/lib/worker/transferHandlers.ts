@@ -12,7 +12,8 @@ type ExtractFunctionReturnTypes<T> = {
         : T[I]; // recurse on array fields
 };
 
-type SerializedKeyReference = ExtractFunctionReturnTypes<KeyReference>;
+// ExtractFunctionReturnTypes cannot keep track of fixed length of `_keyContentHash` so we explicitly re-declare
+type SerializedKeyReference = ExtractFunctionReturnTypes<KeyReference> & { _keyContentHash: [string, string] };
 const KeyReferenceSerializer = {
     canHandle: (obj: any): obj is KeyReference =>
         typeof obj === 'object' && obj._idx !== undefined && obj.isPrivate !== undefined, // NB: careful not to confuse with KeyInfo object
@@ -46,7 +47,10 @@ const KeyReferenceSerializer = {
         getExpirationTime: () => serialized.getExpirationTime,
         getUserIDs: () => serialized.getUserIDs,
         isWeak: () => serialized.isWeak,
-        equals: (otherKey) => otherKey._keyContentHash === serialized._keyContentHash,
+        equals: (otherKey, ignoreOtherCerts) =>
+            ignoreOtherCerts
+                ? otherKey._keyContentHash[1] === serialized._keyContentHash[1]
+                : otherKey._keyContentHash[0] === serialized._keyContentHash[0],
         subkeys: serialized.subkeys.map((subkey) => ({
             getAlgorithmInfo: () => subkey.getAlgorithmInfo,
             getKeyID: () => subkey.getKeyID,

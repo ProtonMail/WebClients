@@ -46,7 +46,7 @@ const checkNameErrors = (name: string, filters: Filter[]): string => {
         return c('Error').t`This field is required`;
     }
     if (filters.find(({ Name }: Filter) => normalize(Name) === normalize(name))) {
-        return c('Error').t`Filter with this name already exist`;
+        return c('Error').t`Filter with this name already exists`;
     }
     return '';
 };

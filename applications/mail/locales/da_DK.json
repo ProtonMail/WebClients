@@ -60,7 +60,7 @@
         "Venstrestil"
       ],
       "Align right": [
-        "Højerstil"
+        "Højrejustér"
       ],
       "Alignment": [
         "Justering"
@@ -85,6 +85,9 @@
       ],
       "Archive": [
         "Arkivér"
+      ],
+      "As Scheduled": [
+        "Som Planlagt"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -213,7 +216,7 @@
         "Sammentræk skrivevinduet"
       ],
       "Copy address": [
-        "Kopiér addresse"
+        "Kopiér adresse"
       ],
       "Copy addresses": [
         "Kopiér adresser"
@@ -244,6 +247,9 @@
       ],
       "Create new message": [
         "Opret ny besked"
+      ],
+      "Custom": [
+        "Tilpasset"
       ],
       "Customize": [
         "Tilpas"
@@ -368,7 +374,7 @@
         "Udløbstid"
       ],
       "Export": [
-        "Exportér"
+        "Eksportér"
       ],
       "Export contact group": [
         "Eksporter kontaktgruppe"
@@ -467,7 +473,7 @@
         "Billeder vil blive indlæst uden en proxy"
       ],
       "Import": [
-        "Import"
+        "Importér"
       ],
       "import": [
         "importér"
@@ -485,7 +491,7 @@
         "Importer fra .csv eller vCard"
       ],
       "Inline": [
-        "Inline"
+        "Indbygget"
       ],
       "Insert": [
         "Indsæt"
@@ -526,9 +532,6 @@
       ],
       "Load": [
         "Indlæs"
-      ],
-      "Load anyway": [
-        "Indlæs alligevel"
       ],
       "Load embedded images": [
         "Indlæs indlejrede billeder"
@@ -595,6 +598,9 @@
       ],
       "Minimize composer": [
         "Minimér skrivevinduet"
+      ],
+      "Monday": [
+        "Mandag"
       ],
       "More": [
         "Flere"
@@ -791,9 +797,6 @@
       "Remove this label": [
         "Fjern denne etiket"
       ],
-      "Rename": [
-        "Omdøb"
-      ],
       "Reply": [
         "Svar"
       ],
@@ -841,9 +844,6 @@
       ],
       "Schedule message": [
         "Planlæg besked"
-      ],
-      "Schedule send": [
-        "Planlæg afsendelse"
       ],
       "Search": [
         "Søg"
@@ -956,7 +956,7 @@
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
-      "Some images failed to load with tracking protection.": [
+      "Some images could not be loaded with tracker protection.": [
         "Nogle billeder kunne ikke indlæses med sporingsbeskyttelse."
       ],
       "Star": [
@@ -982,6 +982,9 @@
       ],
       "This message contains remote content.": [
         "Denne besked indeholder eksternt indhold."
+      ],
+      "Tomorrow": [
+        "I morgen"
       ],
       "Trust": [
         "Hav tillid til"
@@ -1195,16 +1198,6 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Samtale"
-      ]
-    },
-    "Alternative text for simple login image": {
-      "Simple Login": [
-        "Simple Login"
-      ]
-    },
-    "Alternative text for SimpleLogin image": {
-      "SimpleLogin": [
-        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1598,54 +1591,6 @@
         "Din e-mailadresse er ikke på deltagerlisten"
       ]
     },
-    "Calendar status": {
-      "Not synced": [
-        "Ikke synkroniseret"
-      ],
-      "Syncing": [
-        "Synkroniserer"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        "Kalender kunne ikke dekrypteres"
-      ],
-      "Calendar is syncing": [
-        "Kalender synkroniserer"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
-        "Kalender er ved at blive synkroniseret: Det kan tage flere minutter, før alle begivenhederne vises."
-      ],
-      "Calendar is too big": [
-        "Kalender er for stor"
-      ],
-      "Calendar link is not accessible": [
-        "Kalenderlink er ikke tilgængeligt"
-      ],
-      "Calendar link is temporarily inaccessible": [
-        "Kalenderlink er midlertidig ikke tilgængeligt"
-      ],
-      "Failed to sync calendar": [
-        "Kunne ikke synkronisere kalender"
-      ],
-      "More than 12 hours passed since last update": [
-        "Der er gået mere end 12 timer siden den seneste opdatering"
-      ],
-      "Unsupported calendar format": [
-        "Ikke-understøttet kalenderformat"
-      ]
-    },
-    "Calendar subscription not synced error; long version": {
-      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Kalenderlinket er ikke tilgængeligt uden for kalenderudbyderens økosystem."
-      ],
-      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
-      ],
-      "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
-        "Der er gået mere end 12 timer siden sidste opdatering - ${ CALENDAR_APP_NAME } vil forsøge at opdatere kalenderen om et par timer."
-      ]
-    },
     "Calendar widget banner": {
       "Event already ended": [
         "Begivenhed allerede afsluttet"
@@ -1926,7 +1871,7 @@
         "Køn"
       ],
       "Geo": [
-        "Geo"
+        "Geolokalisering"
       ],
       "Language": [
         "Sprog"
@@ -1941,7 +1886,7 @@
         "Navn"
       ],
       "Note": [
-        "Note"
+        "Notat"
       ],
       "Organization": [
         "Organisation"
@@ -1986,9 +1931,6 @@
       ],
       "Work": [
         "Arbejde"
-      ],
-      "Yomi": [
-        "Yomi"
       ]
     },
     "Country name": {
@@ -2134,7 +2076,7 @@
         "Kina"
       ],
       "Christmas Island": [
-        "Christmas Island"
+        "Juleøen"
       ],
       "Cocos (Keeling) Islands": [
         "Cocosøerne"
@@ -2876,12 +2818,21 @@
       "No labels": [
         "Ingen etiketter"
       ],
+      "ProtonMail logo and a plus sign": [
+        "Proton Mail logo and a plus sign"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Få adgang til brugerdefineret planlægning af beskeder og andre fordele, når du opgraderer dit abonnement."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
+      ],
+      "When do you want your message to be sent?": [
+        "Hvornår skal din besked sendes?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
@@ -3065,6 +3016,9 @@
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
       ],
+      "Contact name is too long": [
+        "Kontaktnavn er for langt"
+      ],
       "Contact signature could not be verified": [
         "Kontaktsignatur kunne ikke bekræftes"
       ],
@@ -3080,14 +3034,6 @@
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne beskeds indhold mislykkedes."
       ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "Fravælg mindst ${ calendarToFixCount } kalender",
-        "Fravælg mindst ${ calendarToFixCount } kalendere"
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Fravælg mindst ${ calendarToFixCount } kalender eller",
-        "Fravælg mindst ${ calendarToFixCount } kalendere eller"
-      ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
@@ -3099,6 +3045,9 @@
       ],
       "Email address invalid": [
         "Ugyldig e-mailadresse"
+      ],
+      "Email address is required": [
+        "E-mailadresse er påkrævet."
       ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
@@ -3136,6 +3085,9 @@
       "Image upload failed": [
         "Billed-upload mislykkedes"
       ],
+      "IMAP server is required": [
+        "IMAP-server er påkrævet."
+      ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
       ],
@@ -3159,10 +3111,6 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Det maksimale antal vedhæftninger (${ attachmentsCountLimit }) overskredet"
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Flet mindst ${ calendarToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
-        "Flet mindst ${ calendarToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
       ],
       "Message needs to be sent first": [
         "Beskeden skal sendes først"
@@ -3208,6 +3156,9 @@
         "En af grupperne har ingen kontakter: ${ noContactGroupList }",
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Adgangskode er påkrævet."
+      ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
@@ -3223,6 +3174,9 @@
       ],
       "Please set a password": [
         "Opsæt en adgangskode"
+      ],
+      "Port is required": [
+        "Port er påkrævet."
       ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
@@ -3269,9 +3223,6 @@
       ],
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
-      ],
-      "Some of your folder names are reserved. Please customize the import to edit these names.": [
-        "Nogle af dine mappenavne er reserverede. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
@@ -3349,7 +3300,7 @@
       "This message has already been sent. A new draft has been saved.": [
         "Denne besked er allerede blevet sendt. En ny kladde er blevet gemt."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
@@ -3373,8 +3324,8 @@
       "You can't send a mail to more than 100 recipients": [
         "Du kan ikke sende en mail til mere end 100 modtagere"
       ],
-      "You can't send vCards of more than 10 contacts": [
-        "Du kan ikke sende vCards med mere end 10 kontakter"
+      "You can't send vCard files of more than 10 contacts": [
+        "Du kan ikke sende vCard-filer med mere end 10 kontakter"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Du kan ikke åbne mere end ${ maxActiveComposer } skrivervindue ad gangen",
@@ -3382,9 +3333,6 @@
       ],
       "You did not provide a file.": [
         "Du har ikke angivet en fil."
-      ],
-      "You have reached the maximum number of personal calendars. Some calendars couldn't be imported.": [
-        "Du har nået det maksimale antal personlige kalendere. Nogle kalendere kunne ikke importeres."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -3983,9 +3931,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -3994,9 +3939,6 @@
       ],
       "No verification method available": [
         "Ingen bekræftelsesmetode tilgængelig"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "ICS widget label for event details": {
@@ -4016,6 +3958,9 @@
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret.",
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. ${ totalImported } ud af ${ totalToImport } begivenheder blev importeret."
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Der opstod en fejl under kryptering og tilføjelse af din begivenhed. Ingen begivenhed kunne importeres."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Der opstod en fejl under kryptering og tilføjelse af dine begivenheder. Ingen begivenheder kunne importeres."
@@ -4244,9 +4189,6 @@
       ],
       "ICS file": [
         "ICS fil"
-      ],
-      "Yahoo": [
-        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -4261,6 +4203,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importér fra ${ provider }"
+      ],
       "Other": [
         "Anden"
       ]
@@ -4297,10 +4242,6 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
-      ],
-      "${ calendarsToBeMerged } merged calendar": [
-        "${ calendarsToBeMerged } flettet kalender",
-        "${ calendarsToBeMerged } flettede kalendere"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } flettet kalender",
@@ -4348,13 +4289,13 @@
         "${ numberOfTrackers } e-mail-tracker blokeret",
         "${ numberOfTrackers } e-mail-trackere blokeret"
       ],
-      "${ numContactGroups } contact group": [
-        "${ numContactGroups } kontaktgruppe",
-        "${ numContactGroups } kontaktgrupper"
+      "${ numContact } contact": [
+        "${ numContact } kontakt",
+        "${ numContact } kontakter"
       ],
-      "${ numContacts } contact": [
-        "${ numContacts } kontakt",
-        "${ numContacts } kontakter"
+      "${ numGroups } contact group": [
+        "${ numGroups } kontaktgruppe",
+        "${ numGroups } kontaktgrupper"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } besked i samtale",
@@ -4400,9 +4341,6 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagerplads"
-      ],
       "${ total } conversation": [
         "${ total } samtale",
         "${ total } samtaler"
@@ -4447,9 +4385,6 @@
       ],
       "(No Recipient)": [
         "(Ingen modtager)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadresser"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "En gendannelsessætning er en af de sikreste måder at beskytte adgangen til din konto. Du kan bruge den til at få adgang til din konto og gendanne dine krypterede data, hvis du nogensinde glemmer din adgangskode."
@@ -4558,6 +4493,9 @@
       "Body: ": [
         "Indhold: "
       ],
+      "Calendar side panel": [
+        "Kalender-sidepanel"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
       ],
@@ -4588,15 +4526,15 @@
       "Confirm phishing report": [
         "Bekræft phishing-anmeldelse"
       ],
-      "Continue with ${ planName }": [
-        "Fortsæt med ${ planName }"
-      ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "Opret ${ calendarsToBeCreated } ny kalender",
-        "Opret ${ calendarsToBeCreated } nye kalendere"
+      "Country code": [
+        "Landekode"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Opret ${ calendarsToBeCreatedCount } ny kalender",
+        "Opret ${ calendarsToBeCreatedCount } nye kalendere"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Opret et mærkat til de importerede beskeder, et tidsinterval for importen og de mapper du gerne vil importere."
@@ -4796,9 +4734,9 @@
       "Group assignment applied": [
         "Gruppetildeling anvendt"
       ],
-      "Has ${ numAttachments } attachment": [
-        "Har ${ numAttachments } vedhæftet fil",
-        "Har ${ numAttachments } vedhæftede filer"
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Har ${ numAttachments } vedhæftet fil (${ numAttachmentsSize })",
+        "Har ${ numAttachments } vedhæftede filer (${ numAttachmentsSize })"
       ],
       "here": [
         "hér"
@@ -4837,12 +4775,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Billeder er blevet fjernet, fordi de ikke er tilladte i auto-svar"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
+        "Importer ${ calendarCount } af ${ totalCalendarsCount } kalendere"
+      ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
-      ],
-      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
-        "Importer ${ selectedCalendarsCount } af ${ totalCalendarsCount } kalender",
-        "Importer ${ selectedCalendarsCount } af ${ totalCalendarsCount } kalendere"
       ],
       "Import from": [
         "Importer fra"
@@ -4855,6 +4793,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
@@ -4961,8 +4902,8 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
-      "Moving a large amount of messages. This may take a while.": [
-        "Flytter en stor mængde beskeder. Dette kan tage et stykke tid."
+      "Moving messages. This may take a while.": [
+        "Flytter beskeder. Dette kan tage et stykke tid."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
@@ -5023,9 +4964,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
-      ],
-      "Other options": [
-        "Andre muligheder"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vores system markerede denne besked som et phishing-forsøg. Kontroller, at den er legitim."
@@ -5094,9 +5032,6 @@
       "Print email": [
         "Udskriv e-mail"
       ],
-      "Priority support": [
-        "Prioriteret support"
-      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Beskyt din e-mail mod at blive lækket til mailinglister eller spammere med ${ maskMyEmailButton }."
       ],
@@ -5128,7 +5063,7 @@
         "Anmod om kvittering for læsning"
       ],
       "Rich text": [
-        "Rich text"
+        "Rig tekst"
       ],
       "Right to Left": [
         "Højre mod venstre"
@@ -5165,9 +5100,6 @@
       ],
       "Select what you want to import.": [
         "Vælg, hvad du ønsker at importere."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Send en krypteret, adgangskodebeskyttet besked til en ${ boldText } e-mailadresse."
@@ -5214,9 +5146,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne besked findes ikke eller er allerede udløbet."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagerplads deles mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
-      ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Gem og del filer sikkert med ${ DRIVE_APP_NAME }."
       ],
@@ -5231,9 +5160,6 @@
       ],
       "Subject: ": [
         "Emne: "
-      ],
-      "Support for 1 custom email domain": [
-        "Understøttelse af 1 brugerdefineret e-mail-domæne"
       ],
       "Support privacy by upgrading for": [
         "Støt op om privatlivets fred ved at opgradere til"
@@ -5409,12 +5335,6 @@
       "Turn on to search the content of your messages": [
         "Slå til for at søge i indholdet af dine beskeder"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper / etiketter / filtre"
-      ],
-      "Unlimited messages": [
-        "Ubegrænset antal beskeder"
-      ],
       "Unlock message": [
         "Lås besked op"
       ],
@@ -5426,6 +5346,9 @@
       ],
       "Updating message content search...": [
         "Opdaterer beskedindholdssøgning..."
+      ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
       "Upgrade to add more addresses to your account.": [
         "Opgrader for at tilføje flere adresser til din konto."
@@ -5457,9 +5380,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Opgrader for at bruge ${ MAIL_APP_NAME } med tredjeparts desktopklienter."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
-      ],
       "Upload picture": [
         "Upload billede"
       ],
@@ -5477,9 +5397,6 @@
       ],
       "Using SimpleLogin is easy": [
         "Det er nemt at bruge SimpleLogin"
-      ],
-      "Verified ${ BRAND_NAME } message": [
-        "Verificeret ${ BRAND_NAME }-besked"
       ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
@@ -5705,9 +5622,6 @@
       ],
       "Trusted": [
         "Betroet"
-      ],
-      "WKD": [
-        "WKD"
       ]
     },
     "Key pinning": {
@@ -5948,7 +5862,7 @@
         "Adresse"
       ],
       "ALL": [
-        "ALL"
+        "ALLE"
       ],
       "Also archive": [
         "Arkivér også"
@@ -5969,7 +5883,7 @@
         "Og"
       ],
       "ANY": [
-        "ANY"
+        "ENHVER"
       ],
       "App password": [
         "App-adgangskode"
@@ -6028,14 +5942,11 @@
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],
-      "Coming soon": [
-        "Kommer snart"
+      "Colors": [
+        "Farver"
       ],
       "Conditions": [
         "Betingelser"
-      ],
-      "Confirm password": [
-        "Bekræft adgangskode"
       ],
       "Contacts": [
         "Kontakter"
@@ -6115,8 +6026,11 @@
       "From:": [
         "Fra:"
       ],
-      "From: ${ importedEmail }": [
-        "Fra: ${ importedEmail }"
+      "From: ${ from }": [
+        "Fra: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "Fra: ${ fromEmail }"
       ],
       "Good": [
         "God"
@@ -6134,7 +6048,7 @@
         "Jeg er indforstået med risikoen"
       ],
       "IF": [
-        "IF"
+        "HVIS"
       ],
       "If": [
         "Hvis"
@@ -6192,12 +6106,6 @@
       ],
       "Manage categories": [
         "Administrer kategorier"
-      ],
-      "Manage folders": [
-        "Administrer mapper"
-      ],
-      "Manage labels": [
-        "Administrer etiketter"
       ],
       "Manage my addresses": [
         "Administrer mine adresser"
@@ -6284,7 +6192,7 @@
         "Gendannelsessætning"
       ],
       "Region": [
-        "Region"
+        "Område"
       ],
       "Remember my choice": [
         "Husk mit valg"
@@ -6352,8 +6260,11 @@
       "To:": [
         "Til:"
       ],
-      "To: ${ emailAddress }": [
-        "Til: ${ emailAddress }"
+      "To: ${ to }": [
+        "Til: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Til: ${ toEmail }"
       ],
       "Toolbar": [
         "Værktøjslinje"
@@ -6363,9 +6274,6 @@
       ],
       "Undisclosed Recipients": [
         "Oplyste modtagere"
-      ],
-      "Upload file": [
-        "Upload fil"
       ],
       "Upload picture": [
         "Upload billede"
@@ -6473,6 +6381,17 @@
       ],
       "Row": [
         "Række"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "For at tilføje en ny kalender, skal du fjerne en eksisterende kalender."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "For at tilføje en ny kalender, skal du fjerne en anden kalender eller opgradere dit ${ BRAND_NAME }-abonnement til et betalt ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Du har nået det maksimale antal kalendere, der er tilgængelige i dit abonnement."
       ]
     },
     "Link": {
@@ -6638,8 +6557,9 @@
       "Almost there": [
         "Næsten færdig"
       ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Antal oprettede kalendere: ${ createdCalendars } ud af ${ calendarsToBeCreated }"
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Antal oprettede kalendere: ${ createdCalendarCount } af ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Forbinder til din e-mailudbyder"
@@ -6658,21 +6578,21 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importer alle beskeder fra ${ itemsToImportCount } mappe og giv dem etiketten",
+        "Importer alle beskeder fra ${ itemsToImportCount } mapper og giv dem etiketten"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importer alle beskeder fra ${ itemsToImportCount } etikette og giv dem etiketten",
+        "Importer alle beskeder fra ${ itemsToImportCount } etiketter og giv dem etiketten"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mappe og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mapper og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mappe og giv dem etiketten",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } mapper og giv dem etiketten"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etikette og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etikette og giv dem etiketten",
+        "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten"
       ]
     },
     "Mailbox": {
@@ -6921,6 +6841,39 @@
         "Skift eller tilføj konto"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Brugerdefinerede e-maildomæner"
+      ],
+      "Hide My Email aliases": [
+        "Skjul mine e-mail-aliasser"
+      ],
+      "Schedule messages at any time": [
+        "Planlæg beskeder til ethvert tidspunkt"
+      ],
+      "Search message content": [
+        "Søg i beskedindhold"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Up to 15 email addresses": [
+        "Op til 15 e-mailadresser"
+      ],
+      "Up to 500 GB of storage": [
+        "Op til 500 GB lagerplads"
+      ]
+    },
+    "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Fortæl os om dine indtryk. (Valgfrit)"
@@ -7085,9 +7038,6 @@
       "A way to contact you": [
         "En måde at kontakte dig på"
       ],
-      "Confirm password": [
-        "Bekræft adgangskode"
-      ],
       "E.g., ": [
         "F.eks., "
       ],
@@ -7180,8 +7130,8 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } ud af ${ countContacts } kontakt ekporteret.",
-        "${ contactsExported.length } ud af ${ countContacts } kontakter ekporteret."
+        "${ contactsExported.length } ud af ${ countContacts } kontakt eksporteret.",
+        "${ contactsExported.length } ud af ${ countContacts } kontakter eksporteret."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } af i alt ${ totalBeDeleted } kontakt blev slettet.",
@@ -7443,9 +7393,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
-      ],
       "Email tracking protection": [
         "Beskyttelse mod sporing af e-mail"
       ],
@@ -7460,9 +7407,6 @@
       ],
       "Schedule send": [
         "Planlæg afsendelse"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "Prøv ${ DRIVE_APP_NAME }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi indlæser nu billeder som standard og blokerer afsendere fra at spore dig. Dette kan ændres i ${ settingsLink }."
@@ -7600,7 +7544,7 @@
       "Bug reported": [
         "Fejl anmeldt"
       ],
-      "Canceling import": [
+      "Cancelling import": [
         "Annullerer import"
       ],
       "Code sent to ${ methodTo }": [
@@ -7805,7 +7749,7 @@
         "CSV-felt"
       ],
       "Import": [
-        "Import"
+        "Importér"
       ],
       "Name": [
         "Navn"
@@ -7832,17 +7776,9 @@
         "${ daysCountLeft } dag",
         "${ daysCountLeft } dage"
       ],
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
       "${ hoursCountLeft } hour": [
         "${ hoursCountLeft } time",
         "${ hoursCountLeft } timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minutter"
       ],
       "${ minutesCountLeft } minute": [
         "${ minutesCountLeft } minut",
@@ -7851,6 +7787,34 @@
       "${ secondsCountLeft } second": [
         "${ secondsCountLeft } sekund",
         "${ secondsCountLeft } sekunder"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }. time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 t",
+        "${ hoursInt },5 t"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 time",
+        "${ hoursInt },5 timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minutter"
       ]
     },
     "Title": {
@@ -8298,6 +8262,9 @@
       "Sending original message": [
         "Sender oprindelig besked"
       ],
+      "Set your own schedule": [
+        "Sæt din egen tidsplan"
+      ],
       "Settings": [
         "Indstillinger"
       ],
@@ -8380,8 +8347,8 @@
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
       ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "Din Mail Plus prøveperiode slutter ${ textDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -8787,8 +8754,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yearly",
-        "Yearly"
+        "Hver ${ interval } år",
+        "Hver ${ interval } år"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Hver ${ interval } år, ${ timesString }",

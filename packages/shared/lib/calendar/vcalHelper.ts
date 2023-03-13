@@ -7,12 +7,14 @@ import {
     VcalAttendeePropertyWithRole,
     VcalAttendeePropertyWithToken,
     VcalCalendarComponent,
+    VcalCalendarComponentWithErrors,
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
     VcalDateProperty,
     VcalDateTimeValue,
     VcalStringProperty,
     VcalVcalendar,
+    VcalVcalendarWithErrors,
     VcalVeventComponent,
     VcalVfreebusyComponent,
     VcalVjournalComponent,
@@ -74,7 +76,13 @@ export const getIsDateTimeValue = (value: VcalDateOrDateTimeValue): value is Vca
 };
 
 export const getIsCalendar = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVcalendar => {
-    return vcalComponent?.component?.toLowerCase() === 'vcalendar';
+    return (vcalComponent as VcalVcalendar)?.component?.toLowerCase() === 'vcalendar';
+};
+
+export const getIsVcalendarWithErrors = (
+    vcalendar: VcalVcalendar | VcalVcalendarWithErrors
+): vcalendar is VcalVcalendarWithErrors => {
+    return (vcalendar.components || []).some((component) => !!(component as VcalCalendarComponentWithErrors).error);
 };
 
 export const getIsEventComponent = (vcalComponent: VcalCalendarComponent): vcalComponent is VcalVeventComponent => {

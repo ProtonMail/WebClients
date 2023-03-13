@@ -130,15 +130,15 @@ $modal-full-dimension: 98% !default;
 		.field-container--full {
 			inline-size: calc(100% - var(--label-width, #{$label-width}));
 
-			@include respond-to(1360) {
+			@include media('<=#{em(1360, 16)}') {
 				inline-size: $field-container;
 			}
 
-			@include respond-to(830) {
+			@include media('<=#{em(830, 16)}') {
 				inline-size: calc(100% - var(--label-width, #{$label-width}));
 			}
 
-			@include respond-to($breakpoint-small) {
+			@include media('<=small') {
 				inline-size: 100%;
 			}
 		}
@@ -181,7 +181,7 @@ $modal-full-dimension: 98% !default;
 	}
 }
 
-@media (max-height: $breakpoint-low-height-modal) {
+@include media('height<=#{$breakpoint-low-height-modal}') {
 	.inner-modal {
 		max-block-size: $modal-full-dimension;
 	}
@@ -197,7 +197,7 @@ $modal-full-dimension: 98% !default;
 }
 
 // small viewports
-@media (max-width: $modal-breakpoint-width) {
+@include media('<=#{$modal-breakpoint-width}') {
 	.inner-modal {
 		margin: 1%;
 		min-inline-size: 0;

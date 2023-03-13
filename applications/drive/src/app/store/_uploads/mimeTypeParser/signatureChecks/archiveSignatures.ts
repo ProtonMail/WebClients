@@ -1,8 +1,11 @@
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
-import { SignatureChecker, isTarHeaderChecksumValid } from '../helpers';
+import { SignatureChecker, isTarHeaderChecksumValid, mimetypeFromExtension } from '../helpers';
 
-export default function archiveSignatures({ check, sourceBuffer }: ReturnType<typeof SignatureChecker>) {
+export default function archiveSignatures(
+    { check, sourceBuffer }: ReturnType<typeof SignatureChecker>,
+    fileName?: File['name']
+) {
     if (check([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c])) {
         return SupportedMimeTypes.x7zip;
     }
@@ -79,14 +82,9 @@ export default function archiveSignatures({ check, sourceBuffer }: ReturnType<ty
             } else {
                 offset += compressedSize;
             }
-
-            // Apple known format, mime type will be based on file extension
-            if (filename === 'Index/Document.iwa' || filename.startsWith('Data/') || filename === 'index.xml') {
-                return undefined;
-            }
         }
 
-        return SupportedMimeTypes.zip;
+        return fileName ? mimetypeFromExtension(fileName) : SupportedMimeTypes.zip;
     }
 
     if (

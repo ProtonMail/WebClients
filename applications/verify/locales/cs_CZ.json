@@ -69,68 +69,6 @@
         "Zobrazit fakturu"
       ]
     },
-    "color": {
-      "carrot": [
-        "mrkev"
-      ],
-      "cerise": [
-        "třešeň"
-      ],
-      "cobalt": [
-        "kobalt"
-      ],
-      "copper": [
-        "měď"
-      ],
-      "enzian": [
-        "hořec"
-      ],
-      "fern": [
-        "kapradina"
-      ],
-      "forest": [
-        "les"
-      ],
-      "ocean": [
-        "oceán"
-      ],
-      "olive": [
-        "oliva"
-      ],
-      "pacific": [
-        "pacifik"
-      ],
-      "pickle": [
-        "okurka"
-      ],
-      "pine": [
-        "borovice"
-      ],
-      "pink": [
-        "růžová"
-      ],
-      "plum": [
-        "švestka"
-      ],
-      "purple": [
-        "purpurová"
-      ],
-      "reef": [
-        "útes"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "slateblue": [
-        "břidličná modř"
-      ],
-      "soil": [
-        "půda"
-      ],
-      "strawberry": [
-        "jahoda"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abcházie"
@@ -977,9 +915,6 @@
       ]
     },
     "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -988,9 +923,6 @@
       ],
       "No verification method available": [
         "Nejsou k dispozici žádné metody ověřování"
-      ],
-      "SMS": [
-        "SMS"
       ]
     },
     "Info": {
@@ -999,6 +931,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
+      ],
+      "Country code": [
+        "Kód země"
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"

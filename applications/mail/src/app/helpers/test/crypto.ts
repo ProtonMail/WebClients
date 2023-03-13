@@ -1,10 +1,10 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, KEY_FLAG, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
-import { generatePassphrase } from '@proton/shared/lib/keys/calendarKeys';
 
 import { base64ToArray } from '../base64';
 import { addApiMock } from './api';
-import { addressKeysCache, cache, resolvedRequest } from './cache';
+import { addressKeysCache, mockCache, resolvedRequest } from './cache';
 
 const { TYPE_INTERNAL, TYPE_EXTERNAL } = RECIPIENT_TYPES;
 
@@ -25,7 +25,7 @@ export interface ApiKey {
 export const apiKeys = new Map<string, ApiKey>();
 
 const addApiKeysMock = () => {
-    addApiMock('keys', (args) => {
+    addApiMock('core/v4/keys', (args) => {
         const email = args.params.Email;
         if (apiKeys.has(email)) {
             const apiKey = apiKeys.get(email) as ApiKey;
@@ -106,7 +106,7 @@ export const generateCalendarKeysAndPassphrase = async (addressKey: GeneratedKey
 };
 
 export const addKeysToUserKeysCache = (key: GeneratedKey) => {
-    cache.set('USER_KEYS', resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }]));
+    mockCache.set('USER_KEYS', resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }]));
 };
 
 export const addKeysToAddressKeysCache = (addressID: string, key: GeneratedKey | undefined) => {

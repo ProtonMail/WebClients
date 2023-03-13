@@ -320,7 +320,7 @@ export default function useShareUrl() {
     const getFieldsToUpdateForPassword = async (
         newPassword: string,
         creatorEmail: string,
-        flags: number,
+        _flags: number,
         keyInfo: SharedURLSessionKeyPayload
     ): Promise<Partial<UpdateSharedURL>> => {
         const { sharePasswordSalt, shareSessionKey } = keyInfo;
@@ -427,7 +427,7 @@ export default function useShareUrl() {
             .filter(({ shareUrlId }) => shareUrlId) as { linkId: string; shareUrlId: string; rootShareId: string }[];
         const groupedLinksByShareId = groupWith((a, b) => a.rootShareId === b.rootShareId, sharedLinks);
 
-        const batches: typeof sharedLinks[] = [];
+        const batches: (typeof sharedLinks)[] = [];
 
         groupedLinksByShareId.forEach((linkGroup) => {
             if (linkGroup.length <= BATCH_REQUEST_SIZE) {

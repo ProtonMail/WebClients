@@ -1,3 +1,21 @@
+## Release: 5.0.9 — March 8, 2023
+
+### New features
+
+-   Lift restrictions for the number of calendars you can create by category. Create up to 3 calendars as a free user and 25 if you have a Mail subscription
+
+### Fixes
+
+-   Proactively fix sequence properties outside the valid value range (established on the RFC 5545 standard) when importing and exporting events
+
+## Release: 5.0.8 — February 15, 2023
+
+### Improvements
+
+-   Increase support for importing ICS files with dates that do not follow the RFC 5545 standard (including dates missing seconds and ISO-formatted dates)
+-   Redesign of app notifications
+-   Minor UI improvements
+
 ## Release: 5.0.7 — January 25, 2023
 
 ### Improvements

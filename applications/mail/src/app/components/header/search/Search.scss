@@ -36,7 +36,7 @@
 		}
 	}
 
-	@include respond-to($breakpoint-small, 'max') {
+	@include media('<=small') {
 		inset: 0;
 		display: flex;
 		padding-block: 15%;
@@ -48,11 +48,11 @@
 		background-color: var(--backdrop-norm);
 	}
 
-	@include respond-to($breakpoint-tiny, 'max') {
+	@include media('<=xsmall') {
 		padding: 5%;
 	}
 
-	@include respond-to($breakpoint-small, 'min') {
+	@include media('>small') {
 		inset-block-start: calc(var(--top) * 1px - 1px);
 		/* stylelint-disable */
 		inset-inline-start: calc(var(--left) * 1px - 1px);
@@ -67,7 +67,7 @@
 
 	/* Backdrop button, meant to override 'autoClose' option on mobile */
 	&-backdrop {
-		@include respond-to($breakpoint-small, 'max') {
+		@include media('<=small') {
 			position: absolute;
 			inset: 0;
 			z-index: 0;
@@ -81,7 +81,7 @@
 			background: none;
 		}
 
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			display: none;
 		}
 	}
@@ -103,7 +103,7 @@
 		background-size: calc(100% - #{rem(20)}) rem(3);
 		background-repeat: no-repeat;
 
-		@include respond-to($breakpoint-small, 'max') {
+		@include media('<=small') {
 			position: relative;
 			z-index: 1;
 			inline-size: 100%;
@@ -111,7 +111,7 @@
 			transition: transform 0.1s ease-out;
 		}
 
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			inline-size: calc(var(--width) * 1px + 2em); // 2em for paddings
 			max-inline-size: var(--max-width, unset);
 			max-block-size: var(--max-height, unset);

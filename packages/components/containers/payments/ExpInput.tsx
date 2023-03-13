@@ -17,7 +17,6 @@ const ExpInput = ({ month, year, onChange, ...rest }: Props) => {
             value={`${month}${month.length === 2 || year.length ? '/' : ''}${year}`}
             autoComplete="cc-exp"
             maxLength={5}
-            placeholder="MM/YY"
             onChange={({ target }) => {
                 const [newMonth = '', newYear = ''] = target.value.split('/');
 

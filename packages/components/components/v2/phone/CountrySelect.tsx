@@ -3,6 +3,7 @@ import { AutoSizer, CellMeasurer, CellMeasurerCache, List } from 'react-virtuali
 
 import { c } from 'ttag';
 
+import { generateUID } from '@proton/components/helpers';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
 import { Dropdown, DropdownButton } from '../../dropdown';
@@ -44,8 +45,11 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
         pickRef.current = true;
     };
 
+    const uid = generateUID('phone-number-prefix');
+
     return (
         <>
+            <span className="sr-only" id={uid}>{c('Info').t`Country code`}</span>
             <DropdownButton
                 as="button"
                 type="button"
@@ -61,6 +65,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                 aria-live="assertive"
                 aria-atomic="true"
                 aria-label={value?.countryName}
+                aria-describedby={uid}
             >
                 <span className="flex mr0-5">
                     {!value ? (
@@ -138,7 +143,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     style={{ '--height-custom': '20em', '--min-width-custom': '18em' }}
                 >
                     {!filteredOptions.length ? (
-                        <div className="pl1">{c('Info').t`No results found`}</div>
+                        <div className="pl1" role="alert">{c('Info').t`No results found`}</div>
                     ) : (
                         <AutoSizer>
                             {({ height, width }) => (

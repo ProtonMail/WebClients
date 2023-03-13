@@ -11,8 +11,7 @@ import {
 } from '@proton/components';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { CALENDAR_TYPE_EXTENDED } from '@proton/shared/lib/calendar/constants';
-import getHasUserReachedCalendarsLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarsLimit';
+import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
@@ -40,6 +39,7 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
     const invitedAddress = addresses.find(
         ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizedInvitedEmail
     );
+    const isFreeUser = !user.hasPaidMail;
 
     if (!invitedAddress) {
         createNotification({
@@ -52,11 +52,7 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
     const calendarOwnerEmail = invitation.Calendar.SenderEmail;
     const calendarName = invitation.Calendar.Name;
     const isInvitedAddressDisabled = getIsAddressDisabled(invitedAddress);
-    const { isPersonalCalendarsLimitReached, isSharedCalendarsLimitReached } = getHasUserReachedCalendarsLimit({
-        calendars,
-        isFreeUser: !user.hasPaidMail,
-    });
-    const isCalendarsLimitReached = isPersonalCalendarsLimitReached || isSharedCalendarsLimitReached;
+    const { isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(calendars, isFreeUser);
 
     const handleAccept = () => withLoadingAccept(accept(invitation, rest.onClose));
     const handleReject = () => withLoadingReject(reject(invitation, rest.onClose));
@@ -83,8 +79,8 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
         </span>
     );
 
-    if (isCalendarsLimitReached && !isInvitedAddressDisabled) {
-        return <CalendarLimitReachedModal {...rest} calendarType={CALENDAR_TYPE_EXTENDED.SHARED} />;
+    if (isOtherCalendarsLimitReached && !isInvitedAddressDisabled) {
+        return <CalendarLimitReachedModal {...rest} isFreeUser={isFreeUser} />;
     }
 
     const title = isInvitedAddressDisabled

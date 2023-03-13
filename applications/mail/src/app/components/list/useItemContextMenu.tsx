@@ -1,7 +1,5 @@
 import { RefObject, useCallback, useState } from 'react';
 
-import { FeatureCode, useFeature } from '@proton/components';
-
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import useBlockSender from '../../hooks/useBlockSender';
@@ -32,7 +30,6 @@ export const useItemContextMenu = ({
     const [selectedElement, setSelectedElement] = useState<Element>();
     const [isContextMenuOpen, setIsOpen] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
-    const { feature: mailContextMenuFeature } = useFeature<boolean>(FeatureCode.MailContextMenu);
 
     const closeContextMenu = useCallback(() => setIsOpen(false), [setIsOpen]);
     const openContextMenu = useCallback(() => setIsOpen(true), [setIsOpen]);
@@ -59,7 +56,7 @@ export const useItemContextMenu = ({
         [checkedIDs]
     );
 
-    const contextMenu = mailContextMenuFeature?.Value ? (
+    const contextMenu = (
         <ItemContextMenu
             anchorRef={anchorRef}
             isOpen={isContextMenuOpen}
@@ -75,7 +72,7 @@ export const useItemContextMenu = ({
             canShowBlockSender={canShowBlockSender}
             onBlockSender={handleClickBlockSender}
         />
-    ) : null;
+    );
 
     return {
         contextMenu,

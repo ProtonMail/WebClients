@@ -28,7 +28,7 @@ describe('Subscription Format', () => {
                     Title: 'Mail Plus',
                     MaxDomains: 1,
                     MaxAddresses: 10,
-                    MaxCalendars: 20,
+                    MaxCalendars: 25,
                     MaxSpace: 16106127360,
                     MaxMembers: 1,
                     MaxVPN: 0,
@@ -68,7 +68,7 @@ describe('Subscription Format', () => {
                     Title: 'Mail Plus',
                     MaxDomains: 1,
                     MaxAddresses: 10,
-                    MaxCalendars: 20,
+                    MaxCalendars: 25,
                     MaxSpace: 16106127360,
                     MaxMembers: 1,
                     MaxVPN: 0,
@@ -93,17 +93,11 @@ describe('Subscription Format', () => {
 
     it('should not add upcoming property if it is not specified', () => {
         const result = format(subscription);
-        expect(result.upcoming).not.toBeDefined();
+        expect(result.UpcomingSubscription).not.toBeDefined();
     });
 
     it('should add upcoming property if it is the second parameter', () => {
         const result = format(subscription, upcoming);
-        expect(result.upcoming).toBeDefined();
-    });
-
-    it('should add upcoming property if it is in the subscription object', () => {
-        subscription.UpcomingSubscription = upcoming;
-        const result = format(subscription);
-        expect(result.upcoming).toBeDefined();
+        expect(result.UpcomingSubscription).toBeDefined();
     });
 });

@@ -6,7 +6,7 @@ import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/li
 import { getHasDefaultNotifications, getHasSharedEventContent } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail, withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import { DEFAULT_ATTENDEE_PERMISSIONS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { getBase64SharedSessionKey, getCreationKeys } from '@proton/shared/lib/calendar/crypto/helpers';
+import { getBase64SharedSessionKey, getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getInviteLocale } from '@proton/shared/lib/calendar/getSettings';
 import { ADD_EVENT_ERROR_TYPE, AddAttendeeError } from '@proton/shared/lib/calendar/mailIntegration/AddAttendeeError';
 import {

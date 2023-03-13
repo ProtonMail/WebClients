@@ -335,6 +335,9 @@
       "Upgrade": [
         "ارتقا"
       ],
+      "Upgrade now": [
+        "اکنون ارتقا دهید"
+      ],
       "Use ${ label } theme": [
         "استفاده از پوسته ${ label }"
       ],
@@ -387,20 +390,6 @@
         "کوچک‌نمایی"
       ]
     },
-    "Action in trial plan": {
-      "Continue with free plan": [
-        "ادامه با طرح رایگان"
-      ],
-      "No, thanks": [
-        "نه, ممنون"
-      ],
-      "Start my 30-day free trial": [
-        "شروع دوره آزمایشی 30 روزه من"
-      ],
-      "Try free for 30 days": [
-        "برای 30 روز رایگان امتحان کنید"
-      ]
-    },
     "Addon": {
       "+ ${ domains } custom domain": [
         "+ ${ domains } دامنه سفارشی",
@@ -422,21 +411,6 @@
       ]
     },
     "Billing cycle": {
-      "Payable every 12 months": [
-        "قابل پرداخت هر 12 ماه"
-      ],
-      "Payable every 15 months": [
-        "قابل پرداخت هر 15 ماه"
-      ],
-      "Payable every 24 months": [
-        "قابل پرداخت هر 24 ماه"
-      ],
-      "Payable every 30 months": [
-        "قابل پرداخت هر 30 ماه"
-      ],
-      "Payable every month": [
-        "قابل پرداخت در هر ماه"
-      ],
       "Renews automatically on ${ formattedEndTime }": [
         "بطور خودکار در ${ formattedEndTime } تمدید میشود"
       ]
@@ -1636,6 +1610,11 @@
         "پشتیبانی تورنت (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Delete key": [
+        "حذف کلید"
+      ]
+    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "مشکلی در صحت سنجی کلید امنیتی شما پیش آمد. لطفا دوباره امتحان کنید."
@@ -1760,9 +1739,6 @@
         "${ number } سرور",
         "${ number } سرور"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } فضای ذخیره‌سازی"
-      ],
       "* No credit card required.": [
         "* نیازی به کارت اعتباری نیست."
       ],
@@ -1772,9 +1748,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
         "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد دستگاه‌های بیشتری را به VPN متصل کنید)"
-      ],
-      "10 email addresses": [
-        "10 آدرس ایمیل"
       ],
       "30-day money-back guarantee.": [
         "ضمانت ۳۰ روزهٔ بازگشت پول."
@@ -1805,6 +1778,9 @@
       ],
       "All your changes will be lost.": [
         "تمام تغییرات شما از دست خواهد رفت."
+      ],
+      "American Express SafeKey logo": [
+        "لوگوی American Express SafeKey"
       ],
       "Amount below minimum (${ amount }).": [
         "مبلغ کمتر از حداقل است (${ amount })."
@@ -1850,6 +1826,9 @@
       ],
       "Custom email domains": [
         "دامنه های ایمیل سفارشی"
+      ],
+      "Discover ProtectBuy logo": [
+        "لوگوی Discover ProtectBuy"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "از اطلاعات OpenVPN / IKEv2 در برنامه های ${ VPN_APP_NAME } یا برای داشبورد ${ VPN_APP_NAME } استفاده نکنید. ${ learnMore }"
@@ -1914,8 +1893,8 @@
       "expires ${ expirationDate }": [
         "در ${ expirationDate } منقضی میشود"
       ],
-      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "برای ویزا و مستر کارت ، 3 رقم پشت کارت شما. برای American Express، 4 رقم جلوی کارت شما."
+      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "برای Visa, MasterCard و Discover، سه رقم پشت کارت شما. برای American Express، چهار رقم جلوی کارت شما."
       ],
       "Free up some space or add more storage space.": [
         "مقداری فضا آزاد کنید یا فضای ذخیره سازی بیشتری اضافه کنید."
@@ -2007,8 +1986,8 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "مطمئن شوید که ${ addARecoveryMethod } تا اگر گذرواژه خود را فراموش کردید بتوانید حساب کاربری خود را برگردانید."
       ],
-      "No credit card required": [
-        "نیازی به کارت اعتباری نیست"
+      "Mastercard SecureCode logo": [
+        "لوگوی Mastercard SecureCode"
       ],
       "No payment is required at this time.": [
         "در حال حاضر پرداختی لازم نیست."
@@ -2031,12 +2010,6 @@
       "Or select a particular server:": [
         "یا سروری خاص را انتخاب کنید:"
       ],
-      "P2P": [
-        "P2P"
-      ],
-      "Payment can take a few minutes to fully verify.": [
-        "تایید کامل پرداخت ممکن است چند دقیقه طول بکشد."
-      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "پرداخت‌ها با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت شده‌اند."
       ],
@@ -2052,26 +2025,17 @@
       "Please provide an email address in case we need to contact you.": [
         "لطفا در صورت نیاز به تماس با شما یک رایانشانی ارائه دهید."
       ],
-      "Please try again, use a different payment method, or call your bank for assistance.": [
-        "لطفا دوباره امتحان کنید، از روش پرداخت متفاوتی استفاده کنید، یا از بانک‌تان درخواست کمک کنید."
-      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "لطفا دوباره امتحان کنید، از روش پرداخت دیگری استفاده کنید یا برای دریافت کمک با پی‌پال تماس بگیرید."
       ],
       "Please verify payment at the new tab which was opened.": [
         "لطفا پرداخت را در زبانه جدیدی که باز شد تایید کنید."
       ],
-      "Please verify the card in the new tab which was opened.": [
-        "لطفا کارت را در زبانه جدیدی که باز شد تایید کنید."
-      ],
       "Plus or Visionary subscription required": [
         "اشتراک Plus یا Visionary مورد نیاز است"
       ],
       "Preview": [
         "پیش‌نمایش"
-      ],
-      "Priority support": [
-        "اولویت پشتیبانی"
       ],
       "read our two-factor authentication guide first": [
         "ابتدا راهنمای تایید هویت دو مرحله‌ای ما را مطالعه کنید"
@@ -2111,12 +2075,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "از آنجا که شما یک کاربر وفادار هستید، حساب شما امکانات اضافی فعال شده‌ای دارد."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "فضای ذخیره‌سازی بین ${ MAIL_APP_NAME }، ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME } به اشتراک گذاشته است."
-      ],
-      "Support for 1 custom email domain": [
-        "پشتیبانی از ١ دامنه ایمیل سفارشی"
       ],
       "support team": [
         "تیم پشتیبانی"
@@ -2202,17 +2160,8 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "متاسفانه هیچ روش بازیابی برای این حساب ذخیره نشده است."
       ],
-      "Unlimited folders, labels, and filters": [
-        "پوشه‌ها، برچسب‌ها و فیلترهای بی‌شمار"
-      ],
-      "Unlimited messages": [
-        "پیام های نامحدود"
-      ],
       "Unsupported file": [
         "فایل پشتیبانی نشده"
-      ],
-      "Update the URL in your password manager": [
-        "URL را در مدیریت کننده رمزعبور خود بروزرسانی کنید"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "بهترین سرور را براساس میزان بار و مکان استفاده کنید: ${ formattedBestServerName }"
@@ -2223,9 +2172,6 @@
       "Verification can take a few minutes.": [
         "تایید ممکن است چند دقیقه طول بکشد."
       ],
-      "Verification will open a new tab, please disable any popup blockers.": [
-        "تایید یک زبانه جدید باز می‌کند، لطفا هر مسدودکننده پیش‌آ را غیرفعال کنید."
-      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "تایید یک زبانه جدید باز می‌کند، لطفا هر مسدودکننده پیش‌آ را غیرفعال کنید. هزینه‌ای از شما دریافت نمی‌شود. هر مبلغی که برای تایید کارت استفاده شود، بلافاصله بازپرداخت می‌شود."
       ],
@@ -2234,6 +2180,9 @@
       ],
       "Version ${ version }": [
         "نسخه ${ version }"
+      ],
+      "Visa Secure logo": [
+        "لوگوی Visa Secure"
       ],
       "Warning:": [
         "هشدار:"
@@ -2313,12 +2262,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید. اگر حساب PayPal شما این امکان را ندارد، لطفا روی دکمه زیر کلیک کنید."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "شما باید هر تقویم شخصی دیگر و هر لینک تقویم به اشتراک گذشته دیگر را پیش از اینکه بتوانید اشتراک ایمیل خود را لغو کنید حذف کنید."
-      ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "شما باید هر تقویم شخصی دیگر و هر لینک تقویم به اشتراک گذشته دیگر را پیش از اینکه بتوانید اشتراکتان را لغو کنید حذف کنید."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "شما به ${ spaceDisplayed }% ظرفیت ذخیره‌سازی خود رسیده‌اید. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -2327,9 +2270,6 @@
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "شما در حساب ${ BRAND_NAME } خود ${ loseAllData } خواهید داد. برای بازیابی آن، شما لازم است که گذرواژه قدیمی خود را وارد کنید."
-      ],
-      "You will be soon redirected to your bank to verify your payment.": [
-        "به زودی برای تایید پرداخت به بانک خود هدایت می‌شوید."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "به زودی برای تایید پرداخت به PayPal هدایت می‌شوید."
@@ -2346,9 +2286,6 @@
       "Your account will be updated once the payment is cleared.": [
         "به محض تصفیه حساب، حساب شما بروز می‌شود."
       ],
-      "Your bank requires 3-D Secure verification for security purposes.": [
-        "بانک شما برای اهداف امنیتی به تایید امن 3 بعدی نیاز دارد."
-      ],
       "Your email will only be used for this one-time verification.": [
         "از رایانامه شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
       ],
@@ -2363,32 +2300,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "اشتراک شما توسط موزیلا مدیریت می‌شود. لطفا با پشتیبانی موزیلا تماس بگیرید."
-      ]
-    },
-    "info": {
-      "Create an email address": [
-        "یک آدرس ایمیل بسازید"
-      ],
-      "Day 27: Trial reminder": [
-        "روز 27: یادآور دوره آزمایشی رایگان"
-      ],
-      "Day 30: Trial ends": [
-        "روز 30: دوره آزمایشی رایگان به پایان رسید"
-      ],
-      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "از ایمیل کردن آسام و امن با امکانات ویژه بسیار لذت ببرید."
-      ],
-      "Try Mail Plus": [
-        "Mail Plus را امتحان کنید"
-      ],
-      "We’ll email you before your trial ends. Cancel anytime.": [
-        "قبل از اتمام دوره آزمایشی به شما ایمیل خواهیم زد. هر زمانی لغو کنید."
-      ],
-      "Your new email address is ready to go!": [
-        "آدرس ایمیل جدید شما آماده است!"
-      ],
-      "Your subscription starts on ${ startText }.": [
-        "اشتراک شما از ${ startText } آغاز میشود."
       ]
     },
     "Info for cash payment method": {
@@ -2633,9 +2544,6 @@
       "Main": [
         "اصلی"
       ],
-      "Moderate NAT": [
-        "Moderate NAT"
-      ],
       "Name on card": [
         "نام روی کارت"
       ],
@@ -2735,6 +2643,12 @@
       "Two-password mode": [
         "حالت دوگذرواژه"
       ],
+      "Use a recovery email address": [
+        "استفاده از یک آدرس ایمیل بازیابی"
+      ],
+      "Use a recovery phone number": [
+        "استفاده از یک شماره تلفن بازیابی"
+      ],
       "User's new password": [
         "گذرواژه جدید کاربر"
       ],
@@ -2753,7 +2667,7 @@
       "What happened?": [
         "چه اتفاقی افتاد؟"
       ],
-      "What is the main reason you are cancelling?": [
+      "What is the main reason you are canceling?": [
         "دلیل اصلی انصراف شما چیست؟"
       ],
       "What is the main reason you are deleting your account?": [
@@ -2772,6 +2686,11 @@
     "label": {
       "Recovery phone number": [
         "شماره تلفن بازیابی"
+      ]
+    },
+    "Label for news": {
+      "${ BRAND_NAME } offers and promotions": [
+        "$پیشنهادات و تبلیغات ${ BRAND_NAME }"
       ]
     },
     "Label on payment method": {
@@ -2985,10 +2904,6 @@
         "${ n } پیام در روز",
         "${ n } پیام در روز"
       ],
-      "${ n } personal calendar": [
-        "${ n } تقویم شخصی",
-        "${ n } تقویم شخصی"
-      ],
       "${ n } VPN connection": [
         "${ n } اتصال VPN",
         "${ n } اتصال VPN"
@@ -3008,9 +2923,6 @@
       ],
       "1 free VPN connection in total": [
         "درکل 1 اتصال VPN رایگان"
-      ],
-      "99.95% SLA": [
-        "99.95% SLA"
       ],
       "Admin console": [
         "کنسول مدیریت"
@@ -3084,9 +2996,6 @@
       ],
       "NetShield malware and ad-blocker": [
         "مسدود سازی بد افزار و تبلیغات با استفاده از NetShield"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         "ایمیل محافظت شده با رمزعبور"
@@ -3355,18 +3264,11 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "چندین آدرس ایمیل برای هویت های آنلاین خود، مانند JohnShopper@${ domain } برای حساب های خرید، JohnNews@${ domain } برای اشتراک اخبار ایجاد کنید"
       ],
-      "Create up to ${ n } custom calendar.": [
-        "تا ${ n } تقویم سفارشی ایجاد کنید.",
-        "تا ${ n } تقویم سفارشی ایجاد کنید."
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "با عبور ترافیک اینترنت خود از میان چندین سرور، در برابر تهدیدات حریم خصوصی VPN مصون بمانید"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "براحتی تقویم های خود را با همکاران، خانواده و دوستان خود از طریق یک لینک به اشتراک بگذارید"
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "براحتی تقویم های خود را با خانواده، دوستان یا همکاران خود از طریق یک لینک به اشتراک بگذارید"
       ],
       "End-to-end encrypted calendar": [
         "تقویم رمزنگاری شده سرتاسری"
@@ -3394,12 +3296,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "در روزهای کاری، خدمات پشتیبانی را تا 24 ساعت بعد از در خواست ها از تیم پشتیبانی مشتریان ${ BRAND_NAME } دریافت کنید"
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        "علاوه بر آن، تا 5 تقویم از همکاران، سازمان ها، خانواده و دوستان اضافه کنید."
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        "علاوه بر آن، تا 5 تقویم از دوستان، خانواده، همکاران و سازمان ها اضافه کنید."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME } VPN at the same time, you need two VPN connections.": [
         "یک اتصال VPN به شما اجازه میدهد تا هر زمانی به ${ BRAND_NAME } متصل شوید. برای مثال، برای اتصال یک موبایل و یک لپ‌تاپ به ${ BRAND_NAME } در یک زمان، شما به دو اتصال VPN نیاز دارید."
@@ -3580,12 +3476,6 @@
       "Standard server configs": [
         "پیکربندی‌های سرور استاندارد"
       ],
-      "TCP": [
-        "TCP"
-      ],
-      "UDP": [
-        "UDP"
-      ],
       "Windows": [
         "ویندوز"
       ]
@@ -3727,6 +3617,11 @@
         "تایید کردن شماره تلفن شما امنیت حساب شما را افزایش داده و اجازه میدهد تا گزینه های بیشتری برای بازیابی داشته باشید."
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Created by ${ ownerName }": [
+        "ایجاد شده توسط ${ ownerName }"
+      ]
+    },
     "Signup label": {
       "Display name": [
         "نام نمایشی"
@@ -3744,14 +3639,6 @@
       ],
       "Verification": [
         "تایید"
-      ]
-    },
-    "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } از بتا خارج شد! به فایل های خود امنیتی بدهید که به ایمیل ها خود می گیرند."
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } را امتحان کنید"
       ]
     },
     "State": {
@@ -3840,14 +3727,6 @@
     "Subscription saving": {
       "Save": [
         "ذخیره"
-      ]
-    },
-    "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "راه حل تقویم و ایمیل با اولویت حریم خصوصی برای نیاز های ارتباطی روزمره شما."
-      ],
-      "This offer is for those new to ${ BRAND_NAME } only. No credit card required.": [
-        "این پیشنهاد تنها برای کابران جدید ${ BRAND_NAME } است. به کارت اعتباری نیازی نیست."
       ]
     },
     "Success": {
@@ -3988,9 +3867,6 @@
       "2. Select protocol": [
         "2. پروتکل را انتخاب کنید"
       ],
-      "3-D Secure verification failed": [
-        "تایید امنیت 3 بعدی انجام نشد"
-      ],
       "3. Select config file and download": [
         "3. فایل پیکربندی را انتخاب کرده و بارگیری کنید"
       ],
@@ -4036,14 +3912,8 @@
       "Billing cycle": [
         "دوره صورت‌حساب"
       ],
-      "Cancel Mail subscription": [
-        "لغو اشتراک ایمیل"
-      ],
       "Card verification": [
         "تایید کارت"
-      ],
-      "Card verification in progress": [
-        "تایید کارت در حال انجام است"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"
@@ -4144,9 +4014,6 @@
       "Gift code": [
         "کد هدیه"
       ],
-      "How your free trial works": [
-        "طرح آزمایشی شما چگونه کار میکند"
-      ],
       "Human verification": [
         "تشخیص انسان"
       ],
@@ -4197,9 +4064,6 @@
       ],
       "Payment verification": [
         "تایید پرداخت"
-      ],
-      "Payment verification in progress": [
-        "تایید پرداخت در حال انجام است"
       ],
       "Payments": [
         "پرداخت‌ها"
@@ -4275,9 +4139,6 @@
       ],
       "Switch to two-password mode": [
         "گذر به حالت دوگذرواژه"
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "بهترین های ${ MAIL_APP_NAME } را رایگان امتحان کنید"
       ],
       "TV log in": [
         "ورود تلویزیون"

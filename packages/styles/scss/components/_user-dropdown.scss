@@ -1,6 +1,6 @@
 .user-dropdown {
 	&-button {
-		@include respond-to(1500) {
+		@include media('<=#{em(1500, 16)}') {
 			margin-inline-start: 0.5em;
 		}
 
@@ -31,7 +31,7 @@
 			max-inline-size: em(200);
 		}
 
-		@include respond-to($breakpoint-medium-landscape) {
+		@include media('<=large') {
 			display: none;
 		}
 	}
@@ -44,7 +44,7 @@
 		min-inline-size: rem(28);
 		min-block-size: rem(28);
 
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			min-inline-size: rem(36);
 			min-block-size: rem(36);
 		}

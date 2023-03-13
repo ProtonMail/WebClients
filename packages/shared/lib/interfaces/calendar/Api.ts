@@ -3,6 +3,7 @@ import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '../../calendar/constants';
 import { ApiResponse } from '../Api';
 import { Nullable, RequireSome } from '../utils';
 import { CalendarNotificationSettings } from './Calendar';
+import { CalendarKey, CalendarPassphrase } from './CalendarKey';
 import { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
 import { Attendee, CalendarEvent, CalendarEventData } from './Event';
 import { ACCESS_LEVEL } from './Link';
@@ -26,6 +27,21 @@ export interface CalendarCreateArguments extends CalendarCreateData {
 }
 
 export interface CalendarSetupData {
+    AddressID: string;
+    Signature: string;
+    PrivateKey: string;
+    Passphrase: {
+        DataPacket: string;
+        KeyPacket: string;
+    };
+}
+
+export interface CalendarSetupResponse extends ApiResponse {
+    Key: CalendarKey;
+    Passphrase: CalendarPassphrase;
+}
+
+export interface CreateOrResetCalendarPayload {
     AddressID: string;
     Signature: string;
     PrivateKey: string;
@@ -205,6 +221,6 @@ export interface GetAllMembersApiResponse {
     Members: CalendarMember[];
 }
 
-export interface GetAllInvitationsApiResponse {
+export interface GetCalendarInvitationsResponse {
     Invitations: CalendarMemberInvitation[];
 }

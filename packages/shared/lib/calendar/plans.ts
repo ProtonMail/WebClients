@@ -1,11 +1,9 @@
-import { getPublicLinks } from '@proton/shared/lib/api/calendars';
-import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
-import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
-import { PLAN_SERVICES, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Api, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
-import { CalendarUrlsResponse, CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar';
-import unary from '@proton/utils/unary';
+import { PLAN_SERVICES, PLAN_TYPES } from '../constants';
+import { hasBit } from '../helpers/bitset';
+import { Api, Plan, PlanIDs } from '../interfaces';
+import { CalendarWithOwnMembers } from '../interfaces/calendar';
+import { MAX_CALENDARS_FREE } from './constants';
+import getHasSharedCalendars from './sharing/getHasSharedCalendars';
 
 export const willHavePaidMail = (planIDs: PlanIDs, plans: Plan[]) => {
     const newPlanName = Object.keys(planIDs).find((planName) =>
@@ -32,15 +30,8 @@ export const getShouldCalendarPreventSubscripitionChange = async ({
         return false;
     }
     const calendars = (await getCalendars()) || [];
-    const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
 
-    const hasLinks = !!(
-        await Promise.all(
-            personalCalendars
-                .filter(unary(getIsOwnedCalendar))
-                .map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
-        )
-    ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
+    const hasSharedCalendars = await getHasSharedCalendars({ calendars, api, catchErrors: true });
 
-    return personalCalendars.length > MAX_CALENDARS_FREE || hasLinks;
+    return calendars.length > MAX_CALENDARS_FREE || hasSharedCalendars;
 };

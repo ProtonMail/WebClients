@@ -30,7 +30,7 @@ describe('Contact resign modal', () => {
 
         const { receiverKeys, senderKeys } = await setupContactsForPinKeys(hasFingerprint);
 
-        addApiMock('keys', () => ({ Keys: [senderKeys] }));
+        addApiMock('core/v4/keys', () => ({ Keys: [senderKeys] }));
         addApiMock(
             'contacts/v4/contacts/emails',
             () => ({

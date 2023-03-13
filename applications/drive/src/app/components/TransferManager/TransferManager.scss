@@ -10,16 +10,16 @@
 	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
 	background: var(--background-norm);
 
-	@include respond-to($breakpoint-tiny, 'height') {
+	@include media('height<=xsmall') {
 		max-block-size: 100%;
 	}
 
-	@include respond-to($breakpoint-small, 'max') {
+	@include media('<=small') {
 		inset-inline-start: 0;
 		inset-block-end: 0;
 	}
 
-	@include respond-to($breakpoint-small, 'min') {
+	@include media('>small') {
 		inline-size: 60%;
 		max-inline-size: 50em;
 		margin-inline-end: inherit;
@@ -65,7 +65,7 @@
 	}
 
 	&--minimized {
-		@include respond-to($breakpoint-tiny, 'height') {
+		@include media('height<=xsmall') {
 			max-block-size: initial;
 			block-size: initial;
 		}
@@ -81,15 +81,15 @@
 		block-size: 5em; // To avoid height blinking on status changing
 		@extend .border-bottom;
 
-		@include respond-to($breakpoint-small, 'max') {
+		@include media('<=small') {
 			grid-template-columns: 4fr minmax(5em, 2fr) 2.5em minmax(4.5em, 1fr);
 		}
 
-		@include respond-to($breakpoint-small, 'min') {
+		@include media('>small') {
 			grid-template-columns: 4fr 2.5fr minmax(6em, 2fr) minmax(4.5em, 1fr);
 		}
 
-		@include respond-to($breakpoint-tiny, 'min-height') {
+		@include media('height>xsmall') {
 			&:last-child {
 				border-block-end: none;
 			}
@@ -108,7 +108,7 @@
 		}
 
 		&-icon {
-			@include respond-to(420, 'max') {
+			@include media('<=#{em(420, 16)}') {
 				display: none;
 			}
 		}
@@ -117,7 +117,7 @@
 			white-space: nowrap;
 			font-variant-numeric: tabular-nums;
 
-			@include respond-to($breakpoint-small, 'max') {
+			@include media('<=small') {
 				svg {
 					margin: 0;
 				}

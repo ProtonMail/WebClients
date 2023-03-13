@@ -5,7 +5,7 @@
 	flex-wrap: nowrap;
 	margin-block-end: 1em;
 
-	@include respond-to($breakpoint-small, 'max') {
+	@include media('<=small') {
 		flex-direction: column;
 	}
 }

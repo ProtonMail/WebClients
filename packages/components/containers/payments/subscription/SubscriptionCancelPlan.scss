@@ -3,7 +3,7 @@
 .subscription-cancel-plan {
 	&-info {
 		min-block-size: 4em;
-		@include respond-to($breakpoint-small) {
+		@include media('<=small') {
 			min-block-size: unset;
 		}
 	}

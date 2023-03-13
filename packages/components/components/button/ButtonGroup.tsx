@@ -9,12 +9,8 @@ import {
     isValidElement,
 } from 'react';
 
-
-
 import { Vr } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
-
-
 
 import { classnames } from '../../helpers';
 
@@ -64,5 +60,7 @@ const ButtonGroup = forwardRef<HTMLDivElement, Props>(
         );
     }
 );
+
+ButtonGroup.displayName = 'ButtonGroup';
 
 export default ButtonGroup;
