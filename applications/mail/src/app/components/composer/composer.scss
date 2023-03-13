@@ -83,6 +83,18 @@
 				padding-block-start: 0.85em;
 			}
 		}
+
+		&-to {
+			min-block-size: rem(44);
+			display: flex;
+			align-items: start;
+			padding-block-start: 0.85em;
+
+			// & + .composer-addresses-fakefield .composer-addresses-fakefield-inner {
+			// 	// margin-block-start: -1px; // to avoid jumps
+
+			// }
+		}
 	}
 
 	// addresses
@@ -226,11 +238,15 @@
 				// only for placeholder position when empty
 				margin-inline-start: 0.65em;
 			}
+
+			.composer-addresses-to-contact-button {
+				min-block-size: em(32);
+			}
 		}
 
 		.composer-addresses-input-container {
 			margin-inline-start: 0;
-			padding-block: 1px 0;
+			padding-block: 0;
 		}
 
 		.composer-to-ccbcc-buttons {
