@@ -6,6 +6,7 @@ import { getRecipientLabel } from '../../../helpers/message/messageRecipients';
 import { clearAll, render } from '../../../helpers/test/helper';
 import { refresh } from '../../../logic/contacts/contactsActions';
 import { store } from '../../../logic/store';
+import { RecipientType } from '../../../models/address';
 import AddressesSummary from './AddressesSummary';
 
 const message = {} as Message;
@@ -14,7 +15,8 @@ const props = {
     contacts: [],
     contactGroups: [],
     onFocus: noop,
-    toggleExpanded: noop,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    toggleExpanded: (_type: RecipientType) => noop,
     disabled: false,
     handleContactModal: jest.fn(),
 };
