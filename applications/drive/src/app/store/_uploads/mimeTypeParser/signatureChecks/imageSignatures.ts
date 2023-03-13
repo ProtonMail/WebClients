@@ -51,7 +51,7 @@ export default function imageSignatures({ check, checkString, sourceBuffer }: Re
 
         do {
             // Read 4-byte uint data length block
-            const dataLength = sourceBuffer.slice(offset, offset + 4).readInt32BE(0);
+            const dataLength = sourceBuffer.subarray(offset, offset + 4).readInt32BE(0);
             offset += 4;
 
             if (dataLength < 0) {
@@ -59,7 +59,7 @@ export default function imageSignatures({ check, checkString, sourceBuffer }: Re
             }
 
             // Read 4 -byte chunk type block
-            const chunkType = sourceBuffer.slice(offset, offset + 4).toString('binary');
+            const chunkType = sourceBuffer.subarray(offset, offset + 4).toString('binary');
             offset += 4;
 
             // if acTL comes first, it's animated png, otherwise static
