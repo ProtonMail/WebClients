@@ -114,6 +114,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                     setAuthed(true);
                     reset();
                 }}
+                prioritised2FAItem="totp"
             />
         );
     }
