@@ -50,7 +50,7 @@ const InitContainer = () => {
             .catch((err) => {
                 setError(err);
             });
-        withLoading(initPromise);
+        void withLoading(initPromise);
     }, []);
 
     useEffect(() => {
