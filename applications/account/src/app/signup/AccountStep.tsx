@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import {
     Challenge,
     ChallengeError,
@@ -15,14 +15,11 @@ import {
     Info,
     InlineLinkButton,
     InputFieldTwo,
-    ModalProps,
     Option,
     PasswordInputTwo,
-    Prompt,
     SelectTwo,
     useFormErrors,
     useLoading,
-    useModalState,
 } from '@proton/components';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
@@ -43,7 +40,6 @@ import {
     usernameCharacterValidator,
     usernameLengthValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { hasProtonDomain } from '@proton/shared/lib/helpers/string';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -55,23 +51,6 @@ import Loader from './Loader';
 import { SignupType } from './interfaces';
 
 import './AccountStep.scss';
-
-const SignInPromptModal = ({ email, ...rest }: ModalProps & { email: string }) => {
-    return (
-        <Prompt
-            title={c('Title').t`You already have a ${BRAND_NAME} account`}
-            buttons={[
-                <ButtonLike as={Link} color="norm" shape="solid" to="/login">{c('Action')
-                    .t`Go to sign in`}</ButtonLike>,
-                <Button shape="outline" color="weak" onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>,
-            ]}
-            {...rest}
-        >
-            {c('Info')
-                .t`Your existing ${BRAND_NAME} account can be used to access all ${BRAND_NAME} services. Please sign in with ${email}.`}
-        </Prompt>
-    );
-};
 
 interface Props {
     clientType: CLIENT_TYPES;
@@ -90,7 +69,6 @@ interface Props {
     onSubmit: (form: {
         username: string;
         email: string;
-        recoveryEmail: string;
         password: string;
         signupType: SignupType;
         domain: string;
@@ -110,7 +88,6 @@ const AccountStep = ({
     signupTypes,
     signupType,
     onChangeSignupType,
-    defaultRecoveryEmail,
     onSubmit,
     hasChallenge = true,
     domains,
@@ -126,9 +103,7 @@ const AccountStep = ({
     const [email, setEmail] = useState(defaultEmail || '');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [recoveryEmail, setRecoveryEmail] = useState(defaultRecoveryEmail || '');
     const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
-    const [loginModal, setLoginModal, renderLoginModal] = useModalState();
     const [passwordInputFocused, setPasswordInputFocused] = useState(false);
 
     const trimmedEmail = email.trim();
@@ -150,17 +125,12 @@ const AccountStep = ({
             signupType,
             domain,
             email: trimmedEmail,
-            recoveryEmail,
             payload,
         });
     };
 
     const handleSubmit = () => {
         if (loading || !onFormSubmit()) {
-            return;
-        }
-        if (signupType === SignupType.VPN && hasProtonDomain(recoveryEmail)) {
-            setLoginModal(true);
             return;
         }
         withLoading(run()).catch(noop);
@@ -176,10 +146,7 @@ const AccountStep = ({
         }, 0);
     }, [signupType, isLoadingView]);
 
-    const emailLabel =
-        signupType === SignupType.Username || signupType === SignupType.VPN
-            ? c('Signup label').t`Username`
-            : c('Signup label').t`Email`;
+    const emailLabel = signupType === SignupType.Username ? c('Signup label').t`Username` : c('Signup label').t`Email`;
 
     const innerChallenge = (
         <InputFieldTwo
@@ -187,7 +154,7 @@ const AccountStep = ({
             bigger
             label={emailLabel}
             error={validator(
-                signupType === SignupType.Username || signupType === SignupType.VPN
+                signupType === SignupType.Username
                     ? [
                           requiredValidator(trimmedUsername),
                           usernameCharacterValidator(trimmedUsername),
@@ -199,7 +166,7 @@ const AccountStep = ({
             autoFocus
             inputClassName={hasChallenge ? 'email-input-field' : undefined}
             suffix={(() => {
-                if (signupType === SignupType.Email || signupType === SignupType.VPN) {
+                if (signupType === SignupType.Email) {
                     /* Something empty to avoid a layout gap when switching */
                     return <></>;
                 }
@@ -230,9 +197,9 @@ const AccountStep = ({
                     </SelectTwo>
                 );
             })()}
-            value={signupType === SignupType.Username || signupType === SignupType.VPN ? username : email}
+            value={signupType === SignupType.Username ? username : email}
             onValue={(() => {
-                if (signupType === SignupType.Username || signupType === SignupType.VPN) {
+                if (signupType === SignupType.Username) {
                     return (value: string) => {
                         const sanitizedValue = value.replaceAll('@', '');
                         setUsername(sanitizedValue);
@@ -278,7 +245,6 @@ const AccountStep = ({
 
     return (
         <Main>
-            {renderLoginModal && <SignInPromptModal email={recoveryEmail} {...loginModal} />}
             <Header
                 title={title}
                 subTitle={
@@ -329,9 +295,6 @@ const AccountStep = ({
                         type="email"
                         autoComplete="username"
                         value={(() => {
-                            if (signupType === SignupType.VPN) {
-                                return trimmedUsername;
-                            }
                             if (signupType === SignupType.Username) {
                                 return trimmedUsername.length ? `${trimmedUsername}@${domain}` : '';
                             }
@@ -369,7 +332,7 @@ const AccountStep = ({
                                     // Reset verification parameters if email is changed
                                     onChangeSignupType(
                                         (() => {
-                                            if (signupType === SignupType.Username || signupType === SignupType.VPN) {
+                                            if (signupType === SignupType.Username) {
                                                 return SignupType.Email;
                                             }
                                             return signupTypes.find((type) => type !== signupType) || signupType;
@@ -429,18 +392,6 @@ const AccountStep = ({
                         onValue={setConfirmPassword}
                         rootClassName="mt0-5"
                     />
-                    {signupType === SignupType.VPN && (
-                        <InputFieldTwo
-                            id="recovery-email"
-                            label={c('Label').t`Email address`}
-                            error={validator([requiredValidator(recoveryEmail), emailValidator(recoveryEmail)])}
-                            bigger
-                            disableChange={loading}
-                            value={recoveryEmail}
-                            onValue={setRecoveryEmail}
-                            rootClassName="mt0-5"
-                        />
-                    )}
                     <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-5">
                         {c('Action').t`Create account`}
                     </Button>
