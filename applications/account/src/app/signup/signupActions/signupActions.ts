@@ -171,9 +171,6 @@ export const handleSetupUser = async ({
         if (signupType === SignupType.Username) {
             return `${username}@${domain}`;
         }
-        if (signupType === SignupType.VPN) {
-            return username;
-        }
         if (signupType === SignupType.Email) {
             return email;
         }
@@ -250,7 +247,7 @@ export const handleSetupUser = async ({
     };
 
     // Ignore the rest of the steps for VPN because we don't create an address and ask for recovery email at the start
-    if (signupType === SignupType.VPN || clientType === CLIENT_TYPES.VPN) {
+    if (clientType === CLIENT_TYPES.VPN) {
         return handleDone({ cache: newCache, appIntent: cache.appIntent });
     }
 
@@ -316,12 +313,9 @@ export const handleCreateAccount = async ({
     const {
         accountData: { username, email, domain, signupType },
         humanVerificationResult,
-        setupVPN,
     } = cache;
-    if (signupType === SignupType.Username || (signupType === SignupType.VPN && setupVPN)) {
+    if (signupType === SignupType.Username) {
         await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
-    } else if (signupType === SignupType.VPN) {
-        await api(queryCheckUsernameAvailability(username));
     } else if (signupType === SignupType.Email) {
         try {
             await api(
