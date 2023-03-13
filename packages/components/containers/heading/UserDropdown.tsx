@@ -29,6 +29,7 @@ import {
     usePopperAnchor,
     useRecoveryNotification,
     useSpotlightOnFeature,
+    useSpotlightShow,
     useSubscription,
     useUser,
     useUserSettings,
@@ -98,6 +99,8 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
         FeatureCode.ReferralProgramSpotlight,
         !!referralProgramFeature?.Value && !!userSettings?.Referral?.Eligible && subscriptionStartedThirtyDaysAgo
     );
+    const shouldShowSpotlight = useSpotlightShow(showSpotlight);
+
     const { createNotification } = useNotifications();
     const handleCopyEmail = () => {
         createNotification({
@@ -130,10 +133,10 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
 
     // Show referral dot if the spotlight has been displayed
     useEffect(() => {
-        if (showSpotlight) {
+        if (shouldShowSpotlight) {
             setRedDotReferral(true);
         }
-    }, [showSpotlight, location]);
+    }, [shouldShowSpotlight, location]);
 
     // Hide red dot referral if user has already seen referral page
     useEffect(() => {
@@ -159,7 +162,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                 />
             )}
             <ReferralSpotlight
-                show={showSpotlight}
+                show={shouldShowSpotlight}
                 anchorRef={anchorRef}
                 onDisplayed={onDisplayedSpotlight}
                 onClose={onCloseSpotlight}
