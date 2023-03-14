@@ -12,6 +12,14 @@
         "Beperkt beeld (bekijk alleen beschikbaar/bezet)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Doorsturen start binnenkort. Nieuwe e-mails verschijnen in uw inbox."
+      ],
+      "Mail forward stopped": [
+        "E-mail doorsturen gestopt"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } inleiding"
@@ -426,6 +434,9 @@
       "Select all": [
         "Alles selecteren"
       ],
+      "Select time zone": [
+        "Kies tijdzone"
+      ],
       "Send": [
         "Verstuur"
       ],
@@ -491,6 +502,9 @@
       ],
       "Today": [
         "Vandaag"
+      ],
+      "Toggle Contact app": [
+        "Contact app kiezen"
       ],
       "Trust": [
         "Vertrouwen"
@@ -1983,6 +1997,11 @@
         "De afspraak hoort bij een uitgeschakelde agenda."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Niet opnieuw vragen"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Agenda toevoegen"
@@ -2144,6 +2163,14 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Decoderingsfout: Inhoud van deze afspraak decoderen is mislukt."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
+      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -2218,6 +2245,10 @@
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
+        "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
@@ -2394,6 +2425,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "U heeft het maximale aantal agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
+      ],
       "You must set a name": [
         "U moet een naam instellen"
       ],
@@ -2407,6 +2441,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2445,6 +2482,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3157,6 +3197,9 @@
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
         "Een annuleringsmail wordt verstuurd naar de deelnemers aan de afspraak. Wilt u deze afspraak verwijderen?"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
@@ -3295,6 +3338,9 @@
       "Existent, added and removed participants will be notified.": [
         "Bestaande, toegevoegde en verwijderde deelnemers zullen op de hoogte worden gebracht."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
+      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -3334,6 +3380,9 @@
       ],
       "Import mailbox": [
         "Mailbox importeren"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
@@ -3485,6 +3534,9 @@
       ],
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
@@ -3898,6 +3950,9 @@
       "Description": [
         "Beschrijving"
       ],
+      "Don't ask again": [
+        "Niet opnieuw vragen"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -4220,7 +4275,7 @@
         "Bijna daar"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }",
         "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -5313,6 +5368,9 @@
       "Calendar updated": [
         "Agenda bijgewerkt"
       ],
+      "Canceling import": [
+        "Importeren annuleren"
+      ],
       "Cancellation sent and all events deleted": [
         "Annulering verzonden en alle afspraken zijn verwijderd"
       ],
@@ -5503,6 +5561,11 @@
       "${ minutes } minute": [
         "${ minutes } minuut",
         "${ minutes } minuten"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Zoek tijdzones"
       ]
     },
     "Title": {

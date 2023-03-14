@@ -23,6 +23,11 @@
         "Begrænset visning (se kun fri/optaget)"
       ]
     },
+    "account": {
+      "Reconnect": [
+        "Tilslut igen"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } introduktion"
@@ -309,6 +314,9 @@
       "Edit billing details": [
         "Rediger betalingsdetaljer"
       ],
+      "Edit display name": [
+        "Redigér vist navn"
+      ],
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
@@ -389,9 +397,6 @@
       ],
       "Go to label": [
         "Gå til etikette"
-      ],
-      "Go to sign in": [
-        "Gå til login"
       ],
       "Got it": [
         "Forstået"
@@ -824,6 +829,9 @@
       ],
       "Upgrade now": [
         "Opgradér nu"
+      ],
+      "Upgrade your plan": [
+        "Opgradér dit abonnement"
       ],
       "Upload picture": [
         "Upload billede"
@@ -2983,6 +2991,9 @@
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
+      "Payment process canceled": [
+        "Betalingproces annulleret"
+      ],
       "Payment process consumed": [
         "Betalingsproces forbrugt"
       ],
@@ -4399,6 +4410,9 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Inviter venner til ${ BRAND_NAME }"
       ],
+      "10 email addresses": [
+        "10 e-mailadresse"
+      ],
       "2. They try ${ planName }": [
         "2. De prøver ${ planName }"
       ],
@@ -4932,12 +4946,6 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Har du indstillet både SPF og DKIM, giver DMARC dig mulighed for at specificere, hvordan andre e-mail-tjenester skal levere e-mail til dit domæne, hvis både SPF- og DKIM-tjeks er fejlet. Dette kan gøre det sværere for spammere at foregive at være dig, men kan også forårsage leveringsproblemer, hvis det ikke er korrekt udført."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
@@ -5288,14 +5296,14 @@
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
       ],
-      "Preview": [
-        "Forhåndsvisning"
-      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
+      ],
+      "Priority support": [
+        "Prioriteret support"
       ],
       "Public link invite": [
         "Offentlig link-invitation"
@@ -5426,11 +5434,17 @@
       "Storage for users": [
         "Lagerplads til brugere"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
+      ],
       "Storage used by this user": [
         "Lagerplads brugt af denne bruger"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Gem denne adgangskode og fil på et sikkert sted. Du skal bruge dem igen for at importere din nøgle."
+      ],
+      "Support for 1 custom email domain": [
+        "Understøttelse af 1 brugerdefineret e-mail-domæne"
       ],
       "support team": [
         "supportteam"
@@ -5636,6 +5650,12 @@
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Medmindre du logger ud eller ændrer din adgangskode, forbliver din session aktiv. Sessioner udløber efter 60 dages inaktivitet."
       ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Unlimited messages": [
+        "Ubegrænset antal beskeder"
+      ],
       "Unsaved changes": [
         "Ikke-gemte ændringer"
       ],
@@ -5789,6 +5809,10 @@
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
+        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit abonnement.",
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit abonnement."
@@ -5908,9 +5932,6 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Din eksisterende ${ BRAND_NAME }-konto kan bruges til at tilgå alle ${ BRAND_NAME }-tjenester. Log venligst ind med ${ email }."
-      ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Din import fra ${ accounts } er midlertidigt forsinket.",
         "Dine importer fra ${ accounts } er midlertidigt forsinket."
@@ -5995,6 +6016,11 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "For at undgå enhver afbrydelse af tjenesten på grund af ubetalte fakturaer bedes du sørge for, at du har mindst 1 gyldig betalingsmetode gemt på ethvert tidspunkt."
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Kun visning"
       ]
     },
     "Input label": {
@@ -7404,7 +7430,7 @@
         "Næsten færdig"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Antal oprettet kalender:  ${ createdCalendarCount } af ${ calendarsToBeCreated }",
         "Antal oprettede kalendere: ${ createdCalendarCount } af ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -7794,6 +7820,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } kalender",
+        "${ n } kalendere"
+      ],
       "${ n } custom email domain": [
         "${ n } brugerdefineret e-maildomæne",
         "${ n } brugerdefinerede e-maildomæner"
@@ -8255,6 +8285,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Dæk dig mere ind, med understøttelse af 10 brugerdefinerede domæner"
+      ],
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Opret op til ${ MAX_CALENDARS_PAID } kalender",
+        "Opret op til ${ MAX_CALENDARS_PAID } kalendere"
       ],
       "Everything in ${ vpnPlanName }": [
         "Alt i ${ vpnPlanName }"
@@ -10332,9 +10366,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard konfiguration"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Du har allerede en ${ BRAND_NAME }-konto"
       ],
       "Your calendar link": [
         "Dit kalenderlink"

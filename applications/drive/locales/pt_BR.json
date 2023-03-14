@@ -4,6 +4,14 @@
     "language": "pt_BR"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "O encaminhamento começará em breve. Novos emails aparecerão na sua caixa de entrada."
+      ],
+      "Mail forward stopped": [
+        "Encaminhamento de correio parou"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introdução do ${ BRAND_NAME }"
@@ -154,6 +162,9 @@
       ],
       "Create a new contact group": [
         "Criar novo grupo de contato"
+      ],
+      "Create account": [
+        "Criar conta"
       ],
       "Create link": [
         "Criar link"
@@ -573,6 +584,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Toggle Calendar app": [
+        "Ative o aplicativo de Calendário"
+      ],
+      "Toggle Contact app": [
+        "Ative o aplicativo de Contato"
       ],
       "Trust": [
         "Confiar"
@@ -2448,11 +2465,6 @@
         "${ Label.Name } atualizado"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacidade por padrão."
-      ]
-    },
     "Group": {
       "Account": [
         "Conta"
@@ -3106,9 +3118,6 @@
       "Enabling drive search": [
         "Ativando pesquisa de drive"
       ],
-      "Encrypted": [
-        "Criptografado"
-      ],
       "Encrypted search is here": [
         "A pesquisa criptografada está aqui"
       ],
@@ -3443,9 +3452,6 @@
       "Preparing link to folder": [
         "Preparando link para a pasta"
       ],
-      "Preview": [
-        "Pré-visualização"
-      ],
       "Preview failed to be loaded": [
         "A pré-visualização falhou ao carregar"
       ],
@@ -3481,9 +3487,6 @@
       ],
       "Search Enabled": [
         "Busca habilitada"
-      ],
-      "Secure sharing": [
-        "Compartilhamento seguro"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecione um arquivo ou pasta enviado e crie um link para ele."
@@ -3536,9 +3539,6 @@
       "support team": [
         "equipe de suporte"
       ],
-      "Swiss privacy": [
-        "Privacidade suíça"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Por favor, retorne mais tarde."
       ],
@@ -3559,9 +3559,6 @@
       ],
       "There are no files yet": [
         "Ainda não há arquivos"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Esses arquivos foram compartilhados usando criptografia de ponta a ponta. Para mantê-los seguros — e todos os seus documentos, fotos e arquivos privados — armazene-os em seu próprio ${ DRIVE_APP_NAME }. É fácil de usar e gratuito."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
@@ -4173,9 +4170,6 @@
       "Replace folder": [
         "Substituir pasta"
       ],
-      "Report Abuse": [
-        "Reportar abuso"
-      ],
       "Reveal password": [
         "Mostrar senha"
       ],
@@ -4352,7 +4346,7 @@
         "Quase lá"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Quantidade de calendário criado: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
         "Quantidade de calendários criados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -5433,9 +5427,6 @@
       "Date": [
         "Encontro"
       ],
-      "Decrypting": [
-        "Desencriptando"
-      ],
       "Delete ${ count } contact": [
         "Excluir ${ count } contato",
         "Excluir ${ count } contatos"
@@ -5458,9 +5449,6 @@
       ],
       "Discard changes?": [
         "Descartar alterações?"
-      ],
-      "Download shared file": [
-        "Baixar arquivo compartilhado"
       ],
       "Download unverified file?": [
         "Baixar arquivo não verificado?"
@@ -5534,9 +5522,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "Encontrados ${ searchView.numberOfResults } resultados",
         "Encontrandos ${ searchView.numberOfResults } resultados"
-      ],
-      "Getting files": [
-        "Obtendo arquivos"
       ],
       "Groups": [
         "Grupos"
@@ -5793,9 +5778,6 @@
       ],
       "You have no folders yet": [
         "Você ainda não tem pastas"
-      ],
-      "You've got files": [
-        "Você tem arquivos"
       ],
       "Your 500 MB bonus": [
         "Seu bônus de 500 MB"

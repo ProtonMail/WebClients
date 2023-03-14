@@ -413,9 +413,6 @@
       "Go to label": [
         "Перайсці да меткі"
       ],
-      "Go to sign in": [
-        "Перайсці да ўваходу"
-      ],
       "Got it": [
         "Зразумела"
       ],
@@ -4445,6 +4442,12 @@
       "${ emailAddress } is invalid": [
         "Памылковы адрас ${ emailAddress }"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: поўны памер відарыса"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } будзе прызначаны прадвызначаным календаром."
       ],
@@ -5135,11 +5138,11 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Калі ў вас зададзены абодва SPF і DKIM, то DMARC дазволіць вам паказаць, як іншыя паштовыя службы павінны дастаўляць пошту для вашага дамена, калі дзве праверкі SPF і DKIM былі няўдалыя. Гэта можа перашкаджаць спамерам прадстаўляцца вашым імем, але таксама можа выклікаць праблемы дастаўкі ў выпадку няправільнай налады."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Калі вы страціце свой пароль і вам неабходна будзе скінуць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountRecovery }."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Калі вы страціце свой пароль і вам неабходна будзе скінуць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountAndRecovery }. У адваротным выпадку вы не зможаце атрымаць доступ да электроннай пошты, кантактаў або файлаў."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
@@ -5524,9 +5527,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Патрабуецца падпіска Plus або Visionary"
-      ],
-      "Preview": [
-        "Папярэдні прагляд"
       ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
@@ -6226,9 +6226,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Ваш існуючы ўліковы запіс ${ BRAND_NAME } можа быць выкарыстаны для доступу да ўсіх сэрвісаў ${ BRAND_NAME }. Увайдзіце з ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваша імпартаванне з ${ accounts } часова адкладзена.",
@@ -7745,7 +7742,7 @@
         "Амаль гатова"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
@@ -10979,9 +10976,6 @@
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "У вас ужо ёсць уліковы запіс ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Ваша спасылка на каляндар"

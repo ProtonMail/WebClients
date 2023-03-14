@@ -895,9 +895,6 @@
       "Send feedback": [
         "Enviar comentarios"
       ],
-      "Send quick reply": [
-        "Enviar respuesta rápida"
-      ],
       "Send read receipt": [
         "Enviar confirmación de lectura "
       ],
@@ -999,6 +996,12 @@
       ],
       "This message contains remote content.": [
         "Este mensaje contiene contenido remoto."
+      ],
+      "Toggle Calendar app": [
+        "Cambiar a la aplicación Calendar"
+      ],
+      "Toggle Contact app": [
+        "Cambiar a la aplicación Contactos"
       ],
       "Tomorrow": [
         "Mañana"
@@ -1143,9 +1146,6 @@
     "action": {
       "Search messages": [
         "Buscar mensajes"
-      ],
-      "Send quick reply": [
-        "Enviar respuesta rápida"
       ]
     },
     "Actions message": {
@@ -4332,6 +4332,12 @@
         "${ embeddedAttachmentsCount } imagen incrustada",
         "${ embeddedAttachmentsCount } imágenes incrustadas"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagen de tamaño completo"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: vista previa de baja resolución"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
@@ -5081,9 +5087,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espera mientras buscamos contactos que contengan datos cifrados con la clave inactiva."
       ],
-      "Preview": [
-        "Vista previa"
-      ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
@@ -5095,12 +5098,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protege tu correo electrónico de ser filtrado a listas de correo o spammers con ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Respuesta rápida"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Respuesta rápida a ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -5934,6 +5931,9 @@
       "ALL": [
         "TODO"
       ],
+      "All contacts": [
+        "Todos los contactos"
+      ],
       "Also archive": [
         "Además archivar"
       ],
@@ -6104,9 +6104,6 @@
       ],
       "Good": [
         "Bueno"
-      ],
-      "Group": [
-        "Grupo"
       ],
       "Hide password": [
         "Ocultar contraseña"
@@ -6638,7 +6635,7 @@
         "¡Ya casi está!"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
         "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [

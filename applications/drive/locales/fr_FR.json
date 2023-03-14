@@ -64,6 +64,9 @@
       "Back": [
         "Précédent"
       ],
+      "Back to Homepage": [
+        "Revenir à la page d'accueil"
+      ],
       "Beta Access": [
         "Accès à la version bêta"
       ],
@@ -162,6 +165,9 @@
       ],
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
+      ],
+      "Create account": [
+        "Créer un compte"
       ],
       "Create link": [
         "Créer un lien"
@@ -581,6 +587,12 @@
       ],
       "Theme": [
         "Thème"
+      ],
+      "Toggle Calendar app": [
+        "Basculer vers l'application Calendar"
+      ],
+      "Toggle Contact app": [
+        "Basculer vers l'application Contacts"
       ],
       "Trust": [
         "Faire confiance"
@@ -1905,7 +1917,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'adresse e-mail n'est pas valide."
+        "L'adresse e-mail est invalide."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
@@ -2846,6 +2858,12 @@
         "${ errorCount } échec",
         "${ errorCount } échecs"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName } : image en taille réelle"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName } : aperçu basse résolution"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
@@ -3057,6 +3075,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Les fichiers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora et de certaines autres applications, ainsi que les formats vCard 3.1 et 4.0 (encodage UTF-8), sont pris en charge."
       ],
+      "Decrypting files": [
+        "Les fichiers sont en cours de déchiffrement."
+      ],
       "Delete locked drive": [
         "Supprimer le disque verrouillé",
         "Supprimer les disques verrouillés"
@@ -3112,11 +3133,14 @@
       "Enabling drive search": [
         "Activation de la recherche dans Drive"
       ],
-      "Encrypted": [
-        "Chiffré"
-      ],
       "Encrypted search is here": [
         "La recherche chiffrée se trouve ici."
+      ],
+      "End-to-end encrypted": [
+        "Chiffré de bout en bout"
+      ],
+      "Enter password": [
+        "Saisissez le mot de passe"
       ],
       "Enter the code from your authenticator app": [
         "Entrez le code de votre application d'authentification."
@@ -3306,6 +3330,9 @@
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
       ],
+      "Link owner has the password": [
+        "Le propriétaire du lien a le mot de passe."
+      ],
       "Loading": [
         "Chargement"
       ],
@@ -3341,6 +3368,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Vous voulez partager un fichier ? Utilisez ${ DRIVE_APP_NAME }, le moyen le plus sécurisé de partager, stocker et synchroniser vos fichiers."
       ],
       "Network issue": [
         "Problème de réseau"
@@ -3386,6 +3416,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Remarque : les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "Il n'y a rien ici pour le moment."
       ],
       "of": [
         "sur"
@@ -3452,9 +3485,6 @@
       "Preparing link to folder": [
         "Préparation du lien vers le dossier"
       ],
-      "Preview": [
-        "Aperçu"
-      ],
       "Preview failed to be loaded": [
         "L'aperçu n'a pas pu être chargé."
       ],
@@ -3491,9 +3521,6 @@
       "Search Enabled": [
         "Recherche activée"
       ],
-      "Secure sharing": [
-        "Partage sécurisé"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Sélectionnez un fichier ou un dossier chargé et créez un lien vers celui-ci."
       ],
@@ -3521,6 +3548,9 @@
       "Shareable link for ${ boldNameText }": [
         "Lien partageable pour ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Le lien partagé n'a pas été trouvé."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
       ],
@@ -3545,9 +3575,6 @@
       "support team": [
         "équipe support"
       ],
-      "Swiss privacy": [
-        "Confidentialité suisse"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
       ],
@@ -3569,9 +3596,6 @@
       "There are no files yet": [
         "Il n'y a aucun fichier pour le moment."
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Ces fichiers ont été partagés avec un chiffrement de bout en bout. Pour les garder protégés et privés, enregistrez-les (ainsi que tous vos documents, photos et fichiers) dans votre propre ${ DRIVE_APP_NAME }. C'est facile à utiliser et c'est gratuit."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
       ],
@@ -3580,6 +3604,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Téléchargez le fichier."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Ce fichier a peut-être été supprimé, déplacé ou rendu indisponible. Prenez contact avec le propriétaire du fichier."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte bancaire."
@@ -3987,6 +4014,9 @@
       "Download anyway": [
         "Télécharger quand même"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Téléchargement en cours ${ percentageValue } %"
+      ],
       "Email": [
         "Adresse e-mail"
       ],
@@ -4185,8 +4215,8 @@
       "Replace folder": [
         "Remplacer le dossier"
       ],
-      "Report Abuse": [
-        "Signaler un abus"
+      "Report": [
+        "Signaler"
       ],
       "Reveal password": [
         "Afficher le mot de passe"
@@ -4364,7 +4394,7 @@
         "Nous y sommes presque."
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }.",
         "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }."
       ],
       "Connecting to your email provider": [
@@ -5442,9 +5472,6 @@
       "Date": [
         "Date"
       ],
-      "Decrypting": [
-        "Déchiffrement..."
-      ],
       "Delete ${ count } contact": [
         "Supprimer ${ count } contact",
         "Supprimer ${ count } contacts"
@@ -5467,9 +5494,6 @@
       ],
       "Discard changes?": [
         "Abandonner les modifications ?"
-      ],
-      "Download shared file": [
-        "Télécharger le fichier partagé"
       ],
       "Download unverified file?": [
         "Télécharger le fichier non vérifié ?"
@@ -5547,11 +5571,11 @@
         "${ searchView.numberOfResults } résultat trouvé",
         "${ searchView.numberOfResults } résultats trouvés"
       ],
-      "Getting files": [
-        "Récupération des fichiers"
-      ],
       "Groups": [
         "Groupes"
+      ],
+      "Hm, we couldn't find that one": [
+        "Nous n'avons pas trouvé cet élément."
       ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
@@ -5805,9 +5829,6 @@
       ],
       "You have no folders yet": [
         "Vous n'avez aucun dossier pour le moment."
-      ],
-      "You've got files": [
-        "Vous avez des fichiers."
       ],
       "Your 500 MB bonus": [
         "Votre bonus de 500 Mo"

@@ -3451,6 +3451,9 @@
       "Existent, added and removed participants will be notified.": [
         "Existující, přidaní a odebraní účastníci budou upozorněni."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
+      ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
       ],
@@ -3492,6 +3495,9 @@
       ],
       "Import mailbox": [
         "Importovat poštovní schránku"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
@@ -4387,7 +4393,7 @@
         "Téměř hotovo"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"

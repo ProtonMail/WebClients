@@ -392,9 +392,6 @@
       "Go to label": [
         "Ves a l'etiqueta"
       ],
-      "Go to sign in": [
-        "Ves a l'inici de sessió"
-      ],
       "Got it": [
         "D'acord"
       ],
@@ -871,6 +868,9 @@
       ],
       "Void all recovery files?": [
         "Voleu buidar tots els arxius de recuperació?"
+      ],
+      "What do I get?": [
+        "El vostre abonament inclou:"
       ],
       "Wipe": [
         "Esborra"
@@ -2395,6 +2395,11 @@
       ],
       "Åland Islands": [
         "Illes Aland"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(via ${ entryCountryName })"
       ]
     },
     "Create user accounts empty state": {
@@ -4130,6 +4135,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } no és vàlida"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imatge a mida completa"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: vista prèvia de baixa resolució"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } es definirà com a calendari per defecte."
       ],
@@ -4478,6 +4489,9 @@
       ],
       "Creating your account": [
         "S'està creant el compte"
+      ],
+      "Credits earned": [
+        "Crèdits obtinguts"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualment tot l'emmagatzematge disponible està assignat al compte d'administrador. Reduïu l'assignació a aquest compte per fer espai per altres usuaris. Podeu ampliar l'espai total sempre que vulgueu mitjançant l'actualització del compte."
@@ -4995,9 +5009,6 @@
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary."
       ],
-      "Preview": [
-        "Vista prèvia"
-      ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
       ],
@@ -5477,9 +5488,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "El teu compte existent de ${ BRAND_NAME } pot ser usat per accedir a tots els serveis ${ BRAND_NAME }. Si us plau, inicia sesió amb ${ email }."
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
@@ -6541,6 +6549,9 @@
       "Send crash reports": [
         "Envia informes d'errors"
       ],
+      "Send in": [
+        "Envia en"
+      ],
       "Show secondary time zone": [
         "Mostrar fus horari secundari"
       ],
@@ -6941,7 +6952,7 @@
         "Ja gairebé està"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }",
         "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -8769,6 +8780,11 @@
         "${ minutes } minuts"
       ]
     },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Cerca fusos horaris"
+      ]
+    },
     "Title": {
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ MAIL_APP_NAME }"
@@ -9164,6 +9180,9 @@
       "Gift code": [
         "Codi regal"
       ],
+      "History": [
+        "Historial"
+      ],
       "How does it work?": [
         "Com funciona?"
       ],
@@ -9538,9 +9557,6 @@
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Ja tens un compte de ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"

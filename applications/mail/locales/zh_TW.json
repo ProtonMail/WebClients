@@ -892,9 +892,6 @@
       "Send feedback": [
         "傳送意見反饋"
       ],
-      "Send quick reply": [
-        "發送快速回覆"
-      ],
       "Send read receipt": [
         "傳送已讀回條"
       ],
@@ -996,6 +993,12 @@
       ],
       "This message contains remote content.": [
         "此郵件包含遠端內容。"
+      ],
+      "Toggle Calendar app": [
+        "切換行事曆應用程式"
+      ],
+      "Toggle Contact app": [
+        "切換聯絡人應用程式"
       ],
       "Tomorrow": [
         "明天"
@@ -1139,9 +1142,6 @@
     "action": {
       "Search messages": [
         "搜尋訊息"
-      ],
-      "Send quick reply": [
-        "發送快速回覆"
       ]
     },
     "Actions message": {
@@ -5002,9 +5002,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
       ],
-      "Preview": [
-        "預覽"
-      ],
       "Preview failed to be loaded": [
         "連結載入失敗"
       ],
@@ -5016,12 +5013,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "防止您的郵件地址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ maskMyEmailButton }。"
-      ],
-      "Quick reply": [
-        "快速回覆"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "快速回覆 ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "收件人 : "
@@ -5841,6 +5832,9 @@
       "ALL": [
         "全部"
       ],
+      "All contacts": [
+        "所有聯絡人"
+      ],
       "Also archive": [
         "同時封存"
       ],
@@ -6011,9 +6005,6 @@
       ],
       "Good": [
         "很好"
-      ],
-      "Group": [
-        "群組"
       ],
       "Hide password": [
         "隱藏密碼"
@@ -6545,7 +6536,7 @@
         "快完成了"
       ],
       "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+        "已建立的行事曆數量：${ createdCalendarCount }/${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"

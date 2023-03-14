@@ -413,9 +413,6 @@
       "Go to label": [
         "Перейти к ярлыку"
       ],
-      "Go to sign in": [
-        "Перейти ко входу в систему"
-      ],
       "Got it": [
         "Понятно"
       ],
@@ -5141,11 +5138,11 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Если у вас настроены и SPF, и DKIM, DMARC позволит вам указать, как другие почтовые службы должны доставлять почту для вашего домена, если проверки и SPF, и DKIM были неудачны. Это может осложнить спамерам возможность притворяться вами, но также может вызвать проблемы доставки в случае ненадлежащей настройки."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "В случае утери пароля и необходимости восстановления аккаунта ${ boldImperative }, что у вас есть ${ boldAccountRecovery }."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "В случае утери пароля и необходимости восстановления аккаунта ${ boldImperative }, что у вас есть ${ boldAccountAndRecovery }, иначе вы рискуете потерять доступ к электронной почте, контактам и файлам."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода 2ФА для входа в учётную запись. Каждый код можно использовать только один раз."
@@ -5530,9 +5527,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
-      ],
-      "Preview": [
-        "Предпросмотр"
       ],
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
@@ -6232,9 +6226,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Ваш аккаунт ${ BRAND_NAME } можно использовать для доступа ко всем службам ${ BRAND_NAME }. Войдите с ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваш импорт из ${ accounts } временно отложен.",
@@ -7751,7 +7742,7 @@
         "Почти готово"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
         "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
         "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
         "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }"
@@ -11234,9 +11225,6 @@
       ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "У вас уже есть аккаунт ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Ссылка на календарь"

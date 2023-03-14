@@ -23,6 +23,26 @@
         "Beperkt beeld (bekijk alleen beschikbaar/bezet)"
       ]
     },
+    "account": {
+      "Delete forward": [
+        "Doorsturen verwijderen"
+      ],
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Doorsturen start binnenkort. Nieuwe e-mails verschijnen in uw inbox."
+      ],
+      "Mail forward stopped": [
+        "E-mail doorsturen gestopt"
+      ],
+      "Reconnect": [
+        "Opnieuw verbinden"
+      ],
+      "Remove forward": [
+        "Doorsturen verwijderen"
+      ],
+      "You will stop the mail forwarding.": [
+        "U zult het doorsturen van e-mails stopzetten."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } inleiding"
@@ -393,9 +413,6 @@
       "Go to label": [
         "Ga naar label"
       ],
-      "Go to sign in": [
-        "Ga naar inloggen"
-      ],
       "Got it": [
         "Begrepen"
       ],
@@ -690,6 +707,9 @@
       "Select language for invitation emails": [
         "Selecteer taal voor uitnodigings-e-mails"
       ],
+      "Select time zone": [
+        "Kies tijdzone"
+      ],
       "send auto-reply email": [
         "automatisch antwoord versturen"
       ],
@@ -898,9 +918,22 @@
         "Zoom uit"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Doorsturen hervatten"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Intrekken"
+      ]
+    },
+    "Action in trial plan": {
+      "No, thanks": [
+        "Nee, bedankt"
+      ],
+      "Try free for 30 days": [
+        "Probeer 30 dagen gratis"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -938,6 +971,9 @@
       ],
       "Saving": [
         "Bezig met opslaan"
+      ],
+      "Set as default": [
+        "Als standaard instellen"
       ]
     },
     "Address status": {
@@ -1244,6 +1280,9 @@
       ]
     },
     "Calendar share permission label": {
+      "Edit event details": [
+        "Bewerk details van de afspraak"
+      ],
       "See all event details": [
         "Bekijk alle afspraakgegevens"
       ]
@@ -2820,6 +2859,14 @@
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
+      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -2907,6 +2954,10 @@
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
+        "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
+      ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
       ],
@@ -2963,6 +3014,9 @@
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
+      ],
+      "Payment process canceled": [
+        "Betalingsverzoek geannuleerd"
       ],
       "Payment process consumed": [
         "Betalingsverzoek verwerkt"
@@ -3068,6 +3122,9 @@
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "De mapnaam is ongeldig. Kies een andere naam."
       ],
@@ -3167,6 +3224,9 @@
       "You have no invoices.": [
         "U heeft geen facturen."
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "U heeft het maximale aantal agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
       ],
@@ -3188,6 +3248,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
       ],
+      "Your forward will not be processed.": [
+        "Uw doorsturen zal niet worden verwerkt."
+      ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
       ],
@@ -3196,6 +3259,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3234,6 +3300,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3352,6 +3421,9 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand \"${ formattedFilename }\". Onjuiste bestandsindeling."
+      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand \"${ formattedFilename }\". Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3774,6 +3846,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-mails per maand)"
+      ],
+      "(during your first month)": [
+        "(gedurende uw eerste maand)"
       ]
     },
     "Go to sign in": {
@@ -4204,6 +4279,9 @@
       "Canceled": [
         "Geannuleerd"
       ],
+      "Canceling": [
+        "Annuleren"
+      ],
       "Completed": [
         "Voltooid"
       ],
@@ -4229,6 +4307,9 @@
       ],
       "Contacts": [
         "Contacten"
+      ],
+      "Mail": [
+        "Mail"
       ]
     },
     "Import warning": {
@@ -4385,6 +4466,9 @@
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Nodig vrienden uit voor ${ BRAND_NAME }"
       ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
       "2. They try ${ planName }": [
         "2. Ze proberen ${ planName }"
       ],
@@ -4396,6 +4480,9 @@
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Met een herstelbestand kunt u uw gegevens ontgrendelen en bekijken na een accountreset"
@@ -4625,6 +4712,9 @@
       "Center": [
         "Centreren"
       ],
+      "Check the status of imports and forwarding.": [
+        "Controleer de status van uw import- en doorstuuropdrachten."
+      ],
       "Choose the look and feel of the application.": [
         "Kies het uiterlijk en gevoel van de applicatie."
       ],
@@ -4716,6 +4806,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergeet dit wachtwoord NIET. Als u het vergeet, kan u uw organisatie niet meer beheren."
       ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "Vergeet dit wachtwoord NIET. Als u het vergeet, kunt u niet meer inloggen of uw berichten ontsleutelen."
+      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Gebruik de OpenVPN / IKEv2 inloggegevens niet in ${ VPN_APP_NAME } applicaties of op het ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
@@ -4731,6 +4824,9 @@
       ],
       "Done! We sent a code to ${ destination }.": [
         "Klaar! We hebben een code verzonden naar ${ destination }."
+      ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
@@ -4852,6 +4948,9 @@
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
+      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -4915,11 +5014,14 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Indien u zowel SPF als DKIM ingesteld hebt, geeft het DMARC-record voor andere e-maildiensten aan wat er moet gebeuren als er iets misgaat tijdens het controleren van uw SPF- en DKIM-records. Dit maakt het moeilijker voor spammers om zich voor te doen als u, maar dit kan ook afleverproblemen veroorzaken ten gevolge van een foutieve configuratie."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Als u uw wachtwoord verliest en uw account moet resetten, ${ boldImperative } dat u een ${ boldAccountRecovery } hebt."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Als u uw wachtwoord verliest en uw account moet resetten, ${ boldImperative } dat u zowel ${ boldAccountAndRecovery } hebt, anders hebt u wellicht geen toegang meer tot uw e-mails, contacten of bestanden."
+      ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Als u uw tweestapsverificatie-apparaat kwijtraakt, kunnen deze codes worden gebruikt in plaats van de 6-cijferige tweestapsverificatiecode om in te loggen op uw account. Elke code kan slechts één keer worden gebruikt."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
@@ -4963,6 +5065,9 @@
       ],
       "Import mailbox": [
         "Mailbox importeren"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
@@ -5039,6 +5144,9 @@
       ],
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
+      ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
       ],
       "Learn more": [
         "Meer informatie"
@@ -5130,11 +5238,17 @@
       "No contact encryption keys exist": [
         "Er bestaan geen contactcoderingssleutels"
       ],
+      "No credit card required": [
+        "Green kredietkaart vereist"
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Als er geen methode voor gegevensherstel is ingesteld; loopt u het risico de toegang tot uw gegevens te verliezen"
       ],
       "No folder selected": [
         "Geen map geselecteerd"
+      ],
+      "No imports or forwarding history.": [
+        "Geen importeer- of doorstuurgeschiedenis."
       ],
       "No label selected": [
         "Geen label geselecteerd"
@@ -5220,6 +5334,12 @@
         "Voeg een e-mailadres toe voor de gebruiker op de rij",
         "Voeg e-mailadressen toe voor de gebruikers op de rijen"
       ],
+      "Please authenticate your card in the verification tab.": [
+        "Authenticeer uw kaart in het verificatietabblad."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Authenticeer uw betaling in het verificatietabblad."
+      ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Controleer uw bestand op fouten, of neem contact op met de klantenservice voor meer informatie."
       ],
@@ -5259,6 +5379,9 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecteer het soort link dat u wil invoeren en vul alle velden in."
       ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
+      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
       ],
@@ -5271,14 +5394,14 @@
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
       ],
-      "Preview": [
-        "Voorbeeld"
-      ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
       ],
       "Public link invite": [
         "Publieke uitnodigingslink"
@@ -5355,6 +5478,9 @@
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
@@ -5378,6 +5504,9 @@
       ],
       "Show original message": [
         "Toon origineel bericht"
+      ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren."
       ],
       "Signed up": [
         "Geregistreerd"
@@ -5406,11 +5535,17 @@
       "Storage for users": [
         "Opslag voor gebruikers"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      ],
       "Storage used by this user": [
         "Opslagruimte gebruikt door deze gebruiker"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Bewaar dit wachtwoord en het bestand op een veilige plaats. U heeft ze opnieuw nodig om uw sleutel te importeren."
+      ],
+      "Support for 1 custom email domain": [
+        "Ondersteuning voor 1 aangepast e-maildomein"
       ],
       "support team": [
         "ondersteuningsteam"
@@ -5457,8 +5592,14 @@
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Met de app Import-Export kunt u berichten exporteren voor lokale back-ups en eerdere back-ups terugzetten naar uw account."
       ],
+      "The name will be visible to your users while they are signed in.": [
+        "De naam zal zichtbaar zijn voor uw gebruikers wanneer ze ingelogd zijn."
+      ],
       "The securest way to browse, stream, and be online.": [
         "De veiligste manier om te browsen, streamen en online te zijn."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Deze configuratiebestanden laten u kiezen met welke ${ VPN_APP_NAME }-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
@@ -5604,6 +5745,9 @@
       "Two-factor authentication enabled": [
         "Tweestapsverificatie ingeschakeld"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "Twee-wachtwoordmodus vereist twee wachtwoorden: één om in te loggen op uw account en één om uw mailbox te decoderen. (Geavanceerd)"
+      ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Twee-wachtwoordsmodus maakt gebruik van verschillende wachtwoorden voor het inloggen en de ontsleuteling van de mailbox. Dit biedt in sommige gevallen een klein veiligheidsvoordeel maar wij raden één-wachtwoordsmodus aan voor de meeste gebruikers. Om over te schakel naar twee-wachtwoordsmodus, stelt u eerst een inlogwachtwoord in en daarna een mailboxwachtwoord."
       ],
@@ -5615,6 +5759,12 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Tenzij u uitlogt of uw wachtwoord wijzigt, blijft uw sessie actief. Sessies verlopen na 60 dagen van inactiviteit."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Unlimited messages": [
+        "Onbeperkt aantal berichten"
       ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
@@ -5652,6 +5802,9 @@
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
       ],
+      "Verification may take a few minutes.": [
+        "Verificatie kan enkele minuten duren."
+      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
       ],
@@ -5675,6 +5828,15 @@
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "We raden u aan om officiële ${ VPN_APP_NAME }-applicaties te gebruiken waar mogelijk."
+      ],
+      "We couldn’t process your payment.": [
+        "We konden uw betaling niet verwerken."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "We moeten uw betalingsmethode authenticeren met uw bank."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "We moeten uw betaling authenticeren met uw bank."
       ],
       "We recommend using your recovery phrase instead.": [
         "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
@@ -5766,6 +5928,9 @@
       "You can customize and download your invoices for accounting purposes.": [
         "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
       ],
+      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "U kunt inschakelen dat bijgehouden wordt wanneer uw account benaderd wordt, en vanaf welk IP-adres. We zullen dan het IP-adres bijhouden vanaf waar uw account benaderd wordt, de tijd wanneer dit gebeurt, evenals mislukte inlogpogingen."
+      ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
       ],
@@ -5810,6 +5975,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "U kan geen ${ MAIL_APP_NAME }-gebruikers doorverwijzen"
       ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ${ VPN_APP_NAME }-applicaties of op het ${ VPN_APP_NAME }-dashboard. ${ learnMore }"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
       ],
@@ -5818,6 +5986,9 @@
       ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
+      ],
+      "You may be redirected to your bank’s website.": [
+        "U wordt mogelijk doorverwezen naar de website van uw bank."
       ],
       "You may now start using the extension": [
         "U mag de extensie nu beginnen gebruiken"
@@ -5879,6 +6050,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
       ],
@@ -5902,9 +6076,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Uw bestaande ${ BRAND_NAME }-account kan gebruikt worden voor alle ${ BRAND_NAME }-diensten. Log in met ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Uw import van ${ accounts } is tijdelijk vertraagd.",
@@ -6646,6 +6817,9 @@
       "Domain name": [
         "Domeinnaam"
       ],
+      "Don't ask again": [
+        "Niet opnieuw vragen"
+      ],
       "Duration": [
         "Duur"
       ],
@@ -7045,6 +7219,9 @@
       "Statement": [
         "Voorwaarde"
       ],
+      "Sticky labels": [
+        "Sticky labels"
+      ],
       "Subscription options": [
         "Abonnementsopties"
       ],
@@ -7068,6 +7245,9 @@
       ],
       "Time format": [
         "Tijdsformaat"
+      ],
+      "Time zone": [
+        "Tijdzone"
       ],
       "To: ${ to }": [
         "Aan: ${ to }"
@@ -7220,6 +7400,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME }-productaankondigingen"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } welkomst-e-mail"
       ]
     },
     "Label in domain modal": {
@@ -7263,6 +7446,11 @@
       ],
       "Row": [
         "Rij"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Label/folder modal": {
@@ -7398,7 +7586,7 @@
         "Bijna daar"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }",
         "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -7853,6 +8041,9 @@
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
+      "Calendar sharing": [
+        "Agenda-delen"
+      ],
       "Catch-all": [
         "Catch-all"
       ],
@@ -7967,6 +8158,9 @@
       ],
       "Unlimited folders": [
         "Onbeperkt aantal mappen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde mappen, labels en filters"
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
@@ -8199,6 +8393,9 @@
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Deel uw agenda's eenvoudig met collega's, familieleden en vrienden via een koppeling"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
       ],
       "End-to-end encrypted calendar": [
         "End-to-end versleutelde agenda"
@@ -8935,6 +9132,9 @@
       "Verify now": [
         "Verifieer nu"
       ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Verifieer nu dit herstel-e-mailadres: ${ email.Value }"
+      ],
       "Verify recovery email?": [
         "Herstel-e-mailadres verifiëren?"
       ],
@@ -8983,6 +9183,9 @@
       ],
       "Verify recovery phone?": [
         "Hersteltelefoon verifiëren?"
+      ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Verifieer dit hersteltelefoonnummer nu: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
@@ -9065,6 +9268,12 @@
       ]
     },
     "Settings description": {
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "Voltooi de transitie naar privacy met onze veilige importeer- en doorstuurtools."
+      ],
+      "Complete the transition to privacy with our secure importing tools.": [
+        "Voltooi de transitie naar privacy met onze veilige importeertools."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "U kunt meerdere labels toepassen op één bericht, maar berichten kunnen meestal slechts in één map voorkomen. Slepen en neerzetten om de volgorde van uw mappen en labels te wijzigen."
       ]
@@ -9462,6 +9671,9 @@
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Voeg openbare, externe of gedeelde agenda's toe met behulp van een URL."
+      ],
+      "Add public, external, or shared calendars.": [
+        "Voeg openbare, externe of gedeelde agenda's toe."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9535,6 +9747,11 @@
         "Supersnelle VPN op ${ maxVpn } apparaten"
       ]
     },
+    "Subscription change warning": {
+      "Manage your subscription on ${ subscriptionManagerShort }": [
+        "Beheer uw abonnement op ${ subscriptionManagerShort }"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Voor"
@@ -9556,6 +9773,9 @@
     "Success": {
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } gekopieerd naar uw klembord"
+      ],
+      "Account deleted. Signing out...": [
+        "Account verwijderd. Uitloggen..."
       ],
       "Address added": [
         "Adres toegevoegd"
@@ -9586,6 +9806,9 @@
       ],
       "Calendar updated": [
         "Agenda bijgewerkt"
+      ],
+      "Canceling import": [
+        "Importeren annuleren"
       ],
       "Catch-all address updated": [
         "Catch-all adres bijgewerkt"
@@ -9878,6 +10101,11 @@
       "${ minutes } minute": [
         "${ minutes } minuut",
         "${ minutes } minuten"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Zoek tijdzones"
       ]
     },
     "Title": {
@@ -10297,6 +10525,9 @@
       "Gift code": [
         "Geschenkcode"
       ],
+      "History": [
+        "Geschiedenis"
+      ],
       "How does it work?": [
         "Hoe werkt het?"
       ],
@@ -10330,6 +10561,9 @@
       ],
       "Import key": [
         "Sleutel importeren"
+      ],
+      "Import messages": [
+        "Berichten importeren"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importeren via ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -10544,6 +10778,9 @@
       "Set organization password": [
         "Stel organisatiewachtwoord in"
       ],
+      "Set up forwarding": [
+        "Doorsturen instellen"
+      ],
       "Set up two-factor authentication": [
         "Tweestapsverificatie instellen"
       ],
@@ -10680,9 +10917,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard configuratie"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "U hebt al een account voor ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Uw agendakoppeling"
@@ -10965,6 +11199,11 @@
         "Upgrade naar ${ planName } om tot ${ n } apparaten tegelijkertijd met VPN te verbinden"
       ]
     },
+    "Upgrade notice": {
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "Upgrade naar een ${ MAIL_SHORT_APP_NAME } betaald abonnement om uw agenda te delen."
+      ]
+    },
     "User referee invited via email": {
       "Invited via email": [
         "Uitgenodigd via e-mail"
@@ -11033,6 +11272,9 @@
       "Are you sure you want to delete the phone number?": [
         "Bent u zeker dat u het telefoonnummer wilt verwijderen?"
       ],
+      "Are you sure you want to delete this address?": [
+        "Weet u zeker dat u dit adres wil verwijderen?"
+      ],
       "Are you sure you want to discard your import?": [
         "Weet u zeker dat u uw import wilt verwijderen?"
       ],
@@ -11059,6 +11301,9 @@
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ${ VPN_APP_NAME } abonnementen. Gelieve in plaats daarvan een ticket te openen."
+      ],
+      "Please add at least one recipient.": [
+        "Vul minstens één ontvanger in."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet onmiddellijk kan worden bijgewerkt. We zullen uw account bijwerken zodra de betaling is gewist."
