@@ -2,9 +2,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
-    Href,
     Icon,
     InlineLinkButton,
     useAddresses,
@@ -211,7 +210,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                                 {c('Action').t`Never show`}
                             </InlineLinkButton>
                         ) : (
-                            <Href url={getKnowledgeBaseUrl('/address-verification')}>{c('Link').t`Learn more`}</Href>
+                            <Href href={getKnowledgeBaseUrl('/address-verification')}>{c('Link').t`Learn more`}</Href>
                         )}
                     </span>
                 </div>

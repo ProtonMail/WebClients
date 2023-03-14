@@ -3,12 +3,11 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike, Href } from '@proton/atoms';
 import {
     AppLink,
     Banner,
     CalendarEventDateHeader,
-    Href,
     Icon,
     IconRow,
     useAddresses,
@@ -243,7 +242,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     if (shouldShowAction) {
                         const learnMoreLink = (
                             <Href
-                                url={getKnowledgeBaseUrl('/restoring-encrypted-calendar')}
+                                href={getKnowledgeBaseUrl('/restoring-encrypted-calendar')}
                                 className="link align-baseline"
                                 key="learn-more"
                             >
@@ -278,7 +277,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     }
 
                     const whyNotLink = (
-                        <Href url={getKnowledgeBaseUrl('/restoring-encrypted-calendar')} key="learn-more">
+                        <Href href={getKnowledgeBaseUrl('/restoring-encrypted-calendar')} key="learn-more">
                             {c('Action').t`Why not?`}
                         </Href>
                     );

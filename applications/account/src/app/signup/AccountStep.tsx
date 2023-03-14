@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
     Challenge,
     ChallengeError,
     ChallengeRef,
     ChallengeResult,
     DropdownSizeUnit,
-    Href,
     Info,
     InlineLinkButton,
     InputFieldTwo,
@@ -230,7 +229,7 @@ const AccountStep = ({
     const terms = (
         <Fragment key="terms">
             <br />
-            <Href url={getTermsURL(getIsVPNApp(toApp, clientType) ? APPS.PROTONVPN_SETTINGS : undefined)}>{
+            <Href href={getTermsURL(getIsVPNApp(toApp, clientType) ? APPS.PROTONVPN_SETTINGS : undefined)}>{
                 // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
                 c('new_plans: signup').t`terms and conditions`
             }</Href>

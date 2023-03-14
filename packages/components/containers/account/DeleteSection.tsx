@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 
-import { Href, Loader } from '../../components';
+import { Loader } from '../../components';
 import { useModalState } from '../../components/modalTwo';
 import { useAddresses, useConfig, useSubscription } from '../../hooks';
 import { DiscountWarningModal, NewVisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
@@ -29,7 +29,7 @@ const DeleteSection = () => {
         addresses.some((address) => address.Type !== ADDRESS_TYPE.TYPE_EXTERNAL)
     ) {
         const loginLink = (
-            <Href key="0" url="https://account.proton.me/login?product=mail">
+            <Href key="0" href="https://account.proton.me/login?product=mail">
                 mail.proton.me
             </Href>
         );

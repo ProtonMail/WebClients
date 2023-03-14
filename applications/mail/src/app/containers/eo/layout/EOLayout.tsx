@@ -2,12 +2,11 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { ButtonLike, Href } from '@proton/atoms';
 import {
     AppLink,
     CalendarLogo,
     DriveLogo,
-    Href,
     Logo,
     MailLogo,
     PublicTopBanners,

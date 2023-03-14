@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
-import { Alert, Href, Tabs } from '../../../components';
+import { Alert, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
 import Captcha from './Captcha';
 import CodeMethod from './CodeMethod';
@@ -149,7 +150,7 @@ const HumanVerificationForm = ({
                 <Text>
                     {c('Info')
                         .t`If you are having trouble creating your account, please request an invitation and we will respond within one business day.`}{' '}
-                    <Href url={getStaticURL('/support')}>{c('Link').t`Request an invite`}</Href>
+                    <Href href={getStaticURL('/support')}>{c('Link').t`Request an invite`}</Href>
                 </Text>
             ),
         } as const,

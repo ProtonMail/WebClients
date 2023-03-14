@@ -3,7 +3,8 @@ import { ChangeEvent, useMemo, useState } from 'react';
 import { isToday, isTomorrow } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Checkbox, Href, generateUID, useNotifications } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { Checkbox, generateUID, useNotifications } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

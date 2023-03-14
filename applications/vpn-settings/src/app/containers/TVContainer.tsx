@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Href, Icon, PrimaryButton, VpnLogo, useApi, useLoading } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { Icon, PrimaryButton, VpnLogo, useApi, useLoading } from '@proton/components';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 
 import TVCodeInputs from './TVCodeInputs';
@@ -95,7 +95,7 @@ const TVContainer = () => {
         <div className="ui-prominent background-container h100 flex-no-min-children flex-column flex-nowrap flex-align-items-center scroll-if-needed">
             <div className="flex flex-justify-center flex-align-items-center pt2">
                 <div className="w150p">
-                    <Href url="https://protonvpn.com" target="_self">
+                    <Href href="https://protonvpn.com" target="_self">
                         <VpnLogo />
                     </Href>
                 </div>

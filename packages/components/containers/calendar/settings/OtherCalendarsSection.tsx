@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Card } from '@proton/atoms';
+import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import { FeatureCode, SharedCalendarsSection } from '@proton/components/containers';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
@@ -13,7 +13,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { CalendarMemberInvitation, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, Href, PrimaryButton, Prompt, SettingsLink, Tooltip, useModalState } from '../../../components';
+import { Alert, PrimaryButton, Prompt, SettingsLink, Tooltip, useModalState } from '../../../components';
 import { useApi, useEventManager, useFeature, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { SettingsParagraph } from '../../account';
@@ -189,7 +189,7 @@ const OtherCalendarsSection = ({
                 <SettingsParagraph>
                     {descriptionText}
                     <br />
-                    <Href url={getKnowledgeBaseUrl('/subscribe-to-external-calendar')}>
+                    <Href href={getKnowledgeBaseUrl('/subscribe-to-external-calendar')}>
                         {c('Knowledge base link label').t`Here's how`}
                     </Href>
                 </SettingsParagraph>

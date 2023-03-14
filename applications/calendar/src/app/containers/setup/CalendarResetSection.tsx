@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Href,
     Icon,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
@@ -82,7 +82,7 @@ const CalendarResetSection = ({ calendarsToReset = [], resetAll }: Props) => {
                     .t`You can recover your encrypted data with a recovery file, recovery phrase, or your old password.`}
             </p>
             <p className="mb0-5">
-                <Href url={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
+                <Href href={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
                     {c('Link; reset calendar keys modal').t`What's a recovery method?`}
                 </Href>
             </p>

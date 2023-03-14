@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
+import { Card, Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Href, Loader } from '../../components';
+import { Loader } from '../../components';
 import {
     useHasOutdatedRecoveryFile,
     useIsDataRecoveryAvailable,
@@ -191,7 +191,7 @@ const RecoveryCard = ({ ids }: Props) => {
                       c('Info')
                           .jt`If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.`}
                 <br />
-                <Href url={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
+                <Href href={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
                     {c('Link').t`Why set recovery methods?`}
                 </Href>
             </p>

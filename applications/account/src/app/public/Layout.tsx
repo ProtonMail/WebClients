@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Href, ProtonLogo, PublicTopBanners, getAppVersion, useConfig } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { ProtonLogo, PublicTopBanners, getAppVersion, useConfig } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';

@@ -3,11 +3,10 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
 import {
     FeatureCode,
     GenericError,
-    Href,
     OnLoginCallback,
     useApi,
     useConfig,
@@ -286,7 +285,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                url={getStaticURL('/support')}
+                                href={getStaticURL('/support')}
                                 target="_self"
                                 fullWidth
                                 className="mt0-5"
@@ -404,7 +403,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                             color="norm"
                             shape="ghost"
                             size="large"
-                            url={getStaticURL('/support')}
+                            href={getStaticURL('/support')}
                             target="_self"
                             fullWidth
                             className="mt0-5"

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import Href from '../../components/link/Href';
 import { useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 
@@ -17,7 +17,7 @@ const SubUserTopBanner = () => {
         <TopBanner className="bg-info">
             {c('Info').t`You are currently signed in as ${user.Name} (${user.Email}).`}
             {` `}
-            <Href url={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link').t`Learn more`}</Href>
+            <Href href={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link').t`Learn more`}</Href>
         </TopBanner>
     );
 };

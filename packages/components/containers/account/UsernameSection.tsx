@@ -2,9 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { ButtonLike, Card, CircleLoader, Href } from '@proton/atoms';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import {
     APPS,
@@ -20,7 +18,7 @@ import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserType } from '@proton/shared/lib/interfaces';
 
-import { AppLink, Href, InlineLinkButton, useModalState } from '../../components';
+import { AppLink, InlineLinkButton, useModalState } from '../../components';
 import { useAddresses, useConfig, useUser } from '../../hooks';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import SettingsLayout from './SettingsLayout';
@@ -50,7 +48,7 @@ const UsernameSection = ({ app }: Props) => {
                         <div className="mb0-5">
                             {c('Info')
                                 .t`Get a ${BRAND_NAME} address to use all ${BRAND_NAME} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`}{' '}
-                            <Href url={getKnowledgeBaseUrl('/external-accounts')}>{c('Link').t`Learn more`}</Href>
+                            <Href href={getKnowledgeBaseUrl('/external-accounts')}>{c('Link').t`Learn more`}</Href>
                         </div>
                         <ButtonLike
                             as={AppLink}
@@ -111,7 +109,7 @@ const UsernameSection = ({ app }: Props) => {
                                 <div className="text-pre-wrap break user-select">{primaryAddress.Email}</div>
                             ) : (
                                 <Href
-                                    url={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
+                                    href={`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}?product=mail`}
                                     title={c('Info').t`Sign in to ${MAIL_APP_NAME} to activate your address`}
                                 >
                                     {c('Link').t`Not activated`}

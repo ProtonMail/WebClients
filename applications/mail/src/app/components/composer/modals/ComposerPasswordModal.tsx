@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Href, useNotifications } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { useNotifications } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -123,7 +124,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
             <p className="mt0 mb1 color-weak">
                 {expirationText}
                 <br />
-                <Href url={getKnowledgeBaseUrl('/password-protected-emails')}>{c('Info').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/password-protected-emails')}>{c('Info').t`Learn more`}</Href>
             </p>
 
             <PasswordInnerModalForm
