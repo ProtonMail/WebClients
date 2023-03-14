@@ -167,9 +167,6 @@
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
-      "Go to sign in": [
-        "Przejdź do logowania"
-      ],
       "Hide": [
         "Ukryj"
       ],
@@ -1859,6 +1856,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: obraz w pełnym rozmiarze"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: podgląd w niskiej rozdzielczości"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
       ],
@@ -2096,6 +2099,9 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Jeśli nigdy wcześniej nie korzystałeś z uwierzytelniania dwustopniowego, zdecydowanie zalecamy ${ guideButton }."
       ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Jeśli zgubisz urządzenie z przypisanym uwierzytelnianiem dwustopniowym, możesz użyć poniższych kodów zapasowych, zamiast 6-cyfrowego kodu uwierzytelniającego, aby zalogować się na swoje konto. Każdy kod może zostać użyty tylko jeden raz."
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME } i usługi ${ VPN_APP_NAME }."
       ],
@@ -2230,9 +2236,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Subskrypcja planu Plus lub Visionary jest wymagana"
-      ],
-      "Preview": [
-        "Podgląd"
       ],
       "Preview failed to be loaded": [
         "Załadowanie podglądu nie powiodło się"
@@ -2587,9 +2590,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Twoje obecne konto ${ BRAND_NAME } może zostać użyte do wszystkich usług ${ BRAND_NAME }. Zaloguj się przy użyciu ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Szczegóły Twoich płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."
@@ -3530,7 +3530,7 @@
         "Zapewnij sobie prywatność podczas tworzenia kopii zapasowej, przechowywania i udostępniania plików."
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
@@ -4851,8 +4851,8 @@
       "Total paid": [
         "Łącznie"
       ],
-      "TV log in": [
-        "TV sign in"
+      "TV sign in": [
+        "Zaloguj się na telewizorze"
       ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
@@ -4895,9 +4895,6 @@
       ],
       "WireGuard configuration": [
         "Konfiguracja WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Masz już konto ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"

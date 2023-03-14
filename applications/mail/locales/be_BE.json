@@ -901,9 +901,6 @@
       "Send feedback": [
         "Адправіць водгук"
       ],
-      "Send quick reply": [
-        "Адправіць хуткі адказ"
-      ],
       "Send read receipt": [
         "Адправіць апавяшчэнне пра прачытанне"
       ],
@@ -1005,6 +1002,12 @@
       ],
       "This message contains remote content.": [
         "Гэта паведамленне змяшчае аддаленае змесціва."
+      ],
+      "Toggle Calendar app": [
+        "Пераключыць на праграму Каляндар"
+      ],
+      "Toggle Contact app": [
+        "Пераключыць на праграму Кантакты"
       ],
       "Tomorrow": [
         "Заўтра"
@@ -1151,9 +1154,6 @@
     "action": {
       "Search messages": [
         "Пошук паведамленняў"
-      ],
-      "Send quick reply": [
-        "Адправіць хуткі адказ"
       ]
     },
     "Actions message": {
@@ -4402,9 +4402,9 @@
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнік)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнікі)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнікаў)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнікі)"
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнікаў)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } удзельнікаў)"
       ],
       "${ contactName } contains multiple email addresses.": [
         "Кантакт ${ contactName } змяшчае некалькі адрасоў электроннай пошты."
@@ -4426,6 +4426,12 @@
         "${ embeddedAttachmentsCount } убудаваныя відарысы",
         "${ embeddedAttachmentsCount } убудаваных відарысаў",
         "${ embeddedAttachmentsCount } убудаваныя відарысы"
+      ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: поўны памер відарыса"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
       ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
@@ -5258,9 +5264,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пачакайце, пакуль мы шукаем кантакты, якія змяшчаюць даныя, зашыфраваныя з дапамогай неактыўнага ключа."
       ],
-      "Preview": [
-        "Папярэдні прагляд"
-      ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
       ],
@@ -5272,12 +5275,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Абараніце сваю электронную пошту ад уцечкі ў спіс рассылкі або спамераў з дапамогай ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Хуткі адказ"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Хуткі адказ ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Атрымальнік: "
@@ -6139,6 +6136,9 @@
       "ALL": [
         "УСЕ"
       ],
+      "All contacts": [
+        "Усе кантакты"
+      ],
       "Also archive": [
         "Таксама архіваваць"
       ],
@@ -6309,9 +6309,6 @@
       ],
       "Good": [
         "Добра"
-      ],
-      "Group": [
-        "Група"
       ],
       "Hide password": [
         "Схаваць пароль"
@@ -6843,7 +6840,7 @@
         "Амаль гатова"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
@@ -7863,10 +7860,10 @@
         "${ elementsCount } размовы пазначаны як непрачытаныя."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } размова перамешчана ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спаму.",
-        "${ elementsCount } размовы перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спаму.",
-        "${ elementsCount } размоў перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спаму.",
-        "${ elementsCount } размовы перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спаму."
+        "${ elementsCount } размова перамешчана ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размовы перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размоў перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размовы перамешчаны ў ${ folderName }, а адпраўнік дададзены ў ваш спіс не спам."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } размова перамешчана ў ${ folderName }.",

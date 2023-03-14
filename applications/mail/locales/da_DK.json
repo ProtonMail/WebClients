@@ -875,9 +875,6 @@
       "Send feedback": [
         "Send feedback"
       ],
-      "Send quick reply": [
-        "Send hurtigt svar"
-      ],
       "Send read receipt": [
         "Send læsekvittering"
       ],
@@ -1123,9 +1120,6 @@
     "action": {
       "Search messages": [
         "Søg i beskeder"
-      ],
-      "Send quick reply": [
-        "Send hurtigt svar"
       ]
     },
     "Actions message": {
@@ -5043,9 +5037,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
       ],
-      "Preview": [
-        "Forhåndsvisning"
-      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
@@ -5057,12 +5048,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Beskyt din e-mail mod at blive lækket til mailinglister eller spammere med ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Hurtigt svar"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Hurtigt svar til ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Modtager: "
@@ -5105,6 +5090,9 @@
       ],
       "Saving draft…": [
         "Gemmer kladde…"
+      ],
+      "Scheduled send of this message will be canceled.": [
+        "Planlagt afsendelse af denne besked aflyses."
       ],
       "Scheduling message...": [
         "Planlægger besked..."
@@ -5244,6 +5232,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+      ],
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Denne samtale indeholder en planlagt besked. Afsendelsen af denne besked vil blive annulleret."
       ],
       "This conversation contains non-trashed messages.": [
         "Denne samtale indeholder ikke-kasserede beskeder."
@@ -5875,6 +5866,9 @@
       "ALL": [
         "ALLE"
       ],
+      "All contacts": [
+        "Alle kontakter"
+      ],
       "Also archive": [
         "Arkivér også"
       ],
@@ -6045,9 +6039,6 @@
       ],
       "Good": [
         "God"
-      ],
-      "Group": [
-        "Gruppe"
       ],
       "Hide password": [
         "Skjul adgangskode"
@@ -6579,7 +6570,7 @@
         "Næsten færdig"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Antal oprettet kalender:  ${ createdCalendarCount } af ${ calendarsToBeCreated }",
         "Antal oprettede kalendere: ${ createdCalendarCount } af ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -6674,6 +6665,9 @@
     "Message notification": {
       "Scheduled sending undone": [
         "Planlagt afsendelse annulleret"
+      ],
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Planlægning annulleret. Besked er blevet flyttet til Kladder."
       ],
       "Sending undone": [
         "Afsendelse fortrudt"

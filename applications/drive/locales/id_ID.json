@@ -64,6 +64,9 @@
       "Back": [
         "Kembali"
       ],
+      "Back to Homepage": [
+        "Kembali ke Beranda"
+      ],
       "Beta Access": [
         "Akses Beta"
       ],
@@ -162,6 +165,9 @@
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
+      ],
+      "Create account": [
+        "Buat akun"
       ],
       "Create link": [
         "Buat tautan"
@@ -579,6 +585,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Toggle Calendar app": [
+        "Tampilkan/sembunyikan aplikasi Calendar"
+      ],
+      "Toggle Contact app": [
+        "Tampilkan/sembunyikan aplikasi Contact"
       ],
       "Trust": [
         "Percayai"
@@ -2441,11 +2453,6 @@
         "${ Label.Name } berhasil diperbarui"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Menjunjung privasi sebagai hal yang baku."
-      ]
-    },
     "Group": {
       "Account": [
         "Akun"
@@ -2808,6 +2815,12 @@
       "${ errorCount } failed": [
         "${ errorCount } gagal terproses"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: gambar ukuran penuh"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pratinjau resolusi rendah"
+      ],
       "${ groupCounts } groups found": [
         "ditemukan ${ groupCounts } grup"
       ],
@@ -3003,6 +3016,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Anda dapat mengimpor berkas CSV dari Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora, dan beberapa aplikasi lainnya serta berkas vCard versi 3.1 dan 4.0 (dengan encoding UTF-8)."
       ],
+      "Decrypting files": [
+        "Mendekripsi berkas"
+      ],
       "Delete locked drives": [
         "Hapus drive terkunci"
       ],
@@ -3057,17 +3073,20 @@
       "Enabling drive search": [
         "Mengaktifkan pencarian drive"
       ],
-      "Encrypted": [
-        "Dienkripsi"
-      ],
       "Encrypted search is here": [
         "Pencarian terenkripsi kini telah hadir"
+      ],
+      "End-to-end encrypted": [
+        "Terenkripsi secara end-to-end"
+      ],
+      "Enter password": [
+        "Masukkan kata sandi"
       ],
       "Enter the code from your authenticator app": [
         "Masukkan kode yang tertera pada aplikasi otentikator Anda"
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Masukkan kredensial akun email yang berkas-berkasnya ingin Anda impor."
+        "Masukkan kredensial akun email yang berkasnya ingin Anda impor."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
@@ -3249,6 +3268,9 @@
       "Link copied to clipboard": [
         "Tautan disalin ke clipboard"
       ],
+      "Link owner has the password": [
+        "Kata sandi dipegang oleh pemilik tautan"
+      ],
       "Loading": [
         "Memuat"
       ],
@@ -3284,6 +3306,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Butuh untuk berbagi berkas? Dapatkanlah ${ DRIVE_APP_NAME },\ncara teraman untuk membagikan, menyimpan, dan menyinkronkan berkas Anda."
       ],
       "Network issue": [
         "Masalah jaringan"
@@ -3329,6 +3354,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Catatan: data mungkin masih akan tersedia secara lokal pada perangkat yang Anda pasangi ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "Belum ada hal apa pun di sini"
       ],
       "of": [
         "dari"
@@ -3393,9 +3421,6 @@
       "Preparing link to folder": [
         "Menyiapkan tautan untuk folder"
       ],
-      "Preview": [
-        "Pratinjau"
-      ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
       ],
@@ -3432,9 +3457,6 @@
       "Search Enabled": [
         "Pencarian Diaktifkan"
       ],
-      "Secure sharing": [
-        "File sharing yang aman"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Pilih berkas atau folder yang telah diunggah dan buat tautan untuk berkas atau folder tersebut."
       ],
@@ -3462,6 +3484,9 @@
       "Shareable link for ${ boldNameText }": [
         "Tautan yang dapat dibagikan untuk ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Tautan yang dibagikan tidak ditemukan"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
       ],
@@ -3486,9 +3511,6 @@
       "support team": [
         "tim dukungan"
       ],
-      "Swiss privacy": [
-        "Privasi Swiss"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
       ],
@@ -3508,10 +3530,7 @@
         "Berikut merupakan berkas yang masih harus ditransfer. Menutup jendela transfer akan membatalkan semua proses yang sedang berlangsung."
       ],
       "There are no files yet": [
-        "Tidak ada berkas"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Berkas berikut dibagikan dengan enkripsi end-to-end. Untuk menjaga keamanan berkas ini — dan juga privasi seluruh dokumen, foto, serta berkas lainnya yang Anda miliki — simpanlah semuanya di ${ DRIVE_APP_NAME } milik Anda. Mudah digunakan dan gratis."
+        "Anda belum memiliki berkas apa pun"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
@@ -3521,6 +3540,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Berkas ini mungkin telah dihapus, dipindahkan, atau tidak lagi tersedia. Cobalah untuk menghubungi pemilik berkas yang bersangkutan."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
@@ -3923,6 +3945,9 @@
       "Download anyway": [
         "Tetap unduh"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Unduhan ${ percentageValue }%"
+      ],
       "Email": [
         "Email"
       ],
@@ -4121,8 +4146,8 @@
       "Replace folder": [
         "Ganti folder"
       ],
-      "Report Abuse": [
-        "Laporkan Penyalahgunaan"
+      "Report": [
+        "Laporkan"
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
@@ -4300,7 +4325,7 @@
         "Hampir selesai"
       ],
       "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+        "Jumlah kalender yang dibuat: ${ createdCalendarCount } dari ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
@@ -5099,9 +5124,6 @@
       "Date": [
         "Tanggal"
       ],
-      "Decrypting": [
-        "Mendekripsi"
-      ],
       "Delete ${ count } contact groups": [
         "Hapus ${ count } grup kontak"
       ],
@@ -5122,9 +5144,6 @@
       ],
       "Discard changes?": [
         "Batalkan perubahan?"
-      ],
-      "Download shared file": [
-        "Unduh berkas yang dibagikan"
       ],
       "Download unverified file?": [
         "Unduh berkas yang tidak terverifikasi?"
@@ -5198,11 +5217,11 @@
       "Found ${ searchView.numberOfResults } results": [
         "${ searchView.numberOfResults } hasil pencarian ditemukan"
       ],
-      "Getting files": [
-        "Memperoleh berkas"
-      ],
       "Groups": [
         "Grup"
+      ],
+      "Hm, we couldn't find that one": [
+        "Hm, kami tidak dapat menemukan elemen yang dimaksud"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -5455,9 +5474,6 @@
       ],
       "You have no folders yet": [
         "Anda belum memiliki folder"
-      ],
-      "You've got files": [
-        "Anda memiliki berkas"
       ],
       "Your 500 MB bonus": [
         "Bonus 500 MB Anda"

@@ -167,9 +167,6 @@
       "Get verification code": [
         "Отримати код підтвердження"
       ],
-      "Go to sign in": [
-        "Перейти до входу"
-      ],
       "Hide": [
         "Сховати"
       ],
@@ -2225,9 +2222,6 @@
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
       ],
-      "Preview": [
-        "Попередній перегляд"
-      ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
       ],
@@ -2569,9 +2563,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Ваш наявний обліковий запис ${ BRAND_NAME } можна використовувати для доступу до всіх служб ${ BRAND_NAME }. Увійдіть із ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Подробиці вашого платежу захищені TLS-шифруванням та швейцарським законодавством."
@@ -3407,7 +3398,7 @@
         "Необмежена кількість тек"
       ],
       "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток та фільтрів"
+        "Необмежена кількість тек, міток і фільтрів"
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
@@ -3921,10 +3912,10 @@
         "Адресу е-пошти ще не підтверджено."
       ],
       "Verification email sent to ${ email.Value }": [
-        "Перевіркового листа надіслано на ${ email.Value }"
+        "Лист із підтвердженням надіслано на ${ email.Value }"
       ],
       "Verify now": [
-        "Підтвердити зараз"
+        "Підтвердити"
       ],
       "Verify now this recovery email address: ${ email.Value }": [
         "Тепер підтвердьте цю адресу електронної пошти для відновлення: ${ email.Value }"
@@ -3964,13 +3955,13 @@
         "Перевірити за допомогою SMS"
       ],
       "Verify now": [
-        "Підтвердити зараз"
+        "Підтвердити"
       ],
       "Verify recovery phone?": [
         "Перевірити резервний номер телефону?"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
-        "Підтвердьте зараз цей номер телефону для відновлення: ${ phone.Value }"
+        "Тепер підтвердьте цей номер телефону для відновлення: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Підтвердження номера телефону посилює безпеку вашого облікового запису та розширює можливості відновлення."
@@ -4580,8 +4571,8 @@
       "Total paid": [
         "Усього сплачено"
       ],
-      "TV log in": [
-        "TV sign in"
+      "TV sign in": [
+        "Вхід на телевізорі"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
@@ -4624,9 +4615,6 @@
       ],
       "WireGuard configuration": [
         "Конфігурація WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Ви вже маєте обліковий запис ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Ваші зміни ще не синхронізовані"

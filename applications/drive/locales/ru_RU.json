@@ -163,6 +163,9 @@
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
+      "Create account": [
+        "Создать аккаунт"
+      ],
       "Create link": [
         "Создать ссылку"
       ],
@@ -585,6 +588,12 @@
       ],
       "Theme": [
         "Тема"
+      ],
+      "Toggle Calendar app": [
+        "Переключить на приложение Календарь"
+      ],
+      "Toggle Contact app": [
+        "Переключить на приложение Контакты"
       ],
       "Trust": [
         "Доверять"
@@ -3220,9 +3229,6 @@
       "Enabling drive search": [
         "Включается поиск по хранилищу"
       ],
-      "Encrypted": [
-        "Зашифровано"
-      ],
       "Encrypted search is here": [
         "Зашифрованный поиск тут"
       ],
@@ -3568,9 +3574,6 @@
       "Preparing link to folder": [
         "Подготовка ссылки на папку"
       ],
-      "Preview": [
-        "Предпросмотр"
-      ],
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
       ],
@@ -3606,9 +3609,6 @@
       ],
       "Search Enabled": [
         "Поиск включен"
-      ],
-      "Secure sharing": [
-        "Безопасный обмен"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Выберите загруженный файл или папку и создайте ссылку на них."
@@ -3661,9 +3661,6 @@
       "support team": [
         "служба поддержки"
       ],
-      "Swiss privacy": [
-        "Швейцарская конфиденциальность"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
@@ -3684,9 +3681,6 @@
       ],
       "There are no files yet": [
         "Пока здесь пусто"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Этими файлами поделились используя сквозное шифрование. Чтобы сохранить их в безопасности и обеспечить конфиденциальность всех ваших документов, фотографий и файлов, храните их на своем ${ DRIVE_APP_NAME }. Это бесплатное и простое приложение."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -3731,7 +3725,7 @@
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен проиндексировать ваши файлы локально."
+        "Для включения полной конфиденциальности поиска ${ DRIVE_APP_NAME } должен локально проиндексировать ваши файлы."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Чтобы включить действительно конфиденциальный поиск, нам надо проиндексировать ваши файлы локально. Вы по-прежнему можете использовать ${ DRIVE_APP_NAME } в обычном режиме – мы сообщим вам, когда индексирование будет завершено."
@@ -4302,9 +4296,6 @@
       "Replace folder": [
         "Заменить папку"
       ],
-      "Report Abuse": [
-        "Сообщить о нарушении"
-      ],
       "Reveal password": [
         "Показать пароль"
       ],
@@ -4481,7 +4472,7 @@
         "Почти готово"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
         "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
         "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
         "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }"
@@ -5653,9 +5644,6 @@
       "Date": [
         "Дата"
       ],
-      "Decrypting": [
-        "Расшифровка"
-      ],
       "Delete ${ count } contact": [
         "Удалить ${ count } контакт",
         "Удалить ${ count } контакта",
@@ -5682,9 +5670,6 @@
       ],
       "Discard changes?": [
         "Сбросить изменения?"
-      ],
-      "Download shared file": [
-        "Скачать общий файл"
       ],
       "Download unverified file?": [
         "Скачать непроверенный файл?"
@@ -5763,9 +5748,6 @@
         "Найдено ${ searchView.numberOfResults } результата",
         "Найдено ${ searchView.numberOfResults } результатов",
         "Найдено ${ searchView.numberOfResults } результатов"
-      ],
-      "Getting files": [
-        "Получение файлов"
       ],
       "Groups": [
         "Группы"
@@ -6024,9 +6006,6 @@
       ],
       "You have no folders yet": [
         "У вас пока что нет папок"
-      ],
-      "You've got files": [
-        "Вы получили файлы"
       ],
       "Your 500 MB bonus": [
         "Ваши бонусные 500 МБ"

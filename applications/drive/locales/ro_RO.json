@@ -64,6 +64,9 @@
       "Back": [
         "Înapoi"
       ],
+      "Back to Homepage": [
+        "Înapoi la pagina de start"
+      ],
       "Beta Access": [
         "Acces la Beta"
       ],
@@ -162,6 +165,9 @@
       ],
       "Create a new contact group": [
         "Creare grup de contacte"
+      ],
+      "Create account": [
+        "Creare cont"
       ],
       "Create link": [
         "Creare legătură"
@@ -583,6 +589,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Toggle Calendar app": [
+        "Comutare la aplicație Calendar"
+      ],
+      "Toggle Contact app": [
+        "Comutare la aplicație Contacte"
       ],
       "Trust": [
         "Aprobare"
@@ -2877,6 +2889,12 @@
         "${ errorCount } au eșuat",
         "${ errorCount } au eșuat"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagine completă"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pictogramă cu rezoluție mică"
+      ],
       "${ groupCounts } group found": [
         "S-a găsit un grup",
         "S-au găsit ${ groupCounts } grupuri",
@@ -3104,6 +3122,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Sunt acceptate fișierele CSV din Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora și alte aplicații, precum și formatele vCard 3.1 și 4.0 (codificare UTF-8)."
       ],
+      "Decrypting files": [
+        "Decriptare fișiere"
+      ],
       "Delete locked drive": [
         "Ștergere unitate blocată",
         "Ștergere unități blocate",
@@ -3160,11 +3181,14 @@
       "Enabling drive search": [
         "Se activează căutarea în unitate."
       ],
-      "Encrypted": [
-        "Criptat"
-      ],
       "Encrypted search is here": [
         "Căutarea criptată este aici"
+      ],
+      "End-to-end encrypted": [
+        "Criptat în ambele părți"
+      ],
+      "Enter password": [
+        "Introduceți parola"
       ],
       "Enter the code from your authenticator app": [
         "Introduceți codul din aplicația Authenticator."
@@ -3356,6 +3380,9 @@
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
       ],
+      "Link owner has the password": [
+        "Proprietarul legăturii are parola"
+      ],
       "Loading": [
         "Se încarcă"
       ],
@@ -3391,6 +3418,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Doriți să partajați un fișier? Atunci luați ${ DRIVE_APP_NAME },\ncel mai sigur mod de partajare, stocare și sincronizare a fișierelor."
       ],
       "Network issue": [
         "Problemă de rețea"
@@ -3436,6 +3466,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Notă: este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "Nimic aici încă"
       ],
       "of": [
         "din"
@@ -3504,9 +3537,6 @@
       "Preparing link to folder": [
         "Se pregătește legătura către folder"
       ],
-      "Preview": [
-        "Examinare"
-      ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
       ],
@@ -3543,9 +3573,6 @@
       "Search Enabled": [
         "Căutare actvată."
       ],
-      "Secure sharing": [
-        "Partajare sigură"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selectaţi un fişier sau folder încărcat şi creaţi o legătură la acesta."
       ],
@@ -3573,6 +3600,9 @@
       "Shareable link for ${ boldNameText }": [
         "Legătură partajabilă pentru ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Legătură partajată negăsită"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
       ],
@@ -3597,9 +3627,6 @@
       "support team": [
         "echipa de asistență"
       ],
-      "Swiss privacy": [
-        "Confidențialitate elvețiană"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
       ],
@@ -3621,9 +3648,6 @@
       "There are no files yet": [
         "Încă nu există fișiere."
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Aceste fișiere au fost partajate utilizând criptarea la ambele capete. Pentru a le păstra în siguranță - și toate documentele, fotografiile și fișierele să rămână private - stocați-le în propria unitate ${ DRIVE_APP_NAME }. Este ușor de utilizat și gratuit."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
@@ -3632,6 +3656,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Acest fișier a fost probabil șters, mutat sau făcut indisponibil. Contactați proprietarul."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
@@ -4038,6 +4065,9 @@
       "Download anyway": [
         "Descărcare așa"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Se descarcă ${ percentageValue }%"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4236,8 +4266,8 @@
       "Replace folder": [
         "Înlocuire folder"
       ],
-      "Report Abuse": [
-        "Raportare abuz"
+      "Report": [
+        "Raportare"
       ],
       "Reveal password": [
         "Afișare parolă"
@@ -4415,7 +4445,7 @@
         "Aproape terminat"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
         "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
         "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }"
       ],
@@ -5299,9 +5329,6 @@
       "Date": [
         "Data"
       ],
-      "Decrypting": [
-        "Se decriptează"
-      ],
       "Delete ${ count } contact": [
         "Ștergere un contact",
         "Ștergere ${ count } contacte",
@@ -5326,9 +5353,6 @@
       ],
       "Discard changes?": [
         "Anulare modificări?"
-      ],
-      "Download shared file": [
-        "Descărcare fișier partajat"
       ],
       "Download unverified file?": [
         "Descărcați un fișier neverificat?"
@@ -5407,11 +5431,11 @@
         "S-au găsit ${ searchView.numberOfResults } rezultate",
         "S-au găsit ${ searchView.numberOfResults } de rezultate"
       ],
-      "Getting files": [
-        "Se obțin fișierele"
-      ],
       "Groups": [
         "Grupuri"
+      ],
+      "Hm, we couldn't find that one": [
+        "Hm, nu s-a putut găsi"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -5666,9 +5690,6 @@
       ],
       "You have no folders yet": [
         "Încă nu aveți foldere"
-      ],
-      "You've got files": [
-        "Ați primit fișiere"
       ],
       "Your 500 MB bonus": [
         "Bonusul de 500 MB"

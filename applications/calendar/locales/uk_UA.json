@@ -504,6 +504,9 @@
       "Today": [
         "Сьогодні"
       ],
+      "Toggle Contact app": [
+        "Перемкніть додаток Контакти"
+      ],
       "Trust": [
         "Довіряти"
       ],
@@ -2464,7 +2467,7 @@
         "Ви не можете надіслати файли vCard для понад 10 контактів"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості календарів. Деякі календарі не можуть бути імпортовані."
+        "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -3443,7 +3446,7 @@
         "Наявні, додані та вилучені учасники отримають сповіщення."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Перешліть вхідний лист з іншого облікового запису до вашої захищеної ${ MAIL_APP_NAME } поштової скриньки."
+        "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -4381,7 +4384,7 @@
         "Майже готово"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"

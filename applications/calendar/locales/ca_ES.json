@@ -503,6 +503,9 @@
       "Today": [
         "Avui"
       ],
+      "Toggle Contact app": [
+        "Canvia a l'aplicació Contactes"
+      ],
       "Trust": [
         "De confiança"
       ],
@@ -1992,6 +1995,11 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "L'esdeveniment pertany a un calendari deshabilitat."
+      ]
+    },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "No tornis a preguntar"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -4264,7 +4272,7 @@
         "Ja gairebé està"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }",
         "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -5327,6 +5335,11 @@
       "${ minutes } minute": [
         "${ minutes } minut",
         "${ minutes } minuts"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "Cerca fusos horaris"
       ]
     },
     "Title": {

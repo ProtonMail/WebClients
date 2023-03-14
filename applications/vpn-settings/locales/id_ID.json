@@ -167,9 +167,6 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
-      "Go to sign in": [
-        "Tuju layar masuk"
-      ],
       "Hide": [
         "Sembunyikan"
       ],
@@ -1829,6 +1826,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: gambar ukuran penuh"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pratinjau resolusi rendah"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak pesan Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
       ],
@@ -2195,9 +2198,6 @@
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
-      "Preview": [
-        "Pratinjau"
-      ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
       ],
@@ -2539,9 +2539,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Akun ${ BRAND_NAME } Anda dapat digunakan untuk mengakses seluruh layanan ${ BRAND_NAME }. Silakan masuk dengan ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Detail pembayaran Anda dilindungi dengan enkripsi TLS dan hukum privasi Swiss."
@@ -4454,8 +4451,8 @@
       "Total paid": [
         "Total yang dibayarkan"
       ],
-      "TV log in": [
-        "TV sign in"
+      "TV sign in": [
+        "Masuk TV"
       ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
@@ -4498,9 +4495,6 @@
       ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Anda telah memiliki akun ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
