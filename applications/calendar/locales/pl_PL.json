@@ -507,6 +507,9 @@
       "Today": [
         "Dzisiaj"
       ],
+      "Toggle Contact app": [
+        "Przełącz aplikację kontaktów"
+      ],
       "Trust": [
         "Zaufaj"
       ],
@@ -3652,6 +3655,9 @@
       "Select what you want to import.": [
         "Wybierz, co chcesz zaimportować."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
@@ -4390,7 +4396,7 @@
         "Już prawie"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }"

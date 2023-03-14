@@ -390,9 +390,6 @@
       "Go to label": [
         "转至标签"
       ],
-      "Go to sign in": [
-        "转至登录界面"
-      ],
       "Got it": [
         "知道了"
       ],
@@ -4642,6 +4639,9 @@
       "Done! We sent a code to ${ destination }.": [
         "搞定！我们向 ${ destination } 发送了一个验证码。"
       ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "没有跳转？请先关闭弹出窗口屏蔽插件。"
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
       ],
@@ -4824,12 +4824,6 @@
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "若您同时设定了 SPF 和 DKIM，可以使用 DMARC 来指定其他邮件系统遇到来自您域名的邮件无法通过 SPF 和 DKIM 检查时应采取的措施，这样他人就更难以伪装成您发送垃圾邮件，但如果操作不当也可能导致投递出现问题。"
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
@@ -5116,6 +5110,12 @@
       "Please add passwords for the users on rows": [
         "请按行添加用户密码"
       ],
+      "Please authenticate your card in the verification tab.": [
+        "请在验证页面完成银行卡核验。"
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "请在验证页面确认支付。"
+      ],
       "Please check your file for errors, or contact customer support for more information.": [
         "请检查您的报错文件，或者联系客服了解详细信息。"
       ],
@@ -5155,6 +5155,9 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "选择链接类型并填写相关信息。"
       ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "请尝试用其他方式支付，或联系您的发卡银行。"
+      ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "请用其他方式支付，或联系 PayPal 寻求帮助。"
       ],
@@ -5166,9 +5169,6 @@
       ],
       "Plus or Visionary subscription required": [
         "需开通增强版或尊享版账户"
-      ],
-      "Preview": [
-        "预览"
       ],
       "Preview failed to be loaded": [
         "预览加载失败"
@@ -5352,6 +5352,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "最安全的浏览、串流和冲浪方式。"
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "验证过程将在新页面进行，请先关闭弹出窗口屏蔽插件。"
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "使用第三方 VPN 客户端或在路由器上设置 VPN 连接时，可通过这些配置文件选择连接到哪个 ${ VPN_APP_NAME } 服务器。"
@@ -5542,6 +5545,9 @@
       "Verification can take a few minutes.": [
         "验证可能需要数分钟。"
       ],
+      "Verification may take a few minutes.": [
+        "验证过程可能需要数分钟。"
+      ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
       ],
@@ -5565,6 +5571,15 @@
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "我们建议您尽可能使用官方 ${ VPN_APP_NAME } 客户端。"
+      ],
+      "We couldn’t process your payment.": [
+        "我们未能处理您的支付。"
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "我们需要向您的发卡银行核实支付方式是否有效。"
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "我们需要与您的发卡银行确认支付。"
       ],
       "We recommend using your recovery phrase instead.": [
         "我们建议您改为使用恢复密语。"
@@ -5689,6 +5704,9 @@
       "You have no saved payment methods.": [
         "您尚未添加支付方式。"
       ],
+      "You may be redirected to your bank’s website.": [
+        "您可能将转至银行网站。"
+      ],
       "You may now start using the extension": [
         "扩展程序可以使用了"
       ],
@@ -5772,9 +5790,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "您现有的 ${ BRAND_NAME } 账户即可使用所有 ${ BRAND_NAME } 服务。请使用账号 ${ email } 登录。"
       ],
       "Your import will not be processed.": [
         "此次导入将不会进行。"
@@ -10211,10 +10226,10 @@
         "验证邮箱地址"
       ],
       "Verifying your card...": [
-        "验证您的信用卡……"
+        "正在验证您的银行卡..."
       ],
       "Verifying your payment...": [
-        "验证您的支付……"
+        "正在确认支付..."
       ],
       "Warning": [
         "警告"
@@ -10233,9 +10248,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard 配置"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "您已拥有 ${ BRAND_NAME } 账户"
       ],
       "Your calendar link": [
         "您的日历链接"

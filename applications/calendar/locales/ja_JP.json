@@ -12,6 +12,14 @@
         "一部だけ表示 (空きまたは忙しい)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "転送がすぐに始まります。新しいメールが受信トレイに出現します。"
+      ],
+      "Mail forward stopped": [
+        "メールの転送を停止しました"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } の紹介"
@@ -3830,6 +3838,12 @@
       "Frequency": [
         "頻度"
       ],
+      "From: ${ from }": [
+        "送信者: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "送信者: ${ fromEmail }"
+      ],
       "Good": [
         "いい"
       ],
@@ -3965,6 +3979,12 @@
       "System information": [
         "システム情報"
       ],
+      "To: ${ to }": [
+        "宛先: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "宛先: ${ toEmail }"
+      ],
       "Toolbar": [
         "ツールバー"
       ],
@@ -4028,6 +4048,17 @@
     "Landmarks": {
       "Side panel": [
         "サイドパネル"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有償の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "このプランで利用できるカレンダーの最大数に達しました。"
       ]
     },
     "Link": {

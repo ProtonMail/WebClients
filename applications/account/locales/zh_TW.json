@@ -413,9 +413,6 @@
       "Go to label": [
         "跳至標籤"
       ],
-      "Go to sign in": [
-        "前往登錄頁"
-      ],
       "Got it": [
         "了解"
       ],
@@ -4948,12 +4945,6 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "如果您已同時設定 SPF 和 DKIM，DMARC 允許您指定一旦 SPF 和 DKIM 檢查皆失敗時，其它電郵服務該如何遞送屬於您的網域的電郵。這可以增加別人假扮您寄送垃圾郵件的難度，但若設定不當亦可能導致遞送問題。"
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "萬一您的兩步驟驗證裝置遺失，這些代碼可代替 6 位數的兩步驟驗證碼用來登入您的帳號。每個代碼只能使用一次。"
       ],
@@ -5322,9 +5313,6 @@
       ],
       "Plus or Visionary subscription required": [
         "需為 Plus 或 Visionary 訂閱方案"
-      ],
-      "Preview": [
-        "預覽"
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
@@ -6000,9 +5988,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "您現有的 ${ BRAND_NAME } 帳號可用來存取所有的 ${ BRAND_NAME } 服務。請以 ${ email } 登入。"
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
@@ -7508,7 +7493,7 @@
         "快完成了"
       ],
       "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+        "已建立的行事曆數量：${ createdCalendarCount }/${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
@@ -10520,9 +10505,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard 組態"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "您已擁有 ${ BRAND_NAME } 帳號"
       ],
       "Your calendar link": [
         "您的行事曆連結"

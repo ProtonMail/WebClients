@@ -404,9 +404,6 @@
       "Go to label": [
         "Přejít na štítek"
       ],
-      "Go to sign in": [
-        "Přejít na přihlášení"
-      ],
       "Got it": [
         "Rozumím"
       ],
@@ -4431,6 +4428,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } není platná e-mailová adresa"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: obrázek v plné velikosti"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: náhled v nízkém rozlišení"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } bude nastaven jako výchozí kalendář."
       ],
@@ -5055,6 +5058,9 @@
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Pro Visa, MasterCard a Discover, 3 číslice na zadní straně vaší karty. Pro American Express 4 číslice na přední straně vaší karty."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
+      ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
       ],
@@ -5118,11 +5124,11 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Pokud jste nastavili SPF i DKIM, DMARC Vám umožní určit, jak by ostatní e-mailoví poskytovatelé měli doručovat e-maily pro Vaši doménu v případě, že se nepodaří provést kontrolu SPF ani DKIM. Pro spammery je pak těžší předstírat Vaši totožnost, ale špatné nastavení může způsobit problémy s doručováním."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Pokud ztratíte své heslo a potřebujete resetovat svůj účet, ${ boldImperative } že máte ${ boldAccountRecovery } na svém místě."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Pokud ztratíte své heslo a potřebujete resetovat svůj účet, ${ boldImperative } že máte oba ${ boldAccountAndRecovery } na svém místě, jinak možná nebudete mít přístup k žádným svým e-mailům, kontaktům nebo souborům."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ztratíte-li zařízení určené pro dvoufázové ověření, můžete pro přihlášení použít následující kódy místo 6-místného 2FA kódu. Každý kód může být použit pouze jednou."
@@ -5171,6 +5177,9 @@
       ],
       "Import mailbox": [
         "Importovat poštovní schránku"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Důležité: Ujistěte se, že jste si uložili kódy pro obnovení. V opačném případě se již nikdy nebudete moci přihlásit, pokud ztratíte zařízení určené pro 2FA."
@@ -5501,9 +5510,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Plus nebo Visionary"
-      ],
-      "Preview": [
-        "Náhled"
       ],
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
@@ -6203,9 +6209,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Váš stávající účet ${ BRAND_NAME } lze použít pro přístup ke všem službám ${ BRAND_NAME }. Přihlaste se prosím pomocí ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Váš import z ${ accounts } je dočasně opožděn.",
@@ -7722,7 +7725,7 @@
         "Téměř hotovo"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
@@ -10947,9 +10950,6 @@
       ],
       "WireGuard configuration": [
         "Konfigurace WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Již máte účet ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "URL adresa kalendáře"

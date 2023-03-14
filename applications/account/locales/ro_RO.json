@@ -413,9 +413,6 @@
       "Go to label": [
         "Accesare etichetă"
       ],
-      "Go to sign in": [
-        "La autentificare"
-      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -4412,6 +4409,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagine completă"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pictogramă cu rezoluție mică"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "Calendarul ${ firstRemainingCalendarName } va fi setat ca implicit."
       ],
@@ -5081,11 +5084,11 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Dacă aveți setate atât SPF cât și DKIM, DMARC vă permite să specificați felul în care celelalte servicii de e-mail ar trebui să livreze mesajele pentru domeniul dvs. dacă verificarea SPF și DKIM a eșuat. Aceasta va îngreuna acțiunile celor care trimit mesaje nedorite de a pretinde că sunteți dvs., dar ar putea și cauza probleme de livrare dacă nu e executată corect."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Dacă vă pierdeți parola și trebuie să vă resetați contul, ${ boldImperative } să aveți o ${ boldAccountRecovery }."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Dacă vă pierdeți parola și trebuie să vă resetați contul, ${ boldImperative } să aveți atât o ${ boldAccountAndRecovery }, altfel s-ar putea să nu mai puteți accesa niciunul dintre e-mailurile, contactele sau fișierele personale."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Dacă vă pierdeți dispozitivul pentru autentificarea cu doi factori (A2F), puteți folosi aceste coduri în locul celor 6 cifre pentru autentificarea cu doi factori pentru a vă conecta la cont. Fiecare cod e de unică folosință."
@@ -5465,9 +5468,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
-      ],
-      "Preview": [
-        "Examinare"
       ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
@@ -6159,9 +6159,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Contul ${ BRAND_NAME } existent poate fi utilizat pentru accesarea tuturor serviciilor ${ BRAND_NAME }. Conectați-vă cu ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Importarea din ${ accounts } este temporar întârziată.",
@@ -7678,7 +7675,7 @@
         "Aproape terminat"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
         "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
         "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }"
       ],
@@ -10854,9 +10851,6 @@
       ],
       "WireGuard configuration": [
         "Configurare WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Deja aveți un cont ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Legătură calendar"

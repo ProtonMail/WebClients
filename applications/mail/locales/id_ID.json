@@ -892,9 +892,6 @@
       "Send feedback": [
         "Kirim tanggapan"
       ],
-      "Send quick reply": [
-        "Kirim balasan cepat"
-      ],
       "Send read receipt": [
         "Kirim bukti baca"
       ],
@@ -996,6 +993,12 @@
       ],
       "This message contains remote content.": [
         "Pesan ini mengandung remote content."
+      ],
+      "Toggle Calendar app": [
+        "Tampilkan/sembunyikan aplikasi Calendar"
+      ],
+      "Toggle Contact app": [
+        "Tampilkan/sembunyikan aplikasi Contact"
       ],
       "Tomorrow": [
         "Besok"
@@ -1139,9 +1142,6 @@
     "action": {
       "Search messages": [
         "Cari pesan"
-      ],
-      "Send quick reply": [
-        "Kirim balasan cepat"
       ]
     },
     "Actions message": {
@@ -4285,6 +4285,12 @@
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } gambar yang tersemat"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: gambar ukuran penuh"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pratinjau resolusi rendah"
+      ],
       "${ groupCounts } groups found": [
         "ditemukan ${ groupCounts } grup"
       ],
@@ -4643,7 +4649,7 @@
         "Masukkan kode yang tertera pada aplikasi otentikator Anda"
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Masukkan kredensial akun email yang berkas-berkasnya ingin Anda impor."
+        "Masukkan kredensial akun email yang berkasnya ingin Anda impor."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
@@ -4993,9 +4999,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Mohon tunggu selagi kami memeriksa kontak yang mengandung data yang terenkripsi dengan kunci yang sudah tidak lagi aktif."
       ],
-      "Preview": [
-        "Pratinjau"
-      ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
       ],
@@ -5007,12 +5010,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Lindungi email Anda agar tidak bocor ke tangan oknum milis atau spammer dengan ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Balas cepat"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Balas cepat ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Penerima: "
@@ -5063,7 +5060,7 @@
         "Menjadwalkan pesan..."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        "Apakah pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dalam pencarian Anda."
+        "Apakah pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dari sesi pencarian ini."
       ],
       "Seems like you are all caught up for now": [
         "Untuk saat ini sepertinya semuanya sudah terbaca"
@@ -5441,7 +5438,7 @@
         "Anda dapat memperbarui kueri pencarian atau ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Anda dapat memperbarui maupun membersihkan kueri pencarian"
+        "Anda dapat memperbarui atau membersihkan kueri pencarian"
       ],
       "You can import one data type at a time.": [
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
@@ -5832,6 +5829,9 @@
       "ALL": [
         "SEMUA"
       ],
+      "All contacts": [
+        "Semua kontak"
+      ],
       "Also archive": [
         "Arsipkan"
       ],
@@ -6002,9 +6002,6 @@
       ],
       "Good": [
         "Baik"
-      ],
-      "Group": [
-        "Grup"
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
@@ -6536,7 +6533,7 @@
         "Hampir selesai"
       ],
       "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+        "Jumlah kalender yang dibuat: ${ createdCalendarCount } dari ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"

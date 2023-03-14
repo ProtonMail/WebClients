@@ -12,6 +12,14 @@
         "Visualização limitada (vê apenas livre/ocupado)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "O encaminhamento começará em breve. Novos emails aparecerão na sua caixa de entrada."
+      ],
+      "Mail forward stopped": [
+        "Encaminhamento de correio parou"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introdução do ${ BRAND_NAME }"
@@ -494,6 +502,9 @@
       ],
       "Today": [
         "Hoje"
+      ],
+      "Toggle Contact app": [
+        "Ative o aplicativo de Contato"
       ],
       "Trust": [
         "Confiar"
@@ -4261,7 +4272,7 @@
         "Quase lá"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Quantidade de calendário criado: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
         "Quantidade de calendários criados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [

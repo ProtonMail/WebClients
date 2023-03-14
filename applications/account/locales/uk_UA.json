@@ -410,9 +410,6 @@
       "Go to label": [
         "Перейти до мітки"
       ],
-      "Go to sign in": [
-        "Перейти до входу"
-      ],
       "Got it": [
         "Зрозуміло"
       ],
@@ -920,7 +917,7 @@
     },
     "action": {
       "Resuming forward": [
-        "Продовження пересилання"
+        "Відновлення пересилання"
       ]
     },
     "Action for user session": {
@@ -977,7 +974,7 @@
         "Збереження"
       ],
       "Set as default": [
-        "Встановити за замовчуванням"
+        "Зробити типовою"
       ]
     },
     "Address status": {
@@ -1290,7 +1287,7 @@
     },
     "Calendar share permission label": {
       "Edit event details": [
-        "Змінити деталі події"
+        "Редагувати подію"
       ],
       "See all event details": [
         "Переглянути всі подробиці події"
@@ -3255,7 +3252,7 @@
         "У вас немає рахунків."
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості календарів. Деякі календарі не можуть бути імпортовані."
+        "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ви вже використали усі адреси з вашого тарифного плану. Для додавання нової адреси необхідно покращити тарифний план."
@@ -3448,7 +3445,7 @@
     },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
-        "Сталася помилка читання вашого файлу «${ formattedFilename }». Неправильний формат файлу."
+        "Сталася помилка під час читання вашого файлу \"${ formattedFilename }\". Неправильний формат файлу."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка під час вивантаження вашого файлу \"${ formattedFilename }\". Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -4346,7 +4343,7 @@
         "Скасовано"
       ],
       "Canceling": [
-        "Скасовування"
+        "Скасування"
       ],
       "Completed": [
         "Завершено"
@@ -4823,7 +4820,7 @@
         "По центру"
       ],
       "Check the status of imports and forwarding.": [
-        "Перевірте стан імпортів та пересилань."
+        "Перевірити стан імпортування та пересилання."
       ],
       "Choose the look and feel of the application.": [
         "Налаштуйте зовнішній вигляд програми."
@@ -5060,7 +5057,7 @@
         "Для Visa, MasterCard та Discover — 3 цифри на зворотній стороні картки. Для American Express — 4 цифри на лицьовій стороні картки."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Перешліть вхідний лист з іншого облікового запису до вашої захищеної ${ MAIL_APP_NAME } поштової скриньки."
+        "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -5124,12 +5121,6 @@
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Якщо ви встановили обидва SPF та DKIM, DMARC дозволить вам вказати, як інші сервіси електронної пошти повинні доставляти пошту для вашого домену, якщо обидві перевірки SPF та DKIM не пройшли. Це може перешкоджати спамерам представлятися вашим іменем, але також може спричиняти проблеми доставлення при неправильному налаштуванні."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
@@ -5354,7 +5345,7 @@
         "Жодної теки не вибрано"
       ],
       "No imports or forwarding history.": [
-        "Немає імпортів чи історії пересилань."
+        "Немає історії імпортування чи пересилання."
       ],
       "No label selected": [
         "Жодної мітки не вибрано"
@@ -5505,9 +5496,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Необхідна передплата Plus або Visionary"
-      ],
-      "Preview": [
-        "Попередній перегляд"
       ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
@@ -6189,9 +6177,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Ваш наявний обліковий запис ${ BRAND_NAME } можна використовувати для доступу до всіх служб ${ BRAND_NAME }. Увійдіть із ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваше імпортування з ${ accounts } тимчасово затримано.",
@@ -7708,7 +7693,7 @@
         "Майже готово"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
@@ -8333,7 +8318,7 @@
         "Необмежена кількість тек"
       ],
       "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток та фільтрів"
+        "Необмежена кількість тек, міток і фільтрів"
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
@@ -9327,10 +9312,10 @@
         "увійти"
       ],
       "Verification email sent to ${ email.Value }": [
-        "Перевіркового листа надіслано на ${ email.Value }"
+        "Лист із підтвердженням надіслано на ${ email.Value }"
       ],
       "Verify now": [
-        "Підтвердити зараз"
+        "Підтвердити"
       ],
       "Verify now this recovery email address: ${ email.Value }": [
         "Тепер підтвердьте цю адресу електронної пошти для відновлення: ${ email.Value }"
@@ -9379,13 +9364,13 @@
         "Перевірити за допомогою SMS"
       ],
       "Verify now": [
-        "Підтвердити зараз"
+        "Підтвердити"
       ],
       "Verify recovery phone?": [
         "Перевірити резервний номер телефону?"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
-        "Підтвердьте зараз цей номер телефону для відновлення: ${ phone.Value }"
+        "Тепер підтвердьте цей номер телефону для відновлення: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Підтвердження номера телефону посилює безпеку вашого облікового запису та розширює можливості відновлення."
@@ -10794,7 +10779,7 @@
         "Встановити пароль організації"
       ],
       "Set up forwarding": [
-        "Встановити пересилання"
+        "Налаштувати пересилання"
       ],
       "Set up two-factor authentication": [
         "Налаштувати двоетапну перевірку"
@@ -10936,9 +10921,6 @@
       ],
       "WireGuard configuration": [
         "Конфігурація WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Ви вже маєте обліковий запис ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Посилання на ваш календар"
@@ -11337,7 +11319,7 @@
         "Живий чат — це преміум можливість, доступна лише користувачам платних тарифних планів ${ VPN_APP_NAME }. Будь ласка, створіть запит натомість."
       ],
       "Please add at least one recipient.": [
-        "Будь ласка, додайте принаймні одного отримувача."
+        "Додайте принаймні одного отримувача."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Зверніть увагу, що вибравши цей спосіб оплати, ваш обліковий запис не можна оновити негайно. Ми оновимо ваш обліковий запис одразу після підтвердження платежу."

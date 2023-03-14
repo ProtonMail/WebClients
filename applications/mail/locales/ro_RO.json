@@ -898,9 +898,6 @@
       "Send feedback": [
         "Trimitere feedback"
       ],
-      "Send quick reply": [
-        "Trimitere răspuns rapid"
-      ],
       "Send read receipt": [
         "Trimitere confirmare de citire"
       ],
@@ -1002,6 +999,12 @@
       ],
       "This message contains remote content.": [
         "Acest mesaj conține conținut de la distanță."
+      ],
+      "Toggle Calendar app": [
+        "Comutare la aplicație Calendar"
+      ],
+      "Toggle Contact app": [
+        "Comutare la aplicație Contacte"
       ],
       "Tomorrow": [
         "Mâine"
@@ -1147,9 +1150,6 @@
     "action": {
       "Search messages": [
         "Căutare mesaje"
-      ],
-      "Send quick reply": [
-        "Trimitere răspuns rapid"
       ]
     },
     "Actions message": {
@@ -4378,6 +4378,12 @@
         "${ embeddedAttachmentsCount } imagini incluse.",
         "${ embeddedAttachmentsCount } de imagini incluse."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagine completă"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pictogramă cu rezoluție mică"
+      ],
       "${ groupCounts } group found": [
         "S-a găsit un grup",
         "S-au găsit ${ groupCounts } grupuri",
@@ -5168,9 +5174,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Așteptați pănă se caută contactele care conțin date criptate cu cheia inactivă."
       ],
-      "Preview": [
-        "Examinare"
-      ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
       ],
@@ -5182,12 +5185,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Împiedicați divulgarea adresei e-mail către liste de mesagerie sau mesaje nedorite cu ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Răspuns rapid"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Răspuns rapid către ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinatar: "
@@ -6035,6 +6032,9 @@
       "ALL": [
         "TOATE"
       ],
+      "All contacts": [
+        "Toate contactele"
+      ],
       "Also archive": [
         "Și arhivare"
       ],
@@ -6205,9 +6205,6 @@
       ],
       "Good": [
         "Bună"
-      ],
-      "Group": [
-        "Grup"
       ],
       "Hide password": [
         "Ascundere parolă"
@@ -6739,7 +6736,7 @@
         "Aproape terminat"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
         "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
         "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }"
       ],

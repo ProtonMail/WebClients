@@ -160,6 +160,9 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
+      "Create account": [
+        "Зареєструватися"
+      ],
       "Create link": [
         "Створити посилання"
       ],
@@ -582,6 +585,12 @@
       ],
       "Theme": [
         "Тема"
+      ],
+      "Toggle Calendar app": [
+        "Перемкніть додаток Календар"
+      ],
+      "Toggle Contact app": [
+        "Перемкніть додаток Контакти"
       ],
       "Trust": [
         "Довіряти"
@@ -2137,7 +2146,7 @@
         "Ви не можете надіслати файли vCard для понад 10 контактів"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості календарів. Деякі календарі не можуть бути імпортовані."
+        "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -2475,11 +2484,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } оновлено"
-      ]
-    },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Приватність – це стандарт."
       ]
     },
     "Group": {
@@ -2884,7 +2888,7 @@
         "Знайдено ${ contactsCount } контактів"
       ],
       "${ deviceName } (restored)": [
-        "${ deviceName } (відновлені)"
+        "${ deviceName } (відновлено)"
       ],
       "${ doneCount } finished": [
         "${ doneCount } завершено",
@@ -3210,9 +3214,6 @@
       "Enabling drive search": [
         "Увімкнення пошуку на диску"
       ],
-      "Encrypted": [
-        "Зашифровано"
-      ],
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
       ],
@@ -3289,7 +3290,7 @@
         "Щоб досягти найкращих результатів, уникайте потокової передачі даних і дій, що вимагають багато пам'яті, або розбивайте вивантаження на менші частини."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Перешліть вхідний лист з іншого облікового запису до вашої захищеної ${ MAIL_APP_NAME } поштової скриньки."
+        "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -3555,9 +3556,6 @@
       "Preparing link to folder": [
         "Підготовка посилання на теку"
       ],
-      "Preview": [
-        "Попередній перегляд"
-      ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
       ],
@@ -3593,9 +3591,6 @@
       ],
       "Search Enabled": [
         "Пошук увімкнено"
-      ],
-      "Secure sharing": [
-        "Захищене надсилання"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Виберіть вивантажений файл або теку та створіть посилання на них."
@@ -3648,9 +3643,6 @@
       "support team": [
         "командою підтримки"
       ],
-      "Swiss privacy": [
-        "Швейцарська приватність"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
@@ -3671,9 +3663,6 @@
       ],
       "There are no files yet": [
         "Поки що тут немає файлів"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Доступ до цих файлів було надано з використанням наскрізного шифрування. Для захисту й приватності всіх ваших документів, світлин і файлів, зберігайте їх у власному сховищі ${ DRIVE_APP_NAME }. Він простий в користуванні та безплатний."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -4289,9 +4278,6 @@
       "Replace folder": [
         "Замінити теку"
       ],
-      "Report Abuse": [
-        "Повідомити про порушення"
-      ],
       "Reveal password": [
         "Показати пароль"
       ],
@@ -4468,7 +4454,7 @@
         "Майже готово"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
@@ -5393,9 +5379,6 @@
       "Date": [
         "Дата"
       ],
-      "Decrypting": [
-        "Розшифрування"
-      ],
       "Delete ${ count } contact": [
         "Видалити ${ count } контакт",
         "Видалити ${ count } контакти",
@@ -5422,9 +5405,6 @@
       ],
       "Discard changes?": [
         "Відхилити зміни?"
-      ],
-      "Download shared file": [
-        "Завантажити надіслані файли"
       ],
       "Download unverified file?": [
         "Завантажити неперевірені файли?"
@@ -5503,9 +5483,6 @@
         "Знайдено ${ searchView.numberOfResults } результати",
         "Знайдено ${ searchView.numberOfResults } результатів",
         "Знайдено ${ searchView.numberOfResults } результата"
-      ],
-      "Getting files": [
-        "Отримання файлів"
       ],
       "Groups": [
         "Групи"
@@ -5764,9 +5741,6 @@
       ],
       "You have no folders yet": [
         "У вас поки немає тек"
-      ],
-      "You've got files": [
-        "Ви отримали файли"
       ],
       "Your 500 MB bonus": [
         "Ваша винагорода 500 МБ"

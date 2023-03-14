@@ -895,9 +895,6 @@
       "Send feedback": [
         "Enviar comentaris"
       ],
-      "Send quick reply": [
-        "Enviar una resposta ràpida"
-      ],
       "Send read receipt": [
         "Enviar confirmació de lectura"
       ],
@@ -999,6 +996,12 @@
       ],
       "This message contains remote content.": [
         "Aquest missatge conté contingut remot."
+      ],
+      "Toggle Calendar app": [
+        "Canvia a l'aplicació Calendar"
+      ],
+      "Toggle Contact app": [
+        "Canvia a l'aplicació Contactes"
       ],
       "Tomorrow": [
         "Demà"
@@ -1143,9 +1146,6 @@
     "action": {
       "Search messages": [
         "Cerqueu missatges"
-      ],
-      "Send quick reply": [
-        "Enviar una resposta ràpida"
       ]
     },
     "Actions message": {
@@ -4329,6 +4329,12 @@
         "${ embeddedAttachmentsCount } imatge encastada",
         "${ embeddedAttachmentsCount } imatges encastades"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imatge a mida completa"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: vista prèvia de baixa resolució"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
@@ -5078,9 +5084,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
       ],
-      "Preview": [
-        "Vista prèvia"
-      ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
       ],
@@ -5092,12 +5095,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protegiu el vostre correu electrònic de filtracions a llistes de correu brossa amb ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Resposta ràpida"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Resposta ràpida a ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinatari: "
@@ -5931,6 +5928,9 @@
       "ALL": [
         "TOT"
       ],
+      "All contacts": [
+        "Tots els contactes"
+      ],
       "Also archive": [
         "Arxivar també"
       ],
@@ -6101,9 +6101,6 @@
       ],
       "Good": [
         "Bona"
-      ],
-      "Group": [
-        "Grup"
       ],
       "Hide password": [
         "Amaga la contrasenya"
@@ -6635,7 +6632,7 @@
         "Ja gairebé està"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }",
         "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [

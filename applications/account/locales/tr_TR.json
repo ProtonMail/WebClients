@@ -413,9 +413,6 @@
       "Go to label": [
         "Etikete git"
       ],
-      "Go to sign in": [
-        "Oturum açmaya git"
-      ],
       "Got it": [
         "Anladım"
       ],
@@ -3465,7 +3462,7 @@
         "${ BRAND_NAME } bağlantısı kurulurken bir sorun çıktı."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        "Çok fazla alt oturum var. Lütfen çerezleri temizleyip yeniden oturum açın."
+        "Çok fazla alt oturum var. Lütfen tanımlama bilgilerini temizleyip yeniden oturum açın."
       ],
       "You may also ${ refresh } or try again later.": [
         "Ayrıca sayfayı ${ refresh }yebilir ya da bir süre sonra yeniden deneyebilirsiniz."
@@ -4379,6 +4376,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: tam boyutlu görsel"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: düşük çözünürlüklü ön izleme"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } varsayılan takvim olarak ayarlanacak."
       ],
@@ -5027,11 +5030,11 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Hem SPF hem de DKIM ayarlarını yaptıysanız ve iki denetim de başarısız olursa, DMARC kullanarak diğer e-posta hizmetlerinin etki alanınız için nasıl e-posta sunması gerektiğini belirtebilirsiniz. Böylece istenmeyen e-posta göndericilerinin sizmiş gibi davranmasını zorlaştırabilirsiniz. Ancak bu işlem doğru şekilde yapılmazsa teslim sorunlarına da neden olabilir."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Parolanızı kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, bir ${ boldAccountRecovery } olması gerekir."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Parolanızı kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, bir ${ boldAccountAndRecovery } olması gerekir. Yoksa e-postalarınıza, kişilerinize ve dosyalarınıza erişemeyebilirsiniz."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "İki adımlı doğrulama aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki adımlı doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
@@ -5406,9 +5409,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
-      ],
-      "Preview": [
-        "Ön izle"
       ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
@@ -6092,9 +6092,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Var olan ${ BRAND_NAME } hesabınız tüm ${ BRAND_NAME } hizmetlerine erişmek için kullanılabilir. Lütfen ${ email } ile oturum açın."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
@@ -7605,7 +7602,7 @@
         "Neredeyse tamam"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
         "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -10711,9 +10708,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard yapılandırması"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Zaten bir ${ BRAND_NAME } hesabınız var"
       ],
       "Your calendar link": [
         "Takvim bağlantınız"

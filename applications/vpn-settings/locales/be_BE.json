@@ -167,9 +167,6 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
-      "Go to sign in": [
-        "Перайсці да ўваходу"
-      ],
       "Hide": [
         "Схаваць"
       ],
@@ -1854,6 +1851,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: поўны памер відарыса"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме адзінага пароля, які замяняе сабой пароль ад уваходу і паштовай скрыні. Для пераключэння ў рэжым адзінага пароля ўвядзіце пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
@@ -2229,9 +2232,6 @@
       "Plus or Visionary subscription required": [
         "Патрабуецца падпіска Plus або Visionary"
       ],
-      "Preview": [
-        "Папярэдні прагляд"
-      ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
       ],
@@ -2585,9 +2585,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Ваш існуючы ўліковы запіс ${ BRAND_NAME } можа быць выкарыстаны для доступу да ўсіх сэрвісаў ${ BRAND_NAME }. Увайдзіце з ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Вашы падрабязнасці плацяжу абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
@@ -4596,8 +4593,8 @@
       "Total paid": [
         "Агульны кошт"
       ],
-      "TV log in": [
-        "TV sign in"
+      "TV sign in": [
+        "Увайсці на тэлевізары"
       ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
@@ -4640,9 +4637,6 @@
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "У вас ужо ёсць уліковы запіс ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"

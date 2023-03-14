@@ -167,9 +167,6 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
-      "Go to sign in": [
-        "Ir al inicio de sesión"
-      ],
       "Hide": [
         "Ocultar"
       ],
@@ -1837,6 +1834,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } conlleva que nadie tiene acceso a tu contraseña - ni siquiera nosotros."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagen de tamaño completo"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: vista previa de baja resolución"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Se puede también usar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que quieres utilizar y haz clic en Guardar."
       ],
@@ -2206,9 +2209,6 @@
       "Plus or Visionary subscription required": [
         "Se requiere una suscripción Plus o Visionary."
       ],
-      "Preview": [
-        "Vista previa"
-      ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
@@ -2554,9 +2554,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Tu cuenta actual de ${ BRAND_NAME } puede utilizarse para acceder a todos los servicios de ${ BRAND_NAME }. Inicia sesión con ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Los detalles de pago están protegidos con cifrado TLS y por las leyes de privacidad suizas."
@@ -4506,8 +4503,8 @@
       "Total paid": [
         "Total pagado"
       ],
-      "TV log in": [
-        "TV sign in"
+      "TV sign in": [
+        "Inicio de sesión en TV"
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
@@ -4550,9 +4547,6 @@
       ],
       "WireGuard configuration": [
         "Configuración de WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Ya tienes una cuenta de ${ BRAND_NAME }."
       ],
       "Your changes are not synced yet": [
         "Tus cambios todavía no están sincronizados."

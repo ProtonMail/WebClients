@@ -168,7 +168,7 @@
         "Bezárás"
       ],
       "Close & discard": [
-        "Bezárás & elvetés"
+        "Bezárás és elvetés"
       ],
       "Close composer": [
         "Szerkesztő bezárása"
@@ -874,9 +874,6 @@
       ],
       "Send feedback": [
         "Visszajelzés küldése"
-      ],
-      "Send quick reply": [
-        "Gyors válasz küldése"
       ],
       "Send read receipt": [
         "Olvasási visszaigazolás küldése"
@@ -1883,11 +1880,20 @@
       "Role": [
         "Szerepkör"
       ],
+      "Time zone": [
+        "Időzóna"
+      ],
       "Title": [
         "Beosztás"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Contact type label": {
+      "Fax": [
+        "Fax"
+      ],
       "Main": [
         "Elsődleges"
       ],
@@ -1923,6 +1929,15 @@
       "American Samoa": [
         "Amerikai Szamoa"
       ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
       "Antarctica": [
         "Antarktisz"
       ],
@@ -1934,6 +1949,9 @@
       ],
       "Armenia": [
         "Örményország"
+      ],
+      "Aruba": [
+        "Aruba"
       ],
       "Ascension Island": [
         "Ascension-sziget"
@@ -1956,8 +1974,23 @@
       "Bangladesh": [
         "Banglades"
       ],
+      "Barbados": [
+        "Barbados"
+      ],
       "Belarus": [
         "Fehéroroszország"
+      ],
+      "Belgium": [
+        "Belgium"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
       ],
       "Bhutan": [
         "Bhután"
@@ -1970,6 +2003,9 @@
       ],
       "Bosnia and Herzegovina": [
         "Bosznia-Hercegovina"
+      ],
+      "Botswana": [
+        "Bermuda"
       ],
       "Bouvet Island": [
         "Bouvet-sziget"
@@ -1985,6 +2021,12 @@
       ],
       "Bulgaria": [
         "Bulgária"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
       ],
       "Cambodia": [
         "Kambodzsa"
@@ -2006,6 +2048,9 @@
       ],
       "Chad": [
         "Csád"
+      ],
+      "Chile": [
+        "Chile"
       ],
       "China": [
         "Kína"
@@ -2031,11 +2076,17 @@
       "Cook Islands": [
         "Cook-szigetek"
       ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
       "Croatia": [
         "Horvátország"
       ],
       "Cuba": [
         "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
       ],
       "Cyprus": [
         "Ciprus"
@@ -2058,6 +2109,9 @@
       "Dominican Republic": [
         "Dominikai Köztársaság"
       ],
+      "Ecuador": [
+        "Ecuador"
+      ],
       "Egypt": [
         "Egyiptom"
       ],
@@ -2066,6 +2120,9 @@
       ],
       "Equatorial Guinea": [
         "Egyenlítői-Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
       ],
       "Estonia": [
         "Észtország"
@@ -2103,6 +2160,12 @@
       "French Southern Territories": [
         "Francia déli területek"
       ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
       "Georgia": [
         "Grúzia"
       ],
@@ -2121,11 +2184,23 @@
       "Greenland": [
         "Grönland"
       ],
+      "Grenada": [
+        "Gabon"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
       "Guam": [
         "Guam"
       ],
       "Guatemala": [
         "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
       ],
       "Guinea-Bissau": [
         "Bissau-Guinea"
@@ -2281,7 +2356,7 @@
         "Moldova"
       ],
       "Monaco": [
-        "Monakó"
+        "Monaco"
       ],
       "Mongolia": [
         "Mongólia"
@@ -3311,6 +3386,9 @@
       "Component with wrong format": [
         "A komponens formátuma hibás"
       ],
+      "Custom time zone": [
+        "Egyéni időzóna"
+      ],
       "Edited event not supported": [
         "Szerkesztett esemény nem támogatott"
       ],
@@ -3376,6 +3454,9 @@
       ],
       "Start time out of bounds": [
         "Kezdő időpont a korlátokon kívül"
+      ],
+      "Time zone": [
+        "Időzóna"
       ],
       "Time zone not supported": [
         "Időzóna nem támogatott"
@@ -3509,6 +3590,17 @@
     "fido2: Label": {
       "Security key": [
         "Hitelesítési kulcs"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
       ]
     },
     "Filter": {
@@ -4515,8 +4607,8 @@
         "Csoport hozzárendelés alkalmazva"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
-        "Csatolmányok száma: ${ numAttachments } (${ numAttachmentsSize })",
-        "Csatolmányok száma: ${ numAttachments } (${ numAttachmentsSize })"
+        "Mellékletek száma: ${ numAttachments } (${ numAttachmentsSize })",
+        "Mellékletek száma: ${ numAttachments } (${ numAttachmentsSize })"
       ],
       "here": [
         "ide"
@@ -4782,9 +4874,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
       ],
-      "Preview": [
-        "Előnézet"
-      ],
       "Primary": [
         "Elsődleges"
       ],
@@ -4793,9 +4882,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Akadályozza meg, hogy e-mail címe hírlevél listákra vagy levélszemét küldők kezébe kerüljön: ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Gyors válasz"
       ],
       "Recipient: ": [
         "Címzett: "
@@ -5113,7 +5199,7 @@
         "Kép feltöltése"
       ],
       "URL link": [
-        "URL link"
+        "URL hivatkozás"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Az e-mail egyszerűbb kezeléséhez használjon gyorsbillentyűket."
@@ -5681,7 +5767,7 @@
         "Ország"
       ],
       "Date": [
-        "Randi"
+        "Dátum"
       ],
       "Date:": [
         "Dátum:"
@@ -5691,6 +5777,9 @@
       ],
       "Delete recovery-related information.": [
         "Helyreállítási információk törlése."
+      ],
+      "Don't ask again": [
+        "Ne kérdezze újra"
       ],
       "Don't show this again": [
         "Ne jelenjen meg többet"
@@ -5754,9 +5843,6 @@
       ],
       "Good": [
         "Jó"
-      ],
-      "Group": [
-        "Csoport"
       ],
       "Hide password": [
         "Jelszó elrejtése"
@@ -6526,6 +6612,11 @@
         "Saját domain nevek"
       ]
     },
+    "new_plans: feature info": {
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
+        "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Küldjön visszajelzést a tapasztalatairól. (Opcionális)"
@@ -6806,6 +6897,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Fax": [
+        "Fax"
       ],
       "Home": [
         "Otthoni"
