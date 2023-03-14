@@ -283,6 +283,38 @@ tBiO7HKQxoGj3FnUTJnI52Y0pIg=
         expect(invalidVerificationResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
     });
 
+    it('signMessage/verifyMessage - with context', async () => {
+        const privateKeyRef = await CryptoWorker.generateKey({ userIDs: { name: 'name', email: 'email@test.com' } });
+        const textData = 'message with context';
+
+        const armoredSignature = await CryptoWorker.signMessage({
+            textData,
+            signingKeys: privateKeyRef,
+            context: { value: 'test-context', critical: true },
+            detached: true,
+        });
+
+        const verificationValidContext = await CryptoWorker.verifyMessage({
+            textData,
+            armoredSignature,
+            verificationKeys: privateKeyRef,
+            context: { value: 'test-context', required: true },
+        });
+
+        const verificationMissingContext = await CryptoWorker.verifyMessage({
+            textData,
+            armoredSignature,
+            verificationKeys: privateKeyRef,
+        });
+
+        expect(verificationValidContext.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationMissingContext.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
+        // check errors
+        expect(verificationValidContext.errors).to.be.undefined;
+        expect(verificationMissingContext.errors).to.have.length(1);
+        expect(verificationMissingContext.errors![0]).to.match(/Unknown critical notation: context@proton/);
+    });
+
     it('verifyCleartextMessage - output binary signature should be transferred', async () => {
         const armoredKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 

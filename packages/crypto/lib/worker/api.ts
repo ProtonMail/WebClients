@@ -418,6 +418,7 @@ export class Api extends KeyManagementApi {
      * @param options.textData - text data to encrypt
      * @param options.binaryData - binary data to encrypt
      * @param options.stripTrailingSpaces - whether trailing spaces should be removed from each line of `textData`
+     * @param options.context - (signed data only) settings to prevent verifying the signature in a different context (signature domain separation)
      * @param options.format - `'binary` or `'armored'` format of serialized signed message
      * @param options.date - use the given date for the message signature, instead of the server time
      */
@@ -469,6 +470,7 @@ export class Api extends KeyManagementApi {
      * @param options.textData - text data to sign
      * @param options.binaryData - binary data to sign
      * @param options.stripTrailingSpaces - whether trailing spaces should be removed from each line of `textData`
+     * @param options.context - settings to prevent verifying the signature in a different context (signature domain separation)
      * @param options.detached - whether to return a detached signature, without the signed data
      * @param options.format - `'binary` or `'armored'` format of serialized signed message
      * @param options.date - use the given date for signing, instead of the server time
@@ -500,6 +502,8 @@ export class Api extends KeyManagementApi {
      * @param options.binarySignature - binary signature to verify
      * @param options.stripTrailingSpaces - whether trailing spaces should be removed from each line of `textData`.
      *                                      This option must match the one used when signing.
+     * @param options.context - settings to prevent verifying a signature from a different context (signature domain separation).
+     *                          This option should match the one used when signing.
      * @returns signature verification result over the given data
      */
     async verifyMessage<DataType extends Data, FormatType extends WorkerVerifyOptions<DataType>['format'] = 'utf8'>({
@@ -561,6 +565,8 @@ export class Api extends KeyManagementApi {
      * @param options.armoredMessage - armored data to decrypt
      * @param options.binaryMessage - binary data to decrypt
      * @param options.expectSigned - if true, data decryption fails if the message is not signed with the provided `verificationKeys`
+     * @param options.context - (signed data only) settings to prevent verifying a signature from a different context (signature domain separation).
+     *                          This option should match the one used when encrypting.
      * @param options.format - whether to return data as a string or Uint8Array. If 'utf8' (the default), also normalize newlines.
      * @param options.date - use the given date for verification instead of the server time
      */
