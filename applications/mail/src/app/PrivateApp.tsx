@@ -81,6 +81,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             locales={locales}
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENTS_MODELS}
+            preloadFeatures={[FeatureCode.ESAutomaticBackgroundIndexing]}
             eventQuery={(eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 })}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation

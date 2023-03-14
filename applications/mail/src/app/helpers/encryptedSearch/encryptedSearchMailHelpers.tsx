@@ -84,7 +84,8 @@ export const getESHelpers = ({
     // index content
     let metadataRecoveryPoint: MetadataRecoveryPoint | undefined;
     const queryItemsMetadata = async (
-        signal: AbortSignal
+        signal: AbortSignal,
+        numPagesFetched = ES_MAX_METADATA_BATCH
     ): Promise<{
         resultMetadata?: ESBaseMessage[];
         setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
@@ -105,7 +106,8 @@ export const getESHelpers = ({
         const numPages = Math.ceil(total / ES_MAX_PARALLEL_ITEMS);
 
         let Page = 0;
-        while (Page < ES_MAX_METADATA_BATCH && Page < numPages) {
+
+        while (Page < numPagesFetched && Page < numPages) {
             messagesPromises[Page] = apiHelper<{ Messages: Message[] }>(
                 api,
                 signal,
