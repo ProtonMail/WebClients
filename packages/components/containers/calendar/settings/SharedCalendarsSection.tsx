@@ -263,7 +263,7 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
             )}
             <SettingsSectionWide>
                 <h4 className="no-desktop text-bold text-rg mb-2">{sharedWithMeTitle}</h4>
-                <Table hasActions responsive="cards">
+                <Table hasActions responsive="cards" data-testid="shared-calendars-section">
                     <TableHeader>
                         <TableRow>
                             <TableHeaderCell className="text-left w50">{sharedWithMeTitle}</TableHeaderCell>

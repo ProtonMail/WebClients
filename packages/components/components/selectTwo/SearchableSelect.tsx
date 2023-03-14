@@ -1,8 +1,8 @@
-import { FormEvent, KeyboardEvent, MouseEvent, useMemo, useRef, useState } from 'react';
+import { FormEvent, KeyboardEvent, MouseEvent, ReactNode, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { normalize } from '@proton/shared/lib/helpers/string';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import { classnames } from '../../helpers';
 import { Dropdown, DropdownSizeUnit } from '../dropdown';
@@ -11,22 +11,15 @@ import Option, { Props as OptionProps } from '../option/Option';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
+import { defaultFilterFunction } from './helpers';
 import { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
-const includesString = (str1: string, str2: string) => normalize(str1, true).indexOf(normalize(str2, true)) > -1;
-
-const arrayIncludesString = (arrayToSearch: string[], keyword: string) =>
-    arrayToSearch.some((str) => includesString(str, keyword));
-
-const defaultFilterFunction = <V,>(option: OptionProps<V>, keyword: string) =>
-    (option.title && includesString(option.title, keyword)) ||
-    (option.searchStrings && arrayIncludesString(option.searchStrings, keyword));
-
 export interface Props<V> extends SelectProps<V> {
-    search?: boolean | ((option: OptionProps<V>) => void);
+    search?: boolean | ((option: OptionProps<V>, keyword?: string) => void);
     searchPlaceholder?: string;
-    noSearchResults?: string;
+    noSearchResults?: ReactNode;
+    uniqueSearchResult?: boolean;
 }
 
 const SearchableSelect = <V extends any>({
@@ -43,6 +36,7 @@ const SearchableSelect = <V extends any>({
     onOpen,
     onChange,
     renderSelected,
+    uniqueSearchResult,
     ...rest
 }: Props<V>) => {
     const [searchValue, setSearchValue] = useState('');
@@ -132,7 +126,9 @@ const SearchableSelect = <V extends any>({
 
         const filterFunction = typeof search === 'function' ? search : defaultFilterFunction;
 
-        return optionChildren.filter((child) => filterFunction(child.props, searchValue));
+        const filtered = optionChildren.filter((child) => filterFunction(child.props, searchValue));
+
+        return uniqueSearchResult ? uniqueBy(filtered, (option) => option.props.title) : filtered;
     }, [children, search, searchValue]);
 
     const selectedIndexesInFilteredOptions =

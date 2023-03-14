@@ -19,6 +19,7 @@ export interface CalendarsSettingsSectionProps {
     myCalendars: VisualCalendar[];
     subscribedCalendars: SubscribedCalendar[];
     sharedCalendars: VisualCalendar[];
+    holidaysCalendars: VisualCalendar[];
     unknownCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
 }
@@ -31,6 +32,7 @@ const CalendarsSettingsSection = ({
     myCalendars,
     subscribedCalendars,
     sharedCalendars,
+    holidaysCalendars,
     unknownCalendars,
     defaultCalendar,
 }: CalendarsSettingsSectionProps) => {
@@ -59,6 +61,7 @@ const CalendarsSettingsSection = ({
                 subscribedCalendars={subscribedCalendars}
                 sharedCalendars={sharedCalendars}
                 calendarInvitations={filterOutExpiredInvitations(getPendingInvitations(calendarInvitations))}
+                holidaysCalendars={holidaysCalendars}
                 unknownCalendars={unknownCalendars}
                 addresses={addresses}
                 user={user}

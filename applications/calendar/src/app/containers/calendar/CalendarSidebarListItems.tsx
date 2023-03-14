@@ -26,6 +26,8 @@ import {
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { CALENDAR_MODAL_TYPE, CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
+import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
+import useHolidaysDirectory from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import ShareCalendarModal from '@proton/components/containers/calendar/shareProton/ShareCalendarModal';
 import ShareLinkModal from '@proton/components/containers/calendar/shareURL/ShareLinkModal';
@@ -35,6 +37,7 @@ import { getAllMembers, getCalendarInvitations, getPublicLinks } from '@proton/s
 import {
     getIsCalendarDisabled,
     getIsCalendarWritable,
+    getIsHolidaysCalendar,
     getIsOwnedCalendar,
     getIsPersonalCalendar,
     getIsSubscribedCalendar,
@@ -116,6 +119,7 @@ const CalendarSidebarListItems = ({
 
     const [loadingFetchMemberAndInvitations, withLoadingFetchMemberAndInvitations] = useLoading();
     const [loadingLinks, withLoadingLinks] = useLoading();
+    const [holidaysDirectory] = useHolidaysDirectory();
 
     const [importModalCalendar, setImportModalCalendar] = useState<Nullable<VisualCalendar>>(null);
     const [calendarModalCalendar, setCalendarModalCalendar] = useState<Nullable<VisualCalendar>>(null);
@@ -128,16 +132,33 @@ const CalendarSidebarListItems = ({
     const [members, setMembers] = useState<CalendarMember[]>([]);
 
     const [{ onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] = useModalState();
+    const [holidaysCalendarModalProps, setIsHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
     const [
         { open: isImportModalOpen, onClose: onCloseImportModal, onExit: onExitImportModal, ...importModalProps },
         setIsImportModalOpen,
     ] = useModalState();
+
+    const holidaysCalendars = allCalendars.filter((calendar) => getIsHolidaysCalendar(calendar));
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         shareLinkSuccessModal: { isOpen: false },
         shareLinkModal: { isOpen: false },
         limitModal: { isOpen: false },
     });
+
+    const handleOpenEditModal = (calendar: VisualCalendar | SubscribedCalendar) => {
+        const isOwnedCalendar = getIsOwnedCalendar(calendar);
+        const isHolidaysCalendar = getIsHolidaysCalendar(calendar);
+
+        setCalendarModalCalendar(calendar);
+
+        if (isHolidaysCalendar) {
+            setIsHolidaysCalendarModalOpen(true);
+        } else {
+            setCalendarModalType(isOwnedCalendar ? CALENDAR_MODAL_TYPE.COMPLETE : CALENDAR_MODAL_TYPE.SHARED);
+            setIsCalendarModalOpen(true);
+        }
+    };
 
     if (calendars.length === 0) {
         return null;
@@ -214,15 +235,7 @@ const CalendarSidebarListItems = ({
                                     <DropdownMenu>
                                         <DropdownMenuButton
                                             className="text-left"
-                                            onClick={() => {
-                                                setCalendarModalCalendar(calendar);
-                                                setCalendarModalType(
-                                                    isOwnedCalendar
-                                                        ? CALENDAR_MODAL_TYPE.COMPLETE
-                                                        : CALENDAR_MODAL_TYPE.SHARED
-                                                );
-                                                setIsCalendarModalOpen(true);
-                                            }}
+                                            onClick={() => handleOpenEditModal(calendar)}
                                         >
                                             {c('Action').t`Edit`}
                                         </DropdownMenuButton>
@@ -369,7 +382,7 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
 
     return (
         <>
-            {!!limitModal.props && (
+            {limitModal.props && (
                 <Prompt
                     open={limitModal.isOpen}
                     title={limitModal.props.title}
@@ -397,14 +410,14 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                     onClose={() => setIsSharePrivatelyModalOpen(false)}
                 />
             )}
-            {!!shareLinkSuccessModal.props && (
+            {shareLinkSuccessModal.props && (
                 <ShareLinkSuccessModal
                     isOpen={shareLinkSuccessModal.isOpen}
                     onClose={() => closeModal('shareLinkSuccessModal')}
                     {...shareLinkSuccessModal.props}
                 />
             )}
-            {!!shareLinkModal.props && (
+            {shareLinkModal.props && (
                 <ShareLinkModal
                     onClose={() => closeModal('shareLinkModal')}
                     isOpen={shareLinkModal.isOpen}
@@ -464,7 +477,7 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                     loadingLinks={loadingLinks}
                 />
             )}
-            {!!calendarModalCalendar && (
+            {calendarModalCalendar && (
                 <CalendarModal
                     {...calendarModalProps}
                     onExit={() => {
@@ -475,7 +488,15 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                     type={calendarModalType}
                 />
             )}
-            {!!importModalCalendar && (
+            {calendarModalCalendar && renderHolidaysCalendarModal && holidaysDirectory && (
+                <HolidaysCalendarModal
+                    {...holidaysCalendarModalProps}
+                    directory={holidaysDirectory}
+                    calendar={calendarModalCalendar}
+                    holidaysCalendars={holidaysCalendars}
+                />
+            )}
+            {importModalCalendar && (
                 <ImportModal
                     {...importModalProps}
                     isOpen={isImportModalOpen}

@@ -40,12 +40,7 @@ interface Props {
     redirect: ReactNode;
 }
 
-const CalendarSettingsRouter = ({
-    user,
-    loadingFeatures,
-    calendarAppRoutes,
-    redirect,
-}: Props) => {
+const CalendarSettingsRouter = ({ user, loadingFeatures, calendarAppRoutes, redirect }: Props) => {
     const { path } = useRouteMatch();
 
     const [addresses, loadingAddresses] = useAddresses();
@@ -60,6 +55,7 @@ const CalendarSettingsRouter = ({
         ownedPersonalCalendars: myCalendars,
         sharedCalendars,
         subscribedCalendars: subscribedCalendarsWithoutParams,
+        holidaysCalendars,
         unknownCalendars,
     } = useMemo(() => {
         const visualCalendars = sortCalendars(getVisualCalendars(calendars || []));
@@ -121,6 +117,7 @@ const CalendarSettingsRouter = ({
                     myCalendars={myCalendars}
                     subscribedCalendars={subscribedCalendars}
                     sharedCalendars={sharedCalendars}
+                    holidaysCalendars={holidaysCalendars}
                     unknownCalendars={unknownCalendars}
                     defaultCalendar={defaultCalendar}
                 />
@@ -130,6 +127,7 @@ const CalendarSettingsRouter = ({
                     calendars={visualCalendars}
                     addresses={addresses}
                     subscribedCalendars={subscribedCalendars}
+                    holidaysCalendars={holidaysCalendars}
                     defaultCalendar={defaultCalendar}
                     user={user}
                 />
