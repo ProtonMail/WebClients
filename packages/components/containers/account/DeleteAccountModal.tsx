@@ -71,7 +71,7 @@ const DeleteAccountModal = (props: Props) => {
     const eventManager = useEventManager();
     const api = useApi();
     const authentication = useAuthentication();
-    const [{ isAdmin, Name }] = useUser();
+    const [{ isAdmin, Name, Email }] = useUser();
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState({
         check: false,
@@ -117,7 +117,7 @@ const DeleteAccountModal = (props: Props) => {
                         ClientVersion: APP_VERSION,
                         ClientType: CLIENT_TYPE,
                         Title: `[DELETION FEEDBACK] ${Name}`,
-                        Username: Name,
+                        Username: Name || Email,
                         Email: model.email,
                         Description: model.feedback,
                     })
