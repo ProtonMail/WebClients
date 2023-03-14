@@ -6,10 +6,10 @@ import { APPS, APP_NAMES, DAY } from '@proton/shared/lib/constants';
 import drawerImg from '@proton/styles/assets/img/illustrations/spotlight-drawer.svg';
 import clsx from '@proton/utils/clsx';
 
-import { Spotlight, useSpotlightShow } from '../';
 import { FeatureCode } from '../../containers';
 import { useConfig, useDrawer, useSpotlightOnFeature, useWelcomeFlags } from '../../hooks';
 import useUser from '../../hooks/useUser';
+import { Spotlight, useSpotlightShow } from '../spotlight';
 
 import './DrawerSidebar.scss';
 

@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { isDomain } from '@proton/shared/lib/helpers/validators';
+
 import {
     Field,
     Form,
@@ -15,10 +18,7 @@ import {
     ModalTwoHeader,
     Radio,
     Row,
-} from '@proton/components';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { isDomain } from '@proton/shared/lib/helpers/validators';
-
+} from '../../../../components';
 import { SpamLocation } from '../Spams.interfaces';
 
 export type SpamMode = 'email' | 'domain';

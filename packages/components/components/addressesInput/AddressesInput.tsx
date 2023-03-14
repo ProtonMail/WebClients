@@ -2,7 +2,9 @@ import { ComponentPropsWithoutRef, HTMLProps, MouseEvent, ReactNode, forwardRef 
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip, classnames } from '../..';
+import { classnames } from '../../helpers';
+import { Icon } from '../icon';
+import { Tooltip } from '../tooltip';
 
 interface AddressesInputItemProps extends ComponentPropsWithoutRef<'div'> {
     labelTooltipTitle: string;
