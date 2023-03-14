@@ -4,18 +4,6 @@
 
 /* eslint-disable no-underscore-dangle */
 import {
-    MaybeArray,
-    decryptKey,
-    encryptKey,
-    enums,
-    readCleartextMessage,
-    readKey,
-    readKeys,
-    readMessage,
-    readPrivateKey,
-    readSignature,
-} from 'pmcrypto-v7/lib/openpgp';
-import {
     SHA256,
     SHA512,
     armorBytes,
@@ -40,8 +28,20 @@ import {
     unsafeSHA1,
     verifyCleartextMessage,
     verifyMessage,
-} from 'pmcrypto-v7/lib/pmcrypto';
-import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v7/lib/pmcrypto';
+} from 'pmcrypto-v7';
+import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v7';
+import {
+    MaybeArray,
+    decryptKey,
+    encryptKey,
+    enums,
+    readCleartextMessage,
+    readKey,
+    readKeys,
+    readMessage,
+    readPrivateKey,
+    readSignature,
+} from 'pmcrypto-v7/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import {

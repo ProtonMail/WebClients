@@ -1,11 +1,11 @@
 import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
+import { generateKey } from 'pmcrypto-v7';
 import {
     decryptKey as openpgp_decryptKey,
     readKey as openpgp_readKey,
     readPrivateKey as openpgp_readPrivateKey,
 } from 'pmcrypto-v7/lib/openpgp';
-import { generateKey } from 'pmcrypto-v7/lib/pmcrypto';
 
 import { VERIFICATION_STATUS } from '../../lib';
 import { arrayToHexString } from '../../lib/utils';
