@@ -22,4 +22,5 @@ export interface Member {
     PublicKey: string;
     BrokenSKL: 0 | 1;
     Addresses?: PartialMemberAddress[];
+    "2faStatus": number;
 }
