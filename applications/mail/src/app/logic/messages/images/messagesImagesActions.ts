@@ -37,6 +37,8 @@ export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedPa
     }
 );
 
+const REMOTE_PROXY_CACHE = {} as { [url: string]: Promise<Response> };
+
 export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults, LoadRemoteParams>(
     'messages/remote/load/proxy',
     async ({ imageToLoad, api }) => {
@@ -46,11 +48,18 @@ export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults, LoadRemotePar
 
         try {
             const encodedImageUrl = encodeImageUri(imageToLoad.url);
-            const response: Response = await api({
-                ...getImage(encodedImageUrl),
-                output: 'raw',
-                silence: true,
-            });
+            let promise = REMOTE_PROXY_CACHE[encodedImageUrl];
+
+            if (!promise) {
+                promise = api({
+                    ...getImage(encodedImageUrl),
+                    output: 'raw',
+                    silence: true,
+                });
+                REMOTE_PROXY_CACHE[encodedImageUrl] = promise;
+            }
+
+            const response = await promise;
 
             // We want to cache loading errors on the browser (or android and ios), for that the BE is sending us 204
             // If we receive a 204 and a header x-pm-code with a code different than success code, we need to raise a "fake" error.
