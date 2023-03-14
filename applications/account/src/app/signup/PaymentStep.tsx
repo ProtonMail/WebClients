@@ -168,7 +168,7 @@ const PaymentStep = ({
                 </Content>
             </Main>
             <Main center={false}>
-                <Header title={c('new_plans: signup').t`Payment details`} />
+                <Header title={c('new_plans: signup').t`Payment details`} headingLevel={2} />
                 <Content>
                     <form
                         name="payment-form"
