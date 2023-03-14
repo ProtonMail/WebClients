@@ -14,7 +14,7 @@ import { CalendarMemberInvitation, MEMBER_INVITATION_STATUS, VisualCalendar } fr
 import { ContactEmail } from '../../../interfaces/contacts';
 import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '../../../keys';
-import { getIsOwnedCalendar, getIsSubscribedCalendar } from '../../calendar';
+import { getIsSharedCalendar } from '../../calendar';
 import { CALENDAR_PERMISSIONS } from '../../constants';
 import { decryptPassphrase, decryptPassphraseSessionKey, signPassphrase } from '../../crypto/keys/calendarKeys';
 import { getCanWrite } from '../../permissions';
@@ -130,7 +130,7 @@ export const rejectCalendarShareInvitation = ({
 
 export const getCalendarCreatedByText = (calendar: VisualCalendar, contactEmailsMap: SimpleMap<ContactEmail>) => {
     // we only need to display the owner for shared calendars
-    if (getIsSubscribedCalendar(calendar) || getIsOwnedCalendar(calendar)) {
+    if (!getIsSharedCalendar(calendar)) {
         return;
     }
     const { Name: contactName, Email: contactEmail } = contactEmailsMap[canonicalizeEmail(calendar.Owner.Email)] || {};

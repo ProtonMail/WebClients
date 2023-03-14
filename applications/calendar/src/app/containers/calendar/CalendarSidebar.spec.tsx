@@ -105,6 +105,11 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
     default: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
 }));
 
+jest.mock('@proton/components/containers/calendar/hooks/useHolidaysDirectory', () => ({
+    __esModule: true,
+    default: jest.fn(() => []),
+}));
+
 const mockedUseSubscribedCalendars = useSubscribedCalendars as jest.Mock<ReturnType<typeof useSubscribedCalendars>>;
 
 const mockCalendar: VisualCalendar = {

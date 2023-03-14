@@ -4,6 +4,7 @@ export { ContactEmailsModel } from './contactEmailsModel';
 export { ContactsModel } from './contactsModel';
 export { DomainsModel } from './domainsModel';
 export { FiltersModel } from './filtersModel';
+export { HolidaysCalendarsModel } from './holidaysCalendarsModel';
 export { PaymentMethodsModel } from './paymentMethodsModel';
 export { LabelsModel } from './labelsModel';
 export { MailSettingsModel } from './mailSettingsModel';

@@ -1,5 +1,5 @@
 import { CALENDAR_VALIDATION_MODE } from '../calendar/constants';
-import { Attendee, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
+import { Attendee, CalendarNotificationSettings, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
 import {
     CalendarCreateArguments,
     CalendarCreateOrUpdateEventBlobData,
@@ -121,7 +121,10 @@ export const getAllInvitations = () => ({
     method: 'get',
 });
 
-export const addMember = (calendarID: string, data: { AddressID: string; Signature: string; Members: CreateCalendarMemberData[] }) => ({
+export const addMember = (
+    calendarID: string,
+    data: { AddressID: string; Signature: string; Members: CreateCalendarMemberData[] }
+) => ({
     url: `${CALENDAR_V1}/${calendarID}/members`,
     method: 'post',
     data,
@@ -338,4 +341,24 @@ export const validateSubscription = ({
     url: `${CALENDAR_V1}/subscription/validate`,
     method: 'post',
     data: { URL, Mode },
+});
+
+export const getDirectoryCalendars = (type: number) => ({
+    url: `${CALENDAR_V1}/directory?Type=${type}`,
+    method: 'get',
+});
+
+export const joinHolidaysCalendar = (
+    calendarID: string,
+    addressID: string,
+    data: {
+        PassphraseKeyPacket: string;
+        Signature: string;
+        Color: string;
+        DefaultFullDayNotifications: CalendarNotificationSettings[];
+    }
+) => ({
+    url: `${CALENDAR_V1}/${calendarID}/invitations/${addressID}/join`,
+    method: 'post',
+    data,
 });

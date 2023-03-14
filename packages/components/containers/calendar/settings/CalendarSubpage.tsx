@@ -36,12 +36,20 @@ import CalendarSubpageHeaderSection from './CalendarSubpageHeaderSection';
 interface Props {
     calendars: VisualCalendar[];
     subscribedCalendars: SubscribedCalendar[];
+    holidaysCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
     addresses: Address[];
     user: UserModel;
 }
 
-const CalendarSubpage = ({ calendars, subscribedCalendars, defaultCalendar, addresses, user }: Props) => {
+const CalendarSubpage = ({
+    calendars,
+    subscribedCalendars,
+    holidaysCalendars,
+    defaultCalendar,
+    addresses,
+    user,
+}: Props) => {
     const { calendarId } = useParams<{ calendarId: string }>();
     const history = useHistory();
     const getCalendarBootstrap = useGetCalendarBootstrap();
@@ -155,6 +163,7 @@ const CalendarSubpage = ({ calendars, subscribedCalendars, defaultCalendar, addr
             <div className="container-section-sticky-section container-section-sticky-section--single-calendar-section">
                 <CalendarSubpageHeaderSection
                     calendar={calendar}
+                    holidaysCalendars={holidaysCalendars}
                     defaultCalendar={defaultCalendar}
                     onEdit={reRender}
                     canEdit={user.hasNonDelinquentScope}

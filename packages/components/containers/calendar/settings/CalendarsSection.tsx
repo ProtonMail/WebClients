@@ -11,11 +11,12 @@ export interface CalendarsSectionProps {
     defaultCalendarID?: string;
     addresses: Address[];
     user: UserModel;
-    children: ReactNode;
+    children?: ReactNode;
     onSetDefault?: (id: string) => Promise<void>;
-    onEdit: (calendar: VisualCalendar) => void;
-    onDelete: (id: string) => Promise<void>;
+    onEdit?: (calendar: VisualCalendar) => void;
+    onDelete?: (id: string) => Promise<void>;
     onExport?: (calendar: VisualCalendar) => void;
+    nameHeader?: string;
 }
 const CalendarsSection = ({
     calendars,
@@ -27,6 +28,7 @@ const CalendarsSection = ({
     onSetDefault,
     onDelete,
     onExport,
+    nameHeader,
     ...rest
 }: CalendarsSectionProps) => {
     return (
@@ -34,6 +36,7 @@ const CalendarsSection = ({
             {children}
             {!!calendars.length && (
                 <CalendarsTable
+                    nameHeader={nameHeader}
                     calendars={calendars}
                     defaultCalendarID={defaultCalendarID}
                     addresses={addresses}
