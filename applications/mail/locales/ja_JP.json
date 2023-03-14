@@ -4,6 +4,14 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "転送がすぐに始まります。新しいメールが受信トレイに出現します。"
+      ],
+      "Mail forward stopped": [
+        "メールの転送を停止しました"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } の紹介"
@@ -869,9 +877,6 @@
       "Send feedback": [
         "フィードバックを送信"
       ],
-      "Send quick reply": [
-        "クイック返信を送信"
-      ],
       "Send read receipt": [
         "開封確認を送信する"
       ],
@@ -1110,9 +1115,6 @@
     "action": {
       "Search messages": [
         "メッセージを検索"
-      ],
-      "Send quick reply": [
-        "クイック返信を送信"
       ]
     },
     "Actions message": {
@@ -4905,9 +4907,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "無効な鍵で暗号化されたデータが含まれている連絡先を探しています。しばらくお待ちください。"
       ],
-      "Preview": [
-        "プレビュー"
-      ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
       ],
@@ -4919,12 +4918,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "ニュースレターや迷惑メールの配信リストから、${ maskMyEmailButton }で自分のアドレスを守りましょう。"
-      ],
-      "Quick reply": [
-        "クイック返信"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "${ recipientsAsString } にクイック返信"
       ],
       "Recipient: ": [
         "宛先 "
@@ -5392,7 +5385,7 @@
         "“${ attachmentsFoundKeyword }” とありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "あなたの ${ BRAND_NAME } アカウントには SimpleLogin が含まれています。ワンクリックでブラウザー拡張機能をインストールし始めることができます。"
+        "あなたの ${ BRAND_NAME } アカウントには SimpleLogin が含まれています。ワンクリックでブラウザ拡張機能をインストールし始めることができます。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
@@ -5717,6 +5710,9 @@
       "ALL": [
         "すべて"
       ],
+      "All contacts": [
+        "すべての連絡先"
+      ],
       "Also archive": [
         "アーカイブも実施する"
       ],
@@ -5879,11 +5875,14 @@
       "From:": [
         "差出人："
       ],
+      "From: ${ from }": [
+        "送信者: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "送信者: ${ fromEmail }"
+      ],
       "Good": [
         "いい"
-      ],
-      "Group": [
-        "グループ"
       ],
       "Hide password": [
         "パスワードを隠す"
@@ -6107,6 +6106,12 @@
       "To:": [
         "宛先:"
       ],
+      "To: ${ to }": [
+        "宛先: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "宛先: ${ toEmail }"
+      ],
       "Toolbar": [
         "ツールバー"
       ],
@@ -6227,6 +6232,17 @@
       ],
       "Row": [
         "行"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有償の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "このプランで利用できるカレンダーの最大数に達しました。"
       ]
     },
     "Link": {
@@ -6663,6 +6679,9 @@
       "Hide My Email aliases": [
         "Hide My Email エイリアス"
       ],
+      "Schedule messages at any time": [
+        "いつでもメッセージを送信予約できます"
+      ],
       "Search message content": [
         "メッセージ内容の検索"
       ],
@@ -7030,6 +7049,21 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "注意: 「適用」をクリックするとサービスが再読み込みされます。"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } days": [
+        "${ remainingDays } 日"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hours": [
+        "${ remainingHours } 時間"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } years": [
+        "${ remainingYears } 年"
       ]
     },
     "Reply to calendar invitation": {

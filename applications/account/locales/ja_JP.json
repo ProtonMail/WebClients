@@ -18,6 +18,14 @@
         "一部だけ表示 (空きまたは忙しい)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "転送がすぐに始まります。新しいメールが受信トレイに出現します。"
+      ],
+      "Mail forward stopped": [
+        "メールの転送を停止しました"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } の紹介"
@@ -384,9 +392,6 @@
       ],
       "Go to label": [
         "ラベルへ移動"
-      ],
-      "Go to sign in": [
-        "サインインに移動"
       ],
       "Got it": [
         "はい"
@@ -4758,12 +4763,6 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "SPF と DKIM の両方を設定した場合、SPF と DKIM の両方のチェックに失敗した場合に他のメールサービスがあなたのドメインのメールを配信する方法を DMARC で指定できます。これにより、あなたになりすますスパマーに対処できますが、適切に設定しないと配信に問題を引き起こす可能性があります。"
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
@@ -5096,9 +5095,6 @@
       ],
       "Plus or Visionary subscription required": [
         "PLUS または VISIONARY プランが必要です"
-      ],
-      "Preview": [
-        "プレビュー"
       ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
@@ -5678,9 +5674,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "既存の ${ BRAND_NAME } アカウントは、すべての ${ BRAND_NAME } サービスで利用できます。${ email } でログインしてください。"
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -6475,6 +6468,12 @@
       "Folder location": [
         "フォルダーの場所"
       ],
+      "From: ${ from }": [
+        "送信者: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "送信者: ${ fromEmail }"
+      ],
       "Gift code": [
         "ギフトコード"
       ],
@@ -6826,6 +6825,12 @@
       "Time format": [
         "時刻の表示形式"
       ],
+      "To: ${ to }": [
+        "宛先: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "宛先: ${ toEmail }"
+      ],
       "Token name": [
         "トークン名"
       ],
@@ -7036,6 +7041,17 @@
       ],
       "Preference saved": [
         "設定が保存されました"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有償の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "このプランで利用できるカレンダーの最大数に達しました。"
       ]
     },
     "Link": {
@@ -9968,9 +9984,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard 設定ファイル"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "すでに ${ BRAND_NAME } アカウントをお持ちの場合"
       ],
       "Your calendar link": [
         "カレンダーのリンク"

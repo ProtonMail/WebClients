@@ -155,6 +155,9 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
+      "Create account": [
+        "Δημιουργία λογαριασμού"
+      ],
       "Create link": [
         "Δημιουργία συνδέσμου"
       ],
@@ -2933,9 +2936,6 @@
       "Enabling drive search": [
         "Ενεργοποίηση τοπικής αναζήτησης"
       ],
-      "Encrypted": [
-        "Κρυπτογραφημένα"
-      ],
       "Encrypted search is here": [
         "Η κρυπτογραφημένη αναζήτηση έφτασε"
       ],
@@ -3264,9 +3264,6 @@
       "Preparing link to folder": [
         "Προετοιμασία συνδέσμου προς το φάκελο"
       ],
-      "Preview": [
-        "Προεπισκόπηση"
-      ],
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
       ],
@@ -3299,9 +3296,6 @@
       ],
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
-      ],
-      "Secure sharing": [
-        "Ασφαλής κοινή χρήση"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Επιλέξτε ένα ανεβασμένο αρχείο ή φάκελο και δημιουργήστε έναν σύνδεσμο προς αυτό."
@@ -3351,9 +3345,6 @@
       "support team": [
         "ομάδα υποστήριξης"
       ],
-      "Swiss privacy": [
-        "Ελβετική ιδιωτικότητα"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -3371,9 +3362,6 @@
       ],
       "There are no files yet": [
         "Δεν υπάρχουν ακόμη αρχεία"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Αυτά τα αρχεία κοινοποιήθηκαν χρησιμοποιώντας κρυπτογράφηση από άκρο σε άκρο. Για να τα διατηρήσετε ασφαλή - και όλα τα έγγραφα, τις φωτογραφίες και τα αρχεία σας ιδιωτικά - αποθηκεύστε τα στο δικό σας ${ DRIVE_APP_NAME }. Είναι εύκολο στη χρήση και δωρεάν."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
@@ -3970,9 +3958,6 @@
       "Replace folder": [
         "Αντικατάσταση φακέλου"
       ],
-      "Report Abuse": [
-        "Αναφορά Κατάχρησης"
-      ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
@@ -4138,7 +4123,7 @@
         "Ακόμα λίγο"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
         "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -4925,9 +4910,6 @@
       "Date": [
         "Ραντεβού"
       ],
-      "Decrypting": [
-        "Γίνεται Αποκρυπτογράφηση"
-      ],
       "Delete ${ count } contact": [
         "Διαγραφή ${ count } επαφής",
         "Διαγραφή ${ count } επαφών"
@@ -4950,9 +4932,6 @@
       ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
-      ],
-      "Download shared file": [
-        "Λήψη κοινόχρηστου αρχείου"
       ],
       "Download unverified file?": [
         "Λήψη μη επαληθευμένου αρχείου;"
@@ -5029,9 +5008,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "Βρέθηκε ${ searchView.numberOfResults } αποτέλεσμα",
         "Βρέθηκαν ${ searchView.numberOfResults } αποτελέσματα"
-      ],
-      "Getting files": [
-        "Λήψη αρχείων"
       ],
       "Groups": [
         "Ομάδες"
@@ -5285,9 +5261,6 @@
       ],
       "You have no folders yet": [
         "Δεν έχετε ακόμη φακέλους"
-      ],
-      "You've got files": [
-        "Έχετε αρχεία"
       ],
       "Your 500 MB bonus": [
         "Το 500 MB μπόνους σας"

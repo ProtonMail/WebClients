@@ -797,7 +797,7 @@
         "Supprimer le délai d'expiration"
       ],
       "Remove self-destruction": [
-        "Supprimer l'autodestruction"
+        "Annuler l'autodestruction"
       ],
       "Remove this label": [
         "Supprimer ce label"
@@ -894,9 +894,6 @@
       ],
       "Send feedback": [
         "Envoyer un avis"
-      ],
-      "Send quick reply": [
-        "Envoyer une réponse rapide"
       ],
       "Send read receipt": [
         "Envoyer une confirmation de lecture"
@@ -999,6 +996,12 @@
       ],
       "This message contains remote content.": [
         "Ce message comporte du contenu distant."
+      ],
+      "Toggle Calendar app": [
+        "Basculer vers l'application Calendar"
+      ],
+      "Toggle Contact app": [
+        "Basculer vers l'application Contacts"
       ],
       "Tomorrow": [
         "Demain"
@@ -1143,9 +1146,6 @@
     "action": {
       "Search messages": [
         "Rechercher des messages"
-      ],
-      "Send quick reply": [
-        "Envoyer une réponse rapide"
       ]
     },
     "Actions message": {
@@ -3003,7 +3003,7 @@
     },
     "empty messages: success": {
       "Folder cleared": [
-        "Dossier effacé"
+        "Le dossier a été vidé."
       ],
       "Label cleared": [
         "Étiquette effacée"
@@ -3095,7 +3095,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'adresse e-mail n'est pas valide."
+        "L'adresse e-mail est invalide."
       ],
       "Empty condition": [
         "La condition est vide."
@@ -4335,6 +4335,12 @@
         "${ embeddedAttachmentsCount } image intégrée",
         "${ embeddedAttachmentsCount } images intégrées"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName } : image en taille réelle"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName } : aperçu basse résolution"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
@@ -5084,9 +5090,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Veuillez patienter pendant que nous cherchons les contacts qui contiennent des données chiffrées avec la clé inactive."
       ],
-      "Preview": [
-        "Aperçu"
-      ],
       "Preview failed to be loaded": [
         "L'aperçu n'a pas pu être chargé."
       ],
@@ -5098,12 +5101,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Protégez votre adresse e-mail des fuites vers les listes de diffusion ou les spammeurs avec ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Réponse rapide"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Réponse rapide à ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinataire : "
@@ -5940,6 +5937,9 @@
       "ALL": [
         "TOUT"
       ],
+      "All contacts": [
+        "Tous les contacts"
+      ],
       "Also archive": [
         "Et archiver"
       ],
@@ -6110,9 +6110,6 @@
       ],
       "Good": [
         "Bonne"
-      ],
-      "Group": [
-        "Groupe"
       ],
       "Hide password": [
         "Masquer le mot de passe"
@@ -6644,7 +6641,7 @@
         "Nous y sommes presque."
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }.",
         "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }."
       ],
       "Connecting to your email provider": [

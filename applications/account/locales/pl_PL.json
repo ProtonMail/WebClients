@@ -413,9 +413,6 @@
       "Go to label": [
         "Przejdź do etykiety"
       ],
-      "Go to sign in": [
-        "Przejdź do logowania"
-      ],
       "Got it": [
         "Ok"
       ],
@@ -4450,6 +4447,12 @@
       "${ emailAddress } is invalid": [
         "Adres e-mail ${ emailAddress } jest nieprawidłowy"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: obraz w pełnym rozmiarze"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: podgląd w niskiej rozdzielczości"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "Kalendarz ${ firstRemainingCalendarName } zostanie ustawiony jako domyślny kalendarz."
       ],
@@ -4931,7 +4934,7 @@
         "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz w stanie zarządzać organizacją."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz mógł się zalogować ani odszyfrować wiadomości."
+        "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz mógł zalogować się ani odszyfrować wiadomości."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Nie używaj danych logowania OpenVPN / IKEv2 w aplikacjach lub pulpicie ${ VPN_APP_NAME }. ${ learnMore }"
@@ -5140,11 +5143,14 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Jeśli ustawiłeś zarówno SPF, jak i DKIM, to konfiguracja DMARC pomoże Ci określić, w jaki sposób inni dostawcy powinni dostarczać wiadomości dla Twojej domeny, w momencie, gdy wiadomości nie przejdą weryfikacji SPF i DKIM. Pomoże to uniknąć podszywania się spamerów pod Twoją domenę, ale jeśli konfiguracja zostanie ustawiona nieprawidłowo, może spowodować problemy z dostarczaniem wiadomości."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Jeśli zapomnisz hasła, ${ boldAccountRecovery } ${ boldImperative }, aby zresetować konto."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Jeśli zapomnisz hasła, ${ boldAccountAndRecovery } ${ boldImperative }, aby zresetować konto. W przeciwnym razie nie będziesz mógł uzyskać dostępu do swoich wiadomości, kontaktów i plików."
+      ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Jeśli zgubisz urządzenie z przypisanym uwierzytelnianiem dwustopniowym, możesz użyć poniższych kodów zapasowych, zamiast 6-cyfrowego kodu uwierzytelniającego, aby zalogować się na swoje konto. Każdy kod może zostać użyty tylko jeden raz."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Po obniżeniu planu stracisz dostęp do płatnych funkcji poczty ${ MAIL_APP_NAME } i usługi ${ VPN_APP_NAME }."
@@ -5527,9 +5533,6 @@
       "Plus or Visionary subscription required": [
         "Subskrypcja planu Plus lub Visionary jest wymagana"
       ],
-      "Preview": [
-        "Podgląd"
-      ],
       "Preview failed to be loaded": [
         "Załadowanie podglądu nie powiodło się"
       ],
@@ -5613,6 +5616,9 @@
       ],
       "Select what you want to import.": [
         "Wybierz, co chcesz zaimportować."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Wysłano z bezpiecznej poczty e-mail <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -6225,9 +6231,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Twoje obecne konto ${ BRAND_NAME } może zostać użyte do wszystkich usług ${ BRAND_NAME }. Zaloguj się przy użyciu ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Proces importowania z konta ${ accounts } jest tymczasowo opóźniony.",
@@ -7744,7 +7747,7 @@
         "Już prawie"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
@@ -8480,7 +8483,7 @@
         "Zapewnij sobie prywatność podczas tworzenia kopii zapasowej, przechowywania i udostępniania plików."
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
@@ -11233,9 +11236,6 @@
       ],
       "WireGuard configuration": [
         "Konfiguracja WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Masz już konto ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Twój link kalendarza"

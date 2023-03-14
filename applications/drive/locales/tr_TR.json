@@ -64,6 +64,9 @@
       "Back": [
         "Geri"
       ],
+      "Back to Homepage": [
+        "Girişe dön"
+      ],
       "Beta Access": [
         "Beta erişimi"
       ],
@@ -162,6 +165,9 @@
       ],
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
+      ],
+      "Create account": [
+        "Hesap ekle"
       ],
       "Create link": [
         "Bağlantı oluştur"
@@ -581,6 +587,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Toggle Calendar app": [
+        "Takvim uygulamasına geç"
+      ],
+      "Toggle Contact app": [
+        "Kişiler uygulamasına geç"
       ],
       "Trust": [
         "Güven"
@@ -2840,6 +2852,12 @@
         "${ errorCount } başarısız oldu",
         "${ errorCount } başarısız oldu"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: tam boyutlu görsel"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: düşük çözünürlüklü ön izleme"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
@@ -2997,7 +3015,7 @@
         "Şifrelenmiş arama verilerini temizle"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Bu aygıtta çerezlerin temizlenmesi arama dizinini de siler. Silme sonrası arama özelliğini kullanabilmek tüm dosyalar yeniden dizine eklenmelidir."
+        "Bu aygıtta tanımlama bilgilerinin temizlenmesi arama dizinini de siler. Silme sonrası arama özelliğini kullanabilmek tüm dosyalar yeniden dizine eklenmelidir."
       ],
       "Clears browser data related to the encrypted search.": [
         "Şifrelenmiş arama ile ilişkili tarayıcı verilerini temizler."
@@ -3050,6 +3068,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
+      ],
+      "Decrypting files": [
+        "Dosyaların şifresi çözülüyor"
       ],
       "Delete locked drive": [
         "Kilitlenmiş sürücüyü sil",
@@ -3106,11 +3127,14 @@
       "Enabling drive search": [
         "Drive araması etkinleştiriliyor"
       ],
-      "Encrypted": [
-        "Şifrelenmiş"
-      ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
+      ],
+      "End-to-end encrypted": [
+        "Uçtan uca şifrelenmiş"
+      ],
+      "Enter password": [
+        "Parolayı yazın"
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -3300,6 +3324,9 @@
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
+      "Link owner has the password": [
+        "Parola bağlantı sahibinde"
+      ],
       "Loading": [
         "Yükleniyor"
       ],
@@ -3335,6 +3362,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Bir dosya paylaşmanız mı gerekiyor? ${ DRIVE_APP_NAME } dosyalarınızı paylaşmanın, depolamanın ve eşitlemenin en güvenli yoludur."
       ],
       "Network issue": [
         "Ağ sorunu"
@@ -3380,6 +3410,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Not: Veriler, ${ DRIVE_APP_NAME } kurulu aygıtlarda yerel olarak bulunmayı sürdürebilir."
+      ],
+      "Nothing here yet": [
+        "Burada henüz hiçbir şey yok"
       ],
       "of": [
         "/"
@@ -3446,9 +3479,6 @@
       "Preparing link to folder": [
         "Klasör bağlantısı hazırlanıyor"
       ],
-      "Preview": [
-        "Ön izle"
-      ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
       ],
@@ -3485,9 +3515,6 @@
       "Search Enabled": [
         "Arama etkinleştirildi"
       ],
-      "Secure sharing": [
-        "Güvenli paylaşım"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Yüklenmiş bir dosyayı ya da klasörü seçin ve bir bağlantı oluşturun."
       ],
@@ -3515,6 +3542,9 @@
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } için paylaşılabilir bağlantı"
       ],
+      "Shared link not found": [
+        "Paylaşılan bağlantı bulunamadı"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
@@ -3539,9 +3569,6 @@
       "support team": [
         "destek ekibi"
       ],
-      "Swiss privacy": [
-        "İsviçre gizliliği"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
@@ -3563,9 +3590,6 @@
       "There are no files yet": [
         "Henüz bir dosya yok"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Bu dosyalar uçtan uca şifreleme kullanılarak paylaşıldı. Bu dosyaları ve diğer tüm belgelerinizi, fotoğraflarınızı ve dosyalarınızı gizliliğinizi koruyarak saklamak için kendi ${ DRIVE_APP_NAME } depolama alanınızı kullanın. Kolay kullanılır ve ücretsizdir."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
       ],
@@ -3574,6 +3598,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu web tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Bu dosya silinmiş, taşınmış ya da kullanılamıyor olabilir. Dosyanın sahibine ulaşmayı deneyin."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
@@ -3978,6 +4005,9 @@
       "Download anyway": [
         "Yine de indir"
       ],
+      "Downloading ${ percentageValue }%": [
+        "İndiriliyor %${ percentageValue }"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -4176,8 +4206,8 @@
       "Replace folder": [
         "Klasörü değiştir"
       ],
-      "Report Abuse": [
-        "Kötüye kullanımı bildir"
+      "Report": [
+        "Bildir"
       ],
       "Reveal password": [
         "Parolayı göster"
@@ -4355,7 +4385,7 @@
         "Neredeyse tamam"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
         "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -5198,9 +5228,6 @@
       "Date": [
         "Tarih"
       ],
-      "Decrypting": [
-        "Şifre çözülüyor"
-      ],
       "Delete ${ count } contact": [
         "${ count } kişiyi sil",
         "${ count } kişiyi sil"
@@ -5223,9 +5250,6 @@
       ],
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
-      ],
-      "Download shared file": [
-        "Paylaşılan dosyayı indir"
       ],
       "Download unverified file?": [
         "Doğrulanmamış dosya indirilsin mi?"
@@ -5300,11 +5324,11 @@
         "${ searchView.numberOfResults } sonuç bulundu",
         "${ searchView.numberOfResults } sonuç bulundu"
       ],
-      "Getting files": [
-        "Dosyaları almak"
-      ],
       "Groups": [
         "Gruplar"
+      ],
+      "Hm, we couldn't find that one": [
+        "Bunu bulamadık"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
@@ -5558,9 +5582,6 @@
       ],
       "You have no folders yet": [
         "Henüz bir klasörünüz yok"
-      ],
-      "You've got files": [
-        "Dosyalarınız var"
       ],
       "Your 500 MB bonus": [
         "500 MB hediyeniz"

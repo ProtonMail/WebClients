@@ -413,9 +413,6 @@
       "Go to label": [
         "Tuju label"
       ],
-      "Go to sign in": [
-        "Tuju layar masuk"
-      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -4351,6 +4348,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } tidak valid"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: gambar ukuran penuh"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pratinjau resolusi rendah"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } akan diatur sebagai kalendar default."
       ],
@@ -4868,7 +4871,7 @@
         "Masukkan kode yang terkirim ke ${ email }. Apabila Anda tidak menemukannya di kotak masuk, cek folder spam Anda."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Masukkan kredensial akun email yang berkas-berkasnya ingin Anda impor."
+        "Masukkan kredensial akun email yang berkasnya ingin Anda impor."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Masukkan Kata sandi Organisasi untuk memulihkan hak administrator. ${ learnMore }"
@@ -4978,11 +4981,11 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Jika Anda telah menyetel SPF dan DKIM, DMARC memungkinkan Anda untuk menentukan bagaimana layanan email lain harus mengirimkan email untuk domain Anda jika pemeriksaan SPF dan DKIM gagal. Hal ini dapat mempersulit pelaku spam yang berpura-pura menjadi Anda, tetapi juga dapat menyebabkan masalah pengiriman jika tidak dilakukan dengan benar."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Apabila Anda kehilangan kata sandi Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountRecovery } yang aktif."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Apabila Anda kehilangan kata sandi Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda beresiko tidak akan lagi dapat mengakses email, kontak, atau berkas yang Anda miliki."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses autentikasi dua faktor, kode berikut akan dapat digunakan sebagai pengganti kode autentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
@@ -5352,9 +5355,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
-      ],
-      "Preview": [
-        "Pratinjau"
       ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
@@ -6030,9 +6030,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Akun ${ BRAND_NAME } Anda dapat digunakan untuk mengakses seluruh layanan ${ BRAND_NAME }. Silakan masuk dengan ${ email }."
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
@@ -6853,7 +6850,7 @@
         "Kode hadiah"
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Berikut merupakan rekaman DMARC dasar yang tidak memiliki fungsi apa pun selain dari mengirimkan laporan ke email Anda."
+        "Berikut merupakan rekaman DMARC dasar yang fungsinya semata-mata adalah untuk mengirimkan laporan ke email Anda."
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
@@ -7540,7 +7537,7 @@
         "Hampir selesai"
       ],
       "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+        "Jumlah kalender yang dibuat: ${ createdCalendarCount } dari ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Menghubungkan ke penyedia email Anda"
@@ -10588,9 +10585,6 @@
       ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Anda telah memiliki akun ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Tautan kalender Anda"

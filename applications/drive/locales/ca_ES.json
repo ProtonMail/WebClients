@@ -64,6 +64,9 @@
       "Back": [
         "Torna"
       ],
+      "Back to Homepage": [
+        "Torna a la pàgina d'inici"
+      ],
       "Beta Access": [
         "Accés beta"
       ],
@@ -163,6 +166,9 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
+      "Create account": [
+        "Crea un compte"
+      ],
       "Create link": [
         "Crear enllaç"
       ],
@@ -251,6 +257,9 @@
       ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
+      ],
+      "Enable drive search": [
+        "Activa la cerca de la unitat"
       ],
       "Expand": [
         "Amplia"
@@ -578,6 +587,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Toggle Calendar app": [
+        "Canvia a l'aplicació Calendar"
+      ],
+      "Toggle Contact app": [
+        "Canvia a l'aplicació Contactes"
       ],
       "Trust": [
         "De confiança"
@@ -2837,6 +2852,12 @@
         "${ errorCount } ha fallat",
         "${ errorCount } han fallat"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imatge a mida completa"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: vista prèvia de baixa resolució"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
@@ -2924,11 +2945,17 @@
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
       ],
+      "Also try looking in Trash.": [
+        "També intenta revisar la Paperera."
+      ],
       "An active recovery file": [
         "Un fitxer de recuperació actiu"
       ],
       "and": [
         "i"
+      ],
+      "And access it from anywhere": [
+        "I accedeix-hi des de qualsevol lloc"
       ],
       "Anyone with this link can access your file.": [
         "Qualsevol que tingui aquest enllaç pot accedir al fitxer."
@@ -2950,6 +2977,9 @@
       ],
       "Attention required": [
         "Requereix atenció"
+      ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
+        "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
@@ -2984,6 +3014,9 @@
       "Clear encrypted search data": [
         "Esborra les dades de la cerca xifrada"
       ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        "Netejant les dades del navegador netejaràs l'índex de cerques en aquest dispositiu. Tots els fitxers haurien de re-indexar-se una altra vegada mentre s'utilitza la funcionalitat de cerca."
+      ],
       "Clears browser data related to the encrypted search.": [
         "Esborra les dades del navegador relacionades amb la cerca xifrada."
       ],
@@ -2995,6 +3028,9 @@
       ],
       "Conflict": [
         "Conflicte"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Continua utilitzant ${ DRIVE_APP_NAME } i desbloqueja la unitat més tard"
       ],
       "Country code": [
         "Codi de país"
@@ -3033,9 +3069,21 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "S'admeten fitxers CSV d'Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i algunes altres aplicacions així com els formats vCard 3.1 i 4.0 (codificació UTF-8)."
       ],
+      "Decrypting files": [
+        "Desxifrant els arxius"
+      ],
       "Delete locked drive": [
         "Elimina la unitat bloquejada",
         "Elimina les unitats bloquejades"
+      ],
+      "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
+        "Signatura digital validada. El fitxer va ser carregat amb seguretat per ${ emailAddress }."
+      ],
+      "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
+        "Signatura digital validada. La carpeta va ser carregada amb seguretat per ${ emailAddress }."
+      ],
+      "double your storage": [
+        "dobla el teu emmagatzematge"
       ],
       "Download canceled": [
         "S'ha cancel·lat la baixada"
@@ -3043,8 +3091,17 @@
       "Download failed": [
         "La baixada ha fallat"
       ],
+      "Download failed due to ${ error }": [
+        "Fallada a la descàrrega degut a ${ error }"
+      ],
       "Download finished": [
         "La baixada ha acabat"
+      ],
+      "Download of ${ downloadFileName } will be aborted": [
+        "La descàrrega de ${ downloadFileName } serà cancel·lada"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "La descarrega s'ha pausat degut a un problema de connexió; es reprendrà automàticament"
       ],
       "Downloaded": [
         "Descarregat"
@@ -3064,14 +3121,20 @@
       "Emails are automatically signed": [
         "Els correus són signats automàticament"
       ],
+      "Enable drive search": [
+        "Activa la cerca de la unitat"
+      ],
       "Enabling drive search": [
         "S'està activant la cerca de la unitat"
       ],
-      "Encrypted": [
-        "Xifrat"
-      ],
       "Encrypted search is here": [
         "Ha arribat la cerca xifrada"
+      ],
+      "End-to-end encrypted": [
+        "Xifrat d'extrem a extrem"
+      ],
+      "Enter password": [
+        "Introdueix la contrasenya"
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra app d'autenticació."
@@ -3110,6 +3173,12 @@
       "File \"${ name }\" was deleted during download": [
         "El fitxer «${ name }» s'ha eliminat durant la baixada"
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "El fitxer no està signat. No podem verificar que ${ emailAddress } va carregar ${ fileName }."
+      ],
+      "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "El fitxer no està signat. No podem verificar qui va carregar ${ fileName }."
+      ],
       "File will not be uploaded": [
         "El fitxer no es pujarà"
       ],
@@ -3122,8 +3191,20 @@
       "Folder contents will merge into a single folder": [
         "Els continguts de la carpeta es combinaran en una sola carpeta"
       ],
+      "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "La carpeta no està signada. No podem verificar que ${ emailAddress } va carregar ${ fileName }."
+      ],
+      "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
+        "La carpeta no està signada. No podem verificar qui va carregar ${ fileName }."
+      ],
       "Folder will not be uploaded": [
         "No es carregarà la carpeta"
+      ],
+      "Folders you sync from your computer will appear here.": [
+        "Les carpetes que sincronitzis des del teu ordinador apareixeran aquí."
+      ],
+      "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
+        "Per a millors resultats, evita streaming i activitats que consumeixin memòria intensivament o divideix la càrrega en lots més petits."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Transferiu els missatges entrants d'un altre compte vers la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
@@ -3133,6 +3214,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Allibereu espai o poseu-vos en contacte amb el vostre administrador."
+      ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
+        "Coneix ${ DRIVE_APP_NAME } i guanya la teva bonificació d'emmagatzematge de 500 MB! Fes-ho avui."
       ],
       "Go ahead, upload a file": [
         "Endavant, pugeu un fitxer"
@@ -3157,6 +3241,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
+        "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } de ${ totalCalendarsCount } calendari",
@@ -3183,6 +3270,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Indexant elements ${ esProgress } de ${ totalProgressToShow }"
+      ],
       "Indexing search results…": [
         "S'estan indexant els resultats de la cerca…"
       ],
@@ -3200,6 +3290,18 @@
       ],
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
+      ],
+      "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
+        "Sembla que recentment vas intentar carregar ${ uploadName }. Si la càrrega va fallar, si us plau ${ replaceFile }. Si la càrrega és encara en progrés, reemplaçant-la cancel·larà la càrrega en curs."
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Els elements a la paperera restaran allà fins que els eliminis permanentment"
+      ],
+      "It’s as easy as drag and drop or selecting files": [
+        "És tan fàcil com arrossegar i deixar anar o seleccionar els fitxers"
+      ],
+      "It’s easy and secure": [
+        "És fàcil i segur"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Només confirmeu la vostra selecció i nosaltres farem la resta."
@@ -3222,6 +3324,9 @@
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
       ],
+      "Link owner has the password": [
+        "El propietari de l'enllaç té la contrasenya."
+      ],
       "Loading": [
         "Carregant"
       ],
@@ -3240,6 +3345,9 @@
       "Loading...": [
         "Carregant..."
       ],
+      "Makes your account safer": [
+        "Fes el teu compte més segur"
+      ],
       "Merged": [
         "Combinats"
       ],
@@ -3254,6 +3362,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Voleu compartir un fitxer? Utilitzeu ${ DRIVE_APP_NAME }, la manera més segura de compartir, emmagatzemar i sincronitzar els vostres fitxers."
       ],
       "Network issue": [
         "Problema de xarxa"
@@ -3282,14 +3393,32 @@
       "No results found": [
         "No s'han trobat resultats."
       ],
+      "No synced computers": [
+        "Ordinadors no sincronitzats"
+      ],
+      "No synced folders": [
+        "Carpetes no sincronitzades"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Cap de les claus carregades és vàlida per al xifrat. Per a poder enviar missatges a aquesta adreça carregueu una clau vàlida o desactiveu \"Xifra correus electrònics\"."
       ],
       "Not a valid URL": [
         "No és una URL vàlida"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "No tots els fitxers es van transferir. Intenta carregar o descarregar els fitxers un altre cop."
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Nota: les dades encara poden estar disponibles localment en dispositius on hagis instal·lat ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "No hi ha res aquí de moment."
+      ],
       "of": [
         "de"
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Una de les teves unitats xifrades està bloquejada. El més probable és que sigui degut a un canvi recent del password."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
@@ -3307,11 +3436,17 @@
       "Paused": [
         "Pausat"
       ],
+      "Permanently delete all files in your locked drive": [
+        "Permanentment esborra tots els fitxers de la teva unitat bloquejada"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline només és compatible amb format de Text Pla."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envia automàticament el missatge utilitzant el mode de l'editor actual."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Si us plau. entra el password per desxifrar i veure el contingut."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -3344,14 +3479,14 @@
       "Preparing link to folder": [
         "S'està preparant l'enllaç a la carpeta"
       ],
-      "Preview": [
-        "Vista prèvia"
-      ],
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
       ],
       "Primary": [
         "Principal"
+      ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Cerca privada activada. Ara pots tancar aquest diàleg i cercar per fitxers i carpetes."
       ],
       "Queued": [
         "En cua"
@@ -3380,8 +3515,8 @@
       "Search Enabled": [
         "Cerca activa"
       ],
-      "Secure sharing": [
-        "Comparteix de manera segura"
+      "Select an uploaded file or folder and create a link to it.": [
+        "Selecciona un fitxer o una carpeta carregats i crea-hi un enllaç."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
@@ -3407,8 +3542,23 @@
       "Shareable link for ${ boldNameText }": [
         "Enllaç per a compartir ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "No s'ha trobat l'enllaç compartit."
+      ],
+      "Signature cannot be validated due to network error, please try again later.": [
+        "La signatura no pot ser validada degut a un error de xarxa, si us plau intenteu-ho més tard."
+      ],
+      "Signature check will be ignored": [
+        "La comprovació de la signatura s'ignorarà"
+      ],
       "Signature issue": [
         "Problema de signatura"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Va fallar la descàrrega d'alguns fitxers. Intenta descarregar els fitxers un altre cop."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Va fallar la càrrega d'alguns fitxers. Intenta carregar els fitxers un altre cop."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alguns dels vostres arxius ja no són accessibles. Restaureu l'accés als vostres arxius. ${ StartRecoveryButton }"
@@ -3419,14 +3569,20 @@
       "support team": [
         "equip de suport"
       ],
-      "Swiss privacy": [
-        "Privacitat suïssa"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalment. Comproveu-ho de nou més tard."
       ],
+      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "El compte pot tenir una nova clau, o el següent pot haver estat manipulat amb: ${ items }. Obre només si hi confies."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Les dades xifrades són lleugerament més grans degut a la sobrecàrrega del xifratge i les signatures, les quals garanteixen la seguretat de les teves dades."
+      ],
+      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        "El següent pot haver estat manipulat amb: ${ items }. Obre només si hi confies."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Cal transferir alguns fitxers. Si es tanca el gestor de transferències es finalitzaran totes les operacions."
@@ -3442,6 +3598,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "És possible que aquest fitxer s'hagi suprimit, mogut o no disponible. Contacteu amb el propietari del fitxer."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les vostres targetes de crèdit."
@@ -3463,13 +3622,22 @@
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Això suprimirà l'enllaç i eliminarà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
-        "Això suprimirà els enllaços i eliminarà l'accés als vostres fitxers o carpetes per a qualsevol persona que els tingui."
+        "Això suprimirà els enllaços i eliminarà l'accés als teus fitxers o carpetes per a qualsevol persona que els tingui."
       ],
       "This will overwrite the existing file": [
         "Se sobreescriurà el fitxer actual"
       ],
       "This will overwrite the existing folder": [
         "Se sobreescriurà la carpeta existent"
+      ],
+      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on\nthe device won’t be affected.": [
+        "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
+      ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Per activar la cerca realment privada ${ DRIVE_APP_NAME } necessita indexar els teus fitxers localment."
+      ],
+      "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Per activar la cerca realment privada, necessitem que indexis els teus fitxers localment. Pots encara utilitzar ${ DRIVE_APP_NAME } normalment - et farem saber quan l'indexat estigui completat."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, verifiqueu que sou humà."
@@ -3501,8 +3669,14 @@
       "Trash": [
         "Paperera"
       ],
+      "Try searching by file name, date, or type.": [
+        "Intenta cercar pel nom de fitxer, data, o tipus."
+      ],
       "Unknown error": [
         "Error desconegut"
+      ],
+      "Unlock drive to recover files": [
+        "Desbloqueja la unitat per recuperar els fitxers"
       ],
       "Unsaved changes": [
         "Canvis no desats"
@@ -3524,6 +3698,21 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
+      ],
+      "Use Drive for Desktop to sync folders on your computer with ${ DRIVE_APP_NAME }. They’ll show up here and be accessible from anywhere. ${ LearnMore }": [
+        "Utilitza Drive for Desktop per sincronitzar carpetes al teu ordinador amb ${ DRIVE_APP_NAME }. Es mostraran aquí i seran accessibles des de qualsevol lloc. ${ LearnMore }"
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "Utilitza aquest formulari per notificar-nos de casos inapropiats, il·legals o fitxers compartits maliciosos. Reportes sobre:"
+      ],
+      "Way to go, you’ve just doubled your free storage!": [
+        "Molt bé, acabes de doblar el teu emmagatzematge gratuït!"
+      ],
+      "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "No podem verificar que ${ emailAddress } va carregar ${ fileName }."
+      ],
+      "We couldn’t verify who uploaded ${ fileName }.": [
+        "No podem verificar qui va carregar ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
@@ -3576,6 +3765,9 @@
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
       ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "Et queden ${ expiresInDays } dies per reclamar la teva bonificació de 500 MB de benvinguda i "
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -3600,6 +3792,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura vençuda. El vostre compte està restringit. La manca de pagament continuada us bloquejarà els correus electrònics i enllaços de compartició. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        "El teu navegador no suporta la descàrrega de grans fitxers degut a la indisponibilitat de workers de servei. Descarregant grans fitxers pots bloquejar o deixar el navegador sense resposta. Si us plau utilitza l'última versió de ${ recommendedBrowser } i intenta-ho un altre cop."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Les vostres dades estan a punt per ser importades des de ${ importedEmailAddressStrong } al vostre compte de ${ BRAND_NAME }."
       ],
@@ -3623,6 +3818,9 @@
       ],
       "Your previous password": [
         "Contrasenya anterior"
+      ],
+      "Your previous recovery phrase": [
+        "La teva frase de recuperació anterior"
       ]
     },
     "Info on errors": {
@@ -3639,6 +3837,9 @@
       ],
       "file data key": [
         "clau de dades del fitxer"
+      ],
+      "file data order": [
+        "ordena dades del fitxer"
       ],
       "hash key": [
         "clau hash"
@@ -3803,6 +4004,9 @@
       ],
       "Download anyway": [
         "Baixa igualment"
+      ],
+      "Downloading ${ percentageValue }%": [
+        "Descàrrega ${ percentageValue } %"
       ],
       "Email": [
         "Correu electrònic"
@@ -4002,8 +4206,8 @@
       "Replace folder": [
         "Substituir carpeta"
       ],
-      "Report Abuse": [
-        "Denuncia abús"
+      "Report": [
+        "Reporta"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -4044,6 +4248,9 @@
       "Text": [
         "Text"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Això esborrarà permanentment tots els fitxers de la teva unitat bloquejada."
+      ],
       "To: ${ to }": [
         "Per: ${ to }"
       ],
@@ -4065,6 +4272,9 @@
       "Unlock drive": [
         "Desbloquejar unitat"
       ],
+      "Unlock drive (recommended)": [
+        "Desbloqueja la unitat (recomanat)"
+      ],
       "Unlock later": [
         "Desbloqueja més tard"
       ],
@@ -4073,6 +4283,9 @@
       ],
       "Upload picture": [
         "Carrega imatge"
+      ],
+      "Upload your first file": [
+        "Carrega el teu primer fitxer"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Nom d'usuari o adreça de ${ MAIL_APP_NAME }"
@@ -4088,6 +4301,9 @@
       ],
       "Wonderful": [
         "Meravellosa"
+      ],
+      "Yes, I want to permanently delete\nmy old files": [
+        "Sí, vull eliminar permanentment els meus fitxers antics"
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
@@ -4169,7 +4385,7 @@
         "Ja gairebé està"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }",
         "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -4451,6 +4667,12 @@
       "The link to your item was deleted": [
         "S'ha eliminat l'enllaç a l'element"
       ],
+      "Trash failed to be emptied": [
+        "El buidatge de la paperera va fallar"
+      ],
+      "Your old files will be deleted in 72 hours": [
+        "Els teus fitxers antics s'esborraran en 72 hores"
+      ],
       "Your settings failed to be saved": [
         "No s'ha pogut desar la configuració"
       ],
@@ -4492,6 +4714,9 @@
       ],
       "Upload a file": [
         "Puja un fitxer"
+      ],
+      "Your trusty online vault for vital documents and precious memories.": [
+        "La teva caixa forta en línia de confiança per a documents vitals i records preciosos."
       ]
     },
     "Onboarding Proton": {
@@ -4724,6 +4949,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Ara pots cercar fàcilment fitxers a Drive mentre tens les teves dades segures."
       ]
     },
     "Storage": {
@@ -5000,9 +5228,6 @@
       "Date": [
         "Data"
       ],
-      "Decrypting": [
-        "S'està desxifrant"
-      ],
       "Delete ${ count } contact": [
         "Suprimeix ${ count } contacte",
         "Suprimeix ${ count } contactes"
@@ -5025,9 +5250,6 @@
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
-      ],
-      "Download shared file": [
-        "Baixa el fitxer compartit"
       ],
       "Download unverified file?": [
         "Baixa un fitxer no verificat?"
@@ -5065,6 +5287,9 @@
       "Empty trash": [
         "Buida la paperera"
       ],
+      "Enable drive search": [
+        "Activa la cerca de la unitat"
+      ],
       "Enter your password": [
         "Introduïu la vostra contrasenya"
       ],
@@ -5099,11 +5324,11 @@
         "Trobat ${ searchView.numberOfResults } resultat",
         "Trobats ${ searchView.numberOfResults } resultats"
       ],
-      "Getting files": [
-        "S'estan obtenint els fitxers"
-      ],
       "Groups": [
         "Grups"
+      ],
+      "Hm, we couldn't find that one": [
+        "No hem pogut trobar aquest element."
       ],
       "Human verification": [
         "Verificació humana"
@@ -5331,6 +5556,9 @@
       "Uploaded by": [
         "Pujat per"
       ],
+      "Uploading a large file or folder": [
+        "Carrega un fitxer gran o una carpeta"
+      ],
       "View contacts": [
         "Veure contactes"
       ],
@@ -5354,9 +5582,6 @@
       ],
       "You have no folders yet": [
         "Encara no tens cap carpeta"
-      ],
-      "You've got files": [
-        "Tens fitxers"
       ],
       "Your 500 MB bonus": [
         "El vostre bonus de 500 MB"

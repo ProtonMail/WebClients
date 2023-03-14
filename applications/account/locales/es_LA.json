@@ -413,9 +413,6 @@
       "Go to label": [
         "Ir a la etiqueta"
       ],
-      "Go to sign in": [
-        "Ir al inicio de sesión"
-      ],
       "Got it": [
         "Entendido"
       ],
@@ -4382,6 +4379,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } es inválida"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagen de tamaño completo"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: vista previa de baja resolución"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } se establecerá como calendario por defecto."
       ],
@@ -5030,11 +5033,11 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Si ha configurado tanto SPF como DKIM, DMARC le permite especificar cómo otros servicios de correo electrónico deben entregar el correo electrónico para su dominio si fallaron las comprobaciones de SPF y DKIM. Esto puede hacer que sea más difícil para los spammers que fingen ser usted, pero también puede causar problemas de entrega si no se hace correctamente."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Si pierde su contraseña y necesita restablecer su cuenta, ${ boldImperative } que tenga un ${ boldAccountRecovery } configurado."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Si pierde su contraseña y necesita restablecer su cuenta, ${ boldImperative } que tenga un ${ boldAccountAndRecovery } configurado. De lo contrario, es posible que no pueda acceder a ninguno de sus correos electrónicos, contactos o archivos."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si pierde su dispositivo habilitado para dos factores, estos códigos pueden usarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en su cuenta. Cada código solo se puede usar una vez."
@@ -5409,9 +5412,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Se requiere suscripción Plus o Visionary"
-      ],
-      "Preview": [
-        "Vista previa"
       ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
@@ -6095,9 +6095,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Su correo electrónico sólo se usará para esta verificación única."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Su cuenta existente de ${ BRAND_NAME } puede usarse para acceder a todos los servicios de ${ BRAND_NAME }. Inicie sesión con ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Su importación desde ${ accounts } está retrasada temporalmente.",
@@ -7608,7 +7605,7 @@
         "Ya casi está"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
         "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -10960,9 +10957,6 @@
       ],
       "WireGuard configuration": [
         "Configuración de WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Ya tiene una cuenta de ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Enlace a su calendario"

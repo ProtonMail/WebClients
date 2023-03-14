@@ -40,7 +40,7 @@
         "Supprimer le transfert"
       ],
       "You will stop the mail forwarding.": [
-        "Vous arrêterez le transfert de messages."
+        "Vous arrêterez le transfert du mail."
       ]
     },
     "Action": {
@@ -412,9 +412,6 @@
       ],
       "Go to label": [
         "Afficher le label"
-      ],
-      "Go to sign in": [
-        "Se connecter"
       ],
       "Got it": [
         "J'ai compris"
@@ -2885,7 +2882,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'adresse e-mail n'est pas valide."
+        "L'adresse e-mail est invalide."
       ],
       "Empty condition": [
         "La condition est vide."
@@ -4385,6 +4382,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } n'est pas valide."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName } : image en taille réelle"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName } : aperçu basse résolution"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } sera défini comme calendrier par défaut."
       ],
@@ -5033,11 +5036,11 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Si vous avez configuré SPF et DKIM, DMARC vous permet de spécifier comment les autres services de messagerie devraient envoyer des messages pour votre domaine si les vérifications SPF et DKIM échouent. Ceci peut compliquer la tâche des spammeurs qui se font passer pour vous, mais peut aussi causer des problèmes de distribution si ce n'est pas fait correctement."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Si vous perdez votre mot de passe et que vous devez réinitialiser votre compte, ${ boldImperative } que vous ayez ${ boldAccountRecovery } en place."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Si vous perdez votre mot de passe et que vous devez réinitialiser votre compte, ${ boldImperative } que vous ayez ${ boldAccountAndRecovery } en place, sans quoi vous ne pourrez peut-être pas accéder à vos messages, contacts ou fichiers."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "En cas de perte de l'appareil que vous utilisez pour l'authentification à deux facteurs, ces codes peuvent être utilisés à la place du code d'authentification à 6 chiffres pour vous connecter à votre compte. Chaque code ne peut être utilisé qu'une seule fois."
@@ -5415,9 +5418,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Un abonnement Plus ou Visionary est nécessaire."
-      ],
-      "Preview": [
-        "Aperçu"
       ],
       "Preview failed to be loaded": [
         "L'aperçu n'a pas pu être chargé."
@@ -6104,9 +6104,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Votre compte ${ BRAND_NAME } peut être utilisé pour accéder à tous les services ${ BRAND_NAME }. Connectez-vous avec ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Votre importation à partir de ${ accounts } est temporairement retardée.",
@@ -6969,7 +6966,7 @@
         "Inviter par e-mail"
       ],
       "Keep me signed in": [
-        "Gardez-moi connecté"
+        "Se souvenir de moi"
       ],
       "Keep messages in Sent/Drafts": [
         "Conserver les messages dans les dossiers Envoyés et Brouillons."
@@ -7617,7 +7614,7 @@
         "Nous y sommes presque."
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }.",
         "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }."
       ],
       "Connecting to your email provider": [
@@ -10978,9 +10975,6 @@
       ],
       "WireGuard configuration": [
         "Configuration WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Vous avez déjà un compte ${ BRAND_NAME }."
       ],
       "Your calendar link": [
         "Lien de votre calendrier"

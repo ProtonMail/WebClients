@@ -3761,6 +3761,11 @@
         "Klik for detaljer"
       ]
     },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Kun visning"
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Nogle af dine kalendere vil ikke vise detaljer om tidligere oprettede begivenheder."
@@ -4244,7 +4249,7 @@
         "Næsten færdig"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Antal oprettet kalender:  ${ createdCalendarCount } af ${ calendarsToBeCreated }",
         "Antal oprettede kalendere: ${ createdCalendarCount } af ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [

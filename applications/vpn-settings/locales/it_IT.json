@@ -167,9 +167,6 @@
       "Get verification code": [
         "Ottieni il codice di verifica"
       ],
-      "Go to sign in": [
-        "Vai al login"
-      ],
       "Hide": [
         "Nascondi"
       ],
@@ -1514,6 +1511,9 @@
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
+      "Payment process canceled": [
+        "Processo di pagamento annullato"
+      ],
       "Payment process consumed": [
         "Processo di pagamento completato"
       ],
@@ -1549,6 +1549,9 @@
       ],
       "Tab closed": [
         "Scheda chiusa"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Il browser che stai usando attualmente non permette l'autorizzazione completa del pagamento. Usa un browser differente oppure accedi da un computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
@@ -2098,6 +2101,9 @@
       "Internet connection restored.": [
         "Connessione Internet ripristinata."
       ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Scopri come accedere a ${ VPN_APP_NAME } con applicazioni VPN di terze parti."
+      ],
       "Learn more": [
         "Per saperne di più"
       ],
@@ -2188,9 +2194,6 @@
       "Plus or Visionary subscription required": [
         "Abbonamento Plus o Visionary richiesto"
       ],
-      "Preview": [
-        "Anteprima"
-      ],
       "Preview failed to be loaded": [
         "Impossibile caricare l'anteprima"
       ],
@@ -2238,6 +2241,9 @@
       ],
       "Setting up your Drive": [
         "Impostazione del tuo Drive"
+      ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Accedi a ${ MAIL_APP_NAME } per attivare il tuo indirizzo"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
@@ -2331,6 +2337,9 @@
       ],
       "Two-factor authentication enabled": [
         "Autenticazione a due fattori attivata"
+      ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "La modalità a doppia password richiede due password: una per accedere al tuo account e una per decifrare la tua casella di posta. (Avanzata)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "La modalità a doppia password utilizza due password separate per la decifratura del login e della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
@@ -2462,6 +2471,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "È possibile utilizzare le seguenti credenziali per connettersi a un server ${ VPN_APP_NAME } utilizzando un'app VPN open source di terze parti, come Tunnelblick per macOS o OpenVPN per GNU/Linux."
       ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Non è possibile utilizzare le credenziali OpenVPN/IKEv2 per accedere alle applicazioni ${ VPN_APP_NAME } o al pannello di controllo ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Non è stato impostato alcun metodo di recupero, quindi il recupero dell'account è impossibile se si dimentica la password. Procedere senza metodo di recupero?"
       ],
@@ -2504,6 +2516,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "I tuoi account ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } sono collegati. Per eliminarli entrambi, accedi a ${ loginLink } ed elimina il tuo account da lì."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
       ],
@@ -2518,9 +2533,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Il tuo account ${ BRAND_NAME } esistente può essere utilizzato per accedere a tutti i servizi ${ BRAND_NAME }. Accedi con ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "I tuoi dati di pagamento sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
@@ -3875,6 +3887,9 @@
       "Verify recovery phone?": [
         "Verifica telefono di recupero?"
       ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Verifica ora il numero di telefono di recupero: ${ phone.Value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
       ]
@@ -4686,8 +4701,8 @@
       "Total paid": [
         "Totale pagato"
       ],
-      "TV log in": [
-        "TV sign in"
+      "TV sign in": [
+        "Accesso TV"
       ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
@@ -4730,9 +4745,6 @@
       ],
       "WireGuard configuration": [
         "Configurazione WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Hai già un account ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Le tue modifiche non sono ancora sincronizzate"
@@ -4817,6 +4829,9 @@
     "Warning": {
       "Are you sure you want to delete the phone number?": [
         "Sei sicuro di voler eliminare il numero di telefono?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Sei sicuro di voler eliminare questo indirizzo?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Eliminando questo indirizzo, non sarai più in grado di ricevere le notifiche email giornaliere."

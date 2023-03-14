@@ -4,6 +4,14 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "転送がすぐに始まります。新しいメールが受信トレイに出現します。"
+      ],
+      "Mail forward stopped": [
+        "メールの転送を停止しました"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } の紹介"
@@ -154,6 +162,9 @@
       ],
       "Create a new contact group": [
         "新規連絡先グループを作成"
+      ],
+      "Create account": [
+        "アカウントを作成"
       ],
       "Create link": [
         "リンクを作成"
@@ -3014,9 +3025,6 @@
       "Enabling drive search": [
         "ドライブ内検索をオンにしています"
       ],
-      "Encrypted": [
-        "暗号化済み"
-      ],
       "Encrypted search is here": [
         "暗号化検索が利用できます"
       ],
@@ -3335,9 +3343,6 @@
       "Preparing link to folder": [
         "フォルダーのリンクを準備中"
       ],
-      "Preview": [
-        "プレビュー"
-      ],
       "Preview failed to be loaded": [
         "プレビューの読み込みに失敗しました"
       ],
@@ -3370,9 +3375,6 @@
       ],
       "Search Enabled": [
         "検索機能がオンです"
-      ],
-      "Secure sharing": [
-        "安全な共有"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "アップロードしたファイルまたはフォルダーを選択し、リンクを作成できます。"
@@ -3419,9 +3421,6 @@
       "support team": [
         "サポートチーム"
       ],
-      "Swiss privacy": [
-        "スイス法準拠のプライバシー"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
       ],
@@ -3439,9 +3438,6 @@
       ],
       "There are no files yet": [
         "まだファイルがありません"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "ファイルは、エンドツーエンド暗号化を使用して共有されました。${ DRIVE_APP_NAME } を利用するとドキュメント、写真、ファイルを安全に保管できます。使いやすく、無料で利用できます。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -3910,6 +3906,12 @@
       "Folder name": [
         "フォルダー名"
       ],
+      "From: ${ from }": [
+        "送信者: ${ from }"
+      ],
+      "From: ${ fromEmail }": [
+        "送信者: ${ fromEmail }"
+      ],
       "Good": [
         "いい"
       ],
@@ -4042,9 +4044,6 @@
       "Replace folder": [
         "フォルダーを置き換える"
       ],
-      "Report Abuse": [
-        "不正利用の報告"
-      ],
       "Reveal password": [
         "パスワードを表示する"
       ],
@@ -4086,6 +4085,12 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "開くことのできないドライブ内のすべてのデータが削除されます。"
+      ],
+      "To: ${ to }": [
+        "宛先: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "宛先: ${ toEmail }"
       ],
       "Toolbar": [
         "ツールバー"
@@ -4171,6 +4176,17 @@
     "Landmarks": {
       "Side panel": [
         "サイドパネル"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "新しいカレンダーを追加するには、ほかのカレンダーを削除するか、${ BRAND_NAME } プランから有償の${ MAIL_SHORT_APP_NAME } プランにアップグレードします。"
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "このプランで利用できるカレンダーの最大数に達しました。"
       ]
     },
     "Link": {
@@ -4983,9 +4999,6 @@
       "Date": [
         "日付"
       ],
-      "Decrypting": [
-        "復号中"
-      ],
       "Delete ${ count } contact groups": [
         "${ count } 件の連絡先を削除"
       ],
@@ -5006,9 +5019,6 @@
       ],
       "Discard changes?": [
         "変更を破棄しますか?"
-      ],
-      "Download shared file": [
-        "共有されたファイルをダウンロード"
       ],
       "Download unverified file?": [
         "未検証のファイルをダウンロードしますか?"
@@ -5084,9 +5094,6 @@
       ],
       "Found ${ searchView.numberOfResults } results": [
         "${ searchView.numberOfResults }件見つかりました"
-      ],
-      "Getting files": [
-        "ファイルを取得中"
       ],
       "Groups": [
         "グループ"
@@ -5342,9 +5349,6 @@
       ],
       "You have no folders yet": [
         "フォルダーがありません"
-      ],
-      "You've got files": [
-        "ファイルを安全に保管する"
       ],
       "Your 500 MB bonus": [
         "500 MB のボーナス"
