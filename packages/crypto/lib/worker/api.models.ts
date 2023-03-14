@@ -18,7 +18,7 @@ import type {
     VerifyCleartextOptionsPmcrypto,
     VerifyMessageResult,
     VerifyOptionsPmcrypto,
-} from 'pmcrypto-v7/lib/pmcrypto';
+} from 'pmcrypto-v7';
 
 export type { enums } from 'pmcrypto-v7/lib/openpgp';
 

@@ -1,5 +1,6 @@
 import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
+import { SessionKey, generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto-v7';
 import {
     CompressedDataPacket,
     enums,
@@ -10,7 +11,6 @@ import {
     readPrivateKey as openpgp_readPrivateKey,
     revokeKey as openpgp_revokeKey,
 } from 'pmcrypto-v7/lib/openpgp';
-import { SessionKey, generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto-v7/lib/pmcrypto';
 
 import { VERIFICATION_STATUS } from '../../lib';
 import {
@@ -281,6 +281,38 @@ tBiO7HKQxoGj3FnUTJnI52Y0pIg=
         expect(invalidVerificationResult.signatures).to.have.length(1);
         expect(invalidVerificationResult.errors).to.have.length(1);
         expect(invalidVerificationResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
+    });
+
+    it('signMessage/verifyMessage - with context', async () => {
+        const privateKeyRef = await CryptoWorker.generateKey({ userIDs: { name: 'name', email: 'email@test.com' } });
+        const textData = 'message with context';
+
+        const armoredSignature = await CryptoWorker.signMessage({
+            textData,
+            signingKeys: privateKeyRef,
+            context: { value: 'test-context', critical: true },
+            detached: true,
+        });
+
+        const verificationValidContext = await CryptoWorker.verifyMessage({
+            textData,
+            armoredSignature,
+            verificationKeys: privateKeyRef,
+            context: { value: 'test-context', required: true },
+        });
+
+        const verificationMissingContext = await CryptoWorker.verifyMessage({
+            textData,
+            armoredSignature,
+            verificationKeys: privateKeyRef,
+        });
+
+        expect(verificationValidContext.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        expect(verificationMissingContext.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_INVALID);
+        // check errors
+        expect(verificationValidContext.errors).to.be.undefined;
+        expect(verificationMissingContext.errors).to.have.length(1);
+        expect(verificationMissingContext.errors![0]).to.match(/Unknown critical notation: context@proton/);
     });
 
     it('verifyCleartextMessage - output binary signature should be transferred', async () => {
