@@ -87,7 +87,6 @@ export enum FeatureCode {
     DriveMyDevices = 'DriveWebMyDevices',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     ProtonBadge = 'ProtonBadge',
-    TelemetrySetting = 'TelemetrySetting',
     QuickReply = 'QuickReply',
     ScheduledSendFreemium = 'ScheduledSendFreemium',
 }
