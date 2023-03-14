@@ -276,6 +276,9 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                             {Boolean(member.Private) && (
                                                 <Badge type="light">{c('Private Member').t`private`}</Badge>
                                             )}
+                                            {member['2faStatus'] > 0 && (
+                                                <Badge type="light">{c('Enabled 2FA').t`2FA`}</Badge>
+                                            )}
                                         </div>
                                     </div>,
                                     <div className="pr1 text-cut max-w100">
