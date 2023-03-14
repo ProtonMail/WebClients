@@ -1,29 +1,29 @@
-import { MouseEvent as ReactMouseEvent, useRef, useState } from 'react';
+import { MouseEvent as ReactMouseEvent, useLayoutEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
-import { Icon, ModalProps, ModalTwo, ModalTwoFooter, Tooltip } from '@proton/components/components';
+import { Icon, ModalTwo, ModalTwoFooter, Tooltip } from '@proton/components/components';
 import Dialog from '@proton/components/components/dialog/Dialog';
 import { Portal } from '@proton/components/components/portal';
 import { useActiveBreakpoint } from '@proton/components/hooks';
+import usePrevious from '@proton/hooks/usePrevious';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import bigLogoWhite from '@proton/styles/assets/img/drive/big-logo-white.svg';
 import clsx from '@proton/utils/clsx';
 
-import { DRIVE_LANDING_PAGE } from '../SharedPage/constant';
+import { DRIVE_PRICING_PAGE } from './constants';
 
 import './UpsellFloatingModal.scss';
 
-interface Props extends ModalProps {
-    onResolve: () => void;
-    onReject: () => void;
+interface ChildProps {
     open: boolean;
-    onlyOnce: boolean;
+    onClose: () => void;
+    onBlockNewOpening: () => void;
 }
 
-const UpsellFloaingModalContent = ({ onClose }: { onClose: () => void }) => {
+const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) => {
     return (
         <>
             <div className="upsell-floating-modal-content w100 flex flex-justify-center p5">
@@ -45,58 +45,115 @@ const UpsellFloaingModalContent = ({ onClose }: { onClose: () => void }) => {
                 </p>
             </div>
             <ModalTwoFooter>
-                <ButtonLike as="a" href={DRIVE_LANDING_PAGE} target="_blank" className="w100" color="norm">{c('Action')
+                <ButtonLike as="a" href={DRIVE_PRICING_PAGE} target="_blank" className="w100" color="norm">{c('Action')
                     .t`Get ${DRIVE_APP_NAME}`}</ButtonLike>
             </ModalTwoFooter>
         </>
     );
 };
 
-const UpsellFloatingModal = ({ onResolve, open, onlyOnce = false }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
-    const [wasOpened, setWasOpened] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
-    const handleClose = () => {
-        onResolve();
-        if (onlyOnce) {
-            setWasOpened(true);
+enum ExitState {
+    idle,
+    exiting,
+    exited,
+}
+const DesktopUpsellFloatingModal = ({ open, onClose, onBlockNewOpening }: ChildProps) => {
+    const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
+    const active = exit !== ExitState.exited;
+    const previousOpen = usePrevious(open);
+
+    useLayoutEffect(() => {
+        if (!previousOpen && open) {
+            setExit(ExitState.idle);
+        } else if (previousOpen && !open) {
+            setExit(ExitState.exiting);
+        } else if (!previousOpen && !open && !active) {
+            onBlockNewOpening();
         }
+    }, [previousOpen, open, active]);
+
+    if (!active) {
+        return null;
+    }
+
+    const exiting = exit === ExitState.exiting;
+    return (
+        <Portal>
+            <div
+                className={clsx(modalTwoRootClassName, 'upsell-floating-modal', exiting && 'modal-two--out')}
+                onAnimationEnd={({ animationName }) => {
+                    if (exiting && animationName === 'anime-modal-two-out') {
+                        setExit(ExitState.exited);
+                    }
+                }}
+            >
+                <Dialog className="modal-two-dialog modal-two-dialog--small">
+                    <div className="modal-two-dialog-container">
+                        <UpsellFloatingModalContent onClose={onClose} />
+                    </div>
+                </Dialog>
+            </div>
+        </Portal>
+    );
+};
+
+const MobileUpsellFloatingModal = ({ open, onClose, onBlockNewOpening }: ChildProps) => {
+    const ref = useRef<HTMLDivElement>(null);
+
+    const handleClose = () => {
+        onClose();
+        onBlockNewOpening();
     };
 
+    // We listen for click outside and test if the click will contain the ref
     const handleOutsideClick = (e: ReactMouseEvent<HTMLDivElement, MouseEvent>) => {
         if (e.target && !ref.current?.contains(e.target as Element)) {
             handleClose();
         }
     };
 
-    if (!open || wasOpened) {
+    return (
+        // TODO: need to find a better way than put a click on div
+        <div onClick={handleOutsideClick}>
+            <ModalTwo open={open} onClose={handleClose}>
+                <div ref={ref}>
+                    <UpsellFloatingModalContent onClose={handleClose} />
+                </div>
+            </ModalTwo>
+        </div>
+    );
+};
+
+interface Props {
+    onResolve: () => void;
+    open: boolean;
+    onlyOnce: boolean;
+}
+const UpsellFloatingModal = ({ onResolve, open, onlyOnce = false }: Props) => {
+    const { isNarrow } = useActiveBreakpoint();
+    const [wasOpened, setWasOpened] = useState(false);
+
+    const handleBlockNewOpening = () => {
+        if (onlyOnce) {
+            setWasOpened(true);
+        }
+    };
+
+    const props = {
+        open,
+        onClose: onResolve,
+        onBlockNewOpening: handleBlockNewOpening,
+    };
+
+    if (wasOpened) {
         return null;
     }
 
     if (isNarrow) {
-        // We listen for click outside and test if the click will contain the ref
-        return (
-            <div onClick={handleOutsideClick}>
-                <ModalTwo open onClose={handleClose}>
-                    <div ref={ref}>
-                        <UpsellFloaingModalContent onClose={handleClose} />
-                    </div>
-                </ModalTwo>
-            </div>
-        );
+        return <MobileUpsellFloatingModal {...props} />;
     }
 
-    return (
-        <Portal>
-            <div className={clsx(modalTwoRootClassName, 'upsell-floating-modal')}>
-                <Dialog className="modal-two-dialog modal-two-dialog--small">
-                    <div className="modal-two-dialog-container">
-                        <UpsellFloaingModalContent onClose={handleClose} />
-                    </div>
-                </Dialog>
-            </div>
-        </Portal>
-    );
+    return <DesktopUpsellFloatingModal {...props} />;
 };
 
 export default UpsellFloatingModal;
