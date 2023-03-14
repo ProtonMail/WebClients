@@ -10,6 +10,7 @@ import {
     useFeature,
     useGetMessageCounts,
     useGetUserKeys,
+    useLocalState,
     useNotifications,
     useSubscribeEventManager,
     useUser,
@@ -26,7 +27,7 @@ import {
 import { SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { isPaid } from '@proton/shared/lib/user/helpers';
+import { isFree, isPaid } from '@proton/shared/lib/user/helpers';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import { convertEventType, getESHelpers, migrate, parseSearchParams } from '../helpers/encryptedSearch';
@@ -49,13 +50,15 @@ interface Props {
 
 const EncryptedSearchProvider = ({ children }: Props) => {
     const history = useHistory();
+    const [user] = useUser();
+    const [initialIndexing, setInitialIndexing] = useLocalState(false, `ES:${user.ID}:InitialIndexing`);
     const getMessageKeys = useGetMessageKeys();
     const getUserKeys = useGetUserKeys();
     const getMessageCounts = useGetMessageCounts();
     const api = useApi();
-    const [user] = useUser();
     const [welcomeFlags] = useWelcomeFlags();
     const { update: updateSpotlightES } = useFeature(FeatureCode.SpotlightEncryptedSearch);
+    const { feature: esAutomaticBackgroundIndexingFeature } = useFeature(FeatureCode.ESAutomaticBackgroundIndexing);
     const { createNotification } = useNotifications();
     const { isSearch, page } = parseSearchParams(history.location);
 
@@ -128,8 +131,21 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Initialize ES
      */
     const initializeESMail = async () => {
-        if (!isPaid(user)) {
-            return esLibraryFunctions.esDelete();
+        if (isFree(user) && !!esAutomaticBackgroundIndexingFeature?.Value) {
+            // Avoid indexing for incognito users
+            // If initialIndexing is set, it means that the user is not incognito
+            if (initialIndexing) {
+                // Start indexing
+                const success = await esLibraryFunctions.enableEncryptedSearch(); // TODO: pass parameter to indicate background mode
+
+                if (success) {
+                    await esLibraryFunctions.enableContentSearch();
+                }
+                return;
+            } else {
+                setInitialIndexing(true);
+                return;
+            }
         }
 
         setESMailStatus((esMailStatus) => ({
