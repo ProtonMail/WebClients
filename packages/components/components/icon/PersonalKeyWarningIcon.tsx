@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import Href from '../link/Href';
 import WarningIcon from './WarningIcon';
 
 interface Props {
@@ -16,7 +16,7 @@ const PersonalKeyWarningIcon = ({ className }: Props) => {
         .t`This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.`;
 
     return (
-        <Href url={getKnowledgeBaseUrl('/openpgp-keys-security')} className={className}>
+        <Href href={getKnowledgeBaseUrl('/openpgp-keys-security')} className={className}>
             <WarningIcon warning={warning} />
         </Href>
     );

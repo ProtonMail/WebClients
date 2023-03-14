@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike, Href } from '@proton/atoms';
 
-import { Block, Bordered, ButtonGroup, DropdownMenu, Href, Icon, IconName, SimpleDropdown } from '../../../components';
+import { Block, Bordered, ButtonGroup, DropdownMenu, Icon, IconName, SimpleDropdown } from '../../../components';
 
 interface Props {
     title: string;
@@ -22,14 +22,14 @@ const VPNClientCard = ({ title, link, items, icon }: Props) => {
             <Block>{title}</Block>
             {!items ? (
                 <div className="pl1 pr1 flex mt1 flex-justify-center">
-                    <ButtonLike as={Href} url={link}>
+                    <ButtonLike as={Href} href={link}>
                         {c('Action').t`Download`}
                         <span className="sr-only">{title}</span>
                     </ButtonLike>
                 </div>
             ) : (
                 <ButtonGroup className="flex pl0-25 pr0-25 mt1 flex-justify-center">
-                    <ButtonLike as={Href} url={link}>
+                    <ButtonLike as={Href} href={link}>
                         {c('Action').t`Download`}
                         <span className="sr-only">{title}</span>
                     </ButtonLike>

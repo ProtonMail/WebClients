@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { APPS, BRAND_NAME, CLIENT_TYPES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -17,7 +17,6 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Form,
-    Href,
     Icon,
     InputFieldTwo,
     ModalTwo as Modal,
@@ -144,7 +143,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     });
     const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
     const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
-    const link = <Href key="linkClearCache" url={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
+    const link = <Href key="linkClearCache" href={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
 
     const { validator, onFormSubmit } = useFormErrors();
 

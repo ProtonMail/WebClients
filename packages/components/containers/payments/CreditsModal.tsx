@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { buyCredit } from '@proton/shared/lib/api/payments';
 import {
     APPS,
@@ -16,7 +16,6 @@ import { Currency } from '@proton/shared/lib/interfaces';
 
 import {
     Form,
-    Href,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
@@ -104,7 +103,7 @@ const CreditsModal = (props: ModalProps) => {
                             .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}
                     </div>
                     <Href
-                        url={
+                        href={
                             APP_NAME === APPS.PROTONVPN_SETTINGS
                                 ? 'https://protonvpn.com/support/vpn-credit-proration/'
                                 : getKnowledgeBaseUrl('/credit-proration-coupons')

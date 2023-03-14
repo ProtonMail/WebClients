@@ -1,12 +1,11 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Href,
     Icon,
     ModalProps,
     ModalTwo,
@@ -55,7 +54,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
     };
 
     const learnMoreLink = (
-        <Href url={emailTrackerProtectionURL} data-testid="spyTrackerModal:learnmore">{c('Info').t`Learn more`}</Href>
+        <Href href={emailTrackerProtectionURL} data-testid="spyTrackerModal:learnmore">{c('Info').t`Learn more`}</Href>
     );
 
     let content;

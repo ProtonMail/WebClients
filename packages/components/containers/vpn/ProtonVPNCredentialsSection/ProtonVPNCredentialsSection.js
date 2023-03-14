@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { BRAND_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Alert, Field, Href, Label, Row } from '../../../components';
+import { Alert, Field, Label, Row } from '../../../components';
 import { useUser } from '../../../hooks';
 
 const ProtonVPNCredentialsSection = () => {
@@ -11,7 +12,7 @@ const ProtonVPNCredentialsSection = () => {
     const username = user.isMember ? user.Email : user.Name;
 
     const downloadLink = (
-        <Href key="link" className="mr0-5" url="https://protonvpn.com/download">{c('Link')
+        <Href key="link" className="mr0-5" href="https://protonvpn.com/download">{c('Link')
             .t`${VPN_APP_NAME} native clients`}</Href>
     );
 

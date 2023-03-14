@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/components';
+import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 const YahooContactsInstructions = () => {
     // translator: full sentence: "To import contacts to Proton, you need a CSV or a VCF (vCard) file. Download it from Yahoo in 3 easy steps:"
     const knowledgeBaseLink = (
-        <Href url={getKnowledgeBaseUrl('/exporting-contacts-from-other-mail-providers')} key="knowledgeBaseLink">
+        <Href href={getKnowledgeBaseUrl('/exporting-contacts-from-other-mail-providers')} key="knowledgeBaseLink">
             {c('Import instructions link').t`CSV or a VCF (vCard) file`}
         </Href>
     );
@@ -17,7 +17,7 @@ const YahooContactsInstructions = () => {
 
     // translator: full sentence: "Open your Yahoo contacts":
     const yahooMailLink = (
-        <Href url="https://mail.yahoo.com/" key="yahooMailLink">
+        <Href href="https://mail.yahoo.com/" key="yahooMailLink">
             {c('Import instructions link').t`Yahoo`}
         </Href>
     );

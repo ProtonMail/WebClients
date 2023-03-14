@@ -2,7 +2,7 @@ import { FormEvent, ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -15,7 +15,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Form,
-    Href,
     InlineLinkButton,
     InputFieldTwo,
     Loader,
@@ -105,7 +104,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
 
             // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication guide first</link>.
             const guideButton = (
-                <Href key="0" url={twoFactorAuthLink}>{c('Info')
+                <Href key="0" href={twoFactorAuthLink}>{c('Info')
                     .t`read our two-factor authentication guide first`}</Href>
             );
 

@@ -2,8 +2,8 @@ import React, { useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Href, Icon, InputTwo, Spotlight, usePopperAnchor } from '@proton/components';
+import { Button, Href } from '@proton/atoms';
+import { Icon, InputTwo, Spotlight, usePopperAnchor } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
@@ -85,7 +85,7 @@ export const SearchField = () => {
                             <div className="text-bold text-lg mauto">{c('Spotlight').t`Encrypted search is here`}</div>
                             {c('Spotlight').t`Now you can easily search Drive files while keeping your data secure.`}
                             <br />
-                            <Href url={getKnowledgeBaseUrl('/search-drive')} title="How does encrypted search work?">
+                            <Href href={getKnowledgeBaseUrl('/search-drive')} title="How does encrypted search work?">
                                 {c('Info').t`How does encrypted search work?`}
                             </Href>
                         </div>

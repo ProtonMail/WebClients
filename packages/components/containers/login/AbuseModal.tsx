@@ -1,11 +1,11 @@
 import DOMPurify from 'dompurify';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { isElement } from '@proton/shared/lib/helpers/dom';
 import { getAbuseURL } from '@proton/shared/lib/helpers/url';
 
-import { Href, Prompt } from '../../components';
+import { Prompt } from '../../components';
 
 interface Props {
     message?: string;
@@ -46,7 +46,7 @@ const purifyMessage = (msg: string) => {
 
 const AbuseModal = ({ message, open, onClose }: Props) => {
     const contactLink = (
-        <Href url={getAbuseURL()} key={1}>
+        <Href href={getAbuseURL()} key={1}>
             {c('Info').t`here`}
         </Href>
     );

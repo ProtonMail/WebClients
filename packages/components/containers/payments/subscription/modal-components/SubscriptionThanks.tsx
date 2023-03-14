@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader, Href } from '@proton/atoms';
 import { APPS, PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 import mailThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-mail.svg';
 import vpnThanksSvg from '@proton/styles/assets/img/illustrations/thank-you-vpn.svg';
 
-import { Href, PrimaryButton } from '../../../../components';
+import { PrimaryButton } from '../../../../components';
 import { useConfig } from '../../../../hooks';
 
 interface Props {
@@ -41,7 +41,7 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                     .t`Download your favorite app today and take privacy with you everywhere you go.`}</p>
                 <div className="mt1 mb2 text-center">
                     <Href
-                        url={
+                        href={
                             isVPN
                                 ? 'https://play.google.com/store/apps/details?id=ch.protonvpn.android'
                                 : 'https://play.google.com/store/apps/details?id=ch.protonmail.android'
@@ -51,7 +51,7 @@ const SubscriptionThanks = ({ method, onClose, loading }: Props) => {
                         <img width="150" src={playStoreSvg} alt="Play Store" />
                     </Href>
                     <Href
-                        url={
+                        href={
                             isVPN
                                 ? 'https://itunes.apple.com/us/app/protonvpn-fast-secure-vpn/id1437005085'
                                 : 'https://apps.apple.com/app/protonmail-encrypted-email/id979659905'

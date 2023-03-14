@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, ConfirmModal, Href, Input, Label, PasswordInput, PrimaryButton } from '../../components';
+import { Alert, ConfirmModal, Input, Label, PasswordInput, PrimaryButton } from '../../components';
 import { useApi, useConfig, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
 import { OnLoginCallback } from '../app';
 import { GenericError } from '../error';
@@ -140,7 +141,7 @@ const DangerForm = ({ onSubmit, isVPN }: { onSubmit: () => Promise<void>; isVPN:
     const [danger, setDanger] = useState('');
     const [loading, withLoading] = useLoading();
     const dangerWord = 'DANGER';
-    const hereLink = <Href key="0" url="https://account.proton.me/login">{c('Link').t`here`}</Href>;
+    const hereLink = <Href key="0" href="https://account.proton.me/login">{c('Link').t`here`}</Href>;
     const dangerError = danger.length > 0 && danger !== dangerWord ? c('Error').t`Please enter '${dangerWord}'` : '';
     return (
         <form

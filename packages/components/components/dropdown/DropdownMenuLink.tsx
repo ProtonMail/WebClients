@@ -1,8 +1,9 @@
 import { ElementType } from 'react';
 
+import { Href } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
-import { Href } from '../link';
 
 interface DropdownMenuLinkOwnProps {}
 

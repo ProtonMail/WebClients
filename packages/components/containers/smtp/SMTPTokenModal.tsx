@@ -2,11 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import {
     Copy,
     Form,
-    Href,
     InputFieldTwo,
     ModalProps,
     ModalTwo,
@@ -127,7 +126,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                     {c('Info')
                         .t`Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.`}
                     <br />
-                    <Href url={getKnowledgeBaseUrl('/smtp-submission')}>{c('Link').t`Learn more`}</Href>
+                    <Href href={getKnowledgeBaseUrl('/smtp-submission')}>{c('Link').t`Learn more`}</Href>
                 </p>
                 <div className="flex flex-align-items-center flex-nowrap mb1">
                     <InputFieldTwo
