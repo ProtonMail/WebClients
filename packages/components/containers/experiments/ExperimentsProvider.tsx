@@ -115,6 +115,13 @@ const ExperimentsProvider = ({ children }: Props) => {
 
     useEffect(() => {
         storeExperimentsInCookie(experiments);
+        if (Object.keys(experiments).length > 0) {
+            const fetchUrl = new URL(window.location.href);
+            fetchUrl.searchParams.append('load', 'experiment');
+
+            // Signal used by data to indicate that the experiment started
+            void fetch(fetchUrl.href);
+        }
     }, [experiments]);
 
     return (
