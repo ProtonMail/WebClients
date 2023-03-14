@@ -14,7 +14,7 @@ import { useApi, useLoading, useNotifications } from '@proton/components/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
-import { getIsCalendarWritable, getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarWritable, getIsHolidaysCalendar, getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import {
     CalendarBootstrap,
@@ -49,6 +49,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
 
     const showDuration = getIsCalendarWritable(calendar) && getIsOwnedCalendar(calendar);
     const cannotEdit = !canEdit;
+    const isHolidaysCalendar = getIsHolidaysCalendar(calendar);
 
     const displaySuccessNotification = () => {
         createNotification({ type: 'success', text: c('Notification success').t`Event defaults updated` });
@@ -134,6 +135,45 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
+            {!isHolidaysCalendar && (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="default-part-day-notifications" className="text-semibold">
+                            {c('Label for default event notifications').t`Notifications`}
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="w100">
+                        <Notifications
+                            id="default-part-day-notifications"
+                            data-testid="create-calendar/event-settings:default-notification"
+                            hasType
+                            fullWidth={false}
+                            notifications={model.partDayNotifications}
+                            canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                            disabled={loadingSavePartDayNotifications || cannotEdit}
+                            addIcon="plus"
+                            defaultNotification={getDefaultModel().defaultPartDayNotification}
+                            onChange={(notifications: NotificationModel[]) => {
+                                setModel({
+                                    ...model,
+                                    partDayNotifications: notifications,
+                                });
+                                setHasTouchedPartDayNotifications(true);
+                            }}
+                        />
+                        <div className="mt1">
+                            <Button
+                                color="norm"
+                                onClick={() => handleSaveNotifications(false)}
+                                loading={loadingSavePartDayNotifications}
+                                disabled={!hasTouchedPartDayNotifications || cannotEdit}
+                            >
+                                {c('Action').t`Save`}
+                            </Button>
+                        </div>
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            )}
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="default-part-day-notifications" className="text-semibold">
@@ -174,7 +214,9 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="default-full-day-notifications" className="text-semibold">
-                        {c('Label for default event notifications').t`All-day event notifications`}
+                        {isHolidaysCalendar
+                            ? c('Label for default event notifications').t`Notifications`
+                            : c('Label for default event notifications').t`All-day event notifications`}
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="w100">

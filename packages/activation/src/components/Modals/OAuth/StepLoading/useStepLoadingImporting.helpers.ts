@@ -11,7 +11,7 @@ import { changeOAuthStep, resetOauthDraft } from '@proton/activation/src/logic/d
 import { ImporterCalendar, ImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { createCalendar, removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
-import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -20,7 +20,6 @@ import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { formatPrepareStepPayload } from '../../Imap/ImapMailModal/StepPrepareImap/StepPrepareImap.helpers';
 
@@ -79,7 +78,7 @@ const createCalendars = async ({
             const { Calendar } = await api(
                 createCalendar({
                     Name: calendar.source,
-                    Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
+                    Color: getRandomAccentColor(),
                     Description: calendar.description,
                     Display: 1,
                     AddressID: addressID,

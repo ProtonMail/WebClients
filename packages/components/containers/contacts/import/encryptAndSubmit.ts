@@ -1,7 +1,7 @@
 import { addContacts, labelContactEmails, labelContacts } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { createContactGroup } from '@proton/shared/lib/api/labels';
-import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { API_CODES, HOUR } from '@proton/shared/lib/constants';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
@@ -17,7 +17,6 @@ import { EncryptedContact, ImportContactsModel } from '@proton/shared/lib/interf
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import chunk from '@proton/utils/chunk';
 import noop from '@proton/utils/noop';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 const { SINGLE_SUCCESS } = API_CODES;
@@ -165,7 +164,7 @@ export const submitCategories = async (categories: ImportCategories[], api: Api)
                 } = await api<{ Label: Label }>(
                     createContactGroup({
                         Name: targetName,
-                        Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
+                        Color: getRandomAccentColor(),
                     })
                 );
                 newLabelIDsMap[targetName] = ID;

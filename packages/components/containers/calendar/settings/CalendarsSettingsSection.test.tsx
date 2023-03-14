@@ -1,9 +1,10 @@
 import { Router } from 'react-router';
 
-import { render } from '@testing-library/react';
+import { getByText, render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import {
     ADDRESS_RECEIVE,
     ADDRESS_SEND,
@@ -60,6 +61,11 @@ jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
 jest.mock('@proton/components/hooks/useEarlyAccess', () => () => ({}));
 
+jest.mock('@proton/components/containers/calendar/hooks/useHolidaysDirectory', () => ({
+    __esModule: true,
+    default: jest.fn(() => []),
+}));
+
 let memoryHistory = createMemoryHistory();
 
 const renderComponent = ({
@@ -70,6 +76,7 @@ const renderComponent = ({
     subscribedCalendars,
     sharedCalendars,
     unknownCalendars = [],
+    holidaysCalendars = [],
 }: RequireOnly<
     CalendarsSettingsSectionProps,
     'user' | 'calendars' | 'myCalendars' | 'sharedCalendars' | 'subscribedCalendars'
@@ -84,7 +91,7 @@ const renderComponent = ({
         ],
     };
 
-    return render(
+    render(
         <Router history={memoryHistory}>
             <CalendarsSettingsSection
                 config={config}
@@ -94,6 +101,7 @@ const renderComponent = ({
                 myCalendars={myCalendars}
                 subscribedCalendars={subscribedCalendars}
                 sharedCalendars={sharedCalendars}
+                holidaysCalendars={holidaysCalendars}
                 unknownCalendars={unknownCalendars}
             />
         </Router>
@@ -102,7 +110,8 @@ const renderComponent = ({
 
 describe('My calendars section', () => {
     const createCalendarText = `Create calendar`;
-    const addCalendarText = `Add calendar`;
+    const addCalendarText = `Add calendar from URL`;
+    const addHolidaysCalendarText = `Add public holidays`;
     const limitReachedFreeText = `You've reached the maximum number of calendars available in your plan. To add a new calendar, remove another calendar or upgrade your ${BRAND_NAME} plan to a ${MAIL_SHORT_APP_NAME} paid plan.`;
     const limitReachedPaidText = `You've reached the maximum number of calendars available in your plan. To add a new calendar, remove an existing one.`;
 
@@ -115,7 +124,7 @@ describe('My calendars section', () => {
             const subscribedCalendars = generateSubscribedCalendars(1);
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 calendars,
                 myCalendars,
@@ -123,9 +132,10 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            expect(queryAllByText(limitReachedFreeText)).toHaveLength(0);
-            expect(queryAllByText(createCalendarText)).toHaveLength(1);
-            expect(queryAllByText(addCalendarText)).toHaveLength(1);
+            expect(screen.queryAllByText(limitReachedFreeText)).toHaveLength(0);
+            expect(screen.queryAllByText(createCalendarText)).toHaveLength(1);
+            expect(screen.queryAllByText(addCalendarText)).toHaveLength(1);
+            expect(screen.queryAllByText(addHolidaysCalendarText)).toHaveLength(1);
         });
 
         it('displays the limit reached message in both "My calendars" and "Other calendars" section when the user reaches the calendar limit with personal owned calendars', () => {
@@ -136,7 +146,7 @@ describe('My calendars section', () => {
             const subscribedCalendars: SubscribedCalendar[] = [];
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 calendars,
                 myCalendars,
@@ -144,9 +154,9 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            expect(queryAllByText(limitReachedFreeText)).toHaveLength(2);
-            expect(queryAllByText(createCalendarText)).toHaveLength(0);
-            expect(queryAllByText(addCalendarText)).toHaveLength(0);
+            expect(screen.queryAllByText(limitReachedFreeText)).toHaveLength(2);
+            expect(screen.queryAllByText(createCalendarText)).toHaveLength(0);
+            expect(screen.queryAllByText(addCalendarText)).toHaveLength(0);
         });
 
         it('displays the limit reached message only in "Other calendars" section when the user reached the calendar limit with shared and subscribed calendars (only possible for pre-plans-migration users), and allows creation of owned personal calendars', () => {
@@ -157,7 +167,7 @@ describe('My calendars section', () => {
             const subscribedCalendars = generateSubscribedCalendars(2);
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 calendars,
                 myCalendars,
@@ -165,8 +175,8 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            expect(queryAllByText(limitReachedFreeText)).toHaveLength(1);
-            expect(queryAllByText(createCalendarText)).toHaveLength(1);
+            expect(screen.queryAllByText(limitReachedFreeText)).toHaveLength(1);
+            expect(screen.queryAllByText(createCalendarText)).toHaveLength(1);
         });
 
         it('prevents user from creating MAX_CALENDARS_FREE other calendars by displaying limit reached message', () => {
@@ -177,7 +187,7 @@ describe('My calendars section', () => {
             const subscribedCalendars = generateSubscribedCalendars(MAX_CALENDARS_FREE - 2);
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 calendars,
                 myCalendars,
@@ -185,9 +195,10 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            expect(queryAllByText(limitReachedFreeText)).toHaveLength(1);
-            expect(queryAllByText(createCalendarText)).toHaveLength(1);
-            expect(queryAllByText(addCalendarText)).toHaveLength(0);
+            expect(screen.queryAllByText(limitReachedFreeText)).toHaveLength(1);
+            expect(screen.queryAllByText(createCalendarText)).toHaveLength(1);
+            expect(screen.queryAllByText(addCalendarText)).toHaveLength(0);
+            expect(screen.queryAllByText(addHolidaysCalendarText)).toHaveLength(0);
         });
 
         it('prevents user without active addresses from creating personal or other calendars', () => {
@@ -206,7 +217,7 @@ describe('My calendars section', () => {
             const subscribedCalendars = generateSubscribedCalendars(0);
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { getByText, queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 addresses,
                 calendars,
@@ -215,14 +226,17 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            const createCalendarButton = getByText(createCalendarText);
-            const addCalendarButton = getByText(addCalendarText);
+            const createCalendarButton = screen.getByText(createCalendarText);
+            const addCalendarButton = screen.getByText(addCalendarText);
+            const addHolidaysCalendarButton = screen.getByText(addHolidaysCalendarText);
 
-            expect(queryAllByText(limitReachedPaidText)).toHaveLength(0);
+            expect(screen.queryAllByText(limitReachedPaidText)).toHaveLength(0);
             expect(createCalendarButton).toBeInTheDocument();
             expect(createCalendarButton).toBeDisabled();
             expect(addCalendarButton).toBeInTheDocument();
             expect(addCalendarButton).toBeDisabled();
+            expect(addHolidaysCalendarButton).toBeInTheDocument();
+            expect(addHolidaysCalendarButton).toBeDisabled();
         });
 
         it('prevents delinquent user from creating personal or other calendars', () => {
@@ -233,7 +247,7 @@ describe('My calendars section', () => {
             const subscribedCalendars = generateSubscribedCalendars(0);
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { getByText, queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 calendars,
                 myCalendars,
@@ -241,14 +255,17 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            const createCalendarButton = getByText(createCalendarText);
-            const addCalendarButton = getByText(addCalendarText);
+            const createCalendarButton = screen.getByText(createCalendarText);
+            const addCalendarButton = screen.getByText(addCalendarText);
+            const addHolidaysCalendarButton = screen.getByText(addHolidaysCalendarText);
 
-            expect(queryAllByText(limitReachedPaidText)).toHaveLength(0);
+            expect(screen.queryAllByText(limitReachedPaidText)).toHaveLength(0);
             expect(createCalendarButton).toBeInTheDocument();
             expect(createCalendarButton).toBeDisabled();
             expect(addCalendarButton).toBeInTheDocument();
             expect(addCalendarButton).toBeDisabled();
+            expect(addHolidaysCalendarButton).toBeInTheDocument();
+            expect(addHolidaysCalendarButton).toBeDisabled();
         });
     });
 
@@ -261,7 +278,7 @@ describe('My calendars section', () => {
             const subscribedCalendars = generateSubscribedCalendars(5);
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 calendars,
                 myCalendars,
@@ -269,9 +286,10 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            expect(queryAllByText(limitReachedFreeText)).toHaveLength(0);
-            expect(queryAllByText(createCalendarText)).toHaveLength(1);
-            expect(queryAllByText(addCalendarText)).toHaveLength(1);
+            expect(screen.queryAllByText(limitReachedFreeText)).toHaveLength(0);
+            expect(screen.queryAllByText(createCalendarText)).toHaveLength(1);
+            expect(screen.queryAllByText(addCalendarText)).toHaveLength(1);
+            expect(screen.queryAllByText(addHolidaysCalendarText)).toHaveLength(1);
         });
 
         it('displays the limit reached message in both "My calendars" and "Other calendars" section when the user reaches the calendar limit with personal owned calendars', () => {
@@ -282,7 +300,7 @@ describe('My calendars section', () => {
             const subscribedCalendars: SubscribedCalendar[] = [];
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 calendars,
                 myCalendars,
@@ -290,9 +308,10 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            expect(queryAllByText(limitReachedPaidText)).toHaveLength(2);
-            expect(queryAllByText(createCalendarText)).toHaveLength(0);
-            expect(queryAllByText(addCalendarText)).toHaveLength(0);
+            expect(screen.queryAllByText(limitReachedPaidText)).toHaveLength(2);
+            expect(screen.queryAllByText(createCalendarText)).toHaveLength(0);
+            expect(screen.queryAllByText(addCalendarText)).toHaveLength(0);
+            expect(screen.queryAllByText(addHolidaysCalendarText)).toHaveLength(0);
         });
 
         it('prevents user from creating MAX_CALENDARS_PAID other calendars by display limit reached message', () => {
@@ -303,7 +322,7 @@ describe('My calendars section', () => {
             const subscribedCalendars = generateSubscribedCalendars(1);
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 calendars,
                 myCalendars,
@@ -311,9 +330,10 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            expect(queryAllByText(limitReachedPaidText)).toHaveLength(1);
-            expect(queryAllByText(createCalendarText)).toHaveLength(1);
-            expect(queryAllByText(addCalendarText)).toHaveLength(0);
+            expect(screen.queryAllByText(limitReachedPaidText)).toHaveLength(1);
+            expect(screen.queryAllByText(createCalendarText)).toHaveLength(1);
+            expect(screen.queryAllByText(addCalendarText)).toHaveLength(0);
+            expect(screen.queryAllByText(addHolidaysCalendarText)).toHaveLength(0);
         });
 
         it('prevents user without active addresses from creating personal or other calendars', () => {
@@ -332,7 +352,7 @@ describe('My calendars section', () => {
             const subscribedCalendars = generateSubscribedCalendars(0);
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { getByText, queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 addresses,
                 calendars,
@@ -341,14 +361,17 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            const createCalendarButton = getByText(createCalendarText);
-            const addCalendarButton = getByText(addCalendarText);
+            const createCalendarButton = screen.getByText(createCalendarText);
+            const addCalendarButton = screen.getByText(addCalendarText);
+            const addHolidaysCalendarButton = screen.getByText(addHolidaysCalendarText);
 
-            expect(queryAllByText(limitReachedPaidText)).toHaveLength(0);
+            expect(screen.queryAllByText(limitReachedPaidText)).toHaveLength(0);
             expect(createCalendarButton).toBeInTheDocument();
             expect(createCalendarButton).toBeDisabled();
             expect(addCalendarButton).toBeInTheDocument();
             expect(addCalendarButton).toBeDisabled();
+            expect(addHolidaysCalendarButton).toBeInTheDocument();
+            expect(addHolidaysCalendarButton).toBeDisabled();
         });
 
         it('prevents delinquent user from creating personal or other calendars', () => {
@@ -359,7 +382,7 @@ describe('My calendars section', () => {
             const subscribedCalendars = generateSubscribedCalendars(1);
             const calendars = [...myCalendars, ...sharedCalendars, ...subscribedCalendars];
 
-            const { getByText, queryAllByText } = renderComponent({
+            renderComponent({
                 user,
                 calendars,
                 myCalendars,
@@ -367,14 +390,142 @@ describe('My calendars section', () => {
                 subscribedCalendars,
             });
 
-            const createCalendarButton = getByText(createCalendarText);
-            const addCalendarButton = getByText(addCalendarText);
+            const createCalendarButton = screen.getByText(createCalendarText);
+            const addCalendarButton = screen.getByText(addCalendarText);
+            const addHolidaysCalendarButton = screen.getByText(addHolidaysCalendarText);
 
-            expect(queryAllByText(limitReachedPaidText)).toHaveLength(0);
+            expect(screen.queryAllByText(limitReachedPaidText)).toHaveLength(0);
             expect(createCalendarButton).toBeInTheDocument();
             expect(createCalendarButton).toBeDisabled();
             expect(addCalendarButton).toBeInTheDocument();
             expect(addCalendarButton).toBeDisabled();
+            expect(addHolidaysCalendarButton).toBeInTheDocument();
+            expect(addHolidaysCalendarButton).toBeDisabled();
+        });
+    });
+
+    describe("User's calendars are displayed in calendar settings section", () => {
+        const visualCalendarsToDisplay = [
+            { Name: 'Calendar 1', ID: 'calendar1', Color: getRandomAccentColor() } as VisualCalendar,
+            { Name: 'Calendar 2', ID: 'calendar2', Color: getRandomAccentColor() } as VisualCalendar,
+        ];
+
+        it("should display user's personal calendars in the calendars section", async () => {
+            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel;
+
+            const myCalendars = visualCalendarsToDisplay;
+            const sharedCalendars: VisualCalendar[] = [];
+            const subscribedCalendars: SubscribedCalendar[] = [];
+            const holidaysCalendars: VisualCalendar[] = [];
+            const calendars = [...myCalendars, ...sharedCalendars, ...holidaysCalendars, ...subscribedCalendars];
+
+            renderComponent({
+                user,
+                calendars,
+                myCalendars,
+                sharedCalendars,
+                holidaysCalendars,
+                subscribedCalendars,
+            });
+
+            const section = await screen.findByTestId('my-calendars-section');
+
+            getByText(section, visualCalendarsToDisplay[0].Name);
+            getByText(section, visualCalendarsToDisplay[1].Name);
+        });
+
+        it("should display user's subscribed calendars in the other calendars section", async () => {
+            const subscribedCalendarsToDisplay = [
+                { Name: 'Calendar 1', ID: 'calendar1', Color: getRandomAccentColor() } as SubscribedCalendar,
+                { Name: 'Calendar 2', ID: 'calendar2', Color: getRandomAccentColor() } as SubscribedCalendar,
+            ];
+
+            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel;
+
+            const myCalendars = generateOwnedPersonalCalendars(0);
+            const sharedCalendars: VisualCalendar[] = [];
+            const subscribedCalendars: SubscribedCalendar[] = subscribedCalendarsToDisplay;
+            const holidaysCalendars: VisualCalendar[] = [];
+            const calendars = [...myCalendars, ...sharedCalendars, ...holidaysCalendars, ...subscribedCalendars];
+
+            renderComponent({
+                user,
+                calendars,
+                myCalendars,
+                sharedCalendars,
+                holidaysCalendars,
+                subscribedCalendars,
+            });
+
+            const section = await screen.findByTestId('subscribed-calendars-section');
+
+            getByText(section, subscribedCalendarsToDisplay[0].Name);
+            getByText(section, subscribedCalendarsToDisplay[1].Name);
+        });
+
+        it("should display user's shared calendars in the shared calendars section", async () => {
+            const sharedCalendarsToDisplay = [
+                {
+                    Name: 'Calendar 1',
+                    ID: 'calendar1',
+                    Color: getRandomAccentColor(),
+                    Owner: { Email: 'email1@pm.me' },
+                    Permissions: 1,
+                } as VisualCalendar,
+                {
+                    Name: 'Calendar 2',
+                    ID: 'calendar2',
+                    Color: getRandomAccentColor(),
+                    Owner: { Email: 'email2@pm.me' },
+                    Permissions: 1,
+                } as VisualCalendar,
+            ];
+
+            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel;
+
+            const myCalendars = generateOwnedPersonalCalendars(0);
+            const sharedCalendars: VisualCalendar[] = sharedCalendarsToDisplay;
+            const subscribedCalendars: SubscribedCalendar[] = [];
+            const holidaysCalendars: VisualCalendar[] = [];
+            const calendars = [...myCalendars, ...sharedCalendars, ...holidaysCalendars, ...subscribedCalendars];
+
+            renderComponent({
+                user,
+                calendars,
+                myCalendars,
+                sharedCalendars,
+                holidaysCalendars,
+                subscribedCalendars,
+            });
+
+            const section = await screen.findByTestId('shared-calendars-section');
+
+            getByText(section, `${sharedCalendarsToDisplay[0].Name} (${sharedCalendarsToDisplay[0].Owner.Email})`);
+            getByText(section, `${sharedCalendarsToDisplay[1].Name} (${sharedCalendarsToDisplay[1].Owner.Email})`);
+        });
+
+        it("should display user's holidays calendars in the holidays calendars section", async () => {
+            const user = { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel;
+
+            const myCalendars = generateOwnedPersonalCalendars(0);
+            const sharedCalendars: VisualCalendar[] = [];
+            const subscribedCalendars: SubscribedCalendar[] = [];
+            const holidaysCalendars: VisualCalendar[] = visualCalendarsToDisplay;
+            const calendars = [...myCalendars, ...sharedCalendars, ...holidaysCalendars, ...subscribedCalendars];
+
+            renderComponent({
+                user,
+                calendars,
+                myCalendars,
+                sharedCalendars,
+                holidaysCalendars,
+                subscribedCalendars,
+            });
+
+            const section = await screen.findByTestId('holiday-calendars-section');
+
+            getByText(section, visualCalendarsToDisplay[0].Name);
+            getByText(section, visualCalendarsToDisplay[1].Name);
         });
     });
 });

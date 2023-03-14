@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 
-import getRandomLabelColor from '@proton/activation/src/helpers/getRandomLabelColor';
 import { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
+import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 
 /**
@@ -9,7 +9,7 @@ import { LABEL_TYPE } from '@proton/shared/lib/constants';
  */
 const getDefaultLabel = (email: string): LabelModel => ({
     Name: `${email.split('@')[1]} ${format(new Date(), 'dd-MM-yyyy HH:mm')}`,
-    Color: getRandomLabelColor(),
+    Color: getRandomAccentColor(),
     Type: LABEL_TYPE.MESSAGE_LABEL,
 });
 
