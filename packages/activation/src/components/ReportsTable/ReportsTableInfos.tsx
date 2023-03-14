@@ -2,7 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { selectActiveImportersErrors } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { Alert, Href, SettingsParagraph } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { Alert, SettingsParagraph } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -14,7 +15,7 @@ const ReportsTableInfos = () => {
     const bandwidthLimitLink = (
         <Href
             key="bandwidthLimitLink"
-            url={getKnowledgeBaseUrl(
+            href={getKnowledgeBaseUrl(
                 '/manage-imports-easy-switch#:~:text=notification%20in%20advance.-,Delayed%20imports,-Some%20email%20providers'
             )}
         >

@@ -1,8 +1,7 @@
-import * as React from 'react';
-
 import { c } from 'ttag';
 
-import { Href, SettingsLink } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { SettingsLink } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { reActivateKeySettingsURL, restoringEncryptedMessagesURL } from '../../constants';
@@ -16,7 +15,7 @@ const DecryptionErrorNotification = ({ keyFound = false }: Props) => {
         const learnMoreLink = (
             <Href
                 key="learn-more-link"
-                url={restoringEncryptedMessagesURL}
+                href={restoringEncryptedMessagesURL}
                 className="text-bold link align-baseline color-inherit"
             >
                 {c('Action').t`Learn more`}

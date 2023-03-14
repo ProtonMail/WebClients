@@ -2,8 +2,9 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
-import Href from '../link/Href';
 
 const CLASSES = {
     info: 'alert-block',
@@ -25,7 +26,7 @@ const Alert = ({ type = 'info', children, learnMore, className }: Props) => {
             <div>{children}</div>
             {learnMore ? (
                 <div>
-                    <Href url={learnMore} className={className}>{c('Link').t`Learn more`}</Href>
+                    <Href href={learnMore} className={className}>{c('Link').t`Learn more`}</Href>
                 </div>
             ) : null}
         </div>

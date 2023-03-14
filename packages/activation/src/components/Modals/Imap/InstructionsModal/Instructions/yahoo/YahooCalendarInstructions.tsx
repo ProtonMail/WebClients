@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/components';
+import { Href } from '@proton/atoms';
 import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -8,7 +8,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 const YahooCalendarInstructions = () => {
     // translator: full sentence: "To import a calendar to Proton, you need the ICS file. Download it from Yahoo in 3 easy steps:"
     const knowledgeBaseLink = (
-        <Href url={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)} key="knowledgeBaseLink">
+        <Href href={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)} key="knowledgeBaseLink">
             {c('Import instructions link').t`ICS file`}
         </Href>
     );
@@ -18,7 +18,7 @@ const YahooCalendarInstructions = () => {
 
     // translator: full sentence: "Go to full calendar view in Yahoo"
     const calendarViewLink = (
-        <Href url="https://calendar.yahoo.com/" key="calendarViewLink">
+        <Href href="https://calendar.yahoo.com/" key="calendarViewLink">
             {c('Import instructions link').t`full calendar view`}
         </Href>
     );

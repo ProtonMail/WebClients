@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
 
-import { Href } from '../../../components';
 import Banner, { BannerBackgroundColor } from '../../../components/banner/Banner';
 
 const AuthSecurityKeyContent = ({ error }: { error?: boolean }) => {
@@ -16,7 +16,7 @@ const AuthSecurityKeyContent = ({ error }: { error?: boolean }) => {
             <div>
                 {c('fido2: Info').t`Insert a security key linked to your ${BRAND_NAME} Account.`}
                 <br />
-                <Href url={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
             </div>
             {error && (
                 <div className="mt1">

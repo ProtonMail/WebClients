@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton, EasySwitchProvider } from '@proton/activation';
 import { EASY_SWITCH_SOURCE, ImportType } from '@proton/activation/src/interface';
+import { Href } from '@proton/atoms';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -9,7 +10,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, Href, PrimaryButton, useModalState } from '../../../components';
+import { Alert, PrimaryButton, useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';
 import { ImportModal } from '../importModal';
 
@@ -50,7 +51,7 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
                 {c('Calendar import section description')
                     .t`You can import ICS files from another calendar to ${CALENDAR_APP_NAME}. This lets you quickly import one event or your entire agenda.`}
                 <br />
-                <Href url={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)}>{c('Knowledge base link label')
+                <Href href={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)}>{c('Knowledge base link label')
                     .t`Here's how`}</Href>
             </SettingsParagraph>
 

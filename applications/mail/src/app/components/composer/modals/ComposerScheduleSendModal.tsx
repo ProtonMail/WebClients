@@ -15,7 +15,8 @@ import {
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { DateInput, Href, InputFieldTwo, TimeInput, generateUID, useUserSettings } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { DateInput, InputFieldTwo, TimeInput, generateUID, useUserSettings } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
@@ -164,7 +165,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
             <div className="mb1 flex">
                 <span data-testid="composer:schedule-send:custom-modal:title">{c('Info')
                     .t`When do you want your message to be sent?`}</span>
-                <Href className="underline inline-block" url={getKnowledgeBaseUrl('/schedule-email-send')}>{c('Link')
+                <Href className="underline inline-block" href={getKnowledgeBaseUrl('/schedule-email-send')}>{c('Link')
                     .t`Learn more`}</Href>
             </div>
             <div className="flex flex-gap-0-5 flex-row flex-nowrap">

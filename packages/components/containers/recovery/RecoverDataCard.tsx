@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { Button, Card } from '@proton/atoms';
+import { Button, Card, Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Href, Icon } from '../../components';
+import { Icon } from '../../components';
 import { classnames } from '../../helpers/component';
 import { SettingsSectionTitle } from '../account';
 
@@ -32,7 +32,7 @@ const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
             </ul>
 
             <p className="mb0-5">
-                <Href url={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>
+                <Href href={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>
                     {c('Link').t`How to unlock data`}
                 </Href>
             </p>

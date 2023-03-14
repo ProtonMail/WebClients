@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
-import { Href, Icon, Info, Toggle, useModalState } from '../../components';
+import { Icon, Info, Toggle, useModalState } from '../../components';
 import {
     useApi,
     useEventManager,
@@ -107,7 +107,7 @@ const DataRecoverySection = () => {
                     {c('Info')
                         .t`Activate at least one data recovery method to make sure you can continue to access the contents of your ${BRAND_NAME} Account if you lose your password.`}
                     <br />
-                    <Href url={getKnowledgeBaseUrl('/set-account-recovery-methods#how-to-enable-a-recovery-phrase')}>
+                    <Href href={getKnowledgeBaseUrl('/set-account-recovery-methods#how-to-enable-a-recovery-phrase')}>
                         {c('Link').t`Learn more about data recovery`}
                     </Href>
                 </SettingsParagraph>

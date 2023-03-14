@@ -2,7 +2,8 @@ import { ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { Href, Spotlight, useSpotlightShow } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import { Spotlight, useSpotlightShow } from '@proton/components/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import scheduledImg from '@proton/styles/assets/img/illustrations/spotlight-scheduled-send.svg';
 
@@ -33,7 +34,7 @@ const ScheduleSendSpotlight = ({ children, showSpotlight, onDisplayed, anchorRef
                             'Spotlight'
                         ).t`Schedule send`}</p>
                         <p className="m0">{c('Spotlight').t`You can now schedule your messages to be sent later`}</p>
-                        <Href url={getKnowledgeBaseUrl('/schedule-email-send')} title="Scheduled send">
+                        <Href href={getKnowledgeBaseUrl('/schedule-email-send')} title="Scheduled send">
                             {c('Info').t`Learn more`}
                         </Href>
                     </div>

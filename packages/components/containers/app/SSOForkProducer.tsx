@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms';
 import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { OAuthClientInfo, getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
@@ -18,7 +19,6 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Href } from '../../components';
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';
 import StandardErrorPage from './StandardErrorPage';

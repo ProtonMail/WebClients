@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/components';
+import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 const DefaultMailInstructions = () => {
     // translator: full sentence: "Depending on your email service provider, you may need to generate an app password or enable IMAP first before you can import to Proton."
     const knowledgeBaseLink = (
-        <Href url={getKnowledgeBaseUrl('/allowing-imap-access-and-entering-imap-details')} key="knowledgeBaseLink">
+        <Href href={getKnowledgeBaseUrl('/allowing-imap-access-and-entering-imap-details')} key="knowledgeBaseLink">
             {c('Import instructions link').t`app password or enable IMAP`}
         </Href>
     );

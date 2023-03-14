@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MnemonicData, generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import userPromptSvg from '@proton/styles/assets/img/illustrations/passphrase-recover.svg';
 
 import {
-    Href,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
@@ -89,7 +88,7 @@ const MnemonicPromptModal = ({ open, onClose, onExit }: Props) => {
                         {c('Info')
                             .t`A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.`}
                         <br />
-                        <Href className="text-center" url={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
+                        <Href className="text-center" href={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
                             {c('Link').t`More about recovery`}
                         </Href>
                     </p>

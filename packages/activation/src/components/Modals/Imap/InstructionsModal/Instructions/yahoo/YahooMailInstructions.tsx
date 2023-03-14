@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/components';
+import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 const YahooMailInstructions = () => {
     // translator: full sentence: "To import emails to Proton, you need an app password from Yahoo. Get it by following these steps:"
     const appPasswordLink = (
-        <Href url={getKnowledgeBaseUrl('/allowing-imap-access-and-entering-imap-details')} key="appPasswordLink">
+        <Href href={getKnowledgeBaseUrl('/allowing-imap-access-and-entering-imap-details')} key="appPasswordLink">
             {c('Import instructions link').t`app password`}
         </Href>
     );
@@ -19,7 +19,7 @@ const YahooMailInstructions = () => {
     const boldAccountInfo = <strong key="boldAccountInfo">{c('Import instructions emphasis').t`Account info`}</strong>;
     // translator: full sentence: "Go to account info under your profile in Yahoo"
     const yahooMailLink = (
-        <Href url="https://mail.yahoo.com/" key="yahooMailLink">
+        <Href href="https://mail.yahoo.com/" key="yahooMailLink">
             {c('Import instructions link').t`Yahoo`}
         </Href>
     );

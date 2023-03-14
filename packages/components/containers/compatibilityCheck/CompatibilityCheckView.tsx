@@ -1,9 +1,9 @@
+import { Href } from '@proton/atoms';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import unsupportedBrowserSettings from '@proton/styles/assets/img/errors/unsupported-browser.svg';
 
-import { Href } from '../../components';
 import { useAppTitle } from '../../hooks';
 
 interface Props {
@@ -28,16 +28,16 @@ const CompatibilityCheckView = ({ appName = APPS.PROTONMAIL, incompatibilities }
                 <h1>Compatibility check</h1>
                 <p>
                     {app} requires a modern web browser with cutting edge support for{' '}
-                    <Href className="primary-link" url="http://caniuse.com/#feat=cryptography">
+                    <Href className="primary-link" href="http://caniuse.com/#feat=cryptography">
                         WebCrypto (PRNG)
                     </Href>{' '}
                     and{' '}
-                    <Href className="primary-link" url="http://caniuse.com/#feat=namevalue-storage">
+                    <Href className="primary-link" href="http://caniuse.com/#feat=namevalue-storage">
                         Web Storage
                     </Href>
                     .
                 </p>
-                <Href className="primary-link text-bold" url={kbUrl} target="_self">
+                <Href className="primary-link text-bold" href={kbUrl} target="_self">
                     More info
                 </Href>
             </div>
