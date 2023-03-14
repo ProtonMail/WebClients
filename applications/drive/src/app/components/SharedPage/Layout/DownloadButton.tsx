@@ -18,10 +18,9 @@ export interface DownloadButtonProps {
     rootItem: DecryptedLink;
     items: PublicLink[];
     className?: string;
-    onDownload?: () => void;
 }
 
-export function DownloadButton({ items, className, rootItem, onDownload }: DownloadButtonProps) {
+export function DownloadButton({ items, className, rootItem }: DownloadButtonProps) {
     const [downloadedSize, setDownloadedSize] = useState<number>(0);
     const [totalSize, setTotalSize] = useState<number>(0);
 
@@ -37,9 +36,6 @@ export function DownloadButton({ items, className, rootItem, onDownload }: Downl
     const downloadLinksProgresses = getDownloadsLinksProgresses();
 
     const handleDownload = () => {
-        if (onDownload) {
-            onDownload();
-        }
         // To keep always only one download around.
         clearDownloads();
 

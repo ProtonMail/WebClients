@@ -20,23 +20,14 @@ interface Props {
 
 export default function SharedFilePage({ token, link }: Props) {
     const { isLinkLoading, isContentLoading, error, contents } = usePublicFileView(token, link.linkId);
-    const [renderUpsellFloatingModal, handleToggleModal] = useUpsellFloatingModal();
+    const [renderUpsellFloatingModal] = useUpsellFloatingModal();
+
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
             <SharedPageLayout
-                FooterComponent={
-                    <SharedPageFooter
-                        rootItem={link}
-                        items={[{ id: link.linkId, ...link }]}
-                        onDownload={() => handleToggleModal({ onlyOnce: true })}
-                    />
-                }
+                FooterComponent={<SharedPageFooter rootItem={link} items={[{ id: link.linkId, ...link }]} />}
             >
-                <SharedPageHeader
-                    rootItem={link}
-                    items={[{ id: link.linkId, ...link }]}
-                    onDownload={() => handleToggleModal({ onlyOnce: true })}
-                >
+                <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]}>
                     <div className="max-w100">
                         <Breadcrumbs
                             token={token}

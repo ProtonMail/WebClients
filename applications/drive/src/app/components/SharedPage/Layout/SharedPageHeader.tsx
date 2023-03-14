@@ -6,7 +6,7 @@ interface Props extends DownloadButtonProps {
     children: React.ReactNode;
 }
 
-export default function SharedPageHeader({ children, rootItem, items, onDownload }: Props) {
+export default function SharedPageHeader({ children, rootItem, items }: Props) {
     const { isNarrow } = useActiveBreakpoint();
     return (
         <div
@@ -16,9 +16,7 @@ export default function SharedPageHeader({ children, rootItem, items, onDownload
             <div className="flex flex-nowrap flex-item-fluid flex-align-items-center mb0 pb0 mr1 shared-page-layout-header">
                 {children}
             </div>
-            {isNarrow || items.length === 0 ? null : (
-                <DownloadButton onDownload={onDownload} rootItem={rootItem} items={items} />
-            )}
+            {isNarrow || items.length === 0 ? null : <DownloadButton rootItem={rootItem} items={items} />}
         </div>
     );
 }
