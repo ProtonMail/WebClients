@@ -89,7 +89,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
     const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
-    const [renderUpsellFloatingModal, handleToggleModal] = useUpsellFloatingModal();
+    const [renderUpsellFloatingModal] = useUpsellFloatingModal();
 
     const onItemOpen = (item: DecryptedLink) => {
         if (item.isFile) {
@@ -194,20 +194,8 @@ export default function SharedFolder({ token, rootLink }: Props) {
 
     return (
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
-            <SharedPageLayout
-                FooterComponent={
-                    <SharedPageFooter
-                        rootItem={rootLink}
-                        items={fileBrowserItems}
-                        onDownload={() => handleToggleModal({ onlyOnce: true })}
-                    />
-                }
-            >
-                <SharedPageHeader
-                    rootItem={rootLink}
-                    items={fileBrowserItems}
-                    onDownload={() => handleToggleModal({ onlyOnce: true })}
-                >
+            <SharedPageLayout FooterComponent={<SharedPageFooter rootItem={rootLink} items={fileBrowserItems} />}>
+                <SharedPageHeader rootItem={rootLink} items={fileBrowserItems}>
                     <div className="max-w100">
                         <Breadcrumbs
                             token={token}
