@@ -898,9 +898,6 @@
       "Send feedback": [
         "Надіслати відгук"
       ],
-      "Send quick reply": [
-        "Надіслати швидку відповідь"
-      ],
       "Send read receipt": [
         "Надіслати підтвердження прочитання"
       ],
@@ -1002,6 +999,12 @@
       ],
       "This message contains remote content.": [
         "Це повідомлення містить зовнішній вміст."
+      ],
+      "Toggle Calendar app": [
+        "Перемкніть додаток Календар"
+      ],
+      "Toggle Contact app": [
+        "Перемкніть додаток Контакти"
       ],
       "Tomorrow": [
         "Завтра"
@@ -1148,9 +1151,6 @@
     "action": {
       "Search messages": [
         "Пошук повідомлень"
-      ],
-      "Send quick reply": [
-        "Надіслати швидку відповідь"
       ]
     },
     "Actions message": {
@@ -2831,7 +2831,7 @@
     },
     "Description": {
       "${ MAIL_APP_NAME } logo and a plus sign": [
-        "${ MAIL_APP_NAME } лого та знак плюс"
+        "Логотип ${ MAIL_APP_NAME } і знак плюс"
       ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } у налаштуваннях."
@@ -3430,7 +3430,7 @@
         "Ви не надали файл."
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
-        "Ви досягли максимальної кількості календарів. Деякі календарі не можуть бути імпортовані."
+        "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -4943,7 +4943,7 @@
         "Для повідомлень новіших ${ oldestDate }"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Перешліть вхідний лист з іншого облікового запису до вашої захищеної ${ MAIL_APP_NAME } поштової скриньки."
+        "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -5251,9 +5251,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Будь ласка, зачекайте поки ми перевіряємо контакти, що містять дані, зашифровані неактивним ключем."
       ],
-      "Preview": [
-        "Попередній перегляд"
-      ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
       ],
@@ -5265,12 +5262,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Захистіть свою електронну пошту від потрапляння до списків розсилки або спамерів за допомогою ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Швидка відповідь"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Швидка відповідь для ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Отримувач: "
@@ -6108,6 +6099,9 @@
       "ALL": [
         "ВСЕ"
       ],
+      "All contacts": [
+        "Всі контакти"
+      ],
       "Also archive": [
         "Також архівувати"
       ],
@@ -6278,9 +6272,6 @@
       ],
       "Good": [
         "Добре"
-      ],
-      "Group": [
-        "Група"
       ],
       "Hide password": [
         "Приховати пароль"
@@ -6812,7 +6803,7 @@
         "Майже готово"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
@@ -7130,7 +7121,7 @@
         "Пошук вмісту повідомлень"
       ],
       "Unlimited folders, labels, and filters": [
-        "Необмежена кількість тек, міток та фільтрів"
+        "Необмежена кількість тек, міток і фільтрів"
       ],
       "Up to 15 email addresses": [
         "До 15 адрес електронної пошти"
@@ -7461,7 +7452,7 @@
     },
     "protonbadge": {
       "Official": [
-        "Офіційні"
+        "Офіційний"
       ],
       "Official email from ${ BRAND_NAME }": [
         "Офіційний лист від ${ BRAND_NAME }"
@@ -7525,7 +7516,7 @@
     },
     "Remaining time before the message expire": {
       "<1 hour": [
-        "< 1 година"
+        "<1 година"
       ]
     },
     "Remaining years before the message expire": {

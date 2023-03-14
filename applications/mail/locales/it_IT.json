@@ -870,7 +870,7 @@
         "Auto-distruzione in 7 giorni"
       ],
       "Self-destruct message": [
-        "Auto-distruzione messaggio"
+        "Autodistruzione messaggio"
       ],
       "Self-destruct on ...": [
         "Auto-distruzione il ..."
@@ -886,9 +886,6 @@
       ],
       "Send feedback": [
         "Invia il tuo feedback"
-      ],
-      "Send quick reply": [
-        "Invia risposta rapida"
       ],
       "Send read receipt": [
         "Invia ricevuta di lettura"
@@ -1135,9 +1132,6 @@
     "action": {
       "Search messages": [
         "Cerca messaggi"
-      ],
-      "Send quick reply": [
-        "Invia risposta rapida"
       ]
     },
     "Actions message": {
@@ -1621,7 +1615,7 @@
         "Annulla"
       ],
       "Cancel self-destruction": [
-        "Annulla auto-distruzione"
+        "Annulla autodistruzione"
       ]
     },
     "Collapsible tooltip": {
@@ -5072,9 +5066,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Attendi mentre cerchiamo contatti che contengono dati cifrati con la chiave inattiva."
       ],
-      "Preview": [
-        "Anteprima"
-      ],
       "Preview failed to be loaded": [
         "Impossibile caricare l'anteprima"
       ],
@@ -5086,12 +5077,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Proteggi la tua email dalla divulgazione alle mailing list o agli spammer con ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Risposta rapida"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Risposta rapida a ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -5907,6 +5892,9 @@
       "ALL": [
         "TUTTI"
       ],
+      "All contacts": [
+        "Tutti i contatti"
+      ],
       "Also archive": [
         "Archivia anche"
       ],
@@ -6077,9 +6065,6 @@
       ],
       "Good": [
         "Buona"
-      ],
-      "Group": [
-        "Gruppo"
       ],
       "Hide password": [
         "Nascondi la password"
@@ -6611,7 +6596,7 @@
         "Già qui"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Totale calendari creati: ${ createdCalendarCount } di ${ calendarsToBeCreated }",
         "Totale calendari creati: ${ createdCalendarCount } di ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -8558,7 +8543,7 @@
         "Seleziona gruppo di contatti"
       ],
       "Self-destruct message": [
-        "Auto-distruzione messaggio"
+        "Autodistruzione messaggio"
       ],
       "Send email": [
         "Invia email"

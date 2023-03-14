@@ -56,6 +56,9 @@
       "Back": [
         "Indietro"
       ],
+      "Back to Homepage": [
+        "Torna alla pagina iniziale"
+      ],
       "Beta Access": [
         "Accesso Beta"
       ],
@@ -154,6 +157,9 @@
       ],
       "Create a new contact group": [
         "Crea un nuovo gruppo di contatto"
+      ],
+      "Create account": [
+        "Crea account"
       ],
       "Create link": [
         "Crea link"
@@ -3095,11 +3101,14 @@
       "Enabling drive search": [
         "Abilitazione della ricerca di unità"
       ],
-      "Encrypted": [
-        "Crittografato"
-      ],
       "Encrypted search is here": [
         "La ricerca crittografata è qui"
+      ],
+      "End-to-end encrypted": [
+        "Crittografato end-to-end"
+      ],
+      "Enter password": [
+        "Inserisci la password"
       ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione"
@@ -3370,6 +3379,9 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: i dati potrebbero essere ancora disponibili localmente sui dispositivi su cui hai installato ${ DRIVE_APP_NAME }."
       ],
+      "Nothing here yet": [
+        "Ancora niente qui"
+      ],
       "of": [
         "di"
       ],
@@ -3435,9 +3447,6 @@
       "Preparing link to folder": [
         "Preparazione del collegamento alla cartella"
       ],
-      "Preview": [
-        "Anteprima"
-      ],
       "Preview failed to be loaded": [
         "Impossibile caricare l'anteprima"
       ],
@@ -3470,9 +3479,6 @@
       ],
       "Search Enabled": [
         "Ricerca Abilitata"
-      ],
-      "Secure sharing": [
-        "Condivisione sicura"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Seleziona un file o una cartella caricati e crea un link."
@@ -3522,9 +3528,6 @@
       "support team": [
         "team di supporto"
       ],
-      "Swiss privacy": [
-        "Privacy svizzera"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
@@ -3545,9 +3548,6 @@
       ],
       "There are no files yet": [
         "File non ancora presenti"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Questi file sono stati condivisi utilizzando una crittografia end-to-end. Per mantenerli al sicuro — e con essi tutti i tuoi documenti, foto, e file privati — memorizzali nel tuo ${ DRIVE_APP_NAME }. È facile da usare, e gratis."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
@@ -4159,8 +4159,8 @@
       "Replace folder": [
         "Sostituisci cartella"
       ],
-      "Report Abuse": [
-        "Segnala abuso"
+      "Report": [
+        "Segnala"
       ],
       "Reveal password": [
         "Mostra la password"
@@ -4338,7 +4338,7 @@
         "Già qui"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Totale calendari creati: ${ createdCalendarCount } di ${ calendarsToBeCreated }",
         "Totale calendari creati: ${ createdCalendarCount } di ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -5413,9 +5413,6 @@
       "Date": [
         "Data"
       ],
-      "Decrypting": [
-        "Decrittando"
-      ],
       "Delete ${ count } contact": [
         "Elimina ${ count } contatto",
         "Elimina ${ count } contatti"
@@ -5438,9 +5435,6 @@
       ],
       "Discard changes?": [
         "Annullare le modifiche?"
-      ],
-      "Download shared file": [
-        "Download del file condiviso"
       ],
       "Download unverified file?": [
         "Scaricare file non verificato?"
@@ -5514,9 +5508,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "Trovato ${ searchView.numberOfResults } risultato",
         "Trovati ${ searchView.numberOfResults } risultati"
-      ],
-      "Getting files": [
-        "Ricevendo file"
       ],
       "Groups": [
         "Gruppi"
@@ -5773,9 +5764,6 @@
       ],
       "You have no folders yet": [
         "Non sono ancora presenti cartelle"
-      ],
-      "You've got files": [
-        "Hai ricevuto dei file"
       ],
       "Your 500 MB bonus": [
         "Il tuo bonus di 500 MB"

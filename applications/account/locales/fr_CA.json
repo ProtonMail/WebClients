@@ -390,9 +390,6 @@
       "Go to label": [
         "Afficher le label"
       ],
-      "Go to sign in": [
-        "Aller se connecter"
-      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -4544,12 +4541,6 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Si vous avez configuré SPF et DKIM, DMARC vous permet de spécifier comment les autres services de messagerie devraient envoyer des courriels pour votre domaine si les vérifications SPF et DKIM ont échoué. Ceci peut compliquer la tâche des polluposteurs qui prétendent être vous, mais peut aussi causer des problèmes de livraison si ce n'est pas fait correctement."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si vous procédez à la rétrogradation, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
       ],
@@ -4889,9 +4880,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Abonnement Plus ou Visionary requis"
-      ],
-      "Preview": [
-        "Aperçu"
       ],
       "Preview failed to be loaded": [
         "L'aperçu n'a pas pu être chargé"
@@ -5490,9 +5478,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Votre compte ${ BRAND_NAME } existant peut être utilisé pour accéder à tous les services ${ BRAND_NAME }. Veuillez vous connecter avec ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Votre importation à partir de ${ accounts } est temporairement retardée.",
@@ -9843,9 +9828,6 @@
       ],
       "WireGuard configuration": [
         "Configuration WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Vous avez déjà un compte ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Lien de votre calendrier"

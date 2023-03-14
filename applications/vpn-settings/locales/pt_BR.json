@@ -167,9 +167,6 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
-      "Go to sign in": [
-        "Ir para o início de sessão"
-      ],
       "Hide": [
         "Ocultar"
       ],
@@ -2211,9 +2208,6 @@
       "Plus or Visionary subscription required": [
         "É necessária a assinatura Plus ou Visionária"
       ],
-      "Preview": [
-        "Pré-visualização"
-      ],
       "Preview failed to be loaded": [
         "A pré-visualização falhou ao carregar"
       ],
@@ -2540,9 +2534,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Sua conta ${ BRAND_NAME } existente pode ser usada para acessar todos os serviços do ${ BRAND_NAME }. Por favor, inicie a sessão com ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
@@ -3902,6 +3893,9 @@
       "Verify recovery phone?": [
         "Verificar telefone de recuperação?"
       ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Verifique agora esse endereço de telefone de recuperação: ${ phone.Value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar o seu número de telefone aumenta a segurança de sua conta e permite opções adicionais de recuperação."
       ]
@@ -4722,8 +4716,8 @@
       "Total paid": [
         "Total pago"
       ],
-      "TV log in": [
-        "TV sign in"
+      "TV sign in": [
+        "Iniciar sessão na TV"
       ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
@@ -4766,9 +4760,6 @@
       ],
       "WireGuard configuration": [
         "Configuração do WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Você já tem uma conta ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"

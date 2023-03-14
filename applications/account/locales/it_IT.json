@@ -23,6 +23,11 @@
         "Vista limitata (visibili sono liberi/occupati)"
       ]
     },
+    "account": {
+      "Reconnect": [
+        "Riconnetti"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introduzione a ${ BRAND_NAME }"
@@ -392,9 +397,6 @@
       ],
       "Go to label": [
         "Vai all'etichetta"
-      ],
-      "Go to sign in": [
-        "Vai al login"
       ],
       "Got it": [
         "Capito"
@@ -949,6 +951,9 @@
       ],
       "Saving": [
         "Salvataggio"
+      ],
+      "Set as default": [
+        "Imposta come predefinito"
       ]
     },
     "Address status": {
@@ -2992,6 +2997,9 @@
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
+      "Payment process canceled": [
+        "Processo di pagamento annullato"
+      ],
       "Payment process consumed": [
         "Processo di pagamento completato"
       ],
@@ -3095,6 +3103,9 @@
       ],
       "The address might be misspelled": [
         "L'indirizzo potrebbe esser errato"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Il browser che stai usando attualmente non permette l'autorizzazione completa del pagamento. Usa un browser differente oppure accedi da un computer."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Il nome della cartella non è valido. Si prega di scegliere un altro nome."
@@ -4246,6 +4257,9 @@
       "Canceled": [
         "Annullato"
       ],
+      "Canceling": [
+        "Annullamento"
+      ],
       "Completed": [
         "Completato"
       ],
@@ -4972,12 +4986,6 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Se hai impostato sia SPF che DKIM, DMARC ti permette di specificare come gli altri servizi email dovrebbero consegnare le email per il tuo dominio nel caso falliscano sia i controlli SPF che DKIM. Questo può rendere più difficile agli spammer fingere di essere te, ma potrebbe creare problemi di consegna se non è fatto correttamente."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -5099,6 +5107,9 @@
       ],
       "Large imports can take several days.": [
         "Importazioni di grandi dimensioni possono richiedere diversi giorni."
+      ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Scopri come accedere a ${ VPN_APP_NAME } con applicazioni VPN di terze parti."
       ],
       "Learn more": [
         "Per saperne di più"
@@ -5337,9 +5348,6 @@
       "Plus or Visionary subscription required": [
         "Abbonamento Plus o Visionary richiesto"
       ],
-      "Preview": [
-        "Anteprima"
-      ],
       "Preview failed to be loaded": [
         "Impossibile caricare l'anteprima"
       ],
@@ -5448,6 +5456,9 @@
       "Show original message": [
         "Mostra il messaggio originale"
       ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Accedi a ${ MAIL_APP_NAME } per attivare il tuo indirizzo"
+      ],
       "Signed up": [
         "Iscritto"
       ],
@@ -5531,6 +5542,9 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "L'app Import-Export ti consente di esportare i messaggi per i backup locali e di ripristinare i backup precedenti sul tuo account."
+      ],
+      "The name will be visible to your users while they are signed in.": [
+        "Il nome sarà visibile agli utenti durante l'accesso."
       ],
       "The securest way to browse, stream, and be online.": [
         "Il modo più sicuro per navigare, trasmettere in streaming ed essere online."
@@ -5681,6 +5695,9 @@
       ],
       "Two-factor authentication enabled": [
         "Autenticazione a due fattori attivata"
+      ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "La modalità a doppia password richiede due password: una per accedere al tuo account e una per decifrare la tua casella di posta. (Avanzata)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "La modalità a doppia password utilizza due password separate per la decifratura del login e della casella di posta. Questo fornisce un vantaggio di protezione minimo in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, prima imposti una password di login e poi una per la casella di posta."
@@ -5900,6 +5917,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Non puoi fare riferimento a utenti ${ MAIL_APP_NAME }"
       ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Non è possibile utilizzare le credenziali OpenVPN/IKEv2 per accedere alle applicazioni ${ VPN_APP_NAME } o al pannello di controllo ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Non è stato impostato alcun metodo di recupero, quindi il recupero dell'account è impossibile se si dimentica la password. Procedere senza metodo di recupero?"
       ],
@@ -5972,6 +5992,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non verranno più recapitate nella tua casella di posta. I link di condivisione di Drive non saranno più attivi e non potrai caricare nuovi file. Per continuare a utilizzare il tuo account, si prega di pagare eventuali fatture scadute."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "I tuoi account ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } sono collegati. Per eliminarli entrambi, accedi a ${ loginLink } ed elimina il tuo account da lì."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
       ],
@@ -5995,9 +6018,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Il tuo account ${ BRAND_NAME } esistente può essere utilizzato per accedere a tutti i servizi ${ BRAND_NAME }. Accedi con ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "L'importazione dagli account ${ accounts } è temporaneamente rinviato.",
@@ -7168,6 +7188,9 @@
       "Time format": [
         "Formato dell'orario"
       ],
+      "Time zone": [
+        "Fuso orario"
+      ],
       "To: ${ to }": [
         "A: ${ to }"
       ],
@@ -7500,7 +7523,7 @@
         "Già qui"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Totale calendari creati: ${ createdCalendarCount } di ${ calendarsToBeCreated }",
         "Totale calendari creati: ${ createdCalendarCount } di ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -9098,6 +9121,9 @@
       "Verify recovery phone?": [
         "Verifica telefono di recupero?"
       ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Verifica ora il numero di telefono di recupero: ${ phone.Value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
       ]
@@ -10439,6 +10465,9 @@
       "Gift code": [
         "Codice regalo"
       ],
+      "History": [
+        "Storia"
+      ],
       "How does it work?": [
         "Come funziona?"
       ],
@@ -10472,6 +10501,9 @@
       ],
       "Import key": [
         "Importa chiave"
+      ],
+      "Import messages": [
+        "Importa i messaggi"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importa tramite ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -10822,9 +10854,6 @@
       ],
       "WireGuard configuration": [
         "Configurazione WireGuard"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Hai già un account ${ BRAND_NAME }"
       ],
       "Your calendar link": [
         "Link del tuo calendario"
@@ -11179,6 +11208,9 @@
       ],
       "Are you sure you want to delete the phone number?": [
         "Sei sicuro di voler eliminare il numero di telefono?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Sei sicuro di voler eliminare questo indirizzo?"
       ],
       "Are you sure you want to discard your import?": [
         "Vuoi davvero ignorare la tua importazione?"

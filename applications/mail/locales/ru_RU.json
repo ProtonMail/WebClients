@@ -901,9 +901,6 @@
       "Send feedback": [
         "Отправить отзыв"
       ],
-      "Send quick reply": [
-        "Отправить быстрый ответ"
-      ],
       "Send read receipt": [
         "Отправить уведомление о прочтении"
       ],
@@ -1005,6 +1002,12 @@
       ],
       "This message contains remote content.": [
         "В этом сообщении есть внешнее содержимое."
+      ],
+      "Toggle Calendar app": [
+        "Переключить на приложение Календарь"
+      ],
+      "Toggle Contact app": [
+        "Переключить на приложение Контакты"
       ],
       "Tomorrow": [
         "Завтра"
@@ -1151,9 +1154,6 @@
     "action": {
       "Search messages": [
         "Поиск сообщений"
-      ],
-      "Send quick reply": [
-        "Отправить быстрый ответ"
       ]
     },
     "Actions message": {
@@ -5264,9 +5264,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пожалуйста, подождите, пока мы ищем контакты с данными, зашифрованными неактивным ключом."
       ],
-      "Preview": [
-        "Предпросмотр"
-      ],
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
       ],
@@ -5278,12 +5275,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Защитите свою электронную почту от утечки в списки рассылки или спамеров с помощью ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Быстрый ответ"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Быстрый ответ ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Получатель: "
@@ -6145,6 +6136,9 @@
       "ALL": [
         "ВСЁ"
       ],
+      "All contacts": [
+        "Все контакты"
+      ],
       "Also archive": [
         "Также архивировать"
       ],
@@ -6315,9 +6309,6 @@
       ],
       "Good": [
         "Хорошо"
-      ],
-      "Group": [
-        "Группа"
       ],
       "Hide password": [
         "Скрыть пароль"
@@ -6849,7 +6840,7 @@
         "Почти готово"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
         "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
         "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
         "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }"

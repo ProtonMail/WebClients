@@ -155,6 +155,9 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
+      "Create account": [
+        "Opret konto"
+      ],
       "Create link": [
         "Opret link"
       ],
@@ -3092,11 +3095,14 @@
       "Enabling drive search": [
         "Aktiverer søgning på drev"
       ],
-      "Encrypted": [
-        "Krypteret"
-      ],
       "Encrypted search is here": [
         "Nu med krypteret søgning"
+      ],
+      "End-to-end encrypted": [
+        "End-to-end krypteret"
+      ],
+      "Enter password": [
+        "Angiv adgangskode"
       ],
       "Enter the code from your authenticator app": [
         "Indtast koden fra din godkendelsesapp"
@@ -3426,9 +3432,6 @@
       "Preparing link to folder": [
         "Forbereder link til mappe"
       ],
-      "Preview": [
-        "Forhåndsvisning"
-      ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
       ],
@@ -3464,9 +3467,6 @@
       ],
       "Search Enabled": [
         "Søgning aktiveret"
-      ],
-      "Secure sharing": [
-        "Sikker deling"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vælg en uploadet fil eller mappe og opret et link til den."
@@ -3519,9 +3519,6 @@
       "support team": [
         "supportteam"
       ],
-      "Swiss privacy": [
-        "Schweizisk fortrolighed"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
@@ -3542,9 +3539,6 @@
       ],
       "There are no files yet": [
         "Der er ingen filer endnu"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Disse filer blev delt med ende til ende kryptering. Hvis du vil holde dem sikre - og alle dine dokumenter, fotos og filer private - skal du gemme dem i din egen ${ DRIVE_APP_NAME }. Det er nemt og gratis at bruge."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -4156,8 +4150,8 @@
       "Replace folder": [
         "Erstat mappe"
       ],
-      "Report Abuse": [
-        "Anmeld misbrug"
+      "Report": [
+        "Anmeld"
       ],
       "Reveal password": [
         "Vis adgangskode"
@@ -4335,7 +4329,7 @@
         "Næsten færdig"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Antal oprettet kalender:  ${ createdCalendarCount } af ${ calendarsToBeCreated }",
         "Antal oprettede kalendere: ${ createdCalendarCount } af ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -5178,9 +5172,6 @@
       "Date": [
         "Dato"
       ],
-      "Decrypting": [
-        "Dekrypterer"
-      ],
       "Delete ${ count } contact": [
         "Slet ${ count } kontakt",
         "Slet ${ count } kontakter"
@@ -5203,9 +5194,6 @@
       ],
       "Discard changes?": [
         "Kassér ændringer?"
-      ],
-      "Download shared file": [
-        "Hent delt fil"
       ],
       "Download unverified file?": [
         "Hent ubekræftet fil?"
@@ -5282,9 +5270,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "Fandt ${ searchView.numberOfResults } resultat",
         "Fandt ${ searchView.numberOfResults } resultater"
-      ],
-      "Getting files": [
-        "Modtager filer"
       ],
       "Groups": [
         "Grupper"
@@ -5541,9 +5526,6 @@
       ],
       "You have no folders yet": [
         "Du har ingen mapper endnu"
-      ],
-      "You've got files": [
-        "Du har fået filer"
       ],
       "Your 500 MB bonus": [
         "Din 500 MB bonus"

@@ -36,6 +36,9 @@
       "Reconnect": [
         "Erneut verbinden"
       ],
+      "Remove forward": [
+        "Weiterleitung entfernen"
+      ],
       "You will stop the mail forwarding.": [
         "Die E-Mail-Weiterleitung wird angehalten."
       ]
@@ -409,9 +412,6 @@
       ],
       "Go to label": [
         "Zu Kategorie wechseln"
-      ],
-      "Go to sign in": [
-        "Zur Anmeldung"
       ],
       "Got it": [
         "Verstanden"
@@ -4734,7 +4734,7 @@
         "Zentriert"
       ],
       "Check the status of imports and forwarding.": [
-        "Siehr dir den Status deiner Imports und Weiterleitungen an."
+        "Sieh dir den Status deiner Imports und Weiterleitungen an."
       ],
       "Choose the look and feel of the application.": [
         "Wähle das Erscheinungsbild der Anwendung."
@@ -5035,11 +5035,11 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Wenn du sowohl SPF als auch DKIM eingerichtet hast, kannst du mit DMARC festlegen, wie andere E-Mail-Dienste Nachrichten für deine Domain zustellen sollen, wenn sowohl SPF- als auch DKIM-Prüfungen fehlgeschlagen sind. Dies kann es Spammern erschweren, deine Identität vorzutäuschen - kann aber auch zu Zustellungsproblemen führen, wenn dies nicht ordnungsgemäß eingestellt ist."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Wenn du dein Passwort verlierst und deshalb dein Konto zurücksetzen musst, ist es ${ boldImperative } dass du eine ${ boldAccountRecovery } eingerichtet hast."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Wenn du dein Passwort verlierst und dein Konto zurücksetzen musst, ist es ${ boldImperative }, dass du eine ${ boldAccountAndRecovery } eingerichtet hast, da du sonst möglicherweise nicht auf deine E-Mails, Kontakte oder Dateien zugreifen kannst."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Wenn du dein bestätigtes 2-Faktor-Gerät verlierst, können diese Codes anstelle des 6-stelligen Zwei-Faktor-Authentifizierung-Codes verwendet werden, um dich wieder in deinem Konto anzumelden. Jeder Code kann nur einmal verwendet werden."
@@ -5414,9 +5414,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
-      ],
-      "Preview": [
-        "Vorschau"
       ],
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
@@ -5953,7 +5950,7 @@
         "Du kannst deine Rechnungen für Abrechnungszwecke anpassen und herunterladen."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Du kannst die Protokollierung von Authentifizierungen aktivieren um zu sehen wann von welcher IP-Adresse auf dein Konto zugegriffen wurde. Wir werden die IP-Adresse und den Zeitpunkt, auch von fehlgeschlagenen Anmeldeversuchen, aufzeichnen."
+        "Du kannst die Protokollierung von Authentifizierungen aktivieren, um zu sehen, wann von welcher IP-Adresse auf dein Konto zugegriffen wurde. Wir werden die IP-Adresse und den Zeitpunkt, auch von fehlgeschlagenen Anmeldeversuchen aufzeichnen."
       ],
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
@@ -6100,9 +6097,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Dein bestehendes ${ BRAND_NAME }-Konto kann für die Anmeldung an allen ${ BRAND_NAME }-Diensten genutzt werden. Bitte melde dich mit ${ email } an."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Dein Import von ${ accounts } verzögert sich vorübergehend.",
@@ -7613,7 +7607,7 @@
         "Fast geschafft"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }",
         "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -10962,9 +10956,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard-Konfiguration"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Du hast bereits ein ${ BRAND_NAME }-Konto."
       ],
       "Your calendar link": [
         "Dein Kalender-Link"

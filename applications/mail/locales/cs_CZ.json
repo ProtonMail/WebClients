@@ -880,8 +880,14 @@
       "Select all messages": [
         "Označit všechny zprávy"
       ],
+      "Self-destruct in 7 days": [
+        "Samozničit za 7 dní"
+      ],
       "Self-destruct message": [
         "Samozničující zprávy"
+      ],
+      "Self-destruct on ...": [
+        "Samozničení v ..."
       ],
       "Send": [
         "Odeslat"
@@ -894,9 +900,6 @@
       ],
       "Send feedback": [
         "Odeslat zpětnou vazbu"
-      ],
-      "Send quick reply": [
-        "Poslat rychlou odpověď"
       ],
       "Send read receipt": [
         "Odeslat potvrzení o přečtení"
@@ -1145,9 +1148,6 @@
     "action": {
       "Search messages": [
         "Prohledat zprávy"
-      ],
-      "Send quick reply": [
-        "Poslat rychlou odpověď"
       ]
     },
     "Actions message": {
@@ -2827,6 +2827,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "${ MAIL_APP_NAME } logo a znak plus"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } v nastavení."
       ],
@@ -4418,6 +4421,12 @@
         "${ embeddedAttachmentsCount } vložených obrázků",
         "${ embeddedAttachmentsCount } vložených obrázků"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: obrázek v plné velikosti"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: náhled v nízkém rozlišení"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } skupina nalezena",
         "${ groupCounts } skupiny nalezeny",
@@ -4937,6 +4946,9 @@
       "For messages newer than ${ oldestDate }": [
         "Pro zprávy novější než ${ oldestDate }"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
+      ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
       ],
@@ -5014,6 +5026,9 @@
       ],
       "Import mailbox": [
         "Importovat poštovní schránku"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
@@ -5243,9 +5258,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, vyčkejte dokud nenajdeme kontakty, které jsou šifrované neaktivním klíčem."
       ],
-      "Preview": [
-        "Náhled"
-      ],
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
       ],
@@ -5257,12 +5269,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Chraňte svůj e-mail před únikem do seznamů e-mailových schránek nebo spammerů pomocí ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Rychlá odpověď"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Rychle odpovědět příjemci ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Příjemce: "
@@ -5305,6 +5311,9 @@
       ],
       "Saving draft…": [
         "Ukládám koncept…"
+      ],
+      "Scheduled send of this message will be canceled.": [
+        "Naplánované odeslání této zprávy bude zrušeno."
       ],
       "Scheduling message...": [
         "Plánování zprávy..."
@@ -5447,6 +5456,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
       ],
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "Tato konverzace obsahuje plánovanou zprávu. Odeslání této zprávy bude zrušeno."
+      ],
       "This conversation contains non-trashed messages.": [
         "Tato konverzace obsahuje zprávy, které nejsou v koši."
       ],
@@ -5515,6 +5527,18 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Tato zpráva vyprší ${ formattedDate }"
+      ],
+      "This message will self-destruct in ${ formattedDelay }": [
+        "Tato zpráva se sama zničí za ${ formattedDelay }"
+      ],
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "Tato zpráva se sama zničí ${ dateString } v ${ formattedTime }"
+      ],
+      "This message will self-destruct today at ${ formattedTime }": [
+        "Tato zpráva se sama zničí dnes v ${ formattedTime }"
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "Tato zpráva se sama zničí zítra v ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tento veřejný klíč bude automaticky využit pro šifrování zpráv odesílaných na tuto adresu."
@@ -5641,6 +5665,9 @@
       ],
       "When do you want your message to be sent?": [
         "Kdy chcete, aby byla vaše zpráva odeslána?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Kdy chcete, aby se vaše zpráva sama zničila?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Při poskytování svého e-mailu používejte místo své skutečné e-mailové adresy jedinečný jednorázový alias Skrýt můj e-mail."
@@ -6103,6 +6130,9 @@
       "ALL": [
         "VŠE"
       ],
+      "All contacts": [
+        "Všechny kontakty"
+      ],
       "Also archive": [
         "Také archivovat"
       ],
@@ -6273,9 +6303,6 @@
       ],
       "Good": [
         "Dobré"
-      ],
-      "Group": [
-        "Skupina"
       ],
       "Hide password": [
         "Skrýt heslo"
@@ -6807,7 +6834,7 @@
         "Téměř hotovo"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"

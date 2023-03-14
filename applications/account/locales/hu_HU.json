@@ -381,9 +381,6 @@
       "Go to label": [
         "Címkéhez ugrás"
       ],
-      "Go to sign in": [
-        "Ugrás a bejelentkezéshez"
-      ],
       "Got it": [
         "Rendben!"
       ],
@@ -1576,11 +1573,20 @@
       "Role": [
         "Szerepkör"
       ],
+      "Time zone": [
+        "Időzóna"
+      ],
       "Title": [
         "Beosztás"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Contact type label": {
+      "Fax": [
+        "Fax"
+      ],
       "Main": [
         "Elsődleges"
       ],
@@ -1616,6 +1622,15 @@
       "American Samoa": [
         "Amerikai Szamoa"
       ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
       "Antarctica": [
         "Antarktisz"
       ],
@@ -1627,6 +1642,9 @@
       ],
       "Armenia": [
         "Örményország"
+      ],
+      "Aruba": [
+        "Aruba"
       ],
       "Ascension Island": [
         "Ascension-sziget"
@@ -1649,8 +1667,23 @@
       "Bangladesh": [
         "Banglades"
       ],
+      "Barbados": [
+        "Barbados"
+      ],
       "Belarus": [
         "Fehéroroszország"
+      ],
+      "Belgium": [
+        "Belgium"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
       ],
       "Bhutan": [
         "Bhután"
@@ -1663,6 +1696,9 @@
       ],
       "Bosnia and Herzegovina": [
         "Bosznia-Hercegovina"
+      ],
+      "Botswana": [
+        "Bermuda"
       ],
       "Bouvet Island": [
         "Bouvet-sziget"
@@ -1678,6 +1714,12 @@
       ],
       "Bulgaria": [
         "Bulgária"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
       ],
       "Cambodia": [
         "Kambodzsa"
@@ -1699,6 +1741,9 @@
       ],
       "Chad": [
         "Csád"
+      ],
+      "Chile": [
+        "Chile"
       ],
       "China": [
         "Kína"
@@ -1724,11 +1769,17 @@
       "Cook Islands": [
         "Cook-szigetek"
       ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
       "Croatia": [
         "Horvátország"
       ],
       "Cuba": [
         "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
       ],
       "Cyprus": [
         "Ciprus"
@@ -1751,6 +1802,9 @@
       "Dominican Republic": [
         "Dominikai Köztársaság"
       ],
+      "Ecuador": [
+        "Ecuador"
+      ],
       "Egypt": [
         "Egyiptom"
       ],
@@ -1759,6 +1813,9 @@
       ],
       "Equatorial Guinea": [
         "Egyenlítői-Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
       ],
       "Estonia": [
         "Észtország"
@@ -1796,6 +1853,12 @@
       "French Southern Territories": [
         "Francia déli területek"
       ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
       "Georgia": [
         "Grúzia"
       ],
@@ -1814,11 +1877,23 @@
       "Greenland": [
         "Grönland"
       ],
+      "Grenada": [
+        "Gabon"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
       "Guam": [
         "Guam"
       ],
       "Guatemala": [
         "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
       ],
       "Guinea-Bissau": [
         "Bissau-Guinea"
@@ -1974,7 +2049,7 @@
         "Moldova"
       ],
       "Monaco": [
-        "Monakó"
+        "Monaco"
       ],
       "Mongolia": [
         "Mongólia"
@@ -3093,6 +3168,9 @@
       "Component with wrong format": [
         "A komponens formátuma hibás"
       ],
+      "Custom time zone": [
+        "Egyéni időzóna"
+      ],
       "Edited event not supported": [
         "Szerkesztett esemény nem támogatott"
       ],
@@ -3158,6 +3236,9 @@
       ],
       "Start time out of bounds": [
         "Kezdő időpont a korlátokon kívül"
+      ],
+      "Time zone": [
+        "Időzóna"
       ],
       "Time zone not supported": [
         "Időzóna nem támogatott"
@@ -3463,6 +3544,17 @@
       ],
       "Security key registered": [
         "Hitelesítési kulcs regisztrálva"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
       ]
     },
     "Filter Actions": {
@@ -4627,12 +4719,6 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Amennyiben az SPF és a DKIM rekordokat már beállította, a DMARC beállítása lehetőséget biztosít annak szabályozására, hogy más e-mail szolgáltatások hogyan fogadhatnak levelet a domain nevével, ha mind az SPF, mind a DKIM ellenőrzések meghiúsultak. Ez megnehezítheti, hogy spammerek levélszemetet küldjenek a domain nevével, de az ön leveleinek továbbításában is fennakadásokat okozhat, ha hibásan van beállítva."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ MAIL_APP_NAME } és ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
       ],
@@ -4974,9 +5060,6 @@
       "Plus or Visionary subscription required": [
         "Plus vagy Visionary előfizetés szükséges"
       ],
-      "Preview": [
-        "Előnézet"
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Az ár tartalmaz minden vonatkozó, megújulás-alapú kedvezményt és a fiókjában mentett, le nem járt kupont."
       ],
@@ -5317,7 +5400,7 @@
         "A feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
       ],
       "URL link": [
-        "URL link"
+        "URL hivatkozás"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Használja a legjobb szervert, jelenlegi terhelés és pozíció szerint: ${ formattedBestServerName }"
@@ -5556,9 +5639,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "A meglévő ${ BRAND_NAME } fiók használható az összes ${ BRAND_NAME } szolgáltatáshoz. Jelentkezzen be ${ email } címmel."
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
@@ -6238,7 +6318,7 @@
         "Napi e-mail értesítések"
       ],
       "Date": [
-        "Randi"
+        "Dátum"
       ],
       "Date format": [
         "Dátumformátum"
@@ -6287,6 +6367,9 @@
       ],
       "Domain name": [
         "Domain név"
+      ],
+      "Don't ask again": [
+        "Ne kérdezze újra"
       ],
       "Duration": [
         "Időtartam"
@@ -8412,6 +8495,9 @@
       "Email": [
         "E-mail"
       ],
+      "Fax": [
+        "Fax"
+      ],
       "Home": [
         "Otthoni"
       ],
@@ -9893,9 +9979,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard beállítás"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Önnek már van ${ BRAND_NAME } hozzáférése"
       ],
       "Your calendar link": [
         "Az ön naptárának hivatkozása"

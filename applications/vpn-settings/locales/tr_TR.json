@@ -167,9 +167,6 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
-      "Go to sign in": [
-        "Oturum açmaya git"
-      ],
       "Hide": [
         "Gizle"
       ],
@@ -1834,6 +1831,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: tam boyutlu görsel"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: düşük çözünürlüklü ön izleme"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
@@ -2203,9 +2206,6 @@
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
       ],
-      "Preview": [
-        "Ön izle"
-      ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
       ],
@@ -2551,9 +2551,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Var olan ${ BRAND_NAME } hesabınız tüm ${ BRAND_NAME } hizmetlerine erişmek için kullanılabilir. Lütfen ${ email } ile oturum açın."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
@@ -4498,8 +4495,8 @@
       "Total paid": [
         "Toplam ödenen"
       ],
-      "TV log in": [
-        "TV sign in"
+      "TV sign in": [
+        "TV oturumu açma"
       ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
@@ -4542,9 +4539,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard yapılandırması"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "Zaten bir ${ BRAND_NAME } hesabınız var"
       ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
