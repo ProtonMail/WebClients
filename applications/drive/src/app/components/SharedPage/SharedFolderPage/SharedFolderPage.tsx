@@ -2,17 +2,15 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { NavigationControl } from '@proton/components/containers';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
-import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import { DecryptedLink, useDownload, usePublicFolderView } from '../../../store';
 import { usePublicFileView } from '../../../store/_views/useFileView';
 import { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
-import UpsellFloatingModal from '../../UpsellFloatingModal';
+import { useUpsellFloatingModal } from '../../UpsellFloatingModal';
 import Breadcrumbs from '../Layout/Breadcrumbs';
 import { HeaderSubtitle } from '../Layout/HeaderSubtitle';
 import SharedPageFooter from '../Layout/SharedPageFooter';
@@ -91,21 +89,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
     const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
-    const [renderUpsellFloatingModal, handleToggleModal] = useModalTwo(UpsellFloatingModal);
-    const { isNarrow } = useActiveBreakpoint();
-
-    useEffect(() => {
-        if (isNarrow) {
-            return;
-        }
-        const timeout = setTimeout(() => {
-            void handleToggleModal({});
-        }, 5000);
-
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, [isNarrow]);
+    const [renderUpsellFloatingModal, handleToggleModal] = useUpsellFloatingModal();
 
     const onItemOpen = (item: DecryptedLink) => {
         if (item.isFile) {

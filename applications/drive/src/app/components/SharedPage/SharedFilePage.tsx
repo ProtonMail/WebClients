@@ -1,16 +1,13 @@
-import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
-import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import { DecryptedLink } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
-import UpsellFloatingModal from '../UpsellFloatingModal';
 import Breadcrumbs from './Layout/Breadcrumbs';
+import { useUpsellFloatingModal } from '../UpsellFloatingModal';
 import { HeaderSubtitle } from './Layout/HeaderSubtitle';
 import SharedPageFooter from './Layout/SharedPageFooter';
 import SharedPageHeader from './Layout/SharedPageHeader';
@@ -23,21 +20,7 @@ interface Props {
 
 export default function SharedFilePage({ token, link }: Props) {
     const { isLinkLoading, isContentLoading, error, contents } = usePublicFileView(token, link.linkId);
-    const [renderUpsellFloatingModal, handleToggleModal] = useModalTwo(UpsellFloatingModal);
-    const { isNarrow } = useActiveBreakpoint();
-
-    useEffect(() => {
-        if (isNarrow) {
-            return;
-        }
-        const timeout = setTimeout(() => {
-            void handleToggleModal({});
-        }, 5000);
-
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, [isNarrow]);
+    const [renderUpsellFloatingModal, handleToggleModal] = useUpsellFloatingModal();
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
             <SharedPageLayout
