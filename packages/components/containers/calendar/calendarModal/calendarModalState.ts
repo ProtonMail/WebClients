@@ -10,7 +10,7 @@ import {
 } from '@proton/shared/lib/calendar/alarms/notificationDefaults';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { CALENDAR_TYPE, DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
-import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
     CalendarErrors,
@@ -19,7 +19,6 @@ import {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 export const getCalendarEventSettingsModel = (settings: Partial<CalendarSettings>) => {
     const {
@@ -71,7 +70,7 @@ export const getDefaultModel = (): CalendarViewModelFull => {
         name: '',
         members: [],
         description: '',
-        color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
+        color: getRandomAccentColor(),
         display: true,
         addressID: '',
         addressOptions: [],

@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, useRef } from 'react';
+import React, { ComponentPropsWithoutRef, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,6 +18,8 @@ import { useApi, useEventManager, useFeature, useNotifications } from '../../../
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { SettingsParagraph } from '../../account';
 import { CalendarModal } from '../calendarModal/CalendarModal';
+import HolidaysCalendarModal from '../holidaysCalendarModal/HolidaysCalendarModal';
+import useHolidaysDirectory from '../hooks/useHolidaysDirectory';
 import SubscribedCalendarModal from '../subscribedCalendarModal/SubscribedCalendarModal';
 import CalendarsSection from './CalendarsSection';
 
@@ -32,6 +34,7 @@ export interface OtherCalendarsSectionProps extends ComponentPropsWithoutRef<'di
     subscribedCalendars: SubscribedCalendar[];
     sharedCalendars: VisualCalendar[];
     calendarInvitations: CalendarMemberInvitation[];
+    holidaysCalendars: VisualCalendar[];
     unknownCalendars: VisualCalendar[];
     addresses: Address[];
     user: UserModel;
@@ -43,6 +46,7 @@ const OtherCalendarsSection = ({
     subscribedCalendars,
     sharedCalendars,
     calendarInvitations,
+    holidaysCalendars,
     unknownCalendars,
     addresses,
     user,
@@ -54,9 +58,12 @@ const OtherCalendarsSection = ({
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
+    const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
 
     const [{ onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] = useModalState();
     const [subscribedCalendarModal, setIsSubscribedCalendarModalOpen, renderSubscribedCalendarModal] = useModalState();
+    const [holidaysCalendarModal, setHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
+    const [holidaysDirectory] = useHolidaysDirectory();
 
     const confirm = useRef<{ resolve: (param?: any) => any; reject: () => any }>();
 
@@ -67,6 +74,10 @@ const OtherCalendarsSection = ({
 
     const handleCreate = () => {
         setIsSubscribedCalendarModalOpen(true);
+    };
+
+    const handleCreateHolidaysCalendar = () => {
+        setHolidaysCalendarModalOpen(true);
     };
 
     const handleEdit = (editCalendar: VisualCalendar) => {
@@ -92,7 +103,8 @@ const OtherCalendarsSection = ({
     const descriptionText = calendarSharingEnabled
         ? c('Subscribed calendar section description').t`Add public, external, or shared calendars.`
         : c('Subscribed calendar section description').t`Add public, external, or shared calendars using a URL.`;
-    const addCalendarText = c('Action').t`Add calendar`;
+    const addCalendarText = c('Action').t`Add calendar from URL`;
+    const addHolidaysCalendarText = c('Action').t`Add public holidays`;
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
@@ -101,11 +113,27 @@ const OtherCalendarsSection = ({
         isSettings: true,
     });
 
-    const addCalendarButton = (
+    const addCalendarButtons = (
         <div className="mb-4">
-            <PrimaryButton data-testid="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={handleCreate}>
-                {addCalendarText}
-            </PrimaryButton>
+            <>
+                {holidaysCalendarsEnabled && (
+                    <PrimaryButton
+                        data-testid="calendar-setting-page:add-holidays-calendar"
+                        disabled={!canAdd}
+                        onClick={handleCreateHolidaysCalendar}
+                        className="mr1"
+                    >
+                        {addHolidaysCalendarText}
+                    </PrimaryButton>
+                )}
+                <PrimaryButton
+                    data-test-id="calendar-setting-page:add-calendar"
+                    disabled={!canAdd}
+                    onClick={handleCreate}
+                >
+                    {addCalendarText}
+                </PrimaryButton>
+            </>
         </div>
     );
     const isCalendarsLimitReachedNode = isFreeUser ? (
@@ -155,6 +183,13 @@ const OtherCalendarsSection = ({
             </Prompt>
 
             {renderSubscribedCalendarModal && <SubscribedCalendarModal {...subscribedCalendarModal} />}
+            {renderHolidaysCalendarModal && holidaysDirectory && (
+                <HolidaysCalendarModal
+                    {...holidaysCalendarModal}
+                    directory={holidaysDirectory}
+                    holidaysCalendars={holidaysCalendars}
+                />
+            )}
             {calendarModal.props?.editCalendar && (
                 <CalendarModal
                     {...calendarModalProps}
@@ -169,8 +204,10 @@ const OtherCalendarsSection = ({
                 calendars={[...subscribedCalendars, ...unknownCalendars]}
                 addresses={addresses}
                 user={user}
+                nameHeader={c('Header').t`Subscribed`}
                 onEdit={handleEdit}
                 onDelete={handleDelete}
+                data-testid="subscribed-calendars-section"
                 {...rest}
             >
                 <SettingsParagraph>
@@ -180,8 +217,14 @@ const OtherCalendarsSection = ({
                         {c('Knowledge base link label').t`Here's how`}
                     </Href>
                 </SettingsParagraph>
-                {isCalendarsLimitReached ? isCalendarsLimitReachedNode : addCalendarButton}
+                {isCalendarsLimitReached ? isCalendarsLimitReachedNode : addCalendarButtons}
             </CalendarsSection>
+            <CalendarsSection
+                nameHeader={c('Header').t`Holidays`}
+                calendars={holidaysCalendars}
+                addresses={addresses}
+                user={user}
+            />
             <SharedCalendarsSection
                 user={user}
                 addresses={addresses}
