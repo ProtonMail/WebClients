@@ -64,6 +64,9 @@
       "Back": [
         "Zpět"
       ],
+      "Back to Homepage": [
+        "Zpět na domovskou stránku"
+      ],
       "Beta Access": [
         "Beta přístup"
       ],
@@ -162,6 +165,9 @@
       ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
+      ],
+      "Create account": [
+        "Vytvořit účet"
       ],
       "Create link": [
         "Vytvořit odkaz"
@@ -2914,6 +2920,12 @@
         "${ errorCount } selhalo",
         "${ errorCount } selhalo"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: obrázek v plné velikosti"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: náhled v nízkém rozlišení"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } skupina nalezena",
         "${ groupCounts } skupiny nalezeny",
@@ -3157,6 +3169,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Podporovány jsou soubory CSV z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací a také formáty vCard 3.1 a 4.0 (kódování UTF-8)."
       ],
+      "Decrypting files": [
+        "Dešifrování souborů"
+      ],
       "Delete locked drive": [
         "Smazat zamčený disk",
         "Smazat zamčené disky",
@@ -3214,11 +3229,14 @@
       "Enabling drive search": [
         "Zapínání vyhledávání na disku"
       ],
-      "Encrypted": [
-        "Šifrováno"
-      ],
       "Encrypted search is here": [
         "Vyhledávání v šifrovaných datech je zde"
+      ],
+      "End-to-end encrypted": [
+        "Koncově šifrováno"
+      ],
+      "Enter password": [
+        "Zadejte heslo"
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
@@ -3292,6 +3310,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Chcete-li dosáhnout nejlepších výsledků, vyhněte se streamování a činnostem náročným na paměť nebo rozdělte nahrávání na menší části."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
+      ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
       ],
@@ -3345,6 +3366,9 @@
       ],
       "Import mailbox": [
         "Importovat poštovní schránku"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
@@ -3406,6 +3430,9 @@
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
       ],
+      "Link owner has the password": [
+        "Vlastník odkazu má heslo"
+      ],
       "Loading": [
         "Načítání"
       ],
@@ -3441,6 +3468,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Potřebujete sdílet nějaký soubor? Pak si pořiďte ${ DRIVE_APP_NAME },\nnejbezpečnější způsob sdílení, ukládání a synchronizace vašich souborů."
       ],
       "Network issue": [
         "Síťový problém"
@@ -3486,6 +3516,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Poznámka: Na zařízeních, kde jste nainstalovali ${ DRIVE_APP_NAME }, mohou být data stále dostupná lokálně."
+      ],
+      "Nothing here yet": [
+        "Zatím tady nic není"
       ],
       "of": [
         "z"
@@ -3556,9 +3589,6 @@
       "Preparing link to folder": [
         "Příprava odkazu na složku"
       ],
-      "Preview": [
-        "Náhled"
-      ],
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
       ],
@@ -3595,9 +3625,6 @@
       "Search Enabled": [
         "Vyhledávání Zapnuto"
       ],
-      "Secure sharing": [
-        "Bezpečné sdílení"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vyberte nahraný soubor nebo složku a vytvořte na ně odkaz."
       ],
@@ -3625,6 +3652,9 @@
       "Shareable link for ${ boldNameText }": [
         "Odkaz ke sdílení ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Sdílený odkaz nebyl nalezen"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
       ],
@@ -3649,9 +3679,6 @@
       "support team": [
         "tým podpory"
       ],
-      "Swiss privacy": [
-        "Švýcarské soukromí"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
@@ -3673,9 +3700,6 @@
       "There are no files yet": [
         "Nejsou tady zatím žádné soubory"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Tyto soubory byly sdíleny pomocí koncového šifrování. Chcete-li je mít v bezpečí — a všechny vaše dokumenty, fotografie a soubory v soukromí — uložte je na vlastní ${ DRIVE_APP_NAME }. Snadno se používá a je zdarma."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
       ],
@@ -3684,6 +3708,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Tento soubor mohl být smazán, přesunut nebo znepřístupněn. Zkuste se obrátit na vlastníka souboru."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
@@ -4092,6 +4119,9 @@
       "Download anyway": [
         "Přesto stáhnout"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Stahování ${ percentageValue }%"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4290,8 +4320,8 @@
       "Replace folder": [
         "Nahradit složku"
       ],
-      "Report Abuse": [
-        "Nahlásit zneužití"
+      "Report": [
+        "Nahlásit"
       ],
       "Reveal password": [
         "Zobrazit heslo"
@@ -4469,7 +4499,7 @@
         "Téměř hotovo"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
@@ -5394,9 +5424,6 @@
       "Date": [
         "Datum"
       ],
-      "Decrypting": [
-        "Dešifrování"
-      ],
       "Delete ${ count } contact": [
         "Smazat ${ count } kontakt",
         "Smazat ${ count } kontakty",
@@ -5423,9 +5450,6 @@
       ],
       "Discard changes?": [
         "Zahodit změny?"
-      ],
-      "Download shared file": [
-        "Stáhnout sdílený soubor"
       ],
       "Download unverified file?": [
         "Stáhnout neověřený soubor?"
@@ -5504,9 +5528,6 @@
         "Nalezeny ${ searchView.numberOfResults } výsledky",
         "Nalezeno ${ searchView.numberOfResults } výsledků",
         "Nalezeno ${ searchView.numberOfResults } výsledků"
-      ],
-      "Getting files": [
-        "Získávání souborů"
       ],
       "Groups": [
         "Skupiny"
@@ -5765,9 +5786,6 @@
       ],
       "You have no folders yet": [
         "Zatím nemáte žádné složky"
-      ],
-      "You've got files": [
-        "Obdrželi jste soubory"
       ],
       "Your 500 MB bonus": [
         "Bonus 500 MB"

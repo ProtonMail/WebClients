@@ -163,6 +163,9 @@
       "Create a new contact group": [
         "創建新連絡人群組"
       ],
+      "Create account": [
+        "創建帳號"
+      ],
       "Create link": [
         "建立連結"
       ],
@@ -579,6 +582,12 @@
       ],
       "Theme": [
         "佈景主題"
+      ],
+      "Toggle Calendar app": [
+        "切換行事曆應用程式"
+      ],
+      "Toggle Contact app": [
+        "切換聯絡人應用程式"
       ],
       "Trust": [
         "信任"
@@ -3061,9 +3070,6 @@
       "Enabling drive search": [
         "正在啟用硬碟搜尋"
       ],
-      "Encrypted": [
-        "已加密"
-      ],
       "Encrypted search is here": [
         "加密搜索功能現已推出"
       ],
@@ -3397,9 +3403,6 @@
       "Preparing link to folder": [
         "資料夾連結準備中"
       ],
-      "Preview": [
-        "預覽"
-      ],
       "Preview failed to be loaded": [
         "連結載入失敗"
       ],
@@ -3435,9 +3438,6 @@
       ],
       "Search Enabled": [
         "搜尋已啟用"
-      ],
-      "Secure sharing": [
-        "安全地分享"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "選取已上載的檔案或資料夾並為其建立連結。"
@@ -3490,9 +3490,6 @@
       "support team": [
         "支援團隊"
       ],
-      "Swiss privacy": [
-        "瑞士等級的隱私"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
       ],
@@ -3513,9 +3510,6 @@
       ],
       "There are no files yet": [
         "目前還沒有任何檔案"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "這些檔案將以端到端加密分享。安全儲存這些檔案－包含您全部的文件、照片、私人檔案－保存在僅屬於您的 ${ DRIVE_APP_NAME }。它不但免費且易於使用。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
@@ -4125,9 +4119,6 @@
       "Replace folder": [
         "取代資料夾"
       ],
-      "Report Abuse": [
-        "檢舉濫用"
-      ],
       "Reveal password": [
         "顯示密碼"
       ],
@@ -4304,7 +4295,7 @@
         "快完成了"
       ],
       "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }"
+        "已建立的行事曆數量：${ createdCalendarCount }/${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
@@ -5103,9 +5094,6 @@
       "Date": [
         "日期"
       ],
-      "Decrypting": [
-        "正在解密"
-      ],
       "Delete ${ count } contact groups": [
         "刪除 ${ count } 個聯絡人群組"
       ],
@@ -5126,9 +5114,6 @@
       ],
       "Discard changes?": [
         "捨棄變更？"
-      ],
-      "Download shared file": [
-        "下載已分享檔案"
       ],
       "Download unverified file?": [
         "要下載未驗證的檔案嗎？"
@@ -5204,9 +5189,6 @@
       ],
       "Found ${ searchView.numberOfResults } results": [
         "找到 ${ searchView.numberOfResults } 個結果"
-      ],
-      "Getting files": [
-        "正在取得檔案"
       ],
       "Groups": [
         "群組"
@@ -5462,9 +5444,6 @@
       ],
       "You have no folders yet": [
         "您尚未建立任何資料夾"
-      ],
-      "You've got files": [
-        "您有新的檔案"
       ],
       "Your 500 MB bonus": [
         "您的 500 MB 獎勵"

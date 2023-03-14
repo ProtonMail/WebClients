@@ -163,6 +163,9 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
+      "Create account": [
+        "Стварыць уліковы запіс"
+      ],
       "Create link": [
         "Стварыць спасылку"
       ],
@@ -585,6 +588,12 @@
       ],
       "Theme": [
         "Тэма"
+      ],
+      "Toggle Calendar app": [
+        "Пераключыць на праграму Каляндар"
+      ],
+      "Toggle Contact app": [
+        "Пераключыць на праграму Кантакты"
       ],
       "Trust": [
         "Давяраць"
@@ -2914,6 +2923,12 @@
         "${ errorCount } са збоем",
         "${ errorCount } са збоем"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: поўны памер відарыса"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
+      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзены ${ groupCounts } групы",
@@ -3213,9 +3228,6 @@
       ],
       "Enabling drive search": [
         "Уключэнне пошуку на дыску"
-      ],
-      "Encrypted": [
-        "Зашыфравана"
       ],
       "Encrypted search is here": [
         "Зашыфраваны пошук тут"
@@ -3562,9 +3574,6 @@
       "Preparing link to folder": [
         "Падрыхтоўка спасылкі на папку"
       ],
-      "Preview": [
-        "Папярэдні прагляд"
-      ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
       ],
@@ -3600,9 +3609,6 @@
       ],
       "Search Enabled": [
         "Пошук уключаны"
-      ],
-      "Secure sharing": [
-        "Бяспечнае абагульненне"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Выберыце запампаваны файл або папку і стварыце спасылку на іх."
@@ -3655,9 +3661,6 @@
       "support team": [
         "каманда падтрымкі"
       ],
-      "Swiss privacy": [
-        "Швейцарская прыватнасць"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паўтарыце спробу пазней."
       ],
@@ -3678,9 +3681,6 @@
       ],
       "There are no files yet": [
         "Пакуль у вас няма файлаў"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Гэтыя файлы былі абагулены з дапамогай скразнога шыфравання. Для таго, каб забяспечыць іх бяспеку, а таксама бяспеку ўсіх вашых дакументаў, фатаграфій і прыватных файлаў, захоўвайце іх у ${ DRIVE_APP_NAME }. Дадзены сэрвіс з'яўляецца бясплатным і ім лёгка карыстацца."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена па прычыне патэнцыйнага парушэння ўмоў выкарыстання."
@@ -4296,9 +4296,6 @@
       "Replace folder": [
         "Замяніць папку"
       ],
-      "Report Abuse": [
-        "Паведаміць пра парушэнне"
-      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
@@ -4475,7 +4472,7 @@
         "Амаль гатова"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
         "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
@@ -5400,9 +5397,6 @@
       "Date": [
         "Дата"
       ],
-      "Decrypting": [
-        "Расшыфроўка"
-      ],
       "Delete ${ count } contact": [
         "Выдаліць ${ count } кантакт",
         "Выдаліць ${ count } кантакты",
@@ -5429,9 +5423,6 @@
       ],
       "Discard changes?": [
         "Адхіліць змены?"
-      ],
-      "Download shared file": [
-        "Спампаваць абагулены файл"
       ],
       "Download unverified file?": [
         "Спампаваць неправераны файл?"
@@ -5510,9 +5501,6 @@
         "Знойдзены ${ searchView.numberOfResults } вынікі",
         "Знойдзена ${ searchView.numberOfResults } вынікаў",
         "Знойдзены ${ searchView.numberOfResults } вынікі"
-      ],
-      "Getting files": [
-        "Атрыманне файлаў"
       ],
       "Groups": [
         "Групы"
@@ -5771,9 +5759,6 @@
       ],
       "You have no folders yet": [
         "У вас пакуль няма папак"
-      ],
-      "You've got files": [
-        "Вы атрымалі файлы"
       ],
       "Your 500 MB bonus": [
         "Ваш бонус у 500 МБ"

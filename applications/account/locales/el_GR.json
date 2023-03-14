@@ -382,9 +382,6 @@
       "Go to label": [
         "Μετάβαση στην ετικέτα"
       ],
-      "Go to sign in": [
-        "Μετάβαση στην είσοδο"
-      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -4432,12 +4429,6 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Αν έχετε ρυθμίσει και SPF και DKIM, το DMARC σάς επιτρέπει να καθορίσετε τον τρόπο με τον οποίο άλλες υπηρεσίες ηλεκτρονικού ταχυδρομείου πρέπει να παραδίδουν ηλεκτρονικό ταχυδρομείο για τον domain σας, αν και οι δύο έλεγχοι SPF και DKIM απέτυχαν. Αυτό μπορεί να δυσκολέψει την αποστολή ανεπιθύμητων μηνυμάτων που υποτίθεται ότι είστε εσείς, αλλά μπορεί επίσης να προκαλέσει και προβλήματα παράδοσης εάν δεν γίνει σωστά."
       ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
       ],
@@ -4772,9 +4763,6 @@
       ],
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
-      ],
-      "Preview": [
-        "Προεπισκόπηση"
       ],
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
@@ -5295,9 +5283,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Ο υπάρχων λογαριασμός σας ${ BRAND_NAME } μπορεί να χρησιμοποιηθεί για πρόσβαση σε όλες τις υπηρεσίες ${ BRAND_NAME }. Παρακαλούμε εισέλθετε στο ${ email }."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Η εισαγωγή σας από το ${ accounts } καθυστερεί προσωρινά.",
@@ -6703,7 +6688,7 @@
         "Ακόμα λίγο"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
         "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [

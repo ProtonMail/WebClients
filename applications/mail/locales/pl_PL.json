@@ -802,6 +802,9 @@
       "Remove expiration time": [
         "Usuń czas wygaśnięcia"
       ],
+      "Remove self-destruction": [
+        "Usuń samozniszczenie"
+      ],
       "Remove this label": [
         "Usuń etykietę"
       ],
@@ -877,6 +880,12 @@
       "Select all messages": [
         "Zaznacz wszystkie wiadomości"
       ],
+      "Self-destruct in 7 days": [
+        "Samozniszczenie za 7 dni"
+      ],
+      "Self-destruct message": [
+        "Samoniszcząca się wiadomość"
+      ],
       "Send": [
         "Wyślij"
       ],
@@ -888,9 +897,6 @@
       ],
       "Send feedback": [
         "Wyślij opinię"
-      ],
-      "Send quick reply": [
-        "Wyślij szybką odpowiedź"
       ],
       "Send read receipt": [
         "Wyślij potwierdzenie odczytu"
@@ -993,6 +999,12 @@
       ],
       "This message contains remote content.": [
         "Ta wiadomość zawiera zawartość zdalną."
+      ],
+      "Toggle Calendar app": [
+        "Przełącz aplikację kalendarza"
+      ],
+      "Toggle Contact app": [
+        "Przełącz aplikację kontaktów"
       ],
       "Tomorrow": [
         "Jutro"
@@ -1139,9 +1151,6 @@
     "action": {
       "Search messages": [
         "Szukaj wiadomości"
-      ],
-      "Send quick reply": [
-        "Wyślij szybką odpowiedź"
       ]
     },
     "Actions message": {
@@ -1620,6 +1629,9 @@
     "Cancel self-destruction of the message": {
       "Cancel": [
         "Anuluj"
+      ],
+      "Cancel self-destruction": [
+        "Anuluj samozniszczenie"
       ]
     },
     "Collapsible tooltip": {
@@ -4417,6 +4429,12 @@
         "${ embeddedAttachmentsCount } osadzonych obrazów",
         "${ embeddedAttachmentsCount } osadzonych obrazów"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: obraz w pełnym rozmiarze"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: podgląd w niskiej rozdzielczości"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } znaleziona grupa",
         "${ groupCounts } znalezione grupy",
@@ -5248,9 +5266,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Poczekaj na sprawdzenie kontaktów, które zawierają zaszyfrowane dane za pomocą nieaktywnego klucza."
       ],
-      "Preview": [
-        "Podgląd"
-      ],
       "Preview failed to be loaded": [
         "Załadowanie podglądu nie powiodło się"
       ],
@@ -5262,12 +5277,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Chroń swój adres e-mail przed ujawnieniem go w listach mailingowych lub przez spammerów za pomocą funkcji ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Szybka odpowiedź"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Szybka odpowiedź do ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Odbiorca: "
@@ -5328,6 +5337,9 @@
       ],
       "Select what you want to import.": [
         "Wybierz, co chcesz zaimportować."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Wyślij zaszyfrowaną, chronioną hasłem wiadomość do ${ boldText }."
@@ -5524,6 +5536,18 @@
       "This message will expire ${ formattedDate }": [
         "Wiadomość wygaśnie w dniu: ${ formattedDate }"
       ],
+      "This message will self-destruct in ${ formattedDelay }": [
+        "Wiadomość ulegnie samozniszczeniu w dniu: ${ formattedDelay }"
+      ],
+      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
+        "Wiadomość ulegnie samozniszczeniu w dniu: ${ dateString } o godzinie ${ formattedTime }"
+      ],
+      "This message will self-destruct today at ${ formattedTime }": [
+        "Wiadomość ulegnie samozniszczeniu dzisiaj o godzinie ${ formattedTime }"
+      ],
+      "This message will self-destruct tomorrow at ${ formattedTime }": [
+        "Wiadomość ulegnie samozniszczeniu jutro o godzinie ${ formattedTime }"
+      ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Klucz publiczny zostanie automatycznie użyty do zaszyfrowania wiadomości wysłanej na ten adres."
       ],
@@ -5649,6 +5673,9 @@
       ],
       "When do you want your message to be sent?": [
         "Kiedy chcesz wysłać wiadomość?"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Kiedy chcesz, aby wiadomość uległa samozniszczeniu?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Użyj unikalnego, jednorazowego aliasu Hide My Email, zamiast swojego prawdziwego adresu e-mail."
@@ -6111,6 +6138,9 @@
       "ALL": [
         "WSZYSTKIE"
       ],
+      "All contacts": [
+        "Wszystkie kontakty"
+      ],
       "Also archive": [
         "Również archiwizuj"
       ],
@@ -6281,9 +6311,6 @@
       ],
       "Good": [
         "Dobrze"
-      ],
-      "Group": [
-        "Grupa"
       ],
       "Hide password": [
         "Ukryj hasło"
@@ -6815,7 +6842,7 @@
         "Już prawie"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
@@ -8315,6 +8342,15 @@
       "Read receipt sent": [
         "Potwierdzenie odczytu zostało wysłane"
       ],
+      "Self-destruction cancelled": [
+        "Samozniszczenie zostało anulowane"
+      ],
+      "Self-destruction removed": [
+        "Samozniszczenie zostało usunięte"
+      ],
+      "Self-destruction set": [
+        "Ustaw samozniszczenie"
+      ],
       "Undo in progress": [
         "Cofnięcie jest w toku"
       ],
@@ -8895,6 +8931,9 @@
       ],
       "Select contact group": [
         "Wybierz grupę kontaktów"
+      ],
+      "Self-destruct message": [
+        "Samoniszcząca się wiadomość"
       ],
       "Send email": [
         "Wyślij wiadomość"

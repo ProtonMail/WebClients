@@ -163,6 +163,9 @@
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
+      "Create account": [
+        "Konto erstellen"
+      ],
       "Create link": [
         "Link erstellen"
       ],
@@ -581,6 +584,12 @@
       ],
       "Theme": [
         "Farbschema"
+      ],
+      "Toggle Calendar app": [
+        "Kalender-App umschalten"
+      ],
+      "Toggle Contact app": [
+        "Kontakt-App umschalten"
       ],
       "Trust": [
         "Vertrauen"
@@ -2459,11 +2468,6 @@
         "${ Label.Name } aktualisiert"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privatsphäre als Standard."
-      ]
-    },
     "Group": {
       "Account": [
         "Konto"
@@ -2984,13 +2988,13 @@
         "Abgebrochen"
       ],
       "Cannot load link": [
-        "Link konnte nicht geladen werden"
+        "Link kann nicht geladen werden"
       ],
       "Cannot load links": [
-        "Links konnten nicht geladen werden"
+        "Links können nicht geladen werden"
       ],
       "Cannot load shared link": [
-        "Geteilter Link konnte nicht geladen werden"
+        "Geteilter Link kann nicht geladen werden"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
@@ -3062,6 +3066,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen sowie die Formate vCard 3.1 und 4.0 (UTF-8-Kodierung) werden unterstützt."
       ],
+      "Decrypting files": [
+        "Dateien werden entschlüsselt"
+      ],
       "Delete locked drive": [
         "Gesperrtes Laufwerk löschen",
         "Gesperrte Laufwerke löschen"
@@ -3117,11 +3124,14 @@
       "Enabling drive search": [
         "Suche in Drive wird aktiviert"
       ],
-      "Encrypted": [
-        "Verschlüsselt"
-      ],
       "Encrypted search is here": [
         "Die verschlüsselte Suche ist da"
+      ],
+      "End-to-end encrypted": [
+        "Ende-zu-Ende-verschlüsselt"
+      ],
+      "Enter password": [
+        "Passwort eingeben"
       ],
       "Enter the code from your authenticator app": [
         "Code aus der Authenticator App eingeben"
@@ -3457,9 +3467,6 @@
       "Preparing link to folder": [
         "Link zum Ordner wird vorbereitet"
       ],
-      "Preview": [
-        "Vorschau"
-      ],
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
       ],
@@ -3495,9 +3502,6 @@
       ],
       "Search Enabled": [
         "Suche aktiviert"
-      ],
-      "Secure sharing": [
-        "Sicheres Teilen"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Wähle eine hochgeladene Datei oder einen Ordner aus und erstelle einen Link dazu."
@@ -3550,9 +3554,6 @@
       "support team": [
         "Support-Team"
       ],
-      "Swiss privacy": [
-        "Schweizer Privatsphäre"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
       ],
@@ -3573,9 +3574,6 @@
       ],
       "There are no files yet": [
         "Es sind noch keine Dateien vorhanden"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Diese Dateien wurden mit Ende-zu-Ende-Verschlüsselung geteilt. Um sie sicher zu halten - und alle deine Dokumente, Fotos und Dateien privat - speichere diese in deinem eigenen ${ DRIVE_APP_NAME }. Es ist einfach zu bedienen und kostenlos."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
@@ -4187,9 +4185,6 @@
       "Replace folder": [
         "Ordner ersetzen"
       ],
-      "Report Abuse": [
-        "Missbrauch melden"
-      ],
       "Reveal password": [
         "Passwort anzeigen"
       ],
@@ -4366,7 +4361,7 @@
         "Fast geschafft"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }",
         "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -4558,10 +4553,10 @@
         "Alle Elemente werden demnächst dauerhaft aus dem Papierkorb gelöscht"
       ],
       "Cannot load link": [
-        "Link konnte nicht geladen werden"
+        "Link kann nicht geladen werden"
       ],
       "Cannot load next page": [
-        "Nächste Seite konnte nicht geladen werden"
+        "Nächste Seite kann nicht geladen werden"
       ],
       "Contact group created": [
         "Kontaktgruppe erstellt"
@@ -5388,7 +5383,7 @@
         "Dem Browser geht möglicherweise der Speicher aus"
       ],
       "Cannot load link": [
-        "Link konnte nicht geladen werden"
+        "Link kann nicht geladen werden"
       ],
       "Change layout": [
         "Layout ändern"
@@ -5444,9 +5439,6 @@
       "Date": [
         "Datum"
       ],
-      "Decrypting": [
-        "Wird entschlüsselt"
-      ],
       "Delete ${ count } contact": [
         "${ count } Kontakt löschen",
         "${ count } Kontakte löschen"
@@ -5469,9 +5461,6 @@
       ],
       "Discard changes?": [
         "Änderungen verwerfen?"
-      ],
-      "Download shared file": [
-        "Geteilte Datei herunterladen"
       ],
       "Download unverified file?": [
         "Ungeprüfte Datei herunterladen?"
@@ -5545,9 +5534,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } Ergebnis gefunden",
         "${ searchView.numberOfResults } Ergebnisse gefunden"
-      ],
-      "Getting files": [
-        "Dateien abrufen"
       ],
       "Groups": [
         "Gruppen"
@@ -5804,9 +5790,6 @@
       ],
       "You have no folders yet": [
         "Du hast noch keine Ordner"
-      ],
-      "You've got files": [
-        "Du hast Dateien erhalten"
       ],
       "Your 500 MB bonus": [
         "Dein 500 MB Bonus"

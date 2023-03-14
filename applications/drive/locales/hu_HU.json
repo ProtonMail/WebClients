@@ -155,6 +155,9 @@
       "Create a new contact group": [
         "Új névjegy csoport létrehozása"
       ],
+      "Create account": [
+        "Fiók létrehozása"
+      ],
       "Create link": [
         "Hivatkozás létrehozása"
       ],
@@ -894,11 +897,20 @@
       "Role": [
         "Szerepkör"
       ],
+      "Time zone": [
+        "Időzóna"
+      ],
       "Title": [
         "Beosztás"
+      ],
+      "URL": [
+        "URL"
       ]
     },
     "Contact type label": {
+      "Fax": [
+        "Fax"
+      ],
       "Main": [
         "Elsődleges"
       ],
@@ -934,6 +946,15 @@
       "American Samoa": [
         "Amerikai Szamoa"
       ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
       "Antarctica": [
         "Antarktisz"
       ],
@@ -945,6 +966,9 @@
       ],
       "Armenia": [
         "Örményország"
+      ],
+      "Aruba": [
+        "Aruba"
       ],
       "Ascension Island": [
         "Ascension-sziget"
@@ -967,8 +991,23 @@
       "Bangladesh": [
         "Banglades"
       ],
+      "Barbados": [
+        "Barbados"
+      ],
       "Belarus": [
         "Fehéroroszország"
+      ],
+      "Belgium": [
+        "Belgium"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
       ],
       "Bhutan": [
         "Bhután"
@@ -981,6 +1020,9 @@
       ],
       "Bosnia and Herzegovina": [
         "Bosznia-Hercegovina"
+      ],
+      "Botswana": [
+        "Bermuda"
       ],
       "Bouvet Island": [
         "Bouvet-sziget"
@@ -996,6 +1038,12 @@
       ],
       "Bulgaria": [
         "Bulgária"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
       ],
       "Cambodia": [
         "Kambodzsa"
@@ -1017,6 +1065,9 @@
       ],
       "Chad": [
         "Csád"
+      ],
+      "Chile": [
+        "Chile"
       ],
       "China": [
         "Kína"
@@ -1042,11 +1093,17 @@
       "Cook Islands": [
         "Cook-szigetek"
       ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
       "Croatia": [
         "Horvátország"
       ],
       "Cuba": [
         "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
       ],
       "Cyprus": [
         "Ciprus"
@@ -1069,6 +1126,9 @@
       "Dominican Republic": [
         "Dominikai Köztársaság"
       ],
+      "Ecuador": [
+        "Ecuador"
+      ],
       "Egypt": [
         "Egyiptom"
       ],
@@ -1077,6 +1137,9 @@
       ],
       "Equatorial Guinea": [
         "Egyenlítői-Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
       ],
       "Estonia": [
         "Észtország"
@@ -1114,6 +1177,12 @@
       "French Southern Territories": [
         "Francia déli területek"
       ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
       "Georgia": [
         "Grúzia"
       ],
@@ -1132,11 +1201,23 @@
       "Greenland": [
         "Grönland"
       ],
+      "Grenada": [
+        "Gabon"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
       "Guam": [
         "Guam"
       ],
       "Guatemala": [
         "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
       ],
       "Guinea-Bissau": [
         "Bissau-Guinea"
@@ -1292,7 +1373,7 @@
         "Moldova"
       ],
       "Monaco": [
-        "Monakó"
+        "Monaco"
       ],
       "Mongolia": [
         "Mongólia"
@@ -2058,6 +2139,9 @@
       "Component with wrong format": [
         "A komponens formátuma hibás"
       ],
+      "Custom time zone": [
+        "Egyéni időzóna"
+      ],
       "Edited event not supported": [
         "Szerkesztett esemény nem támogatott"
       ],
@@ -2123,6 +2207,9 @@
       ],
       "Start time out of bounds": [
         "Kezdő időpont a korlátokon kívül"
+      ],
+      "Time zone": [
+        "Időzóna"
       ],
       "Time zone not supported": [
         "Időzóna nem támogatott"
@@ -2257,6 +2344,17 @@
     "fido2: Label": {
       "Security key": [
         "Hitelesítési kulcs"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
       ]
     },
     "Filter notification": {
@@ -2853,9 +2951,6 @@
       "Enabling drive search": [
         "Felhőtárban keresés engedélyezése"
       ],
-      "Encrypted": [
-        "Titkosítva"
-      ],
       "Encrypted search is here": [
         "A titkosított keresés megérkezett"
       ],
@@ -3104,6 +3199,10 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Egy vagy több megbízható kulcsát a tulajdonosa \"kompromittáltként\" jelölt meg. Javasoljuk, hogy távolítsa el a kulcsok megbízhatóságát."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter engedélyezett",
+        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter engedélyezett"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Csak azok férhetnek hozzá a fájlhoz, akik a hivatkozást és a jelszót is ismerik."
       ],
@@ -3147,9 +3246,6 @@
       "Preparing link to folder": [
         "A mappa hivatkozásának előkészítése"
       ],
-      "Preview": [
-        "Előnézet"
-      ],
       "Primary": [
         "Elsődleges"
       ],
@@ -3179,9 +3275,6 @@
       ],
       "Search Enabled": [
         "Keresés engedélyezve"
-      ],
-      "Secure sharing": [
-        "Biztonságos megosztás"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Hivatkozás létrehozásához, válasszon ki egy feltöltött fájlt vagy mappát."
@@ -3221,9 +3314,6 @@
       ],
       "support team": [
         "ügyfélszolgálat"
-      ],
-      "Swiss privacy": [
-        "Svájci adatbiztonság"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
@@ -3619,6 +3709,9 @@
       "Device name": [
         "Eszköz neve"
       ],
+      "Don't ask again": [
+        "Ne kérdezze újra"
+      ],
       "Download anyway": [
         "Letöltés mindenképpen"
       ],
@@ -3819,9 +3912,6 @@
       ],
       "Replace folder": [
         "Mappa lecserélése"
-      ],
-      "Report Abuse": [
-        "Visszaélés jelentése"
       ],
       "Reveal password": [
         "Jelszó felfedése"
@@ -4446,6 +4536,9 @@
       "Email": [
         "E-mail"
       ],
+      "Fax": [
+        "Fax"
+      ],
       "Home": [
         "Otthoni"
       ],
@@ -4750,9 +4843,6 @@
       "Date": [
         "Dátum"
       ],
-      "Decrypting": [
-        "Visszafejtés"
-      ],
       "Delete ${ count } contact": [
         "${ count } névjegy törlése",
         "${ count } névjegy törlése"
@@ -4775,9 +4865,6 @@
       ],
       "Discard changes?": [
         "Módosítások elvetése?"
-      ],
-      "Download shared file": [
-        "Megosztott fájl letöltése"
       ],
       "Download unverified file?": [
         "Ellenőrizetlen fájl letöltése?"
@@ -4848,9 +4935,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } találat",
         "${ searchView.numberOfResults } találat"
-      ],
-      "Getting files": [
-        "Fájlok letöltése"
       ],
       "Groups": [
         "Csoportok"
@@ -5095,9 +5179,6 @@
       ],
       "You have no folders yet": [
         "Még nincsenek mappái"
-      ],
-      "You've got files": [
-        "Fájljai érkeztek"
       ],
       "Your 500 MB bonus": [
         "Az 500 MB bónuszod"

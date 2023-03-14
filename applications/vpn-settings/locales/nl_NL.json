@@ -167,9 +167,6 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
-      "Go to sign in": [
-        "Ga naar inloggen"
-      ],
       "Hide": [
         "Verbergen"
       ],
@@ -400,6 +397,14 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ]
+    },
+    "Action in trial plan": {
+      "No, thanks": [
+        "Nee, bedankt"
+      ],
+      "Try free for 30 days": [
+        "Probeer 30 dagen gratis"
       ]
     },
     "Addon": {
@@ -1501,6 +1506,9 @@
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
+      "Payment process canceled": [
+        "Betalingsverzoek geannuleerd"
+      ],
       "Payment process consumed": [
         "Betalingsverzoek verwerkt"
       ],
@@ -1536,6 +1544,9 @@
       ],
       "Tab closed": [
         "Tab gesloten"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "De browser die u gebruikt staat niet toe dat de betaling volledig geautoriseerd wordt. Gebruik een andere browser of log in via een computer."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
@@ -1752,6 +1763,9 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-mails per maand)"
+      ],
+      "(during your first month)": [
+        "(gedurende uw eerste maand)"
       ]
     },
     "Go to sign in": {
@@ -1837,11 +1851,17 @@
         "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
       "30-day money-back guarantee.": [
         "30-dagen geld terug garantie."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
@@ -1936,6 +1956,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Klaar! We hebben een code verzonden naar ${ destination }."
       ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
       ],
@@ -2029,6 +2052,9 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Als u nog nooit eerder tweestapsverificatie heeft gebruikt, raden we u aan om ${ guideButton }."
       ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Als u uw tweestapsverificatie-apparaat kwijtraakt, kunnen deze codes worden gebruikt in plaats van de 6-cijferige tweestapsverificatiecode om in te loggen op uw account. Elke code kan slechts één keer worden gebruikt."
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
       ],
@@ -2065,6 +2091,9 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -2098,6 +2127,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "No credit card required": [
+        "Green kredietkaart vereist"
+      ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
       ],
@@ -2128,6 +2160,12 @@
       "Plan upgrade required": [
         "Upgrade van abonnement vereist"
       ],
+      "Please authenticate your card in the verification tab.": [
+        "Authenticeer uw kaart in het verificatietabblad."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Authenticeer uw betaling in het verificatietabblad."
+      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Voer de herstelzin van 12 woorden in die bij uw account hoort."
       ],
@@ -2136,6 +2174,9 @@
       ],
       "Please provide an email address in case we need to contact you.": [
         "Geef een e-mailadres op voor het geval we contact met u moeten opnemen."
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
@@ -2149,14 +2190,14 @@
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
       ],
-      "Preview": [
-        "Voorbeeld"
-      ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
       ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
@@ -2197,14 +2238,26 @@
       "Setting up your Drive": [
         "Uw Drive aan het instellen"
       ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      ],
+      "Support for 1 custom email domain": [
+        "Ondersteuning voor 1 aangepast e-maildomein"
       ],
       "support team": [
         "ondersteuningsteam"
       ],
       "The securest way to browse, stream, and be online.": [
         "De veiligste manier om te browsen, streamen en online te zijn."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Deze configuratiebestanden laten u kiezen met welke ${ VPN_APP_NAME }-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
@@ -2281,11 +2334,20 @@
       "Two-factor authentication enabled": [
         "Tweestapsverificatie ingeschakeld"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "Twee-wachtwoordmodus vereist twee wachtwoorden: één om in te loggen op uw account en één om uw mailbox te decoderen. (Geavanceerd)"
+      ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Twee-wachtwoordsmodus maakt gebruik van verschillende wachtwoorden voor het inloggen en de ontsleuteling van de mailbox. Dit biedt in sommige gevallen een klein veiligheidsvoordeel maar wij raden één-wachtwoordsmodus aan voor de meeste gebruikers. Om over te schakel naar twee-wachtwoordsmodus, stelt u eerst een inlogwachtwoord in en daarna een mailboxwachtwoord."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Unlimited messages": [
+        "Onbeperkt aantal berichten"
       ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
@@ -2304,6 +2366,9 @@
       ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
+      ],
+      "Verification may take a few minutes.": [
+        "Verificatie kan enkele minuten duren."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
@@ -2328,6 +2393,15 @@
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "We raden u aan om officiële ${ VPN_APP_NAME }-applicaties te gebruiken waar mogelijk."
+      ],
+      "We couldn’t process your payment.": [
+        "We konden uw betaling niet verwerken."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "We moeten uw betalingsmethode authenticeren met uw bank."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "We moeten uw betaling authenticeren met uw bank."
       ],
       "We recommend using your recovery phrase instead.": [
         "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
@@ -2399,11 +2473,17 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "U kunt de volgende inloggegevens gebruiken om met een ${ VPN_APP_NAME }-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
       ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ${ VPN_APP_NAME }-applicaties of op het ${ VPN_APP_NAME }-dashboard. ${ learnMore }"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
       ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
+      ],
+      "You may be redirected to your bank’s website.": [
+        "U wordt mogelijk doorverwezen naar de website van uw bank."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
@@ -2438,6 +2518,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
       ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
       ],
@@ -2452,9 +2535,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Uw bestaande ${ BRAND_NAME }-account kan gebruikt worden voor alle ${ BRAND_NAME }-diensten. Log in met ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Uw betalingsgegevens zijn beschermd met TLS encryptie en Zwitserse privacywetten."
@@ -2881,6 +2961,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME }-productaankondigingen"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } welkomst-e-mail"
       ]
     },
     "Label on payment method": {
@@ -2889,6 +2972,11 @@
       ],
       "Expired": [
         "Verlopen"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "Postcode"
       ]
     },
     "Link": {
@@ -3133,6 +3221,9 @@
       "Auto-reply": [
         "Automatisch beantwoorden"
       ],
+      "Calendar sharing": [
+        "Agenda-delen"
+      ],
       "Catch-all": [
         "Catch-all"
       ],
@@ -3247,6 +3338,9 @@
       ],
       "Unlimited folders": [
         "Onbeperkt aantal mappen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde mappen, labels en filters"
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
@@ -3470,6 +3564,9 @@
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Deel uw agenda's eenvoudig met collega's, familieleden en vrienden via een koppeling"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
       ],
       "End-to-end encrypted calendar": [
         "End-to-end versleutelde agenda"
@@ -3754,6 +3851,9 @@
       "Verify now": [
         "Verifieer nu"
       ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Verifieer nu dit herstel-e-mailadres: ${ email.Value }"
+      ],
       "Verify recovery email?": [
         "Herstel-e-mailadres verifiëren?"
       ],
@@ -3793,6 +3893,9 @@
       ],
       "Verify recovery phone?": [
         "Hersteltelefoon verifiëren?"
+      ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Verifieer dit hersteltelefoonnummer nu: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
@@ -4138,6 +4241,11 @@
         "Supersnelle VPN op ${ maxVpn } apparaten"
       ]
     },
+    "Subscription change warning": {
+      "Manage your subscription on ${ subscriptionManagerShort }": [
+        "Beheer uw abonnement op ${ subscriptionManagerShort }"
+      ]
+    },
     "Subscription price": {
       "For": [
         "Voor"
@@ -4159,6 +4267,9 @@
     "Success": {
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } gekopieerd naar uw klembord"
+      ],
+      "Account deleted. Signing out...": [
+        "Account verwijderd. Uitloggen..."
       ],
       "Bug reported": [
         "Bug gemeld"
@@ -4408,6 +4519,9 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } downloaden"
       ],
+      "Downloads": [
+        "Downloads"
+      ],
       "Edit credit/debit card": [
         "Krediet/debietkaart bewerken"
       ],
@@ -4585,8 +4699,8 @@
       "Total paid": [
         "Totaal betaald"
       ],
-      "TV log in": [
-        "TV sign in"
+      "TV sign in": [
+        "TV inloggen"
       ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
@@ -4629,9 +4743,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard configuratie"
-      ],
-      "You already have a ${ BRAND_NAME } account": [
-        "U hebt al een account voor ${ BRAND_NAME }"
       ],
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
@@ -4716,6 +4827,9 @@
     "Warning": {
       "Are you sure you want to delete the phone number?": [
         "Bent u zeker dat u het telefoonnummer wilt verwijderen?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Weet u zeker dat u dit adres wil verwijderen?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Door dit e-mailadres te verwijderen, kunt u geen dagelijkse e-mailmeldingen meer ontvangen."

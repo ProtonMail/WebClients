@@ -64,6 +64,9 @@
       "Back": [
         "Wstecz"
       ],
+      "Back to Homepage": [
+        "Powrót do strony głównej"
+      ],
       "Beta Access": [
         "Dostęp beta"
       ],
@@ -162,6 +165,9 @@
       ],
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
+      ],
+      "Create account": [
+        "Utwórz konto"
       ],
       "Create link": [
         "Utwórz link"
@@ -585,6 +591,12 @@
       ],
       "Theme": [
         "Motyw"
+      ],
+      "Toggle Calendar app": [
+        "Przełącz aplikację kalendarza"
+      ],
+      "Toggle Contact app": [
+        "Przełącz aplikację kontaktów"
       ],
       "Trust": [
         "Zaufaj"
@@ -2486,11 +2498,6 @@
         "Etykieta ${ Label.Name } została zaktualizowana"
       ]
     },
-    "Footer": {
-      "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Prywatność to nasz standard."
-      ]
-    },
     "Group": {
       "Account": [
         "Konto"
@@ -2919,6 +2926,12 @@
         "Transfer ${ errorCount } plików zakończył się niepowodzeniem",
         "Transfer ${ errorCount } plików zakończył się niepowodzeniem"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: obraz w pełnym rozmiarze"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: podgląd w niskiej rozdzielczości"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } znaleziona grupa",
         "${ groupCounts } znalezione grupy",
@@ -3159,6 +3172,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Obsługiwane są pliki vCard w wersji 3.1, 4.0 (kodowanie UTF-8) oraz CSV z programów Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora i kilku innych."
       ],
+      "Decrypting files": [
+        "Odszyfrowywanie plików"
+      ],
       "Delete locked drive": [
         "Usuń zablokowany dysk",
         "Usuń zablokowane dyski",
@@ -3216,11 +3232,14 @@
       "Enabling drive search": [
         "Włączanie wyszukiwania zawartości dysku"
       ],
-      "Encrypted": [
-        "Zaszyfrowany"
-      ],
       "Encrypted search is here": [
         "Wyszukiwanie zawartości jest tutaj"
+      ],
+      "End-to-end encrypted": [
+        "Zaszyfrowane end-to-end"
+      ],
+      "Enter password": [
+        "Wpisz hasło"
       ],
       "Enter the code from your authenticator app": [
         "Wpisz kod z aplikacji uwierzytelniającej"
@@ -3414,6 +3433,9 @@
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
       ],
+      "Link owner has the password": [
+        "Właściciel linku posiada hasło"
+      ],
       "Loading": [
         "Ładowanie"
       ],
@@ -3449,6 +3471,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nazwij nowy folder i wybierz folder nadrzędny, do którego chcesz go dodać. Jeśli nie wybierzesz folderu nadrzędnego, nowy folder zostanie utworzony jako folder najwyższego poziomu."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Potrzebujesz udostępnić plik? Uzyskaj dysk ${ DRIVE_APP_NAME }, aby udostępniać, przechowywać i synchronizować pliki w bezpieczny sposób."
       ],
       "Network issue": [
         "Błąd sieci"
@@ -3494,6 +3519,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Uwaga: Dane mogą być nadal dostępne lokalnie na urządzeniach, na których zainstalowano aplikację ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "Niczego tutaj nie ma"
       ],
       "of": [
         "z"
@@ -3564,9 +3592,6 @@
       "Preparing link to folder": [
         "Przygotowywanie linku"
       ],
-      "Preview": [
-        "Podgląd"
-      ],
       "Preview failed to be loaded": [
         "Załadowanie podglądu nie powiodło się"
       ],
@@ -3603,9 +3628,6 @@
       "Search Enabled": [
         "Wyszukiwanie zostało włączone"
       ],
-      "Secure sharing": [
-        "Bezpieczne udostępnianie"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Wybierz przesłany plik lub folder i utwórz do niego link."
       ],
@@ -3614,6 +3636,9 @@
       ],
       "Select what you want to import.": [
         "Wybierz, co chcesz zaimportować."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -3629,6 +3654,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Link do ${ boldNameText }"
+      ],
+      "Shared link not found": [
+        "Udostępniony link nie został znaleziony"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."
@@ -3654,9 +3682,6 @@
       "support team": [
         "pomocą techniczną"
       ],
-      "Swiss privacy": [
-        "Szwajcarska polityka prywatności"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
       ],
@@ -3678,9 +3703,6 @@
       "There are no files yet": [
         "Nie masz tu jeszcze żadnych plików"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Te pliki zostały udostępnione za pomocą szyfrowania end-to-end. Aby zapewnić bezpieczeństwo wszystkich swoich dokumentów, zdjęć i plików, trzymaj je na dysku ${ DRIVE_APP_NAME }. Usługa jest łatwa w użyciu i darmowa."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
       ],
@@ -3689,6 +3711,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ta przeglądarka nie obsługuje podglądu dokumentów PDF. Pobierz plik."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Plik mógł zostać usunięty, przeniesiony lub jest niedostępny. Skontaktuj się z właścicielem pliku."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
@@ -4097,6 +4122,9 @@
       "Download anyway": [
         "Pobierz mimo to"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Pobieranie ${ percentageValue }$"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4295,8 +4323,8 @@
       "Replace folder": [
         "Zastąp folder"
       ],
-      "Report Abuse": [
-        "Zgłoś nadużycie"
+      "Report": [
+        "Zgłoś"
       ],
       "Reveal password": [
         "Pokaż hasło"
@@ -4474,7 +4502,7 @@
         "Już prawie"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
         "Liczba utworzonych kalendarzy: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
@@ -5649,9 +5677,6 @@
       "Date": [
         "Data"
       ],
-      "Decrypting": [
-        "Odszyfrowywanie"
-      ],
       "Delete ${ count } contact": [
         "Usuń kontakt",
         "Usuń ${ count } kontakty",
@@ -5678,9 +5703,6 @@
       ],
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
-      ],
-      "Download shared file": [
-        "Pobierz udostępniony plik"
       ],
       "Download unverified file?": [
         "Pobrać niezweryfikowany plik?"
@@ -5760,11 +5782,11 @@
         "Znaleziono ${ searchView.numberOfResults } wyników",
         "Znaleziono ${ searchView.numberOfResults } wyników"
       ],
-      "Getting files": [
-        "Ładowanie plików"
-      ],
       "Groups": [
         "Grupy"
+      ],
+      "Hm, we couldn't find that one": [
+        "Nie możemy tego znaleźć"
       ],
       "Human verification": [
         "Weryfikacja antyspamowa"
@@ -6020,9 +6042,6 @@
       ],
       "You have no folders yet": [
         "Nie masz jeszcze żadnych folderów"
-      ],
-      "You've got files": [
-        "Pobierz pliki"
       ],
       "Your 500 MB bonus": [
         "Twój bonus 500 MB"

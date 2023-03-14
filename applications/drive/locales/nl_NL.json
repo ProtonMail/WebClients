@@ -4,6 +4,14 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Doorsturen start binnenkort. Nieuwe e-mails verschijnen in uw inbox."
+      ],
+      "Mail forward stopped": [
+        "E-mail doorsturen gestopt"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } inleiding"
@@ -154,6 +162,9 @@
       ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
+      ],
+      "Create account": [
+        "Account aanmaken"
       ],
       "Create link": [
         "Link aanmaken"
@@ -573,6 +584,12 @@
       ],
       "Theme": [
         "Thema"
+      ],
+      "Toggle Calendar app": [
+        "Agenda app kiezen"
+      ],
+      "Toggle Contact app": [
+        "Contact app kiezen"
       ],
       "Trust": [
         "Vertrouwen"
@@ -1879,6 +1896,14 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
+      ],
       "Device name does not match": [
         "Apparaatnaam komt niet overeen"
       ],
@@ -1941,6 +1966,10 @@
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
+        "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
@@ -2101,6 +2130,9 @@
       "You can't send vCard files of more than 10 contacts": [
         "U kunt geen vCard-bestand met meer dan 10 contacten verzenden"
       ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "U heeft het maximale aantal agenda's bereikt. Sommige agenda's konden niet worden geïmporteerd."
+      ],
       "You must set a name": [
         "U moet een naam instellen"
       ],
@@ -2112,6 +2144,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2150,6 +2185,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Er is een fout opgetreden bij het uploaden van uw bestand ${ formattedFilename }. Maximale bestandsgrootte is ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2792,6 +2830,9 @@
         "${ contactsCount } contactpersoon gevonden",
         "${ contactsCount } contactpersonen gevonden"
       ],
+      "${ deviceName } (restored)": [
+        "${ deviceName } (hersteld)"
+      ],
       "${ doneCount } finished": [
         "${ doneCount } voltooid",
         "${ doneCount } voltooid"
@@ -2875,6 +2916,9 @@
       "A number will be added to the folder name": [
         "Een nummer wordt toegevoegd aan de foldernaam"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
@@ -2936,6 +2980,15 @@
       ],
       "Canceled": [
         "Geannuleerd"
+      ],
+      "Cannot load link": [
+        "Kan koppeling niet laden"
+      ],
+      "Cannot load links": [
+        "Kan koppelingen niet laden"
+      ],
+      "Cannot load shared link": [
+        "Kan gedeelde koppelingen niet laden"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -3062,9 +3115,6 @@
       "Enabling drive search": [
         "Drive doorzoeken wordt ingeschakeld"
       ],
-      "Encrypted": [
-        "Versleuteld"
-      ],
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
@@ -3138,6 +3188,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
+      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -3189,6 +3242,9 @@
       ],
       "Import mailbox": [
         "Mailbox importeren"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
@@ -3396,9 +3452,6 @@
       "Preparing link to folder": [
         "Link naar map wordt voorbereid"
       ],
-      "Preview": [
-        "Voorbeeld"
-      ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
       ],
@@ -3426,14 +3479,14 @@
       "Report has been sent": [
         "Rapport werd verzonden"
       ],
+      "Restored files ${ formattedDate }": [
+        "Herstelde bestanden ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
       ],
       "Search Enabled": [
         "Zoeken Ingeschakeld"
-      ],
-      "Secure sharing": [
-        "Veilig delen"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecteer een geüpload bestand of map en maak er een link naartoe."
@@ -3443,6 +3496,9 @@
       ],
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
@@ -3483,9 +3539,6 @@
       "support team": [
         "ondersteuningsteam"
       ],
-      "Swiss privacy": [
-        "Zwitserse privacy"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
@@ -3506,9 +3559,6 @@
       ],
       "There are no files yet": [
         "Er zijn nog geen bestanden"
-      ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Deze bestanden werden gedeeld gebruik makend van end-to-end encryptie. Om ze veilig te houden — en al uw documenten, foto's, en bestanden privé — sla ze op in uw eigen ${ DRIVE_APP_NAME }. Het is gemakkelijk en gratis."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -3919,6 +3969,9 @@
       "Device name": [
         "Apparaatnaam"
       ],
+      "Don't ask again": [
+        "Niet opnieuw vragen"
+      ],
       "Download anyway": [
         "Toch downloaden"
       ],
@@ -4120,9 +4173,6 @@
       "Replace folder": [
         "Map vervangen"
       ],
-      "Report Abuse": [
-        "Meld misbruik"
-      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
@@ -4299,7 +4349,7 @@
         "Bijna daar"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }",
         "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -4489,6 +4539,12 @@
       ],
       "All items will soon be permanently deleted from trash": [
         "Alle items zullen binnenkort permanent uit de prullenbak worden verwijderd"
+      ],
+      "Cannot load link": [
+        "Kan koppelingen niet laden"
+      ],
+      "Cannot load next page": [
+        "Kan volgende pagina niet laden"
       ],
       "Contact group created": [
         "Contactgroep aangemaakt"
@@ -5107,6 +5163,9 @@
       "Bug reported": [
         "Bug gemeld"
       ],
+      "Canceling import": [
+        "Importeren annuleren"
+      ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
@@ -5299,6 +5358,9 @@
       "Browser might run out of memory": [
         "Browser valt mogelijk zonder geheugen"
       ],
+      "Cannot load link": [
+        "Kan koppeling niet laden"
+      ],
       "Change layout": [
         "Layout aanpassen"
       ],
@@ -5353,9 +5415,6 @@
       "Date": [
         "Datum"
       ],
-      "Decrypting": [
-        "Ontsleutelen"
-      ],
       "Delete ${ count } contact": [
         "Verwijder ${ count } contact",
         "${ count } contacten verwijderen"
@@ -5378,9 +5437,6 @@
       ],
       "Discard changes?": [
         "Wijzigingen annuleren?"
-      ],
-      "Download shared file": [
-        "Gedeeld bestand downloaden"
       ],
       "Download unverified file?": [
         "Ongeverifieerd bestand downloaden?"
@@ -5454,9 +5510,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } zoekresultaat",
         "${ searchView.numberOfResults } zoekresultaten"
-      ],
-      "Getting files": [
-        "Bestanden aan het ontvangen"
       ],
       "Groups": [
         "Groepen"
@@ -5713,9 +5766,6 @@
       ],
       "You have no folders yet": [
         "U hebt nog geen mappen"
-      ],
-      "You've got files": [
-        "U heeft bestanden"
       ],
       "Your 500 MB bonus": [
         "Uw 500 MB bonus"

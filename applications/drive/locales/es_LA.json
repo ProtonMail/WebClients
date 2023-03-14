@@ -64,6 +64,9 @@
       "Back": [
         "Atrás"
       ],
+      "Back to Homepage": [
+        "Volver la página de inicio"
+      ],
       "Beta Access": [
         "Acceso beta"
       ],
@@ -162,6 +165,9 @@
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
+      ],
+      "Create account": [
+        "Crear cuenta"
       ],
       "Create link": [
         "Crear enlace"
@@ -581,6 +587,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Toggle Calendar app": [
+        "Alternar app de Calendario"
+      ],
+      "Toggle Contact app": [
+        "Alternar app de Contactos"
       ],
       "Trust": [
         "Confiar"
@@ -2843,6 +2855,12 @@
         "${ errorCount } fallida",
         "${ errorCount } fallidas"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagen de tamaño completo"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: vista previa de baja resolución"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupo encontrado"
@@ -3054,6 +3072,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
+      "Decrypting files": [
+        "Descifrando archivos"
+      ],
       "Delete locked drive": [
         "Eliminar unidad bloqueada",
         "Eliminar unidades bloqueadas"
@@ -3109,11 +3130,14 @@
       "Enabling drive search": [
         "Habilitando búsqueda en Drive"
       ],
-      "Encrypted": [
-        "Cifrado"
-      ],
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí"
+      ],
+      "End-to-end encrypted": [
+        "Cifrado de extremo a extremo"
+      ],
+      "Enter password": [
+        "Ingrese la contraseña"
       ],
       "Enter the code from your authenticator app": [
         "Ingrese el código de su app de autenticación"
@@ -3303,6 +3327,9 @@
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ],
+      "Link owner has the password": [
+        "El propietario del enlace tiene la contraseña"
+      ],
       "Loading": [
         "Cargando"
       ],
@@ -3338,6 +3365,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nombre su carpeta nueva y seleccione la carpeta padre en la que desea colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "¿Desea compartir un archivo? Use ${ DRIVE_APP_NAME }, la forma más segura de compartir, almacenar y sincronizar sus archivos."
       ],
       "Network issue": [
         "Problema de red"
@@ -3383,6 +3413,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que haya instalado ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "No hay nada aquí en este momento"
       ],
       "of": [
         "de"
@@ -3449,9 +3482,6 @@
       "Preparing link to folder": [
         "Preparando enlace a la carpeta"
       ],
-      "Preview": [
-        "Vista previa"
-      ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
@@ -3488,9 +3518,6 @@
       "Search Enabled": [
         "Búsqueda habilitada"
       ],
-      "Secure sharing": [
-        "Uso compartido seguro"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Seleccione un archivo cargado o carpeta y cree un enlace."
       ],
@@ -3518,6 +3545,9 @@
       "Shareable link for ${ boldNameText }": [
         "Enlace compartible para ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "No se encontró el enlace compartido"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No se pudo validar la firma por problemas de red. Intente de nuevo más tarde."
       ],
@@ -3542,9 +3572,6 @@
       "support team": [
         "equipo de soporte"
       ],
-      "Swiss privacy": [
-        "Privacidad suiza"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "No disponible temporalmente. Compruebe más tarde."
       ],
@@ -3566,9 +3593,6 @@
       "There are no files yet": [
         "Aún no hay archivos"
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Estos archivos fueron compartidos usando cifrado de extremo a extremo. Para mantenerlos seguros, y todos sus documentos, imágenes y archivos privados, almacénelos en su propio ${ DRIVE_APP_NAME }. Es fácil de usar y gratis."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida por una posible violación de la política."
       ],
@@ -3577,6 +3601,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descargue el archivo."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Es posible que este archivo se haya eliminado, movido o dejado de estar disponible. Póngase en contacto con el propietario del archivo."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
@@ -3981,6 +4008,9 @@
       "Download anyway": [
         "Descargar de todos modos"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Descargando ${ percentageValue }%"
+      ],
       "Email": [
         "Correo"
       ],
@@ -4179,8 +4209,8 @@
       "Replace folder": [
         "Reemplazar carpeta"
       ],
-      "Report Abuse": [
-        "Reportar abuso"
+      "Report": [
+        "Notificar"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -4358,7 +4388,7 @@
         "Ya casi está"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
         "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -5439,9 +5469,6 @@
       "Date": [
         "Fecha"
       ],
-      "Decrypting": [
-        "Descifrando"
-      ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
         "Eliminar ${ count } contacto"
@@ -5464,9 +5491,6 @@
       ],
       "Discard changes?": [
         "¿Descartar cambios?"
-      ],
-      "Download shared file": [
-        "Descargar archivo compartido"
       ],
       "Download unverified file?": [
         "¿Descargar archivo no verificado?"
@@ -5541,11 +5565,11 @@
         "${ searchView.numberOfResults } resultado encontrado",
         "${ searchView.numberOfResults } resultados encontrados"
       ],
-      "Getting files": [
-        "Obteniendo archivos"
-      ],
       "Groups": [
         "Grupos"
+      ],
+      "Hm, we couldn't find that one": [
+        "No pudimos encontrar este elemento"
       ],
       "Human verification": [
         "Verificación humana"
@@ -5799,9 +5823,6 @@
       ],
       "You have no folders yet": [
         "Aún no tiene carpetas"
-      ],
-      "You've got files": [
-        "Tiene archivos"
       ],
       "Your 500 MB bonus": [
         "Su bono de 500 MB"

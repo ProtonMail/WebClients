@@ -892,9 +892,6 @@
       "Send feedback": [
         "Feedback senden"
       ],
-      "Send quick reply": [
-        "Schnellantwort senden"
-      ],
       "Send read receipt": [
         "Lesebestätigung senden"
       ],
@@ -996,6 +993,12 @@
       ],
       "This message contains remote content.": [
         "Diese Nachricht enthält Inhalte aus externen Quellen."
+      ],
+      "Toggle Calendar app": [
+        "Kalender-App umschalten"
+      ],
+      "Toggle Contact app": [
+        "Kontakt-App umschalten"
       ],
       "Tomorrow": [
         "Morgen"
@@ -1140,9 +1143,6 @@
     "action": {
       "Search messages": [
         "Nachrichten durchsuchen"
-      ],
-      "Send quick reply": [
-        "Schnellantwort senden"
       ]
     },
     "Actions message": {
@@ -5086,9 +5086,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die Daten enthalten, die mit dem inaktiven Schlüssel verschlüsselt sind."
       ],
-      "Preview": [
-        "Vorschau"
-      ],
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
       ],
@@ -5100,12 +5097,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Schütze deine E-Mails mit ${ maskMyEmailButton } davor, an Mailinglisten oder Spammer weitergegeben zu werden."
-      ],
-      "Quick reply": [
-        "Schnellantwort"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Schnellantwort an ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Empfänger: "
@@ -5939,6 +5930,9 @@
       "ALL": [
         "ALLE"
       ],
+      "All contacts": [
+        "Alle Kontakte"
+      ],
       "Also archive": [
         "Auch archivieren"
       ],
@@ -6109,9 +6103,6 @@
       ],
       "Good": [
         "Gut"
-      ],
-      "Group": [
-        "Gruppe"
       ],
       "Hide password": [
         "Passwort ausblenden"
@@ -6643,7 +6634,7 @@
         "Fast geschafft"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }",
         "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [

@@ -64,6 +64,9 @@
       "Back": [
         "Atrás"
       ],
+      "Back to Homepage": [
+        "Volver la página de inicio"
+      ],
       "Beta Access": [
         "Acceso beta"
       ],
@@ -162,6 +165,9 @@
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos"
+      ],
+      "Create account": [
+        "Crear cuenta"
       ],
       "Create link": [
         "Crear enlace"
@@ -581,6 +587,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Toggle Calendar app": [
+        "Cambiar a la aplicación Calendar"
+      ],
+      "Toggle Contact app": [
+        "Cambiar a la aplicación Contactos"
       ],
       "Trust": [
         "Confiar"
@@ -2843,6 +2855,12 @@
         "${ errorCount } error",
         "${ errorCount } errores"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagen de tamaño completo"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: vista previa de baja resolución"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
@@ -3054,6 +3072,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
+      "Decrypting files": [
+        "Descifrando archivos"
+      ],
       "Delete locked drive": [
         "Eliminar unidad bloqueada",
         "Eliminar unidades bloqueadas"
@@ -3109,11 +3130,14 @@
       "Enabling drive search": [
         "Activación de la búsqueda en tu unidad"
       ],
-      "Encrypted": [
-        "Cifrado"
-      ],
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí."
+      ],
+      "End-to-end encrypted": [
+        "Cifrado de extremo a extremo"
+      ],
+      "Enter password": [
+        "Introduce la contraseña"
       ],
       "Enter the code from your authenticator app": [
         "Introduce el código de tu aplicación de autenticación."
@@ -3303,6 +3327,9 @@
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ],
+      "Link owner has the password": [
+        "El propietario del enlace tiene la contraseña."
+      ],
       "Loading": [
         "Cargando"
       ],
@@ -3338,6 +3365,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "¿Quieres compartir un archivo? Usa ${ DRIVE_APP_NAME }, la forma más segura de compartir, almacenar y sincronizar tus archivos."
       ],
       "Network issue": [
         "Problema de red"
@@ -3383,6 +3413,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que hayas instalado ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "No hay nada aquí en este momento."
       ],
       "of": [
         "de"
@@ -3449,9 +3482,6 @@
       "Preparing link to folder": [
         "Preparando enlace a la carpeta"
       ],
-      "Preview": [
-        "Vista previa"
-      ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
       ],
@@ -3488,9 +3518,6 @@
       "Search Enabled": [
         "Búsqueda habilitada"
       ],
-      "Secure sharing": [
-        "Uso compartido seguro"
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecciona una carpeta o archivo que has cargado para crear un enlace."
       ],
@@ -3518,6 +3545,9 @@
       "Shareable link for ${ boldNameText }": [
         "Enlace compartible para ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "No se ha encontrado el enlace compartido."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Error al validar la firma debido a errores de red. Inténtalo de nuevo más tarde."
       ],
@@ -3542,9 +3572,6 @@
       "support team": [
         "equipo de soporte"
       ],
-      "Swiss privacy": [
-        "Privacidad suiza"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
@@ -3566,9 +3593,6 @@
       "There are no files yet": [
         "Aún no hay archivos."
       ],
-      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own ${ DRIVE_APP_NAME }. It's easy-to-use and free.": [
-        "Se han compartido estos archivos usando cifrado de extremo a extremo. Para mantenerlos seguros (así como tus documentos, fotos y archivos privados), almacénalos en tu propio ${ DRIVE_APP_NAME }. Es gratis y fácil de usar."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
       ],
@@ -3577,6 +3601,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descarga el archivo."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Es posible que este archivo se haya eliminado, movido o dejado de estar disponible. Póngate en contacto con el propietario del archivo."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
@@ -3981,6 +4008,9 @@
       "Download anyway": [
         "Descargar de todos modos"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Descargando ${ percentageValue }%"
+      ],
       "Email": [
         "Correo electrónico"
       ],
@@ -4010,6 +4040,9 @@
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
+      ],
+      "Enter device name": [
+        "Introduce el nombre del dispositivo."
       ],
       "Expired": [
         "Expirado"
@@ -4176,8 +4209,8 @@
       "Replace folder": [
         "Reemplazar carpeta"
       ],
-      "Report Abuse": [
-        "Denunciar abuso"
+      "Report": [
+        "Notificar"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -4355,7 +4388,7 @@
         "¡Ya casi está!"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
         "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -5203,9 +5236,6 @@
       "Date": [
         "Fecha"
       ],
-      "Decrypting": [
-        "Descifrando"
-      ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
         "Eliminar ${ count } contactos"
@@ -5228,9 +5258,6 @@
       ],
       "Discard changes?": [
         "¿Descartar los cambios?"
-      ],
-      "Download shared file": [
-        "Descargar archivo compartido"
       ],
       "Download unverified file?": [
         "¿Descargar archivo no verificado?"
@@ -5305,11 +5332,11 @@
         "${ searchView.numberOfResults } resultado encontrado",
         "${ searchView.numberOfResults } resultados encontrados"
       ],
-      "Getting files": [
-        "Obteniendo archivos"
-      ],
       "Groups": [
         "Grupos"
+      ],
+      "Hm, we couldn't find that one": [
+        "No hemos podido encontrar este elemento."
       ],
       "Human verification": [
         "Verificación humana"
@@ -5563,9 +5590,6 @@
       ],
       "You have no folders yet": [
         "Todavía no tienes carpetas."
-      ],
-      "You've got files": [
-        "Tienes archivos."
       ],
       "Your 500 MB bonus": [
         "Tu bonus de 500 MB"

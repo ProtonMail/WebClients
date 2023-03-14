@@ -898,9 +898,6 @@
       "Send feedback": [
         "Geri bildirim gönder"
       ],
-      "Send quick reply": [
-        "Hızlı yanıt gönder"
-      ],
       "Send read receipt": [
         "Okundu bilgisi gönderilsin"
       ],
@@ -1002,6 +999,12 @@
       ],
       "This message contains remote content.": [
         "Bu iletide uzak içerik var."
+      ],
+      "Toggle Calendar app": [
+        "Takvim uygulamasına geç"
+      ],
+      "Toggle Contact app": [
+        "Kişiler uygulamasına geç"
       ],
       "Tomorrow": [
         "Yarın"
@@ -1146,9 +1149,6 @@
     "action": {
       "Search messages": [
         "İleti arama"
-      ],
-      "Send quick reply": [
-        "Hızlı yanıt gönder"
       ]
     },
     "Actions message": {
@@ -4332,6 +4332,12 @@
         "${ embeddedAttachmentsCount } gömülmüş görsel",
         "${ embeddedAttachmentsCount } gömülmüş görsel"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: tam boyutlu görsel"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: düşük çözünürlüklü ön izleme"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
@@ -5081,9 +5087,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen etkin olmayan anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
       ],
-      "Preview": [
-        "Ön izle"
-      ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
       ],
@@ -5095,12 +5098,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta gönderenlere sızmasından korunun."
-      ],
-      "Quick reply": [
-        "Hızlı yanıt"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "${ recipientsAsString } alıcısına hızlı yanıt"
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -5934,6 +5931,9 @@
       "ALL": [
         "TÜMÜ"
       ],
+      "All contacts": [
+        "Tüm kişiler"
+      ],
       "Also archive": [
         "Arşive taşı"
       ],
@@ -6104,9 +6104,6 @@
       ],
       "Good": [
         "İyi"
-      ],
-      "Group": [
-        "Grup"
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -6638,7 +6635,7 @@
         "Neredeyse tamam"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
         "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [

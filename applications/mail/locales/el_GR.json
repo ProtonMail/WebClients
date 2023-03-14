@@ -875,9 +875,6 @@
       "Send feedback": [
         "Αποστολή σχολίων"
       ],
-      "Send quick reply": [
-        "Αποστολή γρήγορης απάντησης"
-      ],
       "Send read receipt": [
         "Αποστολή αποδεικτικού ανάγνωσης"
       ],
@@ -1120,9 +1117,6 @@
     "action": {
       "Search messages": [
         "Αναζήτηση μηνυμάτων"
-      ],
-      "Send quick reply": [
-        "Αποστολή γρήγορης απάντησης"
       ]
     },
     "Actions message": {
@@ -4735,9 +4729,6 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
       ],
-      "Preview": [
-        "Προεπισκόπηση"
-      ],
       "Preview failed to be loaded": [
         "Η φόρτωση της προεπισκόπησης απέτυχε"
       ],
@@ -4749,12 +4740,6 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Προστατέψτε την ηλ. διεύθυνσή σας από το να διαρρεύσει σε λίστες αλληλογραφίας ή σε ανεπιθύμητους πατώντας εδώ ${ maskMyEmailButton }."
-      ],
-      "Quick reply": [
-        "Γρήγορη απάντηση"
-      ],
-      "Quick reply to ${ recipientsAsString }": [
-        "Γρήγορη απάντησης σε ${ recipientsAsString }"
       ],
       "Recipient: ": [
         "Παραλήπτης: "
@@ -5708,9 +5693,6 @@
       "Good": [
         "Καλή"
       ],
-      "Group": [
-        "Ομάδα"
-      ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
@@ -6205,7 +6187,7 @@
         "Ακόμα λίγο"
       ],
       "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Amount of calendar created: ${ createdCalendarCount } of ${ calendarsToBeCreated }",
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
         "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
