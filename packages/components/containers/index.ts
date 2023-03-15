@@ -5,6 +5,7 @@ export * from './app';
 export * from './appearance';
 export * from './authentication';
 export * from './autoReply';
+export * from './banner';
 export * from './bridge';
 export * from './cache';
 export * from './calendar';
