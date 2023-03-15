@@ -9,7 +9,7 @@ import { Portal } from '@proton/components/components/portal';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import upsellImage from '@proton/styles/assets/img/illustrations/upsell-drive.png';
+import bigLogoWhite from '@proton/styles/assets/img/drive/big-logo-white.svg';
 import clsx from '@proton/utils/clsx';
 
 import { DRIVE_LANDING_PAGE } from '../SharedPage/constant';
@@ -26,13 +26,13 @@ interface Props extends ModalProps {
 const UpsellFloaingModalContent = ({ onClose }: { onClose: () => void }) => {
     return (
         <>
-            <div className="w100 flex flex-justify-center bg-weak">
+            <div className="upsell-floating-modal-content w100 flex flex-justify-center p5">
                 <Tooltip className="upsell-floating-modal-tooltip" title={c('Action').t`Close`} onClick={onClose}>
                     <Button className="flex-item-noshrink" icon shape="ghost" data-testid="modal:close">
                         <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                     </Button>
                 </Tooltip>
-                <img src={upsellImage} width="220" alt="" />
+                <img className="block" src={bigLogoWhite} alt={DRIVE_APP_NAME} />
             </div>
             <div className="m1 ml1-5 mr1-5">
                 <span className="upsell-floating-modal-badge text-semibold rounded pt0-25 pb0-25 pl1 pr1 mt0-5">{c(
