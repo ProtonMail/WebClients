@@ -37,12 +37,12 @@
         "@trivago/prettier-plugin-sort-imports": "^4.1.1",
         "eslint-plugin-jsx-a11y": "^6.7.1",
         "husky": "^8.0.3",
-        "lint-staged": "^13.1.2",
+        "lint-staged": "^13.2.0",
         "prettier": "^2.8.4",
         "sort-package-json": "^2.4.1"
     },
     "packageManager": "yarn@3.4.1",
     "engines": {
-        "node": ">= v18.14.2"
+        "node": ">= v18.15.0"
     }
 }
