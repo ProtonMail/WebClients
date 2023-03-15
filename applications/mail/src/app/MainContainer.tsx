@@ -19,11 +19,11 @@ import PageContainer from './containers/PageContainer';
 import { ChecklistsProvider } from './containers/checklists';
 import { SimpleLoginExtensionProvider } from './hooks/simpleLogin/useSimpleLoginExtension';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
-import { store } from './logic/store';
+import { store, useSetReduxThunkExtraArgs } from './logic/store';
 
 const MainContainer = () => {
     useTelemetryScreenSize();
-
+    useSetReduxThunkExtraArgs();
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);
     const { getFeature } = useFeatures([
