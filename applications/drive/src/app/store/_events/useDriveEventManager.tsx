@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext, useRef } from 'react';
 
 import { generateUID, useApi, useEventManager } from '@proton/components';
-import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
+import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/api/drive/volume';
 import createEventManager, { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -22,7 +22,7 @@ const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
         unregister: () => false,
     },
 
-    shares: {
+    volumes: {
         startSubscription: () => {
             throw Error('Usage of uninitialized DriveEventManager!');
         },
@@ -31,7 +31,7 @@ const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
     },
 
     pollEvents: {
-        shares: () => Promise.resolve(),
+        volumes: () => Promise.resolve(),
         driveEvents: () => Promise.resolve(),
     },
 };
@@ -40,14 +40,14 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     const eventHandlers = useRef(new Map<string, EventHandler>());
     const eventManagers = useRef(new Map<string, EventManager>());
 
-    const genericHandler = (shareId: string, driveEvents: DriveEventsResult) => {
+    const genericHandler = (volumeId: string, driveEvents: DriveEventsResult) => {
         if (!driveEvents.Events?.length) {
             return;
         }
 
         const handlerPromises: unknown[] = [];
         eventHandlers.current.forEach((handler) => {
-            handlerPromises.push(handler(shareId, driveEventsResultToDriveEvents(driveEvents, shareId)));
+            handlerPromises.push(handler(volumeId, driveEventsResultToDriveEvents(driveEvents)));
         });
 
         /*
@@ -57,67 +57,68 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         return Promise.all(handlerPromises);
     };
 
-    const createShareEventManager = async (shareId: string) => {
-        const { EventID } = await api<{ EventID: string }>(queryLatestEvents(shareId));
+    const createVolumeEventManager = async (volumeId: string) => {
+        const { EventID } = await api<{ EventID: string }>(queryLatestVolumeEvent(volumeId));
 
         const eventManager = createEventManager({
             api,
             eventID: EventID,
-            query: (eventId: string) => queryEvents(shareId, eventId),
+            query: (eventId: string) => queryVolumeEvents(volumeId, eventId),
         });
 
-        eventManagers.current.set(shareId, eventManager);
+        eventManagers.current.set(volumeId, eventManager);
 
         return eventManager;
     };
 
     /**
-     * Creates event manager for specific share and starts interval polling of event.
+     * Creates event manager for a specified volume and starts interval polling of event.
      */
-    const subscribeToShare = async (shareId: string) => {
-        const eventManager = await createShareEventManager(shareId);
-        eventManager.subscribe((payload: DriveEventsResult) => genericHandler(shareId, payload));
-        eventManagers.current.set(shareId, eventManager);
+    const subscribeToVolume = async (volumeId: string) => {
+        const eventManager = await createVolumeEventManager(volumeId);
+        eventManager.subscribe((payload: DriveEventsResult) => genericHandler(volumeId, payload));
+        eventManagers.current.set(volumeId, eventManager);
     };
 
     /**
-     * Creates an event manager for specified share if doesn't exist,
+     * Creates an event manager for a specified volume if doesn't exist,
      * and starts event polling
      */
-    const startShareSubscription = async (shareId: string) => {
-        if (!eventManagers.current.get(shareId)) {
-            await subscribeToShare(shareId);
+    const startVolumeSubscription = async (volumeId: string) => {
+        if (!eventManagers.current.get(volumeId)) {
+            await subscribeToVolume(volumeId);
         }
-        eventManagers.current.get(shareId)!.start();
+        eventManagers.current.get(volumeId)!.start();
     };
 
     /**
-     * Pauses event polling for specific share. Returns false if there's no event manager
-     * associated with passed shareId
+     * Pauses event polling for the volume. Returns false if there's no event manager
+     * associated with the volumeId
      */
-    const pauseShareSubscription = (shareId: string): boolean => {
-        if (!eventManagers.current.get(shareId)) {
-            return false;
+    const pauseVolumeSubscription = (volumeId: string): boolean => {
+        const volumeSubscription = eventManagers.current.get(volumeId);
+        if (volumeSubscription) {
+            volumeSubscription.stop();
+            return true;
         }
 
-        eventManagers.current.get(shareId)?.stop();
-        return true;
+        return false;
     };
 
     /**
      * Stops event listening, empties handlers and clears reference to the event manager
      */
-    const unsubscribeFromShare = (shareId: string): boolean => {
-        eventManagers.current.get(shareId)?.reset();
-        return eventManagers.current.delete(shareId);
+    const unsubscribeFromVolume = (volumeId: string): boolean => {
+        eventManagers.current.get(volumeId)?.reset();
+        return eventManagers.current.delete(volumeId);
     };
 
     /**
-     * Polls drive events for specific share
+     * Polls drive events for a volume
      * @private
      */
-    const pollShare = async (shareId: string): Promise<void> => {
-        const eventManager = eventManagers.current.get(shareId);
+    const pollVolume = async (volumeId: string): Promise<void> => {
+        const eventManager = eventManagers.current.get(volumeId);
 
         if (!eventManager) {
             captureMessage('Trying to call non-existing event manager');
@@ -128,28 +129,32 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     };
 
     /**
-     * Polls events for specified list of shares
+     * Polls events for specified list of volumes
      */
-    const pollShareEvents = async (
-        shareIds: string[],
+    const pollVolumeEvents = async (
+        volumeIds: string | string[],
         params: { includeCommon: boolean } = { includeCommon: false }
     ) => {
+        const volumeIdsArray = Array.isArray(volumeIds) ? volumeIds : [volumeIds];
         const pollingTasks = [];
 
         if (params.includeCommon) {
             pollingTasks.push(generalEventManager.call());
         }
 
-        pollingTasks.push(...shareIds.map((shareId) => pollShare(shareId)));
+        pollingTasks.push(...volumeIdsArray.map((volumeId) => pollVolume(volumeId)));
 
         await Promise.all(pollingTasks).catch(logError);
     };
 
     /**
-     *  Polls drive events for all subscribed shares
+     *  Polls drive events for all subscribed volumes
      */
-    const pollDriveEvents = async (): Promise<void> => {
+    const pollDriveEvents = async (params: { includeCommon: boolean } = { includeCommon: false }): Promise<void> => {
         const pollingPromises: Promise<unknown>[] = [];
+        if (params.includeCommon) {
+            pollingPromises.push(generalEventManager.call());
+        }
         eventManagers.current.forEach((eventManager) => {
             pollingPromises.push(eventManager.call());
         });
@@ -193,7 +198,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     const clear = () => {
         // clear timeouts and listeners
         eventManagers.current.forEach((_, key) => {
-            unsubscribeFromShare(key);
+            unsubscribeFromVolume(key);
         });
         // clear references to event managers
         eventManagers.current.clear();
@@ -205,10 +210,10 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         getSubscriptionIds,
         clear,
 
-        shares: {
-            startSubscription: startShareSubscription,
-            pauseSubscription: pauseShareSubscription,
-            unsubscribe: unsubscribeFromShare,
+        volumes: {
+            startSubscription: startVolumeSubscription,
+            pauseSubscription: pauseVolumeSubscription,
+            unsubscribe: unsubscribeFromVolume,
         },
 
         eventHandlers: {
@@ -217,7 +222,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         },
 
         pollEvents: {
-            shares: pollShareEvents,
+            volumes: pollVolumeEvents,
             driveEvents: pollDriveEvents,
         },
     };

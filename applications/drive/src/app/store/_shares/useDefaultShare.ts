@@ -5,6 +5,7 @@ import { UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
 
 import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
 import { useDebouncedFunction } from '../_utils';
+import { useVolumesState } from '../_volumes';
 import { ShareWithKey } from './interface';
 import useShare from './useShare';
 import useSharesState from './useSharesState';
@@ -19,10 +20,15 @@ export default function useDefaultShare() {
     const sharesState = useSharesState();
     const { getShare, getShareWithKey } = useShare();
     const { createVolume } = useVolume();
+    const volumesState = useVolumesState();
 
     const loadUserShares = useCallback(async (): Promise<void> => {
         const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
         const shares = Shares.map(shareMetaShortToShare);
+
+        shares.forEach(({ volumeId, shareId }) => {
+            volumesState.setVolumeShareIds(volumeId, [shareId]);
+        });
         sharesState.setShares(shares);
     }, []);
 

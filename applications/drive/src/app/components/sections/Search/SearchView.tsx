@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 
 import { c, msgid } from 'ttag';
@@ -13,7 +14,8 @@ import DriveToolbar from '../Drive/DriveToolbar';
 import { Search } from './Search';
 
 export function SearchView() {
-    const { activeFolder } = useActiveShare();
+    const { activeFolder, setDefaultRoot } = useActiveShare();
+    useEffect(setDefaultRoot, []);
 
     const location = useLocation();
     const query = extractSearchParameters(location);

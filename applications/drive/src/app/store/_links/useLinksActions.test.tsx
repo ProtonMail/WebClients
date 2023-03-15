@@ -3,6 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import { useLinksActions } from './useLinksActions';
 
 jest.mock('@proton/components/hooks/usePreventLeave', () => {
@@ -18,7 +19,7 @@ jest.mock('../_events/useDriveEventManager', () => {
     const useDriveEventManager = () => {
         return {
             pollEvents: {
-                shares: () => Promise.resolve(),
+                volumes: () => Promise.resolve(),
             },
         };
     };
@@ -111,16 +112,22 @@ describe('useLinksActions', () => {
         mockQueryRestoreLinks.mockImplementation((shareId, linkIds) => linkIds);
         mockQueryDeleteTrashedLinks.mockImplementation((shareId, linkIds) => linkIds);
 
-        const { result } = renderHook(() =>
-            useLinksActions({
-                queries: {
-                    queryTrashLinks: mockQueryTrashLinks,
-                    queryRestoreLinks: mockQueryRestoreLinks,
-                    queryDeleteTrashedLinks: mockQueryDeleteTrashedLinks,
-                    queryEmptyTrashOfShare: jest.fn(),
-                    queryDeleteChildrenLinks: jest.fn(),
-                },
-            })
+        const wrapper = ({ children }: { children: React.ReactNode }) => (
+            <VolumesStateProvider>{children}</VolumesStateProvider>
+        );
+
+        const { result } = renderHook(
+            () =>
+                useLinksActions({
+                    queries: {
+                        queryTrashLinks: mockQueryTrashLinks,
+                        queryRestoreLinks: mockQueryRestoreLinks,
+                        queryDeleteTrashedLinks: mockQueryDeleteTrashedLinks,
+                        queryEmptyTrashOfShare: jest.fn(),
+                        queryDeleteChildrenLinks: jest.fn(),
+                    },
+                }),
+            { wrapper }
         );
         hook = result;
     });
