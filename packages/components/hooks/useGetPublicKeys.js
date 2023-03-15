@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { useKeyTransparencyContext } from '@proton/shared/lib/keyTransparency';
 
+import { useKeyTransparencyContext } from '../containers/keyTransparency';
 import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
