@@ -14,6 +14,7 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
+import { useVolumesState } from '../_volumes';
 import { encryptFolderExtendedAttributes } from './extendedAttributes';
 import useLink from './useLink';
 import { validateLinkName } from './validation';
@@ -27,6 +28,7 @@ export default function useLinkActions() {
     const events = useDriveEventManager();
     const { getLink, getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
     const { getPrimaryAddressKey } = useDriveCrypto();
+    const volumeState = useVolumesState();
 
     const createFolder = async (
         abortSignal: AbortSignal,
@@ -78,7 +80,11 @@ export default function useLinkActions() {
                 })
             )
         );
-        await events.pollEvents.shares([shareId]);
+
+        const volumeId = volumeState.findVolumeId(shareId);
+        if (volumeId) {
+            await events.pollEvents.volumes(volumeId);
+        }
         return Folder.ID;
     };
 
@@ -122,7 +128,11 @@ export default function useLinkActions() {
                 })
             )
         );
-        await events.pollEvents.shares([shareId]);
+        const volumeId = volumeState.findVolumeId(shareId);
+
+        if (volumeId) {
+            await events.pollEvents.volumes(volumeId);
+        }
     };
 
     /**

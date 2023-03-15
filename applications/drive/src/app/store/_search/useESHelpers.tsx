@@ -160,7 +160,16 @@ export const useESHelpers = ({
         return {
             newEvents: await Promise.all(
                 newEvents
-                    .map((event) => driveEventsResultToDriveEvents(event, resolvedShareId))
+                    // Encrypted seach can search only in my files through
+                    // events per share which do not include ContextShareID.
+                    .map((event) => ({
+                        ...event,
+                        Events: event.Events.map((item) => ({
+                            ...item,
+                            ContextShareID: resolvedShareId,
+                        })),
+                    }))
+                    .map((event) => driveEventsResultToDriveEvents(event))
                     .map((events) => convertDriveEventsToSearchEvents(resolvedShareId, events, getLinkPrivateKey))
             ),
             shouldRefresh,
