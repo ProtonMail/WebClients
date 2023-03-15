@@ -3,12 +3,14 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { useLoading } from '@proton/components/hooks';
 
 import { sendErrorReport } from '../../utils/errorHandling';
+import { useVolumesState } from '../_volumes';
 import { DevicesState } from './interface';
 import useDevicesApi from './useDevicesApi';
 import useDevicesFeatureFlag from './useDevicesFeatureFlag';
 
 export function useDevicesListingProvider() {
     const devicesApi = useDevicesApi();
+    const volumesState = useVolumesState();
     const [state, setState] = useState<DevicesState>({});
     const [isLoading, withLoading] = useLoading();
 
@@ -16,6 +18,9 @@ export function useDevicesListingProvider() {
         const devices = await withLoading(devicesApi.loadDevices(abortSignal));
 
         if (devices) {
+            Object.values(devices).forEach(({ volumeId, shareId }) => {
+                volumesState.setVolumeShareIds(volumeId, [shareId]);
+            });
             setState(devices);
         }
     };

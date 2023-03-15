@@ -1,10 +1,11 @@
-import { ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useApi, useUser } from '@proton/components';
 import { useEncryptedSearch } from '@proton/encrypted-search';
 import { getES } from '@proton/encrypted-search';
+import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
@@ -38,15 +39,16 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     const searchEnabled = useSearchEnabledFeature();
 
     const [isInitialized, setIsInitialize] = useState(false);
-    const handlerId = useRef<string>();
-    const events = useDriveEventManager();
+    const driveEventManager = useDriveEventManager();
+
+    const defaultShareIdPromise = getDefaultShare().then(({ shareId }) => shareId);
 
     const esHelpers = useESHelpers({
         api,
         user,
         fetchShareMap,
         getLink,
-        shareId: getDefaultShare().then(({ shareId }) => shareId),
+        shareId: defaultShareIdPromise,
         getSharePrivateKey,
         getLinkPrivateKey,
     });
@@ -91,18 +93,50 @@ export const SearchLibraryProvider = ({ children }: Props) => {
         if (!esFunctions.getESDBStatus().dbExists) {
             return;
         }
-        if (handlerId.current) {
-            events.eventHandlers.unregister(handlerId.current);
-        }
-        handlerId.current = events.eventHandlers.register(async (shareId, events) => {
-            const searchEvents = await convertDriveEventsToSearchEvents(shareId, events, getLinkPrivateKey);
+        const callbackId = driveEventManager.eventHandlers.register(async (volumeId, events) => {
+            // The store is updated via volume events which includes all shares
+            // including my files or devices. Encrypted search works only for
+            // my files and thus we need to filter for events affecting only
+            // the default share. In case of delete operation, share ID is not
+            // known and thus we do a hack and try to guess it is for my files
+            // share. There might be a minor problem but before the risk gets
+            // big we should be switched to volume-centric cache and not deal
+            // with this issue.
+            const defaultShareId = await defaultShareIdPromise;
+            const defaultShareEvents = {
+                ...events,
+                events: events.events
+                    .map(
+                        // Move from one share to another is just simple meta
+                        // data update in volume context, but it is delete in
+                        // share context.
+                        (event) =>
+                            !event.originShareId || event.encryptedLink.rootShareId === event.originShareId
+                                ? event
+                                : {
+                                      ...event,
+                                      eventType: EVENT_TYPES.DELETE,
+                                      encryptedLink: {
+                                          ...event.encryptedLink,
+                                          rootShareId: event.originShareId,
+                                      },
+                                  }
+                    )
+                    .filter(
+                        (event) =>
+                            event.eventType === EVENT_TYPES.DELETE || event.encryptedLink.rootShareId === defaultShareId
+                    ),
+            };
+            const searchEvents = await convertDriveEventsToSearchEvents(
+                defaultShareId,
+                defaultShareEvents,
+                getLinkPrivateKey
+            );
             await esFunctions.handleEvent(searchEvents);
         });
 
         return () => {
-            if (handlerId.current) {
-                events.eventHandlers.unregister(handlerId.current);
-            }
+            driveEventManager.eventHandlers.unregister(callbackId);
         };
     }, [esFunctions.handleEvent]);
 

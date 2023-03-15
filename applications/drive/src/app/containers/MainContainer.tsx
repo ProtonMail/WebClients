@@ -3,7 +3,6 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { LoaderPage, LocationErrorBoundary, ModalsChildren, useLoading, useWelcomeFlags } from '@proton/components';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
-import noop from '@proton/utils/noop';
 
 import SignatureIssueModal from '../components/SignatureIssueModal';
 import TransferManager from '../components/TransferManager/TransferManager';
@@ -11,7 +10,7 @@ import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import ConflictModal from '../components/uploads/ConflictModal';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
-import { DriveProvider, useDefaultShare, useSearchControl } from '../store';
+import { DriveProvider, useDefaultShare, useDriveEventManager, useSearchControl } from '../store';
 import DevicesContainer from './DevicesContainer';
 import DriveStartupModals from './DriveStartupModals';
 import FolderContainer from './FolderContainer';
@@ -21,9 +20,14 @@ import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
 
 // Empty shared root for blurred container.
-const DEFAULT_SHARE_VALUE = {
-    shareId: '',
-    linkId: '',
+const DEFAULT_VOLUME_INITIAL_STATE: {
+    volumeId: string | undefined;
+    shareId: string | undefined;
+    linkId: string | undefined;
+} = {
+    volumeId: undefined,
+    shareId: undefined,
+    linkId: undefined,
 };
 
 const InitContainer = () => {
@@ -31,16 +35,30 @@ const InitContainer = () => {
 
     const { getDefaultShare } = useDefaultShare();
     const [loading, withLoading] = useLoading(true);
-    const [defaultShareRoot, setDefaultShareRoot] = useState<{ shareId: string; linkId: string }>(DEFAULT_SHARE_VALUE);
+    const [defaultShareRoot, setDefaultShareRoot] =
+        useState<typeof DEFAULT_VOLUME_INITIAL_STATE>(DEFAULT_VOLUME_INITIAL_STATE);
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const { searchEnabled } = useSearchControl();
+    const driveEventManager = useDriveEventManager();
 
     useEffect(() => {
-        const initPromise = getDefaultShare().then(({ shareId, rootLinkId: linkId }) => {
-            setDefaultShareRoot({ shareId, linkId });
+        const initPromise = getDefaultShare().then(({ shareId, rootLinkId: linkId, volumeId }) => {
+            setDefaultShareRoot({ volumeId, shareId, linkId });
         });
-        withLoading(initPromise).catch(noop);
+        withLoading(initPromise);
     }, []);
+
+    useEffect(() => {
+        const { volumeId } = defaultShareRoot;
+        if (volumeId === undefined) {
+            return;
+        }
+
+        driveEventManager.volumes.startSubscription(volumeId).catch(console.warn);
+        return () => {
+            driveEventManager.volumes.unsubscribe(volumeId);
+        };
+    }, [defaultShareRoot.volumeId]);
 
     if (loading) {
         return (
@@ -51,16 +69,19 @@ const InitContainer = () => {
         );
     }
 
+    // Presence of shareId/linkId is guaranteed by loading flag
+    const rootShare = { shareId: defaultShareRoot.shareId!, linkId: defaultShareRoot.linkId! };
+
     if (!welcomeFlags.isDone) {
         return (
-            <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
+            <ActiveShareProvider defaultShareRoot={rootShare}>
                 <OnboardingContainer onDone={setWelcomeFlagsDone} />
             </ActiveShareProvider>
         );
     }
 
     return (
-        <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
+        <ActiveShareProvider defaultShareRoot={rootShare}>
             <DriveStartupModals />
             <ModalsChildren />
             <TransferManager />
