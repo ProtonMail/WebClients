@@ -38,6 +38,7 @@ $breakpoint-for-drawer: 1280px; // Temporary breakpoint used to display the draw
 
 // Media expressions for include-media
 $media-expressions: (
+	'all': 'all',
 	'screen': 'screen',
 	'print': 'print',
 	'mouse': '(hover: hover) and (pointer: fine)',
