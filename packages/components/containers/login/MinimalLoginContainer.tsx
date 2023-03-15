@@ -2,13 +2,14 @@ import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
+import { TotpInputs } from '@proton/components/containers';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { EMAIL_PLACEHOLDER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import { Input, Label, PasswordInput, PrimaryButton, UnderlineButton } from '../../components';
+import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../components';
 import { useApi, useConfig, useErrorHandler, useLoading, useNotifications } from '../../hooks';
 import { OnLoginCallback } from '../app/interface';
 import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
@@ -26,36 +27,43 @@ const UnlockForm = ({
     const [loading, withLoading] = useLoading();
     const [keyPassword, setKeyPassword] = useState('');
 
+    const { validator, onFormSubmit } = useFormErrors();
+
     return (
         <form
             name="unlockForm"
             onSubmit={(event) => {
                 event.preventDefault();
+                if (!onFormSubmit()) {
+                    return;
+                }
                 withLoading(onSubmit(keyPassword)).catch(noop);
             }}
             method="post"
         >
-            <Label htmlFor="password">{c('Label').t`Mailbox password`}</Label>
-            <div className="mb1">
-                <PasswordInput
-                    name="password"
-                    autoFocus
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    id="password"
-                    required
-                    className="w100"
-                    value={keyPassword}
-                    placeholder={c('Placeholder').t`Mailbox password`}
-                    onChange={loading ? noop : ({ target: { value } }) => setKeyPassword(value)}
-                    data-cy-login="mailbox password"
-                />
-            </div>
+            <InputFieldTwo
+                as={PasswordInputTwo}
+                id="mailboxPassword"
+                bigger
+                label={c('Label').t`Mailbox password`}
+                error={validator([requiredValidator(keyPassword)])}
+                disableChange={loading}
+                autoFocus
+                value={keyPassword}
+                onValue={setKeyPassword}
+            />
             <div className="flex flex-justify-space-between">
-                {cancelButton}
-                <PrimaryButton type="submit" loading={loading} data-cy-login="submit mailbox password">
+                <Button
+                    color="norm"
+                    size="large"
+                    fullWidth
+                    type="submit"
+                    loading={loading}
+                    data-cy-login="submit mailbox password"
+                >
                     {c('Action').t`Submit`}
-                </PrimaryButton>
+                </Button>
+                {cancelButton}
             </div>
         </form>
     );
@@ -69,39 +77,70 @@ const TOTPForm = ({
     cancelButton?: ReactNode;
 }) => {
     const [loading, withLoading] = useLoading();
-    const [totp, setTotp] = useState('');
+
+    const [code, setCode] = useState('');
+    const [type, setType] = useState<'totp' | 'recovery-code'>('totp');
+    const hasBeenAutoSubmitted = useRef(false);
+
+    const { validator, onFormSubmit, reset } = useFormErrors();
+
+    const safeCode = code.replaceAll(/\s+/g, '');
+    const requiredError = requiredValidator(safeCode);
+
+    useEffect(() => {
+        if (type !== 'totp' || loading || requiredError || hasBeenAutoSubmitted.current) {
+            return;
+        }
+        // Auto-submit the form once the user has entered the TOTP
+        if (safeCode.length === 6) {
+            // Do it just one time
+            hasBeenAutoSubmitted.current = true;
+            withLoading(onSubmit(safeCode)).catch(noop);
+        }
+    }, [safeCode]);
+
     return (
         <form
             name="totpForm"
             onSubmit={(event) => {
                 event.preventDefault();
-                withLoading(onSubmit(totp)).catch(noop);
+                if (!onFormSubmit()) {
+                    return;
+                }
+                withLoading(onSubmit(safeCode)).catch(noop);
             }}
             method="post"
         >
-            <Label htmlFor="twoFa">{c('Label').t`Two-factor authentication code`}</Label>
-            <div className="mb1">
-                <Input
-                    type="text"
-                    name="twoFa"
-                    autoFocus
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    autoComplete="one-time-code"
-                    id="twoFa"
-                    required
-                    value={totp}
-                    className="w100"
-                    placeholder="123456"
-                    onChange={loading ? noop : ({ target: { value } }) => setTotp(value)}
-                    data-cy-login="TOTP"
-                />
-            </div>
+            <TotpInputs
+                type={type}
+                code={code}
+                error={validator([requiredError])}
+                loading={loading}
+                setCode={setCode}
+                bigger={true}
+            />
             <div className="flex flex-justify-space-between">
-                {cancelButton}
-                <PrimaryButton type="submit" disabled={totp.length < 6} loading={loading} data-cy-login="submit TOTP">
+                <Button size="large" fullWidth color="norm" type="submit" loading={loading}>
                     {c('Action').t`Submit`}
-                </PrimaryButton>
+                </Button>
+                <Button
+                    color="norm"
+                    shape="ghost"
+                    size="large"
+                    fullWidth
+                    className="mt0-5"
+                    onClick={() => {
+                        if (loading) {
+                            return;
+                        }
+                        reset();
+                        setCode('');
+                        setType(type === 'totp' ? 'recovery-code' : 'totp');
+                    }}
+                >
+                    {type === 'totp' ? c('Action').t`Use recovery code` : c('Action').t`Use authentication code`}
+                </Button>
+                {cancelButton}
             </div>
         </form>
     );
@@ -125,6 +164,8 @@ const LoginForm = ({
     const usernameRef = useRef<HTMLInputElement>(null);
     const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
     const [challengeError, setChallengeError] = useState(false);
+
+    const { validator, onFormSubmit } = useFormErrors();
 
     useEffect(() => {
         if (challengeLoading) {
@@ -150,6 +191,9 @@ const LoginForm = ({
                 className={challengeLoading ? 'hidden' : undefined}
                 onSubmit={(event) => {
                     event.preventDefault();
+                    if (!onFormSubmit()) {
+                        return;
+                    }
                     const run = async () => {
                         const payload = await challengeRefLogin.current?.getChallenge();
                         return onSubmit(username, password, payload);
@@ -174,42 +218,32 @@ const LoginForm = ({
                         }}
                     />
                 )}
-                <Label htmlFor="login">{c('Label').t`Username or ${MAIL_APP_NAME} address`}</Label>
-                <div className="mb1">
-                    <Input
-                        type="text"
-                        name="login"
-                        ref={usernameRef}
-                        autoFocus
-                        autoCapitalize="off"
-                        autoCorrect="off"
-                        title={c('Title').t`Enter your username or ${MAIL_APP_NAME} email address`}
-                        id="login"
-                        placeholder={EMAIL_PLACEHOLDER}
-                        required
-                        value={username}
-                        onChange={loading ? noop : ({ target: { value } }) => setUsername(value)}
-                        data-cy-login="username"
-                    />
-                </div>
-                <Label htmlFor="password">{c('Label').t`Password`}</Label>
-                <div className="mb1">
-                    <PasswordInput
-                        name="password"
-                        autoComplete="current-password"
-                        id="password"
-                        title={c('Title').t`Enter your password`}
-                        required
-                        value={password}
-                        onChange={loading ? noop : ({ target: { value } }) => setPassword(value)}
-                        data-cy-login="password"
-                    />
-                </div>
-                <div className="flex flex-justify-space-between">
+                <InputFieldTwo
+                    id="username"
+                    bigger
+                    label={c('Label').t`Email or username`}
+                    error={validator([requiredValidator(username)])}
+                    autoComplete="username"
+                    value={username}
+                    onValue={setUsername}
+                    ref={usernameRef}
+                />
+                <InputFieldTwo
+                    id="password"
+                    bigger
+                    label={c('Label').t`Password`}
+                    error={validator([requiredValidator(password)])}
+                    as={PasswordInputTwo}
+                    autoComplete="current-password"
+                    value={password}
+                    onValue={setPassword}
+                    rootClassName="mt0-5"
+                />
+                <div className="flex flex-justify-space-between mt1">
                     {needHelp}
-                    <PrimaryButton type="submit" loading={loading} data-cy-login="submit">
+                    <Button color="norm" size="large" type="submit" fullWidth loading={loading} data-cy-login="submit">
                         {c('Action').t`Sign in`}
-                    </PrimaryButton>
+                    </Button>
                 </div>
                 {footer}
             </form>
@@ -270,9 +304,9 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     };
 
     const cancelButton = (
-        <UnderlineButton type="reset" onClick={handleCancel}>
+        <Button size="large" shape="ghost" type="button" fullWidth onClick={handleCancel} className="mt0-5">
             {c('Action').t`Cancel`}
-        </UnderlineButton>
+        </Button>
     );
 
     const cache = cacheRef.current;
