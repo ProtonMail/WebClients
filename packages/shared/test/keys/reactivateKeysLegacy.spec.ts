@@ -121,6 +121,7 @@ describe('reactivate keys', () => {
             keyReactivationRecords,
             keyPassword,
             onReactivation,
+            keyTransparencyVerify: async () => {},
         });
         expect(api.calls.count()).toEqual(5);
         expect(onReactivation.calls.allArgs()).toEqual([

@@ -16,7 +16,7 @@ import noop from '@proton/utils/noop';
 import { getAllAddresses } from '../api/addresses';
 import { updateUsername } from '../api/settings';
 import { getUser, queryCheckUsernameAvailability } from '../api/user';
-import { Address, Api, UserType, User as tsUser } from '../interfaces';
+import { Address, Api, PreAuthKTVerify, UserType, User as tsUser } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getPrimaryKey } from './getPrimaryKey';
@@ -82,6 +82,7 @@ export interface AddressGenerationPayload {
     username: string;
     domain: string;
     setup: AddressGenerationSetup;
+    preAuthKTVerify: PreAuthKTVerify;
 }
 
 export const getAddressSetupMode = ({
@@ -185,11 +186,13 @@ export const handleCreateAddressAndKey = async ({
     domain,
     api,
     passphrase,
+    preAuthKTVerify,
 }: {
     username: string;
     domain: string;
     api: Api;
     passphrase: string;
+    preAuthKTVerify: PreAuthKTVerify;
 }) => {
     if (!passphrase) {
         throw new Error('Password required to generate keys');
@@ -199,8 +202,9 @@ export const handleCreateAddressAndKey = async ({
         getAllAddresses(api),
     ]);
     const [address] = await handleSetupUsernameAndAddress({ api, username, user, domain });
+    const userKeys = await getDecryptedUserKeysHelper(user, passphrase);
+    const keyTransparencyVerify = preAuthKTVerify(userKeys);
     if (getHasMigratedAddressKeys(addresses)) {
-        const userKeys = await getDecryptedUserKeysHelper(user, passphrase);
         const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;
         if (!primaryUserKey) {
             throw new Error('Missing primary user key');
@@ -210,6 +214,7 @@ export const handleCreateAddressAndKey = async ({
             userKey: primaryUserKey,
             address,
             activeKeys: [],
+            keyTransparencyVerify,
         });
     } else {
         await createAddressKeyLegacy({
@@ -217,6 +222,7 @@ export const handleCreateAddressAndKey = async ({
             passphrase: passphrase,
             address,
             activeKeys: [],
+            keyTransparencyVerify,
         });
     }
 
@@ -228,11 +234,13 @@ export const handleSetupAddressAndKey = async ({
     domain,
     api,
     password,
+    preAuthKTVerify,
 }: {
     username: string;
     domain: string;
     api: Api;
     password: string;
+    preAuthKTVerify: PreAuthKTVerify;
 }) => {
     if (!password) {
         throw new Error('Password required to setup keys');
@@ -247,6 +255,7 @@ export const handleSetupAddressAndKey = async ({
         api,
         addresses: addressesToSetup,
         password,
+        preAuthKTVerify,
     });
 };
 
@@ -255,9 +264,10 @@ export const handleAddressGeneration = async ({
     domain,
     setup,
     api,
+    preAuthKTVerify,
 }: AddressGenerationPayload & { api: Api }) => {
     if (setup.mode === 'create') {
-        return handleCreateAddressAndKey({ username, domain, api, passphrase: setup.keyPassword });
+        return handleCreateAddressAndKey({ username, domain, api, passphrase: setup.keyPassword, preAuthKTVerify });
     }
     if (setup.mode === 'setup') {
         return handleSetupAddressAndKey({
@@ -265,6 +275,7 @@ export const handleAddressGeneration = async ({
             domain,
             api,
             password: setup.loginPassword,
+            preAuthKTVerify,
         });
     }
     throw new Error('Unknown internal address setup mode');

@@ -2,7 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { reactivateKeyRoute } from '../../api/keys';
-import { Address, Api, DecryptedKey, Key } from '../../interfaces';
+import { Address, Api, DecryptedKey, Key, KeyTransparencyVerify } from '../../interfaces';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { getSignedKeyList } from '../signedKeyList';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
@@ -16,6 +16,7 @@ interface ReactivateKeysProcessArguments {
     onReactivation: OnKeyReactivationCallback;
     keys: DecryptedKey[];
     Keys: Key[];
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const reactivateKeysProcess = async ({
@@ -26,6 +27,7 @@ export const reactivateKeysProcess = async ({
     onReactivation,
     keys,
     Keys,
+    keyTransparencyVerify,
 }: ReactivateKeysProcessArguments) => {
     const activeKeys = await getActiveKeys(address, address?.SignedKeyList, Keys, keys);
 
@@ -51,7 +53,9 @@ export const reactivateKeysProcess = async ({
                 flags: getDefaultKeyFlags(address),
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
-            const SignedKeyList = address ? await getSignedKeyList(updatedActiveKeys) : undefined;
+            const SignedKeyList = address
+                ? await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify)
+                : undefined;
 
             await api(
                 reactivateKeyRoute({
@@ -75,6 +79,7 @@ export interface ReactivateKeysProcessLegacyArguments {
     keyReactivationRecords: KeyReactivationRecord[];
     onReactivation: OnKeyReactivationCallback;
     keyPassword: string;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 const reactivateKeysProcessLegacy = async ({
@@ -82,6 +87,7 @@ const reactivateKeysProcessLegacy = async ({
     api,
     onReactivation,
     keyPassword,
+    keyTransparencyVerify,
 }: ReactivateKeysProcessLegacyArguments) => {
     for (const keyReactivationRecord of keyReactivationRecords) {
         const { user, address, keysToReactivate, keys } = keyReactivationRecord;
@@ -95,6 +101,7 @@ const reactivateKeysProcessLegacy = async ({
                 onReactivation,
                 keys,
                 Keys,
+                keyTransparencyVerify,
             });
         } catch (e: any) {
             keysToReactivate.forEach(({ id }) => onReactivation(id, e));

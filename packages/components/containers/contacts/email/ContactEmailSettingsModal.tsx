@@ -15,6 +15,7 @@ import {
 } from '@proton/shared/lib/contacts/properties';
 import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { useKeyTransparencyContext } from '@proton/shared/lib/keyTransparency';
 import {
     getContactPublicKeyModel,
     getVerifyingKeys,
@@ -69,6 +70,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     const [loadingSave, withLoadingSave] = useLoading(false);
     const { createNotification } = useNotifications();
     const [mailSettings] = useMailSettings();
+    const { verifyOutboundPublicKeys } = useKeyTransparencyContext();
 
     const saveVCardContact = useSaveVCardContact();
 
@@ -86,7 +88,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
      * Initialize the key model for the modal
      */
     const prepare = async () => {
-        const apiKeysConfig = await getPublicKeysEmailHelper(api, emailAddress, true);
+        const apiKeysConfig = await getPublicKeysEmailHelper(api, emailAddress, verifyOutboundPublicKeys, true);
         const pinnedKeysConfig = await getKeyInfoFromProperties(vCardContact, emailGroup || '');
         const publicKeyModel = await getContactPublicKeyModel({
             emailAddress,

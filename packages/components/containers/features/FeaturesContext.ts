@@ -89,6 +89,7 @@ export enum FeatureCode {
     ProtonBadge = 'ProtonBadge',
     QuickReply = 'QuickReply',
     ScheduledSendFreemium = 'ScheduledSendFreemium',
+    KeyTransparencyWEB = 'KeyTransparencyWEB',
 }
 
 export interface FeaturesContextValue {

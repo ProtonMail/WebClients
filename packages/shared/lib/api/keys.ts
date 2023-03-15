@@ -249,12 +249,23 @@ export const migrateAddressKeysRoute = (data: MigrateAddressKeysPayload) => ({
 });
 
 export interface GetSignedKeyListsParams {
-    SinceEpochID: number;
+    AfterEpochID?: number;
     Email: string;
 }
 
 export const getSignedKeyListsRoute = (params: GetSignedKeyListsParams) => ({
     url: 'core/v4/keys/signedkeylists',
+    method: 'get',
+    params,
+});
+
+export interface GetSignedKeyListParams {
+    EpochID: number;
+    Email: string;
+}
+
+export const getSignedKeyListRoute = (params: GetSignedKeyListParams) => ({
+    url: 'keys/signedkeylist',
     method: 'get',
     params,
 });

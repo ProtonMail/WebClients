@@ -60,6 +60,7 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: true,
                 api,
+                preAuthKTVerify: () => async () => {},
             });
             if (!newKeyPassword) {
                 throw new Error('Missing new password');
@@ -155,6 +156,7 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: true,
                 api,
+                preAuthKTVerify: () => async () => {},
             });
             if (!newKeyPassword) {
                 throw new Error('Missing new password');
@@ -229,6 +231,7 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: false,
                 api,
+                preAuthKTVerify: () => async () => {},
             });
             expect(api.calls.all().length).toBe(1);
             if (!newKeyPassword) {
@@ -302,6 +305,7 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: false,
                 api,
+                preAuthKTVerify: () => async () => {},
             });
             if (!newKeyPassword) {
                 throw new Error('Missing password');
@@ -372,6 +376,7 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: false,
                 api,
+                preAuthKTVerify: () => async () => {},
             });
             expect(api.calls.all().length).toBe(0);
             expect(newKeyPassword).toBeUndefined();
@@ -416,6 +421,7 @@ describe('upgrade keys v2', () => {
                 clearKeyPassword: keyPassword,
                 isOnePasswordMode: true,
                 api,
+                preAuthKTVerify: () => async () => {},
             });
             expect(api.calls.all().length).toBe(0);
             expect(newKeyPassword).toBeUndefined();
