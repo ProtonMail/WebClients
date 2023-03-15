@@ -10,6 +10,7 @@ import { usePublicFileView } from '../../../store/_views/useFileView';
 import { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import { useUpsellFloatingModal } from '../../UpsellFloatingModal';
 import Breadcrumbs from '../Layout/Breadcrumbs';
 import { HeaderSubtitle } from '../Layout/HeaderSubtitle';
 import SharedPageFooter from '../Layout/SharedPageFooter';
@@ -88,6 +89,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
     const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
+    const [renderUpsellFloatingModal] = useUpsellFloatingModal();
 
     const onItemOpen = (item: DecryptedLink) => {
         if (item.isFile) {
@@ -217,6 +219,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
                 )}
                 <SharedFileBrowser {...folderView} onItemOpen={onItemOpen} items={fileBrowserItems} />
             </SharedPageLayout>
+            {renderUpsellFloatingModal}
         </FileBrowserStateProvider>
     );
 }
