@@ -1,6 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useRef } from 'react';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
+
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
+import { Api } from '@proton/shared/lib/interfaces';
 
 import attachments from './attachments/attachmentsSlice';
 import contacts from './contacts/contactsSlice';
@@ -9,6 +13,33 @@ import elements from './elements/elementsSlice';
 import incomingDefaults from './incomingDefaults/incomingDefaultsSlice';
 import messages from './messages/messagesSlice';
 
+const thunkExtraArgs = {} as unknown as AppThunkExtra['extra'];
+
+/**
+ * Set thunk extra args needed at the `MainContainer` app level.
+ * @warning use this method at the top of the app before store context is initialized.
+ * @warning dont dispatch async thunks usind those extra args before this hook is runned
+ */
+export const useSetReduxThunkExtraArgs = () => {
+    const api = useApi();
+    const notifications = useNotifications();
+    const events = useEventManager();
+
+    /**
+     * https://beta.reactjs.org/reference/react/useRef#avoiding-recreating-the-ref-contents
+     */
+    const thunkExtraArgsDefined = useRef(false);
+    if (!thunkExtraArgsDefined.current) {
+        thunkExtraArgsDefined.current = true;
+        Object.assign(thunkExtraArgs, { api, notifications, events });
+    }
+};
+
+/**
+ * Typing has to be tweaked here. Store is generated inside a hook
+ * to add utils inside thunk middleware.
+ * Those utils depends on other react contexts.
+ */
 export const store = configureStore({
     reducer: {
         elements,
@@ -20,6 +51,7 @@ export const store = configureStore({
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
+            thunk: { extraArgument: thunkExtraArgs },
             // Serialization checks have to be restored
             // But we need some kind of regex ignore capacities
             serializableCheck: {
@@ -47,10 +79,18 @@ export const store = configureStore({
         }),
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>;
-
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch;
+type Store = typeof store;
+export type RootState = ReturnType<Store['getState']>;
+export type AppDispatch = Store['dispatch'];
+export type AppThunkExtra = {
+    state: RootState;
+    dispatch: AppDispatch;
+    extra: {
+        api: Api;
+        notifications: ReturnType<typeof useNotifications>;
+        eventManager: ReturnType<typeof useEventManager>;
+    };
+};
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
