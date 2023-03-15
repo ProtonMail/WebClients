@@ -105,6 +105,11 @@
 
 		logo-text-proton-color : var(--text-norm),
 		logo-text-product-color: var(--primary),
+
+		promotion-text-color: var(--text-norm),
+		promotion-background-start: rgb(109 74 255 / 0.15),
+		promotion-background-end: rgb(70 26 255 / 0.05),
+
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
 		--#{$variable}: var(--optional-#{$variable}, #{$default});
