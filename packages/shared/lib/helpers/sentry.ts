@@ -120,7 +120,7 @@ function main({
         // Unfortunately Sentry does not use the custom transport for those, and thus fails to add the headers the API requires.
         sendClientReports: false,
         beforeSend(event, hint) {
-            const error = hint?.originalException;
+            const error = hint?.originalException as any;
             const stack = typeof error === 'string' ? error : error?.stack;
             // Filter out broken ferdi errors
             if (stack && stack.match(/ferdi|franz/i)) {
