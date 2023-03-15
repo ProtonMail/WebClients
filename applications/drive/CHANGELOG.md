@@ -1,3 +1,19 @@
+# Release 5.0.12.0 – March 22, 2023
+
+## Improved
+
+-   New Download page with file previews
+-   Added ability to preview Office Open XML (docx) documents
+-   Shared links include shared items from devices
+-   Added limit for file size preview to not crash the session
+
+## Fixed
+
+-   Recovery flow possible for users with devices
+-   Unified sorting on the sidebar with the file browser
+-   Automatic refresh of trashed items from devices
+-   Identification of epub file types
+
 # Release 5.0.11.0 – February 22, 2023
 
 ## Improved
