@@ -59,7 +59,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                 type="button"
                 hasCaret
                 className="navigation-link-header-group-control flex mr0-5"
-                content={<Icon className="flex-item-noshrink mr-0-5" name={iconName} />}
+                content={<Icon className="flex-item-noshrink -mr0-5" name={iconName} />}
                 data-testid="quick-reply-type-dropdown"
             >
                 <DropdownMenu>
