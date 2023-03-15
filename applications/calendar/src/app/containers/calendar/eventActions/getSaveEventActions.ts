@@ -49,6 +49,7 @@ import { withVeventSequence } from './sequence';
 const getSaveSingleEventActionsHelper = async ({
     newEditEventData,
     oldEditEventData,
+    getAddressKeys,
     getCalendarKeys,
     onSaveConfirmation,
     sendIcs,
@@ -64,6 +65,7 @@ const getSaveSingleEventActionsHelper = async ({
 }: {
     newEditEventData: EventNewData;
     oldEditEventData: EventOldData;
+    getAddressKeys: GetAddressKeys;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     sendIcs: (
         data: SendIcsActionData,
@@ -97,6 +99,15 @@ const getSaveSingleEventActionsHelper = async ({
         newVevent: newVeventWithSequence,
         oldVevent: oldEditEventData.veventComponent,
     });
+    const sharedSessionKey = await getBase64SharedSessionKey({
+        calendarEvent: oldEditEventData.eventData,
+        getCalendarKeys,
+        getAddressKeys,
+    });
+    if (sharedSessionKey) {
+        updatedInviteActions.sharedEventID = oldEditEventData.eventData.SharedEventID;
+        updatedInviteActions.sharedSessionKey = sharedSessionKey;
+    }
     const {
         multiSyncActions,
         updatePartstatActions,
@@ -303,15 +314,6 @@ const getSaveEventActions = async ({
         eventResult: eventReadResult.result,
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
-    const sharedSessionKey = await getBase64SharedSessionKey({
-        calendarEvent: oldEventData,
-        getCalendarKeys,
-        getAddressKeys,
-    });
-    if (sharedSessionKey) {
-        inviteActionsWithSelfAddress.sharedEventID = oldEventData.SharedEventID;
-        inviteActionsWithSelfAddress.sharedSessionKey = sharedSessionKey;
-    }
 
     // WKST should be preserved unless the user edited the RRULE explicitly. Otherwise, add it here (if needed)
     const oldWkst = dayToNumericDay(oldEditEventData.veventComponent?.rrule?.value.wkst || 'MO');
@@ -331,6 +333,7 @@ const getSaveEventActions = async ({
             personalEventsDeprecated,
             canEditOnlyNotifications,
             isAttendee,
+            getAddressKeys,
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
@@ -354,6 +357,7 @@ const getSaveEventActions = async ({
             personalEventsDeprecated,
             canEditOnlyNotifications,
             isAttendee,
+            getAddressKeys,
             getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
@@ -438,6 +442,8 @@ const getSaveEventActions = async ({
         newEditEventData,
         oldEditEventData,
         originalEditEventData,
+        getAddressKeys,
+        getCalendarKeys,
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
         personalEventsDeprecated,
