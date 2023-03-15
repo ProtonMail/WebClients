@@ -8,10 +8,11 @@ import {
     KeyTransparencyVerify,
     UserModel,
 } from '@proton/shared/lib/interfaces';
-import { useKeyTransparencyContext } from '@proton/shared/lib/keyTransparency';
 
-import { FeatureCode, useFeature } from '../..';
+import { FeatureCode } from '../../containers/features/FeaturesContext';
+import useFeature from '../../hooks/useFeature';
 import { KT_FF, isKTActive } from './ktStatus';
+import { useKeyTransparencyContext } from './useKeyTransparencyContext';
 
 interface KTBlobSelf {
     ktBlobContent: PartialKTBlobContent;

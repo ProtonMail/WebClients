@@ -15,7 +15,6 @@ import {
 } from '@proton/shared/lib/contacts/properties';
 import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { useKeyTransparencyContext } from '@proton/shared/lib/keyTransparency';
 import {
     getContactPublicKeyModel,
     getVerifyingKeys,
@@ -43,6 +42,7 @@ import {
     Row,
 } from '../../../components';
 import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../../hooks';
+import { useKeyTransparencyContext } from '../../keyTransparency';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
 import ContactMIMETypeSelect from './ContactMIMETypeSelect';
 import ContactPGPSettings from './ContactPGPSettings';
