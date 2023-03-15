@@ -9,6 +9,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
+const { RetryChunkLoadPlugin } = require('webpack-retry-chunk-load-plugin');
 const PostCssLogicalWebpackPlugin = require('./postcss-logical-webpack-plugin');
 
 const WriteWebpackPlugin = require('./write-webpack-plugin');
@@ -171,6 +172,14 @@ module.exports = ({
             }
             return tag;
         }, HtmlWebpackPlugin),
+
+        new RetryChunkLoadPlugin({
+            cacheBust: `function() {
+      return Date.now();
+    }`,
+            retryDelay: 5000,
+            maxRetries: 3,
+        }),
 
         new webpack.DefinePlugin({
             WEBPACK_APP_MODE: JSON.stringify(appMode),
