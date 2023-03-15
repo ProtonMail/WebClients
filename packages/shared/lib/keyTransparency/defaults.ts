@@ -1,5 +1,5 @@
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { KTContext, KTLocalStorageAPI, KeyTransparencyState } from '../interfaces';
+import { KTLocalStorageAPI, KeyTransparencyState } from '../interfaces';
 
 /**
  * Return the default set of functions to use local storage,
@@ -17,9 +17,4 @@ export const getDefaultKTLS = (): KTLocalStorageAPI => {
 export const defaultKeyTransparencyState: KeyTransparencyState = {
     selfAuditPromise: Promise.resolve(),
     ktLSAPI: getDefaultKTLS(),
-};
-
-export const defaultKTContext: KTContext = {
-    verifyOutboundPublicKeys: async () => {},
-    getKTState: () => ({ current: defaultKeyTransparencyState }),
 };
