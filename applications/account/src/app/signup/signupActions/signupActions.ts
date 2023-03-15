@@ -1,3 +1,4 @@
+import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
@@ -217,15 +218,19 @@ export const handleSetupUser = async ({
             // array, and keys won't be setup.
             const addresses = await getAllAddresses(authApi);
 
+            const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(api);
+
             const keyPassword = addresses.length
                 ? await handleSetupKeys({
                       api: authApi,
                       addresses,
                       password,
+                      preAuthKTVerify,
                   })
                 : undefined;
 
             const user = await authApi<{ User: User }>(getUser()).then(({ User }) => User);
+            await preAuthKTCommit(user.ID);
             return { keyPassword, user, addresses };
         })(),
         authApi(updateLocale(localeCode)).catch(noop),

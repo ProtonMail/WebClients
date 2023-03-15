@@ -10,7 +10,20 @@ import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members'
 import { getOrganizationKeys } from '../api/organization';
 import { MEMBER_PRIVATE, USER_ROLES } from '../constants';
 import { ApiError } from '../fetch/ApiError';
-import { Address, Api, DecryptedKey, Member, Organization, OrganizationKey, SignedKeyList, User } from '../interfaces';
+import { canonicalizeInternalEmail } from '../helpers/email';
+import {
+    Address,
+    Api,
+    DecryptedKey,
+    KeyTransparencyCommit,
+    KeyTransparencyVerify,
+    Member,
+    Organization,
+    OrganizationKey,
+    PreAuthKTVerify,
+    SignedKeyList,
+    User,
+} from '../interfaces';
 import { generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
@@ -72,18 +85,21 @@ interface AddressesKeys {
 export async function getAddressKeysMigrationPayload(
     addressesKeys: AddressesKeys[],
     userKey: PrivateKeyReference,
+    keyTransparencyVerify: KeyTransparencyVerify,
     organizationKey: PrivateKeyReference
 ): Promise<MigrationOrgResult>;
 
 export async function getAddressKeysMigrationPayload(
     addressesKeys: AddressesKeys[],
     userKey: PrivateKeyReference,
+    keyTransparencyVerify: KeyTransparencyVerify,
     organizationKey?: PrivateKeyReference
 ): Promise<MigrationResult>;
 
 export async function getAddressKeysMigrationPayload(
     addressesKeys: AddressesKeys[],
     userKey: PrivateKeyReference,
+    keyTransparencyVerify: KeyTransparencyVerify,
     organizationKey?: PrivateKeyReference
 ) {
     const result = await Promise.all<
@@ -132,7 +148,10 @@ export async function getAddressKeysMigrationPayload(
             );
             return {
                 Address: address,
-                SignedKeyList: activeKeys.length > 0 ? await getSignedKeyList(activeKeys) : (undefined as any),
+                SignedKeyList:
+                    activeKeys.length > 0
+                        ? await getSignedKeyList(activeKeys, address, keyTransparencyVerify)
+                        : (undefined as any),
                 AddressKeys: migratedKeys.map((migratedKey) => {
                     return {
                         ID: migratedKey.ID,
@@ -165,6 +184,7 @@ interface MigrateAddressKeysArguments {
     user: User;
     addresses: Address[];
     organizationKey?: OrganizationKey;
+    preAuthKTVerify: PreAuthKTVerify;
 }
 
 export async function migrateAddressKeys(
@@ -180,6 +200,7 @@ export async function migrateAddressKeys({
     addresses,
     keyPassword,
     organizationKey,
+    preAuthKTVerify,
 }: MigrateAddressKeysArguments) {
     const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
 
@@ -197,8 +218,10 @@ export async function migrateAddressKeys({
         })
     );
 
+    const keyTransparencyVerify = preAuthKTVerify(userKeys);
+
     if (!organizationKey) {
-        return getAddressKeysMigrationPayload(addressesKeys, primaryUserKey);
+        return getAddressKeysMigrationPayload(addressesKeys, primaryUserKey, keyTransparencyVerify);
     }
 
     const decryptedOrganizationKeyResult = await getDecryptedOrganizationKey(
@@ -208,7 +231,12 @@ export async function migrateAddressKeys({
     if (!decryptedOrganizationKeyResult) {
         throw new Error('Failed to decrypt organization key');
     }
-    return getAddressKeysMigrationPayload(addressesKeys, primaryUserKey, decryptedOrganizationKeyResult.privateKey);
+    return getAddressKeysMigrationPayload(
+        addressesKeys,
+        primaryUserKey,
+        keyTransparencyVerify,
+        decryptedOrganizationKeyResult.privateKey
+    );
 }
 
 interface MigrateMemberAddressKeysArguments {
@@ -217,6 +245,7 @@ interface MigrateMemberAddressKeysArguments {
     timeout?: number;
     user: User;
     organization: Organization;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export async function migrateMemberAddressKeys({
@@ -225,6 +254,7 @@ export async function migrateMemberAddressKeys({
     timeout = 120000,
     user,
     organization,
+    keyTransparencyVerify,
 }: MigrateMemberAddressKeysArguments) {
     if (organization.ToMigrate !== 1) {
         return false;
@@ -301,6 +331,7 @@ export async function migrateMemberAddressKeys({
         const payload = await getAddressKeysMigrationPayload(
             memberAddressesKeys,
             primaryMemberUserKey,
+            keyTransparencyVerify,
             decryptedOrganizationKeyResult.privateKey
         );
         if (payload) {
@@ -315,12 +346,16 @@ export const migrateUser = async ({
     addresses,
     keyPassword,
     timeout = 120000,
+    preAuthKTVerify,
+    verifyPoAExistence,
 }: {
     api: Api;
     user: User;
     addresses: Address[];
     keyPassword: string;
     timeout?: number;
+    preAuthKTVerify: PreAuthKTVerify;
+    verifyPoAExistence(api: Api, email: string): Promise<void>;
 }) => {
     if (user.ToMigrate !== 1 || getHasMigratedAddressKeys(addresses)) {
         return false;
@@ -329,6 +364,19 @@ export const migrateUser = async ({
     if (user.Private === MEMBER_PRIVATE.READABLE && user.Role === USER_ROLES.MEMBER_ROLE) {
         return false;
     }
+
+    // Key migration can be triggered by the server. Since the only legitimate
+    // case in which this can happen is when an address is not in KT (otherwise
+    // its keys must have been already upgraded and migrated), we check whether
+    // this is the case by verifying that an absence proof exists and verifies.
+    // If either is not satisfied, key migration is considered to be malicious
+    await Promise.all(
+        addresses.map(async ({ Keys, Email }) => {
+            if (!Keys.some(getHasMigratedAddressKey)) {
+                return verifyPoAExistence(api, canonicalizeInternalEmail(Email));
+            }
+        })
+    );
 
     if (user.Private === MEMBER_PRIVATE.READABLE && user.Role === USER_ROLES.ADMIN_ROLE) {
         const [selfMember, organizationKey] = await Promise.all([
@@ -340,6 +388,7 @@ export const migrateUser = async ({
             organizationKey,
             addresses,
             keyPassword,
+            preAuthKTVerify,
         });
         await api({
             ...migrateMembersAddressKeysRoute({ MemberID: selfMember.ID, ...payload }),
@@ -352,6 +401,7 @@ export const migrateUser = async ({
         user,
         addresses,
         keyPassword,
+        preAuthKTVerify,
     });
     await api({ ...migrateAddressKeysRoute(payload), timeout });
     return true;
@@ -362,9 +412,18 @@ interface RestoreBrokenSKLArguments {
     keyPassword: string;
     timeout?: number;
     user: User;
+    keyTransparencyVerify: KeyTransparencyVerify;
+    keyTransparencyCommit: KeyTransparencyCommit;
 }
 
-export async function restoreBrokenSKL({ api, keyPassword, timeout = 120000, user }: RestoreBrokenSKLArguments) {
+export async function restoreBrokenSKL({
+    api,
+    keyPassword,
+    timeout = 120000,
+    user,
+    keyTransparencyVerify,
+    keyTransparencyCommit,
+}: RestoreBrokenSKLArguments) {
     if (user.Role !== USER_ROLES.ADMIN_ROLE) {
         return;
     }
@@ -441,7 +500,10 @@ export async function restoreBrokenSKL({ api, keyPassword, timeout = 120000, use
                 );
                 return {
                     Address: address,
-                    SignedKeyList: activeKeys.length > 0 ? await getSignedKeyList(activeKeys) : (undefined as any),
+                    SignedKeyList:
+                        activeKeys.length > 0
+                            ? await getSignedKeyList(activeKeys, address, keyTransparencyVerify)
+                            : (undefined as any),
                 };
             })
         );
@@ -455,6 +517,7 @@ export async function restoreBrokenSKL({ api, keyPassword, timeout = 120000, use
 
         if (Object.keys(SignedKeyLists).length > 0) {
             await api({ ...restoreBrokenSKLRoute({ MemberID: member.ID, SignedKeyLists }), timeout });
+            await keyTransparencyCommit(memberUserKeys);
         }
     }
 }

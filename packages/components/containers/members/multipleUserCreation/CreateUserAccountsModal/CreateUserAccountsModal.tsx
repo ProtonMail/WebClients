@@ -23,10 +23,12 @@ import {
     useDomains,
     useEventManager,
     useGetAddresses,
+    useKTVerifier,
     useLoading,
     useNotifications,
     useOrganization,
     useOrganizationKey,
+    useUser,
 } from '@proton/components';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
@@ -94,6 +96,10 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [organizationCapacityError, setOrganizationCapacityError] = useState<OrganizationCapacityError>();
+    const [user] = useUser();
+    // TODO: members SKLs should appear as others' SKLs to the admin, or self-audit will think these keys
+    // are the admin's and potentally fail
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     const [domains, loadingDomains] = useDomains();
     const verifiedDomains = useMemo(
@@ -236,6 +242,8 @@ const CreateUserAccountsModal = ({ usersToImport, onClose, ...rest }: Props) => 
                     api: getSilentApiWithAbort(api, signal),
                     getAddresses,
                     organizationKey: organizationKey.privateKey,
+                    keyTransparencyVerify,
+                    keyTransparencyCommit,
                 });
 
                 localSuccessfullyCreatedUsers.push(user);

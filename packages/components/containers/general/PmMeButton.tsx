@@ -18,10 +18,11 @@ import {
     usePremiumDomains,
     useUser,
 } from '../../hooks';
+import { useKTVerifier } from '../keyTransparency';
 import UnlockModal from '../login/UnlockModal';
 
 const PmMeButton = () => {
-    const [{ Name }] = useUser();
+    const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -33,6 +34,7 @@ const PmMeButton = () => {
     const getUserKeys = useGetUserKeys();
     const isLoadingDependencies = loadingAddresses || loadingPremiumDomains;
     const [Domain = ''] = premiumDomains || [];
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     const createPremiumAddress = async () => {
         const [{ DisplayName = '', Signature = '' } = {}] = addresses || [];
@@ -55,7 +57,9 @@ const PmMeButton = () => {
             password: authentication.getPassword(),
             encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
             onUpdate: noop,
+            keyTransparencyVerify,
         });
+        await keyTransparencyCommit(userKeys);
         await call();
         createNotification({ text: c('Success').t`Premium address created` });
     };
@@ -67,7 +71,7 @@ const PmMeButton = () => {
             loading={loading}
             onClick={() => withLoading(createPremiumAddress())}
         >
-            {c('Action').t`Activate ${Name}@pm.me`}
+            {c('Action').t`Activate ${user.Name}@pm.me`}
         </Button>
     );
 };

@@ -13,6 +13,7 @@ import {
     useUserKeys,
 } from '../../hooks';
 import { FeatureCode } from '../features/FeaturesContext';
+import { useKTVerifier } from '../keyTransparency';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
 import { getAllKeysReactivationRequests } from '../keys/reactivateKeys/getAllKeysToReactive';
 import RecoverDataCard from './RecoverDataCard';
@@ -35,6 +36,7 @@ const OverviewSection = ({ ids }: Props) => {
     const [userKeys] = useUserKeys();
     const [addressesKeys] = useAddressesKeys();
     const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, User, userKeys);
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => User);
 
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKeys] = useModalState();
     const [confirmProps, setDismissConfirmModalOpen, renderConfirm] = useModalState();
@@ -67,7 +69,9 @@ const OverviewSection = ({ ids }: Props) => {
                             keyReactivationRecords,
                             keyPassword: authentication.getPassword(),
                             onReactivation,
+                            keyTransparencyVerify,
                         });
+                        await keyTransparencyCommit(userKeys);
                         return call();
                     }}
                     {...reactivateKeyProps}

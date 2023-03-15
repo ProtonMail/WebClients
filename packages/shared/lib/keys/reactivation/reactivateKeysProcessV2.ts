@@ -4,7 +4,15 @@ import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { HTTP_STATUS_CODE } from '../../constants';
-import { ActiveKey, Address, Api, DecryptedKey, Address as tsAddress, User as tsUser } from '../../interfaces';
+import {
+    ActiveKey,
+    Address,
+    Api,
+    DecryptedKey,
+    KeyTransparencyVerify,
+    Address as tsAddress,
+    User as tsUser,
+} from '../../interfaces';
 import { SimpleMap } from '../../interfaces/utils';
 import { generateAddressKeyTokens } from '../addressKeys';
 import {
@@ -30,6 +38,7 @@ interface ReactivateUserKeysArguments {
     onReactivation: OnKeyReactivationCallback;
     keysToReactivate: KeyReactivationData[];
     keyPassword: string;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const reactivateUserKeys = async ({
@@ -41,6 +50,7 @@ export const reactivateUserKeys = async ({
     keysToReactivate,
     onReactivation,
     keyPassword,
+    keyTransparencyVerify,
 }: ReactivateUserKeysArguments) => {
     const keyReactivationDataMap = addressRecordsInV2Format.reduce<SimpleMap<KeyReactivationData>>((acc, record) => {
         record.keysToReactivate.forEach((keyData) => {
@@ -81,6 +91,7 @@ export const reactivateUserKeys = async ({
                 newUserKeys: updatedActiveKeys,
                 user,
                 keyPassword,
+                keyTransparencyVerify,
             });
             const addressReactivationPayload = getAddressReactivationPayload(reactivatedAddressKeysResult);
             mutableAddresses = mutableAddresses.map((address) => {
@@ -88,7 +99,11 @@ export const reactivateUserKeys = async ({
                 if (updatedSignedKeyList) {
                     return {
                         ...address,
-                        SignedKeyList: updatedSignedKeyList,
+                        SignedKeyList: {
+                            ...updatedSignedKeyList,
+                            MinEpochID: null,
+                            MaxEpochID: null,
+                        },
                     };
                 }
                 return address;
@@ -148,6 +163,7 @@ interface ReactivateAddressKeysV2Arguments {
     userKey: PrivateKeyReference;
     onReactivation: OnKeyReactivationCallback;
     keysToReactivate: KeyReactivationData[];
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const reactivateAddressKeysV2 = async ({
@@ -157,6 +173,7 @@ export const reactivateAddressKeysV2 = async ({
     keysToReactivate,
     onReactivation,
     userKey,
+    keyTransparencyVerify,
 }: ReactivateAddressKeysV2Arguments) => {
     let mutableActiveKeys = activeKeys;
 
@@ -185,7 +202,7 @@ export const reactivateAddressKeysV2 = async ({
                 reactiveLegacyAddressKeyRouteV2({
                     ID,
                     PrivateKey: privateKeyArmored,
-                    SignedKeyList: await getSignedKeyList(updatedActiveKeys),
+                    SignedKeyList: await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify),
                     Token: encryptedToken,
                     Signature: signature,
                 })
@@ -210,6 +227,7 @@ export interface ReactivateKeysProcessV2Arguments {
     userKeys: DecryptedKey[];
     keyReactivationRecords: KeyReactivationRecord[];
     onReactivation: OnKeyReactivationCallback;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 const reactivateKeysProcessV2 = async ({
@@ -220,6 +238,7 @@ const reactivateKeysProcessV2 = async ({
     keyPassword,
     addresses: oldAddresses,
     userKeys: oldUserKeys,
+    keyTransparencyVerify,
 }: ReactivateKeysProcessV2Arguments) => {
     const { userRecord, addressRecordsInV2Format, addressRecordsInLegacyFormatOrWithBackup } =
         keyReactivationRecords.reduce<{
@@ -277,6 +296,7 @@ const reactivateKeysProcessV2 = async ({
                 onReactivation,
                 keyPassword,
                 addressRecordsInV2Format,
+                keyTransparencyVerify,
             });
             userKeys = userKeysReactivationResult.userKeys;
             addresses = userKeysReactivationResult.addresses;
@@ -319,6 +339,7 @@ const reactivateKeysProcessV2 = async ({
                 userKey: primaryPrivateUserKey,
                 onReactivation,
                 keysToReactivate: keysLeftToReactivate,
+                keyTransparencyVerify,
             });
         } catch (e: any) {
             keysLeftToReactivate.forEach(({ id }) => onReactivation(id, e));

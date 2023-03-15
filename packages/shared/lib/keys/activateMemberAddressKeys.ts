@@ -2,7 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 
 import { activateKeyRoute, activateKeyRouteV2 } from '../api/keys';
 import { MEMBER_PRIVATE } from '../constants';
-import { Address, Api, DecryptedKey, UserModel as tsUserModel } from '../interfaces';
+import { Address, Api, DecryptedKey, KeyTransparencyVerify, UserModel as tsUserModel } from '../interfaces';
 import { generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getPrimaryKey } from './getPrimaryKey';
@@ -26,6 +26,7 @@ interface Args {
     userKeys: DecryptedKey[];
     keyPassword: string;
     api: Api;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const activateMemberAddressKeys = async ({
@@ -35,6 +36,7 @@ export const activateMemberAddressKeys = async ({
     userKeys,
     keyPassword,
     api,
+    keyTransparencyVerify,
 }: Args) => {
     if (!addressKeys.length) {
         return;
@@ -67,7 +69,7 @@ export const activateMemberAddressKeys = async ({
                 privateKey,
                 passphrase: token,
             });
-            const SignedKeyList = await getSignedKeyList(activeKeys);
+            const SignedKeyList = await getSignedKeyList(activeKeys, address, keyTransparencyVerify);
 
             await api(
                 activateKeyRouteV2({
@@ -83,7 +85,7 @@ export const activateMemberAddressKeys = async ({
                 privateKey,
                 passphrase: keyPassword,
             });
-            const SignedKeyList = await getSignedKeyList(activeKeys);
+            const SignedKeyList = await getSignedKeyList(activeKeys, address, keyTransparencyVerify);
 
             await api(activateKeyRoute({ ID, PrivateKey: encryptedPrivateKey, SignedKeyList }));
         }
