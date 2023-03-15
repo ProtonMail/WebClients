@@ -46,8 +46,3 @@ export type VerifyOutboundPublicKeys = (
     SignedKeyList: FetchedSignedKeyList | null,
     IgnoreKT?: IGNORE_KT
 ) => Promise<void>;
-
-export interface KTContext {
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-    getKTState: () => React.MutableRefObject<KeyTransparencyState>;
-}
