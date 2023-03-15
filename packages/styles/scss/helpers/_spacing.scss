@@ -1,32 +1,25 @@
-.mt1r {
-	margin-block-start: rem(10);
-}
-
-.mt0-5r {
-	margin-block-start: rem(5);
-}
-
-.mr0-5r {
-	margin-inline-end: rem(5);
-}
-
-.mr-2 {
+.-mr2 {
+	// renamed from `mr-2`
 	margin-inline-end: -2em;
 }
 
-.mr-6p {
+.-mr6p {
+	// renamed from `mr-6p`
 	margin-inline-end: em(-6);
 }
 
-.mr-0-5 {
+.-mr0-5 {
+	// renamed from `mr-0-5`
 	margin-inline-end: -0.5em;
 }
 
-.mt-0-5 {
+.-mt0-5 {
+	// renamed from `mt-0-5`
 	margin-block-start: -0.5em;
 }
 
-.mb-0-5 {
+.-mb0-5 {
+	// renamed from `mb-0-5`
 	margin-block-end: -0.5em;
 }
 
