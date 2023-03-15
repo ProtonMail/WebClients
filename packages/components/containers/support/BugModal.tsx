@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { reportBug } from '@proton/shared/lib/api/reports';
-import { APPS, BRAND_NAME, CLIENT_TYPES, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -33,7 +33,7 @@ import { getClientName, getReportInfo } from '../../helpers/report';
 import { useApi, useConfig, useNotifications } from '../../hooks';
 import AttachScreenshot, { Screenshot } from './AttachScreenshot';
 
-export type BugModalMode = 'chat-unavailable' | 'chat-no-agents';
+export type BugModalMode = 'chat-no-agents';
 
 type OptionLabelItem = { type: 'label'; value: string };
 type OptionOptionItem = { type: 'option'; title: string; value: string; clientType?: CLIENT_TYPES };
@@ -219,15 +219,6 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     );
 
     const modeAlert = (() => {
-        if (mode === 'chat-unavailable') {
-            return (
-                <p>
-                    {c('Warning')
-                        .t`Live chat is a premium feature available only to those with paid ${VPN_APP_NAME} plans. Please open a ticket instead.`}
-                </p>
-            );
-        }
-
         if (mode === 'chat-no-agents') {
             return (
                 <p>
