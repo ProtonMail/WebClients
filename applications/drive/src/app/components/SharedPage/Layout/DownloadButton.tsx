@@ -35,7 +35,7 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
 
     const downloadLinksProgresses = getDownloadsLinksProgresses();
 
-    const onDownload = () => {
+    const handleDownload = () => {
         // To keep always only one download around.
         clearDownloads();
 
@@ -93,7 +93,7 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
         <Button
             className={clsx(['flex-item-centered-vert', className])}
             color="norm"
-            onClick={onDownload}
+            onClick={handleDownload}
             loading={isDownloading}
         >
             {isDownloading ? inProgressText : idleText}
