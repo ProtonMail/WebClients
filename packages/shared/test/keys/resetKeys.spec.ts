@@ -10,6 +10,7 @@ describe('reset keys v2', () => {
             addresses: [],
             passphrase: '',
             encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+            preAuthKTVerify: () => async () => {},
         });
         expect(result).toEqual({
             userKeyPayload: undefined,
@@ -27,6 +28,7 @@ describe('reset keys v2', () => {
             ],
             passphrase: '123',
             encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+            preAuthKTVerify: () => async () => {},
         });
         if (!addressKeysPayload?.length) {
             throw new Error('Missing address keys');

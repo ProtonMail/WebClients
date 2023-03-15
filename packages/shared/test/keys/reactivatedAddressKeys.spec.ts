@@ -90,6 +90,7 @@ describe('reactivate address keys', () => {
             oldUserKeys: userKeys,
             newUserKeys: userKeys,
             keyPassword: '',
+            keyTransparencyVerify: async () => {},
         });
         expect(result).toEqual({
             address: Address,
@@ -106,6 +107,7 @@ describe('reactivate address keys', () => {
             oldUserKeys: [userKeys[0]],
             newUserKeys: userKeys,
             keyPassword: '',
+            keyTransparencyVerify: async () => {},
         });
         expect(result).toEqual(
             jasmine.objectContaining({
@@ -124,6 +126,7 @@ describe('reactivate address keys', () => {
             oldUserKeys: [userKeys[0]],
             newUserKeys: userKeys,
             keyPassword: '',
+            keyTransparencyVerify: async () => {},
         });
         const payload = await getAddressReactivationPayload([result]);
         expect(payload).toEqual(
@@ -147,6 +150,7 @@ describe('reactivate address keys', () => {
             oldUserKeys: [userKeys[0]],
             newUserKeys: [userKeys[0], userKeys[1]],
             keyPassword: '',
+            keyTransparencyVerify: async () => {},
         });
         expect(JSON.parse(result[0].signedKeyList?.Data || '')).toEqual([
             { Primary: 1, Flags: 3, Fingerprint: jasmine.any(String), SHA256Fingerprints: jasmine.any(Array) },

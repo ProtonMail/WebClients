@@ -10,6 +10,7 @@ describe('get contact public key model', () => {
         apiKeysConfig: {
             Keys: [],
             publicKeys: [],
+            SignedKeyList: null,
         },
     };
 
@@ -58,6 +59,7 @@ describe('get contact public key model', () => {
             ...publicKeyConfig,
             apiKeysConfig: {
                 publicKeys: [{ publicKey, armoredKey: '', flags: 0 }],
+                SignedKeyList: null,
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -75,6 +77,7 @@ describe('get contact public key model', () => {
             ...publicKeyConfig,
             apiKeysConfig: {
                 publicKeys: [{ publicKey, armoredKey: '', flags: 0 }],
+                SignedKeyList: null,
             },
             pinnedKeysConfig: {
                 pinnedKeys: [],
@@ -92,6 +95,7 @@ describe('get contact public key model', () => {
             ...publicKeyConfig,
             apiKeysConfig: {
                 publicKeys: [{ publicKey, armoredKey: '', flags: 0 }],
+                SignedKeyList: null,
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -108,6 +112,7 @@ describe('get contact public key model', () => {
             ...publicKeyConfig,
             apiKeysConfig: {
                 publicKeys: [],
+                SignedKeyList: null,
             },
             pinnedKeysConfig: {
                 pinnedKeys: [],
@@ -127,6 +132,7 @@ describe('get contact public key model', () => {
                 ...publicKeyConfig,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                 publicKeys: [{ publicKey, armoredKey: '', flags: 0 }],
+                SignedKeyList: null,
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],

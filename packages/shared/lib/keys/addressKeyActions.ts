@@ -1,9 +1,15 @@
 import { removeKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
-import { Address, Api, DecryptedKey } from '../interfaces';
+import { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../interfaces';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getSignedKeyList } from './signedKeyList';
 
-export const setPrimaryAddressKey = async (api: Api, address: Address, keys: DecryptedKey[], ID: string) => {
+export const setPrimaryAddressKey = async (
+    api: Api,
+    address: Address,
+    keys: DecryptedKey[],
+    ID: string,
+    keyTransparencyVerify: KeyTransparencyVerify
+) => {
     const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, keys);
     const oldActiveKey = activeKeys.find(({ ID: otherID }) => ID === otherID);
     if (!oldActiveKey) {
@@ -20,11 +26,17 @@ export const setPrimaryAddressKey = async (api: Api, address: Address, keys: Dec
             })
             .sort((a, b) => b.primary - a.primary)
     );
-    const signedKeyList = await getSignedKeyList(updatedActiveKeys);
+    const signedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
     await api(setKeyPrimaryRoute({ ID, SignedKeyList: signedKeyList }));
 };
 
-export const deleteAddressKey = async (api: Api, address: Address, keys: DecryptedKey[], ID: string) => {
+export const deleteAddressKey = async (
+    api: Api,
+    address: Address,
+    keys: DecryptedKey[],
+    ID: string,
+    keyTransparencyVerify: KeyTransparencyVerify
+) => {
     const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, keys);
     const oldActiveKey = activeKeys.find(({ ID: otherID }) => ID === otherID);
     if (oldActiveKey?.primary) {
@@ -34,7 +46,7 @@ export const deleteAddressKey = async (api: Api, address: Address, keys: Decrypt
         address,
         activeKeys.filter(({ ID: otherID }) => ID !== otherID)
     );
-    const signedKeyList = await getSignedKeyList(updatedActiveKeys);
+    const signedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
     await api(removeKeyRoute({ ID, SignedKeyList: signedKeyList }));
 };
 
@@ -43,7 +55,8 @@ export const setAddressKeyFlags = async (
     address: Address,
     keys: DecryptedKey[],
     ID: string,
-    flags: number
+    flags: number,
+    keyTransparencyVerify: KeyTransparencyVerify
 ) => {
     const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, keys);
     const updatedActiveKeys = getNormalizedActiveKeys(
@@ -58,6 +71,6 @@ export const setAddressKeyFlags = async (
             return activeKey;
         })
     );
-    const signedKeyList = await getSignedKeyList(updatedActiveKeys);
+    const signedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
     await api(setKeyFlagsRoute({ ID, Flags: flags, SignedKeyList: signedKeyList }));
 };

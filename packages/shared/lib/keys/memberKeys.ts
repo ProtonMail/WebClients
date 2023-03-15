@@ -7,6 +7,8 @@ import {
     Api,
     DecryptedKey,
     EncryptionConfig,
+    KeyTransparencyCommit,
+    KeyTransparencyVerify,
     Address as tsAddress,
     Key as tsKey,
     Member as tsMember,
@@ -36,6 +38,8 @@ interface SetupMemberKeySharedArguments {
     password: string;
     organizationKey: PrivateKeyReference;
     encryptionConfig: EncryptionConfig;
+    keyTransparencyVerify: KeyTransparencyVerify;
+    keyTransparencyCommit: KeyTransparencyCommit;
 }
 
 export const setupMemberKeyLegacy = async ({
@@ -45,6 +49,8 @@ export const setupMemberKeyLegacy = async ({
     password,
     organizationKey,
     encryptionConfig,
+    keyTransparencyVerify,
+    keyTransparencyCommit,
 }: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberMailboxPassword } = await generateKeySaltAndPassphrase(password);
 
@@ -69,7 +75,15 @@ export const setupMemberKeyLegacy = async ({
                 flags: getDefaultKeyFlags(address),
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
-            const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
+            const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
+
+            await keyTransparencyCommit([
+                {
+                    ID: privateKey.getKeyID(),
+                    privateKey,
+                    publicKey: privateKey,
+                },
+            ]);
 
             return {
                 AddressID: address.ID,
@@ -106,6 +120,8 @@ export const setupMemberKeyV2 = async ({
     password,
     organizationKey,
     encryptionConfig,
+    keyTransparencyVerify,
+    keyTransparencyCommit,
 }: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberKeyPassword } = await generateKeySaltAndPassphrase(password);
 
@@ -140,7 +156,15 @@ export const setupMemberKeyV2 = async ({
                 flags: getDefaultKeyFlags(address),
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
-            const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
+            const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
+
+            await keyTransparencyCommit([
+                {
+                    ID: addressPrivateKey.getKeyID(),
+                    privateKey: addressPrivateKey,
+                    publicKey: addressPrivateKey,
+                },
+            ]);
 
             return {
                 AddressID: address.ID,
@@ -193,6 +217,7 @@ interface CreateMemberAddressKeysLegacyArguments {
     memberUserKey: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
     encryptionConfig: EncryptionConfig;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const createMemberAddressKeysLegacy = async ({
@@ -203,6 +228,7 @@ export const createMemberAddressKeysLegacy = async ({
     memberUserKey,
     organizationKey,
     encryptionConfig,
+    keyTransparencyVerify,
 }: CreateMemberAddressKeysLegacyArguments) => {
     const { privateKey, activationToken, privateKeyArmored, privateKeyArmoredOrganization, organizationToken } =
         await generateMemberAddressKey({
@@ -224,7 +250,7 @@ export const createMemberAddressKeysLegacy = async ({
         flags: getDefaultKeyFlags(memberAddress),
     });
     const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, [...activeKeys, newActiveKey]);
-    const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
+    const SignedKeyList = await getSignedKeyList(updatedActiveKeys, memberAddress, keyTransparencyVerify);
 
     const { primary } = newActiveKey;
 
@@ -254,6 +280,7 @@ interface CreateMemberAddressKeysV2Arguments {
     memberUserKey: PrivateKeyReference;
     organizationKey: PrivateKeyReference;
     encryptionConfig: EncryptionConfig;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const createMemberAddressKeysV2 = async ({
@@ -264,6 +291,7 @@ export const createMemberAddressKeysV2 = async ({
     memberUserKey,
     organizationKey,
     encryptionConfig,
+    keyTransparencyVerify,
 }: CreateMemberAddressKeysV2Arguments) => {
     const { token, signature, organizationSignature, encryptedToken } = await generateAddressKeyTokens(
         memberUserKey,
@@ -288,7 +316,7 @@ export const createMemberAddressKeysV2 = async ({
         flags: getDefaultKeyFlags(memberAddress),
     });
     const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, [...activeKeys, newActiveKey]);
-    const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
+    const SignedKeyList = await getSignedKeyList(updatedActiveKeys, memberAddress, keyTransparencyVerify);
 
     const { primary } = newActiveKey;
 

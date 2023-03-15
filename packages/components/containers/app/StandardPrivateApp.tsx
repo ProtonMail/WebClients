@@ -41,6 +41,7 @@ import {
 } from '../eventManager';
 import { FeatureCode } from '../features';
 import ForceRefreshProvider from '../forceRefresh/Provider';
+import { KeyTransparencyManager } from '../keyTransparency';
 import { DensityInjector } from '../layouts';
 import { ModalsChildren } from '../modals';
 import { ThemeInjector } from '../themes';
@@ -220,20 +221,22 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <CalendarModelEventManagerProvider>
                 <ContactProvider>
-                    <EventModelListener models={eventModels} />
-                    <EventNotices />
-                    <ThemeInjector />
-                    <DensityInjector />
-                    {!noModals && <ModalsChildren />}
-                    <KeyBackgroundManager
-                        hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                        hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                        hasMemberKeyMigration={hasMemberKeyMigration}
-                    />
-                    <StorageListener />
-                    <ForceRefreshProvider>
-                        <LoadedApp />
-                    </ForceRefreshProvider>
+                    <KeyTransparencyManager APP_NAME={APP_NAME}>
+                        <EventModelListener models={eventModels} />
+                        <EventNotices />
+                        <ThemeInjector />
+                        <DensityInjector />
+                        {!noModals && <ModalsChildren />}
+                        <KeyBackgroundManager
+                            hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                            hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                            hasMemberKeyMigration={hasMemberKeyMigration}
+                        />
+                        <StorageListener />
+                        <ForceRefreshProvider>
+                            <LoadedApp />
+                        </ForceRefreshProvider>
+                    </KeyTransparencyManager>
                 </ContactProvider>
             </CalendarModelEventManagerProvider>
         </EventManagerProvider>

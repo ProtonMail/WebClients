@@ -15,7 +15,14 @@ import {
     SPF_STATE,
     VERIFY_STATE,
 } from '@proton/shared/lib/constants';
-import { Address, Api, DecryptedKey, Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import {
+    Address,
+    Api,
+    DecryptedKey,
+    Domain,
+    DomainAddress,
+    KeyTransparencyVerify,
+} from '@proton/shared/lib/interfaces';
 import { clearExternalFlags, getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
@@ -39,10 +46,13 @@ import {
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
+    useGetUser,
+    useGetUserKeys,
     useLoading,
     useNotifications,
     useStep,
 } from '../../hooks';
+import { useKTVerifier } from '../keyTransparency';
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';
 import DMARCSection from './DMARCSection';
@@ -81,10 +91,12 @@ const convertToInternalAddress = async ({
     address,
     keys,
     api,
+    keyTransparencyVerify,
 }: {
     address: Address;
     keys: DecryptedKey[];
     api: Api;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }) => {
     const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, keys);
     const internalAddress = {
@@ -98,7 +110,9 @@ const convertToInternalAddress = async ({
                 ...key,
                 flags: clearExternalFlags(key.flags),
             };
-        })
+        }),
+        address,
+        keyTransparencyVerify
     );
     await api(
         addressType(address.ID, {
@@ -122,6 +136,10 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const { step, next, goTo } = useStep();
     const { call } = useEventManager();
     const { validator, onFormSubmit } = useFormErrors();
+
+    const getUser = useGetUser();
+    const getUserKeys = useGetUserKeys();
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, getUser);
 
     useEffect(() => {
         const run = async () => {
@@ -148,9 +166,12 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                         address: externalAddress,
                         keys: await getAddressKeys(externalAddress.ID),
                         api: getSilentApi(api),
+                        keyTransparencyVerify,
                     });
                 })
             );
+            const userKeys = await getUserKeys();
+            await keyTransparencyCommit(userKeys);
             await call();
         };
         run();

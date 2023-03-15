@@ -9,6 +9,7 @@ import {
     Icon,
     LoaderPage,
     StandardLoadErrorPage,
+    createPreAuthKTVerifier,
     useApi,
     useAuthentication,
     useErrorHandler,
@@ -103,6 +104,8 @@ const SetupAddressContainer = () => {
     const authentication = useAuthentication();
     const getUser = useGetUser();
     const [, setTheme] = useTheme();
+
+    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(normalApi);
 
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
 
@@ -218,6 +221,7 @@ const SetupAddressContainer = () => {
                                 setup: payload.setup,
                                 domain: payload.domain,
                                 username: payload.username,
+                                preAuthKTVerify,
                             });
 
                             const user = await getUser();
@@ -233,6 +237,8 @@ const SetupAddressContainer = () => {
                                 trusted: authentication.getTrusted(),
                             });
                             sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
+
+                            await preAuthKTCommit(user.ID);
 
                             handleToApp(toApp);
                         } catch (e: any) {

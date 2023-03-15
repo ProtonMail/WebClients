@@ -10,6 +10,8 @@ import {
     CachedOrganizationKey,
     DecryptedKey,
     Key,
+    KeyTransparencyVerify,
+    PreAuthKTVerify,
     SignedKeyList,
     User,
     Address as tsAddress,
@@ -171,6 +173,10 @@ export const upgradeV2KeysLegacy = async ({
     return newKeyPassword;
 };
 
+interface UpgradeV2KeysArgs extends UpgradeV2KeysLegacyArgs {
+    keyTransparencyVerify: KeyTransparencyVerify;
+}
+
 export const upgradeV2KeysV2 = async ({
     user,
     userKeys,
@@ -180,7 +186,8 @@ export const upgradeV2KeysV2 = async ({
     clearKeyPassword,
     isOnePasswordMode,
     api,
-}: UpgradeV2KeysLegacyArgs) => {
+    keyTransparencyVerify,
+}: UpgradeV2KeysArgs) => {
     if (!userKeys.length) {
         return;
     }
@@ -221,7 +228,7 @@ export const upgradeV2KeysV2 = async ({
             return {
                 address,
                 addressKeys,
-                signedKeyList: await getSignedKeyList(activeKeys),
+                signedKeyList: await getSignedKeyList(activeKeys, address, keyTransparencyVerify),
             };
         })
     );
@@ -264,6 +271,7 @@ interface UpgradeV2KeysHelperArgs {
     keyPassword: string;
     api: Api;
     isOnePasswordMode?: boolean;
+    preAuthKTVerify: PreAuthKTVerify;
 }
 
 export const upgradeV2KeysHelper = async ({
@@ -274,6 +282,7 @@ export const upgradeV2KeysHelper = async ({
     keyPassword,
     isOnePasswordMode,
     api,
+    preAuthKTVerify,
 }: UpgradeV2KeysHelperArgs) => {
     const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
 
@@ -319,6 +328,8 @@ export const upgradeV2KeysHelper = async ({
     }
 
     if (getHasMigratedAddressKeys(addresses)) {
+        const keyTransparencyVerify = preAuthKTVerify(userKeys);
+
         return upgradeV2KeysV2({
             api,
             user,
@@ -328,6 +339,7 @@ export const upgradeV2KeysHelper = async ({
             loginPassword,
             clearKeyPassword,
             isOnePasswordMode,
+            keyTransparencyVerify,
         });
     }
 

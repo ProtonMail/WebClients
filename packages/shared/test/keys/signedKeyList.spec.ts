@@ -64,7 +64,12 @@ describe('active keys', () => {
                 getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', flags: 3 }),
                 getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 3 }),
                 getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 2 }),
-            ])
+            ]),
+            {
+                ID: 'a',
+                Email: 'a@a.com',
+            } as unknown as Address,
+            async () => {}
         );
         const address = { Email: 'a@a.com' } as Address;
         const activeKeys = await getActiveKeys(address, signedKeyList, addressKeys, decryptedAddressKeys);
@@ -109,14 +114,16 @@ describe('active keys', () => {
         ]);
         const addressKeys = addressKeysFull.map(({ Key }) => Key);
         const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
+        const address = { Email: 'a@a.com', Type: ADDRESS_TYPE.TYPE_EXTERNAL } as Address;
         const signedKeyList = await getSignedKeyList(
             await Promise.all([
                 getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', flags: 7 }),
                 getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 7 }),
                 getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 6 }),
-            ])
+            ]),
+            address,
+            async () => {}
         );
-        const address = { Email: 'a@a.com', Type: ADDRESS_TYPE.TYPE_EXTERNAL } as Address;
         const activeKeys = await getActiveKeys(address, signedKeyList, addressKeys, decryptedAddressKeys);
         expect(activeKeys).toEqual([
             {

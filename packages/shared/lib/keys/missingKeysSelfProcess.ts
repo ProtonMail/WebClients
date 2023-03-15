@@ -1,4 +1,4 @@
-import { Address, Api, DecryptedKey, EncryptionConfig } from '../interfaces';
+import { Address, Api, DecryptedKey, EncryptionConfig, KeyTransparencyVerify } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
 import { getPrimaryKey } from './getPrimaryKey';
 import { getHasMigratedAddressKeys } from './keyMigration';
@@ -13,6 +13,7 @@ interface MissingKeysSelfProcessArguments {
     addressesToGenerate: Address[];
     password: string;
     onUpdate: OnUpdateCallback;
+    keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 export const missingKeysSelfProcess = ({
@@ -23,6 +24,7 @@ export const missingKeysSelfProcess = ({
     addressesToGenerate,
     password,
     onUpdate,
+    keyTransparencyVerify,
 }: MissingKeysSelfProcessArguments) => {
     const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
     const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;
@@ -42,6 +44,7 @@ export const missingKeysSelfProcess = ({
                         encryptionConfig,
                         userKey: primaryUserKey,
                         activeKeys: [],
+                        keyTransparencyVerify,
                     });
                 } else {
                     await createAddressKeyLegacy({
@@ -50,6 +53,7 @@ export const missingKeysSelfProcess = ({
                         encryptionConfig,
                         passphrase: password,
                         activeKeys: [],
+                        keyTransparencyVerify,
                     });
                 }
 

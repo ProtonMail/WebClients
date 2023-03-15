@@ -111,7 +111,12 @@ describe('key migration', () => {
     it('should migrate keys in the legacy format', async () => {
         const { User, Addresses, userKeys, addressKeys, organizationKey } = await getSetup1();
 
-        const result = await migrateAddressKeys({ user: User, addresses: Addresses, keyPassword: DEFAULT_KEYPASSWORD });
+        const result = await migrateAddressKeys({
+            user: User,
+            addresses: Addresses,
+            keyPassword: DEFAULT_KEYPASSWORD,
+            preAuthKTVerify: () => async () => {},
+        });
         await verifyStandard({
             organizationKey,
             Addresses,
@@ -146,7 +151,12 @@ describe('key migration', () => {
         Addresses[2].Keys.length = 0;
         addressKeys[2].length = 0;
 
-        const result = await migrateAddressKeys({ user: User, addresses: Addresses, keyPassword: DEFAULT_KEYPASSWORD });
+        const result = await migrateAddressKeys({
+            user: User,
+            addresses: Addresses,
+            keyPassword: DEFAULT_KEYPASSWORD,
+            preAuthKTVerify: () => async () => {},
+        });
         await verifyStandard({
             organizationKey,
             Addresses,
@@ -179,6 +189,7 @@ describe('key migration', () => {
             addresses: Addresses,
             organizationKey: organizationKey.Key,
             keyPassword: DEFAULT_KEYPASSWORD,
+            preAuthKTVerify: () => async () => {},
         });
         await verifyStandard({
             organizationKey,

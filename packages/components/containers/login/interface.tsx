@@ -3,6 +3,7 @@ import { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     Address,
     Api,
+    PreAuthKTVerifier,
     Address as tsAddress,
     KeySalt as tsKeySalt,
     User as tsUser,
@@ -48,6 +49,7 @@ export interface AuthCacheResult {
     ignoreUnlock: boolean;
     addressGeneration?: AddressGeneration;
     setupVPN: boolean;
+    preAuthKTVerifier: PreAuthKTVerifier;
 }
 
 export type AuthFlows = 'signup' | 'reset' | 'switch' | 'login' | undefined;

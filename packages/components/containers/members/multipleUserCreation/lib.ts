@@ -2,7 +2,7 @@ import { PrivateKeyReference } from '@proton/crypto';
 import { checkMemberAddressAvailability, createMember, createMemberAddress } from '@proton/shared/lib/api/members';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { Address, Api } from '@proton/shared/lib/interfaces';
+import { Address, Api, KeyTransparencyCommit, KeyTransparencyVerify } from '@proton/shared/lib/interfaces';
 import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
 import { setupMemberKeys } from '@proton/shared/lib/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -16,11 +16,15 @@ export const createUser = async ({
     api,
     getAddresses,
     organizationKey,
+    keyTransparencyVerify,
+    keyTransparencyCommit,
 }: {
     user: UserTemplate;
     api: Api;
     getAddresses: GetAddresses;
     organizationKey: PrivateKeyReference;
+    keyTransparencyVerify: KeyTransparencyVerify;
+    keyTransparencyCommit: KeyTransparencyCommit;
 }) => {
     const { emailAddresses, password, displayName, totalStorage, vpnAccess, privateSubUser } = user;
 
@@ -137,6 +141,8 @@ export const createUser = async ({
             organizationKey: organizationKey,
             encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
             password,
+            keyTransparencyVerify,
+            keyTransparencyCommit,
         });
     }
 };

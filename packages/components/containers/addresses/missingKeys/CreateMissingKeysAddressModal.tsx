@@ -43,10 +43,12 @@ import {
     useAuthentication,
     useEventManager,
     useGetAddresses,
+    useGetUser,
     useGetUserKeys,
     useLoading,
     useNotifications,
 } from '../../../hooks';
+import { useKTVerifier } from '../../keyTransparency';
 import SelectEncryption from '../../keys/addKey/SelectEncryption';
 import MissingKeysStatus from './MissingKeysStatus';
 import { AddressWithStatus, Status } from './interface';
@@ -88,6 +90,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
     const [step, setStep] = useState(STEPS.INIT);
     const getUserKeys = useGetUserKeys();
     const getAddresses = useGetAddresses();
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
     const [formattedAddresses, setFormattedAddresses] = useState<AddressWithStatus[]>(() =>
         addressesToGenerate.map((address) => ({
             ...address,
@@ -107,9 +110,10 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
             return;
         }
         try {
-            const [memberAddresses, addresses] = await Promise.all([
+            const [memberAddresses, addresses, userKeys] = await Promise.all([
                 getAllMemberAddresses(api, member.ID),
                 getAddresses(),
+                getUserKeys(),
             ]);
 
             const encryptionConfig = ENCRYPTION_CONFIGS[encryptionType];
@@ -137,6 +141,8 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
                     memberAddresses,
                     password,
                     api,
+                    keyTransparencyVerify,
+                    keyTransparencyCommit,
                 });
                 addressesToGenerate.forEach((address) => handleUpdate(address.ID, { status: 'ok' }));
             } else {
@@ -149,8 +155,10 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
                     memberAddresses,
                     onUpdate: handleUpdate,
                     organizationKey: organizationKey.privateKey,
+                    keyTransparencyVerify,
                 });
             }
+            await keyTransparencyCommit(userKeys);
             await call();
         } catch (e: any) {
             createNotification({ text: e.message, type: 'error' });
@@ -176,7 +184,9 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
                     });
                 });
             },
+            keyTransparencyVerify,
         });
+        await keyTransparencyCommit(userKeys);
         await call();
     };
 
