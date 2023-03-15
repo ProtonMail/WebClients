@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 
 import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import {
@@ -15,11 +15,12 @@ import {
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { KeyTransparencyState, VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';
-import { KeyTransparencyContext } from '@proton/shared/lib/keyTransparency';
 
 import { useApi, useFeature, useGetAddresses, useGetUserKeys, useUser } from '../../hooks';
 import { FeatureCode } from '../features';
+import { KTContext } from './ktContext';
 import { KT_FF, isKTActive, removeKTBlobs } from './ktStatus';
+import { KeyTransparencyContext } from './useKeyTransparencyContext';
 
 /**
  * Generate a unique fake ID from an email address
@@ -33,7 +34,7 @@ const generateID = async (userID: string, email: string) => {
 };
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
     APP_NAME: APP_NAMES;
 }
 
@@ -182,7 +183,7 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
         void run();
     }, []);
 
-    const ktFunctions = {
+    const ktFunctions: KTContext = {
         getKTState,
         verifyOutboundPublicKeys,
     };
