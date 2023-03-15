@@ -87,7 +87,7 @@ const DesktopUpsellFloatingModal = ({ open, onClose, onBlockNewOpening }: ChildP
                     }
                 }}
             >
-                <Dialog className="modal-two-dialog modal-two-dialog--small">
+                <Dialog className="modal-two-dialog upsell-floating-modal-dialog ">
                     <div className="modal-two-dialog-container">
                         <UpsellFloatingModalContent onClose={onClose} />
                     </div>
