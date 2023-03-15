@@ -25,7 +25,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
     const { APP_NAME } = useConfig();
 
     // This does not allow to get any user information but allow us to know if the user was already logged in Proton
-    const isLoggedIn = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
+    const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
 
     const containerClassname = clsx([
         'shared-page-layout-bg flex-no-min-children flex-nowrap flex-column h100 scroll-if-needed relative',
@@ -42,7 +42,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                     </div>
 
                     <div className="flex flex-justify-end flex-item-fluid flex-item-centered-vert">
-                        {isLoggedIn ? (
+                        {isProtonUser ? (
                             <ButtonLike color="norm" shape="outline" as="a" href={APPS.PROTONDRIVE} target="_blank">
                                 {c('Action').t`Go to Drive`}
                             </ButtonLike>
