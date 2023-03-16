@@ -14,7 +14,7 @@ export const isKTActive = async (feature?: KT_FF) => {
     //  - feature flag is off;
     //  - BigInt is not supported (it is needed for VRF verification);
     //  - there is no access to cross-storage.
-    if (feature === KT_FF.DISABLE) {
+    if (typeof feature === 'undefined' || feature === KT_FF.DISABLE) {
         return false;
     }
 
