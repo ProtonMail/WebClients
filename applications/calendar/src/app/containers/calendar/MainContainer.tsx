@@ -43,11 +43,7 @@ const MainContainer = () => {
         return view;
     });
 
-    useFeatures([
-        FeatureCode.CalendarSharingEnabled,
-        FeatureCode.CalendarPersonalEventsDeprecated,
-        FeatureCode.CalendarNotificationsRevampAvailable,
-    ]);
+    useFeatures([FeatureCode.CalendarSharingEnabled]);
 
     const memoedCalendars = useMemo(() => sortCalendars(getVisualCalendars(calendars || [])), [calendars]);
     const ownedPersonalCalendars = useMemo(() => getOwnedPersonalCalendars(memoedCalendars), [memoedCalendars]);

@@ -24,18 +24,7 @@ export const getEventStatusTraits = (model: EventModelReadView) => {
     };
 };
 
-export const getCanEditEvent = ({
-    isCalendarDisabled,
-    isSubscribedCalendar,
-    notificationsRevampAvailable,
-}: {
-    isCalendarDisabled: boolean;
-    isSubscribedCalendar: boolean;
-    notificationsRevampAvailable: boolean;
-}) => {
-    if (isSubscribedCalendar) {
-        return notificationsRevampAvailable;
-    }
+export const getCanEditEvent = ({ isCalendarDisabled }: { isCalendarDisabled: boolean }) => {
     return !isCalendarDisabled;
 };
 

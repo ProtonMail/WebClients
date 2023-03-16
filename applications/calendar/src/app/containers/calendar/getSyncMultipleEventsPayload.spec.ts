@@ -44,7 +44,6 @@ END:VEVENT`;
                             veventComponent: vcalVeventComponent,
                             removedAttendeesEmails: [],
                             hasDefaultNotifications: false,
-                            personalEventsDeprecated: true,
                         },
                     },
                 ],

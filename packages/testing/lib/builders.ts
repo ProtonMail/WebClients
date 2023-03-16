@@ -173,7 +173,7 @@ export const addressBuilder = build<Address>('Address', {
 export const calendarEventBuilder = build<CalendarEvent>('Event', {
     fields: {
         IsProtonProtonInvite: 0,
-        IsPersonalMigrated: true,
+        // LastEditTime: 1637857503,
         // LastEditTime: 1637857503,
         Author: 'stest1@proton.black',
         Permissions: 1,

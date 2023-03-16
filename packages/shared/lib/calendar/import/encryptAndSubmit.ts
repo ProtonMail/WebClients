@@ -29,13 +29,11 @@ const encryptEvent = async ({
     addressKeys,
     calendarKeys,
     hasDefaultNotifications,
-    personalEventsDeprecated,
 }: {
     eventComponent: VcalVeventComponent;
     addressKeys: DecryptedKey[];
     calendarKeys: DecryptedCalendarKey[];
     hasDefaultNotifications: boolean;
-    personalEventsDeprecated: boolean;
 }) => {
     const componentId = getComponentIdentifier(eventComponent);
     try {
@@ -44,7 +42,6 @@ const encryptEvent = async ({
             isCreateEvent: true,
             isSwitchCalendar: false,
             hasDefaultNotifications,
-            personalEventsDeprecated,
             ...(await getCreationKeys({ newAddressKeys: addressKeys, newCalendarKeys: calendarKeys })),
         });
         if (!getHasSharedKeyPacket(data) || !getHasSharedEventContent(data)) {
@@ -116,7 +113,6 @@ interface ProcessData {
     calendarKeys: DecryptedCalendarKey[];
     api: Api;
     overwrite?: boolean;
-    personalEventsDeprecated: boolean;
     signal?: AbortSignal;
     onProgress?: (encrypted: EncryptedEvent[], imported: EncryptedEvent[], errors: ImportEventError[]) => void;
 }
@@ -129,7 +125,6 @@ export const processInBatches = async ({
     calendarKeys,
     api,
     overwrite = true,
-    personalEventsDeprecated,
     signal,
     onProgress,
 }: ProcessData) => {
@@ -156,7 +151,6 @@ export const processInBatches = async ({
                         addressKeys,
                         calendarKeys,
                         hasDefaultNotifications,
-                        personalEventsDeprecated,
                     })
                 )
             ),
@@ -211,7 +205,6 @@ export const processWithJails = async ({
     addressKeys,
     calendarKeys,
     api,
-    personalEventsDeprecated,
     signal,
     onProgress,
 }: ProcessData) => {
@@ -234,7 +227,6 @@ export const processWithJails = async ({
                         hasDefaultNotifications,
                         addressKeys,
                         calendarKeys,
-                        personalEventsDeprecated,
                     })
                 )
             );

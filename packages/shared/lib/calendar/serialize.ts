@@ -1,6 +1,6 @@
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 
-import { SignPartResult, VcalVeventComponent } from '../interfaces/calendar';
+import { VcalVeventComponent } from '../interfaces/calendar';
 import { SimpleMap } from '../interfaces/utils';
 import { CALENDAR_CARD_TYPE } from './constants';
 import {
@@ -38,7 +38,6 @@ interface CreateCalendarEventArguments {
     isCreateEvent: boolean;
     isSwitchCalendar: boolean;
     hasDefaultNotifications: boolean;
-    personalEventsDeprecated: boolean;
     isAttendee?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
@@ -52,12 +51,11 @@ export const createCalendarEvent = async ({
     isCreateEvent,
     isSwitchCalendar,
     hasDefaultNotifications,
-    personalEventsDeprecated,
     isAttendee,
     removedAttendeesEmails = [],
     addedAttendeesPublicKeysMap,
 }: CreateCalendarEventArguments) => {
-    const { sharedPart, calendarPart, personalPart, notificationsPart, attendeesPart } = getParts(eventComponent);
+    const { sharedPart, calendarPart, notificationsPart, attendeesPart } = getParts(eventComponent);
 
     const isCreateOrSwitchCalendar = isCreateEvent || isSwitchCalendar;
     const isAttendeeSwitchingCalendar = isSwitchCalendar && isAttendee;
@@ -76,7 +74,6 @@ export const createCalendarEvent = async ({
         sharedEncryptedPart,
         calendarSignedPart,
         calendarEncryptedPart,
-        personalSignedPart,
         attendeesEncryptedPart,
         attendeesEncryptedSessionKeysMap,
     ] = await Promise.all([
@@ -92,7 +89,6 @@ export const createCalendarEvent = async ({
             : encryptPart(sharedPart[ENCRYPTED_AND_SIGNED], privateKey, sharedSessionKey),
         signPart(calendarPart[SIGNED], privateKey),
         calendarSessionKey && encryptPart(calendarPart[ENCRYPTED_AND_SIGNED], privateKey, calendarSessionKey),
-        signPart(personalPart[SIGNED], privateKey),
         // attendees are not allowed to change the SharedEventContent, so they shouldn't send it (API will complain otherwise)
         isAttendeeSwitchingCalendar
             ? undefined
@@ -107,40 +103,10 @@ export const createCalendarEvent = async ({
         calendarSignedPart,
         calendarEncryptedPart,
         calendarSessionKey: encryptedCalendarSessionKey,
-        personalSignedPart: personalEventsDeprecated ? undefined : personalSignedPart,
         notificationsPart: hasDefaultNotifications ? undefined : notificationsPart,
         attendeesEncryptedPart,
         attendeesClearPart: isAttendeeSwitchingCalendar ? undefined : attendeesPart[CLEAR_TEXT],
         removedAttendeesEmails,
         attendeesEncryptedSessionKeysMap,
     });
-};
-
-/**
- * Format just the personal data into what the API expects.
- */
-export const formatPersonalData = (personalSignedPart?: SignPartResult) => {
-    if (!personalSignedPart) {
-        return;
-    }
-    return {
-        Type: SIGNED,
-        Data: personalSignedPart.data,
-        Signature: personalSignedPart.signature,
-    };
-};
-
-/**
- * Create just the personal event from an internal vcal component.
- */
-interface CreatePersonalEventArguments {
-    eventComponent: VcalVeventComponent;
-    signingKey: PrivateKeyReference;
-}
-export const createPersonalEvent = async ({ eventComponent, signingKey }: CreatePersonalEventArguments) => {
-    const { personalPart } = getParts(eventComponent);
-
-    const personalSignedPart = await signPart(personalPart[SIGNED], signingKey);
-
-    return formatPersonalData(personalSignedPart);
 };
