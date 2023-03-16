@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import useOpenModal from '../../../useOpenModal';
+import useOpenPreview from '../../../useOpenPreview';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const PreviewButton = ({ shareId, linkId, close }: Props) => {
-    const { openPreview } = useOpenModal();
+    const openPreview = useOpenPreview();
 
     return (
         <ContextMenuButton
