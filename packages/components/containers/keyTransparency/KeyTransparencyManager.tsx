@@ -44,7 +44,7 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
     const [{ ID: userID }] = useUser();
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const { get } = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
+    const { get } = useFeature<KT_FF | undefined>(FeatureCode.KeyTransparencyWEB);
     const ktLSAPI = getKTLocalStorage(APP_NAME);
 
     const ktState = useRef<KeyTransparencyState>({
@@ -134,7 +134,7 @@ const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
 
     useEffect(() => {
         const run = async () => {
-            const feature = await get().then((result) => result.Value);
+            const feature = await get().then((result) => result?.Value);
             const addressesPromise = getAddresses();
 
             // Since we cannot check the feature flag at login time, the
