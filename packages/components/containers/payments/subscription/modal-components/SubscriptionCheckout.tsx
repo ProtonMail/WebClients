@@ -99,7 +99,7 @@ const SubscriptionCheckout = ({
     planIDs,
     checkResult,
     loading,
-    showProration,
+    showProration = true,
     nextSubscriptionStart,
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -117,16 +117,15 @@ const SubscriptionCheckout = ({
     const isFreePlanSelected = !hasPlanIDs(planIDs);
     const isVPNPlanSelected = !!planIDs?.[PLANS.VPN];
 
-    const proration = Math.abs(checkResult.Proration || 0);
-    const credit = Math.abs(checkResult.Credit || 0);
+    const proration = checkResult.Proration ?? 0;
+    const credit = checkResult.Credit ?? 0;
     const amount = checkResult.Amount || 0;
     const amountDue = checkResult.AmountDue || 0;
     const giftValue = Math.abs(checkResult.Gift || 0);
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers });
 
-    const displayProration = showProration ?? true;
-    const displayStartDate = !displayProration;
+    const displayStartDate = !showProration;
 
     return (
         <Checkout
@@ -175,13 +174,17 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            {displayProration && proration > 0 && (
+            {showProration && proration !== 0 && (
                 <CheckoutRow
                     title={
                         <span className="inline-flex flex-align-items-center">
                             <span className="mr0-5">{c('Label').t`Proration`}</span>
                             <Info
-                                title={c('Info').t`Credit for the unused portion of your previous plan subscription`}
+                                title={
+                                    proration < 0
+                                        ? c('Info').t`Credit for the unused portion of your previous plan subscription`
+                                        : c('Info').t`Balance from your previous subscription`
+                                }
                                 url={
                                     isVPN
                                         ? 'https://protonvpn.com/support/vpn-credit-proration/'
@@ -190,14 +193,14 @@ const SubscriptionCheckout = ({
                             />
                         </span>
                     }
-                    amount={-proration}
+                    amount={proration}
                     currency={currency}
                 />
             )}
             {displayStartDate && nextSubscriptionStart && (
                 <StartDateCheckoutRow nextSubscriptionStart={nextSubscriptionStart} />
             )}
-            {credit > 0 && <CheckoutRow title={c('Title').t`Credits`} amount={-credit} currency={currency} />}
+            {credit !== 0 && <CheckoutRow title={c('Title').t`Credits`} amount={credit} currency={currency} />}
             {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
             {!isOptimistic && (
                 <>
