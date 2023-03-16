@@ -9,7 +9,7 @@
         "Le transfert commencera bientôt. De nouveaux messages apparaîtront dans votre boîte de réception."
       ],
       "Mail forward stopped": [
-        "Le transfert d'e-mail a été arrêté."
+        "Le transfert automatique de messages a été arrêté."
       ]
     },
     "Action": {
@@ -3006,7 +3006,7 @@
         "Le dossier a été vidé."
       ],
       "Label cleared": [
-        "Étiquette effacée"
+        "Le label a été retiré."
       ]
     },
     "Encrypted Headers": {
@@ -3095,7 +3095,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'adresse e-mail est invalide."
+        "L'adresse e-mail n'est pas valide."
       ],
       "Empty condition": [
         "La condition est vide."
@@ -3903,7 +3903,7 @@
         "Importez vos contacts ou messages."
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Transférez rapidement vos contacts ou adresses e-mail depuis n'importe quel fournisseur à l'aide de notre assistant d'importation Easy Switch."
+        "Transférez rapidement vos contacts ou messages depuis n'importe quel fournisseur à l'aide de notre assistant d'importation Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
         "Connectez-vous à l'application mobile pour terminer l'action."
@@ -3990,7 +3990,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Adresse e-mail"
+        "E-mail"
       ],
       "Manual": [
         "Manuel"
@@ -4339,7 +4339,7 @@
         "${ fileName } : image en taille réelle"
       ],
       "${ fileName }: low-resolution preview": [
-        "${ fileName } : aperçu basse résolution"
+        "${ fileName } : aperçu en basse résolution"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
@@ -6060,6 +6060,9 @@
       "Email format": [
         "Format du message"
       ],
+      "Email or username": [
+        "Adresse e-mail ou nom d'utilisateur"
+      ],
       "Emails": [
         "E-mails"
       ],
@@ -6342,17 +6345,11 @@
       "Toolbar": [
         "Barre d'outils"
       ],
-      "Two-factor authentication code": [
-        "Code d’authentification à deux facteurs"
-      ],
       "Undisclosed Recipients": [
         "Destinataires non divulgués"
       ],
       "Upload picture": [
         "Importer une image"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Nom d'utilisateur ou adresse ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Code de vérification"
@@ -7153,9 +7150,6 @@
       ],
       "Link": [
         "Lien"
-      ],
-      "Mailbox password": [
-        "Mot de passe de la messagerie"
       ],
       "Name": [
         "Nom"
@@ -8372,9 +8366,6 @@
       ],
       "Enter your password": [
         "Saisissez votre mot de passe."
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Saisissez votre nom d'utilisateur ou votre adresse e-mail ${ MAIL_APP_NAME }."
       ],
       "Error": [
         "Erreur"

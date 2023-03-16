@@ -4294,6 +4294,12 @@
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } 個內嵌圖像"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }：完整大小圖片"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }：低解析度預覽"
+      ],
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 個群組"
       ],
@@ -5955,6 +5961,9 @@
       "Email format": [
         "電郵格式"
       ],
+      "Email or username": [
+        "電郵位址或使用者名稱"
+      ],
       "Emails": [
         "電郵"
       ],
@@ -6237,17 +6246,11 @@
       "Toolbar": [
         "工具列"
       ],
-      "Two-factor authentication code": [
-        "雙重驟驗證碼"
-      ],
       "Undisclosed Recipients": [
         "非公開收件者"
       ],
       "Upload picture": [
         "上載圖像"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "使用者名稱或 ${ MAIL_APP_NAME } 位址"
       ],
       "Verification code": [
         "驗證碼"
@@ -7040,9 +7043,6 @@
       ],
       "Link": [
         "連結"
-      ],
-      "Mailbox password": [
-        "信箱密碼"
       ],
       "Name": [
         "名稱"
@@ -7967,9 +7967,6 @@
       ],
       "Enter your password": [
         "請輸入您的密碼"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "輸入您的使用者名稱或 ${ MAIL_APP_NAME } 電郵位址"
       ],
       "Error": [
         "錯誤"

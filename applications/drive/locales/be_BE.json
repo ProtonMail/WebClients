@@ -64,6 +64,9 @@
       "Back": [
         "Назад"
       ],
+      "Back to Homepage": [
+        "Вярнуцца на галоўную старонку"
+      ],
       "Beta Access": [
         "Бэта-доступ"
       ],
@@ -2924,7 +2927,7 @@
         "${ errorCount } са збоем"
       ],
       "${ fileName }: full-size image": [
-        "${ fileName }: поўны памер відарыса"
+        "${ fileName }: відарыс у поўным памеры"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
@@ -3172,6 +3175,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Падтрымліваюцца файлы CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і некаторых іншых праграм, а таксама фарматы vCard 3.1 і 4.0 (кадаванне UTF-8)."
       ],
+      "Decrypting files": [
+        "Расшыфроўка файлаў"
+      ],
       "Delete locked drive": [
         "Выдаліць заблакіраваны дыск",
         "Выдаліць заблакіраваныя дыскі",
@@ -3231,6 +3237,12 @@
       ],
       "Encrypted search is here": [
         "Зашыфраваны пошук тут"
+      ],
+      "End-to-end encrypted": [
+        "Зашыфравана скразным метадам"
+      ],
+      "Enter password": [
+        "Увядзіце пароль"
       ],
       "Enter the code from your authenticator app": [
         "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
@@ -3424,6 +3436,9 @@
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
+      "Link owner has the password": [
+        "Пароль ёсць ва ўладальніка спасылкі"
+      ],
       "Loading": [
         "Загрузка"
       ],
@@ -3459,6 +3474,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Неабходна абагуліць файл? Тады скарыстайцеся ${ DRIVE_APP_NAME },\nсамым бяспечным спосабам абагулення, захавання і сінхранізацыі вашых файлаў."
       ],
       "Network issue": [
         "Праблема з сеткай"
@@ -3504,6 +3522,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Нататка: даныя ўсё яшчэ могуць заставацца даступнымі лакальна на прыладзе, дзе ўсталяваны ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "Тут пакуль нічога няма"
       ],
       "of": [
         "з"
@@ -3637,6 +3658,9 @@
       "Shareable link for ${ boldNameText }": [
         "Агульнадаступная спасылка для ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Абагуленая спасылка не знойдзена"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
       ],
@@ -3690,6 +3714,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Дадзены браўзер не падтрымлівае папярэдні прагляд дакументаў PDF. Спампуйце файл."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Гэты файл мог быць выдалены, перамешчаны або яго зрабілі недаступным. Паспрабуйце звязацца з уладальнікам файла."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
@@ -4098,6 +4125,9 @@
       "Download anyway": [
         "Усё роўна спампаваць"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Спампавана ${ percentageValue }%"
+      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -4106,6 +4136,9 @@
       ],
       "Email format": [
         "Фармат ліста"
+      ],
+      "Email or username": [
+        "Электронная пошта або імя карыстальніка"
       ],
       "Emails": [
         "Лісты"
@@ -4296,6 +4329,9 @@
       "Replace folder": [
         "Замяніць папку"
       ],
+      "Report": [
+        "Справаздача"
+      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
@@ -4347,9 +4383,6 @@
       "Toolbar": [
         "Панэль інструментаў"
       ],
-      "Two-factor authentication code": [
-        "Код двухфактарнай аўтэнтыфікацыі"
-      ],
       "Type": [
         "Тып"
       ],
@@ -4373,9 +4406,6 @@
       ],
       "Upload your first file": [
         "Запампуйце ваш першы файл"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Імя карыстальніка або адрас ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Праверачны код"
@@ -4958,9 +4988,6 @@
       "Image URL": [
         "URL-адрас відарыса"
       ],
-      "Mailbox password": [
-        "Пароль паштовай скрыні"
-      ],
       "Name": [
         "Назва"
       ],
@@ -5469,9 +5496,6 @@
       "Enter your password": [
         "Увядзіце пароль"
       ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Увядзіце ваша імя карыстальніка або адрас электроннай пошты ${ MAIL_APP_NAME }"
-      ],
       "Exporting contacts": [
         "Экспартаванне кантактаў"
       ],
@@ -5504,6 +5528,9 @@
       ],
       "Groups": [
         "Групы"
+      ],
+      "Hm, we couldn't find that one": [
+        "Здаецца, што мы не можам знайсці гэты элемент"
       ],
       "Human verification": [
         "Антыспамавая праверка"

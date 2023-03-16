@@ -5,6 +5,9 @@
   },
   "contexts": {
     "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Незабаром розпочнеться пересилання. Нові листи з'являться у вашій поштовій скриньці."
+      ],
       "Mail forward stopped": [
         "Пересилання пошти зупинено"
       ]
@@ -60,6 +63,9 @@
       ],
       "Back": [
         "Назад"
+      ],
+      "Back to Homepage": [
+        "Повернутися на головну сторінку"
       ],
       "Beta Access": [
         "Бета-доступ"
@@ -2159,6 +2165,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Сталася помилка під час читання вашого файлу ${ formattedFilename }. Неправильний формат файлу."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2199,6 +2208,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Сталася помилка під час читання вашого файлу ${ formattedFilename }. Неправильний формат файлу."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2914,6 +2926,12 @@
         "${ errorCount } не вдалося",
         "${ errorCount } не вдалося"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: повнорозмірне зображення"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: попередній перегляд низької роздільності"
+      ],
       "${ groupCounts } group found": [
         "Знайдено ${ groupCounts } групу",
         "Знайдено ${ groupCounts } групи",
@@ -3157,6 +3175,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
       ],
+      "Decrypting files": [
+        "Розшифрування файлу"
+      ],
       "Delete locked drive": [
         "Видалити заблокований диск",
         "Видалити заблоковані диски",
@@ -3216,6 +3237,12 @@
       ],
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
+      ],
+      "End-to-end encrypted": [
+        "Наскрізно зашифровано"
+      ],
+      "Enter password": [
+        "Введіть пароль"
       ],
       "Enter the code from your authenticator app": [
         "Введіть код з програми автентифікації"
@@ -3346,6 +3373,9 @@
       "Import mailbox": [
         "Імпортувати поштову скриньку"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Імпортуйте ваші електронні листи, календарі та контакти з іншої служби до ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
@@ -3406,6 +3436,9 @@
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
       ],
+      "Link owner has the password": [
+        "Пароль у власника посилання"
+      ],
       "Loading": [
         "Завантаження"
       ],
@@ -3441,6 +3474,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Потрібно поділитись файлом? Тоді отримайте ${ DRIVE_APP_NAME },\nнайнадійніший спосіб поділитися, розмістити та синхронізувати ваші файли."
       ],
       "Network issue": [
         "Проблема з мережею"
@@ -3486,6 +3522,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Примітка: дані можуть бути досі доступними локально на пристроях, де встановлено ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "Тут ще нічого немає"
       ],
       "of": [
         "з"
@@ -3619,6 +3658,9 @@
       "Shareable link for ${ boldNameText }": [
         "Посилання спільного доступу для ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Спільне посилання не знайдено"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Неможливо підтвердити підпис через помилку мережі. Будь ласка, спробуйте знову пізніше."
       ],
@@ -3672,6 +3714,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Цей браузер не підтримує перегляд PDF документів. Будь ласка, завантажте файл."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Можливо, цей файл було видалено, переміщено або він став недоступним. Спробуйте зв'язатися з власником файлу."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
@@ -4080,6 +4125,9 @@
       "Download anyway": [
         "Все одно завантажити"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Завантаження ${ percentageValue }%"
+      ],
       "Email": [
         "Е-пошта"
       ],
@@ -4088,6 +4136,9 @@
       ],
       "Email format": [
         "Формат повідомлень"
+      ],
+      "Email or username": [
+        "Е-пошта чи ім'я користувача"
       ],
       "Emails": [
         "Адреси е-пошти"
@@ -4278,6 +4329,9 @@
       "Replace folder": [
         "Замінити теку"
       ],
+      "Report": [
+        "Звіт"
+      ],
       "Reveal password": [
         "Показати пароль"
       ],
@@ -4329,9 +4383,6 @@
       "Toolbar": [
         "Панель інструментів"
       ],
-      "Two-factor authentication code": [
-        "Код двоетапної перевірки"
-      ],
       "Type": [
         "Тип"
       ],
@@ -4355,9 +4406,6 @@
       ],
       "Upload your first file": [
         "Вивантажте свій перший файл"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Ім'я користувача або адреса ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Код підтвердження"
@@ -4940,9 +4988,6 @@
       "Image URL": [
         "URL-адреса зображення"
       ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
       "Name": [
         "Назва"
       ],
@@ -5451,9 +5496,6 @@
       "Enter your password": [
         "Введіть свій пароль"
       ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Введіть своє ім'я користувача або ${ MAIL_APP_NAME } адресу електронної пошти"
-      ],
       "Exporting contacts": [
         "Експортування контактів"
       ],
@@ -5486,6 +5528,9 @@
       ],
       "Groups": [
         "Групи"
+      ],
+      "Hm, we couldn't find that one": [
+        "Гм, ми не змогли знайти таку сторінку"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""

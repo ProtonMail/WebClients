@@ -17,7 +17,7 @@
         "Le transfert commencera bientôt. De nouveaux messages apparaîtront dans votre boîte de réception."
       ],
       "Mail forward stopped": [
-        "Le transfert d'e-mail a été arrêté."
+        "Le transfert automatique de messages a été arrêté."
       ]
     },
     "Action": {
@@ -2181,7 +2181,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'adresse e-mail est invalide."
+        "L'adresse e-mail n'est pas valide."
       ],
       "Ends on date cannot be empty": [
         "La date de fin ne peut pas être vide."
@@ -2833,7 +2833,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Adresse e-mail"
+        "E-mail"
       ],
       "Manual": [
         "Manuel"
@@ -3968,6 +3968,9 @@
       "Email format": [
         "Format du message"
       ],
+      "Email or username": [
+        "Adresse e-mail ou nom d'utilisateur"
+      ],
       "Emails": [
         "E-mails"
       ],
@@ -4164,17 +4167,11 @@
       "Toolbar": [
         "Barre d'outils"
       ],
-      "Two-factor authentication code": [
-        "Code d’authentification à deux facteurs"
-      ],
       "Upload picture": [
         "Importer une image"
       ],
       "URL": [
         "URL"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Nom d'utilisateur ou adresse ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Code de vérification"
@@ -4878,9 +4875,6 @@
       ],
       "Image URL": [
         "URL de l'image"
-      ],
-      "Mailbox password": [
-        "Mot de passe de la messagerie"
       ],
       "Name": [
         "Nom"
@@ -5728,9 +5722,6 @@
       ],
       "Enter your password": [
         "Saisissez votre mot de passe."
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Saisissez votre nom d'utilisateur ou votre adresse e-mail ${ MAIL_APP_NAME }."
       ],
       "Error": [
         "Erreur"

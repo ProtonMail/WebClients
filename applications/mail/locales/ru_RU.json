@@ -4433,6 +4433,12 @@
         "${ embeddedAttachmentsCount } встроенных изображения",
         "${ embeddedAttachmentsCount } встроенных изображения"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: изображение в полном размере"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: предпросмотр в низком разрешении"
+      ],
       "${ groupCounts } group found": [
         "Найдена ${ groupCounts } группа",
         "Найдено ${ groupCounts } группы",
@@ -6259,6 +6265,9 @@
       "Email format": [
         "Формат сообщения"
       ],
+      "Email or username": [
+        "Эл. почта или имя пользователя"
+      ],
       "Emails": [
         "Электронные письма"
       ],
@@ -6541,17 +6550,11 @@
       "Toolbar": [
         "Панель инструментов"
       ],
-      "Two-factor authentication code": [
-        "Код двухфакторной аутентификации"
-      ],
       "Undisclosed Recipients": [
         "Скрытые получатели"
       ],
       "Upload picture": [
         "Загрузить изображение"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Имя пользователя или адрес ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Проверочный код"
@@ -7368,9 +7371,6 @@
       ],
       "Link": [
         "Ссылка"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
       ],
       "Name": [
         "Название"
@@ -8707,9 +8707,6 @@
       ],
       "Enter your password": [
         "Введите свой пароль"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Введите свое имя пользователя или адрес электронной почты ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Ошибка"
