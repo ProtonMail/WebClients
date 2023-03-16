@@ -82,58 +82,19 @@ describe('getCannotSaveEvent()', () => {
 });
 
 describe('getCanEditEvent()', () => {
-    test('User can edit events in active calendars', () => {
+    test('User can edit events as long as the calendar is not disabled', () => {
         const combinations = [];
-        for (let i = 0; i < 2 ** 1; i++) {
-            const notificationsRevampAvailable = !!(1 & i);
-
-            combinations.push({ notificationsRevampAvailable });
-        }
-        combinations.forEach(({ notificationsRevampAvailable }) => {
-            expect(
-                getCanEditEvent({
-                    isCalendarDisabled: false,
-                    isSubscribedCalendar: false,
-                    notificationsRevampAvailable,
-                })
-            ).toEqual(true);
-        });
-    });
-
-    test('User cannot edit events in disabled calendars', () => {
-        const combinations = [];
-        for (let i = 0; i < 2 ** 1; i++) {
-            const notificationsRevampAvailable = !!(1 & i);
-
-            combinations.push({ notificationsRevampAvailable });
-        }
-        combinations.forEach(({ notificationsRevampAvailable }) => {
-            expect(
-                getCanEditEvent({
-                    isCalendarDisabled: true,
-                    isSubscribedCalendar: false,
-                    notificationsRevampAvailable,
-                })
-            ).toEqual(false);
-        });
-    });
-
-    test('User can edit events in subscribed calendars if and only if notifications revamp is available', () => {
-        const combinations = [];
-        for (let i = 0; i < 2 ** 2; i++) {
+        for (let i = 0; i < 1 ** 2; i++) {
             const isCalendarDisabled = !!(1 & i);
-            const notificationsRevampAvailable = !!(2 & i);
 
-            combinations.push({ isCalendarDisabled, notificationsRevampAvailable });
+            combinations.push({ isCalendarDisabled });
         }
-        combinations.forEach(({ isCalendarDisabled, notificationsRevampAvailable }) => {
+        combinations.forEach(({ isCalendarDisabled }) => {
             expect(
                 getCanEditEvent({
                     isCalendarDisabled,
-                    isSubscribedCalendar: true,
-                    notificationsRevampAvailable,
                 })
-            ).toEqual(notificationsRevampAvailable);
+            ).toEqual(!isCalendarDisabled);
         });
     });
 });

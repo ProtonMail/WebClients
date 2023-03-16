@@ -70,7 +70,6 @@ interface Props {
     getCalendarInfo: GetCalendarInfo;
     getCalendarEventRaw: GetCalendarEventRaw;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
-    personalEventsDeprecated: boolean;
 }
 const ExtraEvent = ({
     invitationOrError,
@@ -86,7 +85,6 @@ const ExtraEvent = ({
     getCalendarInfo,
     getCalendarEventRaw,
     getCanonicalEmailsMap,
-    personalEventsDeprecated,
 }: Props) => {
     const [model, setModel] = useState<InvitationModel>(() =>
         getInitialInvitationModel({
@@ -255,7 +253,6 @@ const ExtraEvent = ({
                     contactEmails,
                     ownAddresses,
                     overwrite: !!hasDecryptionError,
-                    personalEventsDeprecated,
                 });
                 const newInvitationApi = updatedInvitationApi || invitationApi;
                 const isOutdated =

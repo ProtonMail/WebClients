@@ -2,7 +2,6 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { FeatureCode } from '@proton/components/containers';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
@@ -25,7 +24,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 
 import { DynamicProgress } from '../../../components';
-import { useApi, useBeforeUnload, useFeature, useGetCalendarInfo } from '../../../hooks';
+import { useApi, useBeforeUnload, useGetCalendarInfo } from '../../../hooks';
 
 const getEventsWithoutDefaultNotifications = (events: VcalVeventComponent[]) => {
     return events.map((eventComponent) => ({ eventComponent, hasDefaultNotifications: false }));
@@ -39,7 +38,6 @@ interface Props {
 const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
     const getCalendarInfo = useGetCalendarInfo();
-    const personalEventsDeprecated = !!useFeature(FeatureCode.CalendarPersonalEventsDeprecated).feature?.Value;
 
     useBeforeUnload(c('Alert').t`By leaving now, some events may not be imported`);
 
@@ -93,7 +91,6 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     calendarKeys,
                     api: apiWithAbort,
                     signal,
-                    personalEventsDeprecated,
                     onProgress: handleImportProgress,
                 };
                 const { importedEvents } = await processWithJails(processData);
