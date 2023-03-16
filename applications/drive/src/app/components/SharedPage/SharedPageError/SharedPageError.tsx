@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button';
 import notFoundSvg from '@proton/styles/assets/img/illustrations/shared-page-not-found.svg';
 
+import { DRIVE_LANDING_PAGE } from '../../../constants/urls';
 import SharedPageLayout from '../Layout/SharedPageLayout';
-import { DRIVE_LANDING_PAGE } from '../constant';
 
 export default function SharedPageError() {
     return (
