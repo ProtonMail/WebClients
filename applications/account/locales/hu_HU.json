@@ -27,9 +27,6 @@
       "activate": [
         "aktiválás"
       ],
-      "Activate ${ Name }@pm.me": [
-        "${ Name }@pm.me aktiválása"
-      ],
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
       ],
@@ -4120,6 +4117,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } érvénytelen"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: teljes méretű kép"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: alacsony felbontású előnézet"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } lesz az alapértelmezett naptár."
       ],
@@ -5059,6 +5062,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus vagy Visionary előfizetés szükséges"
+      ],
+      "Preview failed to be loaded": [
+        "Az előnézetet nem sikerült betölteni"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Az ár tartalmaz minden vonatkozó, megújulás-alapú kedvezményt és a fiókjában mentett, le nem járt kupont."
@@ -7656,6 +7662,26 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7725,26 +7751,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8938,6 +8944,9 @@
       ],
       "Calendar updated": [
         "Naptár frissítve"
+      ],
+      "Canceling import": [
+        "Importálás megszakítása"
       ],
       "Catch-all address updated": [
         "Gyűjtő e-mail cím frissítve"

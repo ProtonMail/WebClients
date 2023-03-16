@@ -44,9 +44,6 @@
       "activate": [
         "activar"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Activar ${ Name }@pm.me"
-      ],
       "Activate organization key": [
         "Activar la clau d'organització"
       ],
@@ -2674,6 +2671,11 @@
         "${ allCategoriesExceptTheLastOne } i ${ lastCategory }"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "2FA"
+      ]
+    },
     "Error": {
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } és el vostre nom d'usuari. Per crear ${ Local }@${ Domain }, aneu a Preferències > Missatges i redacció > Domini curt (pm.me)."
@@ -3267,6 +3269,9 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "S'ha produït un error llegint el fitxer \"${ formattedFilename }\". Format de fitxer incorrecte."
+      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "S'ha produït un error carregant el vostre fitxer \"${ formattedFilename }\". La mida màxima del fitxer és de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -4683,6 +4688,9 @@
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Si actualment aquest domini rep correus electrònics, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per garantir una transició fluida."
       ],
+      "If this is due to an old password reset, you can stop the message from showing again": [
+        "Si això està relacionat amb un restabliment de la contrasenya antiga, podeu evitar que el missatge torni a aparèixer."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
@@ -4712,6 +4720,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si fas efectiu la baixada perdràs l'accés a les funcions de pagament de ${ VPN_APP_NAME }."
+      ],
+      "If you recently reset your password, you can use a data recovery method to unlock your data": [
+        "Si recentment heu restablert la vostra contrasenya, podeu utilitzar un mètode de recuperació de dades per desbloquejar les vostres dades."
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Si voleu conservar un registre SPF existent, només podeu afegir-hi ${ spf } després del ${ spfValue }. No creeu diversos registres SPF."
@@ -4793,6 +4804,9 @@
         "Invite sent",
         "Invites sent"
       ],
+      "It appears some of your data is encrypted and locked.": [
+        "Sembla que algunes de les vostres dades estan xifrades i bloquejades."
+      ],
       "it’s imperative": [
         "és obligatori"
       ],
@@ -4819,6 +4833,9 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "learn more about Sieve programming language": [
+        "obtenir més informació sobre el llenguatge de programació Sieve"
       ],
       "Left to Right": [
         "Esquerra a Dreta"
@@ -4970,6 +4987,9 @@
         "Afegiu l'adreça de correu per a l'usuari de la fila",
         "Afegiu l'adreça de correu per als usuaris de cada fila"
       ],
+      "Please contact the administrator of the organisation to manage the subscription.": [
+        "Us convidem a contactar amb l'administrador de la vostra organització per gestionar la vostra subscripció."
+      ],
       "Please fill out this field.": [
         "Empleneu aquest camp."
       ],
@@ -5029,6 +5049,9 @@
       ],
       "Recovery file downloaded": [
         "S'ha baixat el fitxer de recuperació"
+      ],
+      "Recovery files have been voided": [
+        "Els fitxers de recuperació s'han desfet."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu a menys que escolliu eliminar-la."
@@ -5249,6 +5272,9 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Per protegir la vostra connexió a internet, descarregueu i instal·leu l'aplicació de ${ VPN_APP_NAME } per al vostre dispositiu i connecteu a un servidor."
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "Perquè funcioni correctament, cada filtre ha de contenir almenys un nom i un script Sieve vàlids. Podeu ${ link }."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregeu el vostre compte amb crèdits que podeu utilitzar per subscriure-us a un nou pla o per renovar el pla actual. Obteniu un crèdit per cada ${ i18nCurrency } gastat."
       ],
@@ -5272,6 +5298,9 @@
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "El mode de doble contrasenya empra contrasenyes separades per accedir i desxifrar la bústia de correu. Això proporciona un petit benefici en seguretat en algunes situacions, però no obstant recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per canviar al mode de doble contrasenya, establiu en primer lloc una contrasenya d'accés i després una per a la bústia de correu."
+      ],
+      "Unable to verify recovery file signature. Please contact support.": [
+        "No es pot verificar la signatura del fitxer de recuperació. Us convidem a contactar amb el suport."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Malauradament no hi ha cap mètode de recuperació establert per a aquest compte."
@@ -5979,6 +6008,9 @@
       "Allow recovery by recovery phrase": [
         "Permet la recuperació amb la frase de recuperació"
       ],
+      "Allow recovery using a trusted device": [
+        "Permet la recuperació amb un dispositiu de confiança"
+      ],
       "Amount": [
         "Quantitat"
       ],
@@ -6101,6 +6133,9 @@
       ],
       "Conditions": [
         "Condicions"
+      ],
+      "Confirm link URLs": [
+        "Confirma els enllaços URL"
       ],
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
@@ -6775,6 +6810,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "Anuncis de productes de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Missatges de benvinguda de ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -7495,6 +7533,11 @@
         "Gestió d'equip"
       ]
     },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7504,11 +7547,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom per defecte."
-      ]
-    },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7614,6 +7652,12 @@
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } creat"
+      ],
+      "A disabled address cannot be default": [
+        "Una adreça desactivada no pot ser una adreça per defecte."
+      ],
+      "An external address cannot be default": [
+        "Una adreça externa no pot ser una adreça per defecte."
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "La clau amb empremta digital ${ fp } s'ha suprimit."
@@ -8117,6 +8161,9 @@
       ],
       "Verify with email": [
         "Verifica amb correu electrònic"
+      ],
+      "You can safely close this tab.": [
+        "Podeu tancar aquesta pestanya amb seguretat."
       ],
       "Your recovery email has been successfully verified.": [
         "El vostre correu electrònic de recuperació s'ha verificat."
@@ -9913,6 +9960,9 @@
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ${ VPN_APP_NAME }. En comptes d'això, obriu una incidència."
       ],
+      "Please add at least one recipient.": [
+        "Afegiu almenys un destinatari."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
       ],
@@ -9953,6 +10003,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Els canvis DNS poden trigar fins a un dia a actualitzar-se."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        "Aquesta clau ja no compleix els nostres estàndards de seguretat. Us suggerim que la marqueu com a obsoleta i que genereu una clau nova."
       ]
     },
     "Weekly recurring event, frequency": {
