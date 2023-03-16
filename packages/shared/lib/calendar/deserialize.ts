@@ -200,35 +200,9 @@ export const getSelfAddressData = ({
 };
 
 const readCalendarAlarms = (
-    {
-        PersonalEvents = [],
-        Notifications,
-        IsPersonalMigrated,
-        FullDay,
-    }: Pick<CalendarEvent, 'PersonalEvents' | 'Notifications' | 'IsPersonalMigrated' | 'FullDay'>,
+    { Notifications, FullDay }: Pick<CalendarEvent, 'PersonalEvents' | 'Notifications' | 'FullDay'>,
     calendarSettings: CalendarSettings
 ) => {
-    if (!IsPersonalMigrated) {
-        /**
-         * The API always returns an array with a single-valued object: PersonalEvents = [{ MemberID: 'vcal string' }]
-         *
-         * The reason for this complicated structure is that it was built with shared addresses in mind (where there
-         * would be several member IDs in the map). That is not happening any time soon.
-         * Also, we only have alarms in here, so the array contains a single card of type SIGNED.
-         *
-         * This structure will get deprecated soon. Because of that we're ignoring the signature in PersonalEvents.
-         */
-        const personalEvent = PersonalEvents[0]?.Data;
-        const alarmComponents = personalEvent
-            ? (parse(unwrap(personalEvent)) as VcalVeventComponent).components
-            : undefined;
-
-        return {
-            valarmComponents: alarmComponents || [],
-            hasDefaultNotifications: false,
-        };
-    }
-
     return {
         valarmComponents: fromApiNotifications({
             notifications: Notifications || null,
@@ -251,7 +225,6 @@ interface ReadCalendarEventArguments {
         | 'Attendees'
         | 'PersonalEvents'
         | 'Notifications'
-        | 'IsPersonalMigrated'
         | 'FullDay'
     >;
     publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
@@ -270,7 +243,6 @@ export const readCalendarEvent = async ({
         Attendees = [],
         PersonalEvents = [],
         Notifications,
-        IsPersonalMigrated,
         FullDay,
     },
     publicKeysMap = {},
@@ -305,7 +277,7 @@ export const readCalendarEvent = async ({
     }, {} as VcalVeventComponent);
 
     const { valarmComponents, hasDefaultNotifications } = readCalendarAlarms(
-        { PersonalEvents, Notifications, IsPersonalMigrated, FullDay },
+        { PersonalEvents, Notifications, FullDay },
         calendarSettings
     );
     const veventAttendees = decryptedAttendeesEvents.reduce<VcalAttendeeProperty[]>((acc, event) => {

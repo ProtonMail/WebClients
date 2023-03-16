@@ -85,7 +85,6 @@ const transformToExternal = (data, publicAddressKey, sharedSessionKey, calendarS
             AttendeesEvents: withAuthor(data.AttendeesEventContent, 'me'),
             Attendees: data.Attendees,
             Notifications: data.Notifications,
-            IsPersonalMigrated: true,
             FullDay: +isAllDay,
         },
         publicKeysMap: {
@@ -104,82 +103,7 @@ describe('calendar encryption', () => {
     beforeAll(() => initRandomMock());
     afterAll(() => disableRandomMock());
 
-    it('should encrypt and sign calendar events (legacy personal events)', async () => {
-        const dummyProdId = 'Proton Calendar';
-        setVcalProdId(dummyProdId);
-        const calendarKey = await CryptoProxy.importPrivateKey({
-            armoredKey: DecryptableKey.PrivateKey,
-            passphrase: '123',
-        });
-        const addressKey = await CryptoProxy.importPrivateKey({ armoredKey: DecryptableKey2, passphrase: '123' });
-        const data = await createCalendarEvent({
-            eventComponent: veventComponent,
-            privateKey: addressKey,
-            publicKey: calendarKey,
-            isCreateEvent: true,
-            isSwitchCalendar: false,
-            personalEventsDeprecated: false,
-            hasDefaultNotifications: false,
-        });
-        expect(data).toEqual({
-            SharedKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAh5aMHBZCvQYA9q2Gm4j5LJYj0N/ETwHe/+Icmt09yl8w81ByP+wHwvShTNdKZNv7ziSuGkYloQ9Y2hReRQR0Vdacz4LtBa2T3H17aBbI/rBs',
-            SharedEventContent: [
-                {
-                    Type: 2,
-                    Data: wrap(
-                        'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nDTSTART:20191211T121212Z\r\nDTEND:20191212T121212Z\r\nEND:VEVENT',
-                        dummyProdId
-                    ),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/),
-                },
-                {
-                    Type: 3,
-                    // the following check is just to ensure some stability in the process generating the signatures
-                    // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sADAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
-                },
-            ],
-            CalendarKeyPacket:
-                'wV4DatuD4HBmK9ESAQdAh5aMHBZCvQYA9q2Gm4j5LJYj0N/ETwHe/+Icmt09yl8w81ByP+wHwvShTNdKZNv7ziSuGkYloQ9Y2hReRQR0Vdacz4LtBa2T3H17aBbI/rBs',
-            CalendarEventContent: [
-                {
-                    Type: 3,
-                    // the following check is just to ensure some stability in the process generating the signatures
-                    // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sABAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
-                },
-            ],
-            PersonalEventContent: {
-                Type: 2,
-                Data: wrap(
-                    'BEGIN:VEVENT\r\nUID:123\r\nDTSTAMP:20191211T121212Z\r\nBEGIN:VALARM\r\nACTION:DISPLAY\r\nTRIGGER:-PT15H\r\nEND:VALARM\r\nEND:VEVENT',
-                    dummyProdId
-                ),
-                Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
-            },
-            Notifications: [{ Type: 1, Trigger: '-PT15H' }],
-            AttendeesEventContent: [
-                {
-                    Type: 3,
-                    // the following check is just to ensure some stability in the process generating the signatures
-                    // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sE8AfKRArUuTJnXofqQYdEjeY\+U6lh.*/g),
-                    Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
-                },
-            ],
-            Attendees: [
-                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
-                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE },
-                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
-            ],
-        });
-        setVcalProdId('');
-    });
-
-    it('should encrypt and sign calendar events (deprecated personal events)', async () => {
+    it('should encrypt and sign calendar events', async () => {
         const dummyProdId = 'Proton Calendar';
         setVcalProdId(dummyProdId);
         const calendarKey = await CryptoProxy.importPrivateKey({
@@ -196,7 +120,6 @@ describe('calendar encryption', () => {
                 publicKey: calendarKey,
                 isCreateEvent: true,
                 isSwitchCalendar: false,
-                personalEventsDeprecated: true,
                 hasDefaultNotifications: false,
             })
         ).toEqual({
@@ -255,7 +178,6 @@ describe('calendar encryption', () => {
                 publicKey: calendarKey,
                 isCreateEvent: true,
                 isSwitchCalendar: false,
-                personalEventsDeprecated: true,
                 hasDefaultNotifications: true,
             })
         ).toEqual({
@@ -325,7 +247,6 @@ describe('calendar encryption', () => {
             publicKey,
             isCreateEvent: true,
             isSwitchCalendar: false,
-            personalEventsDeprecated: true,
             hasDefaultNotifications: false,
         });
         const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({

@@ -66,7 +66,7 @@ const getDecryptedEvent = ({
 }): Promise<DecryptedEventTupleResult> => {
     return Promise.all([
         getCalendarEventRaw(calendarEvent),
-        pick(calendarEvent, ['Permissions', 'IsOrganizer', 'IsProtonProtonInvite', 'IsPersonalMigrated']),
+        pick(calendarEvent, ['Permissions', 'IsOrganizer', 'IsProtonProtonInvite']),
     ]);
 };
 

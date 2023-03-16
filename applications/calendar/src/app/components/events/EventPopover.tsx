@@ -9,12 +9,10 @@ import {
     AppLink,
     Badge,
     CalendarInviteButtons,
-    FeatureCode,
     Icon,
     Loader,
     ReloadSpinner,
     Tooltip,
-    useFeature,
     useLoading,
     useReadCalendarBootstrap,
 } from '@proton/components';
@@ -91,7 +89,6 @@ const EventPopover = ({
 }: Props) => {
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
 
-    const notificationsRevampAvailable = !!useFeature(FeatureCode.CalendarNotificationsRevampAvailable).feature?.Value;
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
     const readCalendarBootstrap = useReadCalendarBootstrap();
@@ -147,7 +144,7 @@ const EventPopover = ({
                   selfAddress: model.selfAddress,
                   selfAttendeeIndex: model.selfAttendeeIndex,
               };
-        withLoadingDelete(onDelete(inviteActions));
+        return withLoadingDelete(onDelete(inviteActions));
     };
 
     const handleChangePartstat = (partstat: ICAL_ATTENDEE_STATUS) => {
@@ -183,7 +180,7 @@ const EventPopover = ({
     const reloadText = c('Reload event button tooltip').t`Reload event`;
     const viewText = c('View event button tooltip').t`Open in a new tab`;
 
-    const editButton = getCanEditEvent({ isCalendarDisabled, isSubscribedCalendar, notificationsRevampAvailable }) && (
+    const editButton = getCanEditEvent({ isCalendarDisabled }) && (
         <Tooltip title={editText}>
             <ButtonLike
                 data-test-id="event-popover:edit"

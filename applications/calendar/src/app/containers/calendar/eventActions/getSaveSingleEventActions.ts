@@ -40,7 +40,6 @@ interface SaveEventHelperArguments {
     oldEditEventData?: EventOldData;
     newEditEventData: EventNewData;
     hasDefaultNotifications: boolean;
-    personalEventsDeprecated: boolean;
     selfAddress?: Address;
     canEditOnlyNotifications: boolean;
     isAttendee: boolean;
@@ -70,7 +69,6 @@ const getSaveSingleEventActions = async ({
         veventComponent: newVeventComponent,
     },
     hasDefaultNotifications,
-    personalEventsDeprecated,
     selfAddress,
     canEditOnlyNotifications,
     isAttendee,
@@ -147,7 +145,6 @@ const getSaveSingleEventActions = async ({
             veventComponent: updatedVeventComponent,
             calendarEvent: oldEvent,
             hasDefaultNotifications,
-            personalEventsDeprecated,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             isAttendee,
         });
@@ -245,7 +242,6 @@ const getSaveSingleEventActions = async ({
             veventComponent: updatedVeventComponent,
             calendarEvent: oldEvent,
             hasDefaultNotifications,
-            personalEventsDeprecated,
             isAttendee,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             addedAttendeesPublicKeysMap,
@@ -300,7 +296,6 @@ const getSaveSingleEventActions = async ({
         const createIntermediateOperation = getCreateSyncOperation({
             veventComponent: omit(updatedVeventComponent, ['attendee']),
             hasDefaultNotifications,
-            personalEventsDeprecated,
         });
         const syncIntermediateActions = [
             {
@@ -368,14 +363,12 @@ const getSaveSingleEventActions = async ({
               veventComponent: updatedVeventComponent,
               calendarEvent: intermediateEvent,
               hasDefaultNotifications,
-              personalEventsDeprecated,
               isAttendee,
               addedAttendeesPublicKeysMap,
           })
         : getCreateSyncOperation({
               veventComponent: updatedVeventComponent,
               hasDefaultNotifications,
-              personalEventsDeprecated,
               addedAttendeesPublicKeysMap,
           });
     const multiSyncActions = [

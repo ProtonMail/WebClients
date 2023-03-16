@@ -19,7 +19,7 @@ export interface RecurringCache {
 
 export type DecryptedEventTupleResult = [
     DecryptedVeventResult,
-    Pick<EventInternalProperties, 'Permissions' | 'IsProtonProtonInvite' | 'IsPersonalMigrated'>
+    Pick<EventInternalProperties, 'Permissions' | 'IsProtonProtonInvite'>
 ];
 export type EventReadResult = {
     result?: DecryptedEventTupleResult;
