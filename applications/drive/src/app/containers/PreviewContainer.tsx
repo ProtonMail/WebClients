@@ -3,7 +3,7 @@ import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { FilePreview, NavigationControl, useModals } from '@proton/components';
+import { FilePreview, NavigationControl, useModalState } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
@@ -32,7 +32,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const { shareId, linkId } = match.params;
     const { navigateToLink, navigateToSharedURLs, navigateToTrash, navigateToRoot, navigateToSearch } = useNavigate();
     const { setFolder } = useActiveShare();
-    const { createModal, removeModal } = useModals();
+    const [detailsModalProps, handleSetDetailsModalOpen, detailsModalRender] = useModalState();
+    const [shareLinkModalProps, handleShareLinkModalOpen, shareLinkModalRender] = useModalState();
     const { query: lastQuery } = useSearchResults();
     const { saveFile } = useActions();
 
@@ -105,24 +106,12 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         [shareId]
     );
 
-    // Remember modal ID created by preview and close it together
-    // with closing the preview itself.
-    const modalId = useRef<string>();
     useEffect(() => {
         return () => {
-            if (modalId.current) {
-                removeModal(modalId.current);
-            }
+            handleSetDetailsModalOpen(false);
+            handleShareLinkModalOpen(false);
         };
     }, []);
-
-    const openDetails = useCallback(() => {
-        createModal(<DetailsModal shareId={shareId} linkId={linkId} />);
-    }, [shareId, linkId]);
-
-    const openShareOptions = useCallback(() => {
-        createModal(<ShareLinkModal shareId={shareId} linkId={linkId} />);
-    }, [shareId, linkId]);
 
     const signatureStatus = useMemo(() => {
         if (!link) {
@@ -163,36 +152,42 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const rootRef = useRef<HTMLDivElement>(null);
 
     return (
-        <FilePreview
-            isMetaLoading={isLinkLoading}
-            isLoading={isContentLoading}
-            error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
-            contents={contents}
-            fileName={link?.name}
-            mimeType={link?.mimeType}
-            sharedStatus={getSharedStatus(link)}
-            fileSize={link?.size}
-            onClose={navigateToParent}
-            onDownload={downloadFile}
-            onSave={isEditEnabled ? handleSaveFile : undefined}
-            onDetail={openDetails}
-            onShare={isLinkLoading || !!link?.trashed ? undefined : openShareOptions}
-            imgThumbnailUrl={link?.cachedThumbnailUrl}
-            ref={rootRef}
-            navigationControls={
-                link &&
-                navigation && (
-                    <NavigationControl
-                        current={navigation.current}
-                        total={navigation.total}
-                        rootRef={rootRef}
-                        onPrev={() => onOpen?.(navigation.prevLinkId)}
-                        onNext={() => onOpen?.(navigation.nextLinkId)}
-                    />
-                )
-            }
-            signatureStatus={signatureStatus}
-            signatureConfirmation={signatureConfirmation}
-        />
+        <>
+            <FilePreview
+                isMetaLoading={isLinkLoading}
+                isLoading={isContentLoading}
+                error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
+                contents={contents}
+                fileName={link?.name}
+                mimeType={link?.mimeType}
+                sharedStatus={getSharedStatus(link)}
+                fileSize={link?.size}
+                onClose={navigateToParent}
+                onDownload={downloadFile}
+                onSave={isEditEnabled ? handleSaveFile : undefined}
+                onDetail={() => handleSetDetailsModalOpen(true)}
+                onShare={isLinkLoading || !!link?.trashed ? undefined : () => handleShareLinkModalOpen(true)}
+                imgThumbnailUrl={link?.cachedThumbnailUrl}
+                ref={rootRef}
+                navigationControls={
+                    link &&
+                    navigation && (
+                        <NavigationControl
+                            current={navigation.current}
+                            total={navigation.total}
+                            rootRef={rootRef}
+                            onPrev={() => onOpen?.(navigation.prevLinkId)}
+                            onNext={() => onOpen?.(navigation.nextLinkId)}
+                        />
+                    )
+                }
+                signatureStatus={signatureStatus}
+                signatureConfirmation={signatureConfirmation}
+            />
+            {detailsModalRender ? <DetailsModal {...detailsModalProps} shareId={shareId} linkId={linkId} /> : null}
+            {shareLinkModalRender ? (
+                <ShareLinkModal {...shareLinkModalProps} shareId={shareId} linkId={linkId} />
+            ) : null}
+        </>
     );
 }
