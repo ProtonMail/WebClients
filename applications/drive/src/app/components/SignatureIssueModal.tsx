@@ -2,7 +2,17 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, FormModal, Radio, Row } from '@proton/components';
+import { Button } from '@proton/atoms/Button';
+import {
+    Checkbox,
+    Form,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Radio,
+    Row,
+} from '@proton/components';
 
 import { SignatureIssues } from '../store';
 import { TransferSignatureIssueStrategy } from '../store';
@@ -33,6 +43,11 @@ export default function SignatureIssueModal({
     const [strategy, setStrategy] = useState(TransferSignatureIssueStrategy.Abort);
     const [applyAll, setApplyAll] = useState(false);
 
+    const handleClose = () => {
+        cancelAll();
+        onClose?.();
+    };
+
     const downloadFileName = (
         <strong className="text-break" key="downloadFileName">
             {downloadName}
@@ -40,68 +55,74 @@ export default function SignatureIssueModal({
     );
 
     return (
-        <FormModal
-            onClose={() => {
-                cancelAll();
-                onClose?.();
-            }}
+        <ModalTwo
+            as={Form}
+            onClose={handleClose}
             onSubmit={() => {
                 apply(strategy, applyAll);
                 onClose?.();
             }}
-            title={isFile ? c('Title').t`Download unverified file?` : c('Title').t`Download unverified folder?`}
-            close={c('Action').t`Cancel all downloads`}
-            submit={c('Action').t`Continue`}
-            small
+            size="small"
             {...rest}
         >
-            <p>
-                <SignatureAlertBody
-                    signatureIssues={signatureIssues}
-                    signatureAddress={signatureAddress}
-                    isFile={isFile}
-                    name={name}
-                />
-            </p>
-            <p>{c('Info').t`What do you want to do?`}</p>
-            <Row>
-                <Radio
-                    id={TransferSignatureIssueStrategy.Abort}
-                    checked={strategy === TransferSignatureIssueStrategy.Abort}
-                    onChange={() => setStrategy(TransferSignatureIssueStrategy.Abort)}
-                    name="strategy"
-                    className="inline-flex flex-nowrap"
-                >
-                    <div>
-                        <strong>{c('Label').t`Cancel download`}</strong>
-                        <br />
-                        <span className="color-weak">
-                            {c('Info').jt`Download of ${downloadFileName} will be aborted`}
-                        </span>
-                    </div>
-                </Radio>
-            </Row>
-            <Row>
-                <Radio
-                    id={TransferSignatureIssueStrategy.Continue}
-                    checked={strategy === TransferSignatureIssueStrategy.Continue}
-                    onChange={() => setStrategy(TransferSignatureIssueStrategy.Continue)}
-                    name="strategy"
-                    className="inline-flex flex-nowrap"
-                >
-                    <div>
-                        <strong>{c('Label').t`Download anyway`}</strong>
-                        <br />
-                        <span className="color-weak">{c('Info').t`Signature check will be ignored`}</span>
-                    </div>
-                </Radio>
-            </Row>
-            <hr />
-            <Row>
-                <Checkbox onChange={() => setApplyAll((value) => !value)}>
-                    {c('Label').t`Apply to all unverified items`}
-                </Checkbox>
-            </Row>
-        </FormModal>
+            <ModalTwoHeader
+                title={isFile ? c('Title').t`Download unverified file?` : c('Title').t`Download unverified folder?`}
+            />
+            <ModalTwoContent>
+                <p>
+                    <SignatureAlertBody
+                        signatureIssues={signatureIssues}
+                        signatureAddress={signatureAddress}
+                        isFile={isFile}
+                        name={name}
+                    />
+                </p>
+                <p>{c('Info').t`What do you want to do?`}</p>
+                <Row>
+                    <Radio
+                        id={TransferSignatureIssueStrategy.Abort}
+                        checked={strategy === TransferSignatureIssueStrategy.Abort}
+                        onChange={() => setStrategy(TransferSignatureIssueStrategy.Abort)}
+                        name="strategy"
+                        className="inline-flex flex-nowrap"
+                    >
+                        <div>
+                            <strong>{c('Label').t`Cancel download`}</strong>
+                            <br />
+                            <span className="color-weak">
+                                {c('Info').jt`Download of ${downloadFileName} will be aborted`}
+                            </span>
+                        </div>
+                    </Radio>
+                </Row>
+                <Row>
+                    <Radio
+                        id={TransferSignatureIssueStrategy.Continue}
+                        checked={strategy === TransferSignatureIssueStrategy.Continue}
+                        onChange={() => setStrategy(TransferSignatureIssueStrategy.Continue)}
+                        name="strategy"
+                        className="inline-flex flex-nowrap"
+                    >
+                        <div>
+                            <strong>{c('Label').t`Download anyway`}</strong>
+                            <br />
+                            <span className="color-weak">{c('Info').t`Signature check will be ignored`}</span>
+                        </div>
+                    </Radio>
+                </Row>
+                <hr />
+                <Row>
+                    <Checkbox onChange={() => setApplyAll((value) => !value)}>
+                        {c('Label').t`Apply to all unverified items`}
+                    </Checkbox>
+                </Row>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={handleClose}>{c('Action').t`Cancel all downloads`}</Button>
+                <Button type="submit" color="norm">
+                    {c('Action').t`Continue`}
+                </Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 }
