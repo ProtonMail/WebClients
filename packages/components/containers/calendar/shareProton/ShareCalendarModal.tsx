@@ -6,6 +6,7 @@ import { Button, Href } from '@proton/atoms';
 import InputField from '@proton/components/components/v2/field/InputField';
 import {
     useApi,
+    useGetAddressKeys,
     useGetDecryptedPassphraseAndCalendarKeys,
     useGetEncryptionPreferences,
     useLoading,
@@ -26,6 +27,7 @@ import { Address, Recipient, RequireSome, SimpleMap } from '@proton/shared/lib/i
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -189,6 +191,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     const { createNotification } = useNotifications();
     const { contactEmails, contactGroups, contactEmailsMap, groupsWithContactsMap } = useContactEmailsCache();
     const getEncryptionPreferences = useGetEncryptionPreferences();
+    const getAddressKeys = useGetAddressKeys();
     const getDecryptedPassphraseAndCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
 
@@ -309,23 +312,34 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
             {}
         );
 
-        const { decryptedPassphraseSessionKey: sessionKey } = await getDecryptedPassphraseAndCalendarKeys(calendar.ID);
-        const keyPacketsMap = await encryptPassphraseSessionKey({
-            sessionKey,
-            memberPublicKeys,
-        });
-
         const addressID = addresses.find(({ Email }) => Email === calendar.Email)?.ID;
 
         if (!addressID) {
             throw new Error('Could not find address ID for calendar owner');
         }
 
+        const [{ decryptedPassphraseSessionKey: sessionKey }, addressKeys] = await Promise.all([
+            getDecryptedPassphraseAndCalendarKeys(calendar.ID),
+            getAddressKeys(addressID),
+        ]);
+        const primaryAddressKey = getPrimaryKey(addressKeys)?.privateKey;
+
+        if (!primaryAddressKey) {
+            throw new Error('Could not find primary address key for calendar owner');
+        }
+
+        const { armoredSignature, encryptedSessionKeyMap } = await encryptPassphraseSessionKey({
+            sessionKey,
+            memberPublicKeys,
+            signingKey: primaryAddressKey,
+        });
+
         return api<{ Code: number; Invitations: CalendarMemberInvitation[] }>(
             addMember(calendar.ID, {
                 AddressID: addressID,
+                Signature: armoredSignature,
                 Members: Object.keys(memberPublicKeys).map((email) => {
-                    const keyPacket = keyPacketsMap[email];
+                    const keyPacket = encryptedSessionKeyMap[email];
 
                     if (!keyPacket) {
                         throw new Error('No passphrase key packet for member');
