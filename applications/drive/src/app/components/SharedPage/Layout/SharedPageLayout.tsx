@@ -11,7 +11,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import clsx from '@proton/utils/clsx';
 
-import { DRIVE_LANDING_PAGE } from '../constant';
+import { DRIVE_PRICING_PAGE } from '../../../constants/urls';
 
 import './Layout.scss';
 
@@ -47,7 +47,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                                 {c('Action').t`Go to Drive`}
                             </ButtonLike>
                         ) : (
-                            <ButtonLike color="norm" shape="outline" as="a" href={DRIVE_LANDING_PAGE} target="_blank">
+                            <ButtonLike color="norm" shape="outline" as="a" href={DRIVE_PRICING_PAGE} target="_blank">
                                 {c('Action').t`Create account`}
                             </ButtonLike>
                         )}
