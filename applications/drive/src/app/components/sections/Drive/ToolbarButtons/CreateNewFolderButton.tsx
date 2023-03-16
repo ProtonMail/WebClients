@@ -2,18 +2,21 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import useOpenModal from '../../../useOpenModal';
+import { useCreateFolderModal } from '../../../CreateFolderModal';
 
 const CreateNewFolderButton = () => {
-    const { openCreateFolder } = useOpenModal();
+    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
 
     return (
-        <ToolbarButton
-            icon={<Icon name="folder-plus" />}
-            title={c('Action').t`Create new folder`}
-            onClick={openCreateFolder}
-            data-testid="toolbar-new-folder"
-        />
+        <>
+            <ToolbarButton
+                icon={<Icon name="folder-plus" />}
+                title={c('Action').t`Create new folder`}
+                onClick={() => showCreateFolderModal()}
+                data-testid="toolbar-new-folder"
+            />
+            {createFolderModal}
+        </>
     );
 };
 

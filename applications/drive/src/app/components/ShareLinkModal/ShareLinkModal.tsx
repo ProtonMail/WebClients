@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { ModalTwo, useLoading, useNotifications } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { ShareURL, SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
@@ -277,3 +278,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
 }
 
 export default ShareLinkModal;
+export const useLinkSharingModal = () => {
+    return useModalTwo<Props, void>(ShareLinkModal);
+};

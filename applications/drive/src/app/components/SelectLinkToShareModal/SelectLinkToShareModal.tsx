@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { ModalTwo, useLoading } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 import { DecryptedLink, useTreeForModals } from '../../store';
 import ModalContentLoader from '../ModalContentLoader';
-import useOpenModal from '../useOpenModal';
+import { useLinkSharingModal } from '../ShareLinkModal/ShareLinkModal';
 import { ModalContent } from './ModalContent';
 
 interface Props {
@@ -20,7 +21,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
 
     const [loading, withLoading] = useLoading();
     const [selectedFile, setSelectedFile] = useState<DecryptedLink>();
-    const { openLinkSharing } = useOpenModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const onSelect = async (link: DecryptedLink) => {
         if (!loading) {
@@ -30,7 +31,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
 
     const handleSubmit = async () => {
         if (selectedFile) {
-            openLinkSharing(shareId, selectedFile.linkId);
+            void showLinkSharingModal({ shareId, linkId: selectedFile.linkId });
             onClose?.();
         }
     };
@@ -38,33 +39,39 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
     const isSharingDisabled = !selectedFile || !selectedFile.parentLinkId;
 
     return (
-        <ModalTwo
-            open={open}
-            onReset={onClose}
-            onClose={onClose}
-            onSubmit={(e: any) => {
-                e.preventDefault();
-                withLoading(handleSubmit()).catch(console.error);
-            }}
-            size="large"
-            as="form"
-        >
-            {isTreeLoaded ? (
-                <ModalContent
-                    isLoading={loading}
-                    isTreeLoaded={isTreeLoaded}
-                    rootItems={rootItems}
-                    selectedLinkId={selectedFile?.linkId}
-                    isSharingDisabled={isSharingDisabled}
-                    actionText={selectedFile?.shareUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
-                    toggleExpand={toggleExpand}
-                    onSelect={onSelect}
-                />
-            ) : (
-                <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
-            )}
-        </ModalTwo>
+        <>
+            <ModalTwo
+                open={open}
+                onReset={onClose}
+                onClose={onClose}
+                onSubmit={(e: any) => {
+                    e.preventDefault();
+                    withLoading(handleSubmit()).catch(console.error);
+                }}
+                size="large"
+                as="form"
+            >
+                {isTreeLoaded ? (
+                    <ModalContent
+                        isLoading={loading}
+                        isTreeLoaded={isTreeLoaded}
+                        rootItems={rootItems}
+                        selectedLinkId={selectedFile?.linkId}
+                        isSharingDisabled={isSharingDisabled}
+                        actionText={selectedFile?.shareUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
+                        toggleExpand={toggleExpand}
+                        onSelect={onSelect}
+                    />
+                ) : (
+                    <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
+                )}
+            </ModalTwo>
+            {linkSharingModal}
+        </>
     );
 };
 
 export default SelectedFileToShareModal;
+export const useFileSharingModal = () => {
+    return useModalTwo<Props, void>(SelectedFileToShareModal);
+};
