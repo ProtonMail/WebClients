@@ -1,9 +1,10 @@
 import { ComponentType } from 'react';
 
-import { CacheProvider, NotificationsProvider } from '@proton/components/containers';
 import ApiContext from '@proton/components/containers/api/apiContext';
+import { CacheProvider } from '@proton/components/containers/cache';
 import EventManagerContext from '@proton/components/containers/eventManager/context';
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
+import { NotificationsProvider } from '@proton/components/containers/notifications';
 
 import { apiMock } from './api';
 import { mockCache } from './cache';
