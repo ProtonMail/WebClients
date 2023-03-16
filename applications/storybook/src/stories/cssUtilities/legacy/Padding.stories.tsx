@@ -1,18 +1,8 @@
 import { useState } from 'react';
 
-import {
-    Checkbox,
-    Label,
-    Option,
-    SelectTwo,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableRow,
-} from '@proton/components';
+import { Checkbox, Label, Option, SelectTwo } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
+import { getTitle } from '../../../helpers/title';
 import mdx from './Padding.mdx';
 
 export default {
@@ -24,109 +14,18 @@ export default {
     },
 };
 
-const paddingSizes = [
-    {
-        class: '0',
-        rem: '0',
-        px: '0',
-    },
-    {
-        class: '0-5',
-        rem: '0.125rem',
-        px: '2px',
-    },
-    {
-        class: '1',
-        rem: '0.25rem',
-        px: '4px',
-    },
-    {
-        class: '2',
-        rem: '0.5rem',
-        px: '8px',
-    },
-    {
-        class: '3',
-        rem: '0.75rem',
-        px: '12px',
-    },
-    {
-        class: '4',
-        rem: '1rem',
-        px: '16px',
-    },
-    {
-        class: '5',
-        rem: '1.25rem',
-        px: '20px',
-    },
-    {
-        class: '6',
-        rem: '1.5rem',
-        px: '24px',
-    },
-    {
-        class: '8',
-        rem: '2rem',
-        px: '32px',
-    },
-    {
-        class: '10',
-        rem: '2.5rem',
-        px: '40px',
-    },
-    {
-        class: '11',
-        rem: '2.75rem',
-        px: '44px',
-    },
-    {
-        class: '12',
-        rem: '3rem',
-        px: '48px',
-    },
-    {
-        class: '14',
-        rem: '3.5rem',
-        px: '56px',
-    },
-];
-
-export const PaddingsTable = () => {
-    return (
-        <Table className="color-norm">
-            <TableHeader>
-                <TableRow>
-                    <TableCell type="header">Name</TableCell>
-                    <TableCell type="header">REM value</TableCell>
-                    <TableCell type="header">PX value</TableCell>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {paddingSizes.map((item) => (
-                    <TableRow key={item.class}>
-                        <TableCell>
-                            <code>p-{item.class}</code>
-                        </TableCell>
-                        <TableCell>{item.rem}</TableCell>
-                        <TableCell>{item.px}</TableCell>
-                    </TableRow>
-                ))}
-            </TableBody>
-        </Table>
-    );
-};
+const paddingSize = ['0', '0-15', '0-25', '0-3', '0-5', '0-75', '1', '1-25', '1-5', '1-75', '2', '2-25', '3', '4'];
 
 const demoItemClasses = 'flex flex-align-items-center flex-justify-center bg-primary user-select';
 
 export const Padding = () => {
     return (
         <div className="border rounded w100 relative flex flex-gap-0-5 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between">
-            {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
-                    <div className={`p-${size.class}`} style={{ backgroundColor: 'rgba(0,0,0,.2)' }}>
+            {paddingSize.map((size) => (
+                <div key={size} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
+                    <div className={`p${size}`} style={{ backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ width: '3rem', height: '2rem' }}>
-                            <span className="text-2xs">p-{size.class}</span>
+                            <span className="text-2xs">p{size}</span>
                         </div>
                     </div>
                 </div>
@@ -138,11 +37,11 @@ export const Padding = () => {
 export const PaddingTop = () => {
     return (
         <div className="border rounded w100 relative flex flex-gap-0-5 flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs">
-            {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
-                    <div className={`pt-${size.class}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
+            {paddingSize.map((size) => (
+                <div key={size} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
+                    <div className={`pt${size}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ height: '2rem' }}>
-                            pt-{size.class}
+                            pt{size}
                         </div>
                     </div>
                 </div>
@@ -154,11 +53,11 @@ export const PaddingTop = () => {
 export const PaddingBottom = () => {
     return (
         <div className="border rounded w100 relative flex flex-gap-0-5 flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs">
-            {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
-                    <div className={`pb-${size.class}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
+            {paddingSize.map((size) => (
+                <div key={size} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
+                    <div className={`pb${size}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ height: '2rem' }}>
-                            pb-{size.class}
+                            pb{size}
                         </div>
                     </div>
                 </div>
@@ -170,11 +69,11 @@ export const PaddingBottom = () => {
 export const PaddingY = () => {
     return (
         <div className="border rounded w100 relative flex flex-gap-0-5 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
-            {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
-                    <div className={`py-${size.class}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
+            {paddingSize.map((size) => (
+                <div key={size} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
+                    <div className={`py${size}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ height: '2rem' }}>
-                            py-{size.class}
+                            py{size}
                         </div>
                     </div>
                 </div>
@@ -186,11 +85,11 @@ export const PaddingY = () => {
 export const PaddingLeft = () => {
     return (
         <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-start flex-gap-0-5 text-2xs">
-            {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
-                    <div className={`pl-${size.class}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
+            {paddingSize.map((size) => (
+                <div key={size} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
+                    <div className={`pl${size}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ width: '3rem', height: '2rem' }}>
-                            pl-{size.class}
+                            pl{size}
                         </div>
                     </div>
                 </div>
@@ -202,11 +101,11 @@ export const PaddingLeft = () => {
 export const PaddingRight = () => {
     return (
         <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-end flex-gap-0-5 text-2xs">
-            {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
-                    <div className={`pr-${size.class}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
+            {paddingSize.map((size) => (
+                <div key={size} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
+                    <div className={`pr${size}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ width: '3rem', height: '2rem' }}>
-                            pr-{size.class}
+                            pr{size}
                         </div>
                     </div>
                 </div>
@@ -218,43 +117,17 @@ export const PaddingRight = () => {
 export const PaddingX = () => {
     return (
         <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-center flex-gap-0-5 text-2xs">
-            {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
-                    <div className={`px-${size.class}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
+            {paddingSize.map((size) => (
+                <div key={size} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
+                    <div className={`px${size}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ width: '3rem', height: '2rem' }}>
-                            px-{size.class}
+                            px{size}
                         </div>
                     </div>
                 </div>
             ))}
         </div>
     );
-};
-
-export const Responsive = () => {
-    return (
-        <div className="border rounded overflow-hidden w100 relative flex text-2xs">
-            <div className="bg-primary rounded-sm">
-                <div
-                    className={`${demoItemClasses} pl-4 sm:pl-8 md:pl-10 lg:pl-12 xl:pl-14`}
-                    style={{ backgroundColor: 'rgba(0,0,0,.2)' }}
-                >
-                    <div
-                        className="flex flex-align-items-center flex-justify-center bg-primary"
-                        style={{ height: '3rem', width: '3rem' }}
-                    ></div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-Responsive.parameters = {
-    docs: {
-        iframeHeight: '100px',
-        inlineStories: false,
-    },
-    layout: 'fullscreen',
 };
 
 const paddings = [
@@ -266,17 +139,17 @@ const paddings = [
     {
         id: 'pt',
         checked: true,
-        value: '4',
+        value: '0-5',
     },
     {
         id: 'pr',
         checked: true,
-        value: '8',
+        value: '2',
     },
     {
         id: 'pb',
         checked: true,
-        value: '4',
+        value: '1-5',
     },
     {
         id: 'pl',
@@ -323,7 +196,7 @@ export const Sandbox = () => {
 
         items.forEach((item) => {
             if (item.checked) {
-                classes.push(`${item.id}-${item.value}`);
+                classes.push(`${item.id}${item.value}`);
             }
         });
 
@@ -362,8 +235,8 @@ export const Sandbox = () => {
                             </span>
 
                             <SelectTwo value={value} onValue={(newValue) => handleSelectChange(id, newValue)}>
-                                {paddingSizes.map((size) => (
-                                    <Option key={size.class} title={size.class} value={size.class} />
+                                {paddingSize.map((size) => (
+                                    <Option key={size} title={size} value={size} />
                                 ))}
                             </SelectTwo>
                         </Label>
