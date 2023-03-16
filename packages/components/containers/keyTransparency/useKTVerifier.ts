@@ -25,13 +25,13 @@ interface KTBlobSelf {
  * and therefore self audit could run and the normal flow of verification can be performed
  */
 const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
-    const { get } = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
+    const { get } = useFeature<KT_FF | undefined>(FeatureCode.KeyTransparencyWEB);
     const { getKTState } = useKeyTransparencyContext();
     const { selfAuditPromise, ktLSAPI } = getKTState().current;
     const ktBlobValues = useRef<KTBlobSelf[]>([]);
 
     const keyTransparencyVerify: KeyTransparencyVerify = async (address, signedKeyList, publicKeys) => {
-        const feature = await get().then((result) => result.Value);
+        const feature = await get().then((result) => result?.Value);
         if (!(await isKTActive(feature))) {
             return;
         }
