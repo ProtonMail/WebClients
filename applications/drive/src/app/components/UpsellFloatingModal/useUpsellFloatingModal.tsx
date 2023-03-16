@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useActiveBreakpoint } from '@proton/components/hooks';
+import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUser';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
 
 import { useDownload } from '../../store';
 import UpsellFloatingModal from './UpsellFloatingModal';
@@ -14,15 +16,20 @@ const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unk
     const [renderUpsellFloatingModal, showUpsellFloatingModal] = useModalTwo<ModalProps, unknown>(UpsellFloatingModal);
     const { isNarrow } = useActiveBreakpoint();
     const { hasDownloads } = useDownload();
+    // If user is proton user we disable upsell auto-show
+    const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
 
     useEffect(() => {
+        if (isProtonUser) {
+            return;
+        }
         if (hasDownloads) {
             void showUpsellFloatingModal({ onlyOnce: true });
         }
-    }, [hasDownloads]);
+    }, [hasDownloads, isProtonUser]);
 
     useEffect(() => {
-        if (isNarrow) {
+        if (isNarrow || isProtonUser) {
             return;
         }
         const timeout = setTimeout(() => {
@@ -32,7 +39,7 @@ const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unk
         return () => {
             clearTimeout(timeout);
         };
-    }, [isNarrow]);
+    }, [isNarrow, isProtonUser]);
 
     return [renderUpsellFloatingModal, showUpsellFloatingModal];
 };
