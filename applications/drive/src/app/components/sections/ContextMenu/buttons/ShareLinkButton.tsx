@@ -1,18 +1,17 @@
 import { c } from 'ttag';
 
 import { DecryptedLink } from '../../../../store';
-import useOpenModal from '../../../useOpenModal';
+import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
     link: DecryptedLink;
+    showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
     close: () => void;
 }
 
-const ShareLinkButton = ({ shareId, link, close }: Props) => {
-    const { openLinkSharing } = useOpenModal();
-
+const ShareLinkButton = ({ shareId, link, showLinkSharingModal, close }: Props) => {
     const hasSharedLink = !!link.shareUrl;
 
     return (
@@ -20,7 +19,7 @@ const ShareLinkButton = ({ shareId, link, close }: Props) => {
             name={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
             icon={hasSharedLink ? 'link-pen' : 'link'}
             testId="context-menu-manage-link"
-            action={() => openLinkSharing(shareId, link.linkId)}
+            action={() => showLinkSharingModal({ shareId, linkId: link.linkId })}
             close={close}
         />
     );

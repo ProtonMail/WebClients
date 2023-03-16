@@ -9,7 +9,7 @@ interface Props {
 }
 
 const MoveToTrashButton = ({ selectedLinks, close }: Props) => {
-    const { trashLinks } = useActions();
+    const { trashLinks } = useActions(); // We can use it here since we don't need confirmModal
 
     return (
         <ContextMenuButton
