@@ -1,8 +1,16 @@
 import { Canvas, Primary, Source, Story } from '@storybook/addon-docs';
 
+import Resizeme from './Resizeme';
+
 # Padding
 
 The `padding` property is used to add space between the content and the border of an element.
+
+## Padding values
+
+All values are available for <a href="#equal">`p`</a>, <a href="#padding-top--bottom">`pt`</a>, <a href="#padding-top--bottom">`pb`</a>, <a href="#padding-left--right">`pl`</a>, <a href="#padding-left--right">`pr`</a>, <a href="#padding-left--right">`px`</a> and <a href="#padding-top--bottom">`py`</a>.<br /> Additionally, all values are available to use for specific breakpoints: `sm`, `md`, `lg` and `xl`. <a href="#responsive">Read more about this here</a>
+
+<Story id="css-utilities-padding--paddings-table" />
 
 ## Equal
 
@@ -28,6 +36,15 @@ Add padding to the left or right of an element or use a `px` class to add the sa
     <Story id="css-utilities-padding--padding-left" />
     <Story id="css-utilities-padding--padding-right" />
     <Story id="css-utilities-padding--padding-x" />
+</div>
+
+## Responsive
+
+The new helper classes are **all** available to use without media query, as well as `sm`, `md`, `lg` and `xl` variants. This allows to tweak spacings precicely for every breakpoint if needed. The blue square in the demo area underneath has the classes `pl-4 sm:pl-8 md:pl-10 lg:pl-12 xl:pl-14` which translates to padding-left 4 (16px) on `tinymobile`, 8 (32px) on `mobile`, 10 (40px) on `tablet`, 12 (48px) on `desktop` and 14 (56px) on `extra large`. The new system works **mobile first**, that means the base `pl-4` will be overridden by `lg:pl-12` on larger screens.
+
+<Resizeme />
+<div className="border p-4 rounded bg-weak mb-4" style={{ width: '320px', resize: 'horizontal', overflow: 'auto' }}>
+    <Story id="css-utilities-padding--responsive" />
 </div>
 
 ## Sandbox
