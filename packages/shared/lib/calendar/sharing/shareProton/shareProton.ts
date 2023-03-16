@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
-import { serverTime } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
+import { SIGNATURE_CONTEXT } from '@proton/shared/lib/calendar/crypto/constants';
+import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
+import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 
 import { acceptInvitation, rejectInvitation } from '../../../api/calendars';
 import { SECOND } from '../../../constants';
@@ -13,7 +16,7 @@ import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '../../../keys';
 import { getIsOwnedCalendar, getIsSubscribedCalendar } from '../../calendar';
 import { CALENDAR_PERMISSIONS } from '../../constants';
-import { decryptPassphrase, signPassphrase } from '../../crypto/keys/calendarKeys';
+import { decryptPassphrase, decryptPassphraseSessionKey, signPassphrase } from '../../crypto/keys/calendarKeys';
 import { getCanWrite } from '../../permissions';
 
 export const getIsInvitationExpired = ({ ExpirationTime }: CalendarMemberInvitation) => {
@@ -42,29 +45,60 @@ export const filterOutExpiredInvitations = (invitations: CalendarMemberInvitatio
 export const acceptCalendarShareInvitation = async ({
     addressID,
     calendarID,
-    getAddressKeys,
     armoredPassphrase,
+    armoredSignature,
+    senderEmail,
+    getAddressKeys,
+    getEncryptionPreferences,
     api,
+    skipSignatureVerification,
 }: {
     addressID: string;
     calendarID: string;
     armoredPassphrase: string;
+    armoredSignature: string;
+    senderEmail: string;
     getAddressKeys: GetAddressKeys;
+    getEncryptionPreferences: GetEncryptionPreferences;
     api: Api;
-}) => {
-    // TODO: signature verification?
+    skipSignatureVerification?: boolean;
+}): Promise<boolean> => {
+    // decrypt passphrase
     const addressKeys = await getAddressKeys(addressID);
     const privateKeys = addressKeys.map(({ privateKey }) => privateKey);
+    const passphraseSessionKey = await decryptPassphraseSessionKey({ armoredPassphrase, privateKeys });
+    if (!passphraseSessionKey) {
+        throw new Error('Missing passphrase session key');
+    }
+
+    // verify passphrase signature
+    if (!skipSignatureVerification) {
+        const { verifyingPinnedKeys } = await getEncryptionPreferences(senderEmail);
+        if (verifyingPinnedKeys.length) {
+            const { verified, errors } = await CryptoProxy.verifyMessage({
+                armoredSignature,
+                binaryData: passphraseSessionKey.data,
+                verificationKeys: verifyingPinnedKeys,
+                context: { required: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
+            });
+            if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                throw new ShareCalendarSignatureVerificationError(senderEmail, errors);
+            }
+        }
+    }
+
+    // accept invitation
     const passphrase = await decryptPassphrase({
         armoredPassphrase,
-        privateKeys,
+        sessionKey: passphraseSessionKey,
     });
     const { privateKey } = getPrimaryKey(addressKeys) || {};
     if (!privateKey) {
         throw new Error('No primary address key');
     }
     const Signature = await signPassphrase({ passphrase, privateKey });
-    return api(acceptInvitation(calendarID, addressID, { Signature }));
+    await api(acceptInvitation(calendarID, addressID, { Signature }));
+    return true;
 };
 
 export const rejectCalendarShareInvitation = ({
