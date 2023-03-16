@@ -1003,6 +1003,12 @@
       "This message contains remote content.": [
         "Tato zpráva obsahuje vzdálený obsah."
       ],
+      "Toggle Calendar app": [
+        "Zobrazení aplikace kalendáře"
+      ],
+      "Toggle Contact app": [
+        "Zobrazení aplikace kontaktů"
+      ],
       "Tomorrow": [
         "Zítra"
       ],
@@ -6253,6 +6259,9 @@
       "Email format": [
         "Formát e-mailu"
       ],
+      "Email or username": [
+        "E-mail nebo uživatelské jméno"
+      ],
       "Emails": [
         "E-maily"
       ],
@@ -6535,17 +6544,11 @@
       "Toolbar": [
         "Panel nástrojů"
       ],
-      "Two-factor authentication code": [
-        "Kód dvoufázového ověření"
-      ],
       "Undisclosed Recipients": [
         "Nezveřejnění příjemci"
       ],
       "Upload picture": [
         "Nahrát obrázek"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Uživatelské jméno nebo adresa ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -7362,9 +7365,6 @@
       ],
       "Link": [
         "Odkaz"
-      ],
-      "Mailbox password": [
-        "Heslo k poštovní schránce"
       ],
       "Name": [
         "Jméno"
@@ -8454,9 +8454,6 @@
       ],
       "Enter your password": [
         "Zadejte Vaše heslo"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Zadejte své uživatelské jméno nebo e-mailovou adresu ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Chyba"

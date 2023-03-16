@@ -64,6 +64,9 @@
       "Back": [
         "Voltar"
       ],
+      "Back to Homepage": [
+        "Voltar para a página inicial"
+      ],
       "Beta Access": [
         "Acesso beta"
       ],
@@ -2852,6 +2855,12 @@
         "${ errorCount } falhou",
         "${ errorCount } falharam"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagem em tamanho real"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pré-visualização em baixa resolução"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
@@ -3063,6 +3072,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "São suportados os arquivos CSV do Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora e alguns outros apps, assim como os formatos vCard 3.1 e 4.0 (encode UTF-8)."
       ],
+      "Decrypting files": [
+        "Descriptografando arquivos"
+      ],
       "Delete locked drive": [
         "Excluir unidade bloqueada",
         "Excluir unidades bloqueadas"
@@ -3120,6 +3132,12 @@
       ],
       "Encrypted search is here": [
         "A pesquisa criptografada está aqui"
+      ],
+      "End-to-end encrypted": [
+        "Criptografado de ponta a ponta"
+      ],
+      "Enter password": [
+        "Insira a senha"
       ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo autenticador"
@@ -3387,6 +3405,9 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Observação: Os dados ainda podem estar disponíveis localmente em dispositivos onde você instalou ${ DRIVE_APP_NAME }."
       ],
+      "Nothing here yet": [
+        "Nada por aqui ainda"
+      ],
       "of": [
         "de"
       ],
@@ -3514,6 +3535,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Link compartilhável para ${ boldNameText }"
+      ],
+      "Shared link not found": [
+        "Link compartilhado não encontrado"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "A assinatura não pode ser validada devido a um erro de rede, tente novamente mais tarde."
@@ -3972,6 +3996,9 @@
       "Download anyway": [
         "Baixar mesmo assim"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Baixando ${ percentageValue }%"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3980,6 +4007,9 @@
       ],
       "Email format": [
         "Formato do e-mail"
+      ],
+      "Email or username": [
+        "E-mail ou nome de usuário"
       ],
       "Emails": [
         "E-mails"
@@ -4170,6 +4200,9 @@
       "Replace folder": [
         "Substituir pasta"
       ],
+      "Report": [
+        "Reportar"
+      ],
       "Reveal password": [
         "Mostrar senha"
       ],
@@ -4221,9 +4254,6 @@
       "Toolbar": [
         "Barra de ferramentas"
       ],
-      "Two-factor authentication code": [
-        "Autenticação de dois fatores"
-      ],
       "Type": [
         "Tipo"
       ],
@@ -4247,9 +4277,6 @@
       ],
       "Upload your first file": [
         "Carregue seu primeiro arquivo"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Nome de usuário ou endereço ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Código de verificação"
@@ -4783,9 +4810,6 @@
       ],
       "Image URL": [
         "URL da imagem"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
       ],
       "Name": [
         "Nome"
@@ -5491,9 +5515,6 @@
       ],
       "Enter your password": [
         "Digite sua senha"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Insira seu nome de usuário ou endereço de e-mail ${ MAIL_APP_NAME }"
       ],
       "Exporting contacts": [
         "Exportando contatos"

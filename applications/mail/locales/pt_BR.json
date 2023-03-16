@@ -56,7 +56,7 @@
         "Adicionar número de telefone"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        "Adicionar a ${ CALENDAR_APP_NAME }"
+        "Adicionar o ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
         "Adicionar ao grupo"
@@ -1563,7 +1563,7 @@
         "A reprogramação de eventos não é suportada no momento"
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
-        "Esta resposta não pode ser adicionada a ${ CALENDAR_APP_NAME } pois apenas aceitamos respostas para todos os eventos de uma série, no momento"
+        "Esta resposta não pode ser adicionada o ${ CALENDAR_APP_NAME } pois apenas aceitamos respostas para todos os eventos de uma série, no momento"
       ],
       "This event has been canceled.": [
         "Este evento foi cancelado."
@@ -4334,6 +4334,12 @@
         "${ embeddedAttachmentsCount } imagem incorporada",
         "${ embeddedAttachmentsCount } imagens incorporadas"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: imagem em tamanho real"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: pré-visualização em baixa resolução"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
@@ -6044,6 +6050,9 @@
       "Email format": [
         "Formato do e-mail"
       ],
+      "Email or username": [
+        "E-mail ou nome de usuário"
+      ],
       "Emails": [
         "E-mails"
       ],
@@ -6326,17 +6335,11 @@
       "Toolbar": [
         "Barra de ferramentas"
       ],
-      "Two-factor authentication code": [
-        "Autenticação de dois fatores"
-      ],
       "Undisclosed Recipients": [
         "Destinatários ocultos"
       ],
       "Upload picture": [
         "Carregar imagem"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Nome de usuário ou endereço ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Código de verificação"
@@ -7137,9 +7140,6 @@
       ],
       "Link": [
         "Link"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
       ],
       "Name": [
         "Nome"
@@ -8359,9 +8359,6 @@
       ],
       "Enter your password": [
         "Digite sua senha"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Insira seu nome de usuário ou endereço de e-mail ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Erro"
