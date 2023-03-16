@@ -56,6 +56,9 @@
       "Back": [
         "Tilbage"
       ],
+      "Back to Homepage": [
+        "Tilbage til startside"
+      ],
       "Beta Access": [
         "Beta-adgang"
       ],
@@ -3040,6 +3043,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
       ],
+      "Decrypting files": [
+        "Dekrypterer filer"
+      ],
       "Delete locked drive": [
         "Slet låst drev",
         "Slet låste drev"
@@ -3286,6 +3292,9 @@
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
+      "Link owner has the password": [
+        "Link-ejeren har koden"
+      ],
       "Loading": [
         "Indlæser"
       ],
@@ -3321,6 +3330,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Brug for at dele en fil? Så få ${ DRIVE_APP_NAME },\nden sikreste vej til at dele, opbevare og synkroniserer dine filer."
       ],
       "Network issue": [
         "Netværksproblem"
@@ -3366,6 +3378,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Bemærk: Data kan stadig være tilgængelige lokalt på enheder, hvor du har installeret ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "Intet her endnu"
       ],
       "of": [
         "af"
@@ -3495,6 +3510,9 @@
       "Shareable link for ${ boldNameText }": [
         "Delbart link til ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Delt link ikke fundet"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
       ],
@@ -3548,6 +3566,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Denne fil er blevet slettet, flyttet eller gjort utilgængelig. Prøv at kontakte fil-ejeren."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
@@ -3952,6 +3973,9 @@
       "Download anyway": [
         "Download alligevel"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Henter ${ percentageValue }%"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -3960,6 +3984,9 @@
       ],
       "Email format": [
         "E-mailformattering"
+      ],
+      "Email or username": [
+        "E-mail eller brugernavn"
       ],
       "Emails": [
         "E-mails"
@@ -4204,9 +4231,6 @@
       "Toolbar": [
         "Værktøjslinje"
       ],
-      "Two-factor authentication code": [
-        "To-faktor-godkendelseskode"
-      ],
       "Type": [
         "Type"
       ],
@@ -4230,9 +4254,6 @@
       ],
       "Upload your first file": [
         "Upload din første fil"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Brugernavn eller ${ MAIL_APP_NAME }-adresse"
       ],
       "Verification code": [
         "Verifikationskode"
@@ -4767,9 +4788,6 @@
       "Image URL": [
         "Billed-URL"
       ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
       "Name": [
         "Navn"
       ],
@@ -5239,9 +5257,6 @@
       ],
       "Enter your password": [
         "Indtast din adgangskode"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Indtast dit brugernavn eller ${ MAIL_APP_NAME } e-mailadresse"
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"

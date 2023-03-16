@@ -2972,6 +2972,10 @@
       "Choose a date in the future.": [
         "Egy jövőbeli időpontot válasszon ki."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "A következő ${ EXPIRATION_TIME_MAX_DAYS } napon belüli dátumot válasszon.",
+        "A következő ${ EXPIRATION_TIME_MAX_DAYS } napon belüli dátumot válasszon."
+      ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "A következő ${ SCHEDULED_MAX_DATE_DAYS } napon belüli dátumot válasszon.",
         "A következő ${ SCHEDULED_MAX_DATE_DAYS } napon belüli dátumot válasszon."
@@ -4155,6 +4159,12 @@
         "${ embeddedAttachmentsCount } beszúrt kép",
         "${ embeddedAttachmentsCount } beszúrt kép"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: teljes méretű kép"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: alacsony felbontású előnézet"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
@@ -4873,6 +4883,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
+      ],
+      "Preview failed to be loaded": [
+        "Az előnézetet nem sikerült betölteni"
       ],
       "Primary": [
         "Elsődleges"
@@ -5793,6 +5806,9 @@
       "Email format": [
         "E-mail formátum"
       ],
+      "Email or username": [
+        "Email cím, vagy felhasználónév"
+      ],
       "Emails": [
         "E-mailek"
       ],
@@ -6075,17 +6091,11 @@
       "Toolbar": [
         "Eszköztár"
       ],
-      "Two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód"
-      ],
       "Undisclosed Recipients": [
         "Címzettek nem láthatók"
       ],
       "Upload picture": [
         "Kép feltöltése"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Felhasználónév vagy ${ MAIL_APP_NAME } email-cím"
       ],
       "Verification code": [
         "Ellenőrző kód"
@@ -6808,9 +6818,6 @@
       "Link": [
         "Hivatkozás"
       ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
       "Name": [
         "Név"
       ],
@@ -6961,6 +6968,24 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } day": [
+        "${ remainingDays } nap",
+        "${ remainingDays } nap"
+      ]
+    },
+    "Remaining hours before the message expire": {
+      "${ remainingHours } hour": [
+        "${ remainingHours } óra",
+        "${ remainingHours } óra"
+      ]
+    },
+    "Remaining years before the message expire": {
+      "${ remainingYears } year": [
+        "${ remainingYears } év",
+        "${ remainingYears } év"
       ]
     },
     "Reply to calendar invitation": {
@@ -7276,6 +7301,9 @@
       "Bug reported": [
         "Hiba bejelentve"
       ],
+      "Canceling import": [
+        "Importálás megszakítása"
+      ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
       ],
@@ -7414,6 +7442,15 @@
       ],
       "Read receipt sent": [
         "Olvasási visszaigazolás elküldve"
+      ],
+      "Self-destruction cancelled": [
+        "Önmegsemmisítés visszavonva"
+      ],
+      "Self-destruction removed": [
+        "Önmegsemmesítés eltávolítva"
+      ],
+      "Self-destruction set": [
+        "Önmegsemmesítés beállítva"
       ],
       "Undo in progress": [
         "Visszavonás folyamatban"
@@ -7740,9 +7777,6 @@
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Írja be felhasználónevét vagy ${ MAIL_APP_NAME } email-címét"
       ],
       "Error": [
         "Hiba"

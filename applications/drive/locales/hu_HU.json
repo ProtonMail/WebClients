@@ -2713,6 +2713,12 @@
         "${ errorCount } sikertelen",
         "${ errorCount } sikertelen"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: teljes méretű kép"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: alacsony felbontású előnézet"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
@@ -3246,6 +3252,9 @@
       "Preparing link to folder": [
         "A mappa hivatkozásának előkészítése"
       ],
+      "Preview failed to be loaded": [
+        "Az előnézetet nem sikerült betölteni"
+      ],
       "Primary": [
         "Elsődleges"
       ],
@@ -3724,6 +3733,9 @@
       "Email format": [
         "E-mail formátum"
       ],
+      "Email or username": [
+        "Email cím, vagy felhasználónév"
+      ],
       "Emails": [
         "E-mailek"
       ],
@@ -3964,9 +3976,6 @@
       "Toolbar": [
         "Eszköztár"
       ],
-      "Two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód"
-      ],
       "Type": [
         "Típus"
       ],
@@ -3987,9 +3996,6 @@
       ],
       "Upload picture": [
         "Kép feltöltése"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Felhasználónév vagy ${ MAIL_APP_NAME } email-cím"
       ],
       "Verification code": [
         "Ellenőrző kód"
@@ -4470,9 +4476,6 @@
       "Image URL": [
         "Kép URL"
       ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
       "Name": [
         "Név"
       ],
@@ -4614,6 +4617,9 @@
       ],
       "Bug reported": [
         "Hiba bejelentve"
+      ],
+      "Canceling import": [
+        "Importálás megszakítása"
       ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
@@ -4904,9 +4910,6 @@
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Írja be felhasználónevét vagy ${ MAIL_APP_NAME } email-címét"
       ],
       "Exporting contacts": [
         "Névjegyek exportálása"

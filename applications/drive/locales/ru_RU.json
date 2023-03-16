@@ -64,6 +64,9 @@
       "Back": [
         "Назад"
       ],
+      "Back to Homepage": [
+        "Вернуться на главную страницу"
+      ],
       "Beta Access": [
         "Бета-доступ"
       ],
@@ -2929,6 +2932,12 @@
         "${ errorCount } не удались",
         "${ errorCount } не удались"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: изображение в полном размере"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: предпросмотр в низком разрешении"
+      ],
       "${ groupCounts } group found": [
         "Найдена ${ groupCounts } группа",
         "Найдено ${ groupCounts } группы",
@@ -3172,6 +3181,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
       ],
+      "Decrypting files": [
+        "Расшифровка файла"
+      ],
       "Delete locked drive": [
         "Удалить заблокированное хранилище",
         "Удалить заблокированные хранилища",
@@ -3231,6 +3243,12 @@
       ],
       "Encrypted search is here": [
         "Зашифрованный поиск тут"
+      ],
+      "End-to-end encrypted": [
+        "Зашифровано сквозным методом"
+      ],
+      "Enter password": [
+        "Введите пароль"
       ],
       "Enter the code from your authenticator app": [
         "Введите код из приложения для аутентификации"
@@ -3424,6 +3442,9 @@
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
       ],
+      "Link owner has the password": [
+        "Пароль находится у владельца ссылки"
+      ],
       "Loading": [
         "Загрузка"
       ],
@@ -3459,6 +3480,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите ее поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Нужно поделиться файлом? Тогда используйте ${ DRIVE_APP_NAME },\nсамый безопасный способ обмена, хранения и синхронизации файлов."
       ],
       "Network issue": [
         "Проблема с сетью"
@@ -3504,6 +3528,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Примечание: данные все еще могут быть доступны локально на устройствах, на которых вы установили ${ DRIVE_APP_NAME }."
+      ],
+      "Nothing here yet": [
+        "Пока здесь ничего нет"
       ],
       "of": [
         "из"
@@ -3637,6 +3664,9 @@
       "Shareable link for ${ boldNameText }": [
         "Доступная для обмена ссылка для ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Общая ссылка не найдена"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
       ],
@@ -3690,6 +3720,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Браузер не поддерживает предварительный просмотр документов PDF. Пожалуйста, скачайте файл."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Файл возможно был удален, перемещен или стал недоступен. Рекомендуется обратиться к владельцу файла."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
@@ -4098,6 +4131,9 @@
       "Download anyway": [
         "Все равно скачать"
       ],
+      "Downloading ${ percentageValue }%": [
+        "Загрузка ${ percentageValue }%"
+      ],
       "Email": [
         "Электронная почта"
       ],
@@ -4106,6 +4142,9 @@
       ],
       "Email format": [
         "Формат сообщения"
+      ],
+      "Email or username": [
+        "Эл. почта или имя пользователя"
       ],
       "Emails": [
         "Электронные письма"
@@ -4296,6 +4335,9 @@
       "Replace folder": [
         "Заменить папку"
       ],
+      "Report": [
+        "Пожаловаться"
+      ],
       "Reveal password": [
         "Показать пароль"
       ],
@@ -4347,9 +4389,6 @@
       "Toolbar": [
         "Панель инструментов"
       ],
-      "Two-factor authentication code": [
-        "Код двухфакторной аутентификации"
-      ],
       "Type": [
         "Тип"
       ],
@@ -4373,9 +4412,6 @@
       ],
       "Upload your first file": [
         "Загрузите свой первый файл"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Имя пользователя или адрес ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Проверочный код"
@@ -4957,9 +4993,6 @@
       ],
       "Image URL": [
         "URL изображения"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
       ],
       "Name": [
         "Название"
@@ -5716,9 +5749,6 @@
       "Enter your password": [
         "Введите свой пароль"
       ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Введите свое имя пользователя или адрес электронной почты ${ MAIL_APP_NAME }"
-      ],
       "Exporting contacts": [
         "Экспортирование контактов"
       ],
@@ -5751,6 +5781,9 @@
       ],
       "Groups": [
         "Группы"
+      ],
+      "Hm, we couldn't find that one": [
+        "Похоже, мы не смогли найти эту страницу"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""

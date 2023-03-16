@@ -13,6 +13,9 @@
       ]
     },
     "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Незабаром розпочнеться пересилання. Нові листи з'являться у вашій поштовій скриньці."
+      ],
       "Mail forward stopped": [
         "Пересилання пошти зупинено"
       ]
@@ -2482,6 +2485,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Сталася помилка під час читання вашого файлу ${ formattedFilename }. Неправильний формат файлу."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2522,6 +2528,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Сталася помилка під час читання вашого файлу ${ formattedFilename }. Неправильний формат файлу."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Виникла помилка при вивантаженні вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3490,6 +3499,9 @@
       "Import mailbox": [
         "Імпортувати поштову скриньку"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Імпортуйте ваші електронні листи, календарі та контакти з іншої служби до ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
       ],
@@ -4069,6 +4081,9 @@
       "Email format": [
         "Формат повідомлень"
       ],
+      "Email or username": [
+        "Е-пошта чи ім'я користувача"
+      ],
       "Emails": [
         "Адреси е-пошти"
       ],
@@ -4267,17 +4282,11 @@
       "Toolbar": [
         "Панель інструментів"
       ],
-      "Two-factor authentication code": [
-        "Код двоетапної перевірки"
-      ],
       "Upload picture": [
         "Завантажити зображення"
       ],
       "URL": [
         "URL-адреса"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Ім'я користувача або адреса ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Код підтвердження"
@@ -5048,9 +5057,6 @@
       "Image URL": [
         "URL-адреса зображення"
       ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
       "Name": [
         "Назва"
       ],
@@ -5696,9 +5702,6 @@
       ],
       "Enter your password": [
         "Введіть свій пароль"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Введіть своє ім'я користувача або ${ MAIL_APP_NAME } адресу електронної пошти"
       ],
       "Error": [
         "Помилка"
