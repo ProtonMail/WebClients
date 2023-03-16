@@ -13,7 +13,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import bigLogoWhite from '@proton/styles/assets/img/drive/big-logo-white.svg';
 import clsx from '@proton/utils/clsx';
 
-import { DRIVE_PRICING_PAGE } from './constants';
+import { DRIVE_PRICING_PAGE } from '../../constants/urls';
 
 import './UpsellFloatingModal.scss';
 
