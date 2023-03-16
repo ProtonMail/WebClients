@@ -157,7 +157,7 @@ const ItemRowLayout = ({
                     hasStar={false}
                     size={isCompactView ? 'small' : 'medium'}
                 />
-                <span className="item-senddate-row ml0-5 flex flex-nowrap flex-justify-end flex-align-items-center">
+                <span className="item-senddate-row ml0-5 flex flex-item-fluid flex-nowrap flex-justify-end flex-align-items-center">
                     <ItemDate
                         element={element}
                         labelID={labelID}
