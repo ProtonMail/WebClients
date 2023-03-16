@@ -15,7 +15,6 @@ import { c } from 'ttag';
 
 import {
     Dropzone,
-    FeatureCode,
     onlyDragFiles,
     useApi,
     useBeforeUnload,
@@ -23,7 +22,6 @@ import {
     useConfig,
     useContactEmails,
     useEventManager,
-    useFeature,
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
@@ -296,7 +294,6 @@ const InteractiveCalendarView = ({
     const getMailSettings = useGetMailSettings();
     const relocalizeText = useRelocalizeText();
     const config = useConfig();
-    const personalEventsDeprecated = !!useFeature(FeatureCode.CalendarPersonalEventsDeprecated).feature?.Value;
     const isSavingEvent = useRef(false);
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
@@ -353,10 +350,7 @@ const InteractiveCalendarView = ({
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
-        return Promise.all([
-            getCalendarEventRaw(eventData),
-            pick(eventData, ['Permissions', 'IsProtonProtonInvite', 'IsPersonalMigrated']),
-        ]);
+        return Promise.all([getCalendarEventRaw(eventData), pick(eventData, ['Permissions', 'IsProtonProtonInvite'])]);
     };
 
     const [interactiveData, setInteractiveData] = useState<InteractiveState | undefined>(() =>
@@ -1195,7 +1189,6 @@ const InteractiveCalendarView = ({
                     const payload = await getUpdatePersonalEventPayload({
                         eventComponent,
                         hasDefaultNotifications,
-                        personalEventsDeprecated,
                         addressID,
                         memberID,
                         getAddressKeys,
@@ -1250,7 +1243,6 @@ const InteractiveCalendarView = ({
                 addresses,
                 inviteActions,
                 isDuplicatingEvent,
-                personalEventsDeprecated,
                 api,
                 onSaveConfirmation: handleSaveConfirmation,
                 onEquivalentAttendees: handleEquivalentAttendees,
@@ -1343,7 +1335,6 @@ const InteractiveCalendarView = ({
                 getAddressKeys,
                 getCalendarKeys,
                 inviteActions,
-                personalEventsDeprecated,
                 sendIcs: handleSendIcs,
             });
             // some operations may refer to the events to be deleted, so we execute those first

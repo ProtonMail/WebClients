@@ -63,7 +63,6 @@ export const generateApiCalendarEvent = async ({
         isCreateEvent: true,
         isSwitchCalendar: false,
         hasDefaultNotifications: true,
-        personalEventsDeprecated: true,
     });
     const nowTimestamp = getUnixTime(new Date());
     const { dtstart, uid } = eventComponent;
@@ -78,7 +77,6 @@ export const generateApiCalendarEvent = async ({
         Permissions: 1,
         IsOrganizer: booleanToNumber(isOrganizer),
         IsProtonProtonInvite: isProtonProtonInvite ? 1 : 0,
-        IsPersonalMigrated: true,
         Author: author,
         StartTime: getUnixTime(propertyToUTCDate(dtstart)),
         StartTimezone: getPropertyTzid(dtstart) || 'UTC',
