@@ -1,6 +1,6 @@
 import { jest } from '@jest/globals';
 
-import { useModals } from '@proton/components';
+import { useModals } from '@proton/components/hooks';
 
 export const mockModals: ReturnType<typeof useModals> = {
     createModal: jest.fn<any>(),
