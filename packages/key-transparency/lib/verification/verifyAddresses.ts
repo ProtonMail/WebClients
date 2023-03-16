@@ -10,6 +10,7 @@ import {
     SignedKeyList,
 } from '@proton/shared/lib/interfaces';
 
+import { KT_VE_VERIFICATION_CONTEXT } from '../constants';
 import { fetchProof, fetchSignedKeyLists, fetchVerifiedEpoch, uploadVerifiedEpoch } from '../helpers/fetchHelpers';
 import { isTimestampOldEnough, isTimestampTooOld, ktSentryReport } from '../helpers/utils';
 import { AuditData, KeyWithFlags, PartialKTBlobContent, VerifiedEpoch } from '../interfaces';
@@ -119,6 +120,7 @@ export const getAuditData = async (
             armoredSignature: verifiedEpoch.Signature,
             verificationKeys,
             textData: verifiedEpoch.Data,
+            context: KT_VE_VERIFICATION_CONTEXT,
         });
 
         if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
