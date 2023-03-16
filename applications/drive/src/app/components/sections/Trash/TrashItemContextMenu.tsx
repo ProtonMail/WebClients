@@ -1,7 +1,9 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink } from '../../../store';
+import { useDetailsModal } from '../../DetailsModal';
 import { ContextMenuProps } from '../../FileBrowser/interface';
+import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { DetailsButton, DownloadButton, PreviewButton } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ContextMenuButtons';
@@ -23,16 +25,33 @@ export function TrashItemContextMenu({
         selectedLink.mimeType &&
         isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
     const hasDownloadAvailable = !selectedLinks.some((item) => !item.isFile);
+    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const { deletePermanently, restoreLinks, confirmModal } = useActions();
 
     return (
-        <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-            {hasPreviewAvailable && (
-                <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
-            )}
-            {hasDownloadAvailable && <DownloadButton selectedLinks={selectedLinks} close={close} />}
-            <DetailsButton selectedLinks={selectedLinks} close={close} />
-            <RestoreFromTrashButton selectedLinks={selectedLinks} close={close} />
-            <DeletePermanentlyButton selectedLinks={selectedLinks} close={close} />
-        </ItemContextMenu>
+        <>
+            <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
+                {hasPreviewAvailable && (
+                    <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
+                )}
+                {hasDownloadAvailable && <DownloadButton selectedLinks={selectedLinks} close={close} />}
+                <DetailsButton
+                    selectedLinks={selectedLinks}
+                    showDetailsModal={showDetailsModal}
+                    showFilesDetailsModal={showFilesDetailsModal}
+                    close={close}
+                />
+                <RestoreFromTrashButton restoreLinks={restoreLinks} selectedLinks={selectedLinks} close={close} />
+                <DeletePermanentlyButton
+                    selectedLinks={selectedLinks}
+                    deletePermanently={deletePermanently}
+                    close={close}
+                />
+            </ItemContextMenu>
+            {detailsModal}
+            {filesDetailsModal}
+            {confirmModal}
+        </>
     );
 }

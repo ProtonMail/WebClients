@@ -14,6 +14,7 @@ import {
     useFormErrors,
     useLoading,
 } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
@@ -86,3 +87,6 @@ const RenameDeviceModal = ({ device, onClose, open }: Props) => {
 };
 
 export default RenameDeviceModal;
+export const useRenameDeviceModal = () => {
+    return useModalTwo<Props, void>(RenameDeviceModal);
+};

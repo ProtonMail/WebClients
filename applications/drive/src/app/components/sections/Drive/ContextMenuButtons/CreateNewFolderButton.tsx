@@ -1,21 +1,19 @@
 import { c } from 'ttag';
 
-import useOpenModal from '../../../useOpenModal';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
+    action: () => void;
     close: () => void;
 }
 
-const CreateNewFolderButton = ({ close }: Props) => {
-    const { openCreateFolder } = useOpenModal();
-
+const CreateNewFolderButton = ({ close, action }: Props) => {
     return (
         <ContextMenuButton
             testId="toolbar-new-folder"
             icon="folder-plus"
             name={c('Action').t`Create new folder`}
-            action={openCreateFolder}
+            action={action}
             close={close}
         />
     );

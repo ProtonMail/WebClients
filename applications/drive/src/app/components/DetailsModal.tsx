@@ -14,6 +14,7 @@ import {
     Row,
     Tooltip,
 } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useLinkDetailsView } from '../store';
@@ -23,7 +24,7 @@ import ModalContentLoader from './ModalContentLoader';
 import SignatureAlert from './SignatureAlert';
 
 const { UserNameCell, LocationCell, TimeCell, DescriptiveTypeCell, MimeTypeCell } = Cells;
-interface Props {
+export interface Props {
     shareId: string;
     linkId: string;
     onClose?: () => void;
@@ -165,3 +166,7 @@ function getTitle(isFile?: boolean) {
     }
     return isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
 }
+
+export const useDetailsModal = () => {
+    return useModalTwo<{ shareId: string; linkId: string }, unknown>(DetailsModal);
+};

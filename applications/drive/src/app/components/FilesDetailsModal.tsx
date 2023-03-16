@@ -11,6 +11,7 @@ import {
     ModalTwoHeader,
     Row,
 } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { DecryptedLink, useLinksDetailsView } from '../store';
@@ -75,3 +76,6 @@ const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
 };
 
 export default FilesDetailsModal;
+export const useFilesDetailsModal = () => {
+    return useModalTwo<Props, unknown>(FilesDetailsModal);
+};

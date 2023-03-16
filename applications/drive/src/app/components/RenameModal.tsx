@@ -15,6 +15,7 @@ import {
     Row,
     useLoading,
 } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
@@ -109,3 +110,7 @@ const RenameModal = ({ item, onClose, open }: Props) => {
 };
 
 export default RenameModal;
+
+export const useRenameModal = () => {
+    return useModalTwo<Props, void>(RenameModal);
+};

@@ -13,6 +13,7 @@ import {
     useFormErrors,
     useLoading,
 } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
@@ -103,3 +104,6 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, open }: Props) => {
 };
 
 export default CreateFolderModal;
+export const useCreateFolderModal = () => {
+    return useModalTwo<Props | void, void>(CreateFolderModal);
+};

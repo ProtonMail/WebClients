@@ -11,9 +11,9 @@ import useNavigate from '../../hooks/drive/useNavigate';
 import { useLinkPath } from '../../store';
 import { Share, ShareType, useShare } from '../../store/_shares';
 import { sendErrorReport } from '../../utils/errorHandling';
+import { useDetailsModal } from '../DetailsModal';
 import SignatureIcon from '../SignatureIcon';
 import { getDevicesSectionName } from '../sections/Devices/constants';
-import useOpenModal from '../useOpenModal';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -24,7 +24,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
     const { createNotification } = useNotifications();
     const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
     const { traverseLinksToRoot } = useLinkPath(); // TODO: Get data using useFolderView instead one day.
-    const { openDetails } = useOpenModal();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
 
     const [dropTarget, setDropTarget] = useState<string>();
     const [rootShare, setRootShare] = useState<Share>();
@@ -43,7 +43,9 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
 
                     let onClick;
                     if (linkId === activeFolder.linkId) {
-                        onClick = link.signatureIssues ? () => openDetails(activeFolder.shareId, linkId) : undefined;
+                        onClick = link.signatureIssues
+                            ? () => showDetailsModal({ shareId: activeFolder.shareId, linkId })
+                            : undefined;
                     } else {
                         onClick = () => navigateToLink(activeFolder.shareId, linkId, false);
                     }
@@ -135,7 +137,12 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
         });
     }
 
-    return <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} />;
+    return (
+        <>
+            <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} />
+            {detailsModal}
+        </>
+    );
 };
 
 export default DriveBreadcrumbs;
