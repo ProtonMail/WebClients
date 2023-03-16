@@ -5,7 +5,7 @@ import { EmptyViewContainer } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noContentSvg from '@proton/styles/assets/img/illustrations/shared-page-empty-list.svg';
 
-import { DRIVE_LANDING_PAGE } from '../constant';
+import { DRIVE_LANDING_PAGE } from '../../../constants/urls';
 
 export const EmptyPlaceholder = () => (
     <div className="flex flex-item-fluid flex-justify-center shared-folder-empty-placeholder-container">
