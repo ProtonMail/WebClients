@@ -3,6 +3,7 @@ import { getSignedKeyListRoute, getSignedKeyListsRoute } from '@proton/shared/li
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { Api, FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
+import { KT_VE_SIGNING_CONTEXT } from '../constants';
 import { Epoch, Proof, VerifiedEpoch } from '../interfaces';
 import { verifyEpoch } from '../verification';
 import {
@@ -166,6 +167,7 @@ export const uploadVerifiedEpoch = async (
                 textData: bodyData,
                 signingKeys,
                 detached: true,
+                context: KT_VE_SIGNING_CONTEXT,
             }),
         })
     );
