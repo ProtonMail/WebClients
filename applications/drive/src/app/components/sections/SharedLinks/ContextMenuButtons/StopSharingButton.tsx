@@ -5,12 +5,11 @@ import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
     selectedLinks: DecryptedLink[];
+    stopSharingLinks: ReturnType<typeof useActions>['stopSharingLinks'];
     close: () => void;
 }
 
-const StopSharingButton = ({ selectedLinks, close }: Props) => {
-    const { stopSharingLinks } = useActions();
-
+const StopSharingButton = ({ selectedLinks, stopSharingLinks, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Stop sharing`}

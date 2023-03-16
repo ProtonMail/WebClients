@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { Device } from '../../../../../store';
-import useOpenModal from '../../../../useOpenModal';
+import { useRemoveDeviceModal } from '../../../../RemoveDeviceModal';
 import { isMultiSelect } from '../../../ToolbarButtons/utils';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Remove = ({ selectedDevices }: Props) => {
-    const { openRemoveDevice } = useOpenModal();
+    const [removeDeviceModal, showRemoveDeviceModal] = useRemoveDeviceModal();
 
     const isDisabled = isMultiSelect(selectedDevices);
 
@@ -20,12 +20,15 @@ const Remove = ({ selectedDevices }: Props) => {
     }
 
     return (
-        <ToolbarButton
-            title={c('Action').t`Remove device`}
-            icon={<Icon name="trash" />}
-            onClick={() => openRemoveDevice(selectedDevices[0])}
-            data-testid="toolbar-delete"
-        />
+        <>
+            <ToolbarButton
+                title={c('Action').t`Remove device`}
+                icon={<Icon name="trash" />}
+                onClick={() => showRemoveDeviceModal({ device: selectedDevices[0] })}
+                data-testid="toolbar-delete"
+            />
+            {removeDeviceModal}
+        </>
     );
 };
 

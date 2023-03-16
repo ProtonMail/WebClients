@@ -15,6 +15,7 @@ import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import { useFileUploadInput, useFolderUploadInput } from '../../../../store';
+import { useCreateFolderModal } from '../../../CreateFolderModal';
 import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 
 interface Props {
@@ -39,6 +40,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
         handleClick: folderClick,
         handleChange: folderChange,
     } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
+    const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
 
     return (
         <>
@@ -56,6 +58,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
             </SidebarPrimaryButton>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={fileChange} />
             <input type="file" ref={folderInput} className="hidden" onChange={folderChange} />
+            {createFolderModal}
             <Dropdown
                 size={{ width: DropdownSizeUnit.Anchor, height: DropdownSizeUnit.Dynamic }}
                 isOpen={isOpen}
@@ -66,7 +69,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                     <UploadFileButton onClick={fileClick} />
                     {isDesktop && <UploadFolderButton onClick={folderClick} />}
                     <hr className="mt0-5 mb0-5" />
-                    <CreateNewFolderButton />
+                    <CreateNewFolderButton onClick={showCreateFolderModal} />
                 </DropdownMenu>
             </Dropdown>
         </>

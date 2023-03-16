@@ -1,5 +1,7 @@
 import { Device } from '../../../../store';
 import { ContextMenuProps } from '../../../FileBrowser/interface';
+import { useRemoveDeviceModal } from '../../../RemoveDeviceModal';
+import { useRenameDeviceModal } from '../../../RenameDeviceModal';
 import { ItemContextMenu } from '../../ContextMenu/ItemContextMenu';
 import { RemoveButton, RenameButton } from './buttons';
 
@@ -13,6 +15,8 @@ export function DevicesItemContextMenu({
 }: ContextMenuProps & {
     selectedDevices: Device[];
 }) {
+    const [renameDeviceModal, showRenameDeviceModal] = useRenameDeviceModal();
+    const [removeDeviceModal, showRemoveDeviceModal] = useRemoveDeviceModal();
     const isOnlyOneItem = selectedDevices.length === 1;
 
     if (!isOnlyOneItem) {
@@ -20,9 +24,13 @@ export function DevicesItemContextMenu({
     }
 
     return (
-        <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-            <RenameButton selectedDevices={selectedDevices} close={close} />
-            <RemoveButton selectedDevices={selectedDevices} close={close} />
-        </ItemContextMenu>
+        <>
+            <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
+                <RenameButton showRenameDeviceModal={showRenameDeviceModal} device={selectedDevices[0]} close={close} />
+                <RemoveButton showRemoveDeviceModal={showRemoveDeviceModal} device={selectedDevices[0]} close={close} />
+            </ItemContextMenu>
+            {renameDeviceModal}
+            {removeDeviceModal}
+        </>
     );
 }

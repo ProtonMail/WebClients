@@ -141,3 +141,15 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
 };
 
 export default MoveToFolderModal;
+export const useMoveToFolderModal = (): [JSX.Element | null, ({ shareId, selectedItems }: Props) => void] => {
+    const [moveToFolderModal, showMoveToFolderModal] = useModalTwo<Props, void>(MoveToFolderModal);
+
+    const handleShowMoveToFolderModal = ({ shareId, selectedItems }: Props) => {
+        if (!shareId || !selectedItems.length) {
+            return;
+        }
+        void showMoveToFolderModal({ shareId, selectedItems });
+    };
+
+    return [moveToFolderModal, handleShowMoveToFolderModal];
+};
