@@ -21,7 +21,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import SubSettingsSection from '../../layout/SubSettingsSection';
-import ShareCalendarModal from '../shareModal/ShareCalendarModal';
+import ShareCalendarModal from '../shareProton/ShareCalendarModal';
 import CalendarShareUrlSection from '../shareURL/CalendarShareUrlSection';
 import CalendarMemberAndInvitationList from './CalendarMemberAndInvitationList';
 
