@@ -1,6 +1,5 @@
 import { useModals } from '@proton/components';
 
-import useNavigate from '../hooks/drive/useNavigate';
 import { DecryptedLink, Device } from '../store';
 import CreateFileModal from './CreateFileModal';
 import CreateFolderModal from './CreateFolderModal';
@@ -12,17 +11,9 @@ import RenameDeviceModal from './RenameDeviceModal';
 import RenameModal from './RenameModal';
 import SelectedFileToShareModal from './SelectLinkToShareModal/SelectLinkToShareModal';
 import ShareLinkModal from './ShareLinkModal/ShareLinkModal';
-import { useSpotlight } from './useSpotlight';
 
 export default function useOpenModal() {
-    const { navigateToLink } = useNavigate();
     const { createModal } = useModals();
-    const spotlight = useSpotlight();
-
-    const openPreview = (shareId: string, linkId: string) => {
-        spotlight.searchSpotlight.close();
-        navigateToLink(shareId, linkId, true);
-    };
 
     const openCreateFolder = async () => {
         createModal(<CreateFolderModal />);
@@ -69,7 +60,6 @@ export default function useOpenModal() {
     };
 
     return {
-        openPreview,
         openCreateFolder,
         openCreateFile,
         openDetails,
