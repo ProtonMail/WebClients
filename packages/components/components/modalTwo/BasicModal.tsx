@@ -1,14 +1,11 @@
 import { ElementType, ReactNode } from 'react';
 
-import {
-    ModalOwnProps as MainModalOwnProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useModalState,
-} from '../';
 import { PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import ModalTwo, { ModalOwnProps as MainModalOwnProps } from './Modal';
+import ModalTwoContent from './ModalContent';
+import ModalTwoFooter from './ModalFooter';
+import ModalTwoHeader from './ModalHeader';
+import useModalState from './useModalState';
 
 export interface BasicModalProps extends MainModalOwnProps {
     title?: string;

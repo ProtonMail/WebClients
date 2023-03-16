@@ -3,10 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { Checkbox, Label, PrivateAuthenticationStore, Prompt, PromptProps } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { User } from '@proton/shared/lib/interfaces';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+
+import { PrivateAuthenticationStore } from '../../containers';
+import { Checkbox } from '../input';
+import { Label } from '../label';
+import { Prompt, PromptProps } from '../prompt';
 
 export const shouldShowConfirmSignOutModal = ({
     user,
