@@ -9,7 +9,7 @@
         "Le transfert commencera bientôt. De nouveaux messages apparaîtront dans votre boîte de réception."
       ],
       "Mail forward stopped": [
-        "Le transfert d'e-mail a été arrêté."
+        "Le transfert automatique de messages a été arrêté."
       ]
     },
     "Action": {
@@ -1917,7 +1917,7 @@
         "L'adresse e-mail est nécessaire."
       ],
       "Email is not valid": [
-        "L'adresse e-mail est invalide."
+        "L'adresse e-mail n'est pas valide."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
@@ -2862,7 +2862,7 @@
         "${ fileName } : image en taille réelle"
       ],
       "${ fileName }: low-resolution preview": [
-        "${ fileName } : aperçu basse résolution"
+        "${ fileName } : aperçu en basse résolution"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
@@ -4026,6 +4026,9 @@
       "Email format": [
         "Format du message"
       ],
+      "Email or username": [
+        "Adresse e-mail ou nom d'utilisateur"
+      ],
       "Emails": [
         "E-mails"
       ],
@@ -4269,9 +4272,6 @@
       "Toolbar": [
         "Barre d'outils"
       ],
-      "Two-factor authentication code": [
-        "Code d’authentification à deux facteurs"
-      ],
       "Type": [
         "Type"
       ],
@@ -4295,9 +4295,6 @@
       ],
       "Upload your first file": [
         "Importez votre premier fichier"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Nom d'utilisateur ou adresse ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Code de vérification"
@@ -4831,9 +4828,6 @@
       ],
       "Image URL": [
         "URL de l'image"
-      ],
-      "Mailbox password": [
-        "Mot de passe de la messagerie"
       ],
       "Name": [
         "Nom"
@@ -5539,9 +5533,6 @@
       ],
       "Enter your password": [
         "Saisissez votre mot de passe."
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Saisissez votre nom d'utilisateur ou votre adresse e-mail ${ MAIL_APP_NAME }."
       ],
       "Exporting contacts": [
         "Exportation des contacts"

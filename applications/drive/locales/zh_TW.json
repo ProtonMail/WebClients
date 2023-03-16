@@ -64,6 +64,9 @@
       "Back": [
         "返回"
       ],
+      "Back to Homepage": [
+        "回到首頁"
+      ],
       "Beta Access": [
         "測試版體驗"
       ],
@@ -2821,6 +2824,12 @@
       "${ errorCount } failed": [
         "${ errorCount } 個任務失敗"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }：完整大小圖片"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }：低解析度預覽"
+      ],
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 個群組"
       ],
@@ -3016,6 +3025,9 @@
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其它軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
       ],
+      "Decrypting files": [
+        "正在解密檔案"
+      ],
       "Delete locked drives": [
         "刪除已鎖定的硬碟"
       ],
@@ -3072,6 +3084,12 @@
       ],
       "Encrypted search is here": [
         "加密搜索功能現已推出"
+      ],
+      "End-to-end encrypted": [
+        "端到端加密"
+      ],
+      "Enter password": [
+        "輸入密碼"
       ],
       "Enter the code from your authenticator app": [
         "輸入驗證應用程式中的驗證代碼"
@@ -3259,6 +3277,9 @@
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
       ],
+      "Link owner has the password": [
+        "連結擁有者有密碼"
+      ],
       "Loading": [
         "正在載入"
       ],
@@ -3294,6 +3315,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "需要分享檔案？請使用 ${ DRIVE_APP_NAME }，\n分享、儲存與同步您檔案的最安全方法。"
       ],
       "Network issue": [
         "網路問題"
@@ -3339,6 +3363,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "備註：資料將會持續在安裝 ${ DRIVE_APP_NAME } 的裝置上保持可用狀態。"
+      ],
+      "Nothing here yet": [
+        "還沒有任何內容"
       ],
       "of": [
         "/"
@@ -3466,6 +3493,9 @@
       "Shareable link for ${ boldNameText }": [
         "${ boldNameText } 的可供分享連結"
       ],
+      "Shared link not found": [
+        "找不到分享的連結"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "因為網路錯誤，所以無法驗證簽章，請稍後再試。"
       ],
@@ -3519,6 +3549,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載該檔案。"
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "此檔案可能已被刪除、移動或不可用。請嘗試聯絡檔案擁有者。"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
@@ -3921,6 +3954,9 @@
       "Download anyway": [
         "仍要下載"
       ],
+      "Downloading ${ percentageValue }%": [
+        "正在下載 ${ percentageValue }%"
+      ],
       "Email": [
         "電郵"
       ],
@@ -3929,6 +3965,9 @@
       ],
       "Email format": [
         "電郵格式"
+      ],
+      "Email or username": [
+        "電郵位址或使用者名稱"
       ],
       "Emails": [
         "電郵"
@@ -4119,6 +4158,9 @@
       "Replace folder": [
         "取代資料夾"
       ],
+      "Report": [
+        "回報"
+      ],
       "Reveal password": [
         "顯示密碼"
       ],
@@ -4170,9 +4212,6 @@
       "Toolbar": [
         "工具列"
       ],
-      "Two-factor authentication code": [
-        "雙重驟驗證碼"
-      ],
       "Type": [
         "類型"
       ],
@@ -4196,9 +4235,6 @@
       ],
       "Upload your first file": [
         "上傳您的第一個檔案"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "使用者名稱或 ${ MAIL_APP_NAME } 位址"
       ],
       "Verification code": [
         "驗證碼"
@@ -4709,9 +4745,6 @@
       "Image URL": [
         "圖像網址"
       ],
-      "Mailbox password": [
-        "信箱密碼"
-      ],
       "Name": [
         "名稱"
       ],
@@ -5160,9 +5193,6 @@
       "Enter your password": [
         "請輸入您的密碼"
       ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "輸入您的使用者名稱或 ${ MAIL_APP_NAME } 電郵位址"
-      ],
       "Exporting contacts": [
         "正在匯出聯絡人"
       ],
@@ -5192,6 +5222,9 @@
       ],
       "Groups": [
         "群組"
+      ],
+      "Hm, we couldn't find that one": [
+        "抱歉，我們找不到那個"
       ],
       "Human verification": [
         "真人身分驗證"
