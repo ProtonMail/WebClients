@@ -64,6 +64,9 @@
       "Back": [
         "Zurück"
       ],
+      "Back to Homepage": [
+        "Zurück zur Startseite"
+      ],
       "Beta Access": [
         "Beta-Zugang"
       ],
@@ -2855,6 +2858,12 @@
         "${ errorCount } fehlgeschlagen",
         "${ errorCount } fehlgeschlagen"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: Bild in voller Größe"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: Vorschau in niedriger Auflösung"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
@@ -3321,6 +3330,9 @@
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
+      "Link owner has the password": [
+        "Der Eigentümer des Links hat das Passwort"
+      ],
       "Loading": [
         "Wird geladen"
       ],
@@ -3356,6 +3368,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Du möchtest eine Datei teilen? Dann hol dir ${ DRIVE_APP_NAME },\ndie sicherste Art, deine Dateien zu teilen, speichern und synchronisieren."
       ],
       "Network issue": [
         "Netzwerkproblem"
@@ -3401,6 +3416,9 @@
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Hinweis: Auf Geräten, auf denen ${ DRIVE_APP_NAME } installiert ist, sind die Daten möglicherweise weiterhin lokal verfügbar."
+      ],
+      "Nothing here yet": [
+        "Hier gibt es noch nichts"
       ],
       "of": [
         "von"
@@ -3530,6 +3548,9 @@
       "Shareable link for ${ boldNameText }": [
         "Teilbarer Link für ${ boldNameText }"
       ],
+      "Shared link not found": [
+        "Geteilten Link nicht gefunden"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Die Signatur kann aufgrund eines Netzwerkfehlers nicht validiert werden, bitte versuche es später erneut."
       ],
@@ -3583,6 +3604,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Die Datei wurde möglicherweise gelöscht, verschoben oder nicht mehr verfügbar gemacht. Versuche den Eigentümer der Datei zu kontaktieren."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
@@ -3987,6 +4011,9 @@
       "Download anyway": [
         "Trotzdem herunterladen"
       ],
+      "Downloading ${ percentageValue }%": [
+        "${ percentageValue }% heruntergeladen"
+      ],
       "Email": [
         "E-Mail-Adresse"
       ],
@@ -3995,6 +4022,9 @@
       ],
       "Email format": [
         "E-Mail-Format"
+      ],
+      "Email or username": [
+        "E‐Mail‐Adresse oder Benutzername"
       ],
       "Emails": [
         "E-Mails"
@@ -4185,6 +4215,9 @@
       "Replace folder": [
         "Ordner ersetzen"
       ],
+      "Report": [
+        "Bericht"
+      ],
       "Reveal password": [
         "Passwort anzeigen"
       ],
@@ -4236,9 +4269,6 @@
       "Toolbar": [
         "Symbolleiste"
       ],
-      "Two-factor authentication code": [
-        "Zwei-Faktor-Authentifizierungscode"
-      ],
       "Type": [
         "Typ"
       ],
@@ -4262,9 +4292,6 @@
       ],
       "Upload your first file": [
         "Lade deine erste Datei hoch"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Benutzername oder ${ MAIL_APP_NAME }-Adresse"
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -4798,9 +4825,6 @@
       ],
       "Image URL": [
         "Bild-URL"
-      ],
-      "Mailbox password": [
-        "Postfach-Passwort"
       ],
       "Name": [
         "Name"
@@ -5504,9 +5528,6 @@
       "Enter your password": [
         "Passwort eingeben"
       ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Gib deinen Benutzernamen oder deine ${ MAIL_APP_NAME }-E-Mail-Adresse ein"
-      ],
       "Exporting contacts": [
         "Kontakte werden exportiert"
       ],
@@ -5537,6 +5558,9 @@
       ],
       "Groups": [
         "Gruppen"
+      ],
+      "Hm, we couldn't find that one": [
+        "Dieses Element konnte nicht gefunden werden"
       ],
       "Human verification": [
         "Captcha"

@@ -2383,7 +2383,7 @@
         "Nama label ini tidak dapat digunakan. Mohon pilih nama lain."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Pesan ini terindikasi memiliki tautan/URL yang tidak dapat dibuka dengan benar oleh browser Anda."
+        "Pesan ini terindikasi memiliki tautan/URL yang tidak dapat dibuka sebagaimana semestinya oleh browser Anda."
       ],
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
@@ -2792,7 +2792,7 @@
     },
     "Hint": {
       "Found ${ items.length } suggestions, use keyboard to navigate.": [
-        "Menemukan ${ items.length } saran, gunakan papan ketik untuk navigasi."
+        "${ items.length } saran ditemukan. Gunakan keyboard Anda untuk beralih antar pilihan yang ada."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Pakai kunci Up dan Down untuk mengakses dan menjelajah saran setelah input. Pencet Enter untuk mengonfirmasi pilihan, atau Escape untuk menutup kotak saran."
@@ -3898,6 +3898,9 @@
       "Email format": [
         "Format email"
       ],
+      "Email or username": [
+        "Email atau nama pengguna"
+      ],
       "Emails": [
         "Email"
       ],
@@ -4093,17 +4096,11 @@
       "Toolbar": [
         "Bilah Alat"
       ],
-      "Two-factor authentication code": [
-        "Kode autentikasi dua faktor"
-      ],
       "Upload picture": [
         "Unggah gambar"
       ],
       "URL": [
         "URL"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Nama pengguna atau alamat ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -4775,9 +4772,6 @@
       "Image URL": [
         "URL gambar"
       ],
-      "Mailbox password": [
-        "Sandi kotak pesan"
-      ],
       "Name": [
         "Nama"
       ],
@@ -5369,9 +5363,6 @@
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Masukkan nama pengguna atau alamat email ${ MAIL_APP_NAME } Anda"
       ],
       "Error": [
         "Kesalahan"

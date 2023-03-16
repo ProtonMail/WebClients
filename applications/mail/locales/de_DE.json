@@ -4337,6 +4337,12 @@
         "${ embeddedAttachmentsCount } eingebettetes Bild",
         "${ embeddedAttachmentsCount } eingebettete Bilder"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: Bild in voller Größe"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: Vorschau in niedriger Auflösung"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
@@ -6053,6 +6059,9 @@
       "Email format": [
         "E-Mail-Format"
       ],
+      "Email or username": [
+        "E‐Mail‐Adresse oder Benutzername"
+      ],
       "Emails": [
         "E-Mails"
       ],
@@ -6335,17 +6344,11 @@
       "Toolbar": [
         "Symbolleiste"
       ],
-      "Two-factor authentication code": [
-        "Zwei-Faktor-Authentifizierungscode"
-      ],
       "Undisclosed Recipients": [
         "Verborgene Empfänger"
       ],
       "Upload picture": [
         "Bild hochladen"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Benutzername oder ${ MAIL_APP_NAME }-Adresse"
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -7146,9 +7149,6 @@
       ],
       "Link": [
         "Link"
-      ],
-      "Mailbox password": [
-        "Postfach-Passwort"
       ],
       "Name": [
         "Name"
@@ -8365,9 +8365,6 @@
       ],
       "Enter your password": [
         "Passwort eingeben"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Gib deinen Benutzernamen oder deine ${ MAIL_APP_NAME }-E-Mail-Adresse ein"
       ],
       "Error": [
         "Fehler"

@@ -3630,6 +3630,9 @@
       "Email format": [
         "E-mail formátum"
       ],
+      "Email or username": [
+        "Email cím, vagy felhasználónév"
+      ],
       "Emails": [
         "E-mailek"
       ],
@@ -3826,14 +3829,8 @@
       "Toolbar": [
         "Eszköztár"
       ],
-      "Two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód"
-      ],
       "Upload picture": [
         "Kép feltöltése"
-      ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Felhasználónév vagy ${ MAIL_APP_NAME } email-cím"
       ],
       "Verification code": [
         "Ellenőrző kód"
@@ -4447,9 +4444,6 @@
       "Image URL": [
         "Kép URL"
       ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
       "Name": [
         "Név"
       ],
@@ -4675,6 +4669,9 @@
       ],
       "Calendar updated": [
         "Naptár frissítve"
+      ],
+      "Canceling import": [
+        "Importálás megszakítása"
       ],
       "Cancellation sent and all events deleted": [
         "Lemondás elküldve és az összes esemény törölve"
@@ -5004,9 +5001,6 @@
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Írja be felhasználónevét vagy ${ MAIL_APP_NAME } email-címét"
       ],
       "Error": [
         "Hiba"
