@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { CardDetails, PayPalDetails, PaymentMethod } from '@proton/shared/lib/interfaces';
+import { Autopay, CardDetails, PayPalDetails, PaymentMethod } from '@proton/shared/lib/interfaces';
 
 import TableBody from '../../components/table/TableBody';
 import TableRow from '../../components/table/TableRow';
@@ -47,6 +47,7 @@ describe('PaymentMethodsTable', () => {
             Details,
             Order: 1,
             ID: 'id123',
+            Autopay: Autopay.ENABLE,
         };
 
         const TableBodyMock: jest.Mock = TableBody as any;
@@ -117,6 +118,7 @@ describe('PaymentMethodsTable', () => {
             Details: Details1,
             Order: 1,
             ID: 'id-visa',
+            Autopay: Autopay.ENABLE,
         };
 
         const Details2: CardDetails = {
@@ -134,6 +136,7 @@ describe('PaymentMethodsTable', () => {
             Details: Details2,
             Order: 2,
             ID: 'id-mastercard',
+            Autopay: Autopay.ENABLE,
         };
 
         const paypalMethod: PaymentMethod = {

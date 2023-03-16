@@ -2,7 +2,7 @@ import { Params } from '@proton/components/containers/payments/interface';
 import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 
 import { getProductHeaders } from '../apps/product';
-import { Currency } from '../interfaces';
+import { Autopay, Currency } from '../interfaces';
 
 export const getSubscription = () => ({
     url: 'payments/subscription',
@@ -84,6 +84,16 @@ export const queryPaymentMethods = () => ({
 export const setPaymentMethod = (data: any) => ({
     url: 'payments/methods',
     method: 'post',
+    data,
+});
+
+export interface UpdatePaymentMethodsParams {
+    Autopay: Autopay;
+}
+
+export const updatePaymentMethod = (methodId: string, data: UpdatePaymentMethodsParams) => ({
+    url: `payments/methods/${methodId}`,
+    method: 'put',
     data,
 });
 
