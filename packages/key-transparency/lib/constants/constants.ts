@@ -25,3 +25,14 @@ export enum KT_CERTIFICATE_ISSUER {
 // Number of independent CT operators from which
 // we expect SCTs on epoch certificates
 export const SCT_THRESHOLD = 2;
+
+export const KT_VE_SIGNING_CONTEXT = {
+    value: 'key-transparency.verified-epoch',
+    // TODO: set it to true once the BE understands the notation
+    critical: false,
+};
+
+export const KT_VE_VERIFICATION_CONTEXT = {
+    value: 'key-transparency.verified-epoch',
+    required: true,
+};
