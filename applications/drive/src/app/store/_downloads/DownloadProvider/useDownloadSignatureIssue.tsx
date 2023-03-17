@@ -1,26 +1,24 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { useModals } from '@proton/components';
-
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
+import { useSignatureIssueModal } from '../../../components/modals/SignatureIssueModal';
 import { waitUntil } from '../../../utils/async';
 import { isTransferActive, isTransferSignatureIssue } from '../../../utils/transfer';
 import { SignatureIssues } from '../../_links';
-import { DownloadSignatureIssueModal, LinkDownload, TransferSignatureIssueStrategy } from '../interface';
+import { LinkDownload, TransferSignatureIssueStrategy } from '../interface';
 import { Download, UpdateData, UpdateFilter, UpdateState } from './interface';
 
 // Empty string is ensured to not conflict with any upload ID or folder name.
 // No upload has empty ID.
 const SIGNATURE_ISSUE_STRATEGY_ALL_ID = '';
 
-export default function useUploadConflict(
-    DownloadSignatureIssueModal: DownloadSignatureIssueModal,
+export default function useDownloadSignatureIssue(
     downloads: Download[],
     updateState: (filter: UpdateFilter, newState: UpdateState) => void,
     updateWithData: (filter: UpdateFilter, newState: UpdateState, data: UpdateData) => void,
     cancelDownloads: (filter: UpdateFilter) => void
 ) {
-    const { createModal } = useModals();
+    const [signatureIssueModal, showSignatureIssueModal] = useSignatureIssueModal();
 
     // There should be only one modal to choose conflict strategy.
     const isSignatureIssueModalOpen = useRef(false);
@@ -140,7 +138,7 @@ export default function useUploadConflict(
             setSignatureIssues([]);
             cancelDownloads(isTransferActive);
         };
-        createModal(<DownloadSignatureIssueModal apply={apply} cancelAll={cancelAll} {...params} />);
+        void showSignatureIssueModal({ apply, cancelAll, ...params });
     };
 
     // Modals are openned on this one place only to not have race condition
@@ -162,5 +160,6 @@ export default function useUploadConflict(
 
     return {
         handleSignatureIssue,
+        signatureIssueModal,
     };
 }
