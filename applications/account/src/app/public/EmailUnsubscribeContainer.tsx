@@ -4,17 +4,27 @@ import { useHistory, useLocation, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { EmailSubscriptionCategories, GenericError, useApi, useLoading, useNotifications } from '@proton/components';
+import {
+    EmailSubscriptionCategories,
+    GenericError,
+    useApi,
+    useErrorHandler,
+    useLoading,
+    useNotifications,
+} from '@proton/components';
 import { authJwt } from '@proton/shared/lib/api/auth';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getNewsExternal, updateNewsExternal } from '@proton/shared/lib/api/settings';
 import { NEWS } from '@proton/shared/lib/constants';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { clearBit, getBits, setBit } from '@proton/shared/lib/helpers/bitset';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import EmailResubscribed from '../components/EmailResubscribed';
 import EmailSubscriptionManagement from '../components/EmailSubscriptionManagement';
 import EmailUnsubscribed from '../components/EmailUnsubscribed';
+import ExpiredError from './ExpiredError';
 
 import './EmailUnsubscribeContainer.scss';
 
@@ -31,15 +41,22 @@ enum PAGE {
     MANAGE,
 }
 
+enum ErrorType {
+    Expired,
+    API,
+}
+
 const EmailUnsubscribeContainer = () => {
     const api = useApi();
+    const silentApi = getSilentApi(api);
     const [authApi, setAuthApi] = useState<Api | null>(null);
     const [news, setNews] = useState<number | null>(null);
     const [page, setPage] = useState(PAGE.UNSUBSCRIBE);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading();
     const history = useHistory();
     const location = useLocation();
+    const handleError = useErrorHandler();
     const { subscriptions: subscriptionsParam } = useParams<{ subscriptions: string | undefined }>();
 
     const subscriptions = Number(subscriptionsParam);
@@ -51,10 +68,9 @@ const EmailUnsubscribeContainer = () => {
 
             history.replace(location.pathname);
 
-            const { UID, AccessToken } = await api<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
+            const { UID, AccessToken } = await silentApi<{ UID: string; AccessToken: string }>(authJwt({ Token: jwt }));
 
-            const authApiFn: Api = (config: object) =>
-                api(withAuthHeaders(UID, AccessToken, { ...config, headers: {} }));
+            const authApiFn = getAuthAPI(UID, AccessToken, silentApi);
 
             const result = await authApiFn<UserSettingsNewsResponse>(getNewsExternal());
             let currentNews = result.UserSettings.News;
@@ -72,7 +88,15 @@ const EmailUnsubscribeContainer = () => {
             setNews(currentNews);
         };
 
-        init().catch(setError);
+        init().catch((error) => {
+            const { code } = getApiError(error);
+            if (code === API_CUSTOM_ERROR_CODES.JWT_EXPIRED) {
+                setError({ type: ErrorType.Expired });
+            } else {
+                handleError(error);
+                setError({ type: ErrorType.API });
+            }
+        });
     }, []);
 
     const { createNotification } = useNotifications();
@@ -114,6 +138,13 @@ const EmailUnsubscribeContainer = () => {
         <main className="main-area email-unsubscribe-container--main">
             {(() => {
                 if (error) {
+                    if (error.type === ErrorType.Expired) {
+                        return (
+                            <div className="absolute-center">
+                                <ExpiredError type="unsubscribe" />
+                            </div>
+                        );
+                    }
                     const signIn = (
                         <a key="1" href="/login" target="_self">
                             {c('Error message, unsubscribe').t`sign in`}

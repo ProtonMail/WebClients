@@ -78,7 +78,7 @@
 }
 
 // .max-w50e { max-inline-size: 50em; }
-@each $max-width in (5, 7, 8, 13, 15, 18, 24, 30, 37, 40, 43, 46, 50, 52, 57, 60, 69) {
+@each $max-width in (5, 7, 8, 13, 15, 18, 20, 24, 30, 37, 40, 43, 46, 50, 52, 57, 60, 69) {
 	.max-w#{$max-width}e {
 		max-inline-size: #{$max-width}em;
 	}
