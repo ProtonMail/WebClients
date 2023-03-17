@@ -25,7 +25,7 @@ import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../hooks/drive/useActiveShare';
 import { useFileUploadInput } from '../../store';
-import { useFileSharingModal } from '../SelectLinkToShareModal/SelectLinkToShareModal';
+import { useFileSharingModal } from '../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import useChecklist from './useChecklist';
 
 export default function GiftFloatingButton() {

@@ -6,7 +6,7 @@ import { useModals, useNotifications } from '@proton/components';
 
 import { useLockedVolume } from '../../../store';
 import DeleteLockedVolumesConfirmModal from './DeleteLockedVolumesConfirmModal';
-import KeyReactivationModal from './LockedVolumesResolveMethodModal';
+import KeyReactivationModal from './KeyReactivationModal';
 import UnlockDriveConfirmationDialog from './UnlockDriveConfirmationDialog';
 import { LockedVolumeResolveMethod } from './interfaces';
 

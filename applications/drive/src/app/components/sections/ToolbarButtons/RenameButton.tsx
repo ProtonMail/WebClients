@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { DecryptedLink } from '../../../store';
-import { useRenameModal } from '../../RenameModal';
+import { useRenameModal } from '../../modals/RenameModal';
 import { isMultiSelect, noSelection } from './utils';
 
 interface Props {

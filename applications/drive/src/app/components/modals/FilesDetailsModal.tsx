@@ -14,7 +14,7 @@ import {
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { DecryptedLink, useLinksDetailsView } from '../store';
+import { DecryptedLink, useLinksDetailsView } from '../../store';
 import ModalContentLoader from './ModalContentLoader';
 
 interface Props {

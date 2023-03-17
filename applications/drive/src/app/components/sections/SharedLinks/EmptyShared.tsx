@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { EmptyViewContainer, PrimaryButton } from '@proton/components';
 import noLinksSvg from '@proton/styles/assets/img/illustrations/file-share.svg';
 
-import { useFileSharingModal } from '../../SelectLinkToShareModal/SelectLinkToShareModal';
+import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 
 type Props = {
     shareId: string;

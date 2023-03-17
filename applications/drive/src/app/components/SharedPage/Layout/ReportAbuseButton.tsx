@@ -8,8 +8,8 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import clsx from '@proton/utils/clsx';
 
 import { usePublicShare } from '../../../store';
-import ReportAbuseModal from '../../ReportAbuseModal/ReportAbuseModal';
-import { LinkInfo } from '../../ReportAbuseModal/types';
+import ReportAbuseModal from '../../modals/ReportAbuseModal/ReportAbuseModal';
+import { LinkInfo } from '../../modals/ReportAbuseModal/types';
 
 interface Props {
     linkInfo: LinkInfo;

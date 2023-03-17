@@ -17,11 +17,11 @@ import {
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
-import { useLinkDetailsView } from '../store';
-import { formatAccessCount } from '../utils/formatters';
-import { Cells } from './FileBrowser';
+import { useLinkDetailsView } from '../../store';
+import { formatAccessCount } from '../../utils/formatters';
+import { Cells } from '../FileBrowser';
+import SignatureAlert from '../SignatureAlert';
 import ModalContentLoader from './ModalContentLoader';
-import SignatureAlert from './SignatureAlert';
 
 const { UserNameCell, LocationCell, TimeCell, DescriptiveTypeCell, MimeTypeCell } = Cells;
 export interface Props {

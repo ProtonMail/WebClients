@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { ModalTwo, useLoading } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
-import { DecryptedLink, useTreeForModals } from '../../store';
+import { DecryptedLink, useTreeForModals } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
 import { useLinkSharingModal } from '../ShareLinkModal/ShareLinkModal';
 import { ModalContent } from './ModalContent';

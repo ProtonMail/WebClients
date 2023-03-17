@@ -11,8 +11,8 @@ import useNavigate from '../../hooks/drive/useNavigate';
 import { useLinkPath } from '../../store';
 import { Share, ShareType, useShare } from '../../store/_shares';
 import { sendErrorReport } from '../../utils/errorHandling';
-import { useDetailsModal } from '../DetailsModal';
 import SignatureIcon from '../SignatureIcon';
+import { useDetailsModal } from '../modals/DetailsModal';
 import { getDevicesSectionName } from '../sections/Devices/constants';
 
 interface Props {

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { useFileSharingModal } from '../../SelectLinkToShareModal/SelectLinkToShareModal';
+import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 
 interface Props {
     shareId: string;
