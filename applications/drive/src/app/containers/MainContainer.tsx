@@ -6,9 +6,7 @@ import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenS
 
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
-import ConflictModal from '../components/modals/ConflictModal';
 import DriveStartupModals from '../components/modals/DriveStartupModals';
-import SignatureIssueModal from '../components/modals/SignatureIssueModal';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { DriveProvider, useDefaultShare, useDriveEventManager, useSearchControl } from '../store';
@@ -111,7 +109,7 @@ const InitContainer = () => {
 const MainContainer = () => {
     return (
         <LocationErrorBoundary>
-            <DriveProvider DownloadSignatureIssueModal={SignatureIssueModal} UploadConflictModal={ConflictModal}>
+            <DriveProvider>
                 <InitContainer />
             </DriveProvider>
         </LocationErrorBoundary>

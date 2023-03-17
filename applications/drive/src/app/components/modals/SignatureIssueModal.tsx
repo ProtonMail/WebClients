@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button';
 import {
     Checkbox,
     Form,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -13,12 +14,13 @@ import {
     Radio,
     Row,
 } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 import { SignatureIssues } from '../../store';
 import { TransferSignatureIssueStrategy } from '../../store';
 import { SignatureAlertBody } from '../SignatureAlert';
 
-export interface ConflictModalProps {
+interface ConflictModalProps {
     isFile: boolean;
     name: string;
     downloadName: string;
@@ -26,7 +28,6 @@ export interface ConflictModalProps {
     signatureIssues: SignatureIssues;
     apply: (strategy: TransferSignatureIssueStrategy, all: boolean) => void;
     cancelAll: () => void;
-    onClose?: () => void;
 }
 
 export default function SignatureIssueModal({
@@ -39,13 +40,13 @@ export default function SignatureIssueModal({
     cancelAll,
     onClose,
     ...rest
-}: ConflictModalProps) {
+}: ConflictModalProps & ModalStateProps) {
     const [strategy, setStrategy] = useState(TransferSignatureIssueStrategy.Abort);
     const [applyAll, setApplyAll] = useState(false);
 
     const handleClose = () => {
         cancelAll();
-        onClose?.();
+        onClose();
     };
 
     const downloadFileName = (
@@ -60,7 +61,7 @@ export default function SignatureIssueModal({
             onClose={handleClose}
             onSubmit={() => {
                 apply(strategy, applyAll);
-                onClose?.();
+                onClose();
             }}
             size="small"
             {...rest}
@@ -126,3 +127,7 @@ export default function SignatureIssueModal({
         </ModalTwo>
     );
 }
+
+export const useSignatureIssueModal = () => {
+    return useModalTwo<ConflictModalProps, void>(SignatureIssueModal);
+};

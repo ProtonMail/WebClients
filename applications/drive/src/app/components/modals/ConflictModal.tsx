@@ -2,9 +2,11 @@ import React, { ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
+import { Button } from '@proton/atoms';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import {
     Checkbox,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -23,7 +25,6 @@ export interface ConflictModalProps {
     originalIsFolder?: boolean;
     apply: (strategy: TransferConflictStrategy, all: boolean) => void;
     cancelAll: () => void;
-    onClose?: () => void;
     onConfirm?: () => void;
     title?: string;
     children?: ReactNode;
@@ -37,7 +38,6 @@ export interface ConflictModalProps {
     mode?: 'alert';
     submitProps?: any;
     closeProps?: any;
-    open?: boolean;
 }
 
 export default function ConflictModal({
@@ -49,7 +49,7 @@ export default function ConflictModal({
     cancelAll,
     onClose,
     open,
-}: ConflictModalProps) {
+}: ConflictModalProps & ModalStateProps) {
     const [strategy, setStrategy] = useState(
         isFolder ? TransferConflictStrategy.Merge : TransferConflictStrategy.Rename
     );
@@ -66,11 +66,11 @@ export default function ConflictModal({
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         apply(strategy, applyAll);
-        onClose?.();
+        onClose();
     };
 
     const closeAndCancel = () => {
-        onClose?.();
+        onClose();
         cancelAll();
     };
 
@@ -183,3 +183,7 @@ export default function ConflictModal({
         </ModalTwo>
     );
 }
+
+export const useConflictModal = () => {
+    return useModalTwo<ConflictModalProps, void>(ConflictModal);
+};
