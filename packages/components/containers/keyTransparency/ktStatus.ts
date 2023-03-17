@@ -18,6 +18,12 @@ export const isKTActive = async (feature?: KT_FF) => {
         return false;
     }
 
+    const { hostname } = window.location;
+    const currentDomain = hostname.slice(hostname.indexOf('.') + 1);
+    if (hostname === 'localhost' || currentDomain === 'proton.local') {
+        return false;
+    }
+
     try {
         // We only care about the difference between account and everything else
         const ls = getKTLocalStorage(
