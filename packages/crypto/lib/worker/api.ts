@@ -28,8 +28,8 @@ import {
     unsafeSHA1,
     verifyCleartextMessage,
     verifyMessage,
-} from 'pmcrypto-v7';
-import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v7';
+} from 'pmcrypto';
+import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
 import {
     MaybeArray,
     decryptKey,
@@ -41,7 +41,7 @@ import {
     readMessage,
     readPrivateKey,
     readSignature,
-} from 'pmcrypto-v7/lib/openpgp';
+} from 'pmcrypto/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import {

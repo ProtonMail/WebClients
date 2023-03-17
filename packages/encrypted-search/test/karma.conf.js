@@ -39,7 +39,7 @@ module.exports = (config) => {
                                 },
                             },
                         ],
-                        exclude: /node_modules\/(?!.*pmcrypto-v7)/,
+                        exclude: /node_modules\/(?!.*pmcrypto)/,
                     },
                 ],
             },
