@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import InputField from '@proton/components/components/v2/field/InputField';
 import {
     useApi,
@@ -21,22 +21,22 @@ import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharin
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { Address, Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Address, Recipient, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import {
-    ENCRYPTION_PREFERENCES_ERROR_TYPES,
-    EncryptionPreferencesError,
-} from '@proton/shared/lib/mail/encryptionPreferences';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import remove from '@proton/utils/remove';
 
 import {
     AddressesAutocompleteTwo,
     AddressesInput,
     AddressesInputItem,
     Icon,
+    Loader,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
@@ -81,6 +81,101 @@ class ShareCalendarValdidationError extends Error {
     }
 }
 
+type RecipientError = ShareCalendarValdidationError | EncryptionPreferencesError;
+
+interface ExtendedRecipient extends Recipient {
+    loading?: boolean;
+    error?: RecipientError;
+    publicKey?: PublicKeyReference;
+    isKeyPinned?: boolean;
+}
+
+const getRecipientHasError = (recipient: ExtendedRecipient): recipient is RequireSome<ExtendedRecipient, 'error'> => {
+    return !!recipient.error;
+};
+
+const loadRecipient = async ({
+    recipient,
+    setRecipientsMap,
+    getEncryptionPreferences,
+    contactEmailsMap,
+}: {
+    recipient: Recipient;
+    setRecipientsMap: Dispatch<SetStateAction<SimpleMap<ExtendedRecipient>>>;
+    getEncryptionPreferences: GetEncryptionPreferences;
+    contactEmailsMap: SimpleMap<ContactEmail>;
+}) => {
+    const { Address: email } = recipient;
+    setRecipientsMap((map) => ({
+        ...map,
+        [email]: {
+            ...recipient,
+            loading: true,
+        },
+    }));
+    const { sendKey, isSendKeyPinned, error, isInternal } = await getEncryptionPreferences(email, 0, contactEmailsMap);
+
+    if (error) {
+        setRecipientsMap((map) => ({
+            ...map,
+            [email]: {
+                ...recipient,
+                loading: false,
+                error: new EncryptionPreferencesError(error.type, reformatApiErrorMessage(error.message)),
+            },
+        }));
+    } else if (!isInternal) {
+        setRecipientsMap((map) => ({
+            ...map,
+            [email]: {
+                ...recipient,
+                loading: false,
+                error: new ShareCalendarValdidationError(NOT_PROTON_ACCOUNT),
+            },
+        }));
+    } else {
+        setRecipientsMap((map) => ({
+            ...map,
+            [email]: {
+                ...recipient,
+                loading: false,
+                publicKey: sendKey,
+                isKeyPinned: isSendKeyPinned,
+            },
+        }));
+    }
+};
+
+const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }: ExtendedRecipient) => {
+    if (loading) {
+        return {
+            icon: <Loader className="icon-16p pl0-5 mauto flex flex-item-noshrink" />,
+        };
+    }
+    if (error) {
+        return {
+            icon: (
+                <div className="flex flex-align-items-center flex-item-noshrink ml0-5">
+                    <Icon name="exclamation-circle" />
+                </div>
+            ),
+            iconTooltip: error.message,
+            labelTooltip: Address,
+        };
+    }
+    return {
+        icon: (
+            <span className="inline-flex pl0-5 flex-item-noshrink mtauto mbauto">
+                <Icon size={16} name={isKeyPinned ? 'lock-check-filled' : 'lock-filled'} className={'color-info'} />
+            </span>
+        ),
+        iconTooltip: isKeyPinned
+            ? c('Tooltip; share calendar modal ').t`Shared end-to-end encrypted with verified contact`
+            : c('Tooltip; share calendar modal ').t`Shared end-to-end encrypted`,
+        labelTooltip: Address,
+    };
+};
+
 interface Props extends ModalProps {
     calendar: VisualCalendar;
     addresses: Address[];
@@ -98,34 +193,27 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
 
     const [permissions, setPermissions] = useState<number>(MEMBER_PERMISSIONS.FULL_VIEW);
-    const [recipients, setRecipients] = useState<Recipient[]>([]);
-    const [invalidRecipients, setInvalidRecipients] = useState<
-        SimpleMap<ShareCalendarValdidationError | EncryptionPreferencesError>
-    >({});
-    const [loading, withLoading] = useLoading();
+    const [recipientsMap, setRecipientsMap] = useState<SimpleMap<ExtendedRecipient>>({});
+    const [loadingShare, withLoadingShare] = useLoading(false);
 
+    const recipients = Object.values(recipientsMap).filter(isTruthy);
+    const invalidRecipients = recipients.filter(getRecipientHasError);
+    const hasExternalRecipients = invalidRecipients.some(({ error }) => error.type === NOT_PROTON_ACCOUNT);
     const currentEmails = recipients.map(({ Address }) => canonicalizeInternalEmail(Address));
     const pendingInvitations = filterOutAcceptedInvitations(invitations);
     const existingEmails = [...pendingInvitations, ...members].map(({ Email }) => canonicalizeInternalEmail(Email));
     const totalRecipients = recipients.length;
     const maxRecipients = Math.max(MAX_CALENDAR_MEMBERS - existingEmails.length, 0);
+    const isLoadingRecipients = recipients.some(({ loading }) => loading);
 
     const ownNormalizedEmails = getSelfSendAddresses(addresses).map(({ Email }) => canonicalizeInternalEmail(Email));
 
     useEffect(() => {
         if (!rest.open) {
-            setRecipients([]);
-            setInvalidRecipients({});
+            setRecipientsMap({});
             setPermissions(MEMBER_PERMISSIONS.FULL_VIEW);
         }
     }, [rest.open]);
-
-    const removeFromInvalidRecipients = (email: string) => {
-        setInvalidRecipients((prevState) => ({
-            ...prevState,
-            [email]: undefined,
-        }));
-    };
 
     const showDuplicateNotification = (recipients: Recipient[]) => {
         const joinedRecipients = recipients.map((recipient) => recipient.Address).join(', ');
@@ -144,7 +232,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     };
 
     const handleAddRecipients = (recipients: Recipient[]) => {
-        const { newRecipients, duplicateRecipients, existingRecipients } = recipients.reduce<{
+        const { duplicateRecipients, existingRecipients } = recipients.reduce<{
             newRecipients: Recipient[];
             addedCanonicalizedAddresses: string[];
             duplicateRecipients: Recipient[];
@@ -164,9 +252,12 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                 }
 
                 if (!validateEmailAddress(address)) {
-                    setInvalidRecipients((prevState) => ({
-                        ...prevState,
-                        [address]: new ShareCalendarValdidationError(INVALID_EMAIL),
+                    setRecipientsMap((map) => ({
+                        ...map,
+                        [address]: {
+                            ...recipient,
+                            error: new ShareCalendarValdidationError(INVALID_EMAIL),
+                        },
                     }));
                 }
 
@@ -175,6 +266,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                 } else if ([...currentEmails, ...acc.addedCanonicalizedAddresses].includes(canonicalizedAddress)) {
                     acc.duplicateRecipients.push(recipient);
                 } else {
+                    loadRecipient({ recipient, setRecipientsMap, getEncryptionPreferences, contactEmailsMap });
                     acc.newRecipients.push(recipient);
                     acc.addedCanonicalizedAddresses.push(canonicalizedAddress);
                 }
@@ -185,10 +277,14 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
         );
 
         if (existingRecipients.length) {
-            setInvalidRecipients((prevState) => ({
-                ...prevState,
-                ...existingRecipients.reduce<SimpleMap<ShareCalendarValdidationError>>((acc, { Address }) => {
-                    acc[Address] = new ShareCalendarValdidationError(EXISTING_MEMBER);
+            setRecipientsMap((map) => ({
+                ...map,
+                ...existingRecipients.reduce<SimpleMap<ExtendedRecipient>>((acc, recipient) => {
+                    acc[recipient.Address] = {
+                        ...recipient,
+                        loading: false,
+                        error: new ShareCalendarValdidationError(EXISTING_MEMBER),
+                    };
 
                     return acc;
                 }, {}),
@@ -198,51 +294,20 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
         if (duplicateRecipients.length) {
             showDuplicateNotification(duplicateRecipients);
         }
-
-        setRecipients((previousRecipients) => [...previousRecipients, ...newRecipients, ...existingRecipients]);
     };
 
-    const handleShare = async (emails: string[]) => {
-        const memberPublicKeys: SimpleMap<PublicKeyReference> = {};
-        const invalidRecipients: SimpleMap<EncryptionPreferencesError | ShareCalendarValdidationError> = {};
-        await Promise.all(
-            emails.map(async (email) => {
-                const { apiKeys, error, isInternal } = await getEncryptionPreferences(email, 0, contactEmailsMap);
-                const [primaryApiKey] = apiKeys;
-
-                if (error) {
-                    return (invalidRecipients[email] = new EncryptionPreferencesError(
-                        error.type,
-                        reformatApiErrorMessage(error.message)
-                    ));
+    const handleShare = async () => {
+        const memberPublicKeys = recipients.reduce<{ [email: string]: PublicKeyReference }>(
+            (acc, { Address, publicKey }) => {
+                if (!publicKey) {
+                    throw new Error('No public key for member');
                 }
+                acc[Address] = publicKey;
 
-                if (!isInternal) {
-                    return (invalidRecipients[email] = new ShareCalendarValdidationError(NOT_PROTON_ACCOUNT));
-                }
-
-                // This should not happen at this stage. Needed for Typescript
-                if (!primaryApiKey) {
-                    return (invalidRecipients[email] = new EncryptionPreferencesError(
-                        ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_API_KEY,
-                        c('Error').t`No public key for ${BRAND_NAME} address`
-                    ));
-                }
-
-                // No real benefit of using a trusted key here since the server could always fake the contact crypto preferences,
-                // and there's no UI difference for the end user between a trusted key and a non-trusted one
-                memberPublicKeys[email] = primaryApiKey;
-            })
+                return acc;
+            },
+            {}
         );
-
-        if (Object.keys(invalidRecipients).length) {
-            setInvalidRecipients((prevState) => ({
-                ...prevState,
-                ...invalidRecipients,
-            }));
-            // to be caught by handleAddMembers
-            throw new Error('Invalid recipients');
-        }
 
         const { decryptedPassphraseSessionKey: sessionKey } = await getDecryptedPassphraseAndCalendarKeys(calendar.ID);
         const keyPacketsMap = await encryptPassphraseSessionKey({
@@ -278,7 +343,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
 
     const handleAddMembers = async () => {
         try {
-            const { Invitations: newInvitations } = await handleShare(recipients.map(({ Address }) => Address));
+            const { Invitations: newInvitations } = await handleShare();
 
             createNotification({
                 type: 'success',
@@ -310,45 +375,37 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
             {totalRecipients}/{maxRecipients}
         </span>
     );
-    const assistiveText =
-        invalidRecipients &&
-        Object.values(invalidRecipients)
-            .filter(isTruthy)
-            .some(({ type }) => type === NOT_PROTON_ACCOUNT)
-            ? c('Share calendar assistive text').t`To invite non-${BRAND_NAME} users, share your calendar with a link`
-            : '';
+    const assistiveText = (
+        <span>
+            {c('Share calendar assistive text').t`To invite non-${BRAND_NAME} users, share your calendar with a link.`}{' '}
+            <Href href={getKnowledgeBaseUrl('/share-calendar-via-link')}>
+                {c('Knowledge base link label').t`Here's how`}
+            </Href>
+        </span>
+    );
     const addressesInputText = c('Calendar access select label').t`Add people or groups`;
 
     const items = recipients.map((recipient) => {
-        const invalidEmailMessage = invalidRecipients[recipient.Address]?.message;
-        const labelTooltip = (() => {
-            if (invalidEmailMessage) {
-                return invalidEmailMessage;
-            }
-
-            return recipient.Address;
-        })();
+        const { Name, Address, error } = recipient;
+        const { icon, iconTooltip, labelTooltip } = getAddressInputItemAttributes(recipient);
 
         return (
             <AddressesInputItem
-                key={recipient.Address}
+                key={Address}
                 labelTooltipTitle={labelTooltip}
-                label={recipient.Name}
+                label={Name}
                 labelProps={{
-                    className: clsx(['pt0-25 pb0-25', invalidEmailMessage && 'pl0-25']),
+                    className: clsx(['pt0-25 pb0-25', error && 'pl0-25']),
                 }}
-                icon={
-                    invalidEmailMessage && (
-                        <div className="flex flex-align-items-center flex-item-noshrink ml0-5">
-                            <Icon name="exclamation-circle" />
-                        </div>
-                    )
-                }
-                className={clsx([invalidEmailMessage && 'invalid'])}
+                icon={icon}
+                iconTooltipTitle={iconTooltip}
+                className={clsx([error && 'invalid'])}
                 onClick={(event) => event.stopPropagation()}
                 onRemove={() => {
-                    setRecipients((prevState) => remove(prevState, recipient));
-                    removeFromInvalidRecipients(recipient.Address);
+                    setRecipientsMap((map) => ({
+                        ...map,
+                        [Address]: undefined,
+                    }));
                 }}
             />
         );
@@ -356,11 +413,15 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
 
     const onAutocompleteKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Backspace' && event.currentTarget.value.length === 0 && totalRecipients > 0) {
-            setRecipients((prevState) => prevState.slice(0, -1));
+            setRecipientsMap((map) => Object.fromEntries(Object.entries(map).slice(0, -1)));
         }
     };
 
-    const isSubmitDisabled = !totalRecipients || Object.values(invalidRecipients).some(isTruthy) || remainingSpots < 0;
+    const isSubmitDisabled =
+        !totalRecipients ||
+        isLoadingRecipients ||
+        Object.values(invalidRecipients).some(isTruthy) ||
+        remainingSpots < 0;
     const inputId = 'input-share-privately';
     const calendarName = (
         <span key="bold-calendar-name" className="text-bold text-break">
@@ -381,7 +442,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                         as={AddressesInput}
                         ref={addressesAutocompleteRef}
                         hint={hint}
-                        assistiveText={assistiveText}
+                        assistiveText={hasExternalRecipients ? assistiveText : null}
                         onClick={() => {
                             document.getElementById(inputId)?.focus();
                         }}
@@ -457,11 +518,11 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
             <ModalFooter>
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
                 <Button
-                    loading={loading}
+                    loading={loadingShare}
                     color="norm"
                     disabled={isSubmitDisabled}
                     type="submit"
-                    onClick={() => withLoading(handleAddMembers())}
+                    onClick={() => withLoadingShare(handleAddMembers())}
                 >
                     {c('Action').t`Share`}
                 </Button>
