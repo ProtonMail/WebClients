@@ -9,13 +9,10 @@ import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import { Api, IncomingDefault } from '@proton/shared/lib/interfaces';
 
 import { IncomingDefaultEvent } from '../../models/event';
+import { AppThunkExtra } from '../store';
 import { IncomingDefaultsState } from './incomingDefaultsTypes';
 
 type LoadResults = Pick<IncomingDefaultsState, 'list'>;
-
-interface LoadParams {
-    api: Api;
-}
 
 interface ApiResult {
     IncomingDefaults: IncomingDefault[];
@@ -24,35 +21,39 @@ interface ApiResult {
 }
 
 const LOAD_BY_CHUNKS_SIZE = 100;
-export const load = createAsyncThunk<LoadResults, LoadParams>('incomingDefaults/load', async ({ api }) => {
-    const list: IncomingDefault[] = [];
-    let count = 0;
-    let page = 0;
+export const load = createAsyncThunk<LoadResults, undefined, AppThunkExtra>(
+    'incomingDefaults/load',
+    async (_, thunkApi) => {
+        const list: IncomingDefault[] = [];
+        let count = 0;
+        let page = 0;
+        const api = thunkApi.extra.api;
 
-    do {
-        try {
-            const result = await api<ApiResult>(
-                getIncomingDefaults({
-                    Page: page,
-                    PageSize: LOAD_BY_CHUNKS_SIZE,
-                    // Load only the blocked ones for perf reasons
-                    Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
-                })
-            );
-            list.push(...result.IncomingDefaults);
-            count = result.Total;
-            page += 1;
-        } catch (error: any | undefined) {
-            console.error(error);
-            throw error;
-        }
-    } while (count > list.length);
+        do {
+            try {
+                const result = await api<ApiResult>(
+                    getIncomingDefaults({
+                        Page: page,
+                        PageSize: LOAD_BY_CHUNKS_SIZE,
+                        // Load only the blocked ones for perf reasons
+                        Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
+                    })
+                );
+                list.push(...result.IncomingDefaults);
+                count = result.Total;
+                page += 1;
+            } catch (error: any | undefined) {
+                console.error(error);
+                throw error;
+            }
+        } while (count > list.length);
 
-    return {
-        list,
-        count,
-    };
-});
+        return {
+            list,
+            count,
+        };
+    }
+);
 
 export const event = createAction<IncomingDefaultEvent>('incomingDefaults/event');
 
