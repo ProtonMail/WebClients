@@ -19,7 +19,7 @@ interface Props {
 }
 
 const SettingsArea = ({ config }: Props) => {
-    const { loading, feature } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
+    const { loading } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
 
     return (
         <EasySwitchStoreProvider>
@@ -29,15 +29,13 @@ const SettingsArea = ({ config }: Props) => {
                 </PrivateMainSettingsAreaBase>
             ) : (
                 <PrivateMainSettingsArea config={config}>
-                    {feature?.Value.GoogleMailSync && ( //Only display forward section if feature is enabled
-                        <SettingsSectionWide>
-                            <SettingsParagraph>
-                                {c('Info')
-                                    .t`Forward incoming mail from another account to your secure ${MAIL_APP_NAME} inbox.`}
-                            </SettingsParagraph>
-                            <GmailForwarding />
-                        </SettingsSectionWide>
-                    )}
+                    <SettingsSectionWide>
+                        <SettingsParagraph>
+                            {c('Info')
+                                .t`Forward incoming mail from another account to your secure ${MAIL_APP_NAME} inbox.`}
+                        </SettingsParagraph>
+                        <GmailForwarding />
+                    </SettingsSectionWide>
                     <SettingsSectionWide>
                         <SettingsParagraph>
                             {c('Info')

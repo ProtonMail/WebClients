@@ -18,33 +18,12 @@ export const getAccountAppRoutes = ({
     user: UserModel;
     isDataRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
-    isGmailSyncEnabled: boolean
+    isGmailSyncEnabled: boolean;
     recoveryNotification?: ThemeColor;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
     const isExternal = Type === UserType.EXTERNAL;
-
-    let easySwitchSubsections = [
-        {
-            text: c('Title').t`Import messages`,
-            id: 'start-import',
-        },
-        {
-            text: c('Title').t`History`,
-            id: 'import-list',
-        }
-    ]
-
-    if (isGmailSyncEnabled) {
-        easySwitchSubsections = [
-            {
-                text: c("Title").t`Set up forwarding`,
-                id: "start-forward",
-            },
-            ...easySwitchSubsections,
-        ];
-    }
 
     return <const>{
         header: c('Settings section title').t`Account`,
@@ -202,9 +181,24 @@ export const getAccountAppRoutes = ({
                 icon: 'arrow-down-to-square',
                 available: !isExternal,
                 description: isGmailSyncEnabled
-                    ? c('Settings description').t`Complete the transition to privacy with our secure importing and forwarding tools.`
+                    ? c('Settings description')
+                          .t`Complete the transition to privacy with our secure importing and forwarding tools.`
                     : c('Settings description').t`Complete the transition to privacy with our secure importing tools.`,
-                subsections: easySwitchSubsections
+                subsections: [
+                    {
+                        text: c('Title').t`Set up forwarding`,
+                        id: 'start-forward',
+                        available: isGmailSyncEnabled,
+                    },
+                    {
+                        text: c('Title').t`Import messages`,
+                        id: 'start-import',
+                    },
+                    {
+                        text: c('Title').t`History`,
+                        id: 'import-list',
+                    },
+                ],
             },
         },
     };
