@@ -91,6 +91,18 @@ module.exports = {
         'no-nested-ternary': 'warn',
         'no-param-reassign': 'off',
         'no-plusplus': 'off',
+        'no-restricted-imports': [
+            'error',
+            {
+                patterns: [
+                    {
+                        group: ['pmcrypto/*'],
+                        message:
+                            'You should probably import from `@proton/crypto` instead: using `pmcrypto` directly is only needed for crypto-specific use cases.',
+                    },
+                ],
+            },
+        ],
         'no-restricted-syntax': [
             'error',
             {

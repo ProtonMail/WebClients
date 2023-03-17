@@ -1,5 +1,4 @@
-import { encodeBase64 } from 'pmcrypto-v7/lib/utils';
-
+import { encodeBase64 } from '@proton/crypto/lib/utils';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 

@@ -14,5 +14,6 @@ module.exports = {
         'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-expressions': 'off',
         'chai-friendly/no-unused-expressions': ['error', { allowShortCircuit: true }],
+        'no-restricted-imports': 'off', // currently only used to guard against `pmcrypto` imports
     },
 };
