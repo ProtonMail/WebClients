@@ -1,6 +1,6 @@
 import { jest } from '@jest/globals';
 
-import { useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components/hooks';
 
 export const mockNotifications: ReturnType<typeof useNotifications> = {
     createNotification: jest.fn<any>(),
