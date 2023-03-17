@@ -15,13 +15,15 @@ import {
 } from '../models';
 import { getIndexKey } from './esBuild';
 import { cacheIDB, getOldestCachedTimepoint } from './esCache';
-import { normalizeString } from './esUtils';
+import { normalizeString, replaceApostrophes, replaceQuotes } from './esUtils';
 
 /**
  * Process the string input by the user in the searchbar by performing the following
  * transformations:
  *   - trims whitespaces from the input string;
  *   - removes diacritics;
+ *   - turn unusual quotes into normal ones, that can then be searched to split sentences;
+ *   - turn unusual apostrophes into normal ones;
  *   - casts to locale lower case;
  *   - splits the input string in multiple keywords if separated by whitespace, unless
  *     it's within quotes
@@ -29,7 +31,7 @@ import { normalizeString } from './esUtils';
  * @returns the array of normalised keywords to be searched
  */
 export const normalizeKeyword = (keyword: string) => {
-    const trimmedKeyword = normalizeString(keyword);
+    const trimmedKeyword = replaceApostrophes(replaceQuotes(normalizeString(keyword)));
     const quotesIndexes: number[] = [];
 
     let index = 0;
@@ -69,8 +71,10 @@ export const normalizeKeyword = (keyword: string) => {
  * @param stringsToSearch string to be searched
  * @returns whether all keywords can be found in at least one given string
  */
-export const testKeywords = (normalizedKeywords: string[], stringsToSearch: string[]) => {
-    const normalizedStrings = stringsToSearch.map((str) => normalizeString(str));
+export const testKeywords = (normalizedKeywords: string[], stringsToSearch: string[], hasApostrophe: boolean) => {
+    const normalizedStrings = stringsToSearch.map((str) =>
+        normalizeString(hasApostrophe ? replaceApostrophes(str) : str)
+    );
     let result = true;
     let index = 0;
     while (result && index !== normalizedKeywords.length) {
@@ -88,6 +92,7 @@ export const testKeywords = (normalizedKeywords: string[], stringsToSearch: stri
 export const applySearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
     esSearchParams: ESSearchParameters,
     item: CachedItem<ESItemMetadata, ESItemContent>,
+    hasApostrophe: boolean,
     esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>
 ) => {
     const { applyFilters, searchKeywords, getKeywords } = esHelpers;
@@ -98,7 +103,7 @@ export const applySearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
         return filters;
     }
 
-    return searchKeywords(keywords, item);
+    return searchKeywords(keywords, item, hasApostrophe);
 };
 
 /**
@@ -129,6 +134,7 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
     esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
     lastTimePoint: ESTimepoint | undefined,
     itemLimit: number,
+    hasApostrophe: boolean,
     setIncrementalResults?: (newResults: ESItem<ESItemMetadata, ESItemContent>[]) => void,
     abortSearchingRef?: React.MutableRefObject<AbortController>
 ): Promise<{ resultsArray: ESItem<ESItemMetadata, ESItemContent>[]; newLastTimePoint: ESTimepoint | undefined }> => {
@@ -182,7 +188,14 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
                 return;
             }
 
-            if (applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>(esSearchParams, item, esHelpers)) {
+            if (
+                applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
+                    esSearchParams,
+                    item,
+                    hasApostrophe,
+                    esHelpers
+                )
+            ) {
                 newLastTimePoint = getItemInfo(item.metadata).timepoint;
                 resultsArray.push({ ...item.metadata, ...item.content });
                 remainingItems--;
@@ -209,6 +222,7 @@ const cachedSearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
     iterator: IterableIterator<CachedItem<ESItemMetadata, ESItemContent>>,
     esSearchParams: ESSearchParameters,
     abortSearchingRef: React.MutableRefObject<AbortController>,
+    hasApostrophe: boolean,
     esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>
 ) => {
     const searchResults: ESItem<ESItemMetadata, ESItemContent>[] = [];
@@ -219,7 +233,7 @@ const cachedSearch = <ESItemMetadata, ESItemContent, ESSearchParameters>(
             break;
         }
 
-        if (applySearch(esSearchParams, iteration.value, esHelpers)) {
+        if (applySearch(esSearchParams, iteration.value, hasApostrophe, esHelpers)) {
             searchResults.push({ ...iteration.value.metadata, ...iteration.value.content });
         }
 
@@ -279,11 +293,12 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
     esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
     minimumItems: number | undefined
 ) => {
-    const { checkIsReverse, getItemInfo, getSearchInterval } = esHelpers;
+    const { checkIsReverse, getItemInfo, getSearchInterval, getKeywords } = esHelpers;
 
     let searchResults: ESItem<ESItemMetadata, ESItemContent>[] = [];
     let isSearchPartial = false;
     const isReverse = checkIsReverse(esSearchParams);
+    const hasApostrophe = (getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
 
     // Caching needs to be triggered here for when a refresh happens on a search URL
     const count = (await readNumMetadata(userID)) || 0;
@@ -309,6 +324,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
             iterator,
             esSearchParams,
             abortSearchingRef,
+            hasApostrophe,
             esHelpers
         );
         let resultsCounter = searchResults.length;
@@ -333,6 +349,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
                     iterator,
                     esSearchParams,
                     abortSearchingRef,
+                    hasApostrophe,
                     esHelpers
                 )
             );
@@ -353,6 +370,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
                 iterator,
                 esSearchParams,
                 abortSearchingRef,
+                hasApostrophe,
                 esHelpers
             )
         );
@@ -420,6 +438,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
             esHelpers,
             lastTimePoint,
             remainingItems,
+            hasApostrophe,
             setIncrementalResults,
             abortSearchingRef
         );

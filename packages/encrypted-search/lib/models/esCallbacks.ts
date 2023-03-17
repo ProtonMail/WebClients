@@ -59,9 +59,14 @@ interface RequiredESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent> {
      * Decide whether the decrypted content should be returned as a search result
      * @param keywords User specified keywords
      * @param itemToSearch The item on which to apply the search
+     * @param hasApostrophe Whether apostrophes need to be normalized
      * @returns Whether itemToSearch is a search result or not
      */
-    searchKeywords: (keywords: string[], itemToSearch: CachedItem<ESItemMetadata, ESItemContent>) => boolean;
+    searchKeywords: (
+        keywords: string[],
+        itemToSearch: CachedItem<ESItemMetadata, ESItemContent>,
+        hasApostrophe: boolean
+    ) => boolean;
 
     /**
      * Return the total number of items (e.g. mails in mail, files in drive, ...)
