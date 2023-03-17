@@ -19,7 +19,7 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
-import { DecryptedLink, formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../store';
+import { DecryptedLink, formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../../store';
 
 interface Props {
     onClose?: () => void;

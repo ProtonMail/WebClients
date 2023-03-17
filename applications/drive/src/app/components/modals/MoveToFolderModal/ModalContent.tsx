@@ -11,8 +11,8 @@ import {
     UnderlineButton,
 } from '@proton/components';
 
-import { DecryptedLink, TreeItem } from '../../store';
-import FolderTree from '../FolderTree/FolderTree';
+import { DecryptedLink, TreeItem } from '../../../store';
+import FolderTree from '../../FolderTree/FolderTree';
 import EmptyFileTreePlaceholder from './EmptyFileTreePlaceholder';
 
 export const ModalContent = ({

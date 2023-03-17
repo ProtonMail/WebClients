@@ -15,7 +15,7 @@ import clsx from '@proton/utils/clsx';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import { useFileUploadInput, useFolderUploadInput } from '../../../../store';
-import { useCreateFolderModal } from '../../../CreateFolderModal';
+import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 
 interface Props {

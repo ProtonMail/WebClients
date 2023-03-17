@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { DecryptedLink } from '../../../../store';
-import { useMoveToFolderModal } from '../../../MoveToFolderModal/MoveToFolderModal';
+import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
 
 interface Props {
     shareId: string;
