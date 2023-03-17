@@ -1,139 +1,177 @@
 import { History } from 'history';
 
-import { Feature, WelcomeFlagsState } from '@proton/components';
 import {
+    CachedItem,
     ESEvent,
     ESHelpers,
+    ESItemInfo,
+    ESTimepoint,
+    ES_MAX_METADATA_BATCH,
+    ES_MAX_PARALLEL_ITEMS,
+    EncryptedItemWithInfo,
+    EventsObject,
+    apiHelper,
+    checkVersionedESDB,
+    encryptItem,
     esSentryReport,
-    esStorageHelpers,
-    indexKeyExists,
+    executeContentOperations,
+    readLastEvent,
+    readMetadataItem,
+    readMetadataRecoveryPoint,
+    setMetadataRecoveryPoint,
     testKeywords,
 } from '@proton/encrypted-search';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { Api, LabelCount, Recipient, UserModel } from '@proton/shared/lib/interfaces';
+import { Api, LabelCount, UserModel } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
-import { isPaid } from '@proton/shared/lib/user/helpers';
+import isTruthy from '@proton/utils/isTruthy';
 
+import { MAIL_EVENTLOOP_NAME } from '../../constants';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import { ESItemChangesMail, ESMessage, NormalizedSearchParams, StoredCiphertext } from '../../models/encryptedSearch';
+import {
+    ESBaseMessage,
+    ESMessage,
+    ESMessageContent,
+    MetadataRecoveryPoint,
+    NormalizedSearchParams,
+} from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
-import { queryEvents, queryMessagesMetadata } from './esAPI';
-import { fetchMessage, prepareCiphertext } from './esBuild';
-import { normaliseSearchParams, shouldOnlySortResults, testMetadata } from './esSearch';
-import { convertEventType } from './esSync';
-import { getTotalMessages, parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
+import { decryptMessage } from '../message/messageDecrypt';
+import { queryConversation, queryEvents, queryMessage } from './esAPI';
+import { cleanText, externalIDExists, fetchMessage, getBaseMessage, getExternalID } from './esBuild';
+import { shouldOnlySortResults, testMetadata, transformRecipients } from './esSearch';
+import { convertEventType, getTotal } from './esSync';
+import { parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
 
 interface Props {
     getMessageKeys: GetMessageKeys;
     getMessageCounts: () => Promise<LabelCount[]>;
     api: Api;
     user: UserModel;
-    welcomeFlags: WelcomeFlagsState;
-    updateSpotlightES: <V = any>(value: V) => Promise<Feature<V>>;
     history: History;
+    numAddresses: number;
 }
 
-export const getTimePoint = (item: ESMessage | StoredCiphertext) => [item.Time, item.Order] as [number, number];
-export const getItemID = (item: Message | StoredCiphertext | ESMessage) => item.ID;
+export const getItemInfo = (item: ESBaseMessage | ESMessage): ESItemInfo => ({
+    ID: item.ID,
+    timepoint: [item.Time, item.Order],
+});
 
 export const getESHelpers = ({
     getMessageKeys,
     getMessageCounts,
     api,
     user,
-    welcomeFlags,
-    updateSpotlightES,
     history,
-}: Props): ESHelpers<Message, ESMessage, NormalizedSearchParams, ESItemChangesMail, StoredCiphertext> => {
+    numAddresses,
+}: Props): ESHelpers<ESBaseMessage, NormalizedSearchParams, ESMessageContent> => {
     const { ID: userID } = user;
 
-    const fetchESItem = (itemID: string, itemMetadata?: Message, abortSignal?: AbortSignal) =>
-        fetchMessage(itemID, api, getMessageKeys, itemMetadata, abortSignal);
+    const getSearchInterval = (esSearchParameters: NormalizedSearchParams) => ({
+        begin: esSearchParameters.begin,
+        end: esSearchParameters.end,
+    });
 
-    const queryItemsMetadata = async (storedItem: StoredCiphertext | undefined, signal: AbortSignal) => {
-        const result = await queryMessagesMetadata(
-            api,
-            {
-                EndID: storedItem?.ID,
-                End: storedItem?.Time,
-            },
-            signal,
-            userID
-        );
+    const fetchESItemContent = (itemID: string, abortSignal?: AbortSignal) =>
+        fetchMessage(itemID, api, getMessageKeys, abortSignal);
 
-        return result?.Messages;
-    };
+    // We need to keep the recovery point for metadata indexing in memory
+    // for cases where IDB couldn't be instantiated but we still want to
+    // index content
+    let metadataRecoveryPoint: MetadataRecoveryPoint | undefined;
+    const queryItemsMetadata = async (
+        signal: AbortSignal
+    ): Promise<{
+        resultMetadata?: ESBaseMessage[];
+        setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
+    }> => {
+        const messagesPromises: Promise<ESBaseMessage[] | undefined>[] = [];
+        const Messages: ESBaseMessage[] = [];
 
-    const preFilter = (storedCiphertext: StoredCiphertext, esSearchParams: NormalizedSearchParams) =>
-        storedCiphertext.LabelIDs.includes(esSearchParams.labelID);
-
-    const applySearch = (esSearchParams: NormalizedSearchParams, itemToSearch: ESMessage) => {
-        const { Sender } = itemToSearch;
-
-        const transformRecipients = (recipients: Recipient[]) => [
-            ...recipients.map((recipient) => recipient.Address.toLocaleLowerCase()),
-            ...recipients.map((recipient) => recipient.Name.toLocaleLowerCase()),
-        ];
-
-        const recipients = transformRecipients(getRecipients(itemToSearch));
-        const sender = transformRecipients([Sender]);
-
-        if (!testMetadata(esSearchParams, itemToSearch, recipients, sender)) {
-            return false;
+        let recoveryPoint: MetadataRecoveryPoint | undefined = metadataRecoveryPoint;
+        // Note that indexing, and therefore an instance of this function,
+        // can exist even without an IDB, because we can index in memory only.
+        // Therefore, we have to check if an IDB exists before querying it
+        const esdbExists = await checkVersionedESDB(userID);
+        if (!recoveryPoint && esdbExists) {
+            recoveryPoint = await readMetadataRecoveryPoint(userID);
         }
 
-        const { normalizedKeywords } = esSearchParams;
-        if (!normalizedKeywords) {
-            return true;
+        const total = await getTotal(getMessageCounts)();
+        const numPages = Math.ceil(total / ES_MAX_PARALLEL_ITEMS);
+
+        let Page = 0;
+        while (Page < ES_MAX_METADATA_BATCH && Page < numPages) {
+            messagesPromises[Page] = apiHelper<{ Messages: Message[] }>(
+                api,
+                signal,
+                queryMessageMetadata({
+                    PageSize: ES_MAX_PARALLEL_ITEMS,
+                    Location: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    Sort: 'Time',
+                    Desc: 1,
+                    Page,
+                    End: recoveryPoint?.End,
+                    EndID: recoveryPoint?.EndID,
+                }),
+                'queryMessageMetadata'
+            ).then((result) => {
+                if (!result) {
+                    return;
+                }
+                return result.Messages.map((message) => getBaseMessage(message));
+            });
+            Page++;
         }
 
-        const { Subject, decryptedBody, decryptedSubject } = itemToSearch;
-        const subject = decryptedSubject || Subject;
+        if (messagesPromises.length) {
+            const awaitedMessages = await Promise.all(messagesPromises);
+            // We only want to return messages metadata up until the first
+            // undefined, which means a failed batch, to avoid leaving holes
+            // in the indexe metadata
+            for (const batch of awaitedMessages) {
+                if (!batch) {
+                    break;
+                }
+                Messages.push(...batch);
+            }
+        }
 
-        return testKeywords(normalizedKeywords, [subject, ...recipients, ...sender, decryptedBody || '']);
+        if (signal.aborted) {
+            return {};
+        }
+
+        // Fetching is over
+        if (!Messages.length) {
+            return { resultMetadata: [] };
+        }
+
+        const lastMessage = Messages[Messages.length - 1];
+        const newRecoveryPoint = {
+            End: lastMessage.Time,
+            EndID: lastMessage.ID,
+        };
+
+        return {
+            resultMetadata: Messages,
+            setRecoveryPoint: esdbExists
+                ? async (setIDB: boolean = true) => {
+                      metadataRecoveryPoint = newRecoveryPoint;
+                      if (setIDB) {
+                          await setMetadataRecoveryPoint(userID, newRecoveryPoint);
+                      }
+                  }
+                : undefined,
+        };
     };
 
     const checkIsReverse = (esSearchParams: NormalizedSearchParams) => esSearchParams.sort.desc;
 
-    const getTotalItems = async () => {
-        const messageCounts = await getMessageCounts();
-        return getTotalMessages(messageCounts);
-    };
-
-    const updateESItem = (esItemMetadata: ESItemChangesMail, oldItem: ESMessage): ESMessage => {
-        const { LabelIDsRemoved, LabelIDsAdded, ...otherChanges } = esItemMetadata;
-        let { LabelIDs } = oldItem;
-        if (LabelIDsRemoved) {
-            LabelIDs = LabelIDs.filter((labelID) => !LabelIDsRemoved.includes(labelID));
-        }
-        if (LabelIDsAdded) {
-            LabelIDs = LabelIDs.concat(LabelIDsAdded);
-        }
-
-        return {
-            ...oldItem,
-            ...otherChanges,
-            LabelIDs,
-        };
-    };
-
-    const getDecryptionErrorParams = (): NormalizedSearchParams => {
-        return {
-            ...normaliseSearchParams({}, MAILBOX_LABEL_IDS.ALL_MAIL),
-            decryptionError: true,
-        };
-    };
-
     const getKeywords = (esSearchParams: NormalizedSearchParams) => esSearchParams.normalizedKeywords;
-
-    const getSearchInterval = (esSearchParams?: NormalizedSearchParams) => ({
-        begin: esSearchParams?.begin,
-        end: esSearchParams?.end,
-    });
 
     const getSearchParams = () => {
         const { isSearch, esSearchParams } = parseSearchParamsMail(history.location);
@@ -143,29 +181,38 @@ export const getESHelpers = ({
         };
     };
 
-    const getPreviousEventID = async () => {
+    const getPreviousEventID = async (): Promise<EventsObject> => {
         const event = await queryEvents(api);
         if (!event || !event.EventID) {
-            throw new Error('Last event not found');
+            return {};
         }
-        return event.EventID;
+        let eventsToStore: EventsObject = {};
+        eventsToStore[MAIL_EVENTLOOP_NAME] = event.EventID;
+        return eventsToStore;
     };
 
-    const getEventFromLS = async (): Promise<{
-        newEvents: ESEvent<ESItemChangesMail>[];
+    const getEventFromIDB = async (
+        previousEventsObject?: EventsObject
+    ): Promise<{
+        newEvents: ESEvent<ESBaseMessage>[];
         shouldRefresh: boolean;
-        eventToStore: string | undefined;
+        eventsToStore: EventsObject;
     }> => {
-        const { getES } = esStorageHelpers();
-        const storedEventID = getES.Event(userID);
-        if (!storedEventID) {
-            throw new Error('Event ID from local storage not found');
+        let lastEventID: string;
+        if (previousEventsObject) {
+            lastEventID = previousEventsObject[MAIL_EVENTLOOP_NAME];
+        } else {
+            const storedEventID = await readLastEvent(userID, MAIL_EVENTLOOP_NAME);
+            if (!storedEventID) {
+                throw new Error('Event ID from IDB not found');
+            }
+            lastEventID = storedEventID;
         }
 
-        const initialEvent = await queryEvents(api, storedEventID);
+        const initialEvent = await queryEvents(api, lastEventID);
 
         if (!initialEvent) {
-            throw new Error('Event from local storage not found');
+            throw new Error('Event fetch failed');
         }
 
         // We want to sync all items, potentially in multiple batches if the More flag
@@ -189,54 +236,153 @@ export const getESHelpers = ({
                     newEvents.push(newEventToCheck);
                 }
             } catch (error: any) {
-                esSentryReport('getEventFromLS: queryEvents', { error });
-                return getEventFromLS();
+                esSentryReport('getEventFromIDB: queryEvents', { error });
+                return getEventFromIDB();
             }
         }
 
-        const shouldRefresh = newEvents.reduce((accumulator, event) => {
-            return accumulator || hasBit(event.Refresh, EVENT_ERRORS.MAIL);
-        }, false);
+        const { EventID } = newEvents[newEvents.length - 1];
+        if (!EventID) {
+            throw new Error('Last event has no ID');
+        }
+
+        let eventsToStore: EventsObject = {};
+        eventsToStore[MAIL_EVENTLOOP_NAME] = EventID;
+
+        const esEvents: ESEvent<ESBaseMessage>[] = newEvents
+            .map((event) => convertEventType(event, numAddresses))
+            .filter(isTruthy);
 
         return {
-            newEvents: newEvents.map((event) => convertEventType(event)),
-            shouldRefresh,
-            eventToStore: newEvents[newEvents.length - 1].EventID,
+            newEvents: esEvents,
+            shouldRefresh: esEvents.some((event) => {
+                return hasBit(event.Refresh, EVENT_ERRORS.MAIL);
+            }),
+            eventsToStore,
         };
     };
 
-    const indexNewUser = async () => {
-        try {
-            if (welcomeFlags.isWelcomeFlow && !isMobile() && !indexKeyExists(userID) && isPaid(user)) {
-                // Start indexing for new users and prevent showing the spotlight on ES to them
-                await updateSpotlightES(false);
-                return true;
-            }
-        } catch (error) {
-            console.log('ES effect error', error);
+    const searchKeywords = (keywords: string[], itemToSearch: CachedItem<ESBaseMessage, ESMessageContent>) => {
+        const { metadata, content } = itemToSearch;
+
+        const recipients = transformRecipients(getRecipients(metadata));
+        const sender = transformRecipients([metadata.Sender]);
+
+        let result = testKeywords(keywords, [metadata.Subject, ...recipients, ...sender]);
+        if (!content) {
+            return result;
         }
-        return false;
+
+        const { decryptedBody, decryptedSubject } = content;
+        return result || testKeywords(keywords, [decryptedSubject || '', decryptedBody || '']);
+    };
+
+    const applyFilters = (esSearchParams: NormalizedSearchParams, metadata: ESBaseMessage) => {
+        const { Sender } = metadata;
+        const recipients = transformRecipients(getRecipients(metadata));
+        const sender = transformRecipients([Sender]);
+        return testMetadata(esSearchParams, metadata, recipients, sender);
+    };
+
+    // If a message is deleted, ideally we would like to re-index all messages that have its
+    // ExternalID in their In-Reply-To header (for simplicity we only check those in the same
+    // conversation). However, by the time the deletion event is processed by the client, the
+    // deleted message no longer exists on the server therefore we have no way of knowing its
+    // ExternalID, because we don't store this information in the index. Therefore, we re-index
+    // the content of all messages newer than the deleted one and within the same conversation
+    // whose In-Reply-To header exists but doesn't belong to the mailbox
+    const onContentDeletion = async (ID: string, indexKey: CryptoKey) => {
+        const metadata = await readMetadataItem<ESBaseMessage>(userID, ID, indexKey);
+        if (!metadata) {
+            return;
+        }
+
+        const { ConversationID, Time: deletedTime, Order: deletedOrder } = metadata;
+        const messages = await queryConversation(api, ConversationID);
+        if (!messages) {
+            throw new Error('Messages in the conversation of a deleted message could not be fetched');
+        }
+
+        const messagesToAdd: EncryptedItemWithInfo[] = (
+            await Promise.all(
+                messages.map(async (message) => {
+                    const { ID: messageID, Time, Order } = message;
+                    if (Time < deletedTime || (Time === deletedTime && Order < deletedOrder)) {
+                        return;
+                    }
+
+                    // When querying a conversation, one message is already populated with all fields,
+                    // while all others have only metadata
+                    let contentMessage: Message;
+                    if (Object.hasOwn(message, 'ParsedHeaders')) {
+                        contentMessage = message as Message;
+                    } else {
+                        const fullMessage = await queryMessage(api, messageID);
+                        if (!fullMessage) {
+                            throw new Error('Failed message fetching of item to reindex');
+                        }
+                        contentMessage = fullMessage;
+                    }
+
+                    const ExternalID = getExternalID(contentMessage);
+                    if (typeof ExternalID === 'string') {
+                        const shouldReindex = !(await externalIDExists(ExternalID, ConversationID, api));
+
+                        if (shouldReindex) {
+                            const keys = await getMessageKeys(contentMessage);
+                            const decryptionResult = await decryptMessage(contentMessage, keys.privateKeys);
+
+                            let decryptedSubject: string | undefined;
+                            let decryptedBody: string | undefined;
+                            let mimetype: MIME_TYPES | undefined;
+                            if (!decryptionResult.errors) {
+                                ({ decryptedSubject, decryptedBody, mimetype } = decryptionResult);
+                            } else {
+                                return;
+                            }
+
+                            const cleanDecryptedBody =
+                                typeof decryptedBody === 'string'
+                                    ? (mimetype || contentMessage.MIMEType) === MIME_TYPES.DEFAULT
+                                        ? cleanText(decryptedBody, true)
+                                        : decryptedBody
+                                    : undefined;
+
+                            const aesGcmCiphertext = await encryptItem(
+                                {
+                                    decryptedBody: cleanDecryptedBody,
+                                    decryptedSubject,
+                                },
+                                indexKey
+                            );
+                            const timepoint: ESTimepoint = [Time, Order];
+                            return { ID: messageID, timepoint, aesGcmCiphertext };
+                        }
+                    }
+                })
+            )
+        ).filter(isTruthy);
+
+        if (messagesToAdd.length) {
+            await executeContentOperations(userID, [], messagesToAdd);
+        }
     };
 
     return {
-        getItemID,
-        fetchESItem,
-        prepareCiphertext,
+        getItemInfo,
+        fetchESItemContent,
         queryItemsMetadata,
-        preFilter,
-        applySearch,
+        applyFilters,
         checkIsReverse,
         shouldOnlySortResults,
-        getTimePoint,
-        getSearchInterval,
-        getTotalItems,
-        updateESItem,
-        getDecryptionErrorParams,
+        getTotalItems: getTotal(getMessageCounts),
         getKeywords,
         getSearchParams,
         resetSort: () => resetSort(history),
         getPreviousEventID,
-        getEventFromLS,
-        indexNewUser,
+        getEventFromIDB,
+        searchKeywords,
+        getSearchInterval,
+        onContentDeletion,
     };
 };

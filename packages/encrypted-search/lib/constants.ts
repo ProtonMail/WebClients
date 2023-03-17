@@ -1,11 +1,6 @@
-import { EncryptedSearchFunctions } from './models';
+import noop from '@proton/utils/noop';
 
-/**
- * Maximum number of times an API call to fetch an item
- * content will be retried before being stored locally
- * for a later attempt
- */
-export const ES_MAX_RETRIES = 10;
+import { ESProgress, EncryptedSearchFunctions } from './models';
 
 /**
  * Number of items to add to the search results list during
@@ -15,15 +10,18 @@ export const ES_EXTRA_RESULTS_LIMIT = 50;
 
 /**
  * Size of a batch of items during indexing and syncing.
- * It corresponds to the maximum number of messages' metadata returned
+ * It corresponds to the maximum number of items' metadata returned
  * by mail API
  */
 export const ES_MAX_PARALLEL_ITEMS = 150;
 
 /**
- * Number of items to fetch and process concurrently during indexing
+ * Number of items to fetch and process concurrently during indexing. Some
+ * browsers internally set the maximum concurrent requests to handle to 100,
+ * therefore we impose a slightly more stringent limit to allow some room for
+ * other requests the app might send
  */
-export const ES_MAX_CONCURRENT = 10;
+export const ES_MAX_CONCURRENT = 20;
 
 /**
  * Number of characters to retain from an item's metadata when highlighting it
@@ -41,10 +39,31 @@ export const ES_MAX_INITIAL_CHARS = 20;
 export const ES_MAX_CACHE = 600000000; // 600 MB
 
 /**
- * Number of items queried from IndexedDB when search is performed from disk in
- * chronological order
+ * Maximum number of metadata "pages" per batch during metadata indexing
+ */
+export const ES_MAX_METADATA_BATCH = 20;
+
+/**
+ * Upper bound of number of items queried from IndexedDB at once
  */
 export const ES_MAX_ITEMS_PER_BATCH = 1000;
+
+/**
+ * Current version of the most up-to-date ES IndexedDB
+ */
+export const INDEXEDDB_VERSION = 2;
+
+/**
+ * Maximum number of times an API call to fetch an item
+ * content will be retried before being stored locally
+ * for a later attempt
+ */
+export const ES_MAX_RETRIES = 10;
+
+/**
+ * Error codes that are deemed temporary and therefore will trigger a retry
+ * during API calls that the ES library does
+ */
 export const ES_TEMPORARY_ERRORS = [408, 429, 502, 503];
 
 /**
@@ -53,9 +72,44 @@ export const ES_TEMPORARY_ERRORS = [408, 429, 502, 503];
  */
 export const DIACRITICS_REGEXP = /\p{Mark}/gu;
 
+/**
+ * Configuration of the Web Crypto API to symmetrically encrypt items in IndexedDB
+ */
 export const AesKeyGenParams: AesKeyGenParams = { name: 'AES-GCM', length: 128 };
 export const KeyUsages: KeyUsage[] = ['encrypt', `decrypt`];
 
+/**
+ * ENUMS
+ */
+export enum INDEXING_STATUS {
+    INACTIVE,
+    INDEXING,
+    PAUSED,
+    ACTIVE,
+}
+
+export enum TIMESTAMP_TYPE {
+    STOP,
+    START,
+    STEP,
+}
+
+export enum ES_SYNC_ACTIONS {
+    DELETE,
+    CREATE,
+    UPDATE_CONTENT,
+    UPDATE_METADATA,
+}
+
+export enum STORING_OUTCOME {
+    FAILURE,
+    SUCCESS,
+    QUOTA,
+}
+
+/**
+ * DEFAULTS
+ */
 export const defaultESStatus = {
     permanentResults: [],
     setResultsList: () => {},
@@ -63,21 +117,23 @@ export const defaultESStatus = {
     previousESSearchParams: undefined,
     cachedIndexKey: undefined,
     dbExists: false,
-    isBuilding: false,
+    isEnablingContentSearch: false,
     isDBLimited: false,
     esEnabled: false,
     esSupported: true,
     isRefreshing: false,
     isSearchPartial: false,
     isSearching: false,
-    isCaching: false,
     isFirstSearch: true,
+    isEnablingEncryptedSearch: false,
+    isPaused: false,
+    contentIndexingDone: false,
 };
 
 export const defaultESCache = {
-    esCache: [],
+    esCache: new Map(),
     cacheSize: 0,
-    isCacheLimited: true,
+    isCacheLimited: false,
     isCacheReady: false,
 };
 
@@ -85,17 +141,19 @@ export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     encryptedSearch: async () => false,
     highlightString: () => '',
     highlightMetadata: () => ({ numOccurrences: 0, resultJSX: null as any }),
-    resumeIndexing: async () => {},
+    enableEncryptedSearch: async () => false,
+    enableContentSearch: async () => {},
     handleEvent: async () => {},
     isSearchResult: () => false,
     esDelete: async () => {},
     getESDBStatus: () => ({ ...defaultESStatus, isCacheLimited: defaultESCache.isCacheLimited }),
-    getProgressRecorderRef: () => null as any,
+    getProgressRecorderRef: () => ({ current: [0, 0] }),
     shouldHighlight: () => false,
     initializeES: async () => {},
     pauseIndexing: async () => {},
     cacheIndexedDB: async () => {},
-    toggleEncryptedSearch: () => {},
+    toggleEncryptedSearch: async () => {},
+    resetCache: () => {},
 };
 
 export const defaultESIndexingState = {
@@ -105,16 +163,25 @@ export const defaultESIndexingState = {
     endTime: 0,
     oldestTime: 0,
     esPrevProgress: 0,
-    totalIndexingMessages: 0,
+    totalIndexingItems: 0,
     currentProgressValue: 0,
 };
 
 export const defaultESHelpers = {
-    preFilter: () => true,
     checkIsReverse: () => true,
     shouldOnlySortResults: () => false,
+    resetSort: noop,
     getSearchInterval: () => ({ begin: undefined, end: undefined }),
-    getDecryptionErrorParams: () => undefined,
-    resetSort: () => {},
-    indexNewUser: async () => false,
+    applyFilters: () => true,
+    onContentDeletion: async () => {},
+};
+
+export const defaultESProgress: ESProgress = {
+    totalItems: 0,
+    numPauses: 0,
+    isRefreshed: false,
+    timestamps: [],
+    originalEstimate: 0,
+    recoveryPoint: undefined,
+    status: INDEXING_STATUS.INACTIVE,
 };

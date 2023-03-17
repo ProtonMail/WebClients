@@ -1,11 +1,10 @@
-import { ESDBStatus, ESStoredItem, EncryptedSearchFunctions } from '@proton/encrypted-search';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { ESDBStatus, ESItem, EncryptedSearchFunctions } from '@proton/encrypted-search';
+import { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { LabelIDsChanges } from './event';
 import { Filter, SearchParameters, Sort } from './tools';
 
 export type ESBaseMessage = Pick<
-    Message,
+    MessageMetadata,
     | 'ID'
     | 'Order'
     | 'ConversationID'
@@ -28,18 +27,26 @@ export type ESBaseMessage = Pick<
     | 'AttachmentInfo'
 >;
 
+export interface ESMessageContent {
+    decryptedBody?: string;
+    decryptedSubject?: string;
+}
+
 export interface ESDBStatusMail {
     dropdownOpened: boolean;
     temporaryToggleOff: boolean;
+    lastContentTime: number;
+    isMigrating: boolean;
 }
 
 export interface EncryptedSearchFunctionsMail
     extends Pick<
-        EncryptedSearchFunctions<ESMessage, NormalizedSearchParams, ESItemChangesMail>,
+        EncryptedSearchFunctions<ESBaseMessage, NormalizedSearchParams, ESMessageContent>,
         | 'encryptedSearch'
         | 'highlightString'
         | 'highlightMetadata'
-        | 'resumeIndexing'
+        | 'enableEncryptedSearch'
+        | 'enableContentSearch'
         | 'isSearchResult'
         | 'esDelete'
         | 'getProgressRecorderRef'
@@ -47,20 +54,13 @@ export interface EncryptedSearchFunctionsMail
         | 'pauseIndexing'
         | 'cacheIndexedDB'
         | 'toggleEncryptedSearch'
+        | 'resetCache'
     > {
     openDropdown: () => void;
     closeDropdown: () => void;
     setTemporaryToggleOff: () => void;
-    getESDBStatus: () => ESDBStatusMail & ESDBStatus<ESMessage, NormalizedSearchParams>;
+    getESDBStatus: () => ESDBStatusMail & ESDBStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
 }
-
-export interface ESMessage extends ESBaseMessage {
-    decryptedBody?: string;
-    decryptedSubject?: string;
-    decryptionError: boolean;
-}
-
-export interface StoredCiphertext extends ESStoredItem, Pick<ESMessage, 'ID' | 'LabelIDs' | 'Time' | 'Order'> {}
 
 export interface NormalizedSearchParams extends Omit<SearchParameters, 'wildcard' | 'keyword'> {
     labelID: string;
@@ -68,7 +68,11 @@ export interface NormalizedSearchParams extends Omit<SearchParameters, 'wildcard
     filter: Filter;
     search: SearchParameters;
     normalizedKeywords: string[] | undefined;
-    decryptionError?: boolean;
 }
 
-export type ESItemChangesMail = Message & LabelIDsChanges;
+export type ESMessage = ESItem<ESBaseMessage, ESMessageContent>;
+
+export type MetadataRecoveryPoint = {
+    End?: number;
+    EndID?: string;
+};

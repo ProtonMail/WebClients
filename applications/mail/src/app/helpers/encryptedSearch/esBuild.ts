@@ -1,11 +1,10 @@
-import { AesGcmCiphertext } from '@proton/encrypted-search';
+import { AesGcmCiphertext, apiHelper } from '@proton/encrypted-search';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { localisedForwardFlags } from '../../constants';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import { ESBaseMessage, ESMessage } from '../../models/encryptedSearch';
+import { ESBaseMessage, ESMessage, ESMessageContent } from '../../models/encryptedSearch';
 import { locateBlockquote } from '../message/messageBlockquote';
 import { decryptMessage } from '../message/messageDecrypt';
 import { toText } from '../parserHtml';
@@ -29,7 +28,7 @@ export const removeTag = (element: HTMLElement, tagName: string) => {
 /**
  * Remove quoted text and HTML tags from body
  */
-const cleanText = (text: string, removeQuote: boolean) => {
+export const cleanText = (text: string, includeQuote: boolean) => {
     const domParser = new DOMParser();
 
     const { body } = domParser.parseFromString(text, 'text/html');
@@ -37,7 +36,7 @@ const cleanText = (text: string, removeQuote: boolean) => {
     removeTag(body, 'script');
 
     let content = body.innerHTML;
-    if (removeQuote) {
+    if (!includeQuote) {
         const [noQuoteContent] = locateBlockquote(body);
         content = noQuoteContent;
     }
@@ -51,10 +50,10 @@ const cleanText = (text: string, removeQuote: boolean) => {
 };
 
 /**
- * Turns a Message into a ESBaseMessage
+ * Turn a range of supersets of the ESBaseMessage interface into an ESBaseMessage object
  */
-const prepareMessageMetadata = (message: Message | ESMessage) => {
-    const messageForSearch: ESBaseMessage = {
+export const getBaseMessage = (message: Message | ESMessage) => {
+    const baseMessage: ESBaseMessage = {
         ID: message.ID,
         ConversationID: message.ConversationID,
         Subject: message.Subject,
@@ -76,18 +75,57 @@ const prepareMessageMetadata = (message: Message | ESMessage) => {
         Order: message.Order,
         AttachmentInfo: message.AttachmentInfo,
     };
-    return messageForSearch;
+    return baseMessage;
 };
 
 /**
- * Compare the subject to a set of known translations of the Fw: flag and decide
- * if the message is a forwarded one
+ * Extract the ExternalID from the In-Reply-To header of the given message
  */
-export const isMessageForwarded = (subject: string | undefined) => {
-    if (!subject) {
-        return false;
+export const getExternalID = ({ ParsedHeaders }: Message) => {
+    let ExternalID = ParsedHeaders['In-Reply-To'];
+
+    if (typeof ExternalID === 'string') {
+        if (ExternalID[0] === '<' && ExternalID[ExternalID.length - 1] === '>') {
+            ExternalID = ExternalID.slice(1, ExternalID.length - 1);
+        }
+        return ExternalID;
     }
-    return localisedForwardFlags.some((fwFlag) => subject.slice(0, fwFlag.length).toLocaleLowerCase() === fwFlag);
+};
+
+/**
+ * Check whether the given ExternalID exists in the given conversation
+ */
+export const externalIDExists = async (ExternalID: string, ConversationID: string, api: Api) => {
+    const response = await apiHelper<{ Total: number }>(
+        api,
+        undefined,
+        {
+            method: 'get',
+            url: 'mail/v4/messages',
+            params: {
+                ExternalID,
+                ConversationID,
+            },
+        },
+        'externalIDExists'
+    );
+
+    return !!response && response.Total > 0;
+};
+
+/**
+ * Check whether quoted content has to be indexed or not by checking
+ * whether the ExternalID inside the given message's In-Reply-To header
+ * exists in the user's mailbox
+ */
+const shouldIndexQuotedContent = async (message: Message, api: Api) => {
+    const ExternalID = getExternalID(message);
+
+    if (typeof ExternalID === 'string') {
+        return !(await externalIDExists(ExternalID, message.ConversationID, api));
+    }
+
+    return true;
 };
 
 /**
@@ -97,48 +135,40 @@ export const fetchMessage = async (
     messageID: string,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    messageMetadata?: Message,
     signal?: AbortSignal
-): Promise<ESMessage | undefined> => {
+): Promise<ESMessageContent | undefined> => {
     const message = await queryMessage(api, messageID, signal);
     if (!message) {
         return;
     }
 
+    const keys = await getMessageKeys(message);
+    const decryptionResult = await decryptMessage(message, keys.privateKeys);
+
     let decryptedSubject: string | undefined;
     let decryptedBody: string | undefined;
-    let decryptionError = true;
     let mimetype: MIME_TYPES | undefined;
-    try {
-        const keys = await getMessageKeys(message);
-        const decryptionResult = await decryptMessage(message, keys.privateKeys, undefined);
-        if (!decryptionResult.errors) {
-            ({ decryptedSubject, decryptedBody, mimetype } = decryptionResult);
-            decryptionError = false;
-        }
-    } catch (error: any) {
+    if (!decryptionResult.errors) {
+        ({ decryptedSubject, decryptedBody, mimetype } = decryptionResult);
+    } else {
         // Decryption can legitimately fail if there are inactive keys. In this
         // case the above three variables are left undefined
+        return {};
     }
 
-    // Quotes are removed for all sent messages, and all other messages apart from forwarded ones
-    const removeQuote = message.LabelIDs.includes('2') || !isMessageForwarded(message.Subject);
+    const includeQuote = await shouldIndexQuotedContent(message, api);
 
     const cleanDecryptedBody =
         typeof decryptedBody === 'string'
             ? (mimetype || message.MIMEType) === MIME_TYPES.DEFAULT
-                ? cleanText(decryptedBody, removeQuote)
+                ? cleanText(decryptedBody, includeQuote)
                 : decryptedBody
             : undefined;
 
-    const cachedMessage: ESMessage = {
-        ...prepareMessageMetadata(messageMetadata || message),
+    return {
         decryptedBody: cleanDecryptedBody,
         decryptedSubject,
-        decryptionError,
     };
-
-    return cachedMessage;
 };
 
 export const prepareCiphertext = (itemToStore: ESMessage, aesGcmCiphertext: AesGcmCiphertext) => {

@@ -8,7 +8,7 @@ import { useApi, useEventManager, useNotifications } from '@proton/components';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
-import { parseSearchParams } from '../../helpers/encryptedSearch/esUtils';
+import { parseSearchParams } from '../../helpers/encryptedSearch';
 import {
     addESResults,
     load as loadAction,
