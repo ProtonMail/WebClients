@@ -162,6 +162,12 @@ export class UploadWorker {
     worker: Worker;
 
     constructor(worker: Worker, { generateKeys, start, createdBlocks, pause, resume }: WorkerHandlers) {
+        // Before the worker termination, we want to release securely crypto
+        // proxy. That might need a bit of time and we allow up to few seconds
+        // before we terminate the worker. During the releasing time, crypto
+        // might be failing, so any error should be ignored.
+        let closing = false;
+
         this.worker = worker;
         worker.addEventListener('message', ({ data }: WorkerControllerEvent) => {
             switch (data.command) {
@@ -220,6 +226,7 @@ export class UploadWorker {
                     resume();
                     break;
                 case 'close':
+                    closing = true;
                     void CryptoProxy.releaseEndpoint().then(() => self.close());
                     break;
                 default:
@@ -228,11 +235,17 @@ export class UploadWorker {
             }
         });
         worker.addEventListener('error', (event: ErrorEvent) => {
+            if (closing) {
+                return;
+            }
             this.postError(getErrorString(event.error, event.message));
         });
         // @ts-ignore
         worker.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
             event.preventDefault();
+            if (closing) {
+                return;
+            }
             this.postError(event.reason);
         });
     }
