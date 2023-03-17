@@ -1,3 +1,3 @@
-import { serverTime, updateServerTime } from 'pmcrypto-v7/lib/serverTime';
+import { serverTime, updateServerTime } from 'pmcrypto/lib/serverTime';
 
 export { serverTime, updateServerTime };

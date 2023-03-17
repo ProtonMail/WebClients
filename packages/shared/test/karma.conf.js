@@ -34,7 +34,7 @@ module.exports = (config) => {
                                 options: { transpileOnly: true },
                             },
                         ],
-                        exclude: /node_modules\/(?!.*(bip39|pmcrypto-v7))/,
+                        exclude: /node_modules\/(?!.*(bip39|pmcrypto))/,
                     },
                 ],
             },
