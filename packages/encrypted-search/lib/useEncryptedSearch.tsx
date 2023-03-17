@@ -1004,11 +1004,22 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return false;
         }
 
+        const hasApostrophe = (esHelpers.getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
         const { resultsArray, newLastTimePoint } = await uncachedSearch<
             ESItemMetadata,
             ESItemContent,
             ESSearchParameters
-        >(userID, indexKey, esSearchParams, esHelpers, lastTimePoint, extraItems, undefined, abortSearchingRef);
+        >(
+            userID,
+            indexKey,
+            esSearchParams,
+            esHelpers,
+            lastTimePoint,
+            extraItems,
+            hasApostrophe,
+            undefined,
+            abortSearchingRef
+        );
 
         if (!abortSearchingRef.current.signal.aborted) {
             permanentResults.push(...resultsArray);
