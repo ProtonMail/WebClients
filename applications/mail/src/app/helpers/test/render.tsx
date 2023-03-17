@@ -31,7 +31,7 @@ import { ComposeProvider } from '../../containers/ComposeProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
-import { store } from '../../logic/store';
+import { store, useSetReduxThunkExtraArgs } from '../../logic/store';
 import { api, mockDomApi, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
 import { minimalCache, mockCache } from './cache';
 import NotificationsTestProvider from './notifications';
@@ -66,6 +66,12 @@ interface Props {
     children: ReactNode;
 }
 
+const ReduxProviderWrapper = ({ children }: Props) => {
+    useSetReduxThunkExtraArgs();
+
+    return <ReduxProvider store={store}>{children}</ReduxProvider>;
+};
+
 const TestProvider = ({ children }: Props) => {
     const contentRef = useRef<HTMLDivElement>(null);
 
@@ -84,7 +90,7 @@ const TestProvider = ({ children }: Props) => {
                                                 <EventModelListener
                                                     models={[ConversationCountsModel, MessageCountsModel]}
                                                 />
-                                                <ReduxProvider store={store}>
+                                                <ReduxProviderWrapper>
                                                     <MailContentRefProvider mailContentRef={contentRef}>
                                                         <MailboxContainerContextProvider
                                                             isResizing={false}
@@ -102,7 +108,7 @@ const TestProvider = ({ children }: Props) => {
                                                             </ComposeProvider>
                                                         </MailboxContainerContextProvider>
                                                     </MailContentRefProvider>
-                                                </ReduxProvider>
+                                                </ReduxProviderWrapper>
                                             </ExperimentsProvider>
                                         </DrawerProvider>
                                     </SpotlightProvider>

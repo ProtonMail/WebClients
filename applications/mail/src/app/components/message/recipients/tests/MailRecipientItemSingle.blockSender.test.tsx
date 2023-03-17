@@ -10,7 +10,6 @@ import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 import {
     addApiMock,
     addToCache,
-    api,
     clearAll,
     getDropdown,
     minimalCache,
@@ -102,16 +101,15 @@ const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfi
             GlobalTotal: 3,
         };
     });
-
-    // Load manually incoming defaults
-    store.dispatch(load({ api: api }));
-
     const message = getTestMessageToBlock(sender);
 
     const container = await render(
         <MailRecipientItemSingle message={message} recipient={sender} isRecipient={isRecipient} {...modalsHandlers} />,
         false
     );
+
+    // Load manually incoming defaults
+    await store.dispatch(load());
 
     const dropdown = await openDropdown(container, sender);
 
