@@ -46,7 +46,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
     const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
-    const { isDBLimited, dropdownOpened } = getESDBStatus();
+    const { dropdownOpened } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
 
     const showEncryptedSearch = !isMobile() && !!isPaid(user);
@@ -120,7 +120,6 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
                     esState={esState}
-                    isDBLimited={isDBLimited}
                     showMore={showMore}
                     toggleShowMore={toggleShowMore}
                     searchInputValue={searchInputValue}
