@@ -8,7 +8,7 @@ import { useTheme } from '../themes';
  * Meant to wrap portions of ui that we know are for certain only
  * rendered if a user visits the app(s) while unauthenticated.
  */
-const Unauthenticated = ({ children }: { children: JSX.Element }) => {
+const UnAuthenticated = ({ children }: { children: JSX.Element }) => {
     const [, setTheme] = useTheme();
 
     useLayoutEffect(() => {
@@ -18,4 +18,4 @@ const Unauthenticated = ({ children }: { children: JSX.Element }) => {
     return children;
 };
 
-export default Unauthenticated;
+export default UnAuthenticated;

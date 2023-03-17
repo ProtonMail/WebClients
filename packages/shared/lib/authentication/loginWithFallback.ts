@@ -3,7 +3,7 @@ import { getAuthVersionWithFallback } from '@proton/srp';
 import { PASSWORD_WRONG_ERROR, auth, getInfo } from '../api/auth';
 import { Api } from '../interfaces';
 import { srpAuth } from '../srp';
-import { AuthResponse, AuthVersion, InfoResponse } from './interface';
+import { AuthResponse, AuthVersion, ChallengePayload, InfoResponse } from './interface';
 
 /**
  * Provides authentication with fallback behavior in case the user's auth version is unknown.
@@ -12,10 +12,11 @@ interface Arguments {
     api: Api;
     credentials: { username: string; password: string };
     initialAuthInfo?: InfoResponse;
-    payload?: any;
+    payload?: ChallengePayload;
+    persistent: boolean;
 }
 
-const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload }: Arguments) => {
+const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload, persistent }: Arguments) => {
     let state: { authInfo?: InfoResponse; lastAuthVersion?: AuthVersion } = {
         authInfo: initialAuthInfo,
         lastAuthVersion: undefined,
@@ -32,7 +33,7 @@ const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload }:
             // If it's not the last fallback attempt, suppress the wrong password notification from the API.
             const suppress = done ? undefined : { suppress: [PASSWORD_WRONG_ERROR] };
             const srpConfig = {
-                ...auth(data),
+                ...auth(data, persistent),
                 ...suppress,
             };
             const result = await srpAuth({

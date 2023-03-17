@@ -3,7 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Header, MainLogo, Unauthenticated, useConfig } from '@proton/components';
+import { Header, MainLogo, UnAuthenticated, useConfig } from '@proton/components';
 import Footer from '@proton/components/components/footer/Footer';
 import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUser';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -33,7 +33,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
     ]);
 
     return (
-        <Unauthenticated>
+        <UnAuthenticated>
             <div className={containerClassname}>
                 <Header className="shadow-norm flex flex-align-items-center">
                     <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
@@ -65,6 +65,6 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                     {FooterComponent}
                 </Footer>
             </div>
-        </Unauthenticated>
+        </UnAuthenticated>
     );
 }

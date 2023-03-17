@@ -1,13 +1,23 @@
+import { ChallengePayload } from '../authentication/interface';
 import { APP_CLIENT_IDS } from '../constants';
 import { HTTP_ERROR_CODES } from '../errors';
 import { AuthenticationCredentialsPayload } from '../webauthn/interface';
 
 export const PASSWORD_WRONG_ERROR = 8002;
 
-export const auth = (data: any) => ({
+export const auth = (
+    data: {
+        Username: string;
+        Payload?: ChallengePayload;
+    },
+    persistent: boolean
+) => ({
     method: 'post',
     url: 'core/v4/auth',
-    data,
+    data: {
+        ...data,
+        PersistentCookies: Number(persistent),
+    },
     ignoreHandler: [HTTP_ERROR_CODES.TOO_MANY_REQUESTS],
 });
 
@@ -126,6 +136,12 @@ export const getModulus = () => ({
     url: 'core/v4/auth/modulus',
 });
 
+export const createSession = (data?: { ClientSecret?: string; Payload?: ChallengePayload }) => ({
+    method: 'post',
+    url: 'auth/v4/sessions',
+    data,
+});
+
 export const querySessions = () => ({
     method: 'get',
     url: 'auth/v4/sessions',
@@ -152,9 +168,17 @@ export const getMnemonicAuthInfo = (Username?: string) => ({
     data: Username ? { Username } : undefined,
 });
 
-export const authMnemonic = (Username?: string) => ({
+export const authMnemonic = (Username: string, persistent: boolean) => ({
     method: 'post',
     url: 'auth/v4/mnemonic',
-    data: { Username },
+    data: { Username, PersistentCookies: Number(persistent) },
     ignoreHandler: [HTTP_ERROR_CODES.TOO_MANY_REQUESTS],
+});
+
+export const payload = (data: ChallengePayload) => ({
+    method: 'post',
+    url: `auth/v4/sessions/payload`,
+    data: {
+        Payload: data,
+    },
 });

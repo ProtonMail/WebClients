@@ -13,7 +13,6 @@ import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallba
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -48,19 +47,19 @@ import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
 const syncUser = async (cache: AuthCacheResult): Promise<tsUser> => {
-    const user = await cache.authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+    const user = await cache.api<{ User: tsUser }>(getUser()).then(({ User }) => User);
     cache.data.user = user;
     return user;
 };
 
 const syncAddresses = async (cache: AuthCacheResult): Promise<tsAddress[]> => {
-    const addresses = await getAllAddresses(cache.authApi);
+    const addresses = await getAllAddresses(cache.api);
     cache.data.addresses = addresses;
     return addresses;
 };
 
 const syncSalts = async (cache: AuthCacheResult): Promise<tsKeySalt[]> => {
-    const salts = await cache.authApi<{ KeySalts: tsKeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts);
+    const salts = await cache.api<{ KeySalts: tsKeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts);
     cache.data.salts = salts;
     return salts;
 };
@@ -79,20 +78,11 @@ const finalizeLogin = async ({
     loginPassword: string;
     keyPassword?: string;
 }): Promise<AuthActionResponse> => {
-    const {
-        authResponse,
-        authVersion,
-        api,
-        authApi,
-        persistent,
-        appName,
-        hasTrustedDeviceRecovery,
-        preAuthKTVerifier,
-    } = cache;
+    const { authResponse, authVersion, api, persistent, appName, hasTrustedDeviceRecovery, preAuthKTVerifier } = cache;
 
     if (authVersion < AUTH_VERSION) {
         await srpVerify({
-            api: authApi,
+            api,
             credentials: { password: loginPassword },
             config: upgradePassword(),
         });
@@ -102,7 +92,7 @@ const finalizeLogin = async ({
         const user = cache.data.user || (await syncUser(cache));
         const trusted = false;
 
-        await persistSession({ ...authResponse, User: user, keyPassword, api: authApi, persistent, trusted });
+        await persistSession({ ...authResponse, User: user, keyPassword, api, persistent, trusted });
 
         return {
             to: AuthStep.DONE,
@@ -125,7 +115,7 @@ const finalizeLogin = async ({
 
     const validatedSession = await maybeResumeSessionByUser(api, user);
     if (validatedSession) {
-        await authApi(revoke()).catch(noop);
+        await api(revoke()).catch(noop);
         return {
             to: AuthStep.DONE,
             session: { ...validatedSession, loginPassword, flow: 'login' },
@@ -135,7 +125,7 @@ const finalizeLogin = async ({
     let trusted = false;
     if (hasTrustedDeviceRecovery && keyPassword) {
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
-            api: authApi,
+            api,
             user,
             addresses,
             keyPassword,
@@ -159,12 +149,12 @@ const finalizeLogin = async ({
             });
 
             if (isDeviceRecoveryAvailable) {
-                const userSettings = await authApi<{ UserSettings: UserSettings }>(getSettings()).then(
+                const userSettings = await api<{ UserSettings: UserSettings }>(getSettings()).then(
                     ({ UserSettings }) => UserSettings
                 );
 
                 if (userSettings.DeviceRecovery) {
-                    await storeDeviceRecovery({ api: authApi, user, userKeys });
+                    await storeDeviceRecovery({ api, user, userKeys });
                     trusted = true;
                 }
             }
@@ -177,7 +167,7 @@ const finalizeLogin = async ({
         ...authResponse,
         User: user,
         keyPassword,
-        api: authApi,
+        api,
         persistent,
         trusted,
     });
@@ -211,7 +201,7 @@ const handleKeyUpgrade = async ({
     keyPassword: string;
     isOnePasswordMode?: boolean;
 }) => {
-    const { appName, authApi, preAuthKTVerifier } = cache;
+    const { appName, api, preAuthKTVerifier } = cache;
     let keyPassword = maybeKeyPassword;
 
     if (appName !== APPS.PROTONACCOUNT) {
@@ -234,7 +224,7 @@ const handleKeyUpgrade = async ({
         await Promise.all(
             addresses.map(async ({ Keys, Email }) => {
                 if (getV2KeysToUpgrade(Keys).length > 0) {
-                    await verifyPoAExistence(authApi, canonicalizeInternalEmail(Email));
+                    await verifyPoAExistence(api, canonicalizeInternalEmail(Email));
                 }
             })
         );
@@ -246,7 +236,7 @@ const handleKeyUpgrade = async ({
             keyPassword,
             clearKeyPassword,
             isOnePasswordMode,
-            api: authApi,
+            api,
             preAuthKTVerify,
         }).catch((e) => {
             const error = getSentryError(e);
@@ -264,7 +254,7 @@ const handleKeyUpgrade = async ({
     }
 
     const hasDoneMigration = await migrateUser({
-        api: authApi,
+        api,
         keyPassword,
         user,
         addresses,
@@ -330,15 +320,15 @@ export const handleUnlock = async ({
  * Setup keys and address for users that have not setup.
  */
 export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthCacheResult; newPassword: string }) => {
-    const { authApi, username, preAuthKTVerifier } = cache;
+    const { api, username, preAuthKTVerifier } = cache;
 
     const [domains, addresses] = await Promise.all([
-        authApi<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
+        api<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
         cache.data.addresses || (await syncAddresses(cache)),
     ]);
 
     const keyPassword = await handleSetupAddressKeys({
-        api: authApi,
+        api,
         username,
         password: newPassword,
         addresses,
@@ -402,9 +392,9 @@ export const handleFido2 = async ({
     cache: AuthCacheResult;
     payload: Fido2Data;
 }): Promise<AuthActionResponse> => {
-    const { authApi } = cache;
+    const { api } = cache;
 
-    await authApi(auth2FA({ FIDO2: payload }));
+    await api(auth2FA({ FIDO2: payload }));
 
     return next({ cache, from: AuthStep.TWO_FA });
 };
@@ -420,9 +410,9 @@ export const handleTotp = async ({
     cache: AuthCacheResult;
     totp: string;
 }): Promise<AuthActionResponse> => {
-    const { authApi } = cache;
+    const { api } = cache;
 
-    await authApi(auth2FA({ TwoFactorCode: totp })).catch((e) => {
+    await api(auth2FA({ TwoFactorCode: totp })).catch((e) => {
         if (e.status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
             const error = new Error(
                 getApiErrorMessage(e) || c('Error').t`Incorrect login credentials. Please try again.`
@@ -465,18 +455,16 @@ export const handleLogin = async ({
         credentials: { username, password },
         initialAuthInfo: infoResult,
         payload,
+        persistent,
     });
-    const { UID, AccessToken } = authResponse;
-    const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
 
     const cache: AuthCacheResult = {
         authResponse,
         authVersion,
-        api,
         appName,
         toApp,
         data: {},
-        authApi,
+        api,
         authTypes: getAuthTypes(authResponse, appName),
         username,
         persistent,
@@ -484,7 +472,7 @@ export const handleLogin = async ({
         ignoreUnlock,
         hasTrustedDeviceRecovery,
         setupVPN,
-        preAuthKTVerifier: createPreAuthKTVerifier(authApi),
+        preAuthKTVerifier: createPreAuthKTVerifier(api),
     };
 
     return next({ cache, from: AuthStep.LOGIN });
