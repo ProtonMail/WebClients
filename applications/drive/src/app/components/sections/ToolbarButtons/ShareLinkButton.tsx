@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { DecryptedLink } from '../../../store';
-import { useLinkSharingModal } from '../../ShareLinkModal/ShareLinkModal';
+import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import { isMultiSelect, noSelection } from './utils';
 
 interface Props {

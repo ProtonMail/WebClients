@@ -15,7 +15,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import drive1gbSvg from '@proton/styles/assets/img/onboarding/drive-1gb.svg';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
-import useChecklist from './useChecklist';
+import useChecklist from '../onboarding/useChecklist';
 
 interface Props {
     showGenericSteps?: boolean;

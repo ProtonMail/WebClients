@@ -21,7 +21,7 @@ import {
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import { sendErrorReport } from '../../utils/errorHandling';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { FileCard } from './FileCard';
 import { AbuseCategory, AbuseCateroryType, AbuseFormProps, ReportAbuseRequestPayload } from './types';
 

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { useCreateFolderModal } from '../../../CreateFolderModal';
+import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 
 const CreateNewFolderButton = () => {
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();

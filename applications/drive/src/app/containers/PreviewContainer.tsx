@@ -7,10 +7,10 @@ import { FilePreview, NavigationControl, useModalState } from '@proton/component
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
-import DetailsModal from '../components/DetailsModal';
-import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
 import { SignatureAlertBody } from '../components/SignatureAlert';
 import SignatureIcon from '../components/SignatureIcon';
+import DetailsModal from '../components/modals/DetailsModal';
+import ShareLinkModal from '../components/modals/ShareLinkModal/ShareLinkModal';
 import useIsEditEnabled from '../components/sections/useIsEditEnabled';
 import useActiveShare from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';

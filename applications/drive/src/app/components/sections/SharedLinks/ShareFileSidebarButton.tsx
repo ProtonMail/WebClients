@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { FloatingButton, Icon, SidebarPrimaryButton } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { useFileSharingModal } from '../../SelectLinkToShareModal/SelectLinkToShareModal';
+import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 
 interface Props {
     mobileVersion?: boolean;

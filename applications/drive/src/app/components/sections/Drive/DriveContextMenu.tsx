@@ -2,12 +2,12 @@ import { ContextSeparator } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink } from '../../../store';
-import { useDetailsModal } from '../../DetailsModal';
 import { ContextMenuProps } from '../../FileBrowser/interface';
-import { useFilesDetailsModal } from '../../FilesDetailsModal';
-import { useMoveToFolderModal } from '../../MoveToFolderModal/MoveToFolderModal';
-import { useRenameModal } from '../../RenameModal';
-import { useLinkSharingModal } from '../../ShareLinkModal/ShareLinkModal';
+import { useDetailsModal } from '../../modals/DetailsModal';
+import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
+import { useMoveToFolderModal } from '../../modals/MoveToFolderModal/MoveToFolderModal';
+import { useRenameModal } from '../../modals/RenameModal';
+import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import {
     CopyLinkButton,
     DetailsButton,

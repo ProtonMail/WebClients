@@ -7,7 +7,7 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { ShareURL, SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import useConfirm from '../../hooks/util/useConfirm';
+import useConfirm from '../../../hooks/util/useConfirm';
 import {
     DecryptedLink,
     getSharedLink,
@@ -16,7 +16,7 @@ import {
     splitGeneratedAndCustomPassword,
     useLinkView,
     useShareUrl,
-} from '../../store';
+} from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
 import ErrorState from './ErrorState';
 import GeneratedLinkState from './GeneratedLinkState';

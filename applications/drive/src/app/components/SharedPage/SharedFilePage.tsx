@@ -1,4 +1,3 @@
-
 import { c } from 'ttag';
 
 import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
@@ -6,8 +5,8 @@ import { FilePreviewContent } from '@proton/components/containers/filePreview/Fi
 import { DecryptedLink } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
+import { useUpsellFloatingModal } from '../modals/UpsellFloatingModal';
 import Breadcrumbs from './Layout/Breadcrumbs';
-import { useUpsellFloatingModal } from '../UpsellFloatingModal';
 import { HeaderSubtitle } from './Layout/HeaderSubtitle';
 import SharedPageFooter from './Layout/SharedPageFooter';
 import SharedPageHeader from './Layout/SharedPageHeader';

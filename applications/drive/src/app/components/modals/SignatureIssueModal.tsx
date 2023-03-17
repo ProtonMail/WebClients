@@ -14,9 +14,9 @@ import {
     Row,
 } from '@proton/components';
 
-import { SignatureIssues } from '../store';
-import { TransferSignatureIssueStrategy } from '../store';
-import { SignatureAlertBody } from './SignatureAlert';
+import { SignatureIssues } from '../../store';
+import { TransferSignatureIssueStrategy } from '../../store';
+import { SignatureAlertBody } from '../SignatureAlert';
 
 export interface ConflictModalProps {
     isFile: boolean;

@@ -6,7 +6,7 @@ import { LocationErrorBoundary, useLoading } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
-import SignatureIssueModal from '../components/SignatureIssueModal';
+import SignatureIssueModal from '../components/modals/SignatureIssueModal';
 import usePublicToken from '../hooks/drive/usePublicToken';
 import { DecryptedLink, PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
 
