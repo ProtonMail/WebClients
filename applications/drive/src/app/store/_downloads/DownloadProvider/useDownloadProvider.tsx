@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { useModals, useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import DownloadIsTooBigModal from '../../../components/DownloadIsTooBigModal';
 import { TransferState } from '../../../components/TransferManager/transfer';
+import DownloadIsTooBigModal from '../../../components/modals/DownloadIsTooBigModal';
 import { logError, sendErrorReport } from '../../../utils/errorHandling';
 import { bufferToStream } from '../../../utils/stream';
 import {

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { Device } from '../../../../../store';
-import { useRemoveDeviceModal } from '../../../../RemoveDeviceModal';
+import { useRemoveDeviceModal } from '../../../../modals/RemoveDeviceModal';
 import { isMultiSelect } from '../../../ToolbarButtons/utils';
 
 interface Props {

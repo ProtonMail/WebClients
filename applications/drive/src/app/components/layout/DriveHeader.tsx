@@ -16,7 +16,7 @@ import {
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
 
-import DriveOnboardingModal from '../onboarding/DriveOnboardingModal';
+import DriveOnboardingModal from '../modals/DriveOnboardingModal';
 import ClearSearchDataButton from './search/ClearSearchDataButton';
 import { SearchField } from './search/SearchField';
 

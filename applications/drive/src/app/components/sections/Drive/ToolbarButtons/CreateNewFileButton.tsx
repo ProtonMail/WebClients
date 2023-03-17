@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { useCreateFileModal } from '../../../CreateFileModal';
+import { useCreateFileModal } from '../../../modals/CreateFileModal';
 
 const CreateNewFileButton = () => {
     const [createFileModal, showCreateFileModal] = useCreateFileModal();

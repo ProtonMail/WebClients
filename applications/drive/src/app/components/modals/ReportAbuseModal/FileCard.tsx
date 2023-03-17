@@ -3,7 +3,7 @@ import React from 'react';
 import { FileIcon, FileNameDisplay } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { Cells } from '../FileBrowser';
+import { Cells } from '../../FileBrowser';
 import { LinkInfo } from './types';
 
 interface Props {

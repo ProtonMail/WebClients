@@ -5,7 +5,7 @@ import { useActiveBreakpoint } from '@proton/components/hooks';
 import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUser';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 
-import { useDownload } from '../../store';
+import { useDownload } from '../../../store';
 import UpsellFloatingModal from './UpsellFloatingModal';
 import { UPSELL_MODAL_TIMEOUT } from './constants';
 

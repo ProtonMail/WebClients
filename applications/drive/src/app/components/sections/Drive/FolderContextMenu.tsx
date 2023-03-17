@@ -5,10 +5,10 @@ import { ContextMenu, ContextSeparator } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useFileUploadInput, useFolderUploadInput } from '../../../store';
-import { useCreateFileModal } from '../../CreateFileModal';
-import { useCreateFolderModal } from '../../CreateFolderModal';
 import { ContextMenuProps } from '../../FileBrowser/interface';
-import { useFileSharingModal } from '../../SelectLinkToShareModal/SelectLinkToShareModal';
+import { useCreateFileModal } from '../../modals/CreateFileModal';
+import { useCreateFolderModal } from '../../modals/CreateFolderModal';
+import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { ShareFileButton } from '../ContextMenu/buttons';
 import useIsEditEnabled from '../useIsEditEnabled';
 import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';

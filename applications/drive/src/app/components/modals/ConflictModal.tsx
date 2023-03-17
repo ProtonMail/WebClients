@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button } from '@proton/atoms/index';
 import {
     Checkbox,
     ModalTwo,

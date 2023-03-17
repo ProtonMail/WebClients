@@ -5,10 +5,10 @@ import { c, msgid } from 'ttag';
 import { ModalTwo, useActiveBreakpoint, useLoading } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
-import { DecryptedLink, useActions, useTreeForModals } from '../../store';
+import { DecryptedLink, useActions, useTreeForModals } from '../../../store';
+import { selectMessageForItemList } from '../../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
-import { selectMessageForItemList } from '../sections/helpers';
 import { ModalContent } from './ModalContent';
 
 interface Props {

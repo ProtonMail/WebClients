@@ -19,7 +19,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import { Device, useActions } from '../../store';
+import { Device, useActions } from '../../../store';
 
 interface Props {
     onClose?: () => void;
