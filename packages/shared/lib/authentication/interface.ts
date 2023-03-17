@@ -63,6 +63,10 @@ export interface LocalSessionResponse {
 
 export type AuthVersion = 0 | 1 | 2 | 3 | 4;
 
+export interface ChallengePayload {
+    [key: string]: string;
+}
+
 export interface InfoResponse {
     Modulus: string;
     ServerEphemeral: string;

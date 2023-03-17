@@ -1,5 +1,6 @@
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
+import UnAuthenticatedApiProvider from '../api/UnAuthenticatedApiProvider';
 import MinimalLoginContainer from '../login/MinimalLoginContainer';
 import StandardPublicApp from './StandardPublicApp';
 import { OnLoginCallback } from './interface';
@@ -11,13 +12,15 @@ interface Props {
 
 const StandalonePublicApp = ({ onLogin, locales }: Props) => {
     return (
-        <StandardPublicApp locales={locales}>
-            <div className="h100 flex flex-justify-center flex-align-items-center">
-                <div className="w20e">
-                    <MinimalLoginContainer onLogin={onLogin} />
+        <UnAuthenticatedApiProvider>
+            <StandardPublicApp locales={locales}>
+                <div className="h100 flex flex-justify-center flex-align-items-center">
+                    <div className="w20e">
+                        <MinimalLoginContainer onLogin={onLogin} />
+                    </div>
                 </div>
-            </div>
-        </StandardPublicApp>
+            </StandardPublicApp>
+        </UnAuthenticatedApiProvider>
     );
 };
 

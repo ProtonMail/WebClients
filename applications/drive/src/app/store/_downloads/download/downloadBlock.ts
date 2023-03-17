@@ -1,7 +1,7 @@
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { retryHandler } from '@proton/shared/lib/api/helpers/withApiHandlers';
+import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { DOWNLOAD_RETRIES_ON_TIMEOUT, DOWNLOAD_TIMEOUT, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
