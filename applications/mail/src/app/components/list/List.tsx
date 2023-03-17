@@ -126,8 +126,8 @@ const List = (
 ) => {
     const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
-    const { esEnabled, dbExists } = getESDBStatus();
-    const shouldOverrideCompactness = shouldHighlight() && dbExists && esEnabled;
+    const { contentIndexingDone, esEnabled } = getESDBStatus();
+    const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
 
     const [user] = useUser();
