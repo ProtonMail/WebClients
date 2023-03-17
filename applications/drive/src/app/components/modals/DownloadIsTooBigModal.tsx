@@ -1,20 +1,19 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { BasicModal, PrimaryButton } from '@proton/components';
+import { BasicModal, ModalStateProps, PrimaryButton } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 type Props = {
-    open?: boolean;
-    onClose?: () => void;
     onCancel?: () => void;
     onSubmit?: () => void;
 };
 
-export default function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, open }: Props) {
+export default function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, open }: Props & ModalStateProps) {
     const handleCancel = () => {
         onCancel?.();
-        onClose?.();
+        onClose();
     };
 
     const recommendedBrowser = (
@@ -34,7 +33,7 @@ export default function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, ope
                     <PrimaryButton
                         onClick={() => {
                             onSubmit?.();
-                            onClose?.();
+                            onClose();
                         }}
                     >
                         {c('Action').t`Download anyway`}
@@ -47,3 +46,7 @@ export default function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, ope
         </BasicModal>
     );
 }
+
+export const useDownloadIsTooBigModal = () => {
+    return useModalTwo<Props, void>(DownloadIsTooBigModal);
+};

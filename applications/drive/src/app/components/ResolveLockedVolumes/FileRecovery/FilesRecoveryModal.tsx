@@ -1,16 +1,12 @@
 import { c } from 'ttag';
 
-import { ModalTwo, useLoading, useNotifications } from '@proton/components';
+import { ModalStateProps, ModalTwo, useLoading, useNotifications } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 import { useLockedVolume } from '../../../store';
 import FilesRecoveryState from './FilesRecoveryState';
 
-interface Props {
-    onClose?: () => void;
-    open?: boolean;
-}
-
-const FilesRecoveryModal = ({ onClose, open }: Props) => {
+const FilesRecoveryModal = ({ onClose, open }: ModalStateProps) => {
     const { restoreVolumes } = useLockedVolume();
     const [recovering, withRecovering] = useLoading();
     const { createNotification } = useNotifications();
@@ -37,3 +33,7 @@ const FilesRecoveryModal = ({ onClose, open }: Props) => {
 };
 
 export default FilesRecoveryModal;
+
+export const useFilesRecoveryModal = () => {
+    return useModalTwo<void, void>(FilesRecoveryModal);
+};
