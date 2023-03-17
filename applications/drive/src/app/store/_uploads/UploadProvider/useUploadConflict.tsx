@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import { useModals } from '@proton/components';
-
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
+import { useConflictModal } from '../../../components/modals/ConflictModal';
 import { waitUntil } from '../../../utils/async';
 import { isTransferActive, isTransferConflict } from '../../../utils/transfer';
-import { TransferConflictStrategy, UploadConflictModal } from '../interface';
+import { TransferConflictStrategy } from '../interface';
 import { ConflictStrategyHandler, FileUpload, FolderUpload, UpdateData, UpdateFilter, UpdateState } from './interface';
 
 // Empty string is ensured to not conflict with any upload ID or folder name.
@@ -13,14 +12,13 @@ import { ConflictStrategyHandler, FileUpload, FolderUpload, UpdateData, UpdateFi
 const CONFLICT_STRATEGY_ALL_ID = '';
 
 export default function useUploadConflict(
-    UploadConflictModal: UploadConflictModal,
     fileUploads: FileUpload[],
     folderUploads: FolderUpload[],
     updateState: (filter: UpdateFilter, newState: UpdateState) => void,
     updateWithData: (filter: UpdateFilter, newState: UpdateState, data: UpdateData) => void,
     cancelUploads: (filter: UpdateFilter) => void
 ) {
-    const { createModal } = useModals();
+    const [conflictModal, showConflictModal] = useConflictModal();
 
     // There should be always visible only one modal to chose conflict strategy.
     const isConflictStrategyModalOpen = useRef(false);
@@ -127,7 +125,7 @@ export default function useUploadConflict(
             conflictStrategyRef.current[CONFLICT_STRATEGY_ALL_ID] = TransferConflictStrategy.Skip;
             cancelUploads(isTransferActive);
         };
-        createModal(<UploadConflictModal apply={apply} cancelAll={cancelAll} {...params} />);
+        void showConflictModal({ apply, cancelAll, ...params });
     };
 
     // Modals are openned on this one place only to not have race condition
@@ -160,5 +158,6 @@ export default function useUploadConflict(
     return {
         getFolderConflictHandler,
         getFileConflictHandler,
+        conflictModal,
     };
 }

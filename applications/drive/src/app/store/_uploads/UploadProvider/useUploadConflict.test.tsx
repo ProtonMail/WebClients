@@ -10,18 +10,13 @@ import { TransferConflictStrategy } from '../interface';
 import { FileUpload, FolderUpload } from './interface';
 import useUploadConflict from './useUploadConflict';
 
-const mockCreateModal = jest.fn();
-jest.mock('@proton/components/hooks/useModals.ts', () => {
-    const useModals = () => {
-        return {
-            createModal: mockCreateModal,
-        };
-    };
-    return useModals;
-});
+const mockModal = jest.fn();
+const mockShowModal = jest.fn();
+jest.mock('../../../components/modals/ConflictModal.tsx', () => ({
+    useConflictModal: () => [mockModal, mockShowModal],
+}));
 
 describe('useUploadConflict', () => {
-    const mockConflictModal = jest.fn();
     const mockUpdateState = jest.fn();
     const mockUpdateWithData = jest.fn();
     const mockCancelUploads = jest.fn();
@@ -43,15 +38,7 @@ describe('useUploadConflict', () => {
         const folderUploads: FolderUpload[] = [];
         const wrapper = ({ children }: { children: ReactNode }) => <ModalsProvider>{children}</ModalsProvider>;
         const { result } = renderHook(
-            () =>
-                useUploadConflict(
-                    mockConflictModal,
-                    fileUploads,
-                    folderUploads,
-                    mockUpdateState,
-                    mockUpdateWithData,
-                    mockCancelUploads
-                ),
+            () => useUploadConflict(fileUploads, folderUploads, mockUpdateState, mockUpdateWithData, mockCancelUploads),
             { wrapper }
         );
         return result;
@@ -60,7 +47,8 @@ describe('useUploadConflict', () => {
     beforeEach(() => {
         mockGlobalFile();
 
-        mockCreateModal.mockClear();
+        mockModal.mockClear();
+        mockShowModal.mockClear();
         mockUpdateState.mockClear();
         mockUpdateWithData.mockClear();
         mockCancelUploads.mockClear();
@@ -97,8 +85,8 @@ describe('useUploadConflict', () => {
     });
 
     it('waits and resolves in conflict strategy for one', async () => {
-        mockCreateModal.mockImplementation(({ props }) => {
-            props.apply(TransferConflictStrategy.Rename, false);
+        mockShowModal.mockImplementation(({ apply }) => {
+            apply(TransferConflictStrategy.Rename, false);
         });
         const hook = renderConflict();
         await act(async () => {
@@ -113,8 +101,8 @@ describe('useUploadConflict', () => {
     });
 
     it('waits and resolves in conflict strategy for all', async () => {
-        mockCreateModal.mockImplementation(({ props }) => {
-            props.apply(TransferConflictStrategy.Rename, true);
+        mockShowModal.mockImplementation(({ apply }) => {
+            apply(TransferConflictStrategy.Rename, true);
         });
         const hook = renderConflict();
         await act(async () => {
@@ -144,8 +132,8 @@ describe('useUploadConflict', () => {
     });
 
     it('waits and cancels all uploads', async () => {
-        mockCreateModal.mockImplementation(({ props }) => {
-            props.cancelAll();
+        mockShowModal.mockImplementation(({ cancelAll }) => {
+            cancelAll();
         });
         const hook = renderConflict();
         await act(async () => {

@@ -1,19 +1,24 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { BasicModal, PrimaryButton } from '@proton/components';
+import { Button } from '@proton/atoms/index';
+import { BasicModal, ModalStateProps, PrimaryButton } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 type Props = {
-    open?: boolean;
     type?: FileThresholdModalType;
-    onClose?: () => void;
     onSubmit: () => void;
     onCancel: () => void;
 };
 
 export type FileThresholdModalType = 'fileNumberTotal' | 'fileSizeTotal';
 
-export const FileThresholdModal = ({ onSubmit, onCancel, onClose, open, type = 'fileNumberTotal' }: Props) => {
+export const FileThresholdModal = ({
+    onSubmit,
+    onCancel,
+    onClose,
+    open,
+    type = 'fileNumberTotal',
+}: Props & ModalStateProps) => {
     const handleCancel = () => {
         onCancel();
         onClose?.();
@@ -50,4 +55,8 @@ export const FileThresholdModal = ({ onSubmit, onCancel, onClose, open, type = '
             </p>
         </BasicModal>
     );
+};
+
+export const useFileThresholdModal = () => {
+    return useModalTwo<Props, void>(FileThresholdModal);
 };

@@ -2,7 +2,6 @@ import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
 import { DownloadProvider } from './DownloadProvider';
 import { ThumbnailsDownloadProvider } from './ThumbnailDownloadProvider';
-import { DownloadSignatureIssueModal } from './interface';
 import useDownload from './useDownload';
 import usePublicDownload from './usePublicDownload';
 
@@ -10,13 +9,7 @@ export { useDownloadProvider } from './DownloadProvider';
 export { useThumbnailsDownload } from './ThumbnailDownloadProvider';
 export { default as useDownload } from './useDownload';
 
-export function DownloadsProvider({
-    DownloadSignatureIssueModal,
-    children,
-}: {
-    DownloadSignatureIssueModal: DownloadSignatureIssueModal;
-    children: React.ReactNode;
-}) {
+export function DownloadsProvider({ children }: { children: React.ReactNode }) {
     const { initDownload, downloadThumbnail } = useDownload();
 
     const downloadThumbnailsCb = async (
@@ -46,19 +39,13 @@ export function DownloadsProvider({
     };
 
     return (
-        <DownloadProvider initDownload={initDownload} DownloadSignatureIssueModal={DownloadSignatureIssueModal}>
+        <DownloadProvider initDownload={initDownload}>
             <ThumbnailsDownloadProvider downloadThumbnail={downloadThumbnailsCb}>{children}</ThumbnailsDownloadProvider>
         </DownloadProvider>
     );
 }
 
-export function PublicDownloadsProvider({
-    DownloadSignatureIssueModal,
-    children,
-}: {
-    DownloadSignatureIssueModal: DownloadSignatureIssueModal;
-    children: React.ReactNode;
-}) {
+export function PublicDownloadsProvider({ children }: { children: React.ReactNode }) {
     const { initDownload, downloadThumbnail } = usePublicDownload();
 
     const downloadThumbnailsCb = async (
@@ -77,7 +64,7 @@ export function PublicDownloadsProvider({
     };
 
     return (
-        <DownloadProvider initDownload={initDownload} DownloadSignatureIssueModal={DownloadSignatureIssueModal}>
+        <DownloadProvider initDownload={initDownload}>
             <ThumbnailsDownloadProvider downloadThumbnail={downloadThumbnailsCb}>{children}</ThumbnailsDownloadProvider>
         </DownloadProvider>
     );
