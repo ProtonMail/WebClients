@@ -1,4 +1,4 @@
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 
 import { Api } from '../../interfaces';
 
@@ -15,5 +15,9 @@ export const getSilentApiWithAbort = (api: Api, signal: AbortSignal) => {
 };
 
 export const getUIDApi = (UID: string, api: Api) => {
-    return <T>(config: any) => api<T>(withUIDHeaders(UID, { ...config }));
+    return <T>(config: any) => api<T>(withUIDHeaders(UID, config));
+};
+
+export const getAuthAPI = (UID: string, AccessToken: string, api: Api) => {
+    return <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
 };
