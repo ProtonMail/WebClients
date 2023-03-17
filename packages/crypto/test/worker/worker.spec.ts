@@ -1,6 +1,6 @@
 import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
-import { SessionKey, generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto-v7';
+import { SessionKey, generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto';
 import {
     CompressedDataPacket,
     enums,
@@ -10,7 +10,7 @@ import {
     readMessage as openpgp_readMessage,
     readPrivateKey as openpgp_readPrivateKey,
     revokeKey as openpgp_revokeKey,
-} from 'pmcrypto-v7/lib/openpgp';
+} from 'pmcrypto/lib/openpgp';
 
 import { VERIFICATION_STATUS } from '../../lib';
 import {
