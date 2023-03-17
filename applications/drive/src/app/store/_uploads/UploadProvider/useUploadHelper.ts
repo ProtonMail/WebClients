@@ -34,7 +34,7 @@ export default function useUploadHelper() {
         ): Promise<{
             filename: string;
             hash: string;
-            drarftLinkId?: string;
+            draftLinkId?: string;
             clientUid?: string;
         }> => {
             const hashesToCheck = await Promise.all(
@@ -67,7 +67,7 @@ export default function useUploadHelper() {
                 if (availableName) {
                     return {
                         ...availableName,
-                        drarftLinkId: pendingAvailableHashes[0].LinkID,
+                        draftLinkId: pendingAvailableHashes[0].LinkID,
                         clientUid: pendingAvailableHashes[0].ClientUID,
                     };
                 }
@@ -83,11 +83,11 @@ export default function useUploadHelper() {
             }
 
             const draftHashes = PendingHashes.filter(({ ClientUID }) => !isClientUidAvailable(ClientUID));
-            const drarftLinkId = draftHashes.find(({ Hash }) => Hash === hash)?.LinkID;
+            const draftLinkId = draftHashes.find(({ Hash }) => Hash === hash)?.LinkID;
 
             return {
                 ...availableName,
-                drarftLinkId,
+                draftLinkId,
             };
         };
         return findAdjustedName();
