@@ -38,7 +38,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
     esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
     recordProgressLocal?: () => void
 ) => {
-    const { getItemInfo, fetchESItemContent, onContentDeletion } = esHelpers;
+    const { getItemInfo, fetchESItemContent, onContentDeletion, getKeywords } = esHelpers;
 
     let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
     if (!!indexKey) {
@@ -162,8 +162,11 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
 
                 addToESCache<ESItemMetadata, ESItemContent>(itemToCache, esCacheRef, getItemInfo);
 
-                if (!!esSearchParams && applySearch(esSearchParams, itemToCache, esHelpers)) {
-                    updatePermanentResults({ itemToCache: { ...itemToCache.metadata, ...itemToCache.content } });
+                if (!!esSearchParams) {
+                    const hasApostrophe = (getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
+                    if (applySearch(esSearchParams, itemToCache, hasApostrophe, esHelpers)) {
+                        updatePermanentResults({ itemToCache: { ...itemToCache.metadata, ...itemToCache.content } });
+                    }
                 }
             }
 
@@ -209,12 +212,14 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                 //   - if the old item was part of the search and the new one shouldn't be, delete it;
                 //   - if the old item wasn't part of the search and the new one should be, add it;
                 if (!!esSearchParams) {
+                    const hasApostrophe = (getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
                     const resultIndex = findItemIndex(ID, permanentResults, getItemInfo);
                     if (resultIndex !== -1) {
                         if (
                             applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
                                 esSearchParams,
                                 itemToCache,
+                                hasApostrophe,
                                 esHelpers
                             )
                         ) {
@@ -229,6 +234,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                         applySearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
                             esSearchParams,
                             itemToCache,
+                            hasApostrophe,
                             esHelpers
                         )
                     ) {

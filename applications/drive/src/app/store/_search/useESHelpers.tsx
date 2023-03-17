@@ -60,8 +60,8 @@ export const useESHelpers = ({
         timepoint: [item.createTime, item.order],
     });
 
-    const searchKeywords = (keywords: string[], itemToSearch: CachedItem<ESLink, void>) =>
-        testKeywords(keywords, [itemToSearch.metadata.decryptedName]);
+    const searchKeywords = (keywords: string[], itemToSearch: CachedItem<ESLink, void>, hasApostrophe: boolean) =>
+        testKeywords(keywords, [itemToSearch.metadata.decryptedName], hasApostrophe);
 
     const getSearchParams = () => {
         const keyword = extractSearchParameters(history.location);
