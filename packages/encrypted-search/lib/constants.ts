@@ -73,6 +73,17 @@ export const ES_TEMPORARY_ERRORS = [408, 429, 502, 503];
 export const DIACRITICS_REGEXP = /\p{Mark}/gu;
 
 /**
+ * Regular expression used to turn all fancy quotes into normal ones
+ */
+export const QUOTES_REGEXP =
+    /\u00ab|\u00bb|\u201e|\u201c|\u201f|\u201d|\u275d|\u275e|\u276e|\u276f|\u2e42|\u301d|\u301e|\u301f|\uff02/gu;
+
+/**
+ * Regular expression used to turn all fancy apostrophes into normal ones
+ */
+export const APOSTROPHES_REGEXP = /\u2018|\u2019|\u02bc/gu;
+
+/**
  * Configuration of the Web Crypto API to symmetrically encrypt items in IndexedDB
  */
 export const AesKeyGenParams: AesKeyGenParams = { name: 'AES-GCM', length: 128 };

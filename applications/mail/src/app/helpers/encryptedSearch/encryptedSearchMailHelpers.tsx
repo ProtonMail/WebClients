@@ -262,19 +262,23 @@ export const getESHelpers = ({
         };
     };
 
-    const searchKeywords = (keywords: string[], itemToSearch: CachedItem<ESBaseMessage, ESMessageContent>) => {
+    const searchKeywords = (
+        keywords: string[],
+        itemToSearch: CachedItem<ESBaseMessage, ESMessageContent>,
+        hasApostrophe: boolean
+    ) => {
         const { metadata, content } = itemToSearch;
 
         const recipients = transformRecipients(getRecipients(metadata));
         const sender = transformRecipients([metadata.Sender]);
 
-        let result = testKeywords(keywords, [metadata.Subject, ...recipients, ...sender]);
+        let result = testKeywords(keywords, [metadata.Subject, ...recipients, ...sender], hasApostrophe);
         if (!content) {
             return result;
         }
 
         const { decryptedBody, decryptedSubject } = content;
-        return result || testKeywords(keywords, [decryptedSubject || '', decryptedBody || '']);
+        return result || testKeywords(keywords, [decryptedSubject || '', decryptedBody || ''], hasApostrophe);
     };
 
     const applyFilters = (esSearchParams: NormalizedSearchParams, metadata: ESBaseMessage) => {

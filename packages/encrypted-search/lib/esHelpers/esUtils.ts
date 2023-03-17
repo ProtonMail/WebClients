@@ -1,6 +1,6 @@
 import { removeItem } from '@proton/shared/lib/helpers/storage';
 
-import { DIACRITICS_REGEXP } from '../constants';
+import { APOSTROPHES_REGEXP, DIACRITICS_REGEXP, QUOTES_REGEXP } from '../constants';
 import { AesGcmCiphertext, ESTimepoint, GetItemInfo } from '../models';
 
 /**
@@ -74,3 +74,13 @@ export const ciphertextSize = (ciphertext: AesGcmCiphertext | undefined) =>
  */
 export const ciphertextBatchSize = (ciphertextBatch: (AesGcmCiphertext | undefined)[]) =>
     ciphertextBatch.reduce((p, c) => p + ciphertextSize(c), 0);
+
+/**
+ * Turn unusual quotes into normal ones, that can then be searched to split sentences
+ */
+export const replaceQuotes = (str: string) => str.replace(QUOTES_REGEXP, `"`);
+
+/**
+ * turn unusual apostrophes into normal ones
+ */
+export const replaceApostrophes = (str: string) => str.replace(APOSTROPHES_REGEXP, `'`);
