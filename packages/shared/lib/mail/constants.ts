@@ -11,16 +11,15 @@ export const MESSAGE_FLAGS = {
     FLAG_IMPORTED: Math.pow(2, 9), // whether the message is an import
     FLAG_OPENED: Math.pow(2, 10), // whether the message has ever been opened by the user
     FLAG_RECEIPT_SENT: Math.pow(2, 11), // whether a read receipt has been sent in response to the message
-    // For drafts only
-    FLAG_RECEIPT_REQUEST: 65536, // whether to request a read receipt for the message
-    FLAG_PUBLIC_KEY: 131072, // whether to attach the public key
-    FLAG_SIGN: 262144, // whether to sign the message
-    FLAG_HAM_MANUAL: 1 << 27, // The message is in spam and the user moves it to a new location that is not spam or trash (e.g. inbox or archive).
-    FLAG_PHISHING_AUTO: 1 << 30, // Incoming mail is marked as phishing by anti-spam filters.
-    FLAG_DMARC_FAIL: 1 << 26, // Incoming mail failed dmarc authentication.
-    FLAG_UNSUBSCRIBED: 1 << 19, // Unsubscribed from newsletter
-    FLAG_SCHEDULED_SEND: 1 << 20, // Messages that have been delayed send
-    FLAG_UNSUBSCRIBABLE: 1 << 21, // Messages that are unsubscribable
+    FLAG_RECEIPT_REQUEST: Math.pow(2, 16), // whether to request a read receipt for the message
+    FLAG_PUBLIC_KEY: Math.pow(2, 17), // whether to attach the public key
+    FLAG_SIGN: Math.pow(2, 18), // whether to sign the message
+    FLAG_UNSUBSCRIBED: Math.pow(2, 19), // Unsubscribed from newsletter
+    FLAG_SCHEDULED_SEND: Math.pow(2, 20), // Messages that have been delayed send
+    FLAG_UNSUBSCRIBABLE: Math.pow(2, 21), // Messages that are unsubscribable
+    FLAG_DMARC_FAIL: Math.pow(2, 26), // Incoming mail failed dmarc authentication.
+    FLAG_HAM_MANUAL: Math.pow(2, 27), // The message is in spam and the user moves it to a new location that is not spam or trash (e.g. inbox or archive).
+    FLAG_PHISHING_AUTO: Math.pow(2, 30), // Incoming mail is marked as phishing by anti-spam filters.
     FLAG_FROZEN_EXPIRATION: Math.pow(2, 32), // Messages where the expiration time cannot be changed
 };
 
