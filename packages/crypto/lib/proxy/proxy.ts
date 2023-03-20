@@ -1,4 +1,4 @@
-import { DEFAULT_OFFSET, VERIFICATION_STATUS } from 'pmcrypto-v7/lib/constants';
+import { DEFAULT_OFFSET, VERIFICATION_STATUS } from 'pmcrypto/lib/constants';
 
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 

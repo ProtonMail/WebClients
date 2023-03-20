@@ -13,7 +13,7 @@ module.exports = {
     ],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto-v7|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|@protontech/bip39|jsmimeparser|emoji-mart)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|@protontech/bip39|jsmimeparser|emoji-mart)/)',
     ],
     transform: {
         '^.+\\.(m?js|tsx?)$': '<rootDir>/jest.transform.js',

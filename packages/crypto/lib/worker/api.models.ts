@@ -18,9 +18,9 @@ import type {
     VerifyCleartextOptionsPmcrypto,
     VerifyMessageResult,
     VerifyOptionsPmcrypto,
-} from 'pmcrypto-v7';
+} from 'pmcrypto';
 
-export type { enums } from 'pmcrypto-v7/lib/openpgp';
+export type { enums } from 'pmcrypto/lib/openpgp';
 
 type MaybeArray<T> = T[] | T;
 export type { SessionKey, AlgorithmInfo, MIMEAttachment };
