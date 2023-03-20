@@ -15,7 +15,7 @@ module.exports = {
     ],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto-v7|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|@openpgp/web-stream-tools|@protontech/bip39|emoji-mart)/)',
     ],
     transform: {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
