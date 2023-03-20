@@ -46,6 +46,14 @@ interface Props {
     bordered?: boolean;
 }
 
+const BREAKPOINTS = {
+    extratiny: 0,
+    tiny: 330,
+    small: 500,
+    medium: 700,
+    large: 1100,
+};
+
 const Toolbar = ({
     labelID = '',
     messageID,
@@ -74,13 +82,7 @@ const Toolbar = ({
     const toolbarRef = useRef<HTMLDivElement>(null);
 
     // Using local breakpoints to be more precise and to deal with sidebar being there or not
-    const breakpoint = useElementBreakpoints(toolbarRef, {
-        extratiny: 0,
-        tiny: 330,
-        small: 500,
-        medium: 700,
-        large: 1100,
-    });
+    const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
 
     const isTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
     const isNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
