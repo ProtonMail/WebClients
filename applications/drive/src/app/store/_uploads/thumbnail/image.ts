@@ -2,13 +2,19 @@ import { THUMBNAIL_MAX_SIDE, THUMBNAIL_MAX_SIZE, THUMBNAIL_QUALITIES } from '@pr
 
 import { ThumbnailData } from './interface';
 
+export const imageCannotBeLoadedError = new Error('Image cannot be loaded');
+
 export function scaleImageFile(file: Blob): Promise<ThumbnailData> {
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.addEventListener('load', () => {
             scaleImage(img).then(resolve).catch(reject);
         });
-        img.addEventListener('error', reject);
+        // If image fails to be loaded, it doesnt provide any error.
+        // We need to provide custom to state clearly what is happening.
+        img.addEventListener('error', () => {
+            reject(imageCannotBeLoadedError);
+        });
         img.src = URL.createObjectURL(file);
     });
 }
