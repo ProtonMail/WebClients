@@ -55,7 +55,7 @@ const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
     };
 
     const keyTransparencyCommit: KeyTransparencyCommit = async (userKeys: DecryptedKey[]) => {
-        const feature = await get().then((result) => result.Value);
+        const feature = await get().then((result) => result?.Value);
         if (!(await isKTActive(feature))) {
             return;
         }
