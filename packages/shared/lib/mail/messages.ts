@@ -29,6 +29,7 @@ const {
     FLAG_DMARC_FAIL,
     FLAG_PHISHING_AUTO,
     FLAG_HAM_MANUAL,
+    FLAG_FROZEN_EXPIRATION,
 } = MESSAGE_FLAGS;
 const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
 const LIST_HEADERS = [
@@ -80,6 +81,7 @@ export const isE2E = hasFlag(FLAG_E2E);
 export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);
 export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
 export const isSign = hasFlag(FLAG_SIGN);
+export const isFrozenExpiration = hasFlag(FLAG_FROZEN_EXPIRATION);
 export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
 export const isUnsubscribed = hasFlag(FLAG_UNSUBSCRIBED);
 export const isUnsubscribable = (message?: Partial<Message>) => {
