@@ -39,7 +39,7 @@ abstract class Metric<D extends MetricSchema> {
         this.requestService.report({
             Name: this.name,
             Version: this.version,
-            TimeStamp: Date.now(),
+            Timestamp: Math.round(Date.now() / 1000),
             Data: data,
         });
     }
