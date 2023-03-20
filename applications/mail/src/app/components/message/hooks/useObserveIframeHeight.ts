@@ -52,7 +52,9 @@ const useObserveIframeHeight = (startObserving: boolean, iframeRef: RefObject<HT
         ) as HTMLDivElement;
 
         const resizeObserver = new ResizeObserver(() => {
-            setIframeHeight();
+            requestAnimationFrame(() => {
+                setIframeHeight();
+            });
         });
 
         // Only checks iframe root div widths changes (window resize or inner resize when column mailbox layout is set)
