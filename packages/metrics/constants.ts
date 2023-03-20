@@ -1,4 +1,14 @@
 /**
+ * Number of metrics to batch into a single request
+ */
+export const METRICS_BATCH_SIZE = 10;
+
+/**
+ * Time in seconds between metrics requests
+ */
+export const METRICS_REQUEST_FREQUENCY_SECONDS = 5;
+
+/**
  * Maximum number of times an API call
  * will be retried before abandoning the request
  */
