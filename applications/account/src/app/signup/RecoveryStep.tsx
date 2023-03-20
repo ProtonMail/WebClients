@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,10 +10,12 @@ import {
     Prompt,
     PromptProps,
     useApi,
+    useConfig,
     useFormErrors,
     useLoading,
     useModalState,
 } from '@proton/components';
+import metrics from '@proton/metrics';
 import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
@@ -22,6 +24,7 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import { getSignupApplication } from './helper';
 
 interface RecoveryConfirmModalProps extends Omit<PromptProps, 'buttons' | 'children' | 'title'> {
     onConfirm: () => void;
@@ -58,6 +61,7 @@ interface Props {
 }
 
 const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, onBack }: Props) => {
+    const { APP_NAME } = useConfig();
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const [loadingDiscard, withLoadingDiscard] = useLoading();
@@ -68,6 +72,13 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
 
     const { validator, onFormSubmit } = useFormErrors();
+
+    useEffect(() => {
+        void metrics.core_signup_pageLoad_total.increment({
+            step: 'recovery',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, []);
 
     const handleSubmit = async () => {
         if (loading || !onFormSubmit()) {
@@ -92,7 +103,6 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
             recoveryEmail: saveEmail ? recoveryEmail : undefined,
         });
     };
-
     return (
         <Main>
             <Header title={c('Title').t`Save contact details`} onBack={onBack} />
