@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { Icon, useConfig } from '@proton/components';
 import useInterval from '@proton/hooks/useInterval';
+import metrics from '@proton/metrics';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import accountSetupImg from '@proton/styles/assets/img/illustrations/account-setup.svg';
 import clsx from '@proton/utils/clsx';
@@ -13,6 +14,7 @@ import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Main from '../public/Main';
+import { getSignupApplication } from './helper';
 
 interface Props {
     onSetup: () => Promise<void>;
@@ -21,6 +23,7 @@ interface Props {
 }
 
 const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
+    const { APP_NAME } = useConfig();
     const driveIntent = toApp === APPS.PROTONDRIVE;
     const steps: string[] = [
         c('Info').t`Creating your account`,
@@ -39,6 +42,13 @@ const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
         const nextIndex = Math.min(steps.length - 1, stepIndex + 1);
         setStepIndex(nextIndex);
     }, 2500);
+
+    useEffect(() => {
+        void metrics.core_signup_pageLoad_total.increment({
+            step: 'loading',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, []);
 
     return (
         <Main>

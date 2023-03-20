@@ -1,23 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Logo, useLoading } from '@proton/components';
+import { Icon, Logo, useConfig, useLoading } from '@proton/components';
+import metrics from '@proton/metrics';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
+import { getSignupApplication } from './helper';
 
 interface Props {
     onExplore: (app: APP_NAMES) => Promise<void>;
 }
 
 const ExploreStep = ({ onExplore }: Props) => {
+    const { APP_NAME } = useConfig();
     const [type, setType] = useState<APP_NAMES | undefined>(undefined);
     const [loading, withLoading] = useLoading();
+
+    useEffect(() => {
+        void metrics.core_signup_pageLoad_total.increment({
+            step: 'recovery',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, []);
+
     return (
         <Main>
             <Header title={c('new_plans: title').t`Start exploring the ${BRAND_NAME} universe`} />
@@ -40,7 +51,7 @@ const ExploreStep = ({ onExplore }: Props) => {
                                             return;
                                         }
                                         setType(app);
-                                        withLoading(onExplore(app));
+                                        void withLoading(onExplore(app));
                                     }}
                                 >
                                     <Logo
