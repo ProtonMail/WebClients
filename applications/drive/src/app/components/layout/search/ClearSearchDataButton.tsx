@@ -2,11 +2,13 @@ import { c } from 'ttag';
 
 import { DropdownMenuButton, Tooltip } from '@proton/components';
 
-import useConfirm from '../../../hooks/util/useConfirm';
 import { useSearchControl } from '../../../store';
+import { useConfirmModal } from '../../modals/ConfirmationModal';
 
-export default function ClearSearchDataButton() {
-    const { openConfirmModal } = useConfirm();
+interface Props {
+    showConfirmModal: ReturnType<typeof useConfirmModal>[1];
+}
+export default function ClearSearchDataButton({ showConfirmModal }: Props) {
     const { searchEnabled, hasData, deleteData } = useSearchControl();
 
     if (!hasData || !searchEnabled) {
@@ -14,10 +16,10 @@ export default function ClearSearchDataButton() {
     }
 
     const handleDeleteESIndex = () => {
-        openConfirmModal({
-            onConfirm: deleteData,
+        void showConfirmModal({
+            onSubmit: deleteData,
             title: c('Info').t`Clear encrypted search data`,
-            confirm: c('Info').t`Clear data`,
+            submitText: c('Info').t`Clear data`,
             message: c('Info')
                 .t`Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.`,
         });
