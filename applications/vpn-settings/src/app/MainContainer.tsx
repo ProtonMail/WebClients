@@ -13,6 +13,7 @@ import {
     DeleteSection,
     EmailSubscriptionSection,
     ErrorBoundary,
+    FreeUserLiveChatModal,
     GiftCodeSection,
     InvoicesSection,
     LanguageSection,
@@ -86,6 +87,7 @@ const MainContainer = () => {
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
+    const [freeUserLiveChatModal, setFreeUserLiveChatModal, renderFreeUserLiveChatModal] = useModalState();
     const [{ liteRedirect, ignoreOnboarding }] = useState(() => {
         return {
             liteRedirect: getLiteRedirect(),
@@ -119,7 +121,7 @@ const MainContainer = () => {
             if (canEnableChat) {
                 setShowChat({ autoToggle: hasChatRequest, render: true });
             } else {
-                openAuthenticatedBugReportModal('chat-unavailable');
+                setFreeUserLiveChatModal(true);
             }
         }
     }, []);
@@ -187,6 +189,7 @@ const MainContainer = () => {
     return (
         <>
             {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
+            {renderFreeUserLiveChatModal && <FreeUserLiveChatModal {...freeUserLiveChatModal} />}
             <Switch>
                 <Route path="/tv">
                     <UnAuthenticated>
