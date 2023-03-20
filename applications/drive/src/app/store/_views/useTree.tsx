@@ -145,6 +145,9 @@ export function useTree(shareId: string, { rootLinkId, rootExpanded, foldersOnly
 
                 item.children = [...prevItems, ...newItems].map(syncTreeWithCache);
                 item.children.sort((a, b) => {
+                    if (a.link.isFile !== b.link.isFile) {
+                        return a.link.isFile < b.link.isFile ? -1 : 1;
+                    }
                     return a.link.name.localeCompare(b.link.name, undefined, { numeric: true });
                 });
             }
