@@ -6,7 +6,7 @@ import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHel
 import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useConfirm from '../../hooks/util/useConfirm';
+import { useConfirmModal } from '../../components/modals/ConfirmationModal';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDevicesActions from '../_devices/useDevicesActions';
@@ -22,10 +22,12 @@ import useListNotifications from './useListNotifications';
 /**
  * useActions provides actions over links and its results is reported back
  * to user using notifications.
+ *
+ * {@return {confirmModal}} Only needed for deletePermanently/emptyTrash/stopSharingLinks
  */
 export default function useAction() {
     const { showErrorNotification } = useErrorHandler();
-    const { openConfirmModal } = useConfirm();
+    const [confirmModal, showConfirmModal] = useConfirmModal();
     const { createNotification } = useNotifications();
     const {
         createMovedItemsNotifications,
@@ -270,11 +272,11 @@ export default function useAction() {
                 ? c('Info').t`Are you sure you want to permanently delete "${itemName}" from trash?`
                 : c('Info').t`Are you sure you want to permanently delete selected items from trash?`;
 
-        openConfirmModal({
+        void showConfirmModal({
             title,
-            confirm,
+            submitText: confirm,
             message,
-            onConfirm: async () => {
+            onSubmit: async () => {
                 const result = await links.deleteTrashedLinks(
                     abortSignal,
                     linksToDelete.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
@@ -289,11 +291,11 @@ export default function useAction() {
         const confirm = c('Action').t`Empty trash`;
         const message = c('Info').t`Are you sure you want to empty trash and permanently delete all the items?`;
 
-        openConfirmModal({
+        void showConfirmModal({
             title,
-            confirm,
+            submitText: confirm,
             message,
-            onConfirm: async () => {
+            onSubmit: async () => {
                 await links
                     .emptyTrash(abortSignal, shareId)
                     .then(() => {
@@ -313,15 +315,15 @@ export default function useAction() {
             return;
         }
 
-        openConfirmModal({
+        void showConfirmModal({
             title: c('Title').t`Stop sharing`,
-            confirm: c('Title').t`Stop sharing`,
+            submitText: c('Title').t`Stop sharing`,
             message: c('Info').ngettext(
                 msgid`This will delete the link and remove access to your file or folder for anyone with the link.`,
                 `This will delete the links and remove access to your files or folders for anyone with the links.`,
                 linksToStopSharing.length
             ),
-            onConfirm: async () => {
+            onSubmit: async () => {
                 const result = await shareUrl.deleteShareUrls(
                     abortSignal,
                     linksToStopSharing.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
@@ -394,6 +396,7 @@ export default function useAction() {
         copyShareLinkToClipboard,
         removeDevice,
         renameDevice,
+        confirmModal,
     };
 }
 

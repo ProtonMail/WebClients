@@ -1,7 +1,7 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import {DecryptedLink, useActions} from '../../../store';
-import { ContextMenuProps } from '../../FileBrowser/interface';
+import { DecryptedLink, useActions } from '../../../store';
+import { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { DetailsButton, DownloadButton, PreviewButton } from '../ContextMenu';
