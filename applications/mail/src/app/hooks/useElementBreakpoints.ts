@@ -14,13 +14,15 @@ export const useElementBreakpoints = (ref: RefObject<HTMLElement>, breakpoints: 
         }
 
         const observer = new ResizeObserver((entries) => {
-            const width = entries[0].contentRect.width;
+            requestAnimationFrame(() => {
+                const width = entries[0].contentRect.width;
 
-            const breakpoint = orderedBreakpoints.find((breakpoint) => {
-                return breakpoint[1] < width;
-            })?.[0];
+                const breakpoint = orderedBreakpoints.find((breakpoint) => {
+                    return breakpoint[1] < width;
+                })?.[0];
 
-            setBreakpoint(breakpoint);
+                setBreakpoint(breakpoint);
+            });
         });
 
         observer.observe(ref.current);
