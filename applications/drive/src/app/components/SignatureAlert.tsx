@@ -61,7 +61,7 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
     );
 
     const emailAddress = (
-        <strong className="text-break" key="signatureAddress" data-testId="signature-address">
+        <strong className="text-break" key="signatureAddress" data-testid="signature-address">
             {signatureAddress}
         </strong>
     );
