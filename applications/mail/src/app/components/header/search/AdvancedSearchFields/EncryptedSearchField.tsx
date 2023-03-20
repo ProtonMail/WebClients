@@ -4,8 +4,8 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Info, Label, Progress, Prompt, Toggle, Tooltip, useModalState, useUser } from '@proton/components';
 import { ESIndexingState } from '@proton/encrypted-search';
-import clsx from '@proton/utils/clsx';
 import { isPaid } from '@proton/shared/lib/user/helpers';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 import { formatSimpleDate } from '../../../../helpers/date';
@@ -76,7 +76,11 @@ const EncryptedSearchField = ({ esState }: Props) => {
         : c('Info').t`The local database is being prepared`;
     const esActivationLoading = isMigrating || isEnablingEncryptedSearch;
     const esActivationButton = (
-        <Button onClick={() => setEnableESModalOpen(true)} loading={esActivationLoading}>
+        <Button
+            onClick={() => setEnableESModalOpen(true)}
+            loading={esActivationLoading}
+            data-testid="encrypted-search:activate"
+        >
             {c('Action').t`Activate`}
         </Button>
     );
@@ -177,7 +181,9 @@ const EncryptedSearchField = ({ esState }: Props) => {
                     <Prompt
                         title={c('Title').t`Enable message content search`}
                         buttons={[
-                            <Button color="norm" onClick={handleEnableES}>{c('Action').t`Enable`}</Button>,
+                            <Button color="norm" onClick={handleEnableES} data-testid="encrypted-search:enable">{c(
+                                'Action'
+                            ).t`Enable`}</Button>,
                             <Button onClick={enableESModalProps.onClose}>{c('Action').t`Cancel`}</Button>,
                         ]}
                         {...enableESModalProps}
