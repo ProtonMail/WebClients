@@ -45,6 +45,12 @@ export default function useDownloadControl(
     };
 
     const updateLinkSizes = (id: string, linkSizes: { [linkId: string]: number }) => {
+        // Progress might be updated even when transfer is already finished and
+        // thus progress is not here anymore. In such case it is OK to simply
+        // ignore the call to not crash.
+        if (progresses.current[id] === undefined) {
+            return;
+        }
         Object.entries(linkSizes || {}).forEach(([linkId, size]) => {
             getLinkProgress(id, linkId).total = size;
         });
