@@ -3,11 +3,13 @@
     "description": "Metrics library",
     "scripts": {
         "check-types": "tsc",
-        "generate-schema-types": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && json2ts -i 'json-schema-registry/**/*.schema.json' -o types/ --no-additionalProperties",
-        "generate-schema-types:mock": "rimraf types && json2ts -i 'mockSchemas/**/*.schema.json' -o types/ --no-additionalProperties",
-        "lint": "eslint . --ext ts --quiet --cache"
+        "generate-schema-types": "json2ts -i 'json-schema-registry/observability/client/web*.schema.json' -o types/ --no-additionalProperties",
+        "lint": "eslint . --ext ts --quiet --cache",
+        "test": "jest --coverage --runInBand --ci",
+        "update-schema-types": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && yarn generate-schema-types"
     },
     "dependencies": {
+        "@proton/shared": "workspace:packages/shared",
         "json-schema-to-typescript": "^12.0.0"
     },
     "devDependencies": {

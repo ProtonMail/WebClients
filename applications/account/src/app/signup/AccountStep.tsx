@@ -17,9 +17,11 @@ import {
     Option,
     PasswordInputTwo,
     SelectTwo,
+    useConfig,
     useFormErrors,
     useLoading,
 } from '@proton/components';
+import metrics from '@proton/metrics';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
     APPS,
@@ -47,6 +49,7 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Loader from './Loader';
+import { getSignupApplication } from './helper';
 import { SignupType } from './interfaces';
 
 import './AccountStep.scss';
@@ -92,6 +95,7 @@ const AccountStep = ({
     domains,
     loading: loadingDependencies,
 }: Props) => {
+    const { APP_NAME } = useConfig();
     const challengeRefLogin = useRef<ChallengeRef>();
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const [loading, withLoading] = useLoading();
@@ -144,6 +148,20 @@ const AccountStep = ({
             challengeRefLogin.current?.focus('#email');
         }, 0);
     }, [signupType, isLoadingView]);
+
+    /**
+     * Signup page load count metric
+     */
+    useEffect(() => {
+        if (isLoadingView) {
+            return;
+        }
+
+        void metrics.core_signup_pageLoad_total.increment({
+            step: signupType === SignupType.Email ? 'external_account_creation' : 'proton_account_creation',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, [isLoadingView, signupType]);
 
     const emailLabel = signupType === SignupType.Username ? c('Signup label').t`Username` : c('Signup label').t`Email`;
 

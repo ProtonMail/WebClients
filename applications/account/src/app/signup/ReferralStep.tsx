@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ReferralFeaturesList, useLoading } from '@proton/components';
+import { ReferralFeaturesList, useConfig, useLoading } from '@proton/components';
+import metrics from '@proton/metrics';
 import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { PlanIDs } from '@proton/shared/lib/interfaces';
 
@@ -11,6 +12,7 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import { getSignupApplication } from './helper';
 
 type PlanType = 'free' | 'trial';
 
@@ -20,9 +22,17 @@ interface Props {
 }
 
 const ReferralStep = ({ onPlan, onBack }: Props) => {
+    const { APP_NAME } = useConfig();
     const [type, setType] = useState<PlanType | undefined>(undefined);
     const [loading, withLoading] = useLoading();
     const mailPlus = PLAN_NAMES[PLANS.MAIL];
+
+    useEffect(() => {
+        void metrics.core_signup_pageLoad_total.increment({
+            step: 'referral',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, []);
 
     return (
         <Main>
