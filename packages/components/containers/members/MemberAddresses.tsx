@@ -91,7 +91,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
         return initiallyDisplayedAddresses;
     };
 
-    return <ul className="unstyled mt-0-5 mb-0-5">{getAddressesListItems()}</ul>;
+    return <ul className="unstyled -mt0-5 -mb0-5">{getAddressesListItems()}</ul>;
 };
 
 export default MemberAddresses;
