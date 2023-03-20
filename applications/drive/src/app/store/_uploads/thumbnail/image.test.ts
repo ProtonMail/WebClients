@@ -43,7 +43,7 @@ describe('scaleImageFile', () => {
                 }
             }
         };
-        await expect(scaleImageFile(new Blob())).rejects.toEqual(new Error('Failed to load image'));
+        await expect(scaleImageFile(new Blob())).rejects.toEqual(new Error('Image cannot be loaded'));
     });
 
     it('fails due to no small enough thumbnail', async () => {
