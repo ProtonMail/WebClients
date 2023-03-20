@@ -7,7 +7,6 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { ShareURL, SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import useConfirm from '../../../hooks/util/useConfirm';
 import {
     DecryptedLink,
     getSharedLink,
@@ -17,6 +16,7 @@ import {
     useLinkView,
     useShareUrl,
 } from '../../../store';
+import { useConfirmModal } from '../ConfirmationModal';
 import ModalContentLoader from '../ModalContentLoader';
 import ErrorState from './ErrorState';
 import GeneratedLinkState from './GeneratedLinkState';
@@ -70,7 +70,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
 
     const { loadOrCreateShareUrl, updateShareUrl, deleteShareUrl } = useShareUrl();
     const { createNotification } = useNotifications();
-    const { openConfirmModal } = useConfirm();
+    const [confirmModal, showConfirmModal] = useConfirmModal();
 
     useEffect(() => {
         if (shareUrlInfo?.ShareURL.ShareID) {
@@ -110,8 +110,8 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
             newPassword = password.substring(0, SHARE_GENERATED_PASSWORD_LENGTH) + newCustomPassword;
         }
 
-        const update = async () => {
-            const res = await updateShareUrl(
+        const update = () => {
+            return updateShareUrl(
                 {
                     creatorEmail: shareUrlInfo.ShareURL.CreatorEmail,
                     shareId: shareUrlInfo.ShareURL.ShareID,
@@ -122,7 +122,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
                 newDuration,
                 newPassword
             );
-            return res;
         };
 
         const updatedFields = await withSaving(update()).catch((error) => {
@@ -175,12 +174,12 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
             onClose?.();
         };
 
-        openConfirmModal({
+        void showConfirmModal({
             title: c('Title').t`Stop sharing with everyone?`,
-            confirm: c('Action').t`Stop sharing`,
+            submitText: c('Action').t`Stop sharing`,
             message: getConfirmationMessage(link.isFile),
             canUndo: true,
-            onConfirm: () =>
+            onSubmit: () =>
                 withDeleting(deleteLink()).catch(() => {
                     createNotification({
                         type: 'error',
@@ -200,11 +199,11 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
             return;
         }
 
-        openConfirmModal({
+        void showConfirmModal({
             title: c('Title').t`Discard changes?`,
-            confirm: c('Title').t`Discard`,
+            submitText: c('Title').t`Discard`,
             message: c('Info').t`You will lose all unsaved changes.`,
-            onConfirm: async () => onClose?.(),
+            onSubmit: async () => onClose?.(),
             canUndo: true,
         });
     };
@@ -261,19 +260,22 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
     };
 
     return (
-        <ModalTwo
-            as="form"
-            open={open}
-            onClose={handleClose}
-            onReset={(e: any) => {
-                e.preventDefault();
-                handleClose();
-            }}
-            disableCloseOnEscape={saving || deleting}
-            size="large"
-        >
-            {renderModalState()}
-        </ModalTwo>
+        <>
+            <ModalTwo
+                as="form"
+                open={open}
+                onClose={handleClose}
+                onReset={(e: any) => {
+                    e.preventDefault();
+                    handleClose();
+                }}
+                disableCloseOnEscape={saving || deleting}
+                size="large"
+            >
+                {renderModalState()}
+                {confirmModal}
+            </ModalTwo>
+        </>
     );
 }
 
