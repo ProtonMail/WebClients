@@ -1,5 +1,4 @@
-import { encodeBase64 } from 'pmcrypto-v7/lib/utils';
-
+import { encodeBase64 } from '@proton/crypto/lib/utils';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import * as downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
