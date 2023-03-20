@@ -200,9 +200,15 @@
 		--button-default-border-color: var(--#{dash-join($group, $color, 'major-1')});
 		--button-hover-border-color: var(--#{dash-join($group, $color, 'major-2')});
 		--button-active-border-color: var(--#{dash-join($group, $color, 'major-3')});
-		--button-default-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-1'))});
-		--button-hover-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-2'))});
-		--button-active-text-color: var(--#{if($color == 'weak', 'text-norm', dash-join($group, $color, 'major-3'))});
+		--button-default-text-color: var(
+			--#{if($color == 'weak' or $color == 'norm', 'text-norm', dash-join($group, $color, 'major-1'))}
+		);
+		--button-hover-text-color: var(
+			--#{if($color == 'weak' or $color == 'norm', 'text-norm', dash-join($group, $color, 'major-2'))}
+		);
+		--button-active-text-color: var(
+			--#{if($color == 'weak' or $color == 'norm', 'text-norm', dash-join($group, $color, 'major-3'))}
+		);
 	}
 
 	// Ghost shape
