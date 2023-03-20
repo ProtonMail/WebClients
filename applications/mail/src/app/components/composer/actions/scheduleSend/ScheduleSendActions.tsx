@@ -1,6 +1,6 @@
 import React, { forwardRef, useMemo } from 'react';
 
-import { Locale, addDays, addSeconds, format, fromUnixTime, getUnixTime, nextMonday } from 'date-fns';
+import { Locale, addDays, addSeconds, format, fromUnixTime, getUnixTime, nextMonday, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -33,6 +33,13 @@ type Actions = {
 const formatDate = (initialDate: number | Date, locale: Locale) =>
     format(initialDate, 'PPPp', { locale }).replace(YEAR_REGEX, '').replace(',', '');
 
+const EIGHT_AM = {
+    hours: 8,
+    minutes: 0,
+    seconds: 0,
+    milliseconds: 0,
+};
+
 const ScheduleSendActions = ({
     onDisplayScheduleSendModal,
     onScheduleSend,
@@ -44,9 +51,9 @@ const ScheduleSendActions = ({
         const now = new Date();
         const isNight = isScheduledDuringNight();
         const scheduledAt = scheduledAtUnixTimestamp ? fromUnixTime(scheduledAtUnixTimestamp) : undefined;
-        const today = now.setHours(8, 0, 0, 0);
-        const tomorrow = addDays(now, 1).setHours(8, 0, 0, 0);
-        const monday = nextMonday(now).setHours(8, 0, 0, 0);
+        const today8am = set(now, EIGHT_AM);
+        const tomorrow8am = set(addDays(now, 1), EIGHT_AM);
+        const monday8am = set(nextMonday(now), EIGHT_AM);
 
         const list: Actions = [
             {
@@ -56,14 +63,15 @@ const ScheduleSendActions = ({
                     : // translator: Full sentence is: 'Tomorrow | February 14th at 8:00'
                       c('Action').t`Tomorrow`,
                 testId: 'composer:schedule-send:tomorrow',
-                value: isNight ? formatDate(today, dateLocale) : formatDate(tomorrow, dateLocale),
-                onSubmit: () => (isNight ? onScheduleSend(getUnixTime(today)) : onScheduleSend(getUnixTime(tomorrow))),
+                value: isNight ? formatDate(today8am, dateLocale) : formatDate(tomorrow8am, dateLocale),
+                onSubmit: () =>
+                    isNight ? onScheduleSend(getUnixTime(today8am)) : onScheduleSend(getUnixTime(tomorrow8am)),
             },
             {
                 title: c('Action').t`Monday`,
                 testId: 'composer:schedule-send:next-monday',
-                value: formatDate(monday, dateLocale),
-                onSubmit: () => onScheduleSend(getUnixTime(monday)),
+                value: formatDate(monday8am, dateLocale),
+                onSubmit: () => onScheduleSend(getUnixTime(monday8am)),
             },
             {
                 title: (
@@ -152,7 +160,6 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                     ref={ref}
                     title={c('Title').t`Open actions dropdown`}
                     dropdownStyle={{ '--min-width': '23em', '--custom-max-width': '95vw' }}
-                    noMaxSize
                     // contains buttonGroup props
                     {...rest}
                 >
