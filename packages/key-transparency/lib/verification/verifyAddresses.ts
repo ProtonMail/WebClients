@@ -34,6 +34,7 @@ export const bootstrapInitialEpoch = async (
     if (newSKLs.length === 0) {
         ktSentryReport('No SKL returned during bootstrap', {
             context: 'bootstrapInitialEpoch',
+            email,
         });
         throw new Error('Bootstrapping failed');
     }
@@ -44,6 +45,7 @@ export const bootstrapInitialEpoch = async (
         if (!checkSKLEquality(inputSKL, oldestSKL)) {
             ktSentryReport('The oldest new SKL has null MinEpochID but is different from the current SKL', {
                 context: 'bootstrapInitialEpoch',
+                email,
             });
             throw new Error('Bootstrapping failed');
         }
@@ -58,6 +60,7 @@ export const bootstrapInitialEpoch = async (
             ktSentryReport('The current SKL fails signature verification', {
                 context: 'bootstrapInitialEpoch',
                 errors: JSON.stringify(errors),
+                email,
             });
             throw new Error('Bootstrapping failed');
         }
@@ -67,6 +70,7 @@ export const bootstrapInitialEpoch = async (
                 'The current SKL is older than the maximum epoch interval despite having MinEpochID equal to null',
                 {
                     context: 'bootstrapInitialEpoch',
+                    email,
                 }
             );
             throw new Error('Bootstrapping failed');
@@ -88,6 +92,7 @@ export const bootstrapInitialEpoch = async (
             context: 'bootstrapInitialEpoch',
             certificateTimestamp,
             Revision,
+            email,
         });
         throw new Error('Bootstrapping failed');
     }
@@ -127,6 +132,7 @@ export const getAuditData = async (
             ktSentryReport('Verified epoch signature verification failed', {
                 context: 'getAuditData',
                 errors: JSON.stringify(errors),
+                email,
             });
         } else {
             const newSKLs = await fetchSignedKeyLists(api, verifiedEpoch.EpochID, email);
@@ -241,6 +247,7 @@ export const auditAddresses = async (
                     context: 'auditAddresses',
                     Revision,
                     initialEpochRevision: initialEpoch.Revision,
+                    addressID,
                 });
                 continue;
             }
@@ -249,6 +256,7 @@ export const auditAddresses = async (
                 ktSentryReport('Certificate timestamp of a MaxEpochID is too old', {
                     context: 'auditAddresses',
                     certificateTimestamp,
+                    addressID,
                 });
                 continue;
             }
@@ -288,6 +296,7 @@ export const auditAddresses = async (
                     ktSentryReport('SKL signature verification failed', {
                         context: 'auditAddresses',
                         errors: JSON.stringify(errors),
+                        addressID,
                     });
                     errorFlag = true;
                     break;
@@ -300,6 +309,7 @@ export const auditAddresses = async (
                 if (index !== newSKLs.length - 1) {
                     ktSentryReport('MaxEpochID is null in a SKL which is not the most recent', {
                         context: 'auditAddresses',
+                        addressID,
                     });
                     errorFlag = true;
                     break;
@@ -310,6 +320,7 @@ export const auditAddresses = async (
                         'MaxEpochID is null in a SKL which either obsolete or older than max epoch interval',
                         {
                             context: 'auditAddresses',
+                            addressID,
                         }
                     );
                     errorFlag = true;
@@ -346,6 +357,7 @@ export const auditAddresses = async (
                 context: 'auditAddresses',
                 revisionChain,
                 initialEpochRevision: initialEpoch.Revision,
+                addressID,
             });
             continue;
         }
@@ -358,6 +370,7 @@ export const auditAddresses = async (
             ktSentryReport('Revision chain mismatch', {
                 context: 'auditAddresses',
                 revisionChain,
+                addressID,
             });
             continue;
         }
@@ -366,6 +379,7 @@ export const auditAddresses = async (
         if (!checkSKLEquality(lastSKL, SignedKeyList)) {
             ktSentryReport('Last SKL in the new SKLs list and input one do not match', {
                 context: 'auditAddresses',
+                addressID,
             });
             continue;
         }
@@ -374,6 +388,7 @@ export const auditAddresses = async (
         if (!lastSKLData) {
             ktSentryReport('Last SKL must have a Data property because it must be active', {
                 context: 'auditAddresses',
+                addressID,
             });
             continue;
         }
@@ -384,6 +399,7 @@ export const auditAddresses = async (
             ktSentryReport('Last SKL and current keys do not match', {
                 context: 'auditAddresses',
                 error,
+                addressID,
             });
             continue;
         }
@@ -395,6 +411,7 @@ export const auditAddresses = async (
                 ktSentryReport('Last certificate timestamp is older than max epoch interval ago', {
                     context: 'auditAddresses',
                     lastCertificateTimestamp,
+                    addressID,
                 });
                 continue;
             }
@@ -433,6 +450,7 @@ export const verifyAuditAddressesResult = async (
         ktSentryReport('Submitted SKL signature verification failed', {
             context: 'verifyAuditAddressesResult',
             errors: JSON.stringify(errors),
+            addressID: address.ID,
         });
         throw new Error('Submitted SKL signature verification failed');
     }
