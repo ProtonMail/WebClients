@@ -1,3 +1,4 @@
+import metrics from '@proton/metrics';
 import {
     auth,
     auth2FA,
@@ -31,7 +32,7 @@ export const updateUID = (UID: string) => {
     setItem(unAuthStorageKey, UID);
 
     setUID(UID);
-    // Set metrics UID here
+    metrics.setAuthHeaders(UID);
 
     context.UID = UID;
 };
