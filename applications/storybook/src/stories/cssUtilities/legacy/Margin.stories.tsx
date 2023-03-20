@@ -1,20 +1,9 @@
 import { useState } from 'react';
 
 import { Button } from '@proton/atoms';
-import {
-    ButtonGroup,
-    Checkbox,
-    Label,
-    Option,
-    SelectTwo,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableRow,
-} from '@proton/components';
+import { ButtonGroup, Checkbox, Label, Option, SelectTwo } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
+import { getTitle } from '../../../helpers/title';
 import mdx from './Margin.mdx';
 
 export default {
@@ -26,103 +15,25 @@ export default {
     },
 };
 
-const marginSizes = [
-    {
-        class: '0',
-        rem: '0',
-        px: '0',
-    },
-    {
-        class: '0-5',
-        rem: '0.125rem',
-        px: '2px',
-    },
-    {
-        class: '1',
-        rem: '0.25rem',
-        px: '4px',
-    },
-    {
-        class: '2',
-        rem: '0.5rem',
-        px: '8px',
-    },
-    {
-        class: '3',
-        rem: '0.75rem',
-        px: '12px',
-    },
-    {
-        class: '4',
-        rem: '1rem',
-        px: '16px',
-    },
-    {
-        class: '5',
-        rem: '1.25rem',
-        px: '20px',
-    },
-    {
-        class: '6',
-        rem: '1.5rem',
-        px: '24px',
-    },
-    {
-        class: '8',
-        rem: '2rem',
-        px: '32px',
-    },
-    {
-        class: '10',
-        rem: '2.5rem',
-        px: '40px',
-    },
-    {
-        class: '11',
-        rem: '2.75rem',
-        px: '44px',
-    },
-    {
-        class: '12',
-        rem: '3rem',
-        px: '48px',
-    },
-    {
-        class: '14',
-        rem: '3.5rem',
-        px: '56px',
-    },
-    {
-        class: 'auto',
-        rem: '',
-        px: '',
-    },
+const marginSize = [
+    '0',
+    '0-1',
+    '0-15',
+    '0-2',
+    '0-25',
+    '0-3',
+    '0-4',
+    '0-5',
+    '0-6',
+    '0-75',
+    '0-85',
+    '1',
+    '1-25',
+    '1-5',
+    '1-75',
+    '2',
+    '4',
 ];
-
-export const MarginsTable = () => {
-    return (
-        <Table className="color-norm">
-            <TableHeader>
-                <TableRow>
-                    <TableCell type="header">Name</TableCell>
-                    <TableCell type="header">REM value</TableCell>
-                    <TableCell type="header">PX value</TableCell>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {marginSizes.map((item) => (
-                    <TableRow key={item.class}>
-                        <TableCell>
-                            <code>m-{item.class}</code>
-                        </TableCell>
-                        <TableCell>{item.rem}</TableCell>
-                        <TableCell>{item.px}</TableCell>
-                    </TableRow>
-                ))}
-            </TableBody>
-        </Table>
-    );
-};
 
 const demoItemClasses =
     'user-select flex flex-align-items-center flex-justify-center bg-primary rounded-sm text-center';
@@ -133,7 +44,7 @@ type CodeProps = {
 };
 
 const Code = ({ children }: CodeProps) => (
-    <code className="inline-block user-select rounded-sm p-1 px-2 border bg-weak text-norm text-sm hidden-empty">
+    <code className="inline-block user-select rounded-sm p0-25 px0-5 border bg-weak text-norm text-sm hidden-empty">
         {children}
     </code>
 );
@@ -141,17 +52,17 @@ const Code = ({ children }: CodeProps) => (
 export const Margin = () => {
     return (
         <div
-            className="border rounded w100 relative flex flex-nowrap gap-2 scroll-if-needed flex-align-items-center flex-justify-space-between"
-            style={{ height: '10rem' }}
+            className="border rounded w100 relative flex flex-nowrap flex-gap-0-5 scroll-if-needed flex-align-items-center flex-justify-space-between"
+            style={{ height: '9rem' }}
         >
-            {marginSizes.map((size) => (
+            {marginSize.map((size) => (
                 <div
-                    key={size.class}
+                    key={size}
                     className="bg-strong flex-item-noshrink rounded"
                     style={{ display: 'flow-root', '--border-radius-md': '10%' }}
                 >
-                    <div className={`${demoItemClasses} m-${size.class}`} style={{ width: '3rem', height: '3rem' }}>
-                        <span className="text-2xs">m-{size.class}</span>
+                    <div className={`${demoItemClasses} m${size}`} style={{ width: '3rem', height: '3rem' }}>
+                        <span className="text-2xs">m{size}</span>
                     </div>
                 </div>
             ))}
@@ -165,10 +76,10 @@ export const MarginTop = () => {
             className="border rounded w100 relative flex flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
-            {marginSizes.map((size) => (
-                <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
-                    <div className={`${demoItemClasses} mt-${size.class}`} style={{ width: '3rem', height: '3rem' }}>
-                        mt-{size.class}
+            {marginSize.map((size) => (
+                <div key={size} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
+                    <div className={`${demoItemClasses} mt${size}`} style={{ width: '3rem', height: '3rem' }}>
+                        mt{size}
                     </div>
                 </div>
             ))}
@@ -182,10 +93,10 @@ export const MarginBottom = () => {
             className="border rounded overflow-hidden w100 relative flex flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
-            {marginSizes.map((size) => (
-                <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
-                    <div className={`${demoItemClasses} mb-${size.class}`} style={{ width: '3rem', height: '3rem' }}>
-                        mb-{size.class}
+            {marginSize.map((size) => (
+                <div key={size} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
+                    <div className={`${demoItemClasses} mb${size}`} style={{ width: '3rem', height: '3rem' }}>
+                        mb{size}
                     </div>
                 </div>
             ))}
@@ -196,14 +107,10 @@ export const MarginBottom = () => {
 export const MarginY = () => {
     return (
         <div className="border rounded overflow-hidden w100 relative flex flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
-            {marginSizes.map((size) => (
-                <div
-                    key={size.class}
-                    className="bg-strong rounded-sm flex-item-noshrink"
-                    style={{ display: 'flow-root' }}
-                >
-                    <div className={`${demoItemClasses} my-${size.class}`} style={{ width: '3rem', height: '3rem' }}>
-                        my-{size.class}
+            {marginSize.map((size) => (
+                <div key={size} className="bg-strong rounded-sm flex-item-noshrink" style={{ display: 'flow-root' }}>
+                    <div className={`${demoItemClasses} my${size}`} style={{ width: '3rem', height: '3rem' }}>
+                        my{size}
                     </div>
                 </div>
             ))}
@@ -214,10 +121,10 @@ export const MarginY = () => {
 export const MarginLeft = () => {
     return (
         <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-start flex-gap-0-5 text-2xs">
-            {marginSizes.map((size) => (
-                <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
-                    <div className={`${demoItemClasses} ml-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
-                        ml-{size.class}
+            {marginSize.map((size) => (
+                <div key={size} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
+                    <div className={`${demoItemClasses} ml${size}`} style={{ width: '5rem', height: '1.5rem' }}>
+                        ml{size}
                     </div>
                 </div>
             ))}
@@ -228,10 +135,10 @@ export const MarginLeft = () => {
 export const MarginRight = () => {
     return (
         <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-end flex-gap-0-5 text-2xs">
-            {marginSizes.map((size) => (
-                <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
-                    <div className={`${demoItemClasses} mr-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
-                        mr-{size.class}
+            {marginSize.map((size) => (
+                <div key={size} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
+                    <div className={`${demoItemClasses} mr${size}`} style={{ width: '5rem', height: '1.5rem' }}>
+                        mr{size}
                     </div>
                 </div>
             ))}
@@ -242,40 +149,15 @@ export const MarginRight = () => {
 export const MarginX = () => {
     return (
         <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-center flex-gap-0-5 text-2xs">
-            {marginSizes.map((size) => (
-                <div
-                    key={size.class}
-                    className="bg-strong rounded-sm flex-item-noshrink"
-                    style={{ display: 'flow-root' }}
-                >
-                    <div className={`${demoItemClasses} mx-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
-                        mx-{size.class}
+            {marginSize.map((size) => (
+                <div key={size} className="bg-strong rounded-sm flex-item-noshrink" style={{ display: 'flow-root' }}>
+                    <div className={`${demoItemClasses} mx${size}`} style={{ width: '5rem', height: '1.5rem' }}>
+                        mx{size}
                     </div>
                 </div>
             ))}
         </div>
     );
-};
-
-export const Responsive = () => {
-    return (
-        <div className="border rounded overflow-hidden w100 relative flex text-2xs">
-            <div className="bg-strong rounded-sm" style={{ display: 'flow-root' }}>
-                <div
-                    className={`${demoItemClasses} ml-4 sm:ml-8 md:ml-10 lg:ml-12 xl:ml-14`}
-                    style={{ width: '3rem', height: '3rem' }}
-                ></div>
-            </div>
-        </div>
-    );
-};
-
-Responsive.parameters = {
-    docs: {
-        iframeHeight: '100px',
-        inlineStories: false,
-    },
-    layout: 'fullscreen',
 };
 
 const margins = [
@@ -302,7 +184,7 @@ const margins = [
     {
         id: 'ml',
         checked: true,
-        value: '8',
+        value: '4',
     },
     {
         id: 'mx',
@@ -458,10 +340,10 @@ export const Sandbox = () => {
 
         items.forEach((item) => {
             if (item.checked) {
-                if (item.id === 'mx' && item.value === 'mx-auto') {
-                    classes.push('mx-auto');
+                if (item.id === 'mx' && item.value === 'mxauto') {
+                    classes.push('mxauto');
                 } else {
-                    classes.push(`${item.id}-${item.value}`);
+                    classes.push(`${item.id}${item.value}`);
                 }
             }
         });
@@ -469,18 +351,42 @@ export const Sandbox = () => {
         return classes.join(' ');
     }
 
-    const sizeOptions = () => {
-        const newSizes = Array.from(marginSizes);
+    const sizeOptions = (id: string) => {
+        const newSizes = Array.from(marginSize);
+
+        switch (id) {
+            case 'mx':
+                newSizes.unshift('auto');
+                break;
+            case 'my':
+                newSizes.unshift('auto');
+                break;
+            case 'mt':
+                newSizes.unshift('auto');
+                break;
+            case 'mb':
+                newSizes.unshift('auto');
+                break;
+            case 'ml':
+                newSizes.unshift('auto');
+                break;
+            case 'mr':
+                newSizes.unshift('auto');
+                break;
+            case 'm':
+                newSizes.unshift('auto');
+                break;
+        }
 
         return newSizes;
     };
 
     const containerClasses = (classes: string | string[]) => {
         if (
-            classes.includes('m-auto') ||
-            classes.includes('my-auto') ||
-            classes.includes('mt-auto') ||
-            classes.includes('mb-auto')
+            classes.includes('mauto') ||
+            classes.includes('myauto') ||
+            classes.includes('mtauto') ||
+            classes.includes('mbauto')
         ) {
             return 'h100';
         } else if (classes.includes('auto')) {
@@ -491,9 +397,9 @@ export const Sandbox = () => {
     };
     // display: assembleClasses(selectedMargin).includes('mauto') ? 'flex' : 'flow-root'
     const containerDisplay = (classes: string | string[]) => {
-        if (classes.includes('m-auto') || classes.includes('mx-auto my-auto')) {
+        if (classes.includes('mauto') || classes.includes('mxauto myauto')) {
             return 'flex';
-        } else if (classes.includes('my-auto') || classes.includes('mt-auto') || classes.includes('mb-auto')) {
+        } else if (classes.includes('myauto') || classes.includes('mtauto') || classes.includes('mbauto')) {
             return 'inline-flex';
         } else {
             return 'flow-root';
@@ -502,10 +408,14 @@ export const Sandbox = () => {
 
     return (
         <>
-            <div className="flex flex-justify-space-between mb-7">
+            <div className="flex flex-justify-space-between mb2">
                 <div className="w25">
                     {selectedMargin.map(({ id, checked, value }) => (
-                        <Label htmlFor={id} key={id} className="flex flex-nowrap flex-align-items-center gap-4 mb-4">
+                        <Label
+                            htmlFor={id}
+                            key={id}
+                            className="flex flex-nowrap flex-align-items-center flex-gap-1 mb1"
+                        >
                             <Checkbox
                                 id={id}
                                 checked={checked}
@@ -528,8 +438,8 @@ export const Sandbox = () => {
                             </span>
 
                             <SelectTwo value={value} onValue={(newValue) => handleSelectChange(id, newValue)}>
-                                {sizeOptions().map((size) => (
-                                    <Option key={size.class} title={size.class} value={size.class} />
+                                {sizeOptions(id).map((size) => (
+                                    <Option key={size} title={size} value={size} />
                                 ))}
                             </SelectTwo>
                         </Label>
@@ -558,7 +468,7 @@ export const Sandbox = () => {
                 <Button onClick={() => setSelectedMargin(marginsCentered)}>center element in flex container</Button>
             </ButtonGroup>
 
-            <div className="block mt-7">
+            <div className="block mt2">
                 <strong>Classes:</strong> <Code>{assembleClasses(selectedMargin)}</Code>
             </div>
         </>

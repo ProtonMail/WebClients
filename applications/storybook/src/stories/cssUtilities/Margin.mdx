@@ -1,6 +1,14 @@
 import { Canvas, Primary, Source, Story } from '@storybook/addon-docs';
 
+import Resizeme from './Resizeme';
+
 # Margin
+
+## Margin values
+
+All values are available for <a href="#equal">`m`</a>, <a href="#margin-top--bottom">`mt`</a>, <a href="#margin-top--bottom">`mb`</a>, <a href="#margin-left--right">`ml`</a>, <a href="#margin-left--right">`mr`</a>, <a href="#margin-left--right">`mx`</a> and <a href="#margin-top--bottom">`my`</a>.<br /> Additionally, all values are available to use for specific breakpoints: `sm`, `md`, `lg` and `xl`. <a href="#responsive">Read more about this here</a>
+
+<Story id="css-utilities-margin--margins-table" />
 
 ## Equal
 
@@ -32,29 +40,38 @@ Add a margin to the left or right of an element or use a `mx` class to add the s
 
 <ul>
     <li>
-        <code>.mtauto</code> = <code>margin-top: auto</code>.
+        <code>.mt-auto</code> = <code>margin-top: auto</code>.
     </li>
     <li>
-        <code>.mrauto</code> = <code>margin-right: auto</code>.
+        <code>.mr-auto</code> = <code>margin-right: auto</code>.
     </li>
     <li>
-        <code>.mbauto</code> = <code>margin-bottom: auto</code>.
+        <code>.mb-auto</code> = <code>margin-bottom: auto</code>.
     </li>
     <li>
-        <code>.mlauto</code> = <code>margin-left: auto</code>.
+        <code>.ml-auto</code> = <code>margin-left: auto</code>.
     </li>
     <li>
-        <code>.mauto</code> = <code>margin: auto</code>.
+        <code>.m-auto</code> = <code>margin: auto</code>.
     </li>
     <li>
-        <code>.mxauto</code> = <code>.mlauto</code> + <code>.mrauto</code>
+        <code>.mx-auto</code> = <code>.ml-auto</code> + <code>.mr-auto</code>
     </li>
     <li>
-        <code>.myauto</code> = <code>.mtauto</code> + <code>.mbauto</code>
+        <code>.my-auto</code> = <code>.mt-auto</code> + <code>.mb-auto</code>
     </li>
 </ul>
 
 Use these classes to position elements [with flexbox](?path=/docs/css-utilities-flexbox--page).
+
+## Responsive
+
+The new helper classes are **all** available to use without media query, as well as `sm`, `md`, `lg` and `xl` variants. This allows to tweak spacings precicely for every breakpoint if needed. The blue square in the demo area underneath has the classes `ml-4 sm:ml-8 md:ml-10 lg:ml-12 xl:ml-14` which translates to margin-left 4 (16px) on `tinymobile`, 8 (32px) on `mobile`, 10 (40px) on `tablet`, 12 (48px) on `desktop` and 14 (56px) on `extra large`. The new system works **mobile first**, that means the base `ml-4` will be overridden by `lg:ml-12` on larger screens.
+
+<Resizeme />
+<div className="border p-4 rounded bg-weak mb-4" style={{ width: '320px', resize: 'horizontal', overflow: 'auto' }}>
+    <Story id="css-utilities-margin--responsive" />
+</div>
 
 ## Sandbox
 
