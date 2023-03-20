@@ -4,6 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import { G_OAUTH_REDIRECT_PATH } from '@proton/activation/src/constants';
 import { ErrorBoundary, LoaderPage, ProtonApp, StandardErrorPage, getSessionTrackingEnabled } from '@proton/components';
 import { initMainHost } from '@proton/cross-storage';
+import metrics from '@proton/metrics';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
@@ -21,6 +23,8 @@ initMainHost();
 newVersionUpdater(config);
 sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
 setVcalProdId(getProdId(config));
+
+metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const App = () => {
     const [hasInitialAuth] = useState(() => {
