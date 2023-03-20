@@ -10,19 +10,22 @@ interface Props {
 }
 
 const StopSharingButton = ({ selectedLinks }: Props) => {
-    const { stopSharingLinks } = useActions();
+    const { stopSharingLinks, confirmModal } = useActions();
 
     if (noSelection(selectedLinks)) {
         return null;
     }
 
     return (
-        <ToolbarButton
-            title={c('Action').t`Stop sharing`}
-            icon={<Icon name="link-slash" />}
-            onClick={() => stopSharingLinks(new AbortController().signal, selectedLinks)}
-            data-testid="toolbar-button-stop-sharing"
-        />
+        <>
+            <ToolbarButton
+                title={c('Action').t`Stop sharing`}
+                icon={<Icon name="link-slash" />}
+                onClick={() => stopSharingLinks(new AbortController().signal, selectedLinks)}
+                data-testid="toolbar-button-stop-sharing"
+            />
+            {confirmModal}
+        </>
     );
 };
 

@@ -15,11 +15,10 @@ import {
 import busy from '@proton/shared/lib/busy';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
-import useConfirm from '../../hooks/util/useConfirm';
 import { useTransfersView } from '../../store';
 import { isTransferFailed } from '../../utils/transfer';
+import { useConfirmModal } from '../modals/ConfirmationModal';
 import Header from './Header';
 import HeaderButtons from './HeaderButtons';
 import Transfer from './TransferItem';
@@ -111,7 +110,7 @@ const TransferManager = ({
     const rect = useElementRect(containerRef);
     const rectHeader = useElementRect(headerRef);
     const { state: minimized, toggle: toggleMinimized } = useToggle();
-    const { openConfirmModal } = useConfirm();
+    const [confirmModal, showConfirmModal] = useConfirmModal();
     const { isNarrow } = useActiveBreakpoint();
     const [isRTL] = useRightToLeft();
 
@@ -151,13 +150,13 @@ const TransferManager = ({
 
     const handleCloseClick = () => {
         if (hasActiveTransfer) {
-            openConfirmModal({
+            void showConfirmModal({
                 title: c('Title').t`Stop transfers?`,
-                cancel: c('Action').t`Continue transfers`,
-                confirm: c('Action').t`Stop transfers`,
+                cancelText: c('Action').t`Continue transfers`,
+                submitText: c('Action').t`Stop transfers`,
                 message: c('Info')
                     .t`There are files that still need to be transferred. Closing the transfer manager will end all operations.`,
-                onConfirm: async () => onClear(),
+                onSubmit: async () => onClear(),
                 canUndo: true,
             });
             return;
@@ -186,11 +185,11 @@ const TransferManager = ({
                 message = c('Info').t`Some files failed to download. Try downloading the files again.`;
             }
 
-            openConfirmModal({
+            void showConfirmModal({
                 title,
                 message,
-                cancel: c('Action').t`Retry`,
-                confirm: c('Action').t`Close`,
+                cancelText: c('Action').t`Retry`,
+                submitText: c('Action').t`Close`,
                 onCancel: () => {
                     return transferManagerControls.restartTransfers(
                         entries.filter(({ transfer }) => {
@@ -198,8 +197,7 @@ const TransferManager = ({
                         })
                     );
                 },
-                onClose: noop,
-                onConfirm: async () => onClear(),
+                onSubmit: async () => onClear(),
                 canUndo: true,
             });
             return;
@@ -265,55 +263,61 @@ const TransferManager = ({
     const drawerWidth = useDrawerWidth();
 
     return (
-        <div
-            id="transfer-manager"
-            className={clsx(['transfers-manager', minimized && 'transfers-manager--minimized'])}
-            style={{ marginRight: `${drawerWidth}px` }}
-        >
-            <div ref={headerRef}>
-                <Header
-                    downloads={downloads}
-                    uploads={uploads}
-                    stats={stats}
-                    minimized={minimized}
-                    onToggleMinimize={toggleMinimized}
-                    onClose={handleCloseClick}
-                />
+        <>
+            <div
+                id="transfer-manager"
+                className={clsx(['transfers-manager', minimized && 'transfers-manager--minimized'])}
+                style={{ marginRight: `${drawerWidth}px` }}
+            >
+                <div ref={headerRef}>
+                    <Header
+                        downloads={downloads}
+                        uploads={uploads}
+                        stats={stats}
+                        minimized={minimized}
+                        onToggleMinimize={toggleMinimized}
+                        onClose={handleCloseClick}
+                    />
+                </div>
+                <div ref={containerRef} className="flex">
+                    {!minimized && (
+                        <>
+                            <Tabs
+                                tabs={[
+                                    {
+                                        title: c('Title').t`All`,
+                                        content: Content,
+                                    },
+                                    {
+                                        title: c('Title').t`Active`,
+                                        content: Content,
+                                    },
+                                    {
+                                        title: c('Title').t`Completed`,
+                                        content: Content,
+                                    },
+                                    {
+                                        title: c('Title').t`Failed`,
+                                        content: Content,
+                                    },
+                                ]}
+                                value={activeTabIndex}
+                                onChange={(groupValue) => {
+                                    setActiveTabIndex(groupValue as TabIndices);
+                                }}
+                            />
+                            {!isNarrow && (
+                                <HeaderButtons
+                                    className="transfers-manager-header-buttons p0-5 pr1"
+                                    entries={entries}
+                                />
+                            )}
+                        </>
+                    )}
+                </div>
             </div>
-            <div ref={containerRef} className="flex">
-                {!minimized && (
-                    <>
-                        <Tabs
-                            tabs={[
-                                {
-                                    title: c('Title').t`All`,
-                                    content: Content,
-                                },
-                                {
-                                    title: c('Title').t`Active`,
-                                    content: Content,
-                                },
-                                {
-                                    title: c('Title').t`Completed`,
-                                    content: Content,
-                                },
-                                {
-                                    title: c('Title').t`Failed`,
-                                    content: Content,
-                                },
-                            ]}
-                            value={activeTabIndex}
-                            onChange={(groupValue) => {
-                                setActiveTabIndex(groupValue as TabIndices);
-                            }}
-                        />
-                        {!isNarrow && (
-                            <HeaderButtons className="transfers-manager-header-buttons p0-5 pr1" entries={entries} />
-                        )}
-                    </>
-                )}
-            </div>
-        </div>
+            {confirmModal}
+        </>
     );
 };
 

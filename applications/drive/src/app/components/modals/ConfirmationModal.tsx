@@ -7,14 +7,17 @@ import {
     Alert,
     ErrorButton,
     ModalSize,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 export interface ConfirmationModalProps {
-    onClose?: () => void;
+    message: string;
+    canUndo?: boolean;
     onCancel?: () => void;
     onSubmit?: () => Promise<void>;
     title?: string;
@@ -24,7 +27,6 @@ export interface ConfirmationModalProps {
     loading?: boolean;
     className?: string;
     size?: ModalSize;
-    open?: boolean;
 }
 
 export const ConfirmationModal = ({
@@ -36,9 +38,10 @@ export const ConfirmationModal = ({
     onCancel,
     onSubmit,
     size = 'large',
-    children,
     open,
-}: ConfirmationModalProps) => {
+    message,
+    canUndo = false,
+}: ConfirmationModalProps & ModalStateProps) => {
     const [submitLoading, setSubmitLoading] = useState(false);
 
     const isLoading = loading || submitLoading;
@@ -49,7 +52,7 @@ export const ConfirmationModal = ({
             await onSubmit();
             setSubmitLoading(false);
         }
-        onClose?.();
+        onClose();
     };
 
     return (
@@ -65,7 +68,9 @@ export const ConfirmationModal = ({
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={title} />
             <ModalTwoContent>
                 <Alert className="mb1" type="error">
-                    {children}
+                    {message}
+                    <br />
+                    {!canUndo && c('Info').t`You cannot undo this action.`}
                 </Alert>
             </ModalTwoContent>
             <ModalTwoFooter>
@@ -78,4 +83,8 @@ export const ConfirmationModal = ({
             </ModalTwoFooter>
         </ModalTwo>
     );
+};
+
+export const useConfirmModal = () => {
+    return useModalTwo<ConfirmationModalProps, void>(ConfirmationModal, false);
 };
