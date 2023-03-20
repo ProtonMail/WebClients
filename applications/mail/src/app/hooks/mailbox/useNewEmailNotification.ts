@@ -36,6 +36,7 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
             const title = c('Desktop notification title').t`New email received`;
             const labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;
             return create(title, {
+                tag: ID,
                 body: c('Desktop notification body').t`From: ${sender} - ${Subject}`,
                 icon: notificationIcon,
                 onClick() {
