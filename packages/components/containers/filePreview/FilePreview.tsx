@@ -66,6 +66,7 @@ export const FilePreviewContent = ({
     contents,
 
     onDownload,
+    onNewContents,
 
     signatureConfirmation,
 
@@ -82,7 +83,7 @@ export const FilePreviewContent = ({
     contents?: Uint8Array[];
 
     onDownload?: () => void;
-    onSave?: (content: Uint8Array[]) => Promise<void>;
+    onNewContents?: (content: Uint8Array[]) => void;
 
     signatureConfirmation?: ReactNode;
 
@@ -139,7 +140,7 @@ export const FilePreviewContent = ({
             return <AudioPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
         }
         if (isSupportedText(mimeType)) {
-            return <TextPreview contents={contents} />;
+            return <TextPreview contents={contents} onNewContents={onNewContents} />;
         }
         if (isPDF(mimeType)) {
             return <PDFPreview contents={contents} filename={fileName} />;
@@ -281,6 +282,14 @@ const FilePreview = (
                 fileName={fileName}
                 contents={contents}
                 onDownload={onDownload}
+                onNewContents={
+                    onSave
+                        ? (content: Uint8Array[]) => {
+                              setIsDirty(true);
+                              setNewContent(content);
+                          }
+                        : undefined
+                }
                 signatureConfirmation={signatureConfirmation}
             />
             <CloseModal {...closeModalProps} handleDiscard={onClose} isSaving={isSaving} />
