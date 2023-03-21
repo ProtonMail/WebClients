@@ -63,3 +63,7 @@ export const getPlanFromPlanIDs = (plans: Plan[], planIDs?: PlanIDs) => {
 export const isMailTrialSignup = (location: Location) => {
     return location.pathname.includes(SSO_PATHS.TRIAL);
 };
+
+export const isMailReferAFriendSignup = (location: Location) => {
+    return location.pathname.includes(SSO_PATHS.REFER);
+};
