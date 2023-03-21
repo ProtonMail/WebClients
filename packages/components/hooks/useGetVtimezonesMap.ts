@@ -20,7 +20,7 @@ export const useGetVtimezonesMap = () => {
     const cache = useCache();
 
     const getVTimezonesMap = useCallback(
-        async (tzids: string[]) => {
+        async (tzids: string[]): Promise<SimpleMap<VTimezoneObject>> => {
             const uniqueTzids = unique(tzids.filter((tzid) => tzid.toLowerCase() !== 'utc'));
             const encodedTzids = uniqueTzids.map((tzid) => encodeURIComponent(tzid));
 

@@ -1,20 +1,21 @@
-import { ElementType, ReactElement, cloneElement, forwardRef } from 'react';
+import { ElementType, ForwardedRef, ReactElement, cloneElement, forwardRef } from 'react';
+import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
-import { ButtonLike, ButtonLikeShape } from '@proton/atoms';
-import { ThemeColorUnion } from '@proton/colors';
+import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
 
 import { classnames } from '../../helpers';
-import { PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+
+type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
 
 interface OwnProps {
-    color?: ThemeColorUnion;
-    shape?: ButtonLikeShape;
+    color?: ButtonButtonLikeProps['color'];
+    shape?: ButtonButtonLikeProps['shape'];
     icon: ReactElement;
     text: string;
     hasRedDot?: boolean;
 }
 
-export type TopNavbarListItemButtonProps<E extends ElementType> = PolymorphicComponentProps<E, OwnProps>;
+export type TopNavbarListItemButtonProps<E extends ElementType> = PolymorphicPropsWithRef<OwnProps, E>;
 
 const defaultElement = 'button';
 
@@ -29,15 +30,17 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
         hasRedDot,
         tabIndex,
         children,
+        as,
         ...rest
     }: TopNavbarListItemButtonProps<E>,
-    ref: typeof rest.ref
+    ref: ForwardedRef<Element>
 ) => {
     const isDisabled = disabled;
+    const Element: ElementType = as || defaultElement;
 
     return (
         <ButtonLike
-            as={defaultElement}
+            as={Element}
             color={color}
             shape={shape}
             className={classnames([
