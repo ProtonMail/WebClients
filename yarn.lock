@@ -3530,7 +3530,7 @@ __metadata:
     react-dom: ^17.0.2
     react-redux: ^8.0.5
     ttag: ^1.7.24
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -3574,7 +3574,7 @@ __metadata:
     react-polymorphic-types: ^2.0.0
     ts-loader: ^9.4.2
     ts-node: ^10.9.1
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     webpack: ^5.76.2
   languageName: unknown
   linkType: soft
@@ -3596,7 +3596,7 @@ __metadata:
     tinycolor2: ^1.6.0
     ts-jest: ^28.0.8
     ts-loader: ^9.4.2
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     webpack: ^5.76.2
     webpack-cli: ^5.0.1
   languageName: unknown
@@ -3667,7 +3667,7 @@ __metadata:
     tabbable: ^6.1.1
     tinycolor2: ^1.6.0
     ttag: ^1.7.24
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   peerDependencies:
     "@proton/cross-storage": "*"
     "@proton/crypto": "*"
@@ -3692,7 +3692,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/shared": "workspace:packages/shared"
     eslint: ^8.36.0
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -3720,7 +3720,7 @@ __metadata:
     pmcrypto: "npm:@protontech/pmcrypto@^7.6.1"
     prettier: ^2.8.6
     ts-loader: ^9.4.2
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     webpack: ^5.76.2
     webpack-cli: ^5.0.1
   languageName: unknown
@@ -3747,7 +3747,7 @@ __metadata:
     karma-webpack: ^5.0.0
     playwright: ^1.31.2
     ts-loader: ^9.4.2
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     webpack: ^5.76.2
   languageName: unknown
   linkType: soft
@@ -3788,7 +3788,7 @@ __metadata:
     react: ^17.0.2
     react-test-renderer: ^17.0.2
     ts-jest: ^28.0.8
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -3830,7 +3830,7 @@ __metadata:
     pkijs: ^3.0.14
     playwright: ^1.31.2
     ts-loader: ^9.4.2
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     webpack: ^5.76.2
   languageName: unknown
   linkType: soft
@@ -3843,7 +3843,7 @@ __metadata:
     eslint: ^8.36.0
     json-schema-to-typescript: ^12.0.0
     rimraf: ^4.4.0
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -3969,7 +3969,7 @@ __metadata:
     push.js: ^1.0.12
     ts-loader: ^9.4.2
     ttag: ^1.7.24
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     ua-parser-js: ^1.0.34
     web-streams-polyfill: ^3.2.1
     webpack: ^5.76.2
@@ -3993,7 +3993,7 @@ __metadata:
     eslint: ^8.36.0
     mocha: ^10.2.0
     prettier: ^2.8.6
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -4045,7 +4045,7 @@ __metadata:
     jest: ^28.1.3
     lodash: ^4.17.21
     ts-jest: ^28.0.8
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -25130,7 +25130,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     ttag: ^1.7.24
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -25165,7 +25165,7 @@ fsevents@^1.2.7:
     react-hooks-testing-library: ^0.6.0
     react-json-view: ^1.21.3
     ttag: ^1.7.24
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -25207,7 +25207,7 @@ fsevents@^1.2.7:
     react-helmet: ^6.1.0
     tinycolor2: ^1.6.0
     ttag: ^1.7.24
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -25251,7 +25251,7 @@ fsevents@^1.2.7:
     react-dom: ^17.0.2
     react-window: ^1.8.8
     ttag: ^1.7.24
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     web-streams-polyfill: ^3.2.1
     webpack: ^5.76.2
   languageName: unknown
@@ -25327,7 +25327,7 @@ fsevents@^1.2.7:
     redux-logger: ^3.0.6
     ttag: ^1.7.24
     turndown: ^7.1.1
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     weak-napi: ^2.0.2
     workbox-cacheable-response: ^6.5.4
     workbox-expiration: ^6.5.4
@@ -25368,7 +25368,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     ts-loader: ^9.4.2
-    typescript: ^4.9.5
+    typescript: ^5.0.2
     webpack: ^5.76.2
   languageName: unknown
   linkType: soft
@@ -25390,7 +25390,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     resize-observer: ^1.0.4
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -25414,7 +25414,7 @@ fsevents@^1.2.7:
     react: ^17.0.2
     react-dom: ^17.0.2
     ttag: ^1.7.24
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -27271,7 +27271,7 @@ fsevents@^1.2.7:
     prettier: ^2.8.6
     sort-package-json: ^2.4.1
     stylelint-use-logical-spec: ^5.0.0
-    typescript: ^4.9.5
+    typescript: ^5.0.2
   languageName: unknown
   linkType: soft
 
@@ -30369,7 +30369,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.5.5, typescript@npm:^4.8.4, typescript@npm:^4.9.5":
+"typescript@npm:^4.5.5, typescript@npm:^4.8.4":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
   bin:
@@ -30379,13 +30379,33 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.5.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.8.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
+"typescript@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "typescript@npm:5.0.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: bef1dcd166acfc6934b2ec4d72f93edb8961a5fab36b8dd2aaf6f4f4cd5c0210f2e0850aef4724f3b4913d5aef203a94a28ded731b370880c8bcff7e4ff91fc1
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.5.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.8.4#~builtin<compat/typescript>":
   version: 4.9.5
   resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^5.0.2#~builtin<compat/typescript>":
+  version: 5.0.2
+  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=85af82"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: b63cb742fbb9aeb3085e002ad8f10d5fd963606aa4d6b3b65b4e76c396ff09739f03b5dbae08e1698c3bce9d5619d3f67aeb7ee470ed4016bd345b3cfe37b54a
   languageName: node
   linkType: hard
 
