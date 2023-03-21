@@ -60,7 +60,7 @@ import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { getPlanFromPlanIDs, getSubscriptionPrices, isMailTrialSignup } from './helper';
+import { getPlanFromPlanIDs, getSubscriptionPrices, isMailReferAFriendSignup, isMailTrialSignup } from './helper';
 import {
     InviteData,
     PlanIDs,
@@ -110,15 +110,16 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const normalApi = useApi();
     const history = useHistory();
     const location = useLocation<{ invite?: InviteData }>();
-    const isTrial = isMailTrialSignup(location);
-    // Override the app to always be mail in trial signup
-    if (isTrial) {
+    const isMailTrial = isMailTrialSignup(location);
+    const isMailRefer = isMailReferAFriendSignup(location);
+    // Override the app to always be mail in trial or refer-a-friend signup
+    if (isMailTrial || isMailRefer) {
         toApp = APPS.PROTONMAIL;
         toAppName = MAIL_APP_NAME;
     }
     const [signupParameters] = useState(() => {
         const params = getSignupSearchParams(location.search);
-        if (isTrial) {
+        if (isMailTrial) {
             params.referrer = REFERRER_CODE_MAIL_TRIAL;
         }
         return params;
@@ -148,7 +149,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const cache = cacheRef.current;
     const accountData = cache?.accountData;
 
-    const isReferral = model.referralData && !isTrial;
+    const isReferral = model.referralData && !isMailTrial;
 
     const signupTypes = (() => {
         // Only on account.protonvpn.com do we suggest external only sign up
