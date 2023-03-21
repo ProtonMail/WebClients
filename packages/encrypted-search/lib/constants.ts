@@ -16,6 +16,11 @@ export const ES_EXTRA_RESULTS_LIMIT = 50;
 export const ES_MAX_PARALLEL_ITEMS = 150;
 
 /**
+ * Number of items to fetch and process concurrently when the indexing started in background mode
+ */
+export const ES_BACKGROUND_CONCURRENT = 1;
+
+/**
  * Number of items to fetch and process concurrently during indexing. Some
  * browsers internally set the maximum concurrent requests to handle to 100,
  * therefore we impose a slightly more stringent limit to allow some room for
@@ -42,6 +47,7 @@ export const ES_MAX_CACHE = 600000000; // 600 MB
  * Maximum number of metadata "pages" per batch during metadata indexing
  */
 export const ES_MAX_METADATA_BATCH = 20;
+export const ES_BACKGROUND_METADATA_BATCH = 1;
 
 /**
  * Upper bound of number of items queried from IndexedDB at once
