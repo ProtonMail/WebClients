@@ -16,8 +16,9 @@ export const FileThresholdModal = ({
     onSubmit,
     onCancel,
     onClose,
-    open,
     type = 'fileNumberTotal',
+    open,
+    ...modalProps
 }: Props & ModalStateProps) => {
     const handleCancel = () => {
         onCancel();
@@ -46,6 +47,7 @@ export const FileThresholdModal = ({
                     </PrimaryButton>
                 </>
             }
+            {...modalProps}
         >
             <p>
                 {type === 'fileNumberTotal'
@@ -58,5 +60,5 @@ export const FileThresholdModal = ({
 };
 
 export const useFileThresholdModal = () => {
-    return useModalTwo<Props, void>(FileThresholdModal);
+    return useModalTwo<Props, void>(FileThresholdModal, false);
 };

@@ -7,6 +7,7 @@ import {
     Field,
     InputTwo,
     Label,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -24,10 +25,9 @@ import { DecryptedLink, formatLinkName, splitLinkName, useActions, validateLinkN
 interface Props {
     onClose?: () => void;
     item: DecryptedLink;
-    open?: boolean;
 }
 
-const RenameModal = ({ item, onClose, open }: Props) => {
+const RenameModal = ({ item, onClose, ...modalProps }: Props & ModalStateProps) => {
     const { renameLink } = useActions();
     const [name, setName] = useState(item.name);
     const [loading, withLoading] = useLoading();
@@ -53,13 +53,15 @@ const RenameModal = ({ item, onClose, open }: Props) => {
         setName(target.value);
     };
 
+    const ac = new AbortController();
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         const formattedName = formatLinkName(name);
         setName(formattedName);
 
-        await renameLink(new AbortController().signal, item.rootShareId, item.linkId, formattedName);
+        await renameLink(ac.signal, item.rootShareId, item.linkId, formattedName);
         onClose?.();
     };
 
@@ -71,8 +73,8 @@ const RenameModal = ({ item, onClose, open }: Props) => {
             disableCloseOnEscape={loading}
             onClose={onClose}
             onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e)).catch(noop)}
-            open={open}
             size="large"
+            {...modalProps}
         >
             <ModalTwoHeader
                 closeButtonProps={{ disabled: loading }}
@@ -112,5 +114,5 @@ const RenameModal = ({ item, onClose, open }: Props) => {
 export default RenameModal;
 
 export const useRenameModal = () => {
-    return useModalTwo<Props, void>(RenameModal);
+    return useModalTwo<Props, void>(RenameModal, false);
 };

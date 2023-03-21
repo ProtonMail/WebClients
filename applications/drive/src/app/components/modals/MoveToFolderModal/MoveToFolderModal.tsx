@@ -15,10 +15,9 @@ interface Props {
     shareId: string;
     selectedItems: DecryptedLink[];
     onClose?: () => void;
-    open?: boolean;
 }
 
-const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => {
+const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: Props) => {
     const { moveLinks } = useActions();
     const {
         rootItems,
@@ -107,7 +106,6 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
         <>
             <ModalTwo
                 onClose={onClose}
-                open={open}
                 size="large"
                 as="form"
                 onSubmit={(e: React.FormEvent) => {
@@ -117,6 +115,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
                 onReset={() => {
                     onClose?.();
                 }}
+                {...modalProps}
             >
                 {isTreeLoaded ? (
                     <ModalContent
@@ -142,7 +141,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
 
 export default MoveToFolderModal;
 export const useMoveToFolderModal = (): [JSX.Element | null, ({ shareId, selectedItems }: Props) => void] => {
-    const [moveToFolderModal, showMoveToFolderModal] = useModalTwo<Props, void>(MoveToFolderModal);
+    const [moveToFolderModal, showMoveToFolderModal] = useModalTwo<Props, void>(MoveToFolderModal, false);
 
     const handleShowMoveToFolderModal = ({ shareId, selectedItems }: Props) => {
         if (!shareId || !selectedItems.length) {

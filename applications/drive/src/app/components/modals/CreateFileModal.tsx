@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import {
     InputFieldTwo,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -23,10 +24,9 @@ import { formatLinkName, useActions, validateLinkNameField } from '../../store';
 interface Props {
     onClose?: () => void;
     folder?: { shareId: string; linkId: string };
-    open?: boolean;
 }
 
-const CreateFileModal = ({ onClose, folder, open }: Props) => {
+const CreateFileModal = ({ onClose, folder, ...modalProps }: Props & ModalStateProps) => {
     const { activeFolder } = useActiveShare();
     const { createFile } = useActions();
     const [fileName, setFileName] = useState('');
@@ -68,8 +68,8 @@ const CreateFileModal = ({ onClose, folder, open }: Props) => {
             disableCloseOnEscape={loading}
             onClose={onClose}
             onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e)).catch(noop)}
-            open={open}
             size="large"
+            {...modalProps}
         >
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={c('Title').t`Create a new file`} />
             <ModalTwoContent>
@@ -100,5 +100,5 @@ const CreateFileModal = ({ onClose, folder, open }: Props) => {
 
 export default CreateFileModal;
 export const useCreateFileModal = () => {
-    return useModalTwo<Props | void, void>(CreateFileModal);
+    return useModalTwo<Props | void, void>(CreateFileModal, false);
 };
