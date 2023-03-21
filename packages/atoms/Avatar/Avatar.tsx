@@ -1,21 +1,22 @@
 import { ElementType } from 'react';
-import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
+import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
 import clsx from '@proton/utils/clsx';
 
 import './Avatar.scss';
 
-export type AvatarProps<E extends ElementType> = PolymorphicComponentProps<E, {}>;
+export type AvatarProps<E extends ElementType> = PolymorphicPropsWithoutRef<{}, E>;
 
-const element = 'span';
+const defaultElement = 'span';
 
-const Avatar = <E extends ElementType = typeof element>({
+const Avatar = <E extends ElementType = typeof defaultElement>({
     className: classNameProp,
+    as,
     ...rest
-}: PolymorphicComponentProps<E, {}>) => {
+}: PolymorphicPropsWithoutRef<{}, E>) => {
     const className = clsx(classNameProp, 'avatar rounded inline-flex flex-justify-center flex-align-items-center');
-
-    return <Box as={element} className={className} {...rest} aria-hidden="true" />;
+    const Element: ElementType = as || defaultElement;
+    return <Element className={className} {...rest} aria-hidden="true" />;
 };
 
 export default Avatar;
