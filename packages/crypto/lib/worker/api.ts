@@ -9,9 +9,11 @@ import {
     armorBytes,
     canKeyEncrypt,
     checkKeyStrength,
+    decryptKey,
     decryptMessage,
     decryptMessageLegacy,
     decryptSessionKey,
+    encryptKey,
     encryptMessage,
     encryptSessionKey,
     generateKey,
@@ -22,6 +24,12 @@ import {
     isExpiredKey,
     isRevokedKey,
     processMIME,
+    readCleartextMessage,
+    readKey,
+    readKeys,
+    readMessage,
+    readPrivateKey,
+    readSignature,
     reformatKey,
     signMessage,
     unsafeMD5,
@@ -30,24 +38,14 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import {
-    MaybeArray,
-    decryptKey,
-    encryptKey,
-    enums,
-    readCleartextMessage,
-    readKey,
-    readKeys,
-    readMessage,
-    readPrivateKey,
-    readSignature,
-} from 'pmcrypto/lib/openpgp';
+import { enums } from 'pmcrypto/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import {
     ComputeHashStreamOptions,
     KeyInfo,
     KeyReference,
+    MaybeArray,
     MessageInfo,
     PrivateKeyReference,
     PublicKeyReference,
