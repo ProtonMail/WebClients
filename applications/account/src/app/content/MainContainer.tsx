@@ -79,7 +79,6 @@ const MainContainer = () => {
         FeatureCode.CalendarInviteLocale,
         FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
-        FeatureCode.BulkUserUpload,
         FeatureCode.SmtpToken,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.CalendarSubscription,
@@ -92,7 +91,6 @@ const MainContainer = () => {
     const isSpyTrackerEnabled = getFeature(FeatureCode.SpyTrackerProtection).feature?.Value === true;
     const isInviteLocaleFeatureEnabled = getFeature(FeatureCode.CalendarInviteLocale).feature?.Value === true;
     const isAutoImportInviteFeatureEnabled = getFeature(FeatureCode.CalendarAutoImportInvite).feature?.Value === true;
-    const isBulkUserUploadEnabled = getFeature(FeatureCode.BulkUserUpload).feature?.Value === true;
     const isSmtpTokenEnabled = getFeature(FeatureCode.SmtpToken).feature?.Value === true;
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
 
@@ -110,7 +108,6 @@ const MainContainer = () => {
         isInviteSettingEnabled: isInviteLocaleFeatureEnabled || isAutoImportInviteFeatureEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isSmtpTokenEnabled,
-        isBulkUserUploadEnabled,
         isDataRecoveryAvailable,
         isGmailSyncEnabled,
         recoveryNotification: recoveryNotification?.color,
@@ -208,7 +205,6 @@ const MainContainer = () => {
                         app={app}
                         path={prefixPath}
                         organizationAppRoutes={routes.organization}
-                        isBulkUserUploadEnabled={isBulkUserUploadEnabled}
                         redirect={redirect}
                     />
                 </Route>
