@@ -1,6 +1,6 @@
 import { ElementType, ReactNode } from 'react';
+import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
-import { PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import ModalTwo, { ModalOwnProps as MainModalOwnProps } from './Modal';
 import ModalTwoContent from './ModalContent';
 import ModalTwoFooter from './ModalFooter';
@@ -16,7 +16,7 @@ export interface BasicModalProps extends MainModalOwnProps {
     subline?: string;
 }
 
-const BasicModal = ({
+const BasicModal = <E extends ElementType>({
     title,
     children,
     footer,
@@ -26,7 +26,7 @@ const BasicModal = ({
     hasClose,
     subline,
     ...rest
-}: PolymorphicComponentProps<ElementType, BasicModalProps>) => {
+}: PolymorphicPropsWithoutRef<BasicModalProps, E>) => {
     const [modalProps] = useModalState({ open: isOpen, onClose, onExit });
 
     return (
