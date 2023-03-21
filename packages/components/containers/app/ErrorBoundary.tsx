@@ -1,8 +1,8 @@
 import { Component, ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
 import GenericError from '../error/GenericError';
 
 interface Props {
@@ -55,10 +55,7 @@ class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, St
         }
         return (
             props.component || (
-                <GenericError
-                    className={classnames([props.small ? 'p1' : 'p2', props.className])}
-                    small={props.small}
-                />
+                <GenericError className={clsx([props.small ? 'p1' : 'p2', props.className])} small={props.small} />
             )
         );
     }
