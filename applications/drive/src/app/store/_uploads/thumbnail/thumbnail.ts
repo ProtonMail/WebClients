@@ -1,6 +1,6 @@
 import { isSVG, isSupportedImage } from '@proton/shared/lib/helpers/mimetype';
 
-import { scaleImageFile } from './image';
+import { imageCannotBeLoadedError, scaleImageFile } from './image';
 import { ThumbnailData } from './interface';
 import { scaleSvgFile } from './svg';
 
@@ -10,6 +10,12 @@ export async function makeThumbnail(mimeType: string, file: Blob): Promise<Thumb
     }
 
     if (isSupportedImage(mimeType)) {
-        return scaleImageFile(file);
+        return scaleImageFile(file).catch((err) => {
+            // Corrupted images cannot be loaded which we don't care about.
+            if (err === imageCannotBeLoadedError) {
+                return undefined;
+            }
+            throw err;
+        });
     }
 }
