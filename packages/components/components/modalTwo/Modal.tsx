@@ -1,11 +1,11 @@
 import { ElementType, createContext, useLayoutEffect, useRef, useState } from 'react';
+import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
 import useInstance from '@proton/hooks/useInstance';
 import usePrevious from '@proton/hooks/usePrevious';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 
 import { classnames, generateUID } from '../../helpers';
-import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { useHotkeys } from '../../hooks';
 import Dialog from '../dialog/Dialog';
 import { useFocusTrap } from '../focus';
@@ -67,7 +67,7 @@ enum ExitState {
 
 const defaultElement = 'div';
 
-export type ModalProps<E extends ElementType = typeof defaultElement> = PolymorphicComponentProps<E, ModalOwnProps>;
+export type ModalProps<E extends ElementType = typeof defaultElement> = PolymorphicPropsWithoutRef<ModalOwnProps, E>;
 
 const Modal = <E extends ElementType = typeof defaultElement>({
     open,
@@ -79,8 +79,9 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     disableCloseOnEscape,
     className,
     behind,
+    as,
     ...rest
-}: PolymorphicComponentProps<E, ModalOwnProps>) => {
+}: PolymorphicPropsWithoutRef<ModalOwnProps, E>) => {
     const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
     const id = useInstance(() => generateUID('modal'));
     const dialogRef = useRef(null);
@@ -133,6 +134,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     }
 
     const exiting = exit === ExitState.exiting;
+    const Element: ElementType = as || defaultElement;
 
     return (
         <Portal>
@@ -166,7 +168,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     ])}
                 >
                     <ModalContext.Provider value={modalContextValue}>
-                        <Box as={defaultElement} className="modal-two-dialog-container" {...rest} />
+                        <Element className="modal-two-dialog-container" {...rest} />
                     </ModalContext.Provider>
                 </Dialog>
             </div>
