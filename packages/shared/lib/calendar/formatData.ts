@@ -114,11 +114,11 @@ export const formatData = ({
     if (attendeesEncryptedSessionKeysMap) {
         result.AddedProtonAttendees = Object.keys(attendeesEncryptedSessionKeysMap)
             .map((email) => {
-                const sharedSessionKey = attendeesEncryptedSessionKeysMap[email];
-                if (!sharedSessionKey) {
+                const sharedEncryptedSessionKey = attendeesEncryptedSessionKeysMap[email];
+                if (!sharedEncryptedSessionKey) {
                     return;
                 }
-                return { Email: email, AddressKeyPacket: uint8ArrayToBase64String(sharedSessionKey) };
+                return { Email: email, AddressKeyPacket: uint8ArrayToBase64String(sharedEncryptedSessionKey) };
             })
             .filter(isTruthy);
     }
