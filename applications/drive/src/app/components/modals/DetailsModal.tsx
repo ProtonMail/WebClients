@@ -7,6 +7,7 @@ import {
     Alert,
     FileNameDisplay,
     Icon,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -28,7 +29,6 @@ export interface Props {
     shareId: string;
     linkId: string;
     onClose?: () => void;
-    open?: boolean;
 }
 
 interface RowProps {
@@ -38,7 +38,7 @@ interface RowProps {
     dataTestId?: string;
 }
 
-export default function DetailsModal({ shareId, linkId, onClose, open }: Props) {
+export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }: Props & ModalStateProps) {
     const {
         isLinkLoading,
         isSignatureIssuesLoading,
@@ -139,7 +139,7 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
     };
 
     return (
-        <ModalTwo onClose={onClose} open={open} size="large">
+        <ModalTwo onClose={onClose} size="large" {...modalProps}>
             <ModalTwoHeader title={getTitle(link?.isFile)} />
             {renderModalState()}
             <ModalTwoFooter>
@@ -168,5 +168,5 @@ function getTitle(isFile?: boolean) {
 }
 
 export const useDetailsModal = () => {
-    return useModalTwo<{ shareId: string; linkId: string }, unknown>(DetailsModal);
+    return useModalTwo<{ shareId: string; linkId: string }, unknown>(DetailsModal, false);
 };

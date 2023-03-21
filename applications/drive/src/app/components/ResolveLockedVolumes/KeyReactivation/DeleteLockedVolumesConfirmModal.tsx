@@ -6,24 +6,29 @@ import { Button } from '@proton/atoms';
 import {
     Alert,
     Checkbox,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
     useLoading,
 } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 interface Props {
     onClose?: () => void;
-    onBack?: () => void;
     onSubmit: () => Promise<unknown>;
     volumeCount: number;
-    open?: boolean;
 }
 
-const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, volumeCount, open }: Props) => {
+const DeleteLockedVolumesConfirmModal = ({
+    onClose = noop,
+    onSubmit,
+    volumeCount,
+    ...modalProps
+}: Props & ModalStateProps) => {
     const [isChecked, setIsChecked] = useState(false);
     const [isLoading, withLoading] = useLoading();
 
@@ -46,11 +51,11 @@ const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, vol
     return (
         <ModalTwo
             onClose={onClose}
-            open={open}
             size="small"
             as="form"
             disableCloseOnEscape={isLoading}
             onSubmit={handleSubmit}
+            {...modalProps}
         >
             <ModalTwoHeader title={modalTitle} />
             <ModalTwoContent>
@@ -63,7 +68,7 @@ const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, vol
                 <Checkbox onChange={handleChange}>{confirmationText}</Checkbox>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button type="button" onClick={onBack}>
+                <Button type="button" onClick={onClose}>
                     {c('Action').t`Back`}
                 </Button>
                 <Button color="danger" type="submit" disabled={!isChecked} loading={isLoading}>
@@ -75,3 +80,7 @@ const DeleteLockedVolumesConfirmModal = ({ onClose = noop, onSubmit, onBack, vol
 };
 
 export default DeleteLockedVolumesConfirmModal;
+
+export const useDeleteLockedVolumesConfirmModal = () => {
+    return useModalTwo<Props, void>(DeleteLockedVolumesConfirmModal, false);
+};

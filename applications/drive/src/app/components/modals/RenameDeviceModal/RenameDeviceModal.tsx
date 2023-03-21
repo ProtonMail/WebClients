@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import {
     Form,
     InputFieldTwo,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -23,10 +24,9 @@ import { Device, useActions } from '../../../store';
 interface Props {
     onClose?: () => void;
     device: Device;
-    open?: boolean;
 }
 
-const RenameDeviceModal = ({ device, onClose, open }: Props) => {
+const RenameDeviceModal = ({ device, onClose, ...modalProps }: Props & ModalStateProps) => {
     const { renameDevice } = useActions();
     const [submitting, withSubmitting] = useLoading();
 
@@ -56,8 +56,8 @@ const RenameDeviceModal = ({ device, onClose, open }: Props) => {
             onClose={onClose}
             onReset={onClose}
             onSubmit={() => withSubmitting(handleSubmit()).catch(noop)}
-            open={open}
             size="small"
+            {...modalProps}
         >
             <ModalTwoHeader closeButtonProps={{ disabled: submitting }} title={c('Title').t`Rename device`} />
             <ModalTwoContent>
@@ -88,5 +88,5 @@ const RenameDeviceModal = ({ device, onClose, open }: Props) => {
 
 export default RenameDeviceModal;
 export const useRenameDeviceModal = () => {
-    return useModalTwo<Props, void>(RenameDeviceModal);
+    return useModalTwo<Props, void>(RenameDeviceModal, false);
 };

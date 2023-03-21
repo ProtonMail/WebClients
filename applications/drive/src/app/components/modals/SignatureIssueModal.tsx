@@ -39,7 +39,7 @@ export default function SignatureIssueModal({
     apply,
     cancelAll,
     onClose,
-    ...rest
+    ...modalProps
 }: ConflictModalProps & ModalStateProps) {
     const [strategy, setStrategy] = useState(TransferSignatureIssueStrategy.Abort);
     const [applyAll, setApplyAll] = useState(false);
@@ -64,7 +64,7 @@ export default function SignatureIssueModal({
                 onClose();
             }}
             size="small"
-            {...rest}
+            {...modalProps}
         >
             <ModalTwoHeader
                 title={isFile ? c('Title').t`Download unverified file?` : c('Title').t`Download unverified folder?`}
@@ -129,5 +129,5 @@ export default function SignatureIssueModal({
 }
 
 export const useSignatureIssueModal = () => {
-    return useModalTwo<ConflictModalProps, void>(SignatureIssueModal);
+    return useModalTwo<ConflictModalProps, void>(SignatureIssueModal, false);
 };
