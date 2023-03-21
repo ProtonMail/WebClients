@@ -5,6 +5,7 @@ import {
     Alert,
     Field,
     Label,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -20,10 +21,9 @@ import ModalContentLoader from './ModalContentLoader';
 interface Props {
     selectedItems: DecryptedLink[];
     onClose?: () => void;
-    open?: boolean;
 }
 
-const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
+const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & ModalStateProps) => {
     const { isLoading, error, hasFile, hasFolder, count, size } = useLinksDetailsView(selectedItems);
 
     let title = c('Title').t`Item details`;
@@ -65,7 +65,7 @@ const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
     };
 
     return (
-        <ModalTwo onClose={onClose} open={open} size="large">
+        <ModalTwo onClose={onClose} size="large" {...modalProps}>
             <ModalTwoHeader title={title} />
             {renderModalState()}
             <ModalTwoFooter>
@@ -77,5 +77,5 @@ const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
 
 export default FilesDetailsModal;
 export const useFilesDetailsModal = () => {
-    return useModalTwo<Props, unknown>(FilesDetailsModal);
+    return useModalTwo<Props, void>(FilesDetailsModal, false);
 };

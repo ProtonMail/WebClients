@@ -3,7 +3,15 @@ import React, { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, RadioGroup } from '@proton/components';
+import {
+    ModalStateProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    RadioGroup,
+} from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -14,7 +22,6 @@ interface Props {
     onClose?: () => void;
     onSubmit?: (type: LockedVolumeResolveMethod) => void;
     volumeCount: number;
-    open?: boolean;
 }
 
 const OptionLabel = ({ title, info }: { title: string; info: string }) => {
@@ -26,7 +33,13 @@ const OptionLabel = ({ title, info }: { title: string; info: string }) => {
     );
 };
 
-const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveMethod, volumeCount, open }: Props) => {
+const KeyReactivationModal = ({
+    onClose,
+    onSubmit = noop,
+    defaultResolveMethod,
+    volumeCount,
+    ...modalProps
+}: Props & ModalStateProps) => {
     const [radioGroupValue, setRadioGroupValue] = useState<number>(
         defaultResolveMethod || LockedVolumeResolveMethod.ReactivateKeys
     );
@@ -70,7 +83,6 @@ const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveM
             value: LockedVolumeResolveMethod.DeleteOldFiles,
         },
     ];
-
     return (
         <ModalTwo
             onClose={onClose}
@@ -78,10 +90,13 @@ const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveM
             onSubmit={(e: any) => {
                 e.preventDefault();
                 onSubmit(radioGroupValue);
+                if (radioGroupValue === LockedVolumeResolveMethod.UnlockLater) {
+                    onClose();
+                }
             }}
             size="small"
-            open={open}
             as="form"
+            {...modalProps}
         >
             <ModalTwoHeader title={c('Action').t`Drive Locked`} />
             <ModalTwoContent onReset={noop} onSubmit={() => onSubmit(radioGroupValue)}>
@@ -105,3 +120,7 @@ const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, defaultResolveM
     );
 };
 export default KeyReactivationModal;
+
+export const useKeyReactivationModal = () => {
+    return useModalTwo<Props, void>(KeyReactivationModal, false);
+};

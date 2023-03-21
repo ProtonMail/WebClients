@@ -48,7 +48,7 @@ export default function ConflictModal({
     apply,
     cancelAll,
     onClose,
-    open,
+    ...modalProps
 }: ConflictModalProps & ModalStateProps) {
     const [strategy, setStrategy] = useState(
         isFolder ? TransferConflictStrategy.Merge : TransferConflictStrategy.Rename
@@ -75,7 +75,7 @@ export default function ConflictModal({
     };
 
     return (
-        <ModalTwo as="form" onClose={closeAndCancel} onSubmit={handleSubmit} open={open} size="small">
+        <ModalTwo as="form" onClose={closeAndCancel} onSubmit={handleSubmit} size="small" {...modalProps}>
             <ModalTwoHeader
                 title={isFolder ? c('Title').t`Duplicate folder found` : c('Title').t`Duplicate file found`}
             />
@@ -185,5 +185,5 @@ export default function ConflictModal({
 }
 
 export const useConflictModal = () => {
-    return useModalTwo<ConflictModalProps, void>(ConflictModal);
+    return useModalTwo<ConflictModalProps, void>(ConflictModal, false);
 };

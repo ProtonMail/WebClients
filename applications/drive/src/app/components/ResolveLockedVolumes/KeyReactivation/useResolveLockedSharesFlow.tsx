@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useModals, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
 
 import { useLockedVolume } from '../../../store';
-import DeleteLockedVolumesConfirmModal from './DeleteLockedVolumesConfirmModal';
-import KeyReactivationModal from './KeyReactivationModal';
-import UnlockDriveConfirmationDialog from './UnlockDriveConfirmationDialog';
+import { useDeleteLockedVolumesConfirmModal } from './DeleteLockedVolumesConfirmModal';
+import { useKeyReactivationModal } from './KeyReactivationModal';
+import { useUnlockDriveConfirmationDialog } from './UnlockDriveConfirmationDialog';
 import { LockedVolumeResolveMethod } from './interfaces';
 
 interface ReactivationParams {
@@ -17,20 +17,12 @@ interface ReactivationParams {
 
 const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) => {
     const lastResolveMethod = useRef<LockedVolumeResolveMethod>(LockedVolumeResolveMethod.ReactivateKeys);
-    const currentModalRef = useRef<string | null>(null);
 
     const { lockedVolumesCount, deleteLockedVolumes } = useLockedVolume();
-    const { createModal, removeModal } = useModals();
+    const [keyReactivationModal, showKeyReactivationModal] = useKeyReactivationModal();
+    const [deleteLockedVolumesConfirmModal, showDeleteLockedVolumesConfirmModal] = useDeleteLockedVolumesConfirmModal();
+    const [unlockDriveConfirmationDialog, showUnlockDriveConfirmationDialog] = useUnlockDriveConfirmationDialog();
     const { createNotification } = useNotifications();
-
-    const [currentModalType, setCurrentModalType] = useState<LockedVolumeResolveMethod | null>(null);
-
-    const removeCurrentModal = () => {
-        if (currentModalRef.current !== null) {
-            removeModal(currentModalRef.current);
-            currentModalRef.current = null;
-        }
-    };
 
     const handleDeleteLockedVolumesSubmit = async () => {
         try {
@@ -38,7 +30,6 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
             createNotification({
                 text: c('Notification').t`Your old files will be deleted in 72 hours`,
             });
-            removeCurrentModal();
             onSuccess?.();
         } catch (e) {
             onError?.();
@@ -46,67 +37,40 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
     };
 
     const handleResolveMethodSelection = (type: LockedVolumeResolveMethod) => {
-        removeCurrentModal();
-        lastResolveMethod.current = type;
-        setCurrentModalType(type);
-    };
-
-    const handleBackButtonClick = () => {
-        removeCurrentModal();
-        setCurrentModalType(LockedVolumeResolveMethod.ResolveMethodSelection);
-    };
-
-    useEffect(() => {
-        if (currentModalType === null) {
-            return;
-        }
-
-        switch (currentModalType) {
+        switch (type) {
             case LockedVolumeResolveMethod.ResolveMethodSelection:
-                currentModalRef.current = createModal(
-                    <KeyReactivationModal
-                        onSubmit={handleResolveMethodSelection}
-                        defaultResolveMethod={lastResolveMethod.current}
-                        onClose={() => setCurrentModalType(null)}
-                        volumeCount={lockedVolumesCount}
-                    />
-                );
+                void showKeyReactivationModal({
+                    onSubmit: handleResolveMethodSelection,
+                    defaultResolveMethod: lastResolveMethod.current,
+                    volumeCount: lockedVolumesCount,
+                });
                 break;
             case LockedVolumeResolveMethod.DeleteOldFiles:
-                currentModalRef.current = createModal(
-                    <DeleteLockedVolumesConfirmModal
-                        onSubmit={handleDeleteLockedVolumesSubmit}
-                        onBack={handleBackButtonClick}
-                        onClose={() => setCurrentModalType(null)}
-                        volumeCount={lockedVolumesCount}
-                    />
-                );
+                void showDeleteLockedVolumesConfirmModal({
+                    onSubmit: handleDeleteLockedVolumesSubmit,
+                    volumeCount: lockedVolumesCount,
+                });
                 break;
             case LockedVolumeResolveMethod.ReactivateKeys:
-                currentModalRef.current = createModal(
-                    <UnlockDriveConfirmationDialog
-                        onBack={handleBackButtonClick}
-                        onClose={() => setCurrentModalType(null)}
-                    />
-                );
+                void showUnlockDriveConfirmationDialog();
                 break;
             case LockedVolumeResolveMethod.UnlockLater:
-                setCurrentModalType(null);
                 onSuccess?.();
                 break;
             default:
                 break;
         }
-    }, [currentModalType]);
+    };
 
     const openKeyReactivationModal = () => {
-        lastResolveMethod.current = LockedVolumeResolveMethod.ReactivateKeys;
-        removeCurrentModal();
-        setCurrentModalType(LockedVolumeResolveMethod.ResolveMethodSelection);
+        void handleResolveMethodSelection(LockedVolumeResolveMethod.ResolveMethodSelection);
     };
 
     return {
         openKeyReactivationModal,
+        keyReactivationModal,
+        deleteLockedVolumesConfirmModal,
+        unlockDriveConfirmationDialog,
     };
 };
 

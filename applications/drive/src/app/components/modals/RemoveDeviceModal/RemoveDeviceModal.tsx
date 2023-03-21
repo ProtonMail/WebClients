@@ -24,13 +24,12 @@ import { Device, useActions } from '../../../store';
 interface Props {
     onClose?: () => void;
     device: Device;
-    open?: boolean;
 }
 
 export const deviceNameValidator = (value: string, deviceName: string) =>
     value !== deviceName ? c('Error').t`Device name does not match` : '';
 
-const RemoveDeviceModal = ({ device, onClose, open }: Props) => {
+const RemoveDeviceModal = ({ device, onClose, ...modalProps }: Props) => {
     const { removeDevice } = useActions();
     const [submitting, withSubmitting] = useLoading();
 
@@ -65,8 +64,8 @@ const RemoveDeviceModal = ({ device, onClose, open }: Props) => {
             onClose={onClose}
             onReset={onClose}
             onSubmit={() => withSubmitting(handleSubmit()).catch(noop)}
-            open={open}
             size="small"
+            {...modalProps}
         >
             <ModalTwoHeader closeButtonProps={{ disabled: submitting }} title={c('Title').t`Remove device?`} />
             <ModalTwoContent>
@@ -103,5 +102,5 @@ const RemoveDeviceModal = ({ device, onClose, open }: Props) => {
 
 export default RemoveDeviceModal;
 export const useRemoveDeviceModal = () => {
-    return useModalTwo<Props, void>(RemoveDeviceModal);
+    return useModalTwo<Props, void>(RemoveDeviceModal, false);
 };
