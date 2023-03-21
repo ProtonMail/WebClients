@@ -127,7 +127,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
 
         if (await shouldCalendarPreventDowngradePromise) {
             await new Promise<void>((resolve, reject) => {
-                createModal(<CalendarDowngradeModal isDowngrade onConfirm={reject} onClose={reject} />);
+                createModal(<CalendarDowngradeModal isDowngrade onConfirm={resolve} onClose={reject} />);
             });
         }
 
