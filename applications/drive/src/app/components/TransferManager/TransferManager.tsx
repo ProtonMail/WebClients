@@ -268,7 +268,7 @@ const TransferManager = ({
         <div
             id="transfer-manager"
             className={clsx(['transfers-manager', minimized && 'transfers-manager--minimized'])}
-            style={{ 'margin-right': `${drawerWidth}px` }}
+            style={{ marginRight: `${drawerWidth}px` }}
         >
             <div ref={headerRef}>
                 <Header
