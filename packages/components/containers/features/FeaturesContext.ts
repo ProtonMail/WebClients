@@ -83,7 +83,6 @@ export enum FeatureCode {
     OfferMailTrial2023 = 'OfferMailTrial2023',
     SmtpToken = 'SmtpToken',
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
-    BulkUserUpload = 'BulkUserUpload',
     DriveMyDevices = 'DriveWebMyDevices',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     ProtonBadge = 'ProtonBadge',
