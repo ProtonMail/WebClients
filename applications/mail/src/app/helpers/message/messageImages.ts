@@ -4,6 +4,7 @@ import { createUrl } from '@proton/shared/lib/fetch/helpers';
 import { Api } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import { API_URL } from '../../config';
 import {
     loadFakeProxy,
     loadRemoteDirectFromURL,
@@ -194,7 +195,7 @@ export const replaceProxyWithOriginalURLAttributes = (message: MessageState, doc
 
 export const forgeImageURL = (url: string, uid: string) => {
     const config = getImage(url, 0, uid);
-    const prefixedUrl = `api/${config.url}`; // api/ is required to set the AUTH cookie
+    const prefixedUrl = `${API_URL}/${config.url}`;
     const urlToLoad = createUrl(prefixedUrl, config.params);
     return urlToLoad.toString();
 };

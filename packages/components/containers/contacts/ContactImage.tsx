@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import 'intersection-observer';
-
+import { useMailSettings } from '@proton/components/hooks';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
@@ -16,26 +15,25 @@ interface Props {
 }
 
 const ContactImage = ({ email, name, className, bimiSelector, displaySenderImage }: Props) => {
-    const [fallback, setFallback] = useState(false);
-    const { canLoad, url } = useSenderImage(displaySenderImage ? email : '', fallback, bimiSelector);
+    const [mailSettings] = useMailSettings();
+    const canLoad = !!displaySenderImage && !!email && mailSettings?.HideSenderImages === 0;
+    const url = useSenderImage(canLoad ? email : '', bimiSelector);
+    const [tryToLoad, setTryToLoad] = useState(false);
 
-    if (canLoad) {
-        // Fallback to XHR API call to load the image if native fails
-        const handleError = () => {
-            // url is not set at the initial render
-            if (!url) {
-                return;
-            }
-            setFallback(true);
-        };
+    useEffect(() => {
+        if (url) {
+            setTryToLoad(true);
+        }
+    }, [url]);
 
+    if (tryToLoad) {
         return (
             <img
                 className={clsx(className, 'item-sender-image')}
                 alt=""
                 width="32"
                 src={url}
-                onError={handleError}
+                onError={() => setTryToLoad(false)}
                 loading="lazy" // Lazy load the image only when it's in the viewport
                 data-testid="contact-image"
             />
