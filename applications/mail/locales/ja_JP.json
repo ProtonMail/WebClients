@@ -461,7 +461,7 @@
         "ラベルを隠す"
       ],
       "Hide messages": [
-        "本文を非表示"
+        "メッセージを非表示"
       ],
       "Hide my email": [
         "Hide My Email"
@@ -926,7 +926,7 @@
         "詳細を非表示"
       ],
       "Show messages": [
-        "本文を表示"
+        "メッセージを表示"
       ],
       "Show more search options": [
         "表示する検索オプションを増やします"
@@ -2973,9 +2973,6 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
-      "A problem occurred, please try again": [
-        "問題が発生しました。もう一度やり直してください。"
-      ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
@@ -3149,9 +3146,6 @@
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
-      ],
-      "Please activate your content search again": [
-        "本文検索を再度有効化してください"
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
@@ -4212,7 +4206,7 @@
         "${ contactsCount } の連絡先が見つかりました"
       ],
       "${ count } unread messages": [
-        "${ count } 件のメッセージが未読"
+        "${ count } 件の未読メッセージ"
       ],
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } 枚の埋め込み画像"
@@ -4236,7 +4230,7 @@
         "${ numGroups } 件の連絡先グループ"
       ],
       "${ NumMessages } messages in conversation": [
-        "会話内に ${ NumMessages } 件の会話"
+        "会話内に ${ NumMessages } 件のメッセージ"
       ],
       "${ numOccurrences } occurrences found": [
         "${ numOccurrences } 件見つかりました"
@@ -4269,7 +4263,7 @@
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
       "${ total } conversations": [
-        "${ total }件のやりとり"
+        "${ total } 件の会話"
       ],
       "${ total } messages": [
         "${ total } 件のメッセージ"
@@ -4287,7 +4281,7 @@
         "${ unreadCount } 件の未読の会話"
       ],
       "${ unreadCount } unread messages": [
-        "${ unreadCount } 件のメッセージが未読"
+        "${ unreadCount } 件の未読メッセージ"
       ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
@@ -4380,7 +4374,7 @@
         "${ count } 件のメッセージを完全に削除してよろしいですか？"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "このやりとりを完全に削除してよろしいですか？"
+        "この会話を完全に削除してよろしいですか？"
       ],
       "Are you sure you want to permanently delete this draft?": [
         "この下書きを完全に削除してよろしいですか？"
@@ -4498,9 +4492,6 @@
       ],
       "Don't forget to share the password with the recipient": [
         "宛先にパスワードを伝えることを忘れないでください"
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ totalProgressToShow }件中${ esProgress }件目のメールをダウンロード中"
       ],
       "Draft": [
         "下書き"
@@ -4962,7 +4953,7 @@
         "下書きを保存しています…"
       ],
       "Scheduling message...": [
-        "メッセージをスケジューリングしています..."
+        "メッセージを送信予約中..."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "検索時間が長すぎますか? 検索セッションから ${ dropdownButton } か ${ toggleOffButton } してください。"
@@ -5102,11 +5093,14 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
       ],
+      "This conversation contains a scheduled message. Sending of this message will be canceled.": [
+        "この会話には送信予約メッセージが含まれます。送信予約はキャンセルされます。"
+      ],
       "This conversation contains non-trashed messages.": [
-        "このやりとりには、ごみ箱に入れられていないメールもあります。"
+        "この会話には、ごみ箱に入っていないメッセージもあります。"
       ],
       "This conversation contains trashed messages.": [
-        "このやりとりには、ごみ箱に入っているメールもあります。"
+        "この会話には、ごみ箱に入っているメッセージもあります。"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "メールのドメイン認証に失敗しました。このメールは不適切に転送されたものか、なりすましの恐れがあります。"
@@ -7320,7 +7314,7 @@
         "${ elementsCount } 件のやりとりを迷惑メールに移動し、送信元のアドレスは迷惑メールリストに登録されました。"
       ],
       "${ elementsCount } conversations removed from ${ labelName }.": [
-        "${ elementsCount }件のやりとりから${ labelName }のラベルを外しました。"
+        "${ elementsCount } 件の会話から ${ labelName } のラベルを外しました。"
       ],
       "${ elementsCount } messages added to ${ labelName }.": [
         "${ elementsCount } 件のメッセージが ${ labelName } に追加されました。"
@@ -7386,7 +7380,7 @@
         "やりとりを${ folderName }に移動し、差出人のアドレスは迷惑メールから除外されました。"
       ],
       "Conversation moved to ${ folderName }.": [
-        "やりとりを${ folderName }に移動しました。"
+        "会話が ${ folderName } に移動されました。"
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "やりとりを迷惑メールに移動し、差出人のアドレスは迷惑メールリストに追加されました。"
@@ -7610,7 +7604,7 @@
         "${ MAIL_APP_NAME } のキーボードショートカット"
       ],
       "${ unreads } unread messages": [
-        "${ unreads }件の未読"
+        "${ unreads } 件の未読メッセージ"
       ],
       "Account suspended": [
         "アカウントが停止されました"
@@ -8077,9 +8071,6 @@
       "Trust public key?": [
         "公開鍵を信頼しますか?"
       ],
-      "Two-factor authentication": [
-        "2 要素認証"
-      ],
       "Unsubscribe": [
         "退会"
       ],
@@ -8174,9 +8165,6 @@
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "検索機能を有効化するためにすべてのメールをダウンロードします。ブラウザーのキャッシュを削除するとまたダウンロードが必要になります。"
-      ],
       "This feature is only available for paid users": [
         "この機能は課金ユーザーのみが利用できます"
       ],
@@ -8249,9 +8237,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "ライブチャットは ${ VPN_APP_NAME } の有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"

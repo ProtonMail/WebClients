@@ -3018,9 +3018,6 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
-      "A problem occurred, please try again": [
-        "Ocorreu um erro. Tente novamente"
-      ],
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
@@ -3158,8 +3155,8 @@
         "Número máximo de anexos (${ attachmentsCountLimit }) excedido"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente do ${ BRAND_NAME }",
-        "Mescle pelo menos ${ calendarsToFixCount } calendários com calendários existente do ${ BRAND_NAME }"
+        "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente da ${ BRAND_NAME }",
+        "Mescle pelo menos ${ calendarsToFixCount } calendários com calendários existente da ${ BRAND_NAME }"
       ],
       "Message needs to be sent first": [
         "A mensagem precisa ser enviada primeiro"
@@ -3210,9 +3207,6 @@
       ],
       "Passwords do not match": [
         "As senhas não correspondem"
-      ],
-      "Please activate your content search again": [
-        "Ative a busca de conteúdo novamente"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, corrija o conflito em destaque para prosseguir.",
@@ -3292,7 +3286,7 @@
         "Algo deu errado. Por favor, ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
-        "Desculpe, o ${ BRAND_NAME } não pode descriptografar sua mensagem. Verifique se todas as suas chaves estão ativas."
+        "Desculpe, a ${ BRAND_NAME } não pode descriptografar sua mensagem. Verifique se todas as suas chaves estão ativas."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "O anexo não pôde ser descriptografado.\nCaso tenha a chave privada correspondente, você ainda será capaz de descriptografar\no arquivo com um programa como o GnuPG.",
@@ -3607,7 +3601,7 @@
         "Algo deu errado. Por favor, atualize a página ou tente novamente mais tarde."
       ],
       "There was a problem connecting to ${ BRAND_NAME }.": [
-        "Houve um problema de conexão com o ${ BRAND_NAME }."
+        "Houve um problema de conexão com a ${ BRAND_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Você ainda não tem nenhum contato. Comece criando um novo contato"
@@ -4112,19 +4106,19 @@
     },
     "Import error": {
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
-        "O ${ BRAND_NAME } não pode se conectar à sua conta. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta. Por favor, certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "O ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
+        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "O ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "O ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
+        "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "O ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que:"
       ],
       "2-step verification is enabled in your external account.": [
         "A verificação em duas etapas está ativada em sua conta externa."
@@ -4181,7 +4175,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Dependendo do seu provedor de e-mails, você pode precisar gerar uma ${ knowledgeBaseLink } antes de poder importar para o ${ BRAND_NAME }."
+        "Dependendo do seu provedor de e-mails, você pode precisar gerar uma ${ knowledgeBaseLink } antes de poder importar para a ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Expanda o menu clicando nos 3 pontinhos (...)."
@@ -4202,16 +4196,16 @@
         "Selecione ${ boldExportCSV }."
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Para importar um calendário para o ${ BRAND_NAME }, você precisa do ${ knowledgeBaseLink }. Baixe-o do Yahoo em 3 passos simples:"
+        "Para importar um calendário para a ${ BRAND_NAME }, você precisa do ${ knowledgeBaseLink }. Baixe-o do Yahoo em 3 passos simples:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Para importar um calendário para o ${ BRAND_NAME }, você precisa do ${ knowledgeBaseLink }. Baixe-o antes de iniciar o processo de importação."
+        "Para importar um calendário para a ${ BRAND_NAME }, você precisa do ${ knowledgeBaseLink }. Baixe-o antes de iniciar o processo de importação."
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Para importar contatos para o ${ BRAND_NAME }, você precisa de um ${ knowledgeBaseLink }. Baixe-o do Yahoo em 3 passos simples:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Para importar contatos para o ${ BRAND_NAME }, você precisa de um ${ knowledgeBaseLink }. Baixe-o antes de iniciar o processo de importação."
+        "Para importar contatos para a ${ BRAND_NAME }, você precisa de um ${ knowledgeBaseLink }. Baixe-o antes de iniciar o processo de importação."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Para importar e-mail para o ${ BRAND_NAME }, você precisa de uma ${ appPasswordLink } do Yahoo. Consiga-a seguindo esses passos:"
@@ -4661,9 +4655,6 @@
       "Don't forget to share the password with the recipient": [
         "Não se esqueça de compartilhar a senha com o destinatário"
       ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Baixando mensagem ${ esProgress } de ${ totalProgressToShow }"
-      ],
       "Draft": [
         "Rascunho"
       ],
@@ -4945,7 +4936,7 @@
         "Mesclado"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "A expiração da mensagem funciona fora da caixa ao enviar e-mails para outros usuários do ${ MAIL_APP_NAME }. Para enviar e-mails que expiram para usuários que não são usuários do ${ BRAND_NAME } , cancele e adicione a proteção por senha a seu e-mail."
+        "A expiração da mensagem funciona fora da caixa ao enviar e-mails para outros usuários do ${ MAIL_APP_NAME }. Para enviar e-mails que expiram para usuários que não são usuários da ${ BRAND_NAME } , cancele e adicione a proteção por senha a seu e-mail."
       ],
       "Message headers": [
         "Cabeçalho da mensagem"
@@ -5462,7 +5453,7 @@
         "Versão ${ appVersion }"
       ],
       "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Visite nossa loja para obter produtos do ${ BRAND_NAME }."
+        "Visite nossa loja para obter produtos da ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Pedimos desculpas. Pode ter sido um erro do nosso lado. Você pode confirmar que deseja marcar este e-mail como legítimo?"
@@ -5516,7 +5507,7 @@
         "Você pode adicioná-la como anexo ou exibi-la no corpo do e-mail."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "Você pode mesclar calendários importados com calendários existentes de ${ BRAND_NAME }."
+        "Você pode mesclar calendários importados com calendários existentes da ${ BRAND_NAME }."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
@@ -5617,7 +5608,7 @@
         "Sua conta tem pelo menos uma fatura vencida. Sua conta é restrita. O não pagamento contínuo bloqueará seus e-mails e links de compartilhamento. ${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta do ${ BRAND_NAME }."
+        "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
@@ -6108,7 +6099,7 @@
         "Ocultar senha"
       ],
       "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Como você descreveria sua experiência com o novo ${ BRAND_NAME }?"
+        "Como você descreveria sua experiência com a nova ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Eu entendo o risco"
@@ -6458,7 +6449,7 @@
         "Para adicionar um novo calendário, remova um existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para acrescentar um calendário novo, remova outro calendário ou atualize seu ${ BRAND_NAME } plano para um plano ${ MAIL_SHORT_APP_NAME } pago."
+        "Para acrescentar um calendário novo, remova outro calendário ou atualize seu plano da ${ BRAND_NAME } para um plano ${ MAIL_SHORT_APP_NAME } pago."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Você alcançou o número máximo de calendários disponíveis no seu plano."
@@ -7258,7 +7249,7 @@
         "Oficial"
       ],
       "Official email from ${ BRAND_NAME }": [
-        "E-mail oficial de ${ BRAND_NAME }"
+        "E-mail oficial da ${ BRAND_NAME }"
       ]
     },
     "Received email icon": {
@@ -8385,7 +8376,7 @@
         "Grupos"
       ],
       "Hide your email with SimpleLogin by ${ BRAND_NAME }": [
-        "Oculte seu e-mail com SimpleLogin do ${ BRAND_NAME }"
+        "Oculte seu e-mail com SimpleLogin da ${ BRAND_NAME }"
       ],
       "Human verification": [
         "Verificação humana"
@@ -8650,9 +8641,6 @@
       "Trust public key?": [
         "Confiar na chave pública?"
       ],
-      "Two-factor authentication": [
-        "Autenticação de dois fatores"
-      ],
       "Unsubscribe": [
         "Cancelar inscrição"
       ],
@@ -8747,9 +8735,6 @@
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta ação baixará todas as mensagens para poderem ser pesquisadas localmente. Limpar os dados do navegador irá desativar esta opção."
-      ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"
       ],
@@ -8826,9 +8811,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se você não se lembra de sua senha, é impossível reativar sua chave. Nós podemos ajudá-lo a descartar o banner de alerta, mas no processo você perderá o acesso permanente a todos os dados criptografados com essa chave."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Bate papo ao vivo é uma funcionalidade premium disponível apenas para aqueles com planos ${ VPN_APP_NAME } pagos. Por favor, abra um chamado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
