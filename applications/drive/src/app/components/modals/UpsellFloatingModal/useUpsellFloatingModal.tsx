@@ -13,7 +13,10 @@ interface ModalProps {
     onlyOnce?: true;
 }
 const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unknown>> => {
-    const [renderUpsellFloatingModal, showUpsellFloatingModal] = useModalTwo<ModalProps, unknown>(UpsellFloatingModal);
+    const [renderUpsellFloatingModal, showUpsellFloatingModal] = useModalTwo<ModalProps, unknown>(
+        UpsellFloatingModal,
+        false
+    );
     const { isNarrow } = useActiveBreakpoint();
     const { hasDownloads } = useDownload();
     // If user is proton user we disable upsell auto-show

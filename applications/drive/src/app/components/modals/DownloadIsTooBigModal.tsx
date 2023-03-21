@@ -10,7 +10,13 @@ type Props = {
     onSubmit?: () => void;
 };
 
-export default function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, open }: Props & ModalStateProps) {
+export default function DownloadIsTooBigModal({
+    onSubmit,
+    onCancel,
+    onClose,
+    open,
+    ...modalProps
+}: Props & ModalStateProps) {
     const handleCancel = () => {
         onCancel?.();
         onClose();
@@ -40,6 +46,7 @@ export default function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, ope
                     </PrimaryButton>
                 </>
             }
+            {...modalProps}
         >
             <p>{c('Info')
                 .jt`Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${recommendedBrowser} and try again.`}</p>
@@ -48,5 +55,5 @@ export default function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, ope
 }
 
 export const useDownloadIsTooBigModal = () => {
-    return useModalTwo<Props, void>(DownloadIsTooBigModal);
+    return useModalTwo<Props, void>(DownloadIsTooBigModal, false);
 };

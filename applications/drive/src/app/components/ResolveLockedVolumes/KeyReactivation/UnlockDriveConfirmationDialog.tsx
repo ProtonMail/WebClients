@@ -3,20 +3,26 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '@proton/components';
+import {
+    ModalStateProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    SettingsLink,
+} from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 interface Props {
-    onClose?: () => void;
     onBack?: () => void;
     onSubmit?: () => void;
-    open?: boolean;
 }
 
-const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack, open }: Props) => {
+const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, ...modalProps }: Props & ModalStateProps) => {
     return (
-        <ModalTwo onClose={onClose} size="small" open={open}>
+        <ModalTwo onClose={onClose} size="small" {...modalProps}>
             <ModalTwoHeader title={c('Label').t`Unlock drive`} />
             <ModalTwoContent onSubmit={() => onSubmit()}>
                 <p>
@@ -35,7 +41,7 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack
                 </p>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button color="weak" type="button" onClick={onBack}>
+                <Button color="weak" type="button" onClick={onClose}>
                     {c('Action').t`Back`}
                 </Button>
                 <ButtonLike
@@ -55,3 +61,7 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, onBack
 };
 
 export default UnlockDriveConfirmationDialog;
+
+export const useUnlockDriveConfirmationDialog = () => {
+    return useModalTwo<Props | void, void>(UnlockDriveConfirmationDialog, false);
+};

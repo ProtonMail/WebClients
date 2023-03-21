@@ -42,7 +42,6 @@ interface Props {
     modalTitleID?: string;
     shareId: string;
     linkId: string;
-    open?: boolean;
 }
 
 enum ShareLinkModalState {
@@ -50,7 +49,7 @@ enum ShareLinkModalState {
     GeneratedLink,
 }
 
-function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, linkId, open }: Props) {
+function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, linkId, ...modalProps }: Props) {
     const { link, isLoading: linkIsLoading, error: linkError } = useLinkView(shareId, linkId);
 
     const [modalState, setModalState] = useState(ShareLinkModalState.Loading);
@@ -263,7 +262,6 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
         <>
             <ModalTwo
                 as="form"
-                open={open}
                 onClose={handleClose}
                 onReset={(e: any) => {
                     e.preventDefault();
@@ -271,6 +269,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
                 }}
                 disableCloseOnEscape={saving || deleting}
                 size="large"
+                {...modalProps}
             >
                 {renderModalState()}
                 {confirmModal}
@@ -281,5 +280,5 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
 
 export default ShareLinkModal;
 export const useLinkSharingModal = () => {
-    return useModalTwo<Props, void>(ShareLinkModal);
+    return useModalTwo<Props, void>(ShareLinkModal, false);
 };

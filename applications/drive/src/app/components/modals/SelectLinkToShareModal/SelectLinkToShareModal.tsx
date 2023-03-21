@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalTwo, useLoading } from '@proton/components';
+import { ModalStateProps, ModalTwo, useLoading } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 import { DecryptedLink, useTreeForModals } from '../../../store';
@@ -13,10 +13,9 @@ import { ModalContent } from './ModalContent';
 interface Props {
     shareId: string;
     onClose?: () => void;
-    open?: boolean;
 }
 
-const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
+const SelectedFileToShareModal = ({ shareId, onClose, ...modalProps }: Props & ModalStateProps) => {
     const { rootItems, toggleExpand, isLoaded: isTreeLoaded } = useTreeForModals(shareId, { rootExpanded: true });
 
     const [loading, withLoading] = useLoading();
@@ -41,7 +40,6 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
     return (
         <>
             <ModalTwo
-                open={open}
                 onReset={onClose}
                 onClose={onClose}
                 onSubmit={(e: any) => {
@@ -50,6 +48,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
                 }}
                 size="large"
                 as="form"
+                {...modalProps}
             >
                 {isTreeLoaded ? (
                     <ModalContent
@@ -73,5 +72,5 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
 
 export default SelectedFileToShareModal;
 export const useFileSharingModal = () => {
-    return useModalTwo<Props, void>(SelectedFileToShareModal);
+    return useModalTwo<Props, void>(SelectedFileToShareModal, false);
 };

@@ -38,9 +38,9 @@ export const ConfirmationModal = ({
     onCancel,
     onSubmit,
     size = 'large',
-    open,
     message,
     canUndo = false,
+    ...modalProps
 }: ConfirmationModalProps & ModalStateProps) => {
     const [submitLoading, setSubmitLoading] = useState(false);
 
@@ -62,8 +62,8 @@ export const ConfirmationModal = ({
             onClose={onClose}
             onReset={onClose}
             onSubmit={handleSubmit}
-            open={open}
             size={size}
+            {...modalProps}
         >
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={title} />
             <ModalTwoContent>

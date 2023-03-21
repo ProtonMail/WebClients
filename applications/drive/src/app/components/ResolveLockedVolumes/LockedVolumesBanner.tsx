@@ -18,7 +18,12 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     const { isReadyForPreparation, prepareVolumesForRestore, hasLockedVolumes, hasVolumesForRestore } =
         useLockedVolume();
 
-    const { openKeyReactivationModal } = useResolveLockedSharesFlow({
+    const {
+        openKeyReactivationModal,
+        keyReactivationModal,
+        deleteLockedVolumesConfirmModal,
+        unlockDriveConfirmationDialog,
+    } = useResolveLockedSharesFlow({
         onSuccess: () => {
             prepareVolumesForRestore(new AbortController().signal).catch(console.error);
         },
@@ -62,6 +67,9 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
                 {hasVolumesForRestore ? recoveryMessage : reactivateMessage}
             </TopBanner>
             {filesRecoveryModal}
+            {keyReactivationModal}
+            {deleteLockedVolumesConfirmModal}
+            {unlockDriveConfirmationDialog}
         </>
     ) : null;
 };

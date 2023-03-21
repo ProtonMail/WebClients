@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import {
     InputFieldTwo,
+    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -24,10 +25,9 @@ interface Props {
     onClose?: () => void;
     onCreateDone?: (folderId: string) => void;
     folder?: { shareId: string; linkId: string };
-    open?: boolean;
 }
 
-const CreateFolderModal = ({ onClose, folder, onCreateDone, open }: Props) => {
+const CreateFolderModal = ({ onClose, folder, onCreateDone, ...modalProps }: Props & ModalStateProps) => {
     const { activeFolder } = useActiveShare();
     const { createFolder } = useActions();
     const [folderName, setFolderName] = useState('');
@@ -73,8 +73,8 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, open }: Props) => {
             disableCloseOnEscape={loading}
             onClose={onClose}
             onSubmit={(e: React.FormEvent) => withLoading(handleSubmit(e)).catch(noop)}
-            open={open}
             size="large"
+            {...modalProps}
         >
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={c('Title').t`Create a new folder`} />
             <ModalTwoContent>
@@ -105,5 +105,5 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, open }: Props) => {
 
 export default CreateFolderModal;
 export const useCreateFolderModal = () => {
-    return useModalTwo<Props | void, void>(CreateFolderModal);
+    return useModalTwo<Props | void, void>(CreateFolderModal, false);
 };
