@@ -4,7 +4,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 import {
     ErrorBoundary,
     PrivateMainArea,
-    classnames,
     useCalendarUserSettings,
     useCalendars,
     useFolders,
@@ -17,6 +16,7 @@ import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import ConversationView from '../../components/conversation/ConversationView';
 import List from '../../components/list/List';
@@ -306,32 +306,30 @@ const MailboxContainer = ({
                 data-testid="mailbox"
             >
                 {showToolbar && (
-                    <ErrorBoundary small>
-                        <Toolbar
-                            labelID={labelID}
-                            elementID={elementID}
-                            messageID={messageID}
-                            selectedIDs={selectedIDs}
-                            checkedIDs={checkedIDs}
-                            elementIDs={elementIDs}
-                            columnMode={columnMode}
-                            conversationMode={conversationMode}
-                            breakpoints={breakpoints}
-                            onCheck={handleCheck}
-                            page={page}
-                            total={total}
-                            isSearch={isSearch}
-                            onPage={handlePage}
-                            onBack={handleBack}
-                            onElement={handleElement}
-                            onMarkAs={handleMarkAs}
-                            onMove={handleMove}
-                            onDelete={handleDelete}
-                            labelDropdownToggleRef={labelDropdownToggleRef}
-                            moveDropdownToggleRef={moveDropdownToggleRef}
-                            bordered={toolbarBordered}
-                        />
-                    </ErrorBoundary>
+                    <Toolbar
+                        labelID={labelID}
+                        elementID={elementID}
+                        messageID={messageID}
+                        selectedIDs={selectedIDs}
+                        checkedIDs={checkedIDs}
+                        elementIDs={elementIDs}
+                        columnMode={columnMode}
+                        conversationMode={conversationMode}
+                        breakpoints={breakpoints}
+                        onCheck={handleCheck}
+                        page={page}
+                        total={total}
+                        isSearch={isSearch}
+                        onPage={handlePage}
+                        onBack={handleBack}
+                        onElement={handleElement}
+                        onMarkAs={handleMarkAs}
+                        onMove={handleMove}
+                        onDelete={handleDelete}
+                        labelDropdownToggleRef={labelDropdownToggleRef}
+                        moveDropdownToggleRef={moveDropdownToggleRef}
+                        bordered={toolbarBordered}
+                    />
                 )}
                 <PrivateMainArea
                     className="flex"
@@ -339,47 +337,45 @@ const MailboxContainer = ({
                     hasRowMode={!showContentPanel}
                     ref={mainAreaRef}
                 >
-                    <ErrorBoundary>
-                        <List
-                            ref={listRef}
-                            show={showList}
-                            conversationMode={conversationMode}
-                            labelID={labelID}
-                            loading={loading}
-                            placeholderCount={placeholderCount}
-                            columnLayout={columnLayout}
-                            elementID={elementIDForList}
-                            elements={elements}
-                            checkedIDs={checkedIDs}
-                            onCheck={handleCheck}
-                            onClick={handleElement}
-                            isSearch={isSearch}
-                            breakpoints={breakpoints}
-                            page={page}
-                            total={total}
-                            onPage={handlePage}
-                            onFocus={handleFocus}
-                            onCheckOne={handleCheckOne}
-                            filter={filter}
-                            resizeAreaRef={resizeAreaRef}
-                            enableResize={enableResize}
-                            resetWidth={resetWidth}
-                            showContentPanel={showContentPanel}
-                            scrollBarWidth={scrollBarWidth}
-                            onMarkAs={handleMarkAs}
-                            onDelete={handleDelete}
-                            onMove={handleMove}
-                            onBack={handleBack}
-                            mailSettings={mailSettings}
-                            userSettings={userSettings}
-                            sort={sort}
-                            onSort={handleSort}
-                            onFilter={handleFilter}
-                        />
-                    </ErrorBoundary>
+                    <List
+                        ref={listRef}
+                        show={showList}
+                        conversationMode={conversationMode}
+                        labelID={labelID}
+                        loading={loading}
+                        placeholderCount={placeholderCount}
+                        columnLayout={columnLayout}
+                        elementID={elementIDForList}
+                        elements={elements}
+                        checkedIDs={checkedIDs}
+                        onCheck={handleCheck}
+                        onClick={handleElement}
+                        isSearch={isSearch}
+                        breakpoints={breakpoints}
+                        page={page}
+                        total={total}
+                        onPage={handlePage}
+                        onFocus={handleFocus}
+                        onCheckOne={handleCheckOne}
+                        filter={filter}
+                        resizeAreaRef={resizeAreaRef}
+                        enableResize={enableResize}
+                        resetWidth={resetWidth}
+                        showContentPanel={showContentPanel}
+                        scrollBarWidth={scrollBarWidth}
+                        onMarkAs={handleMarkAs}
+                        onDelete={handleDelete}
+                        onMove={handleMove}
+                        onBack={handleBack}
+                        mailSettings={mailSettings}
+                        userSettings={userSettings}
+                        sort={sort}
+                        onSort={handleSort}
+                        onFilter={handleFilter}
+                    />
                     <ErrorBoundary>
                         <section
-                            className={classnames([
+                            className={clsx([
                                 'view-column-detail flex flex-column flex-item-fluid flex-nowrap relative',
                                 !showContentPanel && 'hidden',
                                 showContentView ? 'no-scroll' : 'scroll-if-needed',
