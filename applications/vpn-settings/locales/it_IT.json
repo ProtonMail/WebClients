@@ -1834,6 +1834,12 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia di criptazione di ${ BRAND_NAME } significa che nessuno può accedere alla tua password - nemmeno noi."
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: immagine a grandezza naturale"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: anteprima a bassa risoluzione"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } può anche essere usato con una sola password, la quale sostituisce sia la password d'accesso che quella della casella di posta. Per passare alla modalità ad una password, inserisci la password desiderata e fai clic su Salva."
       ],
@@ -1917,6 +1923,9 @@
       ],
       "Attention required": [
         "Attenzione"
+      ],
+      "Balance from your previous subscription": [
+        "Saldo del tuo abbonamento precedente"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Abbonamento Base, Plus o Visionary richiesto"
@@ -2065,6 +2074,9 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Se non hai mai usato l'autenticazione a 2 fattori prima, ti raccomandiamo fortemente ${ guideButton }."
       ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Se perdi il tuo dispositivo abilitato a due fattori, questi codici possono essere utilizzati al posto del codice di autenticazione a due fattori a 6 cifre per accedere al tuo account. Ogni codice può essere utilizzato una sola volta."
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -2169,6 +2181,12 @@
       ],
       "Plan upgrade required": [
         "Upgrade del piano necessario"
+      ],
+      "Please authenticate your card in the verification tab.": [
+        "Verifica la carta nella scheda di verifica."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Verifica il pagamento nella scheda di verifica."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Inserisci la frase di recupero di 12 parole associata al tuo account."
@@ -2400,6 +2418,12 @@
       ],
       "We couldn’t process your payment.": [
         "Il pagamento non può essere completato."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "Abbiamo bisogno di verificare il tuo metodo di pagamento con la tua banca."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "Abbiamo bisogno di verificare il tuo pagamento con la tua banca."
       ],
       "We recommend using your recovery phrase instead.": [
         "Ti consigliamo di utilizzare invece la frase di recupero."
@@ -2970,6 +2994,11 @@
       ],
       "Expired": [
         "Scaduto"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "CAP"
       ]
     },
     "Link": {
@@ -4244,6 +4273,9 @@
       ]
     },
     "Subscription change warning": {
+      "Manage your subscription on ${ subscriptionManagerShort }": [
+        "Gestisci il tuo abbonamento su ${ subscriptionManagerShort }"
+      ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
         "Il tuo abbonamento è stato effettuato tramite un acquisto in-app. Per gestire il tuo abbonamento devi accedere alla sezione Abbonamento sul tuo account ${ subscriptionManager }"
       ]
@@ -4251,6 +4283,32 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Sei sicuro?"
+      ],
+      "Auto-pay is disabled": [
+        "Il pagamento automatico è disabilitato"
+      ],
+      "Auto-pay is enabled": [
+        "Il pagamento automatico è abilitato"
+      ],
+      "Disable": [
+        "Disabilita"
+      ],
+      "Enable auto-pay support": [
+        "Abilita il supporto per il pagamento automatico"
+      ],
+      "Keep auto-pay": [
+        "Mantieni il pagamento automatico"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Il nostro sistema non ti addebiterà più nulla in automatico su questo metodo di pagamento, ma il tuo abbonamento verrà comunque rinnovato alla fine del ciclo di fatturazione. Se desideri eseguire il downgrade o modificare l'abbonamento, devi comunque farlo tu stesso prima della fine del periodo di fatturazione. Inoltre, se dimentichi di effettuare un pagamento manuale e il pagamento automatico è disabilitato per tutti i metodi di pagamento, potremmo eseguire il downgrade automatico del tuo account, con conseguente perdita di molte funzionalità."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Il nostro sistema non ti addebiterà più nulla in automatico utilizzando questo metodo di pagamento, ma il tuo abbonamento verrà comunque rinnovato alla fine del ciclo di fatturazione. Se desideri eseguire il downgrade o modificare l'abbonamento, devi comunque farlo tu stesso prima della fine del periodo di fatturazione. Non possiamo eseguire il downgrade automatico perché se superi la quota di archiviazione del piano gratuito o utilizzi altre funzionalità a pagamento, non possiamo eliminare automaticamente file, email o altri dati per te. Se disattivi il pagamento automatico, ricordati di pagare la tua prossima fattura di abbonamento prima della data di scadenza per evitare la sospensione dell'account."
       ]
     },
     "Subscription saving": {
@@ -4844,9 +4902,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Eliminando questo numero di telefono, non sarai più in grado di recuperare il tuo account."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "La chat dal vivo è una funzionalità premium disponibile solo per chi ha piani ${ VPN_APP_NAME } a pagamento. Si prega di aprire un ticket."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà stato completato."

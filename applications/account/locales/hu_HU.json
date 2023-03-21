@@ -7662,26 +7662,6 @@
         "Csoport menedzsment"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7751,6 +7731,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Váltson az üzleti csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a ${ BRAND_NAME } összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -10346,9 +10346,6 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Ha megszakítja az importálást, nem lehet folytatni. A ${ BRAND_NAME } már mentette az eddig feldolgozott adatokat a fiókjába. Megszakítja?"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Az élő csevegés egy prémium funkció, ami csak a fizetős ${ VPN_APP_NAME } csomagokban elérhető. Kérjük, nyisson egy jegyet."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ha ezt a fizetési módot választja, akkor a csomagját nem tudjuk azonnal frissíteni. A frissítést akkor végezzük, amint a befizetés megérkezik."

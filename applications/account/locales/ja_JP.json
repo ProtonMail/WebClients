@@ -4967,6 +4967,9 @@
       "No folder selected": [
         "フォルダーが選択されていません"
       ],
+      "No imports or forwarding history.": [
+        "インポートや転送の履歴はありません。"
+      ],
       "No label selected": [
         "ラベルが選択されていません"
       ],
@@ -7701,23 +7704,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7775,6 +7761,23 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8645,6 +8648,9 @@
       ]
     },
     "Settings description": {
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "安全なインポート・転送ツールで、プライバシーに移行しましょう。"
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "1 つのメッセージに複数のラベルを付けることはできますが、1 つのメッセージを複数のフォルダーに入れることはできません。フォルダーやラベルを並び替えるには、ドラッグ＆ドロップしてください。"
       ]
@@ -9616,6 +9622,9 @@
       "Gift code": [
         "ギフトコード"
       ],
+      "History": [
+        "履歴"
+      ],
       "How does it work?": [
         "どのように動作しますか?"
       ],
@@ -9648,6 +9657,9 @@
       ],
       "Import key": [
         "キーをインポート"
+      ],
+      "Import messages": [
+        "メッセージのインポート"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } でインポート"
@@ -9855,6 +9867,9 @@
       ],
       "Set organization password": [
         "組織のパスワードを設定"
+      ],
+      "Set up forwarding": [
+        "転送の設定"
       ],
       "Set up two-factor authentication": [
         "2 要素認証の設定"
@@ -10315,9 +10330,6 @@
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
         "このアドレスを無効にすることで、このアドレスを使ったメールの送受信ができなくなり、リンクされているすべての ${ BRAND_NAME } 製品も無効となります。本当にこのアドレスを無効にしますか？"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "ライブチャットは ${ VPN_APP_NAME } の有料プラン専用のプレミアム機能です。利用するにはチケットをオープンしてください。"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "この支払い方法を選択すると、すぐにアカウントをアップグレードすることはできません。お支払いが確認され次第アカウントが更新されます。"

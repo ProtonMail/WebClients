@@ -1927,6 +1927,9 @@
       "Attention required": [
         "Attention requise"
       ],
+      "Balance from your previous subscription": [
+        "Crédit de votre précédent abonnement"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Un abonnement Basic, Plus ou Visionary est nécessaire."
       ],
@@ -4294,6 +4297,32 @@
         "Pour"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Confirmez-vous ?"
+      ],
+      "Auto-pay is disabled": [
+        "Le paiement automatique est désactivé."
+      ],
+      "Auto-pay is enabled": [
+        "Le paiement automatique est activé."
+      ],
+      "Disable": [
+        "Désactiver"
+      ],
+      "Enable auto-pay support": [
+        "Activer la prise en charge du paiement automatique"
+      ],
+      "Keep auto-pay": [
+        "Garder le paiement automatique"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Notre système ne vous facturera plus de manière automatique en utilisant ce moyen de paiement, mais votre abonnement sera toujours renouvelé à la fin du cycle de facturation. Si vous voulez modifier votre abonnement, vous devez toujours le faire vous-même avant la fin de la période de facturation. De plus, si vous oubliez de faire un paiement manuel et que le paiement automatique est désactivé pour tous les moyens de paiement, nous pourrions rétrograder votre compte à un abonnement inférieur de manière automatique, ce qui entraînera la perte de nombreuses fonctionnalités."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Notre système n'utilisera plus ce moyen de paiement pour effectuer des prélèvements automatiques, mais votre abonnement sera toujours renouvelé à la fin de la période de facturation. Si vous voulez modifier votre abonnement, vous devez toujours le faire vous-même avant la fin de la période de facturation. Nous ne pouvons pas rétrograder votre abonnement de manière automatique, car si vous avez dépassé le quota d'espace de stockage de l'abonnement gratuit ou si vous utilisez d'autres fonctions payantes, nous ne pouvons pas supprimer automatiquement des fichiers, des messages ou d'autres données à votre place. Si vous désactivez le paiement automatique, n'oubliez pas de payer votre prochaine facture d'abonnement avant la date d'échéance pour éviter la suspension de votre compte."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Économisez"
@@ -4885,9 +4914,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "En supprimant ce numéro de téléphone, vous ne pourrez plus récupérer votre compte."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Le chat en direct est une fonction premium uniquement disponible pour les utilisateurs ayant un abonnement ${ VPN_APP_NAME } payant. Nous vous invitons à ouvrir un ticket à la place."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Notez qu'en choisissant ce moyen de paiement, votre compte ne pourra pas être mis à niveau immédiatement. Nous mettrons votre compte à niveau dès que le paiement aura été effectué."

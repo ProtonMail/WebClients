@@ -53,6 +53,9 @@
       "activate": [
         "aktifkan"
       ],
+      "Activate ${ user.Name }@pm.me": [
+        "Aktifkan ${ user.Name }@pm.me"
+      ],
       "Activate organization key": [
         "Aktifkan kunci organisasi"
       ],
@@ -2800,6 +2803,11 @@
         "${ allCategoriesExceptTheLastOne } dan ${ lastCategory }"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "2FA"
+      ]
+    },
     "Error": {
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } merupakan nama pengguna Anda. Untuk membuat ${ Local }@${ Domain }, silakan kunjungi Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
@@ -2919,7 +2927,7 @@
         "Domain tidak valid"
       ],
       "Invalid email address": [
-        "Alamat surel tidak valid"
+        "Alamat email tidak valid"
       ],
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
@@ -4632,6 +4640,9 @@
       ],
       "Background color": [
         "Warna latar belakang"
+      ],
+      "Balance from your previous subscription": [
+        "Saldo dari langganan terakhir Anda"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar akan tetap tersedia terlepas dari apakah pintasan keyboard diaktifkan atau tidak di pengaturan."
@@ -8116,26 +8127,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -8205,6 +8196,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9428,6 +9439,23 @@
     "Subscription price": {
       "For": [
         "Untuk"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Apakah Anda yakin?"
+      ],
+      "Auto-pay is disabled": [
+        "Pembayaran otomatis dinonaktifkan"
+      ],
+      "Auto-pay is enabled": [
+        "Pembayaran otomatis diaktifkan"
+      ],
+      "Enable auto-pay support": [
+        "Aktifkan dukungan pembayaran otomatis"
+      ],
+      "Keep auto-pay": [
+        "Tetap aktifkan pembayaran otomatis"
       ]
     },
     "Subscription saving": {
@@ -10958,9 +10986,6 @@
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Apabila Anda membatalkan impor ini, Anda tidak akan dapat melanjutkannya kembali. ${ BRAND_NAME } menyimpan seluruh proses yang telah berlangsung pada akun Anda. Tetap batalkan?"
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
-      ],
       "Please add at least one recipient.": [
         "Mohon tambahkan setidaknya satu nama penerima."
       ],
@@ -10989,7 +11014,7 @@
         "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda mempercayainya, Anda dapat melewati proses verifikasi ini."
+        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Kami mendeteksi masalah pada konfigurasi DNS Anda. Pastikan datanya sesuai petunjuk di bawah. Jika masalah masih terjadi, kami akan mematikan penandatangan DKIM."

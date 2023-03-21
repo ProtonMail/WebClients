@@ -294,6 +294,9 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
+      "Go to Drive": [
+        "Aller dans Drive"
+      ],
       "Go to label": [
         "Afficher le label"
       ],
@@ -334,7 +337,7 @@
         "Importer les contacts"
       ],
       "Import emails": [
-        "Importer des e-mails"
+        "Importer des messages"
       ],
       "Import from .csv or vCard": [
         "Importer depuis un .csv ou une vCard"
@@ -1872,7 +1875,7 @@
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
-      "A problem occurred, please try again": [
+      "A problem occurred, please try again.": [
         "Une erreur s'est produite, nous vous invitons à réessayer."
       ],
       "Address primary private key not found": [
@@ -2009,8 +2012,8 @@
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
       ],
-      "Please activate your content search again": [
-        "Veuillez réactiver votre recherche dans le contenu."
+      "Please activate your search again": [
+        "Veuillez réactiver votre recherche."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
@@ -3215,6 +3218,9 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Transférez les messages entrants d'un autre compte vers votre boîte de réception sécurisée ${ MAIL_APP_NAME }."
       ],
+      "Free forever": [
+        "Gratuit pour toujours"
+      ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
       ],
@@ -3575,6 +3581,9 @@
       "support team": [
         "équipe support"
       ],
+      "Swiss encrypted file storage": [
+        "Stockage de fichiers chiffrés, basé en Suisse"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
       ],
@@ -3737,6 +3746,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Lorsque vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
+      ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "Avec ${ DRIVE_APP_NAME }, vos données sont protégées par un chiffrement de bout en bout. Personne d'autre que vous ne peut les déchiffrer."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -4460,10 +4472,10 @@
         "Comment importer des contacts depuis Yahoo"
       ],
       "How to import emails from another service": [
-        "Comment importer des e-mails depuis un autre service"
+        "Comment importer des messages depuis un autre service"
       ],
       "How to import emails from Yahoo": [
-        "Comment importer des e-mails depuis Yahoo"
+        "Comment importer des messages depuis Yahoo"
       ]
     },
     "New Label form": {
@@ -5779,9 +5791,6 @@
       "Trash": [
         "Corbeille"
       ],
-      "Two-factor authentication": [
-        "Authentification à deux facteurs"
-      ],
       "Type": [
         "Type"
       ],
@@ -5966,9 +5975,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais vous perdrez alors définitivement l'accès à toutes les données chiffrées avec cette clé."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Le chat en direct est une fonction premium uniquement disponible pour les utilisateurs ayant un abonnement ${ VPN_APP_NAME } payant. Nous vous invitons à ouvrir un ticket à la place."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."

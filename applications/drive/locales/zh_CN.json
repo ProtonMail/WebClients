@@ -575,6 +575,12 @@
       "Theme": [
         "配色"
       ],
+      "Toggle Calendar app": [
+        "切换至 Calendar 应用"
+      ],
+      "Toggle Contact app": [
+        "切换至 Contact 应用"
+      ],
       "Trust": [
         "信任"
       ],
@@ -914,6 +920,9 @@
       ],
       "Role": [
         "身份"
+      ],
+      "Time zone": [
+        "时区"
       ],
       "Title": [
         "头衔"
@@ -1852,9 +1861,6 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "A problem occurred, please try again": [
-        "出错了，请重试"
-      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -1968,9 +1974,6 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
-      ],
-      "Please activate your content search again": [
-        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -2175,6 +2178,9 @@
       "Component with wrong format": [
         "组件格式错误"
       ],
+      "Custom time zone": [
+        "自定义时区"
+      ],
       "Edited event not supported": [
         "不支持已编辑的事件"
       ],
@@ -2240,6 +2246,9 @@
       ],
       "Start time out of bounds": [
         "开始超越边界的时间"
+      ],
+      "Time zone": [
+        "时区"
       ],
       "Time zone not supported": [
         "不支持此时区"
@@ -3799,6 +3808,9 @@
       "Device name": [
         "设备名称"
       ],
+      "Don't ask again": [
+        "不再询问"
+      ],
       "Download anyway": [
         "仍要下载"
       ],
@@ -5232,9 +5244,6 @@
       "Trash": [
         "废件箱"
       ],
-      "Two-factor authentication": [
-        "双重验证"
-      ],
       "Type": [
         "类型"
       ],
@@ -5414,9 +5423,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "只有付费 ${ VPN_APP_NAME } 账户才能与客服实时交流，请通过表单提交反馈。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"

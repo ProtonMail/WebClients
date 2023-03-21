@@ -1613,6 +1613,9 @@
       "Role": [
         "身份"
       ],
+      "Time zone": [
+        "时区"
+      ],
       "Title": [
         "头衔"
       ],
@@ -3242,6 +3245,9 @@
       "Component with wrong format": [
         "组件格式错误"
       ],
+      "Custom time zone": [
+        "自定义时区"
+      ],
       "Edited event not supported": [
         "不支持已编辑的事件"
       ],
@@ -3307,6 +3313,9 @@
       ],
       "Start time out of bounds": [
         "开始超越边界的时间"
+      ],
+      "Time zone": [
+        "时区"
       ],
       "Time zone not supported": [
         "不支持此时区"
@@ -6525,6 +6534,9 @@
       "Domain name": [
         "域名"
       ],
+      "Don't ask again": [
+        "不再询问"
+      ],
       "Duration": [
         "时间"
       ],
@@ -7801,6 +7813,9 @@
       "Unlimited folders": [
         "文件夹数量不限"
       ],
+      "Unlimited folders, labels, and filters": [
+        "不限量文件夹、标签和筛选规则"
+      ],
       "Unlimited labels": [
         "标签数量不限"
       ],
@@ -7829,26 +7844,6 @@
       ],
       "Team management": [
         "团队管理"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: info": {
@@ -7920,6 +7915,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -10612,9 +10627,6 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "取消导入后您将无法恢复当前进度，但已导入的内容 ${ BRAND_NAME } 会正常保存。确定要取消吗？"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "只有付费 ${ VPN_APP_NAME } 账户才能与客服实时交流，请通过表单提交反馈。"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"

@@ -4699,6 +4699,9 @@
       "Background color": [
         "Hintergrundfarbe"
       ],
+      "Balance from your previous subscription": [
+        "Guthaben von deinem vorherigen Abonnement"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Standardnavigation sowie Standardaktionen bleiben auch dann verfügbar, wenn die Tastaturkürzel in den Einstellungen deaktiviert sind."
       ],
@@ -8224,26 +8227,6 @@
         "Teamverwaltung"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -8313,6 +8296,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9802,6 +9805,32 @@
     "Subscription price": {
       "For": [
         "Für"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Bist du sicher?"
+      ],
+      "Auto-pay is disabled": [
+        "Automatisches Bezahlen ist deaktiviert."
+      ],
+      "Auto-pay is enabled": [
+        "Automatisches Bezahlen ist aktiviert."
+      ],
+      "Disable": [
+        "Deaktivieren"
+      ],
+      "Enable auto-pay support": [
+        "Unterstützung für automatisches Bezahlen aktivieren"
+      ],
+      "Keep auto-pay": [
+        "Automatisches Bezahlen behalten"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Unser System wird dich mit dieser Zahlungsmethode nicht mehr automatisch belasten, aber dein Abonnement wird am Ende des Abrechnungszeitraums immer noch verlängert. Wenn du dein Abonnement downgraden oder ändern möchtest, musst du dies immer noch selbst vor dem Ende des Abrechnungszeitraums tun. Wenn du außerdem vergisst, eine manuelle Zahlung vorzunehmen und die automatische Zahlung für alle Zahlungsmethoden deaktiviert ist, können wir dein Konto automatisch downgraden, was zum Verlust vieler Funktionen führt."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Unser System wird dich mit dieser Zahlungsmethode nicht mehr automatisch belasten, aber dein Abonnement wird am Ende des Abrechnungszeitraums immer noch verlängert. Wenn du dein Abonnement downgraden oder ändern möchtest, musst du dies immer noch selbst vor dem Ende des Abrechnungszeitraums tun. Wir können dich nicht automatisch downgraden, denn wenn du das Speicherkontingent des kostenlosen Plans überschreitest oder andere kostenpflichtige Funktionen nutzt, können wir Dateien, E-Mails oder andere Daten nicht automatisch für dich löschen. Wenn du die automatische Zahlung deaktivierst, denke daran, deine nächste Abonnementrechnung vor dem Fälligkeitsdatum zu bezahlen, um eine Kontosperrung zu vermeiden."
       ]
     },
     "Subscription saving": {
@@ -11348,9 +11377,6 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Wenn du diesen Import abbrichst, wirst du ihn nicht mehr fortsetzen können. ${ BRAND_NAME } hat jeglichen Fortschritt in deinem Konto gespeichert. Trotzdem abbrechen?"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Der Live-Chat ist eine Premium-Funktion, die nur für Kunden mit kostenpflichtigen ${ VPN_APP_NAME }-Abonnements verfügbar ist. Bitte öffne stattdessen ein Ticket."
       ],
       "Please add at least one recipient.": [
         "Bitte füge mindestens einen Empfänger hinzu."
