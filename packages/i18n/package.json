@@ -17,13 +17,13 @@
         "chalk": "^4.1.2",
         "execa": "^5.1.1",
         "gettext-parser": "^6.0.0",
-        "glob": "^9.3.0",
+        "glob": "^9.3.1",
         "ttag-cli": "^1.10.5"
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
         "eslint": "^8.36.0",
-        "prettier": "^2.8.4"
+        "prettier": "^2.8.6"
     },
     "engines": {
         "node": ">= v18.15.0"
