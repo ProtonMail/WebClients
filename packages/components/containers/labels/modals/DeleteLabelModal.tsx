@@ -38,8 +38,7 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
         [LABEL_TYPE.MESSAGE_FOLDER]: {
             content: c('Info')
                 .t`Emails stored in this folder will not be deleted and can still be found in the All Mail folder.`,
-            confirm: c('Info')
-                .t`Are you sure you want to delete this folder? All children folders will also be deleted.`,
+            confirm: c('Info').t`Are you sure you want to delete this folder? All subfolders will also be deleted.`,
         },
     };
 
