@@ -1076,7 +1076,7 @@
     },
     "Billing cycle": {
       "Renews automatically on ${ formattedEndTime }": [
-        "Падаўжаецца аўтаматычна ${ formattedEndTime }"
+        "Падоўжыцца аўтаматычна ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2665,7 +2665,7 @@
         "Не ўдалося перамясціць ${ name } у ваш спіс заблакіраваных"
       ],
       "${ name } moved to not spam list": [
-        "${ name } перамешчана ў спіс не спама"
+        "${ name } перамешчана ў спіс не спам"
       ],
       "${ name } moved to spam list": [
         "${ name } перамешчаны ў спіс са спамам"
@@ -2782,7 +2782,7 @@
         "Не ўдалося перамясціць ${ name } у ваш спіс заблакіраваных"
       ],
       "${ name } moved to not spam list": [
-        "${ name } перамешчана ў спіс не спама"
+        "${ name } перамешчана ў спіс не спам"
       ],
       "${ name } moved to spam list": [
         "${ name } перамешчаны ў спіс са спамам"
@@ -4592,7 +4592,7 @@
         "2. Яны спрабуюць ${ planName }"
       ],
       "3. You earn credits": [
-        "3. Вы зарабілі крэдыты"
+        "3. Вы заробіце крэдыты"
       ],
       "30-day money-back guarantee.": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён."
@@ -4792,6 +4792,9 @@
       "Background color": [
         "Колер фону"
       ],
+      "Balance from your previous subscription": [
+        "Баланс з вашай папярэдняй падпіскі"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Асноўныя функцыі навігацыі і дзеянні застаюцца даступнымі незалежна ад таго, актыўныя спалучэнні клавіш у наладах або не."
       ],
@@ -4970,7 +4973,7 @@
         "Спампуйце вашу ўлюблёную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        "Спампуйце вашы ключы PGP, каб выкарыстоўваць іх у іншых сумяшчальных з PGP сэрвісах."
+        "Спампуйце вашы ключы PGP, каб выкарыстоўваць іх з іншымі сумяшчальнымі сэрвісамі PGP."
       ],
       "Drop a file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -5129,7 +5132,7 @@
         "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Калі паведамлення няма ў папцы \"Уваходныя\", то магчыма, што яно трапіла ў папку \"Спам\"."
+        "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Калі вы маеце карыстальніцкі дамен у ${ MAIL_APP_NAME }, вы можаце задаць агульны адрас электроннай пошты для атрымання ўсіх паведамленняў, якія будуць адпраўляцца не толькі на ваш дамен, але і на памылковы адрас (напрыклад, які змяшчае памылкі)."
@@ -6485,7 +6488,7 @@
         "Перайсці да Адпраўленых"
       ],
       "Go to Spam": [
-        "Перайсці да Спама"
+        "Перайсці ў Спам"
       ],
       "Go to Starred": [
         "Перайсці да Пазначаных зорачкай"
@@ -7327,7 +7330,7 @@
         "Адправіць аўтаматычны адказ"
       ],
       "Send crash reports": [
-        "Адправіць справаздачы па збоях"
+        "Адпраўляць справаздачы па збоях"
       ],
       "Send in": [
         "Адправіць у"
@@ -8404,26 +8407,6 @@
         "Кіраванне камандамі"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зрабіце прыватнасць прадвызначаным параметрам для рэзервовага капіявання, захоўвання і абмену файламі."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да пакета для бізнесу і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да максімальнага пакета прыватнасці і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш выпрабавальны перыяд завершыцца ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -8493,6 +8476,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зрабіце прыватнасць прадвызначаным параметрам для рэзервовага капіявання, захоўвання і абмену файламі."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Палепшыце да пакета для бізнесу і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Палепшыце да максімальнага пакета прыватнасці і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9799,6 +9802,32 @@
         "Для"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Вы ўпэўнены?"
+      ],
+      "Auto-pay is disabled": [
+        "Аўтаматычная аплата адключана"
+      ],
+      "Auto-pay is enabled": [
+        "Аўтаматычная аплата ўключана"
+      ],
+      "Disable": [
+        "Адключыць"
+      ],
+      "Enable auto-pay support": [
+        "Уключыць падтрымку аўтаматычнай аплаты"
+      ],
+      "Keep auto-pay": [
+        "Пакінуць аўтаматычную аплату"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Наша сістэма больш не будзе аўтаматычна спаганяць з вас сродкі выкарыстоўваючы гэты спосаб аплаты, але ваша падпіска ўсё яшчэ будзе падаўжацца ў канцы перыяду аплаты. Вам усё роўна трэба рабіць гэта самастойна да завяршэння разліковага перыяду, калі вы захочаце панізіць або змяніць сваю падпіску. Звярніце ўвагу, што калі вы забудзеце зрабіць плацеж уручную і аўтаматычная аплата будзе адключана для ўсіх спосабаў аплаты, мы пакідаем за сабой права панізіць ваш уліковы запіс у аўтаматычным рэжыме, што прывядзе да страты многіх функцый."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Наша сістэма больш не будзе аўтаматычна спаганяць з вас сродкі выкарыстоўваючы гэты спосаб аплаты, але ваша падпіска ўсё яшчэ будзе падаўжацца ў канцы перыяду аплаты. Вам усё роўна трэба рабіць гэта самастойна да завяршэння разліковага перыяду, калі вы захочаце панізіць або змяніць сваю падпіску. Мы не зможам аўтаматычна панізіць ваш тарыфны план, бо калі вы перавысілі бясплатную квоту яго сховішча або выкарыстоўваеце іншыя платныя функцыі, то аўтаматычна выдаліць файлы, лісты або іншыя даныя будзе немагчыма. Калі вы адключыце аўтаматычную аплату, то не забывайце аплачваць падпіску свайго рахунку да даты завяршэння плацежнага перыяду, каб прадухіліць яго прыпыненне."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Захаваць"
@@ -10236,7 +10265,7 @@
         "Дадаць фільтр Sieve"
       ],
       "Add to Not spam list": [
-        "Дадаць у спіс не спама"
+        "Дадаць у спіс не спам"
       ],
       "Add to spam list": [
         "Дадаць у спіс са спамам"
@@ -11374,9 +11403,6 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Калі вы скасуеце гэта імпартаванне, вы не зможаце яго ўзнавіць. ${ BRAND_NAME } захаваў увесь ход выканання ў вашым уліковым запісе. Усё роўна скасаваць?"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Чат у рэальным часе з'яўляецца прэміяльнай функцыяй для тых, хто карыстаецца платнымі тарыфнымі планамі ${ VPN_APP_NAME }. Замест гэтага, стварыце запыт у службу падтрымкі."
       ],
       "Please add at least one recipient.": [
         "Дадайце прынамсі аднаго атрымальніка."

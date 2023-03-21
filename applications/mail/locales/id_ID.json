@@ -98,7 +98,7 @@
         "Lampirkan tangkapan layar"
       ],
       "Attachment": [
-        "Lampiran"
+        "Lampirkan gambar"
       ],
       "Attention required": [
         "Diperlukan perhatian"
@@ -494,7 +494,7 @@
         "Impor dari .csv atau vCard"
       ],
       "Inline": [
-        "Dalam baris"
+        "Sisipkan gambar"
       ],
       "Insert": [
         "Sisipkan"
@@ -647,7 +647,7 @@
         "Pindahkan ke kotak masuk (bukan spam)"
       ],
       "Move to spam": [
-        "Pindah ke spam"
+        "Pindahkan ke spam"
       ],
       "Move to spam and unsubscribe": [
         "Pindahkan ke spam dan batalkan langganan"
@@ -3009,9 +3009,6 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
-      "A problem occurred, please try again": [
-        "Terdapat suatu masalah, silakan coba lagi"
-      ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
@@ -3124,7 +3121,7 @@
         "Kata sandi kotak pesan salah. Silakan coba lagi."
       ],
       "Invalid email address": [
-        "Alamat surel tidak valid"
+        "Alamat email tidak valid"
       ],
       "Invalid expiration time": [
         "Waktu kedaluwarsa tidak valid"
@@ -3188,9 +3185,6 @@
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
-      ],
-      "Please activate your content search again": [
-        "Silakan aktifkan kembali pencarian konten Anda"
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
@@ -4571,16 +4565,13 @@
         "Apakah Anda tetap ingin mengunduh lampiran ini?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        "Anda ingin menandatangani ulang rincian kontak sambil mempercayai kunci dengan sidik jari berikut?"
+        "Apakah Anda ingin menandatangani ulang rincian kontak dan memercayai kunci dengan sidik jari berikut?"
       ],
       "Do you want to re-sign the contact details?": [
         "Anda ingin menandatangani ulang rincian kontak?"
       ],
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Mengunduh pesan ${ esProgress } dari ${ totalProgressToShow }"
       ],
       "Draft": [
         "Draf"
@@ -5599,10 +5590,10 @@
         "Mengklik \"Percayai Kunci\" akan membuat kontak baru dan menghubungkannya kunci publik ini dengan pengirim. Surel dari alamat ini akan diverifikasi kriptografi secara otomatis."
       ],
       "Do you want to trust the primary public keys with the following fingerprints?": [
-        "Anda ingin mempercayai kunci publik utama dengan sidik jari berikut?"
+        "Apakah Anda ingin memercayai kunci publik utama dengan sidik jari berikut?"
       ],
       "You have enabled Address Verification with Trusted Keys for these email addresses,\nbut no active encryption keys have been trusted.\nYou must trust keys valid for sending in order to send a message to these email addresses.": [
-        "Anda mengaktifkan Verifikasi Alamat dengan Kunci Terpercaya untuk alamat surel ini,\ntapi tidak ada kunci enkripsi aktif yang dipercaya.\nAnda harus mempercayai kunci valid untuk mengirim pesan ke alamat surel ini."
+        "Anda telah mengaktifkan Verifikasi Alamat dengan Kunci Terpercaya untuk alamat email ini,\nnamun Anda belum memercayai kunci enkripsi aktif manapun.\nAnda harus memercayai kunci yang valid untuk dapat mengirim pesan ke alamat email ini."
       ]
     },
     "Key validation warning": {
@@ -8247,9 +8238,6 @@
       "Trust public key?": [
         "Percaya kunci publik?"
       ],
-      "Two-factor authentication": [
-        "Autentikasi dua faktor"
-      ],
       "Unsubscribe": [
         "Berhenti berlangganan"
       ],
@@ -8344,9 +8332,6 @@
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan Anda yang paling baru."
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tindakan ini akan mengunduh seluruh pesan untuk dapat dicari secara lokal. Membersihkan data browser Anda akan menonaktifkan pilihan ini."
-      ],
       "This feature is only available for paid users": [
         "Fitur ini hanya tersedia untuk pengguna berbayar"
       ],
@@ -8420,9 +8405,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
       ],
@@ -8463,7 +8445,7 @@
         "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda mempercayainya, Anda dapat melewati proses verifikasi ini."
+        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."

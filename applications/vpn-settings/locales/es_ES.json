@@ -404,7 +404,7 @@
         "No, gracias"
       ],
       "Try free for 30 days": [
-        "Prueba gratis por 30 días"
+        "Pruébalo gratis por 30 días"
       ]
     },
     "Addon": {
@@ -1512,7 +1512,7 @@
         "Las contraseñas no coinciden."
       ],
       "Payment process canceled": [
-        "Se ha cancelado el proceso de pago."
+        "Se ha cancelado el proceso de pago"
       ],
       "Payment process consumed": [
         "El proceso de pago está terminado."
@@ -1807,7 +1807,7 @@
     },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Prueba lo mejor de ${ MAIL_APP_NAME } gratuitamente."
+        "Prueba lo mejor de ${ MAIL_APP_NAME } gratuitamente"
       ]
     },
     "Human verification method": {
@@ -1925,7 +1925,7 @@
         "Atención requerida"
       ],
       "Basic, Plus or Visionary subscription required": [
-        "Se requiere una suscripción Basic, Plus o Visionary."
+        "Se requiere una suscripción Basic, Plus o Visionary"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
@@ -2147,7 +2147,7 @@
         "MM/AA"
       ],
       "No credit card required": [
-        "No se requiere tarjeta de crédito."
+        "No se requiere tarjeta de crédito"
       ],
       "No payment is required at this time.": [
         "En este momento no se requiere ningún pago."
@@ -2207,7 +2207,7 @@
         "Espera hasta que tus cambios estén sincronizados con el servidor."
       ],
       "Plus or Visionary subscription required": [
-        "Se requiere una suscripción Plus o Visionary."
+        "Se requiere una suscripción Plus o Visionary"
       ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
@@ -3575,8 +3575,8 @@
         "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
-        "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones."
+        "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones",
+        "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Te defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de internet por varios servidores."
@@ -3585,7 +3585,7 @@
         "Comparte calendarios con compañeros, familiares y amigos fácilmente mediante un enlace"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Comparte calendarios con familiares, amigos y compañeros fácilmente."
+        "Comparte calendarios con familiares, amigos y compañeros fácilmente"
       ],
       "End-to-end encrypted calendar": [
         "Calendario cifrado de extremo a extremo"
@@ -3725,8 +3725,8 @@
         "Cubre más posibilidades con 10 dominios de correo electrónico personalizados."
       ],
       "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Crea hasta ${ MAX_CALENDARS_PAID } calendario.",
-        "Crea hasta ${ MAX_CALENDARS_PAID } calendarios."
+        "Crea hasta ${ MAX_CALENDARS_PAID } calendario",
+        "Crea hasta ${ MAX_CALENDARS_PAID } calendarios"
       ],
       "Everything in ${ vpnPlanName }": [
         "Todo en ${ vpnPlanName }"
@@ -4044,7 +4044,7 @@
     },
     "Subscription change warning": {
       "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Gestiona tu suscripción en ${ subscriptionManagerShort }."
+        "Gestiona tu suscripción en ${ subscriptionManagerShort }"
       ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
         "Tu suscripción ha sido realizada a través de una compra in-app. Para administrar tu suscripción actual necesitas navegar hasta la sección Suscripciones en tu cuenta ${ subscriptionManager }"
@@ -4053,6 +4053,14 @@
     "Subscription price": {
       "For": [
         "Por"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "¿Estás seguro?"
+      ],
+      "Disable": [
+        "Deshabilitar"
       ]
     },
     "Subscription saving": {
@@ -4411,7 +4419,7 @@
         "Pagar factura"
       ],
       "Payment failed": [
-        "Error con el pago"
+        "Error en el pago"
       ],
       "Payment methods": [
         "Métodos de pago"
@@ -4525,7 +4533,7 @@
         "Verificación"
       ],
       "Verification failed": [
-        "Error con la verificación"
+        "Error de verificación"
       ],
       "Verify email address": [
         "Verificar dirección de correo"
@@ -4646,9 +4654,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Al eliminar este número de teléfono, ya no podrás recuperar tu cuenta."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "El chat en vivo es una función prémium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."
