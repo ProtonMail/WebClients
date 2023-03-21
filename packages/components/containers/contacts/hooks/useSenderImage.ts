@@ -1,53 +1,23 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { useIsDarkTheme } from '@proton/components';
-import { useApi, useAuthentication, useMailSettings } from '@proton/components/hooks';
+import { useAuthentication, useConfig } from '@proton/components/hooks';
 
-import { getImageSize, getSenderImageUrl, getSenderLogo } from '../helpers/senderImage';
+import { getImageSize, getSenderImageUrl } from '../helpers/senderImage';
 
 /**
- * Return the sender image for a given email address
+ * Return the sender image URL for a given email address
  * @param emailAddress email address to get the sender image for
- * @returns the sender image
+ * @param bimiSelector
+ * @returns the sender image URL
  */
-const useSenderImage = (emailAddress: string, fallback: boolean, bimiSelector?: string) => {
-    const [mailSettings] = useMailSettings();
+const useSenderImage = (emailAddress: string, bimiSelector?: string) => {
     const isDarkTheme = useIsDarkTheme();
     const imageSizeRef = useRef(getImageSize());
     const mode = isDarkTheme ? 'dark' : 'light';
-    const api = useApi();
     const { UID } = useAuthentication();
-    const [url, setUrl] = useState('');
-    const [canLoad, setCanLoad] = useState(false);
-
-    useEffect(() => {
-        setCanLoad(!!emailAddress && mailSettings?.HideSenderImages === 0);
-    }, [emailAddress, mailSettings?.HideSenderImages]);
-
-    useEffect(() => {
-        if (!canLoad) {
-            return;
-        }
-
-        if (fallback) {
-            // Load the image with XHR request and create a blob URL
-            void getSenderLogo(api, emailAddress, imageSizeRef.current, bimiSelector, mode).then((fallbackUrl) => {
-                // Fallback URL can be empty if the network request fails
-                if (fallbackUrl.length) {
-                    setUrl(fallbackUrl);
-                } else {
-                    // In that case, we cannot load an image (and fallback to initials)
-                    setCanLoad(false);
-                }
-            });
-            return;
-        }
-
-        // Load the image with a simple GET request
-        setUrl(getSenderImageUrl(UID, emailAddress, imageSizeRef.current, bimiSelector, mode));
-    }, [emailAddress, canLoad, mode, bimiSelector, fallback]);
-
-    return { canLoad, url };
+    const { API_URL } = useConfig();
+    return emailAddress ? getSenderImageUrl(API_URL, UID, emailAddress, imageSizeRef.current, bimiSelector, mode) : '';
 };
 
 export default useSenderImage;
