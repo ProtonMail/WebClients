@@ -39,9 +39,13 @@ export type HighlightMetadata = (
 ) => { numOccurrences: number; resultJSX: JSX.Element };
 export type EnableContentSearch = (options?: {
     isRefreshed?: boolean | undefined;
+    isBackgroundIndexing?: boolean;
     notify?: boolean | undefined;
 }) => Promise<void>;
-export type EnableEncryptedSearch = (options?: { isRefreshed?: boolean | undefined }) => Promise<boolean>;
+export type EnableEncryptedSearch = (options?: {
+    isRefreshed?: boolean | undefined;
+    isBackgroundIndexing?: boolean;
+}) => Promise<boolean>;
 
 /**
  * Core functionalities of ES to be used in the product

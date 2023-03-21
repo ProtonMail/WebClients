@@ -7,6 +7,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import {
     AesKeyGenParams,
+    ES_BACKGROUND_CONCURRENT,
     ES_MAX_CONCURRENT,
     ES_MAX_PARALLEL_ITEMS,
     INDEXING_STATUS,
@@ -204,15 +205,22 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>(
     esSupported: boolean,
     indexKey: CryptoKey | undefined,
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    queryItemsMetadata: (signal: AbortSignal) => Promise<{
+    queryItemsMetadata: (
+        signal: AbortSignal,
+        isBackgroundIndexing?: boolean
+    ) => Promise<{
         resultMetadata?: ESItemMetadata[];
         setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
     }>,
     getItemInfo: GetItemInfo<ESItemMetadata>,
     abortIndexingRef: React.MutableRefObject<AbortController>,
-    recordProgress: (progress: number) => void
+    recordProgress: (progress: number) => void,
+    isBackgroundIndexing?: boolean
 ) => {
-    let { resultMetadata, setRecoveryPoint } = await queryItemsMetadata(abortIndexingRef.current.signal);
+    let { resultMetadata, setRecoveryPoint } = await queryItemsMetadata(
+        abortIndexingRef.current.signal,
+        isBackgroundIndexing
+    );
 
     // If it's undefined, it means an error occured
     if (!resultMetadata) {
@@ -273,7 +281,8 @@ export const buildContentDB = async <ESItemContent>(
     recordProgress: (progress: number) => void,
     fetchESItemContent: (itemID: string, signal?: AbortSignal | undefined) => Promise<ESItemContent | undefined>,
     inputrecoveryPoint: ESTimepoint | undefined,
-    isInitialIndexing: boolean = true
+    isInitialIndexing: boolean = true,
+    isBackgroundIndexing?: boolean
 ): Promise<STORING_OUTCOME> => {
     let counter = 0;
 
@@ -362,6 +371,7 @@ export const buildContentDB = async <ESItemContent>(
         // retain the outcome of those which had succeeded in order to index at least those and
         // to set the recovery point accordingly
         let fetchingFailure = false;
+        const maxProcessing = isBackgroundIndexing ? ES_BACKGROUND_CONCURRENT : ES_MAX_CONCURRENT;
         const encryptedContent = await runInQueue(
             IDs.map(
                 // eslint-disable-next-line @typescript-eslint/no-loop-func
@@ -371,7 +381,7 @@ export const buildContentDB = async <ESItemContent>(
                         abortFetching.abort();
                     })
             ),
-            ES_MAX_CONCURRENT
+            maxProcessing
         );
 
         // Later fetches can finish later than earlier ones. To be on the safe side we consider as

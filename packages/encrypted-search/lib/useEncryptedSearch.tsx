@@ -493,7 +493,10 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      * @param isRefreshed is only used to be forward to the metrics route for statistical purposes.
      * Whenever the user manually starts indexing, the latter shouldn't be specified (and defaults to false).
      */
-    const enableEncryptedSearch: EnableEncryptedSearch = async ({ isRefreshed = false } = {}) => {
+    const enableEncryptedSearch: EnableEncryptedSearch = async ({
+        isRefreshed = false,
+        isBackgroundIndexing = false,
+    } = {}) => {
         // If indexing instance is already in progress, don't start a new one
         const { isEnablingEncryptedSearch } = esStatus;
         if (isEnablingEncryptedSearch) {
@@ -621,7 +624,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 esHelpers.queryItemsMetadata,
                 esHelpers.getItemInfo,
                 abortIndexingRef,
-                recordProgressLocal
+                recordProgressLocal,
+                isBackgroundIndexing
             );
 
             // Kill switch in case user logs out or deletes data
@@ -717,7 +721,11 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      * @param isRefreshed is only used to be forward to the metrics route for statistical purposes.
      * Whenever the user manually starts indexing, the latter shouldn't be specified (and defaults to false).
      */
-    const enableContentSearch: EnableContentSearch = async ({ notify = true, isRefreshed = false } = {}) => {
+    const enableContentSearch: EnableContentSearch = async ({
+        notify = true,
+        isRefreshed = false,
+        isBackgroundIndexing = false,
+    } = {}) => {
         // If there is no fetch content helper, content search cannot be activated at all
         const { fetchESItemContent } = esHelpers;
         if (!fetchESItemContent) {
@@ -811,7 +819,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                     abortIndexingRef,
                     recordProgressLocal,
                     fetchESItemContent,
-                    recoveryPoint
+                    recoveryPoint,
+                    isBackgroundIndexing
                 );
             } catch (error: any) {
                 if (abortIndexingRef.current.signal.aborted) {

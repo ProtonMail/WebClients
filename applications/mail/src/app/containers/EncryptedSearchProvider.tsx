@@ -136,10 +136,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             // If initialIndexing is set, it means that the user is not incognito
             if (initialIndexing) {
                 // Start indexing
-                const success = await esLibraryFunctions.enableEncryptedSearch(); // TODO: pass parameter to indicate background mode
+                const success = await esLibraryFunctions.enableEncryptedSearch({ isBackgroundIndexing: true });
 
                 if (success) {
-                    await esLibraryFunctions.enableContentSearch();
+                    await esLibraryFunctions.enableContentSearch({ isBackgroundIndexing: true });
                 }
                 return;
             } else {
