@@ -1,3 +1,4 @@
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -9,6 +10,8 @@ enum UploadingState {
     // finish - automatic replace is safe.
     Failed = 'failed',
 }
+
+const KEY_PREFIX = 'upload-client-uid';
 
 /**
  * generateClientUid generates new client UID and two callbacks.
@@ -36,14 +39,14 @@ export function generateClientUid(clientUid?: string) {
     try {
         localStorage.setItem(key, UploadingState.Uploading);
     } catch (e) {
-        sendErrorReport(e);
+        handleLocalStorageError(e);
     }
 
     const uploadFailed = () => {
         try {
             localStorage.setItem(key, UploadingState.Failed);
         } catch (e) {
-            sendErrorReport(e);
+            handleLocalStorageError(e);
         }
         removeEventListener('unload', uploadFailed);
     };
@@ -83,5 +86,38 @@ export function isClientUidAvailable(clientUid: string): boolean {
  * Key should be unique enough to not be conflict with anything else.
  */
 function getStorageKey(uid: string) {
-    return `upload-client-uid-${uid}`;
+    return `${KEY_PREFIX}-${uid}`;
+}
+
+function handleLocalStorageError(err: unknown) {
+    // When upload succeeds, the keys are removed. If user uploaded many files
+    // and all failed, it could fill the whole storage. If we cannot fit more
+    // keys anymore, lets simply remove them to keep the local storage
+    // functional. The worst case is we ask user to replace the draft.
+    if (isQuotaExceededError(err)) {
+        captureMessage('The local storage is full, deleting old failed upload statuses');
+        clearAllUploadUIDsFromLocalStorage();
+    } else {
+        sendErrorReport(err);
+    }
+}
+
+function isQuotaExceededError(err: unknown): boolean {
+    return (
+        err instanceof DOMException &&
+        // Most browsers
+        (err.code === 22 ||
+            err.name === 'QuotaExceededError' ||
+            // Firefox
+            err.code === 1014 ||
+            err.name === 'NS_ERROR_DOM_QUOTA_REACHED')
+    );
+}
+
+function clearAllUploadUIDsFromLocalStorage() {
+    Object.keys(localStorage).forEach((key) => {
+        if (key.startsWith(KEY_PREFIX)) {
+            localStorage.removeItem(key);
+        }
+    });
 }
