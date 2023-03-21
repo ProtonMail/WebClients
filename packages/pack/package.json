@@ -46,29 +46,29 @@
         "favicons-webpack-plugin": "^6.0.0",
         "fork-ts-checker-webpack-plugin": "^7.3.0",
         "html-webpack-plugin": "^5.5.0",
-        "mini-css-extract-plugin": "^2.7.3",
+        "mini-css-extract-plugin": "^2.7.5",
         "po-gettext-loader": "^1.0.0",
         "portfinder": "^1.0.32",
         "postcss": "^8.4.21",
         "postcss-color-functional-notation": "^4.2.4",
-        "postcss-loader": "^7.0.2",
+        "postcss-loader": "^7.1.0",
         "postcss-logical": "^5.0.4",
         "react-refresh": "^0.14.0",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.59.3",
-        "sass-loader": "^13.2.0",
+        "sass-loader": "^13.2.1",
         "terser-webpack-plugin": "^5.3.7",
         "ttag": "^1.7.24",
         "ttag-cli": "^1.10.5",
-        "webpack": "^5.76.1",
+        "webpack": "^5.76.2",
         "webpack-cli": "^5.0.1",
-        "webpack-dev-server": "^4.12.0",
+        "webpack-dev-server": "^4.13.1",
         "webpack-retry-chunk-load-plugin": "^3.1.1",
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
         "eslint": "^8.36.0",
-        "prettier": "^2.8.4"
+        "prettier": "^2.8.6"
     },
     "engines": {
         "node": ">= v18.15.0"
