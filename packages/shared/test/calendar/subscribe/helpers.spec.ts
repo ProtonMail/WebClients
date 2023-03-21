@@ -104,7 +104,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
             )
         );
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(OK))).toBe(undefined);
-        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(9999))).toEqual(
+        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(9999 as unknown as any))).toEqual(
             getNotSyncedInfo('Failed to sync calendar')
         );
 

@@ -58,7 +58,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 0 }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1 }],
                 SignedKeyList: null,
             },
             pinnedKeysConfig: {
@@ -76,7 +76,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 0 }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1 }],
                 SignedKeyList: null,
             },
             pinnedKeysConfig: {
@@ -94,7 +94,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 0 }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1 }],
                 SignedKeyList: null,
             },
             pinnedKeysConfig: {
@@ -131,7 +131,7 @@ describe('get contact public key model', () => {
             apiKeysConfig: {
                 ...publicKeyConfig,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
-                publicKeys: [{ publicKey, armoredKey: '', flags: 0 }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1 }],
                 SignedKeyList: null,
             },
             pinnedKeysConfig: {

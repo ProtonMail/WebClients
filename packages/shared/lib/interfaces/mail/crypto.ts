@@ -35,7 +35,7 @@ export interface Package {
     Body?: string | Uint8Array;
     BodyKey?: any;
     BodyKeyPacket?: string;
-    Type?: PACKAGE_TYPE;
+    Type?: PACKAGE_TYPE | 0;
     PublicKey?: PublicKeyReference;
     AttachmentKeys?: { [AttachmentID: string]: { Key: string; Algorithm: string } };
     AttachmentKeyPackets?: { [AttachmentID: string]: string };
@@ -47,7 +47,7 @@ export interface PackageDirect {
     Body?: string;
     BodyKey?: any;
     BodyKeyPacket?: string;
-    Type?: PACKAGE_TYPE;
+    Type?: PACKAGE_TYPE | 0;
     PublicKey?: PublicKeyReference;
     Token?: string;
     EncToken?: string;

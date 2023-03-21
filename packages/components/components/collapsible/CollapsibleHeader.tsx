@@ -1,5 +1,5 @@
 import { ElementType, ReactNode, useContext } from 'react';
-import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
+import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
 import clsx from '@proton/utils/clsx';
 
@@ -22,17 +22,18 @@ export interface CollapsibleHeaderOwnProps {
     disableContainerToggle?: boolean;
 }
 
-export type CollapsibleHeaderProps<E extends ElementType> = PolymorphicComponentProps<E, CollapsibleHeaderOwnProps>;
+export type CollapsibleHeaderProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleHeaderOwnProps, E>;
 
-const element = 'header';
+const defaultElement = 'header';
 
-const CollapsibleHeader = <E extends ElementType = typeof element>({
+const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
     suffix,
     disableFullWidth,
     disableContainerToggle,
     className,
     children,
     onClick,
+    as,
     ...rest
 }: CollapsibleHeaderProps<E>) => {
     const { toggle, headerId, disabled } = useContext(CollapsibleContext);
@@ -47,9 +48,10 @@ const CollapsibleHeader = <E extends ElementType = typeof element>({
         onClick?.();
     };
 
+    const Element: ElementType = as || defaultElement;
+
     return (
-        <Box
-            as={element}
+        <Element
             disabled={disabled}
             {...rest}
             onClick={handleContainerClick}
@@ -69,7 +71,7 @@ const CollapsibleHeader = <E extends ElementType = typeof element>({
             </div>
 
             {suffix && <div className="flex flex-item-noshrink ml0-5">{suffix}</div>}
-        </Box>
+        </Element>
     );
 };
 export default CollapsibleHeader;

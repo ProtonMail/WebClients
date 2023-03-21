@@ -1,4 +1,15 @@
-import { ElementType, ReactElement, ReactNode, Ref, forwardRef, useContext, useRef, useState } from 'react';
+import {
+    ElementType,
+    ForwardedRef,
+    ReactElement,
+    ReactNode,
+    Ref,
+    forwardRef,
+    useContext,
+    useRef,
+    useState,
+} from 'react';
+import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import { isFocusable } from 'tabbable';
 
@@ -6,7 +17,6 @@ import useInstance from '@proton/hooks/useInstance';
 
 import { FormContext } from '../../../components';
 import { classnames, generateUID } from '../../../helpers';
-import { Box, PolymorphicComponentProps } from '../../../helpers/react-polymorphic-box';
 import Icon from '../../icon/Icon';
 import { Tooltip } from '../../tooltip';
 import Input from '../input/Input';
@@ -39,7 +49,7 @@ export interface InputFieldOwnProps {
     assistContainerClassName?: string;
 }
 
-export type InputFieldProps<E extends ElementType> = PolymorphicComponentProps<E, InputFieldOwnProps>;
+export type InputFieldProps<E extends ElementType> = PolymorphicPropsWithRef<InputFieldOwnProps, E>;
 export const errorClassName = 'field-two--invalid';
 
 const defaultElement = Input;
@@ -60,9 +70,10 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         assistContainerClassName,
         warning,
         suffix,
+        as,
         ...rest
     }: InputFieldProps<E>,
-    ref: typeof rest.ref
+    ref: ForwardedRef<Element>
 ) => {
     const [isFocused, setIsFocused] = useState(false);
     const { dense } = useContext(FormContext) || {};
@@ -146,6 +157,8 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         );
     };
 
+    const Element: ElementType = as || defaultElement;
+
     return (
         <div
             className={classes.root}
@@ -166,8 +179,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                 <label htmlFor={id} ref={labelRef} className="hidden" />
             )}
             <div className={classes.inputContainer}>
-                <Box
-                    as={defaultElement}
+                <Element
                     ref={ref}
                     id={id}
                     error={error}

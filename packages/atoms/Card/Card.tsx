@@ -1,5 +1,5 @@
 import { ElementType } from 'react';
-import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
+import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
 import clsx from '@proton/utils/clsx';
 
@@ -9,20 +9,21 @@ export interface CardOwnProps {
     background?: boolean;
 }
 
-export type CardProps<E extends ElementType> = PolymorphicComponentProps<E, CardOwnProps>;
+export type CardProps<E extends ElementType> = PolymorphicPropsWithoutRef<CardOwnProps, E>;
 
-const element = 'div';
+const defaultElement = 'div';
 
-const Card = <E extends ElementType = typeof element>({
+const Card = <E extends ElementType = typeof defaultElement>({
     className,
     bordered = true,
     rounded = false,
     background = true,
+    as,
     ...rest
 }: CardProps<E>) => {
+    const Element: ElementType = as || defaultElement;
     return (
-        <Box
-            as={element}
+        <Element
             className={clsx('p1', className, rounded && 'rounded', bordered && 'border', background && 'bg-weak')}
             {...rest}
         />

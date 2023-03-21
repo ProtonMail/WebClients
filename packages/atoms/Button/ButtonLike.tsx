@@ -1,5 +1,5 @@
-import { ElementType, ReactElement, forwardRef } from 'react';
-import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
+import { ElementType, ForwardedRef, ReactElement, forwardRef } from 'react';
+import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import { ThemeColorUnion } from '@proton/colors';
 import clsx from '@proton/utils/clsx';
@@ -61,7 +61,7 @@ interface ButtonLikeOwnProps {
     selected?: boolean;
 }
 
-export type ButtonLikeProps<E extends ElementType> = PolymorphicComponentProps<E, ButtonLikeOwnProps>;
+export type ButtonLikeProps<E extends ElementType> = PolymorphicPropsWithRef<ButtonLikeOwnProps, E>;
 
 const defaultElement = 'button';
 
@@ -80,9 +80,10 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         icon,
         group,
         selected = false,
+        as,
         ...restProps
     }: ButtonLikeProps<E>,
-    ref: typeof restProps.ref
+    ref: ForwardedRef<Element>
 ) => {
     const isDisabled = loading || disabled;
 
@@ -104,10 +105,10 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
     );
 
     const roleProps = restProps.onClick && !restProps.type ? { role: 'button' } : undefined;
+    const Element: ElementType = as || defaultElement;
 
     return (
-        <Box
-            as={defaultElement}
+        <Element
             ref={ref}
             className={buttonClassName}
             disabled={isDisabled}
@@ -122,7 +123,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
                     <CircleLoader />
                 </span>
             )}
-        </Box>
+        </Element>
     );
 };
 

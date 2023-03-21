@@ -1,9 +1,9 @@
 import { ElementType, ReactElement, forwardRef } from 'react';
+import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import { Button, CircleLoader } from '@proton/atoms';
 
 import { classnames } from '../../helpers';
-import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import DropdownCaret from './DropdownCaret';
 
 interface OwnProps {
@@ -13,7 +13,7 @@ interface OwnProps {
     isOpen?: boolean;
 }
 
-export type DropdownButtonProps<E extends ElementType> = PolymorphicComponentProps<E, OwnProps>;
+export type DropdownButtonProps<E extends ElementType> = PolymorphicPropsWithRef<OwnProps, E>;
 
 const defaultElement = Button;
 
@@ -26,13 +26,14 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
         caretClassName = '',
         loading = false,
         disabled,
+        as,
         ...rest
     }: DropdownButtonProps<E>,
     ref: typeof rest.ref
 ) => {
+    const Element: ElementType = as || defaultElement;
     return (
-        <Box
-            as={defaultElement}
+        <Element
             ref={ref}
             aria-expanded={isOpen}
             aria-busy={loading}
@@ -53,7 +54,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
                     isOpen={isOpen}
                 />
             )}
-        </Box>
+        </Element>
     );
 };
 
