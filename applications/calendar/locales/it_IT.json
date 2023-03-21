@@ -12,6 +12,14 @@
         "Vista limitata (visibili sono liberi/occupati)"
       ]
     },
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "L'inoltro inizierà a breve. Le nuove email appariranno nella tua casella di posta."
+      ],
+      "Mail forward stopped": [
+        "Inoltro mail interrotto"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introduzione a ${ BRAND_NAME }"
@@ -494,6 +502,9 @@
       ],
       "Today": [
         "Oggi"
+      ],
+      "Toggle Contact app": [
+        "Pulsante app Contatti"
       ],
       "Trust": [
         "Attendibile"
@@ -2430,6 +2441,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2468,6 +2482,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3520,6 +3537,9 @@
       ],
       "Select what you want to import.": [
         "Seleziona cosa vuoi importare."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Seleziona i calendari da importare. Verrà creato un nuovo calendario per ogni calendario importato in base al numero di calendari disponibili nel tuo piano."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
@@ -5878,9 +5898,6 @@
       "Start import process": [
         "Avvia il processo d'importazione"
       ],
-      "Two-factor authentication": [
-        "Autenticazione a due fattori"
-      ],
       "Update event": [
         "Aggiorna evento"
       ],
@@ -6049,9 +6066,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se non ricordi la password, è impossibile riattivare la chiave. Possiamo aiutarti a chiudere il banner di avviso, ma nel processo perderai definitivamente l'accesso a tutti i dati crittografati con quella chiave."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "La chat dal vivo è una funzionalità premium disponibile solo per chi ha piani ${ VPN_APP_NAME } a pagamento. Si prega di aprire un ticket."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."

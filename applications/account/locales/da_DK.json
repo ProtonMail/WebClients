@@ -24,6 +24,9 @@
       ]
     },
     "account": {
+      "Delete forward": [
+        "Slet videresendelse"
+      ],
       "Reconnect": [
         "Tilslut igen"
       ]
@@ -948,6 +951,9 @@
       ],
       "Saving": [
         "Gemmer"
+      ],
+      "Set as default": [
+        "Angiv som standard"
       ]
     },
     "Address status": {
@@ -4233,6 +4239,9 @@
       "Canceled": [
         "Annulleret"
       ],
+      "Canceling": [
+        "Annullerer"
+      ],
       "Completed": [
         "Fuldført"
       ],
@@ -4653,6 +4662,9 @@
       "Center": [
         "Centrér"
       ],
+      "Check the status of imports and forwarding.": [
+        "Kontrollér status for import og videresendelse."
+      ],
       "Choose the look and feel of the application.": [
         "Vælg applikationens udseende."
       ],
@@ -4880,6 +4892,9 @@
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "For Visa, MasterCard og Discover, de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
+      ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
       ],
@@ -4985,6 +5000,9 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Vigtigt: Sørg for at du har gemt gendannelseskoderne. Ellers risikerer du at miste adgangen til din konto permanent, hvis du mister din 2FA-enhed."
@@ -8012,26 +8030,6 @@
         "Brugeradministration"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Gør privatliv din standard for sikkerhedskopiering, lagring, deling og hentning af filer."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Opgrader til virksomhedspakken med adgang til alle premium ${ BRAND_NAME }-tjenester."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -8101,6 +8099,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Gør privatliv din standard for sikkerhedskopiering, lagring, deling og hentning af filer."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Opgrader til virksomhedspakken med adgang til alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium ${ BRAND_NAME }-tjenester."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Din prøveperiode ender ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8991,6 +9009,9 @@
       ]
     },
     "Settings description": {
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "Gennemfør omstillingen til privatliv med vores sikre værktøjer til import og videresendelse."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Du kan anvende flere etiketter på en enkelt besked, men beskeder kan normalt kun være i én enkelt mappe. Træk og slip for at omarrangere rækkefølgen af dine mapper og etiketter."
       ]
@@ -9995,6 +10016,9 @@
       "Gift code": [
         "Gavekode"
       ],
+      "History": [
+        "Historik"
+      ],
       "How does it work?": [
         "Hvordan fungerer det?"
       ],
@@ -10028,6 +10052,9 @@
       ],
       "Import key": [
         "Importer nøgle"
+      ],
+      "Import messages": [
+        "Importér beskeder"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -10236,6 +10263,9 @@
       "Set organization password": [
         "Angiv organisationsadgangskode"
       ],
+      "Set up forwarding": [
+        "Indstil videresendelse"
+      ],
       "Set up two-factor authentication": [
         "Opsæt to-faktor-godkendelse"
       ],
@@ -10419,6 +10449,9 @@
       ],
       "Date": [
         "Dato"
+      ],
+      "Import": [
+        "Importér"
       ],
       "Size": [
         "Størrelse"
@@ -10734,8 +10767,8 @@
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Hvis du annullerer denne import, vil du ikke kunne genoptage den. ${ BRAND_NAME } gemte alle fremskridt på din konto. Annuller alligevel?"
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Live chat er en premium-funktion, der kun er tilgængelig for dem, der har betalte ${ VPN_APP_NAME }-abonnementer. Åbn venligst en sag i stedet."
+      "Please add at least one recipient.": [
+        "Angiv mindst én modtager."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."

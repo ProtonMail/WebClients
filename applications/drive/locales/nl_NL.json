@@ -1869,9 +1869,6 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "A problem occurred, please try again": [
-        "Er is een probleem opgetreden, probeer het opnieuw"
-      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -2005,9 +2002,6 @@
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
-      ],
-      "Please activate your content search again": [
-        "Activeer het zoeken naar inhoud opnieuw"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
@@ -3118,6 +3112,12 @@
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
+      "End-to-end encrypted": [
+        "End-to-end versleuteld"
+      ],
+      "Enter password": [
+        "Vul login wachtwoord in"
+      ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw verificatie-app in"
       ],
@@ -3514,6 +3514,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Deelbare koppeling voor ${ boldNameText }"
+      ],
+      "Shared link not found": [
+        "Gedeelde link niet gevonden"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
@@ -4175,6 +4178,9 @@
       ],
       "Replace folder": [
         "Map vervangen"
+      ],
+      "Report": [
+        "Melden"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -5505,6 +5511,9 @@
       "Groups": [
         "Groepen"
       ],
+      "Hm, we couldn't find that one": [
+        "Sorry, we konden deze niet vinden"
+      ],
       "Human verification": [
         "Persoonsverificatie"
       ],
@@ -5716,9 +5725,6 @@
       "Trash": [
         "Prullenbak"
       ],
-      "Two-factor authentication": [
-        "Tweestapsverificatie"
-      ],
       "Type": [
         "Soort"
       ],
@@ -5903,9 +5909,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ${ VPN_APP_NAME } abonnementen. Gelieve in plaats daarvan een ticket te openen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."

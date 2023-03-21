@@ -25,7 +25,7 @@
     },
     "account": {
       "Delete forward": [
-        "Eliminar el reenvío"
+        "Cancelar el reenvío"
       ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "El reenvío iniciará pronto. Los correos nuevos aparecerán en tu bandeja de entrada."
@@ -52,6 +52,9 @@
       ],
       "activate": [
         "activar"
+      ],
+      "Activate ${ user.Name }@pm.me": [
+        "Activar ${ user.Name }@pm.me"
       ],
       "Activate organization key": [
         "Activar clave de la organización"
@@ -930,7 +933,7 @@
         "No, gracias"
       ],
       "Try free for 30 days": [
-        "Prueba gratis por 30 días"
+        "Pruébalo gratis por 30 días"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -970,7 +973,7 @@
         "Guardando"
       ],
       "Set as default": [
-        "Establecer como por defecto"
+        "Establecer como predeterminado"
       ]
     },
     "Address status": {
@@ -1361,7 +1364,7 @@
     },
     "Calendar table settings button tooltip": {
       "Open settings": [
-        "Abrir la configuración"
+        "Abrir ajustes"
       ]
     },
     "Calendar view": {
@@ -2477,7 +2480,7 @@
     },
     "Create user accounts empty state": {
       "No search results found": [
-        "No se han encontrado resultados de búsqueda."
+        "No hay resultados de búsqueda"
       ]
     },
     "Credits": {
@@ -3023,7 +3026,7 @@
         "Las contraseñas no coinciden."
       ],
       "Payment process canceled": [
-        "Se ha cancelado el proceso de pago."
+        "Se ha cancelado el proceso de pago"
       ],
       "Payment process consumed": [
         "El proceso de pago está terminado."
@@ -3988,7 +3991,7 @@
     },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Prueba lo mejor de ${ MAIL_APP_NAME } gratuitamente."
+        "Prueba lo mejor de ${ MAIL_APP_NAME } gratuitamente"
       ]
     },
     "Hint": {
@@ -4692,7 +4695,7 @@
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en la configuración."
       ],
       "Basic, Plus or Visionary subscription required": [
-        "Se requiere una suscripción Basic, Plus o Visionary."
+        "Se requiere una suscripción Basic, Plus o Visionary"
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Antes de crear esta dirección necesitas proporcionar una contraseña y crear las claves de cifrado para ella."
@@ -5260,7 +5263,7 @@
         "No existen claves de cifrado de contactos"
       ],
       "No credit card required": [
-        "No se requiere tarjeta de crédito."
+        "No se requiere tarjeta de crédito"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "No has establecido ningún método de recuperación de datos. Corres el riesgo de perder el acceso a tus datos."
@@ -5413,7 +5416,7 @@
         "Espera hasta que tus cambios estén sincronizados con el servidor."
       ],
       "Plus or Visionary subscription required": [
-        "Se requiere una suscripción Plus o Visionary."
+        "Se requiere una suscripción Plus o Visionary"
       ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
@@ -5614,7 +5617,7 @@
         "La aplicación Import-Export te permite exportar mensajes para crear copias de seguridad locales y restaurar copias de seguridad anteriores en tu cuenta."
       ],
       "The name will be visible to your users while they are signed in.": [
-        "Tus usuarios verán el nombre mientras inicien sesión."
+        "Tus usuarios verán el nombre mientras estén conectados."
       ],
       "The securest way to browse, stream, and be online.": [
         "La manera más segura de navegar, hacer streaming y estar en línea."
@@ -8213,26 +8216,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedTrialExpirationDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -8302,6 +8285,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haz que la privacidad sea tu opción por defecto para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Pásate al plan de privacidad más completo y disfruta de todos los servicios prémium de ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedTrialExpirationDate }."
       ]
     },
     "new_plans: Label": {
@@ -8406,8 +8409,8 @@
         "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
-        "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones."
+        "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones",
+        "Crea hasta ${ n } calendarios o añade calendarios de amigos, familiares, compañeros y organizaciones"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Te defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de internet por varios servidores."
@@ -8416,7 +8419,7 @@
         "Comparte calendarios con compañeros, familiares y amigos fácilmente mediante un enlace"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Comparte calendarios con familiares, amigos y compañeros fácilmente."
+        "Comparte calendarios con familiares, amigos y compañeros fácilmente"
       ],
       "End-to-end encrypted calendar": [
         "Calendario cifrado de extremo a extremo"
@@ -8564,8 +8567,8 @@
         "Cubre más posibilidades con 10 dominios de correo electrónico personalizados."
       ],
       "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Crea hasta ${ MAX_CALENDARS_PAID } calendario.",
-        "Crea hasta ${ MAX_CALENDARS_PAID } calendarios."
+        "Crea hasta ${ MAX_CALENDARS_PAID } calendario",
+        "Crea hasta ${ MAX_CALENDARS_PAID } calendarios"
       ],
       "Everything in ${ vpnPlanName }": [
         "Todo en ${ vpnPlanName }"
@@ -9046,7 +9049,7 @@
         "Buscar"
       ],
       "Search settings": [
-        "Configuración de búsqueda"
+        "Ajustes de búsqueda"
       ],
       "Search users": [
         "Buscar usuarios"
@@ -9550,7 +9553,7 @@
     },
     "Subscription change warning": {
       "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Gestiona tu suscripción en ${ subscriptionManagerShort }."
+        "Gestiona tu suscripción en ${ subscriptionManagerShort }"
       ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
         "Tu suscripción ha sido realizada a través de una compra in-app. Para administrar tu suscripción actual necesitas navegar hasta la sección Suscripciones en tu cuenta ${ subscriptionManager }"
@@ -9559,6 +9562,14 @@
     "Subscription price": {
       "For": [
         "Por"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "¿Estás seguro?"
+      ],
+      "Disable": [
+        "Deshabilitar"
       ]
     },
     "Subscription saving": {
@@ -10463,7 +10474,7 @@
         "Pagar factura"
       ],
       "Payment failed": [
-        "Error con el pago"
+        "Error en el pago"
       ],
       "Payment methods": [
         "Métodos de pago"
@@ -10690,7 +10701,7 @@
         "Verificación"
       ],
       "Verification failed": [
-        "Error con la verificación"
+        "Error de verificación"
       ],
       "Verify email address": [
         "Verificar dirección de correo"
@@ -10931,7 +10942,7 @@
         "${ MAIL_APP_NAME } utiliza esta clave para cifrar los datos de tu contacto."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
-        "Se ha detectado un problema con tu configuración DNS. Asegúrate de que tus registros coinciden con las instrucciones de abajo. Si el problema persiste, se tendrá que cerrar la sesión de DKIM."
+        "Hemos detectado un problema con tu configuración DNS. Asegúrate de que tus registros coincidan con las instrucciones de abajo. Si el problema persiste, tendremos que desactivar el DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Se ha detenido la firma de DKIM por problemas con tu configuración de DNS. Sigue las instrucciones a continuación para reanudar la firma."
@@ -11102,9 +11113,6 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Si cancelas esta importación, no podrás reanudarla. ${ BRAND_NAME } ha guardado todo el progreso en tu cuenta. ¿Quieres cancelarla de todos modos?"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "El chat en vivo es una función prémium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
       ],
       "Please add at least one recipient.": [
         "Añade al menos un destinatario."

@@ -438,7 +438,7 @@
     },
     "Billing cycle": {
       "Renews automatically on ${ formattedEndTime }": [
-        "Падаўжаецца аўтаматычна ${ formattedEndTime }"
+        "Падоўжыцца аўтаматычна ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -1947,6 +1947,9 @@
       "Attention required": [
         "Патрабуецца ўвага"
       ],
+      "Balance from your previous subscription": [
+        "Баланс з вашай папярэдняй падпіскі"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Патрабуецца падпіска Basic, Plus або Visionary"
       ],
@@ -2086,7 +2089,7 @@
         "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Калі паведамлення няма ў папцы \"Уваходныя\", то магчыма, што яно трапіла ў папку \"Спам\"."
+        "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Калі ў вас ёсць падарункавы код, то вы можаце ўжыць яго ніжэй для атрымання скідкі."
@@ -4145,6 +4148,32 @@
         "Для"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Вы ўпэўнены?"
+      ],
+      "Auto-pay is disabled": [
+        "Аўтаматычная аплата адключана"
+      ],
+      "Auto-pay is enabled": [
+        "Аўтаматычная аплата ўключана"
+      ],
+      "Disable": [
+        "Адключыць"
+      ],
+      "Enable auto-pay support": [
+        "Уключыць падтрымку аўтаматычнай аплаты"
+      ],
+      "Keep auto-pay": [
+        "Пакінуць аўтаматычную аплату"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Наша сістэма больш не будзе аўтаматычна спаганяць з вас сродкі выкарыстоўваючы гэты спосаб аплаты, але ваша падпіска ўсё яшчэ будзе падаўжацца ў канцы перыяду аплаты. Вам усё роўна трэба рабіць гэта самастойна да завяршэння разліковага перыяду, калі вы захочаце панізіць або змяніць сваю падпіску. Звярніце ўвагу, што калі вы забудзеце зрабіць плацеж уручную і аўтаматычная аплата будзе адключана для ўсіх спосабаў аплаты, мы пакідаем за сабой права панізіць ваш уліковы запіс у аўтаматычным рэжыме, што прывядзе да страты многіх функцый."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Наша сістэма больш не будзе аўтаматычна спаганяць з вас сродкі выкарыстоўваючы гэты спосаб аплаты, але ваша падпіска ўсё яшчэ будзе падаўжацца ў канцы перыяду аплаты. Вам усё роўна трэба рабіць гэта самастойна да завяршэння разліковага перыяду, калі вы захочаце панізіць або змяніць сваю падпіску. Мы не зможам аўтаматычна панізіць ваш тарыфны план, бо калі вы перавысілі бясплатную квоту яго сховішча або выкарыстоўваеце іншыя платныя функцыі, то аўтаматычна выдаліць файлы, лісты або іншыя даныя будзе немагчыма. Калі вы адключыце аўтаматычную аплату, то не забывайце аплачваць падпіску свайго рахунку да даты завяршэння плацежнага перыяду, каб прадухіліць яго прыпыненне."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Захаваць"
@@ -4746,9 +4775,6 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Выдаліўшы гэты нумар тэлефона, вы больш не зможаце аднавіць свой уліковы запіс."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Чат у рэальным часе з'яўляецца прэміяльнай функцыяй для тых, хто карыстаецца платнымі тарыфнымі планамі ${ VPN_APP_NAME }. Замест гэтага, стварыце запыт у службу падтрымкі."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны адразу. Мы абновім яго толькі пасля пацвярджэння аплаты."

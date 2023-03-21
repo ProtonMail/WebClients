@@ -2191,7 +2191,7 @@
         "Interval tidak boleh kosong"
       ],
       "Invalid email address": [
-        "Alamat surel tidak valid"
+        "Alamat email tidak valid"
       ],
       "Invalid link to the event": [
         "Tautan ke acara tidak vallid"
@@ -3134,13 +3134,13 @@
         "(${ memberCount } anggota)"
       ],
       "A cancellation email will be sent to removed participants.": [
-        "Surel pembatalan akan dikirim ke peserta yang dihapus."
+        "Email pembatalan akan dikirim kepada para peserta yang dihapus."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Surel pembatalan akan dikirim ke peserta acara. Anda ingin menghapus semua rangkaian acara ini?"
+        "Email pembatalan akan dikirim kepada para peserta acara. Apakah Anda ingin menghapus seluruh acara yang terdapat pada rangkaian ini?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Surel pembatalan akan dikirim ke peserta acara. Anda ingin menghapus acara ini?"
+        "Email pembatalan akan dikirim kepada para peserta acara. Apakah Anda ingin menghapus acara ini?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
@@ -3692,10 +3692,10 @@
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak dan telah ditangguhkan. Kelalaian membayar yang berkelanjutan akan memblokir email dan tautan berbagi Anda. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Alamat Anda nonaktif. Surel pembatalan tidak dapat dikirim ke peserta acara. Anda ingin tetap menghapus semua rangkaian acara ini?"
+        "Alamat Anda sedang dinonaktifkan. Email pembatalan tidak akan dapat dikirim kepada para peserta acara. Apakah Anda tetap ingin menghapus seluruh acara yang terdapat pada rangkaian ini?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Alamat Anda nonaktif. Surel pembatalan tidak dapat dikirim ke peserta acara. Anda ingin tetap menghapus acara ini?"
+        "Alamat Anda sedang dinonaktifkan. Email pembatalan tidak akan dapat dikirim kepada para peserta acara. Apakah Anda tetap ingin menghapus acara ini?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
@@ -5001,7 +5001,7 @@
         "${ countMergeableContacts } kontak terlihat identik."
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        "Surel pembatalan akan dikirim ke peserta yang dihapus untuk semua rangkaian acara ini."
+        "Email pembatalan akan dikirim kepada para peserta yang dihapus untuk seluruh acara pada rangkaian ini."
       ],
       "Address copied to clipboard": [
         "Alamat disalin ke clipboard"
@@ -5547,9 +5547,6 @@
       "Start import process": [
         "Mulai proses impor"
       ],
-      "Two-factor authentication": [
-        "Autentikasi dua faktor"
-      ],
       "Update event": [
         "Perbarui acara"
       ],
@@ -5581,7 +5578,7 @@
         "Apa-apa saja yang baru"
       ],
       "You have invited participants with equivalent emails": [
-        "Anda telah mengundang peserta dengan surel yang sama"
+        "Anda telah mengundang peserta dengan alamat email yang serupa"
       ],
       "Your calendar link": [
         "Tautan kalender Anda"
@@ -5715,9 +5712,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
       ],
@@ -5755,7 +5749,7 @@
         "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda mempercayainya, Anda dapat melewati proses verifikasi ini."
+        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
