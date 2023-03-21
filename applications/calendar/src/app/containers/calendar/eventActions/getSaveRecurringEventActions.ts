@@ -1,14 +1,17 @@
+import { useGetCalendarKeys } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { getHasDefaultNotifications } from '@proton/shared/lib/calendar/apiModels';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
+import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { getResetPartstatActions, getUpdatedInviteVevent } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import unary from '@proton/utils/unary';
 
@@ -48,6 +51,8 @@ interface SaveRecurringArguments {
     newEditEventData: EventNewData;
     recurrence: CalendarEventRecurring;
     updateAllPossibilities: UpdateAllPossibilities;
+    getAddressKeys: GetAddressKeys;
+    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     hasDefaultNotifications: boolean;
     personalEventsDeprecated: boolean;
     canEditOnlyNotifications: boolean;
@@ -82,6 +87,8 @@ const getSaveRecurringEventActions = async ({
     },
     recurrence,
     updateAllPossibilities,
+    getAddressKeys,
+    getCalendarKeys,
     inviteActions,
     hasDefaultNotifications,
     personalEventsDeprecated,
@@ -370,6 +377,15 @@ const getSaveRecurringEventActions = async ({
                 throw new Error(
                     'Cannot add participants and change calendar simultaneously. Please change the calendar first'
                 );
+            }
+            const sharedSessionKey = await getBase64SharedSessionKey({
+                calendarEvent: originalEvent,
+                getCalendarKeys,
+                getAddressKeys,
+            });
+            if (sharedSessionKey) {
+                updatedInviteActions.sharedEventID = originalEvent.SharedEventID;
+                updatedInviteActions.sharedSessionKey = sharedSessionKey;
             }
             const {
                 veventComponent: cleanVeventComponent,
