@@ -836,6 +836,8 @@ jdam/kRWvRjS8LMZDsVICPpOrwhQXkRlAQDFe4bzH3MY16IqrIq70QSCxqLJ
                 passphrase,
             });
             expect(decryptedKeyFromArmored.isDecrypted()).to.be.true;
+            // @ts-ignore missing `s2k` field definition
+            expect(decryptedKeyFromArmored.keyPacket.s2k.c).to.equal(96); // setting should be lowered since passphrases are already salted
 
             const decryptedKeyFromBinary = await openpgp_decryptKey({
                 privateKey: await openpgp_readPrivateKey({ binaryKey }),
