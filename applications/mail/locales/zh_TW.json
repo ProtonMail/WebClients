@@ -3017,9 +3017,6 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
-      "A problem occurred, please try again": [
-        "發生錯誤，請再試一次"
-      ],
       "Address primary private key not found": [
         "找不到電子郵件地址主要私密金鑰"
       ],
@@ -3196,9 +3193,6 @@
       ],
       "Passwords do not match": [
         "密碼不一致"
-      ],
-      "Please activate your content search again": [
-        "請再次啟用內容搜尋功能"
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "請先修正已標示的衝突以便繼續。"
@@ -4274,7 +4268,7 @@
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
       "${ contactCount } contacts contain multiple email addresses.": [
-        "${ contactCount } 個聯絡人裡包含數組電郵位址。"
+        "${ contactCount } 個聯絡人包含多個電子郵件地址。"
       ],
       "${ contactEmailsLength } Members": [
         "${ contactEmailsLength } 位成員"
@@ -4587,9 +4581,6 @@
       ],
       "Don't forget to share the password with the recipient": [
         "別忘記與您的收件者共享金鑰密碼"
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "正在下載 ${ totalProgressToShow } 則訊息中的 ${ esProgress } 則"
       ],
       "Draft": [
         "草稿"
@@ -8256,9 +8247,6 @@
       "Trust public key?": [
         "要信任公開金鑰嗎？"
       ],
-      "Two-factor authentication": [
-        "兩步驟驗證"
-      ],
       "Unsubscribe": [
         "取消訂閱"
       ],
@@ -8353,9 +8341,6 @@
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
       ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此動作將下載所有郵件，以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
-      ],
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"
       ],
@@ -8428,9 +8413,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可說明您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "即時文字客服加值功能僅適用於 ${ VPN_APP_NAME } 的付費方案。請改為提交支援需求。"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"

@@ -1858,9 +1858,6 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
-      "A problem occurred, please try again": [
-        "Der opstod et problem. Prøv venligst igen"
-      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
@@ -1994,9 +1991,6 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
-      ],
-      "Please activate your content search again": [
-        "Aktiver venligst din indholdssøgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
@@ -3180,6 +3174,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "For det bedste resultat, undgå streaming og hukommelses-intens aktivitet, eller split dine uploads op i mindre bidder."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
+      ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
       ],
@@ -3231,6 +3228,9 @@
       ],
       "Import mailbox": [
         "Importér postkasse"
+      ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -5289,6 +5289,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Hm, we couldn't find that one": [
+        "Hm, den kunne vi ikke finde"
+      ],
       "Human verification": [
         "Menneskelig bekræftelse"
       ],
@@ -5500,9 +5503,6 @@
       "Trash": [
         "Flyt til papirkurv"
       ],
-      "Two-factor authentication": [
-        "To-faktor-godkendelse"
-      ],
       "Type": [
         "Type"
       ],
@@ -5687,9 +5687,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Live chat er en premium-funktion, der kun er tilgængelig for dem, der har betalte ${ VPN_APP_NAME }-abonnementer. Åbn venligst en sag i stedet."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."

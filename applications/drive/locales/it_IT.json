@@ -4,6 +4,14 @@
     "language": "it_IT"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "L'inoltro inizierà a breve. Le nuove email appariranno nella tua casella di posta."
+      ],
+      "Mail forward stopped": [
+        "Inoltro mail interrotto"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "Introduzione a ${ BRAND_NAME }"
@@ -579,6 +587,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Toggle Calendar app": [
+        "Pulsante app Calendario"
+      ],
+      "Toggle Contact app": [
+        "Pulsante app Contatti"
       ],
       "Trust": [
         "Attendibile"
@@ -1858,9 +1872,6 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
-      "A problem occurred, please try again": [
-        "Si è verificato un problema, si prega di riprovare"
-      ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
       ],
@@ -1994,9 +2005,6 @@
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
-      ],
-      "Please activate your content search again": [
-        "Si prega di attivare nuovamente la ricerca di contenuti"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
@@ -2133,6 +2141,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2171,6 +2182,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2835,6 +2849,12 @@
         "${ errorCount } non riuscito",
         "${ errorCount } non riusciti"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: immagine a grandezza naturale"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: anteprima a bassa risoluzione"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
@@ -3045,6 +3065,9 @@
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
+      ],
+      "Decrypting files": [
+        "Decrittografia dei file"
       ],
       "Delete locked drive": [
         "Elimina spazio bloccato",
@@ -3298,6 +3321,9 @@
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
+      "Link owner has the password": [
+        "Il proprietario del collegamento ha la password"
+      ],
       "Loading": [
         "Caricamento"
       ],
@@ -3333,6 +3359,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dai un nome alla tua cartella e selezione la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
+      ],
+      "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
+        "Hai bisogno di condividere un file? Utilizza ${ DRIVE_APP_NAME },\nil modo più sicuro per condividere, archiviare e sincronizzare i tuoi file."
       ],
       "Network issue": [
         "Problema di rete"
@@ -3474,6 +3503,9 @@
       "Report has been sent": [
         "La segnalazione è stata inviata"
       ],
+      "Restored files ${ formattedDate }": [
+        "File ripristinati ${ formattedDate }"
+      ],
       "Search cannot be enabled in this browser": [
         "La ricerca non può essere abilitata in questo browser"
       ],
@@ -3489,6 +3521,9 @@
       "Select what you want to import.": [
         "Seleziona cosa vuoi importare."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Seleziona i calendari da importare. Verrà creato un nuovo calendario per ogni calendario importato in base al numero di calendari disponibili nel tuo piano."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
@@ -3503,6 +3538,9 @@
       ],
       "Shareable link for ${ boldNameText }": [
         "Link condivisibile per ${ boldNameText }"
+      ],
+      "Shared link not found": [
+        "Link condiviso non trovato"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La firma non può essere convalidata a causa di un errore di rete, riprova più tardi."
@@ -3557,6 +3595,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
+      ],
+      "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
+        "Questo file potrebbe essere stato eliminato, spostato o reso non disponibile. Prova a contattare il proprietario del file."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
@@ -3960,6 +4001,9 @@
       ],
       "Download anyway": [
         "Scarica comunque"
+      ],
+      "Downloading ${ percentageValue }%": [
+        "Download ${ percentageValue }%"
       ],
       "Email": [
         "Email"
@@ -5503,6 +5547,9 @@
       "Groups": [
         "Gruppi"
       ],
+      "Hm, we couldn't find that one": [
+        "Hm, non siamo riusciti a trovarlo"
+      ],
       "Human verification": [
         "Verifica umana"
       ],
@@ -5714,9 +5761,6 @@
       "Trash": [
         "Cestino"
       ],
-      "Two-factor authentication": [
-        "Autenticazione a due fattori"
-      ],
       "Type": [
         "Tipo"
       ],
@@ -5901,9 +5945,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se non ricordi la password, è impossibile riattivare la chiave. Possiamo aiutarti a chiudere il banner di avviso, ma nel processo perderai definitivamente l'accesso a tutti i dati crittografati con quella chiave."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "La chat dal vivo è una funzionalità premium disponibile solo per chi ha piani ${ VPN_APP_NAME } a pagamento. Si prega di aprire un ticket."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "I report non sono crittografati end-to-end, non inviare alcuna informazione sensibile."

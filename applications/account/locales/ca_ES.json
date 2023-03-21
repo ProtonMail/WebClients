@@ -44,6 +44,9 @@
       "activate": [
         "activar"
       ],
+      "Activate ${ user.Name }@pm.me": [
+        "Activa ${ user.Name }@pm.me"
+      ],
       "Activate organization key": [
         "Activar la clau d'organització"
       ],
@@ -461,6 +464,9 @@
       "Mark as default": [
         "Marca per defecte"
       ],
+      "Mark as not spam": [
+        "Marca com a no correu brossa"
+      ],
       "Mark as spam": [
         "Marcar com a correu brossa"
       ],
@@ -624,7 +630,7 @@
         "Tornar a l'inici de sessió"
       ],
       "Review": [
-        "Ressenya"
+        "Reviseu"
       ],
       "Revoke": [
         "Revoca"
@@ -4213,6 +4219,10 @@
       "${ storageSize } storage": [
         "${ storageSize } d'emmagatzematge"
       ],
+      "${ userFound } user found": [
+        "${ userFound } usuari trobat",
+        "${ userFound } usuaris trobats"
+      ],
       "${ vpnPlus } required for Secure Core feature.": [
         "La característica Secure Core requereix ${ vpnPlus }."
       ],
@@ -5339,6 +5349,9 @@
         "Utilitzeu les següents credencials connectant a servidors ${ VPN_APP_NAME } sense aplicació. Exemple d'utilització: Tunnelblick a macOS, OpenVPN a GNU/Linux."
       ],
       "Verification can take a few minutes.": [
+        "La verificació pot trigar uns minuts."
+      ],
+      "Verification may take a few minutes.": [
         "La verificació pot trigar uns minuts."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
@@ -7533,11 +7546,6 @@
         "Gestió d'equip"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7547,6 +7555,11 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom per defecte."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7632,6 +7645,10 @@
       ],
       "Access advanced VPN features": [
         "Accedir a funcionalitats de VPN avançades"
+      ],
+      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
+        "Crea fins a ${ MAX_CALENDARS_PAID } calendari",
+        "Crea fins a ${ MAX_CALENDARS_PAID } calendaris"
       ],
       "Get 5 additional email addresses per user": [
         "Aconseguiu 5 adreces de correu electrònic addicionals per usuari"
@@ -8510,6 +8527,14 @@
         "Per"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "N'estas segur?"
+      ],
+      "Disable": [
+        "Desactiva"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Desa"
@@ -9193,6 +9218,10 @@
       ],
       "External PGP settings": [
         "Configuració de PGP externa"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "No s'ha pogut crear ${ failedUsers.length } compte d'usuari.",
+        "No s'han pogut crear ${ failedUsers.length } comptes d'usuari."
       ],
       "Filters": [
         "Filtres"
@@ -9956,9 +9985,6 @@
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Si cancel·leu aquesta importació, no la podreu reprendre. ${ BRAND_NAME } ha desat tot el progrés del vostre compte. Voleu cancel·lar-ho de totes maneres?"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "El xat en directe és una funcionalitat prèmium que només està disponible per aquells qui tenen plans de pagament de ${ VPN_APP_NAME }. En comptes d'això, obriu una incidència."
       ],
       "Please add at least one recipient.": [
         "Afegiu almenys un destinatari."
