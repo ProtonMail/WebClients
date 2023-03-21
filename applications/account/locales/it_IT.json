@@ -24,8 +24,23 @@
       ]
     },
     "account": {
+      "Delete forward": [
+        "Elimina inoltro"
+      ],
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "L'inoltro inizierà a breve. Le nuove email appariranno nella tua casella di posta."
+      ],
+      "Mail forward stopped": [
+        "Inoltro mail interrotto"
+      ],
       "Reconnect": [
         "Riconnetti"
+      ],
+      "Remove forward": [
+        "Rimuovi inoltro"
+      ],
+      "You will stop the mail forwarding.": [
+        "Interromperai l'inoltro della mail."
       ]
     },
     "Action": {
@@ -37,6 +52,9 @@
       ],
       "activate": [
         "attiva"
+      ],
+      "Activate ${ user.Name }@pm.me": [
+        "Attiva ${ user.Name }@pm.me"
       ],
       "Activate organization key": [
         "Attiva la chiave dell'organizzazione"
@@ -900,6 +918,11 @@
         "Zoom indietro"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Ripristino inoltro"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Revoca"
@@ -1262,6 +1285,9 @@
       ]
     },
     "Calendar share permission label": {
+      "Edit event details": [
+        "Modifica i dettagli dell'evento"
+      ],
       "See all event details": [
         "Vedi tutti i dettagli dell'evento"
       ]
@@ -2786,6 +2812,11 @@
         "${ allCategoriesExceptTheLastOne } e ${ lastCategory }"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "2FA"
+      ]
+    },
     "Error": {
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } è il tuo nome utente. Per creare ${ Local }@${ Domain }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
@@ -3227,6 +3258,9 @@
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Il tuo account o organizzazione ha una fattura scaduta. Si prega di pagare tutte le fatture non pagate."
       ],
+      "Your forward will not be processed.": [
+        "Il tuo inoltro non verrà elaborato."
+      ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
       ],
@@ -3235,6 +3269,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3273,6 +3310,9 @@
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore durante il caricamento del file ${ formattedFilename }. La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3391,6 +3431,9 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Si è verificato un errore durante la lettura del file \"${ formattedFilename }\". Formato file errato."
+      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Si è verificato un errore nel caricamento del tuo file \"${ formattedFilename }\". La dimensione massima del file è ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -4341,6 +4384,12 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } non è valido"
       ],
+      "${ fileName }: full-size image": [
+        "${ fileName }: immagine a grandezza naturale"
+      ],
+      "${ fileName }: low-resolution preview": [
+        "${ fileName }: anteprima a bassa risoluzione"
+      ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } verrà impostato come calendario predefinito."
       ],
@@ -4642,6 +4691,9 @@
       "Background color": [
         "Colore di sfondo"
       ],
+      "Balance from your previous subscription": [
+        "Saldo del tuo abbonamento precedente"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navigazione di base e le azioni rimangono disponibili indipendentemente dal fatto che le scorciatoie da tastiera siano attive o meno nelle impostazioni."
       ],
@@ -4686,6 +4738,9 @@
       ],
       "Center": [
         "Centra"
+      ],
+      "Check the status of imports and forwarding.": [
+        "Controlla lo stato delle importazioni e degli inoltri."
       ],
       "Choose the look and feel of the application.": [
         "Scegli l'aspetto dell'applicazione."
@@ -4777,6 +4832,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NON dimenticare questa password. Se la dimentichi, non sarai più in grado di gestire la tua organizzazione."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "NON dimenticare questa password. Se la dimenticassi, non sarai più in grado di accedere o di decifrare i tuoi messaggi."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Non utilizzare le credenziali OpenVPN / IKEv2 nelle applicazioni ${ VPN_APP_NAME } o nel pannello di controllo ${ VPN_APP_NAME }. ${ learnMore }"
@@ -4982,6 +5040,15 @@
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Se hai impostato sia SPF che DKIM, DMARC ti permette di specificare come gli altri servizi email dovrebbero consegnare le email per il tuo dominio nel caso falliscano sia i controlli SPF che DKIM. Questo può rendere più difficile agli spammer fingere di essere te, ma potrebbe creare problemi di consegna se non è fatto correttamente."
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Se perdila tua password e hai bisogno di reimpostare il tuo account, ${ boldImperative } che tu abbia un ${ boldAccountRecovery } impostato."
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Se perdi la tua password e hai bisogno di reimpostare il tuo account, ${ boldImperative } che tu abbia entrambi i ${ boldAccountAndRecovery } impostati, altrimenti potresti non essere in grado di accedere a nessuna delle tue email, contatti o file."
+      ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Se perdi il tuo dispositivo abilitato a due fattori, questi codici possono essere utilizzati al posto del codice di autenticazione a due fattori a 6 cifre per accedere al tuo account. Ogni codice può essere utilizzato una sola volta."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -5207,6 +5274,9 @@
       "No folder selected": [
         "Nessuna cartella selezionata"
       ],
+      "No imports or forwarding history.": [
+        "Nessuna cronologia di importazione o inoltro."
+      ],
       "No label selected": [
         "Nessuna etichetta selezionata"
       ],
@@ -5290,6 +5360,12 @@
       "Please add an email address for the user on row": [
         "Si prega di aggiungere un indirizzo email per l'utente sulla riga",
         "Si prega di aggiungere gli indirizzi email per gli utenti nelle righe"
+      ],
+      "Please authenticate your card in the verification tab.": [
+        "Verifica la carta nella scheda di verifica."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Verifica il pagamento nella scheda di verifica."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Per favore controlla se ci sono errori nel tuo file, o contatta l'assistenza clienti per più informazioni."
@@ -5428,6 +5504,9 @@
       ],
       "Select what you want to import.": [
         "Seleziona cosa vuoi importare."
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Seleziona i calendari da importare. Verrà creato un nuovo calendario per ogni calendario importato in base al numero di calendari disponibili nel tuo piano."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Inviato con l'email sicura di <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -5780,6 +5859,12 @@
       "We couldn’t process your payment.": [
         "Il pagamento non può essere completato."
       ],
+      "We need to authenticate your payment method with your bank.": [
+        "Abbiamo bisogno di verificare il tuo metodo di pagamento con la tua banca."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "Abbiamo bisogno di verificare il tuo pagamento con la tua banca."
+      ],
       "We recommend using your recovery phrase instead.": [
         "Ti consigliamo di utilizzare invece la frase di recupero."
       ],
@@ -5869,6 +5954,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Puoi personalizzare e scaricare le tue fatture per scopi contabili."
+      ],
+      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Puoi abilitare l'autenticazione per vedere quando si accede al tuo account e da quale IP. Registreremo l'indirizzo IP che accede all'account e l'ora, nonché i tentativi falliti."
       ],
       "You can import one data type at a time.": [
         "Puoi importare un tipo di dati alla volta."
@@ -7387,6 +7475,11 @@
         "Riga"
       ]
     },
+    "Label, credit card": {
+      "ZIP code": [
+        "CAP"
+      ]
+    },
     "Label/folder modal": {
       "Create folder": [
         "Crea cartella"
@@ -8126,26 +8219,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -8215,6 +8288,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9202,6 +9295,12 @@
       ]
     },
     "Settings description": {
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "Completa la transizione alla privacy con i nostri strumenti di importazione e inoltro sicuri."
+      ],
+      "Complete the transition to privacy with our secure importing tools.": [
+        "Completa la transizione alla privacy con i nostri strumenti di importazione sicura."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "È possibile applicare più etichette ad un singolo messaggio, ma i messaggi di solito possono trovarsi solo in una cartella. Trascina e rilascia per riorganizzare l'ordine delle cartelle e delle etichette."
       ]
@@ -9685,6 +9784,9 @@
       ]
     },
     "Subscription change warning": {
+      "Manage your subscription on ${ subscriptionManagerShort }": [
+        "Gestisci il tuo abbonamento su ${ subscriptionManagerShort }"
+      ],
       "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
         "Il tuo abbonamento è stato effettuato tramite un acquisto in-app. Per gestire il tuo abbonamento devi accedere alla sezione Abbonamento sul tuo account ${ subscriptionManager }"
       ]
@@ -9692,6 +9794,32 @@
     "Subscription price": {
       "For": [
         "Per"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Sei sicuro?"
+      ],
+      "Auto-pay is disabled": [
+        "Il pagamento automatico è disabilitato"
+      ],
+      "Auto-pay is enabled": [
+        "Il pagamento automatico è abilitato"
+      ],
+      "Disable": [
+        "Disabilita"
+      ],
+      "Enable auto-pay support": [
+        "Abilita il supporto per il pagamento automatico"
+      ],
+      "Keep auto-pay": [
+        "Mantieni il pagamento automatico"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Il nostro sistema non ti addebiterà più nulla in automatico su questo metodo di pagamento, ma il tuo abbonamento verrà comunque rinnovato alla fine del ciclo di fatturazione. Se desideri eseguire il downgrade o modificare l'abbonamento, devi comunque farlo tu stesso prima della fine del periodo di fatturazione. Inoltre, se dimentichi di effettuare un pagamento manuale e il pagamento automatico è disabilitato per tutti i metodi di pagamento, potremmo eseguire il downgrade automatico del tuo account, con conseguente perdita di molte funzionalità."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Il nostro sistema non ti addebiterà più nulla in automatico utilizzando questo metodo di pagamento, ma il tuo abbonamento verrà comunque rinnovato alla fine del ciclo di fatturazione. Se desideri eseguire il downgrade o modificare l'abbonamento, devi comunque farlo tu stesso prima della fine del periodo di fatturazione. Non possiamo eseguire il downgrade automatico perché se superi la quota di archiviazione del piano gratuito o utilizzi altre funzionalità a pagamento, non possiamo eliminare automaticamente file, email o altri dati per te. Se disattivi il pagamento automatico, ricordati di pagare la tua prossima fattura di abbonamento prima della data di scadenza per evitare la sospensione dell'account."
       ]
     },
     "Subscription saving": {
@@ -10715,6 +10843,9 @@
       "Set organization password": [
         "Imposta la password dell'organizzazione"
       ],
+      "Set up forwarding": [
+        "Imposta l'inoltro"
+      ],
       "Set up two-factor authentication": [
         "Abilita l'autenticazione in due fattori"
       ],
@@ -11233,8 +11364,8 @@
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Se annulli questa importazione, non sarai in grado di riprenderla. ${ BRAND_NAME } ha salvato tutti i progressi nel tuo account. Vuoi annullare comunque?"
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "La chat dal vivo è una funzionalità premium disponibile solo per chi ha piani ${ VPN_APP_NAME } a pagamento. Si prega di aprire un ticket."
+      "Please add at least one recipient.": [
+        "Inserisci almeno un destinatario."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà stato completato."
