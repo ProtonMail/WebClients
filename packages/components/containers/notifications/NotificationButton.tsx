@@ -1,5 +1,4 @@
-import { ElementType, ReactElement, forwardRef, useContext } from 'react';
-import { PolymorphicComponentProps } from 'react-polymorphic-box';
+import { ElementType, ForwardedRef, ReactElement, forwardRef, useContext } from 'react';
 
 import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
 import NotificationContext from '@proton/components/containers/notifications/notificationContext';
@@ -11,21 +10,20 @@ interface NotificationOwnProps {
     close?: boolean;
 }
 
-export type NotificationButtonProps<E extends ElementType> = PolymorphicComponentProps<
-    E,
-    NotificationOwnProps & Omit<ButtonLikeProps<E>, 'shape' | 'color' | 'size'>
->;
+export type NotificationButtonProps<E extends ElementType> = Omit<ButtonLikeProps<E>, 'shape' | 'color' | 'size'> &
+    NotificationOwnProps;
 const defaultElement = 'button';
 
 const NotificationButtonBase = <E extends ElementType = typeof defaultElement>(
-    { close, className = '', ...rest }: NotificationButtonProps<E>,
-    ref: typeof rest.ref
+    { close, className = '', as, ...rest }: NotificationButtonProps<E>,
+    ref: ForwardedRef<Element>
 ) => {
     const { type } = useContext(NotificationContext);
     const positive = type == 'info' || type == 'success';
+    const Element: ElementType = as || defaultElement;
     return (
         <ButtonLike
-            as={defaultElement}
+            as={Element}
             {...(!rest.as || rest.as === 'button' ? { type: 'button' } : undefined)}
             ref={ref}
             {...rest}

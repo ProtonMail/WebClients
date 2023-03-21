@@ -1,5 +1,5 @@
 import { Children, ElementType, useState } from 'react';
-import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
+import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
 import { generateUID } from '../../helpers';
 import CollapsibleContext, { CollapsibleContextValue } from './CollapsibleContext';
@@ -15,14 +15,15 @@ export interface CollapsibleOwnProps {
     expandByDefault?: boolean;
 }
 
-export type CollapsibleProps<E extends ElementType> = PolymorphicComponentProps<E, CollapsibleOwnProps>;
+export type CollapsibleProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleOwnProps, E>;
 
-const element = 'div';
+const defaultElement = 'div';
 
-const Collapsible = <E extends ElementType = typeof element>({
+const Collapsible = <E extends ElementType = typeof defaultElement>({
     disabled = false,
     expandByDefault = false,
     children: childrenProp,
+    as,
     ...rest
 }: CollapsibleProps<E>) => {
     const [isExpanded, setIsExpanded] = useState(expandByDefault);
@@ -43,12 +44,14 @@ const Collapsible = <E extends ElementType = typeof element>({
         contentId,
     };
 
+    const Element: ElementType = as || defaultElement;
+
     return (
         <CollapsibleContext.Provider value={contextValue}>
-            <Box as={element} {...rest}>
+            <Element {...rest}>
                 {header}
                 {content}
-            </Box>
+            </Element>
         </CollapsibleContext.Provider>
     );
 };

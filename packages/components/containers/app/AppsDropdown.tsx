@@ -18,7 +18,6 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
 
     return (
         <SimpleDropdown
-            as="button"
             type="button"
             hasCaret={false}
             content={<Icon name="grid-3" className="apps-dropdown-button-icon flex-item-noshrink no-print" />}
@@ -28,8 +27,9 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
             title={c('Apps dropdown').t`${BRAND_NAME} applications`}
             onClick={onDropdownClick}
             disableDefaultArrowNavigation
-            ref={ref}
             {...rest}
+            ref={ref}
+            as="button"
         >
             <ul className="unstyled mt0 mb0">
                 {Children.toArray(<AppsLinks app={app} itemClassName={itemClassName} name />)

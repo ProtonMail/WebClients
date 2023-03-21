@@ -18,7 +18,7 @@ export const useGetCanonicalEmailsMap = () => {
     const cache = useCache();
 
     const getCanonicalEmailsMap = useCallback(
-        async (emails: string[]) => {
+        async (emails: string[]): Promise<SimpleMap<string>> => {
             if (!emails.length) {
                 return Promise.resolve({});
             }

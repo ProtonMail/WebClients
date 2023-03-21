@@ -1,4 +1,4 @@
-import { CSSProperties, ElementType, MouseEventHandler, ReactNode, forwardRef, useState } from 'react';
+import { CSSProperties, ElementType, ForwardedRef, MouseEventHandler, ReactNode, forwardRef, useState } from 'react';
 
 import { useCombinedRefs } from '@proton/hooks';
 
@@ -7,7 +7,7 @@ import { PopperPlacement, usePopperAnchor } from '../popper';
 import Dropdown from './Dropdown';
 import DropdownButton, { DropdownButtonProps } from './DropdownButton';
 
-interface OwnProps {
+interface OwnProps<E extends ElementType> {
     hasCaret?: boolean;
     content?: ReactNode;
     children?: ReactNode;
@@ -16,11 +16,11 @@ interface OwnProps {
     dropdownClassName?: string;
     dropdownStyle?: CSSProperties;
     disableDefaultArrowNavigation?: boolean;
-    onClick?: MouseEventHandler;
+    onClick?: MouseEventHandler<E>;
     onToggle?: (isOpen: boolean) => void;
 }
 
-export type Props<T extends ElementType> = DropdownButtonProps<T> & OwnProps;
+export type Props<T extends ElementType> = DropdownButtonProps<T> & OwnProps<T>;
 
 const SimpleDropdownBase = <E extends ElementType>(
     {
@@ -34,24 +34,28 @@ const SimpleDropdownBase = <E extends ElementType>(
         disableDefaultArrowNavigation = false,
         onClick,
         onToggle,
+        as,
         ...rest
     }: Props<E>,
-    ref: typeof rest.ref
+    ref: ForwardedRef<Element>
 ) => {
     const [uid] = useState(generateUID('dropdown'));
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>(onToggle);
 
-    const handleClick: MouseEventHandler<HTMLButtonElement> = !!onClick
+    const handleClick: MouseEventHandler<E> = !!onClick
         ? (e) => {
               onClick(e);
               toggle();
           }
         : toggle;
 
+    const Element: ElementType | undefined = as || undefined;
+
     return (
         <>
             <DropdownButton
+                as={Element}
                 {...rest}
                 ref={useCombinedRefs(ref, anchorRef)}
                 isOpen={isOpen}
@@ -65,7 +69,7 @@ const SimpleDropdownBase = <E extends ElementType>(
                 originalPlacement={originalPlacement}
                 autoClose={autoClose}
                 isOpen={isOpen}
-                anchorRef={anchorRef}
+                anchorRef={anchorRef as unknown as any}
                 onClose={close}
                 className={dropdownClassName}
                 style={dropdownStyle}

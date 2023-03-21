@@ -1,21 +1,24 @@
 import { ElementType, useContext } from 'react';
-import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
+import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
 import CollapsibleContext from './CollapsibleContext';
 
 export interface CollapsibleContentOwnProps {}
 
-export type CollapsibleContentProps<E extends ElementType> = PolymorphicComponentProps<E, CollapsibleContentOwnProps>;
+export type CollapsibleContentProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleContentOwnProps, E>;
 
-const element = 'div';
+const defaultElement = 'div';
 
-const CollapsibleContent = <E extends ElementType = typeof element>(props: CollapsibleContentProps<E>) => {
+const CollapsibleContent = <E extends ElementType = typeof defaultElement>({
+    as,
+    ...rest
+}: CollapsibleContentProps<E>) => {
     const { isExpanded, contentId, headerId } = useContext(CollapsibleContext);
+    const Element: ElementType = as || defaultElement;
 
     return (
-        <Box
-            as={element}
-            {...props}
+        <Element
+            {...rest}
             id={contentId}
             role="region"
             aria-labelledby={headerId}
