@@ -16,7 +16,6 @@ interface Arguments {
     isInviteSettingEnabled: boolean;
     isReferralProgramEnabled: boolean;
     isSmtpTokenEnabled: boolean;
-    isBulkUserUploadEnabled: boolean;
     isSubscribeCalendarEnabled: boolean;
     isDataRecoveryAvailable: boolean;
     isGmailSyncEnabled: boolean;
@@ -30,7 +29,6 @@ export const getRoutes = ({
     isDataRecoveryAvailable,
     isSpyTrackerEnabled,
     isReferralProgramEnabled,
-    isBulkUserUploadEnabled,
     isSubscribeCalendarEnabled,
     isSmtpTokenEnabled,
     isInviteSettingEnabled,
@@ -54,7 +52,7 @@ export const getRoutes = ({
         }),
         calendar: getCalendarAppRoutes(isSubscribeCalendarEnabled, isInviteSettingEnabled),
         drive: getDriveAppRoutes(),
-        organization: getOrganizationAppRoutes({ user, organization, isBulkUserUploadEnabled }),
+        organization: getOrganizationAppRoutes({ user, organization }),
         vpn: getVpnAppRoutes(),
     };
 };
