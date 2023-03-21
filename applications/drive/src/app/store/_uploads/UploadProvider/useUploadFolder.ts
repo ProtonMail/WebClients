@@ -16,7 +16,7 @@ interface Folder {
 export default function useUploadFolder() {
     const queuedFunction = useQueuedFunction();
     const { createFolder } = useLinkActions();
-    const { trashLinks } = useLinksActions();
+    const { trashLinks, deleteChildrenLinks } = useLinksActions();
     const { findAvailableName, getLinkByName } = useUploadHelper();
 
     const createEmptyFolder = async (
@@ -71,6 +71,18 @@ export default function useUploadFolder() {
         return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
     };
 
+    const replaceDraft = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        parentId: string,
+        linkId: string,
+        folderName: string,
+        modificationTime?: Date
+    ) => {
+        await deleteChildrenLinks(abortSignal, shareId, parentId, [linkId]);
+        return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
+    };
+
     const prepareFolder = (
         abortSignal: AbortSignal,
         shareId: string,
@@ -82,13 +94,17 @@ export default function useUploadFolder() {
         const lowercaseName = folderName.toLowerCase();
 
         return queuedFunction(`upload_empty_folder:${lowercaseName}`, async () => {
-            const { filename: newName, drarftLinkId } = await findAvailableName(
-                abortSignal,
-                shareId,
-                parentId,
-                folderName
-            );
+            const {
+                filename: newName,
+                draftLinkId,
+                clientUid,
+            } = await findAvailableName(abortSignal, shareId, parentId, folderName);
             checkSignal(abortSignal, folderName);
+            // Automatically replace file - previous draft was uploaded
+            // by the same client.
+            if (draftLinkId && clientUid) {
+                return replaceDraft(abortSignal, shareId, parentId, draftLinkId, newName, modificationTime);
+            }
             if (folderName === newName) {
                 return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
             }
@@ -96,14 +112,20 @@ export default function useUploadFolder() {
             const link = await getLinkByName(abortSignal, shareId, parentId, folderName);
             const originalIsFolder = link ? !link.isFile : false;
             checkSignal(abortSignal, folderName);
-            const conflictStrategy = await getFolderConflictStrategy(abortSignal, !!drarftLinkId, originalIsFolder);
+            const conflictStrategy = await getFolderConflictStrategy(abortSignal, !!draftLinkId, originalIsFolder);
             if (conflictStrategy === TransferConflictStrategy.Rename) {
                 return createEmptyFolder(abortSignal, shareId, parentId, newName, modificationTime);
             }
             if (conflictStrategy === TransferConflictStrategy.Replace) {
+                if (draftLinkId) {
+                    return replaceDraft(abortSignal, shareId, parentId, draftLinkId, folderName, modificationTime);
+                }
                 return replaceFolder(abortSignal, shareId, parentId, folderName, modificationTime);
             }
             if (conflictStrategy === TransferConflictStrategy.Merge) {
+                if (draftLinkId) {
+                    return replaceDraft(abortSignal, shareId, parentId, draftLinkId, folderName, modificationTime);
+                }
                 return getFolder(abortSignal, shareId, parentId, folderName);
             }
             if (conflictStrategy === TransferConflictStrategy.Skip) {

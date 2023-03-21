@@ -232,25 +232,25 @@ export default function useUploadFile() {
                 const {
                     filename: newName,
                     hash,
-                    drarftLinkId,
+                    draftLinkId,
                     clientUid,
                 } = await findAvailableName(abortSignal, shareId, parentId, file.name);
 
                 checkSignal(abortSignal, file.name);
                 // Automatically replace file - previous draft was uploaded
                 // by the same client.
-                if (drarftLinkId && clientUid) {
+                if (draftLinkId && clientUid) {
                     // Careful: uploading duplicate file has different name and
                     // this newName has to be used, not file.name.
                     // Example: upload A, then do it again with adding number
                     // A (2) which will fail, then do it again to replace draft
                     // with new upload - it needs to be A (2), not just A.
-                    return replaceDraft(abortSignal, newName, mimeType, hash, keys, drarftLinkId, clientUid);
+                    return replaceDraft(abortSignal, newName, mimeType, hash, keys, draftLinkId, clientUid);
                 }
                 if (file.name === newName) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
-                const conflictStrategy = await getFileConflictStrategy(abortSignal, !!drarftLinkId);
+                const conflictStrategy = await getFileConflictStrategy(abortSignal, !!draftLinkId);
                 if (conflictStrategy === TransferConflictStrategy.Rename) {
                     return createFile(abortSignal, newName, mimeType, hash, keys);
                 }
@@ -258,8 +258,8 @@ export default function useUploadFile() {
                     conflictStrategy === TransferConflictStrategy.Replace ||
                     conflictStrategy === TransferConflictStrategy.Merge
                 ) {
-                    if (drarftLinkId) {
-                        return replaceDraft(abortSignal, file.name, mimeType, hash, keys, drarftLinkId);
+                    if (draftLinkId) {
+                        return replaceDraft(abortSignal, file.name, mimeType, hash, keys, draftLinkId);
                     }
                     return replaceFile(abortSignal, mimeType, keys);
                 }
