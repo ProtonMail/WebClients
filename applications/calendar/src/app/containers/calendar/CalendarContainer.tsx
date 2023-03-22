@@ -3,7 +3,14 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useApi, useAppTitle, useCalendarBootstrap, useModalState, useNotifications } from '@proton/components';
+import {
+    useApi,
+    useAppTitle,
+    useCalendarBootstrap,
+    useModalState,
+    useNotifications,
+    useObserveDrawerIframeAppLocation,
+} from '@proton/components';
 import { getInvitation } from '@proton/shared/lib/api/calendars';
 import { getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -136,6 +143,7 @@ const CalendarContainer = ({
     const [isAskUpdateTimezoneModalOpen, setIsAskUpdateTimezoneModalOpen] = useState(false);
     const [shareCalendarInvitationModal, setIsSharedCalendarInvitationModalOpen, renderShareCalendarInvitationModal] =
         useModalState();
+    useObserveDrawerIframeAppLocation();
 
     const interactiveRef = useRef<InteractiveRef>(null);
     const timeGridViewRef = useRef<TimeGridRef>(null);

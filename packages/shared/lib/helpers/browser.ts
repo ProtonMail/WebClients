@@ -76,6 +76,7 @@ export const isDesktop = () => {
     const { type } = getDevice();
     return !type;
 };
+export const getIsIframe = () => window.self !== window.top;
 
 export const metaKey = isMac() ? '⌘' : 'Ctrl';
 export const altKey = isMac() ? 'Option' : 'Alt';

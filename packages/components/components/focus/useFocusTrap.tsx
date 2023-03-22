@@ -2,6 +2,8 @@ import { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 import { FocusableElement, isFocusable, tabbable } from 'tabbable';
 
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
+
 const findParentElement = (el: Element | null | undefined, cb: (el: Element) => boolean) => {
     let nextEl = el;
     while (nextEl) {
@@ -64,7 +66,7 @@ const useFocusTrap = ({
     const prevOpenRef = useRef(false);
     const pendingRef = useRef('');
 
-    const isIframe = window.self !== window.top;
+    const isIframe = getIsIframe();
 
     useEffect(() => {
         prevOpenRef.current = active;

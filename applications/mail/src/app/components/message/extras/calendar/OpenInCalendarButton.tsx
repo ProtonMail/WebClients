@@ -1,17 +1,8 @@
 import { Button } from '@proton/atoms';
-import {
-    AppLink,
-    FeatureCode,
-    useActiveBreakpoint,
-    useAuthentication,
-    useConfig,
-    useDrawer,
-    useFeature,
-} from '@proton/components';
+import { AppLink, useActiveBreakpoint, useAuthentication, useConfig, useDrawer } from '@proton/components';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { openCalendarEventInDrawer } from '@proton/shared/lib/drawer/calendar';
-import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 
 interface Props {
     linkString: string;
@@ -22,7 +13,6 @@ interface Props {
 
 const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }: Props) => {
     const { APP_NAME: currentApp } = useConfig();
-    const { feature: drawerFeature, loading } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
     const { setAppInView, iframeSrcMap, setIframeSrcMap, showDrawerSidebar } = useDrawer();
     const { isNarrow } = useActiveBreakpoint();
     const authentication = useAuthentication();
@@ -35,10 +25,6 @@ const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }:
             {linkString}
         </AppLink>
     );
-
-    if (loading) {
-        return null;
-    }
 
     const handleDrawerAppOpening = () => {
         openCalendarEventInDrawer({
@@ -53,8 +39,8 @@ const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }:
         });
     };
 
-    // We use the default link to the Calendar app when the feature flag is off OR mobile view OR the user is hiding the Drawer
-    if (!drawerFeature?.Value.CalendarInMail || isNarrow || !showDrawerSidebar) {
+    // We use the default link to the Calendar app when mobile view OR the user is hiding the Drawer
+    if (isNarrow || !showDrawerSidebar) {
         return appLink;
     }
 

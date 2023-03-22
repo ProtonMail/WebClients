@@ -77,18 +77,6 @@ describe('MailHeader', () => {
     afterEach(clearAll);
 
     describe('Core features', () => {
-        it('should open contacts widget', async () => {
-            const { getByText: getByTextHeader } = await setup();
-
-            const contactsButton = getByTextHeader('Contacts');
-            fireEvent.click(contactsButton);
-
-            const dropdown = await getDropdown();
-            getByText(dropdown, 'Contacts');
-            getByText(dropdown, 'Groups');
-            getByText(dropdown, 'Settings');
-        });
-
         it('should open settings', async () => {
             const { getByText: getByTextHeader } = await setup();
 

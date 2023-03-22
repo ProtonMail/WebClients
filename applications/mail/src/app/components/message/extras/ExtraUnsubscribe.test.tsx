@@ -26,6 +26,7 @@ jest.mock('@proton/shared/lib/helpers/browser', () => ({
     openNewTab: jest.fn(),
     isMobile: jest.fn(),
     isFirefoxLessThan55: jest.fn(),
+    getIsIframe: jest.fn(() => false),
 }));
 
 describe('Unsubscribe banner', () => {

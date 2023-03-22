@@ -10,7 +10,13 @@ import {
     useState,
 } from 'react';
 
-import { useApi, useAuthentication, useGetUser, useToggleDrawerApp } from '@proton/components/hooks/index';
+import {
+    useApi,
+    useAuthentication,
+    useDrawerLocalStorage,
+    useGetUser,
+    useToggleDrawerApp,
+} from '@proton/components/hooks';
 import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { serverTime } from '@proton/crypto';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
@@ -18,18 +24,39 @@ import { APP_NAMES, DAY, MINUTE } from '@proton/shared/lib/constants';
 import { getIsDrawerPostMessage, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_APPS, DRAWER_EVENTS, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
 import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 
 export const DrawerContext = createContext<{
+    /**
+     * App currently opened in the Drawer
+     */
     appInView: DRAWER_APPS | undefined;
     setAppInView: Dispatch<SetStateAction<DRAWER_APPS | undefined>>;
+    /**
+     * Map of the srcs we use on the iframe to open it
+     */
     iframeSrcMap: IframeSrcMap;
     setIframeSrcMap: Dispatch<SetStateAction<IframeSrcMap>>;
+    /**
+     * Map we use to store urls of all apps opened inside the iframe
+     */
+    iframeURLMap: IframeSrcMap;
+    setIframeURLMap: Dispatch<SetStateAction<IframeSrcMap>>;
+    /**
+     * Is the drawer sidebar hidden (from a setting perspective)
+     */
     showDrawerSidebar?: boolean;
     setShowDrawerSidebar: Dispatch<SetStateAction<boolean | undefined>>;
-    parentApp?: APP_NAMES;
-    setParentApp: Dispatch<SetStateAction<APP_NAMES | undefined>>;
+    /**
+     * Is the drawer sidebar already mounted, so that we can perform actions on it
+     */
     drawerSidebarMounted: boolean;
     setDrawerSidebarMounted: Dispatch<SetStateAction<boolean>>;
+    /**
+     * Child specific, on which "parent" app the "child" app is opened
+     */
+    parentApp?: APP_NAMES;
+    setParentApp: Dispatch<SetStateAction<APP_NAMES | undefined>>;
 } | null>(null);
 
 export default function useDrawer() {
@@ -44,6 +71,8 @@ export default function useDrawer() {
         setAppInView,
         iframeSrcMap,
         setIframeSrcMap,
+        iframeURLMap,
+        setIframeURLMap,
         showDrawerSidebar,
         setShowDrawerSidebar,
         parentApp,
@@ -58,7 +87,7 @@ export default function useDrawer() {
         setIframeSrcMap,
     });
 
-    const isIframe = window.self !== window.top;
+    const isIframe = getIsIframe();
 
     // If app is inside an iframe and it has a parent, then it's a drawer app
     const isDrawerApp = !!parentApp && isIframe;
@@ -68,6 +97,8 @@ export default function useDrawer() {
         setAppInView,
         iframeSrcMap,
         setIframeSrcMap,
+        iframeURLMap,
+        setIframeURLMap,
         toggleDrawerApp,
         parentApp,
         isDrawerApp,
@@ -85,8 +116,10 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
 
     // App currently in view in the drawer
     const [appInView, setAppInView] = useState<DRAWER_APPS | undefined>();
-    // Iframe src's for all apps opened in the drawer.
+    // Iframe src's for all apps opened in the drawer => Map of the src we use on the iframe to open it
     const [iframeSrcMap, setIframeSrcMap] = useState<IframeSrcMap>({});
+    // Iframe urls for all apps opened in the drawer => Map we use to store the url of the app opened inside the iframe
+    const [iframeURLMap, setIframeURLMap] = useState<IframeSrcMap>({});
     // Parent app of the app embedded into the drawer
     const [parentApp, setParentApp] = useState<APP_NAMES>();
     // Is the sidebar mounted, we need this to get the drawer width
@@ -97,6 +130,8 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
     const [requestsAbortControllers, setRequestsAbortControllers] = useState<
         { id: string; abortController: AbortController }[]
     >([]);
+
+    const { setDrawerLocalStorageKey } = useDrawerLocalStorage(iframeSrcMap, appInView);
 
     const removeAbortController = (id: string) => {
         setRequestsAbortControllers((requestsAbortControllers) =>
@@ -114,7 +149,6 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                 case DRAWER_EVENTS.CLOSE:
                     {
                         setAppInView(undefined);
-
                         if (event.data.payload) {
                             const { app, closeDefinitely } = event.data.payload;
 
@@ -248,6 +282,14 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                     }
 
                     break;
+                case DRAWER_EVENTS.CHILD_URL_UPDATE:
+                    const { url, app } = event.data.payload;
+                    setDrawerLocalStorageKey({ app, url });
+                    setIframeURLMap((iframeURLMap) => ({
+                        ...iframeURLMap,
+                        [app]: url,
+                    }));
+                    break;
                 default:
                     break;
             }
@@ -313,6 +355,8 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                 setAppInView,
                 iframeSrcMap,
                 setIframeSrcMap,
+                iframeURLMap,
+                setIframeURLMap,
                 showDrawerSidebar,
                 setShowDrawerSidebar,
                 parentApp,
