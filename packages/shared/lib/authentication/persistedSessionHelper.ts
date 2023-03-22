@@ -1,5 +1,6 @@
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 
 import { getLocalKey, getLocalSessions, setLocalKey } from '../api/auth';
 import { getIs401Error } from '../api/helpers/apiErrorHelper';
@@ -40,7 +41,7 @@ const handleDrawerApp = (localID: number) => {
         resolve = res;
     });
 
-    const isIframe = window.self !== window.top;
+    const isIframe = getIsIframe();
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
 
     const handler = (event: MessageEvent) => {

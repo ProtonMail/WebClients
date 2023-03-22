@@ -25,7 +25,7 @@ jest.mock('../../../hooks/useContacts', () => () => []);
 jest.mock('../../../hooks/useUserSettings', () => () => [{}, jest.fn()]);
 jest.mock('../../../hooks/useCachedModelResult', () => jest.fn());
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
-jest.mock('../../../hooks/useDrawer', () => () => ({}));
+jest.mock('../../../hooks/drawer/useDrawer', () => () => ({}));
 
 function renderComponent({ customActions }: { customActions: CustomAction[] }) {
     return (

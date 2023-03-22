@@ -7,6 +7,7 @@ import { handleCreateUser } from './handleCreateUser';
 import { handlePayment } from './signupActions';
 
 jest.mock('./handleCreateUser');
+jest.mock('@proton/components/hooks/drawer/useOpenDrawerOnLoad', () => () => ({}));
 
 describe('signupActions', () => {
     let handleCreateUserMock: jest.Mock;

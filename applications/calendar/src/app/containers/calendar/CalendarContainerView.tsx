@@ -33,10 +33,10 @@ import {
     UserDropdown,
     useContactGroups,
     useDrawer,
-    useFeature,
     useHasRebrandingFeedback,
     useModalState,
     useNotifications,
+    useOpenDrawerOnLoad,
     useSpotlightOnFeature,
     useSpotlightShow,
     useToggle,
@@ -62,7 +62,6 @@ import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
-import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
 import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import uniqueBy from '@proton/utils/uniqueBy';
@@ -150,7 +149,7 @@ const CalendarContainerView = ({
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
 
-    const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
+    useOpenDrawerOnLoad();
     const displayContactsInHeader = useDisplayContactsWidget();
     const { showDrawerSidebar, appInView } = useDrawer();
 
@@ -566,9 +565,7 @@ const CalendarContainerView = ({
     const noonDate = getNoonDateForTimeZoneOffset(utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate);
 
     const drawerSidebarButtons = [
-        drawerFeature?.Value.ContactsInCalendar && (
-            <ContactDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)} />
-        ),
+        <ContactDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)} />,
     ].filter(isTruthy);
 
     const canShowDrawer = !isDrawerApp && drawerSidebarButtons.length > 0;
