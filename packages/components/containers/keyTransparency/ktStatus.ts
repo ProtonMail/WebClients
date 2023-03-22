@@ -1,4 +1,4 @@
-import { getKTLocalStorage, removeKTFromLS } from '@proton/key-transparency';
+import { KT_DOMAINS, getBaseDomain, getKTLocalStorage, removeKTFromLS } from '@proton/key-transparency';
 import { APPS } from '@proton/shared/lib/constants';
 import { getHostname } from '@proton/shared/lib/helpers/url';
 import { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
@@ -12,15 +12,15 @@ export enum KT_FF {
 export const isKTActive = async (feature?: KT_FF) => {
     // Do not activate KT if
     //  - feature flag is off;
-    //  - BigInt is not supported (it is needed for VRF verification);
+    //  - the api is not prod's or proton.black's
     //  - there is no access to cross-storage.
+    //  - BigInt is not supported (it is needed for VRF verification);
     if (typeof feature === 'undefined' || feature === KT_FF.DISABLE) {
         return false;
     }
 
-    const { hostname } = window.location;
-    const currentDomain = hostname.slice(hostname.indexOf('.') + 1);
-    if (hostname === 'localhost' || currentDomain === 'proton.local') {
+    const domain = getBaseDomain(false);
+    if (domain === KT_DOMAINS.UNKNOWN) {
         return false;
     }
 
