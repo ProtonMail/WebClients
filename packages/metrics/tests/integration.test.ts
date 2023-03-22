@@ -1,9 +1,10 @@
 import Counter from '../lib/Counter';
 import Histogram from '../lib/Histogram';
-import { MetricSchema } from '../lib/Metric';
 import MetricsApi from '../lib/MetricsApi';
 import MetricsBase from '../lib/MetricsBase';
-import MetricsRequestService, { IMetricsRequestService } from '../lib/MetricsRequestService';
+import MetricsRequestService from '../lib/MetricsRequestService';
+import IMetricsRequestService from '../lib/types/IMetricsRequestService';
+import MetricSchema from '../lib/types/MetricSchema';
 
 export const counterName = 'counter_name';
 export const counterVersion = 1;

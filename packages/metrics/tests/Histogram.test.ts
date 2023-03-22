@@ -1,7 +1,7 @@
 import Histogram from '../lib/Histogram';
 import MetricsApi from '../lib/MetricsApi';
 import MetricsRequestService from '../lib/MetricsRequestService';
-import { MetricSchema } from './../lib/Metric';
+import MetricSchema from '../lib/types/MetricSchema';
 
 jest.mock('../lib/MetricsApi');
 const metricsApi = new MetricsApi();

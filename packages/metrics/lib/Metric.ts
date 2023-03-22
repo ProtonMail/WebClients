@@ -1,4 +1,6 @@
-import { IMetricsRequestService } from './MetricsRequestService';
+import IMetricsRequestService from './types/IMetricsRequestService';
+import MetricSchema from './types/MetricSchema';
+import MetricVersions from './types/MetricVersions';
 
 /**
  * Custom regex based on the following
@@ -9,13 +11,6 @@ const metricRegexp = /^[a-zA-Z]+(?:_[a-zA-Z0-9]+)*$/;
 
 function validateMetricName(name: string) {
     return metricRegexp.test(name);
-}
-
-export type MetricVersions = 1 | 2;
-
-export interface MetricSchema {
-    Value: number;
-    Labels: Object;
 }
 
 abstract class Metric<D extends MetricSchema> {

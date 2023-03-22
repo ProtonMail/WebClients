@@ -1,4 +1,5 @@
-import Metric, { MetricSchema } from './Metric';
+import Metric from './Metric';
+import MetricSchema from './types/MetricSchema';
 
 class Counter<D extends MetricSchema> extends Metric<D> {
     public increment(labels: D['Labels']) {

@@ -1,5 +1,6 @@
 import MetricsApi from '../lib/MetricsApi';
-import MetricsRequestService, { MetricsRequest } from '../lib/MetricsRequestService';
+import MetricsRequestService from '../lib/MetricsRequestService';
+import MetricsRequest from '../lib/types/MetricsRequest';
 
 jest.mock('../lib/MetricsApi');
 const metricsApi = new MetricsApi();

@@ -1,22 +1,6 @@
-import { MetricVersions } from './Metric';
-import { IMetricsApi } from './MetricsApi';
-
-export interface MetricsRequest {
-    Name: string;
-    Version: MetricVersions;
-    Timestamp: number;
-    Data: object;
-}
-
-export interface IMetricsRequestService {
-    api: IMetricsApi;
-    report: (request: MetricsRequest) => void;
-    startBatchingProcess: () => void;
-    stopBatchingProcess: () => void;
-    processAllRequests: () => Promise<void>;
-    clearQueue: () => void;
-    setReportMetrics: (reportMetrics: boolean) => void;
-}
+import IMetricsApi from './types/IMetricsApi';
+import IMetricsRequestService from './types/IMetricsRequestService';
+import MetricsRequest from './types/MetricsRequest';
 
 interface BatchOptions {
     frequency: number;
