@@ -1,4 +1,12 @@
-import { auth, authMnemonic, createSession, payload, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
+import {
+    auth,
+    auth2FA,
+    authMnemonic,
+    createSession,
+    payload,
+    setCookies,
+    setRefreshCookies,
+} from '@proton/shared/lib/api/auth';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from '@proton/shared/lib/api/helpers/refreshHandlers';
 import { ChallengePayload } from '@proton/shared/lib/authentication/interface';
@@ -79,6 +87,7 @@ export const clearTabPersistedUID = () => {
 
 const authConfig = auth({} as any, true);
 const mnemonicAuthConfig = authMnemonic('', true);
+const auth2FAConfig = auth2FA({ TwoFactorCode: '' });
 
 export const apiCallback: Api = (config: any) => {
     const UID = context.UID;
@@ -114,6 +123,10 @@ export const apiCallback: Api = (config: any) => {
         })
         .catch((e) => {
             if (getIs401Error(e)) {
+                // Don't attempt to refresh on 2fa failures since the session has become invalidated
+                if (config.url === auth2FAConfig.url) {
+                    throw e;
+                }
                 return refreshHandler(UID, getDateHeader(e?.response?.headers)).then(() => {
                     return apiCallback(config);
                 });
