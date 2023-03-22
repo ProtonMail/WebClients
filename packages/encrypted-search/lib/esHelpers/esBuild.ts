@@ -205,13 +205,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>(
     esSupported: boolean,
     indexKey: CryptoKey | undefined,
     esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    queryItemsMetadata: (
-        signal: AbortSignal,
-        isBackgroundIndexing?: boolean
-    ) => Promise<{
-        resultMetadata?: ESItemMetadata[];
-        setRecoveryPoint?: (setIDB?: boolean) => Promise<void>;
-    }>,
+    queryItemsMetadata: InternalESHelpers<ESItemMetadata, unknown>['queryItemsMetadata'],
     getItemInfo: GetItemInfo<ESItemMetadata>,
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void,
@@ -279,7 +273,7 @@ export const buildContentDB = async <ESItemContent>(
     indexKey: CryptoKey,
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void,
-    fetchESItemContent: (itemID: string, signal?: AbortSignal | undefined) => Promise<ESItemContent | undefined>,
+    fetchESItemContent: Required<InternalESHelpers<unknown, unknown, ESItemContent>>['fetchESItemContent'],
     inputrecoveryPoint: ESTimepoint | undefined,
     isInitialIndexing: boolean = true,
     isBackgroundIndexing?: boolean
