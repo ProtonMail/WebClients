@@ -3,12 +3,7 @@ import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/he
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS, METRICS_REQUEST_TIMEOUT_SECONDS } from './../constants';
-
-export interface IMetricsApi {
-    setAuthHeaders: (uid: string) => void;
-    setVersionHeaders: (clientID: string, appVersion: string) => void;
-    fetch: (requestInfo: RequestInfo | URL, requestInit?: RequestInit, retries?: number) => Promise<Response | void>;
-}
+import IMetricsApi from './types/IMetricsApi';
 
 class MetricsApi implements IMetricsApi {
     private _authHeaders: { [key: string]: string };
