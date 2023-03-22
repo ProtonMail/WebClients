@@ -57,6 +57,9 @@
     --optional-email-item-selected-background-color: var(--interaction-norm-major-1);
     --optional-email-item-selected-icon-background-color: var(--interaction-norm-major-3);
 
+    --optional-promotion-background-start: rgb(138 110 255 / 0.3);
+    --optional-promotion-background-end: rgb(138 110 255 / 0.1);
+
     /* Reset because prominent part overrides those colors */
     --optional-link-norm: initial;
     --optional-link-hover: initial;

@@ -1,0 +1,19 @@
+@import '~@proton/styles/scss/config';
+@import '~@proton/styles/scss/specifics/placeholder-loading';
+
+.bg-promotion {
+	background: linear-gradient(85.16deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%);
+
+	&-loading {
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+
+			inline-size: 100%;
+		}
+	}
+
+	&-text {
+		color: var(--promotion-color-text);
+	}
+}
