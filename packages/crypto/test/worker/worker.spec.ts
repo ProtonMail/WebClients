@@ -12,7 +12,7 @@ import {
     revokeKey as openpgp_revokeKey,
 } from 'pmcrypto/lib/openpgp';
 
-import { VERIFICATION_STATUS } from '../../lib';
+import { S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
 import {
     arrayToHexString,
     binaryStringToArray,
@@ -434,6 +434,27 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(decryptionResultWithEncryptedSignature.signatures).to.have.length(1);
         expect(decryptionResultWithEncryptedSignature.verificationErrors).to.not.exist;
         expect(decryptionResultWithEncryptedSignature.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+    });
+
+    it('should support encrypting/decrypting using argon2', async () => {
+        const passwords = 'password';
+        const sessionKey = {
+            algorithm: enums.read(enums.symmetric, enums.symmetric.aes128),
+            data: hexStringToArray('01FE16BBACFD1E7B78EF3B865187374F'),
+        };
+        const encrypted = await CryptoWorker.encryptSessionKey({
+            ...sessionKey,
+            passwords,
+            format: 'binary',
+            config: { s2kType: S2kTypeForConfig.argon2 },
+        });
+        // ensure encryption used argon2
+        const skeskStartIndex = 2;
+        expect(encrypted[skeskStartIndex]).to.equal(4); // SKESK version (v6 format is different, test needs updating)
+        expect(encrypted[skeskStartIndex + 2]).to.equal(S2kTypeForConfig.argon2);
+
+        const decryptedSessionKey = await CryptoWorker.decryptSessionKey({ binaryMessage: encrypted, passwords });
+        expect(decryptedSessionKey).to.deep.equal(sessionKey);
     });
 
     it('generateSessionKey - should return session key of expected size', async () => {
