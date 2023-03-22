@@ -15,6 +15,7 @@ export const KT_LEN = 32;
 export enum KT_DOMAINS {
     PROD = 'keytransparency.ch',
     ATLAS_DEV = 'dev.proton.wtf',
+    UNKNOWN = 'unknown',
 }
 
 export enum KT_CERTIFICATE_ISSUER {
