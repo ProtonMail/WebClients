@@ -1,4 +1,4 @@
-import { FeatureCode, StandardPrivateApp, useApi, useDrawer } from '@proton/components';
+import { StandardPrivateApp, useApi, useDrawer } from '@proton/components';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
@@ -48,7 +48,6 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             }}
             onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             locales={locales}
-            preloadFeatures={[FeatureCode.Drawer]}
             preloadModels={[
                 UserModel,
                 UserSettingsModel,
