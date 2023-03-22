@@ -4,7 +4,8 @@ import { METRICS_BATCH_SIZE, METRICS_REQUEST_FREQUENCY_SECONDS } from './constan
 import Counter from './lib/Counter';
 import MetricsApi from './lib/MetricsApi';
 import MetricsBase from './lib/MetricsBase';
-import MetricsRequestService, { IMetricsRequestService } from './lib/MetricsRequestService';
+import MetricsRequestService from './lib/MetricsRequestService';
+import IMetricsRequestService from './lib/types/IMetricsRequestService';
 import { WebCoreSignupAccountStepAccountCreationTotal } from './types/web_core_signup_accountStep_accountCreation_total_v1.schema.d';
 import { WebCoreSignupBackButtonTotal } from './types/web_core_signup_backButton_total_v1.schema.d';
 import { WebCoreSignupCongratulationsStepDisplayNameChoiceTotal } from './types/web_core_signup_congratulationsStep_displayNameChoice_total_v1.schema.d';
