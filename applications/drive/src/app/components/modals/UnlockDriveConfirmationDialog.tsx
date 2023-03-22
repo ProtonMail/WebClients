@@ -3,6 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import {
     ModalStateProps,
     ModalTwo,
@@ -10,8 +11,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     SettingsLink,
-} from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+} from '@proton/components/index';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

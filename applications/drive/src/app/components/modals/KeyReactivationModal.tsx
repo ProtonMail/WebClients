@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import {
     ModalStateProps,
     ModalTwo,
@@ -10,12 +11,11 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     RadioGroup,
-} from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+} from '@proton/components/index';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { LockedVolumeResolveMethod } from './interfaces';
+import { LockedVolumeResolveMethod } from '../ResolveLockedVolumes/KeyReactivation/interfaces';
 
 interface Props {
     defaultResolveMethod: LockedVolumeResolveMethod;
