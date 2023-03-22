@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 
 import { useLockedVolume } from '../../../store';
-import { useDeleteLockedVolumesConfirmModal } from './DeleteLockedVolumesConfirmModal';
-import { useKeyReactivationModal } from './KeyReactivationModal';
-import { useUnlockDriveConfirmationDialog } from './UnlockDriveConfirmationDialog';
+import { useDeleteLockedVolumesConfirmModal } from '../../modals/DeleteLockedVolumesConfirmModal';
+import { useKeyReactivationModal } from '../../modals/KeyReactivationModal';
+import { useUnlockDriveConfirmationDialog } from '../../modals/UnlockDriveConfirmationDialog';
 import { LockedVolumeResolveMethod } from './interfaces';
 
 interface ReactivationParams {

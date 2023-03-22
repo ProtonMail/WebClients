@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { ModalStateProps, ModalTwo, useLoading, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { ModalStateProps, ModalTwo, useLoading, useNotifications } from '@proton/components/index';
 
 import { useLockedVolume } from '../../../store';
 import FilesRecoveryState from './FilesRecoveryState';

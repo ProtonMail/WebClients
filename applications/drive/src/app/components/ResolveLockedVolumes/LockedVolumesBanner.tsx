@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { InlineLinkButton, TopBanner, useLoading } from '@proton/components';
 
 import { useLockedVolume } from '../../store';
-import { useFilesRecoveryModal } from './FileRecovery/FilesRecoveryModal';
+import { useFilesRecoveryModal } from '../modals/FilesRecoveryModal/FilesRecoveryModal';
 import useResolveLockedSharesFlow from './KeyReactivation/useResolveLockedSharesFlow';
 
 interface Props {

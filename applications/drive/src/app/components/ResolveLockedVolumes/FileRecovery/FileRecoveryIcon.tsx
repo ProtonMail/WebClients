@@ -4,7 +4,7 @@ import { Icon, Tooltip } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 import { useLockedVolume } from '../../../store';
-import FilesRecoveryModal from './FilesRecoveryModal';
+import FilesRecoveryModal from '../../modals/FilesRecoveryModal/FilesRecoveryModal';
 
 interface Props {
     className?: string;
