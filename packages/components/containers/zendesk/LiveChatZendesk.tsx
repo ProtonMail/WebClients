@@ -156,7 +156,7 @@ const LiveChatZendesk = ({ zendeskKey, zendeskRef, name, email, onLoaded, onUnav
             'webWidget',
             'prefill',
             {
-                name: { value: name, readOnly: true },
+                name: { value: name, readOnly: false },
                 email: { value: email, readOnly: Boolean(email) },
             },
         ]);
