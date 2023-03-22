@@ -26,22 +26,26 @@ export type EncryptedSearch<ESItemMetadata, ESItemContent> = (
     setResultsList: ESSetResultsList<ESItemMetadata, ESItemContent>,
     minimumItems?: number
 ) => Promise<boolean>;
+
 export type EncryptedSearchExecution<ESItemMetadata, ESItemContent, ESSearchParameters> = (
     setResultsList: ESSetResultsList<ESItemMetadata, ESItemContent>,
     esSearchParams: ESSearchParameters,
     minimumItems: number | undefined
 ) => Promise<boolean>;
 export type HighlightString = (content: string, setAutoScroll: boolean) => string;
+
 export type HighlightMetadata = (
     metadata: string,
     isBold?: boolean,
     trim?: boolean
 ) => { numOccurrences: number; resultJSX: JSX.Element };
+
 export type EnableContentSearch = (options?: {
     isRefreshed?: boolean | undefined;
     isBackgroundIndexing?: boolean;
     notify?: boolean | undefined;
 }) => Promise<void>;
+
 export type EnableEncryptedSearch = (options?: {
     isRefreshed?: boolean | undefined;
     isBackgroundIndexing?: boolean;
