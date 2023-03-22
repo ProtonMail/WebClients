@@ -132,8 +132,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const initializeESMail = async () => {
         if (isFree(user) && !!esAutomaticBackgroundIndexingFeature?.Value) {
-            // Avoid indexing for incognito users
-            // If initialIndexing is set, it means that the user is not incognito
+            // Avoid indexing for incognito users, and users that only log in on a device once
+            // If initialIndexing is set, it means that the user is most likely not in incognito mode, since they have persistent storage
+            // (or they loaded the page twice in a single incognito session)
             if (initialIndexing) {
                 // Start indexing
                 const success = await esLibraryFunctions.enableEncryptedSearch({ isBackgroundIndexing: true });
