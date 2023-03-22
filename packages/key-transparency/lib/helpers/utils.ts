@@ -63,7 +63,7 @@ export const ktSentryReport = (errorMessage: string, extra: { [key: string]: any
 /**
  * Derive which base domain is being used, whether production or test
  */
-export const getBaseDomain = () => {
+export const getBaseDomain = (sendReport: boolean = true) => {
     // The app name is removed
     const { hostname } = window.location;
     const currentDomain = hostname.slice(hostname.indexOf('.') + 1);
@@ -85,12 +85,18 @@ export const getBaseDomain = () => {
         return KT_DOMAINS.PROD;
     }
 
-    // Any other domain (including atlas env over dev, i.e. {env}.proton.black) -> no certificates are released
-    ktSentryReport('Domain not recognised', {
-        context: 'getBaseDomain',
-        hostname,
-        currentDomain,
-        domainParts: JSON.stringify(domainParts),
-    });
-    throw new Error('Domain not recognised');
+    // Any other domain (including atlas env over dev, i.e. {env}.proton.black) -> no certificates are released.
+    // Since this function is also used to test whether to use KT at all, we don't want to spam sentry with
+    // attempts to figure this out, in which case sendReport should be false
+    if (sendReport) {
+        ktSentryReport('Domain not recognised', {
+            context: 'getBaseDomain',
+            hostname,
+            currentDomain,
+            domainParts: JSON.stringify(domainParts),
+        });
+        throw new Error('Domain not recognised');
+    }
+
+    return KT_DOMAINS.UNKNOWN;
 };
