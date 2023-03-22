@@ -60,7 +60,7 @@ const FreeUserLiveChatModal = ({ open, onExit, onClose }: Props) => {
                         path={`/dashboard?plan=${PLANS.VPN}&cycle=1`}
                         onClick={handleClose}
                     >
-                        {c('Live Chat Modal').t`Upgrade subscription `}
+                        {c('Live Chat Modal').t`Upgrade subscription`}
                     </ButtonLike>
                     <Button
                         shape="ghost"
