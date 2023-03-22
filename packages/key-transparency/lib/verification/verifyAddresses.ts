@@ -174,7 +174,12 @@ export const auditAddresses = async (
     const [api] = apis;
     const addressesKeys = new Map(
         await Promise.all(
-            addresses.map(async ({ ID, Keys }): Promise<[string, KeyWithFlags[]]> => [ID, await importKeys(Keys)])
+            addresses.map(
+                async ({ ID, Keys }): Promise<[string, KeyWithFlags[]]> => [
+                    ID,
+                    await importKeys(Keys.filter(({ Active }) => Active === 1)),
+                ]
+            )
         )
     );
 
