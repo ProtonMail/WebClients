@@ -3,7 +3,7 @@ import { Attendee, CalendarNotificationSettings, CalendarSettings, CalendarUserS
 import {
     CalendarCreateArguments,
     CalendarCreateOrUpdateEventBlobData,
-    CalendarEventIDsQuery,
+    CalendarEventsIDsQuery,
     CalendarEventsQuery,
     CalendarExportEventsQuery,
     CalendarKeysResetData,
@@ -197,7 +197,7 @@ export const queryEvents = (
     params,
 });
 
-export const queryEventIDs = (calendarID: string, params: CalendarEventIDsQuery) => ({
+export const queryEventsIDs = (calendarID: string, params: CalendarEventsIDsQuery) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/ids`,
     method: 'get',
     params,
