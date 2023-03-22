@@ -10,7 +10,6 @@ import {
     useFeature,
     useGetMessageCounts,
     useGetUserKeys,
-    useLocalState,
     useNotifications,
     useSubscribeEventManager,
     useUser,
@@ -27,10 +26,17 @@ import {
 import { SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { isFree, isPaid } from '@proton/shared/lib/user/helpers';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
-import { convertEventType, getESHelpers, migrate, parseSearchParams } from '../helpers/encryptedSearch';
+import {
+    convertEventType,
+    getESFreeBlobKey,
+    getESHelpers,
+    migrate,
+    parseSearchParams,
+} from '../helpers/encryptedSearch';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import {
     ESBaseMessage,
@@ -51,7 +57,6 @@ interface Props {
 const EncryptedSearchProvider = ({ children }: Props) => {
     const history = useHistory();
     const [user] = useUser();
-    const [initialIndexing, setInitialIndexing] = useLocalState(false, `ES:${user.ID}:InitialIndexing`);
     const getMessageKeys = useGetMessageKeys();
     const getUserKeys = useGetUserKeys();
     const getMessageCounts = useGetMessageCounts();
@@ -132,20 +137,24 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const initializeESMail = async () => {
         if (isFree(user) && !!esAutomaticBackgroundIndexingFeature?.Value) {
-            // Avoid indexing for incognito users, and users that only log in on a device once
-            // If initialIndexing is set, it means that the user is most likely not in incognito mode, since they have persistent storage
-            // (or they loaded the page twice in a single incognito session)
-            if (initialIndexing) {
-                // Start indexing
-                const success = await esLibraryFunctions.enableEncryptedSearch({ isBackgroundIndexing: true });
+            if (!(await checkVersionedESDB(user.ID))) {
+                // Avoid indexing for incognito users, and users that only log in on a device once
+                // If initialIndexing is set, it means that the user is most likely not in incognito mode, since they have persistent storage
+                // (or they loaded the page twice in a single incognito session)
+                const initialIndexing = getItem(getESFreeBlobKey(user.ID)) === 'true';
+                if (initialIndexing) {
+                    // Start indexing
+                    const success = await esLibraryFunctions.enableEncryptedSearch({ isBackgroundIndexing: true });
 
-                if (success) {
-                    await esLibraryFunctions.enableContentSearch({ isBackgroundIndexing: true });
+                    if (success) {
+                        await esLibraryFunctions.enableContentSearch({ isBackgroundIndexing: true });
+                        removeItem(getESFreeBlobKey(user.ID));
+                    }
+                    return;
+                } else {
+                    setItem(getESFreeBlobKey(user.ID), 'true');
+                    return;
                 }
-                return;
-            } else {
-                setInitialIndexing(true);
-                return;
             }
         }
 

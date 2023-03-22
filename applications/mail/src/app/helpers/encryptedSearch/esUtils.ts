@@ -85,3 +85,5 @@ export const isEncryptedSearchAvailable = (user: UserModel, feature?: Feature) =
 
     return feature?.Value === true;
 };
+
+export const getESFreeBlobKey = (userID: string) => `ES:${userID}:InitialIndexing`;
