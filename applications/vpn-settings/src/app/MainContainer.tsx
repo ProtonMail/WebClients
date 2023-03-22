@@ -186,6 +186,8 @@ const MainContainer = () => {
             </SidebarNav>
         </Sidebar>
     );
+    const name = user.DisplayName || user.Name;
+    const email = user.Email || userSettings?.Email?.Value;
     return (
         <>
             {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
@@ -264,8 +266,8 @@ const MainContainer = () => {
                                 tags={tagsArray}
                                 zendeskRef={zendeskRef}
                                 zendeskKey={vpnZendeskKey}
-                                name={user.DisplayName || user.Name}
-                                email={user.Email || userSettings?.Email?.Value || ''}
+                                name={name || ''}
+                                email={email || ''}
                                 onLoaded={() => {
                                     if (showChat.autoToggle) {
                                         zendeskRef.current?.toggle();
