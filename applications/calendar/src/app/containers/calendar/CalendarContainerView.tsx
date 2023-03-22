@@ -517,6 +517,7 @@ const CalendarContainerView = ({
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={isNarrow}
+                searchBox={<CalendarSearch />}
                 actionArea={toolbar(isDrawerApp)}
                 hideUpsellButton={isNarrow}
                 settingsButton={drawerSettingsButton}
