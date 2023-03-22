@@ -155,7 +155,7 @@ export const defaultESCache = {
     isCacheReady: false,
 };
 
-export const defaultESContext: EncryptedSearchFunctions<unknown, unknown, unknown> = {
+export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     encryptedSearch: async () => false,
     highlightString: () => '',
     highlightMetadata: () => ({ numOccurrences: 0, resultJSX: null as any }),
