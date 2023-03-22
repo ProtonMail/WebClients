@@ -35,7 +35,13 @@ const MiddleEllipsis = ({
     ...rest
 }: Props) => {
     const [start, end] = useMemo(() => {
-        return [text.slice(0, -charsToDisplayEnd), text.slice(-charsToDisplayEnd)];
+        // Split text per characters and not bytes. For example, 👋🌍😊🐶 with
+        // charsToDisplayEnd=3 would end up being 👋🌍� and �🐶 with simple
+        // string slice. With array slice (because string iterator iterates per
+        // characters), the results is as expected 👋 and 🌍😊🐶.
+        // Note this doesn't work with all unicodes. For example, flags have
+        // six bytes and even that is not handled properly by string iterator.
+        return [[...text].slice(0, -charsToDisplayEnd).join(''), [...text].slice(-charsToDisplayEnd).join('')];
     }, [text]);
 
     const ref = useRef<HTMLSpanElement>(null);
