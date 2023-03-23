@@ -5,7 +5,7 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
+import { handleRecipientInputChange, inputToRecipient } from '@proton/shared/lib/mail/recipient';
 
 import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '../autocomplete';
 import Icon from '../icon/Icon';
@@ -135,23 +135,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
         });
 
         const handleInputChange = (newValue: string) => {
-            if (newValue === ';' || newValue === ',') {
-                return;
-            }
-
-            if (!hasEmailPasting) {
-                setInput(newValue);
-                return;
-            }
-
-            const values = newValue.split(/[,;]/).map((value) => value.trim());
-            if (values.length > 1) {
-                onAddRecipients(values.slice(0, -1).map(inputToRecipient));
-                setInput(values[values.length - 1]);
-                return;
-            }
-
-            setInput(newValue);
+            handleRecipientInputChange(newValue, hasEmailPasting, onAddRecipients, setInput);
         };
 
         return (
