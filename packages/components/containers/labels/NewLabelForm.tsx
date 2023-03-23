@@ -138,6 +138,7 @@ function NewLabelForm({
                             : c('New Label form').t`Label name`
                     }
                     data-test-id="label/folder-modal:name"
+                    data-testid="label/folder-modal:name"
                     autoFocus
                     error={validator([requiredValidator(labelOrFolder.Name)])}
                 />

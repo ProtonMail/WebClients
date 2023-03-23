@@ -19,13 +19,16 @@ import {
     useModalState,
 } from '@proton/components';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/colors';
+import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
+import { Label } from '@proton/shared/lib/interfaces';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
@@ -79,7 +82,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
+    const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -88,6 +91,14 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const isMessage = testIsMessage(elements[0]);
     const canMoveToInbox = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], INBOX).length : true;
     const canMoveToSpam = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], SPAM).length : true;
+
+    /*
+     * translator: Text displayed in a button to suggest the creation of a new folder in the move dropdown
+     * This button is shown when the user search for a folder which doesn't exist
+     * ${search} is a string containing the search the user made in the folder dropdown
+     * Full sentence for reference: 'Create folder "Dunder Mifflin"'
+     */
+    const createFolderButtonText = c('Title').t`Create folder "${search}"`;
 
     const alwaysCheckboxDisabled = useMemo(() => {
         return !getSendersToFilter(elements).length || !selectedFolder;
@@ -153,6 +164,12 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const autoFocusSearch = !breakpoints.isNarrow;
     const applyDisabled = selectedFolder?.ID === undefined;
 
+    const newFolder: Pick<Label, 'Name' | 'Color' | 'Type'> = {
+        Name: search,
+        Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
+        Type: LABEL_TYPE.MESSAGE_FOLDER,
+    };
+
     return (
         <form
             className="flex flex-column flex-nowrap flex-justify-start flex-align-items-stretch flex-item-fluid-auto"
@@ -175,7 +192,14 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         <Icon name="folder" /> +
                     </Button>
                 </Tooltip>
-                <EditLabelModal type="folder" onCloseCustomAction={() => setContainFocus(true)} {...editLabelProps} />
+                {renderLabelModal && (
+                    <EditLabelModal
+                        label={newFolder}
+                        type="folder"
+                        onCloseCustomAction={() => setContainFocus(true)}
+                        {...editLabelProps}
+                    />
+                )}
             </div>
             <div className="flex-item-noshrink m1 mb0">
                 <SearchInput
@@ -226,10 +250,23 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                             </li>
                         );
                     })}
-                    {list.length === 0 && (
+                    {list.length === 0 && !search && (
                         <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
                             {c('Info').t`No folder found`}
                         </li>
+                    )}
+                    {list.length === 0 && search && (
+                        <span className="flex w100">
+                            <Button
+                                key="create-new-folder"
+                                className="w100 mr2 ml2 text-ellipsis"
+                                data-testid="folder-dropdown:create-folder-option"
+                                title={createFolderButtonText}
+                                onClick={handleCreate}
+                            >
+                                {createFolderButtonText}
+                            </Button>
+                        </span>
                     )}
                 </ul>
             </div>
