@@ -11,6 +11,13 @@ export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
     };
 };
 
+export const queryFileRevisions = (shareId: string, linkId: string) => {
+    return {
+        method: 'get',
+        url: `drive/shares/${shareId}/files/${linkId}/revisions`,
+        silence: true,
+    };
+};
 export const queryFileRevision = (
     shareId: string,
     linkId: string,
