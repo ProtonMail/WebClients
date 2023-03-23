@@ -11,17 +11,20 @@ import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { RecipientType } from '../../../models/address';
 import { MessageChange } from '../Composer';
+import AddressesCCButton from './AddressesCCButton';
 import AddressesInput from './AddressesInput';
 
 interface Props {
     message: MessageState;
     messageSendInfo: MessageSendInfo;
     onChange: MessageChange;
-    expanded: boolean;
-    toggleExpanded: (e: MouseEvent<HTMLButtonElement>) => void;
+    ccExpanded: boolean;
+    bccExpanded: boolean;
+    toggleExpanded: (type: RecipientType) => (e: MouseEvent<HTMLButtonElement>) => void;
     inputFocusRefs: {
         to: MutableRefObject<() => void>;
         cc: MutableRefObject<() => void>;
+        bcc: MutableRefObject<() => void>;
     };
     handleContactModal: (type: RecipientType) => () => Promise<void>;
 }
@@ -30,12 +33,14 @@ const AddressesEditor = ({
     message,
     messageSendInfo,
     onChange,
-    expanded,
-    toggleExpanded,
     inputFocusRefs,
     handleContactModal,
+    ccExpanded,
+    bccExpanded,
+    toggleExpanded,
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
+    const expanded = ccExpanded || bccExpanded;
 
     const toListAnchorRef = useRef<HTMLDivElement>(null);
     const ccListAnchorRef = useRef<HTMLDivElement>(null);
@@ -70,31 +75,30 @@ const AddressesEditor = ({
                         classname="composer-editor-to"
                         anchorRef={toListAnchorRef}
                     />
-                    <span className="flex flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50 flex-align-self-start pt0-5 composer-to-ccbcc-buttons sticky-top">
-                        {expanded ? null : (
-                            <Button
-                                color="norm"
-                                tabIndex={-1}
-                                shape="ghost"
-                                size="small"
-                                icon
-                                title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
-                                onClick={toggleExpanded}
-                                data-testid="composer:cc-bcc-button"
-                                className={clsx([
-                                    'ml1 composer-addresses-ccbcc text-left text-cut text-no-decoration text-strong relative',
-                                ])}
-                            >
-                                {c('Action').t`CC BCC`}
-                            </Button>
-                        )}
+                    <span className="flex-no-min-children flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50 flex-align-self-start pt0-5 composer-to-ccbcc-buttons sticky-top">
+                        <>
+                            {!ccExpanded && (
+                                <AddressesCCButton
+                                    classNames="ml1 composer-addresses-ccbcc text-cut"
+                                    onClick={toggleExpanded('CCList')}
+                                    type="CCList"
+                                />
+                            )}
+                            {!bccExpanded && (
+                                <AddressesCCButton
+                                    classNames={clsx(ccExpanded && 'ml1', 'composer-addresses-ccbcc text-cut')}
+                                    onClick={toggleExpanded('BCCList')}
+                                    type="BCCList"
+                                />
+                            )}
+                        </>
                         <Tooltip title={c('Action').t`Insert contacts`}>
                             <Button
                                 type="button"
                                 tabIndex={-1}
                                 onClick={handleContactModal('ToList')}
                                 color="weak"
-                                className="pt0-25 pb0-25 flex-item-noshrink"
+                                className="pt0-25 pb0-25 flex-item-noshrink composer-addresses-to-contact-button"
                                 shape="ghost"
                                 icon
                                 data-testid="composer:to-button"
@@ -107,51 +111,56 @@ const AddressesEditor = ({
             </div>
             {expanded && (
                 <>
-                    <div className="flex flex-row on-mobile-flex-column w100 mb0" ref={ccListAnchorRef}>
-                        <Label
-                            htmlFor={`cc-${uid}`}
-                            className="composer-meta-label text-semibold"
-                            title={c('Label').t`Carbon Copy`}
-                        >
-                            {c('Title').t`CC`}
-                        </Label>
-                        <AddressesInput
-                            id={`cc-${uid}`}
-                            recipients={message.data?.CCList}
-                            messageSendInfo={messageSendInfo}
-                            onChange={handleChange('CCList')}
-                            placeholder={c('Placeholder').t`Email address`}
-                            dataTestId="composer:to-cc"
-                            inputFocusRef={inputFocusRefs.cc}
-                            addContactButton={c('Title').t`CC`}
-                            addContactAction={handleContactModal('CCList')}
-                            classname="composer-editor-cc"
-                            hasLighterFieldDesign
-                            anchorRef={ccListAnchorRef}
-                        />
-                    </div>
-                    <div className="flex flex-row on-mobile-flex-column w100" ref={bccListAnchorRef}>
-                        <Label
-                            htmlFor={`bcc-${uid}`}
-                            className="composer-meta-label text-semibold"
-                            title={c('Label').t`Blind Carbon Copy`}
-                        >
-                            {c('Title').t`BCC`}
-                        </Label>
-                        <AddressesInput
-                            id={`bcc-${uid}`}
-                            recipients={message.data?.BCCList}
-                            messageSendInfo={messageSendInfo}
-                            onChange={handleChange('BCCList')}
-                            placeholder={c('Placeholder').t`Email address`}
-                            dataTestId="composer:to-bcc"
-                            addContactButton={c('Title').t`BCC`}
-                            addContactAction={handleContactModal('BCCList')}
-                            classname="composer-editor-bcc"
-                            hasLighterFieldDesign
-                            anchorRef={bccListAnchorRef}
-                        />
-                    </div>
+                    {ccExpanded && (
+                        <div className="flex flex-row on-mobile-flex-column w100 mb0" ref={ccListAnchorRef}>
+                            <Label
+                                htmlFor={`cc-${uid}`}
+                                className="composer-meta-label text-semibold"
+                                title={c('Label').t`Carbon Copy`}
+                            >
+                                {c('Title').t`CC`}
+                            </Label>
+                            <AddressesInput
+                                id={`cc-${uid}`}
+                                recipients={message.data?.CCList}
+                                messageSendInfo={messageSendInfo}
+                                onChange={handleChange('CCList')}
+                                placeholder={c('Placeholder').t`Email address`}
+                                dataTestId="composer:to-cc"
+                                inputFocusRef={inputFocusRefs.cc}
+                                addContactButton={c('Title').t`CC`}
+                                addContactAction={handleContactModal('CCList')}
+                                classname="composer-editor-cc"
+                                hasLighterFieldDesign
+                                anchorRef={ccListAnchorRef}
+                            />
+                        </div>
+                    )}
+                    {bccExpanded && (
+                        <div className="flex flex-row on-mobile-flex-column w100" ref={bccListAnchorRef}>
+                            <Label
+                                htmlFor={`bcc-${uid}`}
+                                className="composer-meta-label text-semibold"
+                                title={c('Label').t`Blind Carbon Copy`}
+                            >
+                                {c('Title').t`BCC`}
+                            </Label>
+                            <AddressesInput
+                                id={`bcc-${uid}`}
+                                recipients={message.data?.BCCList}
+                                messageSendInfo={messageSendInfo}
+                                onChange={handleChange('BCCList')}
+                                placeholder={c('Placeholder').t`Email address`}
+                                dataTestId="composer:to-bcc"
+                                addContactButton={c('Title').t`BCC`}
+                                inputFocusRef={inputFocusRefs.bcc}
+                                addContactAction={handleContactModal('BCCList')}
+                                classname="composer-editor-bcc"
+                                hasLighterFieldDesign
+                                anchorRef={bccListAnchorRef}
+                            />
+                        </div>
+                    )}
                 </>
             )}
         </div>

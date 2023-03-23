@@ -1,6 +1,6 @@
 import { MutableRefObject } from 'react';
 
-import { fireEvent, getAllByRole } from '@testing-library/dom';
+import { fireEvent, getAllByRole, screen } from '@testing-library/dom';
 import { act, getByText } from '@testing-library/react';
 
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -99,6 +99,21 @@ const props = {
     addressesFocusRef: {} as MutableRefObject<() => void>,
 };
 
+const getProps = ({ cc = [], bcc = [] }: Partial<Record<'cc' | 'bcc', Recipient[]>>) => {
+    const messageOverride: MessageState = {
+        ...message,
+        data: {
+            ...message.data,
+            CCList: cc as Recipient[],
+            BCCList: bcc as Recipient[],
+        } as Message,
+    };
+    return {
+        ...props,
+        message: messageOverride,
+    };
+};
+
 describe('Addresses', () => {
     const originalOffsetHeight = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetHeight');
     const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetWidth');
@@ -119,10 +134,10 @@ describe('Addresses', () => {
     afterEach(clearAll);
 
     it('should render Addresses', async () => {
-        const { getByText } = await render(<Addresses {...props} />);
+        await render(<Addresses {...props} />);
 
-        getByText(email1Name);
-        getByText(email2Name);
+        screen.getByText(email1Name);
+        screen.getByText(email2Name);
     });
 
     it('should add a contact from insert contact modal', async () => {
@@ -130,14 +145,14 @@ describe('Addresses', () => {
         addToCache('ContactEmails', contactEmails);
         addApiMock('core/v4/keys', () => ({}));
 
-        const { getByTestId, getAllByTestId, rerender } = await render(<Addresses {...props} />, false);
+        const { rerender } = await render(<Addresses {...props} />, false);
 
-        const toButton = getByTestId('composer:to-button');
+        const toButton = screen.getByTestId('composer:to-button');
 
         // Open the modal
         fireEvent.click(toButton);
 
-        const modal = getByTestId('modal:contactlist');
+        const modal = screen.getByTestId('modal:contactlist');
 
         // Check if the modal is displayed with all contacts
         getByText(modal, 'Insert contacts');
@@ -176,7 +191,57 @@ describe('Addresses', () => {
 
         await rerender(<Addresses {...props} message={updatedMessage} />);
 
-        const updatedAddresses = getAllByTestId('composer-addresses-item');
+        const updatedAddresses = screen.getAllByTestId('composer-addresses-item');
         expect(updatedAddresses.length).toEqual(3);
+    });
+
+    it('Should display CC field on click', async () => {
+        await render(<Addresses {...props} />);
+
+        // cc and bcc fields shoud be hidden
+        expect(screen.queryByTestId('composer:to-cc')).toBe(null);
+        expect(screen.queryByTestId('composer:to-bcc')).toBe(null);
+
+        fireEvent.click(screen.getByTestId('composer:recipients:cc-button'));
+
+        // cc field visible now
+        await screen.findByTestId('composer:to-cc');
+
+        fireEvent.click(screen.getByTestId('composer:recipients:bcc-button'));
+
+        // bcc field visible now
+        await screen.findByTestId('composer:to-bcc');
+    });
+
+    it('Summary has BCC contact so click on CC should displays CC field and BCC field', async () => {
+        await render(<Addresses {...getProps({ bcc: [recipient1] })} />);
+
+        // cc and bcc fields shoud be hidden
+        expect(screen.queryByTestId('composer:to-cc')).toBe(null);
+        expect(screen.queryByTestId('composer:to-bcc')).toBe(null);
+
+        fireEvent.click(screen.getByTestId('composer:recipients:cc-button'));
+
+        const ccField = await screen.findByTestId('composer:to-cc');
+        const bccField = await screen.findByTestId('composer:to-bcc');
+
+        expect(ccField).not.toBe(null);
+        expect(bccField).not.toBe(null);
+    });
+
+    it('Summary has CC contact so click on BCC should displays BCC field and CC field', async () => {
+        await render(<Addresses {...getProps({ cc: [recipient1] })} />);
+
+        // cc and bcc fields shoud be hidden
+        expect(screen.queryByTestId('composer:to-cc')).toBe(null);
+        expect(screen.queryByTestId('composer:to-bcc')).toBe(null);
+
+        fireEvent.click(screen.getByTestId('composer:recipients:bcc-button'));
+
+        const ccField = await screen.findByTestId('composer:to-cc');
+        const bccField = await screen.findByTestId('composer:to-bcc');
+
+        expect(ccField).not.toBe(null);
+        expect(bccField).not.toBe(null);
     });
 });
