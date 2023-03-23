@@ -120,7 +120,15 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
-    const [editLabelProps, setEditLabelModalOpen] = useModalState();
+    /*
+     * translator: Text displayed in a button to suggest the creation of a new label in the label dropdown
+     * This button is shown when the user search for a label which doesn't exist
+     * ${search} is a string containing the search the user made in the label dropdown
+     * Full sentence for reference: 'Create label "Dunder Mifflin"'
+     */
+    const createLabelButtonText = c('Title').t`Create label "${search}"`;
+
+    const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
 
     const initialState = useMemo(
         () => getInitialState(labels, getElementsFromIDs(selectedIDs)),
@@ -284,12 +292,14 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                         <Icon name="tag" /> +
                     </Button>
                 </Tooltip>
-                <EditLabelModal
-                    label={newLabel}
-                    onAdd={(label) => handleAddNewLabel(label)}
-                    onCloseCustomAction={() => setContainFocus(true)}
-                    {...editLabelProps}
-                />
+                {renderLabelModal && (
+                    <EditLabelModal
+                        label={newLabel}
+                        onAdd={(label) => handleAddNewLabel(label)}
+                        onCloseCustomAction={() => setContainFocus(true)}
+                        {...editLabelProps}
+                    />
+                )}
             </div>
             <div className="flex-item-noshrink m1 mb0">
                 <SearchInput
@@ -300,6 +310,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     autoFocus={autoFocusSearch}
                     data-test-selector="label-dropdown:search-label"
                     data-prevent-arrow-navigation
+                    data-testid="label-dropdown:search-input"
                 />
             </div>
             <div
@@ -339,10 +350,23 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                             </label>
                         </li>
                     ))}
-                    {list.length === 0 && (
+                    {list.length === 0 && !search && (
                         <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
                             {c('Info').t`No label found`}
                         </li>
+                    )}
+                    {list.length === 0 && search && (
+                        <span className="flex w100">
+                            <Button
+                                key="create-new-label"
+                                className="w100 mr2 ml2 text-ellipsis"
+                                data-testid="label-dropdown:create-label-option"
+                                title={createLabelButtonText}
+                                onClick={handleCreate}
+                            >
+                                {createLabelButtonText}
+                            </Button>
+                        </span>
                     )}
                 </ul>
             </div>
