@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
+import { InputFieldTwo, useConfig, useFormErrors, useLoading } from '@proton/components';
+import metrics from '@proton/metrics';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import { getSignupApplication } from './helper';
 
 interface Props {
     defaultName?: string;
@@ -18,10 +20,19 @@ interface Props {
 }
 
 const CongratulationsStep = ({ defaultName = '', planName: maybePlanName, onSubmit }: Props) => {
+    const { APP_NAME } = useConfig();
     const [displayName, setDisplayName] = useState(defaultName);
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
     const planName = maybePlanName && <b key="plan-name">{maybePlanName}</b>;
+
+    useEffect(() => {
+        void metrics.core_signup_pageLoad_total.increment({
+            step: 'congratulations',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, []);
+
     return (
         <Main>
             <Header title={c('Title').t`Congratulations on choosing privacy!`} />

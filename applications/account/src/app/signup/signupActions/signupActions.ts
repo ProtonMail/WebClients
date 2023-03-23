@@ -30,13 +30,13 @@ import {
 import { handleCreateUser } from './handleCreateUser';
 import { hvHandler } from './helpers';
 
-export const handleDone = async ({
+export const handleDone = ({
     cache,
     appIntent = cache.appIntent,
 }: {
     cache: SignupCacheResult;
     appIntent?: AppIntent;
-}): Promise<SignupActionResponse> => {
+}): SignupActionResponse => {
     const {
         persistent,
         trusted,
@@ -305,6 +305,8 @@ export const handleSelectPlan = async ({
     });
 };
 
+export const usernameAvailabilityError = 'UsernameAvailabilityError';
+
 export const handleCreateAccount = async ({
     cache,
     api,
@@ -316,9 +318,17 @@ export const handleCreateAccount = async ({
         accountData: { username, email, domain, signupType },
         humanVerificationResult,
     } = cache;
-    if (signupType === SignupType.Username) {
-        await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
-    } else if (signupType === SignupType.Email) {
+
+    try {
+        if (signupType === SignupType.Username) {
+            await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
+        }
+    } catch (error: any) {
+        error.type = usernameAvailabilityError;
+        throw error;
+    }
+
+    if (signupType === SignupType.Email) {
         try {
             await api(
                 withVerificationHeaders(

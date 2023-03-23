@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -7,6 +9,7 @@ import {
     Payment as PaymentComponent,
     Price,
     StyledPayPalButton,
+    useConfig,
     useLoading,
     useModals,
     usePayment,
@@ -17,6 +20,7 @@ import PlanCustomization from '@proton/components/containers/payments/subscripti
 import SubscriptionCycleSelector, {
     SubscriptionCheckoutCycleItem,
 } from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
+import metrics from '@proton/metrics';
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -27,7 +31,7 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
-import { getCardPayment } from './helper';
+import { getCardPayment, getSignupApplication } from './helper';
 import { PlanIDs, SubscriptionData } from './interfaces';
 
 interface Props {
@@ -57,6 +61,7 @@ const PaymentStep = ({
     paymentMethodStatus,
     subscriptionData,
 }: Props) => {
+    const { APP_NAME } = useConfig();
     const [loading, withLoading] = useLoading();
     const paymentMethods = [
         paymentMethodStatus?.Card && PAYMENT_METHOD_TYPES.CARD,
@@ -86,6 +91,13 @@ const PaymentStep = ({
     });
 
     const { createModal } = useModals();
+
+    useEffect(() => {
+        void metrics.core_signup_pageLoad_total.increment({
+            step: 'payment',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, []);
 
     const planName = (
         <span key="plan-name" className="color-primary">

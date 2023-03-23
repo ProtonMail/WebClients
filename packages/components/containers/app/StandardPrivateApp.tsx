@@ -3,6 +3,7 @@ import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react
 import { c } from 'ttag';
 
 import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
+import metrics from '@proton/metrics';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
@@ -132,6 +133,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
 
             setSentryEnabled(!!userSettings.CrashReports);
             setMetricsEnabled(!!userSettings.Telemetry);
+            metrics.setReportMetrics(!!userSettings.Telemetry);
 
             const browserLocale = getBrowserLocale();
             const localeCode = getClosestLocaleCode(userSettings.Locale, locales);

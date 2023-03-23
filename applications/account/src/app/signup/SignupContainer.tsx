@@ -14,6 +14,8 @@ import {
     useMyLocation,
     useVPNServersCount,
 } from '@proton/components/hooks';
+import metrics from '@proton/metrics';
+import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
@@ -60,7 +62,13 @@ import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { getPlanFromPlanIDs, getSubscriptionPrices, isMailReferAFriendSignup, isMailTrialSignup } from './helper';
+import {
+    getPlanFromPlanIDs,
+    getSignupApplication,
+    getSubscriptionPrices,
+    isMailReferAFriendSignup,
+    isMailTrialSignup,
+} from './helper';
 import {
     InviteData,
     PlanIDs,
@@ -81,6 +89,7 @@ import {
     handleSaveRecovery,
     handleSelectPlan,
     handleSetupUser,
+    usernameAvailabilityError,
 } from './signupActions';
 
 const {
@@ -139,7 +148,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     ]);
     const [humanVerificationStep, setHumanVerificationStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
 
-    const errorHandler = useErrorHandler();
+    const handleError = useErrorHandler();
     const cacheRef = useRef<SignupCacheResult | undefined>(undefined);
 
     const [persistent] = useLocalState(false, defaultPersistentKey);
@@ -299,9 +308,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         cacheRef.current = result.cache;
         handleStep(result.to);
     };
-    const handleError = (error: any) => {
-        errorHandler(error);
-    };
 
     if (step === NoSignup) {
         throw new Error('Missing dependencies');
@@ -371,7 +377,10 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         setModelDiff({
             subscriptionData,
         });
-        return handleSelectPlan({ cache, api: ignoreHumanApi, subscriptionData }).then(handleResult).catch(handleError);
+
+        const signupActionResponse = await handleSelectPlan({ cache, api: ignoreHumanApi, subscriptionData });
+
+        await handleResult(signupActionResponse);
     };
 
     const plan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs);
@@ -379,15 +388,41 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     const verificationModel = cache?.humanVerificationResult?.verificationModel;
 
     const handleBackStep = (() => {
+        const reportBackButtonMetric = (signupStep: SignupSteps) => {
+            const metricMap: { [key in SignupSteps]?: WebCoreSignupBackButtonTotal['Labels']['step'] } = {
+                [AccountCreationUsername]: 'account',
+                [HumanVerification]: 'verification',
+                [Payment]: 'payment',
+                [Upsell]: 'upsell',
+                [TrialPlan]: 'referral',
+                [SaveRecovery]: 'recovery',
+            };
+
+            const metricStep = metricMap[signupStep];
+            if (metricStep === undefined) {
+                return;
+            }
+
+            metrics.core_signup_backButton_total.increment({
+                step: metricStep,
+                application: getSignupApplication(APP_NAME),
+            });
+        };
+
         if (step === AccountCreationUsername) {
             // No back button on referral
-            if (isReferral) {
+            if (isReferral || !onBack) {
                 return undefined;
             }
-            return onBack;
+            return () => {
+                reportBackButtonMetric(step);
+                onBack();
+            };
         }
+
         if (step === HumanVerification) {
             return () => {
+                reportBackButtonMetric(step);
                 if (humanVerificationStep === HumanVerificationSteps.ENTER_DESTINATION) {
                     handleBack();
                 } else {
@@ -395,8 +430,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                 }
             };
         }
+
         if ([Payment, Upsell, TrialPlan, SaveRecovery].includes(step)) {
-            return handleBack;
+            return () => {
+                reportBackButtonMetric(step);
+                handleBack();
+            };
         }
     })();
     const upsellPlanName = (() => {
@@ -553,12 +592,40 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             trusted: false,
                             clientType,
                         };
-                        return handleCreateAccount({
-                            cache,
-                            api: ignoreHumanApi,
-                        })
-                            .then(handleResult)
-                            .catch(handleError);
+
+                        const accountType = signupType === SignupType.Email ? 'external_account' : 'proton_account';
+
+                        try {
+                            const signupActionResponse = await handleCreateAccount({
+                                cache,
+                                api: ignoreHumanApi,
+                            });
+
+                            await handleResult(signupActionResponse);
+
+                            metrics.core_signup_accountStep_accountCreation_total.increment({
+                                account_type: accountType,
+                                status: 'success',
+                                application: getSignupApplication(APP_NAME),
+                            });
+                        } catch (error: any) {
+                            handleError(error);
+
+                            if (
+                                /**
+                                 * Do not report usernameAvailabilityError's as failures to metrics
+                                 */
+                                error.type === usernameAvailabilityError
+                            ) {
+                                return;
+                            }
+
+                            metrics.core_signup_accountStep_accountCreation_total.increment({
+                                account_type: accountType,
+                                status: 'failure',
+                                application: getSignupApplication(APP_NAME),
+                            });
+                        }
                     }}
                     hasChallenge={!accountData?.payload || !Object.keys(accountData.payload).length}
                     loading={loading}
@@ -582,23 +649,25 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     onClose={() => {
                         handleBack();
                     }}
-                    onSubmit={(token: string, tokenType: HumanVerificationMethodType, verificationModel) => {
-                        if (!cache) {
-                            throw new Error('Missing cache');
-                        }
-                        return handleHumanVerification({
-                            api: ignoreHumanApi,
-                            verificationModel,
-                            cache,
-                            token,
-                            tokenType,
-                        })
-                            .then(handleResult)
-                            .catch((e) => {
-                                handleError(e);
-                                // Important this is thrown so that the human verification form can handle it
-                                throw e;
+                    onSubmit={async (token: string, tokenType: HumanVerificationMethodType, verificationModel) => {
+                        try {
+                            if (!cache) {
+                                throw new Error('Missing cache');
+                            }
+                            const signupActionResponse = await handleHumanVerification({
+                                api: ignoreHumanApi,
+                                verificationModel,
+                                cache,
+                                token,
+                                tokenType,
                             });
+
+                            await handleResult(signupActionResponse);
+                        } catch (error) {
+                            handleError(error);
+                            // Important this is thrown so that the human verification form can handle it
+                            throw error;
+                        }
                     }}
                 />
             )}
@@ -609,7 +678,20 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                         // Referral is always free even if there's a plan, and 1-month cycle
                         const cycle = CYCLE.MONTHLY;
                         const checkResult = getFreeCheckResult(model.subscriptionData.currency, cycle);
-                        return handlePlanSelectionCallback({ checkResult, planIDs, cycle });
+
+                        try {
+                            await handlePlanSelectionCallback({ checkResult, planIDs, cycle });
+                            metrics.core_signup_referralStep_planSelection_total.increment({
+                                status: 'success',
+                                application: getSignupApplication(APP_NAME),
+                            });
+                        } catch (error) {
+                            handleError(error);
+                            metrics.core_signup_referralStep_planSelection_total.increment({
+                                status: 'failure',
+                                application: getSignupApplication(APP_NAME),
+                            });
+                        }
                     }}
                 />
             )}
@@ -623,17 +705,30 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     onChangeCurrency={handleChangeCurrency}
                     vpnServers={vpnServers}
                     onPlan={async (planIDs) => {
-                        const checkResult = await getSubscriptionPrices(
-                            silentApi,
-                            planIDs,
-                            model.subscriptionData.currency,
-                            model.subscriptionData.cycle,
-                            model.subscriptionData.checkResult.Coupon?.Code
-                        ).catch(errorHandler);
-                        if (!checkResult) {
-                            return;
+                        try {
+                            const checkResult = await getSubscriptionPrices(
+                                silentApi,
+                                planIDs,
+                                model.subscriptionData.currency,
+                                model.subscriptionData.cycle,
+                                model.subscriptionData.checkResult.Coupon?.Code
+                            );
+                            if (!checkResult) {
+                                return;
+                            }
+
+                            await handlePlanSelectionCallback({ checkResult, planIDs });
+                            metrics.core_signup_upsellStep_planSelection_total.increment({
+                                status: 'success',
+                                application: getSignupApplication(APP_NAME),
+                            });
+                        } catch (error) {
+                            handleError(error);
+                            metrics.core_signup_upsellStep_planSelection_total.increment({
+                                status: 'failure',
+                                application: getSignupApplication(APP_NAME),
+                            });
                         }
-                        return handlePlanSelectionCallback({ checkResult, planIDs });
                     }}
                 />
             )}
@@ -649,21 +744,33 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     onChangeCurrency={handleChangeCurrency}
                     onChangeCycle={handleChangeCycle}
                     onChangePlanIDs={handleChangePlanIDs}
-                    onPay={(payment) => {
-                        if (!cache) {
-                            throw new Error('Missing cache');
+                    onPay={async (payment) => {
+                        try {
+                            if (!cache) {
+                                throw new Error('Missing cache');
+                            }
+                            const subscriptionData = {
+                                ...model.subscriptionData,
+                                payment,
+                            };
+                            const signupActionResponse = await handlePayment({
+                                api: silentApi,
+                                cache,
+                                subscriptionData,
+                            });
+
+                            await handleResult(signupActionResponse);
+                            metrics.core_signup_paymentStep_payment_total.increment({
+                                status: 'success',
+                                application: getSignupApplication(APP_NAME),
+                            });
+                        } catch (error) {
+                            handleError(error);
+                            metrics.core_signup_paymentStep_payment_total.increment({
+                                status: 'failure',
+                                application: getSignupApplication(APP_NAME),
+                            });
                         }
-                        const subscriptionData = {
-                            ...model.subscriptionData,
-                            payment,
-                        };
-                        return handlePayment({
-                            api: silentApi,
-                            cache,
-                            subscriptionData,
-                        })
-                            .then(handleResult)
-                            .catch(handleError);
                     }}
                 />
             )}
@@ -674,15 +781,27 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                         hasPlanIDs(model.subscriptionData.planIDs) && model.subscriptionData.checkResult.AmountDue > 0
                     }
                     onSetup={async () => {
-                        if (!cache) {
-                            throw new Error('Missing cache');
-                        }
-                        return handleSetupUser({ cache, api: silentApi })
-                            .then(handleResult)
-                            .catch((error) => {
-                                handleBack();
-                                handleError(error);
+                        try {
+                            if (!cache) {
+                                throw new Error('Missing cache');
+                            }
+                            const signupActionResponse = await handleSetupUser({ cache, api: silentApi });
+
+                            await handleResult(signupActionResponse);
+
+                            metrics.core_signup_loadingStep_accountSetup_total.increment({
+                                status: 'success',
+                                application: getSignupApplication(APP_NAME),
                             });
+                        } catch (error) {
+                            handleBack();
+                            handleError(error);
+
+                            metrics.core_signup_loadingStep_accountSetup_total.increment({
+                                status: 'failure',
+                                application: getSignupApplication(APP_NAME),
+                            });
+                        }
                     }}
                 />
             )}
@@ -694,16 +813,29 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                         ''
                     }
                     planName={planName}
-                    onSubmit={({ displayName }) => {
-                        if (!cache) {
-                            throw new Error('Missing cache');
+                    onSubmit={async ({ displayName }) => {
+                        try {
+                            if (!cache) {
+                                throw new Error('Missing cache');
+                            }
+                            const signupActionResponse = await handleDisplayName({
+                                displayName,
+                                cache,
+                            });
+
+                            await handleResult(signupActionResponse);
+
+                            metrics.core_signup_congratulationsStep_displayNameChoice_total.increment({
+                                status: 'success',
+                                application: getSignupApplication(APP_NAME),
+                            });
+                        } catch (error) {
+                            handleError(error);
+                            metrics.core_signup_congratulationsStep_displayNameChoice_total.increment({
+                                status: 'failure',
+                                application: getSignupApplication(APP_NAME),
+                            });
                         }
-                        return handleDisplayName({
-                            displayName,
-                            cache,
-                        })
-                            .then(handleResult)
-                            .catch(handleError);
                     }}
                 />
             )}
@@ -717,28 +849,64 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                         ''
                     }
                     defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
-                    onSubmit={({ recoveryEmail, recoveryPhone }) => {
-                        if (!cache) {
-                            throw new Error('Missing cache');
+                    onSubmit={async ({ recoveryEmail, recoveryPhone }) => {
+                        try {
+                            if (!cache) {
+                                throw new Error('Missing cache');
+                            }
+                            const signupActionResponse = await handleSaveRecovery({
+                                cache,
+                                recoveryEmail,
+                                recoveryPhone,
+                            });
+
+                            await handleResult(signupActionResponse);
+
+                            if (!!recoveryEmail || !!recoveryPhone) {
+                                metrics.core_signup_recoveryStep_setRecoveryMethod_total.increment({
+                                    status: 'success',
+                                    application: getSignupApplication(APP_NAME),
+                                });
+                            } else {
+                                metrics.core_signup_recoveryStep_setRecoveryMethod_total.increment({
+                                    status: 'skipped',
+                                    application: getSignupApplication(APP_NAME),
+                                });
+                            }
+                        } catch (error) {
+                            handleError(error);
+                            metrics.core_signup_recoveryStep_setRecoveryMethod_total.increment({
+                                status: 'failure',
+                                application: getSignupApplication(APP_NAME),
+                            });
                         }
-                        return handleSaveRecovery({ cache, recoveryEmail, recoveryPhone })
-                            .then(handleResult)
-                            .catch(handleError);
                     }}
                 />
             )}
             {step === Explore && (
                 <ExploreStep
                     onExplore={async (app) => {
-                        if (!cache) {
-                            throw new Error('Missing cache');
+                        try {
+                            if (!cache) {
+                                throw new Error('Missing cache');
+                            }
+                            const signupActionResponse = handleDone({
+                                cache,
+                                appIntent: { app, ref: 'product-switch' },
+                            });
+
+                            await handleResult(signupActionResponse);
+                            metrics.core_signup_exploreStep_login_total.increment({
+                                status: 'success',
+                                application: getSignupApplication(APP_NAME),
+                            });
+                        } catch (error) {
+                            handleError(error);
+                            metrics.core_signup_exploreStep_login_total.increment({
+                                status: 'failure',
+                                application: getSignupApplication(APP_NAME),
+                            });
                         }
-                        return handleDone({
-                            cache,
-                            appIntent: { app, ref: 'product-switch' },
-                        })
-                            .then(handleResult)
-                            .catch(handleError);
                     }}
                 />
             )}

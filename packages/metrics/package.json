@@ -3,17 +3,22 @@
     "description": "Metrics library",
     "scripts": {
         "check-types": "tsc",
-        "generate-schema-types": "rimraf json-schema-registry && git clone $SCHEMA_REPOSITORY && json2ts -i 'json-schema-registry/**/*.schema.json' -o types/ --no-additionalProperties",
-        "generate-schema-types:mock": "json2ts -i 'mockSchemas/**/*.schema.json' -o types/ --no-additionalProperties",
-        "lint": "eslint . --ext ts --quiet --cache"
+        "generate-schema-types": "json2ts -i 'json-schema-registry/observability/client/web*.schema.json' -o types/ --no-additionalProperties",
+        "lint": "eslint . --ext ts --quiet --cache",
+        "test": "jest --coverage --runInBand --ci",
+        "update-schema-types": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && yarn generate-schema-types"
     },
     "dependencies": {
+        "@proton/shared": "workspace:packages/shared",
         "json-schema-to-typescript": "^12.0.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "eslint": "^8.36.0",
+        "jest": "^29.5.0",
+        "jest-fetch-mock": "^3.0.3",
         "rimraf": "^4.4.0",
+        "ts-jest": "^29.0.5",
         "typescript": "^5.0.2"
     }
 }
