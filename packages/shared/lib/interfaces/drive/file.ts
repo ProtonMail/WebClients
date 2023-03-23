@@ -75,6 +75,10 @@ export interface DriveFileRevision {
     ThumbnailHash: string;
 }
 
+export interface DriveFileRevisionsResult {
+    Revisions: DriveFileRevision[];
+}
+
 export interface DriveFileRevisionResult {
     Revision: DriveFileRevision;
 }

@@ -25,7 +25,7 @@ import useListNotifications from './useListNotifications';
  *
  * {@return {confirmModal}} Only needed for deletePermanently/emptyTrash/stopSharingLinks
  */
-export default function useAction() {
+export default function useActions() {
     const { showErrorNotification } = useErrorHandler();
     const [confirmModal, showConfirmModal] = useConfirmModal();
     const { createNotification } = useNotifications();
