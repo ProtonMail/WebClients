@@ -84,8 +84,7 @@ export const bootstrapInitialEpoch = async (
         MinEpochID,
         email,
         oldestSKL,
-        api,
-        true
+        api
     );
     if (Revision !== 0 && !isTimestampOldEnough(certificateTimestamp)) {
         ktSentryReport('Bootstrapped epoch is not from around 90 days ago', {
