@@ -4473,16 +4473,16 @@
         "${ NumMessages } сообщений в цепочке писем"
       ],
       "${ numOccurrences } occurrence found": [
-        "Найдено ${ numOccurrences } событие",
-        "Найдено ${ numOccurrences } события",
-        "Найдено ${ numOccurrences } событий",
-        "Найдено ${ numOccurrences } событий"
+        "Найдено ${ numOccurrences } вхождение",
+        "Найдено ${ numOccurrences } вхождения",
+        "Найдено ${ numOccurrences } вхождений",
+        "Найдено ${ numOccurrences } вхождений"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
-        "Найдено ${ numOccurrences } событие в содержимом почты",
-        "Найдено ${ numOccurrences } события в содержимом почты",
-        "Найдено ${ numOccurrences } событий в содержимом почты",
-        "Найдено ${ numOccurrences } событий в содержимом почты"
+        "Найдено ${ numOccurrences } вхождение в содержимом почты",
+        "Найдено ${ numOccurrences } вхождения в содержимом почты",
+        "Найдено ${ numOccurrences } вхождений в содержимом почты",
+        "Найдено ${ numOccurrences } вхождений в содержимом почты"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
@@ -4657,9 +4657,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Вы уверены, что хотите удалить все письма с этим ярлыком?"
-      ],
-      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
-        "Вы уверены, что хотите удалить эту папку? Все дочерние папки также будут удалены."
       ],
       "Are you sure you want to delete this label?": [
         "Вы уверены, что хотите удалить этот ярлык?"
@@ -4863,10 +4860,10 @@
         "Отслеживания электронной почты могут нарушить вашу конфиденциальность. ${ BRAND_NAME } не обнаружил отслеживание в этом сообщении."
       ],
       "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашел и заблокировал ${ numberOfTrackers } трекер.",
-        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашел и заблокировал ${ numberOfTrackers } трекера.",
-        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашел и заблокировал ${ numberOfTrackers } трекеров.",
-        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашел и заблокировал ${ numberOfTrackers } трекеров."
+        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашёл и заблокировал ${ numberOfTrackers } трекер.",
+        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашёл и заблокировал ${ numberOfTrackers } трекера.",
+        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашёл и заблокировал ${ numberOfTrackers } трекеров.",
+        "Трекеры электронной почты могут нарушать вашу конфиденциальность. ${ BRAND_NAME } нашёл и заблокировал ${ numberOfTrackers } трекеров."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Трекеры электронной почты могут нарушать вашу конфиденциальность. Включите защиту от трекеров, чтобы отправители не могли узнать, открывали ли вы сообщение и когда."
@@ -6869,10 +6866,10 @@
         "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как",
@@ -8086,10 +8083,10 @@
         "${ elementsCount } цепочек писем помечено как прочитанные."
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } цепочка писем отмечена как Со звездами.",
-        "${ elementsCount } цепочки писем отмечено как Со звездами.",
-        "${ elementsCount } цепочек писем отмечено как Со звездами.",
-        "${ elementsCount } цепочек писем отмечено как Со звездами."
+        "${ elementsCount } цепочка писем отмечена звёздочкой.",
+        "${ elementsCount } цепочки писем отмечены звёздочкой.",
+        "${ elementsCount } цепочек писем отмечены звёздочкой.",
+        "${ elementsCount } цепочек писем отмечены звёздочкой."
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } цепочка писем помечена как непрочитанная.",
@@ -8101,7 +8098,7 @@
         "${ elementsCount } цепочка писем перемещена в ${ folderName }, а отправитель добавлен в ваш список \"не спам\".",
         "${ elementsCount } цепочки писем перемещены в ${ folderName }, а отправители добавлены в ваш список \"не спам\".",
         "${ elementsCount } цепочек писем перемещены в ${ folderName }, а отправители добавлены в ваш список \"не спам\".",
-        "${ elementsCount } цепочки писем перемещены в ${ folderName }, а отправители добавлены в ваш список \"не спам\"."
+        "${ elementsCount } цепочек писем перемещены в ${ folderName }, а отправители добавлены в ваш список \"не спам\"."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } цепочка писем перемещена в ${ folderName }.",
@@ -8113,13 +8110,13 @@
         "${ elementsCount } цепочка писем перемещена в спам, а отправитель добавлен в ваш список спама.",
         "${ elementsCount } цепочки писем перемещены в спам, а отправители добавлены в ваш список спама.",
         "${ elementsCount } цепочек писем перемещены в спам, а отправители добавлены в ваш список спама.",
-        "${ elementsCount } цепочки писем перемещено в спам, а отправители добавлены в ваш список спама."
+        "${ elementsCount } цепочек писем перемещены в спам, а отправители добавлены в ваш список спама."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } цепочка писем удалена из ${ labelName }.",
-        "${ elementsCount } цепочки писем удалено из ${ labelName }.",
-        "${ elementsCount } цепочек писем удалено из ${ labelName }.",
-        "${ elementsCount } цепочек писем удалено из ${ labelName }."
+        "С ${ elementsCount } цепочки писем снт ярлык ${ labelName }.",
+        "С ${ elementsCount } цепочек писем снят ярлык ${ labelName }.",
+        "С ${ elementsCount } цепочек писем снят ярлык ${ labelName }.",
+        "С ${ elementsCount } цепочек писем снят ярлык ${ labelName }."
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } сообщению добавлен ярлык ${ labelName }.",
@@ -8129,15 +8126,15 @@
       ],
       "${ elementsCount } message marked as read.": [
         "${ elementsCount } сообщение отмечено как прочитанное.",
-        "${ elementsCount } сообщения отмечено как прочитанные.",
-        "${ elementsCount } сообщений отмечено как прочитанные.",
-        "${ elementsCount } сообщений отмечено как прочитанные."
+        "${ elementsCount } сообщения отмечены как прочитанные.",
+        "${ elementsCount } сообщений отмечены как прочитанные.",
+        "${ elementsCount } сообщений отмечены как прочитанные."
       ],
       "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } сообщение отмечено как Со звездами.",
-        "${ elementsCount } сообщения отмечено как Со звездами.",
-        "${ elementsCount } сообщений отмечено как Со звездами.",
-        "${ elementsCount } сообщений отмечено как Со звездами."
+        "${ elementsCount } сообщение отмечено звёздочкой.",
+        "${ elementsCount } сообщения отмечены звёздочкой.",
+        "${ elementsCount } сообщений отмечены звёздочкой.",
+        "${ elementsCount } сообщений отмечены звёздочкой."
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } сообщение помечено как непрочитанное.",
@@ -8164,10 +8161,10 @@
         "${ elementsCount } сообщений перемещены в спам, а отправители добавлены в список спама."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } сообщение удалено из ${ labelName }.",
-        "${ elementsCount } сообщения удалено из ${ labelName }.",
-        "${ elementsCount } сообщений удалено из ${ labelName }.",
-        "${ elementsCount } сообщений удалено из ${ labelName }."
+        "С ${ elementsCount } сообщения снят ярлык ${ labelName }.",
+        "С ${ elementsCount } сообщений снят ярлык ${ labelName }.",
+        "С ${ elementsCount } сообщений снят ярлык ${ labelName }.",
+        "С ${ elementsCount } сообщений снят ярлык ${ labelName }."
       ],
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
