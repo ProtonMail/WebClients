@@ -1,4 +1,4 @@
-import { MouseEvent, MutableRefObject, useCallback, useEffect, useRef } from 'react';
+import { MouseEvent, MutableRefObject, useEffect, useRef, useState } from 'react';
 
 import { ContactSelectorModal, useContactModals, useToggle } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
@@ -25,10 +25,12 @@ interface Props {
 const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
     const toFocusRef = useRef<() => void>(noop);
     const ccFocusRef = useRef<() => void>(noop);
+    const bccFocusRef = useRef<() => void>(noop);
 
     const inputFocusRefs = {
         to: toFocusRef,
         cc: ccFocusRef,
+        bcc: bccFocusRef,
     };
 
     const { onEdit, onGroupDetails, modals: contactModals } = useContactModals({ onMailTo: noop });
@@ -38,51 +40,66 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
 
     // Summary of selected addresses or addresses editor
     const { state: editor, set: setEditor } = useToggle(false);
-
-    // CC and BCC visible in expanded mode
-    const { state: expanded, set: setExpanded } = useToggle(false);
+    const [ccExpanded, setCCExpanded] = useState(false);
+    const [bccExpanded, setBCCExpanded] = useState(false);
 
     useEffect(() => {
-        addressesBlurRef.current = () => setEditor(false);
+        addressesBlurRef.current = () => {
+            setEditor(false);
+            setCCExpanded(false);
+            setBCCExpanded(false);
+        };
         addressesFocusRef.current = () => {
-            if (message.data?.CCList.length || message.data?.BCCList.length) {
-                setExpanded(true);
+            if (message.data?.CCList.length) {
+                setCCExpanded(true);
+            }
+            if (message.data?.BCCList.length) {
+                setBCCExpanded(true);
             }
             setEditor(true);
             setTimeout(() => inputFocusRefs.to.current(), 100);
         };
     }, [message.data?.CCList, message.data?.BCCList]);
 
-    const handleFocus = useCallback(() => {
+    const handleFocus = () => {
         if (disabled) {
             return false;
         }
 
         setEditor(true);
-        setExpanded(false);
+        setCCExpanded(false);
+        setBCCExpanded(false);
         setTimeout(() => addressesFocusRef.current(), 100);
-    }, [disabled]);
+    };
 
-    const handleToggleExpanded = useCallback(
-        (e: MouseEvent<HTMLButtonElement>) => {
-            e.stopPropagation();
-
-            if (disabled) {
-                return false;
+    const handleDisplayFocusFields = (type: RecipientType) => {
+        if (disabled) {
+            return false;
+        }
+        setEditor(true);
+        if (type === 'CCList' || message.data?.CCList.length) {
+            setCCExpanded(true);
+        }
+        if (type === 'BCCList' || message.data?.BCCList.length) {
+            setBCCExpanded(true);
+        }
+        setTimeout(() => {
+            if (type === 'ToList') {
+                inputFocusRefs.to.current();
             }
-
-            // If click on the CC, BCC button and is already opened, we close the "expanded"
-            if (editor && expanded) {
-                setExpanded(false);
-                setTimeout(() => inputFocusRefs.to.current(), 100);
-            } else {
-                setEditor(true);
-                setExpanded(true);
-                setTimeout(() => inputFocusRefs.cc.current(), 100);
+            if (type === 'CCList') {
+                inputFocusRefs.cc.current();
             }
-        },
-        [disabled, expanded, editor]
-    );
+            if (type === 'BCCList') {
+                inputFocusRefs.bcc.current();
+            }
+        }, 100);
+    };
+
+    const handleToggleClick = (type: RecipientType) => (e: MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        handleDisplayFocusFields(type);
+    };
 
     const handleContactModal = (type: RecipientType) => async () => {
         const recipients = await showContactSelector({
@@ -96,6 +113,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         const currentNonContacts = currentRecipients.filter((r) => !r.ContactID);
 
         onChange({ data: { [type]: [...currentNonContacts, ...recipients] } });
+        handleDisplayFocusFields(type);
     };
 
     return (
@@ -105,10 +123,11 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
                     message={message}
                     messageSendInfo={messageSendInfo}
                     onChange={onChange}
-                    expanded={expanded}
-                    toggleExpanded={handleToggleExpanded}
                     inputFocusRefs={inputFocusRefs}
                     handleContactModal={handleContactModal}
+                    ccExpanded={ccExpanded}
+                    bccExpanded={bccExpanded}
+                    toggleExpanded={handleToggleClick}
                 />
             ) : (
                 <AddressesSummary
@@ -116,7 +135,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
                     disabled={disabled}
                     mapSendInfo={messageSendInfo.mapSendInfo}
                     onFocus={handleFocus}
-                    toggleExpanded={handleToggleExpanded}
+                    toggleExpanded={handleToggleClick}
                     handleContactModal={handleContactModal}
                 />
             )}
