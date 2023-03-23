@@ -4384,9 +4384,6 @@
       "Are you sure you want to delete this filter?": [
         "Estàs segur que vols esborrar aquest filtre?"
       ],
-      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
-        "Segur que voleu eliminar aquesta carpeta? També s'eliminaran totes les carpetes filles."
-      ],
       "Are you sure you want to delete this label?": [
         "Esteu segur de voler eliminar aquesta etiqueta?"
       ],
@@ -7546,6 +7543,11 @@
         "Gestió d'equip"
       ]
     },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7555,11 +7557,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom per defecte."
-      ]
-    },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
