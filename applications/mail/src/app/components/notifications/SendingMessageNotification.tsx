@@ -9,6 +9,7 @@ import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { formatDateToHuman } from '../../helpers/date';
+import { isScheduledSendTodayMorning } from '../composer/actions/scheduleSend/helpers';
 import UndoNotificationButton from './UndoNotificationButton';
 
 export const createSendingMessageNotificationManager = () => {
@@ -41,10 +42,17 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
 
     const getScheduledNotification = (scheduledAt: number, onUndo: (() => Promise<void> | undefined) | undefined) => {
         const scheduleDate = scheduledAt * 1000;
-
         const { dateString, formattedTime } = formatDateToHuman(scheduleDate);
 
         const getNotificationText = () => {
+            if (isScheduledSendTodayMorning(scheduledAt)) {
+                /*
+                 * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+                 * Full sentence for reference: "Message will be sent in the morning at 11:00 AM"
+                 */
+                return c('Info').t`Message will be sent in the morning at ${formattedTime}`;
+            }
+
             if (isToday(scheduleDate)) {
                 /*
                  * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
