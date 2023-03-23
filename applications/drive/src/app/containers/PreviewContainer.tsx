@@ -3,14 +3,14 @@ import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { FilePreview, NavigationControl, useModalState } from '@proton/components';
+import { FilePreview, NavigationControl } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
 import { SignatureAlertBody } from '../components/SignatureAlert';
 import SignatureIcon from '../components/SignatureIcon';
-import DetailsModal from '../components/modals/DetailsModal';
-import ShareLinkModal from '../components/modals/ShareLinkModal/ShareLinkModal';
+import { useDetailsModal } from '../components/modals/DetailsModal';
+import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import useIsEditEnabled from '../components/sections/useIsEditEnabled';
 import useActiveShare from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';
@@ -32,8 +32,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const { shareId, linkId } = match.params;
     const { navigateToLink, navigateToSharedURLs, navigateToTrash, navigateToRoot, navigateToSearch } = useNavigate();
     const { setFolder } = useActiveShare();
-    const [detailsModalProps, handleSetDetailsModalOpen, detailsModalRender] = useModalState();
-    const [shareLinkModalProps, handleShareLinkModalOpen, shareLinkModalRender] = useModalState();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { query: lastQuery } = useSearchResults();
     const { saveFile } = useActions();
 
@@ -106,13 +106,6 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         [shareId]
     );
 
-    useEffect(() => {
-        return () => {
-            handleSetDetailsModalOpen(false);
-            handleShareLinkModalOpen(false);
-        };
-    }, []);
-
     const signatureStatus = useMemo(() => {
         if (!link) {
             return;
@@ -165,8 +158,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                 onClose={navigateToParent}
                 onDownload={downloadFile}
                 onSave={isEditEnabled ? handleSaveFile : undefined}
-                onDetail={() => handleSetDetailsModalOpen(true)}
-                onShare={isLinkLoading || !!link?.trashed ? undefined : () => handleShareLinkModalOpen(true)}
+                onDetail={() => showDetailsModal({ shareId, linkId })}
+                onShare={isLinkLoading || !!link?.trashed ? undefined : () => showLinkSharingModal({ shareId, linkId })}
                 imgThumbnailUrl={link?.cachedThumbnailUrl}
                 ref={rootRef}
                 navigationControls={
@@ -184,10 +177,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                 signatureStatus={signatureStatus}
                 signatureConfirmation={signatureConfirmation}
             />
-            {detailsModalRender ? <DetailsModal {...detailsModalProps} shareId={shareId} linkId={linkId} /> : null}
-            {shareLinkModalRender ? (
-                <ShareLinkModal {...shareLinkModalProps} shareId={shareId} linkId={linkId} />
-            ) : null}
+            {detailsModal}
+            {linkSharingModal}
         </>
     );
 }
