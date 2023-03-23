@@ -115,6 +115,28 @@ describe('Composer scheduled messages', () => {
             );
         });
 
+        it.each`
+            expected            | date
+            ${'Tomorrow'}       | ${new Date(2023, 0, 1, 7, 59, 0)}
+            ${'Tomorrow'}       | ${new Date(2023, 0, 1, 8, 0, 0)}
+            ${'Tomorrow'}       | ${new Date(2023, 0, 1, 10, 0, 0)}
+            ${'In the morning'} | ${new Date(2023, 0, 1, 0, 0, 1)}
+            ${'In the morning'} | ${new Date(2023, 0, 1, 2, 0, 0)}
+            ${'In the morning'} | ${new Date(2023, 0, 1, 7, 30, 0)}
+        `('Should display "$expected" on "$date"', async ({ expected, date }) => {
+            jest.useFakeTimers('modern').setSystemTime(date.getTime());
+
+            setupMessage('Subject', [user as Recipient]);
+            setupTest({ hasPaidMail: false, featureFlagActive: true });
+
+            await render(<Composer {...props} />, false);
+
+            const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
+            fireEvent.click(dropdownButton);
+
+            expect(screen.queryByTestId('composer:schedule-send:tomorrow')).toHaveTextContent(expected);
+        });
+
         it('Should contain "as scheduled" field when editing', async () => {
             // Sunday 1 2023
             const fakeNow = new Date(2023, 0, 1, 10, 0, 0);

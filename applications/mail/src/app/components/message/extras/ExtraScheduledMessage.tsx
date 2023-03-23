@@ -27,6 +27,7 @@ import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { cancelScheduled } from '../../../logic/messages/scheduled/scheduledActions';
 import { useAppDispatch } from '../../../logic/store';
+import { isScheduledSendTodayMorning } from '../../composer/actions/scheduleSend/helpers';
 
 interface Props {
     message: MessageStateWithData;
@@ -89,6 +90,14 @@ const ExtraScheduledMessage = ({ message }: Props) => {
         }
 
         const { dateString, formattedTime } = formatDateToHuman(scheduleDate);
+
+        if (isScheduledSendTodayMorning(scheduleDate)) {
+            /*
+             * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+             * Full sentence for reference: "This message will be sent in the morning at 11:00 AM"
+             */
+            return c('Info').t`This message will be sent in the morning at ${formattedTime}`;
+        }
 
         if (isToday(scheduleDate)) {
             /*
