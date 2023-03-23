@@ -3,9 +3,9 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
+import clsx from '@proton/utils/clsx';
 
 import InlineLinkButton from '../../components/button/InlineLinkButton';
-import { classnames } from '../../helpers';
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 interface Props {
@@ -25,10 +25,10 @@ const GenericError = ({ children, className, small = false }: Props) => {
     const line2 = c('Error message').jt`You may also ${refresh} or try again later.`;
 
     return (
-        <div className={classnames(['mauto', className])}>
+        <div className={clsx('mauto', className)}>
             {small ? (
                 <>
-                    <h2 className="text-bold">{title}</h2>
+                    <h1 className="text-bold h2 mb0-25">{title}</h1>
                     <div className="text-center">{line1}</div>
                     <div className="text-center">{line2}</div>
                 </>

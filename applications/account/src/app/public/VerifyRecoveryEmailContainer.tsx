@@ -4,18 +4,29 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { GenericError, useApi, useLoading } from '@proton/components';
+import { GenericError, useApi, useErrorHandler, useLoading } from '@proton/components';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import PublicLayout from '../components/PublicLayout';
+import ExpiredError from './ExpiredError';
 
 interface Props {
     onSubscribe: (jwt: string) => void;
 }
 
+enum ErrorType {
+    Expired,
+    API,
+}
+
 const VerifyRecoveryEmailContainer = ({ onSubscribe }: Props) => {
     const api = useApi();
-    const [error, setError] = useState<any>();
+    const silentApi = getSilentApi(api);
+    const handleError = useErrorHandler();
+    const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading(true);
     const location = useLocation();
     const history = useHistory();
@@ -28,27 +39,42 @@ const VerifyRecoveryEmailContainer = ({ onSubscribe }: Props) => {
 
         history.replace({ search: location.search, hash: '' });
 
-        withLoading(
-            api({ ...postVerifyValidate({ JWT: jwt }), silence: true })
-                .then(() => {
-                    setJwt(jwt);
-                })
-                .catch(setError)
-        );
+        const promise = silentApi(postVerifyValidate({ JWT: jwt }))
+            .then(() => {
+                setJwt(jwt);
+            })
+            .catch((error) => {
+                const { code } = getApiError(error);
+                if (code === API_CUSTOM_ERROR_CODES.JWT_EXPIRED) {
+                    setError({ type: ErrorType.Expired });
+                } else {
+                    handleError(error);
+                    setError({ type: ErrorType.API });
+                }
+            });
+
+        withLoading(promise);
     }, []);
 
     return (
         <main className="main-area">
             {(() => {
                 if (error) {
+                    if (error.type === ErrorType.Expired) {
+                        return (
+                            <div className="absolute-center">
+                                <ExpiredError type="email" />
+                            </div>
+                        );
+                    }
                     const signIn = (
                         <a key="1" href="/switch" target="_self">
                             {c('Error message, recovery').t`sign in`}
                         </a>
                     );
                     return (
-                        <div className="absolute-center text-center">
-                            <GenericError>
+                        <div className="absolute-center">
+                            <GenericError className="text-center">
                                 <span>{c('Error message, recovery')
                                     .t`There was a problem verifying your email address.`}</span>
                                 <span>{c('Error message, recovery')
@@ -87,5 +113,4 @@ const VerifyRecoveryEmailContainer = ({ onSubscribe }: Props) => {
         </main>
     );
 };
-
 export default VerifyRecoveryEmailContainer;
