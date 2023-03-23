@@ -3104,6 +3104,20 @@
         "Co to jest?"
       ]
     },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "Czat jest dostępny w planie ${ planName }"
+      ],
+      "Open support form": [
+        "Otwórz formularz kontaktowy"
+      ],
+      "Upgrade subscription": [
+        "Ulepsz subskrypcję"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "Ulepsz konto, aby odblokować czat i inne funkcje premium lub skorzystaj z naszego darmowego formularza kontaktowego, aby zgłosić problem."
+      ]
+    },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         "Spowoduje to trwałe usunięcie wszystkich użytkowników, kont i danych powiązanych z organizacją."
@@ -4424,6 +4438,12 @@
       ],
       "Keep auto-pay": [
         "Zachowaj automatyczną płatność"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Dodatkowo, jeśli zapomnisz dokonać ręcznej płatności, a automatyczna płatność jest wyłączona dla wszystkich metod płatności, możemy automatycznie obniżyć Twój plan, co spowoduje utratę wielu funkcji."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Nasz system nie będzie automatycznie obciążał Cię za pomocą tej metody płatności, ale Twoja subskrypcja będzie odnawiana do końca cyklu rozliczeniowego. Jeśli chcesz obniżyć lub zmienić subskrypcję, musisz zrobić to samodzielnie przed końcem okresu rozliczeniowego. Nie możemy automatycznie obniżyć Twojego planu, jeśli przekroczono darmowy limit przestrzeni dyskowej lub korzystasz z innych płatnych funkcji. Nie możemy automatycznie usunąć plików, wiadomości i innych danych. Jeśli wyłączysz automatyczną płatność, pamiętaj o opłaceniu następnej faktury przed terminem płatności, aby zapobiec zawieszeniu konta."
       ]
     },
     "Subscription saving": {

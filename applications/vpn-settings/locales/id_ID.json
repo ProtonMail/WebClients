@@ -2899,7 +2899,7 @@
         "Pilih negara Anda"
       ],
       "Start date": [
-        "Mulai tanggal"
+        "Tanggal mulai"
       ],
       "Subscription options": [
         "Pilihan langganan"
@@ -3048,6 +3048,20 @@
       ],
       "What’s this?": [
         "Apa ini?"
+      ]
+    },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "Fitur live chat tersedia dengan paket ${ planName }"
+      ],
+      "Open support form": [
+        "Buka formulir dukungan"
+      ],
+      "Upgrade subscription": [
+        "Tingkatkan paket langganan"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "Tingkatkan paket langganan Anda untuk memperoleh dukungan melalui chat dan berbagai fitur premium lainnya, atau gunakan formulir layanan dukungan gratis kami untuk melaporkan masalah Anda."
       ]
     },
     "Member downgrade modal": {
@@ -4011,16 +4025,22 @@
         "Apakah Anda yakin?"
       ],
       "Auto-pay is disabled": [
-        "Pembayaran otomatis dinonaktifkan"
+        "Autodebet dinonaktifkan"
       ],
       "Auto-pay is enabled": [
-        "Pembayaran otomatis diaktifkan"
+        "Autodebet diaktifkan"
       ],
       "Enable auto-pay support": [
-        "Aktifkan dukungan pembayaran otomatis"
+        "Aktifkan dukungan autodebet"
       ],
       "Keep auto-pay": [
-        "Tetap aktifkan pembayaran otomatis"
+        "Tetap aktifkan autodebet"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Di samping itu, apabila Anda menonaktifkan autodebet dan lupa membayar tagihan, kami dapat menurunkan akun Anda dan menonaktifkan berbagai fitur berbayar yang ada secara otomatis."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Sistem kami tidak akan lagi mendebet Anda secara otomatis melalui metode pembayaran ini, namun langganan Anda akan tetap diperbarui pada akhir siklus tagihan. Apabila Anda ingin menurunkan akun atau mengubah paket berlangganan, Anda tetap harus mengurus proses pemindahan paket secara manual sebelum tagihan Anda jatuh tempo. Mohon diperhatikan bahwa kami tidak dapat menurunkan akun Anda apabila Anda melebihi batas kuota yang diizinkan atau menggunakan fitur berbayar selaku pengguna gratis, dan kami juga tidak dapat menghapus berkas, email, atau data lainnya yang Anda miliki. Apabila Anda menonaktifkan autodebet, jangan lupa untuk membayar tagihan Anda pada waktunya untuk menghindari penangguhan akun."
       ]
     },
     "Subscription saving": {
