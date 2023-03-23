@@ -3099,6 +3099,20 @@
         "Што гэта?"
       ]
     },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "Інтэрактыўны чат даступны на тарыфным плане ${ planName }"
+      ],
+      "Open support form": [
+        "Адкрыць форму падтрымкі"
+      ],
+      "Upgrade subscription": [
+        "Палепшыць падпіску"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "Палепшыце сваю падпіску, каб разблакіраваць падтрымку ў чаце і іншыя прэміяльныя функцыі або скарыстайцеся нашай бясплатнай формай падтрымкі, калі хочаце паведаміць пра праблему."
+      ]
+    },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         "Гэта незваротна выдаліць усіх падпарадкаваных карыстальнікаў, уліковыя запісы і даныя, якія звязаны з вашай арганізацыяй."
@@ -4093,10 +4107,10 @@
         "${ UsedAddresses } адрасы"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } адрас электроннай пошты з ${ MaxAddresses }",
-        "${ UsedAddresses } адрасы электроннай пошты з ${ MaxAddresses }",
-        "${ UsedAddresses } адрасоў электроннай пошты з ${ MaxAddresses }",
-        "${ UsedAddresses } адрасы электроннай пошты з ${ MaxAddresses }"
+        "${ UsedAddresses } з ${ MaxAddresses } адрасы электроннай пошты",
+        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
+        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
+        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } каляндар",
@@ -4105,10 +4119,10 @@
         "${ UsedCalendars } календары"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } карыстальніцкі дамен з ${ MaxDomains }",
-        "${ UsedDomains } карыстальніцкія дамены з ${ MaxDomains }",
-        "${ UsedDomains } карыстальніцкіх даменаў з ${ MaxDomains }",
-        "${ UsedDomains } карыстальніцкія дамены з ${ MaxDomains }"
+        "${ UsedDomains } з ${ MaxDomains } карыстальніцкага дамена",
+        "${ UsedDomains } з ${ MaxDomains } карыстальніцкіх даменаў",
+        "${ UsedDomains } з ${ MaxDomains } карыстальніцкіх даменаў",
+        "${ UsedDomains } з ${ MaxDomains } карыстальніцкіх даменаў"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } карыстальнік з ${ MaxMembers }",
