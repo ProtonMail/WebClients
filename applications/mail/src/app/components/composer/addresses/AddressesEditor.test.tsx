@@ -49,6 +49,9 @@ const messageSendInfo: MessageSendInfo = {
     setMapSendInfo: () => jest.fn(),
 };
 
+let ccExpanded = false;
+let bccExpanded = false;
+
 const props = {
     message,
     messageSendInfo,
@@ -58,11 +61,24 @@ const props = {
     inputFocusRefs: {
         to: {} as MutableRefObject<() => void>,
         cc: {} as MutableRefObject<() => void>,
+        bcc: {} as MutableRefObject<() => void>,
     },
     handleContactModal: jest.fn(),
+    ccExpanded,
+    bccExpanded,
+    expandCC: () => {
+        ccExpanded = true;
+    },
+    expandBCC: () => {
+        bccExpanded = true;
+    },
 };
 
 describe('AddressesEditor', () => {
+    beforeAll(() => {
+        ccExpanded = false;
+        bccExpanded = false;
+    });
     afterEach(clearAll);
 
     it('should render Addresses', async () => {
@@ -261,10 +277,12 @@ describe('AddressesEditor', () => {
 
     it('should not focus CC BCC or Insert contacts buttons', async () => {
         const { getByTestId } = await render(<AddressesEditor {...props} />);
-        const ccBccButton = getByTestId('composer:cc-bcc-button');
+        const ccButton = getByTestId('composer:recipients:cc-button');
+        const bccButton = getByTestId('composer:recipients:bcc-button');
         const insertContactsButton = getByTestId('composer:to-button');
 
-        expect(ccBccButton.getAttribute('tabindex')).toEqual('-1');
+        expect(ccButton.getAttribute('tabindex')).toEqual('-1');
+        expect(bccButton.getAttribute('tabindex')).toEqual('-1');
         expect(insertContactsButton.getAttribute('tabindex')).toEqual('-1');
     });
 });
