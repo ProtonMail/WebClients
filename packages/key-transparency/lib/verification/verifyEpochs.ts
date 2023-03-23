@@ -50,35 +50,14 @@ export const verifySKLInsideEpoch = async (
     epoch: Epoch,
     email: string,
     signedKeyList: FetchedSignedKeyList,
-    api: Api,
-    bumpEpochID: boolean = false
+    api: Api
 ): Promise<{
     certificateTimestamp: number;
     Revision: number;
     ObsolescenceToken: string | null;
     epochIDBumped?: boolean;
 }> => {
-    let certificateTimestamp: number;
-    try {
-        certificateTimestamp = await verifyEpoch(epoch);
-    } catch (error: any) {
-        // There might be a race condition with the epoch, i.e. its certificate
-        // was valid when BE returned it but is expired by the time it is checked.
-        // The caller signals this can be an issue by setting the bumpEpochID flag,
-        // therefore if this is the case we retry verification with the epoch whose
-        // EpochID is the current's + 1.
-        if (bumpEpochID && error?.message === 'Epoch certificate is expired') {
-            const nextEpoch = await fetchEpoch(epoch.EpochID + 1, api);
-            const { certificateTimestamp, Revision, ObsolescenceToken } = await verifySKLInsideEpoch(
-                nextEpoch,
-                email,
-                signedKeyList,
-                api
-            );
-            return { certificateTimestamp, Revision, ObsolescenceToken, epochIDBumped: true };
-        }
-        throw error;
-    }
+    const certificateTimestamp = await verifyEpoch(epoch);
 
     // 3. Validate the proof
     const { Revision, ObsolescenceToken } = await verifySKLExistence(api, epoch, email, signedKeyList);
@@ -95,9 +74,8 @@ export const verifySKLInsideEpochID = async (
     epochID: number,
     email: string,
     signedKeyList: FetchedSignedKeyList,
-    api: Api,
-    bumpEpochID: boolean = false
+    api: Api
 ) => {
     const epoch = await fetchEpoch(epochID, api);
-    return verifySKLInsideEpoch(epoch, email, signedKeyList, api, bumpEpochID);
+    return verifySKLInsideEpoch(epoch, email, signedKeyList, api);
 };
