@@ -45,6 +45,7 @@ export const cacheIDB = async <ESItemMetadata, ESItemContent>(
     }
     // In case IDB is empty, there is nothing to cache
     if (!sortedIDs.length) {
+        esCacheRef.current.isCacheReady = true;
         return;
     }
 
