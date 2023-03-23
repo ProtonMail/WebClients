@@ -44,7 +44,6 @@ export const convertEventType = (event: Event, numAddresses: number): ESEvent<ES
     eventsToStore[MAIL_EVENTLOOP_NAME] = EventID;
 
     return {
-        EventID,
         Refresh,
         Items,
         attemptReDecryption,
