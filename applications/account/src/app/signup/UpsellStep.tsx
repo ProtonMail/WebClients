@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CurrencySelector, Price, useLoading } from '@proton/components';
+import { CurrencySelector, Price, useConfig, useLoading } from '@proton/components';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     getFreeDrivePlan,
@@ -11,6 +11,7 @@ import {
     getFreeVPNPlan,
     getShortPlan,
 } from '@proton/components/containers/payments/features/plan';
+import metrics from '@proton/metrics';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -21,6 +22,7 @@ import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
 import UpsellPlanCard from './UpsellPlanCard';
+import { getSignupApplication } from './helper';
 
 interface Props {
     onPlan: (planIDs: PlanIDs) => Promise<void>;
@@ -69,6 +71,7 @@ const UpsellStep = ({
     upsellPlanName,
     onBack,
 }: Props) => {
+    const { APP_NAME } = useConfig();
     const plansMap = toMap(plans, 'Name');
 
     const shortFreePlan = (() => {
@@ -95,6 +98,13 @@ const UpsellStep = ({
 
     // If there's a feature with a checkmark, don't show any icons
     const noIcon = hasNoIcon(shortFreePlan?.features || []) || hasNoIcon(upsellShortPlan?.features || []);
+
+    useEffect(() => {
+        void metrics.core_signup_pageLoad_total.increment({
+            step: 'upsell',
+            application: getSignupApplication(APP_NAME),
+        });
+    }, []);
 
     return (
         <div className="sign-layout-two-column w100 flex flex-align-items-start flex-justify-center flex-gap-2">
