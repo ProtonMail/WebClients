@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     className?: string;
@@ -13,14 +13,9 @@ interface Props {
 
 const IllustrationPlaceholder = ({ className, illustrationClassName, title, url, uppercase, children }: Props) => {
     return (
-        <div
-            className={classnames([
-                'flex-no-min-children flex-column flex-nowrap flex-align-items-center w100',
-                className,
-            ])}
-        >
-            <img src={url} alt={title} className={classnames(['p1 mb1', illustrationClassName])} />
-            {!!title && <h2 className={classnames(['text-bold', uppercase && 'text-uppercase'])}>{title}</h2>}
+        <div className={clsx('flex-no-min-children flex-column flex-nowrap flex-align-items-center w100', className)}>
+            <img src={url} alt={title} className={clsx('p1 mb1', illustrationClassName)} />
+            {!!title && <h1 className={clsx('text-bold h2 mb0-25', uppercase && 'text-uppercase')}>{title}</h1>}
             {children}
         </div>
     );
