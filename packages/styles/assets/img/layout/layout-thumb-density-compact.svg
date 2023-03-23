@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="122" height="78" fill="none" viewBox="0 0 122 78">
-  <path fill="url(#a)" d="M0 4a4 4 0 0 1 4-4h114a4 4 0 0 1 4 4v70a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4z"/>
-  <path fill="#fff" d="M25 20a2 2 0 0 1 2-2h71a2 2 0 0 1 2 2v38a2 2 0 0 1-2 2H27a2 2 0 0 1-2-2V20z"/>
-  <rect width="35" height="2" x="43" y="26" fill="#D1CECC" rx="1"/>
-  <rect width="2" height="2" x="39" y="26" fill="#D1CECC" rx="1"/>
-  <rect width="25" height="2" x="43" y="30" fill="#D1CECC" rx="1"/>
-  <g fill="#D1CECC" fill-opacity=".5">
-    <rect width="39" height="2" x="43" y="36" rx="1"/>
-    <rect width="2" height="2" x="39" y="36" rx="1"/>
-    <rect width="28" height="2" x="43" y="40" rx="1"/>
-  </g>
-  <g fill="#D1CECC" fill-opacity=".2">
-    <rect width="34" height="2" x="43" y="46" rx="1"/>
-    <rect width="2" height="2" x="39" y="46" rx="1"/>
-    <rect width="23" height="2" x="43" y="50" rx="1"/>
-  </g>
-  <path fill="#6D4AFF" d="M22 20a2 2 0 0 1 2-2h4v42h-4a2 2 0 0 1-2-2V20z"/>
-  <defs>
-    <linearGradient id="a" x1="101.5" x2="16" y1="-7.5" y2="83" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#EAE7E4" stop-opacity=".3"/>
-      <stop offset="1" stop-color="#C6C3BE" stop-opacity=".2"/>
-    </linearGradient>
-  </defs>
+    <path fill="url(#a)" d="M0 4a4 4 0 0 1 4-4h114a4 4 0 0 1 4 4v70a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4z" />
+    <path fill="#fff" d="M25 20a2 2 0 0 1 2-2h71a2 2 0 0 1 2 2v38a2 2 0 0 1-2 2H27a2 2 0 0 1-2-2V20z" />
+    <rect width="35" height="2" x="43" y="26" fill="#D1CECC" rx="1" />
+    <rect width="2" height="2" x="39" y="26" fill="#D1CECC" rx="1" />
+    <rect width="25" height="2" x="43" y="30" fill="#D1CECC" rx="1" />
+    <g fill="#D1CECC" fill-opacity=".5">
+        <rect width="39" height="2" x="43" y="36" rx="1" />
+        <rect width="2" height="2" x="39" y="36" rx="1" />
+        <rect width="28" height="2" x="43" y="40" rx="1" />
+    </g>
+    <g fill="#D1CECC" fill-opacity=".2">
+        <rect width="34" height="2" x="43" y="46" rx="1" />
+        <rect width="2" height="2" x="39" y="46" rx="1" />
+        <rect width="23" height="2" x="43" y="50" rx="1" />
+    </g>
+    <path fill="#6D4AFF" d="M22 20a2 2 0 0 1 2-2h4v42h-4a2 2 0 0 1-2-2V20z" />
+    <defs>
+        <linearGradient id="a" x1="101.5" x2="16" y1="-7.5" y2="83" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#EAE7E4" stop-opacity=".3" />
+            <stop offset="1" stop-color="#C6C3BE" stop-opacity=".2" />
+        </linearGradient>
+    </defs>
 </svg>
