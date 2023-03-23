@@ -376,7 +376,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
         </span>
     );
     const assistiveText = (
-        <span>
+        <span className="cursor-default">
             {c('Share calendar assistive text').t`To invite non-${BRAND_NAME} users, share your calendar with a link.`}{' '}
             <Href href={getKnowledgeBaseUrl('/share-calendar-via-link')}>
                 {c('Knowledge base link label').t`Here's how`}
@@ -442,6 +442,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                         as={AddressesInput}
                         ref={addressesAutocompleteRef}
                         hint={hint}
+                        id={inputId}
                         assistiveText={hasExternalRecipients ? assistiveText : null}
                         onClick={() => {
                             document.getElementById(inputId)?.focus();
