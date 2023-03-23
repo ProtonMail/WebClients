@@ -188,13 +188,14 @@ describe('MetricsRequestService', () => {
         it('does not call api if there are no items to process', () => {
             const batchFrequency = 100;
             const batchSize = 5;
-            new MetricsRequestService(metricsApi, {
+            const requestService = new MetricsRequestService(metricsApi, {
                 reportMetrics: true,
                 batch: {
                     frequency: batchFrequency,
                     size: batchSize,
                 },
             });
+            requestService.startBatchingProcess();
 
             jest.advanceTimersByTime(batchFrequency);
             expect(metricsApi.fetch).not.toHaveBeenCalled();
@@ -261,7 +262,7 @@ describe('MetricsRequestService', () => {
     });
 
     describe('startBatchingProcess', () => {
-        it('starts batching interval automatically if batch params are defined', () => {
+        it('starts batching interval on first report call if batch params are defined', () => {
             const requestService = new MetricsRequestService(metricsApi, {
                 reportMetrics: true,
                 batch: {
@@ -281,8 +282,6 @@ describe('MetricsRequestService', () => {
             const requestService = new MetricsRequestService(metricsApi, {
                 reportMetrics: true,
             });
-
-            requestService.startBatchingProcess();
 
             requestService.report(defaultMetricsRequest);
             expect(metricsApi.fetch).toHaveBeenCalledTimes(1);

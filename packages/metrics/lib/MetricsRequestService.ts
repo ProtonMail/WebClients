@@ -45,10 +45,6 @@ class MetricsRequestService implements IMetricsRequestService {
 
         this._requestQueue = [];
         this._intervalId = null;
-
-        if (this._batch !== undefined) {
-            this.startBatchingProcess();
-        }
     }
 
     public startBatchingProcess() {
@@ -93,9 +89,14 @@ class MetricsRequestService implements IMetricsRequestService {
 
         if (this._batch === undefined) {
             void this.makeRequest([request]);
-        } else {
-            this._requestQueue.push(request);
+            return;
         }
+
+        if (this._intervalId === null) {
+            this.startBatchingProcess();
+        }
+
+        this._requestQueue.push(request);
     }
 
     private processNextBatch() {
