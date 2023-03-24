@@ -52,7 +52,6 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false }
                                 className="color-selector-input"
                                 data-test-id={`color-selector:${color}`}
                                 onChange={() => onChange(color)}
-                                autoFocus={isSelected}
                             />
                             <span className="sr-only">{label || color}</span>
                         </label>
