@@ -23,9 +23,9 @@
         "@protontech/mutex-browser": "^1.0.5",
         "@protontech/sieve.js": "^2.0.6",
         "@protontech/timezone-support": "^1.0.0",
-        "@sentry/browser": "^7.44.2",
+        "@sentry/browser": "^7.45.0",
         "@types/dompurify": "^3.0.0",
-        "@types/node": "^18.15.5",
+        "@types/node": "^18.15.7",
         "@types/papaparse": "^5.3.7",
         "@types/ua-parser-js": "^0.7.36",
         "@types/webpack-env": "^1.18.0",
@@ -37,7 +37,7 @@
         "is-valid-domain": "0.1.6",
         "jsbi": "^4.3.0",
         "lodash": "^4.17.21",
-        "papaparse": "^5.4.0",
+        "papaparse": "^5.4.1",
         "push.js": "^1.0.12",
         "ua-parser-js": "^1.0.34",
         "web-streams-polyfill": "^3.2.1"
@@ -55,12 +55,12 @@
         "karma-jasmine": "^5.1.0",
         "karma-spec-reporter": "^0.0.36",
         "karma-webpack": "^5.0.0",
-        "playwright": "^1.31.2",
-        "prettier": "^2.8.6",
+        "playwright": "^1.32.0",
+        "prettier": "^2.8.7",
         "ts-loader": "^9.4.2",
         "ttag": "^1.7.24",
         "typescript": "^5.0.2",
-        "webpack": "^5.76.2"
+        "webpack": "^5.76.3"
     },
     "peerDependencies": {
         "@proton/styles": "*",
