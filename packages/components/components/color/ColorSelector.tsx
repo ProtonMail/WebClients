@@ -13,9 +13,10 @@ interface Props {
     className?: string;
     colors: { value: string; label?: string }[];
     inline?: boolean;
+    autoFocus?: boolean;
 }
 
-const ColorSelector = ({ selected, onChange, className, colors, inline = false }: Props) => {
+const ColorSelector = ({ selected, onChange, className, colors, inline = false, autoFocus }: Props) => {
     const uid = useInstance(() => generateUID('color-selector'));
 
     return (
@@ -51,6 +52,7 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false }
                                 className="color-selector-input"
                                 data-test-id={`color-selector:${color}`}
                                 onChange={() => onChange(color)}
+                                autoFocus={autoFocus ? isSelected : undefined}
                             />
                             <span className="sr-only">{label || color}</span>
                         </label>
