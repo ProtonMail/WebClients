@@ -20,6 +20,7 @@ export interface Props {
     prefix?: string;
     isDisplayedInSentence?: boolean;
     large?: boolean;
+    dataTestId?: string;
 }
 
 const Price = ({
@@ -31,12 +32,13 @@ const Price = ({
     prefix = '',
     isDisplayedInSentence = false,
     large,
+    dataTestId,
 }: Props) => {
     const value = humanPrice(amount, divisor);
     const [integer, decimal] = `${value}`.split('.');
     const p = amount < 0 ? <span className="prefix">-</span> : null;
     const v = (
-        <span className={classnames(['amount', 'amount--large'])}>
+        <span className={classnames(['amount', 'amount--large'])} data-testid={dataTestId}>
             <span className="integer">{integer}</span>
             {decimal ? <span className="decimal">.{decimal}</span> : null}
         </span>
