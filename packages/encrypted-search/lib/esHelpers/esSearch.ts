@@ -2,7 +2,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { AesKeyGenParams, ES_EXTRA_RESULTS_LIMIT, ES_MAX_ITEMS_PER_BATCH } from '../constants';
-import { readContentBatch, readMetadataBatch, readNumMetadata, readSortedIDs } from '../esIDB';
+import { readContentBatch, readMetadataBatch, readSortedIDs } from '../esIDB';
 import {
     AesGcmCiphertext,
     CachedItem,
@@ -301,8 +301,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
     const hasApostrophe = (getKeywords(esSearchParams) || []).some((keyword) => keyword.includes(`'`));
 
     // Caching needs to be triggered here for when a refresh happens on a search URL
-    const count = (await readNumMetadata(userID)) || 0;
-    if (!esCacheRef.current.isCacheReady && esCacheRef.current.esCache.size === 0 && count > 0) {
+    if (!esCacheRef.current.isCacheReady && esCacheRef.current.esCache.size === 0) {
         const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
         if (!indexKey) {
             throw new Error('Key not found');
@@ -315,7 +314,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
     if (isReverse || (esCacheRef.current.isCacheReady && !esCacheRef.current.isCacheLimited)) {
         // We have to wait for the cache to contain at least one message, because if it is empty the iterator
         // will be exhausted immediately and will not loop over newly inserted messages when they'll come in
-        while (esCacheRef.current.esCache.size === 0) {
+        while (!esCacheRef.current.isCacheReady && esCacheRef.current.esCache.size === 0) {
             await wait(200);
         }
 
