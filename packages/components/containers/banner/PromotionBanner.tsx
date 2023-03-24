@@ -41,6 +41,7 @@ const PromotionBanner = ({
                 contentCentered && 'text-center on-tablet-text-left p-0-5',
                 rounded && 'rounded'
             )}
+            data-testid="promotion-banner"
         >
             <div
                 className={clsx(
@@ -50,7 +51,10 @@ const PromotionBanner = ({
                 )}
             >
                 {loading ? (
-                    <span className={clsx('bg-promotion-loading', contentCentered ? 'w100' : 'w33')} />
+                    <span
+                        className={clsx('bg-promotion-loading', contentCentered ? 'w100' : 'w33')}
+                        data-testid="promotion-banner:loading"
+                    />
                 ) : (
                     <>
                         {icon && <div className="flex-item-noshrink mr-2">{icon}</div>}
