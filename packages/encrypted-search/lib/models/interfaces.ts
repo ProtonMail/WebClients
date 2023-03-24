@@ -218,7 +218,6 @@ export interface ESItemEvent<ESItemMetadata> {
  * Overall structure of an event
  */
 export interface ESEvent<ESItemMetadata> {
-    EventID: string;
     Refresh?: number;
     Items?: ESItemEvent<ESItemMetadata>[];
     attemptReDecryption?: boolean;
