@@ -1,18 +1,5 @@
 .google-button {
-	background-color: #4285f4;
-	position: relative;
-	block-size: 3rem;
-
-	&:disabled {
-		background-color: var(--background-weak);
-		color: #818181;
-	}
-
-	&:hover {
-		background-color: #3265d2;
-	}
-
-	& > .google-logo {
-		position: absolute;
-	}
+	--button-default-background-color: #4285f4;
+	--button-hover-background-color: #3265d2;
+	--button-active-background-color: #2245b0;
 }
