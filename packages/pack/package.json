@@ -55,12 +55,12 @@
         "postcss-logical": "^5.0.4",
         "react-refresh": "^0.14.0",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.59.3",
+        "sass": "^1.60.0",
         "sass-loader": "^13.2.1",
         "terser-webpack-plugin": "^5.3.7",
         "ttag": "^1.7.24",
         "ttag-cli": "^1.10.5",
-        "webpack": "^5.76.2",
+        "webpack": "^5.76.3",
         "webpack-cli": "^5.0.1",
         "webpack-dev-server": "^4.13.1",
         "webpack-retry-chunk-load-plugin": "^3.1.1",
@@ -68,7 +68,7 @@
     },
     "devDependencies": {
         "eslint": "^8.36.0",
-        "prettier": "^2.8.6"
+        "prettier": "^2.8.7"
     },
     "engines": {
         "node": ">= v18.15.0"
