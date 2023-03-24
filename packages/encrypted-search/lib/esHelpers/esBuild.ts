@@ -103,11 +103,10 @@ export const initializeEncryptedSearch = async (
  */
 export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: string) => {
     const userKeysList = await getUserKeys();
-    const primaryUserKey = userKeysList[0];
     const decryptionResult = await CryptoProxy.decryptMessage({
         armoredMessage: encryptedKey,
-        verificationKeys: [primaryUserKey.publicKey],
-        decryptionKeys: [primaryUserKey.privateKey],
+        verificationKeys: userKeysList.map(({ publicKey }) => publicKey),
+        decryptionKeys: userKeysList.map(({ privateKey }) => privateKey),
     });
 
     const { data: decryptedKey } = decryptionResult;
