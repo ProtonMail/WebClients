@@ -5,8 +5,7 @@ import { genAccentShades } from '@proton/colors';
 import useInstance from '@proton/hooks/useInstance';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import capitalize from '@proton/utils/capitalize';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     selected: string;
@@ -14,15 +13,16 @@ interface Props {
     className?: string;
     colors: { value: string; label?: string }[];
     inline?: boolean;
+    autoFocus?: boolean;
 }
 
-const ColorSelector = ({ selected, onChange, className, colors, inline = false }: Props) => {
+const ColorSelector = ({ selected, onChange, className, colors, inline = false, autoFocus }: Props) => {
     const uid = useInstance(() => generateUID('color-selector'));
 
     return (
         <ul
             aria-label={c('Label').t`Colors`}
-            className={classnames([
+            className={clsx([
                 'color-selector-container unstyled m0',
                 inline && 'color-selector-container-inline',
                 className,
@@ -36,7 +36,7 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false }
                 return (
                     <li key={color}>
                         <label
-                            className={classnames(['color-selector-item', isSelected && 'is-selected'])}
+                            className={clsx(['color-selector-item', isSelected && 'is-selected'])}
                             style={{
                                 color,
                                 '--color-selector-base': base,
@@ -52,7 +52,7 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false }
                                 className="color-selector-input"
                                 data-test-id={`color-selector:${color}`}
                                 onChange={() => onChange(color)}
-                                autoFocus={isSelected}
+                                autoFocus={autoFocus ? isSelected : undefined}
                             />
                             <span className="sr-only">{label || color}</span>
                         </label>
