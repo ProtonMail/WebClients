@@ -1,15 +1,17 @@
-import { ComponentPropsWithoutRef, HTMLProps, MouseEvent, ReactNode, forwardRef } from 'react';
+import { ComponentPropsWithoutRef, HTMLProps, MouseEvent, ReactElement, ReactNode, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
+
 import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
 
 interface AddressesInputItemProps extends ComponentPropsWithoutRef<'div'> {
-    labelTooltipTitle: string;
+    iconTooltipTitle?: string;
+    labelTooltipTitle?: string;
     onRemove: (event: MouseEvent<HTMLButtonElement>) => void;
-    icon?: ReactNode;
+    icon?: ReactElement;
     label?: string;
     labelProps?: HTMLProps<HTMLSpanElement> & { 'data-test-id'?: string };
     removeProps?: HTMLProps<HTMLButtonElement> & { 'data-test-id'?: string };
@@ -20,6 +22,7 @@ export const AddressesInputItem = forwardRef<HTMLDivElement, AddressesInputItemP
         className,
         children,
         icon,
+        iconTooltipTitle,
         label,
         labelProps: { className: labelClassName, ...labelRest } = {},
         labelTooltipTitle,
@@ -29,10 +32,16 @@ export const AddressesInputItem = forwardRef<HTMLDivElement, AddressesInputItemP
     },
     ref
 ) {
+    const wrappedLabel = (
+        <span className={clsx(['pill-label mtauto mbauto px0-5 text-ellipsis', labelClassName])} {...labelRest}>
+            {label}
+        </span>
+    );
+
     return (
         <>
             <div
-                className={classnames([
+                className={clsx([
                     'pill my0-25 mr0-5 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation cursor-grab rounded',
                     className,
                 ])}
@@ -40,15 +49,8 @@ export const AddressesInputItem = forwardRef<HTMLDivElement, AddressesInputItemP
                 {...rest}
             >
                 <span className="interactive flex flex-row flex-nowrap">
-                    {icon}
-                    <Tooltip title={labelTooltipTitle}>
-                        <span
-                            className={classnames(['pill-label mtauto mbauto px0-5 text-ellipsis', labelClassName])}
-                            {...labelRest}
-                        >
-                            {label}
-                        </span>
-                    </Tooltip>
+                    {iconTooltipTitle && icon ? <Tooltip title={iconTooltipTitle}>{icon}</Tooltip> : icon}
+                    {labelTooltipTitle ? <Tooltip title={labelTooltipTitle}>{wrappedLabel}</Tooltip> : wrappedLabel}
                 </span>
 
                 <Tooltip title={c('Action').t`Remove`}>
@@ -93,9 +95,9 @@ const AddressesInput = forwardRef<HTMLDivElement, AddressesInputProps>(function 
     ref
 ) {
     return (
-        <div className={classnames(['w100 flex-item-fluid relative', className])} ref={ref} onClick={onClick}>
+        <div className={clsx(['w100 flex-item-fluid relative', className])} ref={ref} onClick={onClick}>
             <div
-                className={classnames(['flex-no-min-children flex-item-fluid', autocompleteContainerClassName])}
+                className={clsx(['flex-no-min-children flex-item-fluid', autocompleteContainerClassName])}
                 {...autocompleteContainerRest}
             >
                 <div className="flex-item-fluid flex max-w100 max-h100 relative">
@@ -103,10 +105,7 @@ const AddressesInput = forwardRef<HTMLDivElement, AddressesInputProps>(function 
                     {placeholder}
                     <div className="flex max-w100 max-h100 relative flex-item-grow-2">
                         <div
-                            className={classnames([
-                                'flex-item-fluid flex flex-align-items-center',
-                                inputContainerClassName,
-                            ])}
+                            className={clsx(['flex-item-fluid flex flex-align-items-center', inputContainerClassName])}
                         >
                             {autocomplete}
                         </div>
