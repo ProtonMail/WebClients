@@ -22,7 +22,6 @@ export default async function convertDriveEventsToSearchEvents(
     eventsToStore[shareId] = events.eventId;
     return {
         eventsToStore,
-        EventID: events.eventId,
         Refresh: events.refresh ? 1 : 0,
         attemptReDecryption: false,
         Items: await Promise.all(
