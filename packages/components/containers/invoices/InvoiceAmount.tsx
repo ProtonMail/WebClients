@@ -12,7 +12,11 @@ const format = ({ State, AmountCharged = 0, AmountDue = 0 }: Invoice) => {
 };
 
 const InvoiceAmount = ({ invoice }: Props) => {
-    return <Price currency={invoice.Currency}>{format(invoice)}</Price>;
+    return (
+        <Price currency={invoice.Currency} dataTestId="invoice-amount">
+            {format(invoice)}
+        </Price>
+    );
 };
 
 export default InvoiceAmount;
