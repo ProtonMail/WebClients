@@ -18,6 +18,12 @@
             "options": {
                 "importOrderParserPlugins": ["typescript"]
             }
+        },
+        {
+            "files": "*.svg",
+            "options": {
+                "parser": "html"
+            }
         }
     ],
     "importOrder": [

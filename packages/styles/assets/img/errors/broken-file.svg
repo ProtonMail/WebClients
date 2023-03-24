@@ -1,25 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="168" height="160" fill="none" viewBox="0 0 168 160">
-  <path fill="#F0ECE6" fill-rule="evenodd" d="M99.027 24H35.6a5.6 5.6 0 00-5.6 5.6v124.8a5.6 5.6 0 005.6 5.6h96.8a5.6 5.6 0 005.6-5.6V62.973L99.027 24z" clip-rule="evenodd"/>
-  <path fill="#66635E" fill-rule="evenodd" d="M104.11 122.11c11.234-11.235 11.234-29.45 0-40.684-11.235-11.235-29.45-11.235-40.684 0-11.235 11.234-11.235 29.449 0 40.684 11.234 11.234 29.45 11.234 40.684 0zm-1.756-31.683c5.124 8.382 4.059 19.48-3.194 26.733s-18.351 8.318-26.733 3.194l29.927-29.927zm-4.578-5.322l-30.671 30.672c-7.207-8.553-6.783-21.348 1.27-29.401 8.054-8.054 20.85-8.478 29.401-1.271z" clip-rule="evenodd" opacity=".3"/>
-  <mask id="a" width="61" height="79" x="30" y="24" maskUnits="userSpaceOnUse" style="mask-type:alpha">
-    <path fill="#C4C4C4" d="M91 24H30v78.571h61V24z"/>
-  </mask>
-  <g filter="url(#filter0_f_5741_18649)" mask="url(#a)" opacity=".3">
-    <path fill="#221548" d="M67.393.92L30 24v54.51l12.237-8.56a58.929 58.929 0 0025.156-48.29V.92z"/>
-  </g>
-  <path fill="url(#paint0_linear_5741_18649)" d="M62 30C62 13.431 48.569 0 32 0 15.431 0 2 13.431 2 30c0 16.569 13.431 30 30 30 16.569 0 30-13.431 30-30z"/>
-  <path fill="#fff" d="M27.095 17.889a2.905 2.905 0 015.81 0L32.983 32a2.983 2.983 0 11-5.966 0l.078-14.111z"/>
-  <circle cx="30" cy="42.199" r="3" fill="#fff"/>
-  <path fill="#FAF7F0" fill-rule="evenodd" d="M99.03 24l39 39h-33.4a5.6 5.6 0 01-5.6-5.6V24z" clip-rule="evenodd"/>
-  <defs>
-    <linearGradient id="paint0_linear_5741_18649" x1="32" x2="32" y1="6.021" y2="83.934" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FA5284"/>
-      <stop offset="1" stop-color="#DC3251"/>
-    </linearGradient>
-    <filter id="filter0_f_5741_18649" width="70.785" height="110.983" x="13.304" y="-15.777" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-      <feGaussianBlur result="effect1_foregroundBlur_5741_18649" stdDeviation="8.348"/>
-    </filter>
-  </defs>
+    <path
+        fill="#F0ECE6"
+        fill-rule="evenodd"
+        d="M99.027 24H35.6a5.6 5.6 0 00-5.6 5.6v124.8a5.6 5.6 0 005.6 5.6h96.8a5.6 5.6 0 005.6-5.6V62.973L99.027 24z"
+        clip-rule="evenodd"
+    />
+    <path
+        fill="#66635E"
+        fill-rule="evenodd"
+        d="M104.11 122.11c11.234-11.235 11.234-29.45 0-40.684-11.235-11.235-29.45-11.235-40.684 0-11.235 11.234-11.235 29.449 0 40.684 11.234 11.234 29.45 11.234 40.684 0zm-1.756-31.683c5.124 8.382 4.059 19.48-3.194 26.733s-18.351 8.318-26.733 3.194l29.927-29.927zm-4.578-5.322l-30.671 30.672c-7.207-8.553-6.783-21.348 1.27-29.401 8.054-8.054 20.85-8.478 29.401-1.271z"
+        clip-rule="evenodd"
+        opacity=".3"
+    />
+    <mask id="a" width="61" height="79" x="30" y="24" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+        <path fill="#C4C4C4" d="M91 24H30v78.571h61V24z" />
+    </mask>
+    <g filter="url(#filter0_f_5741_18649)" mask="url(#a)" opacity=".3">
+        <path fill="#221548" d="M67.393.92L30 24v54.51l12.237-8.56a58.929 58.929 0 0025.156-48.29V.92z" />
+    </g>
+    <path
+        fill="url(#paint0_linear_5741_18649)"
+        d="M62 30C62 13.431 48.569 0 32 0 15.431 0 2 13.431 2 30c0 16.569 13.431 30 30 30 16.569 0 30-13.431 30-30z"
+    />
+    <path fill="#fff" d="M27.095 17.889a2.905 2.905 0 015.81 0L32.983 32a2.983 2.983 0 11-5.966 0l.078-14.111z" />
+    <circle cx="30" cy="42.199" r="3" fill="#fff" />
+    <path fill="#FAF7F0" fill-rule="evenodd" d="M99.03 24l39 39h-33.4a5.6 5.6 0 01-5.6-5.6V24z" clip-rule="evenodd" />
+    <defs>
+        <linearGradient
+            id="paint0_linear_5741_18649"
+            x1="32"
+            x2="32"
+            y1="6.021"
+            y2="83.934"
+            gradientUnits="userSpaceOnUse"
+        >
+            <stop stop-color="#FA5284" />
+            <stop offset="1" stop-color="#DC3251" />
+        </linearGradient>
+        <filter
+            id="filter0_f_5741_18649"
+            width="70.785"
+            height="110.983"
+            x="13.304"
+            y="-15.777"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur result="effect1_foregroundBlur_5741_18649" stdDeviation="8.348" />
+        </filter>
+    </defs>
 </svg>
