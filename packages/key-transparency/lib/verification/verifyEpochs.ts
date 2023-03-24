@@ -55,7 +55,6 @@ export const verifySKLInsideEpoch = async (
     certificateTimestamp: number;
     Revision: number;
     ObsolescenceToken: string | null;
-    epochIDBumped?: boolean;
 }> => {
     const certificateTimestamp = await verifyEpoch(epoch);
 
