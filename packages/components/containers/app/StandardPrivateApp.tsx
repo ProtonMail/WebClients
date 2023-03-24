@@ -34,12 +34,8 @@ import {
     useLoadFeature,
 } from '../../hooks';
 import { ContactProvider } from '../contacts';
-import {
-    CalendarModelEventManagerProvider,
-    EventManagerProvider,
-    EventModelListener,
-    EventNotices,
-} from '../eventManager';
+import { EventManagerProvider, EventModelListener, EventNotices } from '../eventManager';
+import { CalendarModelEventManagerProvider } from '../eventManager/calendar';
 import { FeatureCode } from '../features';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import { KeyTransparencyManager } from '../keyTransparency';
