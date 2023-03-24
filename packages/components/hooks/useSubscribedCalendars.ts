@@ -4,13 +4,14 @@ import { getSubscriptionParameters } from '@proton/shared/lib/api/calendars';
 import { getIsSubscribedCalendar, getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getIsCalendarSubscriptionEventManagerUpdate } from '@proton/shared/lib/calendar/subscribe/helpers';
 import {
+    findMemberIndices,
     getIsCalendarEventManagerCreate,
     getIsCalendarEventManagerDelete,
     getIsCalendarEventManagerUpdate,
     getIsCalendarMemberEventManagerCreate,
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
-} from '@proton/shared/lib/eventManager/helpers';
+} from '@proton/shared/lib/eventManager/calendar/helpers';
 import {
     Calendar,
     CalendarMember,
@@ -25,12 +26,11 @@ import {
     CalendarMemberEventManager,
     CalendarSubscriptionEventManager,
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
-import { findMemberIndices } from '@proton/shared/lib/models/calendarMembers';
 import addItem from '@proton/utils/addItem';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
 
-import { useCalendarModelEventManager } from '../containers/eventManager/calendar/ModelEventManagerProvider';
+import { useCalendarModelEventManager } from '../containers/eventManager/calendar';
 import useApi from './useApi';
 import useEventManager from './useEventManager';
 import useLoading from './useLoading';
