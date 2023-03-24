@@ -9,6 +9,8 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { ModalTwo, useModalState } from '@proton/components/index';
 
 import GmailSyncModalAnimation from './GmailSyncModalAnimation';
@@ -70,26 +72,28 @@ const GmailSyncModal = ({ syncOpen, onSyncCallback, onSyncSkipCallback }: Props)
         <>
             {renderSyncModal && (
                 <ModalTwo size="xlarge" fullscreenOnMobile {...syncModalProps}>
-                    <section className="flex flex-row m2 h100 flex-gap-2">
-                        <div className="flex flex-column flex-nowrap flex-gap-2">
-                            <div style={{ color: '#372580' }}>
-                                <h1>{c('Gmail forwarding').t`Automatically forward`}</h1>
+                    <ModalHeader />
+                    <ModalContent className="m2 mt0 flex flex-row flex-align-items-center flex-nowrap flex-gap-2">
+                        <div className="flex flex-column flex-item-fluid flex-gap-2">
+                            <h1>
+                                <strong>{c('Gmail forwarding').t`Automatically forward`}</strong>
+                                &nbsp;
                                 <br className="no-desktop" />
-                                <h2>{c('Gmail forwarding').t`Gmail messages to your inbox`}</h2>
-                            </div>
+                                {c('Gmail forwarding').t`Gmail messages to your inbox`}
+                            </h1>
                             <div className="no-desktop flex-item-grow-2">
                                 <GmailSyncModalAnimation />
                             </div>
                             <div className="flex flex-column flex-align-items-center flex-gap-1">
                                 <SignInWithGoogle onClick={handleGoogleSync} loading={loading} />
-                                <Button shape="ghost" color="norm" onClick={handleSyncSkip}>{c('Action')
+                                <Button shape="ghost" color="norm" fullWidth onClick={handleSyncSkip}>{c('Action')
                                     .t`Skip`}</Button>
                             </div>
                         </div>
-                        <div className="no-tablet flex-item-grow-2">
+                        <div className="no-mobile no-tablet w60">
                             <GmailSyncModalAnimation />
                         </div>
-                    </section>
+                    </ModalContent>
                 </ModalTwo>
             )}
         </>
