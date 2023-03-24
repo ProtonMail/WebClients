@@ -34,7 +34,7 @@ import {
     useNotifications,
     useReadCalendarBootstrap,
 } from '../../../hooks';
-import { useCalendarModelEventManager } from '../../eventManager';
+import { useCalendarModelEventManager } from '../../eventManager/calendar';
 
 const getHasChangedCalendarMemberData = (calendarPayload: CalendarCreateData, calendar: VisualCalendar) => {
     const { Name: oldName, Description: oldDescription, Color: oldColor, Display: oldDisplay } = calendar;
