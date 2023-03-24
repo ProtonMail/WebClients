@@ -1,5 +1,6 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
-import { utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { base64StringToUint8Array } from '../../helpers/encoding';
 import { CalendarEventData } from '../../interfaces/calendar';
@@ -39,21 +40,60 @@ export const getDecryptedSessionKey = async (
     return CryptoProxy.decryptSessionKey({ binaryMessage: data, decryptionKeys: privateKeys });
 };
 
+export const getNeedsLegacyVerification = (verifiedBinary: VERIFICATION_STATUS, textData: string) => {
+    if (verifiedBinary !== VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+        return false;
+    }
+    if (/ \r\n/.test(textData)) {
+        // if there are trailing spaces using the RFC-compliant line separator, those got stripped by clients signing
+        // as-text with the stripTrailingSpaces option enabled. We need legacy verification.
+        return true;
+    }
+    const textDataWithoutCRLF = textData.replaceAll(`\r\n`, '');
+
+    // if there are "\n" end-of-lines we need legacy verification as those got normalized by clients signing as-text
+    return /\n/.test(textDataWithoutCRLF);
+};
+
+const getVerifiedLegacy = async ({
+    textData,
+    signature,
+    publicKeys,
+}: {
+    textData: string;
+    signature: string;
+    publicKeys: PublicKeyReference | PublicKeyReference[];
+}) => {
+    /**
+     * Verification of an ical card may have failed because the signature is a legacy one,
+     * done as text and therefore using OpenPGP normalization (\n -> \r\n) + stripping trailing spaces.
+     *
+     * We try to verify the signature in the legacy way and log the fact in Sentry
+     */
+    captureMessage('Fallback to legacy signature verification of calendar event', { level: 'info' });
+    const { verified: verifiedLegacy } = await CryptoProxy.verifyMessage({
+        textData,
+        stripTrailingSpaces: true,
+        verificationKeys: publicKeys,
+        armoredSignature: signature,
+    });
+
+    return verifiedLegacy;
+};
+
 export const verifySignedCard = async (
     dataToVerify: string,
-    signature: string | null,
+    signature: string,
     publicKeys: PublicKeyReference | PublicKeyReference[]
 ) => {
-    const verified = signature
-        ? (
-              await CryptoProxy.verifyMessage({
-                  textData: dataToVerify,
-                  stripTrailingSpaces: true,
-                  verificationKeys: publicKeys,
-                  armoredSignature: signature,
-              })
-          ).verified
-        : undefined;
+    const { verified: verifiedBinary } = await CryptoProxy.verifyMessage({
+        binaryData: stringToUtf8Array(dataToVerify), // not 'utf8' to avoid issues with trailing spaces and automatic normalisation of EOLs to \n
+        verificationKeys: publicKeys,
+        armoredSignature: signature,
+    });
+    const verified = getNeedsLegacyVerification(verifiedBinary, dataToVerify)
+        ? await getVerifiedLegacy({ textData: dataToVerify, signature, publicKeys })
+        : verifiedBinary;
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
     const verificationStatus = getEventVerificationStatus(verified, hasPublicKeys);
 
@@ -66,13 +106,18 @@ export const decryptCard = async (
     publicKeys: PublicKeyReference | PublicKeyReference[],
     sessionKey: SessionKey
 ) => {
-    const { data: decryptedData, verified } = await CryptoProxy.decryptMessage({
+    const { data: decryptedData, verified: verifiedBinary } = await CryptoProxy.decryptMessage({
         binaryMessage: dataToDecrypt,
-        format: 'binary',
+        format: 'binary', // even though we convert to utf8 later, we can't use 'utf8' here as that would entail automatic normalisation of EOLs to \n
         verificationKeys: publicKeys,
         armoredSignature: signature || undefined,
         sessionKeys: [sessionKey],
     });
+    const decryptedText = utf8ArrayToString(decryptedData);
+    const verified =
+        signature && getNeedsLegacyVerification(verifiedBinary, decryptedText)
+            ? await getVerifiedLegacy({ textData: decryptedText, signature, publicKeys })
+            : verifiedBinary;
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
     const verificationStatus = getEventVerificationStatus(verified, hasPublicKeys);
 
