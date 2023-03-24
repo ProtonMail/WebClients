@@ -5,8 +5,7 @@ import { genAccentShades } from '@proton/colors';
 import useInstance from '@proton/hooks/useInstance';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import capitalize from '@proton/utils/capitalize';
-
-import { classnames } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     selected: string;
@@ -22,7 +21,7 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false }
     return (
         <ul
             aria-label={c('Label').t`Colors`}
-            className={classnames([
+            className={clsx([
                 'color-selector-container unstyled m0',
                 inline && 'color-selector-container-inline',
                 className,
@@ -36,7 +35,7 @@ const ColorSelector = ({ selected, onChange, className, colors, inline = false }
                 return (
                     <li key={color}>
                         <label
-                            className={classnames(['color-selector-item', isSelected && 'is-selected'])}
+                            className={clsx(['color-selector-item', isSelected && 'is-selected'])}
                             style={{
                                 color,
                                 '--color-selector-base': base,
