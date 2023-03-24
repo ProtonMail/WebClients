@@ -80,13 +80,7 @@ export const bootstrapInitialEpoch = async (
         return;
     }
 
-    const { certificateTimestamp, epochIDBumped, Revision } = await verifySKLInsideEpochID(
-        MinEpochID,
-        email,
-        oldestSKL,
-        api,
-        true
-    );
+    const { certificateTimestamp, Revision } = await verifySKLInsideEpochID(MinEpochID, email, oldestSKL, api);
     if (Revision !== 0 && !isTimestampOldEnough(certificateTimestamp)) {
         ktSentryReport('Bootstrapped epoch is not from around 90 days ago', {
             context: 'bootstrapInitialEpoch',
@@ -98,7 +92,7 @@ export const bootstrapInitialEpoch = async (
     }
 
     const initialEpoch: VerifiedEpoch = {
-        EpochID: MinEpochID + (epochIDBumped ? 1 : 0),
+        EpochID: MinEpochID,
         Revision,
     };
 
