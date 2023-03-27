@@ -455,7 +455,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                     <InputField
                         as={AddressesInput}
                         ref={addressesAutocompleteRef}
-                        hint={hint}
+                        hint={maxReachedError ? hint : null}
                         id={inputId}
                         assistiveText={hasExternalRecipients ? assistiveText : null}
                         onClick={() => {
