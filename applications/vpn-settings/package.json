@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
+        "@proton/metrics": "workspace:packages/metrics",
         "@proton/pack": "workspace:packages/pack",
         "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
