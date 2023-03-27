@@ -73,8 +73,9 @@ describe('property', () => {
                     text: 'random string to make it fail',
                 },
             } as VCardProperty<VCardDateOrText>;
+            const fallbackDate = new Date();
 
-            expect(getDateFromVCardProperty(vCardProperty)).toEqual(new Date());
+            expect(getDateFromVCardProperty(vCardProperty, fallbackDate)).toEqual(fallbackDate);
         });
     });
 });
