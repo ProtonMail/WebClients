@@ -1,3 +1,13 @@
+## Release: 5.0.10 — April 12, 2023
+
+### New features
+
+-   You can now share your calendar with family and friends that own a Proton account with view or editing permissions. Sharing a calendar with Proton users enables real-time updates of the calendar modifications
+
+### Improvements
+
+-   Enable the possibility to interact with the contacts in the side panel while creating an event in your calendar
+
 ## Release: 5.0.9 — March 8, 2023
 
 ### New features
