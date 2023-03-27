@@ -60,7 +60,7 @@ const ModalHeader = ({
     const [firstAction, secondAction] = Array.isArray(actions) ? actions : [actions];
 
     return (
-        <div className="modal-two-header ">
+        <div className="modal-two-header">
             <div
                 className={classnames([
                     'flex flex-nowrap flex-item-noshrink flex-align-items-start',
