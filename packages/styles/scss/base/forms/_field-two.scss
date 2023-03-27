@@ -43,9 +43,17 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
+	&--invalid .multi-select-container {
+		border-color: var(--signal-danger);
+	}
+
 	&--warning &-assist {
 		color: var(--signal-warning);
 		font-weight: var(--font-weight-semibold);
+	}
+
+	&--warning .multi-select-container {
+		border-color: var(--signal-warning);
 	}
 
 	&--disabled {
