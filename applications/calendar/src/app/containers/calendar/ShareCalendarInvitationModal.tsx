@@ -6,12 +6,15 @@ import {
     Prompt,
     useCalendarShareInvitationActions,
     useLoading,
+    useModalState,
     useNotifications,
     useSettingsLink,
 } from '@proton/components';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
+import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
+import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
@@ -34,6 +37,11 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
     const [loadingAccept, withLoadingAccept] = useLoading();
     const [loadingReject, withLoadingReject] = useLoading();
     const { accept, reject } = useCalendarShareInvitationActions();
+    const [
+        signatureVerificationErrorModal,
+        setIsSignatureVerificationErrorModalOpen,
+        renderSignatureVerificationErrorModal,
+    ] = useModalState();
 
     const canonicalizedInvitedEmail = canonicalizeInternalEmail(invitation.Email);
     const invitedAddress = addresses.find(
@@ -54,8 +62,45 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
     const isInvitedAddressDisabled = getIsAddressDisabled(invitedAddress);
     const { isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(calendars, isFreeUser);
 
-    const handleAccept = () => withLoadingAccept(accept(invitation, rest.onClose));
-    const handleReject = () => withLoadingReject(reject(invitation, rest.onClose));
+    const handleAcceptError = (e: Error) => {
+        if (e instanceof ShareCalendarSignatureVerificationError) {
+            const { errors } = e;
+            errors?.forEach((error) => {
+                console.error(error);
+            });
+            setIsSignatureVerificationErrorModalOpen(true);
+        } else {
+            createNotification({
+                type: 'error',
+                text: e.message,
+            });
+        }
+    };
+    const handleRejectError = (e: Error) => {
+        createNotification({
+            type: 'error',
+            text: e.message,
+        });
+        rest.onClose?.();
+    };
+
+    const handleAccept = () =>
+        withLoadingAccept(
+            accept({
+                invitation,
+                onFinish: rest.onClose,
+                onError: handleAcceptError,
+            })
+        );
+
+    const handleReject = () =>
+        withLoadingReject(
+            reject({
+                invitation,
+                onFinish: rest.onClose,
+                onError: handleRejectError,
+            })
+        );
     const handleGoToSettings = () => goToSettings('/identity-addresses', APPS.PROTONMAIL);
 
     const calendarOwnerDisplayName = (
@@ -105,25 +150,37 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
           ];
 
     return (
-        <Prompt {...rest} title={title} buttons={buttons}>
-            {isInvitedAddressDisabled ? (
-                <>
-                    <p>
-                        {c('Warning in modal to accept calendar invitation; Description')
-                            .jt`You cannot join this calendar because your invited email address (${boldInvitedAddress}) is disabled.`}
-                    </p>
-                    <p>
-                        {c('Warning in modal to accept calendar invitation; Description')
-                            .jt`To access this shared calendar, enable this address, or ask ${boldCalendarOwnerEmail} to send an invite to an active address.`}
-                    </p>
-                </>
-            ) : (
-                <p>
-                    {c('Modal for received invitation to share calendar; text')
-                        .jt`${calendarOwnerDisplayName} shared their calendar ${boldCalendarName} with you.`}
-                </p>
+        <>
+            {renderSignatureVerificationErrorModal && (
+                <ShareCalendarWithSignatureVerificationErrorModal
+                    {...signatureVerificationErrorModal}
+                    senderEmail={calendarOwnerEmail}
+                    onCancel={() => {
+                        signatureVerificationErrorModal.onClose();
+                        rest.onClose?.();
+                    }}
+                />
             )}
-        </Prompt>
+            <Prompt {...rest} title={title} buttons={buttons}>
+                {isInvitedAddressDisabled ? (
+                    <>
+                        <p>
+                            {c('Warning in modal to accept calendar invitation; Description')
+                                .jt`You cannot join this calendar because your invited email address (${boldInvitedAddress}) is disabled.`}
+                        </p>
+                        <p>
+                            {c('Warning in modal to accept calendar invitation; Description')
+                                .jt`To access this shared calendar, enable this address, or ask ${boldCalendarOwnerEmail} to send an invite to an active address.`}
+                        </p>
+                    </>
+                ) : (
+                    <p>
+                        {c('Modal for received invitation to share calendar; text')
+                            .jt`${calendarOwnerDisplayName} shared their calendar ${boldCalendarName} with you.`}
+                    </p>
+                )}
+            </Prompt>
+        </>
     );
 };
 

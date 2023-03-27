@@ -121,7 +121,7 @@ export const getAllInvitations = () => ({
     method: 'get',
 });
 
-export const addMember = (calendarID: string, data: { AddressID: string; Members: CreateCalendarMemberData[] }) => ({
+export const addMember = (calendarID: string, data: { AddressID: string; Signature: string; Members: CreateCalendarMemberData[] }) => ({
     url: `${CALENDAR_V1}/${calendarID}/members`,
     method: 'post',
     data,

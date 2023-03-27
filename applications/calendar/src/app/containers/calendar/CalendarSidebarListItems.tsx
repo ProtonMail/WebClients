@@ -27,7 +27,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { CALENDAR_MODAL_TYPE, CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
-import ShareCalendarModal from '@proton/components/containers/calendar/shareModal/ShareCalendarModal';
+import ShareCalendarModal from '@proton/components/containers/calendar/shareProton/ShareCalendarModal';
 import ShareLinkModal from '@proton/components/containers/calendar/shareURL/ShareLinkModal';
 import ShareLinkSuccessModal from '@proton/components/containers/calendar/shareURL/ShareLinkSuccessModal';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
