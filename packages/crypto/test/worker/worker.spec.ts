@@ -948,6 +948,30 @@ jdam/kRWvRjS8LMZDsVICPpOrwhQXkRlAQDFe4bzH3MY16IqrIq70QSCxqLJ
             expect(exportedPublicKey.getKeyID().equals(publicKeyToImport.getKeyID()));
         });
 
+        it('rejects importing a private key encrypted using argon2', async () => {
+            const passphrase = 'passphrase';
+            const argon2Key = `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xY8EZBsDeBYJKwYBBAHaRw8BAQdA+q1zyp3azB9V6zZSf+GejE5fiY4TUXKB
+3ZhHyIfGRpj+CQSSisPQuR0D6KLh+VMUC3ajAwQQJiOXsJlZd5bzJyAckMnm
+EcP1IJ9cbqfUiVVyftKU5XaSs75Z4VEUMg0lkufCqvhEXq6qX+K+uENG6IIc
+t9ziGOMPCIEQgM0YbmFtZSA8ZW1haWxAYXJnb24yLnRlc3Q+wowEEBYKAD4F
+gmQbA3gECwkHCAmQqdOOOdbaF0kDFQgKBBYAAgECGQECmwMCHgEWIQTJB5NG
+/MI1Uadr6pWp04451toXSQAAzp0BALdGS+QDK75+4nVmsfbO49XlGm8BTcoj
+ul76mQ0eBXwvAPwIVBkUpVZ4mZQdigm4pUubIsw745TjlvrWQCEYFElNCceU
+BGQbA3gSCisGAQQBl1UBBQEBB0Dc0WBjkzK/rnUPIJuFpXLfV6Tn9D3L8tHc
+nwx9SURjLQMBCAf+CQRMjXT++0oAAQI7CEdQ18zOAwQQWxKyMceDiPXcySM6
+TR6BoEVjr5mAoy2t4cEw1WqT/mhvwx0UET7q0bJJyOpAxwTPWSSotbEoYbzT
+kB98NBNP3D+QNiNCtsJ4BBgWCAAqBYJkGwN4CZCp04451toXSQKbDBYhBMkH
+k0b8wjVRp2vqlanTjjnW2hdJAAAEcQD7B5iqgIxMvSaT5NWQJvydNABhm2rl
+pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
+=jg+l
+-----END PGP PRIVATE KEY BLOCK-----`;
+            await expect(CryptoWorker.importPrivateKey({ armoredKey: argon2Key, passphrase })).to.be.rejectedWith(
+                /Keys encrypted using Argon2 are not supported yet/
+            );
+        });
+
         it('allows importing a private key as long as it can be decrypted', async () => {
             const passphrase = 'passphrase';
             const { privateKey } = await generateKey({
