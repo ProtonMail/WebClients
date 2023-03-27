@@ -7,6 +7,8 @@ import {
     getSessionTrackingEnabled,
     useAuthentication,
 } from '@proton/components';
+import metrics from '@proton/metrics';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
@@ -24,6 +26,8 @@ const locales = initLocales(require.context('../../locales', true, /.json$/, 'la
 newVersionUpdater(config);
 sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
 initLogicalProperties();
+
+metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const Setup = () => {
     const { UID, login, logout } = useAuthentication() as PublicAuthenticationStore & PrivateAuthenticationStore;
