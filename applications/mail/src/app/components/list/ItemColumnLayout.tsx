@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getLabelIDs, isStarred as testIsStarred } from '../../helpers/elements';
-import { useExpiringElement } from '../../hooks/useExpiration';
+import { useExpiringElement } from '../../hooks/useExpiringElement';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
 import { Breakpoints } from '../../models/utils';

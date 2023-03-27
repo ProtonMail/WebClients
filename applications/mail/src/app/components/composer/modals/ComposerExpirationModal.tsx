@@ -1,18 +1,38 @@
-import { ChangeEvent, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { isToday, isTomorrow } from 'date-fns';
-import { c, msgid } from 'ttag';
+import {
+    addHours,
+    addWeeks,
+    differenceInSeconds,
+    endOfDay,
+    format,
+    isBefore,
+    isToday,
+    isTomorrow,
+    roundToNearestMinutes,
+    set,
+    startOfToday,
+} from 'date-fns';
+import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Checkbox, generateUID, useNotifications } from '@proton/components';
+import {
+    Checkbox,
+    DateInputTwo,
+    InputFieldTwo,
+    TimeInput,
+    generateUID,
+    useNotifications,
+    useUserSettings,
+} from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { isValidDate } from '@proton/shared/lib/date/date';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import range from '@proton/utils/range';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { MAX_EXPIRATION_TIME } from '../../../constants';
-import { formatDateToHuman } from '../../../helpers/date';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
 import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -21,57 +41,16 @@ import { MessageChange } from '../Composer';
 import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
 
-// expiresIn value is in seconds and default is 7 days
-const ONE_WEEK = 3600 * 24 * 7;
-
-const initValues = ({ draftFlags = {} }: Partial<MessageState> = {}) => {
-    const { expiresIn = ONE_WEEK } = draftFlags;
-    const deltaHours = expiresIn / 3600;
-    const deltaDays = Math.floor(deltaHours / 24);
-
-    return {
-        days: deltaDays,
-        hours: deltaHours % 24,
-    };
-};
-
-const computeHours = ({ days, hours }: { days: number; hours: number }) => hours + days * 24;
-
-const optionRange = (size: number) =>
-    range(0, size).map((value) => (
-        <option key={value} value={value}>
-            {value}
-        </option>
-    ));
-
-const getExpirationText = (days: number, hours: number) => {
-    const expirationDate = new Date().getTime() + (days * 3600 * 24 + hours * 3600) * 1000;
-    const { dateString, formattedTime } = formatDateToHuman(expirationDate);
-
-    if (isToday(expirationDate)) {
-        /*
-         * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-         * Full sentence for reference: "Your message will be deleted from the recipient's inbox and your sent folder today at 12:30 PM"
-         */
-        return c('Info')
-            .t`Your message will be deleted from the recipient's inbox and your sent folder today at ${formattedTime}`;
-    } else if (isTomorrow(expirationDate)) {
-        /*
-         * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-         * Full sentence for reference: "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at 12:30 PM"
-         */
-        return c('Info')
-            .t`Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${formattedTime}`;
-    } else {
-        /*
-         * translator: The variables here are the following.
-         * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
-         * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-         * Full sentence for reference: "Your message will be deleted from the recipient's inbox and your sent folder  on Tuesday, May 11 at 12:30 PM"
-         */
-        return c('Info')
-            .t`Your message will be deleted from the recipient's inbox and your sent folder on ${dateString} at ${formattedTime}`;
+const formatDateInput = (value: Date, locale: Locale) => {
+    if (isToday(value)) {
+        return c('Date label').t`Today`;
     }
+
+    if (isTomorrow(value)) {
+        return c('Date label').t`Tomorrow`;
+    }
+
+    return format(value, 'PP', { locale });
 };
 
 interface Props {
@@ -82,6 +61,13 @@ interface Props {
 
 const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     const dispatch = useAppDispatch();
+    const { createNotification } = useNotifications();
+    const [userSettings] = useUserSettings();
+
+    const [uid] = useState(generateUID('password-modal'));
+    const isExpirationSet = message?.draftFlags?.expiresIn;
+    const [isSendOutside, setIsSendOutside] = useState(false);
+
     const {
         password,
         setPassword,
@@ -93,27 +79,39 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         onFormSubmit,
     } = useExternalExpiration(message);
 
-    const isExpirationSet = message?.draftFlags?.expiresIn;
+    const currentDate = new Date();
+    const [date, setDate] = useState<Date>(set(addWeeks(currentDate, 1), { hours: 9, minutes: 0, seconds: 0 }));
 
-    const [uid] = useState(generateUID('password-modal'));
-
-    const [isSendOutside, setIsSendOutside] = useState(false);
-
-    const values = initValues(message);
-
-    const [days, setDays] = useState(values.days);
-    const [hours, setHours] = useState(values.hours);
-    const { createNotification } = useNotifications();
-
-    const valueInHours = computeHours({ days, hours });
-
-    const handleChange = (setter: (value: number) => void) => (event: ChangeEvent<HTMLSelectElement>) => {
-        const value = Number(event.target.value);
-        setter(value);
-
-        if (setter === setDays && value === 28) {
-            setHours(0);
+    useEffect(() => {
+        if (message?.draftFlags && message.draftFlags.expiresIn) {
+            setDate(message.draftFlags.expiresIn);
         }
+    }, []);
+
+    const minDate = startOfToday();
+    const maxDate = endOfDay(addHours(minDate, MAX_EXPIRATION_TIME));
+    const timeError = isBefore(date, currentDate) ? c('Error').t`Choose a date in the future.` : undefined;
+    const minTime = isToday(date) ? roundToNearestMinutes(currentDate, { nearestTo: 30 }) : startOfToday();
+
+    const handleChange = (type: 'date' | 'time', newDate?: Date) => {
+        if (!newDate) {
+            return;
+        }
+
+        let newFormattedDate = date;
+        if (type === 'date') {
+            newFormattedDate = set(date, {
+                month: newDate.getMonth(),
+                date: newDate.getDate(),
+            });
+        } else {
+            newFormattedDate = set(date, {
+                hours: newDate.getHours(),
+                minutes: newDate.getMinutes(),
+            });
+        }
+
+        setDate(newFormattedDate);
     };
 
     const handleCancel = () => {
@@ -124,31 +122,30 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     const handleSubmit = () => {
         onFormSubmit();
 
+        const secondsDelta = differenceInSeconds(date, currentDate);
+
         if (isSendOutside && !isPasswordSet) {
             return;
         }
-
-        if (Number.isNaN(valueInHours)) {
+        if (Number.isNaN(secondsDelta)) {
             createNotification({
                 type: 'error',
                 text: c('Error').t`Invalid expiration time`,
             });
             return;
         }
-
-        if (valueInHours === 0) {
+        if (secondsDelta === 0) {
             handleCancel();
             return;
         }
 
-        if (valueInHours > MAX_EXPIRATION_TIME) {
+        if (secondsDelta > MAX_EXPIRATION_TIME * 3600) {
             createNotification({
                 type: 'error',
                 text: c('Error').t`The maximum expiration is 4 weeks`,
             });
             return;
         }
-
         if (isPasswordSet) {
             onChange(
                 (message) => ({
@@ -157,25 +154,19 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                         Password: password,
                         PasswordHint: passwordHint,
                     },
-                    draftFlags: { expiresIn: valueInHours * 3600 },
+                    draftFlags: { expiresIn: date },
                 }),
                 true
             );
         } else {
-            onChange({ draftFlags: { expiresIn: valueInHours * 3600 } });
+            onChange({ draftFlags: { expiresIn: date } });
         }
-        dispatch(updateExpires({ ID: message?.localID || '', expiresIn: valueInHours * 3600 }));
+        dispatch(updateExpires({ ID: message?.localID || '', expiresIn: date }));
         onClose();
     };
 
-    const disabled = Number.isNaN(valueInHours);
-
     // translator: this is a hidden text, only for screen reader, to complete a label
     const descriptionExpirationTime = c('Info').t`Expiration time`;
-
-    const expirationText = useMemo(() => {
-        return getExpirationText(days, hours);
-    }, [days, hours]);
 
     return (
         <ComposerInnerModal
@@ -184,57 +175,53 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                     ? c('Info').t`Edit expiration time`
                     : c('Adding expiration to a message will create an expiring message').t`Expiring message`
             }
-            disabled={disabled}
+            disabled={!isValidDate(date)}
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
-            <div className="flex flex-column flex-nowrap mt1 mb1">
-                <span className="sr-only" id={`composer-expiration-string-${uid}`}>
-                    {descriptionExpirationTime}
-                </span>
+            <div className="flex flex-column flex-nowrap mb1">
+                <div className="mb1">
+                    <span className="sr-only" id={`composer-expiration-string-${uid}`}>
+                        {descriptionExpirationTime}
+                    </span>
+                    <p className="my0">{c('Info')
+                        .t`When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?`}</p>
+                    <Href href={getKnowledgeBaseUrl('/expiration/')}>{c('Link').t`Learn more`}</Href>
+                </div>
+
                 <div className="flex flex-gap-0-5 flex-row">
-                    <div className="flex-item-fluid flex flex-column flex-nowrap">
-                        <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5 text-semibold">
-                            {
-                                // translator: the word is preceded by the number of days, between 0 and 28
-                                c('Info').ngettext(msgid`Day`, `Days`, days)
-                            }
-                        </label>
-                        <select
-                            id={`composer-expiration-days-${uid}`}
-                            className="field mr0-25"
-                            value={days}
-                            onChange={handleChange(setDays)}
-                            placeholder={c('Info').ngettext(msgid`Day`, `Days`, days)}
-                            aria-describedby={`composer-expiration-string-${uid}`}
+                    <div className="flex-item-fluid">
+                        <InputFieldTwo
+                            as={DateInputTwo}
+                            id="expiration-date"
+                            label={c('Label attach to date input to select a date').t`Date`}
+                            onChange={(date?: Date) => handleChange('date', date)}
+                            value={date}
+                            toFormatter={formatDateInput}
+                            weekStartsOn={getWeekStartsOn({ WeekStart: userSettings.WeekStart })}
+                            min={minDate}
+                            max={maxDate}
+                            preventValueReset
                             data-testid="composer:expiration-days"
-                        >
-                            {optionRange(7 * 4 + 1)}
-                        </select>
+                            required
+                        />
                     </div>
-                    <div className="flex-item-fluid flex flex-column flex-nowrap">
-                        <label htmlFor={`composer-expiration-hours-${uid}`} className="text-semibold">
-                            {
-                                // translator: the word is preceded by the number of hours, between 0 and 23
-                                c('Info').ngettext(msgid`Hour`, `Hours`, hours)
-                            }
-                        </label>
-                        <select
-                            id={`composer-expiration-hours-${uid}`}
-                            className="field mr0-25"
-                            value={hours}
-                            onChange={handleChange(setHours)}
-                            disabled={days === 28}
-                            aria-describedby={`composer-expiration-string-${uid}`}
+                    <div className="flex-item-fluid">
+                        <InputFieldTwo
+                            as={TimeInput}
+                            id="expiration-time"
+                            label={c('Label attach to time input to select hours').t`Time`}
+                            onChange={(date?: Date) => handleChange('time', date)}
+                            value={date}
+                            min={minTime}
+                            max={endOfDay(date)}
+                            error={timeError}
                             data-testid="composer:expiration-hours"
-                        >
-                            {optionRange(24)}
-                        </select>
+                            required
+                        />
                     </div>
                 </div>
             </div>
-
-            <p className="mt0 color-weak">{expirationText}</p>
 
             <div className="flex flex-nowrap mb1">
                 <Checkbox
@@ -247,7 +234,6 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                         // translator: full sentence "I'm sending this message to a non-Proton Mail user."
                         c('Info').t`I'm sending this message to a non-${MAIL_APP_NAME} user.`
                     }
-                    <Href href={getKnowledgeBaseUrl('/expiration/')} className="ml0-25">{c('Link').t`Learn more`}</Href>
                 </span>
             </div>
 

@@ -17,7 +17,7 @@ describe('ItemExpiration', () => {
     });
 
     it('should not have color-danger class if it is expiring in more than a day', () => {
-        const date = addHours(new Date(), 24);
+        const date = addHours(new Date(), 25);
         const expirationTime = getUnixTime(date);
         render(<ItemExpiration expirationTime={expirationTime} />);
         expect(screen.getByTestId('item-expiration')).not.toHaveClass('color-danger');
@@ -27,13 +27,13 @@ describe('ItemExpiration', () => {
         const date = addMinutes(new Date(), 10);
         const expirationTime = getUnixTime(date);
         render(<ItemExpiration expirationTime={expirationTime} />);
-        expect(screen.getByText('<1 hour')).toBeInTheDocument();
+        expect(screen.getByText('<1 d')).toBeInTheDocument();
     });
 
-    it('should diplay 30 days', () => {
+    it('should display 30 days', () => {
         const date = addDays(new Date(), 30);
         const expirationTime = getUnixTime(date);
         render(<ItemExpiration expirationTime={expirationTime} />);
-        expect(screen.getByText('30 days')).toBeInTheDocument();
+        expect(screen.getByText('30 d')).toBeInTheDocument();
     });
 });

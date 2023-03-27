@@ -7,7 +7,7 @@ import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { useExpiringElement } from '../../hooks/useExpiration';
+import { useExpiringElement } from '../../hooks/useExpiringElement';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
 import NumMessages from '../conversation/NumMessages';

@@ -1,3 +1,5 @@
+import { differenceInSeconds } from 'date-fns';
+
 import { sendMessageForm } from '@proton/shared/lib/api/messages';
 import { Packages } from '@proton/shared/lib/interfaces/mail/crypto';
 
@@ -16,7 +18,7 @@ const serializeJsonToFormData = (payload: any, context: string, data: any) => {
 interface Args {
     ID: string;
     packages: Packages;
-    expiresIn?: number;
+    expiresIn?: Date;
     delaySendSeconds?: number;
     autoSaveContacts?: number;
     scheduledAt?: number;
@@ -37,7 +39,7 @@ export const sendFormatter = ({
     serializeJsonToFormData(payload, `Packages`, packages);
 
     if (expiresIn) {
-        payload.ExpiresIn = expiresIn;
+        payload.ExpiresIn = differenceInSeconds(expiresIn, new Date());
     }
     if (delaySendSeconds) {
         payload.DelaySeconds = delaySendSeconds;

@@ -4,7 +4,7 @@ import { getLocalID, getMessage } from '../helpers/messagesReducer';
 import { MessagesState } from '../messagesTypes';
 
 const previousExpiration: Record<string, number | undefined> = {};
-const previousDraftFlagsExpiresIn: Record<string, number | undefined> = {};
+const previousDraftFlagsExpiresIn: Record<string, Date | undefined> = {};
 
 export const expirePending = (
     state: Draft<MessagesState>,
