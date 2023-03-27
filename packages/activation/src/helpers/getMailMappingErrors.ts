@@ -75,15 +75,20 @@ export const getMailMappingErrors = (
     const errorsSet = new Set<MailImportPayloadError>([]);
     const erroredIds: MailImportFolder['id'][] = [];
 
-    importMapping.forEach((item) => {
-        const itemErrors = getMailMappingError(item, labels, folders, importMapping, isLabelMapping);
-        if (itemErrors.length) {
-            itemErrors.forEach((error) => {
-                errorsSet.add(error);
-            });
-            erroredIds.push(item.id);
-        }
-    });
+    importMapping
+        .filter((item) => {
+            //We remove the items with categories when importing with Google to avoid conflicts if user has a folder named "Forums", "Updates", "Promotions" or "Social"
+            return isLabelMapping ? !item.category : true;
+        })
+        .forEach((item) => {
+            const itemErrors = getMailMappingError(item, labels, folders, importMapping, isLabelMapping);
+            if (itemErrors.length) {
+                itemErrors.forEach((error) => {
+                    errorsSet.add(error);
+                });
+                erroredIds.push(item.id);
+            }
+        });
 
     // Check only on mapping
     if (hasMaxFoldersError) {
