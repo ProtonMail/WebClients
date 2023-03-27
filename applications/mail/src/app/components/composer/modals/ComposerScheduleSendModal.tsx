@@ -15,8 +15,8 @@ import {
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Href } from '@proton/atoms';
-import { DateInput, InputFieldTwo, TimeInput, generateUID, useUserSettings } from '@proton/components';
+import { Href } from '@proton/atoms/Href';
+import { DateInputTwo, InputFieldTwo, TimeInput, generateUID, useUserSettings } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
@@ -170,7 +170,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
             </div>
             <div className="flex flex-gap-0-5 flex-row flex-nowrap">
                 <InputFieldTwo
-                    as={DateInput}
+                    as={DateInputTwo}
                     id={`composer-schedule-date-${uid}`}
                     label={c('Label').t`Date`}
                     onChange={handleChangeDate}
@@ -181,7 +181,6 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
                     toFormatter={formatDateInput}
                     preventValueReset
                     error={errorDate}
-                    errorZoneClassName="hidden"
                     data-testid="composer:schedule-date-input"
                 />
                 <InputFieldTwo
