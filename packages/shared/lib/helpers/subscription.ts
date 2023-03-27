@@ -52,7 +52,7 @@ export const hasMigrationDiscount = (subscription: Subscription) => {
     return subscription?.CouponCode?.startsWith('MIGRATION');
 };
 
-export const isManagedExternally = ({ External }: Subscription): boolean => {
+export const isManagedExternally = ({ External }: Subscription | Pick<Subscription, 'External'>): boolean => {
     return External === Android || External === iOS;
 };
 
