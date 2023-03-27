@@ -13,11 +13,11 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useExpiration } from '../../../hooks/useExpiration';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../../models/utils';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
+import ItemExpiration from '../../list/ItemExpiration';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemStar from '../../list/ItemStar';
@@ -47,8 +47,6 @@ const HeaderCollapsed = ({
     breakpoints,
     conversationIndex = 0,
 }: Props) => {
-    const { lessThanTwoHours } = useExpiration(message);
-
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
             event.stopPropagation();
@@ -93,11 +91,11 @@ const HeaderCollapsed = ({
                 {messageLoaded && isOutboxMessage && !isScheduledMessage && (
                     <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
                 )}
-                {messageLoaded && isExpiringMessage && !lessThanTwoHours && (
-                    <span className="badge-label-weak ml0-5 flex-item-noshrink">{c('Info').t`Expires`}</span>
-                )}
-                {messageLoaded && isExpiringMessage && lessThanTwoHours && (
-                    <span className="badge-label-danger ml0-5 flex-item-noshrink">{c('Info').t`Expires soon`}</span>
+                {messageLoaded && isExpiringMessage && (
+                    <ItemExpiration
+                        className="badge-label-weak ml0-5 py-0-5 flex-item-no-shrink"
+                        expirationTime={message.data?.ExpirationTime}
+                    />
                 )}
 
                 {messageLoaded && (
