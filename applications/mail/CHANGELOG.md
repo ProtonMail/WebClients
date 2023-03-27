@@ -1,3 +1,11 @@
+## Release 5.0.20.0 — April 5, 2023
+
+### Improvements
+
+-   Add "In the morning" preset option for messages schedules to be sent later
+-   Re-open the apps side panel on app refresh if it was previously open 
+-   Use the search keyword in labels and filters to automatically fill the name in the creation form if there was no result matching
+
 ## Release 5.0.19.0 — March 22, 2023
 
 ### Improvements
