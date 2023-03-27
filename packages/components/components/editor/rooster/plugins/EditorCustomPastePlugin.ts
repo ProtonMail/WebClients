@@ -52,16 +52,20 @@ class EditorCustomPastePlugin implements EditorPlugin {
     }
 
     private handlePasteImage(event: BeforePasteEvent) {
-        const { image, types } = event.clipboardData;
+        const { image } = event.clipboardData;
 
-        // Image should have 1 type only in order to be sure it's only an image
-        if (image && types.length === 1) {
+        if (image) {
             // we replace pasted content by empty string
             event.fragment.textContent = '';
             // Check if image type is supported
             const isSupportedFileType = EMBEDDABLE_TYPES.includes(image.type);
-            if (isSupportedFileType && this.onPasteImage) {
-                this.onPasteImage(image);
+            const pasteImage = this.onPasteImage;
+            if (isSupportedFileType && pasteImage) {
+                this.editor?.focus();
+                // Need to wait to focus before pasting
+                setTimeout(() => {
+                    pasteImage(image);
+                }, 0);
             }
         }
     }
