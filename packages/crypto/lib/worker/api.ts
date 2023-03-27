@@ -327,6 +327,14 @@ class KeyManagementApi {
             // @ts-ignore missing .validate() types
             await decryptedKey.validate();
         } else {
+            const usesArgon2 = maybeEncryptedKey.getKeys().some(
+                // @ts-ignore s2k field not declared
+                (keyOrSubkey) => keyOrSubkey.keyPacket.s2k && keyOrSubkey.keyPacket.s2k.type === 'argon2'
+            );
+            if (usesArgon2) {
+                // TODO: Argon2 uses Wasm which requires special bundling
+                throw new Error('Keys encrypted using Argon2 are not supported yet');
+            }
             decryptedKey = await decryptKey({ privateKey: maybeEncryptedKey, passphrase });
         }
 
