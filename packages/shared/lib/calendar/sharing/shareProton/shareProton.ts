@@ -75,14 +75,29 @@ export const acceptCalendarShareInvitation = async ({
     if (!skipSignatureVerification) {
         const { verifyingPinnedKeys } = await getEncryptionPreferences(senderEmail);
         if (verifyingPinnedKeys.length) {
-            const { verified, errors } = await CryptoProxy.verifyMessage({
+            const { verified: sessionKeyVerified, errors } = await CryptoProxy.verifyMessage({
                 armoredSignature,
                 binaryData: passphraseSessionKey.data,
                 verificationKeys: verifyingPinnedKeys,
                 context: { required: true, value: SIGNATURE_CONTEXT.SHARE_CALENDAR_INVITE },
             });
-            if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
-                throw new ShareCalendarSignatureVerificationError(senderEmail, errors);
+            if (sessionKeyVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                /**
+                 * TEMPORARY CODE: needed while there exist old clients not sending signatures with context.
+                 * For such clients, the BE gives us a passphrase signature, so we try verifying that
+                 *
+                 * When not needed anymore, substitute by:
+                 * throw new ShareCalendarSignatureVerificationError(senderEmail, errors);
+                 */
+                const { verified: passphraseVerified } = await CryptoProxy.decryptMessage({
+                    armoredMessage: armoredPassphrase,
+                    armoredSignature,
+                    verificationKeys: verifyingPinnedKeys,
+                    sessionKeys: passphraseSessionKey,
+                });
+                if (passphraseVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    throw new ShareCalendarSignatureVerificationError(senderEmail, errors);
+                }
             }
         }
     }
