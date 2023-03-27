@@ -16,6 +16,7 @@ import {
     MAIL_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -126,8 +127,12 @@ const CalendarShareSection = ({
                                         className="text-bold mb0-5"
                                         id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}
                                     >{c('Calendar settings section title').t`Share with ${BRAND_NAME} users`}</h3>
-                                    <SettingsParagraph>{c('Calendar settings private share description')
-                                        .t`Share your calendar with other ${BRAND_NAME} users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}</SettingsParagraph>
+                                    <SettingsParagraph
+                                        learnMoreUrl={getKnowledgeBaseUrl('/share-calendar-with-proton-users')}
+                                    >
+                                        {c('Calendar settings private share description')
+                                            .t`Share your calendar with other ${BRAND_NAME} users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}
+                                    </SettingsParagraph>
                                     {!isMaximumMembersReached && (
                                         <Button
                                             onClick={handleShare}

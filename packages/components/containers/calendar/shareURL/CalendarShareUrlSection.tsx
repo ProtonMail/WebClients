@@ -11,6 +11,7 @@ import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/h
 import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -163,7 +164,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
 
     const content = (
         <>
-            <SettingsParagraph>
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/share-calendar-via-link')}>
                 {c('Calendar settings link share description')
                     .t`Create a link to your calendar and share it with anyone outside ${BRAND_NAME}. Only you can add or remove events.`}
             </SettingsParagraph>
