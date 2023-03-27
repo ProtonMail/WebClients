@@ -85,25 +85,33 @@ const PlanCardFeatures = ({ planName, features, audience }: Props) => {
     );
     const mailFeatures = (
         <div>
-            <MailLogo />
+            <h3>
+                <MailLogo />
+            </h3>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.mail, audience)} />
         </div>
     );
     const calendarFeatures = (
         <div>
-            <CalendarLogo />
+            <h3>
+                <CalendarLogo />
+            </h3>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.calendar, audience)} />
         </div>
     );
     const driveFeatures = (
         <div>
-            <DriveLogo />
+            <h3>
+                <DriveLogo />
+            </h3>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.drive, audience)} />
         </div>
     );
     const vpnFeatures = (
         <div>
-            <VpnLogo />
+            <h3>
+                <VpnLogo />
+            </h3>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.vpn, audience)} />
         </div>
     );
