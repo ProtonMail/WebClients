@@ -1,5 +1,10 @@
 import { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { ImportType, MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
+import {
+    ImportType,
+    MailImportDestinationFolder,
+    MailImportGmailCategories,
+    TIME_PERIOD,
+} from '@proton/activation/src/interface';
 import { ImporterCalendar, ImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
 import { Label } from '@proton/shared/lib/interfaces';
@@ -25,6 +30,21 @@ const dummyFolder: MailImportFolder = {
     protonPath: [
         'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m',
     ],
+    providerPath: ['providerPath'],
+    separator: '/',
+    size: 0,
+    category: undefined,
+    folderParentID: '',
+    systemFolder: MailImportDestinationFolder.ARCHIVE,
+};
+
+const dummyShortPathFolder: MailImportFolder = {
+    id: 'id',
+    checked: true,
+    color: 'test color',
+    isSystemFolderChild: false,
+    folderChildIDS: [''],
+    protonPath: ['Lorem'],
     providerPath: ['providerPath'],
     separator: '/',
     size: 0,
@@ -429,5 +449,138 @@ describe('importerHasErrors test check and general behavior', () => {
             false
         );
         expect(errors).toBe(false);
+    });
+});
+
+describe('importerHasErrors test for Gmail imports', () => {
+    const socialFolder = {
+        id: 'id',
+        checked: true,
+        color: 'test color',
+        isSystemFolderChild: false,
+        folderChildIDS: [''],
+        protonPath: ['Social'],
+        providerPath: ['Social'],
+        separator: '/',
+        size: 0,
+        category: MailImportGmailCategories.SOCIAL,
+        folderParentID: '',
+        systemFolder: MailImportDestinationFolder.ARCHIVE,
+    };
+
+    it('Should not return an error when Social folder and label exists when Gmail import', () => {
+        const products: ImportType[] = [ImportType.MAIL];
+
+        const importerData: ImporterData = {
+            importedEmail: 'test@proton.me',
+            importerId: '1',
+            emails: {
+                fields: {
+                    importAddress: generateMockAddress(0, true),
+                    mapping: [dummyShortPathFolder, dummyShortPathFolder, socialFolder],
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    importLabel: { Color: 'red', Name: 'name', Type: 1 },
+                    importCategoriesDestination: MailImportDestinationFolder.ALL_DRAFTS,
+                },
+            },
+        };
+        const labels: Label[] = [
+            {
+                ID: 'id',
+                Name: 'Social',
+                Color: 'color',
+                Type: 1,
+                Order: 1,
+                Path: 'Social',
+            },
+        ];
+        const folders: Folder[] = [
+            {
+                ID: 'id',
+                Name: 'Social',
+                Color: 'red',
+                Path: '/Social',
+                Expanded: 1,
+                Type: 1,
+                Order: 1,
+                ParentID: '',
+                Notify: 1,
+            },
+        ];
+        const calendars: VisualCalendar[] = [];
+        const mailChecked = true;
+        const calendarChecked = false;
+
+        const errors = importerHasErrors(
+            products,
+            importerData,
+            labels,
+            folders,
+            calendars,
+            mailChecked,
+            calendarChecked,
+            true,
+            false
+        );
+
+        expect(errors).toBe(false);
+    });
+
+    it('Should not return an error when Social folder and label exists when non Gmail import', () => {
+        const products: ImportType[] = [ImportType.MAIL];
+
+        const importerData: ImporterData = {
+            importedEmail: 'test@proton.me',
+            importerId: '1',
+            emails: {
+                fields: {
+                    importAddress: generateMockAddress(0, true),
+                    mapping: [dummyShortPathFolder, dummyShortPathFolder, socialFolder],
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    importLabel: { Color: 'red', Name: 'name', Type: 1 },
+                    importCategoriesDestination: MailImportDestinationFolder.ALL_DRAFTS,
+                },
+            },
+        };
+        const labels: Label[] = [
+            {
+                ID: 'id',
+                Name: 'Social',
+                Color: 'color',
+                Type: 1,
+                Order: 1,
+                Path: 'Social',
+            },
+        ];
+        const folders: Folder[] = [
+            {
+                ID: 'id',
+                Name: 'Social',
+                Color: 'red',
+                Path: '/Social',
+                Expanded: 1,
+                Type: 1,
+                Order: 1,
+                ParentID: '',
+                Notify: 1,
+            },
+        ];
+        const calendars: VisualCalendar[] = [];
+        const mailChecked = true;
+        const calendarChecked = false;
+
+        const errors = importerHasErrors(
+            products,
+            importerData,
+            labels,
+            folders,
+            calendars,
+            mailChecked,
+            calendarChecked,
+            false,
+            false
+        );
+
+        expect(errors).toBe(true);
     });
 });
