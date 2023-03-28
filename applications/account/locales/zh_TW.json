@@ -2967,9 +2967,6 @@
       "No emails found to import - the account does not have an inbox": [
         "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } 地址沒有公開金鑰"
-      ],
       "No valid address found": [
         "未能找到有效位址"
       ],
@@ -9161,11 +9158,6 @@
         "標籤"
       ]
     },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "要邀請非 ${ BRAND_NAME } 使用者，請透過連結分享您的行事曆"
-      ]
-    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
         "您已超出每個行事曆最多 ${ MAX_CALENDAR_MEMBERS } 個成員的限額"
@@ -9341,14 +9333,6 @@
       ],
       "High-speed VPN on ${ maxVpn } devices": [
         "極速 VPN 裝載多達 ${ maxVpn } 臺裝置"
-      ]
-    },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "在 ${ subscriptionManagerShort } 中管理您的訂閱"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "您的訂閱乃應用程式內購買。若要管理您目前的訂閱，請另行查看您的 ${ subscriptionManager } 帳戶中的訂閱版面"
       ]
     },
     "Subscription price": {

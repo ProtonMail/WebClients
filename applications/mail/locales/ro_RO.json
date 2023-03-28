@@ -31,6 +31,12 @@
       "Add address": [
         "Adăugare adresă"
       ],
+      "Add Bcc recipients": [
+        "Adaugă destinatari copie ascunsă"
+      ],
+      "Add Cc recipients": [
+        "Adaugă destinatari copie"
+      ],
       "Add condition": [
         "Adăugare condiție"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Acces la Beta"
       ],
+      "Blind Carbon Copy": [
+        "Copie ascunsă"
+      ],
       "Block": [
         "Blocare"
       ],
@@ -130,11 +139,8 @@
       "Cancel": [
         "Anulare"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Copie, Copie ascunsă"
-      ],
-      "CC BCC": [
-        "C CA"
+      "Carbon Copy": [
+        "Copie"
       ],
       "Change page": [
         "Schimbare pagină"
@@ -497,6 +503,9 @@
       "Import from .csv or vCard": [
         "Importare din .csv sau vCard"
       ],
+      "In the morning": [
+        "Dimineața"
+      ],
       "Inline": [
         "Integrat"
       ],
@@ -703,9 +712,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Deschidere ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Deschidere calendar"
-      ],
       "Open composer": [
         "Deschidere editor mesaje"
       ],
@@ -714,9 +720,6 @@
       ],
       "Open navigation": [
         "Deschidere navigare"
-      ],
-      "Open shop": [
-        "Accesare magazin"
       ],
       "Ordered list": [
         "Listă ordonată"
@@ -864,6 +867,9 @@
       ],
       "Search message content": [
         "Căutare în conținut mesaj"
+      ],
+      "See business plans": [
+        "Vezi planurile tarifare"
       ],
       "See plan features": [
         "Afișare caracteristici plan"
@@ -1624,12 +1630,12 @@
         "Eveniment în desfășurare"
       ]
     },
-    "Cancel self-destruction of the message": {
+    "Cancel expiration of the message": {
       "Cancel": [
         "Anulare"
       ],
-      "Cancel self-destruction": [
-        "Anulare autodistrugere"
+      "Cancel expiration": [
+        "Anulare expirare"
       ]
     },
     "Collapsible tooltip": {
@@ -3033,6 +3039,9 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
+      "A problem occurred, please try again.": [
+        "A apărut o problemă. Vă rugăm să încercați din nou."
+      ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
@@ -3230,6 +3239,9 @@
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
+      "Please activate your search again": [
+        "Reactivați căutarea în conținutul mesajelor"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictul evidențiat pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua.",
@@ -3343,6 +3355,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "A apărut o problemă la căutarea în conținut. S-a folosit căutarea implicită."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "A apărut o problemă la actualizarea mesajelor locale, acestea vor fi descărcate din nou pentru a reactiva căutarea în conținut"
       ],
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
@@ -4326,9 +4341,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } nu face bani abuzând de viața privată."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Un calendar nou",
         "${ calendarsToBeCreatedCount } calendare noi",
@@ -4576,6 +4588,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Sigur doriți să ștergeți toate mesajele cu această etichetă?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Sigur doriți să ștergeți acest dosar? Toate sub folderele vor fi și ele șterse."
+      ],
       "Are you sure you want to delete this label?": [
         "Sigur doriţi să ştergeţi această etichetă?"
       ],
@@ -4704,11 +4719,6 @@
       "Daily": [
         "Zilnic"
       ],
-      "Day": [
-        "zi",
-        "zile",
-        "de zile"
-      ],
       "Default email application": [
         "Aplicaţia de e-mail implicită"
       ],
@@ -4728,6 +4738,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Nu uitați să partajați parola cu destinatarul."
+      ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Se descarcă mesajul ${ currentProgress } din ${ totalProgress }"
       ],
       "Draft": [
         "Ciornă"
@@ -4825,17 +4838,18 @@
       "Expiration time": [
         "Dată expirare"
       ],
-      "Expires": [
-        "Expiră"
+      "Expires in ${ formattedDate }": [
+        "Expiră peste ${ formattedDate }"
       ],
-      "Expires in ${ formattedDelayShort }": [
-        "Expiră peste ${ formattedDelayShort }"
+      "Expires in ${ minutesDiff } minute": [
+        "Expiră în ${ minutesDiff } minut",
+        "Expiră în ${ minutesDiff } minute",
+        "Expiră în ${ minutesDiff } minute"
       ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Expiră în mai puțin de ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Expiră în curând"
+      "Expires in less than ${ hoursDiff } hour": [
+        "Expiră în mai puțin de ${ hoursDiff } oră",
+        "Expiră în mai puțin de ${ hoursDiff } ore",
+        "Expiră în mai puțin de ${ hoursDiff } ore"
       ],
       "file attached": [
         "attachment",
@@ -4847,9 +4861,6 @@
       ],
       "Folder": [
         "Folder"
-      ],
-      "For increased security, activate 2FA.": [
-        "Pentru o securitate sporită, activați A2F."
       ],
       "For messages newer than ${ oldestDate }": [
         "Pentru mesaje mai noi de ${ oldestDate }"
@@ -4882,11 +4893,6 @@
       ],
       "Hide original message": [
         "Ascundere mesaj original"
-      ],
-      "Hour": [
-        "oră",
-        "ore",
-        "de ore"
       ],
       "How Hide My Email works": [
         "Cum funcționează ascunderea adresei"
@@ -4941,8 +4947,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
       ],
-      "Increase storage space starting at": [
-        "Creșteți spațiul de stocare începând cu"
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Mărire spațiu de stocare începând cu ${ planPrice } pe lună."
       ],
       "Indexing paused": [
         "Indexare întreruptă"
@@ -5031,6 +5037,9 @@
       "Message sent.": [
         "Mesajul a fost trimis."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Mesajul va fi trimis dimineață la ora ${ formattedTime }"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Mesajul va fi trimis ${ dateString } la ora ${ formattedTime }"
       ],
@@ -5108,9 +5117,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
-      ],
-      "per month.": [
-        "pe lună."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP / Inline este compatibil doar cu formatul de text simplu."
@@ -5225,6 +5231,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Căutarea durează prea mult? ${ dropdownButton } sau ${ toggleOffButton } din această sesiune de căutare."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Securizați fișierele dvs. cu stocare criptată gratuit, astăzi."
+      ],
       "Seems like you are all caught up for now": [
         "Se pare că toate au fost preluate."
       ],
@@ -5282,9 +5291,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Stocați și partajați fișiere în siguranță cu ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Subiect"
       ],
@@ -5296,9 +5302,6 @@
       ],
       "Subject: ": [
         "Subiect: "
-      ],
-      "Support privacy by upgrading for": [
-        "Susțineți confidențialitatea migrând la"
       ],
       "support team": [
         "echipa de asistență"
@@ -5320,6 +5323,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Datele pe care le-ați introdus în ciornă nu pot fi salvate dacă părăsiți pagina."
+      ],
+      "The local database is being prepared": [
+        "Se pregătește baza de date locală"
+      ],
+      "The message has expired": [
+        "Acest mesaj a expirat"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Mesajul original pe care încercați să-l redirecționați / să-i răspundeți este în curs de a fi trimis. Dacă continuați, nu veți mai putea anula trimiterea mesajului original."
@@ -5351,6 +5360,9 @@
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Această acțiune va descărca toate mesajele pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Această acțiune va descărca toate mesajele pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
@@ -5394,9 +5406,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Acest mesaj este generat automat ca răspuns la un mesaj anterior."
       ],
-      "This message is expired!": [
-        "Acest mesaj a expirat!"
-      ],
       "This message is from a mailing list.": [
         "Acest mesaj este de la o listă de corespondență."
       ],
@@ -5406,6 +5415,12 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Acest mesaj este semnat cu o cheie atașată care încă nu a fost încă aprobată."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Acest mesaj va fi șters automat ${ longDateMEssage }"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Acest mesaj va fi șters automat la ora ${ shortDateMessage }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Acest mesaj va fi marcat ca nedorit. Doriți să vă dezabonați și de la mesajele ulterioare?",
         "Aceste mesaje vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?",
@@ -5413,6 +5428,9 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Acest mesaj va fi mutat în «Ciorne» pentru a putea fi editat. Va trebui să-l reprogramați când va fi trimis."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Mesajul va fi trimis dimineață la ora ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Acest mesaj va fi trimis ${ dateString } la ora ${ formattedTime }"
@@ -5429,17 +5447,14 @@
       "This message will expire ${ formattedDate }": [
         "Acest mesaj va expira ${ formattedDate }"
       ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "Acest mesaj se va autodistruge peste ${ formattedDelay }."
+      "This message will expire on ${ longDateMEssage }": [
+        "Acest mesaj va expira peste ${ longDateMEssage }"
       ],
-      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
-        "Acest mesaj se va autodistruge ${ dateString } la ora ${ formattedTime }."
+      "This message will expire today at ${ shortDateMessage }": [
+        "Acest mesaj va expira astăzi la ora ${ shortDateMessage }"
       ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "Acest mesaj se va autodistruge astăzi la ora ${ formattedTime }."
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "Acest mesaj se va autodistruge mâine la ora ${ formattedTime }."
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Acest mesaj va expira mâine la ora ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Această cheie publică va fi folosită automat pentru criptarea mesajelor trimise la această adresă."
@@ -5489,23 +5504,26 @@
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Se actualizează mesajele local, căutarea în conținut nu este posibilă în această perioadă"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
       "Upgrade to add more addresses to your account.": [
         "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Treceți la alt plan pentru a configura un răspuns automat de vacanță."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Treceți la alt plan pentru a crea mai multe foldere, filtre și adrese."
       ],
-      "Upgrade to host emails from your own domain name.": [
-        "Treceți la un plan superior pentru a putea folosi adrese de e-mail cu nume de domenii proprii."
+      "Upgrade to level up your privacy.": [
+        "Faceți upgrade pentru a vă spori confidențialitatea."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Treceți la alt plan pentru a trimite e-mailuri de la adrese @pm.me."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Faceți upgrade pentru a trimite mesaje de la domeniul dvs. personalizat."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Treceți la un plan superior pentru a trimite cu ușurință mesaje și către grupuri de contacte."
@@ -5519,8 +5537,14 @@
       "Upgrade to support privacy and get more features.": [
         "Treceți la alt plan pentru a beneficia de confidențialitate și a obține mai multe funcții."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Treceți la alt plan pentru a utiliza ${ MAIL_APP_NAME } cu clienți desktop de la terți."
+      "Upgrade to unlock premium features.": [
+        "Faceți upgrade pentru a debloca funcționalități premium."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Faceți upgrade pentru a folosi ${ MAIL_APP_NAME } cu Apple Mail, Outlook sau Thunderbird."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Faceți upgrade pentru a folosi răspuns automat când sunteți plecat."
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -5531,9 +5555,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Utilizați ${ CALENDAR_APP_NAME } pentru a vă păstra activitățile private."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilizați combinaţiile de taste pentru a vă gestiona mai rapid mesajele."
       ],
@@ -5542,9 +5563,6 @@
       ],
       "Version ${ appVersion }": [
         "Versiunea ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Vizitați magazinul nostru pentru a obține produse ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ne cerem scuze. S-ar putea să fi fost o greşeală din partea noastră. Puteți confirma că doriți să marcați acest e-mail ca fiind legitim?"
@@ -5563,6 +5581,9 @@
       ],
       "Week": [
         "Săptămâna"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Când vreți să fie șters automat mesajul de la destinatar și din mesaje trimise?"
       ],
       "When do you want your message to be sent?": [
         "Când doriți să fie trimis mesajul?"
@@ -5615,8 +5636,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "Puteți utiliza ${ VPN_APP_NAME } gratuit astăzi."
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Puteți utiliza ${ VPN_APP_NAME } gratuit, astăzi."
       ],
       "You cannot reply from the invited address.": [
         "Nu puteți răspunde de la adresa invitată."
@@ -5717,15 +5738,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Mesajul va fi șters ${ dateString } la ${ formattedTime } din folderul de mesaje «Primite» a destinatarului și din folderul personal de mesaje «Trimise»."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Mesajul va fi șters astăzi la ${ formattedTime } din folderul de mesaje «Primite» a destinatarului și din folderul personal de mesaje «Trimise»."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Mesajul va fi șters mâine la ${ formattedTime } din folderul de mesaje «Primite» a destinatarului și din folderul personal de mesaje «Trimise»."
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Acest mesaj va expira peste o zi.",
@@ -7406,29 +7418,13 @@
       ]
     },
     "Remaining days before the message expire": {
-      "${ remainingDays } day": [
+      "${ remainingDays } d": [
         "${ remainingDays } zi",
         "${ remainingDays } zile",
         "${ remainingDays } de zile"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } oră",
-        "${ remainingHours } ore",
-        "${ remainingHours } de ore"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<o oră"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } an",
-        "${ remainingYears } ani",
-        "${ remainingYears } de ani"
+      ],
+      "<1 d": [
+        "< 1 z"
       ]
     },
     "Reply to calendar invitation": {
@@ -7863,6 +7859,9 @@
       "Message deleted": [
         "Mesaj șters"
       ],
+      "Message expiration cancelled": [
+        "Expirarea mesajului anulată"
+      ],
       "Message marked as legitimate": [
         "Mesaj marcat ca legitim"
       ],
@@ -7923,9 +7922,6 @@
       ],
       "Read receipt sent": [
         "Confirmare de citire trimisă"
-      ],
-      "Self-destruction cancelled": [
-        "Autodistrugere anulată"
       ],
       "Self-destruction removed": [
         "Autodistrugere eliminată"
@@ -8010,28 +8006,6 @@
     "Time": {
       "Yesterday": [
         "Ieri"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "O zi",
-        "${ daysCountLeft } zile",
-        "${ daysCountLeft } de zile"
-      ],
-      "${ hoursCountLeft } hour": [
-        "O oră",
-        "${ hoursCountLeft } ore",
-        "${ hoursCountLeft } de ore"
-      ],
-      "${ minutesCountLeft } minute": [
-        "Un minut",
-        "${ minutesCountLeft } minute",
-        "${ minutesCountLeft } de minute"
-      ],
-      "${ secondsCountLeft } second": [
-        "O secundă",
-        "${ secondsCountLeft } secunde",
-        "${ secondsCountLeft } de secunde"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -8171,8 +8145,14 @@
       "Create folder": [
         "Creare folder"
       ],
+      "Create folder \"${ search }\"": [
+        "Creare dosar ”${ search }”"
+      ],
       "Create label": [
         "Creare etichetă"
+      ],
+      "Create label \"${ search }\"": [
+        "Creare etichetă ”${ search }”"
       ],
       "Create new group": [
         "Creare grup"
@@ -8530,6 +8510,9 @@
       ],
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
+      ],
+      "Sign in with 2FA": [
+        "Autentifică-te cu 2FA"
       ],
       "Sign out": [
         "Deconectare"

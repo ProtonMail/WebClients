@@ -2304,9 +2304,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Няма публічных ключоў для адраса ${ BRAND_NAME }"
-      ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
       ],
@@ -3398,7 +3395,7 @@
         "Падтрымліваюцца файлы CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і некаторых іншых праграм, а таксама фарматы vCard 3.1 і 4.0 (кадаванне UTF-8)."
       ],
       "Custom": [
-        "Карыстальніцкае"
+        "Карыстальніцкі"
       ],
       "Custom daily": [
         "Штодзень (карыстальніцкае)"
@@ -3979,6 +3976,11 @@
       ],
       "Trusted": [
         "Давераны"
+      ]
+    },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Як гэта зрабіць"
       ]
     },
     "Label": {
@@ -4925,7 +4927,7 @@
         "Стварыць новую групу"
       ],
       "Custom": [
-        "Карыстальніцкае"
+        "Карыстальніцкі"
       ],
       "Day": [
         "Дзень",
@@ -5179,8 +5181,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Абагуліце свой каляндар з дапамогай спасылкі для запрашэння карыстальнікаў, якія не карыстаюцца ${ BRAND_NAME }"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Абагуліце свой каляндар з дапамогай спасылкі для запрашэння карыстальнікаў, якія не карыстаюцца ${ BRAND_NAME }."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5880,6 +5882,9 @@
       "Sign in and grant access": [
         "Увайсці і даць доступ"
       ],
+      "Sign in with 2FA": [
+        "Увайсці з 2ФА"
+      ],
       "Sign out": [
         "Выйсці"
       ],
@@ -6003,6 +6008,14 @@
       ],
       "You do not have any contacts to export": [
         "У вас няма кантактаў для экспартавання"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Абагулена з дапамогай скразнога шыфравання"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Абагулена з дапамогай скразнога шыфравання з правераным кантактам"
       ]
     },
     "Validation": {

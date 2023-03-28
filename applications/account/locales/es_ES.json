@@ -2904,6 +2904,9 @@
       "Error in one of the conditions": [
         "Error en una de las condiciones"
       ],
+      "Expired": [
+        "Caducado"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Error al obtener las sesiones activas. ${ refresh } o inténtalo de nuevo más tarde."
       ],
@@ -2994,9 +2997,6 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "No se han encontrado correos para importar. La cuenta no tiene una bandeja de entrada."
-      ],
-      "No public key for ${ BRAND_NAME } address": [
-        "No hay clave pública para esta dirección ${ BRAND_NAME }."
       ],
       "No valid address found": [
         "No se ha encontrado una dirección válida."
@@ -4649,6 +4649,9 @@
       "Are you sure you want to delete this filter?": [
         "¿Estás seguro de que quieres eliminar este filtro?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "¿Estás seguro de que quieres borrar esta carpeta? También se borrarán todas las subcarpetas."
+      ],
       "Are you sure you want to delete this label?": [
         "¿Estás seguro de que quieres eliminar esta etiqueta?"
       ],
@@ -5825,6 +5828,9 @@
       ],
       "Verification can take a few minutes.": [
         "La verificación puede tardar unos minutos."
+      ],
+      "Verification link expired": [
+        "El enlace de verificación ha caducado"
       ],
       "Verification may take a few minutes.": [
         "La verificación puede tardar unos minutos."
@@ -9351,7 +9357,7 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Para invitar a usuarios que no sean de ${ BRAND_NAME }, comparte tu calendario con un enlace."
       ]
     },
@@ -9549,14 +9555,6 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN de alta velocidad en ${ maxVpn } dispositivo",
         "VPN de alta velocidad en ${ maxVpn } dispositivos"
-      ]
-    },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Gestiona tu suscripción en ${ subscriptionManagerShort }"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Tu suscripción ha sido realizada a través de una compra in-app. Para administrar tu suscripción actual necesitas navegar hasta la sección Suscripciones en tu cuenta ${ subscriptionManager }"
       ]
     },
     "Subscription price": {

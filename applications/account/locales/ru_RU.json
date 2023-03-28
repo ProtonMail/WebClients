@@ -471,7 +471,7 @@
         "Оставить"
       ],
       "Load more": [
-        "Загрузить еще"
+        "Загрузить ещё"
       ],
       "Loading verification": [
         "Загружается проверка"
@@ -501,7 +501,7 @@
         "Может быть, позже"
       ],
       "More": [
-        "Подробнее"
+        "Ещё"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
@@ -777,7 +777,7 @@
         "Размер"
       ],
       "Skip verification": [
-        "Пропуск проверки"
+        "Пропустить проверку"
       ],
       "Sort": [
         "Сортировать"
@@ -1782,7 +1782,7 @@
         "Барбадос"
       ],
       "Belarus": [
-        "Беларусь"
+        "Белоруссия"
       ],
       "Belgium": [
         "Бельгия"
@@ -2280,7 +2280,7 @@
         "Руанда"
       ],
       "Saint Barthélemy": [
-        "Сен-Бартелеми"
+        "Сен-Бартельми"
       ],
       "Saint Helena": [
         "Остров Святой Елены"
@@ -2433,7 +2433,7 @@
         "Украина"
       ],
       "United Arab Emirates": [
-        "Объединенные Арабские Эмираты"
+        "Объединённые Арабские Эмираты"
       ],
       "United Kingdom": [
         "Великобритания"
@@ -2892,7 +2892,7 @@
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
-        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей"
       ],
@@ -3021,9 +3021,6 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не найдено писем для импорта, у аккаунта нет папки Входящие"
-      ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Нет открытого ключа для адреса ${ BRAND_NAME }"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
@@ -4795,6 +4792,9 @@
       "Background color": [
         "Цвет фона"
       ],
+      "Balance from your previous subscription": [
+        "Баланс с прошлой подписки"
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
       ],
@@ -4901,7 +4901,7 @@
         "В настоящее время все доступное хранилище выделено для учетной записи администратора. Пожалуйста, уменьшите объем выделенного для учетной записи администратора пространства, чтобы освободить место для дополнительных пользователей. Вы можете увеличить общий объем хранилища в любое время, улучшив свою учетную запись."
       ],
       "Custom": [
-        "Пользовательский"
+        "Своё значение"
       ],
       "Custom daily": [
         "Настраиваемое ежедневное"
@@ -5342,7 +5342,7 @@
         "Член"
       ],
       "Merged": [
-        "Объединенные"
+        "Объединённые"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -5357,7 +5357,7 @@
         "Многопользовательский режим не включён."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Назовите новую папку и выберите родительскую папку, в которую вы хотите ее поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
+        "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
       "New": [
         "Новый"
@@ -5498,7 +5498,7 @@
         "Заполните это поле."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Пожалуйста, храните ее в безопасности. Она понадобится вам для доступа к вашему аккаунту и расшифровки данных в случае сброса пароля."
+        "Пожалуйста, храните её в безопасности. Она понадобится вам для доступа к вашему аккаунту и расшифровки данных в случае сброса пароля."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Обратите внимание, что если вы удалите этот адрес, вы больше не сможете отправлять или получать письма, используя этот адрес."
@@ -5621,10 +5621,10 @@
         "Выберите то, что вы хотите импортировать."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учетом числа календарей, доступных в вашем тарифе."
+        "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учётом числа календарей, доступных в вашем тарифе."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Отправлено с помощью <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> защищенной почты."
+        "Отправлено с помощью защищённой почты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Сервер сейчас не работает"
@@ -5786,7 +5786,7 @@
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Эта ссылка может быть омографической атакой и не может быть открыта браузером Edge. Если вы уверены, что ссылка является подлинной, используйте другой браузер, чтобы открыть ее."
+        "Эта ссылка может быть омографической атакой и не может быть открыта браузером Edge. Если вы уверены, что ссылка является подлинной, используйте другой браузер, чтобы открыть её."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
@@ -5852,7 +5852,7 @@
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Чтобы импортировать события, сначала создайте календарь в ${ CALENDAR_APP_NAME }. Именно в нем события будут отображаться после импорта."
+        "Чтобы импортировать события, сначала создайте календарь в ${ CALENDAR_APP_NAME }. Именно в нём события будут отображаться после импорта."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Чтобы быть в курсе последних событий, касающихся продукции ${ BRAND_NAME }, вы можете подписаться на наши разнообразные электронные письма и время от времени посещать наш блог."
@@ -6215,10 +6215,10 @@
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "В вашем аккаунте есть как минимум один просроченный счет. Ваш аккаунт ограничен, и все услуги теперь заблокированы до оплаты. ${ payInvoiceLink }"
+        "В вашем аккаунте есть как минимум один просроченный счёт. Ваш аккаунт ограничен, и все услуги теперь заблокированы до оплаты. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "В вашем аккаунте есть по крайней мере один просроченный счет. Ваш аккаунт ограничен. Продолжение неуплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
+        "В вашем аккаунте есть по крайней мере один просроченный счёт. Ваш аккаунт ограничен. Отсутствие оплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
       ],
       "Your account recovery method is set": [
         "Установлен метод восстановления вашего аккаунта"
@@ -7366,7 +7366,7 @@
         "Спам"
       ],
       "Starred": [
-        "Со звёздами"
+        "Отмеченные звёздочкой"
       ],
       "Start date": [
         "Дата начала"
@@ -7456,7 +7456,7 @@
         "Имя пользователя"
       ],
       "Verification code": [
-        "Проверочный код"
+        "Код подтверждения"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать нашу службу."
@@ -9562,11 +9562,6 @@
         "Ярлыки"
       ]
     },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Чтобы пригласить пользователей, не являющихся пользователями ${ BRAND_NAME }, поделитесь своим календарем со ссылкой"
-      ]
-    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участника для одного календаря",
@@ -10038,14 +10033,6 @@
         "Высокоскоростная VPN на ${ maxVpn } устройствах"
       ]
     },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Измените подписку в ${ subscriptionManagerShort }"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Вы приобрели подписку с помощью покупки в приложении. Чтобы управлять вашей текущей подпиской, вам нужно зайти в раздел Подписок на вашем аккаунте ${ subscriptionManager }"
-      ]
-    },
     "Subscription price": {
       "For": [
         "За"
@@ -10055,8 +10042,26 @@
       "Are you sure?": [
         "Вы уверены?"
       ],
+      "Auto-pay is disabled": [
+        "Автоматические платежи отключены"
+      ],
+      "Auto-pay is enabled": [
+        "Автоматические платежи включены"
+      ],
       "Disable": [
         "Отключить"
+      ],
+      "Enable auto-pay support": [
+        "Включить поддержку автоматических платежей"
+      ],
+      "Keep auto-pay": [
+        "Оставить автоплатеж"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Наша система больше не будет автоматически списывать платежи используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платежного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платежного периода. Кроме того, если вы забудете произвести платеж вручную, и автоматический платеж будет отключен для всех способов оплаты, мы можем перевести ваш аккаунт на более дешевую подписку, что приведет к потере многих функций."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Наша система больше не будет автоматически списывать платежи используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платежного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платежного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превысите лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платеж, не забудьте оплатить следующий счет по подписке до даты окончания, чтобы избежать блокировки аккаунта."
       ]
     },
     "Subscription saving": {
@@ -10424,7 +10429,7 @@
     },
     "Title": {
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } Быстрые клавиши"
+        "Сочетания клавиш ${ MAIL_APP_NAME }"
       ],
       "1. Give a name to the config to be generated": [
         "1. Дайте имя генерируемой конфигурации"
@@ -10454,7 +10459,7 @@
         "Восстановление аккаунта"
       ],
       "Account suspended": [
-        "Аккаунт отключен"
+        "Аккаунт заблокирован"
       ],
       "Action": [
         "Действие"
@@ -11246,7 +11251,7 @@
         "Ссылка на календарь"
       ],
       "Your changes are not synced yet": [
-        "Изменения ещё не сохранены"
+        "Изменения ещё не синхронизированы"
       ],
       "Your current plan": [
         "Ваш текущий тариф"

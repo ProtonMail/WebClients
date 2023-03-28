@@ -1942,7 +1942,7 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
-        "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList }"
+        "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList } "
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
@@ -2649,8 +2649,8 @@
         "${ canceledCount } ακυρώθηκαν"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } επαφή περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
-        "${ contactCount } επαφές περιέχουν πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+        "${ contactCount } επαφή περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
@@ -4767,12 +4767,12 @@
     },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
-        "${ hours } ώ.",
-        "${ hours } ώ."
+        "${ hours } ώ",
+        "${ hours } ώ"
       ],
       "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 ώ.",
-        "${ hoursInt }.5 ώ."
+        "${ hoursInt }.5 ώ",
+        "${ hoursInt }.5 ώ"
       ],
       "${ minutes } min": [
         "${ minutes } λ.",
@@ -5362,8 +5362,8 @@
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδα επαφών;",
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδες επαφών;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδα επαφών;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδες επαφών;"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
