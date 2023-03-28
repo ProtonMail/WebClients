@@ -12,7 +12,7 @@ import {
     revokeKey as openpgp_revokeKey,
 } from 'pmcrypto/lib/openpgp';
 
-import { VERIFICATION_STATUS } from '../../lib';
+import { S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
 import {
     arrayToHexString,
     binaryStringToArray,
@@ -434,6 +434,27 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
         expect(decryptionResultWithEncryptedSignature.signatures).to.have.length(1);
         expect(decryptionResultWithEncryptedSignature.verificationErrors).to.not.exist;
         expect(decryptionResultWithEncryptedSignature.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+    });
+
+    it('should support encrypting/decrypting using argon2', async () => {
+        const passwords = 'password';
+        const sessionKey = {
+            algorithm: enums.read(enums.symmetric, enums.symmetric.aes128),
+            data: hexStringToArray('01FE16BBACFD1E7B78EF3B865187374F'),
+        };
+        const encrypted = await CryptoWorker.encryptSessionKey({
+            ...sessionKey,
+            passwords,
+            format: 'binary',
+            config: { s2kType: S2kTypeForConfig.argon2 },
+        });
+        // ensure encryption used argon2
+        const skeskStartIndex = 2;
+        expect(encrypted[skeskStartIndex]).to.equal(4); // SKESK version (v6 format is different, test needs updating)
+        expect(encrypted[skeskStartIndex + 2]).to.equal(S2kTypeForConfig.argon2);
+
+        const decryptedSessionKey = await CryptoWorker.decryptSessionKey({ binaryMessage: encrypted, passwords });
+        expect(decryptedSessionKey).to.deep.equal(sessionKey);
     });
 
     it('generateSessionKey - should return session key of expected size', async () => {
@@ -925,6 +946,30 @@ jdam/kRWvRjS8LMZDsVICPpOrwhQXkRlAQDFe4bzH3MY16IqrIq70QSCxqLJ
             const exportedPublicKey = await openpgp_readKey({ armoredKey: armoredPublicKey });
             expect(exportedPublicKey.isPrivate()).to.be.false;
             expect(exportedPublicKey.getKeyID().equals(publicKeyToImport.getKeyID()));
+        });
+
+        it('rejects importing a private key encrypted using argon2', async () => {
+            const passphrase = 'passphrase';
+            const argon2Key = `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+xY8EZBsDeBYJKwYBBAHaRw8BAQdA+q1zyp3azB9V6zZSf+GejE5fiY4TUXKB
+3ZhHyIfGRpj+CQSSisPQuR0D6KLh+VMUC3ajAwQQJiOXsJlZd5bzJyAckMnm
+EcP1IJ9cbqfUiVVyftKU5XaSs75Z4VEUMg0lkufCqvhEXq6qX+K+uENG6IIc
+t9ziGOMPCIEQgM0YbmFtZSA8ZW1haWxAYXJnb24yLnRlc3Q+wowEEBYKAD4F
+gmQbA3gECwkHCAmQqdOOOdbaF0kDFQgKBBYAAgECGQECmwMCHgEWIQTJB5NG
+/MI1Uadr6pWp04451toXSQAAzp0BALdGS+QDK75+4nVmsfbO49XlGm8BTcoj
+ul76mQ0eBXwvAPwIVBkUpVZ4mZQdigm4pUubIsw745TjlvrWQCEYFElNCceU
+BGQbA3gSCisGAQQBl1UBBQEBB0Dc0WBjkzK/rnUPIJuFpXLfV6Tn9D3L8tHc
+nwx9SURjLQMBCAf+CQRMjXT++0oAAQI7CEdQ18zOAwQQWxKyMceDiPXcySM6
+TR6BoEVjr5mAoy2t4cEw1WqT/mhvwx0UET7q0bJJyOpAxwTPWSSotbEoYbzT
+kB98NBNP3D+QNiNCtsJ4BBgWCAAqBYJkGwN4CZCp04451toXSQKbDBYhBMkH
+k0b8wjVRp2vqlanTjjnW2hdJAAAEcQD7B5iqgIxMvSaT5NWQJvydNABhm2rl
+pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
+=jg+l
+-----END PGP PRIVATE KEY BLOCK-----`;
+            await expect(CryptoWorker.importPrivateKey({ armoredKey: argon2Key, passphrase })).to.be.rejectedWith(
+                /Keys encrypted using Argon2 are not supported yet/
+            );
         });
 
         it('allows importing a private key as long as it can be decrypted', async () => {
