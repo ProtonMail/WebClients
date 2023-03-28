@@ -31,6 +31,12 @@
       "Add address": [
         "Adres ekle"
       ],
+      "Add Bcc recipients": [
+        "Gizli kopya alıcıları ekle"
+      ],
+      "Add Cc recipients": [
+        "Kopya alıcıları ekle"
+      ],
       "Add condition": [
         "Koşul ekle"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Beta erişimi"
       ],
+      "Blind Carbon Copy": [
+        "Gizli kopya"
+      ],
       "Block": [
         "Engelle"
       ],
@@ -130,11 +139,8 @@
       "Cancel": [
         "İptal"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Kopya, Gizli kopya"
-      ],
-      "CC BCC": [
-        "Kopya Gizli Kopya"
+      "Carbon Copy": [
+        "Kopya"
       ],
       "Change page": [
         "Sayfayı değiştir"
@@ -498,6 +504,9 @@
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
       ],
+      "In the morning": [
+        "Sabahları"
+      ],
       "Inline": [
         "Satır arası"
       ],
@@ -703,9 +712,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } uygulamasını aç"
       ],
-      "Open calendar": [
-        "Takvimi aç"
-      ],
       "Open composer": [
         "Oluşturucuyu aç"
       ],
@@ -714,9 +720,6 @@
       ],
       "Open navigation": [
         "Gezinmeyi aç"
-      ],
-      "Open shop": [
-        "Mağazayı aç"
       ],
       "Ordered list": [
         "Numaralı liste"
@@ -864,6 +867,9 @@
       ],
       "Search message content": [
         "İleti içeriğinde arama"
+      ],
+      "See business plans": [
+        "Kurumsal tarifelere bakın"
       ],
       "See plan features": [
         "Tarife özelliklerini görün"
@@ -1354,7 +1360,7 @@
         "VPN sorunu"
       ],
       "Website access problem": [
-        "Web sitesi erişim sorunu"
+        "Site erişim sorunu"
       ]
     },
     "Button": {
@@ -1622,12 +1628,12 @@
         "Etkinlik sürüyor"
       ]
     },
-    "Cancel self-destruction of the message": {
+    "Cancel expiration of the message": {
       "Cancel": [
         "İptal"
       ],
-      "Cancel self-destruction": [
-        "Kendini yok etmeyi iptal et"
+      "Cancel expiration": [
+        "Geçerlilik süresini iptal et"
       ]
     },
     "Collapsible tooltip": {
@@ -3024,6 +3030,9 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
+      "A problem occurred, please try again.": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
@@ -3214,6 +3223,9 @@
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
+      "Please activate your search again": [
+        "Lütfen aramayı yeniden etkinleştirin"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
@@ -3324,6 +3336,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "İçerik aramasıyla ilgili bir sorun çıktı. Varsayılan arama yöntemi kullanıldı."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Yerel iletileriniz güncellenirken bir sorun çıktı. İçerik arama özelliğini etkinleştirebilmek için iletileriniz yeniden indirilecek"
       ],
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
@@ -4288,9 +4303,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } gizliliğinizi ihlal ederek para kazanmaz."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
@@ -4503,6 +4515,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Bu şekilde etiketlenmiş tüm iletileri silmek istediğinize emin misiniz?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Bu klasörü silmek istediğinize emin misiniz? Tüm alt klasörleri de silinecek."
+      ],
       "Are you sure you want to delete this label?": [
         "Bu etiketi silmek istediğinize emin misiniz?"
       ],
@@ -4627,10 +4642,6 @@
       "Daily": [
         "Günlük"
       ],
-      "Day": [
-        "gün",
-        "gün"
-      ],
       "Default email application": [
         "Varsayılan e-posta uygulaması"
       ],
@@ -4649,6 +4660,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Parolayı alıcı ile paylaşmayı unutmayın"
+      ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } / ${ totalProgress } ileti indiriliyor"
       ],
       "Draft": [
         "Taslak"
@@ -4743,17 +4757,16 @@
       "Expiration time": [
         "Geçerlilik süresi"
       ],
-      "Expires": [
-        "Geçerlilik sonu"
+      "Expires in ${ formattedDate }": [
+        "${ formattedDate } içinde geçerlilik süresi dolacak"
       ],
-      "Expires in ${ formattedDelayShort }": [
-        "${ formattedDelayShort } sonra geçersiz olacak"
+      "Expires in ${ minutesDiff } minute": [
+        "Geçerlilik süresi ${ minutesDiff } dakika sonra dolacak",
+        "Geçerlilik süresi ${ minutesDiff } dakika sonra dolacak"
       ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "${ formattedDelayShort } sonra geçersiz olacak"
-      ],
-      "Expires soon": [
-        "Yakında geçersiz olacak"
+      "Expires in less than ${ hoursDiff } hour": [
+        "Geçerlilik süresi ${ hoursDiff } saat içinde dolacak",
+        "Geçerlilik süresi ${ hoursDiff } saat içinde dolacak"
       ],
       "file attached": [
         "attachment",
@@ -4764,9 +4777,6 @@
       ],
       "Folder": [
         "Klasör"
-      ],
-      "For increased security, activate 2FA.": [
-        "Güvenliği arttırmak için 2 aşamalı kimlik doğrulamayı açın."
       ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } tarihinden daha yeni iletiler için"
@@ -4798,10 +4808,6 @@
       ],
       "Hide original message": [
         "Özgün iletiyi gizle"
-      ],
-      "Hour": [
-        "saat",
-        "saat"
       ],
       "How Hide My Email works": [
         "E-postamı gizle özelliği nasıl çalışır"
@@ -4855,8 +4861,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
-      "Increase storage space starting at": [
-        "Depolama alanını artırırken şuradan başlayın,"
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Aylık ${ planPrice } tutarından başlayan fiyatlarla depolama alanınızı artırın."
       ],
       "Indexing paused": [
         "Dizine ekleme duraklatıldı"
@@ -4945,6 +4951,9 @@
       "Message sent.": [
         "İleti gönderildi."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Bu ileti sabah ${ formattedTime } saatinde gönderilecek"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "İleti ${ dateString } tarihinde, ${ formattedTime } saatinde gönderilecek"
       ],
@@ -5022,9 +5031,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
-      ],
-      "per month.": [
-        "aylık."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
@@ -5138,6 +5144,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Arama çok uzun mu sürüyor? Bu arama oturumunu ${ dropdownButton } ya da ${ toggleOffButton }."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Dosyalarınızın güvenliğini şifrelenmiş depolama alanı ile hemen ücretsiz olarak sağlayın."
+      ],
       "Seems like you are all caught up for now": [
         "Şimdilik her şeyi okumuşsunuz gibi görünüyor"
       ],
@@ -5193,10 +5202,7 @@
         "SimpleLogin, gerçek e-posta adresinizi açıklamak istemediğiniz, güvenilmez üçüncü taraf sitelerinde oturum açmak için basit bir yol sunar."
       ],
       "Sorry, this message does not exist or has already expired.": [
-        "Ne yazık ki, bu ileti bulunamadı ya da süresi geçmiş."
-      ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "${ DRIVE_APP_NAME } ile dosyaları güvenli bir şekilde saklayın ve paylaşın."
+        "Ne yazık ki, bu ileti bulunamadı ya da geçerlilik süresi dolmuş."
       ],
       "Subject": [
         "Konu"
@@ -5209,9 +5215,6 @@
       ],
       "Subject: ": [
         "Konu: "
-      ],
-      "Support privacy by upgrading for": [
-        "Tarifenizi yükselterek gizliliği destekleyin"
       ],
       "support team": [
         "destek ekibi"
@@ -5233,6 +5236,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Sayfadan ayrılırsanız taslağa yazdığınız veriler kaydedilmeyebilir."
+      ],
+      "The local database is being prepared": [
+        "Yerel veri tabanı hazırlanıyor"
+      ],
+      "The message has expired": [
+        "Bu iletinin geçerlilik süresi dolmuş"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "İletmeye ya da yanıtlamaya çalıştığınız iletinin aslı hala gönderiliyor. İlerlerseniz asıl iletinin gönderilmesini geri alamazsınız."
@@ -5263,13 +5272,16 @@
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Bu işlem tüm iletileri indirir. Böylece iletiler yerel olarak aranabilir. Web tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
+        "Bu işlem tüm iletileri indirir. Böylece iletiler yerel olarak aranabilir. Tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Bu işlem son iletileri indirir. Böylece iletiler yerel olarak aranabilir. Tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres devre dışı. Bu adrese e-posta gönderebilmek için önce sahibi adresi etkinleştirmelidir."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Bu web tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
+        "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Bu yazışmada zamanlanmış bir ileti var. Bu iletinin gönderimi iptal edilecek."
@@ -5291,10 +5303,10 @@
         "Bu davet, devre dışı bırakılmış bir takvime kaydedilmiş."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
+        "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge web tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
+        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir tarayıcı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
@@ -5305,9 +5317,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Bu ileti, otomatik olarak önceki bir iletiyi yanıtlamak için oluşturuldu."
       ],
-      "This message is expired!": [
-        "Bu iletinin geçerlilik süresi geçmiş!"
-      ],
       "This message is from a mailing list.": [
         "Bu ileti bir posta listesinden gönderilmiş."
       ],
@@ -5317,12 +5326,21 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Bu ileti, ekteki henüz güvenilmemiş anahtar ile imzalanmış."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Bu iletinin ${ longDateMEssage } zamanında otomatik olarak silinecek"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Bu ileti ${ shortDateMessage } saatinde otomatik olarak silinecek"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Bu ileti istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?",
         "Bu iletiler istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Bu ileti, Taslaklar kutusuna taşınacak. Böylece onu düzenlebilirsiniz. Ne zaman gönderileceğini yeniden zamanlamanız gerekecek."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Bu ileti sabah ${ formattedTime } saatinde gönderilecek"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Bu ileti ${ dateString } tarihinde, ${ formattedTime } saatinde gönderilecek"
@@ -5339,17 +5357,14 @@
       "This message will expire ${ formattedDate }": [
         "Bu ileti ${ formattedDate } tarihinde geçersiz olacak"
       ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "Bu ileti kendini ${ formattedDelay } sonra yok edecek"
+      "This message will expire on ${ longDateMEssage }": [
+        "Bu iletinin geçerlilik süresi ${ longDateMEssage } zamanında dolacak"
       ],
-      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
-        "Bu ileti ${ dateString } tarihinde ${ formattedTime } saatinde kendini yok edecek"
+      "This message will expire today at ${ shortDateMessage }": [
+        "Bu iletinin geçerlilik süresi bugün ${ shortDateMessage } saatinde dolacak"
       ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "Bu ileti bugün ${ formattedTime } saatinde kendini yok edecek"
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "Bu ileti yarın ${ formattedTime } saatinde kendini yok edecek"
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Bu iletinin geçerlilik süresi yarın ${ shortDateMessage } saatinde dolacak"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Bu herkese açık anahtar, bu adrese gönderilen e-postaların otomatik olarak şifrelenmesi için kullanılacak."
@@ -5399,23 +5414,26 @@
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Yerel iletileriniz güncelleniyor. Bu güncelleme sırasında iletilerin içeriklerinde arama yapılamaz"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir fiyat ile almak için tarifenizi şimdi yükseltin"
       ],
       "Upgrade to add more addresses to your account.": [
         "Hesabınıza daha fazla adres eklemek için yükseltin."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Bir otomatik yanıtlayıcı yapılandırmak için yükseltin."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Daha fazla klasör, süzgeç ve adres oluşturmak için yükseltin."
       ],
-      "Upgrade to host emails from your own domain name.": [
-        "Kendi etki alanınızla e-posta kullanmak için yükseltin."
+      "Upgrade to level up your privacy.": [
+        "Gizliliğinizi artırmak için tarifenizi yükseltin."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "@pm.me adreslerinden e-posta göndermek için yükseltin."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Kendi etki alanınızı kullanarak e-posta gönderebilmek için tarifenizi yükseltin."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Kişi gruplarına kolayca e-posta göndermek için yükseltin."
@@ -5429,8 +5447,14 @@
       "Upgrade to support privacy and get more features.": [
         "Gizliliği desteklemek ve daha fazla özellikten yararlanmak için tarifenizi yükseltin."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Üçüncü taraf masaüstü uygulamaları ile ${ MAIL_APP_NAME } kullanmak için yükseltin."
+      "Upgrade to unlock premium features.": [
+        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Apple Mail, Outlook ya da Thunderbird ile ${ MAIL_APP_NAME } kullanabilmek için tarifenizi yükseltin."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Uzkatayken otomatik yanıtlama özelliğini kullanabilmek için tarifenizi yükseltin."
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -5441,9 +5465,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "Adres: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Takviminizi güvende tutmak için ${ CALENDAR_APP_NAME } kullanın."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "E-postanızı daha hızlı yönetmek için klavye kısayollarını kullanın."
       ],
@@ -5452,9 +5473,6 @@
       ],
       "Version ${ appVersion }": [
         "Sürüm ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "${ BRAND_NAME } ürünlerini almak için mağazamıza bakabilirsiniz."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Özür dileriz. Bu durum bizim hatamızdan kaynaklanıyor olabilir. Bu e-postanın göründüğü gibi olduğunu doğrulayabilir misiniz misiniz?"
@@ -5469,10 +5487,13 @@
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
       "Web URL": [
-        "Web adresi"
+        "Site adresi"
       ],
       "Week": [
         "Hafta"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "İletiniz ne zaman alıcının gelen kutusundan ve gönderilmiş klasörünüzden otomatik olarak silinsin?"
       ],
       "When do you want your message to be sent?": [
         "İletinizin ne zaman gönderilmesini istersiniz?"
@@ -5525,8 +5546,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "${ VPN_APP_NAME } uygulamasını bugün ücretsiz olarak kullanabilirsiniz."
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "${ VPN_APP_NAME } uygulamasını hemen ücretsiz olarak kullanmaya başlayın."
       ],
       "You cannot reply from the invited address.": [
         "Davet edilen adresten yanıtlayamazsınız."
@@ -5591,7 +5612,7 @@
         "“${ attachmentsFoundKeyword }” yazdınız ama bir dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
       ],
       "Your ${ BRAND_NAME } Account includes SimpleLogin. Install the browser extension with one click to get started.": [
-        "${ BRAND_NAME } hesabınızda SimpleLogin bulunur. Başlamak için tek tıklamayla web tarayıcı eklentisini kurabilirsiniz."
+        "${ BRAND_NAME } hesabınızda SimpleLogin bulunur. Başlamak için tek tıklamayla tarayıcı eklentisini kurabilirsiniz."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -5619,15 +5640,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "İletiniz alıcının Gelen kutusundan ve sizin Gönderilmiş kutunuzdan ${ dateString } günü ${ formattedTime } zamanında silinecek"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "İletiniz alıcının Gelen kutusundan ve sizin Gönderilmiş kutunuzdan bugün ${ formattedTime } zamanında silinecek"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "İletiniz alıcının Gelen kutusundan ve sizin Gönderilmiş kutunuzdan yarın ${ formattedTime } zamanında silinecek"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "İletiniz ${ numberOfDays } gün sonra geçersiz olacak.",
@@ -5664,7 +5676,7 @@
         "Ele geçirilmiş"
       ],
       "Expired": [
-        "Süresi geçmiş"
+        "Geçerlilik süresi dolmuş"
       ],
       "Obsolete": [
         "Eskimiş"
@@ -6464,7 +6476,7 @@
         "Arşiv"
       ],
       "clearing your browser cache": [
-        "web tarayıcınızın ön belleğini temizlemek"
+        "tarayıcınızın ön belleğini temizlemek"
       ],
       "Create a calendar linked to an active email address.": [
         "Etkin bir e-posta adresine bağlı bir takvim ekleyin."
@@ -6709,7 +6721,7 @@
         "Görsel, gizliliğinizi korumak için yüklenmedi."
       ],
       "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "Web tarayıcınız uzak sunucunun kimliğini doğrulayamadı. Görsel, http iletişim kuralı ile sunuluyor olabilir."
+        "Tarayıcınız uzak sunucunun kimliğini doğrulayamadı. Görsel, http iletişim kuralı ile sunuluyor olabilir."
       ]
     },
     "Message notification": {
@@ -7294,26 +7306,12 @@
       ]
     },
     "Remaining days before the message expire": {
-      "${ remainingDays } day": [
-        "${ remainingDays } gün",
-        "${ remainingDays } gün"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } saat",
-        "${ remainingHours } saat"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<1 saat"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } yıl",
-        "${ remainingYears } yıl"
+      "${ remainingDays } d": [
+        "${ remainingDays } g",
+        "${ remainingDays } g"
+      ],
+      "<1 d": [
+        "<1 d"
       ]
     },
     "Reply to calendar invitation": {
@@ -7720,6 +7718,9 @@
       "Message deleted": [
         "İleti silindi"
       ],
+      "Message expiration cancelled": [
+        "İletinin geçerlilik süresi iptal edildi"
+      ],
       "Message marked as legitimate": [
         "İleti göründüğü gibi olarak işaretlendi"
       ],
@@ -7778,9 +7779,6 @@
       ],
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
-      ],
-      "Self-destruction cancelled": [
-        "Kendini yok etme iptal edildi"
       ],
       "Self-destruction removed": [
         "Kendini yok etme kaldırıldı"
@@ -7865,24 +7863,6 @@
     "Time": {
       "Yesterday": [
         "Dün"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } gün",
-        "${ daysCountLeft } gün"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } saat",
-        "${ hoursCountLeft } saat"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } dakika",
-        "${ minutesCountLeft } dakika"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } saniye",
-        "${ secondsCountLeft } saniye"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -8013,8 +7993,14 @@
       "Create folder": [
         "Klasör ekle"
       ],
+      "Create folder \"${ search }\"": [
+        "\"${ search }\" klasörü ekle"
+      ],
       "Create label": [
         "Etiket ekle"
+      ],
+      "Create label \"${ search }\"": [
+        "\"${ search }\" etiketi ekle"
       ],
       "Create new group": [
         "Yeni grup ekle"
@@ -8367,6 +8353,9 @@
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
+      "Sign in with 2FA": [
+        "2 adımlı doğrulama ile oturum a"
+      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -8423,7 +8412,7 @@
         "Uyarı"
       ],
       "Warning: suspected fake website": [
-        "Uyarı: Şüpheli sahte web sitesi"
+        "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
       ],
       "Welcome": [
         "Hoş geldin"

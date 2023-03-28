@@ -2188,9 +2188,6 @@
       "Name required": [
         "Απαιτείται όνομα"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Κανένα δημόσιο κλειδί για τη ${ BRAND_NAME } διεύθυνση"
-      ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ],
@@ -2212,7 +2209,7 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
-        "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList }"
+        "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList } "
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
@@ -2932,8 +2929,8 @@
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } επαφή περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
-        "${ contactCount } επαφές περιέχουν πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+        "${ contactCount } επαφή περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
@@ -3634,6 +3631,11 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
+      ]
+    },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Δείτε πώς"
       ]
     },
     "Label": {
@@ -4699,11 +4701,6 @@
         "Αποτυχία ενημέρωσης ρυθμίσεων"
       ]
     },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Για να προσκαλέσετε μη ${ BRAND_NAME } χρήστες, κοινοποιήστε το ημερολόγιό σας με έναν σύνδεσμο"
-      ]
-    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Έχετε ξεπεράσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους ανά ημερολόγιο",
@@ -5005,12 +5002,12 @@
     },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
-        "${ hours } ώ.",
-        "${ hours } ώ."
+        "${ hours } ώ",
+        "${ hours } ώ"
       ],
       "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 ώ.",
-        "${ hoursInt }.5 ώ."
+        "${ hoursInt }.5 ώ",
+        "${ hoursInt }.5 ώ"
       ],
       "${ minutes } min": [
         "${ minutes } λ.",
@@ -5496,8 +5493,8 @@
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδα επαφών;",
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδες επαφών;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδα επαφών;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδες επαφών;"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",

@@ -177,7 +177,7 @@
         "Увеличить"
       ],
       "Load more": [
-        "Загрузить еще"
+        "Загрузить ещё"
       ],
       "Loading verification": [
         "Загружается проверка"
@@ -696,7 +696,7 @@
         "Барбадос"
       ],
       "Belarus": [
-        "Беларусь"
+        "Белоруссия"
       ],
       "Belgium": [
         "Бельгия"
@@ -1194,7 +1194,7 @@
         "Руанда"
       ],
       "Saint Barthélemy": [
-        "Сен-Бартелеми"
+        "Сен-Бартельми"
       ],
       "Saint Helena": [
         "Остров Святой Елены"
@@ -1347,7 +1347,7 @@
         "Украина"
       ],
       "United Arab Emirates": [
-        "Объединенные Арабские Эмираты"
+        "Объединённые Арабские Эмираты"
       ],
       "United Kingdom": [
         "Великобритания"
@@ -1949,6 +1949,9 @@
       ],
       "Attention required": [
         "Требуется внимание"
+      ],
+      "Balance from your previous subscription": [
+        "Баланс с прошлой подписки"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Требуется подписка Basic, Plus или Visionary"
@@ -2578,10 +2581,10 @@
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "В вашем аккаунте есть как минимум один просроченный счет. Ваш аккаунт ограничен, и все услуги теперь заблокированы до оплаты. ${ payInvoiceLink }"
+        "В вашем аккаунте есть как минимум один просроченный счёт. Ваш аккаунт ограничен, и все услуги теперь заблокированы до оплаты. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "В вашем аккаунте есть по крайней мере один просроченный счет. Ваш аккаунт ограничен. Продолжение неуплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
+        "В вашем аккаунте есть по крайней мере один просроченный счёт. Ваш аккаунт ограничен. Отсутствие оплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш аккаунт будет обновлен, когда платеж будет проверен."
@@ -2972,7 +2975,7 @@
         "Имя пользователя"
       ],
       "Verification code": [
-        "Проверочный код"
+        "Код подтверждения"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать нашу службу."
@@ -3097,6 +3100,20 @@
       ],
       "What’s this?": [
         "Что это такое?"
+      ]
+    },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "Онлайн-чат доступен с ${ planName }"
+      ],
+      "Open support form": [
+        "Открыть форму поддержки"
+      ],
+      "Upgrade subscription": [
+        "Улучшить подписку"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "Улучшите подписку, чтобы разблокировать чат с поддержкой и другие платные функции, или используйте бесплатную форму поддержки, чтобы сообщить о вашей проблеме."
       ]
     },
     "Member downgrade modal": {
@@ -4382,14 +4399,6 @@
         "Высокоскоростная VPN на ${ maxVpn } устройствах"
       ]
     },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Измените подписку в ${ subscriptionManagerShort }"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Вы приобрели подписку с помощью покупки в приложении. Чтобы управлять вашей текущей подпиской, вам нужно зайти в раздел Подписок на вашем аккаунте ${ subscriptionManager }"
-      ]
-    },
     "Subscription price": {
       "For": [
         "За"
@@ -4399,8 +4408,26 @@
       "Are you sure?": [
         "Вы уверены?"
       ],
+      "Auto-pay is disabled": [
+        "Автоматические платежи отключены"
+      ],
+      "Auto-pay is enabled": [
+        "Автоматические платежи включены"
+      ],
       "Disable": [
         "Отключить"
+      ],
+      "Enable auto-pay support": [
+        "Включить поддержку автоматических платежей"
+      ],
+      "Keep auto-pay": [
+        "Оставить автоплатеж"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Наша система больше не будет автоматически списывать платежи используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платежного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платежного периода. Кроме того, если вы забудете произвести платеж вручную, и автоматический платеж будет отключен для всех способов оплаты, мы можем перевести ваш аккаунт на более дешевую подписку, что приведет к потере многих функций."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Наша система больше не будет автоматически списывать платежи используя этот способ оплаты, но ваша подписка по-прежнему будет обновляться в конце платежного цикла. Если вы хотите изменить подписку или понизить её уровень, вам по-прежнему необходимо сделать это самостоятельно до окончания платежного периода. Мы не можем автоматически понизить ваш уровень подписки, так как если вы превысите лимит бесплатного хранилища или используете платные функции, мы не можем автоматически удалить файлы, электронные письма или другие данные. Если вы отключите автоматический платеж, не забудьте оплатить следующий счет по подписке до даты окончания, чтобы избежать блокировки аккаунта."
       ]
     },
     "Subscription saving": {
@@ -4567,7 +4594,7 @@
         "Аккаунт"
       ],
       "Account suspended": [
-        "Аккаунт отключен"
+        "Аккаунт заблокирован"
       ],
       "Action": [
         "Действие"
@@ -4897,7 +4924,7 @@
         "Конфигурация WireGuard"
       ],
       "Your changes are not synced yet": [
-        "Изменения ещё не сохранены"
+        "Изменения ещё не синхронизированы"
       ],
       "Your current plan": [
         "Ваш текущий тариф"

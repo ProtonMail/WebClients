@@ -2268,9 +2268,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nessuna email trovata da importare - l'account non ha una cartella di posta ricevuta"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Nessuna chiave pubblica per l'indirizzo ${ BRAND_NAME }"
-      ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
       ],
@@ -3862,6 +3859,11 @@
         "Attendibile"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Ecco come"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
@@ -4986,8 +4988,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Per invitare un utente non ${ BRAND_NAME }, condividi il tuo calendario con un collegamento"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Per invitare un utente non ${ BRAND_NAME }, condividi il tuo calendario con un collegamento."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5888,6 +5890,9 @@
       ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"
+      ],
+      "Sign in with 2FA": [
+        "Accedi con autenticazione a 2 fattori"
       ],
       "Sign out": [
         "Esci"

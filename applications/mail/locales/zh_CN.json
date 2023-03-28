@@ -119,12 +119,6 @@
       "Cancel": [
         "取消"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "抄送、密送"
-      ],
-      "CC BCC": [
-        "抄送／密送"
-      ],
       "Change page": [
         "页面跳转"
       ],
@@ -686,9 +680,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "打开 ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "打开日历"
-      ],
       "Open composer": [
         "打开邮件编辑区"
       ],
@@ -697,9 +688,6 @@
       ],
       "Open navigation": [
         "打开导航栏"
-      ],
-      "Open shop": [
-        "打开商店"
       ],
       "Ordered list": [
         "标号列表"
@@ -1583,11 +1571,6 @@
       ],
       "Event in progress": [
         "活动正在进行中"
-      ]
-    },
-    "Cancel self-destruction of the message": {
-      "Cancel": [
-        "取消"
       ]
     },
     "Collapsible tooltip": {
@@ -4179,9 +4162,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的权限来${ enableDesktopNotifications }。"
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } 绝不以践踏用户隐私的方式牟利。"
-      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
@@ -4458,9 +4438,6 @@
       "Daily": [
         "每天"
       ],
-      "Days": [
-        "天"
-      ],
       "Default email application": [
         "设为默认邮件应用"
       ],
@@ -4569,18 +4546,6 @@
       "Expiration time": [
         "邮件有效期"
       ],
-      "Expires": [
-        "含有效期"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "${ formattedDelayShort } 后过期"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "${ formattedDelayShort } 内过期"
-      ],
-      "Expires soon": [
-        "即将过期"
-      ],
       "files attached": [
         "attachment"
       ],
@@ -4589,9 +4554,6 @@
       ],
       "Folder": [
         "文件夹"
-      ],
-      "For increased security, activate 2FA.": [
-        "开启双重验证可进一步提升账户安全性。"
       ],
       "For messages newer than ${ oldestDate }": [
         "搜索 ${ oldestDate } 之后的邮件"
@@ -4616,9 +4578,6 @@
       ],
       "Hide original message": [
         "隐藏原始邮件"
-      ],
-      "Hours": [
-        "小时"
       ],
       "How Hide My Email works": [
         "Hide My Email 的原理"
@@ -4661,9 +4620,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
-      ],
-      "Increase storage space starting at": [
-        "邮箱扩容低至"
       ],
       "Indexing paused": [
         "索引暂停"
@@ -4830,9 +4786,6 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
       ],
-      "per month.": [
-        "/月。"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 只能用于纯文本邮件。"
       ],
@@ -4995,9 +4948,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "对不起，此消息不存在或已过期。"
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "使用 ${ DRIVE_APP_NAME } 可以安全地存储、分享文件。"
-      ],
       "Subject": [
         "主题"
       ],
@@ -5009,9 +4959,6 @@
       ],
       "Subject: ": [
         "主题："
-      ],
-      "Support privacy by upgrading for": [
-        "升级账户支持我们的隐私保护事业，仅需"
       ],
       "support team": [
         "客服团队"
@@ -5100,9 +5047,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "这是一封自动回复邮件。"
       ],
-      "This message is expired!": [
-        "此消息已过期！"
-      ],
       "This message is from a mailing list.": [
         "此邮件来自邮寄列表。"
       ],
@@ -5181,14 +5125,8 @@
       "Upgrade to add more addresses to your account.": [
         "升级后可向您的账户添加更多地址。"
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "升级账户即可开启自动回复功能。"
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "升级账户即可创建更多文件夹、筛选规则和邮箱地址。"
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "开通付费账户即可使用您自己的域名收发邮件。"
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "开通付费账户即可通过 @pm.me 地址发送电子邮件。"
@@ -5205,9 +5143,6 @@
       "Upgrade to support privacy and get more features.": [
         "升级账户不仅可以支持我们的隐私保护事业，还能解锁更多功能。"
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "开通付费账户即可通过第三方客户端使用 ${ MAIL_APP_NAME }。"
-      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -5217,9 +5152,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "网址：${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "使用 ${ CALENDAR_APP_NAME } 守护您的日程隐私。"
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用键盘快捷键让邮件操作更加迅捷。"
       ],
@@ -5228,9 +5160,6 @@
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "前往我们的商店即可选购 ${ BRAND_NAME } 特色纪念品。"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "很抱歉，这可能是我们的失误。确定要将此邮件标为非垃圾邮件吗？"
@@ -5297,9 +5226,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "您现在就可以免费使用 ${ VPN_APP_NAME }。"
       ],
       "You cannot reply from the invited address.": [
         "您无法通过受邀地址进行回复。"
@@ -5384,15 +5310,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "您发送的消息将在 ${ dateString } ${ formattedTime } 从您的已发送文件夹和接收者的收件箱删除。"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "您发送的消息将在今天 ${ formattedTime } 从您的已发送文件夹和接收者的收件箱删除。"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "您发送的消息将在明天 ${ formattedTime } 从您的已发送文件夹和接收者的收件箱删除。"
       ],
       "Your message will expire in ${ numberOfDays } days.": [
         "您的消息将在 ${ numberOfDays } 天后过期。"
@@ -6991,21 +6908,6 @@
         "请注意：点击「应用」按钮后网页将重新加载。"
       ]
     },
-    "Remaining days before the message expire": {
-      "${ remainingDays } days": [
-        "${ remainingDays } 天"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hours": [
-        "${ remainingHours } 小时"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } years": [
-        "${ remainingYears } 年"
-      ]
-    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "回复已发送"
@@ -7510,20 +7412,6 @@
     "Time": {
       "Yesterday": [
         "昨天"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } days": [
-        "${ daysCountLeft } 天"
-      ],
-      "${ hoursCountLeft } hours": [
-        "${ hoursCountLeft } 小时"
-      ],
-      "${ minutesCountLeft } minutes": [
-        "${ minutesCountLeft } 分钟"
-      ],
-      "${ secondsCountLeft } seconds": [
-        "${ secondsCountLeft } 秒"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

@@ -2268,9 +2268,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Geen publieke sleutel voor ${ BRAND_NAME }-adres"
-      ],
       "No valid address found": [
         "Geen geldig adres gevonden"
       ],
@@ -3862,6 +3859,11 @@
         "WLD"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Hier is hoe"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
@@ -4983,11 +4985,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Instellingen wijzigen mislukt"
-      ]
-    },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Deel uw agenda met een link om niet-${ BRAND_NAME }-gebruikers uit te nodigen"
       ]
     },
     "Share calendar max shares reached error": {

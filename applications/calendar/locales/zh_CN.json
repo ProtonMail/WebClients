@@ -2216,9 +2216,6 @@
       "No emails found to import - the account does not have an inbox": [
         "未找到可导入的邮件——账户无收件箱"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } 地址无公钥"
-      ],
       "No valid address found": [
         "未找到有效地址"
       ],
@@ -3725,6 +3722,11 @@
         "已信任"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "了解如何操作"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
@@ -4781,11 +4783,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "未能更新设置"
-      ]
-    },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "分享日历链接即可邀请非 ${ BRAND_NAME } 用户"
       ]
     },
     "Share calendar max shares reached error": {

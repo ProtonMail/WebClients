@@ -2896,7 +2896,7 @@
         "${ selectedCalendarsTotal } calendriers sur ${ providerCalendars.length }"
       ],
       "${ selectedCount } selected": [
-        "${ selectedCount } sélectionné(s)"
+        "Sélection : ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } dossier sélectionné",
@@ -3464,7 +3464,7 @@
         "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Notez que ce processus peut prendre un certain temps en fonction de la taille de votre carnet d'adresses."
+        "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"
@@ -3703,7 +3703,7 @@
         "Actualisation de la recherche dans Drive..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Passez à la version supérieure pour bénéficier de fonctions, de produits et d'un espace de stockage premium à un tarif avantageux"
+        "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
       "Uploaded": [
         "Importé"
@@ -5745,6 +5745,9 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
+      ],
+      "Sign in with 2FA": [
+        "Se connecter avec l'authentification à deux facteurs (A2F)"
       ],
       "Sign out": [
         "Se déconnecter"
