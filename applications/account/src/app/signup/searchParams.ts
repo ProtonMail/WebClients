@@ -39,6 +39,14 @@ export const getProductParam = (product: APP_NAMES | undefined, productParam: st
     return product || sanitisedProductParam || defaultProductParam;
 };
 
+export const getProductParams = (pathname: string, searchParams: URLSearchParams) => {
+    const maybeProductPathname = pathname.match(/\/([^/]*)/)?.[1];
+    const maybeProductParam = (searchParams.get('service') || searchParams.get('product') || undefined)?.toLowerCase();
+    const product = getProduct(maybeProductPathname) || getProduct(maybeProductParam);
+    const productParam = getProductParam(product, maybeProductParam);
+    return { product, productParam };
+};
+
 export const getSignupSearchParams = (search: string) => {
     const searchParams = new URLSearchParams(search);
     const maybeCurrency = searchParams.get('currency')?.toUpperCase() as Currency | undefined;
@@ -55,8 +63,7 @@ export const getSignupSearchParams = (search: string) => {
     const maybeDomains = Number(searchParams.get('domains'));
     const domains = maybeDomains >= 1 && maybeDomains <= 100 ? maybeDomains : undefined;
 
-    const maybeProductParam = searchParams.get('service') || searchParams.get('product') || undefined;
-    const product = getProduct(maybeProductParam);
+    const { product } = getProductParams(window.location.pathname, searchParams);
 
     // plan is validated by comparing plans after it's loaded
     const maybePreSelectedPlan = searchParams.get('plan');
