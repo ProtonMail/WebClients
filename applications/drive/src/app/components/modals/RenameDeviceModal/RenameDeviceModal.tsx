@@ -14,8 +14,8 @@ import {
     Row,
     useFormErrors,
     useLoading,
+    useModalTwo,
 } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 

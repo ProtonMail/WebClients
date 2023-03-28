@@ -12,8 +12,8 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    useModalTwo,
 } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 export interface ConfirmationModalProps {
     message: string;
