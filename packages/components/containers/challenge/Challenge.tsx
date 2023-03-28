@@ -1,10 +1,9 @@
 import { useRef, useState } from 'react';
 
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { Loader } from '../../components/loader';
-import { classnames } from '../../helpers';
 import ChallengeError from './ChallengeError';
 import ChallengeFrame, { Props as ChallengeProps } from './ChallengeFrame';
 import { ChallengeLog } from './interface';
@@ -13,7 +12,6 @@ interface Props extends Omit<ChallengeProps, 'src' | 'onError' | 'onSuccess'> {
     type: number;
     name: string;
     iframeClassName?: string;
-    noLoader?: boolean;
     onSuccess: (challengeLog: ChallengeLog[]) => void;
     onError: (challengeLog: ChallengeLog[]) => void;
 }
@@ -23,7 +21,6 @@ const Challenge = ({
     style,
     onSuccess,
     onError,
-    noLoader,
     bodyClassName,
     iframeClassName,
     loaderClassName,
@@ -31,8 +28,7 @@ const Challenge = ({
     type,
     ...rest
 }: Props) => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [hasError, setHasError] = useState(false);
+    const [error, setError] = useState(false);
     const [errorRetry, setErrorRetry] = useState(0);
     const challengeLogRef = useRef<ChallengeLog[]>([]);
 
@@ -50,40 +46,37 @@ const Challenge = ({
     const jitter = randomIntFromInterval(0, 3);
     const errorTimeout = (15 + errorRetry * 5 - jitter) * 1000;
 
-    return (
-        <>
-            {isLoading && !noLoader ? <Loader className={loaderClassName} /> : null}
+    if (error) {
+        if (rest.empty) {
+            return null;
+        }
+        return <ChallengeError />;
+    }
 
-            {hasError ? (
-                <ChallengeError />
-            ) : (
-                <ChallengeFrame
-                    key={errorRetry}
-                    src={challengeSrc}
-                    errorTimeout={errorTimeout}
-                    className={iframeClassName ? iframeClassName : 'w100'}
-                    bodyClassName={classnames(['color-norm bg-norm', bodyClassName])}
-                    style={style}
-                    onSuccess={() => {
-                        setIsLoading(false);
-                        onSuccess?.(challengeLogRef.current);
-                    }}
-                    onError={(challengeLog) => {
-                        challengeLogRef.current = challengeLogRef.current.concat(challengeLog);
-                        if (errorRetry < 2) {
-                            setErrorRetry(errorRetry + 1);
-                            return;
-                        }
-                        setHasError(true);
-                        setIsLoading(false);
-                        onError?.(challengeLogRef.current);
-                    }}
-                    {...rest}
-                >
-                    {children}
-                </ChallengeFrame>
-            )}
-        </>
+    return (
+        <ChallengeFrame
+            key={errorRetry}
+            src={challengeSrc}
+            errorTimeout={errorTimeout}
+            className={iframeClassName ? iframeClassName : 'w100'}
+            bodyClassName={clsx('color-norm bg-norm', bodyClassName)}
+            style={style}
+            onSuccess={() => {
+                onSuccess?.(challengeLogRef.current);
+            }}
+            onError={(challengeLog) => {
+                challengeLogRef.current = challengeLogRef.current.concat(challengeLog);
+                if (errorRetry < 2) {
+                    setErrorRetry(errorRetry + 1);
+                    return;
+                }
+                setError(true);
+                onError?.(challengeLogRef.current);
+            }}
+            {...rest}
+        >
+            {children}
+        </ChallengeFrame>
     );
 };
 
