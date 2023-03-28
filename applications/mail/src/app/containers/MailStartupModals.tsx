@@ -30,10 +30,6 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
     const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
 
-    useEffect(() => {
-        setOnboardingModal(onboardingOpen);
-    }, [onboardingOpen]);
-
     const onceRef = useRef(false);
     useEffect(() => {
         if (onceRef.current) {
@@ -53,7 +49,7 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         }
-    }, [shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay]);
+    }, [shouldOpenReferralModal.open, handleRebrandingFeedbackModalDisplay, onboardingOpen]);
 
     return (
         <>

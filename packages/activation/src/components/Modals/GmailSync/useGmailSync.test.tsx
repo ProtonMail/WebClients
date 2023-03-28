@@ -4,7 +4,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 
 import { easySwitchHookRender } from '@proton/activation/src/tests/render';
-import { useExperiment, useFeature, useWelcomeFlags } from '@proton/components/index';
+import { useExperiment, useFeature, useUserSettings, useWelcomeFlags } from '@proton/components/index';
 
 import useGmailSync from './useGmailSync';
 
@@ -23,6 +23,12 @@ beforeAll(() => {
         }),
         rest.get('/core/v4/experiments', (req, res, ctx) => {
             return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+        }),
+        rest.get('/core/v4/settings', (req, res, ctx) => {
+            return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+        }),
+        rest.put('/core/v4/settings/welcome', (req, res, ctx) => {
+            return res(ctx.set('date', '01/01/2022'), ctx.json({}));
         })
     );
 });
@@ -33,6 +39,9 @@ afterAll(() => {
 
 jest.mock('@proton/components/hooks/useFeature');
 const mockUseFeature = useFeature as jest.MockedFunction<any>;
+
+jest.mock('@proton/components/hooks/useUserSettings');
+const mockUserSettings = useUserSettings as jest.MockedFunction<any>;
 
 jest.mock('@proton/components/hooks/useExperiment');
 const mockUseExperiment = useExperiment as jest.MockedFunction<any>;
@@ -45,13 +54,28 @@ describe('useGmailSync', () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
         mockUseExperiment.mockReturnValue({ value: 'A', loading: false });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: true }]);
+        mockUserSettings.mockReturnValue([{ Locale: 'en_US' }, false]);
 
         const { result } = easySwitchHookRender(useGmailSync);
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: false,
             displayOnboarding: false,
+            displaySync: false,
+        });
+    });
+
+    it('User that have local other than english should not see the animation', () => {
+        mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
+        mockUseExperiment.mockReturnValue({ value: 'B', loading: true });
+        mockUseWelcomeFlags.mockReturnValue([{ isDone: true }]);
+        mockUserSettings.mockReturnValue([{ Locale: 'fr_CH' }, false]);
+
+        const { result } = easySwitchHookRender(useGmailSync);
+        const { current } = result;
+
+        expect(current.derivedValues).toStrictEqual({
+            displayOnboarding: true,
             displaySync: false,
         });
     });
@@ -60,12 +84,12 @@ describe('useGmailSync', () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
         mockUseExperiment.mockReturnValue({ value: 'A', loading: false });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: false }]);
+        mockUserSettings.mockReturnValue([{ Locale: 'en_US' }, false]);
 
         const { result } = easySwitchHookRender(useGmailSync);
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: true,
             displayOnboarding: true,
             displaySync: false,
         });
@@ -80,7 +104,6 @@ describe('useGmailSync', () => {
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: true,
             displayOnboarding: false,
             displaySync: true,
         });
@@ -90,12 +113,12 @@ describe('useGmailSync', () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: false } }, loading: false });
         mockUseExperiment.mockReturnValue({ value: 'B', loading: false });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: false }]);
+        mockUserSettings.mockReturnValue([{ Locale: 'en_US' }, false]);
 
         const { result } = easySwitchHookRender(useGmailSync);
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: false,
             displayOnboarding: false,
             displaySync: false,
         });
@@ -105,12 +128,12 @@ describe('useGmailSync', () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: true });
         mockUseExperiment.mockReturnValue({ value: 'B', loading: true });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: false }]);
+        mockUserSettings.mockReturnValue([{ Locale: 'en_US' }, false]);
 
         const { result } = easySwitchHookRender(useGmailSync);
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: false,
             displayOnboarding: false,
             displaySync: false,
         });
@@ -120,12 +143,12 @@ describe('useGmailSync', () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: true });
         mockUseExperiment.mockReturnValue({ value: 'B', loading: false });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: false }]);
+        mockUserSettings.mockReturnValue([{ Locale: 'en_US' }, false]);
 
         const { result } = easySwitchHookRender(useGmailSync);
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: false,
             displayOnboarding: false,
             displaySync: false,
         });
@@ -135,12 +158,12 @@ describe('useGmailSync', () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
         mockUseExperiment.mockReturnValue({ value: 'B', loading: true });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: false }]);
+        mockUserSettings.mockReturnValue([{ Locale: 'en_US' }, false]);
 
         const { result } = easySwitchHookRender(useGmailSync);
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: false,
             displayOnboarding: false,
             displaySync: false,
         });
@@ -150,31 +173,31 @@ describe('useGmailSync', () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
         mockUseExperiment.mockReturnValue({ value: 'B', loading: false });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: false }]);
+        mockUserSettings.mockReturnValue([{ Locale: 'en_US' }, false]);
 
         const { result } = easySwitchHookRender(useGmailSync);
         result.current.handleSyncSkip();
         const { current } = result;
 
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: true,
             displayOnboarding: true,
             displaySync: false,
         });
     });
 
-    it('User see gmail forwarding and successfully forward gmail', () => {
+    it('User see gmail forwarding and successfully forward gmail', async () => {
         const setWelcomeFlagDone = jest.fn();
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
         mockUseExperiment.mockReturnValue({ value: 'B', loading: false });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: false }, setWelcomeFlagDone]);
+        mockUserSettings.mockReturnValue([{ Locale: 'en_US' }, false]);
 
         const { result } = easySwitchHookRender(useGmailSync);
-        result.current.handleSyncCallback(false);
+        await result.current.handleSyncCallback(false);
         const { current } = result;
 
         expect(setWelcomeFlagDone).toBeCalledTimes(1);
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: false,
             displayOnboarding: false,
             displaySync: false,
         });
@@ -185,6 +208,7 @@ describe('useGmailSync', () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
         mockUseExperiment.mockReturnValue({ value: 'B', loading: false });
         mockUseWelcomeFlags.mockReturnValue([{ isDone: false }, setWelcomeFlagDone]);
+        mockUserSettings.mockReturnValue([{ Locale: 'en_US' }, false]);
 
         const { result } = easySwitchHookRender(useGmailSync);
         result.current.handleSyncCallback(true);
@@ -192,7 +216,6 @@ describe('useGmailSync', () => {
 
         expect(setWelcomeFlagDone).toBeCalledTimes(0);
         expect(current.derivedValues).toStrictEqual({
-            isBlurred: true,
             displayOnboarding: false,
             displaySync: true,
         });
