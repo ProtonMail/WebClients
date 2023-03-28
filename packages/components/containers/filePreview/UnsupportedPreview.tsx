@@ -28,7 +28,7 @@ const UnsupportedPreview = ({ onDownload, type = 'file' }: Props) => {
                 className={classnames(['p0-25 text-bold', isNarrow && 'h3'])}
                 data-testid="file-preview:unsupported-preview-text"
             >
-                {c('Info').t`No preview available`}
+                {c('Info').t`Preview for this file type is not supported`}
             </h2>
 
             {onDownload && (
