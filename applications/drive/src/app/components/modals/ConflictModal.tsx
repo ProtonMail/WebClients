@@ -3,7 +3,6 @@ import React, { ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import {
     Checkbox,
     ModalStateProps,
@@ -14,6 +13,7 @@ import {
     PrimaryButton,
     Radio,
     Row,
+    useModalTwo,
 } from '@proton/components';
 
 import { TransferConflictStrategy } from '../../store';

@@ -3,8 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { Icon, useModalTwo } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { usePublicShare } from '../../../store';

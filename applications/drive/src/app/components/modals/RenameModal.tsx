@@ -15,8 +15,8 @@ import {
     PrimaryButton,
     Row,
     useLoading,
+    useModalTwo,
 } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 

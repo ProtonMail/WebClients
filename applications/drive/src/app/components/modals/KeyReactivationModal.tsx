@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import {
     ModalStateProps,
     ModalTwo,
@@ -11,7 +10,8 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     RadioGroup,
-} from '@proton/components/index';
+    useModalTwo,
+} from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

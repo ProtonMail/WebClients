@@ -14,8 +14,8 @@ import {
     ModalTwoHeader,
     Row,
     Tooltip,
+    useModalTwo,
 } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
 
 import { useLinkDetailsView } from '../../store';

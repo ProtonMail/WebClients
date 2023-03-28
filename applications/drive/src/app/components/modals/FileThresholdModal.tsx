@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import { BasicModal, ModalStateProps, PrimaryButton } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { BasicModal, ModalStateProps, PrimaryButton, useModalTwo } from '@proton/components';
 
 type Props = {
     type?: FileThresholdModalType;

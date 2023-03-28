@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalTwo, useLoading, useNotifications } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { ModalTwo, useLoading, useModalTwo, useNotifications } from '@proton/components';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { ShareURL, SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 

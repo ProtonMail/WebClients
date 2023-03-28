@@ -11,8 +11,8 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Row,
+    useModalTwo,
 } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { DecryptedLink, useLinksDetailsView } from '../../store';

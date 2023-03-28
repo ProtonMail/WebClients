@@ -13,8 +13,8 @@ import {
     ModalTwoHeader,
     Radio,
     Row,
+    useModalTwo,
 } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 
 import { SignatureIssues } from '../../store';
 import { TransferSignatureIssueStrategy } from '../../store';
