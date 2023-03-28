@@ -2304,9 +2304,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Žádný veřejný klíč pro adresu ${ BRAND_NAME }"
-      ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
       ],
@@ -3981,6 +3978,11 @@
         "Důvěryhodný"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Jak na to"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
@@ -5179,8 +5181,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Chcete-li pozvat uživatele, kteří nemají účet ${ BRAND_NAME }, sdílejte svůj kalendář pomocí odkazu"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Chcete-li pozvat uživatele, kteří nemají účet ${ BRAND_NAME }, sdílejte svůj kalendář pomocí odkazu."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5879,6 +5881,9 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
+      ],
+      "Sign in with 2FA": [
+        "Příhlásit se pomocí dvoufázového ověření"
       ],
       "Sign out": [
         "Odhlásit se"

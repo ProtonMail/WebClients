@@ -101,9 +101,6 @@
       "Cancel": [
         "Poništi"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Indigo kopija, slijepa indigo kopija"
-      ],
       "Change page": [
         "Promjeni stranicu"
       ],
@@ -578,17 +575,11 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Otvori ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Otvori kalendar"
-      ],
       "Open composer": [
         "Otvori prozor za novu poruku"
       ],
       "Open navigation": [
         "Otvori navigaciju"
-      ],
-      "Open shop": [
-        "Otvori trgovinu"
       ],
       "Ordered list": [
         "Numerirani popis"
@@ -3262,11 +3253,6 @@
       "Daily": [
         "Dnevno"
       ],
-      "Day": [
-        "Dan",
-        "Dani",
-        "Dani"
-      ],
       "Do you want to download this attachment anyway?": [
         "Želite li svejedno preuzeti ovaj privitak?",
         "Želite li svejedno preuzeti ovaj privitke?",
@@ -3327,9 +3313,6 @@
       "Expiration time": [
         "Vrijeme isteka"
       ],
-      "Expires": [
-        "Ističe"
-      ],
       "file attached": [
         "attachment",
         "attachments",
@@ -3340,9 +3323,6 @@
       ],
       "Folder": [
         "Mapa"
-      ],
-      "For increased security, activate 2FA.": [
-        "Za povećanu sigurnost, omogućite dvofaktorsku autentikaciju."
       ],
       "For messages newer than ${ oldestDate }": [
         "Za poruke novije od ${ oldestDate }"
@@ -3365,11 +3345,6 @@
       "Hide original message": [
         "Sakrij originalnu poruku"
       ],
-      "Hour": [
-        "Sat",
-        "Sati",
-        "Sati"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
       ],
@@ -3390,9 +3365,6 @@
       ],
       "Import mailbox": [
         "Uvezi poštanski sandučić"
-      ],
-      "Increase storage space starting at": [
-        "Povećajte prostor za pohranu već za"
       ],
       "Indexing paused": [
         "Pauzirano je indeksiranje"
@@ -3520,9 +3492,6 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Naš je sustav ovu e-poruku označio kao pokušaj krađe identiteta. Molimo provjerite je li legitimna poruka."
       ],
-      "per month.": [
-        "mjesečno."
-      ],
       "Phone number": [
         "Broj telefona"
       ],
@@ -3622,9 +3591,6 @@
       "Subject: ": [
         "Predmet: "
       ],
-      "Support privacy by upgrading for": [
-        "Podržite privatnost nadogradnjom za"
-      ],
       "support team": [
         "tim za podršku"
       ],
@@ -3692,9 +3658,6 @@
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Ova poruka se automatski stvara kao odgovor na prethodnu poruku."
-      ],
-      "This message is expired!": [
-        "Ova poruka je istekla!"
       ],
       "This message is from a mailing list.": [
         "Ovo poruka je s mailing liste."
@@ -5525,28 +5488,6 @@
     "Time": {
       "Yesterday": [
         "Jučer"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dan",
-        "${ daysCountLeft } dana",
-        "${ daysCountLeft } dana"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } sat",
-        "${ hoursCountLeft } sata",
-        "${ hoursCountLeft } sati"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minuta",
-        "${ minutesCountLeft } minute",
-        "${ minutesCountLeft } minuta"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } sekunda",
-        "${ secondsCountLeft } sekunde",
-        "${ secondsCountLeft } sekundi"
       ]
     },
     "Title": {

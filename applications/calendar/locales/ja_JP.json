@@ -2227,9 +2227,6 @@
       "No emails found to import - the account does not have an inbox": [
         "インポートするメールがありません - アカウントに受信箱がありません"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } アドレスの公開鍵がありません"
-      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
@@ -3693,6 +3690,11 @@
         "信頼済み"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "詳細"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
@@ -4754,11 +4756,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "設定の更新に失敗しました"
-      ]
-    },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "非 ${ BRAND_NAME } ユーザーを招待するには、リンクでカレンダーを共有します"
       ]
     },
     "Share calendar max shares reached error": {

@@ -563,7 +563,7 @@
         "Пропустить"
       ],
       "Skip verification": [
-        "Пропуск проверки"
+        "Пропустить проверку"
       ],
       "Start import": [
         "Начать импорт"
@@ -1039,7 +1039,7 @@
         "Барбадос"
       ],
       "Belarus": [
-        "Беларусь"
+        "Белоруссия"
       ],
       "Belgium": [
         "Бельгия"
@@ -1537,7 +1537,7 @@
         "Руанда"
       ],
       "Saint Barthélemy": [
-        "Сен-Бартелеми"
+        "Сен-Бартельми"
       ],
       "Saint Helena": [
         "Остров Святой Елены"
@@ -1690,7 +1690,7 @@
         "Украина"
       ],
       "United Arab Emirates": [
-        "Объединенные Арабские Эмираты"
+        "Объединённые Арабские Эмираты"
       ],
       "United Kingdom": [
         "Великобритания"
@@ -1907,7 +1907,7 @@
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
-        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей"
       ],
@@ -2891,7 +2891,7 @@
         "${ contactEmailsLength } адресатов"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } контакт содержит несколько адресов электронной почты."
+        "Контакт ${ contactName } содержит несколько адресов электронной почты."
       ],
       "${ contactsCount } contact found": [
         "Найден ${ contactsCount } контакт",
@@ -3461,7 +3461,7 @@
         "Делает ваш аккаунт безопаснее"
       ],
       "Merged": [
-        "Объединенные"
+        "Объединённые"
       ],
       "More": [
         "Ещё"
@@ -3473,7 +3473,7 @@
         "Мои ссылки"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Назовите новую папку и выберите родительскую папку, в которую вы хотите ее поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
+        "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
       "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
         "Нужно поделиться файлом? Тогда используйте ${ DRIVE_APP_NAME },\nсамый безопасный способ обмена, хранения и синхронизации файлов."
@@ -3554,7 +3554,7 @@
         "Окончательно удалить все файлы в вашем заблокированном хранилище"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline совместимо только с форматом Plain Text."
+        "PGP/Inline совместимы только с форматом «простой текст»."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем."
@@ -3635,13 +3635,13 @@
         "Выберите загруженный файл или папку и создайте ссылку на них."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений этим адресатам."
+        "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений на этом адрес эл. почты."
       ],
       "Select what you want to import.": [
         "Выберите то, что вы хотите импортировать."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учетом числа календарей, доступных в вашем тарифе."
+        "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учётом числа календарей, доступных в вашем тарифе."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -3650,7 +3650,7 @@
         "Время сеанса истекло"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Настройка PGP позволяет отправлять электронную почту, защифрованную сквозным метом с пользователем, не являющимся ${ BRAND_NAME }, который использует службу, совместимую с PGP."
+        "Настройка PGP позволяет отправлять электронную почту, зашифрованную сквозным методом, не пользователю ${ BRAND_NAME }, который использует службу, совместимую с PGP."
       ],
       "Share files with links": [
         "Делитесь файлами с помощью ссылок"
@@ -3710,7 +3710,7 @@
         "Этот аккаунт был отключен из-за возможного нарушения политики."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Этот адрес отключён. Чтобы иметь возможность отправки на этот адрес, сначала он должен быть включён его владельцем."
+        "Этот адрес отключён. Чтобы была возможность отправки на этот адрес, его владелец должен включить его."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Браузер не поддерживает предварительный просмотр документов PDF. Пожалуйста, скачайте файл."
@@ -3722,7 +3722,7 @@
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Эта ссылка может быть омографической атакой и не может быть открыта браузером Edge. Если вы уверены, что ссылка является подлинной, используйте другой браузер, чтобы открыть ее."
+        "Эта ссылка может быть омографической атакой и не может быть открыта браузером Edge. Если вы уверены, что ссылка является подлинной, используйте другой браузер, чтобы открыть её."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
@@ -3761,7 +3761,7 @@
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Чтобы импортировать события, сначала создайте календарь в ${ CALENDAR_APP_NAME }. Именно в нем события будут отображаться после импорта."
+        "Чтобы импортировать события, сначала создайте календарь в ${ CALENDAR_APP_NAME }. Именно в нём события будут отображаться после импорта."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Для повторной подписи контактов нам необходимо проверить каждый контакт с помощью списка ключей шифрования, доступных в вашем аккаунте. Если совпадение не найдено, ваш контакт будет повторно подписан основным ключом шифрования."
@@ -3905,10 +3905,10 @@
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${ payInvoiceLink }": [
-        "В вашем аккаунте есть как минимум один просроченный счет. Ваш аккаунт ограничен, и все услуги теперь заблокированы до оплаты. ${ payInvoiceLink }"
+        "В вашем аккаунте есть как минимум один просроченный счёт. Ваш аккаунт ограничен, и все услуги теперь заблокированы до оплаты. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "В вашем аккаунте есть по крайней мере один просроченный счет. Ваш аккаунт ограничен. Продолжение неуплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
+        "В вашем аккаунте есть по крайней мере один просроченный счёт. Ваш аккаунт ограничен. Отсутствие оплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Ваш текущий браузер не поддерживает загрузку больших файлов из-за недоступности работников службы. Загрузка больших файлов может привести к зависанию или отсутствию реакции браузера. Используйте последние версии ${ recommendedBrowser } и повторите попытку."
@@ -4363,7 +4363,7 @@
         "Украденные данные"
       ],
       "Street address": [
-        "Андрес улицы"
+        "Адрес"
       ],
       "System information": [
         "Сведения о системе"
@@ -4408,7 +4408,7 @@
         "Загрузите свой первый файл"
       ],
       "Verification code": [
-        "Проверочный код"
+        "Код подтверждения"
       ],
       "Video file": [
         "Видео файл"
@@ -5579,7 +5579,7 @@
         "${ numberOfFailedTransfer.total } неудавшаяся загрузок"
       ],
       "Account suspended": [
-        "Аккаунт отключен"
+        "Аккаунт заблокирован"
       ],
       "Active": [
         "Активно"
@@ -6035,7 +6035,7 @@
         "Ваши бонусные 500 МБ"
       ],
       "Your changes are not synced yet": [
-        "Изменения ещё не сохранены"
+        "Изменения ещё не синхронизированы"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
         "Ваша бесплатная пробная версия Mail Plus заканчивается ${ textDate }"

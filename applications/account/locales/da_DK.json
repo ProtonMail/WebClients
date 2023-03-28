@@ -2964,9 +2964,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Ingen offentlig nøgle til ${ BRAND_NAME }-adresse"
-      ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
       ],
@@ -9058,11 +9055,6 @@
         "Etiketter"
       ]
     },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Hvis du vil invitere brugere, som ikke benytter ${ BRAND_NAME }, skal du dele din kalender med et link"
-      ]
-    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Du har overskredet det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem pr. kalender",
@@ -10277,6 +10269,9 @@
       ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
+      ],
+      "Sign in with 2FA": [
+        "Log ind med 2FA"
       ],
       "Sign out": [
         "Log ud"

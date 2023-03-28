@@ -525,7 +525,7 @@
         "VPN sorunu"
       ],
       "Website access problem": [
-        "Web sitesi erişim sorunu"
+        "Site erişim sorunu"
       ]
     },
     "Button": {
@@ -1452,7 +1452,7 @@
         "Tutar en az miktarın altında."
       ],
       "Checkout expired, please try again": [
-        "Ödeme süresi dolmuş. Lütfen yeniden deneyin"
+        "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
       "Code wrong or not valid anymore": [
         "Kod yanlış ya da artık geçersiz"
@@ -1470,7 +1470,7 @@
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Televizyonunuzda süre dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
+        "Geçerlilik süresi dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -1551,7 +1551,7 @@
         "Sekme kapatıldı"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da bilgisayar ile oturum açın."
+        "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın ya da bilgisayar ile oturum açın."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
@@ -2033,7 +2033,7 @@
         "Kurtarma telefon numaranızı yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
       ],
       "Expired": [
-        "Süresi geçmiş"
+        "Geçerlilik süresi dolmuş"
       ],
       "expires ${ expirationDate }": [
         "${ expirationDate } tarihinde geçersiz olacak"
@@ -2213,7 +2213,7 @@
         "Ön izleme yüklenemedi"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve süresi dolmamış kuponlar katılmıştır."
+        "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -2288,7 +2288,7 @@
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Bu web tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
+        "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
@@ -2502,7 +2502,7 @@
         "Kayıtlı bir ödeme yönteminiz yok."
       ],
       "You may be redirected to your bank’s website.": [
-        "Bankanızın web sitesine yönlendirilebilirsiniz."
+        "Bankanızın sitesine yönlendirilebilirsiniz."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını devre dışı bırakmalı ya da silmelisiniz."
@@ -2529,7 +2529,7 @@
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "You'll stay signed in even after you close the browser.": [
-        "Web tarayıcıyı kapattıktan sonra bile oturumunuz açık kalır."
+        "Oturumunuz tarayıcıyı kapattıktan sonra bile açık kalır."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -2990,7 +2990,7 @@
         "Varsayılan"
       ],
       "Expired": [
-        "Süresi geçmiş"
+        "Geçerlilik süresi dolmuş"
       ]
     },
     "Label, credit card": {
@@ -3003,7 +3003,7 @@
         "Bir hediye kodu ekleyin"
       ],
       "clearing your browser cache": [
-        "web tarayıcınızın ön belleğini temizlemek"
+        "tarayıcınızın ön belleğini temizlemek"
       ],
       "click here": [
         "buraya tıklayın"
@@ -4051,14 +4051,6 @@
         "${ maxVpn } aygıt için yüksek hızlı VPN"
       ]
     },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Aboneliğinizi ${ subscriptionManagerShort } üzerinden yönetin"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Aboneliğiniz bir uygulama içi satın alma ile yapılmış. Geçerli aboneliğinizi yönetmek için ${ subscriptionManager } hesabınızın Abonelik bölümüne bakın"
-      ]
-    },
     "Subscription price": {
       "For": [
         "Toplam"
@@ -4519,6 +4511,9 @@
       ],
       "Sign in": [
         "Oturum aç"
+      ],
+      "Sign in with 2FA": [
+        "2 adımlı doğrulama ile oturum a"
       ],
       "Sign out": [
         "Oturumu kapat"

@@ -130,12 +130,6 @@
       "Cancel": [
         "Cancel·la"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Còpia, Còpia oculta"
-      ],
-      "CC BCC": [
-        "CC CCO"
-      ],
       "Change page": [
         "Canviar de pàgina"
       ],
@@ -700,9 +694,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Obrir ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Obrir el calendari"
-      ],
       "Open composer": [
         "Obrir el redactor"
       ],
@@ -711,9 +702,6 @@
       ],
       "Open navigation": [
         "Obre la navegació"
-      ],
-      "Open shop": [
-        "Obrir la botiga"
       ],
       "Ordered list": [
         "Llista ordenada"
@@ -1617,14 +1605,6 @@
       ],
       "Event in progress": [
         "Esdeveniment en curs"
-      ]
-    },
-    "Cancel self-destruction of the message": {
-      "Cancel": [
-        "Cancel·la"
-      ],
-      "Cancel self-destruction": [
-        "Cancel·la la destrucció automàtica"
       ]
     },
     "Collapsible tooltip": {
@@ -4285,9 +4265,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } no guanya diners abusant de la privacitat."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nou calendari",
         "${ calendarsToBeCreatedCount } nous calendaris"
@@ -4624,10 +4601,6 @@
       "Daily": [
         "Diàriament"
       ],
-      "Day": [
-        "Dia",
-        "Dies"
-      ],
       "Default email application": [
         "Aplicació de correu electrònic per defecte"
       ],
@@ -4740,18 +4713,6 @@
       "Expiration time": [
         "Data de caducitat"
       ],
-      "Expires": [
-        "Caduca"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "Caduca en ${ formattedDelayShort }"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Caduca en menys de ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Caduca aviat"
-      ],
       "file attached": [
         "attachment",
         "attachments"
@@ -4761,9 +4722,6 @@
       ],
       "Folder": [
         "Carpeta"
-      ],
-      "For increased security, activate 2FA.": [
-        "Per millorar la seguretat activeu l'autenticació de doble factor (2FA)."
       ],
       "For messages newer than ${ oldestDate }": [
         "Per missatges més nous que ${ oldestDate }"
@@ -4795,10 +4753,6 @@
       ],
       "Hide original message": [
         "Amaga el missatge original"
-      ],
-      "Hour": [
-        "Hora",
-        "Hores"
       ],
       "How Hide My Email works": [
         "Com funciona Hide My Email"
@@ -4851,9 +4805,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
-      ],
-      "Increase storage space starting at": [
-        "Incrementeu l'espai d'emmagatzematge començant a"
       ],
       "Indexing paused": [
         "Indexació pausada"
@@ -5019,9 +4970,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "El nostre sistema ha marcat aquest missatge com un intent de suplantació d'identitat. Comproveu que sigui legítim."
-      ],
-      "per month.": [
-        "al mes."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline només és compatible amb format de Text Pla."
@@ -5192,9 +5140,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Emmagatzemeu i compartiu fitxers de forma segura amb ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Assumpte"
       ],
@@ -5206,9 +5151,6 @@
       ],
       "Subject: ": [
         "Assumpte: "
-      ],
-      "Support privacy by upgrading for": [
-        "Doneu suport a la privacitat actualitzant a"
       ],
       "support team": [
         "equip de suport"
@@ -5302,9 +5244,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Aquest missatge es genera automàticament com a resposta a un missatge previ."
       ],
-      "This message is expired!": [
-        "Aquest missatge ha expirat!"
-      ],
       "This message is from a mailing list.": [
         "Aquest missatge és d'una llista de correus."
       ],
@@ -5335,18 +5274,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Aquest missatge expirarà el ${ formattedDate }"
-      ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "Aquest missatge es destruirà automàticament en ${ formattedDelay }."
-      ],
-      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
-        "Aquest missatge es destruirà automàticament el ${ dateString } a les ${ formattedTime }."
-      ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "Aquest missatge es destruirà automàticament avui a les ${ formattedTime }."
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "Aquest missatge es destruirà automàticament demà a les ${ formattedTime }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Aquesta clau pública serà utilitzada automàticament per xifrar el correu electrónic enviat a aquenta adreça."
@@ -5402,14 +5329,8 @@
       "Upgrade to add more addresses to your account.": [
         "Actualitzeu per afegir més adreces al vostre compte."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Actualitzeu per configurar una resposta automàtica per vacances."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Actualitzeu per crear més carpetes, filtres, i adreces."
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "Actualitzeu per allotjar correus electrònics del vostre propi nom de domini."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Actualitzeu per enviar correu electrònic des d'adreces @pm.me."
@@ -5426,9 +5347,6 @@
       "Upgrade to support privacy and get more features.": [
         "Actualitzeu per donar suport a la privacitat i obtenir més funcionalitats."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Milloreu el compte per a utilitzar ${ MAIL_APP_NAME } amb clients d'escriptori de tercers."
-      ],
       "Upload picture": [
         "Carrega imatge"
       ],
@@ -5438,9 +5356,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Utilitzeu ${ CALENDAR_APP_NAME } per a mantenir l'agenda privada."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilitzeu dreceres de teclat per gestionar el vostre correu electrònic més ràpidament."
       ],
@@ -5449,9 +5364,6 @@
       ],
       "Version ${ appVersion }": [
         "Versió ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Visiteu la nostra botiga per obtenir marxandatge de ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ens disculpem. Això podria haver estat un error per part nostra. Podeu confirmar que voleu marcar aquest correu electrònic com a legítim?"
@@ -5521,9 +5433,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "Podeu utilitzar ${ VPN_APP_NAME } gratuïtament avui."
       ],
       "You cannot reply from the invited address.": [
         "No podeu contestar des de l'adreça convidada."
@@ -5616,15 +5525,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "La vostra informació d'inici de sessió no es desarà quan s'hagi completat la importació."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "El vostre missatge s'esborrarà de la safata d'entrada del destinatari i de la vostra carpeta d'enviats el ${ dateString } a les ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "El vostre missatge s'esborrarà de la safata d'entrada del destinatari i de la vostra carpeta d'enviats avui a les ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "El vostre missatge s'esborrarà de la safata d'entrada del destinatari i de la vostra carpeta d'enviats demà a les ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Aquest missatge caducarà d'aquí ${ numberOfDays } dia.",
@@ -7290,29 +7190,6 @@
         "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
       ]
     },
-    "Remaining days before the message expire": {
-      "${ remainingDays } day": [
-        "${ remainingDays } dia",
-        "${ remainingDays } dies"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } hora",
-        "${ remainingHours } hores"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<1 hora"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } any",
-        "${ remainingYears } anys"
-      ]
-    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Resposta enviada"
@@ -7776,9 +7653,6 @@
       "Read receipt sent": [
         "S'ha enviat la confirmació de lectura."
       ],
-      "Self-destruction cancelled": [
-        "Destrucció automàtica cancel·lada"
-      ],
       "Self-destruction removed": [
         "Destrucció automàtica suprimida"
       ],
@@ -7862,24 +7736,6 @@
     "Time": {
       "Yesterday": [
         "Ahir"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dia",
-        "${ daysCountLeft } dies"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } hora",
-        "${ hoursCountLeft } hores"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minut",
-        "${ minutesCountLeft } minuts"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } segon",
-        "${ secondsCountLeft } segons"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
