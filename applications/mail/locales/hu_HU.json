@@ -122,12 +122,6 @@
       "Cancel": [
         "Mégsem"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Másolat, titkos másolat"
-      ],
-      "CC BCC": [
-        "Másolat, Titkos másolat"
-      ],
       "Change page": [
         "Lapozás"
       ],
@@ -692,9 +686,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } megnyitása"
       ],
-      "Open calendar": [
-        "Naptár megnyitása"
-      ],
       "Open composer": [
         "Szerkesztő megnyitása"
       ],
@@ -703,9 +694,6 @@
       ],
       "Open navigation": [
         "Navigáció megnyitása"
-      ],
-      "Open shop": [
-        "Bolt megnyitása"
       ],
       "Ordered list": [
         "Számozott lista"
@@ -4115,9 +4103,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "A ${ BRAND_NAME } nem abból él, hogy a személyes adatokkal visszaéljen."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
         "${ calendarsToBeCreatedCount } új naptár"
@@ -4451,10 +4436,6 @@
       "Daily": [
         "Naponta"
       ],
-      "Day": [
-        "Nap",
-        "Nap"
-      ],
       "Default email application": [
         "Alapértelmezett e-mail alkalmazás"
       ],
@@ -4561,18 +4542,6 @@
       "Expiration time": [
         "Időkorlát"
       ],
-      "Expires": [
-        "Lejár"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "Lejár ennyi idő múlva: ${ formattedDelayShort }"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Lejár ennél kevesebb idő múlva: ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Hamarosan lejár"
-      ],
       "file attached": [
         "attachment",
         "attachments"
@@ -4582,9 +4551,6 @@
       ],
       "Folder": [
         "Mappa"
-      ],
-      "For increased security, activate 2FA.": [
-        "A biztonság érdekében, kapcsolja be a kétlépcsős hitelesítést."
       ],
       "For messages newer than ${ oldestDate }": [
         "Üzeneteknek, melyek újabbak mint ${ oldestDate }"
@@ -4613,10 +4579,6 @@
       ],
       "Hide original message": [
         "Eredeti üzenet elrejtése"
-      ],
-      "Hour": [
-        "Óra",
-        "Óra"
       ],
       "How Hide My Email works": [
         "Így működik a Hide My Email"
@@ -4663,9 +4625,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
-      ],
-      "Increase storage space starting at": [
-        "Tárhely megnövelése már"
       ],
       "Indexing paused": [
         "Feldolgozás szüneteltetve"
@@ -4826,9 +4785,6 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "A rendszerünk úgy érzékelte, hogy ez egy adathalász kísérlet. Kérjük ellenőrizze, hogy esetleg mégsem az."
       ],
-      "per month.": [
-        "havonta."
-      ],
       "Phone number": [
         "Telefonszám"
       ],
@@ -4986,9 +4942,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Sajnáljuk, az üzenet nem létezik vagy már lejárt."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Tároljon és osszon meg fájlokat biztonságosan a ${ DRIVE_APP_NAME }-val."
-      ],
       "Subject": [
         "Tárgy"
       ],
@@ -5000,9 +4953,6 @@
       ],
       "Subject: ": [
         "Tárgy: "
-      ],
-      "Support privacy by upgrading for": [
-        "Támogassa a magánszféra védelmét, váltson nagyobb csomagra:"
       ],
       "support team": [
         "ügyfélszolgálat"
@@ -5087,9 +5037,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Ez egy automatikusan generált üzenet, válaszként egy korábbi üzenetre."
       ],
-      "This message is expired!": [
-        "Ez az üzenet lejárt!"
-      ],
       "This message is from a mailing list.": [
         "Ez az üzenet levelezési listáról érkezett."
       ],
@@ -5169,14 +5116,8 @@
       "Upgrade to add more addresses to your account.": [
         "Váltson nagyobb csomagra, hogy több címet hozhasson létre a fiókjában."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Automatikus szabadság-üzenetet beállításához, váltson nagyobb csomagra."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Váltson nagyobb csomagra, hogy több mappát, szűrőt és címet hozhasson létre."
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "Váltson nagyobb csomagra, hogy saját domain nevet használhasson a levelezéshez."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Váltson nagyobb csomagra, hogy @pm.me címről is küldhessen levelet."
@@ -5193,9 +5134,6 @@
       "Upgrade to support privacy and get more features.": [
         "Váltson nagyobb csomagra, hogy támogassa a magánszféra védelmét és további szolgáltatásokhoz férjen hozzá."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Váltson nagyobb csomagra, a ${ MAIL_APP_NAME } harmadik féltől származó, asztali levelezőprogramokkal való használatához."
-      ],
       "Upload picture": [
         "Kép feltöltése"
       ],
@@ -5210,9 +5148,6 @@
       ],
       "Version ${ appVersion }": [
         "Verzió: ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Nyissa meg a webboltunkat a ${ BRAND_NAME } portékákért."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Elnézést, ez egy téves kiértékelés lehetett a mi részünkről. Megerősíti, hogy ez az üzenet helyénvaló?"
@@ -5279,9 +5214,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "Használhatja a ${ VPN_APP_NAME }-t ingyen már ma."
       ],
       "You cannot reply from the invited address.": [
         "Nem válaszolhat a meghívott címről."
@@ -5374,15 +5306,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "A bejelentkezési adatok az importálás befejezése után nem kerülnek tárolásra."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Az üzenete törlésre kerül a címzett levelei közül és az elküldött levelekből, ekkor: ${ dateString } ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Az üzenete ma törlésre kerül a címzett levelei közül és az elküldött levelekből, ekkor: ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Az üzenete holnap törlésre kerül a címzett levelei közül és az elküldött levelekből, ekkor: ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Az üzenete ${ numberOfDays } nap múlva lejár.",
@@ -6958,24 +6881,6 @@
         "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
       ]
     },
-    "Remaining days before the message expire": {
-      "${ remainingDays } day": [
-        "${ remainingDays } nap",
-        "${ remainingDays } nap"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } óra",
-        "${ remainingHours } óra"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } év",
-        "${ remainingYears } év"
-      ]
-    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Válasz elküldve"
@@ -7431,9 +7336,6 @@
       "Read receipt sent": [
         "Olvasási visszaigazolás elküldve"
       ],
-      "Self-destruction cancelled": [
-        "Önmegsemmisítés visszavonva"
-      ],
       "Self-destruction removed": [
         "Önmegsemmesítés eltávolítva"
       ],
@@ -7517,24 +7419,6 @@
     "Time": {
       "Yesterday": [
         "Tegnap"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } nap",
-        "${ daysCountLeft } nap"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } óra",
-        "${ hoursCountLeft } óra"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } perc",
-        "${ minutesCountLeft } perc"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } másodperc",
-        "${ secondsCountLeft } másodperc"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

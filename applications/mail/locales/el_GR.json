@@ -122,12 +122,6 @@
       "Cancel": [
         "Ακύρωση"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Κοινοποίηση, Κρυφή Κοινοποίηση"
-      ],
-      "CC BCC": [
-        "Κοιν., Κρυφή Κοιν."
-      ],
       "Change page": [
         "Αλλαγή σελίδας"
       ],
@@ -692,9 +686,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Άνοιγμα ημερολόγιου"
-      ],
       "Open composer": [
         "Άνοιγμα συντάκτη"
       ],
@@ -703,9 +694,6 @@
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
-      ],
-      "Open shop": [
-        "Ανοιχτό κατάστημα"
       ],
       "Ordered list": [
         "Ταξινομημένη λίστα"
@@ -2988,7 +2976,7 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
-        "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList }"
+        "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList } "
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
@@ -3028,8 +3016,8 @@
         "επανενεργοποιήστε το προηγούμενο κλειδί"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "Αφαιρέθηκε ομώνυμος παραλήπτης: ${ recipents }",
-        "Αφαιρέθηκαν ομώνυμοι παραλήπτες: ${ recipents }"
+        "Αφαιρέθηκε διπλότυπος παραλήπτης: ${ recipents }",
+        "Αφαιρέθηκαν διπλότυποι παραλήπτες: ${ recipents }"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -3948,9 +3936,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "Το ${ BRAND_NAME } δε βγάζει λεφτά κάνοντας κατάχρηση απόρρητου."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
         "${ calendarsToBeCreatedCount } νέα ημερολόγια"
@@ -3960,8 +3945,8 @@
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } επαφή περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
-        "${ contactCount } επαφές περιέχουν πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+        "${ contactCount } επαφή περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
@@ -4164,16 +4149,16 @@
         "Θέλετε σίγουρα να μετακινήσετε στα Διαγραμμένα όλα τα μηνύματα αυτής της τοποθεσίας;"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } συνομιλία;",
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } συνομιλίες;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } συνομιλία;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } συνομιλίες;"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } πρόχειρο;",
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } πρόχειρα;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } πρόχειρο;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } πρόχειρα;"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } μήνυμα;",
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } μηνύματα;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } μήνυμα;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } μηνύματα;"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Θέλετε σίγουρα να εξαλείψετε οριστικά αυτήν τη συνομιλία;"
@@ -4277,10 +4262,6 @@
       ],
       "Daily": [
         "Καθημερινά"
-      ],
-      "Day": [
-        "Ημέρα",
-        "Ημέρες"
       ],
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
@@ -4394,18 +4375,6 @@
       "Expiration time": [
         "Χρόνος λήξης"
       ],
-      "Expires": [
-        "Λήγει"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "Λήγει σε ${ formattedDelayShort }"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Λήγει σε λιγότερο από ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Λήγει σύντομα"
-      ],
       "file attached": [
         "attachment",
         "attachments"
@@ -4415,9 +4384,6 @@
       ],
       "Folder": [
         "Φάκελος"
-      ],
-      "For increased security, activate 2FA.": [
-        "Για αυξημένη ασφάλεια, ενεργοποιήστε το 2FA."
       ],
       "For messages newer than ${ oldestDate }": [
         "Για μηνύματα νεώτερα από ${ oldestDate }"
@@ -4446,10 +4412,6 @@
       ],
       "Hide original message": [
         "Απόκρυψη αρχικού μηνύματος"
-      ],
-      "Hour": [
-        "Ώρα",
-        "Ώρες"
       ],
       "How Hide My Email works": [
         "Πως το Hide My Email λειτουργεί"
@@ -4499,9 +4461,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
-      ],
-      "Increase storage space starting at": [
-        "Αύξηση αποθηκευτικού χώρου που αρχίζει από"
       ],
       "Indexing paused": [
         "Η δημιουργία ευρετηρίου διακόπηκε προσωρινά"
@@ -4668,9 +4627,6 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Ελέγξτε ότι είναι νόμιμο."
       ],
-      "per month.": [
-        "ανά μήνα."
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline είναι μόνο συμβατό με μορφοποίηση Απλού Κειμένου."
       ],
@@ -4834,9 +4790,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Διασφαλισμένη αποθήκευση και κοινοποίηση των αρχείων σας με την ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Θέμα"
       ],
@@ -4848,9 +4801,6 @@
       ],
       "Subject: ": [
         "Θέμα: "
-      ],
-      "Support privacy by upgrading for": [
-        "Υποστηρίξτε την ιδιωτικότητα, μέσω αναβάθμισης σε"
       ],
       "support team": [
         "ομάδα υποστήριξης"
@@ -4934,9 +4884,6 @@
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Αυτό το μήνυμα δημιουργείται αυτόματα ως απόκριση σε ένα προηγούμενο μήνυμα."
-      ],
-      "This message is expired!": [
-        "Αυτό το μήνυμα έχει λήξει!"
       ],
       "This message is from a mailing list.": [
         "Αυτό το μήνυμα προέρχεται από μια λίστα αλληλογραφίας."
@@ -5023,14 +4970,8 @@
       "Upgrade to add more addresses to your account.": [
         "Αναβαθμίστε για να προσθέσετε περισσότερες διευθύνσεις στο λογαριασμό σας."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Αναβάθμιση για να μπορείτε να ρυθμίσετε παραμέτρους αυτόματης απόκρισης διακοπών."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Για τη δημιουργία περισσότερων φακέλων, φίλτρων και διευθύνσεων, αναβαθμίστε."
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "Αναβαθμίστε για να λαμβάνετε και να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου με το δικό σας τομέα."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Αναβάθμιση για αποστολή ηλεκτρονικού ταχυδρομείου από διευθύνσεις @pm.me."
@@ -5047,9 +4988,6 @@
       "Upgrade to support privacy and get more features.": [
         "Αναβαθμίστε για να υποστηρίξετε το απόρρητο και να αποκτήσετε περισσότερες δυνατότητες."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Αναβαθμίστε για να χρησιμοποιήσετε το ${ MAIL_APP_NAME } με πελάτες τρίτου επιτραπέζιου υπολογιστή."
-      ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
       ],
@@ -5059,9 +4997,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Χρησιμοποιήστε το ${ CALENDAR_APP_NAME } για να διατηρήσετε την ατζέντα σας ιδιωτική."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Χρησιμοποιήστε συντομεύσεις πληκτρολογίου για να διαχειριστείτε το ηλεκτρονικό ταχυδρομείο σας γρηγορότερα."
       ],
@@ -5070,9 +5005,6 @@
       ],
       "Version ${ appVersion }": [
         "'Εκδοση ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Επισκεφθείτε το κατάστημά μας για να αγοράσετε εμπορεύματα ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ζητάμε συγγνώμη. Αυτό μπορεί να ήταν λάθος από την πλευρά μας. Μπορείτε να επιβεβαιώσετε ότι θέλετε να επισημάνετε αυτό το email ως νόμιμο;"
@@ -5139,9 +5071,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "Μπορείτε να χρησιμοποιήσετε το ${ VPN_APP_NAME } δωρεάν σήμερα."
       ],
       "You cannot reply from the invited address.": [
         "Δεν μπορείτε να απαντήσετε από την προσκεκλημένη διεύθυνση."
@@ -5234,15 +5163,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Το μήνυμά σας θα διαγραφεί από τα Εισερχόμενα του παραλήπτη και τον φάκελο Απεσταλμένων σας σήμερα την ${ dateString } στις ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Το μήνυμά σας θα διαγραφεί από τα Εισερχόμενα του παραλήπτη και τον φάκελο Απεσταλμένων σας σήμερα στις ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Το μήνυμά σας θα διαγραφεί από τα Εισερχόμενα του παραλήπτη και τον φάκελο Απεσταλμένων σας αύριο στις ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Το μήνυμά σας θα λήξει σε ${ numberOfDays } ημέρα.",
@@ -7265,32 +7185,14 @@
         "Χθες"
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } ημέρα",
-        "${ daysCountLeft } ημέρες"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } ώρα",
-        "${ hoursCountLeft } ώρες"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } λεπτό",
-        "${ minutesCountLeft } λεπτά"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } δευτερόλεπτο",
-        "${ secondsCountLeft } δευτερόλεπτα"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
-        "${ hours } ώ.",
-        "${ hours } ώ."
+        "${ hours } ώ",
+        "${ hours } ώ"
       ],
       "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 ώ.",
-        "${ hoursInt }.5 ώ."
+        "${ hoursInt }.5 ώ",
+        "${ hoursInt }.5 ώ"
       ],
       "${ minutes } min": [
         "${ minutes } λ.",
@@ -7927,8 +7829,8 @@
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδα επαφών;",
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } ομάδες επαφών;"
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδα επαφών;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδες επαφών;"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",

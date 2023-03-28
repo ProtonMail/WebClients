@@ -2915,6 +2915,9 @@
       "Error in one of the conditions": [
         "Eroare în una dintre condiții"
       ],
+      "Expired": [
+        "Expirat"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nu s-a reușit obținerea unei sesiuni active. Vă rugăm să ${ refresh } sau reîncercați mai târziu."
       ],
@@ -3006,9 +3009,6 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
-      ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Nu există cheie publică pentru adresa ${ BRAND_NAME }."
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
@@ -3494,6 +3494,9 @@
       ],
       "sign in": [
         "autentificare"
+      ],
+      "Sign in to verify": [
+        "Autentificați-vă pentru verificare"
       ],
       "There was a problem removing your email address.": [
         "A existat o problemă la eliminarea adresei de e-mail."
@@ -4698,6 +4701,9 @@
       "Are you sure you want to delete this filter?": [
         "Sigur doriți ștergerea acestui filtru?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Sigur doriți să ștergeți acest dosar? Toate sub folderele vor fi și ele șterse."
+      ],
       "Are you sure you want to delete this label?": [
         "Sigur doriţi să ştergeţi această etichetă?"
       ],
@@ -5651,6 +5657,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Adresa de e-mail pe care o plasați în partea de sus a listei este adresa de e-mail implicită. Pentru a le reordona, trageți și plasați adresele în poziția dorită."
       ],
+      "The email verification link has expired. Please sign in to resend a verification link.": [
+        "Linkul de verificare a emailului a expirat. Reconectați-vă pentru a retrimite linkul de verificare."
+      ],
       "The following address is available:": [
         "Este disponibilă următoarea adresă:"
       ],
@@ -5728,6 +5737,9 @@
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Acest cod de acces nu va fi disponibil după ce închideți această fereastră și nu ar trebui să-l partajați cu nimeni."
+      ],
+      "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
+        "Acest link de dezabonare a expirat. Redeschideți un mesaj mai recent de la această listă."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
@@ -5852,6 +5864,9 @@
       "Unsaved changes": [
         "Modificări nesalvate"
       ],
+      "Unsubscribe link expired": [
+        "Linkul de dezabonare a expirat"
+      ],
       "Unsupported file": [
         "Fişier nesuportat"
       ],
@@ -5884,6 +5899,9 @@
       ],
       "Verification can take a few minutes.": [
         "Verificarea poate dura câteva minute."
+      ],
+      "Verification link expired": [
+        "Linkul de verificare a expirat"
       ],
       "Verification may take a few minutes.": [
         "Verificarea ar putea dura câteva minute."
@@ -9460,7 +9478,7 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Pentru a invita utilizatori non-${ BRAND_NAME } partajați calendarul cu o legătură."
       ]
     },
@@ -9667,14 +9685,6 @@
         "VPN de mare viteză pe un dispozitiv",
         "VPN de mare viteză pe ${ maxVpn } dispozitive",
         "VPN de mare viteză pe ${ maxVpn } de dispozitive"
-      ]
-    },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Gestionați-vă abonamentul pe ${ subscriptionManagerShort }"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Abonarea s-a efectuat prin achiziția din aplicație. Pentru a vă gestiona abonamentul actual trebuie să accesați secțiunea «Abonamente» din contul ${ subscriptionManager }."
       ]
     },
     "Subscription price": {
@@ -10759,6 +10769,9 @@
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
       ],
+      "Sign in with 2FA": [
+        "Autentifică-te cu 2FA"
+      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -11137,6 +11150,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Semnare automată toate mesajele trimise, astfel încât utilizatorii să vă poată verifica autenticitatea mesajelor. Aceasta se poate face în combinație cu setările implicite PGP care pot fi configurate mai jos."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Criptat în ambele părți"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Criptat în ambele părți cu contacte verificate"
       ]
     },
     "Tor out of date": {

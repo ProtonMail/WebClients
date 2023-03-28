@@ -127,12 +127,6 @@
       "Cancel": [
         "キャンセル"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "CC, BCC"
-      ],
-      "CC BCC": [
-        "CC BCC"
-      ],
       "Change page": [
         "ページの変更"
       ],
@@ -694,9 +688,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } を開く"
       ],
-      "Open calendar": [
-        "カレンダーを開く"
-      ],
       "Open composer": [
         "作成画面を開く"
       ],
@@ -705,9 +696,6 @@
       ],
       "Open navigation": [
         "ナビゲーションを開く"
-      ],
-      "Open shop": [
-        "ショップを開く"
       ],
       "Ordered list": [
         "順序付きリスト"
@@ -1582,11 +1570,6 @@
       ],
       "Event in progress": [
         "予定が開催中です"
-      ]
-    },
-    "Cancel self-destruction of the message": {
-      "Cancel": [
-        "キャンセル"
       ]
     },
     "Collapsible tooltip": {
@@ -4181,9 +4164,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } がプライバシーを悪用して資金を入手することはありません。"
-      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
@@ -4469,9 +4449,6 @@
       "Daily": [
         "毎日"
       ],
-      "Days": [
-        "日"
-      ],
       "Default email application": [
         "既定のメールアプリ"
       ],
@@ -4580,18 +4557,6 @@
       "Expiration time": [
         "有効期限"
       ],
-      "Expires": [
-        "期限"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "${ formattedDelayShort } に期限が切れます"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "${ formattedDelayShort } 以内に期限が切れます"
-      ],
-      "Expires soon": [
-        "もうすぐ期限切れになります"
-      ],
       "files attached": [
         "attachment"
       ],
@@ -4600,9 +4565,6 @@
       ],
       "Folder": [
         "フォルダー"
-      ],
-      "For increased security, activate 2FA.": [
-        "さらなるセキュリティのため、2FA をアクティブにします。"
       ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } 以降のメッセージ"
@@ -4630,9 +4592,6 @@
       ],
       "Hide original message": [
         "元のメッセージを非表示"
-      ],
-      "Hours": [
-        "時間"
       ],
       "How Hide My Email works": [
         "Hide My Email の仕組み"
@@ -4675,9 +4634,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
-      ],
-      "Increase storage space starting at": [
-        "から容量を増やすことができます"
       ],
       "Indexing paused": [
         "処理が一時停止されました"
@@ -4844,9 +4800,6 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "システムはこのメッセージを迷惑メールとしてフラグを立てました。これが正当なものであるか確認してください。"
       ],
-      "per month.": [
-        "毎月。"
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline は Plain Text 形式にのみ対応しています。"
       ],
@@ -5009,9 +4962,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "このメッセージは存在しないか有効期限切れです。"
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "${ DRIVE_APP_NAME } を使用してファイルを保存、シェアしました。"
-      ],
       "Subject": [
         "件名"
       ],
@@ -5023,9 +4973,6 @@
       ],
       "Subject: ": [
         "件名: "
-      ],
-      "Support privacy by upgrading for": [
-        "こちらにアップグレードしてプライバシーを支援 "
       ],
       "support team": [
         "サポートチーム"
@@ -5120,9 +5067,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "このメッセージは以前のメッセージに対する自動応答です。"
       ],
-      "This message is expired!": [
-        "メッセージの有効期限が切れました!"
-      ],
       "This message is from a mailing list.": [
         "これはメーリングリストからのメッセージです。"
       ],
@@ -5201,14 +5145,8 @@
       "Upgrade to add more addresses to your account.": [
         "アップグレードして更なるアドレスを手に入れましょう。"
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "アップデートして休暇中の自動返信を構成します"
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "アップグレードしてさらなるフォルダー、フィルター、アドレスを作成します。"
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "アップグレードすると自分のドメインでメールをホストすることができます。"
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "アップグレードして @pm.me アドレスからメールを送信します。"
@@ -5225,9 +5163,6 @@
       "Upgrade to support privacy and get more features.": [
         "さらなる機能を入手しプライバシーをサポートするためにアップグレードしてください。"
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "アップグレードしてサードパーティのデスクトップクライアントで ${ MAIL_APP_NAME } を使用します。"
-      ],
       "Upload picture": [
         "写真をアップロード"
       ],
@@ -5237,9 +5172,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "${ CALENDAR_APP_NAME } を使うことで予定表をプライベートに保つことができます。"
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "キーボードショートカットを使ってメールを素早く管理します。"
       ],
@@ -5248,9 +5180,6 @@
       ],
       "Version ${ appVersion }": [
         "バージョン ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "ショップで ${ BRAND_NAME } の商品を手に入れましょう。"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "申し訳ございません。スパム判定を誤ってしまった可能性があります。このメールを迷惑メールから除外しますか？"
@@ -5317,9 +5246,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "いますぐ ${ VPN_APP_NAME } を無料で使うことができます。"
       ],
       "You cannot reply from the invited address.": [
         "招待されたアドレスから返信することはできません。"
@@ -5404,15 +5330,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "あなたのメッセージは、${ dateString } の ${ formattedTime } に受信者の受信トレイおよびあなたの送信済みフォルダーから削除されます"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "あなたのメッセージは、今日の ${ formattedTime } に受信者の受信トレイおよびあなたの送信済みフォルダーから削除されます"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "あなたのメッセージは、明日の ${ formattedTime } に受信者の受信トレイおよびあなたの送信済みフォルダーから削除されます"
       ],
       "Your message will expire in ${ numberOfDays } days.": [
         "メッセージの有効期限は残り ${ numberOfDays } 日です。"
@@ -7036,21 +6953,6 @@
         "注意: 「適用」をクリックするとサービスが再読み込みされます。"
       ]
     },
-    "Remaining days before the message expire": {
-      "${ remainingDays } days": [
-        "${ remainingDays } 日"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hours": [
-        "${ remainingHours } 時間"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } years": [
-        "${ remainingYears } 年"
-      ]
-    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "回答を送信しました"
@@ -7555,20 +7457,6 @@
     "Time": {
       "Yesterday": [
         "昨日"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } days": [
-        "${ daysCountLeft } 日"
-      ],
-      "${ hoursCountLeft } hours": [
-        "${ hoursCountLeft } 時間"
-      ],
-      "${ minutesCountLeft } minutes": [
-        "${ minutesCountLeft } 分"
-      ],
-      "${ secondsCountLeft } seconds": [
-        "${ secondsCountLeft } 秒"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

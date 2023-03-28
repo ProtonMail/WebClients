@@ -2718,9 +2718,6 @@
       "No active sessions": [
         "Δεν υπάρχουν ενεργές συνεδρίες"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Κανένα δημόσιο κλειδί για τη ${ BRAND_NAME } διεύθυνση"
-      ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ],
@@ -8020,11 +8017,6 @@
         "Ετικέτες"
       ]
     },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Για να προσκαλέσετε μη ${ BRAND_NAME } χρήστες, κοινοποιήστε το ημερολόγιό σας με έναν σύνδεσμο"
-      ]
-    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Έχετε ξεπεράσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους ανά ημερολόγιο",
@@ -8517,12 +8509,12 @@
     },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
-        "${ hours } ώ.",
-        "${ hours } ώ."
+        "${ hours } ώ",
+        "${ hours } ώ"
       ],
       "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 ώ.",
-        "${ hoursInt }.5 ώ."
+        "${ hoursInt }.5 ώ",
+        "${ hoursInt }.5 ώ"
       ],
       "${ minutes } min": [
         "${ minutes } λ.",

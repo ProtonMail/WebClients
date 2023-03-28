@@ -4407,14 +4407,6 @@
         "Szybki VPN na ${ maxVpn } urządzeń"
       ]
     },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Zarządzaj subskrypcją w ${ subscriptionManagerShort }"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Subskrypcja została zakupiona w aplikacji. Aby zarządzać nią, przejdź do sekcji Subskrypcja w koncie ${ subscriptionManager }"
-      ]
-    },
     "Subscription price": {
       "For": [
         "za"
@@ -4875,6 +4867,9 @@
       ],
       "Sign in": [
         "Zaloguj się"
+      ],
+      "Sign in with 2FA": [
+        "Zaloguj się z uwierzytelnianiem dwustopniowym"
       ],
       "Sign out": [
         "Wyloguj"

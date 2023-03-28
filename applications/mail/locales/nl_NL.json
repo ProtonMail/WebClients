@@ -130,12 +130,6 @@
       "Cancel": [
         "Annuleren"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "CC, BCC"
-      ],
-      "CC BCC": [
-        "CC BCC"
-      ],
       "Change page": [
         "Pagina veranderen"
       ],
@@ -495,6 +489,9 @@
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
       ],
+      "In the morning": [
+        "'s Ochtends"
+      ],
       "Inline": [
         "Doorlopend"
       ],
@@ -700,17 +697,11 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Open ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Agenda openen"
-      ],
       "Open composer": [
         "Open het opstelvenster"
       ],
       "Open navigation": [
         "Navigatie openen"
-      ],
-      "Open shop": [
-        "Open winkel"
       ],
       "Ordered list": [
         "Genummerde lijst"
@@ -1614,14 +1605,6 @@
       ],
       "Event in progress": [
         "Gebeurtenis in uitvoering"
-      ]
-    },
-    "Cancel self-destruction of the message": {
-      "Cancel": [
-        "Annuleren"
-      ],
-      "Cancel self-destruction": [
-        "Annuleer zelfvernietiging"
       ]
     },
     "Collapsible tooltip": {
@@ -3018,6 +3001,9 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
+      "A problem occurred, please try again.": [
+        "Er is een probleem opgetreden, probeer het opnieuw."
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -3208,6 +3194,9 @@
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
+      "Please activate your search again": [
+        "Activeer het zoeken opnieuw"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
@@ -3318,6 +3307,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Er is een probleem opgetreden met het zoeken naar inhoud. In plaats daarvan is de standaard zoekopdracht gebruikt."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Er was een probleem bij het bijwerken van uw lokale berichten, ze zullen opnieuw gedownload worden om inhoud doorzoeken te kunnen herinschakelen"
       ],
       "There was an error when exporting the contacts vCards": [
         "Er is een fout opgetreden bij het exporteren van de contacten vCards"
@@ -4282,9 +4274,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } verdient geen geld door privacy te misbruiken."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nieuwe agenda",
         "${ calendarsToBeCreatedCount } nieuwe agenda's"
@@ -4491,6 +4480,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Weet u zeker dat u alle berichten met dit label wilt verwijderen?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Weet u zeker dat u deze map wilt verwijderen? Alle onderliggende mappen zullen ook worden verwijderd."
+      ],
       "Are you sure you want to delete this label?": [
         "Weet u zeker dat u dit label wilt verwijderen?"
       ],
@@ -4615,10 +4607,6 @@
       "Daily": [
         "Dagelijks"
       ],
-      "Day": [
-        "Dag",
-        "Dagen"
-      ],
       "Default email application": [
         "Standaard e-mailapplicatie"
       ],
@@ -4637,6 +4625,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
+      ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Bericht ${ currentProgress } van de ${ totalProgress } downloaden"
       ],
       "Draft": [
         "Concept"
@@ -4731,18 +4722,6 @@
       "Expiration time": [
         "Vervaltijd"
       ],
-      "Expires": [
-        "Verloopt"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "Verloopt binnen ${ formattedDelayShort }"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Verloopt binnen minder dan ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Verloopt binnenkort"
-      ],
       "file attached": [
         "attachment",
         "attachments"
@@ -4752,9 +4731,6 @@
       ],
       "Folder": [
         "Map"
-      ],
-      "For increased security, activate 2FA.": [
-        "Activeer 2FA voor meer veiligheid."
       ],
       "For messages newer than ${ oldestDate }": [
         "Voor berichten nieuwer dan ${ oldestDate }"
@@ -4786,10 +4762,6 @@
       ],
       "Hide original message": [
         "Verberg origineel bericht"
-      ],
-      "Hour": [
-        "Uur",
-        "Uren"
       ],
       "How Hide My Email works": [
         "Zo werkt Hide My Email"
@@ -4842,9 +4814,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
-      ],
-      "Increase storage space starting at": [
-        "Vergroot opslagruimte vanaf"
       ],
       "Indexing paused": [
         "Indexeren gepauzeerd"
@@ -4933,6 +4902,9 @@
       "Message sent.": [
         "Bericht verzonden."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Bericht zal 's ochtends worden verzonden om ${ formattedTime }"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Bericht zal worden verzonden op ${ dateString } om ${ formattedTime }"
       ],
@@ -5010,9 +4982,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
-      ],
-      "per month.": [
-        "per maand."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
@@ -5183,9 +5152,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Bewaar en deel bestanden veilig met ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Onderwerp"
       ],
@@ -5197,9 +5163,6 @@
       ],
       "Subject: ": [
         "Onderwerp: "
-      ],
-      "Support privacy by upgrading for": [
-        "Ondersteuning van privacy door opwaardering voor"
       ],
       "support team": [
         "ondersteuningsteam"
@@ -5221,6 +5184,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Het opgestelde concept gaat verloren als u de pagina verlaat."
+      ],
+      "The local database is being prepared": [
+        "De lokale database wordt voorbereid"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Het oorspronkelijke bericht dat u probeert door te sturen/te reageren, is in het proces van verzonden worden. Als u doorgaat, kunt u het oorspronkelijke bericht niet meer ongedaan maken."
@@ -5252,6 +5218,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Deze actie zal de meest recente berichten downloaden zodat ze lokaal kunnen worden doorzocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -5293,9 +5262,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Dit bericht is automatisch aangemaakt als reactie op een voorgaand bericht."
       ],
-      "This message is expired!": [
-        "Dit bericht is verlopen!"
-      ],
       "This message is from a mailing list.": [
         "Dit bericht komt van een mailinglist."
       ],
@@ -5312,6 +5278,9 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Dit bericht zal worden verplaatst naar Concepten, zodat u het kunt bewerken. U zult opnieuw moeten plannen wanneer het verzonden wordt."
       ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Dit bericht zal 's ochtends worden verzonden om ${ formattedTime }"
+      ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Dit bericht zal worden verzonden op ${ dateString } om ${ formattedTime }"
       ],
@@ -5326,18 +5295,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Dit bericht verloopt op ${ formattedDate }"
-      ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "Dit bericht zal zichzelf vernietigen over ${ formattedDelay }"
-      ],
-      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
-        "Dit bericht zal zichzelf vernietigen op ${ dateString } om ${ formattedTime }"
-      ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "Dit bericht zal zichzelf vernietigen vandaag om ${ formattedTime }"
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "Dit bericht zal zichzelf vernietigen morgen om ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Deze openbare sleutel wordt automatisch gebruikt voor het versturen van versleutelde e-mailberichten naar dit adres."
@@ -5387,20 +5344,17 @@
       "Updating message content search...": [
         "Zoeken naar berichtinhoud bijwerken..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Uw lokale berichten worden geüpdatet, berichtinhoud kan niet doorzocht worden tijdens deze update"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
       "Upgrade to add more addresses to your account.": [
         "Upgrade om meer adressen aan uw account toe te voegen."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Upgrade om een vakantie auto-responder te configureren."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Upgrade om meer mappen, filters en adressen te maken."
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "Upgrade om e-mails van uw eigen domeinnaam te hosten."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Upgrade om e-mails te versturen van @pm.me adressen."
@@ -5417,9 +5371,6 @@
       "Upgrade to support privacy and get more features.": [
         "Upgrade om privacy te ondersteunen en meer functies te krijgen."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Upgrade om ${ MAIL_APP_NAME } te gebruiken met desktop clients van derden."
-      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -5429,9 +5380,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Gebruik ${ CALENDAR_APP_NAME } om uw agenda privé te houden."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Gebruik sneltoetsen om uw e-mails sneller te beheren."
       ],
@@ -5440,9 +5388,6 @@
       ],
       "Version ${ appVersion }": [
         "Versie ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Bezoek onze winkel voor ${ BRAND_NAME } merchandise."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Onze excuses. Dit zou een vergissing van onze kant kunnen zijn. Kunt u bevestigen dat u deze e-mail als een legitiem e-mailadres wilt markeren?"
@@ -5512,9 +5457,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "U kan ${ VPN_APP_NAME } vandaag gratis gebruiken."
       ],
       "You cannot reply from the invited address.": [
         "U kunt niet antwoorden vanaf het uitgenodigde adres."
@@ -5607,15 +5549,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Uw bericht zal verwijderd worden uit de ontvangers inbox en uw verzonden map op ${ dateString } om ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Uw bericht zal verwijderd worden uit de verzender's inbox en uw verzonden map vandaag om ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Uw bericht zal verwijderd worden uit de verzender's inbox en uw verzonden map morgen om ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Uw bericht zal verlopen binnen ${ numberOfDays } dag.",
@@ -7284,29 +7217,6 @@
         "Opmerking: de service wordt herladen nadat u op de knop Toepassen klikt."
       ]
     },
-    "Remaining days before the message expire": {
-      "${ remainingDays } day": [
-        "${ remainingDays } dag",
-        "${ remainingDays } dagen"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } uur",
-        "${ remainingHours } uren"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<1 uur"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } jaar",
-        "${ remainingYears } jaren"
-      ]
-    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Antwoord verzonden"
@@ -7993,9 +7903,6 @@
       "Read receipt sent": [
         "Ontvangstbewijs verzonden"
       ],
-      "Self-destruction cancelled": [
-        "Zelfvernietiging geannuleerd"
-      ],
       "Self-destruction removed": [
         "Zelfvernietiging verwijderd"
       ],
@@ -8079,24 +7986,6 @@
     "Time": {
       "Yesterday": [
         "Gisteren"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dag",
-        "${ daysCountLeft } dagen"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } uur",
-        "${ hoursCountLeft } uren"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minuut",
-        "${ minutesCountLeft } minuten"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } seconde",
-        "${ secondsCountLeft } seconden"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -8227,8 +8116,14 @@
       "Create folder": [
         "Map maken"
       ],
+      "Create folder \"${ search }\"": [
+        "Map \"${ search }\" aanmaken"
+      ],
       "Create label": [
         "Label maken"
+      ],
+      "Create label \"${ search }\"": [
+        "Label \"${ search }\" aanmaken"
       ],
       "Create new group": [
         "Nieuwe groep aanmaken"

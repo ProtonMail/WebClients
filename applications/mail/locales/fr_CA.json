@@ -122,12 +122,6 @@
       "Cancel": [
         "Annuler"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Copie carbone, copie carbone invisible"
-      ],
-      "CC BCC": [
-        "CC CCI"
-      ],
       "Change page": [
         "Changer de page"
       ],
@@ -689,9 +683,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Ouvrir ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Ouvrir le calendrier"
-      ],
       "Open composer": [
         "Ouvrir l'éditeur"
       ],
@@ -700,9 +691,6 @@
       ],
       "Open navigation": [
         "Ouvrir la navigation"
-      ],
-      "Open shop": [
-        "Ouvrir la boutique"
       ],
       "Ordered list": [
         "Liste ordonnée"
@@ -3912,9 +3900,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } ne fait aucun profit en abusant de la vie privée."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nouveau calendrier",
         "${ calendarsToBeCreatedCount } nouveaux calendriers"
@@ -4219,10 +4204,6 @@
       "Daily": [
         "Quotidiennement"
       ],
-      "Day": [
-        "Jour",
-        "Jours"
-      ],
       "Default email application": [
         "Application de messagerie par défaut"
       ],
@@ -4332,18 +4313,6 @@
       "Expiration time": [
         "Délai d’expiration"
       ],
-      "Expires": [
-        "Expire"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "Expire dans ${ formattedDelayShort }"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Expire dans moins de ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Expire bientôt"
-      ],
       "file attached": [
         "attachment",
         "attachments"
@@ -4353,9 +4322,6 @@
       ],
       "Folder": [
         "Dossier"
-      ],
-      "For increased security, activate 2FA.": [
-        "Pour une sécurité accrue, activez la double authentification (A2F)."
       ],
       "For messages newer than ${ oldestDate }": [
         "Pour les messages plus récents que ${ oldestDate }"
@@ -4384,10 +4350,6 @@
       ],
       "Hide original message": [
         "Masquer le message d'origine"
-      ],
-      "Hour": [
-        "Heure",
-        "Heures"
       ],
       "How Hide My Email works": [
         "Comment fonctionne Hide My Email"
@@ -4430,9 +4392,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
-      ],
-      "Increase storage space starting at": [
-        "Augmentez l'espace de stockage à partir de"
       ],
       "Indexing paused": [
         "Indexation en pause"
@@ -4599,9 +4558,6 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Notre système a marqué ce message comme étant une tentative d'hameçonnage. Veuillez vérifier qu'il est légitime."
       ],
-      "per month.": [
-        "par mois."
-      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline est uniquement compatible avec le format texte brut."
       ],
@@ -4765,9 +4721,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Stockez et partagez des fichiers en toute sécurité avec ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Objet"
       ],
@@ -4779,9 +4732,6 @@
       ],
       "Subject: ": [
         "Objet: "
-      ],
-      "Support privacy by upgrading for": [
-        "Soutenez la vie privée en passant à"
       ],
       "support team": [
         "équipe d'assistance"
@@ -4869,9 +4819,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Ce message a été généré automatiquement en réponse à un message précédent."
       ],
-      "This message is expired!": [
-        "Ce message a expiré!"
-      ],
       "This message is from a mailing list.": [
         "Ce message provient d’une liste de diffusion."
       ],
@@ -4954,14 +4901,8 @@
       "Upgrade to add more addresses to your account.": [
         "Passez à l’offre supérieure pour ajouter plus d'adresses à votre compte."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Passez à l’offre supérieure pour configurer une réponse automatique en cas d'absence."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Passez à l’offre supérieure pour créer plus de dossiers, de filtres et d’adresses."
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "Passez à l’offre supérieure pour héberger des courriels de votre propre nom de domaine."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Passez à l’offre supérieure pour envoyer des messages depuis des adresses @pm.me."
@@ -4978,9 +4919,6 @@
       "Upgrade to support privacy and get more features.": [
         "Passez à l’offre supérieure pour soutenir la vie privée et obtenir plus de fonctionnalités."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Passez à l’offre supérieure pour utiliser ${ MAIL_APP_NAME } avec des logiciels client tiers."
-      ],
       "Upload picture": [
         "Téléverser une image"
       ],
@@ -4990,17 +4928,11 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Utilisez ${ CALENDAR_APP_NAME } pour garder votre agenda privé."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilisez les raccourcis clavier pour gérer vos messages plus rapidement."
       ],
       "Using SimpleLogin is easy": [
         "Utiliser SimpleLogin est facile"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Rendez-vous dans notre boutique pour vous procurer des produits dérivés ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Nous sommes désolés. Ceci pourrait être une erreur de notre part. Pouvez-vous confirmer que vous souhaitez marquer ce courriel comme étant légitime?"
@@ -5067,9 +4999,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes lorsque de nouveaux messages arrivent dans ce dossier."
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "Vous pouvez utiliser ${ VPN_APP_NAME } gratuitement aujourd'hui."
       ],
       "You cannot reply from the invited address.": [
         "Vous ne pouvez pas répondre à partir de l'adresse invitée."
@@ -5162,15 +5091,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi le ${ dateString } à ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi aujourd'hui à ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi aujourd'hui à ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Votre message expirera dans ${ numberOfDays } jour.",
@@ -7236,20 +7156,6 @@
     "Time": {
       "Yesterday": [
         "Hier"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } jour",
-        "${ daysCountLeft } jours"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } heure",
-        "${ hoursCountLeft } heures"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } seconde",
-        "${ secondsCountLeft } secondes"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

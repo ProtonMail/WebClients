@@ -4292,14 +4292,6 @@
         "VPN de gran velocidad en ${ maxVpn } dispositivos"
       ]
     },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Gestione su suscripción en ${ subscriptionManagerShort }"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Su suscripción fue realizada mediante compra dentro de la app. Para gestionar su suscripción actual, navegue a la sección de Suscripción en su cuenta de ${ subscriptionManager }."
-      ]
-    },
     "Subscription price": {
       "For": [
         "Al"
@@ -4760,6 +4752,9 @@
       ],
       "Sign in": [
         "Iniciar sesión"
+      ],
+      "Sign in with 2FA": [
+        "Iniciar sesión 2FA"
       ],
       "Sign out": [
         "Cerrar sesión"

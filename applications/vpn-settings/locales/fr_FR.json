@@ -2387,7 +2387,7 @@
         "Le fichier n'est pas pris en charge."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Passez à la version supérieure pour bénéficier de fonctions, de produits et d'un espace de stockage premium à un tarif avantageux"
+        "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position : ${ formattedBestServerName }"
@@ -3586,7 +3586,7 @@
         "VPN haute sécurité avec un réseau mondial"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "Avec cette fonction, vous pouvez accéder à plus d'un réseau en même temps. Vous pouvez par exemple regarder un film en streaming depuis un autre pays que celui où vous vous trouvez tout en consultant des informations locales (du pays où vous vous trouvez)."
+        "Avec cette fonctionnalité, vous pouvez accéder à plus d'un réseau en même temps. Vous pouvez par exemple regarder un film en streaming depuis un autre pays que celui où vous vous trouvez tout en consultant des informations locales (du pays où vous vous trouvez)."
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Configurez des réponses automatiques pour vos messages entrants."
@@ -3695,7 +3695,7 @@
         "Partagez vos fichiers ou dossiers avec qui vous voulez grâce à des liens sécurisés et partageables."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "NetShield est une fonction spécialement conçue pour protéger votre appareil et accélérer votre navigation en bloquant les publicités, traqueurs et logiciels malveillants."
+        "NetShield est une fonctionnalité spécialement conçue pour protéger votre appareil et accélérer votre navigation en bloquant les publicités, traqueurs et logiciels malveillants."
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Commencez avec ${ freeStorageSize } et débloquez plus d'espace de stockage au fur et à mesure. L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
@@ -4299,11 +4299,32 @@
       ]
     },
     "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Gérez votre abonnement sur ${ subscriptionManagerShort }."
+      "Got it": [
+        "J'ai compris"
       ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Votre abonnement a été effectué par le biais d'un achat dans l'application. Pour gérer votre abonnement actuel, vous devez vous rendre dans la section Abonnement de votre compte ${ subscriptionManager }."
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Il vous suffit de vous connecter à votre compte Apple App Store, puis d'appuyer sur ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Il vous suffit de vous connecter à votre compte Play Store, puis d'appuyer sur ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gérez votre abonnement sur ${ subscriptionManager }."
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "L'abonnement est géré par ${ subscriptionManager }."
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "L'abonnement de l'utilisateur ID-${ userId } a été effectué par le biais d'un achat dans l'application. Pour gérer l'abonnement, l'utilisateur doit se rendre dans la section Abonnement de son compte ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Abonnements"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Votre abonnement a été acheté avec une application Android. Pour apporter des modifications à votre abonnement ou mettre à jour vos données de paiement, vous devez donc vous rendre sur le Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Votre abonnement a été acheté avec une application iOS. Pour apporter des modifications à votre abonnement ou mettre à jour vos données de paiement, vous devez donc vous rendre sur l'App Store d'Apple."
       ]
     },
     "Subscription price": {
@@ -4334,7 +4355,7 @@
         "Notre système ne vous facturera plus de manière automatique en utilisant ce moyen de paiement, mais votre abonnement sera toujours renouvelé à la fin du cycle de facturation. Si vous voulez modifier votre abonnement, vous devez toujours le faire vous-même avant la fin de la période de facturation. De plus, si vous oubliez de faire un paiement manuel et que le paiement automatique est désactivé pour tous les moyens de paiement, nous pourrions rétrograder votre compte à un abonnement inférieur de manière automatique, ce qui entraînera la perte de nombreuses fonctionnalités."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Notre système n'utilisera plus ce moyen de paiement pour effectuer des prélèvements automatiques, mais votre abonnement sera toujours renouvelé à la fin de la période de facturation. Si vous voulez modifier votre abonnement, vous devez toujours le faire vous-même avant la fin de la période de facturation. Nous ne pouvons pas rétrograder votre abonnement de manière automatique, car si vous avez dépassé le quota d'espace de stockage de l'abonnement gratuit ou si vous utilisez d'autres fonctions payantes, nous ne pouvons pas supprimer automatiquement des fichiers, des messages ou d'autres données à votre place. Si vous désactivez le paiement automatique, n'oubliez pas de payer votre prochaine facture d'abonnement avant la date d'échéance pour éviter la suspension de votre compte."
+        "Notre système n'utilisera plus ce moyen de paiement pour effectuer des prélèvements automatiques, mais votre abonnement sera toujours renouvelé à la fin de la période de facturation. Si vous voulez modifier votre abonnement, vous devez toujours le faire vous-même avant la fin de la période de facturation. Vous ne pouvez pas passer automatiquement à un abonnement inférieur car si vous avez dépassé le quota d'espace de stockage de l'abonnement gratuit ou si vous utilisez d'autres fonctions payantes, nous ne pouvons pas supprimer automatiquement des fichiers, des messages ou d'autres données à votre place. Si vous désactivez le paiement automatique, n'oubliez pas de payer la prochaine facture de votre abonnement avant la date d'échéance pour éviter la suspension de votre compte."
       ]
     },
     "Subscription saving": {
@@ -4766,6 +4787,9 @@
       ],
       "Sign in": [
         "Se connecter"
+      ],
+      "Sign in with 2FA": [
+        "Se connecter avec l'authentification à deux facteurs (A2F)"
       ],
       "Sign out": [
         "Se déconnecter"
