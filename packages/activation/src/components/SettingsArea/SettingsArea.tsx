@@ -30,7 +30,7 @@ const SettingsArea = ({ config }: Props) => {
             ) : (
                 <PrivateMainSettingsArea config={config}>
                     <SettingsSectionWide>
-                        <SettingsParagraph data-testId="SettingsArea:forwardSection">
+                        <SettingsParagraph data-testid="SettingsArea:forwardSection">
                             {c('Info')
                                 .t`Forward incoming mail from another account to your secure ${MAIL_APP_NAME} inbox.`}
                         </SettingsParagraph>

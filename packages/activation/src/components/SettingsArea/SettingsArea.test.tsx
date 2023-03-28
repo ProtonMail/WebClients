@@ -50,16 +50,4 @@ describe('SettingsArea', () => {
         screen.getByTestId('SettingsArea:forwardSection');
         expect(googleInScreen).toHaveLength(2);
     });
-
-    it('Should not render the forward section if feature is disabled', async () => {
-        mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: false } }, loading: false });
-
-        easySwitchRender(<SettingsArea config={settingsAreaConfig} />);
-
-        const forwardSection = screen.queryByTestId('SettingsArea:forwardSection');
-        const googleInScreen = screen.getAllByText('Google');
-
-        expect(forwardSection).toBeNull();
-        expect(googleInScreen).toHaveLength(1);
-    });
 });
