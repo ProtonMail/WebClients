@@ -10,10 +10,10 @@ import { getUpgradedPlan } from '@proton/shared/lib/helpers/subscription';
 import { canPay } from '@proton/shared/lib/user/helpers';
 
 import broadcast, { MessageType } from '../broadcast';
-import LiteBox from './LiteBox';
-import LiteLoaderPage from './LiteLoaderPage';
-import SubscribeAccountDone from './SubscribeAccountDone';
-import { SubscribeType } from './subscribeInterface';
+import LiteBox from '../components/LiteBox';
+import LiteLoaderPage from '../components/LiteLoaderPage';
+import SubscribeAccountDone from '../components/SubscribeAccountDone';
+import { SubscribeType } from '../types/SubscribeType';
 
 interface Props {
     redirect?: string | undefined;

@@ -2,9 +2,9 @@ import { ConfigProvider, StandardErrorPage, SubscriptionModalProvider } from '@p
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
-import DeleteAccount from './DeleteAccount';
-import SubscribeAccount from './SubscribeAccount';
-import VpnBlackFriday from './VpnBlackFriday';
+import DeleteAccount from './actions/DeleteAccount';
+import SubscribeAccount from './actions/SubscribeAccount';
+import VpnBlackFriday from './actions/VpnBlackFriday';
 import { SupportedActions } from './helper';
 
 interface Props {
