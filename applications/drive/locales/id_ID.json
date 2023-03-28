@@ -292,6 +292,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Go to Drive": [
+        "Tuju Drive"
+      ],
       "Go to label": [
         "Tuju label"
       ],
@@ -1869,6 +1872,9 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
+      "A problem occurred, please try again.": [
+        "Terdapat suatu masalah, silakan coba lagi."
+      ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
@@ -1991,6 +1997,9 @@
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
+      ],
+      "Please activate your search again": [
+        "Silakan aktifkan kembali pencarian konten Anda"
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
@@ -3148,6 +3157,9 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
       ],
+      "Free forever": [
+        "Selamanya gratis"
+      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -3505,6 +3517,9 @@
       "support team": [
         "tim dukungan"
       ],
+      "Swiss encrypted file storage": [
+        "Layanan penyimpanan berkas terenkripsi dari Swiss"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
       ],
@@ -3667,6 +3682,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pada saat Anda menyiapkan otentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
       ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "Dengan ${ DRIVE_APP_NAME }, data Anda terlindungi oleh enkripsi end-to-end. Data Anda hanya akan dapat didekripsi oleh diri Anda."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
       ],
@@ -3704,10 +3722,10 @@
         "Anda memiliki ${ expiresInDays } hari tersisa untuk mengklaim bonus 500 MB dan "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
+        "Kapasitas penyimpanan Anda telah mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
+        "Kapasitas penyimpanan Anda telah mencapai 100%. Anda tidak akan dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan semua perubahan yang belum disimpan."
@@ -4279,7 +4297,7 @@
         "Untuk menambah kalender baru, hapus kalender yang ada."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Untuk menambah kalender baru, hapus kalender lainnya atau tingkatkan ${ BRAND_NAME } paket ke ${ MAIL_SHORT_APP_NAME } paket berbayar."
+        "Untuk menambah kalender baru, hapus kalender lainnya atau tingkatkan akun ${ BRAND_NAME } Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Anda telah mencapai jumlah kalender maksimum yang tersedia dalam paket Anda."
@@ -5372,6 +5390,9 @@
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
+      ],
+      "Sign in with 2FA": [
+        "Masuk dengan 2FA"
       ],
       "Sign out": [
         "Keluar"

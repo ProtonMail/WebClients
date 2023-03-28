@@ -2926,6 +2926,9 @@
       "Error in one of the conditions": [
         "Памылка ў адной з умоў"
       ],
+      "Expired": [
+        "Пратэрмінавана"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не ўдалося атрымаць актыўныя сеансы. ${ refresh } або паспрабуйце яшчэ раз пазней."
       ],
@@ -3018,9 +3021,6 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
-      ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Няма публічных ключоў для адраса ${ BRAND_NAME }"
       ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
@@ -3509,6 +3509,9 @@
       ],
       "sign in": [
         "увайсці"
+      ],
+      "Sign in to verify": [
+        "Увайдзіце, каб праверыць"
       ],
       "There was a problem removing your email address.": [
         "Узнікла праблема пры выдаленні вашага адраса электроннай пошты."
@@ -4750,6 +4753,9 @@
       "Are you sure you want to delete this filter?": [
         "Вы сапраўды хочаце выдаліць гэты фільтр?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Вы сапраўды хочаце выдаліць гэту папку? Усе падпапкі будуць выдалены таксама."
+      ],
       "Are you sure you want to delete this label?": [
         "Вы сапраўды хочаце выдаліць гэту метку?"
       ],
@@ -4898,7 +4904,7 @@
         "У цяперашні час усё даступнае сховішча належыць уліковаму запісу адміністратара. Паменшыце вылучаны для яго аб'ём, каб вызваліць месца для дадатковых карыстальнікаў. Вы можаце павялічыць агульны аб'ём сховішча ў любы час, калі палепшыце свой тарыфны план."
       ],
       "Custom": [
-        "Карыстальніцкае"
+        "Карыстальніцкі"
       ],
       "Custom daily": [
         "Штодзень (карыстальніцкае)"
@@ -5710,6 +5716,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Адрас электроннай пошты, які вы размясцілі ўверсе спіса - ваш прадвызначаны адрас электроннай пошты. Перацягвайце адрасы, каб змяніць іх парадак."
       ],
+      "The email verification link has expired. Please sign in to resend a verification link.": [
+        "Праверачная спасылка для ліста пратэрмінавана. Увайдзіце, каб адправіць яе яшчэ раз."
+      ],
       "The following address is available:": [
         "Даступны наступны адрас:"
       ],
@@ -5790,6 +5799,9 @@
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Гэты токен не будзе даступны пасля закрыцця гэтага акна і валодаць ім павінны толькі вы."
+      ],
+      "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
+        "Гэта спасылка для скасавання падпіскі пратэрмінавана. Адкрыйце больш нядаўніх лістоў з гэтага спіса рассылкі."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Гэты карыстальнік з'яўляецца адказным за плацяжы ў вашай арганізацыі. Паніжэнне правоў гэтага ўдзельніка прывядзе да таго, што за плацяжы арганізацыі будзеце адказваць вы."
@@ -5914,6 +5926,9 @@
       "Unsaved changes": [
         "Незахаваныя змены"
       ],
+      "Unsubscribe link expired": [
+        "Спасылка для скасавання падпіскі пратэрмінавана"
+      ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
       ],
@@ -5946,6 +5961,9 @@
       ],
       "Verification can take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
+      ],
+      "Verification link expired": [
+        "Праверачная спасылка пратэрмінавана"
       ],
       "Verification may take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
@@ -9563,8 +9581,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Абагуліце свой каляндар з дапамогай спасылкі для запрашэння карыстальнікаў, якія не карыстаюцца ${ BRAND_NAME }"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Абагуліце свой каляндар з дапамогай спасылкі для запрашэння карыстальнікаў, якія не карыстаюцца ${ BRAND_NAME }."
       ]
     },
     "Share calendar max shares reached error": {
@@ -9784,14 +9802,6 @@
         "Высакахуткасны VPN на ${ maxVpn } прыладах",
         "Высакахуткасны VPN на ${ maxVpn } прыладах",
         "Высакахуткасны VPN на ${ maxVpn } прыладах"
-      ]
-    },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Кіруйце вашай падпіскай у ${ subscriptionManagerShort }"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Падпіска была здзейснена праз куплю ў праграме. Для кіравання вашай бягучай падпіскай вам неабходна перайсці ў раздзел з падпіскамі вашага ўліковага запісу ${ subscriptionManager }"
       ]
     },
     "Subscription price": {
@@ -10882,6 +10892,9 @@
       "Sign in and grant access": [
         "Увайсці і даць доступ"
       ],
+      "Sign in with 2FA": [
+        "Увайсці з 2ФА"
+      ],
       "Sign out": [
         "Выйсці"
       ],
@@ -11262,6 +11275,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Аўтаматычна падпісвайце ўсе свае выходныя паведамленні, каб карыстальнікі маглі праверыць іх сапраўднасць. Гэта дзеянне звязана з прадвызначанымі наладамі PGP, якія вы можаце сканфігурыраваць пазней."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Абагулена з дапамогай скразнога шыфравання"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Абагулена з дапамогай скразнога шыфравання з правераным кантактам"
       ]
     },
     "Tor out of date": {

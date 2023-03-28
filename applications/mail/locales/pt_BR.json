@@ -130,12 +130,6 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Com cópia, Com cópia oculta"
-      ],
-      "CC BCC": [
-        "CC CCO"
-      ],
       "Change page": [
         "Alterar página"
       ],
@@ -697,9 +691,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Abrir calendário"
-      ],
       "Open composer": [
         "Abrir compositor"
       ],
@@ -708,9 +699,6 @@
       ],
       "Open navigation": [
         "Abrir navegação"
-      ],
-      "Open shop": [
-        "Abrir loja"
       ],
       "Ordered list": [
         "Lista ordenada"
@@ -1616,12 +1604,12 @@
         "Evento em andamento"
       ]
     },
-    "Cancel self-destruction of the message": {
+    "Cancel expiration of the message": {
       "Cancel": [
         "Cancelar"
       ],
-      "Cancel self-destruction": [
-        "Cancelar autodestruição"
+      "Cancel expiration": [
+        "Cancelar expiração"
       ]
     },
     "Collapsible tooltip": {
@@ -4290,9 +4278,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } não ganha dinheiro abusando da privacidade."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
         "${ calendarsToBeCreatedCount } novos calendários"
@@ -4629,10 +4614,6 @@
       "Daily": [
         "Diariamente"
       ],
-      "Day": [
-        "Dia",
-        "Dias"
-      ],
       "Default email application": [
         "Aplicativo de e-mail padrão"
       ],
@@ -4745,17 +4726,16 @@
       "Expiration time": [
         "Tempo para expiração"
       ],
-      "Expires": [
-        "Expira"
+      "Expires in ${ formattedDate }": [
+        "Expira em ${ formattedDate }"
       ],
-      "Expires in ${ formattedDelayShort }": [
-        "Expira em ${ formattedDelayShort }"
+      "Expires in ${ minutesDiff } minute": [
+        "Expira em ${ minutesDiff } minuto",
+        "Expira em ${ minutesDiff } minutos"
       ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Expira em menos de ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Expira em breve"
+      "Expires in less than ${ hoursDiff } hour": [
+        "Expira em menos de ${ hoursDiff } hora",
+        "Expira em menos de ${ hoursDiff } horas"
       ],
       "file attached": [
         "attachment",
@@ -4767,11 +4747,11 @@
       "Folder": [
         "Pasta"
       ],
-      "For increased security, activate 2FA.": [
-        "Para maior segurança, ative 2FA."
-      ],
       "For messages newer than ${ oldestDate }": [
         "Para mensagens mais novas que ${ oldestDate }"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
       ],
       "Free up some space or add more storage space.": [
         "Libere algum espaço ou adicione mais espaço de armazenamento."
@@ -4797,10 +4777,6 @@
       ],
       "Hide original message": [
         "Ocultar mensagem original"
-      ],
-      "Hour": [
-        "Hora",
-        "Horas"
       ],
       "How Hide My Email works": [
         "Como Hide My Email funciona"
@@ -4853,9 +4829,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
-      ],
-      "Increase storage space starting at": [
-        "Aumente o espaço de armazenamento começando em"
       ],
       "Indexing paused": [
         "Indexação pausada"
@@ -5021,9 +4994,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Por favor, verifique se é legítimo."
-      ],
-      "per month.": [
-        "por mês."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline é compatível apenas com o formato de Texto Simples."
@@ -5194,9 +5164,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Armazene e compartilhe arquivos seguramente com ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Assunto"
       ],
@@ -5208,9 +5175,6 @@
       ],
       "Subject: ": [
         "Assunto: "
-      ],
-      "Support privacy by upgrading for": [
-        "Apoie a privacidade atualizando para"
       ],
       "support team": [
         "equipe de suporte"
@@ -5232,6 +5196,9 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Os dados inseridos no rascunho não podem ser salvos se você sair da página."
+      ],
+      "The message has expired": [
+        "A mensagem expirou"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "A mensagem original que você está tentando encaminhar/responder ainda está no processo de envio. Se você continuar, não poderá mais desfazer o envio da mensagem original."
@@ -5304,9 +5271,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Esta mensagem é automaticamente gerada como uma resposta a uma mensagem anterior."
       ],
-      "This message is expired!": [
-        "Esta mensagem está expirada!"
-      ],
       "This message is from a mailing list.": [
         "Esta mensagem é de uma lista de endereços."
       ],
@@ -5338,14 +5302,11 @@
       "This message will expire ${ formattedDate }": [
         "Esta mensagem irá expirar em ${ formattedDate }"
       ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "Esta mensagem irá autodestruir-se em ${ formattedDelay }"
+      "This message will expire today at ${ shortDateMessage }": [
+        "Esta mensagem expirará hoje às ${ shortDateMessage }"
       ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "Esta mensagem irá se autodestruir hoje às ${ formattedTime }"
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "Esta mensagem irá se autodestruir às ${ formattedTime }"
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Esta mensagem expirará amanhã às ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta chave pública será automaticamente utilizada para criptografar e-mails enviados para este endereço."
@@ -5401,14 +5362,8 @@
       "Upgrade to add more addresses to your account.": [
         "Atualize para adicionar mais endereços à sua conta."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Atualize para configurar uma resposta automática de férias."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Atualize para criar mais pastas, filtros e endereços."
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "Faça upgrade para hospedar e-mails de seu próprio nome de domínio."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Atualize para enviar email de endereços @pm.me"
@@ -5425,8 +5380,8 @@
       "Upgrade to support privacy and get more features.": [
         "Atualize para oferecer suporte à privacidade e obter mais recursos."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Atualize para usar o ${ MAIL_APP_NAME } com clientes de desktop de terceiros."
+      "Upgrade to unlock premium features.": [
+        "Desbloquear funcionalidades premium."
       ],
       "Upload picture": [
         "Carregar imagem"
@@ -5437,9 +5392,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Use o ${ CALENDAR_APP_NAME } para manter sua agenda privada."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Use os atalhos do teclado para gerenciar seu e-mail com mais rapidez."
       ],
@@ -5448,9 +5400,6 @@
       ],
       "Version ${ appVersion }": [
         "Versão ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Visite nossa loja para obter produtos da ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Pedimos desculpas. Pode ter sido um erro do nosso lado. Você pode confirmar que deseja marcar este e-mail como legítimo?"
@@ -5520,9 +5469,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "Você pode usar o ${ VPN_APP_NAME } de graça hoje."
       ],
       "You cannot reply from the invited address.": [
         "Você não pode responder a partir do endereço convidado."
@@ -5615,15 +5561,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de login não serão salvas após a importação ser concluída."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Sua mensagem será excluída da caixa de entrada do destinatário e da sua pasta de enviados em ${ dateString } às ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Sua mensagem será excluída da caixa de entrada do destinatário e da sua pasta de enviados hoje às ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Sua mensagem será excluída da caixa de entrada do destinatário e da sua pasta de enviados amanha às ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Sua mensagem vai expirar em ${ numberOfDays } dia.",
@@ -7290,26 +7227,12 @@
       ]
     },
     "Remaining days before the message expire": {
-      "${ remainingDays } day": [
-        "${ remainingDays } dia",
-        "${ remainingDays } dias"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } hora",
-        "${ remainingHours } horas"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<1 hora"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } ano",
-        "${ remainingYears } anos"
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d"
+      ],
+      "<1 d": [
+        "<1 d"
       ]
     },
     "Reply to calendar invitation": {
@@ -8013,9 +7936,6 @@
       "Read receipt sent": [
         "Confirmação de leitura enviada"
       ],
-      "Self-destruction cancelled": [
-        "Autodestruição cancelada"
-      ],
       "Self-destruction removed": [
         "Autodestruição removida"
       ],
@@ -8099,24 +8019,6 @@
     "Time": {
       "Yesterday": [
         "Ontem"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dia",
-        "${ daysCountLeft } dias"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } hora",
-        "${ hoursCountLeft } horas"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minuto",
-        "${ minutesCountLeft } minutos"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } segundo",
-        "${ secondsCountLeft } segundos"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

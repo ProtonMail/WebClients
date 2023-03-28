@@ -2926,6 +2926,9 @@
       "Error in one of the conditions": [
         "Wystąpił błąd w co najmniej jednym warunku"
       ],
+      "Expired": [
+        "Wygasł"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nie udało się uzyskać aktywnych sesji. ${ refresh } lub spróbuj ponownie później."
       ],
@@ -3018,9 +3021,6 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Brak wiadomości do zaimportowania. Konto nie posiada skrzynki odbiorczej"
-      ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Brak klucza publicznego adresu ${ BRAND_NAME }"
       ],
       "No valid address found": [
         "Nie znaleziono prawidłowego adresu"
@@ -3509,6 +3509,9 @@
       ],
       "sign in": [
         "Zaloguj się"
+      ],
+      "Sign in to verify": [
+        "Zaloguj się, aby zweryfikować"
       ],
       "There was a problem removing your email address.": [
         "Wystąpił problem podczas usuwania adresu e-mail."
@@ -4354,7 +4357,7 @@
         "Wstrzymano ${ percentageValue }%"
       ],
       "Active": [
-        "Aktywna"
+        "Aktywny"
       ],
       "Canceled": [
         "Anulowano"
@@ -4754,6 +4757,9 @@
       ],
       "Are you sure you want to delete this filter?": [
         "Czy na pewno chcesz usunąć ten filtr?"
+      ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Czy na pewno chcesz usunąć ten folder? Wszystkie foldery podrzędne również zostaną usunięte."
       ],
       "Are you sure you want to delete this label?": [
         "Czy na pewno chcesz usunąć tę etykietę?"
@@ -5919,6 +5925,9 @@
       "Unsaved changes": [
         "Niezapisane zmiany"
       ],
+      "Unsubscribe link expired": [
+        "Link anulowania subskrypcji wygasł"
+      ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
       ],
@@ -5951,6 +5960,9 @@
       ],
       "Verification can take a few minutes.": [
         "Weryfikacja może zająć kilka minut."
+      ],
+      "Verification link expired": [
+        "Link weryfikacyjny wygasł"
       ],
       "Verification may take a few minutes.": [
         "Weryfikacja może zająć kilka minut."
@@ -9567,11 +9579,6 @@
         "Etykiety"
       ]
     },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Aby zaprosić użytkowników spoza ${ BRAND_NAME }, udostępnij kalendarz za pomocą linku"
-      ]
-    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkownika kalendarza",
@@ -10044,14 +10051,6 @@
         "Szybki VPN na ${ maxVpn } urządzenia",
         "Szybki VPN na ${ maxVpn } urządzeń",
         "Szybki VPN na ${ maxVpn } urządzeń"
-      ]
-    },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Zarządzaj subskrypcją w ${ subscriptionManagerShort }"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Subskrypcja została zakupiona w aplikacji. Aby zarządzać nią, przejdź do sekcji Subskrypcja w koncie ${ subscriptionManager }"
       ]
     },
     "Subscription price": {
@@ -11141,6 +11140,9 @@
       ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
+      ],
+      "Sign in with 2FA": [
+        "Zaloguj się z uwierzytelnianiem dwustopniowym"
       ],
       "Sign out": [
         "Wyloguj"

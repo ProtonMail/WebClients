@@ -770,7 +770,7 @@
         "VPN sorunu"
       ],
       "Website access problem": [
-        "Web sitesi erişim sorunu"
+        "Site erişim sorunu"
       ]
     },
     "Button": {
@@ -2268,9 +2268,6 @@
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } adresi için bir herkese açık anahtar yok"
-      ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
       ],
@@ -3605,10 +3602,10 @@
         "Bu etkinlik güncellendi. Davet edilen adresten e-posta gönderemeyeceğiniz için bu etkinliğin düzenleyicisine daveti reddettiğiniz bildirilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
+        "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge web tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
+        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir tarayıcı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
@@ -3844,7 +3841,7 @@
         "Ele geçirilmiş"
       ],
       "Expired": [
-        "Süresi geçmiş"
+        "Geçerlilik süresi dolmuş"
       ],
       "Obsolete": [
         "Eskimiş"
@@ -3857,6 +3854,11 @@
       ],
       "Trusted": [
         "Güvenilmiş"
+      ]
+    },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Nasıl yapılacağını öğrenin"
       ]
     },
     "Label": {
@@ -4230,7 +4232,7 @@
         "Takvimler"
       ],
       "clearing your browser cache": [
-        "web tarayıcınızın ön belleğini temizlemek"
+        "tarayıcınızın ön belleğini temizlemek"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -4983,8 +4985,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "${ BRAND_NAME } kullanmayan kişilerle takviminizi bir bağlantı ile paylaşın"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "${ BRAND_NAME } kullanmayan kişileri çağırmak için takviminizi bir bağlantı ile paylaşın."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5654,6 +5656,9 @@
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
+      "Sign in with 2FA": [
+        "2 adımlı doğrulama ile oturum a"
+      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -5679,7 +5684,7 @@
         "Uyarı"
       ],
       "Warning: suspected fake website": [
-        "Uyarı: Şüpheli sahte web sitesi"
+        "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
       ],
       "We've locked some calendars to protect your data": [
         "Verilerinizi korumak için bazı takvimleri kilitledik"
@@ -5777,6 +5782,14 @@
       ],
       "You do not have any contacts to export": [
         "Dışa aktarılacak bir kişi kaydınız yok"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Uçtan uca şifrelenmiş olarak paylaşıldı"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Uçtan uca şifrelenmiş olarak doğrulanmış kişi ile paylaşıldı"
       ]
     },
     "Validation": {

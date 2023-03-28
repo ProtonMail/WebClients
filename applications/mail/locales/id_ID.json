@@ -31,6 +31,12 @@
       "Add address": [
         "Tambah alamat"
       ],
+      "Add Bcc recipients": [
+        "Tambah penerima Bcc"
+      ],
+      "Add Cc recipients": [
+        "Tambah penerima Cc"
+      ],
       "Add condition": [
         "Tambahkan syarat"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Akses Beta"
       ],
+      "Blind Carbon Copy": [
+        "Tembusan Tertutup"
+      ],
       "Block": [
         "Blokir"
       ],
@@ -130,11 +139,8 @@
       "Cancel": [
         "Batal"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Tembusan, Tembusan Tertutup"
-      ],
-      "CC BCC": [
-        "CC BCC"
+      "Carbon Copy": [
+        "Tembusan"
       ],
       "Change page": [
         "Ubah halaman"
@@ -493,6 +499,9 @@
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
       ],
+      "In the morning": [
+        "Di pagi hari"
+      ],
       "Inline": [
         "Sisipkan gambar"
       ],
@@ -697,9 +706,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Buka ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Buka kalender"
-      ],
       "Open composer": [
         "Buka komposer"
       ],
@@ -708,9 +714,6 @@
       ],
       "Open navigation": [
         "Buka navigasi"
-      ],
-      "Open shop": [
-        "Buka toko"
       ],
       "Ordered list": [
         "Daftar berurut"
@@ -858,6 +861,9 @@
       ],
       "Search message content": [
         "Cari konten pesan"
+      ],
+      "See business plans": [
+        "Lihat paket bisnis kami"
       ],
       "See plan features": [
         "Lihat seluruh fitur paket"
@@ -1614,12 +1620,12 @@
         "Acara sedang berlangsung"
       ]
     },
-    "Cancel self-destruction of the message": {
+    "Cancel expiration of the message": {
       "Cancel": [
         "Batal"
       ],
-      "Cancel self-destruction": [
-        "Batalkan penghapusan otomatis"
+      "Cancel expiration": [
+        "Batalkan kedaluwarsa pesan"
       ]
     },
     "Collapsible tooltip": {
@@ -3009,6 +3015,9 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
+      "A problem occurred, please try again.": [
+        "Terdapat suatu masalah, silakan coba lagi."
+      ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
@@ -3186,6 +3195,9 @@
       "Passwords do not match": [
         "Kata sandi tidak cocok"
       ],
+      "Please activate your search again": [
+        "Silakan aktifkan kembali pencarian konten Anda"
+      ],
       "Please fix the highlighted conflicts to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
@@ -3299,6 +3311,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Terjadi suatu kesalahan dengan pencarian konten. Pencarian standar telah digunakan sebagai gantinya."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Terdapat masalah dalam memperbarui pesan lokal Anda. Pesan Anda akan diunduh ulang agar pencarian konten dapat kembali aktif"
       ],
       "There was an error when exporting the contacts vCards": [
         "Terdapat kesalahan pada saat mengekspor kontak vCard"
@@ -4249,9 +4264,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } tidak meraup keuntungan dengan melanggar privasi."
-      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } kalender baru"
       ],
@@ -4429,6 +4441,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Apakah Anda yakin ingin menghapu semua pesan yang ditandai dengan label ini?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Apakah Anda yakin untuk menghapus folder ini? Seluruh sub-folder yang terkandung di dalam folder ini juga akan ikut terhapus."
+      ],
       "Are you sure you want to delete this label?": [
         "Apakah Anda yakin ingin menghapus label ini?"
       ],
@@ -4549,9 +4564,6 @@
       "Daily": [
         "Harian"
       ],
-      "Days": [
-        "Hari"
-      ],
       "Default email application": [
         "Aplikasi email default"
       ],
@@ -4569,6 +4581,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
+      ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Mengunduh pesan ${ currentProgress } dari ${ totalProgress }"
       ],
       "Draft": [
         "Draf"
@@ -4660,17 +4675,14 @@
       "Expiration time": [
         "Waktu kedaluwarsa"
       ],
-      "Expires": [
-        "Akan kedaluwarsa"
+      "Expires in ${ formattedDate }": [
+        "Akan kedaluwarsa pada ${ formattedDate }"
       ],
-      "Expires in ${ formattedDelayShort }": [
-        "Akan kedaluwarsa dalam ${ formattedDelayShort }"
+      "Expires in ${ minutesDiff } minutes": [
+        "Akan kedaluwarsa dalam ${ minutesDiff } menit"
       ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Akan kedaluwarsa dalam kurang dari ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Akan segera kedaluwarsa"
+      "Expires in less than ${ hoursDiff } hours": [
+        "Akan kedaluwarsa dalam kurang dari ${ hoursDiff }"
       ],
       "files attached": [
         "attachment"
@@ -4680,9 +4692,6 @@
       ],
       "Folder": [
         "Folder"
-      ],
-      "For increased security, activate 2FA.": [
-        "Untuk mendapatkan keamanan yang lebih, aktifkan 2FA."
       ],
       "For messages newer than ${ oldestDate }": [
         "Untuk pesan yang lebih baru daripada ${ oldestDate }"
@@ -4713,9 +4722,6 @@
       ],
       "Hide original message": [
         "Sembunyikan pesan asli"
-      ],
-      "Hours": [
-        "Jam"
       ],
       "How Hide My Email works": [
         "Bagaimana Hide My Email bekerja"
@@ -4768,8 +4774,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
-      "Increase storage space starting at": [
-        "Tambah kuota penyimpanan mulai dari"
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Tingkatkan kuota penyimpanan Anda dengan harga mulai dari ${ planPrice } per bulannya."
       ],
       "Indexing paused": [
         "Pengindeksan dijeda"
@@ -4858,6 +4864,9 @@
       "Message sent.": [
         "Pesan terkirim."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Pesan akan terkirim di pagi hari pada pukul ${ formattedTime }"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Pesan akan terkirim pada ${ dateString } pukul ${ formattedTime }"
       ],
@@ -4935,9 +4944,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistem kami menandai pesan ini sebagai phishing. Mohon periksa keabsahan pesan."
-      ],
-      "per month.": [
-        "per bulan."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "Enkripsi PGP/Inline hanya kompatibel dengan format Plain Text."
@@ -5050,6 +5056,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Apakah pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dari sesi pencarian ini."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Amankan berkas Anda dengan layanan penyimpanan berbasis cloud secara gratis sekarang juga."
+      ],
       "Seems like you are all caught up for now": [
         "Untuk saat ini sepertinya semuanya sudah terbaca"
       ],
@@ -5107,9 +5116,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Simpan dan bagikan berbagai berkas secara aman dengan ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Subjek"
       ],
@@ -5121,9 +5127,6 @@
       ],
       "Subject: ": [
         "Subjek: "
-      ],
-      "Support privacy by upgrading for": [
-        "Dukung privasi dengan meningkatkan akun mulai dari"
       ],
       "support team": [
         "tim dukungan"
@@ -5145,6 +5148,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Data yang Anda masukkan ke dalam draf dapat tidak tersimpan apabila Anda meninggalkan laman."
+      ],
+      "The local database is being prepared": [
+        "Database lokal sedang dipersiapkan"
+      ],
+      "The message has expired": [
+        "Pesan ini telah kedaluwarsa"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Pesan asli yang Anda coba teruskan / balas dalam proses dikirim. Jika lanjut, Anda tidak akan dapat mengurungkan pengiriman pesan asli lebih lama lagi."
@@ -5182,6 +5191,9 @@
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Membersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
       ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Tindakan ini akan mengunduh seluruh pesan terbaru yang ada untuk dapat dicari secara lokal. Membersihkan data browser Anda akan menonaktifkan pilihan ini."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
       ],
@@ -5218,9 +5230,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Pesan ini dibuat secara otomatis sebagai respon terhadap pesan sebelumnya."
       ],
-      "This message is expired!": [
-        "Pesan ini telah kedaluwarsa!"
-      ],
       "This message is from a mailing list.": [
         "Pesan ini berasal dari milis."
       ],
@@ -5230,8 +5239,17 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Pesan ini ditandatangani dengan kunci terlampir yang belum dipercaya."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Pesan ini akan dihapus secara otomatis pada ${ longDateMEssage }"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Pesan ini akan dihapus secara otomatis pada ${ shortDateMessage }"
+      ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Pesan ini akan secara otomatis berpindah ke Draf agar Anda dapat menyunting isi pesan ini di kemudian waktu. Anda harus mengatur ulang waktu pengiriman pesan ini."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Pesan ini akan terkirim di pagi hari pada pukul ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Pesan ini akan terkirim pada ${ dateString } pukul ${ formattedTime }"
@@ -5248,17 +5266,14 @@
       "This message will expire ${ formattedDate }": [
         "Pesan ini akan kedaluwarsa pada ${ formattedDate }"
       ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "Pesan ini akan terhapus secara otomatis pada ${ formattedDelay }"
+      "This message will expire on ${ longDateMEssage }": [
+        "Pesan ini akan kedaluwarsa pada ${ longDateMEssage }"
       ],
-      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
-        "Pesan ini akan terhapus secara otomatis pada ${ dateString } pukul ${ formattedTime }"
+      "This message will expire today at ${ shortDateMessage }": [
+        "Pesan ini akan kedaluwarsa hari ini pada pukul ${ shortDateMessage }"
       ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "Pesan ini akan terhapus secara otomatis pada hari ini pukul ${ formattedTime }"
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "Pesan ini akan terhapus secara otomatis pada hari esok pukul ${ formattedTime }"
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Pesan ini akan kedaluwarsa besok pada pukul ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Kunci publik ini akan digunakan secara otomatis untuk mengenkripsi email-email yang dikirim ke alamat ini."
@@ -5308,26 +5323,29 @@
       "Updating message content search...": [
         "Memperbarui pencarian konten pesan..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Memperbarui pesan lokal Anda, konten pesan tidak akan dapat dicari pada saat proses pembaruan sedang berlangsung"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
       "Upgrade to add more addresses to your account.": [
         "Tingkatkan jenis akun Anda untuk dapat menambahkan lebih banyak alamat ke dalam akun Anda."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Tingkatkan jenis akun Anda agar Anda dapat membalas pesan yang masuk secara otomatis."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Tingkatkan jenis akun Anda untuk dapat membuat lebih banyak folder, filter, dan alamat."
       ],
-      "Upgrade to host emails from your own domain name.": [
-        "Tingkatkan jenis akun Anda untuk dapat mengirim email dari domain buatan Anda sendiri."
+      "Upgrade to level up your privacy.": [
+        "Tingkatkan jenis akun Anda untuk membawa privasi Anda ke tingkatan selanjutnya."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Tingkatkan jenis akun Anda untuk dapat mengirim email dari alamat @pm.me."
       ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Tingkatkan jenis akun Anda untuk dapat mengirim email dari domain khusus milik Anda."
+      ],
       "Upgrade to send emails to contact groups easily.": [
-        "Tingkatkan jenis akun Anda untuk dapat mengirim email ke grup-grup kontak dengan mudah."
+        "Tingkatkan jenis akun Anda untuk dapat mengirim email ke grup kontak dengan mudah."
       ],
       "Upgrade to support a privacy-first internet.": [
         "Tingkatkan jenis akun Anda untuk mendukung internet yang mengutamakan privasi."
@@ -5338,8 +5356,14 @@
       "Upgrade to support privacy and get more features.": [
         "Tingkatkan jenis akun Anda untuk mendukung privasi dan memperoleh lebih banyak fitur."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Tingkatkan jenis akun Anda untuk dapat mengakses ${ MAIL_APP_NAME } melalui klien desktop terpisah milik pihak ketiga."
+      "Upgrade to unlock premium features.": [
+        "Tingkatkan jenis akun Anda untuk dapat menikmati berbagai fitur premium."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Tingkatkan paket langganan Anda untuk menggunakan ${ MAIL_APP_NAME } dengan Apple Mail, Outlook, atau Thunderbird."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Tingkatkan jenis akun Anda untuk dapat membalas pesan yang masuk secara otomatis pada saat Anda sedang berhalangan."
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -5350,9 +5374,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Gunakan ${ CALENDAR_APP_NAME } untuk menjaga agar agenda Anda tetap privat."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Gunakan pintasan keyboard untuk mengelola email secara lebih ringkas."
       ],
@@ -5361,9 +5382,6 @@
       ],
       "Version ${ appVersion }": [
         "Versi ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Kunjungi toko kami untuk memperoleh berbagai cinderamata ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Mohon maaf, namun sepertinya terjadi suatu kesalahan pada sistem kami. Dapatkah Anda mengonfirmasi bahwa Anda memang benar ingin menandai email ini sebagai email yang sah?"
@@ -5382,6 +5400,9 @@
       ],
       "Week": [
         "Pekan"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Kapankah Anda ingin pesan Anda untuk terhapus secara otomatis dari kotak masuk penerima dan folder terkirim Anda?"
       ],
       "When do you want your message to be sent?": [
         "Kapankah Anda ingin pesan Anda terkirim?"
@@ -5434,8 +5455,8 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "Anda dapat menggunakan ${ VPN_APP_NAME } secara gratis mulai sekarang juga."
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Anda dapat menggunakan ${ VPN_APP_NAME } secara gratis sekarang juga."
       ],
       "You cannot reply from the invited address.": [
         "Anda tidak dapat membalas dari alamat yang diundang."
@@ -5471,10 +5492,10 @@
         "Anda telah mencapai jumlah pesan balasan maksimum (5 pesan) yang dapat dikirim."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
+        "Kapasitas penyimpanan Anda telah mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
+        "Kapasitas penyimpanan Anda telah mencapai 100%. Anda tidak akan dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversations** from this folder": [
         "Anda memilih **${ count } percakapan** dari folder ini"
@@ -5520,15 +5541,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Pesan Anda akan terhapus dari kotak masuk penerima pesan dan dari folder terkirim Anda pada hari ${ dateString }, pukul ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Pesan Anda akan terhapus dari kotak masuk penerima pesan dan dari folder terkirim Anda pada ${ formattedTime } hari ini"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Pesan Anda akan terhapus dari kotak masuk penerima pesan dan dari folder terkirim Anda pada ${ formattedTime } besok"
       ],
       "Your message will expire in ${ numberOfDays } days.": [
         "Pesan Anda akan kedaluwarsa dalam ${ numberOfDays } hari."
@@ -6348,7 +6360,7 @@
         "Untuk menambah kalender baru, hapus kalender yang ada."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Untuk menambah kalender baru, hapus kalender lainnya atau tingkatkan ${ BRAND_NAME } paket ke ${ MAIL_SHORT_APP_NAME } paket berbayar."
+        "Untuk menambah kalender baru, hapus kalender lainnya atau tingkatkan akun ${ BRAND_NAME } Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Anda telah mencapai jumlah kalender maksimum yang tersedia dalam paket Anda."
@@ -7181,23 +7193,11 @@
       ]
     },
     "Remaining days before the message expire": {
-      "${ remainingDays } days": [
-        "${ remainingDays } hari"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hours": [
-        "${ remainingHours } jam"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<1 jam"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } years": [
-        "${ remainingYears } tahun"
+      "${ remainingDays } d": [
+        "${ remainingDays } hr"
+      ],
+      "<1 d": [
+        "<1 hr"
       ]
     },
     "Reply to calendar invitation": {
@@ -7573,6 +7573,9 @@
       "Message deleted": [
         "Pesan dihapus"
       ],
+      "Message expiration cancelled": [
+        "Kedaluwarsa pesan dibatalkan"
+      ],
       "Message marked as legitimate": [
         "Pesan ditandai sebagai sah"
       ],
@@ -7629,9 +7632,6 @@
       ],
       "Read receipt sent": [
         "Bukti baca telah terkirim"
-      ],
-      "Self-destruction cancelled": [
-        "Penghapusan otomatis dibatalkan"
       ],
       "Self-destruction removed": [
         "Penghapusan otomatis dihapus"
@@ -7716,20 +7716,6 @@
     "Time": {
       "Yesterday": [
         "Kemarin"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } days": [
-        "${ daysCountLeft } hari"
-      ],
-      "${ hoursCountLeft } hours": [
-        "${ hoursCountLeft } jam"
-      ],
-      "${ minutesCountLeft } minutes": [
-        "${ minutesCountLeft } menit"
-      ],
-      "${ secondsCountLeft } seconds": [
-        "${ secondsCountLeft } detik"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -7851,8 +7837,14 @@
       "Create folder": [
         "Buat map"
       ],
+      "Create folder \"${ search }\"": [
+        "Buat folder \"${ search }\""
+      ],
       "Create label": [
         "Buat label"
+      ],
+      "Create label \"${ search }\"": [
+        "Buat label \"${ search }\""
       ],
       "Create new group": [
         "Buat grup baru"
@@ -8198,6 +8190,9 @@
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
+      ],
+      "Sign in with 2FA": [
+        "Masuk dengan 2FA"
       ],
       "Sign out": [
         "Keluar"

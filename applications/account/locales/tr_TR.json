@@ -1173,7 +1173,7 @@
         "VPN sorunu"
       ],
       "Website access problem": [
-        "Web sitesi erişim sorunu"
+        "Site erişim sorunu"
       ]
     },
     "Button": {
@@ -2858,7 +2858,7 @@
         "Takvim sınırına ulaşıldı"
       ],
       "Checkout expired, please try again": [
-        "Ödeme süresi dolmuş. Lütfen yeniden deneyin"
+        "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
       "Condition incomplete": [
         "Koşul eksik"
@@ -2903,6 +2903,9 @@
       ],
       "Error in one of the conditions": [
         "Koşullardan biri hatalı"
+      ],
+      "Expired": [
+        "Geçerlilik süresi dolmuş"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Etkin oturumlar alınamadı. Lütfen ${ refresh }yin ya da bir süre sonra yeniden deneyin."
@@ -2994,9 +2997,6 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
-      ],
-      "No public key for ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } adresi için bir herkese açık anahtar yok"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -3133,7 +3133,7 @@
         "Adres yanlış yazılmış olabilir"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Kullanmakta olduğunuz web tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir web tarayıcı kullanın ya da bilgisayar ile oturum açın."
+        "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın ya da bilgisayar ile oturum açın."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
@@ -3172,7 +3172,7 @@
         "Gönderim anahtarı geçersiz"
       ],
       "The session has expired. Please sign in again.": [
-        "Oturum zaman aşımına uğradı. Lütfen yeniden oturum açın."
+        "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Dış hesabınızda çok fazla klasör var. Lütfen bazı klasörleri silmek için içe aktarma işlemini özelleştirin."
@@ -3479,6 +3479,9 @@
       ],
       "sign in": [
         "oturum aç"
+      ],
+      "Sign in to verify": [
+        "Doğrulamak için oturum açın"
       ],
       "There was a problem removing your email address.": [
         "E-posta adresiniz silinirken bir sorun çıktı."
@@ -4646,6 +4649,9 @@
       "Are you sure you want to delete this filter?": [
         "Bu süzgeci silmek istediğinize emin misiniz?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Bu klasörü silmek istediğinize emin misiniz? Tüm alt klasörleri de silinecek."
+      ],
       "Are you sure you want to delete this label?": [
         "Bu etiketi silmek istediğinize emin misiniz?"
       ],
@@ -4955,7 +4961,7 @@
         "Etkinlik davetleri ve davet yanıtlama istekleri bu dilde gönderilir."
       ],
       "Expired": [
-        "Süresi geçmiş"
+        "Geçerlilik süresi dolmuş"
       ],
       "expires ${ expirationDate }": [
         "${ expirationDate } tarihinde geçersiz olacak"
@@ -5419,7 +5425,7 @@
         "Ön izleme yüklenemedi"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve süresi dolmamış kuponlar katılmıştır."
+        "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
       "Priority support": [
         "Öncelikli destek"
@@ -5592,6 +5598,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Listenin en üstüne çıkardığınız e-posta adresi, varsayılan e-posta adresiniz olur. Adreslerinizin sırasını sürükleyip bırakarak değiştirebilirsiniz."
       ],
+      "The email verification link has expired. Please sign in to resend a verification link.": [
+        "E-posta doğrulama bağlantısının geçerlilik süresi dolmuş. Lütfen yeni bir doğrulama bağlantısının gönderilmesi için oturum açın."
+      ],
       "The following address is available:": [
         "Şu adres kullanılabilir:"
       ],
@@ -5635,7 +5644,7 @@
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Bu web tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
+        "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
@@ -5656,16 +5665,19 @@
         "Bu parola, sıfırlama öncesinde kullandığınız paroladır."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
+        "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge web tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
+        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Edge tarayıcısı ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir tarayıcı kullanın."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Bu pencereyi kapattığınızda bu kod yeniden görülemeyecek ve artık kimse ile paylaşamayacaksınız."
+      ],
+      "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
+        "Bu abonelikten ayrılma bağlantısının geçerlilik süresi dolmuş. Lütfen bu e-posta listesinden gelmiş daha yeni bir e-postayı açın."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
@@ -5790,6 +5802,9 @@
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
       ],
+      "Unsubscribe link expired": [
+        "Abonelikten ayrılma bağlantısının geçerlilik süresi dolmuş"
+      ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
       ],
@@ -5822,6 +5837,9 @@
       ],
       "Verification can take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
+      ],
+      "Verification link expired": [
+        "Doğrulama bağlantısının geçerlilik süresi dolmuş"
       ],
       "Verification may take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
@@ -5878,7 +5896,7 @@
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
       "Web URL": [
-        "Web adresi"
+        "Site adresi"
       ],
       "Week": [
         "Hafta"
@@ -6009,7 +6027,7 @@
         "Kayıtlı bir ödeme yönteminiz yok."
       ],
       "You may be redirected to your bank’s website.": [
-        "Bankanızın web sitesine yönlendirilebilirsiniz."
+        "Bankanızın sitesine yönlendirilebilirsiniz."
       ],
       "You may now start using the extension": [
         "Artık eklentiyi kullanmaya başlayabilirsiniz"
@@ -6060,7 +6078,7 @@
         "İndirdiğiniz kurtarma dosyalarını kullanarak kilitli verileri kurtaramazsınız. Bu seçenek, güvenilir aygıt kurtarma bilgilerini de geçersiz kılar."
       ],
       "You'll stay signed in even after you close the browser.": [
-        "Web tarayıcıyı kapattıktan sonra bile oturumunuz açık kalır."
+        "Oturumunuz tarayıcıyı kapattıktan sonra bile açık kalır."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilendirilmiş."
@@ -6265,10 +6283,10 @@
         "Anahtar ${ fp } parmak iziyle oluşturuldu."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Şifreleme anahtarları oluşturuluyor. Bu işlem birkaç dakika sürebilir ve web tarayıcınızın geçici olarak donmasına neden olabilir."
+        "Şifreleme anahtarları oluşturuluyor. Bu işlem birkaç dakika sürebilir ve tarayıcınızın geçici olarak donmasına neden olabilir."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Adresiniz için şifreleme anahtarları oluşturuluyor. Bu işlem birkaç dakika sürebilir ve web tarayıcınızın geçici olarak donmasına neden olabilir."
+        "Adresiniz için şifreleme anahtarları oluşturuluyor. Bu işlem birkaç dakika sürebilir ve tarayıcınızın geçici olarak donmasına neden olabilir."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Eğer önceki anahtarınızın ele geçirildiğini düşünüyorsanız, yeni bir şifreleme anahtarı oluşturabilirsiniz."
@@ -7442,7 +7460,7 @@
         "Varsayılan"
       ],
       "Expired": [
-        "Süresi geçmiş"
+        "Geçerlilik süresi dolmuş"
       ]
     },
     "Label to change composer mode": {
@@ -7518,7 +7536,7 @@
         "Takvimler"
       ],
       "clearing your browser cache": [
-        "web tarayıcınızın ön belleğini temizlemek"
+        "tarayıcınızın ön belleğini temizlemek"
       ],
       "click here": [
         "buraya tıklayın"
@@ -9345,8 +9363,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "${ BRAND_NAME } kullanmayan kişilerle takviminizi bir bağlantı ile paylaşın"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "${ BRAND_NAME } kullanmayan kişileri çağırmak için takviminizi bir bağlantı ile paylaşın."
       ]
     },
     "Share calendar max shares reached error": {
@@ -9538,14 +9556,6 @@
       "High-speed VPN on ${ maxVpn } device": [
         "${ maxVpn } aygıt için yüksek hızlı VPN",
         "${ maxVpn } aygıt için yüksek hızlı VPN"
-      ]
-    },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Aboneliğinizi ${ subscriptionManagerShort } üzerinden yönetin"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Aboneliğiniz bir uygulama içi satın alma ile yapılmış. Geçerli aboneliğinizi yönetmek için ${ subscriptionManager } hesabınızın Abonelik bölümüne bakın"
       ]
     },
     "Subscription price": {
@@ -10618,6 +10628,9 @@
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
       ],
+      "Sign in with 2FA": [
+        "2 adımlı doğrulama ile oturum a"
+      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -10729,7 +10742,7 @@
         "Uyarı!"
       ],
       "Warning: suspected fake website": [
-        "Uyarı: Şüpheli sahte web sitesi"
+        "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
       ],
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"
@@ -10994,6 +11007,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Alıcıların iletilerin sizden geldiğini doğrulayabilmesi için tüm giden iletilerinizi otomatik olarak imzalayabilirsiniz. Bunu, aşağıdan yapılandırılabilen varsayılan PGP ayarları ile birlikte yapabilirsiniz."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Uçtan uca şifrelenmiş olarak paylaşıldı"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Uçtan uca şifrelenmiş olarak doğrulanmış kişi ile paylaşıldı"
       ]
     },
     "Tor out of date": {

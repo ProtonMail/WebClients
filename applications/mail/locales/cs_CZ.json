@@ -31,6 +31,12 @@
       "Add address": [
         "Přidat adresu"
       ],
+      "Add Bcc recipients": [
+        "Přidat příjemce skryté kopie"
+      ],
+      "Add Cc recipients": [
+        "Přidat příjemce kopie"
+      ],
       "Add condition": [
         "Přidat podmínku"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Beta přístup"
       ],
+      "Blind Carbon Copy": [
+        "Skrytá kopie"
+      ],
       "Block": [
         "Blokovat"
       ],
@@ -130,11 +139,8 @@
       "Cancel": [
         "Zrušit"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Kopie, Skrytá kopie"
-      ],
-      "CC BCC": [
-        "CC BCC"
+      "Carbon Copy": [
+        "Kopie"
       ],
       "Change page": [
         "Změnit stránku"
@@ -499,6 +505,9 @@
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
       ],
+      "In the morning": [
+        "Ráno"
+      ],
       "Inline": [
         "Vložený"
       ],
@@ -706,9 +715,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Otevřít ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Otevřít kalendář"
-      ],
       "Open composer": [
         "Otevřít editor"
       ],
@@ -717,9 +723,6 @@
       ],
       "Open navigation": [
         "Otevřít menu"
-      ],
-      "Open shop": [
-        "Otevřít obchod"
       ],
       "Ordered list": [
         "Seřazený seznam"
@@ -867,6 +870,9 @@
       ],
       "Search message content": [
         "Hledat v obsahu zpráv"
+      ],
+      "See business plans": [
+        "Podívejte se na podnikatelské plány"
       ],
       "See plan features": [
         "Zobrazit funkce tarifu"
@@ -1629,12 +1635,12 @@
         "Událost probíhá"
       ]
     },
-    "Cancel self-destruction of the message": {
+    "Cancel expiration of the message": {
       "Cancel": [
         "Zrušit"
       ],
-      "Cancel self-destruction": [
-        "Zrušit samozničení"
+      "Cancel expiration": [
+        "Zrušit expiraci"
       ]
     },
     "Collapsible tooltip": {
@@ -3045,6 +3051,9 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
+      "A problem occurred, please try again.": [
+        "Objevil se problém, prosím zkuste to znovu."
+      ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
@@ -4367,9 +4376,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } nevydělává peníze zneužíváním soukromí."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendář",
         "${ calendarsToBeCreatedCount } nové kalendáře",
@@ -4652,6 +4658,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Opravdu chcete smazat všechny zprávy s tímto štítkem?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Opravdu chcete smazat tuto složku? Budou také odstraněny všechny podsložky."
+      ],
       "Are you sure you want to delete this label?": [
         "Jste si jisti, že chcete odstranit tento štítek?"
       ],
@@ -4784,12 +4793,6 @@
       "Daily": [
         "Denně"
       ],
-      "Day": [
-        "Den",
-        "Dny",
-        "Dnů",
-        "Dnů"
-      ],
       "Default email application": [
         "Výchozí e-mailová aplikace"
       ],
@@ -4810,6 +4813,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Nezapomeňte příjemci sdělit heslo"
+      ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Stahování zprávy ${ currentProgress } z ${ totalProgress }"
       ],
       "Draft": [
         "Koncept"
@@ -4910,17 +4916,20 @@
       "Expiration time": [
         "Platnost do"
       ],
-      "Expires": [
-        "Platnost do"
+      "Expires in ${ formattedDate }": [
+        "Vyprší za ${ formattedDate }"
       ],
-      "Expires in ${ formattedDelayShort }": [
-        "Vyprší za ${ formattedDelayShort }"
+      "Expires in ${ minutesDiff } minute": [
+        "Vyprší za ${ minutesDiff } minutu",
+        "Vyprší za ${ minutesDiff } minuty",
+        "Vyprší za ${ minutesDiff } minut",
+        "Vyprší za ${ minutesDiff } minut"
       ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Vyprší za méně než ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Brzy vyprší"
+      "Expires in less than ${ hoursDiff } hour": [
+        "Vyprší za méně než ${ hoursDiff } hodinu",
+        "Vyprší za méně než ${ hoursDiff } hodiny",
+        "Vyprší za méně než ${ hoursDiff } hodin",
+        "Vyprší za méně než ${ hoursDiff } hodin"
       ],
       "file attached": [
         "attachment",
@@ -4933,9 +4942,6 @@
       ],
       "Folder": [
         "Složka"
-      ],
-      "For increased security, activate 2FA.": [
-        "Pro zvýšení zabezpečení, aktivujte 2FA."
       ],
       "For messages newer than ${ oldestDate }": [
         "Pro zprávy novější než ${ oldestDate }"
@@ -4969,12 +4975,6 @@
       ],
       "Hide original message": [
         "Skrýt původní zprávu"
-      ],
-      "Hour": [
-        "Hodina",
-        "Hodiny",
-        "Hodin",
-        "Hodin"
       ],
       "How Hide My Email works": [
         "Jak funguje funkce Skrýt můj e-mail"
@@ -5030,8 +5030,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
-      "Increase storage space starting at": [
-        "Navyšte si úložný prostor již od"
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Navyšte velikost úložiště od ${ planPrice } měsíčně."
       ],
       "Indexing paused": [
         "Indexování pozastaveno"
@@ -5120,6 +5120,9 @@
       "Message sent.": [
         "Zpráva odeslána."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Zpráva bude odeslána ráno v ${ formattedTime }"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Zpráva bude odeslána dne ${ dateString } v ${ formattedTime }"
       ],
@@ -5197,9 +5200,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Zkontrolujte, že se jedná o legitimní zprávu."
-      ],
-      "per month.": [
-        "za měsíc."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu."
@@ -5315,6 +5315,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Trvá hledání příliš dlouho? ${ dropdownButton } nebo ${ toggleOffButton } z této relace hledání."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště zdarma ještě dnes."
+      ],
       "Seems like you are all caught up for now": [
         "Zdá se, že prozatím nemáte co dohánět"
       ],
@@ -5372,9 +5375,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Je nám líto, tato zpráva neexistuje, nebo jí již vypršela platnost."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Bezpečné ukládání a sdílení souborů pomocí ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Předmět"
       ],
@@ -5386,9 +5386,6 @@
       ],
       "Subject: ": [
         "Předmět: "
-      ],
-      "Support privacy by upgrading for": [
-        "Podpořte soukromí aktualizací na"
       ],
       "support team": [
         "tým podpory"
@@ -5410,6 +5407,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Pokud stánku opustíte, může dojít ke ztrátě dat rozepsané zprávy."
+      ],
+      "The local database is being prepared": [
+        "Lokální databáze se připravuje"
+      ],
+      "The message has expired": [
+        "Tato zpráva vypršela"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Původní zpráva, kterou se snažíte přeposlat/odpovědět, je ve fázi odesílání. Pokud budete pokračovat, nepůjde již odesílání původní zprávy zrušit."
@@ -5443,6 +5446,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tato akce stáhne všechny zprávy, aby mohly být lokálně prohledávány. Vymazání dat prohlížeče deaktivuje tuto volbu."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Tato akce stáhne nejnovější zprávy, aby mohly být lokálně prohledávány. Vymazání dat prohlížeče deaktivuje tuto volbu."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
@@ -5486,9 +5492,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Tato zpráva byla automaticky vygenerována jako odpověď na předchozí zprávu."
       ],
-      "This message is expired!": [
-        "Tato zpráva vypršela!"
-      ],
       "This message is from a mailing list.": [
         "Zpráva pochází z e-mailového seznamu."
       ],
@@ -5498,6 +5501,12 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Tato zpráva je podepsána přiloženým klíčem, který nebyl dosud označen jako důvěryhodný."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Tato zpráva bude automaticky smazána ${ longDateMEssage }"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Tato zpráva bude automaticky smazána ${ shortDateMessage }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Tato zpráva bude označena jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
         "Tyto zprávy budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
@@ -5506,6 +5515,9 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Tato zpráva bude přesunuta do konceptů, takže ji budete moci měnit. Bude potřeba znovu naplánovat její odeslání."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Tato zpráva bude odeslána ráno v ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Tato zpráva bude odeslána dne ${ dateString } v ${ formattedTime }"
@@ -5522,17 +5534,14 @@
       "This message will expire ${ formattedDate }": [
         "Tato zpráva vyprší ${ formattedDate }"
       ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "Tato zpráva se sama zničí za ${ formattedDelay }"
+      "This message will expire on ${ longDateMEssage }": [
+        "Tato zpráva vyprší ${ longDateMEssage }"
       ],
-      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
-        "Tato zpráva se sama zničí ${ dateString } v ${ formattedTime }"
+      "This message will expire today at ${ shortDateMessage }": [
+        "Platnost této zprávy vyprší dnes v ${ shortDateMessage }"
       ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "Tato zpráva se sama zničí dnes v ${ formattedTime }"
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "Tato zpráva se sama zničí zítra v ${ formattedTime }"
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Platnost této zprávy vyprší zítra v ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tento veřejný klíč bude automaticky využit pro šifrování zpráv odesílaných na tuto adresu."
@@ -5588,17 +5597,17 @@
       "Upgrade to add more addresses to your account.": [
         "Navyšte svůj účet a přidejte více e-mailových adres k vašemu účtu."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Navyšte svůj účet pro nastavení automatických odpovědí v době nepřítomnosti."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Navyšte svůj účet pro vytváření více složek, filtrů a adres."
       ],
-      "Upgrade to host emails from your own domain name.": [
-        "Navyšte svůj účet pro použití e-mailu na vlastním doménovém jménu."
+      "Upgrade to level up your privacy.": [
+        "Přejděte na vyšší tarif pro lepší soukromí."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Navyšte svůj účet pro posílání e-mailů z adres @pm.me."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Přejděte na vyšší tarif pro posílání e-mailů z vaší vlastní e-mailové domény."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Navyšte účet pro odesílání e-mailů skupinám kontaktů."
@@ -5612,8 +5621,14 @@
       "Upgrade to support privacy and get more features.": [
         "Vylepšete pro podporu soukromí a získání více funkcí."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Navyšte svůj účet pro použití ${ MAIL_APP_NAME } se stolními klienty třetích stran."
+      "Upgrade to unlock premium features.": [
+        "Přejděte na vyšší tarif pro odemknutí pro odemknutí prémiových funkcí."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Přejděte na vyšší tarif pro použití ${ MAIL_APP_NAME } s Apple Mail, Outlook nebo Thunderbird."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Přejděte na vyšší tarif pro použití automatické odpovědi, když jste pryč."
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -5624,9 +5639,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Chcete-li udržet svou agendu v soukromí, použijte ${ CALENDAR_APP_NAME }."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Použijte klávesové zkratky pro rychlejší správu e-mailů."
       ],
@@ -5635,9 +5647,6 @@
       ],
       "Version ${ appVersion }": [
         "Verze ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Navštivte náš obchod a kupte si ${ BRAND_NAME } zboží."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Omlouváme se. Toto mohla být chyba na naší straně. Potvrďte prosím, že jste si jistí, že chcete tento e-mail označit jako legitimní?"
@@ -5656,6 +5665,9 @@
       ],
       "Week": [
         "Týden"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Kdy chcete, aby se vaše zpráva automaticky odstranila z doručené pošty příjemce a z vaší složky odeslaných zpráv?"
       ],
       "When do you want your message to be sent?": [
         "Kdy chcete, aby byla vaše zpráva odeslána?"
@@ -5707,9 +5719,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "Dnes můžete ${ VPN_APP_NAME } používat zdarma."
       ],
       "You cannot reply from the invited address.": [
         "Nemůžete odpovídat z pozvané adresy."
@@ -5818,15 +5827,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Vaše zpráva bude smazána z doručené pošty příjemce a z vaší složky odeslaných zpráv dne ${ dateString } v ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Vaše zpráva bude smazána z doručené pošty příjemce a z vaší složky odeslaných zpráv dnes v ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Vaše zpráva bude smazána z doručené pošty příjemce a z vaší složky odeslaných zpráv zítra v ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Vaše zpráva vyprší za ${ numberOfDays } den.",
@@ -7521,32 +7521,14 @@
       ]
     },
     "Remaining days before the message expire": {
-      "${ remainingDays } day": [
+      "${ remainingDays } d": [
         "${ remainingDays } den",
         "${ remainingDays } dny",
-        "${ remainingDays } dní",
-        "${ remainingDays } dní"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } hodina",
-        "${ remainingHours } hodiny",
-        "${ remainingHours } hodin",
-        "${ remainingHours } hodin"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<1 hodina"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } rok",
-        "${ remainingYears } roky",
-        "${ remainingYears } let",
-        "${ remainingYears } let"
+        "${ remainingDays } dnů",
+        "${ remainingDays } dnů"
+      ],
+      "<1 d": [
+        "<1 den"
       ]
     },
     "Reply to calendar invitation": {
@@ -8009,6 +7991,9 @@
       "Message deleted": [
         "Zpráva byla smazána"
       ],
+      "Message expiration cancelled": [
+        "Expirace zpráv byla zrušena"
+      ],
       "Message marked as legitimate": [
         "Zpráva označena jako legitimní"
       ],
@@ -8071,9 +8056,6 @@
       ],
       "Read receipt sent": [
         "Potvrzení o přečtení bylo odesláno"
-      ],
-      "Self-destruction cancelled": [
-        "Samozničení zrušeno"
       ],
       "Self-destruction removed": [
         "Samozničení odebráno"
@@ -8158,32 +8140,6 @@
     "Time": {
       "Yesterday": [
         "Včera"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } den",
-        "${ daysCountLeft } dny",
-        "${ daysCountLeft } dní",
-        "${ daysCountLeft } dní"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } hodina",
-        "${ hoursCountLeft } hodiny",
-        "${ hoursCountLeft } hodin",
-        "${ hoursCountLeft } hodin"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minuta",
-        "${ minutesCountLeft } minuty",
-        "${ minutesCountLeft } minut",
-        "${ minutesCountLeft } minut"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } sekunda",
-        "${ secondsCountLeft } sekundy",
-        "${ secondsCountLeft } sekund",
-        "${ secondsCountLeft } sekund"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -8332,8 +8288,14 @@
       "Create folder": [
         "Vytvořit složku"
       ],
+      "Create folder \"${ search }\"": [
+        "Vytvořit složku \"${ search }\""
+      ],
       "Create label": [
         "Vytvořit štítek"
+      ],
+      "Create label \"${ search }\"": [
+        "Vytvořit štítek \"${ search }\""
       ],
       "Create new group": [
         "Vytvořit novou skupinu"
@@ -8697,6 +8659,9 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
+      ],
+      "Sign in with 2FA": [
+        "Příhlásit se pomocí dvoufázového ověření"
       ],
       "Sign out": [
         "Odhlásit se"

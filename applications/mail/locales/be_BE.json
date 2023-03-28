@@ -31,6 +31,12 @@
       "Add address": [
         "Дадаць адрас"
       ],
+      "Add Bcc recipients": [
+        "Дадаць атрымальніка схаванай копіі"
+      ],
+      "Add Cc recipients": [
+        "Дадаць атрымальніка копіі"
+      ],
       "Add condition": [
         "Дадаць умову"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Бэта-доступ"
       ],
+      "Blind Carbon Copy": [
+        "Схаваная копія"
+      ],
       "Block": [
         "Блакіраваць"
       ],
@@ -130,11 +139,8 @@
       "Cancel": [
         "Скасаваць"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Копія, схаваная копія"
-      ],
-      "CC BCC": [
-        "Копія, схаваная копія"
+      "Carbon Copy": [
+        "Копія"
       ],
       "Change page": [
         "Змяніць старонку"
@@ -254,7 +260,7 @@
         "Стварыць новае паведамленне"
       ],
       "Custom": [
-        "Карыстальніцкае"
+        "Карыстальніцкі"
       ],
       "Customize": [
         "Наладзіць"
@@ -499,6 +505,9 @@
       "Import from .csv or vCard": [
         "Імпартаванне з .csv або vCard"
       ],
+      "In the morning": [
+        "Раніцай"
+      ],
       "Inline": [
         "Убудаваны"
       ],
@@ -706,9 +715,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Адкрыць ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Адкрыць каляндар"
-      ],
       "Open composer": [
         "Адкрыць рэдактар"
       ],
@@ -717,9 +723,6 @@
       ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
-      ],
-      "Open shop": [
-        "Адкрыць краму"
       ],
       "Ordered list": [
         "Упарадкаваны спіс"
@@ -867,6 +870,9 @@
       ],
       "Search message content": [
         "Пошук змесціва паведамлення"
+      ],
+      "See business plans": [
+        "Паглядзець тарыфныя планы для бізнесу"
       ],
       "See plan features": [
         "Паглядзець функцыі тарыфнага плана"
@@ -1629,12 +1635,12 @@
         "Адбываецца падзея"
       ]
     },
-    "Cancel self-destruction of the message": {
+    "Cancel expiration of the message": {
       "Cancel": [
         "Скасаваць"
       ],
-      "Cancel self-destruction": [
-        "Скасаваць самазнішчэнне"
+      "Cancel expiration": [
+        "Скасаваць тэрмін дзеяння"
       ]
     },
     "Collapsible tooltip": {
@@ -3045,6 +3051,9 @@
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
+      "A problem occurred, please try again.": [
+        "Узнікла праблема. Паспрабуйце яшчэ раз."
+      ],
       "Address primary private key not found": [
         "Асноўны прыватны ключ адраса не знойдзены"
       ],
@@ -3249,6 +3258,9 @@
       "Passwords do not match": [
         "Паролі не супадаюць"
       ],
+      "Please activate your search again": [
+        "Актывуйце пошук яшчэ раз"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Выпраўце вылучаны канфлікт, каб працягнуць.",
         "Выпраўце вылучаныя канфлікты, каб працягнуць.",
@@ -3365,6 +3377,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Узнікла праблема з пошукам змесціва. Замест гэтага быў выкарыстаны прадвызначаны пошук."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Узнікла праблема пры абнаўленні вашых лакальных паведамленняў. Яны будуць спампаваны яшчэ раз, каб паўторна ўключыць у іх пошук па змесціву"
       ],
       "There was an error when exporting the contacts vCards": [
         "Падчас экспартавання кантактаў vCard адбылася памылка"
@@ -4367,9 +4382,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } не зарабляе грошы на парушэнні прыватнасці."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новы каляндар",
         "${ calendarsToBeCreatedCount } новыя календары",
@@ -4652,6 +4664,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Вы сапраўды хочаце выдаліць усе паведамленні з гэтай меткай?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Вы сапраўды хочаце выдаліць гэту папку? Усе падпапкі будуць выдалены таксама."
+      ],
       "Are you sure you want to delete this label?": [
         "Вы сапраўды хочаце выдаліць гэту метку?"
       ],
@@ -4767,7 +4782,7 @@
         "Падтрымліваюцца файлы CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і некаторых іншых праграм, а таксама фарматы vCard 3.1 і 4.0 (кадаванне UTF-8)."
       ],
       "Custom": [
-        "Карыстальніцкае"
+        "Карыстальніцкі"
       ],
       "Custom daily": [
         "Штодзень (карыстальніцкае)"
@@ -4783,12 +4798,6 @@
       ],
       "Daily": [
         "Штодзень"
-      ],
-      "Day": [
-        "Дзень",
-        "Дні",
-        "Дзён",
-        "Дні"
       ],
       "Default email application": [
         "Прадвызначаная праграма электроннай пошты"
@@ -4810,6 +4819,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Не забудзьце абагуліць ваш пароль з атрымальнікам"
+      ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Спампоўванне паведамлення ${ currentProgress } з ${ totalProgress }"
       ],
       "Draft": [
         "Чарнавік"
@@ -4910,17 +4922,20 @@
       "Expiration time": [
         "Тэрмін дзеяння"
       ],
-      "Expires": [
-        "Дзейнічае да"
+      "Expires in ${ formattedDate }": [
+        "Тэрмін дзеяння міне ${ formattedDate }"
       ],
-      "Expires in ${ formattedDelayShort }": [
-        "Тэрмін дзеяння міне ${ formattedDelayShort }"
+      "Expires in ${ minutesDiff } minute": [
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвіліну",
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвіліны",
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвілін",
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвіліны"
       ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Тэрмін дзеяння міне менш чым праз ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Неўзабаве міне"
+      "Expires in less than ${ hoursDiff } hour": [
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзіну",
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзіны",
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзін",
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзіны"
       ],
       "file attached": [
         "attachment",
@@ -4933,9 +4948,6 @@
       ],
       "Folder": [
         "Папка"
-      ],
-      "For increased security, activate 2FA.": [
-        "Для павелічэння бяспекі, актывуйце 2ФА."
       ],
       "For messages newer than ${ oldestDate }": [
         "Для паведамленняў больш новых, чым ${ oldestDate }"
@@ -4969,12 +4981,6 @@
       ],
       "Hide original message": [
         "Схаваць арыгінальнае паведамленне"
-      ],
-      "Hour": [
-        "Гадзіна",
-        "Гадзіны",
-        "Гадзін",
-        "Гадзіны"
       ],
       "How Hide My Email works": [
         "Як працуе функцыя \"Hide My Email\""
@@ -5030,8 +5036,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ importedEmailAddress } у ${ toEmail }."
       ],
-      "Increase storage space starting at": [
-        "Павялічце прастору сховішча, пачынаючы з"
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Павялічце аб'ём сховішча, пачынаючы ад ${ planPrice } у месяц."
       ],
       "Indexing paused": [
         "Індэксаванне прыпынена"
@@ -5120,6 +5126,9 @@
       "Message sent.": [
         "Паведамленне адпраўлена."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Паведамленне будзе адпраўлена раніцай а ${ formattedTime }"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Паведамленне будзе адпраўлена ${ dateString } а ${ formattedTime }"
       ],
@@ -5197,9 +5206,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша сістэма пазначыла гэта паведамленне як спробу фішынгу. Праверце яго надзейнасць"
-      ],
-      "per month.": [
-        "у месяц."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумяшчальны толькі з фарматам звычайнага тэксту."
@@ -5315,6 +5321,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук займае занадта шмат часу? ${ dropdownButton } або ${ toggleOffButton } з гэтага пошукавага сеанса."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча бясплатна ўжо сёння."
+      ],
       "Seems like you are all caught up for now": [
         "У вас пакуль няма лістоў"
       ],
@@ -5372,9 +5381,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Прабачце, але гэтага паведамлення не існуе або яно пратэрмінаванае."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Захоўвайце і бяспечна дзяліцеся файламі з ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Тэма"
       ],
@@ -5386,9 +5392,6 @@
       ],
       "Subject: ": [
         "Тэма: "
-      ],
-      "Support privacy by upgrading for": [
-        "Падтрымайце прыватнасць палепшыўшы да"
       ],
       "support team": [
         "каманда падтрымкі"
@@ -5410,6 +5413,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Калі вы пакінеце гэту старонку, то ўведзеныя вамі даныя могуць не захавацца ў чарнавіку."
+      ],
+      "The local database is being prepared": [
+        "Адбываецца падрыхтоўка лакальнай базы"
+      ],
+      "The message has expired": [
+        "Тэрмін дзеяння паведамлення мінуў"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Арыгінальнае паведамленне, якое вы спрабуеце пераслаць або адказаць, знаходзіцца ў працэсе адпраўкі. Калі вы перацягніце, вы не зможаце адрабіць адпраўку арыгінальнага паведамлення."
@@ -5443,6 +5452,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Гэта дзеянне спампуе ўсе паведамленні для лакальнага пошуку. Ачыстка даных вашага браўзера адключыць гэты параметр."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Гэта дзеянне спампуе ўсе самыя нядаўнія паведамленні для лакальнага пошуку. Ачыстка даных вашага браўзера адключыць гэты параметр."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
@@ -5486,9 +5498,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Гэта паведамленне аўтаматычна згенерыравана ў адказ на папярэдняе паведамленне."
       ],
-      "This message is expired!": [
-        "Тэрмін дзеяння гэтага паведамлення мінуў!"
-      ],
       "This message is from a mailing list.": [
         "Гэта паведамленне са спіса рассылкі."
       ],
@@ -5498,6 +5507,12 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Гэта паведамленне падпісана далучаным ключом, які яшчэ не быў давераным."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Гэта паведамленне будзе аўтаматычна выдалена ${ longDateMEssage }"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Гэта паведамленне будзе аўтаматычна выдалена а ${ shortDateMessage }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Гэта паведамленне будзе пазначана як спам. Ці хочаце вы таксама адпісацца ад будучых лістоў?",
         "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама адпісацца ад будучых лістоў?",
@@ -5506,6 +5521,9 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Гэта паведамленне будзе перамешчана ў папку Чарнавікі, таму вы зможаце рэдагаваць яго. Вам неабходна будзе зноў запланаваць яго перад адпраўкай."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Гэта паведамленне будзе адпраўлена раніцай а ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Гэта паведамленне будзе адпраўлена ${ dateString } а ${ formattedTime }"
@@ -5522,17 +5540,14 @@
       "This message will expire ${ formattedDate }": [
         "Тэрмін дзеяння гэтага паведамлення міне ${ formattedDate }"
       ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "Гэта паведамленне будзе самазнішчана ў ${ formattedDelay }"
+      "This message will expire on ${ longDateMEssage }": [
+        "Тэрмін дзеяння гэтага паведамлення міне ${ longDateMEssage }"
       ],
-      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
-        "Гэта паведамленне будзе самазнішчана ${ dateString } а ${ formattedTime }"
+      "This message will expire today at ${ shortDateMessage }": [
+        "Тэрмін дзеяння гэтага паведамлення міне сёння а ${ shortDateMessage }"
       ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "Гэта паведамленне будзе самазнішчана сёння а ${ formattedTime }"
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "Гэта паведамленне будзе самазнішчана заўтра а ${ formattedTime }"
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Тэрмін дзеяння гэтага паведамлення міне заўтра а ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Гэты публічны ключ будзе аўтаматычна выкарыстаны для шыфравання лістоў, якія адпраўляюцца на гэты адрас."
@@ -5582,23 +5597,26 @@
       "Updating message content search...": [
         "Абнаўленне пошуку змесціва паведамлення..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Абнаўленне вашых лакальных паведамленняў. У вас не будзе магчымасці шукаць па змесціву паведамлення падчас гэтага абнаўлення"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
       ],
       "Upgrade to add more addresses to your account.": [
         "Палепшыце ўліковы запіс, каб дадаць больш адрасоў."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Палепшыце тарыфны план, каб мець магчымасць канфігурыраваць аўтаматычны адказ на час адпачынку."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Палепшыце ўліковы запіс, каб ствараць больш папак, фільтраў і адрасоў."
       ],
-      "Upgrade to host emails from your own domain name.": [
-        "Палепшыце свой уліковы запіс, каб размясціць электронную пошту выкарыстоўваючы імя ўласнага дамена."
+      "Upgrade to level up your privacy.": [
+        "Палепшыце, каб павысіць свой узровень прыватнасці."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Палепшыце ўліковы запіс, каб мець магчымасць адпраўляць лісты з адраса @pm.me."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Палепшыце, каб адпраўляць лісты з вашага карыстальніцкага дамена электроннай пошты."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Палепшыце ўліковы запіс, каб з лёгкасцю адпраўляць лісты групам кантактаў."
@@ -5612,8 +5630,14 @@
       "Upgrade to support privacy and get more features.": [
         "Палепшыце ўліковы запіс, каб падтрымаць прыватнасць і атрымаць больш функцый."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Палепшыце ўліковы запіс, каб выкарыстоўваць ${ MAIL_APP_NAME } са староннімі паштовымі кліентамі для камп'ютараў."
+      "Upgrade to unlock premium features.": [
+        "Палепшыце, каб разблакіраваць прэміяльныя функцыі."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Палепшыце, каб выкарыстоўваць ${ MAIL_APP_NAME } з Apple Mail, Outlook або Thunderbird."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Палепшыце, каб адказваць у аўтаматычным рэжыме, калі вы не можаце зрабіць гэта самі."
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -5624,9 +5648,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL-адрас: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Выкарыстоўвайце ${ CALENDAR_APP_NAME }, каб захаваць свой распарадак дня ў прыватнасці."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Выкарыстоўваць спалучэнні клавіш для больш хуткага кіравання вашымі лістамі."
       ],
@@ -5635,9 +5656,6 @@
       ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Наведайце нашу краму, каб атрымаць тавары ад ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Прыносім прабачэнні. Магчыма, гэта была памылка з нашага боку. Ці можаце вы пацвердзіць, што хочаце пазначыць гэты ліст як надзейны?"
@@ -5656,6 +5674,9 @@
       ],
       "Week": [
         "Тыдзень"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Калі вы хочаце, каб ваша паведамленне аўтаматычна выдалялася з папак з уваходнымі і адпраўленымі лістамі ў вашай паштовай скрыні?"
       ],
       "When do you want your message to be sent?": [
         "Калі вы хочаце, каб ваша паведамленне было адпраўлена?"
@@ -5708,7 +5729,7 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
       ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
+      "You can use ${ VPN_APP_NAME } for free, today.": [
         "Вы можаце выкарыстоўваць ${ VPN_APP_NAME } бясплатна ўжо сёння."
       ],
       "You cannot reply from the invited address.": [
@@ -5818,15 +5839,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы ўліковыя даныя не будуць захаваны."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Ваша паведамленне будзе выдалена з папкі атрымальніка \"Уваходныя\" і вашай папкі \"Адпраўленыя\" ${ dateString } а ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Ваша паведамленне будзе выдалена з папкі атрымальніка \"Уваходныя\" і вашай папкі \"Адпраўленыя\" сёння а ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Ваша паведамленне будзе выдалена з папкі атрымальніка \"Уваходныя\" і вашай папкі \"Адпраўленыя\" заўтра а ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Тэрмін дзеяння вашага паведамлення міне праз ${ numberOfDays } дзень.",
@@ -7521,32 +7533,14 @@
       ]
     },
     "Remaining days before the message expire": {
-      "${ remainingDays } day": [
+      "${ remainingDays } d": [
         "${ remainingDays } дзень",
         "${ remainingDays } дні",
         "${ remainingDays } дзён",
         "${ remainingDays } дні"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } гадзіна",
-        "${ remainingHours } гадзіны",
-        "${ remainingHours } гадзін",
-        "${ remainingHours } гадзіны"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<1 гадзіна"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } год",
-        "${ remainingYears } гады",
-        "${ remainingYears } гадоў",
-        "${ remainingYears } гады"
+      ],
+      "<1 d": [
+        "<1 дз"
       ]
     },
     "Reply to calendar invitation": {
@@ -8009,6 +8003,9 @@
       "Message deleted": [
         "Паведамленне выдалена"
       ],
+      "Message expiration cancelled": [
+        "Тэрмін дзеяння для паведамлення скасаваны"
+      ],
       "Message marked as legitimate": [
         "Паведамленне пазначана як надзейнае"
       ],
@@ -8071,9 +8068,6 @@
       ],
       "Read receipt sent": [
         "Апавяшчэнне пра прачытанне адпраўлена"
-      ],
-      "Self-destruction cancelled": [
-        "Самазнішчэнне скасавана"
       ],
       "Self-destruction removed": [
         "Самазнішчэнне выдалена"
@@ -8158,32 +8152,6 @@
     "Time": {
       "Yesterday": [
         "Учора"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } дзень",
-        "${ daysCountLeft } дні",
-        "${ daysCountLeft } дзён",
-        "${ daysCountLeft } дні"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } гадзіна",
-        "${ hoursCountLeft } гадзіны",
-        "${ hoursCountLeft } гадзін",
-        "${ hoursCountLeft } гадзіны"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } хвіліна",
-        "${ minutesCountLeft } хвіліны",
-        "${ minutesCountLeft } хвілін",
-        "${ minutesCountLeft } хвіліны"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } секунда",
-        "${ secondsCountLeft } секунды",
-        "${ secondsCountLeft } секунд",
-        "${ secondsCountLeft } секунды"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -8332,8 +8300,14 @@
       "Create folder": [
         "Стварэнне папкі"
       ],
+      "Create folder \"${ search }\"": [
+        "Стварыць папку \"${ search }\""
+      ],
       "Create label": [
         "Стварэнне меткі"
+      ],
+      "Create label \"${ search }\"": [
+        "Стварыць метку \"${ search }\""
       ],
       "Create new group": [
         "Стварыць новую групу"
@@ -8697,6 +8671,9 @@
       ],
       "Sign in and grant access": [
         "Увайсці і даць доступ"
+      ],
+      "Sign in with 2FA": [
+        "Увайсці з 2ФА"
       ],
       "Sign out": [
         "Выйсці"

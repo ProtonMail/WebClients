@@ -2899,6 +2899,9 @@
       "Error in one of the conditions": [
         "Fout in de volgende voorwaarden"
       ],
+      "Expired": [
+        "Verlopen"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Het is niet gelukt om uw actieve sessies op te halen. Gelieve te ${ refresh } of later opnieuw te proberen."
       ],
@@ -2989,9 +2992,6 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Geen e-mails gevonden om te importeren - het account heeft geen inbox"
-      ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Geen publieke sleutel voor ${ BRAND_NAME }-adres"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
@@ -3474,6 +3474,9 @@
       ],
       "sign in": [
         "inloggen"
+      ],
+      "Sign in to verify": [
+        "Inloggen om te verifiëren"
       ],
       "There was a problem removing your email address.": [
         "Er was een probleem bij het verwijderen van uw e-mailadres."
@@ -4630,6 +4633,9 @@
       "Are you sure you want to delete this filter?": [
         "Weet u zeker dat u dit filter wil verwijderen?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Weet u zeker dat u deze map wilt verwijderen? Alle onderliggende mappen zullen ook worden verwijderd."
+      ],
       "Are you sure you want to delete this label?": [
         "Weet u zeker dat u dit label wilt verwijderen?"
       ],
@@ -4668,6 +4674,9 @@
       ],
       "Background color": [
         "Achtergrondkleur"
+      ],
+      "Balance from your previous subscription": [
+        "Balans van uw vorige abonnement"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
@@ -5573,6 +5582,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Het e-mailadres dat u bovenaan de lijst plaatst is uw standaard e-mailadres. Slepen en neerzetten om uw adressen te rangschikken."
       ],
+      "The email verification link has expired. Please sign in to resend a verification link.": [
+        "De e-mailverificatielink is verlopen. Log in om de verificatielink opnieuw te verzenden."
+      ],
       "The following address is available:": [
         "Het volgende adres is beschikbaar:"
       ],
@@ -5647,6 +5659,9 @@
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Dit token is niet meer beschikbaar nadat u dit venster sluit en u deelt het beter met niemand."
+      ],
+      "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
+        "Deze uitschrijvingslink is verlopen. Opnieuw een meer recente e-mail van deze mailinglijst."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
@@ -5771,6 +5786,9 @@
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
       ],
+      "Unsubscribe link expired": [
+        "Uitschrijvingslink verlopen"
+      ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
@@ -5803,6 +5821,9 @@
       ],
       "Verification can take a few minutes.": [
         "Verificatie kan een paar minuten duren."
+      ],
+      "Verification link expired": [
+        "Verificatielink is verlopen"
       ],
       "Verification may take a few minutes.": [
         "Verificatie kan enkele minuten duren."
@@ -9325,11 +9346,6 @@
         "Labels"
       ]
     },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Deel uw agenda met een link om niet-${ BRAND_NAME }-gebruikers uit te nodigen"
-      ]
-    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "U hebt het maximum van ${ MAX_CALENDAR_MEMBERS } lid per agenda overschreden",
@@ -9749,11 +9765,6 @@
         "Supersnelle VPN op ${ maxVpn } apparaten"
       ]
     },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Beheer uw abonnement op ${ subscriptionManagerShort }"
-      ]
-    },
     "Subscription price": {
       "For": [
         "Voor"
@@ -9763,8 +9774,26 @@
       "Are you sure?": [
         "Weet u het zeker?"
       ],
+      "Auto-pay is disabled": [
+        "Automatische betaling is uitgeschakeld"
+      ],
+      "Auto-pay is enabled": [
+        "Automatische betaling is ingeschakeld"
+      ],
       "Disable": [
         "Uitschakelen"
+      ],
+      "Enable auto-pay support": [
+        "Ondersteuning voor automatische betaling inschakelen"
+      ],
+      "Keep auto-pay": [
+        "Automatische betaling houden"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. Aanvullend, als u vergeet om een manuele betaling uit te voeren en automatisch betalen uitgeschakeld is voor alle betaalmethodes, wordt uw account mogelijk gedowngraded, wat zal leiden tot het verliezen van veel functies."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
       ]
     },
     "Subscription saving": {
