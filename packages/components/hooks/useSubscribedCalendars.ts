@@ -42,7 +42,7 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], loadingCalendars = 
 
     const calendarIDs = useMemo(() => calendars.map(({ ID }) => ID), [calendars]);
 
-    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: coreSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
     const handleAddCalendar = async (calendar: CalendarWithOwnMembers) => {
@@ -152,7 +152,7 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], loadingCalendars = 
             return;
         }
 
-        return standardSubscribe(
+        return coreSubscribe(
             ({
                 Calendars: CalendarEvents = [],
                 CalendarMembers: CalendarMembersEvents = [],
