@@ -321,7 +321,6 @@ const AccountStep = ({
                     />
                     {hasChallenge ? (
                         <Challenge
-                            noLoader
                             bodyClassName="pl0-5 pr0-5"
                             iframeClassName="challenge-width-increase"
                             challengeRef={challengeRefLogin}
