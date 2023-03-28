@@ -1,15 +1,27 @@
 import { useEffect, useState } from 'react';
 
 import { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
-import { ExperimentCode, FeatureCode, useExperiment, useFeature, useWelcomeFlags } from '@proton/components/index';
+import {
+    ExperimentCode,
+    FeatureCode,
+    useApi,
+    useExperiment,
+    useFeature,
+    useUserSettings,
+    useWelcomeFlags,
+} from '@proton/components/index';
+import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
+import noop from '@proton/utils/noop';
 
 const useGmailSync = () => {
+    const api = useApi();
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+    const [userSettings, userSettingsLoading] = useUserSettings();
+    const experimentCondition = userSettings && userSettings.Locale.startsWith('en');
     const easySwitch = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
-    const gmailSyncOnboarding = useExperiment(ExperimentCode.GmailSyncOnboarding);
+    const gmailSyncOnboarding = useExperiment(ExperimentCode.GmailSyncOnboarding, experimentCondition);
 
     const [derivedValues, setDerivedValues] = useState({
-        isBlurred: false,
         displayOnboarding: false,
         displaySync: false,
     });
@@ -17,15 +29,16 @@ const useGmailSync = () => {
     useEffect(() => {
         const hasSawWelcome = welcomeFlags.isDone;
 
-        if (gmailSyncOnboarding.loading || easySwitch.loading || hasSawWelcome) {
+        if (experimentCondition && (gmailSyncOnboarding.loading || easySwitch.loading || hasSawWelcome)) {
             setDerivedValues({
-                isBlurred: false,
                 displayOnboarding: false,
                 displaySync: false,
             });
-        } else if (!gmailSyncOnboarding.loading && gmailSyncOnboarding.value === 'A') {
+        } else if (
+            (!gmailSyncOnboarding.loading && gmailSyncOnboarding.value === 'A') ||
+            (!experimentCondition && gmailSyncOnboarding.loading && !userSettingsLoading) //We have to display default onboarding to all users that aren't in the experiment
+        ) {
             setDerivedValues({
-                isBlurred: true,
                 displayOnboarding: true,
                 displaySync: false,
             });
@@ -35,26 +48,33 @@ const useGmailSync = () => {
             easySwitch.feature?.Value.GoogleMailSync === true
         ) {
             setDerivedValues({
-                isBlurred: true,
                 displayOnboarding: false,
                 displaySync: true,
             });
         }
-    }, [gmailSyncOnboarding.loading, easySwitch.loading, welcomeFlags]);
+    }, [gmailSyncOnboarding.loading, easySwitch.loading, welcomeFlags, userSettingsLoading]);
 
     const handleSyncSkip = () => {
         setDerivedValues({
-            isBlurred: true,
             displayOnboarding: true,
             displaySync: false,
         });
     };
 
-    const handleSyncCallback = (hasError: boolean) => {
+    const handleSyncCallback = async (hasError: boolean) => {
         if (!hasError) {
             setWelcomeFlagsDone();
+
+            if (welcomeFlags.isWelcomeFlow) {
+                // Set generic welcome to true
+                await api(updateFlags({ Welcomed: 1 })).catch(noop);
+            }
+            if (!userSettings.WelcomeFlag) {
+                // Set product specific welcome to true
+                await api(updateWelcomeFlags()).catch(noop);
+            }
+
             setDerivedValues({
-                isBlurred: false,
                 displayOnboarding: false,
                 displaySync: false,
             });

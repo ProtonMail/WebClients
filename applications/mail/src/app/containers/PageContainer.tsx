@@ -1,4 +1,4 @@
-import { Ref, forwardRef, memo, useRef } from 'react';
+import { Ref, forwardRef, memo, useEffect, useRef } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import { EasySwitchGmailSyncModal, EasySwitchProvider, useEasySwitchGmailSync } from '@proton/activation/index';
@@ -55,7 +55,11 @@ const PageContainer = (
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
     const { showDrawerSidebar, appInView } = useDrawer();
 
+    const [syncModalProps, setSyncModalProps, renderSyncModal] = useModalState();
     const { derivedValues, handleSyncSkip, handleSyncCallback } = useEasySwitchGmailSync();
+    useEffect(() => {
+        setSyncModalProps(derivedValues.displaySync);
+    }, [derivedValues]);
 
     useOpenDrawerOnLoad();
     const { getFeature } = useFeatures([FeatureCode.LegacyMessageMigrationEnabled]);
@@ -104,7 +108,6 @@ const PageContainer = (
     return (
         <PrivateLayout
             ref={ref}
-            isBlurred={derivedValues.isBlurred}
             labelID={labelID}
             elementID={elementID}
             breakpoints={breakpoints}
@@ -114,14 +117,14 @@ const PageContainer = (
         >
             <EasySwitchProvider>
                 <>
-                    {derivedValues.displaySync && !derivedValues.displayOnboarding && (
+                    {renderSyncModal && (
                         <EasySwitchGmailSyncModal
-                            syncOpen={derivedValues.displaySync}
                             onSyncCallback={handleSyncCallback}
                             onSyncSkipCallback={handleSyncSkip}
+                            {...syncModalProps}
                         />
                     )}
-                    {derivedValues.displayOnboarding && !derivedValues.displaySync && (
+                    {derivedValues.displayOnboarding && (
                         <MailStartupModals
                             onboardingOpen={derivedValues.displayOnboarding}
                             onOnboardingDone={() => setWelcomeFlagsDone()}
