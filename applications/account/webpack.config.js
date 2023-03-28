@@ -16,7 +16,8 @@ module.exports = (...env) => {
         storage: path.resolve('./src/app/storage.ts'),
     });
 
-    config.devServer.historyApiFallback.rewrites = [{ from: /^\/lite/, to: '/lite.html' }];
+    const rewrites = [{ from: /^\/lite/, to: '/lite.html' }];
+    config.devServer.historyApiFallback.rewrites = rewrites;
 
     // We keep the order because the other plugins have an impact
     // Replace the old html webpackplugin with this
@@ -38,8 +39,17 @@ module.exports = (...env) => {
 
     const pages = fs.readdirSync('./src/pages');
 
+    // Reverse the pages so that /mail/signup is before /mail
+    pages.reverse();
+
     pages.forEach((file) => {
         const parameters = require(`./src/pages/${file}`);
+
+        // We replace . with / to pretend mail.signup -> /mail/signup
+        const replacePathname = file.replace('.json', '').replace('.', '\\/');
+        const filename = file.replace('.json', '.html');
+
+        rewrites.push({ from: new RegExp(`^\/${replacePathname}$`), to: `/${filename}` });
 
         const templateParameters = { ...htmlPlugin.userOptions.templateParameters, ...parameters };
 
@@ -47,7 +57,7 @@ module.exports = (...env) => {
             htmlIndex,
             0,
             new HtmlWebpackPlugin({
-                filename: file.replace('.json', '.html'),
+                filename,
                 template: path.resolve(`./src/app.ejs`),
                 templateParameters,
                 scriptLoading: 'defer',
