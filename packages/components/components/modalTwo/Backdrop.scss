@@ -7,6 +7,10 @@
 	background: var(--backdrop-norm);
 	animation: 0.1s ease-out forwards;
 
+	@supports (backdrop-filter: blur(1px)) {
+		backdrop-filter: blur(4px);
+	}
+
 	&--out {
 		animation-name: anime-modal-two-backdrop-out;
 	}

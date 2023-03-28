@@ -36,7 +36,7 @@ const headerItemsDesktop: ListViewHeaderItem[] = [headerItems.name, headerItems.
 
 const headerItemsMobile: ListViewHeaderItem[] = [headerItems.name, headerItems.placeholder];
 
-const DriveContainerBlurred = () => {
+const DriveDummyContainer = () => {
     const [user] = useUser();
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: toggleExpanded } = useToggle();
@@ -100,7 +100,6 @@ const DriveContainerBlurred = () => {
         <>
             <ModalsChildren />
             <PrivateAppContainer
-                isBlurred
                 header={header}
                 sidebar={sidebar}
                 drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
@@ -133,4 +132,4 @@ const DriveContainerBlurred = () => {
     );
 };
 
-export default DriveContainerBlurred;
+export default DriveDummyContainer;

@@ -17,7 +17,6 @@ interface Props {
     breakpoints: Breakpoints;
     labelID: string;
     elementID: string | undefined;
-    isBlurred?: boolean;
     drawerSidebarButtons: ReactElement[];
     drawerSpotlightSeenRef: MutableRefObject<boolean>;
     showDrawerSidebar?: boolean;
@@ -29,7 +28,6 @@ const PrivateLayout = (
         breakpoints,
         labelID,
         elementID,
-        isBlurred,
         drawerSidebarButtons,
         drawerSpotlightSeenRef,
         showDrawerSidebar,
@@ -83,7 +81,6 @@ const PrivateLayout = (
             top={top}
             header={header}
             sidebar={sidebar}
-            isBlurred={isBlurred}
             containerRef={ref}
             drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} spotlightSeenRef={drawerSpotlightSeenRef} />}
             drawerVisibilityButton={
