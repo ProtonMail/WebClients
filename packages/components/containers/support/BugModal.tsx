@@ -177,6 +177,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
             return {
                 ...screenshotBlobs,
                 ...omit(model, ['OSArtificial', 'Category']),
+                Trigger: mode || '',
                 Client,
                 ClientVersion: APP_VERSION,
                 ClientType: clientType,
