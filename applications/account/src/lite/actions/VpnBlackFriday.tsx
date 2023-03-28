@@ -16,10 +16,10 @@ import { Currency } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
 
 import broadcast, { MessageType } from '../broadcast';
-import LiteBox from './LiteBox';
-import LiteLoaderPage from './LiteLoaderPage';
-import SubscribeAccountDone from './SubscribeAccountDone';
-import { SubscribeType } from './subscribeInterface';
+import LiteBox from '../components/LiteBox';
+import LiteLoaderPage from '../components/LiteLoaderPage';
+import SubscribeAccountDone from '../components/SubscribeAccountDone';
+import { SubscribeType } from '../types/SubscribeType';
 
 const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscreen?: boolean }) => {
     const [user] = useUser();
