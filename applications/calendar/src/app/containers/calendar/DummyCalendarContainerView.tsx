@@ -8,7 +8,7 @@ import TimeGrid from '../../components/calendar/TimeGrid';
 import CalendarContainerView from './CalendarContainerView';
 import { TimeGridRef } from './interface';
 
-const CalendarContainerViewBlurred = () => {
+const DummyCalendarContainerView = () => {
     const timeGridViewRef = useRef<TimeGridRef>(null);
 
     const now = new Date();
@@ -32,7 +32,6 @@ const CalendarContainerViewBlurred = () => {
     return (
         <CalendarContainerView
             view={VIEWS.WEEK}
-            isBlurred
             utcDate={now}
             utcDefaultDate={now}
             utcDateRange={dateRange}
@@ -60,4 +59,4 @@ const CalendarContainerViewBlurred = () => {
     );
 };
 
-export default CalendarContainerViewBlurred;
+export default DummyCalendarContainerView;

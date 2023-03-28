@@ -1,5 +1,5 @@
 import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';
-import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
+import DummyCalendarContainerView from '../calendar/DummyCalendarContainerView';
 
 interface Props {
     onDone: () => void;
@@ -8,7 +8,7 @@ interface Props {
 const CalendarOnboardingContainer = ({ onDone }: Props) => {
     return (
         <>
-            <CalendarContainerViewBlurred />
+            <DummyCalendarContainerView />
             <CalendarOnboardingModal open onDone={onDone} />
         </>
     );

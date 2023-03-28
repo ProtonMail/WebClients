@@ -1,5 +1,5 @@
 import DriveOnboardingModal from '../components/onboarding/DriveOnboardingModal';
-import DriveContainerBlurred from './DriveContainerBlurred';
+import DriveDummyContainer from './DriveDummyContainer';
 
 interface Props {
     onDone: () => void;
@@ -8,7 +8,7 @@ interface Props {
 const OnboardingContainer = ({ onDone }: Props) => {
     return (
         <>
-            <DriveContainerBlurred />
+            <DriveDummyContainer />
             <DriveOnboardingModal open onDone={onDone} />
         </>
     );
