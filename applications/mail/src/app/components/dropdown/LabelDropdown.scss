@@ -1,9 +1,8 @@
 @import '~@proton/styles/scss/lib';
 
 .label-dropdown {
-	&-container {
+	&-list {
 		@include media('>small') {
-			max-inline-size: 22em;
 			max-block-size: 13.5em;
 		}
 	}

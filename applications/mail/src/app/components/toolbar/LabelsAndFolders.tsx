@@ -56,7 +56,7 @@ const LabelsAndFolders = ({
             <Vr />
             <ToolbarDropdown
                 autoClose={false}
-                dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
+                dropdownSize={{ maxWidth: '22em', maxHeight: DropdownSizeUnit.Viewport }}
                 disabled={!selectedIDs || !selectedIDs.length}
                 content={<Icon className="toolbar-icon" name="folder-arrow-in" />}
                 dropDownClassName="move-dropdown"
@@ -81,7 +81,7 @@ const LabelsAndFolders = ({
             </ToolbarDropdown>
             <ToolbarDropdown
                 autoClose={false}
-                dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
+                dropdownSize={{ maxWidth: '22em', maxHeight: DropdownSizeUnit.Viewport }}
                 disabled={!selectedIDs || !selectedIDs.length}
                 content={<Icon className="toolbar-icon" name="tag" />}
                 dropDownClassName="label-dropdown"
