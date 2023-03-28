@@ -100,7 +100,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         group && selected && 'is-selected',
         size !== 'medium' && `button-${size}`,
         `button-${shape}-${color}`,
-        restProps.as !== 'button' ? 'inline-block text-center' : '',
+        as !== 'button' && 'inline-block text-center',
         className
     );
 
