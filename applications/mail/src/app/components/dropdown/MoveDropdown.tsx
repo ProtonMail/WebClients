@@ -212,10 +212,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     data-prevent-arrow-navigation
                 />
             </div>
-            <div
-                className="overflow-auto mt1 move-dropdown-container flex-item-fluid-auto"
-                data-testid="move-dropdown-list"
-            >
+            <div className="move-dropdown-list overflow-auto mt1 flex-item-fluid-auto" data-testid="move-dropdown-list">
                 <ul className="unstyled mt0 mb0">
                     {list.map((folder: FolderItem) => {
                         return (
@@ -271,7 +268,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                 </ul>
             </div>
             <hr className="m0 flex-item-noshrink" />
-            <div className={clsx(['px1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
+            <div className={clsx(['mx1 mt1 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
                     checked={always}

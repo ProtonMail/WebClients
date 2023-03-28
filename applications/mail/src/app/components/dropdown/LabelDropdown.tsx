@@ -314,7 +314,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 />
             </div>
             <div
-                className="overflow-auto mt1 label-dropdown-container flex-item-fluid-auto"
+                className="label-dropdown-list overflow-auto mt1 flex-item-fluid-auto"
                 data-testid="label-dropdown-list"
             >
                 <ul className="unstyled mt0 mb0">

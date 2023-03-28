@@ -356,7 +356,7 @@ const HeaderMoreDropdown = ({
                         key="message-header-expanded:folder-dropdown"
                         icon
                         autoClose={false}
-                        dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
+                        dropdownSize={{ maxWidth: '22em', maxHeight: DropdownSizeUnit.Viewport }}
                         content={<Icon name="folder-arrow-in" alt={c('Action').t`Move to`} />}
                         className="messageMoveDropdownButton"
                         dropDownClassName="move-dropdown"
@@ -382,7 +382,7 @@ const HeaderMoreDropdown = ({
                         key="message-header-expanded:label-dropdown"
                         icon
                         autoClose={false}
-                        dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
+                        dropdownSize={{ maxWidth: '22em', maxHeight: DropdownSizeUnit.Viewport }}
                         content={<Icon name="tag" alt={c('Action').t`Label as`} />}
                         className="messageLabelDropdownButton"
                         dropDownClassName="label-dropdown"
