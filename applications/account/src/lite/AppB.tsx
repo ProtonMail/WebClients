@@ -33,10 +33,10 @@ import noop from '@proton/utils/noop';
 
 import * as config from '../app/config';
 import locales from '../app/locales';
+import MainContainer from './MainContainer';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
-import MainContainer from './containers/MainContainer';
-import { FullscreenOption, SupportedActions, getApp, getFullscreenOption } from './containers/helper';
+import { FullscreenOption, SupportedActions, getApp, getFullscreenOption } from './helper';
 
 setLocales(locales);
 
