@@ -103,7 +103,6 @@ const PageContainer = (
     return (
         <PrivateLayout
             ref={ref}
-            isBlurred={onboardingOpen}
             labelID={labelID}
             elementID={elementID}
             breakpoints={breakpoints}

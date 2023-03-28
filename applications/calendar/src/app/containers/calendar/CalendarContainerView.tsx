@@ -87,7 +87,6 @@ interface Props {
     onCreateCalendarFromSidebar?: (id: string) => void;
     isLoading?: boolean;
     isNarrow?: boolean;
-    isBlurred?: boolean;
     displayWeekNumbers?: boolean;
     weekStartsOn?: WeekStartsOn;
     tzid: string;
@@ -113,7 +112,6 @@ const CalendarContainerView = ({
     calendars,
     onCreateCalendarFromSidebar,
     isLoading = false,
-    isBlurred = false,
     isNarrow = false,
     displayWeekNumbers = false,
     weekStartsOn = 0,
@@ -576,7 +574,6 @@ const CalendarContainerView = ({
             header={header}
             bottom={bottom}
             sidebar={sidebar}
-            isBlurred={isBlurred}
             containerRef={containerRef}
             mainNoBorder={isDrawerApp}
             drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
