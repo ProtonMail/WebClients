@@ -90,6 +90,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
     const shape = shapeProp || (color === 'weak' ? 'outline' : 'solid');
 
     const isUnderlineShape = shape === 'underline';
+    const Element: ElementType = as || defaultElement;
 
     const buttonClassName = clsx(
         isUnderlineShape ? 'button-underline' : 'button',
@@ -100,12 +101,11 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         group && selected && 'is-selected',
         size !== 'medium' && `button-${size}`,
         `button-${shape}-${color}`,
-        as !== 'button' && 'inline-block text-center',
+        Element !== 'button' && 'inline-block text-center',
         className
     );
 
     const roleProps = restProps.onClick && !restProps.type ? { role: 'button' } : undefined;
-    const Element: ElementType = as || defaultElement;
 
     return (
         <Element

@@ -24,7 +24,7 @@ const NotificationButtonBase = <E extends ElementType = typeof defaultElement>(
     return (
         <ButtonLike
             as={Element}
-            {...(!rest.as || rest.as === 'button' ? { type: 'button' } : undefined)}
+            {...(Element === 'button' ? { type: 'button' } : undefined)}
             ref={ref}
             {...rest}
             shape={positive ? 'ghost' : 'solid'}
