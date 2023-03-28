@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { ModalTwo, useActiveBreakpoint, useLoading } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { ModalTwo, useActiveBreakpoint, useLoading, useModalTwo } from '@proton/components';
 
 import { DecryptedLink, useActions, useTreeForModals } from '../../../store';
 import { selectMessageForItemList } from '../../sections/helpers';

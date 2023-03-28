@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { useModalTwo } from '@proton/components';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUser';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
