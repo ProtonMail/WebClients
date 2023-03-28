@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { SubscribeType } from './subscribeInterface';
+import { SubscribeType } from '../../types/SubscribeType';
 import updateSuccess from './updateSuccess.svg';
 
 const SubscribeAccountDone = ({ type }: { type: SubscribeType }) => {
