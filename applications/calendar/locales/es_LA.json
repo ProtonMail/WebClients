@@ -2268,9 +2268,6 @@
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar, la cuenta no tiene un buzón"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "No hay clave pública para la dirección de ${ BRAND_NAME }"
-      ],
       "No valid address found": [
         "Ninguna dirección válida encontrada"
       ],
@@ -3862,6 +3859,11 @@
         "Confiada"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Así es cómo"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
@@ -4986,8 +4988,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Para invitar usuarios fuera de ${ BRAND_NAME }, comparta su calendario con un enlace"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Para invitar a usuarios que no sean de ${ BRAND_NAME }, comparta su calendario con un enlace."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5895,6 +5897,9 @@
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
       ],
+      "Sign in with 2FA": [
+        "Iniciar sesión 2FA"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -6018,6 +6023,14 @@
       ],
       "You do not have any contacts to export": [
         "No tiene ningún contacto para exportar"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Compartido con cifrado de extremo a extremo"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Compartido con cifrado de extremo a extremo con contacto verificado"
       ]
     },
     "Validation": {

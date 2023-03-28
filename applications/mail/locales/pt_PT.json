@@ -116,12 +116,6 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Cópia de mensagem, Cópia cega de mensagem"
-      ],
-      "CC BCC": [
-        "CC BCC"
-      ],
       "Change page": [
         "Alterar página"
       ],
@@ -653,17 +647,11 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Abrir agenda"
-      ],
       "Open composer": [
         "Abrir compositor"
       ],
       "Open navigation": [
         "Abrir navegação"
-      ],
-      "Open shop": [
-        "Abrir loja"
       ],
       "Ordered list": [
         "Lista ordenada"
@@ -3488,10 +3476,6 @@
       "Daily": [
         "Diariamente"
       ],
-      "Day": [
-        "Dia",
-        "Dias"
-      ],
       "Disable message content search": [
         "Desactivarr procura do conteúdo da mensagem"
       ],
@@ -3576,9 +3560,6 @@
       "Expiration time": [
         "Data de validade"
       ],
-      "Expires": [
-        "Expira"
-      ],
       "file attached": [
         "attachment",
         "attachments"
@@ -3609,10 +3590,6 @@
       ],
       "Hide original message": [
         "Ocultar mensagem original"
-      ],
-      "Hour": [
-        "Hora",
-        "Horas"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
@@ -3769,9 +3746,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "O nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Por favor, verifique se é legítima."
-      ],
-      "per month.": [
-        "por mês."
       ],
       "Phone number": [
         "Número de telefone"
@@ -3960,9 +3934,6 @@
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Esta mensagem é gerada automaticamente como resposta a uma mensagem anterior."
-      ],
-      "This message is expired!": [
-        "Esta mensagem está expirada!"
       ],
       "This message is from a mailing list.": [
         "Esta mensagem é oriunda de uma lista de discussão."
@@ -5915,24 +5886,6 @@
     "Time": {
       "Yesterday": [
         "Ontem"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dia",
-        "${ daysCountLeft } dias"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } hora",
-        "${ hoursCountLeft } horas"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minuto",
-        "${ minutesCountLeft } minutos"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } segundo",
-        "${ secondsCountLeft } segundos"
       ]
     },
     "Title": {

@@ -130,12 +130,6 @@
       "Cancel": [
         "Скасувати"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Копія, Прихована копія"
-      ],
-      "CC BCC": [
-        "Копія/Прихована копія"
-      ],
       "Change page": [
         "Змінити сторінку"
       ],
@@ -706,9 +700,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Відкрити ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Відкрити календар"
-      ],
       "Open composer": [
         "Відкрити редактор"
       ],
@@ -717,9 +708,6 @@
       ],
       "Open navigation": [
         "Відкрити панель навігації"
-      ],
-      "Open shop": [
-        "Відкрити магазин"
       ],
       "Ordered list": [
         "Нумерований список"
@@ -1004,10 +992,10 @@
         "Це повідомлення містить зовнішній вміст."
       ],
       "Toggle Calendar app": [
-        "Перемкніть додаток Календар"
+        "Відкрити календар"
       ],
       "Toggle Contact app": [
-        "Перемкніть додаток Контакти"
+        "Відкрити контакти"
       ],
       "Tomorrow": [
         "Завтра"
@@ -1627,14 +1615,6 @@
       ],
       "Event in progress": [
         "Подія триває"
-      ]
-    },
-    "Cancel self-destruction of the message": {
-      "Cancel": [
-        "Скасувати"
-      ],
-      "Cancel self-destruction": [
-        "Скасувати самознищення"
       ]
     },
     "Collapsible tooltip": {
@@ -4372,9 +4352,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } не заробляє грошей на порушенні приватності."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новий календар",
         "${ calendarsToBeCreatedCount } нові календарі",
@@ -4789,12 +4766,6 @@
       "Daily": [
         "Щодня"
       ],
-      "Day": [
-        "День",
-        "Дні",
-        "Днів",
-        "Днів"
-      ],
       "Default email application": [
         "Типовий застосунок електронної пошти"
       ],
@@ -4915,18 +4886,6 @@
       "Expiration time": [
         "Час завершення"
       ],
-      "Expires": [
-        "Завершується"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "Термін дії завершується ${ formattedDelayShort }"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Термін дії завершується менше ніж за ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Скоро завершується"
-      ],
       "file attached": [
         "attachment",
         "attachments",
@@ -4938,9 +4897,6 @@
       ],
       "Folder": [
         "Тека"
-      ],
-      "For increased security, activate 2FA.": [
-        "Для підвищення безпеки активуйте двоетапну перевірку."
       ],
       "For messages newer than ${ oldestDate }": [
         "Для повідомлень новіших ${ oldestDate }"
@@ -4974,12 +4930,6 @@
       ],
       "Hide original message": [
         "Приховати оригінальне повідомлення"
-      ],
-      "Hour": [
-        "Година",
-        "Години",
-        "Годин",
-        "Годин"
       ],
       "How Hide My Email works": [
         "Як працює Hide My Email"
@@ -5034,9 +4984,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
-      ],
-      "Increase storage space starting at": [
-        "Збільште обсяг сховища, починаючи з"
       ],
       "Indexing paused": [
         "Індексування призупинено"
@@ -5202,9 +5149,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
-      ],
-      "per month.": [
-        "на місяць."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту."
@@ -5377,9 +5321,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Перепрошуємо, цього повідомлення не існує, або термін його дії завершився."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Безпечно розміщуйте та діліться файлами за допомогою ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Тема"
       ],
@@ -5391,9 +5332,6 @@
       ],
       "Subject: ": [
         "Тема: "
-      ],
-      "Support privacy by upgrading for": [
-        "Підтримайте приватність передплативши"
       ],
       "support team": [
         "командою підтримки"
@@ -5491,9 +5429,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Це повідомлення автоматично створюється у відповідь на попереднє повідомлення."
       ],
-      "This message is expired!": [
-        "Термін дії цього повідомлення завершився!"
-      ],
       "This message is from a mailing list.": [
         "Це повідомлення зі списку розсилки."
       ],
@@ -5526,18 +5461,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Термін дії цього повідомлення завершиться ${ formattedDate }"
-      ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "Це повідомлення буде самознищене за ${ formattedDelay }"
-      ],
-      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
-        "Це повідомлення буде самознищене ${ dateString }, ${ formattedTime }"
-      ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "Це повідомлення буде самознищене сьогодні ${ formattedTime }"
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "Це повідомлення буде самознищене завтра ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Відкритий ключ автоматично застосовуватиметься для шифрування листів, що надсилаються на цю адресу."
@@ -5593,14 +5516,8 @@
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Передплатіть тарифний план, щоб налаштувати автоматичну відповідь."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Передплатіть тарифний план, щоб створити більше тек, фільтрів та адрес."
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "Передплатіть тарифний план, щоб розмістити електронну пошту з вашого власного домену."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Передплатіть тарифний план, щоб надсилати листи з адреси @pm.me."
@@ -5617,9 +5534,6 @@
       "Upgrade to support privacy and get more features.": [
         "Передплатіть тарифний план, щоб підтримати приватність та отримати більше можливостей."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Передплатіть тарифний план, щоб використовувати ${ MAIL_APP_NAME } зі сторонніми комп'ютерними клієнтами."
-      ],
       "Upload picture": [
         "Вивантажити зображення"
       ],
@@ -5629,9 +5543,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Використовуйте ${ CALENDAR_APP_NAME }, щоб зберігати приватність своїх планів."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Користуйтесь комбінаціями клавіш для ефективнішої роботи з поштою."
       ],
@@ -5640,9 +5551,6 @@
       ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Відвідайте наш магазин, щоб отримати товари від ${ BRAND_NAME }."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Перепрошуємо. Це могла бути помилка з нашого боку. Підтвердьте, що ви хочете позначити цей лист надійним."
@@ -5712,9 +5620,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "Ви можете безплатно використовувати ${ VPN_APP_NAME } вже сьогодні."
       ],
       "You cannot reply from the invited address.": [
         "Ви не можете відповісти із запрошеної адреси."
@@ -5823,15 +5728,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Повідомлення буде видалено зі скриньки отримувача і з вашої теки надісланих ${ dateString }, о ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Повідомлення буде видалено зі скриньки отримувача і з вашої теки надісланих сьогодні, о ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Повідомлення буде видалено зі скриньки отримувача і з вашої теки надісланих завтра, о ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Термін дії повідомлення завершиться через ${ numberOfDays } день.",
@@ -7525,35 +7421,6 @@
         "Примітка: Після натискання кнопки Застосувати, сторінка перезавантажиться."
       ]
     },
-    "Remaining days before the message expire": {
-      "${ remainingDays } day": [
-        "${ remainingDays } день",
-        "${ remainingDays } дні",
-        "${ remainingDays } днів",
-        "${ remainingDays } днів"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } година",
-        "${ remainingHours } години",
-        "${ remainingHours } годин",
-        "${ remainingHours } годин"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<1 година"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } рік",
-        "${ remainingYears } роки",
-        "${ remainingYears } років",
-        "${ remainingYears } років"
-      ]
-    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Відповідь надіслано"
@@ -8077,9 +7944,6 @@
       "Read receipt sent": [
         "Підтвердження прочитання надіслано"
       ],
-      "Self-destruction cancelled": [
-        "Самознищення скасовано"
-      ],
       "Self-destruction removed": [
         "Самознищення вилучено"
       ],
@@ -8163,32 +8027,6 @@
     "Time": {
       "Yesterday": [
         "Вчора"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } день",
-        "${ daysCountLeft } дні",
-        "${ daysCountLeft } днів",
-        "${ daysCountLeft } днів"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } година",
-        "${ hoursCountLeft } години",
-        "${ hoursCountLeft } годин",
-        "${ hoursCountLeft } годин"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } хвилина",
-        "${ minutesCountLeft } хвилини",
-        "${ minutesCountLeft } хвилин",
-        "${ minutesCountLeft } хвилин"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } секунда",
-        "${ secondsCountLeft } секунди",
-        "${ secondsCountLeft } секунд",
-        "${ secondsCountLeft } секунд"
       ]
     },
     "Time unit for duration; displayed in the time picker": {

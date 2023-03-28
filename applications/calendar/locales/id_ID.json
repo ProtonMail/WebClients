@@ -2238,9 +2238,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Tidak ada kunci publik untuk alamat ${ BRAND_NAME }"
-      ],
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
       ],
@@ -3650,10 +3647,10 @@
         "Anda sebelumnya telah menolak undangan ini. Silakan minta pemilik kalender untuk kembali mengundang Anda"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
+        "Kapasitas penyimpanan Anda telah mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
+        "Kapasitas penyimpanan Anda telah mencapai 100%. Anda tidak akan dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan semua perubahan yang belum disimpan."
@@ -3796,6 +3793,11 @@
       ],
       "Trusted": [
         "Tepercaya"
+      ]
+    },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Berikut caranya"
       ]
     },
     "Label": {
@@ -4157,7 +4159,7 @@
         "Untuk menambah kalender baru, hapus kalender yang ada."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Untuk menambah kalender baru, hapus kalender lainnya atau tingkatkan ${ BRAND_NAME } paket ke ${ MAIL_SHORT_APP_NAME } paket berbayar."
+        "Untuk menambah kalender baru, hapus kalender lainnya atau tingkatkan akun ${ BRAND_NAME } Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Anda telah mencapai jumlah kalender maksimum yang tersedia dalam paket Anda."
@@ -4885,8 +4887,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Untuk mengundang pengguna non-${ BRAND_NAME }, bagikan kalender Anda melalui tautan"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Untuk mengundang pengguna non-${ BRAND_NAME }, bagikan kalender Anda melalui tautan."
       ]
     },
     "Share calendar max shares reached error": {
@@ -5538,6 +5540,9 @@
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
       ],
+      "Sign in with 2FA": [
+        "Masuk dengan 2FA"
+      ],
       "Sign out": [
         "Keluar"
       ],
@@ -5661,6 +5666,14 @@
       ],
       "You do not have any contacts to export": [
         "Anda tidak memiliki kontak untuk diekspor"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Dibagikan secara end-to-end"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Dibagikan secara end-to-end dengan kontak yang terverifikasi"
       ]
     },
     "Validation": {

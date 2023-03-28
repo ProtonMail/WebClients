@@ -104,6 +104,9 @@
       "Beta Access": [
         "Beta-adgang"
       ],
+      "Blind Carbon Copy": [
+        "Blind karbonkopi"
+      ],
       "Block": [
         "Blokér"
       ],
@@ -122,11 +125,8 @@
       "Cancel": [
         "Annullér"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "Karbonkopi, blind karbonkopi"
-      ],
-      "CC BCC": [
-        "CC BCC"
+      "Carbon Copy": [
+        "Karbonkopi"
       ],
       "Change page": [
         "Skift side"
@@ -487,6 +487,9 @@
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
       ],
+      "In the morning": [
+        "Om morgenen"
+      ],
       "Inline": [
         "Indbygget"
       ],
@@ -692,9 +695,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "Åbn ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "Åbn kalender"
-      ],
       "Open composer": [
         "Åbn skriveværktøj"
       ],
@@ -703,9 +703,6 @@
       ],
       "Open navigation": [
         "Åbn navigation"
-      ],
-      "Open shop": [
-        "Åbn butik"
       ],
       "Ordered list": [
         "Rangeret liste"
@@ -1593,9 +1590,9 @@
         "Begivenhed i gang"
       ]
     },
-    "Cancel self-destruction of the message": {
+    "Cancel expiration of the message": {
       "Cancel": [
-        "Annuller"
+        "Annullér"
       ]
     },
     "Collapsible tooltip": {
@@ -2992,6 +2989,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "A problem occurred, please try again.": [
+        "Der opstod et problem. Prøv venligst igen."
+      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
@@ -3181,6 +3181,9 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
+      ],
+      "Please activate your search again": [
+        "Aktiver venligst din søgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
@@ -4250,9 +4253,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } tjener ikke penge ved at misbruge privatlivets fred."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
@@ -4583,10 +4583,6 @@
       "Daily": [
         "Daglig"
       ],
-      "Day": [
-        "Dag",
-        "Dage"
-      ],
       "Default email application": [
         "Standardprogram til mails"
       ],
@@ -4699,17 +4695,8 @@
       "Expiration time": [
         "Udløbstidspunkt"
       ],
-      "Expires": [
-        "Udløber"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "Udløber om ${ formattedDelayShort }"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "Udløber om mindre end ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "Udløber snart"
+      "Expires in ${ formattedDate }": [
+        "Udløber om ${ formattedDate }"
       ],
       "file attached": [
         "attachment",
@@ -4720,9 +4707,6 @@
       ],
       "Folder": [
         "Mapppe"
-      ],
-      "For increased security, activate 2FA.": [
-        "Aktivér 2FA for øget sikkerhed."
       ],
       "For messages newer than ${ oldestDate }": [
         "For beskeder nyere end ${ oldestDate }"
@@ -4754,10 +4738,6 @@
       ],
       "Hide original message": [
         "Skjul oprindelig besked"
-      ],
-      "Hour": [
-        "Time",
-        "Timer"
       ],
       "How Hide My Email works": [
         "Sådan fungerer Skjul min e-mail"
@@ -4810,9 +4790,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
-      ],
-      "Increase storage space starting at": [
-        "Forøg lagerplads fra"
       ],
       "Indexing paused": [
         "Indeksering sat på pause"
@@ -4978,9 +4955,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vores system markerede denne besked som et phishing-forsøg. Kontroller, at den er legitim."
-      ],
-      "per month.": [
-        "pr. måned."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline er kun kompatibel med Plain Text-formatet."
@@ -5151,9 +5125,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne besked findes ikke eller er allerede udløbet."
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "Gem og del filer sikkert med ${ DRIVE_APP_NAME }."
-      ],
       "Subject": [
         "Emne"
       ],
@@ -5165,9 +5136,6 @@
       ],
       "Subject: ": [
         "Emne: "
-      ],
-      "Support privacy by upgrading for": [
-        "Støt op om privatlivets fred ved at opgradere til"
       ],
       "support team": [
         "supportteam"
@@ -5261,9 +5229,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "Denne besked er automatisk genereret som svar på en tidligere besked."
       ],
-      "This message is expired!": [
-        "Denne besked er udløbet!"
-      ],
       "This message is from a mailing list.": [
         "Denne besked er fra en mailingliste."
       ],
@@ -5349,14 +5314,8 @@
       "Upgrade to add more addresses to your account.": [
         "Opgrader for at tilføje flere adresser til din konto."
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "Opgrader for at indstille et automatisk feriesvar."
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Opgrader for at oprette flere foldere, filtre og adresser."
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "Opgrader til at hoste e-mails fra dit eget domænenavn."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Opgrader for at sende e-mail fra @pm.me-adresser."
@@ -5373,9 +5332,6 @@
       "Upgrade to support privacy and get more features.": [
         "Opgrader for at støtte privatlivets fred og for at få flere funktioner."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Opgrader for at bruge ${ MAIL_APP_NAME } med tredjeparts desktopklienter."
-      ],
       "Upload picture": [
         "Upload billede"
       ],
@@ -5385,9 +5341,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "Brug ${ CALENDAR_APP_NAME } for at holde dine planer private."
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Brug tastaturgenveje for at håndtere dine e-mails hurtigere."
       ],
@@ -5396,9 +5349,6 @@
       ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "Besøg vores butik for at få ${ BRAND_NAME }-merchandise."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Vi beklager. Dette kan være en fejl fra vores side. Kan du bekræfte, at du ønsker at markere denne e-mail som en legitim én?"
@@ -5466,7 +5416,7 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
       ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
+      "You can use ${ VPN_APP_NAME } for free, today.": [
         "Du kan bruge ${ VPN_APP_NAME } gratis i dag."
       ],
       "You cannot reply from the invited address.": [
@@ -5560,15 +5510,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Din besked vil blive slettet fra modtagerens indbakke og din sendt-mappe ${ dateString } kl. ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Din besked vil blive slettet fra modtagerens indbakke og din sendt-mappe i dag kl. ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Din besked vil blive slettet fra modtagerens indbakke og din sendt-mappe i morgen kl. ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Din besked udløber om ${ numberOfDays } dag.",
@@ -7235,26 +7176,8 @@
       ]
     },
     "Remaining days before the message expire": {
-      "${ remainingDays } day": [
-        "${ remainingDays } dag",
-        "${ remainingDays } dage"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hour": [
-        "${ remainingHours } time",
-        "${ remainingHours } timer"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "< 1 time"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } year": [
-        "${ remainingYears } år",
-        "${ remainingYears } år"
+      "<1 d": [
+        "<1 dag"
       ]
     },
     "Reply to calendar invitation": {
@@ -7799,24 +7722,6 @@
         "I går"
       ]
     },
-    "Time unit": {
-      "${ daysCountLeft } day": [
-        "${ daysCountLeft } dag",
-        "${ daysCountLeft } dage"
-      ],
-      "${ hoursCountLeft } hour": [
-        "${ hoursCountLeft } time",
-        "${ hoursCountLeft } timer"
-      ],
-      "${ minutesCountLeft } minute": [
-        "${ minutesCountLeft } minut",
-        "${ minutesCountLeft } minutter"
-      ],
-      "${ secondsCountLeft } second": [
-        "${ secondsCountLeft } sekund",
-        "${ secondsCountLeft } sekunder"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }. time",
@@ -7945,8 +7850,14 @@
       "Create folder": [
         "Opret mappe"
       ],
+      "Create folder \"${ search }\"": [
+        "Opret mappe \"${ search }\""
+      ],
       "Create label": [
         "Opret etiket"
+      ],
+      "Create label \"${ search }\"": [
+        "Opret etiket \"${ search }\""
       ],
       "Create new group": [
         "Opret ny gruppe"
@@ -8295,6 +8206,9 @@
       ],
       "Sign in and grant access": [
         "Log ind og giv adgang"
+      ],
+      "Sign in with 2FA": [
+        "Log ind med 2FA"
       ],
       "Sign out": [
         "Log ud"

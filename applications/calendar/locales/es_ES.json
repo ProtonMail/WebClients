@@ -2268,9 +2268,6 @@
       "No emails found to import - the account does not have an inbox": [
         "No se han encontrado correos para importar. La cuenta no tiene una bandeja de entrada."
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "No hay clave pública para esta dirección ${ BRAND_NAME }."
-      ],
       "No valid address found": [
         "No se ha encontrado una dirección válida."
       ],
@@ -3826,7 +3823,7 @@
         "Se permiten hasta ${ MAX_ATTENDEES } participantes por invitación"
       ],
       "Creating invites in a shared calendar is not allowed": [
-        "No se pueden crear invitaciones en un calendario compartido."
+        "No se pueden crear invitaciones en un calendario compartido"
       ]
     },
     "Input label": {
@@ -3860,6 +3857,11 @@
       ],
       "Trusted": [
         "Confiable"
+      ]
+    },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Así es cómo"
       ]
     },
     "Label": {
@@ -4359,7 +4361,7 @@
     },
     "Modal title": {
       "Cannot add more calendars": [
-        "No se pueden añadir más calendarios."
+        "No se pueden añadir más calendarios"
       ],
       "How to import calendars from another service": [
         "Cómo importar calendarios desde otro servicio"
@@ -4986,7 +4988,7 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Para invitar a usuarios que no sean de ${ BRAND_NAME }, comparte tu calendario con un enlace."
       ]
     },

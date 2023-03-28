@@ -2271,9 +2271,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Kein öffentlicher Schlüssel für ${ BRAND_NAME }-Adresse"
-      ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
       ],
@@ -3865,6 +3862,11 @@
         "Vertrauenswürdig"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Und so geht's"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
@@ -4989,7 +4991,7 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Teile deinen Kalender über einen Link, um Nicht-${ BRAND_NAME }-Benutzer einzuladen."
       ]
     },
@@ -5895,6 +5897,9 @@
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
       ],
+      "Sign in with 2FA": [
+        "Mit 2FA anmelden"
+      ],
       "Sign out": [
         "Abmelden"
       ],
@@ -6018,6 +6023,14 @@
       ],
       "You do not have any contacts to export": [
         "Es gibt keine Kontakte, die exportiert werden können"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Geteilte Ende-zu-Ende-Verschlüsselung"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Ende-zu-Ende-verschlüsselt mit verifiziertem Kontakt geteilt"
       ]
     },
     "Validation": {

@@ -2304,9 +2304,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Brak wiadomości do zaimportowania. Konto nie posiada skrzynki odbiorczej"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Brak klucza publicznego adresu ${ BRAND_NAME }"
-      ],
       "No valid address found": [
         "Nie znaleziono prawidłowego adresu"
       ],
@@ -3981,6 +3978,11 @@
         "Zaufany"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Instrukcja"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Nazwa użytkownika ${ BRAND_NAME }"
@@ -5178,11 +5180,6 @@
         "Nie udało się zaktualizować ustawień"
       ]
     },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Aby zaprosić użytkowników spoza ${ BRAND_NAME }, udostępnij kalendarz za pomocą linku"
-      ]
-    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkownika kalendarza",
@@ -6129,6 +6126,9 @@
       ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
+      ],
+      "Sign in with 2FA": [
+        "Zaloguj się z uwierzytelnianiem dwustopniowym"
       ],
       "Sign out": [
         "Wyloguj"

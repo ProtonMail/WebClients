@@ -2286,9 +2286,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Nu există cheie publică pentru adresa ${ BRAND_NAME }."
-      ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
       ],
@@ -3920,6 +3917,11 @@
         "Aprobată"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Uite așa"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
@@ -5081,7 +5083,7 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Pentru a invita utilizatori non-${ BRAND_NAME } partajați calendarul cu o legătură."
       ]
     },
@@ -5767,6 +5769,9 @@
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
       ],
+      "Sign in with 2FA": [
+        "Autentifică-te cu 2FA"
+      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -5890,6 +5895,14 @@
       ],
       "You do not have any contacts to export": [
         "Nu aveți persoane de contact pentru exportare"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Criptat în ambele părți"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Criptat în ambele părți cu contacte verificate"
       ]
     },
     "Validation": {

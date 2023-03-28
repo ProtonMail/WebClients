@@ -508,7 +508,7 @@
         "Сьогодні"
       ],
       "Toggle Contact app": [
-        "Перемкніть додаток Контакти"
+        "Відкрити контакти"
       ],
       "Trust": [
         "Довіряти"
@@ -2304,9 +2304,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Немає відкритого ключа для адреси ${ BRAND_NAME }"
-      ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
       ],
@@ -3981,6 +3978,11 @@
         "Надійний"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Ось, як це зробити"
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
@@ -5176,11 +5178,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Не вдалося оновити налаштування"
-      ]
-    },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Щоб запросити людей, які не є користувачами ${ BRAND_NAME }, надішліть їм посилання на свій календар"
       ]
     },
     "Share calendar max shares reached error": {

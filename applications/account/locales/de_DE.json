@@ -2907,6 +2907,9 @@
       "Error in one of the conditions": [
         "Fehler in einer der Bedingungen"
       ],
+      "Expired": [
+        "Abgelaufen"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Aktive Sitzungen konnten nicht erhalten werden. Bitte ${ refresh } oder später erneut versuchen."
       ],
@@ -2997,9 +3000,6 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
-      ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Kein öffentlicher Schlüssel für ${ BRAND_NAME }-Adresse"
       ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
@@ -3482,6 +3482,9 @@
       ],
       "sign in": [
         "anmelden"
+      ],
+      "Sign in to verify": [
+        "Melde dich an, um dich zu verifizieren."
       ],
       "There was a problem removing your email address.": [
         "Es gab ein Problem beim Entfernen deiner E-Mail-Adresse."
@@ -4657,6 +4660,9 @@
       "Are you sure you want to delete this filter?": [
         "Möchtest du diesen Filter wirklich löschen?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Bist du sicher, dass du diesen Ordner löschen möchtest? Alle Unterordner werden ebenfalls gelöscht."
+      ],
       "Are you sure you want to delete this label?": [
         "Möchtest du diese Kategorie wirklich löschen?"
       ],
@@ -5603,6 +5609,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Die E-Mail-Adresse, die du an den Anfang der Liste setzt, ist deine Standard-E-Mail-Adresse. Durch Ziehen und Ablegen kannst du deine Adressen neu anordnen."
       ],
+      "The email verification link has expired. Please sign in to resend a verification link.": [
+        "Der E-Mail-Verifizierungslink ist abgelaufen. Bitte melde dich an, um den Verifizierungslink erneut zu versenden."
+      ],
       "The following address is available:": [
         "Die folgende Adresse ist verfügbar:"
       ],
@@ -5677,6 +5686,9 @@
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Dieses Token wird nach dem Schließen dieses Fensters nicht mehr verfügbar sein und du solltest es niemals mit jemandem teilen."
+      ],
+      "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
+        "Der Abmeldelink ist abgelaufen. Bitte öffne eine aktuellere E-Mail von dieser Verteilerliste."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zur Zeit für Zahlungen für Ihre Organisation zuständig. Wenn Sie den Benutzer zurückstufen, werden Sie für die Zahlungen für Ihre Organisation zuständig."
@@ -5801,6 +5813,9 @@
       "Unsaved changes": [
         "Ungespeicherte Änderungen"
       ],
+      "Unsubscribe link expired": [
+        "Abmeldelink abgelaufen"
+      ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
       ],
@@ -5833,6 +5848,9 @@
       ],
       "Verification can take a few minutes.": [
         "Die Überprüfung kann einige Minuten dauern."
+      ],
+      "Verification link expired": [
+        "Verifizierungslink ist abgelaufen"
       ],
       "Verification may take a few minutes.": [
         "Die Verifizierung kann einige Minuten dauern."
@@ -9356,7 +9374,7 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Teile deinen Kalender über einen Link, um Nicht-${ BRAND_NAME }-Benutzer einzuladen."
       ]
     },
@@ -9789,14 +9807,6 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Hochgeschwindigkeits-VPN auf ${ maxVpn } Gerät",
         "Hochgeschwindigkeits-VPN auf ${ maxVpn } Geräten"
-      ]
-    },
-    "Subscription change warning": {
-      "Manage your subscription on ${ subscriptionManagerShort }": [
-        "Verwalte dein Abonnement im ${ subscriptionManagerShort }"
-      ],
-      "Your subscription has been done via an in-app purchase. To manage your current subscription you need to navigate to the Subscription section on your ${ subscriptionManager } account": [
-        "Dein Abonnement wurde durch einen In-App-Kauf erworben. Um dein aktuelles Abonnement anzupassen, navigiere zum Abonnementbereich in deinem ${ subscriptionManager } Account"
       ]
     },
     "Subscription price": {
@@ -10872,6 +10882,9 @@
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
       ],
+      "Sign in with 2FA": [
+        "Mit 2FA anmelden"
+      ],
       "Sign out": [
         "Abmelden"
       ],
@@ -11248,6 +11261,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Signiere automatisch alle ausgehenden Nachrichten, damit die Benutzer die Authentizität deiner Nachrichten überprüfen können. Dies geschieht in Kombination mit den Standard-PGP-Einstellungen, die nachfolgend konfiguriert werden können."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Geteilte Ende-zu-Ende-Verschlüsselung"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Ende-zu-Ende-verschlüsselt mit verifiziertem Kontakt geteilt"
       ]
     },
     "Tor out of date": {

@@ -2268,9 +2268,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nenhum email encontrado para importação - a conta não possui uma caixa de entrada"
       ],
-      "No public key for ${ BRAND_NAME } address": [
-        "Nenhuma chave pública para o endereço do ${ BRAND_NAME }"
-      ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
       ],
@@ -3341,6 +3338,9 @@
       "Existent, added and removed participants will be notified.": [
         "Os participantes existentes, adicionados e removidos serão notificados."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Libere algum espaço ou adicione mais espaço de armazenamento."
       ],
@@ -3857,6 +3857,11 @@
       ],
       "Trusted": [
         "Confiável"
+      ]
+    },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Aqui está como"
       ]
     },
     "Label": {
@@ -4983,8 +4988,8 @@
       ]
     },
     "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link": [
-        "Para convidar usuários fora do ${ BRAND_NAME }, compartilhe seu calendário com um link"
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Para convidar usuários fora do ${ BRAND_NAME }, compartilhe seu calendário com um link."
       ]
     },
     "Share calendar max shares reached error": {
@@ -6015,6 +6020,14 @@
       ],
       "You do not have any contacts to export": [
         "Você não possui nenhum contato para exportar"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Compartilhado com criptografia ponta a ponta"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Compartilhado com criptografia ponta a ponta com contato verificado"
       ]
     },
     "Validation": {

@@ -130,12 +130,6 @@
       "Cancel": [
         "取消"
       ],
-      "Carbon Copy, Blind Carbon Copy": [
-        "副本、密件副本"
-      ],
-      "CC BCC": [
-        "副本/密件副本"
-      ],
       "Change page": [
         "跳至頁"
       ],
@@ -697,9 +691,6 @@
       "Open ${ CALENDAR_APP_NAME }": [
         "開啟 ${ CALENDAR_APP_NAME }"
       ],
-      "Open calendar": [
-        "開啟行事曆"
-      ],
       "Open composer": [
         "打開撰寫器"
       ],
@@ -708,9 +699,6 @@
       ],
       "Open navigation": [
         "開啟導覽"
-      ],
-      "Open shop": [
-        "開啟商店"
       ],
       "Ordered list": [
         "有序列表"
@@ -1617,14 +1605,6 @@
       ],
       "Event in progress": [
         "活動進行中"
-      ]
-    },
-    "Cancel self-destruction of the message": {
-      "Cancel": [
-        "取消"
-      ],
-      "Cancel self-destruction": [
-        "取消自毀"
       ]
     },
     "Collapsible tooltip": {
@@ -4258,9 +4238,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
-      "${ BRAND_NAME } doesn't make money by abusing privacy.": [
-        "${ BRAND_NAME } 不會濫用隱私獲取營利。"
-      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
       ],
@@ -4558,9 +4535,6 @@
       "Daily": [
         "每日"
       ],
-      "Days": [
-        "天"
-      ],
       "Default email application": [
         "預設郵件應用程式"
       ],
@@ -4669,18 +4643,6 @@
       "Expiration time": [
         "有效期限"
       ],
-      "Expires": [
-        "到期日"
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        "到期前剩餘時間 ${ formattedDelayShort }"
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        "到期前剩餘時間少於 ${ formattedDelayShort }"
-      ],
-      "Expires soon": [
-        "即將到期"
-      ],
       "files attached": [
         "attachment"
       ],
@@ -4689,9 +4651,6 @@
       ],
       "Folder": [
         "資料夾"
-      ],
-      "For increased security, activate 2FA.": [
-        "為增加安全性請啟用兩步驟驗證。"
       ],
       "For messages newer than ${ oldestDate }": [
         "自 ${ oldestDate } 起的郵件"
@@ -4722,9 +4681,6 @@
       ],
       "Hide original message": [
         "隱藏原始訊息"
-      ],
-      "Hours": [
-        "小時"
       ],
       "How Hide My Email works": [
         "Hide My Email 如何運作"
@@ -4776,9 +4732,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
-      ],
-      "Increase storage space starting at": [
-        "開始增加儲存空間從"
       ],
       "Indexing paused": [
         "暫停編製索引"
@@ -4944,9 +4897,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
-      ],
-      "per month.": [
-        "每月."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline 僅與純文字格式相容。"
@@ -5116,9 +5066,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "抱歉，此訊息不存在或已過期。"
       ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        "安全地儲存及分享檔案使用 ${ DRIVE_APP_NAME }。"
-      ],
       "Subject": [
         "主題"
       ],
@@ -5130,9 +5077,6 @@
       ],
       "Subject: ": [
         "主旨 : "
-      ],
-      "Support privacy by upgrading for": [
-        "透過升級支援隱私"
       ],
       "support team": [
         "支援團隊"
@@ -5227,9 +5171,6 @@
       "This message is automatically generated as a response to a previous message.": [
         "此訊息將自動產生以回覆前一個訊息。"
       ],
-      "This message is expired!": [
-        "此郵件已過期！"
-      ],
       "This message is from a mailing list.": [
         "此郵件來自郵寄清單。"
       ],
@@ -5256,18 +5197,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "此郵件將在 ${ formattedDate } 到期"
-      ],
-      "This message will self-destruct in ${ formattedDelay }": [
-        "此訊息將於 ${ formattedDelay } 自毀"
-      ],
-      "This message will self-destruct on ${ dateString } at ${ formattedTime }": [
-        "這封郵件將於 ${ dateString } 的 ${ formattedTime } 自毀"
-      ],
-      "This message will self-destruct today at ${ formattedTime }": [
-        "這封郵件將於今日的 ${ formattedTime } 自毀"
-      ],
-      "This message will self-destruct tomorrow at ${ formattedTime }": [
-        "這封郵件將於明天的 ${ formattedTime } 自毀"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "將自動使用此公開金鑰加密寄送到此電郵位址的電郵。"
@@ -5323,14 +5252,8 @@
       "Upgrade to add more addresses to your account.": [
         "升級以加入更多電郵位址到您的帳號。"
       ],
-      "Upgrade to configure a vacation auto-responder.": [
-        "升級以設定假期自動回覆。"
-      ],
       "Upgrade to create more folders, filters, and addresses.": [
         "升級以建立更多資料夾、過濾條件與位址。"
-      ],
-      "Upgrade to host emails from your own domain name.": [
-        "升級以使用您自己的網域名稱託管電郵。"
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "升級以從 @pm.me 位址寄送電郵。"
@@ -5347,9 +5270,6 @@
       "Upgrade to support privacy and get more features.": [
         "升級以支援隱私並取得更多功能。"
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "升級即可通過第三方客戶端使用 ${ MAIL_APP_NAME }。"
-      ],
       "Upload picture": [
         "上載圖像"
       ],
@@ -5359,9 +5279,6 @@
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL：${ unsubscribeMethods.HttpClient }"
       ],
-      "Use ${ CALENDAR_APP_NAME } to keep your agenda private.": [
-        "使用 ${ CALENDAR_APP_NAME } 保護您的議程隱私。"
-      ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用鍵盤快捷鍵來更快管理您的電郵。"
       ],
@@ -5370,9 +5287,6 @@
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
-      ],
-      "Visit our shop to get ${ BRAND_NAME } merchandise.": [
-        "造訪我們的線上商店以取得 ${ BRAND_NAME } 商品。"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "不好意思，說不好是我們搞錯了。可否請您確認一下，您想要標記這是一封正當的電郵？"
@@ -5442,9 +5356,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        "今日您可以免費使用 ${ VPN_APP_NAME }。"
       ],
       "You cannot reply from the invited address.": [
         "您無法從獲邀的電郵位址回覆。"
@@ -5529,15 +5440,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "您的郵件會從收件者信匣以及您的寄件匣一併移除，已訂日期時間為 ${ dateString } 的 ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "您的郵件會從收件者信匣以及您的寄件匣一併移除，已訂時間為今天的 ${ formattedTime }"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "您的郵件會從收件者信匣以及您的寄件匣一併移除，已訂時間為明天的 ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } days.": [
         "您的郵件到期日還有 ${ numberOfDays } 天。"
@@ -7189,26 +7091,6 @@
         "請注意：點擊「套用」按鈕後，服務將會重新載入。"
       ]
     },
-    "Remaining days before the message expire": {
-      "${ remainingDays } days": [
-        "${ remainingDays }天"
-      ]
-    },
-    "Remaining hours before the message expire": {
-      "${ remainingHours } hours": [
-        "${ remainingHours }小時"
-      ]
-    },
-    "Remaining time before the message expire": {
-      "<1 hour": [
-        "<1小時"
-      ]
-    },
-    "Remaining years before the message expire": {
-      "${ remainingYears } years": [
-        "${ remainingYears }年"
-      ]
-    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "已傳送回覆"
@@ -7639,9 +7521,6 @@
       "Read receipt sent": [
         "讀取回條已傳送"
       ],
-      "Self-destruction cancelled": [
-        "自毀已取消"
-      ],
       "Self-destruction removed": [
         "已移除自毀"
       ],
@@ -7725,20 +7604,6 @@
     "Time": {
       "Yesterday": [
         "昨天"
-      ]
-    },
-    "Time unit": {
-      "${ daysCountLeft } days": [
-        "${ daysCountLeft } 天"
-      ],
-      "${ hoursCountLeft } hours": [
-        "${ hoursCountLeft } 小時"
-      ],
-      "${ minutesCountLeft } minutes": [
-        "${ minutesCountLeft } 分鐘"
-      ],
-      "${ secondsCountLeft } seconds": [
-        "${ secondsCountLeft } 秒"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
