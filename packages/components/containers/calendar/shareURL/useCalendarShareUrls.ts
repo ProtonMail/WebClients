@@ -26,7 +26,7 @@ const useCalendarShareUrls = (calendars: VisualCalendar[]) => {
     const { createNotification } = useNotifications();
     const getCalendarInfo = useGetCalendarInfo();
     const getPublicLinks = useGetCalendarPublicLinks();
-    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: coreSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
     const [linksMap, setLinksMap] = useState<SimpleMap<CalendarLink[]>>({});
@@ -110,7 +110,7 @@ const useCalendarShareUrls = (calendars: VisualCalendar[]) => {
 
     // subscribe to general event loop
     useEffect(() => {
-        return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
+        return coreSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
             Calendars.forEach((event) => {
                 if (getIsCalendarEventManagerDelete(event)) {
                     handleDeleteCalendar(event.ID);

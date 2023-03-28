@@ -10,12 +10,12 @@ export const useCalendarsAlarmsEventListeners = (
     cacheRef: MutableRefObject<CalendarsAlarmsCache>,
     calendarIDs: string[]
 ) => {
-    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: coreSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
     // subscribe to general event loop
     useEffect(() => {
-        return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
+        return coreSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
             if (!cacheRef.current) {
                 return;
             }

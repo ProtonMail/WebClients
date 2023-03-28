@@ -14,12 +14,12 @@ export const useCalendarCacheEventListener = (
     calendarIDs: string[],
     getOpenedMailEvents: () => OpenedMailEvent[]
 ) => {
-    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: coreSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
     // subscribe to general event loop
     useEffect(() => {
-        return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
+        return coreSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
             const cache = cacheRef.current;
             if (!cache) {
                 return;

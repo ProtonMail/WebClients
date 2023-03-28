@@ -16,13 +16,13 @@ import { useCalendarModelEventManager } from './ModelEventManagerProvider';
  * Listen manually to updates to calendar members and user settings (via core event loop)
  */
 export const useCalendarsInfoCoreListener = () => {
-    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: coreSubscribe } = useEventManager();
     const cache = useCache();
 
     useEffect(() => {
         // subscribe via the standard event loop to updates of CalendarsModel, CalendarMembersModel and CalendarUserSettingsModel
         const calendarUserSettingsModelKey = CalendarUserSettingsModel.key;
-        return standardSubscribe((data) => {
+        return coreSubscribe((data) => {
             if (data[calendarUserSettingsModelKey]) {
                 const { value: oldValue, status } = cache.get(calendarUserSettingsModelKey) || {};
                 if (status === STATUS.RESOLVED) {
@@ -39,7 +39,7 @@ export const useCalendarsInfoCoreListener = () => {
 };
 
 const useCalendarsInfoCalendarListener = (calendarIDs: string[]) => {
-    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: coreSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe, reset: calendarReset } = useCalendarModelEventManager();
     const cache = useCache();
 
@@ -58,7 +58,7 @@ const useCalendarsInfoCalendarListener = (calendarIDs: string[]) => {
 
     useEffect(() => {
         // stop per-calendar event managers when calendars are deleted
-        return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
+        return coreSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
             Calendars.forEach(({ ID, Action }) => {
                 if (Action === EVENT_ACTIONS.DELETE) {
                     calendarReset([ID]);
