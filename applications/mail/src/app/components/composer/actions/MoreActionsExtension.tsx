@@ -102,7 +102,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     }}
                     data-testid="editor-to-html"
                 >
-                    <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Rich text`}</span>
+                    <span className="myauto flex-item-fluid pl0-25">{c('Info').t`Normal`}</span>
                     <Icon name="checkmark" className={clsx(['ml1', getClassname(!editorMetadata.isPlainText)])} />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
