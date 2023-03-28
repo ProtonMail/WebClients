@@ -54,31 +54,38 @@ const SubscriptionRow = ({
     return (
         <TableRow>
             <TableCell label={c('Title').t`Plan`}>
-                <span>
+                <span data-testid="planNameId">
                     {planTitle}
                     {asterisk}
                 </span>
             </TableCell>
             <TableCell label={c('Title').t`Length`}>
-                <span>{getShortBillingText(Cycle)}</span>
+                <span data-testid="planPeriodId">{getShortBillingText(Cycle)}</span>
             </TableCell>
             <TableCell label={c('Title').t`Users`}>
-                <span>{users}</span>
+                <span data-testid="amountOfUsersId">{users}</span>
             </TableCell>
             <TableCell label={c('Title').t`Start date`}>
-                <Time format="PP" sameDayFormat={false}>
+                <Time format="PP" sameDayFormat={false} data-testid="planStartTimeId">
                     {PeriodStart}
                 </Time>
             </TableCell>
             <TableCell label={c('Title').t`End date`}>
-                <Time format="PP" sameDayFormat={false}>
+                <Time format="PP" sameDayFormat={false} data-testid="planEndTimeId">
                     {PeriodEnd}
                 </Time>
             </TableCell>
-            <TableCell label={c('Title').t`Total paid`} className="on-mobile-text-left on-tablet-text-left text-right">
+            <TableCell
+                data-testid="priceId"
+                label={c('Title').t`Total paid`}
+                className="on-mobile-text-left on-tablet-text-left text-right"
+            >
                 <Price currency={Currency}>{PricePerCycle}</Price>
             </TableCell>
-            <TableCell className="on-mobile-text-left on-tablet-text-left text-right">
+            <TableCell
+                data-testid="subscriptionStatusId"
+                className="on-mobile-text-left on-tablet-text-left text-right"
+            >
                 <Badge type={status.type}>{status.label}</Badge>
             </TableCell>
         </TableRow>
@@ -152,7 +159,10 @@ const SubscriptionsSection = () => {
                     </TableBody>
                 </Table>
                 <div className="flex w100 mb1 color-weak text-right mt1">
-                    <div className="on-mobile-text-left on-tablet-text-left text-right w100">
+                    <div
+                        className="on-mobile-text-left on-tablet-text-left text-right w100"
+                        data-testid="renewalDateInfo"
+                    >
                         {asterisk}
                         {getRenewalText(renewalDate)}
                     </div>
