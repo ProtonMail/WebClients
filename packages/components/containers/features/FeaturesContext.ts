@@ -41,8 +41,6 @@ export enum FeatureCode {
     MailFeedbackEnabled = 'MailFeedbackEnabled',
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
     SpotlightScheduledSend = 'SpotlightScheduledSend',
-    CalendarInviteLocale = 'CalendarInviteLocale',
-    CalendarAutoImportInvite = 'CalendarAutoImportInvite',
     CalendarNotificationsRevampAvailable = 'CalendarNotificationsRevampAvailable',
     CalendarPersonalEventsDeprecated = 'CalendarPersonalEventsDeprecated',
     CalendarSharingEnabled = 'CalendarSharingEnabled',
