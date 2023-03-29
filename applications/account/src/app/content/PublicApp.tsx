@@ -172,7 +172,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         data.payload.UID,
                         pushForkSession({
                             ChildClientID: childClientID,
-                            Independent: 0,
+                            Independent: data.payload.independent ? 1 : 0,
                         })
                     )
                 );
