@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 
 interface Props {
     shareId: string;
@@ -10,6 +11,7 @@ interface Props {
 
 const ShareButton = ({ shareId }: Props) => {
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     return (
         <>
@@ -17,11 +19,12 @@ const ShareButton = ({ shareId }: Props) => {
                 title={c('Action').t`Get link`}
                 icon={<Icon name="link" />}
                 onClick={() => {
-                    void showFileSharingModal({ shareId });
+                    void showFileSharingModal({ shareId, showLinkSharingModal });
                 }}
                 data-testid="toolbar-share-via-link"
             />
             {fileSharingModal}
+            {linkSharingModal}
         </>
     );
 };

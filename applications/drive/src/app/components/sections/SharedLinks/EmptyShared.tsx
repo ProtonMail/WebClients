@@ -4,6 +4,7 @@ import { EmptyViewContainer, PrimaryButton } from '@proton/components';
 import noLinksSvg from '@proton/styles/assets/img/illustrations/file-share.svg';
 
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 
 type Props = {
     shareId: string;
@@ -11,10 +12,11 @@ type Props = {
 
 const EmptyShared = ({ shareId }: Props) => {
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const onShareFile = () => {
         if (shareId) {
-            void showFileSharingModal({ shareId });
+            void showFileSharingModal({ shareId, showLinkSharingModal });
         }
     };
 
@@ -33,6 +35,7 @@ const EmptyShared = ({ shareId }: Props) => {
                 </div>
             </EmptyViewContainer>
             {fileSharingModal}
+            {linkSharingModal}
         </>
     );
 };

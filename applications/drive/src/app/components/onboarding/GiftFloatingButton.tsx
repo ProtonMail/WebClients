@@ -26,6 +26,7 @@ import clsx from '@proton/utils/clsx';
 import useActiveShare from '../../hooks/drive/useActiveShare';
 import { useFileUploadInput } from '../../store';
 import { useFileSharingModal } from '../modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useLinkSharingModal } from '../modals/ShareLinkModal/ShareLinkModal';
 import useChecklist from './useChecklist';
 
 export default function GiftFloatingButton() {
@@ -197,6 +198,7 @@ function WelcomeActions({
     const { getLocalID } = useAuthentication();
 
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     return (
         <>
@@ -224,7 +226,7 @@ function WelcomeActions({
                 title={c('Label').t`Create a share link`}
                 text={c('Info').t`It’s easy and secure`}
                 action={() => {
-                    void showFileSharingModal({ shareId: activeFolder.shareId });
+                    void showFileSharingModal({ shareId: activeFolder.shareId, showLinkSharingModal });
                     onActionDone();
                 }}
             />
@@ -240,6 +242,7 @@ function WelcomeActions({
                 }}
             />
             {fileSharingModal}
+            {linkSharingModal}
         </>
     );
 }
