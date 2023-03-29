@@ -4,6 +4,7 @@ import { FloatingButton, Icon, SidebarPrimaryButton } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 
 interface Props {
     mobileVersion?: boolean;
@@ -12,10 +13,11 @@ interface Props {
 const ShareFileSidebarButton = ({ mobileVersion }: Props) => {
     const { activeShareId } = useActiveShare();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const onShareFile = () => {
         if (activeShareId) {
-            void showFileSharingModal({ shareId: activeShareId });
+            void showFileSharingModal({ shareId: activeShareId, showLinkSharingModal });
         }
     };
 
@@ -31,6 +33,7 @@ const ShareFileSidebarButton = ({ mobileVersion }: Props) => {
                 </SidebarPrimaryButton>
             )}
             {fileSharingModal}
+            {linkSharingModal}
         </>
     );
 };
