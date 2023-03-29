@@ -13,7 +13,6 @@ interface Arguments {
     addresses: Address[];
     organization: Organization;
     isSpyTrackerEnabled: boolean;
-    isInviteSettingEnabled: boolean;
     isReferralProgramEnabled: boolean;
     isSmtpTokenEnabled: boolean;
     isSubscribeCalendarEnabled: boolean;
@@ -31,7 +30,6 @@ export const getRoutes = ({
     isReferralProgramEnabled,
     isSubscribeCalendarEnabled,
     isSmtpTokenEnabled,
-    isInviteSettingEnabled,
     isGmailSyncEnabled,
     recoveryNotification,
 }: Arguments) => {
@@ -50,7 +48,7 @@ export const getRoutes = ({
             isSpyTrackerEnabled,
             isSmtpTokenEnabled,
         }),
-        calendar: getCalendarAppRoutes(isSubscribeCalendarEnabled, isInviteSettingEnabled),
+        calendar: getCalendarAppRoutes(isSubscribeCalendarEnabled),
         drive: getDriveAppRoutes(),
         organization: getOrganizationAppRoutes({ user, organization }),
         vpn: getVpnAppRoutes(),
