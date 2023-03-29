@@ -35,6 +35,7 @@ const InitContainer = () => {
 
     const { getDefaultShare } = useDefaultShare();
     const [loading, withLoading] = useLoading(true);
+    const [error, setError] = useState();
     const [defaultShareRoot, setDefaultShareRoot] =
         useState<typeof DEFAULT_VOLUME_INITIAL_STATE>(DEFAULT_VOLUME_INITIAL_STATE);
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
@@ -42,9 +43,13 @@ const InitContainer = () => {
     const driveEventManager = useDriveEventManager();
 
     useEffect(() => {
-        const initPromise = getDefaultShare().then(({ shareId, rootLinkId: linkId, volumeId }) => {
-            setDefaultShareRoot({ volumeId, shareId, linkId });
-        });
+        const initPromise = getDefaultShare()
+            .then(({ shareId, rootLinkId: linkId, volumeId }) => {
+                setDefaultShareRoot({ volumeId, shareId, linkId });
+            })
+            .catch((err) => {
+                setError(err);
+            });
         withLoading(initPromise);
     }, []);
 
@@ -69,8 +74,11 @@ const InitContainer = () => {
         );
     }
 
-    // Presence of shareId/linkId is guaranteed by loading flag
-    const rootShare = { shareId: defaultShareRoot.shareId!, linkId: defaultShareRoot.linkId! };
+    if (error || !defaultShareRoot.shareId || !defaultShareRoot.linkId) {
+        throw error || new Error('Default share failed to be loaded');
+    }
+
+    const rootShare = { shareId: defaultShareRoot.shareId, linkId: defaultShareRoot.linkId };
 
     if (!welcomeFlags.isDone) {
         return (
