@@ -11,24 +11,24 @@ describe('getCategorizedRevisions', () => {
         jest.useRealTimers();
     });
 
-    const revisions = [
-        { CreateTime: 1679058000 }, // March 17, 2023 at 2:00 PM
-        { CreateTime: 1679036400 }, // March 17, 2023 at 7:00 AM
-        { CreateTime: 1678968000 }, // March 16, 2023 at 12:00 PM
-        { CreateTime: 1678986000 }, // March 16, 2023 at 5:00 PM
-        { CreateTime: 1678950000 }, // March 16, 2023 at 7:00 AM
-        { CreateTime: 1678777200 }, // March 14, 2023 at 7:00 AM
-        { CreateTime: 1678431600 }, // March 10, 2023 at 7:00 AM
-        { CreateTime: 1678172400 }, // March 7, 2023 at 7:00 AM
-        { CreateTime: 1675753200 }, // February 7, 2023 at 7:00 AM
-        { CreateTime: 1675234800 }, // February 1, 2023 at 7:00 AM
-        { CreateTime: 1640415600 }, // December 25, 2021 at 7:00 AM
-        { CreateTime: 1621926000 }, // May 25, 2021 at 7:00 AM
-        { CreateTime: 1593500400 }, // June 30, 2020 at 7:00 AM
-        { CreateTime: 1559372400 }, // June 1, 2019 at 7:00 AM
-    ] as DriveFileRevision[];
-
     it('categorizes revisions correctly', () => {
+        const revisions = [
+            { CreateTime: 1679058000 }, // March 17, 2023 at 2:00 PM
+            { CreateTime: 1679036400 }, // March 17, 2023 at 7:00 AM
+            { CreateTime: 1678968000 }, // March 16, 2023 at 12:00 PM
+            { CreateTime: 1678986000 }, // March 16, 2023 at 5:00 PM
+            { CreateTime: 1678950000 }, // March 16, 2023 at 7:00 AM
+            { CreateTime: 1678777200 }, // March 14, 2023 at 7:00 AM
+            { CreateTime: 1678431600 }, // March 10, 2023 at 7:00 AM
+            { CreateTime: 1678172400 }, // March 7, 2023 at 7:00 AM
+            { CreateTime: 1675753200 }, // February 7, 2023 at 7:00 AM
+            { CreateTime: 1675234800 }, // February 1, 2023 at 7:00 AM
+            { CreateTime: 1640415600 }, // December 25, 2021 at 7:00 AM
+            { CreateTime: 1621926000 }, // May 25, 2021 at 7:00 AM
+            { CreateTime: 1593500400 }, // June 30, 2020 at 7:00 AM
+            { CreateTime: 1559372400 }, // June 1, 2019 at 7:00 AM
+        ] as DriveFileRevision[];
+
         const result = getCategorizedRevisions(revisions, 'en-US');
 
         expect([...result.entries()]).toStrictEqual([
