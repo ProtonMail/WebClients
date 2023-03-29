@@ -9,6 +9,7 @@ import { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import { ShareFileButton } from '../ContextMenu/buttons';
 import useIsEditEnabled from '../useIsEditEnabled';
 import { CreateNewFileButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
@@ -47,6 +48,7 @@ export function FolderContextMenu({
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     // ContextMenu is removed from DOM when any action is executed but inputs
     // need to stay rendered so onChange handler can work.
@@ -57,6 +59,7 @@ export function FolderContextMenu({
             {createFolderModal}
             {createFileModal}
             {fileSharingModal}
+            {linkSharingModal}
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
                 {!isActiveLinkReadOnly && <CreateNewFolderButton close={close} action={showCreateFolderModal} />}
                 {isEditEnabled && !isActiveLinkReadOnly && (
@@ -70,7 +73,7 @@ export function FolderContextMenu({
                         <ContextSeparator />
                     </>
                 ) : null}
-                <ShareFileButton close={close} action={() => showFileSharingModal({ shareId })} />
+                <ShareFileButton close={close} action={() => showFileSharingModal({ shareId, showLinkSharingModal })} />
             </ContextMenu>
         </>
     );
