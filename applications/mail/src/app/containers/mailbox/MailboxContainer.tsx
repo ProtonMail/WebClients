@@ -51,6 +51,8 @@ import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
+import { selectComposersCount } from '../../logic/composers/composerSelectors';
+import { useAppSelector } from '../../logic/store';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import { useOnCompose, useOnMailTo } from '../ComposeProvider';
@@ -63,7 +65,6 @@ interface Props {
     breakpoints: Breakpoints;
     elementID?: string;
     messageID?: string;
-    isComposerOpened: boolean;
     toolbarBordered?: boolean;
 }
 
@@ -74,7 +75,6 @@ const MailboxContainer = ({
     breakpoints,
     elementID,
     messageID,
-    isComposerOpened,
     toolbarBordered,
 }: Props) => {
     const location = useLocation();
@@ -92,6 +92,8 @@ const MailboxContainer = ({
     const messageContainerRef = useRef<HTMLElement>(null);
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const resizeAreaRef = useRef<HTMLButtonElement>(null);
+    const composersCount = useAppSelector(selectComposersCount);
+    const isComposerOpened = composersCount > 0;
 
     const onMailTo = useOnMailTo();
 
