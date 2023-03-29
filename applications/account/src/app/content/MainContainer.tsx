@@ -76,8 +76,6 @@ const MainContainer = () => {
 
     const { featuresFlags, getFeature } = useFeatures([
         FeatureCode.SpyTrackerProtection,
-        FeatureCode.CalendarInviteLocale,
-        FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
         FeatureCode.SmtpToken,
         FeatureCode.CalendarSharingEnabled,
@@ -89,8 +87,6 @@ const MainContainer = () => {
     const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
 
     const isSpyTrackerEnabled = getFeature(FeatureCode.SpyTrackerProtection).feature?.Value === true;
-    const isInviteLocaleFeatureEnabled = getFeature(FeatureCode.CalendarInviteLocale).feature?.Value === true;
-    const isAutoImportInviteFeatureEnabled = getFeature(FeatureCode.CalendarAutoImportInvite).feature?.Value === true;
     const isSmtpTokenEnabled = getFeature(FeatureCode.SmtpToken).feature?.Value === true;
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
 
@@ -105,7 +101,6 @@ const MainContainer = () => {
         organization,
         isSubscribeCalendarEnabled: enabled,
         isSpyTrackerEnabled,
-        isInviteSettingEnabled: isInviteLocaleFeatureEnabled || isAutoImportInviteFeatureEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isSmtpTokenEnabled,
         isDataRecoveryAvailable,
@@ -221,8 +216,6 @@ const MainContainer = () => {
                                 loadingFeatures={loadingFeatures}
                                 calendarAppRoutes={routes.calendar}
                                 calendarSubscribeUnavailable={unavailable}
-                                hasInviteLocaleFeature={isInviteLocaleFeatureEnabled}
-                                hasAutoImportInviteFeature={isAutoImportInviteFeatureEnabled}
                                 redirect={redirect}
                             />
                         </ContactEmailsProvider>
