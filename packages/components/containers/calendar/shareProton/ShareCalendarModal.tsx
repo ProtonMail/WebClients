@@ -48,15 +48,15 @@ import {
 } from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 
-export enum VALIDATION_ERRORR_TYPES {
+export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,
     NOT_PROTON_ACCOUNT,
     DOES_NOT_EXIST,
     EXISTING_MEMBER,
 }
-const { INVALID_EMAIL, NOT_PROTON_ACCOUNT, DOES_NOT_EXIST, EXISTING_MEMBER } = VALIDATION_ERRORR_TYPES;
+const { INVALID_EMAIL, NOT_PROTON_ACCOUNT, DOES_NOT_EXIST, EXISTING_MEMBER } = VALIDATION_ERROR_TYPES;
 
-const getValidationErrorMessage = (type: VALIDATION_ERRORR_TYPES) => {
+const getValidationErrorMessage = (type: VALIDATION_ERROR_TYPES) => {
     if (type === INVALID_EMAIL) {
         return c('Error').t`The address might be misspelled`;
     }
@@ -73,9 +73,9 @@ const getValidationErrorMessage = (type: VALIDATION_ERRORR_TYPES) => {
 };
 
 class ShareCalendarValdidationError extends Error {
-    type: VALIDATION_ERRORR_TYPES;
+    type: VALIDATION_ERROR_TYPES;
 
-    constructor(type: VALIDATION_ERRORR_TYPES) {
+    constructor(type: VALIDATION_ERROR_TYPES) {
         const message = getValidationErrorMessage(type);
         super(message);
         this.type = type;
@@ -101,11 +101,13 @@ const loadRecipient = async ({
     setRecipientsMap,
     getEncryptionPreferences,
     contactEmailsMap,
+    onError,
 }: {
     recipient: Recipient;
     setRecipientsMap: Dispatch<SetStateAction<SimpleMap<ExtendedRecipient>>>;
     getEncryptionPreferences: GetEncryptionPreferences;
     contactEmailsMap: SimpleMap<ContactEmail>;
+    onError: (error: Error) => void;
 }) => {
     const { Address: email } = recipient;
     setRecipientsMap((map) => ({
@@ -115,36 +117,53 @@ const loadRecipient = async ({
             loading: true,
         },
     }));
-    const { sendKey, isSendKeyPinned, error, isInternal } = await getEncryptionPreferences(email, 0, contactEmailsMap);
 
-    if (error) {
-        setRecipientsMap((map) => ({
-            ...map,
-            [email]: {
-                ...recipient,
-                loading: false,
-                error: new EncryptionPreferencesError(error.type, reformatApiErrorMessage(error.message)),
-            },
-        }));
-    } else if (!isInternal) {
-        setRecipientsMap((map) => ({
-            ...map,
-            [email]: {
-                ...recipient,
-                loading: false,
-                error: new ShareCalendarValdidationError(NOT_PROTON_ACCOUNT),
-            },
-        }));
-    } else {
-        setRecipientsMap((map) => ({
-            ...map,
-            [email]: {
-                ...recipient,
-                loading: false,
-                publicKey: sendKey,
-                isKeyPinned: isSendKeyPinned,
-            },
-        }));
+    try {
+        const { sendKey, isSendKeyPinned, error, isInternal } = await getEncryptionPreferences(
+            email,
+            0,
+            contactEmailsMap
+        );
+
+        if (error) {
+            setRecipientsMap((map) => ({
+                ...map,
+                [email]: {
+                    ...recipient,
+                    loading: false,
+                    error: new EncryptionPreferencesError(error.type, reformatApiErrorMessage(error.message)),
+                },
+            }));
+        } else if (!isInternal) {
+            setRecipientsMap((map) => ({
+                ...map,
+                [email]: {
+                    ...recipient,
+                    loading: false,
+                    error: new ShareCalendarValdidationError(NOT_PROTON_ACCOUNT),
+                },
+            }));
+        } else {
+            setRecipientsMap((map) => ({
+                ...map,
+                [email]: {
+                    ...recipient,
+                    loading: false,
+                    publicKey: sendKey,
+                    isKeyPinned: isSendKeyPinned,
+                },
+            }));
+        }
+    } catch (e: any) {
+        const error = e instanceof Error ? e : new Error('Failed to fetch encryption preferences');
+
+        onError(error);
+        setRecipientsMap((map) => {
+            const result = { ...map };
+            delete result[email];
+
+            return result;
+        });
     }
 };
 
@@ -269,7 +288,15 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                 } else if ([...currentEmails, ...acc.addedCanonicalizedAddresses].includes(canonicalizedAddress)) {
                     acc.duplicateRecipients.push(recipient);
                 } else {
-                    loadRecipient({ recipient, setRecipientsMap, getEncryptionPreferences, contactEmailsMap });
+                    const onError = (error: Error) => {
+                        console.error(error);
+                        createNotification({
+                            type: 'error',
+                            // translator: The variable ${address} is an email here. E.g.: Failed to retrieve contact information for eric.norbert@proton.me
+                            text: c('Calendar sharing error').t`Failed to retrieve contact information for ${address}`,
+                        });
+                    };
+                    loadRecipient({ recipient, setRecipientsMap, getEncryptionPreferences, contactEmailsMap, onError });
                     acc.newRecipients.push(recipient);
                     acc.addedCanonicalizedAddresses.push(canonicalizedAddress);
                 }
