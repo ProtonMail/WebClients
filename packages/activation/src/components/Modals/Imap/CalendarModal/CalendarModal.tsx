@@ -4,6 +4,7 @@ import {
     DEFAULT_CALENDAR_USER_SETTINGS as DEFAULT_SETTINGS,
     getPreferredActiveWritableCalendar,
     getVisualCalendars,
+    sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 
 interface Props {
@@ -12,7 +13,7 @@ interface Props {
 
 const CalendarModal = ({ onClose }: Props) => {
     const [calendars = [], loading] = useCalendars();
-    const visualCalendars = getVisualCalendars(calendars);
+    const visualCalendars = sortCalendars(getVisualCalendars(calendars));
     const [settings = DEFAULT_SETTINGS, loadingSettings] = useCalendarUserSettings();
 
     const defaultCalendar = getPreferredActiveWritableCalendar(visualCalendars, settings.DefaultCalendarID);

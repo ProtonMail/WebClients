@@ -26,6 +26,7 @@ import {
     getPreferredActiveWritableCalendar,
     getVisualCalendars,
     groupCalendarsByTaxonomy,
+    sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -63,7 +64,7 @@ const CalendarSettingsRouter = ({
         subscribedCalendars: subscribedCalendarsWithoutParams,
         unknownCalendars,
     } = useMemo(() => {
-        const visualCalendars = getVisualCalendars(calendars || []);
+        const visualCalendars = sortCalendars(getVisualCalendars(calendars || []));
         const personalCalendars = getPersonalCalendars(visualCalendars);
 
         return {
