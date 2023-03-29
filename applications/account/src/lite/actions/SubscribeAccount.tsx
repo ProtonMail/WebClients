@@ -66,6 +66,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
 
         const maybeStart = queryParams.get('start');
         const maybeType = queryParams.get('type');
+        const maybeDisableCycleSelector = queryParams.get('disableCycleSelector');
 
         const plan = maybeType === 'upgrade' ? getUpgradedPlan(subscription, app) : undefined;
 
@@ -90,6 +91,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             plan: plan,
             fullscreen,
             disableThanksStep: true,
+            disableCycleSelector: Boolean(maybeDisableCycleSelector),
         });
     }, [user, loading]);
 
