@@ -61,7 +61,9 @@ with a link -> https://protonmail.com/`;
         };
 
         const { findByTestId, unmount } = await render(
-            <ComposerContainer breakpoints={{} as Breakpoints}>{() => <Inside />}</ComposerContainer>,
+            <ComposerContainer breakpoints={{} as Breakpoints}>
+                <Inside />
+            </ComposerContainer>,
             false
         );
 
@@ -137,7 +139,9 @@ with a link -> https://protonmail.com/`;
         };
 
         const { findByTestId, unmount } = await render(
-            <ComposerContainer breakpoints={{} as Breakpoints}>{() => <Inside />}</ComposerContainer>,
+            <ComposerContainer breakpoints={{} as Breakpoints}>
+                <Inside />
+            </ComposerContainer>,
             false
         );
 

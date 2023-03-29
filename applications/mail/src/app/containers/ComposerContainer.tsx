@@ -19,7 +19,7 @@ import '../components/composer/composer.scss';
 
 interface Props {
     breakpoints: Breakpoints;
-    children: (props: { isComposerOpened: boolean }) => ReactNode;
+    children: ReactNode;
 }
 
 const ComposerContainer = ({ breakpoints, children }: Props) => {
@@ -91,7 +91,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     return (
         <ComposeProvider onCompose={handleCompose}>
-            {children({ isComposerOpened })}
+            {children}
             <div>
                 {messageIDs.map((messageID, i) => (
                     <ComposerFrame

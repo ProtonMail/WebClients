@@ -42,13 +42,9 @@ import MailboxContainer from './mailbox/MailboxContainer';
 interface Props {
     params: MailUrlParams;
     breakpoints: Breakpoints;
-    isComposerOpened: boolean;
 }
 
-const PageContainer = (
-    { params: { elementID, labelID, messageID }, breakpoints, isComposerOpened }: Props,
-    ref: Ref<HTMLDivElement>
-) => {
+const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints }: Props, ref: Ref<HTMLDivElement>) => {
     const [userSettings] = useUserSettings();
     const [mailSettings] = useMailSettings();
     const [, setWelcomeFlagsDone] = useWelcomeFlags();
@@ -141,7 +137,6 @@ const PageContainer = (
                     breakpoints={breakpoints}
                     elementID={elementID}
                     messageID={messageID}
-                    isComposerOpened={isComposerOpened}
                     toolbarBordered={canShowDrawer && showDrawerSidebar}
                 />
                 <MailShortcutsModal {...mailShortcutsProps} />
@@ -154,7 +149,6 @@ const MemoPageContainer = memo(forwardRef(PageContainer));
 
 interface PageParamsParserProps {
     breakpoints: Breakpoints;
-    isComposerOpened: boolean;
 }
 
 const PageParamsParser = (props: PageParamsParserProps, ref: Ref<HTMLDivElement>) => {
