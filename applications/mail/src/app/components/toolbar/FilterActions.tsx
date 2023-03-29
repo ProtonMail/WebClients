@@ -25,7 +25,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
         SHOW_READ: c('Filter option').t`Read`,
         SHOW_MOVED_MESSAGE: c('Filter option').t`Show moved message`,
         HIDE_MOVED_MESSAGE: c('Filter option').t`Hide moved message`,
-        HAS_FILE: c('Filter option').t`Has file`,
+        HAS_FILE: c('Filter option to only show message with attachments').t`Has file`,
     };
 
     const readUnreadButtons = [
