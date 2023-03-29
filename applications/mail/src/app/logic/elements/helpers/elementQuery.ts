@@ -29,7 +29,7 @@ export const getQueryElementsParameters = ({
     To: search.to,
     From: search.from,
     // Subject,
-    Attachments: search.attachments,
+    Attachments: filter.Attachments,
     Unread: filter.Unread,
     AddressID: search.address,
     // ID,
