@@ -113,7 +113,7 @@ export const sortFromUrl = (location: Location, labelID?: string) =>
 export const filterFromUrl = (location: Location) => stringToFilter(getSearchParams(location.hash).filter);
 
 export const extractSearchParameters = (location: Location): SearchParameters => {
-    const { address, from, to, keyword, begin, end, attachments, wildcard } = getSearchParams(location.hash);
+    const { address, from, to, keyword, begin, end, wildcard } = getSearchParams(location.hash);
     return {
         address,
         from,
@@ -121,7 +121,6 @@ export const extractSearchParameters = (location: Location): SearchParameters =>
         keyword,
         begin: stringToInt(begin),
         end: stringToInt(end),
-        attachments: stringToInt(attachments),
         wildcard: stringToInt(wildcard),
     };
 };
