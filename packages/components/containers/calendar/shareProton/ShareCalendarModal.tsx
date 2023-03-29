@@ -85,7 +85,11 @@ class ShareCalendarValdidationError extends Error {
 
 type RecipientError = ShareCalendarValdidationError | EncryptionPreferencesError;
 
-interface ExtendedRecipient extends Recipient {
+interface RecipientWithAddedTime extends Recipient {
+    addedTime: number;
+}
+
+interface ExtendedRecipient extends RecipientWithAddedTime {
     loading?: boolean;
     error?: RecipientError;
     publicKey?: PublicKeyReference;
@@ -103,7 +107,7 @@ const loadRecipient = async ({
     contactEmailsMap,
     onError,
 }: {
-    recipient: Recipient;
+    recipient: RecipientWithAddedTime;
     setRecipientsMap: Dispatch<SetStateAction<SimpleMap<ExtendedRecipient>>>;
     getEncryptionPreferences: GetEncryptionPreferences;
     contactEmailsMap: SimpleMap<ContactEmail>;
@@ -218,7 +222,9 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     const [recipientsMap, setRecipientsMap] = useState<SimpleMap<ExtendedRecipient>>({});
     const [loadingShare, withLoadingShare] = useLoading(false);
 
-    const recipients = Object.values(recipientsMap).filter(isTruthy);
+    const recipients = Object.values(recipientsMap)
+        .filter(isTruthy)
+        .sort(({ addedTime: a }, { addedTime: b }) => a - b);
     const invalidRecipients = recipients.filter(getRecipientHasError);
     const hasExternalRecipients = invalidRecipients.some(({ error }) => error.type === NOT_PROTON_ACCOUNT);
     const currentEmails = recipients.map(({ Address }) => canonicalizeInternalEmail(Address));
@@ -257,12 +263,16 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
         const { duplicateRecipients, existingRecipients } = recipients.reduce<{
             newRecipients: Recipient[];
             addedCanonicalizedAddresses: string[];
-            duplicateRecipients: Recipient[];
-            existingRecipients: Recipient[];
+            duplicateRecipients: RecipientWithAddedTime[];
+            existingRecipients: RecipientWithAddedTime[];
         }>(
             (acc, recipient) => {
                 const address = recipient.Address;
                 const canonicalizedAddress = canonicalizeInternalEmail(address);
+                const recipientWithAddedTime = {
+                    ...recipient,
+                    addedTime: Date.now(),
+                };
 
                 if (ownNormalizedEmails.includes(canonicalizedAddress)) {
                     createNotification({
@@ -277,16 +287,16 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                     setRecipientsMap((map) => ({
                         ...map,
                         [address]: {
-                            ...recipient,
+                            ...recipientWithAddedTime,
                             error: new ShareCalendarValdidationError(INVALID_EMAIL),
                         },
                     }));
                 }
 
                 if (existingEmails.includes(canonicalizedAddress)) {
-                    acc.existingRecipients.push(recipient);
+                    acc.existingRecipients.push(recipientWithAddedTime);
                 } else if ([...currentEmails, ...acc.addedCanonicalizedAddresses].includes(canonicalizedAddress)) {
-                    acc.duplicateRecipients.push(recipient);
+                    acc.duplicateRecipients.push(recipientWithAddedTime);
                 } else {
                     const onError = (error: Error) => {
                         console.error(error);
@@ -296,8 +306,14 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                             text: c('Calendar sharing error').t`Failed to retrieve contact information for ${address}`,
                         });
                     };
-                    loadRecipient({ recipient, setRecipientsMap, getEncryptionPreferences, contactEmailsMap, onError });
-                    acc.newRecipients.push(recipient);
+                    loadRecipient({
+                        recipient: recipientWithAddedTime,
+                        setRecipientsMap,
+                        getEncryptionPreferences,
+                        contactEmailsMap,
+                        onError
+                    });
+                    acc.newRecipients.push(recipientWithAddedTime);
                     acc.addedCanonicalizedAddresses.push(canonicalizedAddress);
                 }
 
@@ -443,10 +459,12 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                 className={clsx([error && 'invalid'])}
                 onClick={(event) => event.stopPropagation()}
                 onRemove={() => {
-                    setRecipientsMap((map) => ({
-                        ...map,
-                        [Address]: undefined,
-                    }));
+                    setRecipientsMap((map) => {
+                        const result = { ...map };
+                        delete result[Address];
+
+                        return result;
+                    });
                 }}
             />
         );
