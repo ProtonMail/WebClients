@@ -6,7 +6,7 @@ import { History } from 'history';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DateInput, Label, Option, PrimaryButton, Radio, SelectTwo, useAddresses, useUser } from '@proton/components';
+import { DateInput, Label, Option, PrimaryButton, SelectTwo, useAddresses, useUser } from '@proton/components';
 import { ESIndexingState, isContentIndexingDone } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -32,7 +32,6 @@ interface SearchModel {
     address?: string;
     begin?: Date;
     end?: Date;
-    attachments?: number;
     wildcard?: number;
     filter?: string;
 }
@@ -40,8 +39,6 @@ interface SearchModel {
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
 const ALL_ADDRESSES = 'all';
-const NO_ATTACHMENTS = 0;
-const WITH_ATTACHMENTS = 1;
 const { ALL_MAIL } = MAILBOX_LABEL_IDS;
 const DEFAULT_MODEL: SearchModel = {
     keyword: '',
@@ -49,7 +46,6 @@ const DEFAULT_MODEL: SearchModel = {
     from: [],
     to: [],
     address: ALL_ADDRESSES,
-    attachments: UNDEFINED,
     wildcard: AUTO_WILDCARD,
     filter: UNDEFINED,
     begin: undefined,
@@ -64,7 +60,7 @@ const getRecipients = (value = '') =>
 const formatRecipients = (recipients: Recipient[] = []) => recipients.map(({ Address }) => Address).join(',');
 
 const initializeModel = (history: History, selectedLabelID: string, searchInputValue: string) => () => {
-    const { keyword, address, attachments, wildcard, from, to, begin, end } = extractSearchParameters(history.location);
+    const { keyword, address, wildcard, from, to, begin, end } = extractSearchParameters(history.location);
 
     const { filter } = getSearchParams(history.location.search);
 
@@ -73,7 +69,6 @@ const initializeModel = (history: History, selectedLabelID: string, searchInputV
         labelID: keyword ? selectedLabelID : ALL_MAIL,
         keyword: searchInputValue ? keyword || '' : '',
         address: address || ALL_ADDRESSES,
-        attachments,
         wildcard,
         from: getRecipients(from),
         to: getRecipients(to),
@@ -131,7 +126,7 @@ const AdvancedSearch = ({
         event.preventDefault(); // necessary to not run a basic submission
         event.stopPropagation(); // necessary to not submit normal search from header
 
-        const { keyword, begin, end, wildcard, from, to, address, attachments, filter } = reset ? DEFAULT_MODEL : model;
+        const { keyword, begin, end, wildcard, from, to, address, filter } = reset ? DEFAULT_MODEL : model;
 
         history.push(
             changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.hash, {
@@ -141,7 +136,6 @@ const AdvancedSearch = ({
                 address: address === ALL_ADDRESSES ? UNDEFINED : address,
                 begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
                 end: end ? String(getUnixTime(add(end, { days: 1 }))) : UNDEFINED,
-                attachments: typeof attachments === 'number' ? String(attachments) : UNDEFINED,
                 wildcard: wildcard ? String(wildcard) : UNDEFINED,
                 filter,
                 sort: UNDEFINED, // Make sure to reset sort parameter when performing an advanced search
@@ -304,40 +298,6 @@ const AdvancedSearch = ({
                                     )
                                 )}
                             </SelectTwo>
-                        </div>
-                        <div className="mb0-5">
-                            <Label
-                                className="advanced-search-label text-semibold"
-                                id="advanced-search-attachments-label"
-                            >{c('Label').t`Attachments`}</Label>
-                            <div className="pt0-5">
-                                <Radio
-                                    id="advanced-search-attachments-all"
-                                    data-testid="advanced-search:attachments:all"
-                                    onChange={() => updateModel({ ...model, attachments: UNDEFINED })}
-                                    checked={model.attachments === UNDEFINED}
-                                    name="advanced-search-attachments"
-                                    aria-describedby="advanced-search-attachments-label"
-                                    className="inline-flex mr1"
-                                >{c('Attachment radio advanced search').t`All`}</Radio>
-                                <Radio
-                                    id="advanced-search-attachments-yes"
-                                    data-testid="advanced-search:attachments:with"
-                                    onChange={() => updateModel({ ...model, attachments: WITH_ATTACHMENTS })}
-                                    checked={model.attachments === WITH_ATTACHMENTS}
-                                    name="advanced-search-attachments"
-                                    aria-describedby="advanced-search-attachments-label"
-                                    className="inline-flex mr1"
-                                >{c('Attachment radio advanced search').t`With`}</Radio>
-                                <Radio
-                                    id="advanced-search-attachments-no"
-                                    data-testid="advanced-search:attachments:without"
-                                    onChange={() => updateModel({ ...model, attachments: NO_ATTACHMENTS })}
-                                    checked={model.attachments === NO_ATTACHMENTS}
-                                    name="advanced-search-attachments"
-                                    aria-describedby="advanced-search-attachments-label"
-                                >{c('Attachment radio advanced search').t`Without`}</Radio>
-                            </div>
                         </div>
                     </>
                 )}
