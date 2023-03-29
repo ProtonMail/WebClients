@@ -271,8 +271,8 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, l
                 {...modalProps}
             >
                 {renderModalState()}
-                {confirmModal}
             </ModalTwo>
+            {confirmModal}
         </>
     );
 }
