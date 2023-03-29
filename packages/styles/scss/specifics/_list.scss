@@ -296,7 +296,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	.item-container-column .item-unread-dot {
 		display: block;
 		position: absolute;
-		inset-block-start: em(18);
+		inset-block-start: em(19);
 		inset-inline-start: em(2);
 		z-index: 1;
 	}
@@ -307,17 +307,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		inset-block-start: 0;
 		inset-inline-start: em(5);
 		z-index: 1;
-	}
-
-	.item-checkbox {
-		// for allowing hovering larger than fake circle
-		&::after {
-			content: '';
-			position: absolute;
-			inset-block: calc(#{-$item-container-padding-block} - 0.1em);
-			inset-inline-start: calc(#{-$item-container-padding-inline-start} - 0.1em);
-			inset-inline-end: -0.6em;
-		}
 	}
 }
 
@@ -334,9 +323,8 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	&::after {
 		content: '';
 		position: absolute;
-		inset-block: em(-8);
-		inset-inline: em(-6);
-		margin-block-start: em(5);
+		inset-block: rem(-2);
+		inset-inline: rem(-6);
 	}
 
 	.checkbox-fakecheck {
@@ -373,10 +361,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		.item-icon-compact {
 			// margin-block-start: 0;
 			margin-block: auto;
-
-			&::after {
-				block-size: $item-container-row-height-compact-mode;
-			}
 		}
 	}
 
