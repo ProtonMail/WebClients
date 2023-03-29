@@ -77,13 +77,28 @@ const stringToFilter = (string: string | undefined): Filter => {
             return { Unread: 0 };
         case 'unread':
             return { Unread: 1 };
+        case 'has-file':
+            return { Attachments: 1 };
         default:
             return {};
     }
 };
 
-export const filterToString = (filter: Filter): string | undefined =>
-    filter.Unread === undefined ? undefined : filter.Unread === 0 ? 'read' : 'unread';
+export const filterToString = (filter: Filter): string | undefined => {
+    if (filter.Attachments === 1) {
+        return 'has-file';
+    }
+
+    if (filter.Unread === 1) {
+        return 'unread';
+    }
+
+    if (filter.Unread === 0) {
+        return 'read';
+    }
+
+    return undefined;
+};
 
 export const keywordToString = (keyword: string): string | undefined => {
     const trimmed = keyword.trim();
