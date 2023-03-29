@@ -1,15 +1,17 @@
 import { ReactNode, memo, useEffect, useRef, useState } from 'react';
-import { useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { useBeforeUnload, useHandler, useDrawerWidth } from '@proton/components';
+import { useBeforeUnload, useDrawerWidth, useHandler } from '@proton/components';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { MAX_ACTIVE_COMPOSER_DESKTOP, MAX_ACTIVE_COMPOSER_MOBILE } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
 import { useGetMessage } from '../hooks/message/useMessage';
 import { useClickMailContent } from '../hooks/useClickMailContent';
+import { selectComposerMessageIds, selectComposersCount } from '../logic/composers/composerSelectors';
+import { composerActions } from '../logic/composers/composersSlice';
+import { useAppDispatch, useAppSelector, useAppStore } from '../logic/store';
 import { Breakpoints } from '../models/utils';
 import { ComposeProvider } from './ComposeProvider';
 
@@ -21,36 +23,34 @@ interface Props {
 }
 
 const ComposerContainer = ({ breakpoints, children }: Props) => {
-    const [messageIDs, setMessageIDs] = useState<string[]>([]);
+    const dispatch = useAppDispatch();
+    const composersCount = useAppSelector(selectComposersCount);
+    const messageIDs = useAppSelector(selectComposerMessageIds);
     const [focusedMessageID, setFocusedMessageID] = useState<string>();
     const [composerIndex, setComposerIndex] = useState(0);
-    const store = useStore();
+    const store = useAppStore();
     const getMessage = useGetMessage();
     useClickMailContent(() => setFocusedMessageID(undefined));
     const drawerOffset = useDrawerWidth();
 
     const returnFocusToElement = useRef<HTMLElement | null>(null);
+    const isComposerOpened = composersCount > 0;
 
     useBeforeUnload(
-        messageIDs.length
+        isComposerOpened
             ? c('Info').t`The data you have entered in the draft may not be saved if you leave the page.`
             : ''
     );
 
-    const isComposerOpened = !!messageIDs.length;
-
     const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
 
     const handleClose = (messageID: string) => () => {
-        return setMessageIDs((messageIDs) => {
-            const newMessageIDs = messageIDs.filter((id) => id !== messageID);
+        dispatch(composerActions.removeComposer({ messageID }));
+        const newMessageIDs = messageIDs.filter((id) => id !== messageID);
 
-            if (newMessageIDs.length) {
-                setFocusedMessageID(newMessageIDs[0]);
-            }
-
-            return newMessageIDs;
-        });
+        if (newMessageIDs.length) {
+            setFocusedMessageID(newMessageIDs[0]);
+        }
     };
 
     const messageDeletionListener = useHandler(() => {
@@ -75,7 +75,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     }, [messageIDs]);
 
     const openComposer = (messageID: string, returnFocusTo?: HTMLElement | null) => {
-        setMessageIDs((messageIDs) => [...messageIDs, messageID]);
+        dispatch(composerActions.addComposer({ messageID }));
         setComposerIndex(composerIndex + 1);
         if (returnFocusTo) {
             returnFocusToElement.current = returnFocusTo;
