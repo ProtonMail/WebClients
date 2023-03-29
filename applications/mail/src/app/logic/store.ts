@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -7,6 +7,7 @@ import { useApi, useEventManager, useNotifications } from '@proton/components/ho
 import { Api } from '@proton/shared/lib/interfaces';
 
 import attachments from './attachments/attachmentsSlice';
+import composers from './composers/composersSlice';
 import contacts from './contacts/contactsSlice';
 import conversations from './conversations/conversationsSlice';
 import elements from './elements/elementsSlice';
@@ -48,6 +49,7 @@ export const store = configureStore({
         messages,
         contacts,
         incomingDefaults,
+        composers,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
@@ -92,5 +94,6 @@ export type AppThunkExtra = {
     };
 };
 
+export const useAppStore: () => Store = useStore;
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
