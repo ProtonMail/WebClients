@@ -92,6 +92,8 @@ function WelcomeActionsSpotlight({
 }) {
     const [showPopup, setShowPopup] = useLocalState(true, 'welcome-actions-spotlight');
     const [showList, setShowList] = useState(false);
+    const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const toggleOpen = () => {
         setShowPopup(false); // Any click will remove automatic popup.
@@ -122,18 +124,27 @@ function WelcomeActionsSpotlight({
             <div className="mb1 color-weak">
                 {c('Info').t`Get to know ${DRIVE_APP_NAME} and earn your 500 MB storage bonus! Take action today.`}
             </div>
-            <WelcomeActions completedActions={completedActions} onActionDone={toggleOpen} />
+            <WelcomeActions
+                completedActions={completedActions}
+                onActionDone={toggleOpen}
+                showFileSharingModal={showFileSharingModal}
+                showLinkSharingModal={showLinkSharingModal}
+            />
         </div>
     );
     return (
-        <FloatingSpotlight
-            content={spotlightContent}
-            hasClose={showPopup}
-            show={showPopup || showList}
-            onClick={toggleOpen}
-            color={showList ? 'weak' : 'norm'}
-            icon={showList ? 'cross' : 'gift'}
-        />
+        <>
+            <FloatingSpotlight
+                content={spotlightContent}
+                hasClose={showPopup}
+                show={showPopup || showList}
+                onClick={toggleOpen}
+                color={showList ? 'weak' : 'norm'}
+                icon={showList ? 'cross' : 'gift'}
+            />
+            {fileSharingModal}
+            {linkSharingModal}
+        </>
     );
 }
 
@@ -181,9 +192,13 @@ function FloatingSpotlight({
 function WelcomeActions({
     completedActions,
     onActionDone,
+    showFileSharingModal,
+    showLinkSharingModal,
 }: {
     completedActions: ChecklistKey[];
     onActionDone: () => void;
+    showFileSharingModal: ReturnType<typeof useFileSharingModal>[1];
+    showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
 }) {
     const getIconName = (actionName: ChecklistKey, iconName: IconName) => {
         return completedActions.includes(actionName) ? 'checkmark' : iconName;
@@ -196,9 +211,6 @@ function WelcomeActions({
         handleChange: handleFileChange,
     } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
     const { getLocalID } = useAuthentication();
-
-    const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     return (
         <>
@@ -241,8 +253,6 @@ function WelcomeActions({
                     onActionDone();
                 }}
             />
-            {fileSharingModal}
-            {linkSharingModal}
         </>
     );
 }
