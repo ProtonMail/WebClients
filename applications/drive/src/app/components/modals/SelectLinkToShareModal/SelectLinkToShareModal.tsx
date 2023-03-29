@@ -11,15 +11,20 @@ import { ModalContent } from './ModalContent';
 
 interface Props {
     shareId: string;
+    showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
     onClose?: () => void;
 }
 
-const SelectedFileToShareModal = ({ shareId, onClose, ...modalProps }: Props & ModalStateProps) => {
+const SelectedFileToShareModal = ({
+    shareId,
+    onClose,
+    showLinkSharingModal,
+    ...modalProps
+}: Props & ModalStateProps) => {
     const { rootItems, toggleExpand, isLoaded: isTreeLoaded } = useTreeForModals(shareId, { rootExpanded: true });
 
     const [loading, withLoading] = useLoading();
     const [selectedFile, setSelectedFile] = useState<DecryptedLink>();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const onSelect = async (link: DecryptedLink) => {
         if (!loading) {
@@ -37,35 +42,32 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...modalProps }: Props & M
     const isSharingDisabled = !selectedFile || !selectedFile.parentLinkId;
 
     return (
-        <>
-            <ModalTwo
-                onReset={onClose}
-                onClose={onClose}
-                onSubmit={(e: any) => {
-                    e.preventDefault();
-                    withLoading(handleSubmit()).catch(console.error);
-                }}
-                size="large"
-                as="form"
-                {...modalProps}
-            >
-                {isTreeLoaded ? (
-                    <ModalContent
-                        isLoading={loading}
-                        isTreeLoaded={isTreeLoaded}
-                        rootItems={rootItems}
-                        selectedLinkId={selectedFile?.linkId}
-                        isSharingDisabled={isSharingDisabled}
-                        actionText={selectedFile?.shareUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
-                        toggleExpand={toggleExpand}
-                        onSelect={onSelect}
-                    />
-                ) : (
-                    <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
-                )}
-            </ModalTwo>
-            {linkSharingModal}
-        </>
+        <ModalTwo
+            onReset={onClose}
+            onClose={onClose}
+            onSubmit={(e: any) => {
+                e.preventDefault();
+                withLoading(handleSubmit()).catch(console.error);
+            }}
+            size="large"
+            as="form"
+            {...modalProps}
+        >
+            {isTreeLoaded ? (
+                <ModalContent
+                    isLoading={loading}
+                    isTreeLoaded={isTreeLoaded}
+                    rootItems={rootItems}
+                    selectedLinkId={selectedFile?.linkId}
+                    isSharingDisabled={isSharingDisabled}
+                    actionText={selectedFile?.shareUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
+                    toggleExpand={toggleExpand}
+                    onSelect={onSelect}
+                />
+            ) : (
+                <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
+            )}
+        </ModalTwo>
     );
 };
 
