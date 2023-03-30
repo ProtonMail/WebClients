@@ -181,9 +181,6 @@
       "Close": [
         "Tutup"
       ],
-      "Close & discard": [
-        "Tutup & buang"
-      ],
       "Close composer": [
         "Tutup komposer"
       ],
@@ -3009,9 +3006,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } untuk <${ email }>. Anda dapat menambahkan kunci baru atau menonaktifkan enkripsi pada kontak yang bersangkutan untuk menyelesaikan masalah ini."
-      ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
@@ -3448,9 +3442,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Enkripsi gagal"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard versi < 3.0 tidak didukung"
       ]
     },
     "Error importing contacts": {
@@ -4018,9 +4009,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } saat ini tidak mendukung tipe, rincian, dan format acara tertentu."
-      ],
-      "vCard versions < 3.0": [
-        "versi vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4918,9 +4906,6 @@
       "No more results found": [
         "Tidak ada hasil lainnya yang ditemukan"
       ],
-      "No preview available": [
-        "Pratinjau tidak tersedia"
-      ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
@@ -5026,9 +5011,6 @@
       "Request read receipt": [
         "Minta bukti baca"
       ],
-      "Rich text": [
-        "Teks kaya"
-      ],
       "Right to Left": [
         "Kanan ke Kiri"
       ],
@@ -5085,9 +5067,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Pengiriman pesan dari alamat @pm.me hanya tersedia bagi pengguna yang menggunakan layanan berbayar. Pesan Anda akan dikirim dari alamat bawaan Anda ${ email }"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
@@ -7195,9 +7174,6 @@
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } hr"
-      ],
-      "<1 d": [
-        "<1 hr"
       ]
     },
     "Reply to calendar invitation": {

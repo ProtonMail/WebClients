@@ -2821,9 +2821,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "Dein Benutzername lautet „${ Local }“. Um ${ Local }@${ Domain } anzulegen, wechsle bitte in die „Einstellungen“ > „Nachrichten und verfassen“ > „Kurzdomain (pm.me)“"
-      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -3307,9 +3304,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCards in den Versionen < 3.0 werden nicht unterstützt"
       ]
     },
     "Error importing contacts": {
@@ -4062,9 +4056,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } unterstützt derzeit bestimmte Termintypen, Details und Formate nicht."
-      ],
-      "vCard versions < 3.0": [
-        "vCard-Versionen < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5297,9 +5288,6 @@
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
       ],
-      "No preview available": [
-        "Keine Vorschau verfügbar"
-      ],
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
@@ -5435,6 +5423,9 @@
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
       ],
+      "Preview for this file type is not supported": [
+        "Die Vorschau wird für diesen Dateityp nicht unterstützt."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
@@ -5518,9 +5509,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Der Server ist derzeit nicht erreichbar"
@@ -8176,9 +8164,6 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
-      "Send & receive invitations": [
-        "Einladungen senden & empfangen"
-      ],
       "Share calendar via link": [
         "Kalender als Link teilen"
       ],
@@ -8240,26 +8225,6 @@
       ],
       "Team management": [
         "Teamverwaltung"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8331,6 +8296,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das Business-Paket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Upgrade auf das ultimative Privatsphärepaket und erhalte Zugriff auf alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deine Testversion endet am ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9409,6 +9394,14 @@
         "Erstellt von ${ ownerName }"
       ]
     },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Fehler bei der Signaturverifizierung"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Du hast die Adressverifizierung für ${ boldSenderEmail } aktiviert. Wir konnten die Authentizität dieser Kalendereinladung nicht verifizieren. Dies kann auf Änderungen in den Verschlüsselungsschlüsseln dieses Kontakts zurückzuführen sein. Bitte überprüfe die erweiterten PGP-Einstellungen, oder bitte ${ boldSenderEmail } um eine neue Einladung."
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Anzeigename"
@@ -9831,7 +9824,7 @@
         "Unterstützung für automatisches Bezahlen aktivieren"
       ],
       "Keep auto-pay": [
-        "Automatisches Bezahlen behalten"
+        "Automatisches Bezahlen beibehalten"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
         "Unser System wird dich mit dieser Zahlungsmethode nicht mehr automatisch belasten, aber dein Abonnement wird am Ende des Abrechnungszeitraums immer noch verlängert. Wenn du dein Abonnement downgraden oder ändern möchtest, musst du dies immer noch selbst vor dem Ende des Abrechnungszeitraums tun. Wenn du außerdem vergisst, eine manuelle Zahlung vorzunehmen und die automatische Zahlung für alle Zahlungsmethoden deaktiviert ist, können wir dein Konto automatisch downgraden, was zum Verlust vieler Funktionen führt."

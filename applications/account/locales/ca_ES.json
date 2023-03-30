@@ -2683,9 +2683,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } és el vostre nom d'usuari. Per crear ${ Local }@${ Domain }, aneu a Preferències > Missatges i redacció > Domini curt (pm.me)."
-      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -3145,9 +3142,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error en el xifratge"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "versions vCard < 3.0 no suportades"
       ]
     },
     "Error importing contacts": {
@@ -3824,9 +3818,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
-      ],
-      "vCard versions < 3.0": [
-        "versions vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4937,9 +4928,6 @@
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
       ],
-      "No preview available": [
-        "No hi ha previsualització disponible"
-      ],
       "No results found": [
         "No s'han trobat resultats."
       ],
@@ -5107,9 +5095,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Enviat amb <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> correu segur."
       ],
       "Server is currently down": [
         "El servidor està actualment caigut"
@@ -7489,9 +7474,6 @@
       "Secure Core servers": [
         "Servidors Secure Core"
       ],
-      "Send & receive invitations": [
-        "Enviar i rebre invitacions"
-      ],
       "Share calendar via link": [
         "Compartir un calendari mitjançant un enllaç"
       ],
@@ -7540,11 +7522,6 @@
         "Gestió d'equip"
       ]
     },
-    "new_plans: Info": {
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "El període de prova acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "Popular": [
         "Popular"
@@ -7554,6 +7531,11 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "El compte d'inici sense cost dissenyat per atorgar privadesa a tothom per defecte."
+      ]
+    },
+    "new_plans: Info": {
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "El període de prova acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {

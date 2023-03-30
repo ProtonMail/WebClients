@@ -167,9 +167,6 @@
       "Close": [
         "Luk"
       ],
-      "Close & discard": [
-        "Luk & kassér"
-      ],
       "Close composer": [
         "Luk skrivevinduet"
       ],
@@ -2983,9 +2980,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } for <${ email }>. Du kan tilføje en anden nøgle eller deaktivere kryptering for denne kontakt for at løse problemet."
-      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -3429,9 +3423,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Kryptering mislykkedes"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard-versioner < 3.0 understøttes ikke"
       ]
     },
     "Error importing contacts": {
@@ -4001,9 +3992,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } understøtter i øjeblikket ikke visse begivenhedstyper, detaljer og formater."
-      ],
-      "vCard versions < 3.0": [
-        "vCard versioner < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4929,9 +4917,6 @@
       "No more results found": [
         "Der er ikke flere resultater"
       ],
-      "No preview available": [
-        "Ingen forhåndsvisning tilgængelig"
-      ],
       "No results found": [
         "Ingen resultater fundet"
       ],
@@ -5038,9 +5023,6 @@
       "Request read receipt": [
         "Anmod om kvittering for læsning"
       ],
-      "Rich text": [
-        "Rig tekst"
-      ],
       "Right to Left": [
         "Højre mod venstre"
       ],
@@ -5094,9 +5076,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Afsendelse af beskeder fra @pm.me-adresse er en betalt funktion. Din besked afsendes via din standardadresse ${ email }"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-mail."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -7173,11 +7152,6 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Bemærk: Tjenesten vil genindlæse, når du klikker på Anvend-knappen."
-      ]
-    },
-    "Remaining days before the message expire": {
-      "<1 d": [
-        "<1 dag"
       ]
     },
     "Reply to calendar invitation": {

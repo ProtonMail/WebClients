@@ -292,6 +292,9 @@
       "Get verification code": [
         "取得驗證碼"
       ],
+      "Go to Drive": [
+        "到 Drive"
+      ],
       "Go to label": [
         "跳至標籤"
       ],
@@ -1872,6 +1875,9 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
+      "A problem occurred, please try again.": [
+        "發生問題，請再試一次。"
+      ],
       "Address primary private key not found": [
         "找不到電子郵件地址主要私密金鑰"
       ],
@@ -1994,6 +2000,9 @@
       ],
       "Passwords do not match": [
         "密碼不一致"
+      ],
+      "Please activate your search again": [
+        "請再次啟用搜尋"
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "請先修正已標示的衝突以便繼續。"
@@ -2169,9 +2178,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失敗"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "不支援 vCard 3.0 以下版本"
       ]
     },
     "Error importing contacts": {
@@ -2535,9 +2541,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 目前尚未支援某些事件類型、詳細資料和格式。"
-      ],
-      "vCard versions < 3.0": [
-        "vCard 版本 < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3157,6 +3160,9 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
       ],
+      "Free forever": [
+        "永遠免費"
+      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -3333,9 +3339,6 @@
       ],
       "No group found": [
         "未找到群組"
-      ],
-      "No preview available": [
-        "無法預覽"
       ],
       "No results found": [
         "找不到相符的結果"
@@ -3514,6 +3517,9 @@
       "support team": [
         "支援團隊"
       ],
+      "Swiss encrypted file storage": [
+        "瑞士的加密檔案儲存空間"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
       ],
@@ -3675,6 +3681,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "設置雙重身分驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
+      ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "使用 ${ DRIVE_APP_NAME }，您的資料會以端到端加密保護。僅有您能解密。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -5384,6 +5393,9 @@
       ],
       "Sign in and grant access": [
         "登入並授予存取權"
+      ],
+      "Sign in with 2FA": [
+        "使用 2FA 登入"
       ],
       "Sign out": [
         "登出"
