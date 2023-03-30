@@ -553,6 +553,9 @@
       "Show preview": [
         "Zobrazit náhled"
       ],
+      "Show side panel": [
+        "Zobrazit postranní panel"
+      ],
       "Sign in": [
         "Přihlásit se"
       ],
@@ -2028,6 +2031,9 @@
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
+      "Please activate your search again": [
+        "Prosím, aktivujte znovu vyhledávání"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
@@ -2202,9 +2208,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Šifrování selhalo"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard verze < 3.0 není podporována"
       ]
     },
     "Error importing contacts": {
@@ -2586,9 +2589,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } v současné době nepodporuje některé typy, detaily a formáty událostí."
-      ],
-      "vCard versions < 3.0": [
-        "vCard verze < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3319,6 +3319,9 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
       ],
+      "Free forever": [
+        "Navždy zdarma"
+      ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
       ],
@@ -3499,9 +3502,6 @@
       "No group found": [
         "Nebyla nalezena žádná skupina"
       ],
-      "No preview available": [
-        "Náhled není k dispozici"
-      ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
@@ -3597,6 +3597,9 @@
       ],
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
+      ],
+      "Preview for this file type is not supported": [
+        "Náhled tohoto typu souboru není podporován"
       ],
       "Primary": [
         "Hlavní"
@@ -5707,7 +5710,7 @@
         "Přihlaste se a povolte přístup"
       ],
       "Sign in with 2FA": [
-        "Příhlásit se pomocí dvoufázového ověření"
+        "Přihlásit se pomocí dvoufázového ověření"
       ],
       "Sign out": [
         "Odhlásit se"

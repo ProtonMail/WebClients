@@ -549,6 +549,9 @@
       "Show preview": [
         "Mostrar pré-visualização"
       ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
+      ],
       "Sign in": [
         "Iniciar sessão"
       ],
@@ -2010,8 +2013,8 @@
         "As senhas não correspondem"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Por favor, corrija o conflito em destaque para prosseguir.",
-        "Por favor, corrija os conflitos em destaque para prosseguir."
+        "Corrija o conflito em destaque para prosseguir.",
+        "Corrija os conflitos em destaque para prosseguir."
       ],
       "Port is required": [
         "Porta é necessária"
@@ -2179,9 +2182,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falha na criptografia"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "versões vCard < 3.0 não são suportadas"
       ]
     },
     "Error importing contacts": {
@@ -2550,9 +2550,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
-      ],
-      "vCard versions < 3.0": [
-        "versões vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -2618,13 +2615,13 @@
     },
     "Import error": {
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
-        "A ${ BRAND_NAME } não pode se conectar à sua conta. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta. Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
@@ -2645,7 +2642,7 @@
         "Acesso IMAP está ativado na sua conta do Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Muitos pedidos recentes. Por favor, tente novamente em alguns instantes."
+        "Muitos pedidos recentes. Tente novamente em alguns instantes."
       ],
       "Use your app password if:": [
         "Use a senha de aplicativo se:"
@@ -2929,7 +2926,7 @@
         "Um número de telefone apenas pode ser utilizado para verificar uma conta ${ BRAND_NAME }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "O acesso à conta foi restringido devido a faturas não pagas. Por favor, entre em contato com o seu administrador."
+        "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "A verificação de endereço com chaves confiáveis ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
@@ -3243,7 +3240,7 @@
         "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
+        "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to\nstart the unblock process.": [
         "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process."
@@ -3295,7 +3292,7 @@
         "Conexão com a internet restaurada."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Parece que você tentou enviar ${ uploadName } recentemente. Se o upload falhou, ${ replaceFile }. Se o upload ainda estiver em andamento, substituí-lo cancelará o upload em andamento."
+        "Parece que você tentou enviar ${ uploadName } recentemente. Se o envio falhou, ${ replaceFile }. Se o envio ainda estiver em andamento, substituí-lo cancelará o envio em andamento."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Os itens na lixeira permanecerão aqui até que você os exclua permanentemente"
@@ -3390,9 +3387,6 @@
       "No group found": [
         "Nenhum grupo encontrado"
       ],
-      "No preview available": [
-        "Sem pré-visualização disponível"
-      ],
       "No results found": [
         "Nenhum resultado encontrado"
       ],
@@ -3465,13 +3459,13 @@
         "Selecione qual endereço de e-mail ou endereços adicionar aos grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Por favor, selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
+        "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please wait till your changes are synced with the server.": [
         "Por favor, aguarde até que suas alterações sejam sincronizadas com o servidor."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Por favor, aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
+        "Aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
@@ -3484,6 +3478,9 @@
       ],
       "Preview failed to be loaded": [
         "A pré-visualização falhou ao carregar"
+      ],
+      "Preview for this file type is not supported": [
+        "A visualização prévia deste arquivo não é suportada"
       ],
       "Primary": [
         "Principal"
@@ -3531,7 +3528,7 @@
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
+        "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
       ],
       "Session timed out": [
         "Sessão expirada"
@@ -3612,10 +3609,10 @@
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link pode ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se você tiver certeza de que o link é legítimo, por favor use um navegador diferente para abrí-lo."
+        "Este link pode ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abrí-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
+        "Este link pode ser um ataque homográfico. Verifique se este é o link que você deseja visitar, caso contrário, não abra."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Este link foi criado com a versão antiga do Drive e não pode ser modificado. Exclua este link e crie um novo para alterar as configurações."
@@ -4842,7 +4839,7 @@
         "Senha"
       ],
       "Please describe the problem and include any error messages": [
-        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
+        "Descreva o problema e inclua quaisquer mensagens de erro"
       ],
       "Search for group name": [
         "Pesquisar nome do grupo"

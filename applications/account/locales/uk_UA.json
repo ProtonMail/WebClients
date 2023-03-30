@@ -53,6 +53,9 @@
       "activate": [
         "активувати"
       ],
+      "Activate ${ user.Name }@pm.me": [
+        "Активувати ${ user.Name }@pm.me"
+      ],
       "Activate organization key": [
         "Активувати ключ організації"
       ],
@@ -705,7 +708,7 @@
         "Виберіть мову для листів із запрошеннями"
       ],
       "Select time zone": [
-        "Виберіть часовий пояс"
+        "Вибрати часовий пояс"
       ],
       "send auto-reply email": [
         "надіслати лист з автоматичною відповіддю"
@@ -2829,13 +2832,10 @@
     },
     "Enabled 2FA": {
       "2FA": [
-        "Двофакторна автентифікація (2FA)"
+        "Двоетапна перевірка (2FA)"
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } ваше ім'я користувача. Щоб створити ${ Local }@${ Domain }, перейдіть у Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
-      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -2922,6 +2922,9 @@
       ],
       "Error in one of the conditions": [
         "Помилка в одній з умов"
+      ],
+      "Expired": [
+        "Протерміновано"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не вдалося отримати активні сеанси. ${ refresh } або повторіть спробу пізніше."
@@ -3154,6 +3157,9 @@
       "The address might be misspelled": [
         "Ймовірно, адреса неправильна"
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Браузер, який ви використовуєте, не дозволяє повністю авторизувати платіж. Будь ласка, скористайтеся іншим браузером або увійдіть за допомогою комп'ютера."
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "Назва теки неправильна. Оберіть іншу назву."
       ],
@@ -3325,9 +3331,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не вдалося зашифрувати"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard версій < 3.0 не підтримуються"
       ]
     },
     "Error importing contacts": {
@@ -3500,6 +3503,9 @@
       ],
       "sign in": [
         "увійти"
+      ],
+      "Sign in to verify": [
+        "Увійдіть для підтвердження"
       ],
       "There was a problem removing your email address.": [
         "Виникла проблема з вилученням адреси електронної пошти."
@@ -4096,9 +4102,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
-      ],
-      "vCard versions < 3.0": [
-        "vCard версії < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4746,6 +4749,9 @@
       "Are you sure you want to delete this filter?": [
         "Ви дійсно хочете видалити цей фільтр?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Ви впевнені, що хочете видалити цю теку? Усі підтеки також будуть видалені."
+      ],
       "Are you sure you want to delete this label?": [
         "Ви дійсно хочете видалити цю мітку?"
       ],
@@ -4784,6 +4790,9 @@
       ],
       "Background color": [
         "Колір тла"
+      ],
+      "Balance from your previous subscription": [
+        "Баланс після вашої попередньої передплати"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
@@ -4925,6 +4934,9 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його забудете, то не зможете керувати своєю організацією."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
+        "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його втратите, то не зможете увійти або розшифрувати свої повідомлення."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Не використовуйте облікові дані OpenVPN / IKEv2 у застосунках ${ VPN_APP_NAME } чи на панелі керування ${ VPN_APP_NAME }. ${ learnMore }"
@@ -5133,6 +5145,15 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Якщо ви встановили обидва SPF та DKIM, DMARC дозволить вам вказати, як інші сервіси електронної пошти повинні доставляти пошту для вашого домену, якщо обидві перевірки SPF та DKIM не пройшли. Це може перешкоджати спамерам представлятися вашим іменем, але також може спричиняти проблеми доставлення при неправильному налаштуванні."
       ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Якщо ви втратите свій пароль і вам необхідно буде відновити доступ, ${ boldImperative }, щоб у вас був налаштований ${ boldAccountRecovery }."
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Якщо ви втратите свій пароль і вам необхідно буде відновити доступ, ${ boldImperative }, щоб у вас були налаштовані ${ boldAccountAndRecovery }, інакше ви не зможете отримати доступ до своїх листів, контактів чи файлів."
+      ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Якщо ви втратите свій пристрій двоетапної перевірки, можна скористатися цими кодами замість 6-значного коду перевірки для входу в обліковий запис. Кожен код можна використати лише один раз."
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
       ],
@@ -5259,6 +5280,9 @@
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
       ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні застосунки VPN."
+      ],
       "Learn more": [
         "Докладніше"
       ],
@@ -5369,9 +5393,6 @@
       ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
-      ],
-      "No preview available": [
-        "Перегляд недоступний"
       ],
       "No results found": [
         "Результатів не знайдено"
@@ -5598,9 +5619,6 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
-      ],
       "Server is currently down": [
         "Наразі сервер не працює"
       ],
@@ -5621,6 +5639,9 @@
       ],
       "Show original message": [
         "Показати оригінальне повідомлення"
+      ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
       ],
       "Signed up": [
         "Зареєстровано"
@@ -5685,6 +5706,9 @@
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Адреса, яку ви розташуєте вгорі списку, є вашою типовою адресою. Пересовуйте для зміни порядку адрес."
       ],
+      "The email verification link has expired. Please sign in to resend a verification link.": [
+        "Термін дії посилання для підтвердження електронною поштою завершився. Увійдіть, щоб повторно надіслати посилання."
+      ],
       "The following address is available:": [
         "Ця адреса доступна:"
       ],
@@ -5711,6 +5735,9 @@
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
         "Додаток Іmport-Export дає змогу експортувати повідомлення до локальних резервних копій та відновлювати попередні резервні копії в обліковому записі."
+      ],
+      "The name will be visible to your users while they are signed in.": [
+        "Ваші користувачі зможуть бачити назву, коли вони увійшли в систему."
       ],
       "The securest way to browse, stream, and be online.": [
         "Найзахищеніший спосіб переглядати, передавати та бути онлайн."
@@ -5762,6 +5789,9 @@
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Цей токен буде недоступний після того, як ви закриєте це вікно. Не діліться ним ні з ким."
+      ],
+      "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
+        "Термін дії цього посилання для підтвердження завершився. Відкрийте новіше повідомлення з цього списку розсилки."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
@@ -5862,6 +5892,9 @@
       "Two-factor authentication enabled": [
         "Двоетапна перевірка увімкнена"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "Двопарольний режим потребує два паролі: перший для входу в обліковий запис, а другий для розшифрування поштової скриньки."
+      ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Двопарольний режим використовує окремі паролі для входу та розшифрування поштової скриньки. Це забезпечує додатковий рівень захисту в деяких ситуаціях. Однак, для більшості користувачів ми рекомендуємо використовувати однопарольний режим. Щоб перемкнутися на двопарольний режим, встановіть спочатку пароль входу, а потім пароль поштової скриньки."
       ],
@@ -5882,6 +5915,9 @@
       ],
       "Unsaved changes": [
         "Незбережені зміни"
+      ],
+      "Unsubscribe link expired": [
+        "Термін дії посилання для скасування підписки завершився"
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
@@ -5915,6 +5951,9 @@
       ],
       "Verification can take a few minutes.": [
         "Перевірка може тривати декілька хвилин."
+      ],
+      "Verification link expired": [
+        "Термін дії посилання для підтвердження завершився"
       ],
       "Verification may take a few minutes.": [
         "Перевірка може тривати декілька хвилин."
@@ -6042,6 +6081,9 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Ви можете налаштувати і завантажити свої рахунки для бухгалтерського обліку."
       ],
+      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Ви можете увімкнути журнал авторизації, щоб бачити хто і з якої IP-адреси мав доступ до вашого облікового запису. Ми записуватимемо IP-адреси та час отримання доступу, а також невдалі спроби."
+      ],
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
       ],
@@ -6095,6 +6137,9 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Ви не можете запрошувати користувачів ${ MAIL_APP_NAME }"
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Ви не можете використати облікові дані OpenVPN / IKEv2 для входу в застосунки ${ VPN_APP_NAME } чи панель керування ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ви не вказали спосіб відновлення, тому неможливо відновити обліковий запис при втраті пароля. Продовжити без способу відновлення?"
@@ -6167,6 +6212,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Ваші облікові записи ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } пов'язані. Щоб видалити їх обидва, виконайте вхід у ${ loginLink } та видаліть свій обліковий запис."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має несплачені рахунки. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
@@ -8298,9 +8346,6 @@
       "Secure Core servers": [
         "Сервери Secure Core"
       ],
-      "Send & receive invitations": [
-        "Надсилайте й отримуйте запрошення"
-      ],
       "Share calendar via link": [
         "Діліться календарем за посиланням"
       ],
@@ -8362,26 +8407,6 @@
       ],
       "Team management": [
         "Керування командою"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8453,6 +8478,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9467,6 +9512,12 @@
       ]
     },
     "Settings description": {
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "Перейдіть на новий рівень приватності завдяки нашим інструментам безпечного імпортування і пересилання."
+      ],
+      "Complete the transition to privacy with our secure importing tools.": [
+        "Перейдіть на новий рівень приватності завдяки нашим інструментам безпечного імпортування."
+      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Ви можете застосувати кілька міток до одного повідомлення, але одне повідомлення може зберігатися лише в одній теці. Пересовуйте теки й мітки, щоб змінити їх порядок."
       ]
@@ -9738,6 +9789,32 @@
     "Subscription price": {
       "For": [
         "За"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Ви впевнені?"
+      ],
+      "Auto-pay is disabled": [
+        "Автоплатіж вимкнено"
+      ],
+      "Auto-pay is enabled": [
+        "Автоплатіж увімкнено"
+      ],
+      "Disable": [
+        "Вимкнути"
+      ],
+      "Enable auto-pay support": [
+        "Увімкнути підтримку автоматичного платежу"
+      ],
+      "Keep auto-pay": [
+        "Залишити автовідтворення"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Наша система більше не стягуватиме плату з використанням цього способу оплати, але ваша передплата все одно поновиться в кінці платіжного періоду. Якщо ви хочете перейти на тарифний план нижчого рівня чи змінити передплату, вам доведеться зробити це власноруч до завершення платіжного періоду. Крім того, якщо ви забудете виконати платіж вручну, а автоматична оплата буде вимкнена для всіх способів оплати, ми можемо автоматично перевести вас на тарифний план нижчого рівня, що призведе до втрати доступу до багатьох функцій."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Наша система більше не стягуватиме плату з використанням цього способу оплати, але вашу передплату все одно потрібно поновити в кінці платіжного періоду. Якщо ви хочете перейти на тарифний план нижчого рівня чи змінити передплату, вам доведеться зробити це власноруч до завершення платіжного періоду. Ми не можемо автоматично перевести вас на тарифний план нижчого рівня, оскільки ви перевищили обмеження безплатного сховища або використовуєте інші платні функції, і ми не можемо автоматично видаляти ваші файли, електронні листи та інші дані. Якщо ви вимкнете автоматичний платіж, обов'язково сплатіть достатню суму для продовження передплати до завершення платіжного періоду, щоб уникнути вимкнення облікового запису."
       ]
     },
     "Subscription saving": {
@@ -10100,7 +10177,7 @@
     },
     "Timezone search placeholder": {
       "Search time zones": [
-        "Пошук часових поясів"
+        "Шукати часові пояси"
       ]
     },
     "Title": {
@@ -10796,6 +10873,9 @@
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
+      ],
+      "Sign in with 2FA": [
+        "Увійти з двоетапною перевіркою"
       ],
       "Sign out": [
         "Вийти"

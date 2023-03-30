@@ -471,6 +471,9 @@
       "Show more": [
         "Pokaż więcej"
       ],
+      "Show side panel": [
+        "Pokaż panel boczny"
+      ],
       "Show time zones": [
         "Pokaż strefy czasowe"
       ],
@@ -2519,9 +2522,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Szyfrowanie nie powiodło się"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "Wersja vCard starsza niż 3.0 nie jest obsługiwana"
       ]
     },
     "Error importing contacts": {
@@ -2934,9 +2934,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } nie obsługuje niektórych typów wydarzeń, szczegółów i formatów."
-      ],
-      "vCard versions < 3.0": [
-        "Wersja vCard jest starsza niż 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5180,6 +5177,11 @@
         "Nie udało się zaktualizować ustawień"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Aby zaprosić użytkowników spoza ${ BRAND_NAME }, udostępnij kalendarz za pomocą linku."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Osiągnięto maksymalną liczbę ${ MAX_CALENDAR_MEMBERS } użytkownika kalendarza",
@@ -5219,6 +5221,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Zarządzaj kalendarzem"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Weryfikacja podpisu nie powiodła się"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Włączyłeś weryfikację adresu z zaufanymi kluczami dla ${ boldSenderEmail }. Nie możemy zweryfikować tego zaproszenia. Może to być spowodowane zmianą kluczy szyfrujących tego użytkownika. Sprawdź zaawansowane ustawienia PGP lub poproś ${ boldSenderEmail } o nowe zaproszenie."
       ]
     },
     "Signing preference for emails": {
