@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription, useSubscriptionModal, useUser } from '@proton/components';
+import { usePlans, useSubscription, useSubscriptionModal, useUser } from '@proton/components';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { APP_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getUpgradedPlan } from '@proton/shared/lib/helpers/subscription';
 import { canPay } from '@proton/shared/lib/user/helpers';
@@ -27,6 +28,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
     const onceCloseRef = useRef(false);
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
+    const [plans, loadingPlans] = usePlans();
     const [open, loadingSubscriptionModal] = useSubscriptionModal();
     const [type, setType] = useState<SubscribeType | undefined>(undefined);
 
@@ -35,7 +37,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
     const canEdit = canPay(user);
 
     useEffect(() => {
-        if (onceRef.current || loading || !user) {
+        if (onceRef.current || loading || !user || !plans) {
             return;
         }
         // Only certain users can manage subscriptions
@@ -68,7 +70,13 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
         const maybeType = queryParams.get('type');
         const maybeDisableCycleSelector = queryParams.get('disableCycleSelector');
 
-        const plan = maybeType === 'upgrade' ? getUpgradedPlan(subscription, app) : undefined;
+        const maybePlanName = queryParams.get('plan') || '';
+        const plan =
+            maybeType === 'upgrade'
+                ? getUpgradedPlan(subscription, app)
+                : (plans.find(({ Name, Type }) => Name === maybePlanName && Type === PLAN_TYPES.PLAN)?.Name as
+                      | PLANS
+                      | undefined);
 
         const step = (() => {
             if (maybeStart === 'compare') {
@@ -93,7 +101,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             disableThanksStep: true,
             disableCycleSelector: Boolean(maybeDisableCycleSelector),
         });
-    }, [user, loading]);
+    }, [user, loading, loadingPlans]);
 
     if (loading) {
         return <LiteLoaderPage />;
