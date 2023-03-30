@@ -38,6 +38,9 @@ const StepInstructionsGoogle = ({ triggerOAuth }: Props) => {
     const instructionsVideo = c('Oauth instructions video')
         .t`For the import to work, you must select all requested items as shown in the GIF.`;
 
+    const instructionsVideoAlt = c('Oauth instructions video alternative')
+        .t`Select what ${BRAND_NAME} can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.`;
+
     return (
         <ModalTwo open onClose={handleQuit}>
             <ModalTwoHeader title={c('Title').t`Sign in and grant access`} />
@@ -46,7 +49,8 @@ const StepInstructionsGoogle = ({ triggerOAuth }: Props) => {
                     {instructions}
                 </div>
                 <div className="mb2">{instructionsVideo}</div>
-                <div className="text-center mb1 relative">
+                <div className="sr-only">{instructionsVideoAlt}</div>
+                <div className="text-center mb1 relative" aria-hidden="true">
                     <VideoInstructions>
                         <source src={oauthInstructionsWebm} type="video/webm" />
                         <source src={oauthInstructionsMp4} type="video/mp4" />
