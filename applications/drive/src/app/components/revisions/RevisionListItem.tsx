@@ -10,16 +10,12 @@ import { useContextMenuControls } from '../FileBrowser';
 import { RevisionsItemContextMenu } from './RevisionsItemContextMenu';
 
 const RevisionListItem = ({
-    revisionId,
-    createTime,
+    revision,
     formatType = 'date',
-    havePreviewAvailable,
     isCurrent = false,
 }: {
-    revisionId: DriveFileRevision['ID'];
-    createTime: number;
+    revision: DriveFileRevision;
     formatType?: 'date' | 'time';
-    havePreviewAvailable: boolean;
     isCurrent?: boolean;
 }) => {
     const contextMenuControls = useContextMenuControls();
@@ -42,13 +38,12 @@ const RevisionListItem = ({
                 position={contextMenuControls.position}
                 open={contextMenuControls.open}
                 close={contextMenuControls.close}
-                havePreviewAvailable={havePreviewAvailable}
-                revisionId={revisionId}
+                revision={revision}
                 isCurrent={isCurrent}
             />
-            <li className="flex flex-justify-space-between flex-align-items-center">
+            <li className="flex flex-justify-space-between flex-align-items-center mb-4">
                 <TimeIntl className="flex-item-fluid" options={options}>
-                    {createTime}
+                    {revision.CreateTime}
                 </TimeIntl>
                 <Button
                     ref={ref}

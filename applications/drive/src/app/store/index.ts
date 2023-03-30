@@ -17,11 +17,13 @@ export {
     getSharedLink,
 } from './_shares';
 export { useUpload, useFileUploadInput, useFolderUploadInput } from './_uploads';
+export { useRevisions, RevisionsProvider } from './_revisions';
 export * from './_uploads/interface';
 export { useDownloadProvider as useDownload, useThumbnailsDownload } from './_downloads';
 export * from './_downloads/interface';
 export * from './_links/interface';
 export * from './_shares/interface';
 export * from './_devices/interface';
+export * from './_revisions/interface';
 export * from './_views';
 export { useSearchLibrary } from './_search';

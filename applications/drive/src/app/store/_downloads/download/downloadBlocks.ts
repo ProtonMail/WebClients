@@ -29,7 +29,8 @@ export type DownloadBlocksCallbacks = Omit<
         pagination: {
             FromBlockIndex: number;
             PageSize: number;
-        }
+        },
+        revisionId?: string
     ) => Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }>;
     transformBlockStream: (
         abortSignal: AbortSignal,
