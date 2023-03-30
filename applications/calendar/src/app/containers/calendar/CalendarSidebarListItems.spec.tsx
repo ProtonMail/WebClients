@@ -177,6 +177,33 @@ const mockSharedCalendar: VisualCalendar = {
     ],
 };
 
+const mockSubscribedCalendar: VisualCalendar = {
+    ID: 'id4',
+    Name: 'calendar4',
+    Description: 'description4',
+    Display: 1,
+    Color: '#f00',
+    Email: 'email4',
+    Permissions: MEMBER_PERMISSIONS.OWNS,
+    Flags: CALENDAR_FLAGS.ACTIVE,
+    Type: CALENDAR_TYPE.SUBSCRIPTION,
+    Owner: { Email: 'email4' },
+    Members: [
+        {
+            Email: 'email4',
+            Permissions: 127,
+            AddressID: 'AddressID',
+            Display: 1,
+            ID: 'ID',
+            Flags: 1,
+            Color: '#f00',
+            CalendarID: 'id4',
+            Name: 'calendar4',
+            Description: 'description4',
+        },
+    ],
+};
+
 const getImportButton = () => screen.queryByText(/Import events/) as HTMLButtonElement;
 const getImportModal = () => screen.queryByText(/ImportModal/);
 
@@ -186,6 +213,7 @@ function renderComponent(props?: Partial<CalendarSidebarListItemsProps>) {
     const defaultProps: CalendarSidebarListItemsProps = {
         onChangeVisibility: jest.fn(),
         calendars: [mockCalendar, mockCalendar2],
+        allCalendars: [mockCalendar, mockCalendar2],
         addresses: [
             {
                 Email: 'test@pm.gg',
@@ -368,8 +396,8 @@ describe('CalendarSidebarListItems', () => {
         expect(moreOptionsLink.href).toBe(`http://localhost/calendar/calendars/id3`);
     });
 
-    it(`doesn't let you open the dropdown when actions are disabled`, () => {
-        render(renderComponent({ actionsDisabled: true }));
+    it(`doesn't let you open the dropdown for a subscribed calendar when loading subscription parameters`, () => {
+        render(renderComponent({ calendars: [mockSubscribedCalendar], loadingSubscriptionParameters: true }));
 
         const dropdownButton = screen.getAllByRole('button')[0];
 
@@ -378,5 +406,17 @@ describe('CalendarSidebarListItems', () => {
         fireEvent.click(dropdownButton);
 
         expect(screen.queryByText(/Edit/)).not.toBeInTheDocument();
+    });
+
+    it('lets you open the dropdown for a subscribed calendar when loading subscription parameters', () => {
+        render(renderComponent({ loadingSubscriptionParameters: true }));
+
+        const dropdownButton = screen.getAllByRole('button')[0];
+
+        expect(dropdownButton).not.toBeDisabled();
+
+        fireEvent.click(dropdownButton);
+
+        expect(screen.queryByText(/Edit/)).toBeInTheDocument();
     });
 });
