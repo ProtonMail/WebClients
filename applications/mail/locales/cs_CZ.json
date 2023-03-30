@@ -181,9 +181,6 @@
       "Close": [
         "Zavřít"
       ],
-      "Close & discard": [
-        "Zavřít & zahodit"
-      ],
       "Close composer": [
         "Zavřít editor"
       ],
@@ -963,6 +960,9 @@
       ],
       "Show preview": [
         "Zobrazit náhled"
+      ],
+      "Show side panel": [
+        "Zobrazit postranní panel"
       ],
       "Sign in": [
         "Přihlásit se"
@@ -3045,9 +3045,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } pro <${ email }>. Problém můžete vyřešit přidáním jiného klíče nebo vypnutím šifrování pro tento kontakt."
-      ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
@@ -3257,6 +3254,9 @@
       ],
       "Passwords do not match": [
         "Hesla se neshodují"
+      ],
+      "Please activate your search again": [
+        "Prosím, aktivujte znovu vyhledávání"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
@@ -3517,9 +3517,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Šifrování selhalo"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard verze < 3.0 není podporována"
       ]
     },
     "Error importing contacts": {
@@ -4112,9 +4109,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } v současné době nepodporuje některé typy, detaily a formáty událostí."
-      ],
-      "vCard versions < 3.0": [
-        "vCard verze < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5174,9 +5168,6 @@
       "No more results found": [
         "Nebylo nalezeno více výsledků"
       ],
-      "No preview available": [
-        "Náhled není k dispozici"
-      ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
@@ -5188,6 +5179,9 @@
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Žádný z nahraných klíčů není platný pro šifrování. Chcete-li na tuto adresu posílat zprávy, nahrajte platný klíč nebo vypněte funkci \"Šifrovat e-maily\"."
+      ],
+      "Normal": [
+        "Normální"
       ],
       "Not a valid URL": [
         "Neplatný odkaz"
@@ -5255,6 +5249,9 @@
       "Preview failed to be loaded": [
         "Náhled se nepodařilo načíst"
       ],
+      "Preview for this file type is not supported": [
+        "Náhled tohoto typu souboru není podporován"
+      ],
       "Primary": [
         "Hlavní"
       ],
@@ -5284,9 +5281,6 @@
       ],
       "Request read receipt": [
         "Požádat o potvrzení přečtení"
-      ],
-      "Rich text": [
-        "Formátovaný text"
       ],
       "Right to Left": [
         "Zprava doleva"
@@ -5344,9 +5338,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Odesílání zpráv z adresy @pm.me je placená funkce. Vaše zpráva bude odeslána z vaší výchozí adresy ${ email }"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }u</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
@@ -5591,6 +5582,9 @@
       "Updating message content search...": [
         "Aktualizuji vyhledávání ve zprávách..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Aktualizace lokálních zpráv, obsah zpráv nebude během této aktualizace prohledáván"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
       ],
@@ -5719,6 +5713,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Dnes můžete ${ VPN_APP_NAME } používat zdarma."
       ],
       "You cannot reply from the invited address.": [
         "Nemůžete odpovídat z pozvané adresy."
@@ -7526,9 +7523,6 @@
         "${ remainingDays } dny",
         "${ remainingDays } dnů",
         "${ remainingDays } dnů"
-      ],
-      "<1 d": [
-        "<1 den"
       ]
     },
     "Reply to calendar invitation": {
@@ -8661,7 +8655,7 @@
         "Přihlaste se a povolte přístup"
       ],
       "Sign in with 2FA": [
-        "Příhlásit se pomocí dvoufázového ověření"
+        "Přihlásit se pomocí dvoufázového ověření"
       ],
       "Sign out": [
         "Odhlásit se"

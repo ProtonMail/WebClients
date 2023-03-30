@@ -169,9 +169,6 @@
       "Close": [
         "Sluiten"
       ],
-      "Close & discard": [
-        "Sluit & verwijder"
-      ],
       "Close composer": [
         "Opstelvenster sluiten"
       ],
@@ -2995,9 +2992,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } voor <${ email }>. U kunt een andere sleutel toevoegen of de versleuteling voor dit contact uitschakelen om het probleem op te lossen."
-      ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
@@ -3447,9 +3441,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Versleutelen is mislukt"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard-versies < 3.0 niet ondersteund"
       ]
     },
     "Error importing contacts": {
@@ -4022,9 +4013,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } ondersteunt momenteel bepaalde afspraaktypen, -details en -indelingen niet."
-      ],
-      "vCard versions < 3.0": [
-        "vCard-versies < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4956,9 +4944,6 @@
       "No more results found": [
         "Geen resultaten meer gevonden"
       ],
-      "No preview available": [
-        "Geen voorbeeld beschikbaar"
-      ],
       "No results found": [
         "Geen resultaten gevonden"
       ],
@@ -5065,9 +5050,6 @@
       "Request read receipt": [
         "Leesbevestiging vragen"
       ],
-      "Rich text": [
-        "Rich text"
-      ],
       "Right to Left": [
         "Van rechts naar links"
       ],
@@ -5121,9 +5103,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Berichten versturen vanaf een @pm.me-adres is enkel beschikbaar voor betalende gebruikers. Uw bericht wordt verzonden vanaf ${ email }"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Verzonden met <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> beveiligde e-mail."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"

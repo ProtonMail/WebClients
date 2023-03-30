@@ -158,9 +158,6 @@
       "Close": [
         "关闭"
       ],
-      "Close & discard": [
-        "放弃修改并关闭"
-      ],
       "Close composer": [
         "关闭编辑窗"
       ],
@@ -2951,9 +2948,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "<${ email }> 的${ error.message }，您可以为该联系人另添一个密钥或为其禁用加密来解决问题。"
-      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -3360,9 +3354,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失败"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "不支持 vCard 3.0 以下版本"
       ]
     },
     "Error importing contacts": {
@@ -3919,9 +3910,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 当前不支持某些日程类型、详情和格式。"
-      ],
-      "vCard versions < 3.0": [
-        "vCard 版本小于3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4759,9 +4747,6 @@
       "No more results found": [
         "到底了"
       ],
-      "No preview available": [
-        "无法预览此文件"
-      ],
       "No results found": [
         "未找到结果"
       ],
@@ -4867,9 +4852,6 @@
       "Request read receipt": [
         "请求已读回执"
       ],
-      "Rich text": [
-        "富文本"
-      ],
       "Right to Left": [
         "从右到左"
       ],
@@ -4917,9 +4899,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "从 @pm.me 地址发送邮件需要付费。您的邮件仍将从您的首选地址 ${ email } 发送。"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "通过 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"

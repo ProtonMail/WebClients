@@ -31,6 +31,12 @@
       "Add address": [
         "Añadir dirección"
       ],
+      "Add Bcc recipients": [
+        "Añadir destinatarios en copia oculta"
+      ],
+      "Add Cc recipients": [
+        "Añadir destinatarios en copia"
+      ],
       "Add condition": [
         "Añadir condición"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Acceso beta"
       ],
+      "Blind Carbon Copy": [
+        "Con copia oculta"
+      ],
       "Block": [
         "Bloquear"
       ],
@@ -129,6 +138,9 @@
       ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Carbon Copy": [
+        "Con copia"
       ],
       "Change page": [
         "Cambiar página"
@@ -168,9 +180,6 @@
       ],
       "Close": [
         "Cerrar"
-      ],
-      "Close & discard": [
-        "Cerrar y descartar"
       ],
       "Close composer": [
         "Cerrar el editor"
@@ -488,6 +497,9 @@
       ],
       "Import from .csv or vCard": [
         "Importar desde .csv o vCard"
+      ],
+      "In the morning": [
+        "Por la mañana"
       ],
       "Inline": [
         "Incrustado"
@@ -849,6 +861,9 @@
       ],
       "Search message content": [
         "Buscar contenido del mensaje"
+      ],
+      "See business plans": [
+        "Ver planes de negocio"
       ],
       "See plan features": [
         "Ver las funciones del plan"
@@ -1610,6 +1625,9 @@
     "Cancel expiration of the message": {
       "Cancel": [
         "Cancelar"
+      ],
+      "Cancel expiration": [
+        "Cancelar la expiración"
       ]
     },
     "Collapsible tooltip": {
@@ -3000,9 +3018,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } para <${ email }>. Puedes añadir otra clave o deshabilitar el cifrado para este contacto para resolver el problema."
-      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
       ],
@@ -3199,6 +3214,9 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden."
       ],
+      "Please activate your search again": [
+        "Activa de nuevo tu búsqueda."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
@@ -3309,6 +3327,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Ha sido un problema con la búsqueda de contenido. En su lugar se ha utilizado la búsqueda por defecto."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Ha ocurrido un problema al actualizar tus mensajes locales. Se descargarán otra vez para rehabilitar la búsqueda de contenido."
       ],
       "There was an error when exporting the contacts vCards": [
         "Se ha producido un error al exportar los archivos vCards de los contactos."
@@ -3446,9 +3467,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error con el cifrado"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "Versiones vCard menores a 3.0 no compatibles"
       ]
     },
     "Error importing contacts": {
@@ -4024,9 +4042,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } no admite actualmente algunos tipos de eventos, detalles y formatos."
-      ],
-      "vCard versions < 3.0": [
-        "Versiones vCard menores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4834,6 +4849,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Aumenta el espacio de almacenamiento a partir de ${ planPrice }/mes."
+      ],
       "Indexing paused": [
         "Indexación pausada"
       ],
@@ -4975,9 +4993,6 @@
       "No more results found": [
         "No se han encontrado más resultados."
       ],
-      "No preview available": [
-        "Vista previa no disponible"
-      ],
       "No results found": [
         "No se han encontrado resultados."
       ],
@@ -5084,9 +5099,6 @@
       "Request read receipt": [
         "Solicitar confirmación de lectura"
       ],
-      "Rich text": [
-        "Texto enriquecido"
-      ],
       "Right to Left": [
         "Derecha a Izquierda"
       ],
@@ -5114,6 +5126,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La búsqueda está tardando demasiado? ${ dropdownButton } o ${ toggleOffButton } de esta sesión de búsqueda."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Protege tus archivos con almacenamiento cifrado en la nube gratuito, hoy."
+      ],
       "Seems like you are all caught up for now": [
         "Parece que ya estás al día por ahora."
       ],
@@ -5140,9 +5155,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "El envío de mensajes desde la dirección @pm.me es una función de pago. Tu mensaje será enviado desde tu dirección por defecto ${ email }."
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Enviado con el correo electrónico seguro <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a&gt."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -5204,6 +5216,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Es posible que los datos que has introducido en el borrador no se guarden si abandonas la página."
       ],
+      "The local database is being prepared": [
+        "Se prepara la base de datos local."
+      ],
       "The message has expired": [
         "El mensaje ha expirado"
       ],
@@ -5237,6 +5252,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Esta acción descargará todos los mensajes para que se puedan buscar localmente. Borrar los datos de tu navegador desactivará esta opción."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Esta acción descargará los mensajes más recientes para que se puedan buscar localmente. Borrar los datos de tu navegador desactivará esta opción."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está deshabilitada. Para enviar correos esta dirección, el propietario debe en primer lugar habilitar la dirección."
@@ -5375,6 +5393,9 @@
       "Updating message content search...": [
         "Actualizando búsqueda de contenido de mensaje..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Actualizando tus mensajes locales. No se buscará en el contenido de los mensajes durante esta actualización"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
       ],
@@ -5384,8 +5405,14 @@
       "Upgrade to create more folders, filters, and addresses.": [
         "Pasa a un plan superior para crear más carpetas, filtros y direcciones."
       ],
+      "Upgrade to level up your privacy.": [
+        "Actualiza tu plan para subir de nivel tu privacidad."
+      ],
       "Upgrade to send email from @pm.me addresses.": [
         "Pasa a un plan superior para enviar correos desde direcciones @pm.me."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Actualiza tu plan para enviar correos electrónicos desde tu dominio de correo electrónico personalizado."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Pasa a un plan superior para enviar fácilmente correos electrónicos a grupos de contactos."
@@ -5398,6 +5425,15 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "Pasa a un plan superior para apoyar la privacidad y obtener más funciones."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Actualiza tu plan para desbloquear funciones premium."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Actualiza tu plan para utilizar ${ MAIL_APP_NAME } con Apple Mail, Outlook o Thunderbird."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Actualiza tu plan para utilizar la respuesta automática cuando estás ausente."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -5434,6 +5470,9 @@
       ],
       "Week": [
         "Semana"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "¿Cuándo deseas que se borre automáticamente tu mensaje de la bandeja de entrada del destinatario y de tu carpeta de enviados?"
       ],
       "When do you want your message to be sent?": [
         "¿Cuándo quieres que se envíe tu mensaje?"
@@ -5485,6 +5524,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Puedes usar ${ VPN_APP_NAME } gratis, hoy."
       ],
       "You cannot reply from the invited address.": [
         "No puedes responder desde la dirección invitada."
@@ -7657,6 +7699,9 @@
       "Message deleted": [
         "Mensaje eliminado"
       ],
+      "Message expiration cancelled": [
+        "Expiración del mensaje cancelada"
+      ],
       "Message marked as legitimate": [
         "Mensaje marcado como legítimo"
       ],
@@ -7929,8 +7974,14 @@
       "Create folder": [
         "Crear carpeta"
       ],
+      "Create folder \"${ search }\"": [
+        "Crear una carpeta \"${ search }\""
+      ],
       "Create label": [
         "Crear etiqueta"
+      ],
+      "Create label \"${ search }\"": [
+        "Crear una etiqueta \"${ search }\""
       ],
       "Create new group": [
         "Crear grupo"
@@ -8282,6 +8333,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y permitir acceso"
+      ],
+      "Sign in with 2FA": [
+        "Iniciar sesión con la 2FA"
       ],
       "Sign out": [
         "Cerrar sesión"

@@ -298,6 +298,9 @@
       "Get verification code": [
         "Получить проверочный код"
       ],
+      "Go to Drive": [
+        "Перейти в Drive"
+      ],
       "Go to label": [
         "Перейти к ярлыку"
       ],
@@ -549,6 +552,9 @@
       ],
       "Show preview": [
         "Показать предпросмотр"
+      ],
+      "Show side panel": [
+        "Показать боковую панель"
       ],
       "Sign in": [
         "Войти"
@@ -924,7 +930,7 @@
         "Имя"
       ],
       "Note": [
-        "Заметка"
+        "Заметки"
       ],
       "Organization": [
         "Организация"
@@ -933,7 +939,7 @@
         "Телефон"
       ],
       "Photo": [
-        "Фотография"
+        "Фото"
       ],
       "Role": [
         "Роль"
@@ -965,7 +971,7 @@
         "Пейджер"
       ],
       "Personal": [
-        "Личное"
+        "Личный"
       ],
       "Work": [
         "Рабочий"
@@ -1414,7 +1420,7 @@
         "Мексика"
       ],
       "Moldova": [
-        "Молдова"
+        "Молдавия"
       ],
       "Monaco": [
         "Монако"
@@ -1753,7 +1759,7 @@
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "Использовать общее значение по умолчанию (${ globalDefaultText })"
+        "Использовать глобальное значение по умолчанию (${ globalDefaultText })"
       ]
     },
     "Delinquent modal title": {
@@ -1766,7 +1772,7 @@
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Удаление контактов... Это может занять несколько минут. Когда процесс завершится, вы можете закрыть это окно."
+        "Удаление контактов... Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это окно."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
@@ -1880,6 +1886,9 @@
       ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
+      ],
+      "A problem occurred, please try again.": [
+        "Возникла проблема. Попробуйте ещё раз."
       ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
@@ -2025,6 +2034,9 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
+      "Please activate your search again": [
+        "Активируйте поиск снова"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
@@ -2035,7 +2047,7 @@
         "Нужно указать порт"
       ],
       "Primary address key is not decrypted": [
-        "Ключ первичного адреса не расшифрован"
+        "Основной ключ адреса не расшифрован"
       ],
       "Primary address key is not decrypted.": [
         "Основной ключ адреса не расшифрован."
@@ -2077,7 +2089,7 @@
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так. ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, свяжитесь нашей ${ supportTeam }."
+        "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Недопустимое название папки. Пожалуйста, выберите другое название."
@@ -2128,7 +2140,7 @@
         "Минимальная длина для этого поля ${ minimumLength } символов."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Это имя папки недоступно. Пожалуйста, выберите другое название."
+        "Это имя папки недоступно. Пожалуйста, выберите другое имя."
       ],
       "This label name is not available. Please choose a different name.": [
         "Это имя ярлыка недоступно. Пожалуйста, выберите другое имя."
@@ -2199,9 +2211,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Ошибка шифрования"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard версии ниже 3.0 не поддерживаются"
       ]
     },
     "Error importing contacts": {
@@ -2241,7 +2250,7 @@
         "Неправильный формат компонента"
       ],
       "Custom time zone": [
-        "Настроить часовой пояс"
+        "Пользовательский часовой пояс"
       ],
       "Edited event not supported": [
         "Отредактированное событие не поддерживается"
@@ -2431,7 +2440,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте еще раз."
+        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
       ]
     },
     "fido2: Info": {
@@ -2586,9 +2595,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } в настоящее время не поддерживает определенные типы, детали и форматы событий."
-      ],
-      "vCard versions < 3.0": [
-        "Версии vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -2683,10 +2689,10 @@
         "Двухэтапная аутентификация включена в вашем внешнем аккаунте электронной почты."
       ],
       "IMAP access is enabled in your external account.": [
-        "Доступ IMAP включен в вашем внешнем аккаунте."
+        "Доступ IMAP включён в вашем внешнем аккаунте."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "Доступ по протоколу IMAP включен в вашей учетной записи Yahoo."
+        "Доступ по протоколу IMAP включён в вашей учетной записи Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Слишком много запросов за последнее время. Пожалуйста, повторите попытку позднее."
@@ -2723,13 +2729,13 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "В зависимости от поставщика услуг электронной почты вам может потребоваться сначала создать ${ knowledgeBaseLink }, прежде чем вы сможете импортировать в ${ BRAND_NAME }."
+        "В зависимости от провайдера электронной почты вам может потребоваться сначала создать ${ knowledgeBaseLink }, прежде чем вы сможете импортировать в ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Разверните выпадающее меню, нажав на 3 точки (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Сгенерируйте пароль ${ boldAppPassword } и используйте его вместо обычного пароля при запросе ${ BRAND_NAME }."
+        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Перейдите в ${ boldAccountInfo } в своем профиле в ${ yahooMailLink }."
@@ -2750,13 +2756,13 @@
         "Чтобы импортировать календарь в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта."
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Чтобы импортировать контакты в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите ее с сайта Yahoo в 3 простых шага:"
+        "Чтобы импортировать контакты в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите его с сайта Yahoo в 3 простых шага:"
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Чтобы импортировать контакты в ${ BRAND_NAME }, вам понадобится ${ knowledgeBaseLink }. Загрузите его перед началом процесса импорта."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Для импорта электронной почты в ${ BRAND_NAME } вам понадобится ${ appPasswordLink } от Yahoo. Получите ее, выполнив следующие действия:"
+        "Для импорта электронной почты в ${ BRAND_NAME } вам понадобится ${ appPasswordLink } от Yahoo. Получите его, выполнив следующие действия:"
       ]
     },
     "Import instructions emphasis": {
@@ -3035,16 +3041,16 @@
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Вся (${ totalFoldersCount } папка)",
-        "Все (${ totalFoldersCount } папок)",
-        "Все (${ totalFoldersCount } папки)",
-        "Все (${ totalFoldersCount } папок)"
+        "Всё (${ totalFoldersCount } папка)",
+        "Всё (${ totalFoldersCount } папки)",
+        "Всё (${ totalFoldersCount } папок)",
+        "Всё (${ totalFoldersCount } папок)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Весь (${ totalFoldersCount } ярлык)",
-        "Все (${ totalFoldersCount } ярлыка)",
+        "Всё (${ totalFoldersCount } ярлык)",
+        "Всё (${ totalFoldersCount } ярлыка)",
         "Все (${ totalFoldersCount } ярлыков)",
-        "Все (${ totalFoldersCount } ярлыков)"
+        "Всё (${ totalFoldersCount } ярлыков)"
       ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
@@ -3319,6 +3325,9 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
       ],
+      "Free forever": [
+        "Бесплатно навсегда"
+      ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
       ],
@@ -3499,9 +3508,6 @@
       "No group found": [
         "Группа не найдена"
       ],
-      "No preview available": [
-        "Предпросмотр недоступен"
-      ],
       "No results found": [
         "Результаты не найдены"
       ],
@@ -3598,6 +3604,9 @@
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
       ],
+      "Preview for this file type is not supported": [
+        "Предварительный просмотр файлов этого типа не поддерживается"
+      ],
       "Primary": [
         "Основной"
       ],
@@ -3684,6 +3693,9 @@
       ],
       "support team": [
         "служба поддержки"
+      ],
+      "Swiss encrypted file storage": [
+        "Швейцарское зашифрованное хранение файлов"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -3850,6 +3862,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "С ${ DRIVE_APP_NAME }, ваши данные защищены сквозным шифрованием. Только вы можете их расшифровать."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
       ],
@@ -3989,7 +4004,7 @@
         "Отозванный"
       ],
       "Trusted": [
-        "Надежный"
+        "Доверенный"
       ]
     },
     "Label": {
@@ -4222,7 +4237,7 @@
         "Интервал импорта"
       ],
       "Import to email address": [
-        "Импортировать в адрес электронной почты"
+        "Импортировать в ящик электронной почты"
       ],
       "Import to:": [
         "Импортировать в:"
@@ -4517,7 +4532,7 @@
         "Сбираются ваши данные"
       ],
       "We're gathering your data from your provider": [
-        "Мы собираем ваши данные у вашего поставщика услуг"
+        "Мы собираем ваши данные у вашего провайдера"
       ],
       "Your import is starting": [
         "Ваш импорт начался"
@@ -4898,7 +4913,7 @@
         "Настройка организации"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Используйте селектор приложения в левом верхнем углу, чтобы получить доступ ко всем ${ BRAND_NAME } службам: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и ${ DRIVE_SHORT_APP_NAME }."
+        "Используйте селектор приложений в левом верхнем углу, чтобы получить доступ ко всем сервисам ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и ${ DRIVE_SHORT_APP_NAME }."
       ],
       "You can change this anytime in your settings.": [
         "Вы можете изменить это в любой момент в настройках."
@@ -5947,6 +5962,9 @@
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
       ],
+      "Sign in with 2FA": [
+        "Войти с помощью двухфакторной аутентификации"
+      ],
       "Sign out": [
         "Выйти"
       ],
@@ -6099,7 +6117,7 @@
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
-        "Импорт начнется с самых последних сообщений."
+        "Импорт начнётся с самых последних сообщений."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
@@ -6218,7 +6236,7 @@
         "Эта функция требует платного аккаунта ${ BRAND_NAME }"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Этот импорт может превысить объем памяти, доступный в настоящее время в вашем аккаунте ${ BRAND_NAME }. Рассмотрите возможность настройки импорта."
+        "Этот импорт может превысить объём хранилища, доступный в настоящее время в вашем аккаунте ${ BRAND_NAME }. Рассмотрите возможность настройки импорта."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."

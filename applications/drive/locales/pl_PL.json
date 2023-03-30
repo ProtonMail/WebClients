@@ -553,6 +553,9 @@
       "Show preview": [
         "Pokaż podgląd"
       ],
+      "Show side panel": [
+        "Pokaż panel boczny"
+      ],
       "Sign in": [
         "Zaloguj się"
       ],
@@ -2028,6 +2031,9 @@
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
+      "Please activate your search again": [
+        "Włącz ponownie wyszukiwanie"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Popraw zaznaczony konflikt, aby kontynuować.",
         "Popraw zaznaczone konflikty, aby kontynuować.",
@@ -2202,9 +2208,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Szyfrowanie nie powiodło się"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "Wersja vCard starsza niż 3.0 nie jest obsługiwana"
       ]
     },
     "Error importing contacts": {
@@ -2586,9 +2589,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } nie obsługuje niektórych typów wydarzeń, szczegółów i formatów."
-      ],
-      "vCard versions < 3.0": [
-        "Wersja vCard jest starsza niż 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3316,6 +3316,9 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
       ],
+      "Free forever": [
+        "Darmowy na zawsze"
+      ],
       "Free up some space or add more storage space.": [
         "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
       ],
@@ -3496,9 +3499,6 @@
       "No group found": [
         "Nie znaleziono grupy"
       ],
-      "No preview available": [
-        "Podgląd jest niedostępny"
-      ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
@@ -3595,6 +3595,9 @@
       "Preview failed to be loaded": [
         "Załadowanie podglądu nie powiodło się"
       ],
+      "Preview for this file type is not supported": [
+        "Podgląd dla tego typu pliku nie jest obsługiwany"
+      ],
       "Primary": [
         "Główny"
       ],
@@ -3681,6 +3684,9 @@
       ],
       "support team": [
         "pomocą techniczną"
+      ],
+      "Swiss encrypted file storage": [
+        "Szwajcarska zaszyfrowana przestrzeń dyskowa"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
@@ -3846,6 +3852,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
+      ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "Dzięki ${ DRIVE_APP_NAME } Twoje dane są chronione za pomocą szyfrowania end-to-end. Tylko Ty możesz je odszyfrować."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"

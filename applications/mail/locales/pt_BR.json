@@ -31,6 +31,12 @@
       "Add address": [
         "Adicionar endereço"
       ],
+      "Add Bcc recipients": [
+        "Adicionar destinatários ocultos"
+      ],
+      "Add Cc recipients": [
+        "Adicionar destinatários"
+      ],
       "Add condition": [
         "Adicionar condição"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Acesso beta"
       ],
+      "Blind Carbon Copy": [
+        "Com cópia oculta"
+      ],
       "Block": [
         "Bloquear"
       ],
@@ -129,6 +138,9 @@
       ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Carbon Copy": [
+        "Com cópia"
       ],
       "Change page": [
         "Alterar página"
@@ -168,9 +180,6 @@
       ],
       "Close": [
         "Fechar"
-      ],
-      "Close & discard": [
-        "Fechar e descartar"
       ],
       "Close composer": [
         "Fechar compositor"
@@ -485,6 +494,9 @@
       ],
       "Import from .csv or vCard": [
         "Importar de .csv ou vCard"
+      ],
+      "In the morning": [
+        "Pela manhã"
       ],
       "Inline": [
         "Incorporado"
@@ -936,6 +948,9 @@
       ],
       "Show preview": [
         "Mostrar pré-visualização"
+      ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -3000,9 +3015,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } para <${ email }>. Você pode adicionar outra chave ou desligar a criptografia para este contato para resolver o problema."
-      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -3197,8 +3209,8 @@
         "As senhas não correspondem"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Por favor, corrija o conflito em destaque para prosseguir.",
-        "Por favor, corrija os conflitos em destaque para prosseguir."
+        "Corrija o conflito em destaque para prosseguir.",
+        "Corrija os conflitos em destaque para prosseguir."
       ],
       "Please repeat the password": [
         "Por favor, repita a senha"
@@ -3443,9 +3455,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falha na criptografia"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "versões vCard < 3.0 não são suportadas"
       ]
     },
     "Error importing contacts": {
@@ -4026,9 +4035,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
-      ],
-      "vCard versions < 3.0": [
-        "versões vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4094,13 +4100,13 @@
     },
     "Import error": {
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
-        "A ${ BRAND_NAME } não pode se conectar à sua conta. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta. Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
@@ -4121,7 +4127,7 @@
         "Acesso IMAP está ativado na sua conta do Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Muitos pedidos recentes. Por favor, tente novamente em alguns instantes."
+        "Muitos pedidos recentes. Tente novamente em alguns instantes."
       ],
       "Use your app password if:": [
         "Use a senha de aplicativo se:"
@@ -4441,7 +4447,7 @@
         "Um pedido para cancelar a inscrição desta lista de discussão será enviado para o remetente do boletim informativo e processado automaticamente."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "O acesso à conta foi restringido devido a faturas não pagas. Por favor, entre em contato com o seu administrador."
+        "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
       ],
       "Activation in progress": [
         "Ativação em progresso"
@@ -4489,6 +4495,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Você tem certeza que deseja excluir todas as mensagens com este rótulo?"
+      ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Tem certeza que quer excluir esta pasta? Todas as subpastas também serão excluídas."
       ],
       "Are you sure you want to delete this label?": [
         "Tem certeza de que deseja excluir este marcador?"
@@ -4791,7 +4800,7 @@
         "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
+        "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Se o seu alias for vendido, vazado ou abusado, basta desativá-lo para deixar de receber spam."
@@ -4968,9 +4977,6 @@
       "No more results found": [
         "Não foram encontrados mais resultados"
       ],
-      "No preview available": [
-        "Sem pré-visualização disponível"
-      ],
       "No results found": [
         "Nenhum resultado encontrado"
       ],
@@ -4983,6 +4989,9 @@
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nenhuma das chaves enviadas é válida para criptografia. Para poder enviar mensagens para este endereço, envie uma chave válida ou desligue \"Criptografar e-mails\"."
       ],
+      "Normal": [
+        "Normal"
+      ],
       "Not a valid URL": [
         "Não é uma URL válida"
       ],
@@ -4993,7 +5002,7 @@
         "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Por favor, verifique se é legítimo."
+        "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Verifique se é legítimo."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline é compatível apenas com o formato de Texto Simples."
@@ -5011,10 +5020,10 @@
         "Insira pelo menos um destinatário."
       ],
       "Please fill out this field.": [
-        "Por favor, preencha este campo."
+        "Preencha este campo."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Por favor, mantenha-o seguro. Você precisará dele para acessar sua conta e descriptografar seus dados em caso de redefinição de senha."
+        "Mantenha-o seguro. Você precisará dele para acessar sua conta e descriptografar seus dados em caso de redefinição de senha."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Note que os endereços atribuídos a este grupo NÃO serão excluídos."
@@ -5026,26 +5035,29 @@
         "Por favor, selecione as pastas que deseja importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Por favor, selecione o tipo de link que você deseja inserir e preencha em todos os campos."
+        "Selecione o tipo de link que você deseja inserir e preencha em todos os campos."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selecione qual endereço de e-mail ou endereços adicionar ao grupo ${ groupCount }.",
         "Selecione qual endereço de e-mail ou endereços adicionar aos grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Por favor, selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
+        "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please wait till your changes are synced with the server.": [
         "Por favor, aguarde até que suas alterações sejam sincronizadas com o servidor."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Por favor, aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
+        "Aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
       ],
       "Preview failed to be loaded": [
         "A pré-visualização falhou ao carregar"
+      ],
+      "Preview for this file type is not supported": [
+        "A visualização prévia deste arquivo não é suportada"
       ],
       "Primary": [
         "Principal"
@@ -5076,9 +5088,6 @@
       ],
       "Request read receipt": [
         "Solicitar confirmação de leitura"
-      ],
-      "Rich text": [
-        "Texto formatado"
       ],
       "Right to Left": [
         "Direita para esquerda"
@@ -5134,11 +5143,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "O envio de mensagens de um endereço @pm.me é um recurso pago. A sua mensagem será enviada do seu endereço padrão ${ email }"
       ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Enviado via e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
+        "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
       ],
       "Session timed out": [
         "Sessão expirada"
@@ -5260,10 +5266,10 @@
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link pode ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se você tiver certeza de que o link é legítimo, por favor use um navegador diferente para abrí-lo."
+        "Este link pode ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abrí-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
+        "Este link pode ser um ataque homográfico. Verifique se este é o link que você deseja visitar, caso contrário, não abra."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Esta mensagem foi adequada para se adequar ao fundo escuro."
@@ -5301,6 +5307,9 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Esta mensagem irá expirar em ${ formattedDate }"
+      ],
+      "This message will expire on ${ longDateMEssage }": [
+        "Esta mensagem expirará em ${ longDateMEssage }"
       ],
       "This message will expire today at ${ shortDateMessage }": [
         "Esta mensagem expirará hoje às ${ shortDateMessage }"
@@ -7079,10 +7088,10 @@
         "Número do telefone"
       ],
       "Please describe the problem and include any error messages": [
-        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
+        "Descreva o problema e inclua quaisquer mensagens de erro"
       ],
       "Please insert link first": [
-        "Por favor insira o link primeiro"
+        "Insira o link primeiro"
       ],
       "Search for group name": [
         "Pesquisar nome do grupo"
@@ -7230,9 +7239,6 @@
       "${ remainingDays } d": [
         "${ remainingDays } d",
         "${ remainingDays } d"
-      ],
-      "<1 d": [
-        "<1 d"
       ]
     },
     "Reply to calendar invitation": {

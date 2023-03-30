@@ -298,6 +298,9 @@
       "Get verification code": [
         "Отримати код підтвердження"
       ],
+      "Go to Drive": [
+        "Відкрити Drive"
+      ],
       "Go to label": [
         "Перейти до мітки"
       ],
@@ -1878,6 +1881,9 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
+      "A problem occurred, please try again.": [
+        "Виникла проблема. Повторіть спробу."
+      ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
@@ -2021,6 +2027,9 @@
       ],
       "Passwords do not match": [
         "Паролі відрізняються"
+      ],
+      "Please activate your search again": [
+        "Активуйте пошук знову"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
@@ -2196,9 +2205,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не вдалося зашифрувати"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard версій < 3.0 не підтримуються"
       ]
     },
     "Error importing contacts": {
@@ -2580,9 +2586,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
-      ],
-      "vCard versions < 3.0": [
-        "vCard версії < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3170,7 +3173,7 @@
         "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
       ],
       "Decrypting files": [
-        "Розшифрування файлу"
+        "Розшифрування файлів"
       ],
       "Delete locked drive": [
         "Видалити заблокований диск",
@@ -3312,6 +3315,9 @@
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
+      ],
+      "Free forever": [
+        "Безплатно назавжди"
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -3470,7 +3476,7 @@
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
       "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Потрібно поділитись файлом? Тоді отримайте ${ DRIVE_APP_NAME },\nнайнадійніший спосіб поділитися, розмістити та синхронізувати ваші файли."
+        "Потрібно поділитися файлом? Тоді отримайте ${ DRIVE_APP_NAME } – найнадійніший спосіб зберігання, поширення та синхронізації ваших файлів."
       ],
       "Network issue": [
         "Проблема з мережею"
@@ -3492,9 +3498,6 @@
       ],
       "No group found": [
         "Групу не знайдено"
-      ],
-      "No preview available": [
-        "Перегляд недоступний"
       ],
       "No results found": [
         "Результатів не знайдено"
@@ -3679,6 +3682,9 @@
       "support team": [
         "командою підтримки"
       ],
+      "Swiss encrypted file storage": [
+        "Швейцарське зашифроване сховище файлів"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
@@ -3843,6 +3849,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
+      ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "Завдяки ${ DRIVE_APP_NAME } ваші дані захищаються наскрізним шифруванням. Лише ви можете їх розшифрувати."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -5524,7 +5533,7 @@
         "Групи"
       ],
       "Hm, we couldn't find that one": [
-        "Гм, ми не змогли знайти таку сторінку"
+        "Такої сторінки не знайдено"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -5693,6 +5702,9 @@
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
+      ],
+      "Sign in with 2FA": [
+        "Увійти з двоетапною перевіркою"
       ],
       "Sign out": [
         "Вийти"
