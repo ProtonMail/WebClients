@@ -7,8 +7,10 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import { APP_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { PLANS } from '@proton/shared/lib/constants';
 import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { CURRENCIES } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getUpgradedPlan, getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import { Currency } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
 
 import broadcast, { MessageType } from '../broadcast';
@@ -74,6 +76,10 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
         const cycleParam = parseInt(queryParams.get('cycle') as any, 10);
         const parsedCycle = cycleParam && getValidCycle(cycleParam);
 
+        const currencyParam = queryParams.get('currency')?.toUpperCase();
+        const parsedCurrency =
+            currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
+
         const maybePlanName = queryParams.get('plan') || '';
         const plan =
             maybeType === 'upgrade'
@@ -102,6 +108,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             onSuccess: handleSuccess,
             plan: plan,
             cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
+            currency: parsedCurrency,
             fullscreen,
             disableThanksStep: true,
             disableCycleSelector: Boolean(maybeDisableCycleSelector),
