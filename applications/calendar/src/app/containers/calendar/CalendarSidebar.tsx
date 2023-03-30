@@ -68,7 +68,7 @@ const CalendarSidebar = ({
     const [user] = useUser();
     const { enabled, unavailable } = useCalendarSubscribeFeature();
 
-    const [loadingAction, withLoadingAction] = useLoading();
+    const [loadingVisibility, withLoadingVisibility] = useLoading();
     const { createNotification } = useNotifications();
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
@@ -213,11 +213,12 @@ const CalendarSidebar = ({
             {displayMyCalendars && (
                 <CalendarSidebarListItems
                     calendars={myCalendars}
+                    allCalendars={calendars}
                     onChangeVisibility={(calendarID, value) =>
-                        withLoadingAction(handleChangeVisibility(calendarID, value))
+                        withLoadingVisibility(handleChangeVisibility(calendarID, value))
                     }
                     addresses={addresses}
-                    loading={loadingAction}
+                    loadingVisibility={loadingVisibility}
                 />
             )}
         </SidebarList>
@@ -234,13 +235,14 @@ const CalendarSidebar = ({
             />
             {displayOtherCalendars && (
                 <CalendarSidebarListItems
-                    actionsDisabled={loadingSubscribedCalendars}
+                    loadingSubscriptionParameters={loadingSubscribedCalendars}
                     calendars={otherCalendars}
+                    allCalendars={calendars}
                     onChangeVisibility={(calendarID, value) =>
-                        withLoadingAction(handleChangeVisibility(calendarID, value))
+                        withLoadingVisibility(handleChangeVisibility(calendarID, value))
                     }
                     addresses={addresses}
-                    loading={loadingAction}
+                    loadingVisibility={loadingVisibility}
                 />
             )}
         </SidebarList>
