@@ -37,6 +37,7 @@ import {
     getIsCalendarWritable,
     getIsOwnedCalendar,
     getIsPersonalCalendar,
+    getIsSubscribedCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import {
     CALENDAR_SETTINGS_SECTION_ID,
@@ -90,18 +91,20 @@ type ModalsMap = {
 };
 
 export interface CalendarSidebarListItemsProps {
-    calendars?: VisualCalendar[] | SubscribedCalendar[];
-    loading?: boolean;
+    calendars: VisualCalendar[] | SubscribedCalendar[];
+    allCalendars: VisualCalendar[];
+    loadingVisibility?: boolean;
+    loadingSubscriptionParameters?: boolean;
     onChangeVisibility: (id: string, checked: boolean) => void;
-    actionsDisabled?: boolean;
     addresses: Address[];
 }
 
 const CalendarSidebarListItems = ({
-    calendars = [],
-    loading = false,
+    calendars,
+    allCalendars,
+    loadingVisibility = false,
+    loadingSubscriptionParameters = false,
     onChangeVisibility = noop,
-    actionsDisabled = false,
     addresses,
 }: CalendarSidebarListItemsProps) => {
     const [user] = useUser();
@@ -143,6 +146,7 @@ const CalendarSidebarListItems = ({
     const result = calendars.map((calendar) => {
         const { ID, Name, Display, Color } = calendar;
         const isPersonalCalendar = getIsPersonalCalendar(calendar);
+        const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
         const isCalendarDisabled = getIsCalendarDisabled(calendar);
         const isOwnedCalendar = getIsOwnedCalendar(calendar);
         const isCalendarWritable = getIsCalendarWritable(calendar);
@@ -154,7 +158,7 @@ const CalendarSidebarListItems = ({
                 backgroundColor={Display ? Color : 'transparent'}
                 borderColor={Color}
                 checked={!!Display}
-                disabled={loading}
+                disabled={loadingVisibility}
                 id={`calendar-${ID}`}
                 name={`calendar-${Name}`}
                 onChange={({ target: { checked } }) => onChangeVisibility(ID, checked)}
@@ -204,7 +208,7 @@ const CalendarSidebarListItems = ({
                                     shape="ghost"
                                     size="small"
                                     className="calendar-sidebar-list-item-action opacity-on-hover flex-item-noshrink no-mobile"
-                                    loading={actionsDisabled}
+                                    loading={isSubscribedCalendar && loadingSubscriptionParameters}
                                     content={<Icon name="three-dots-horizontal" />}
                                 >
                                     <DropdownMenu>
@@ -481,7 +485,7 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                         setImportModalCalendar(null);
                     }}
                     initialCalendar={importModalCalendar}
-                    calendars={calendars}
+                    calendars={allCalendars}
                 />
             )}
             {result}
