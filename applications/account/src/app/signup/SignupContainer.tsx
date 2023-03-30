@@ -649,6 +649,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     onClose={() => {
                         handleBack();
                     }}
+                    onError={() => {
+                        handleBack();
+                    }}
                     onSubmit={async (token: string, tokenType: HumanVerificationMethodType, verificationModel) => {
                         try {
                             if (!cache) {
