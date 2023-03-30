@@ -13,6 +13,7 @@ export interface LinkDownload {
     name: string;
     mimeType: string;
     size: number;
+    revisionId?: string;
     signatureAddress?: string;
     signatureIssues?: SignatureIssues;
 
@@ -92,7 +93,8 @@ type GetBlocksCallback = (
     abortSignal: AbortSignal,
     shareId: string,
     linkId: string,
-    pagination: Pagination
+    pagination: Pagination,
+    revisionId?: string
 ) => Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }>;
 type GetKeysCallback = (abortSignal: AbortSignal, link: LinkDownload) => Promise<DecryptFileKeys>;
 

@@ -10,6 +10,7 @@ import { useUser } from '@proton/components/hooks';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink, useRevisionsView } from '../../../store';
+import { RevisionsProvider } from '../../../store';
 import RevisionList from '../../revisions/RevisionList';
 import RevisionsModalUpgradeBanner from './RevisionsModalUpgradeBanner';
 import { getCategorizedRevisions } from './getCategorizedRevisions';
@@ -44,11 +45,9 @@ const RevisionsModal = ({ link, ...modalProps }: Props & ModalStateProps) => {
                 {!user.hasPaidDrive ? <RevisionsModalUpgradeBanner /> : null}
                 {isLoading && <CircleLoader className="w100 mauto mt-5" size="large" />}
                 {!isLoading && !!revisions.length ? (
-                    <RevisionList
-                        currentRevision={currentRevision}
-                        categorizedRevisions={categorizedRevisions}
-                        havePreviewAvailable={havePreviewAvailable}
-                    />
+                    <RevisionsProvider link={link} havePreviewAvailable={havePreviewAvailable}>
+                        <RevisionList currentRevision={currentRevision} categorizedRevisions={categorizedRevisions} />
+                    </RevisionsProvider>
                 ) : null}
             </ModalTwoContent>
         </ModalTwo>
