@@ -553,6 +553,9 @@
       "Show preview": [
         "Папярэдні прагляд"
       ],
+      "Show side panel": [
+        "Паказаць бакавую панэль"
+      ],
       "Sign in": [
         "Увайсці"
       ],
@@ -2205,9 +2208,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "Версіі vCard < 3.0 не падтрымліваюцца"
       ]
     },
     "Error importing contacts": {
@@ -2589,9 +2589,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "Праграма ${ CALENDAR_APP_NAME } у цяперашні час не падтрымлівае некаторыя тыпы падзей, падрабязнасці і фарматы."
-      ],
-      "vCard versions < 3.0": [
-        "Версіі vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3505,9 +3502,6 @@
       "No group found": [
         "Група не знойдзена"
       ],
-      "No preview available": [
-        "Папярэдні прагляд недаступны"
-      ],
       "No results found": [
         "Нічога не знойдзена"
       ],
@@ -3603,6 +3597,9 @@
       ],
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
+      ],
+      "Preview for this file type is not supported": [
+        "Папярэдні прагляд гэтага тыпу файла не падтрымліваецца"
       ],
       "Primary": [
         "Асноўны"
