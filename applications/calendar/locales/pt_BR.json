@@ -467,6 +467,9 @@
       "Show more": [
         "Mostrar mais"
       ],
+      "Show side panel": [
+        "Mostrar o painel lateral"
+      ],
       "Show time zones": [
         "Mostrar fusos horários"
       ],
@@ -2301,8 +2304,8 @@
         "Por favor, primeiro crie um endereço de e-mail."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Por favor, corrija o conflito em destaque para prosseguir.",
-        "Por favor, corrija os conflitos em destaque para prosseguir."
+        "Corrija o conflito em destaque para prosseguir.",
+        "Corrija os conflitos em destaque para prosseguir."
       ],
       "Port is required": [
         "Porta é necessária"
@@ -2473,9 +2476,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falha na criptografia"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "versões vCard < 3.0 não são suportadas"
       ]
     },
     "Error importing contacts": {
@@ -2873,9 +2873,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
-      ],
-      "vCard versions < 3.0": [
-        "versões vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -2941,13 +2938,13 @@
     },
     "Import error": {
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
-        "A ${ BRAND_NAME } não pode se conectar à sua conta. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta. Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Por favor, certifique-se de que:"
+        "A ${ BRAND_NAME } não pode se conectar à sua conta externa. Certifique-se de que:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "A ${ BRAND_NAME } não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
@@ -2968,7 +2965,7 @@
         "Acesso IMAP está ativado na sua conta do Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Muitos pedidos recentes. Por favor, tente novamente em alguns instantes."
+        "Muitos pedidos recentes. Tente novamente em alguns instantes."
       ],
       "Use your app password if:": [
         "Use a senha de aplicativo se:"
@@ -3201,7 +3198,7 @@
         "Um número de telefone apenas pode ser utilizado para verificar uma conta ${ BRAND_NAME }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "O acesso à conta foi restringido devido a faturas não pagas. Por favor, entre em contato com o seu administrador."
+        "O acesso à conta foi restringido devido a faturas não pagas. Entre em contato com o seu administrador."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Os participantes adicionados e removidos serão notificados sobre todos os eventos desta série."
@@ -3363,7 +3360,7 @@
         "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
+        "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
@@ -3506,10 +3503,10 @@
         "Selecione qual endereço de e-mail ou endereços adicionar aos grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Por favor, selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
+        "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Por favor, aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
+        "Aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Aguarde enquanto procuramos contatos que contenham dados criptografados com a chave inativa."
@@ -3539,7 +3536,7 @@
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Os servidores estão inacessíveis. Por favor, tente novamente em alguns minutos"
+        "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
       ],
       "Session timed out": [
         "Sessão expirada"
@@ -3608,10 +3605,10 @@
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este link pode ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se você tiver certeza de que o link é legítimo, por favor use um navegador diferente para abrí-lo."
+        "Este link pode ser um ataque homógrafo e não pode ser aberto pelo navegador Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abrí-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
+        "Este link pode ser um ataque homográfico. Verifique se este é o link que você deseja visitar, caso contrário, não abra."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -4882,7 +4879,7 @@
         "Senha"
       ],
       "Please describe the problem and include any error messages": [
-        "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
+        "Descreva o problema e inclua quaisquer mensagens de erro"
       ],
       "Search for group name": [
         "Pesquisar nome do grupo"

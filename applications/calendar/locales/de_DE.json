@@ -467,6 +467,9 @@
       "Show more": [
         "Mehr anzeigen"
       ],
+      "Show side panel": [
+        "Seitenleiste anzeigen"
+      ],
       "Show time zones": [
         "Zeitzonen anzeigen"
       ],
@@ -2476,9 +2479,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCards in den Versionen < 3.0 werden nicht unterstützt"
       ]
     },
     "Error importing contacts": {
@@ -2876,9 +2876,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } unterstützt derzeit bestimmte Termintypen, Details und Formate nicht."
-      ],
-      "vCard versions < 3.0": [
-        "vCard-Versionen < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5032,6 +5029,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Kalender verwalten"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Fehler bei der Signaturverifizierung"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Du hast die Adressverifizierung für ${ boldSenderEmail } aktiviert. Wir konnten die Authentizität dieser Kalendereinladung nicht verifizieren. Dies kann auf Änderungen in den Verschlüsselungsschlüsseln dieses Kontakts zurückzuführen sein. Bitte überprüfe die erweiterten PGP-Einstellungen, oder bitte ${ boldSenderEmail } um eine neue Einladung."
       ]
     },
     "Signing preference for emails": {

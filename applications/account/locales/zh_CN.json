@@ -2751,9 +2751,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "您的用户名为 ${ Local }。要创建 ${ Local }@${ Domain }，请前往设置 > 邮件>写邮件 > 短域名（pm.me）"
-      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -3204,9 +3201,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失败"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "不支持 vCard 3.0 以下版本"
       ]
     },
     "Error importing contacts": {
@@ -3920,9 +3914,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 当前不支持某些日程类型、详情和格式。"
-      ],
-      "vCard versions < 3.0": [
-        "vCard 版本小于3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5038,9 +5029,6 @@
       "No payment is required at this time.": [
         "目前不需要支付。"
       ],
-      "No preview available": [
-        "无法预览此文件"
-      ],
       "No results found": [
         "未找到结果"
       ],
@@ -5250,9 +5238,6 @@
       ],
       "Select what you want to import.": [
         "选择需要导入的内容。"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "通过 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
       ],
       "Server is currently down": [
         "服务器目前不可用"
@@ -7774,9 +7759,6 @@
       "Secure Core servers": [
         "Secure Core 服务器"
       ],
-      "Send & receive invitations": [
-        "发送和接收邀请"
-      ],
       "Share calendar via link": [
         "通过链接分享日历"
       ],
@@ -7838,26 +7820,6 @@
       ],
       "Team management": [
         "团队管理"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "将隐私设为文件备份、存储、共享和检索的默认设置。"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: info": {
@@ -7929,6 +7891,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "将隐私设为文件备份、存储、共享和检索的默认设置。"
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "采用商业隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "解锁顶级隐私保护体系，畅享所有 ${ BRAND_NAME } 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {

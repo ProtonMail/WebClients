@@ -181,9 +181,6 @@
       "Close": [
         "Kapat"
       ],
-      "Close & discard": [
-        "Vazgeçip kapat"
-      ],
       "Close composer": [
         "Oluşturucuyu kapat"
       ],
@@ -3024,9 +3021,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "<${ email }> için ${ error.message }. Bu sorunu çözmek için başka bir anahtar ekleyebilir ya da bu kişinin şifrelemesini devre dışı bırakabilirsiniz."
-      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -3476,9 +3470,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Şifrelenemedi"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard 3.0 altındaki sürümler desteklenmiyor"
       ]
     },
     "Error importing contacts": {
@@ -4051,9 +4042,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
-      ],
-      "vCard versions < 3.0": [
-        "vCard 3.0 sürümü öncesi"
       ]
     },
     "Import calendar; import invitation": {
@@ -5005,9 +4993,6 @@
       "No more results found": [
         "Başka bir sonuç bulunamadı"
       ],
-      "No preview available": [
-        "Ön izleme yok"
-      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
@@ -5114,9 +5099,6 @@
       "Request read receipt": [
         "Okundu bilgisi istensin"
       ],
-      "Rich text": [
-        "Zengin metin"
-      ],
       "Right to Left": [
         "Sağdan sola"
       ],
@@ -5173,9 +5155,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "@pm.me adresinden ileti göndermek ücretli bir özelliktir. İletiniz varsayılan ${ email } adresinizden gönderilecek"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
@@ -7309,9 +7288,6 @@
       "${ remainingDays } d": [
         "${ remainingDays } g",
         "${ remainingDays } g"
-      ],
-      "<1 d": [
-        "<1 d"
       ]
     },
     "Reply to calendar invitation": {

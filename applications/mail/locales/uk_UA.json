@@ -31,6 +31,12 @@
       "Add address": [
         "Додати адресу"
       ],
+      "Add Bcc recipients": [
+        "Додати отримувачів до прихованої копії"
+      ],
+      "Add Cc recipients": [
+        "Додати отримувачів до копії"
+      ],
       "Add condition": [
         "Додати умову"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Бета-доступ"
       ],
+      "Blind Carbon Copy": [
+        "Прихована копія"
+      ],
       "Block": [
         "Блокувати"
       ],
@@ -129,6 +138,9 @@
       ],
       "Cancel": [
         "Скасувати"
+      ],
+      "Carbon Copy": [
+        "Копія"
       ],
       "Change page": [
         "Змінити сторінку"
@@ -168,9 +180,6 @@
       ],
       "Close": [
         "Закрити"
-      ],
-      "Close & discard": [
-        "Закрити й відхилити"
       ],
       "Close composer": [
         "Закрити редактор"
@@ -492,6 +501,9 @@
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
+      ],
+      "In the morning": [
+        "Зранку"
       ],
       "Inline": [
         "Вбудований"
@@ -855,6 +867,9 @@
       ],
       "Search message content": [
         "Пошук вмісту повідомлень"
+      ],
+      "See business plans": [
+        "Дивитися тарифні плани для бізнесу"
       ],
       "See plan features": [
         "Переглянути можливості тарифного плану"
@@ -1615,6 +1630,14 @@
       ],
       "Event in progress": [
         "Подія триває"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Cancel expiration": [
+        "Скасувати термін дії"
       ]
     },
     "Collapsible tooltip": {
@@ -3019,11 +3042,11 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } для <${ email }>. Щоб розв'язати проблему можете додати інший ключ або вимкнути шифрування для цього контакту."
-      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
+      ],
+      "A problem occurred, please try again.": [
+        "Виникла проблема. Повторіть спробу."
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -3229,6 +3252,9 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
+      "Please activate your search again": [
+        "Активуйте пошук знову"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
@@ -3345,6 +3371,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Виникла проблема з пошуком вмісту. Натомість використано типовий пошук."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "Під час оновлення локальних повідомлень виникла проблема. Їх буде завантажено знову для активації пошуку вмісту"
       ],
       "There was an error when exporting the contacts vCards": [
         "При експортуванні vCards для контактів виникла помилка"
@@ -3488,9 +3517,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не вдалося зашифрувати"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard версій < 3.0 не підтримуються"
       ]
     },
     "Error importing contacts": {
@@ -4088,9 +4114,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
-      ],
-      "vCard versions < 3.0": [
-        "vCard версії < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4634,6 +4657,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Ви дійсно хочете видалити всі повідомлення з цією міткою?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Ви впевнені, що хочете видалити цю теку? Усі підтеки також будуть видалені."
+      ],
       "Are you sure you want to delete this label?": [
         "Ви дійсно хочете видалити цю мітку?"
       ],
@@ -4787,6 +4813,9 @@
       "Don't forget to share the password with the recipient": [
         "Пам'ятайте про надання пароля отримувачу"
       ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Завантажується повідомлення ${ currentProgress } із ${ totalProgress }"
+      ],
       "Draft": [
         "Чернетка"
       ],
@@ -4885,6 +4914,21 @@
       ],
       "Expiration time": [
         "Час завершення"
+      ],
+      "Expires in ${ formattedDate }": [
+        "Термін дії завершується ${ formattedDate }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Завершується через ${ minutesDiff } хвилину",
+        "Завершується через ${ minutesDiff } хвилини",
+        "Завершується через ${ minutesDiff } хвилин",
+        "Завершується через ${ minutesDiff } хвилини"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Завершується менш ніж за ${ hoursDiff } годину",
+        "Завершується менш ніж за ${ hoursDiff } години",
+        "Завершується менш ніж за ${ hoursDiff } годин",
+        "Завершується менш ніж за ${ hoursDiff } години"
       ],
       "file attached": [
         "attachment",
@@ -4985,6 +5029,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
       ],
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Збільште обсяг сховища, починаючи з ${ planPrice } на місяць."
+      ],
       "Indexing paused": [
         "Індексування призупинено"
       ],
@@ -5072,6 +5119,9 @@
       "Message sent.": [
         "Повідомлення надіслано."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "Повідомлення буде надіслано зранку, ${ formattedTime }"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Повідомлення буде надіслано ${ dateString }, ${ formattedTime }"
       ],
@@ -5122,9 +5172,6 @@
       ],
       "No more results found": [
         "Більше нічого не знайдено"
-      ],
-      "No preview available": [
-        "Перегляд недоступний"
       ],
       "No results found": [
         "Результатів не знайдено"
@@ -5234,9 +5281,6 @@
       "Request read receipt": [
         "Запит підтвердження прочитання"
       ],
-      "Rich text": [
-        "Форматований текст"
-      ],
       "Right to Left": [
         "Справа наліво"
       ],
@@ -5264,6 +5308,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Пошук триває надто довго? ${ dropdownButton } або ${ toggleOffButton } з цього пошукового сеансу."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Безплатно захистіть свої файли у зашифрованому хмарному сховищі."
+      ],
       "Seems like you are all caught up for now": [
         "У вас немає листів"
       ],
@@ -5290,9 +5337,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Надсилання повідомлень з адреси @pm.me є платною функцією. Ваше повідомлення буде надіслано зі стандартної адреси ${ email }"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -5354,6 +5398,12 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Введені в чернетку дані можуть не зберегтися, якщо ви покинете сторінку."
       ],
+      "The local database is being prepared": [
+        "Триває підготовка локальної бази даних"
+      ],
+      "The message has expired": [
+        "Термін дії повідомлення завершився"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Оригінальне повідомлення, яке ви намагаєтеся переслати / відповісти, знаходиться в процесі надсилання. Якщо ви продовжите, ви не зможете скасувати надсилання оригінального повідомлення."
       ],
@@ -5386,6 +5436,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ця дія завантажить найновіші повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Цю адресу вимкнено. Щоб мати змогу надсилати на цю адресу, власник повинен спочатку активувати адресу."
@@ -5438,6 +5491,12 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Це повідомлення підписано вкладеним ключем, який ще не був довіреним."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Це повідомлення автоматично видалиться о ${ longDateMEssage }"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Це повідомлення автоматично видалиться о ${ shortDateMessage }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Це повідомлення буде позначено як спам. Бажаєте також відписатися від майбутніх листів?",
         "Ці повідомлення будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?",
@@ -5446,6 +5505,9 @@
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Це повідомлення переміститься до чернеток, щоб ви змогли його редагувати. Після його надсилання вам необхідно повторно запланувати."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Це повідомлення буде надіслано зранку, ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Це повідомлення буде надіслано ${ dateString }, ${ formattedTime }"
@@ -5461,6 +5523,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Термін дії цього повідомлення завершиться ${ formattedDate }"
+      ],
+      "This message will expire on ${ longDateMEssage }": [
+        "Термін дії цього повідомлення завершиться у ${ longDateMEssage }"
+      ],
+      "This message will expire today at ${ shortDateMessage }": [
+        "Термін дії цього повідомлення завершиться сьогодні ${ shortDateMessage }"
+      ],
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Термін дії цього повідомлення завершиться завтра ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Відкритий ключ автоматично застосовуватиметься для шифрування листів, що надсилаються на цю адресу."
@@ -5510,6 +5581,9 @@
       "Updating message content search...": [
         "Оновлення пошуку вмісту повідомлень..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Триває оновлення локальних повідомлень. Пошук у вмісті повідомлень не виконуватиметься доки не завершиться оновлення"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
@@ -5519,8 +5593,14 @@
       "Upgrade to create more folders, filters, and addresses.": [
         "Передплатіть тарифний план, щоб створити більше тек, фільтрів та адрес."
       ],
+      "Upgrade to level up your privacy.": [
+        "Передплатіть тарифний план для вдосконалення вашої приватності."
+      ],
       "Upgrade to send email from @pm.me addresses.": [
         "Передплатіть тарифний план, щоб надсилати листи з адреси @pm.me."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Передплатіть тарифний план, щоб надсилати листи з власного поштового домену."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Передплатіть тарифний план, щоб легко надсилати електронні листи групам контактів."
@@ -5533,6 +5613,15 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "Передплатіть тарифний план, щоб підтримати приватність та отримати більше можливостей."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Передплатіть тарифний план для доступу до преміумфункцій."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Передплатіть тарифний план, щоб використовувати ${ MAIL_APP_NAME } з Apple Mail, Outlook чи Thunderbird."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Передплатіть тарифний план, щоб надсилати автоматичні відповіді."
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -5569,6 +5658,9 @@
       ],
       "Week": [
         "Тиждень"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Час бажаного автоматичного видалення повідомлення з поштової скриньки отримувача і вашої теки надісланих."
       ],
       "When do you want your message to be sent?": [
         "Коли ви хочете надіслати ваше повідомлення?"
@@ -5620,6 +5712,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Ви можете безплатно користуватися ${ VPN_APP_NAME }."
       ],
       "You cannot reply from the invited address.": [
         "Ви не можете відповісти із запрошеної адреси."
@@ -7421,6 +7516,14 @@
         "Примітка: Після натискання кнопки Застосувати, сторінка перезавантажиться."
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } д",
+        "${ remainingDays } д",
+        "${ remainingDays } д",
+        "${ remainingDays } д"
+      ]
+    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Відповідь надіслано"
@@ -7881,6 +7984,9 @@
       "Message deleted": [
         "Повідомлення видалено"
       ],
+      "Message expiration cancelled": [
+        "Термін дії повідомлення скасовано"
+      ],
       "Message marked as legitimate": [
         "Повідомлення позначено надійним"
       ],
@@ -8175,8 +8281,14 @@
       "Create folder": [
         "Створити теку"
       ],
+      "Create folder \"${ search }\"": [
+        "Створити теку \"${ search }\""
+      ],
       "Create label": [
         "Створити мітку"
+      ],
+      "Create label \"${ search }\"": [
+        "Створити мітку \"${ search }\""
       ],
       "Create new group": [
         "Створити нову групу"
@@ -8540,6 +8652,9 @@
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
+      ],
+      "Sign in with 2FA": [
+        "Увійти з двоетапною перевіркою"
       ],
       "Sign out": [
         "Вийти"

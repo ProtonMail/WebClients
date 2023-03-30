@@ -2012,6 +2012,9 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden."
       ],
+      "Please activate your search again": [
+        "Activa de nuevo tu búsqueda."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
@@ -2182,9 +2185,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error con el cifrado"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "Versiones vCard menores a 3.0 no compatibles"
       ]
     },
     "Error importing contacts": {
@@ -2553,9 +2553,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } no admite actualmente algunos tipos de eventos, detalles y formatos."
-      ],
-      "vCard versions < 3.0": [
-        "Versiones vCard menores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3393,9 +3390,6 @@
       "No group found": [
         "No se ha encontrado ningún grupo."
       ],
-      "No preview available": [
-        "Vista previa no disponible"
-      ],
       "No results found": [
         "No se han encontrado resultados."
       ],
@@ -3575,6 +3569,9 @@
       "support team": [
         "equipo de soporte"
       ],
+      "Swiss encrypted file storage": [
+        "Almacenamiento cifrado de archivos suizo"
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
@@ -3737,6 +3734,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de dos factores, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
+      ],
+      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
+        "Con ${ DRIVE_APP_NAME }, tus datos están protegidos con cifrado de extremo a extremo. Solo tu puedes descifrarlos."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -5497,6 +5497,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y permitir acceso"
+      ],
+      "Sign in with 2FA": [
+        "Iniciar sesión con la 2FA"
       ],
       "Sign out": [
         "Cerrar sesión"

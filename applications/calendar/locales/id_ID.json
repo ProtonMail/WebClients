@@ -2450,9 +2450,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Enkripsi gagal"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard versi < 3.0 tidak didukung"
       ]
     },
     "Error importing contacts": {
@@ -2838,9 +2835,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } saat ini tidak mendukung tipe, rincian, dan format acara tertentu."
-      ],
-      "vCard versions < 3.0": [
-        "versi vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4927,6 +4921,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Kelola kalender"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Kesalahan verifikasi tanda tangan"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Anda telah mengaktifkan verifikasi alamat untuk ${ boldSenderEmail }. Kami tidak dapat memverifikasi keaslian undangan kalender ini. Hal ini mungkin disebabkan oleh perubahan kunci enkripsi kontak. Silakan tinjau ulang pengaturan PGP kontak yang bersangkutan, atau Anda dapat meminta undangan baru kepada ${ boldSenderEmail }."
       ]
     },
     "Signing preference for emails": {

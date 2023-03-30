@@ -169,9 +169,6 @@
       "Close": [
         "Tanca"
       ],
-      "Close & discard": [
-        "Tancar i descartar"
-      ],
       "Close composer": [
         "Tancar l'editor"
       ],
@@ -2995,9 +2992,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } per <${ email }>. Podeu afegir una altra clau o desactivar el xifratge per aquest contacte per resoldre aquest problema."
-      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -3438,9 +3432,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error en el xifratge"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "versions vCard < 3.0 no suportades"
       ]
     },
     "Error importing contacts": {
@@ -4013,9 +4004,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
-      ],
-      "vCard versions < 3.0": [
-        "versions vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4944,9 +4932,6 @@
       "No more results found": [
         "No s'han trobat més resultats"
       ],
-      "No preview available": [
-        "No hi ha previsualització disponible"
-      ],
       "No results found": [
         "No s'han trobat resultats."
       ],
@@ -5053,9 +5038,6 @@
       "Request read receipt": [
         "Sol·licitar confirmació de lectura"
       ],
-      "Rich text": [
-        "Text enriquit"
-      ],
       "Right to Left": [
         "Dreta a Esquerra"
       ],
@@ -5109,9 +5091,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'enviament de missatges des de l'adreça @pm.me és una funció de pagament. El vostre missatge s'enviarà des de la vostra adreça per defecte ${ email }"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Enviat amb <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> correu segur."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"

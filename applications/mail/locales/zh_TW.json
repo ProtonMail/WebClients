@@ -31,6 +31,12 @@
       "Add address": [
         "加入電郵位址"
       ],
+      "Add Bcc recipients": [
+        "新增密件副本收件者"
+      ],
+      "Add Cc recipients": [
+        "新增副本收件者"
+      ],
       "Add condition": [
         "加入條件"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "測試版體驗"
       ],
+      "Blind Carbon Copy": [
+        "密件副本"
+      ],
       "Block": [
         "封鎖"
       ],
@@ -129,6 +138,9 @@
       ],
       "Cancel": [
         "取消"
+      ],
+      "Carbon Copy": [
+        "副本"
       ],
       "Change page": [
         "跳至頁"
@@ -168,9 +180,6 @@
       ],
       "Close": [
         "關閉"
-      ],
-      "Close & discard": [
-        "關閉 & 放棄"
       ],
       "Close composer": [
         "關閉撰寫工具"
@@ -486,6 +495,9 @@
       ],
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
+      ],
+      "In the morning": [
+        "早上"
       ],
       "Inline": [
         "內嵌"
@@ -846,6 +858,9 @@
       ],
       "Search message content": [
         "搜尋郵件內容"
+      ],
+      "See business plans": [
+        "檢視商業方案"
       ],
       "See plan features": [
         "看看方案功能"
@@ -1605,6 +1620,14 @@
       ],
       "Event in progress": [
         "活動進行中"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "取消"
+      ],
+      "Cancel expiration": [
+        "取消過期"
       ]
     },
     "Collapsible tooltip": {
@@ -2991,11 +3014,11 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "有關<${ email }>的${ error.message }。您可以針對此聯絡人加入另一組金鑰或是停用加密以解決問題。"
-      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
+      ],
+      "A problem occurred, please try again.": [
+        "發生問題，請再試一次。"
       ],
       "Address primary private key not found": [
         "找不到電子郵件地址主要私密金鑰"
@@ -3174,6 +3197,9 @@
       "Passwords do not match": [
         "密碼不一致"
       ],
+      "Please activate your search again": [
+        "請再次啟用搜尋"
+      ],
       "Please fix the highlighted conflicts to proceed.": [
         "請先修正已標示的衝突以便繼續。"
       ],
@@ -3287,6 +3313,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "內容搜尋發生問題。已改為使用預設搜尋。"
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "更新您的本機郵件時發生問題，它們將會再次下載以重新啟用內容搜尋"
       ],
       "There was an error when exporting the contacts vCards": [
         "匯出聯絡人 vCard 時發生錯誤"
@@ -3421,9 +3450,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失敗"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "不支援 vCard 3.0 以下版本"
       ]
     },
     "Error importing contacts": {
@@ -3992,9 +4018,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 目前尚未支援某些事件類型、詳細資料和格式。"
-      ],
-      "vCard versions < 3.0": [
-        "vCard 版本 < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4415,6 +4438,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "您確定要刪除有此標籤的全部郵件？"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "您確定您要刪除此資料夾嗎？所有下層資料夾也都將會被刪除。"
+      ],
       "Are you sure you want to delete this label?": [
         "您確定要刪除此標籤嗎？"
       ],
@@ -4553,6 +4579,9 @@
       "Don't forget to share the password with the recipient": [
         "別忘記與您的收件者共享金鑰密碼"
       ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "正在下載 ${ totalProgress } 封郵件中的 ${ currentProgress } 封"
+      ],
       "Draft": [
         "草稿"
       ],
@@ -4642,6 +4671,15 @@
       ],
       "Expiration time": [
         "有效期限"
+      ],
+      "Expires in ${ formattedDate }": [
+        "將於${ formattedDate }過期"
+      ],
+      "Expires in ${ minutesDiff } minutes": [
+        "將於${ minutesDiff }分鐘後過期"
+      ],
+      "Expires in less than ${ hoursDiff } hours": [
+        "將於少於${ hoursDiff }小時後過期"
       ],
       "files attached": [
         "attachment"
@@ -4733,6 +4771,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "增加儲存空間，每月 ${ planPrice } 起。"
+      ],
       "Indexing paused": [
         "暫停編製索引"
       ],
@@ -4820,6 +4861,9 @@
       "Message sent.": [
         "訊息已傳送。"
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "郵件將於明天${ formattedTime }寄出"
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "郵件將於 ${ dateString } 的 ${ formattedTime } 傳送"
       ],
@@ -4870,9 +4914,6 @@
       ],
       "No more results found": [
         "找不到更多結果"
-      ],
-      "No preview available": [
-        "無法預覽"
       ],
       "No results found": [
         "找不到相符的結果"
@@ -4979,9 +5020,6 @@
       "Request read receipt": [
         "要求讀取回條"
       ],
-      "Rich text": [
-        "富文本"
-      ],
       "Right to Left": [
         "由右至左"
       ],
@@ -5009,6 +5047,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "搜索耗時過長? 請嘗試 ${ dropdownButton } 或 ${ toggleOffButton } 搜索結果。"
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "立刻使用免費的加密雲端儲存空間保護您的檔案。"
+      ],
       "Seems like you are all caught up for now": [
         "目前您已完成最新進度"
       ],
@@ -5035,9 +5076,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "從 @pm.me 電郵位址寄送郵件是付費功能。您的郵件將從您的預設電郵位址 ${ email } 傳送"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "以 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電郵送出。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
@@ -5099,6 +5137,12 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "若您離開此頁面，您在草稿中輸入的資料將不作儲存。"
       ],
+      "The local database is being prepared": [
+        "正在準備本機資料庫"
+      ],
+      "The message has expired": [
+        "郵件已過期"
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "您正在嘗試轉寄/回覆的原始郵件仍有待傳送。若您繼續，您將自此刻起無法再取消傳送原始郵件。"
       ],
@@ -5134,6 +5178,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "此動作將下載所有郵件，以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "此動作將下載所有郵件以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
@@ -5180,8 +5227,17 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "簽署此郵件的金鑰已隨函附上，惟尚未信任。"
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "此郵件將會自動於${ longDateMEssage }刪除"
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "此郵件將會自動於${ shortDateMessage }刪除"
+      ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "此郵件將被移動至「草稿」，讓您可以繼續編輯。您必須重新安排寄送時間。"
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "此郵件將於明天${ formattedTime }寄出"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "這封郵件將於 ${ dateString } 的 ${ formattedTime } 寄出"
@@ -5197,6 +5253,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "此郵件將在 ${ formattedDate } 到期"
+      ],
+      "This message will expire on ${ longDateMEssage }": [
+        "此郵件的有效期限尚餘${ longDateMEssage }"
+      ],
+      "This message will expire today at ${ shortDateMessage }": [
+        "此郵件將於今天${ shortDateMessage }過期"
+      ],
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "此郵件將於明天${ shortDateMessage }過期"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "將自動使用此公開金鑰加密寄送到此電郵位址的電郵。"
@@ -5246,6 +5311,9 @@
       "Updating message content search...": [
         "正在更新郵件內容搜尋..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "更新您的本機郵件，更新時將無法搜尋郵件內容"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
@@ -5255,8 +5323,14 @@
       "Upgrade to create more folders, filters, and addresses.": [
         "升級以建立更多資料夾、過濾條件與位址。"
       ],
+      "Upgrade to level up your privacy.": [
+        "升級以提昇您的隱私。"
+      ],
       "Upgrade to send email from @pm.me addresses.": [
         "升級以從 @pm.me 位址寄送電郵。"
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "升級以從您的自訂的電子郵件網域傳送電子郵件。"
       ],
       "Upgrade to send emails to contact groups easily.": [
         "升級以輕鬆地向聯絡人群組傳送電郵。"
@@ -5269,6 +5343,15 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "升級以支援隱私並取得更多功能。"
+      ],
+      "Upgrade to unlock premium features.": [
+        "升級以解鎖進階功能。"
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "升級以透過 Apple Mail、Outlook 或 Thunderbird 使用 ${ MAIL_APP_NAME }。"
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "升級以在您離開時使用自動回覆。"
       ],
       "Upload picture": [
         "上載圖像"
@@ -5305,6 +5388,9 @@
       ],
       "Week": [
         "週"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "您希望您的郵件何時從收件人的收件匣與您的寄件匣中自動刪除？"
       ],
       "When do you want your message to be sent?": [
         "您想在什麼時候傳送郵件？"
@@ -5356,6 +5442,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "立刻使用免費的 ${ VPN_APP_NAME }。"
       ],
       "You cannot reply from the invited address.": [
         "您無法從獲邀的電郵位址回覆。"
@@ -7091,6 +7180,11 @@
         "請注意：點擊「套用」按鈕後，服務將會重新載入。"
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays }天"
+      ]
+    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "已傳送回覆"
@@ -7464,6 +7558,9 @@
       "Message deleted": [
         "郵件已刪除"
       ],
+      "Message expiration cancelled": [
+        "已取消郵件過期"
+      ],
       "Message marked as legitimate": [
         "郵件標記為合法"
       ],
@@ -7725,8 +7822,14 @@
       "Create folder": [
         "建立資料夾"
       ],
+      "Create folder \"${ search }\"": [
+        "建立資料夾「${ search }」"
+      ],
       "Create label": [
         "建立標籤"
+      ],
+      "Create label \"${ search }\"": [
+        "建立標籤「${ search }」"
       ],
       "Create new group": [
         "建立新群組"
@@ -8072,6 +8175,9 @@
       ],
       "Sign in and grant access": [
         "登入並授予存取權"
+      ],
+      "Sign in with 2FA": [
+        "使用 2FA 登入"
       ],
       "Sign out": [
         "登出"

@@ -1558,6 +1558,9 @@
       "Tab closed": [
         "Вкладку закрито"
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Браузер, який ви використовуєте, не дозволяє повністю авторизувати платіж. Будь ласка, скористайтеся іншим браузером або увійдіть за допомогою комп'ютера."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
       ],
@@ -1949,6 +1952,9 @@
       "Attention required": [
         "Потребує уваги"
       ],
+      "Balance from your previous subscription": [
+        "Баланс після вашої попередньої передплати"
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Необхідна передплата Basic, Plus або Visionary"
       ],
@@ -2096,6 +2102,9 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Якщо раніше ви ніколи не використовували двоетапну перевірку, ми наполегливо рекомендуємо вам ${ guideButton }."
       ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "Якщо ви втратите свій пристрій двоетапної перевірки, можна скористатися цими кодами замість 6-значного коду перевірки для входу в обліковий запис. Кожен код можна використати лише один раз."
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ MAIL_APP_NAME } та ${ VPN_APP_NAME }."
       ],
@@ -2131,6 +2140,9 @@
       ],
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
+      ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні застосунки VPN."
       ],
       "Learn more": [
         "Докладніше"
@@ -2170,9 +2182,6 @@
       ],
       "No payment is required at this time.": [
         "Наразі платіж не вимагається."
-      ],
-      "No preview available": [
-        "Перегляд недоступний"
       ],
       "No results found": [
         "Результатів не знайдено"
@@ -2276,6 +2285,9 @@
       "Setting up your Drive": [
         "Налаштування Drive"
       ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Оскільки ви лояльний користувач, ваш обліковий запис має увімкнені додаткові функції."
       ],
@@ -2368,6 +2380,9 @@
       ],
       "Two-factor authentication enabled": [
         "Двоетапна перевірка увімкнена"
+      ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "Двопарольний режим потребує два паролі: перший для входу в обліковий запис, а другий для розшифрування поштової скриньки."
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Двопарольний режим використовує окремі паролі для входу та розшифрування поштової скриньки. Це забезпечує додатковий рівень захисту в деяких ситуаціях. Однак, для більшості користувачів ми рекомендуємо використовувати однопарольний режим. Щоб перемкнутися на двопарольний режим, встановіть спочатку пароль входу, а потім пароль поштової скриньки."
@@ -2513,6 +2528,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Ви можете використовувати такі облікові дані для з'єднання з сервером ${ VPN_APP_NAME } через сторонні програми з відкритим кодом, наприклад, Tunnelblick для macOS чи OpenVPN для GNU/Linux."
       ],
+      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "Ви не можете використати облікові дані OpenVPN / IKEv2 для входу в застосунки ${ VPN_APP_NAME } чи панель керування ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ви не вказали спосіб відновлення, тому неможливо відновити обліковий запис при втраті пароля. Продовжити без способу відновлення?"
       ],
@@ -2554,6 +2572,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "Ваші облікові записи ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } пов'язані. Щоб видалити їх обидва, виконайте вхід у ${ loginLink } та видаліть свій обліковий запис."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має несплачені рахунки. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
@@ -3080,6 +3101,20 @@
         "Що це?"
       ]
     },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "Живий чат доступний з ${ planName }"
+      ],
+      "Open support form": [
+        "Відкрити форму підтримки"
+      ],
+      "Upgrade subscription": [
+        "Оновити передплату"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "Передплатіть тарифний план для доступу до підтримки в чаті та інших преміумфункцій, або скористайтеся нашою формою підтримки та повідомте про свою проблему."
+      ]
+    },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         "Ця дія остаточно видалить усіх підлеглих користувачів, облікові записи, а також дані, пов'язані з вашою організацією."
@@ -3369,9 +3404,6 @@
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
-      ],
-      "Send & receive invitations": [
-        "Надсилайте й отримуйте запрошення"
       ],
       "Share calendar via link": [
         "Діліться календарем за посиланням"
@@ -4121,6 +4153,32 @@
         "За"
       ]
     },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Ви впевнені?"
+      ],
+      "Auto-pay is disabled": [
+        "Автоплатіж вимкнено"
+      ],
+      "Auto-pay is enabled": [
+        "Автоплатіж увімкнено"
+      ],
+      "Disable": [
+        "Вимкнути"
+      ],
+      "Enable auto-pay support": [
+        "Увімкнути підтримку автоматичного платежу"
+      ],
+      "Keep auto-pay": [
+        "Залишити автовідтворення"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Наша система більше не стягуватиме плату з використанням цього способу оплати, але ваша передплата все одно поновиться в кінці платіжного періоду. Якщо ви хочете перейти на тарифний план нижчого рівня чи змінити передплату, вам доведеться зробити це власноруч до завершення платіжного періоду. Крім того, якщо ви забудете виконати платіж вручну, а автоматична оплата буде вимкнена для всіх способів оплати, ми можемо автоматично перевести вас на тарифний план нижчого рівня, що призведе до втрати доступу до багатьох функцій."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Наша система більше не стягуватиме плату з використанням цього способу оплати, але вашу передплату все одно потрібно поновити в кінці платіжного періоду. Якщо ви хочете перейти на тарифний план нижчого рівня чи змінити передплату, вам доведеться зробити це власноруч до завершення платіжного періоду. Ми не можемо автоматично перевести вас на тарифний план нижчого рівня, оскільки ви перевищили обмеження безплатного сховища або використовуєте інші платні функції, і ми не можемо автоматично видаляти ваші файли, електронні листи та інші дані. Якщо ви вимкнете автоматичний платіж, обов'язково сплатіть достатню суму для продовження передплати до завершення платіжного періоду, щоб уникнути вимкнення облікового запису."
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Зберегти"
@@ -4550,6 +4608,9 @@
       ],
       "Sign in": [
         "Увійти"
+      ],
+      "Sign in with 2FA": [
+        "Увійти з двоетапною перевіркою"
       ],
       "Sign out": [
         "Вийти"

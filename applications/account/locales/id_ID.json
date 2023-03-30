@@ -2809,9 +2809,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } merupakan nama pengguna Anda. Untuk membuat ${ Local }@${ Domain }, silakan kunjungi Pengaturan > Pesan dan penulisan > Domain pendek (pm.me)"
-      ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
@@ -3289,9 +3286,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Enkripsi gagal"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard versi < 3.0 tidak didukung"
       ]
     },
     "Error importing contacts": {
@@ -4030,9 +4024,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } saat ini tidak mendukung tipe, rincian, dan format acara tertentu."
-      ],
-      "vCard versions < 3.0": [
-        "versi vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5235,9 +5226,6 @@
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang diperlukan untuk saat ini."
       ],
-      "No preview available": [
-        "Pratinjau tidak tersedia"
-      ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
@@ -5453,9 +5441,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Server sedang tidak aktif"
@@ -8076,9 +8061,6 @@
       "Secure Core servers": [
         "Server Secure Core"
       ],
-      "Send & receive invitations": [
-        "Kirim & terima undangan"
-      ],
       "Share calendar via link": [
         "Bagikan kalender via tautan"
       ],
@@ -8140,26 +8122,6 @@
       ],
       "Team management": [
         "Manajemen tim"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -8231,6 +8193,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium ${ BRAND_NAME }."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9294,6 +9276,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Dibuat oleh ${ ownerName }"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Kesalahan verifikasi tanda tangan"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Anda telah mengaktifkan verifikasi alamat untuk ${ boldSenderEmail }. Kami tidak dapat memverifikasi keaslian undangan kalender ini. Hal ini mungkin disebabkan oleh perubahan kunci enkripsi kontak. Silakan tinjau ulang pengaturan PGP kontak yang bersangkutan, atau Anda dapat meminta undangan baru kepada ${ boldSenderEmail }."
       ]
     },
     "Signup label": {

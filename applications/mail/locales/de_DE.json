@@ -181,9 +181,6 @@
       "Close": [
         "Schließen"
       ],
-      "Close & discard": [
-        "Schließen und verwerfen"
-      ],
       "Close composer": [
         "Verfassen-Fenster schließen"
       ],
@@ -954,6 +951,9 @@
       ],
       "Show preview": [
         "Vorschau anzeigen"
+      ],
+      "Show side panel": [
+        "Seitenleiste anzeigen"
       ],
       "Sign in": [
         "Anmelden"
@@ -3021,9 +3021,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } für <${ email }>. Du kannst einen anderen Schlüssel hinzufügen oder das Verschlüsseln für diesen Kontakt deaktivieren, um das Problem zu beheben."
-      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -3473,9 +3470,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCards in den Versionen < 3.0 werden nicht unterstützt"
       ]
     },
     "Error importing contacts": {
@@ -4056,9 +4050,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } unterstützt derzeit bestimmte Termintypen, Details und Formate nicht."
-      ],
-      "vCard versions < 3.0": [
-        "vCard-Versionen < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5010,9 +5001,6 @@
       "No more results found": [
         "Keine weiteren Ergebnisse gefunden"
       ],
-      "No preview available": [
-        "Keine Vorschau verfügbar"
-      ],
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
@@ -5024,6 +5012,9 @@
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung gültig. Um Nachrichten an diese Adresse senden zu können, lade bitte einen gültigen Schlüssel hoch oder deaktiviere „E-Mails verschlüsseln“."
+      ],
+      "Normal": [
+        "Normal"
       ],
       "Not a valid URL": [
         "Ungültige URL"
@@ -5089,6 +5080,9 @@
       "Preview failed to be loaded": [
         "Vorschau konnte nicht geladen werden"
       ],
+      "Preview for this file type is not supported": [
+        "Die Vorschau wird für diesen Dateityp nicht unterstützt."
+      ],
       "Primary": [
         "Primär"
       ],
@@ -5118,9 +5112,6 @@
       ],
       "Request read receipt": [
         "Lesebestätigung anfordern"
-      ],
-      "Rich text": [
-        "Rich Text"
       ],
       "Right to Left": [
         "Von rechts nach links"
@@ -5178,9 +5169,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Das Senden von Nachrichten von der E-Mail-Adresse @pm.me ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse „${ email }“ gesendet."
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -7314,9 +7302,6 @@
       "${ remainingDays } d": [
         "${ remainingDays } Tag",
         "${ remainingDays } Tage"
-      ],
-      "<1 d": [
-        "<1 Tag"
       ]
     },
     "Reply to calendar invitation": {

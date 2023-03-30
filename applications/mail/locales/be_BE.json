@@ -32,10 +32,10 @@
         "Дадаць адрас"
       ],
       "Add Bcc recipients": [
-        "Дадаць атрымальніка схаванай копіі"
+        "Дадаць атрымальнікаў схаванай копіі"
       ],
       "Add Cc recipients": [
-        "Дадаць атрымальніка копіі"
+        "Дадаць атрымальнікаў копіі"
       ],
       "Add condition": [
         "Дадаць умову"
@@ -180,9 +180,6 @@
       ],
       "Close": [
         "Закрыць"
-      ],
-      "Close & discard": [
-        "Закрыць і адхіліць"
       ],
       "Close composer": [
         "Закрыць рэдактар"
@@ -963,6 +960,9 @@
       ],
       "Show preview": [
         "Папярэдні прагляд"
+      ],
+      "Show side panel": [
+        "Паказаць бакавую панэль"
       ],
       "Sign in": [
         "Увайсці"
@@ -3045,9 +3045,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } для <${ email }>. Вы можаце дадаць іншы ключ або адключыць шыфраванне для гэтага кантакту, каб вырашыць праблему."
-      ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
@@ -3379,7 +3376,7 @@
         "Узнікла праблема з пошукам змесціва. Замест гэтага быў выкарыстаны прадвызначаны пошук."
       ],
       "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Узнікла праблема пры абнаўленні вашых лакальных паведамленняў. Яны будуць спампаваны яшчэ раз, каб паўторна ўключыць у іх пошук па змесціву"
+        "Узнікла праблема пры абнаўленні вашых лакальных паведамленняў. Яны будуць спампаваны яшчэ раз, каб паўторна ўключыць у іх пошук па змесціве"
       ],
       "There was an error when exporting the contacts vCards": [
         "Падчас экспартавання кантактаў vCard адбылася памылка"
@@ -3523,9 +3520,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "Версіі vCard < 3.0 не падтрымліваюцца"
       ]
     },
     "Error importing contacts": {
@@ -4118,9 +4112,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "Праграма ${ CALENDAR_APP_NAME } у цяперашні час не падтрымлівае некаторыя тыпы падзей, падрабязнасці і фарматы."
-      ],
-      "vCard versions < 3.0": [
-        "Версіі vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5127,7 +5118,7 @@
         "Паведамленне адпраўлена."
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
-        "Паведамленне будзе адпраўлена раніцай а ${ formattedTime }"
+        "Паведамленне будзе адпраўлена раніцай у ${ formattedTime }"
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "Паведамленне будзе адпраўлена ${ dateString } а ${ formattedTime }"
@@ -5180,9 +5171,6 @@
       "No more results found": [
         "Больш нічога не знойдзена"
       ],
-      "No preview available": [
-        "Папярэдні прагляд недаступны"
-      ],
       "No results found": [
         "Нічога не знойдзена"
       ],
@@ -5194,6 +5182,9 @@
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ніводны з запампаваных ключоў несапраўдны для шыфравання. Для адпраўкі паведамленняў на гэты адрас, запампуйце сапраўдны ключ або адключыце функцыю \"Шыфраваць лісты\"."
+      ],
+      "Normal": [
+        "Звычайны"
       ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
@@ -5261,6 +5252,9 @@
       "Preview failed to be loaded": [
         "Не ўдалося загрузіць папярэдні прагляд"
       ],
+      "Preview for this file type is not supported": [
+        "Папярэдні прагляд гэтага тыпу файла не падтрымліваецца"
+      ],
       "Primary": [
         "Асноўны"
       ],
@@ -5291,9 +5285,6 @@
       "Request read receipt": [
         "Запытаць апавяшчэнне пра прачытанне"
       ],
-      "Rich text": [
-        "Фарматаваны тэкст"
-      ],
       "Right to Left": [
         "Справа налева"
       ],
@@ -5322,7 +5313,7 @@
         "Пошук займае занадта шмат часу? ${ dropdownButton } або ${ toggleOffButton } з гэтага пошукавага сеанса."
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча бясплатна ўжо сёння."
+        "Бясплатна абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча."
       ],
       "Seems like you are all caught up for now": [
         "У вас пакуль няма лістоў"
@@ -5350,9 +5341,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Адпраўка паведамленняў з адраса @pm.me з'яўляецца платнай функцыяй. Ваша паведамленне будзе адпраўлена з вашага прадвызначанага адраса ${ email }"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Адпраўлена з дапамогай бяспечнай электроннай пошты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
@@ -5415,7 +5403,7 @@
         "Калі вы пакінеце гэту старонку, то ўведзеныя вамі даныя могуць не захавацца ў чарнавіку."
       ],
       "The local database is being prepared": [
-        "Адбываецца падрыхтоўка лакальнай базы"
+        "Вядзецца падрыхтоўка лакальнай базы"
       ],
       "The message has expired": [
         "Тэрмін дзеяння паведамлення мінуў"
@@ -5454,7 +5442,7 @@
         "Гэта дзеянне спампуе ўсе паведамленні для лакальнага пошуку. Ачыстка даных вашага браўзера адключыць гэты параметр."
       ],
       "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Гэта дзеянне спампуе ўсе самыя нядаўнія паведамленні для лакальнага пошуку. Ачыстка даных вашага браўзера адключыць гэты параметр."
+        "Гэта дзеянне спампуе ўсе апошнія паведамленні, каб іх можна было шукаць лакальна. Ачыстка даных вашага браўзера адключыць гэты параметр."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
@@ -5511,7 +5499,7 @@
         "Гэта паведамленне будзе аўтаматычна выдалена ${ longDateMEssage }"
       ],
       "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Гэта паведамленне будзе аўтаматычна выдалена а ${ shortDateMessage }"
+        "Гэта паведамленне будзе аўтаматычна выдалена ў ${ shortDateMessage }"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Гэта паведамленне будзе пазначана як спам. Ці хочаце вы таксама адпісацца ад будучых лістоў?",
@@ -5523,7 +5511,7 @@
         "Гэта паведамленне будзе перамешчана ў папку Чарнавікі, таму вы зможаце рэдагаваць яго. Вам неабходна будзе зноў запланаваць яго перад адпраўкай."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
-        "Гэта паведамленне будзе адпраўлена раніцай а ${ formattedTime }"
+        "Гэта паведамленне будзе адпраўлена раніцай у ${ formattedTime }"
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Гэта паведамленне будзе адпраўлена ${ dateString } а ${ formattedTime }"
@@ -5544,10 +5532,10 @@
         "Тэрмін дзеяння гэтага паведамлення міне ${ longDateMEssage }"
       ],
       "This message will expire today at ${ shortDateMessage }": [
-        "Тэрмін дзеяння гэтага паведамлення міне сёння а ${ shortDateMessage }"
+        "Тэрмін дзеяння гэтага паведамлення міне сёння ў ${ shortDateMessage }"
       ],
       "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Тэрмін дзеяння гэтага паведамлення міне заўтра а ${ shortDateMessage }"
+        "Тэрмін дзеяння гэтага паведамлення міне заўтра ў ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Гэты публічны ключ будзе аўтаматычна выкарыстаны для шыфравання лістоў, якія адпраўляюцца на гэты адрас."
@@ -5610,7 +5598,7 @@
         "Палепшыце ўліковы запіс, каб ствараць больш папак, фільтраў і адрасоў."
       ],
       "Upgrade to level up your privacy.": [
-        "Палепшыце, каб павысіць свой узровень прыватнасці."
+        "Палепшыце свой тарыфны план, каб павысіць свой узровень прыватнасці."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Палепшыце ўліковы запіс, каб мець магчымасць адпраўляць лісты з адраса @pm.me."
@@ -5631,13 +5619,13 @@
         "Палепшыце ўліковы запіс, каб падтрымаць прыватнасць і атрымаць больш функцый."
       ],
       "Upgrade to unlock premium features.": [
-        "Палепшыце, каб разблакіраваць прэміяльныя функцыі."
+        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
         "Палепшыце, каб выкарыстоўваць ${ MAIL_APP_NAME } з Apple Mail, Outlook або Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
-        "Палепшыце, каб адказваць у аўтаматычным рэжыме, калі вы не можаце зрабіць гэта самі."
+        "Палепшыце свой тарыфны план, каб выкарыстоўваць аўтаматычны адказ, калі вы не можаце зрабіць гэта самі."
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -5676,7 +5664,7 @@
         "Тыдзень"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
-        "Калі вы хочаце, каб ваша паведамленне аўтаматычна выдалялася з папак з уваходнымі і адпраўленымі лістамі ў вашай паштовай скрыні?"
+        "Калі вы хочаце, каб ваша паведамленне аўтаматычна выдалялася з паштовай скрыні атрымальніка і папкі з адпраўленымі лістамі ў вашай паштовай скрыні?"
       ],
       "When do you want your message to be sent?": [
         "Калі вы хочаце, каб ваша паведамленне было адпраўлена?"
@@ -5730,7 +5718,7 @@
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
       ],
       "You can use ${ VPN_APP_NAME } for free, today.": [
-        "Вы можаце выкарыстоўваць ${ VPN_APP_NAME } бясплатна ўжо сёння."
+        "Вы можаце бясплатна выкарыстоўваць ${ VPN_APP_NAME }."
       ],
       "You cannot reply from the invited address.": [
         "Вы не можаце адказаць з запрошанага адраса."
@@ -7538,9 +7526,6 @@
         "${ remainingDays } дні",
         "${ remainingDays } дзён",
         "${ remainingDays } дні"
-      ],
-      "<1 d": [
-        "<1 дз"
       ]
     },
     "Reply to calendar invitation": {
