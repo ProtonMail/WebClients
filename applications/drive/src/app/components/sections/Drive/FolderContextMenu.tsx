@@ -73,7 +73,12 @@ export function FolderContextMenu({
                         <ContextSeparator />
                     </>
                 ) : null}
-                <ShareFileButton close={close} action={() => showFileSharingModal({ shareId, showLinkSharingModal })} />
+                <ShareFileButton
+                    close={close}
+                    shareId={shareId}
+                    showFileSharingModal={showFileSharingModal}
+                    showLinkSharingModal={showLinkSharingModal}
+                />
             </ContextMenu>
         </>
     );
