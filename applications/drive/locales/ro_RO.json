@@ -297,7 +297,7 @@
         "Obținere cod de verificare"
       ],
       "Go to Drive": [
-        "Mergi la Drive"
+        "Accesare Drive"
       ],
       "Go to label": [
         "Accesare etichetă"
@@ -550,6 +550,9 @@
       ],
       "Show preview": [
         "Afișare previzualizare"
+      ],
+      "Show side panel": [
+        "Afișare panou lateral"
       ],
       "Sign in": [
         "Autentificare"
@@ -1879,7 +1882,7 @@
         "Un grup cu acest nume există deja"
       ],
       "A problem occurred, please try again.": [
-        "A apărut o problemă. Vă rugăm să încercați din nou."
+        "A apărut o problemă. Reîncercați."
       ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
@@ -2021,7 +2024,7 @@
         "Parolele nu coincid"
       ],
       "Please activate your search again": [
-        "Reactivați căutarea în conținutul mesajelor"
+        "Reactivați căutarea."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictul evidențiat pentru a continua.",
@@ -2195,9 +2198,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Criptare eșuată"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "versiunile vCard < 3.0 nu sunt suportate"
       ]
     },
     "Error importing contacts": {
@@ -2571,9 +2571,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } nu acceptă în prezent anumite tipuri de evenimente, detalii și formate."
-      ],
-      "vCard versions < 3.0": [
-        "versiuni vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3449,9 +3446,6 @@
       "No group found": [
         "Nu există grupuri"
       ],
-      "No preview available": [
-        "Nu e disponibilă examinarea"
-      ],
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
@@ -3546,6 +3540,9 @@
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
       ],
+      "Preview for this file type is not supported": [
+        "Examinarea acestui tip de fișier nu este suportată."
+      ],
       "Primary": [
         "Primară"
       ],
@@ -3634,7 +3631,7 @@
         "echipa de asistență"
       ],
       "Swiss encrypted file storage": [
-        "Stocare în Elveția de fișiere criptate"
+        "Stocare fișiere criptate în Elveția"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
@@ -3801,7 +3798,7 @@
         "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Cu ${ DRIVE_APP_NAME }, datele dvs. sun protejate prin criptare end-to-end. Numai dvs. le puteți decripta."
+        "Cu ${ DRIVE_APP_NAME }, datele vă sunt protejate prin criptare la ambele capete. Numai dvs. le puteți decripta."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -5608,7 +5605,7 @@
         "Conectați-vă și acordați acces"
       ],
       "Sign in with 2FA": [
-        "Autentifică-te cu 2FA"
+        "Autentificare A2F"
       ],
       "Sign out": [
         "Deconectare"

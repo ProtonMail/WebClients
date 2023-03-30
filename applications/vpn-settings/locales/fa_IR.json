@@ -1974,9 +1974,6 @@
       "No payment is required at this time.": [
         "در حال حاضر پرداختی لازم نیست."
       ],
-      "No preview available": [
-        "پیش‌نمایشی در دسترس نیست"
-      ],
       "No results found": [
         "نتیجه‌ای یافت نشد"
       ],
@@ -2727,6 +2724,20 @@
         "این چیست؟"
       ]
     },
+    "Live Chat Modal": {
+      "Live chat is available with ${ planName }": [
+        "گفتگو آنلاین با ${ planName } در دسترس است"
+      ],
+      "Open support form": [
+        "باز کردن فرم پشتیبانی"
+      ],
+      "Upgrade subscription": [
+        "ارتقا دادن اشتراک"
+      ],
+      "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
+        "طرح خود را ارتقا دهید تا از گفتگو با پشتیبانی و سایر قابلیت های ویژه بهره‌مند شوید، یا ازفرم پشتیبانی رایگان ما برای گزارش مشکل خود استفاده کنید."
+      ]
+    },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         "این کار بطور دائمی همه کاربران فرعی، حساب ها و داده های مرتبط با سازمان شما را حذف خواهد کرد."
@@ -2978,9 +2989,6 @@
       ],
       "Secure Core servers": [
         "سرورهای هسته امن"
-      ],
-      "Send & receive invitations": [
-        "ارسال و دریافت دعوتنامه ها"
       ],
       "Share calendar via link": [
         "اشتراک گذاری تقویم از طریق لینک"
@@ -4091,6 +4099,9 @@
       ],
       "Switch to two-password mode": [
         "گذر به حالت دوگذرواژه"
+      ],
+      "TV sign in": [
+        "ورود به حساب در تلویزیون"
       ],
       "Two-factor authentication": [
         "احراز هویت دو مرحله‌ای"

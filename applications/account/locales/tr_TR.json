@@ -2818,9 +2818,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } kullanıcı adınızdır. ${ Local }@${ Domain } oluşturmak için lütfen Ayarlar > İletiler ve oluşturma > Kısa etki alanı (pm.me) bölümüne gidin"
-      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -3304,9 +3301,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "Şifrelenemedi"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard 3.0 altındaki sürümler desteklenmiyor"
       ]
     },
     "Error importing contacts": {
@@ -4051,9 +4045,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
-      ],
-      "vCard versions < 3.0": [
-        "vCard 3.0 sürümü öncesi"
       ]
     },
     "Import calendar; import invitation": {
@@ -5286,9 +5277,6 @@
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
-      "No preview available": [
-        "Ön izleme yok"
-      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
@@ -5507,9 +5495,6 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
       ],
       "Server is currently down": [
         "Sunucu şu anda çalışmıyor"
@@ -8136,7 +8121,7 @@
         "HTML imzalar"
       ],
       "Kill switch/always-on VPN": [
-        "Kill Switch / Hep açık VPN"
+        "Bağlantı kesici / Hep açık VPN"
       ],
       "Limited support": [
         "Sınırlı destek"
@@ -8164,9 +8149,6 @@
       ],
       "Secure Core servers": [
         "Secure Core sunucuları"
-      ],
-      "Send & receive invitations": [
-        "Davetleri alma ve gönderme"
       ],
       "Share calendar via link": [
         "Bağlantı ile takvim paylaşma"
@@ -8229,26 +8211,6 @@
       ],
       "Team management": [
         "Ekip yönetimi"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: info": {
@@ -8320,6 +8282,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde standart olarak gizlilik sağlayın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan kurumsal gizlilik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetlerine erişim sağlayan en üst düzey gizlilik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -9396,6 +9378,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "${ ownerName } tarafından oluşturuldu"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "İmza doğrulanırken sorun çıktı"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "${ boldSenderEmail } için adres doğrulamasını etkinleştirdiniz. Bu takvim davetinin gerçek olduğunbu doğrulayamadık. Bu durum, bu kişinin şifreleme anahtarlarındaki değişikliklerden kaynaklanıyor olabilir. Lütfen gelişmiş PGP ayarlarını gözden geçirin ya da ${ boldSenderEmail } adresinden yeni bir davetiye isteyin."
       ]
     },
     "Signup label": {

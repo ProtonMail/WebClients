@@ -1071,7 +1071,7 @@
         "Мексика"
       ],
       "Moldova": [
-        "Молдова"
+        "Молдавия"
       ],
       "Monaco": [
         "Монако"
@@ -1553,7 +1553,7 @@
         "Проверка подписи не удалась"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так. ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, свяжитесь нашей ${ supportTeam }."
+        "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
       ],
       "Tab closed": [
         "Вкладка закрыта"
@@ -1664,7 +1664,7 @@
         "Отключите 2FA через ключ безопасности перед отключением TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте еще раз."
+        "Что-то пошло не так при аутентификации с помощью вашего ключа безопасности. Попробуйте ещё раз."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Что-то пошло не так при регистрации вашего ключа безопасности. Попробуйте снова."
@@ -2181,9 +2181,6 @@
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
       ],
-      "No preview available": [
-        "Предпросмотр недоступен"
-      ],
       "No results found": [
         "Результаты не найдены"
       ],
@@ -2240,6 +2237,9 @@
       ],
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
+      ],
+      "Preview for this file type is not supported": [
+        "Предварительный просмотр файлов этого типа не поддерживается"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
@@ -2858,7 +2858,7 @@
         "Главная"
       ],
       "Moderate NAT": [
-        "NAT Type 2"
+        "Умеренный NAT"
       ],
       "Name on card": [
         "Имя на карте"
@@ -3405,9 +3405,6 @@
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
-      ],
-      "Send & receive invitations": [
-        "Отправляйте и получайте приглашения"
       ],
       "Share calendar via link": [
         "Отправка записей в календаре с помощью ссылки"
@@ -4859,6 +4856,9 @@
       ],
       "Sign in": [
         "Войти"
+      ],
+      "Sign in with 2FA": [
+        "Войти с помощью двухфакторной аутентификации"
       ],
       "Sign out": [
         "Выйти"

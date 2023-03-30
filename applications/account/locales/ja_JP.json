@@ -2713,9 +2713,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } はあなたのユーザー名です。${ Local }@${ Domain } を作成するには、設定 > メッセージと作成 > 短縮ドメイン (pm.me) に移動してください"
-      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
@@ -3175,9 +3172,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "暗号化に失敗しました"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard バージョン 3.0 以前はサポートされていません"
       ]
     },
     "Error importing contacts": {
@@ -3873,9 +3867,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME }は現在、特定の予定の種類や詳細、フォーマットに対応していません。"
-      ],
-      "vCard versions < 3.0": [
-        "vCard バージョン3.0以前"
       ]
     },
     "Import calendar; import invitation": {
@@ -4973,9 +4964,6 @@
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
       ],
-      "No preview available": [
-        "プレビューは利用できません"
-      ],
       "No results found": [
         "該当する項目がありません"
       ],
@@ -5164,9 +5152,6 @@
       ],
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> から送信されました。"
       ],
       "Server is currently down": [
         "このサーバーは現在オフラインです"
@@ -7632,9 +7617,6 @@
       "Secure Core servers": [
         "Secure Core サーバー"
       ],
-      "Send & receive invitations": [
-        "招待を送受信"
-      ],
       "Share calendar via link": [
         "リンクでカレンダーを共有"
       ],
@@ -7698,23 +7680,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7772,6 +7737,23 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
+        "ビジネスパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな ${ BRAND_NAME } サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -9874,6 +9856,9 @@
       ],
       "Sign in and grant access": [
         "サインインして権限を付与"
+      ],
+      "Sign in with 2FA": [
+        "2FA でサインイン"
       ],
       "Sign out": [
         "サインアウト"

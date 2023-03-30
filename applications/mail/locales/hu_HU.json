@@ -4,6 +4,14 @@
     "language": "hu_HU"
   },
   "contexts": {
+    "account": {
+      "Forwarding will start soon. New emails will appear in your inbox.": [
+        "Az átirányítás hamarosan indul. Az új levelek a bejövő üzeneteinél fognak megjelenni."
+      ],
+      "Mail forward stopped": [
+        "E-mail átirányítás leállítva"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } bevezető"
@@ -22,6 +30,12 @@
       ],
       "Add address": [
         "Cím hozzáadása"
+      ],
+      "Add Bcc recipients": [
+        "Titkos másolat címzettek hozzáadása"
+      ],
+      "Add Cc recipients": [
+        "Másolat címzettek hozzáadása"
       ],
       "Add condition": [
         "Új feltétel"
@@ -104,6 +118,9 @@
       "Beta Access": [
         "Béta hozzáférés"
       ],
+      "Blind Carbon Copy": [
+        "Titkos másolat"
+      ],
       "Block": [
         "Tiltás"
       ],
@@ -121,6 +138,9 @@
       ],
       "Cancel": [
         "Mégsem"
+      ],
+      "Carbon Copy": [
+        "Másolat"
       ],
       "Change page": [
         "Lapozás"
@@ -160,9 +180,6 @@
       ],
       "Close": [
         "Bezárás"
-      ],
-      "Close & discard": [
-        "Bezárás és elvetés"
       ],
       "Close composer": [
         "Szerkesztő bezárása"
@@ -481,6 +498,9 @@
       "Import from .csv or vCard": [
         "Importálás .csv vagy vCard fájlból"
       ],
+      "In the morning": [
+        "Reggel"
+      ],
       "Inline": [
         "Beágyazott"
       ],
@@ -776,6 +796,9 @@
       "Remove expiration time": [
         "Időkorlát eltávolítása"
       ],
+      "Remove self-destruction": [
+        "Önmegsemmisítés eltávolítása"
+      ],
       "Remove this label": [
         "Címke eltávolítása"
       ],
@@ -839,6 +862,9 @@
       "Search message content": [
         "Keresés az üzenetek tartalmában"
       ],
+      "See business plans": [
+        "Üzleti csomagok megtekintése"
+      ],
       "See plan features": [
         "Csomag részleteinek megtekintése"
       ],
@@ -850,6 +876,15 @@
       ],
       "Select all messages": [
         "Minden kijelölése"
+      ],
+      "Self-destruct in 7 days": [
+        "Önmegsemmisítés 7 nap múlva"
+      ],
+      "Self-destruct message": [
+        "Önmegsemmisítő üzenet"
+      ],
+      "Self-destruct on ...": [
+        "Önmegsemmisítés ekkor ..."
       ],
       "Send": [
         "Küldés"
@@ -920,6 +955,9 @@
       "Show preview": [
         "Előnézet megmutatása"
       ],
+      "Show side panel": [
+        "Oldalsáv megjelenítése"
+      ],
       "Sign in": [
         "Bejelentkezés"
       ],
@@ -965,6 +1003,12 @@
       "This message contains remote content.": [
         "Ez az üzenet \"Távoli tartalmat\" tartalmaz."
       ],
+      "Toggle Calendar app": [
+        "Naptár alkalmazás váltása"
+      ],
+      "Toggle Contact app": [
+        "Névjegyek alkalmazás váltása"
+      ],
       "Tomorrow": [
         "Holnap"
       ],
@@ -989,6 +1033,9 @@
       ],
       "Turn on tracker protection": [
         "Követés védelem bekapcsolása"
+      ],
+      "Unblock": [
+        "Feloldás"
       ],
       "Underline": [
         "Aláhúzott"
@@ -1188,6 +1235,11 @@
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
         "${ numberOfCompletedItems }/${ totalNumberOfItems } kész",
         "${ numberOfCompletedItems }/${ totalNumberOfItems } kész"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } alkalmazások"
       ]
     },
     "Attached ics file error": {
@@ -1571,6 +1623,14 @@
       ],
       "Event in progress": [
         "Az esemény folyamatban van"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "Eltávolítás"
+      ],
+      "Cancel expiration": [
+        "Időkorlát eltávolítása"
       ]
     },
     "Collapsible tooltip": {
@@ -2736,6 +2796,11 @@
         "Globális beállítások használata (${ defaultValueText })"
       ]
     },
+    "Default signing preference": {
+      "Use global default (${ globalDefaultText })": [
+        "Globális beállítások használata (${ globalDefaultText })"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Lejárt számla"
@@ -2750,6 +2815,9 @@
       ]
     },
     "Description": {
+      "${ MAIL_APP_NAME } logo and a plus sign": [
+        "${ MAIL_APP_NAME } logo és egy plusz jel"
+      ],
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } a beállításoknál."
       ],
@@ -2785,8 +2853,14 @@
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
       ],
+      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
+        "Használja az üzenet ütemezési lehetőséget és tegyen szert további előnyökre, nagyobb csomagra váltással."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
+      ],
+      "When do you want your message to be sent?": [
+        "Mikor szeretné elküldeni az üzenetet?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Eseményeket iCal formátumból (ICS fájl) tud importálni.\nA fájl maximális mérete ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és maximum ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmazhat. Nagyobb fájl importálásához, kisebb darabokra kell vágnia."
@@ -2927,15 +3001,20 @@
         "Frissítés egy eseményhez: ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Mappa ürítve"
+      ],
+      "Label cleared": [
+        "Címke ürítve"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Titkosított Fejlécek fájlnév"
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message }. Címzett: <${ email }>. A megoldáshoz megadhat egy másik kulcsot, vagy kikapcsolhatja a titkosítást ehhez a címzetthez."
-      ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
@@ -2988,6 +3067,14 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Visszafejtési hiba: Az üzenet titkosított tartalmának visszafejtése sikertelen."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál",
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy",
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy"
       ],
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
@@ -3060,6 +3147,10 @@
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Túllépte a mellékletek maximális számát (${ attachmentsCountLimit })"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
+        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral"
       ],
       "Message needs to be sent first": [
         "Az üzenetet előbb el kell küldeni"
@@ -3302,6 +3393,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3334,12 +3428,12 @@
     "Error importing contact": {
       "Encryption failed": [
         "Titkosítás sikertelen"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "3.0-nál régebbi vCard verziók nem támogatottak"
       ]
     },
     "Error importing contacts": {
+      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
+        "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Hiba történt a fájl feltöltésekor: ${ formattedFilename }. A megengedett legnagyobb méret: ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -3579,6 +3673,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bájt",
+        "bájt"
+      ],
       "GB": [
         "GB"
       ],
@@ -3587,6 +3685,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bájt",
+        "Bájt"
+      ],
+      "Gigabyte": [
+        "Gigabájt",
+        "Gigabájt"
+      ],
+      "Kilobyte": [
+        "Kilobájt",
+        "Kilobájt"
+      ],
+      "Megabyte": [
+        "Megabájt",
+        "Megabájt"
       ]
     },
     "Filter": {
@@ -3698,6 +3814,9 @@
       ]
     },
     "forwardmessage": {
+      "Date: On ${ date }": [
+        "Dátum: ${ date }"
+      ],
       "From: ${ senderString }": [
         "Forrás: ${ senderString }"
       ],
@@ -3856,6 +3975,9 @@
         "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
         "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
       ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "Hiba történt az esemény titkosításakor és tárolásakor. Nem került importálásra esemény."
+      ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Hiba történt az események titkosításakor és tárolásakor. Az események nem kerültek importálásra."
       ],
@@ -3878,9 +4000,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "A ${ CALENDAR_APP_NAME } jelenleg nem támogat bizonyos esemény típusokat, részleteket és formátumokat."
-      ],
-      "vCard versions < 3.0": [
-        "vCard verzió < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3948,6 +4067,12 @@
       "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
         "A ${ BRAND_NAME } nem tud csatlakozni a fiókjához. Ellenőrizze a következőket:"
       ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a külső fiókjához. Ellenőrizze, hogy a szerver címe és port száma megfelelő-e."
+      ],
+      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
+        "A ${ BRAND_NAME } nem tud csatlakozni a külső fiókjához. Ellenőrizze a következőket:"
+      ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "A ${ BRAND_NAME } nem tud csatlakozni a Yahoo Mail fiókjához. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
       ],
@@ -4014,6 +4139,9 @@
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)."
       ],
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
+        "Hozza létre az ${ boldAppPassword }-t és használja a szokásos jelszava helyén amikor a ${ BRAND_NAME } erre kéri."
+      ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Nyissa meg a ${ boldAccountInfo } részt a személyes adatainál, a ${ yahooMailLink } fiókjában."
       ],
@@ -4025,6 +4153,21 @@
       ],
       "Select ${ boldExportCSV }.": [
         "Válassza az ${ boldExportCSV } elemet."
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Naptárak importálásához a ${ BRAND_NAME } fiókjába, a ${ knowledgeBaseLink } lesz szükséges. Töltse le a Yahoo-tól 3 egyszerű lépésben:"
+      ],
+      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Naptárak importálásához a ${ BRAND_NAME } fiókjába, a ${ knowledgeBaseLink } lesz szükséges. Töltse ezt le az importálás megkezdése előtt."
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
+        "Névjegyek importálásához a ${ BRAND_NAME } fiókjába, egy ${ knowledgeBaseLink } lesz szükséges. Töltse le a Yahoo-tól 3 egyszerű lépésben:"
+      ],
+      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Névjegyek importálásához a ${ BRAND_NAME } fiókjába, egy ${ knowledgeBaseLink } lesz szükséges. Töltse ezt le az importálás megkezdése előtt."
+      ],
+      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
+        "E-mailek importáláshoz a ${ BRAND_NAME } fiókjába, egy ${ appPasswordLink } lesz szükséges a Yahoo-tól. Szerezze be a következő lépések szerint:"
       ]
     },
     "Import instructions emphasis": {
@@ -4073,6 +4216,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Importálás innen: ${ provider }"
+      ],
       "Other": [
         "Egyéb"
       ]
@@ -4256,6 +4402,9 @@
       "(No Recipient)": [
         "(Nincs címzett)"
       ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
+      ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "A helyreállító jelmondat az egyik legbiztosabb módja annak, hogy megőrizze fiókja elérését. Ha elfelejtené a jelszavát, a helyreállító jelmondattal újra hozzáférhet a fiókjához és helyreállíthatja titkosított adatai elérhetőségét."
       ],
@@ -4311,6 +4460,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Biztosan törli az összes, ezzel a címkével megjelölt üzenetet?"
+      ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Biztos, hogy törli ezt a mappát? Minden benne lévő mappa szintén törlésre kerül."
       ],
       "Are you sure you want to delete this label?": [
         "Biztosan törli ezt a címkét?"
@@ -4501,6 +4653,9 @@
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Az e-mail követők megsérthetik a magánszféráját. Kapcsolja be a követés elleni védelmet, hogy a feladók ne értesülhessenek arról, ha és amikor megnyitja az üzenetet."
       ],
+      "Emails are automatically signed": [
+        "Az e-mailek automatikusan aláírásra kerülnek"
+      ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
         "Az ebben a mappában tárolt levelek nem kerülnek törlésre és megtalálhatók lesznek az Összes üzenet mappában."
       ],
@@ -4542,6 +4697,14 @@
       "Expiration time": [
         "Időkorlát"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "Lejár ${ minutesDiff } perc múlva",
+        "Lejár ${ minutesDiff } perc múlva"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Kevesebb, mint ${ hoursDiff } órán belül lejár",
+        "Kevesebb, mint ${ hoursDiff } órán belül lejár"
+      ],
       "file attached": [
         "attachment",
         "attachments"
@@ -4554,6 +4717,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Üzeneteknek, melyek újabbak mint ${ oldestDate }"
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Irányítsa át a bejövő leveleit másik címről, a biztonságos ${ MAIL_APP_NAME } fiókjába."
       ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
@@ -4623,8 +4789,17 @@
       "Import mailbox": [
         "E-mail fiók importálása"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importálja az e-mailjeit, naptárait és névjegyeit másik szolgáltatásból a ${ BRAND_NAME } fiókjába."
+      ],
+      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
+        "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
+      ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
+      ],
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Növelje a tárhelyét már ${ planPrice } havidíjtól."
       ],
       "Indexing paused": [
         "Feldolgozás szüneteltetve"
@@ -4725,6 +4900,9 @@
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
       ],
+      "Moving messages. This may take a while.": [
+        "Üzenetek áthelyezése. Ez eltarthat egy darabig."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Adjon nevet a mappának és válassza ki a szülő mappát amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
@@ -4761,17 +4939,20 @@
       "No more results found": [
         "Nincs több találat"
       ],
-      "No preview available": [
-        "Előnézet nem érhető el"
-      ],
       "No results found": [
         "Nincs találat"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Egy követőt se találtunk, de néhány képet nem lehetett betölteni követő-védelem mellett"
       ],
+      "non-${ MAIL_APP_NAME }": [
+        "nem-${ MAIL_APP_NAME }"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Egyik feltöltött kulcs sem alkalmas titkosításra. Erre a címre való küldéshez töltsön fel egy érvényes kulcsot, vagy kapcsolja ki az üzenetek titkosítást."
+      ],
+      "Normal": [
+        "Normál"
       ],
       "Not a valid URL": [
         "Érvénytelen URL-cím"
@@ -4784,6 +4965,12 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "A rendszerünk úgy érzékelte, hogy ez egy adathalász kísérlet. Kérjük ellenőrizze, hogy esetleg mégsem az."
+      ],
+      "PGP/Inline is only compatible with Plain Text format.": [
+        "A PGP/Inline csak Egyszerű Szöveg formátummal támogatott."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode.": [
+        "A PGP/MIME automatikusan a szerkesztőablak módja szerinti formátumban küldi az üzenetet."
       ],
       "Phone number": [
         "Telefonszám"
@@ -4829,7 +5016,10 @@
         "Kérjük várjon amíg megkeressük a névjegyeket amik az inaktív kulccsal titkosított adatokat tárolnak."
       ],
       "Preview failed to be loaded": [
-        "Az előnézetet nem sikerült betölteni"
+        "Az előnézet betöltése nem sikerült"
+      ],
+      "Preview for this file type is not supported": [
+        "Ehhez a fájltípushoz nem jeleníthető meg előnézet"
       ],
       "Primary": [
         "Elsődleges"
@@ -4860,9 +5050,6 @@
       ],
       "Request read receipt": [
         "Olvasási visszaigazolás igénylése"
-      ],
-      "Rich text": [
-        "Formázott szöveg"
       ],
       "Right to Left": [
         "Jobbról balra"
@@ -4897,6 +5084,9 @@
       "Select what you want to import.": [
         "Válassza ki, mit szeretne importálni."
       ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
+        "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a csomagjában foglalt korlátig."
+      ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Titkosított, jelszóval védett üzenet küldése ${ boldText } e-mail címre."
       ],
@@ -4911,9 +5101,6 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Üzenetek küldése a @pm.me címről előfizetéshez kötött. Az Ön üzenete az ${ email }, alapértelmezett címről lesz elküldve"
-      ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> biztonságos e-maillel küldve."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
@@ -5028,6 +5215,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
+      "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki és az Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
       ],
@@ -5077,6 +5267,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
       ],
+      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
+        "Események importálásához, először hozzon létre egy ${ CALENDAR_APP_NAME } naptárat. Ebben fognak megjelenni az események az importálás után."
+      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
       ],
@@ -5113,14 +5306,23 @@
       "Updating message content search...": [
         "Üzenetek tartalmában való keresés frissítése..."
       ],
+      "Upgrade now to get premium features, products and storage at a special price": [
+        "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
+      ],
       "Upgrade to add more addresses to your account.": [
         "Váltson nagyobb csomagra, hogy több címet hozhasson létre a fiókjában."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Váltson nagyobb csomagra, hogy több mappát, szűrőt és címet hozhasson létre."
       ],
+      "Upgrade to level up your privacy.": [
+        "Váltson nagyobb csomagra a mégmagasabb adatvédelemért."
+      ],
       "Upgrade to send email from @pm.me addresses.": [
         "Váltson nagyobb csomagra, hogy @pm.me címről is küldhessen levelet."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Váltson nagyobb csomagra, hogy saját domain néven levelezhessen."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Váltson nagyobb csomagra, hogy egyszerre csoportoknak is könnyen küldhessen leveleket."
@@ -5133,6 +5335,15 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "Váltson nagyobb csomagra, hogy támogassa a magánszféra védelmét és további szolgáltatásokhoz férjen hozzá."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Váltson nagyobb csomagra a prémium lehetőségekért."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Váltson nagyobb csomagra, hogy a ${ MAIL_APP_NAME } leveleit Apple Mail, Outlook vagy Thunderbird segítségével olvashassa."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Váltson nagyobb csomagra az automatikus válasz lehetőség használatához."
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -5166,6 +5377,9 @@
       ],
       "Week": [
         "Hét"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Mikor szeretné, hogy az üzenet automatikusan törlődjön a címzett fiókjából és az elküldött üzenetekből?"
       ],
       "When do you want your message to be sent?": [
         "Mikor szeretné elküldeni az üzenetet?"
@@ -6036,6 +6250,16 @@
         "Jelszó (adminisztrátor)"
       ]
     },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "Dátum"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Időpont"
+      ]
+    },
     "Label for contact group color": {
       "Color": [
         "Szín"
@@ -6108,6 +6332,17 @@
       ],
       "Row": [
         "Sor"
+      ]
+    },
+    "Limit of calendars reached": {
+      "To add a new calendar, remove an existing one.": [
+        "Újabb naptár hozzáadásához töröljön egy meglévőt."
+      ],
+      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
+        "Újabb naptár hozzáadásához töröljön egy naptárat, vagy váltsa a ${ BRAND_NAME } csomagját egy előfizetéses ${ MAIL_SHORT_APP_NAME } csomagra."
+      ],
+      "You've reached the maximum number of calendars available in your plan.": [
+        "Elérte a csomagjában lehetséges naptárak maximális számát."
       ]
     },
     "Link": {
@@ -6267,6 +6502,10 @@
       "Almost there": [
         "Majdnem kész"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
+        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Csatlakozás az e-mailszolgáltatójához"
       ],
@@ -6281,6 +6520,24 @@
       ],
       "Your import is starting": [
         "Az importálás indul"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint",
+        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint",
+        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
       ]
     },
     "Mailbox": {
@@ -6313,6 +6570,9 @@
       "On ${ date }, ${ senderString } wrote:": [
         "${ date } keltezéssel, ${ senderString } írta:"
       ],
+      "Re:": [
+        "Re:"
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Igyenes próbaideje lejárt. Hozzáférés a fiókjához hamarosan le lesz tiltva. ${ action }"
       ]
@@ -6338,6 +6598,9 @@
     "Message notification": {
       "Scheduled sending undone": [
         "Ütemezett küldés visszavonva"
+      ],
+      "Scheduling canceled. Message has been moved to Drafts.": [
+        "Az ütemezett elküldés törölve. Az üzenet a Vázlatok mappába került."
       ],
       "Sending undone": [
         "Küldés megszakítva"
@@ -6531,9 +6794,30 @@
     "new_plans: feature": {
       "Custom email domains": [
         "Saját domain nevek"
+      ],
+      "Hide My Email aliases": [
+        "Az e-mail álnevek elrejtése"
+      ],
+      "Schedule messages at any time": [
+        "Üzenetek ütemezése bármikor"
+      ],
+      "Search message content": [
+        "Keresés az üzenetek tartalmában"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ],
+      "Up to 15 email addresses": [
+        "Akár 15 e-mail cím"
+      ],
+      "Up to 500 GB of storage": [
+        "500 GB tárhely"
       ]
     },
     "new_plans: feature info": {
+      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
+        "Korlátlan számú e-mail álnév, a ${ BRAND_NAME } SimpleLogin segítségével"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
       ]
@@ -6600,6 +6884,9 @@
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
+      ],
+      "Discover all ${ BRAND_NAME } services": [
+        "Fedezze fel az összes ${ BRAND_NAME } szolgáltatást"
       ],
       "Select a theme": [
         "Téma kiválasztása"
@@ -6881,6 +7168,12 @@
         "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } n",
+        "${ remainingDays } n"
+      ]
+    },
     "Reply to calendar invitation": {
       "Answer sent": [
         "Válasz elküldve"
@@ -7026,6 +7319,14 @@
       ],
       "Sender's trusted keys verification failed": [
         "A feladó megbízható kulcsának ellenőrzése nem sikerült"
+      ]
+    },
+    "Signing preference for emails": {
+      "Don't sign": [
+        "Ne írja alá"
+      ],
+      "Sign": [
+        "Aláírás"
       ]
     },
     "Sort option": {
@@ -7337,10 +7638,10 @@
         "Olvasási visszaigazolás elküldve"
       ],
       "Self-destruction removed": [
-        "Önmegsemmesítés eltávolítva"
+        "Önmegsemmisítés eltávolítva"
       ],
       "Self-destruction set": [
-        "Önmegsemmesítés beállítva"
+        "Önmegsemmisítés beállítva"
       ],
       "Undo in progress": [
         "Visszavonás folyamatban"
@@ -8123,6 +8424,9 @@
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Ez a művelet nem vonható vissza. Írja be a ${ boldDanger } szót a mezőbe a folytatáshoz."
+      ],
+      "This feature requires a paid ${ BRAND_NAME } account": [
+        "Ehhez a lehetőséghez előfizetéses ${ BRAND_NAME } fiók szükséges"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Az importálás helyigénye meghaladhatja a ${ BRAND_NAME } fiókban rendelkezésre álló helyet. Fontolja meg a beállítások finomítását."

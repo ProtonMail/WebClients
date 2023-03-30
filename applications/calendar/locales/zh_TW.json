@@ -2453,9 +2453,6 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失敗"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "不支援 vCard 3.0 以下版本"
       ]
     },
     "Error importing contacts": {
@@ -2847,9 +2844,6 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 目前尚未支援某些事件類型、詳細資料和格式。"
-      ],
-      "vCard versions < 3.0": [
-        "vCard 版本 < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4895,6 +4889,11 @@
         "未能更新設定"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "要邀請非 ${ BRAND_NAME } 使用者，請透過連結分享您的行事曆."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
         "您已超出每個行事曆最多 ${ MAX_CALENDAR_MEMBERS } 個成員的限額"
@@ -4931,6 +4930,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "管理行事曆"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "簽章驗證錯誤"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "您已為 ${ boldSenderEmail } 啟用地址驗證。我們無法驗證此日曆邀請的真實性。這可能是由於此聯絡人的加密金鑰發生了變化。請檢視其進階 PGP 設定，或者您可以向 ${ boldSenderEmail } 請求新邀請。"
       ]
     },
     "Signing preference for emails": {
@@ -5544,6 +5551,9 @@
       "Sign in and grant access": [
         "登入並授予存取權"
       ],
+      "Sign in with 2FA": [
+        "使用 2FA 登入"
+      ],
       "Sign out": [
         "登出"
       ],
@@ -5667,6 +5677,14 @@
       ],
       "You do not have any contacts to export": [
         "您沒有任何可匯出的聯絡人"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "分享端到端加密"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "與已驗證的聯絡人分享端到端加密"
       ]
     },
     "Validation": {
