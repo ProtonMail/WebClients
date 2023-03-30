@@ -3,6 +3,7 @@ import { ReactNode, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useLoading } from '../../';
 import { FileIcon, FileNameDisplay, Icon } from '../../components';
@@ -26,6 +27,8 @@ interface Props {
     onSave?: () => Promise<void>;
     onDetail?: () => void;
     onShare?: () => void;
+    onRestore?: () => void; // revision's specific
+    date?: number | Date;
     children?: ReactNode;
 }
 
@@ -40,6 +43,8 @@ const Header = ({
     onSave,
     onDetail,
     onShare,
+    onRestore,
+    date,
     children,
 }: Props) => {
     const [isSaving, withSaving] = useLoading();
@@ -49,7 +54,7 @@ const Header = ({
         if (!onSave) {
             return;
         }
-        withSaving(
+        void withSaving(
             onSave()
                 .then(() => {
                     setSaveError(undefined);
@@ -69,9 +74,31 @@ const Header = ({
                 {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
                 <FileNameDisplay text={name} data-testid="file-preview:file-name" />
                 {signatureStatus}
+                <span className="ml-5">
+                    {date &&
+                        new Intl.DateTimeFormat(dateLocale.code, {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                            hour: 'numeric',
+                            minute: 'numeric',
+                        }).format(date)}
+                </span>
             </div>
             {children}
             <div className="flex flex-align-items-center">
+                {onRestore && (
+                    <Button
+                        title={c('Action').t`Download`}
+                        onClick={onRestore}
+                        shape="solid"
+                        className="ml0-5 mr-11"
+                        color="norm"
+                        data-testid="file-preview:actions:download"
+                    >
+                        {c('Info').t`Restore`}
+                    </Button>
+                )}
                 {onDownload && (
                     <Button
                         icon

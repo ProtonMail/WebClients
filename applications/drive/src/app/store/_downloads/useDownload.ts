@@ -41,10 +41,11 @@ export default function useDownload() {
         abortSignal: AbortSignal,
         shareId: string,
         linkId: string,
-        pagination: Pagination
+        pagination: Pagination,
+        revisionId?: string
     ): Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }> => {
         let link = await getLink(abortSignal, shareId, linkId);
-        const revisionId = link.activeRevision?.id;
+        revisionId ||= link.activeRevision?.id;
         if (!revisionId) {
             throw new Error(`Invalid link metadata, expected file`);
         }

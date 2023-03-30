@@ -1,12 +1,14 @@
 import { ContextSeparator } from '@proton/components/components';
 import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 
+import { useRevisions } from '../../store';
 import { ContextMenuProps } from '../FileBrowser';
-import { PreviewButton } from '../sections/ContextMenu';
 import { ItemContextMenu } from '../sections/ContextMenu/ItemContextMenu';
 import {
     RevisionDeleteButton,
-    RevisionDetailsButton, // TODO: Replace with DetailsButton when modal refactor will be merged
+    RevisionDetailsButton,
+    RevisionDownloadButton,
+    RevisionPreviewButton,
     RevisionRestoreButton,
     RevisionSaveAsCopyButton,
 } from './ContextMenuButtons';
@@ -17,38 +19,45 @@ export function RevisionsItemContextMenu({
     position,
     open,
     close,
-    havePreviewAvailable,
-    // revisionId,
+    revision,
     isCurrent,
 }: ContextMenuProps & {
-    revisionId: DriveFileRevision['ID'];
-    havePreviewAvailable: boolean;
+    revision: DriveFileRevision;
     isCurrent: boolean;
 }) {
+    const { havePreviewAvailable, openRevisionPreview, downloadRevision } = useRevisions();
+    if (isCurrent) {
+        return (
+            <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
+                {havePreviewAvailable ? (
+                    <RevisionPreviewButton
+                        revision={revision}
+                        openRevisionPreview={openRevisionPreview}
+                        close={close}
+                    />
+                ) : null}
+                <RevisionDownloadButton revision={revision} downloadRevision={downloadRevision} close={close} />
+                <RevisionDetailsButton close={close} />
+            </ItemContextMenu>
+        );
+    }
     return (
         <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
             {havePreviewAvailable && (
                 <>
-                    {/* TODO: Change it when implementing preview feature */}
-                    <PreviewButton shareId="dsdaa" linkId="dsdsa" close={close} />
-                    {!isCurrent ? <ContextSeparator /> : null}
+                    <RevisionPreviewButton
+                        revision={revision}
+                        openRevisionPreview={openRevisionPreview}
+                        close={close}
+                    />
+                    <ContextSeparator />
                 </>
             )}
-            {!isCurrent ? (
-                <>
-                    <RevisionRestoreButton close={() => {}} />
-                    <RevisionSaveAsCopyButton close={() => {}} />
-                    <ContextSeparator />
-                </>
-            ) : null}
-
-            <RevisionDetailsButton close={() => {}} />
-            {!isCurrent ? (
-                <>
-                    <ContextSeparator />
-                    <RevisionDeleteButton close={() => {}} />
-                </>
-            ) : null}
+            <RevisionRestoreButton close={close} />
+            <RevisionSaveAsCopyButton close={close} />
+            <RevisionDownloadButton revision={revision} downloadRevision={downloadRevision} close={close} />
+            <ContextSeparator />
+            <RevisionDeleteButton deleteRevision={() => {}} revision={revision} close={close} />
         </ItemContextMenu>
     );
 }

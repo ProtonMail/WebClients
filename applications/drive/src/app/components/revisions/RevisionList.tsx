@@ -9,30 +9,9 @@ import RevisionListItem from './RevisionListItem';
 interface Props {
     currentRevision: DriveFileRevision;
     categorizedRevisions: CategorizedRevisions;
-    havePreviewAvailable: boolean;
 }
 
-const revisionListFromArray = (
-    revisionCategoryList: DriveFileRevision[],
-    havePreviewAvailable: boolean,
-    formatType?: 'date' | 'time'
-) => {
-    return (
-        <ul className="unstyled my-4 ml-4">
-            {revisionCategoryList.map((revision) => (
-                <RevisionListItem
-                    key={revision.ID}
-                    revisionId={revision.ID}
-                    havePreviewAvailable={havePreviewAvailable}
-                    formatType={formatType}
-                    createTime={revision.CreateTime}
-                />
-            ))}
-        </ul>
-    );
-};
-
-const RevisionList = ({ currentRevision, categorizedRevisions, havePreviewAvailable }: Props) => {
+const RevisionList = ({ currentRevision, categorizedRevisions }: Props) => {
     const currentRevisionFormat = isToday(fromUnixTime(currentRevision.CreateTime)) ? 'time' : 'date';
     return (
         <ul className="unstyled">
@@ -41,13 +20,7 @@ const RevisionList = ({ currentRevision, categorizedRevisions, havePreviewAvaila
                     .t`Current version`}</span>
 
                 <ul className="unstyled my-4 ml-4">
-                    <RevisionListItem
-                        revisionId={currentRevision.ID}
-                        havePreviewAvailable={havePreviewAvailable}
-                        formatType={currentRevisionFormat}
-                        createTime={currentRevision.CreateTime}
-                        isCurrent
-                    />
+                    <RevisionListItem formatType={currentRevisionFormat} revision={currentRevision} isCurrent />
                 </ul>
             </li>
             {!!categorizedRevisions.size ? (
@@ -59,11 +32,15 @@ const RevisionList = ({ currentRevision, categorizedRevisions, havePreviewAvaila
                         return (
                             <li key={key}>
                                 <span className="text-lg text-semibold color-weak">{revisionCategory.title}</span>
-                                {revisionListFromArray(
-                                    revisionCategory.list,
-                                    havePreviewAvailable,
-                                    key === 'today' || key === 'yesterday' ? 'time' : 'date'
-                                )}
+                                <ul className="unstyled my-3 ml-4">
+                                    {revisionCategory.list.map((revision) => (
+                                        <RevisionListItem
+                                            key={revision.ID}
+                                            formatType={key === 'today' || key === 'yesterday' ? 'time' : 'date'}
+                                            revision={revision}
+                                        />
+                                    ))}
+                                </ul>
                             </li>
                         );
                     })}
