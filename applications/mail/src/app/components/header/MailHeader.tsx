@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import {
     DropdownMenuButton,
+    ExperimentCode,
     FloatingButton,
     Icon,
     MailComposerModeModal,
@@ -18,6 +19,7 @@ import {
     TopNavbarListItemFeedbackButton,
     TopNavbarListItemSettingsDropdown,
     UserDropdown,
+    useExperiment,
     useFolders,
     useHasRebrandingFeedback,
     useLabels,
@@ -51,7 +53,7 @@ interface Props {
 }
 
 const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand }: Props) => {
-    const [{ Density }] = useUserSettings();
+    const [userSettings] = useUserSettings();
     const [{ Shortcuts, ComposerMode, ViewLayout } = { Shortcuts: 0, ComposerMode: 0, ViewLayout: 0 }] =
         useMailSettings();
     const location = useLocation();
@@ -61,6 +63,10 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const { getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
     const displayContactsInHeader = useDisplayContactsWidget();
+    const { Density } = userSettings;
+
+    //Temporary experiment that runs only on english speaking users. No UI change, test done for data team
+    useExperiment(ExperimentCode.ExperimentPoc, userSettings.Locale.startsWith('en'));
 
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();

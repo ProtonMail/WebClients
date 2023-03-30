@@ -7,6 +7,7 @@ export interface Experiment {
 
 export enum ExperimentCode {
     ReferralProgramSignup = 'ReferralProgramSignup',
+    ExperimentPoc = 'ExperimentPoc',
 }
 
 export interface ExperimentsContextValue {
