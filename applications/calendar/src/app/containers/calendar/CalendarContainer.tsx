@@ -23,7 +23,7 @@ import {
     getInviteLocale,
     getSecondaryTimezone,
 } from '@proton/shared/lib/calendar/getSettings';
-import { SECOND } from '@proton/shared/lib/constants';
+import { HOUR, SECOND } from '@proton/shared/lib/constants';
 import { MILLISECONDS_IN_MINUTE, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
@@ -299,11 +299,26 @@ const CalendarContainer = ({
     );
 
     const timezoneInformation = useMemo(() => {
+        const { PrimaryTimezone, SecondaryTimezone } = calendarUserSettings;
         // in responsive mode we display just one day even though the view is WEEK
         const startDate = isNarrow ? utcDate : utcDateRangeInTimezone[0];
-        const noonDate = getNoonDateForTimeZoneOffset(startDate);
-        const { offset } = getTimezoneOffset(noonDate, tzid);
-        const { offset: secondaryOffset } = getTimezoneOffset(noonDate, secondaryTzid || tzid);
+        const endDate = isNarrow ? new Date(+utcDate + 24 * HOUR) : utcDateRangeInTimezone[1];
+        const noonDateInPrimaryTimeZone = getNoonDateForTimeZoneOffset({
+            date: startDate,
+            dateTzid: tzid,
+            targetTzid: PrimaryTimezone,
+        });
+        const noonDateInSecondaryTimeZone = SecondaryTimezone
+            ? getNoonDateForTimeZoneOffset({ date: startDate, dateTzid: tzid, targetTzid: SecondaryTimezone })
+            : noonDateInPrimaryTimeZone;
+        // if noon date in secondary time zone is not in view, use
+        const referenceDateForSecondaryTimeZoneOffset =
+            noonDateInSecondaryTimeZone < endDate ? noonDateInSecondaryTimeZone : startDate;
+        const { offset } = getTimezoneOffset(noonDateInPrimaryTimeZone, tzid);
+        const { offset: secondaryOffset } = SecondaryTimezone
+            ? getTimezoneOffset(referenceDateForSecondaryTimeZoneOffset, SecondaryTimezone)
+            : { offset };
+
         return {
             primaryTimezone: `${formatGMTOffsetAbbreviation(offset)}`,
             secondaryTimezone: `${formatGMTOffsetAbbreviation(secondaryOffset)}`,
