@@ -75,6 +75,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
 
         const cycleParam = parseInt(queryParams.get('cycle') as any, 10);
         const parsedCycle = cycleParam && getValidCycle(cycleParam);
+        const coupon = queryParams.get('coupon') || undefined;
 
         const currencyParam = queryParams.get('currency')?.toUpperCase();
         const parsedCurrency =
@@ -107,6 +108,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             onClose: handleClose,
             onSuccess: handleSuccess,
             plan: plan,
+            coupon,
             cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
             currency: parsedCurrency,
             fullscreen,
