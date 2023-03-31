@@ -22,8 +22,6 @@ import {
     PrivateHeader,
     PrivateMainArea,
     RebrandingFeedbackModal,
-    SettingsLink,
-    Spotlight,
     TimeZoneSelector,
     Tooltip,
     TopBanners,
@@ -33,6 +31,7 @@ import {
     UserDropdown,
     useContactGroups,
     useDrawer,
+    useFeature,
     useHasRebrandingFeedback,
     useModalState,
     useNotifications,
@@ -50,11 +49,9 @@ import {
     CustomActionRenderProps,
 } from '@proton/components/containers/contacts/widget/types';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
-import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
-import { CALENDAR_SETTINGS_SECTION_ID, MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';
-import { getGeneralSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
@@ -72,6 +69,7 @@ import getDateRangeText from '../../components/getDateRangeText';
 import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
+import CalendarSharingPopupModal from './CalendarSharingPopupModal';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import getDateDiff from './getDateDiff';
@@ -144,8 +142,11 @@ const CalendarContainerView = ({
     const { createNotification } = useNotifications();
     const [groups = []] = useContactGroups();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
+    const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
+    const [calendarSharingPopupModal, setIsCalendarSharingPopupModalOpen, renderCalendarSharingPopupModal] =
+        useModalState();
 
     useOpenDrawerOnLoad();
     const displayContactsInHeader = useDisplayContactsWidget();
@@ -379,22 +380,21 @@ const CalendarContainerView = ({
 
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { show, onDisplayed } = useSpotlightOnFeature(
-        FeatureCode.SpotlightAutoAddedInvites,
-        !isWelcomeFlow && !isNarrow,
+        FeatureCode.CalendarSharingSpotlight,
+        !isWelcomeFlow && calendarSharingEnabled,
         {
-            alpha: Date.UTC(2021, 7, 24, 12),
-            beta: Date.UTC(2021, 7, 24, 12),
-            default: Date.UTC(2022, 7, 24, 10),
+            alpha: 0,
+            beta: Date.UTC(2023, 3, 12, 12),
+            default: Date.UTC(2023, 3, 19, 12),
         }
     );
-    const shouldShowSpotlight = useSpotlightShow(show);
-    const goToSettingsLink = (
-        <SettingsLink
-            path={getGeneralSettingsPath({ sectionId: CALENDAR_SETTINGS_SECTION_ID.INVITATIONS })}
-            app={APPS.PROTONCALENDAR}
-            key="settings-link"
-        >{c('Spotlight settings link').t`Go to settings`}</SettingsLink>
-    );
+    const shouldShowCalendarSharingPopup = useSpotlightShow(show);
+
+    useEffect(() => {
+        if (shouldShowCalendarSharingPopup) {
+            setIsCalendarSharingPopupModalOpen(true);
+        }
+    }, [shouldShowCalendarSharingPopup]);
     const createEventText = c('Action').t`Create event`;
 
     const contactCustomActions: CustomAction[] = [
@@ -457,32 +457,12 @@ const CalendarContainerView = ({
     ) : (
         <>
             {renderOnboardingModal && <CalendarOnboardingModal showGenericSteps {...onboardingModal} />}
+            {renderCalendarSharingPopupModal && (
+                <CalendarSharingPopupModal {...calendarSharingPopupModal} onDisplayed={onDisplayed} />
+            )}
             <PrivateHeader
                 userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModal(true)} />}
-                settingsButton={
-                    <Spotlight
-                        type="new"
-                        show={shouldShowSpotlight}
-                        onDisplayed={onDisplayed}
-                        content={
-                            <div style={{ maxWidth: 240 }}>
-                                <div className="text-lg text-bold mb0-25">{c('Spotlight')
-                                    .t`Easily accept invites`}</div>
-                                <p className="m0">
-                                    {c('Spotlight')
-                                        .jt`Now invitations appear in your calendar as pending events. Just open an event to respond. ${goToSettingsLink}`}
-                                </p>
-                            </div>
-                        }
-                    >
-                        <div>
-                            <TopNavbarListItemSettingsDropdown
-                                to={`/${getSlugFromApp(APPS.PROTONCALENDAR)}`}
-                                toApp={APPS.PROTONACCOUNT}
-                            />
-                        </div>
-                    </Spotlight>
-                }
+                settingsButton={<TopNavbarListItemSettingsDropdown to="/calendar" toApp={APPS.PROTONACCOUNT} />}
                 floatingButton={
                     <FloatingButton onClick={() => onCreateEvent?.()}>
                         <Icon size={24} name="plus" className="mauto" />
