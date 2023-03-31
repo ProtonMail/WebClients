@@ -41,7 +41,7 @@ const EVENT_MODELS = [
 
 const PRELOAD_MODELS = [UserSettingsModel, MailSettingsModel, UserModel];
 
-const getAppContainer = () => import('./SetupMainContainer');
+const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './SetupMainContainer');
 
 interface Props {
     onLogout: () => void;

@@ -27,17 +27,18 @@ import authentication from '@proton/shared/lib/authentication/authentication';
 import { APPS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import { initLocales } from '@proton/shared/lib/i18n/locales';
+import { setLocales } from '@proton/shared/lib/i18n/locales';
 import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 import noop from '@proton/utils/noop';
 
 import * as config from '../app/config';
+import locales from '../app/locales';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
 import MainContainer from './containers/MainContainer';
 import { FullscreenOption, SupportedActions, getApp, getFullscreenOption } from './containers/helper';
 
-initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
+setLocales(locales);
 
 const enhancedConfig = {
     ...config,

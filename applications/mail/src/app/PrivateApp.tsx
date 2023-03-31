@@ -30,7 +30,7 @@ interface Props {
     locales: TtagLocaleMap;
 }
 
-const getAppContainer = () => import('./MainContainer');
+const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './MainContainer');
 
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();

@@ -99,7 +99,7 @@ module.exports = ({
 
         new MiniCssExtractPlugin({
             filename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
-            chunkFilename: isProduction ? '[id].[contenthash:8].css' : '[id].css',
+            chunkFilename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
         }),
 
         new HtmlWebpackPlugin({

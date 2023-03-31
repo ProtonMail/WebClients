@@ -6,7 +6,7 @@ import { isDarkTheme } from '@proton/shared/lib/themes/helpers';
 
 import { AdvancedSimpleFilterModalModel } from '../../interfaces';
 
-const LazySieveEditor = lazy(() => import('./SieveEditor'));
+const LazySieveEditor = lazy(() => import(/* webpackChunkName: "SieveEditor" */ './SieveEditor'));
 
 interface Props {
     model: AdvancedSimpleFilterModalModel;
