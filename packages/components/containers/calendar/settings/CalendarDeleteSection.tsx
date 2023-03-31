@@ -133,8 +133,7 @@ const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared 
                         <Button color="danger" onClick={handleDelete} loading={loading} type="submit">
                             {deleteText}
                         </Button>,
-                        <Button disabled={loading} onClick={deleteModal.onClose} type="submit">{c('Action')
-                            .t`Cancel`}</Button>,
+                        <Button disabled={loading} onClick={deleteModal.onClose}>{c('Action').t`Cancel`}</Button>,
                     ]}
                 >
                     <div className="mb1">{modalText}</div>
