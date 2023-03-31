@@ -62,7 +62,7 @@
         "@babel/plugin-transform-runtime": "^7.21.0",
         "@babel/preset-env": "^7.20.2",
         "@babel/preset-react": "^7.18.6",
-        "@babel/preset-typescript": "^7.21.0",
+        "@babel/preset-typescript": "^7.21.4",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@proton/shared": "workspace:packages/shared",
@@ -80,7 +80,7 @@
         "jest-environment-jsdom": "^28.1.3",
         "prettier": "^2.8.7",
         "ttag": "^1.7.24",
-        "typescript": "^5.0.2"
+        "typescript": "^5.0.3"
     },
     "peerDependencies": {
         "@proton/cross-storage": "*",
