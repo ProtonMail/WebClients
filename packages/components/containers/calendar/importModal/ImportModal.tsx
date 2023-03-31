@@ -28,7 +28,7 @@ import noop from '@proton/utils/noop';
 
 import { BasicModal, onlyDragFiles } from '../../../components';
 import { useAddresses, useApi, useConfig, useEventManager, useGetCalendarUserSettings } from '../../../hooks';
-import { useCalendarModelEventManager } from '../../eventManager';
+import { useCalendarModelEventManager } from '../../eventManager/calendar';
 import AttachingModalContent from './AttachingModalContent';
 import ImportInvitationModalContent from './ImportInvitationModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';

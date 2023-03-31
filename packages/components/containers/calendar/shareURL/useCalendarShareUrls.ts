@@ -7,7 +7,7 @@ import {
     transformLinkFromAPI,
     transformLinksFromAPI,
 } from '@proton/shared/lib/calendar/sharing/shareUrl/shareUrl';
-import { getIsCalendarEventManagerDelete } from '@proton/shared/lib/eventManager/helpers';
+import { getIsCalendarEventManagerDelete } from '@proton/shared/lib/eventManager/calendar/helpers';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import {
@@ -20,13 +20,13 @@ import updateItem from '@proton/utils/updateItem';
 
 import { useEventManager, useGetCalendarInfo, useLoading, useNotifications } from '../../../hooks';
 import { useGetCalendarPublicLinks } from '../../../hooks/useGetCalendarPublicLinks';
-import { useCalendarModelEventManager } from '../../eventManager';
+import { useCalendarModelEventManager } from '../../eventManager/calendar';
 
 const useCalendarShareUrls = (calendars: VisualCalendar[]) => {
     const { createNotification } = useNotifications();
     const getCalendarInfo = useGetCalendarInfo();
     const getPublicLinks = useGetCalendarPublicLinks();
-    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: coreSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
     const [linksMap, setLinksMap] = useState<SimpleMap<CalendarLink[]>>({});
@@ -110,7 +110,7 @@ const useCalendarShareUrls = (calendars: VisualCalendar[]) => {
 
     // subscribe to general event loop
     useEffect(() => {
-        return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
+        return coreSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
             Calendars.forEach((event) => {
                 if (getIsCalendarEventManagerDelete(event)) {
                     handleDeleteCalendar(event.ID);

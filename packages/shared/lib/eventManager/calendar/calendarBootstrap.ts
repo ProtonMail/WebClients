@@ -1,10 +1,10 @@
+import { CalendarKey, CalendarMember, CalendarSettings as tsCalendarSettings } from '../../interfaces/calendar';
+import { CalendarMemberEventManager } from '../../interfaces/calendar/EventManager';
 import {
     getIsCalendarMemberEventManagerCreate,
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
-} from '../eventManager/helpers';
-import { CalendarKey, CalendarMember, CalendarSettings as tsCalendarSettings } from '../interfaces/calendar';
-import { CalendarMemberEventManager } from '../interfaces/calendar/EventManager';
+} from './helpers';
 
 /**
  * Find the calendar id for an event, since it's not always returned.
