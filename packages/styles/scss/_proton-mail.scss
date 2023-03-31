@@ -1,4 +1,4 @@
-@use 'config/functions/im-to-em' as *;
+@use 'lib/im-to-em' as *;
 
 // Variables specific overrides
 $breakpoints: im-to-em(
@@ -14,8 +14,8 @@ $use-height-auto-td: false;
 $use-height-auto-img: false;
 $use-height-auto-table: false;
 
-// Configuration
-@import 'config/';
+// Library
+@import 'lib/';
 
 // Initialisation
 @import 'base/';
@@ -27,4 +27,4 @@ $use-height-auto-table: false;
 @import 'components/';
 
 // Helpers
-@import 'helpers/';
+@import 'utilities/';
