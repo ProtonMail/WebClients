@@ -18,12 +18,12 @@
     },
     "devDependencies": {
         "@babel/preset-env": "^7.20.2",
-        "@babel/preset-typescript": "^7.21.0",
+        "@babel/preset-typescript": "^7.21.4",
         "@babel/register": "^7.21.0",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "eslint": "^8.37.0",
         "mocha": "^10.2.0",
         "prettier": "^2.8.7",
-        "typescript": "^5.0.2"
+        "typescript": "^5.0.3"
     }
 }
