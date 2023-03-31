@@ -1,11 +1,11 @@
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 
-import { debounce } from 'lodash';
 import { c } from 'ttag';
 
 import { MailImportPayloadError } from '@proton/activation/src/interface';
 import { Checkbox, Icon, InlineLinkButton, LabelStack } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+import debounce from '@proton/utils/debounce';
 
 import { FOLDER_ICONS, FolderMapItem } from '../../CustomizeMailImportModal.interface';
 import ManageFoldersRowFolderErrors from './ManageFoldersRowFolderErrors';
