@@ -540,7 +540,11 @@ const CalendarContainerView = ({
         return getDateRangeText(view, range, localDate, localDateRange);
     }, [view, range, localDate, localDateRange]);
 
-    const noonDate = getNoonDateForTimeZoneOffset(utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate);
+    const noonDate = getNoonDateForTimeZoneOffset({
+        date: utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate,
+        dateTzid: tzid,
+        targetTzid: calendarUserSettings.PrimaryTimezone,
+    });
 
     const drawerSidebarButtons = [
         <ContactDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCONTACTS, appInView)} />,
