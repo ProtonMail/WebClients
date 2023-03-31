@@ -59,7 +59,7 @@ const SubscriptionRow = ({
                     {asterisk}
                 </span>
             </TableCell>
-            <TableCell label={c('Title').t`Length`}>
+            <TableCell label={c('Title').t`Duration`}>
                 <span data-testid="planPeriodId">{getShortBillingText(Cycle)}</span>
             </TableCell>
             <TableCell label={c('Title').t`Users`}>
@@ -131,7 +131,7 @@ const SubscriptionsSection = () => {
                     <TableHeader>
                         <TableRow>
                             <TableCell type="header">{c('Title').t`Plan`}</TableCell>
-                            <TableCell type="header">{c('Title').t`Length`}</TableCell>
+                            <TableCell type="header">{c('Title').t`Duration`}</TableCell>
                             <TableCell type="header">{c('Title').t`Users`}</TableCell>
                             <TableCell type="header">{c('Title').t`Start date`}</TableCell>
                             <TableCell type="header">{c('Title').t`End date`}</TableCell>
