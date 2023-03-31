@@ -64,6 +64,7 @@ const GiftCodeSection = () => {
                     className="on-mobile-flex-align-self-start flex-item-noshrink"
                     color="norm"
                     type="submit"
+                    data-testid="submitGiftCodeBtn"
                     loading={loading}
                 >
                     {c('Action').t`Submit`}
