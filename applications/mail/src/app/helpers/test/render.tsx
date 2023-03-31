@@ -9,6 +9,7 @@ import { MemoryHistory, createMemoryHistory } from 'history';
 
 import {
     CacheProvider,
+    CalendarModelEventManagerProvider,
     EventModelListener,
     ExperimentsProvider,
     ModalsChildren,
@@ -81,39 +82,41 @@ const TestProvider = ({ children }: Props) => {
                 <NotificationsTestProvider>
                     <ModalsProvider>
                         <AuthenticationProvider store={authentication}>
-                            <CacheProvider cache={mockCache}>
-                                <FeaturesProvider>
-                                    <SpotlightProvider>
-                                        <DrawerProvider>
-                                            <ExperimentsProvider>
-                                                <ModalsChildren />
-                                                <EventModelListener
-                                                    models={[ConversationCountsModel, MessageCountsModel]}
-                                                />
-                                                <ReduxProviderWrapper>
-                                                    <MailContentRefProvider mailContentRef={contentRef}>
-                                                        <MailboxContainerContextProvider
-                                                            isResizing={false}
-                                                            containerRef={contentRef}
-                                                            elementID={undefined}
-                                                        >
-                                                            <ComposeProvider onCompose={onCompose}>
-                                                                <Router history={history}>
-                                                                    <Route path={MAIN_ROUTE_PATH}>
-                                                                        <EncryptedSearchProvider>
-                                                                            {children}
-                                                                        </EncryptedSearchProvider>
-                                                                    </Route>
-                                                                </Router>
-                                                            </ComposeProvider>
-                                                        </MailboxContainerContextProvider>
-                                                    </MailContentRefProvider>
-                                                </ReduxProviderWrapper>
-                                            </ExperimentsProvider>
-                                        </DrawerProvider>
-                                    </SpotlightProvider>
-                                </FeaturesProvider>
-                            </CacheProvider>
+                            <CalendarModelEventManagerProvider>
+                                <CacheProvider cache={mockCache}>
+                                    <FeaturesProvider>
+                                        <SpotlightProvider>
+                                            <DrawerProvider>
+                                                <ExperimentsProvider>
+                                                    <ModalsChildren />
+                                                    <EventModelListener
+                                                        models={[ConversationCountsModel, MessageCountsModel]}
+                                                    />
+                                                    <ReduxProviderWrapper>
+                                                        <MailContentRefProvider mailContentRef={contentRef}>
+                                                            <MailboxContainerContextProvider
+                                                                isResizing={false}
+                                                                containerRef={contentRef}
+                                                                elementID={undefined}
+                                                            >
+                                                                <ComposeProvider onCompose={onCompose}>
+                                                                    <Router history={history}>
+                                                                        <Route path={MAIN_ROUTE_PATH}>
+                                                                            <EncryptedSearchProvider>
+                                                                                {children}
+                                                                            </EncryptedSearchProvider>
+                                                                        </Route>
+                                                                    </Router>
+                                                                </ComposeProvider>
+                                                            </MailboxContainerContextProvider>
+                                                        </MailContentRefProvider>
+                                                    </ReduxProviderWrapper>
+                                                </ExperimentsProvider>
+                                            </DrawerProvider>
+                                        </SpotlightProvider>
+                                    </FeaturesProvider>
+                                </CacheProvider>
+                            </CalendarModelEventManagerProvider>
                         </AuthenticationProvider>
                     </ModalsProvider>
                 </NotificationsTestProvider>

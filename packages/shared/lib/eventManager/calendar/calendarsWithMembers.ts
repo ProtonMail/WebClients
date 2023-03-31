@@ -1,38 +1,16 @@
+import { CalendarWithOwnMembers } from '../../interfaces/calendar';
+import { CalendarEventManager, CalendarMemberEventManager } from '../../interfaces/calendar/EventManager';
+import { STATUS } from '../../models/cache';
+import { CALENDARS_CACHE_KEY } from '../../models/calendarsModel';
 import {
+    findMemberIndices,
     getIsCalendarEventManagerCreate,
     getIsCalendarEventManagerDelete,
     getIsCalendarEventManagerUpdate,
     getIsCalendarMemberEventManagerCreate,
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
-} from '../eventManager/helpers';
-import { CalendarWithOwnMembers } from '../interfaces/calendar';
-import { CalendarEventManager, CalendarMemberEventManager } from '../interfaces/calendar/EventManager';
-import { STATUS } from './cache';
-import { CALENDARS_CACHE_KEY } from './calendarsModel';
-
-export const findMemberIndices = (
-    memberID: string,
-    calendarsWithMembers: CalendarWithOwnMembers[],
-    memberCalendarID?: string
-) => {
-    let calendarIndex = -1;
-    let memberIndex = -1;
-
-    calendarsWithMembers.forEach(({ ID, Members }, i) => {
-        if (ID === memberCalendarID) {
-            calendarIndex = i;
-        }
-        Members.forEach(({ ID }, j) => {
-            if (ID === memberID) {
-                memberIndex = j;
-                calendarIndex = i;
-            }
-        });
-    });
-
-    return [calendarIndex, memberIndex];
-};
+} from './helpers';
 
 export const updateCalendarsWithMembers = (
     cache: Map<string, any>,
@@ -42,7 +20,9 @@ export const updateCalendarsWithMembers = (
     }: {
         Calendars?: CalendarEventManager[];
         CalendarMembers?: CalendarMemberEventManager[];
-    }
+    },
+    ownAddressIDs: string[],
+    stopManagers?: (ids: string[]) => void
 ) => {
     const { value: oldCalendarsWithMembers, status } = cache.get(CALENDARS_CACHE_KEY) || {};
     if (status !== STATUS.RESOLVED) {
@@ -58,6 +38,7 @@ export const updateCalendarsWithMembers = (
                 if (index !== -1) {
                     newCalendarsWithMembers.splice(index, 1);
                 }
+                stopManagers?.([event.ID]);
             } else if (getIsCalendarEventManagerCreate(event)) {
                 const { ID: calendarID, Calendar } = event;
                 const index = newCalendarsWithMembers.findIndex(({ ID }) => ID === calendarID);
@@ -77,13 +58,21 @@ export const updateCalendarsWithMembers = (
             }
         }
     }
+
     if (CalendarMembers.length) {
         for (const event of CalendarMembers) {
             if (getIsCalendarMemberEventManagerDelete(event)) {
                 const [calendarIndex, memberIndex] = findMemberIndices(event.ID, newCalendarsWithMembers);
-                // Remove the member from the calendar if it exists.
                 if (calendarIndex !== -1 && memberIndex !== -1) {
-                    newCalendarsWithMembers[calendarIndex].Members.splice(memberIndex, 1);
+                    const { CalendarID, AddressID } = newCalendarsWithMembers[calendarIndex].Members[memberIndex]!;
+                    if (ownAddressIDs.includes(AddressID)) {
+                        // the user is the member removed -> remove the calendar
+                        newCalendarsWithMembers.splice(calendarIndex, 1);
+                        stopManagers?.([CalendarID]);
+                    } else {
+                        // otherwise a member of one of an owned calendar got removed -> remove the member
+                        newCalendarsWithMembers[calendarIndex].Members.splice(memberIndex, 1);
+                    }
                 }
             } else {
                 const [calendarIndex, memberIndex] = findMemberIndices(

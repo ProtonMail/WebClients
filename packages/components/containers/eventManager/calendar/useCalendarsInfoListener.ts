@@ -1,46 +1,43 @@
 import { useEffect } from 'react';
 
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { CalendarEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
-import { CalendarUserSettingsModel } from '@proton/shared/lib/models';
-import { STATUS } from '@proton/shared/lib/models/cache';
-import { updateBootstrapKeysAndSettings, updateBootstrapMembers } from '@proton/shared/lib/models/calendarBootstrap';
-import { updateCalendarsWithMembers } from '@proton/shared/lib/models/calendarMembers';
+import {
+    updateBootstrapKeysAndSettings,
+    updateBootstrapMembers,
+} from '@proton/shared/lib/eventManager/calendar/calendarBootstrap';
+import { updateCalendarsUserSettings } from '@proton/shared/lib/eventManager/calendar/calendarUserSettings';
+import { updateCalendarsWithMembers } from '@proton/shared/lib/eventManager/calendar/calendarsWithMembers';
 
-import { useCache, useEventManager } from '../../../hooks';
+import { useAddresses, useCache, useEventManager } from '../../../hooks';
 import { KEY as CALENDAR_BOOTSTRAP_CACHE } from '../../../hooks/useGetCalendarBootstrap';
 import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../../hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { useCalendarModelEventManager } from './ModelEventManagerProvider';
 
 /**
- * Listen manually to updates to calendar members and user settings (via core event loop)
+ * Listen to updates to calendars, calendar members and calendar user settings (via core event loop)
  */
 export const useCalendarsInfoCoreListener = () => {
-    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: coreSubscribe } = useEventManager();
+    const { reset: calendarReset } = useCalendarModelEventManager();
     const cache = useCache();
+    const [addresses] = useAddresses();
 
     useEffect(() => {
         // subscribe via the standard event loop to updates of CalendarsModel, CalendarMembersModel and CalendarUserSettingsModel
-        const calendarUserSettingsModelKey = CalendarUserSettingsModel.key;
-        return standardSubscribe((data) => {
-            if (data[calendarUserSettingsModelKey]) {
-                const { value: oldValue, status } = cache.get(calendarUserSettingsModelKey) || {};
-                if (status === STATUS.RESOLVED) {
-                    cache.set(calendarUserSettingsModelKey, {
-                        status: STATUS.RESOLVED,
-                        value: CalendarUserSettingsModel.update(oldValue, data[calendarUserSettingsModelKey]),
-                    });
-                }
-            }
-            updateCalendarsWithMembers(cache, data);
+        const ownAddressIDs = (addresses || []).map(({ ID }) => ID);
+
+        return coreSubscribe((data) => {
+            updateCalendarsUserSettings(cache, data);
+            updateCalendarsWithMembers(cache, data, ownAddressIDs, calendarReset);
             updateBootstrapMembers(cache.get(CALENDAR_BOOTSTRAP_CACHE), data);
         });
-    }, []);
+    }, [cache, addresses]);
 };
 
+/**
+ * Listen to updates to calendar keys and settings (via calendar event loop)
+ */
 const useCalendarsInfoCalendarListener = (calendarIDs: string[]) => {
-    const { subscribe: standardSubscribe } = useEventManager();
-    const { subscribe: calendarSubscribe, reset: calendarReset } = useCalendarModelEventManager();
+    const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
     const cache = useCache();
 
     useEffect(() => {
@@ -54,24 +51,10 @@ const useCalendarsInfoCalendarListener = (calendarIDs: string[]) => {
                 );
             }
         });
-    }, [calendarIDs]);
-
-    useEffect(() => {
-        // stop per-calendar event managers when calendars are deleted
-        return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
-            Calendars.forEach(({ ID, Action }) => {
-                if (Action === EVENT_ACTIONS.DELETE) {
-                    calendarReset([ID]);
-                }
-            });
-        });
-    }, []);
+    }, [cache, calendarIDs]);
 };
 
-/**
- * Listen manually to updates to calendar members, keys and settings
- */
-const useCalendarsInfoListener = (calendarIDs: string[]) => {
+export const useCalendarsInfoListener = (calendarIDs: string[]) => {
     useCalendarsInfoCoreListener();
     useCalendarsInfoCalendarListener(calendarIDs);
 };
