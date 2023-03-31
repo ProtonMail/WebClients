@@ -1,7 +1,6 @@
 import { ReactNode, Ref } from 'react';
 
-import { classnames } from '../../helpers';
-import ErrorBoundary from './ErrorBoundary';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     containerRef?: Ref<HTMLDivElement>;
@@ -39,12 +38,12 @@ const PrivateAppContainer = ({
                 {top}
                 <div className="content ui-prominent flex-item-fluid-auto flex flex-column flex-nowrap reset4print">
                     <div className="flex flex-item-fluid flex-nowrap">
-                        <ErrorBoundary className="inline-block">{sidebar}</ErrorBoundary>
+                        {sidebar}
                         <div className="flex flex-column flex-item-fluid flex-nowrap reset4print">
-                            <ErrorBoundary small>{header}</ErrorBoundary>
+                            {header}
                             <div className="flex flex-item-fluid flex-nowrap">
                                 <div
-                                    className={classnames([
+                                    className={clsx([
                                         'main ui-standard flex flex-column flex-nowrap flex-item-fluid',
                                         mainBordered && 'main--bordered',
                                         mainNoBorder && 'border-none',
