@@ -18,16 +18,17 @@ import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { initLocales } from '@proton/shared/lib/i18n/locales';
+import { setLocales } from '@proton/shared/lib/i18n/locales';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
 import broadcast, { MessageType } from './broadcast';
+import locales from './locales';
 import { VerificationSearchParameters } from './types';
 
 import './Verify.scss';
 
-const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
+setLocales(locales);
 
 const windowIsEmbedded = window.location !== window.parent.location;
 

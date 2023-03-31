@@ -75,7 +75,7 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         toggleItalic,
         toggleNumbering,
         toggleUnderline,
-    } = await import(/* webpackPreload: true */ 'roosterjs');
+    } = await import(/* webpackChunkName: "roosterjs", webpackPreload: true */ 'roosterjs');
     if (!editorInstance || editorInstance.isDisposed()) {
         return;
     }

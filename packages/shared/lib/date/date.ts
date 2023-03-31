@@ -42,7 +42,9 @@ export const getFormattedMonths = (stringFormat: string, options?: FormatOptions
 /**
  * Get the index of the start of week day for a given date-fn locale
  */
-export const getWeekStartsOn = ({ options: { weekStartsOn = 0 } = { weekStartsOn: 0 } }: Locale) => weekStartsOn;
+export const getWeekStartsOn = (locale?: Locale) => {
+    return locale?.options?.weekStartsOn || 0;
+};
 
 export const getTimeRemaining = (earlierDate: Date, laterDate: Date) => {
     const result = {

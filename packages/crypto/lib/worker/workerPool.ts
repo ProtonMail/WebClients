@@ -28,7 +28,13 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         // see: https://github.com/webpack/webpack.js.org/issues/4898#issuecomment-823073304.
         // Harcoding the path here is the easiet way to get the worker to be bundled properly.
         const RemoteApi = wrap<typeof CryptoApi>(
-            new Worker(new URL(/* webpackChunkName: "crypto-worker" */ './worker.ts', import.meta.url))
+            new Worker(
+                new URL(
+                    /* webpackChunkName: "crypto-worker" */
+                    './worker.ts',
+                    import.meta.url
+                )
+            )
         );
         const worker = await new RemoteApi();
         return worker;

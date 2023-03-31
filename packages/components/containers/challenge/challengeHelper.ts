@@ -72,7 +72,7 @@ export const getStyleSrcsData = (styleSrcUrls: string[]) => {
             if (trimmedText[0] === '<') {
                 throw new Error(`Invalid data ${styleSrcUrls} ${trimmedText.slice(0, 10)}`);
             }
-            return [...trimmedText.matchAll(/url\(\/(assets\/[^.]+\.(woff|woff2|jpg|png)[^)]*)\)/g)]
+            return [...trimmedText.matchAll(/url\(\/(assets\/[^)]+)\)/g)]
                 .map((matchArray) => {
                     const [all, match] = matchArray;
                     const newUrl = new URL(match, window.location.origin).toString();
