@@ -27,3 +27,7 @@ global.MutationObserver = class {
     disconnect() {} // eslint-disable-line
     observe() {} // eslint-disable-line
 };
+
+jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
+    __esModule: true,
+}));

@@ -32,6 +32,10 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: jest.fn(),
 }));
 
+jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
+    __esModule: true,
+}));
+
 /**
  * Due to a JSDom issue `dialog` tag is not understood correctly
  * Delete this test when the Jest will implement the fix

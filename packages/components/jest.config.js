@@ -7,6 +7,7 @@ module.exports = {
         'containers/**/*.{js,jsx,ts,tsx}',
         'helpers/**/*.{js,jsx,ts,tsx}',
         'hooks/**/*.{js,jsx,ts,tsx}',
+        '!src/app/locales.ts'
     ],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
