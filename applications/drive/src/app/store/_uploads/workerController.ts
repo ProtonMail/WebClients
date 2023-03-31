@@ -175,7 +175,9 @@ export class UploadWorker {
                     (async (data) => {
                         // Setup CryptoProxy
                         // Dynamic import is needed since we want pmcrypto (incl. openpgpjs) to be loaded inside the worker, not in the main thread.
-                        const { Api: CryptoApi } = await import('@proton/crypto/lib/worker/api');
+                        const { Api: CryptoApi } = await import(
+                            /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
+                        );
                         CryptoApi.init();
                         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
                         updateServerTime(data.serverTime); // align serverTime in worker with that of the main thread (received from API)
