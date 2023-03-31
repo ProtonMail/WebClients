@@ -10,18 +10,31 @@ const getBreakpoint = () => {
     return window.getComputedStyle(bodyEl, ':before').getPropertyValue('content').replace(/['"]+/g, '');
 };
 
+/** Contains React state setter of each instantiated hooks */
+const callbackStack: Set<Function> = new Set();
+const onResize = () => {
+    const result = getBreakpoint();
+    for (let callback of callbackStack.values()) {
+        callback(result);
+    }
+};
+const onResizeDebounced = debounce(onResize, 250);
+
 const useActiveBreakpoint = () => {
     const [breakpoint, setBreakpoint] = useState(() => getBreakpoint());
 
     useEffect(() => {
-        const onResize = () => setBreakpoint(getBreakpoint());
-        const onResizeDebounced = debounce(onResize, 250);
-
-        window.addEventListener('load', onResize);
-        window.addEventListener('resize', onResizeDebounced);
-
+        if (callbackStack.size === 0) {
+            window.addEventListener('load', onResize);
+            window.addEventListener('resize', onResizeDebounced);
+        }
+        callbackStack.add(setBreakpoint);
         return () => {
-            window.removeEventListener('resize', onResizeDebounced);
+            callbackStack.delete(setBreakpoint);
+            if (callbackStack.size === 0) {
+                window.removeEventListener('load', onResize);
+                window.removeEventListener('resize', onResizeDebounced);
+            }
         };
     }, []);
 
