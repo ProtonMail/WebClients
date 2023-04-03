@@ -6,6 +6,7 @@ export * from './ApiEnvironmentConfig';
 export * from './Checklist';
 export * from './Domain';
 export * from './EncryptionPreferences';
+export * from './Environment';
 export * from './Hotkeys';
 export * from './IncomingDefault';
 export * from './Key';

@@ -13,7 +13,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { CalendarMemberInvitation, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, PrimaryButton, Prompt, SettingsLink, Tooltip, useModalState } from '../../../components';
+import { Alert, PrimaryButton, Prompt, SettingsLink, useModalState } from '../../../components';
 import { useApi, useEventManager, useFeature, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { SettingsParagraph } from '../../account';
@@ -37,7 +37,6 @@ export interface OtherCalendarsSectionProps extends ComponentPropsWithoutRef<'di
     user: UserModel;
     canAdd: boolean;
     isCalendarsLimitReached: boolean;
-    unavailable?: boolean;
 }
 
 const OtherCalendarsSection = ({
@@ -49,7 +48,6 @@ const OtherCalendarsSection = ({
     user,
     canAdd,
     isCalendarsLimitReached,
-    unavailable,
     ...rest
 }: OtherCalendarsSectionProps) => {
     const api = useApi();
@@ -98,24 +96,13 @@ const OtherCalendarsSection = ({
 
     const addCalendarButton = (
         <div className="mb1">
-            {unavailable ? (
-                <Tooltip title={c('Tooltip').t`This feature is unavailable for the moment`}>
-                    {/* a <span> is added artificially so that the disabled prop of the button does not hide the tooltip */}
-                    <span>
-                        <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled>
-                            {addCalendarText}
-                        </PrimaryButton>
-                    </span>
-                </Tooltip>
-            ) : (
-                <PrimaryButton
-                    data-test-id="calendar-setting-page:add-calendar"
-                    disabled={!canAdd}
-                    onClick={handleCreate}
-                >
-                    {addCalendarText}
-                </PrimaryButton>
-            )}
+            <PrimaryButton
+                data-test-id="calendar-setting-page:add-calendar"
+                disabled={!canAdd}
+                onClick={handleCreate}
+            >
+                {addCalendarText}
+            </PrimaryButton>
         </div>
     );
     const isCalendarsLimitReachedNode = isFreeUser ? (

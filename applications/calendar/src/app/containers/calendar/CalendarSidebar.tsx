@@ -17,11 +17,9 @@ import {
     SimpleSidebarListItemHeader,
     Tooltip,
     useApi,
-    useCalendarSubscribeFeature,
     useEventManager,
     useLoading,
     useModalState,
-    useNotifications,
     useUser,
 } from '@proton/components';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
@@ -66,10 +64,8 @@ const CalendarSidebar = ({
     const { call } = useEventManager();
     const api = useApi();
     const [user] = useUser();
-    const { enabled, unavailable } = useCalendarSubscribeFeature();
 
     const [loadingVisibility, withLoadingVisibility] = useLoading();
-    const { createNotification } = useNotifications();
 
     const [calendarModal, setIsCalendarModalOpen, renderCalendarModal] = useModalState();
     const [subscribedCalendarModal, setIsSubscribedCalendarModalOpen, renderSubscribedCalendarModal] = useModalState();
@@ -156,7 +152,7 @@ const CalendarSidebar = ({
                 onToggle={() => setDisplayMyCalendars((prevState) => !prevState)}
                 right={
                     <div className="flex flex-nowrap flex-align-items-center pr0-75">
-                        {enabled && !isOtherCalendarsLimitReached ? (
+                        {!isOtherCalendarsLimitReached ? (
                             <Tooltip title={addCalendarText}>
                                 <SimpleDropdown
                                     as="button"
@@ -175,15 +171,7 @@ const CalendarSidebar = ({
                                         </DropdownMenuButton>
                                         <DropdownMenuButton
                                             className="text-left"
-                                            onClick={() =>
-                                                unavailable
-                                                    ? createNotification({
-                                                          type: 'error',
-                                                          text: c('Subscribed calendar feature unavailable error')
-                                                              .t`Subscribing to a calendar is unavailable at the moment`,
-                                                      })
-                                                    : handleCreateSubscribedCalendar()
-                                            }
+                                            onClick={handleCreateSubscribedCalendar}
                                         >
                                             {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
                                         </DropdownMenuButton>
