@@ -1,7 +1,7 @@
 // Variables specific overrides
 
 // Configuration
-@import 'config/';
+@import 'lib/';
 
 // Initialisation
 @import 'base/';
@@ -13,4 +13,4 @@
 @import 'components/';
 
 // Helpers
-@import 'helpers/';
+@import 'utilities/';

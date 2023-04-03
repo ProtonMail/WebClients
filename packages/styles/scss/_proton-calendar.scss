@@ -1,4 +1,4 @@
-@use 'config/functions/im-to-em' as *;
+@use 'lib/im-to-em' as *;
 
 // Variables specific overrides
 $breakpoints: im-to-em(
@@ -12,7 +12,7 @@ $breakpoints: im-to-em(
 );
 
 // Configuration
-@import 'config/';
+@import 'lib/';
 
 // Initialisation
 @import 'base/';
@@ -24,4 +24,4 @@ $breakpoints: im-to-em(
 @import 'components/';
 
 // Helpers
-@import 'helpers/';
+@import 'utilities/';
