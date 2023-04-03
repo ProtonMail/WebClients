@@ -26,7 +26,9 @@ export interface ProductHeaderContext {
 }
 
 function notifySentry(normalizedProduct: string | undefined, context?: ProductHeaderContext) {
-    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business'].includes('' + normalizedProduct);
+    const isAllowed = ['generic', 'mail', 'drive', 'calendar', 'vpn', 'business', 'none'].includes(
+        '' + normalizedProduct
+    );
     if (!isAllowed) {
         captureMessage('Wrong product header', { level: 'error', extra: { normalizedProduct, context } });
     }
