@@ -52,15 +52,22 @@ class EditorCustomPastePlugin implements EditorPlugin {
     }
 
     private handlePasteImage(event: BeforePasteEvent) {
-        const { image } = event.clipboardData;
+        const { image, rawHtml } = event.clipboardData;
 
-        if (image) {
+        /**
+         * When pasting content from Word or OneNote, there are multiple clipboardDate.types and an image inside the event.
+         * So be carefull if you want to base yourself on those ones
+         *
+         * Be carefull to check those 3 points:
+         * - Image should exist
+         * - RawHTML should be null
+         * - Image type should contain an allowed type
+         */
+        if (image && rawHtml === null && EMBEDDABLE_TYPES.includes(image.type)) {
             // we replace pasted content by empty string
             event.fragment.textContent = '';
-            // Check if image type is supported
-            const isSupportedFileType = EMBEDDABLE_TYPES.includes(image.type);
             const pasteImage = this.onPasteImage;
-            if (isSupportedFileType && pasteImage) {
+            if (pasteImage) {
                 this.editor?.focus();
                 // Need to wait to focus before pasting
                 setTimeout(() => {
