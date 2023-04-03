@@ -67,7 +67,6 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
                 require.resolve('@babel/plugin-proposal-optional-chaining'),
                 require.resolve('@babel/plugin-proposal-class-properties'),
                 require.resolve('@babel/plugin-proposal-private-methods'),
-                require.resolve('babel-plugin-lodash'),
                 require.resolve('@babel/plugin-transform-runtime'),
                 ...(isTtag ? [[require.resolve('ttag'), { extract: { output: 'i18n/template.pot' } }]] : []),
                 ...(isProduction ? babelPluginsProd : babelPluginsDev),
