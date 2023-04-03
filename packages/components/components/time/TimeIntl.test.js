@@ -4,6 +4,12 @@ import { readableTimeIntl } from '@proton/shared/lib/helpers/time';
 
 import TimeIntl from './TimeIntl';
 
+jest.mock('@proton/shared/lib/i18n', () => ({
+    dateLocale: {
+        code: 'en-US',
+    },
+}));
+
 describe('TimeIntl component', () => {
     const unixDate = 1552897937;
 
