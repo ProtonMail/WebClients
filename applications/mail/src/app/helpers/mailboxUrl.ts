@@ -77,13 +77,28 @@ const stringToFilter = (string: string | undefined): Filter => {
             return { Unread: 0 };
         case 'unread':
             return { Unread: 1 };
+        case 'has-file':
+            return { Attachments: 1 };
         default:
             return {};
     }
 };
 
-export const filterToString = (filter: Filter): string | undefined =>
-    filter.Unread === undefined ? undefined : filter.Unread === 0 ? 'read' : 'unread';
+export const filterToString = (filter: Filter): string | undefined => {
+    if (filter.Attachments === 1) {
+        return 'has-file';
+    }
+
+    if (filter.Unread === 1) {
+        return 'unread';
+    }
+
+    if (filter.Unread === 0) {
+        return 'read';
+    }
+
+    return undefined;
+};
 
 export const keywordToString = (keyword: string): string | undefined => {
     const trimmed = keyword.trim();
@@ -98,7 +113,7 @@ export const sortFromUrl = (location: Location, labelID?: string) =>
 export const filterFromUrl = (location: Location) => stringToFilter(getSearchParams(location.hash).filter);
 
 export const extractSearchParameters = (location: Location): SearchParameters => {
-    const { address, from, to, keyword, begin, end, attachments, wildcard } = getSearchParams(location.hash);
+    const { address, from, to, keyword, begin, end, wildcard } = getSearchParams(location.hash);
     return {
         address,
         from,
@@ -106,7 +121,6 @@ export const extractSearchParameters = (location: Location): SearchParameters =>
         keyword,
         begin: stringToInt(begin),
         end: stringToInt(end),
-        attachments: stringToInt(attachments),
         wildcard: stringToInt(wildcard),
     };
 };
