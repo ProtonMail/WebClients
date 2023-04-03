@@ -1,4 +1,5 @@
 const path = require('path');
+const { parseResource } = require('webpack/lib/util/identifier');
 
 const { getJsLoaders } = require('./webpack/js.loader');
 const getCssLoaders = require('./webpack/css.loader');
@@ -71,7 +72,17 @@ const getConfig = (env) => {
                 }
                 return result;
             },
-            assetModuleFilename: 'assets/[name].[hash][ext][query]',
+            assetModuleFilename: (data) => {
+                const { path: file } = parseResource(data.filename);
+                const ext = path.extname(file);
+                const base = path.basename(file);
+                const name = base.slice(0, base.length - ext.length);
+                if (name.includes('.var')) {
+                    const replacedNamed = name.replace('.var', '-var');
+                    return `assets/${replacedNamed}.[hash][ext][query]`;
+                }
+                return 'assets/[name].[hash][ext][query]';
+            },
             crossOriginLoading: 'anonymous',
         },
         cache: {
