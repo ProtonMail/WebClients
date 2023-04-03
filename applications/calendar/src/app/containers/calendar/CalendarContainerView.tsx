@@ -384,8 +384,8 @@ const CalendarContainerView = ({
         !isWelcomeFlow && !isDrawerApp && !isNarrow && calendarSharingEnabled,
         {
             alpha: 0,
-            beta: Date.UTC(2023, 3, 12, 12),
-            default: Date.UTC(2023, 3, 19, 12),
+            beta: Date.UTC(2023, 3, 5, 12),
+            default: Date.UTC(2023, 3, 12, 12),
         }
     );
     const shouldShowCalendarSharingPopup = useSpotlightShow(show);
