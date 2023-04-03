@@ -381,7 +381,7 @@ const CalendarContainerView = ({
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { show, onDisplayed } = useSpotlightOnFeature(
         FeatureCode.CalendarSharingSpotlight,
-        !isWelcomeFlow && calendarSharingEnabled,
+        !isWelcomeFlow && !isDrawerApp && !isNarrow && calendarSharingEnabled,
         {
             alpha: 0,
             beta: Date.UTC(2023, 3, 12, 12),
