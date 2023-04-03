@@ -19,6 +19,5 @@ export interface SearchParameters {
     keyword?: string;
     begin?: number;
     end?: number;
-    attachments?: number;
     wildcard?: number;
 }
