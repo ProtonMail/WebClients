@@ -2,7 +2,7 @@ import type { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
 
 import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { FILE_CHUNK_SIZE, MB } from '@proton/shared/lib/drive/constants';
-import { Environment } from '@proton/shared/lib/environment/helper';
+import { Environment } from '@proton/shared/lib/interfaces';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
 import ChunkFileReader from '../ChunkFileReader';

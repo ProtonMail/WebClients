@@ -1,4 +1,4 @@
-import { Environment } from '@proton/shared/lib/environment/helper';
+import { Environment } from '@proton/shared/lib/interfaces';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';

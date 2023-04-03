@@ -70,7 +70,6 @@ const renderComponent = ({
     subscribedCalendars,
     sharedCalendars,
     unknownCalendars = [],
-    calendarSubscribeUnavailable = false,
 }: RequireOnly<
     CalendarsSettingsSectionProps,
     'user' | 'calendars' | 'myCalendars' | 'sharedCalendars' | 'subscribedCalendars'
@@ -96,7 +95,6 @@ const renderComponent = ({
                 subscribedCalendars={subscribedCalendars}
                 sharedCalendars={sharedCalendars}
                 unknownCalendars={unknownCalendars}
-                calendarSubscribeUnavailable={calendarSubscribeUnavailable}
             />
         </Router>
     );

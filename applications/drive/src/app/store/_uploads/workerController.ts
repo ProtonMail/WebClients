@@ -1,5 +1,5 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
-import { Environment } from '@proton/shared/lib/environment/helper';
+import { Environment } from '@proton/shared/lib/interfaces';
 
 import {
     BlockToken,

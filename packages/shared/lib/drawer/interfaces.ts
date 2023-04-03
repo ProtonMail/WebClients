@@ -1,5 +1,5 @@
 import { APPS } from '@proton/shared/lib/constants';
-import { Environment } from '@proton/shared/lib/environment/helper';
+import { Environment } from '@proton/shared/lib/interfaces';
 
 import { User as tsUser } from '../interfaces';
 import { ThemeTypes } from '../themes/themes';
