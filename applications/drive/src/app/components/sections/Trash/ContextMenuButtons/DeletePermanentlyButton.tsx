@@ -5,12 +5,11 @@ import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
     selectedLinks: DecryptedLink[];
+    deletePermanently: ReturnType<typeof useActions>['deletePermanently'];
     close: () => void;
 }
 
-const DeletePermanentlyButton = ({ selectedLinks, close }: Props) => {
-    const { deletePermanently } = useActions();
-
+const DeletePermanentlyButton = ({ selectedLinks, deletePermanently, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Delete permanently`}

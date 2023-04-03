@@ -10,7 +10,7 @@ import { usePublicFileView } from '../../../store/_views/useFileView';
 import { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
-import { useUpsellFloatingModal } from '../../UpsellFloatingModal';
+import { useUpsellFloatingModal } from '../../modals/UpsellFloatingModal';
 import Breadcrumbs from '../Layout/Breadcrumbs';
 import { HeaderSubtitle } from '../Layout/HeaderSubtitle';
 import SharedPageFooter from '../Layout/SharedPageFooter';

@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { FloatingButton, Icon, SidebarPrimaryButton } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import useOpenModal from '../../useOpenModal';
+import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 
 interface Props {
     mobileVersion?: boolean;
@@ -11,22 +12,29 @@ interface Props {
 
 const ShareFileSidebarButton = ({ mobileVersion }: Props) => {
     const { activeShareId } = useActiveShare();
-    const { openFileSharing } = useOpenModal();
+    const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const onShareFile = () => {
         if (activeShareId) {
-            openFileSharing(activeShareId);
+            void showFileSharingModal({ shareId: activeShareId, showLinkSharingModal });
         }
     };
 
-    return mobileVersion ? (
-        <FloatingButton onClick={onShareFile} title={c('Action').t`Share item`} disabled={!activeShareId}>
-            <Icon size={24} name="link" className="mauto" />
-        </FloatingButton>
-    ) : (
-        <SidebarPrimaryButton className="no-mobile" disabled={!activeShareId} onClick={onShareFile}>
-            {c('Action').t`Share item`}
-        </SidebarPrimaryButton>
+    return (
+        <>
+            {mobileVersion ? (
+                <FloatingButton onClick={onShareFile} title={c('Action').t`Share item`} disabled={!activeShareId}>
+                    <Icon size={24} name="link" className="mauto" />
+                </FloatingButton>
+            ) : (
+                <SidebarPrimaryButton className="no-mobile" disabled={!activeShareId} onClick={onShareFile}>
+                    {c('Action').t`Share item`}
+                </SidebarPrimaryButton>
+            )}
+            {fileSharingModal}
+            {linkSharingModal}
+        </>
     );
 };
 

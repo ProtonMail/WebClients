@@ -19,7 +19,7 @@ export default function PasswordPage({ submitPassword }: Props) {
 
     const handlePasswordSubmit = (e: FormEvent) => {
         e.preventDefault();
-        withLoading(submitPassword(password));
+        void withLoading(submitPassword(password));
     };
 
     return (

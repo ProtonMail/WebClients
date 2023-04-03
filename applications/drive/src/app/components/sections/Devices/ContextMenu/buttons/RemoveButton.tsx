@@ -1,22 +1,22 @@
 import { c } from 'ttag';
 
 import { Device } from '../../../../../store';
-import useOpenModal from '../../../../useOpenModal';
+import { useRemoveDeviceModal } from '../../../../modals/RemoveDeviceModal';
 import { ContextMenuButton } from '../../../ContextMenu';
 
 interface Props {
-    selectedDevices: Device[];
+    device: Device;
+    showRemoveDeviceModal: ReturnType<typeof useRemoveDeviceModal>[1];
     close: () => void;
 }
 
-const RemoveButton = ({ selectedDevices, close }: Props) => {
-    const { openRemoveDevice } = useOpenModal();
+const RemoveButton = ({ device, showRemoveDeviceModal, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Remove`}
             icon="trash"
             testId="context-menu-rename"
-            action={() => openRemoveDevice(selectedDevices[0])}
+            action={() => showRemoveDeviceModal({ device })}
             close={close}
         />
     );

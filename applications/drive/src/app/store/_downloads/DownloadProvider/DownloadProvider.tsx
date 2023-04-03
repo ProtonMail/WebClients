@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react';
 import * as React from 'react';
 
 import { TransferProgresses } from '../../../components/TransferManager/transfer';
-import { DownloadSignatureIssueModal, InitDownloadCallback, LinkDownload } from '../interface';
+import { InitDownloadCallback, LinkDownload } from '../interface';
 import { Download, DownloadLinksProgresses, UpdateFilter } from './interface';
 import useDownload from './useDownloadProvider';
 
@@ -24,11 +24,9 @@ const DownloadContext = createContext<DownloadProviderState | null>(null);
 
 export const DownloadProvider = ({
     initDownload,
-    DownloadSignatureIssueModal,
     children,
 }: {
     initDownload: InitDownloadCallback;
-    DownloadSignatureIssueModal: DownloadSignatureIssueModal;
     children: React.ReactNode;
 }) => {
     const {
@@ -43,7 +41,9 @@ export const DownloadProvider = ({
         restartDownloads,
         removeDownloads,
         clearDownloads,
-    } = useDownload(initDownload, DownloadSignatureIssueModal);
+        downloadIsTooBigModal,
+        signatureIssueModal,
+    } = useDownload(initDownload);
 
     return (
         <DownloadContext.Provider
@@ -62,6 +62,8 @@ export const DownloadProvider = ({
             }}
         >
             {children}
+            {downloadIsTooBigModal}
+            {signatureIssueModal}
         </DownloadContext.Provider>
     );
 };
