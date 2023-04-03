@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from 'react';
+import { ReactNode, useCallback, useEffect, useRef } from 'react';
 
 import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import {
@@ -15,8 +15,10 @@ import {
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { stringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { KeyTransparencyState, VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';
+import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
+import { AddressesModel } from '@proton/shared/lib/models';
 
-import { useApi, useFeature, useGetAddresses, useGetUserKeys, useUser } from '../../hooks';
+import { useApi, useFeature, useGetUserKeys, useUser } from '../../hooks';
 import { FeatureCode } from '../features';
 import { KTContext } from './ktContext';
 import { KT_FF, KtFeatureEnum, isKTActive, removeKTBlobs } from './ktStatus';
@@ -37,6 +39,11 @@ interface Props {
     children: ReactNode;
     APP_NAME: APP_NAMES;
 }
+
+const useGetAddresses = (): GetAddresses => {
+    const api = useApi();
+    return useCallback(() => AddressesModel.get(api), [api]);
+};
 
 const KeyTransparencyManager = ({ children, APP_NAME }: Props) => {
     const getAddresses = useGetAddresses();
