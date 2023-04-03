@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
 import { MAX_FOLDERS_DEPTH } from '@proton/activation/src/constants';

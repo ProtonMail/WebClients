@@ -1,5 +1,5 @@
 import { act, fireEvent, render, waitFor } from '@testing-library/react';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { useModals } from '@proton/components/hooks';
 import {

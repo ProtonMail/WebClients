@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { orderBy } from 'lodash';
+import orderBy from 'lodash/orderBy';
 
 import { EasySwitchState } from '../store';
 import { SyncMap, SyncState } from './sync.interface';

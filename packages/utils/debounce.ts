@@ -1,3 +1,1 @@
-import { debounce } from 'lodash';
-
-export default debounce;
+export { default } from 'lodash/debounce';

@@ -1,5 +1,5 @@
 import { render, waitFor } from '@testing-library/react';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 import {
     mockOrganizationApi,

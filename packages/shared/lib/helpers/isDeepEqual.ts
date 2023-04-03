@@ -1,6 +1,2 @@
-import _ from 'lodash';
-
+export { default } from 'lodash/isEqual';
 // Using lodash for now...
-const isDeepEqual = _.isEqual;
-
-export default isDeepEqual;

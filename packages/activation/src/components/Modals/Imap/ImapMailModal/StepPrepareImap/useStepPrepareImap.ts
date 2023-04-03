@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { GMAIL_CATEGORIES, IMAPS } from '@proton/activation/src/constants';
 import { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
