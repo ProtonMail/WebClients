@@ -110,8 +110,8 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         // For a small image, we have to create a smaller rounded container inside the bigger standard one,
         // and fit the image as background inside it. As container width we must pick the smallest dimension
         return (
-            <div className="ratio-container-square mb0 rounded border">
-                <span className="inner-ratio-container flex">
+            <div className="ratio-container-square mb0">
+                <span className="inner-ratio-container flex rounded border overflow-hidden">
                     <div
                         className="mauto flex w-custom"
                         style={{ '--width-custom': `${Math.min(image.width || 0, image.height || 0)}px` }}
