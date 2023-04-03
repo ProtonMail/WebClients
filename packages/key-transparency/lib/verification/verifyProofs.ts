@@ -197,11 +197,11 @@ export const verifyPoAExistence = async (api: Api, email: string) => {
 };
 
 /**
- * Verify the absence proof of an email address for which no Signed Key List was provided.
+ * Verify the absence or obsolescence proof of an email address for which no Signed Key List was provided.
  * Because a SKL is provided even for obsolescent catchall, the case where none is given
  * at all can only mean that both the proof and the catchall proof must be of absence
  */
-export const verifySKLAbsence = async (api: Api, email: string) => {
+export const verifySKLAbsenceOrObsolescence = async (api: Api, email: string) => {
     const epoch = await fetchRecentEpoch(api);
     if (!epoch) {
         return;
@@ -211,15 +211,18 @@ export const verifySKLAbsence = async (api: Api, email: string) => {
 
     const { ObsolescenceToken, Type } = Proof;
 
-    if (!!ObsolescenceToken || Type !== KTPROOF_TYPE.ABSENCE) {
-        ktSentryReport('Proof type should be of abscence', {
-            context: 'verifySKLAbsence',
+    if (Type === KTPROOF_TYPE.ABSENCE) {
+        return verifyProofOfAbscence(Proof, email, epoch.TreeHash);
+    } else if (Type === KTPROOF_TYPE.OBSOLESCENCE && ObsolescenceToken) {
+        return verifyProofOfObsolescence(Proof, email, epoch.TreeHash, ObsolescenceToken);
+    } else {
+        ktSentryReport('Proof type should be of absence or obsolescence', {
+            context: 'verifySKLAbsenceOrObsolescence',
             ObsolescenceToken,
             proofType: Type,
         });
-        throw new Error('Proof type should be of abscence');
+        throw new Error('Proof type should be of absence or obsolescence');
     }
-    return verifyProofOfAbscence(Proof, email, epoch.TreeHash);
 
     /* Ignore CatchAllProof for the time being
     if (!CatchAllProof) {
