@@ -1,4 +1,4 @@
-import DriveOnboardingModal from '../components/onboarding/DriveOnboardingModal';
+import DriveOnboardingModal from '../components/modals/DriveOnboardingModal';
 import DriveDummyContainer from './DriveDummyContainer';
 
 interface Props {

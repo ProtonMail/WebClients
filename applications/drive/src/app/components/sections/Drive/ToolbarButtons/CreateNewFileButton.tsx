@@ -2,18 +2,21 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import useOpenModal from '../../../useOpenModal';
+import { useCreateFileModal } from '../../../modals/CreateFileModal';
 
 const CreateNewFileButton = () => {
-    const { openCreateFile } = useOpenModal();
+    const [createFileModal, showCreateFileModal] = useCreateFileModal();
 
     return (
-        <ToolbarButton
-            icon={<Icon name="file" />}
-            title={c('Action').t`Create new text file`}
-            onClick={openCreateFile}
-            data-testid="toolbar-create-file"
-        />
+        <>
+            <ToolbarButton
+                icon={<Icon name="file" />}
+                title={c('Action').t`Create new text file`}
+                onClick={() => showCreateFileModal()}
+                data-testid="toolbar-create-file"
+            />
+            {createFileModal}
+        </>
     );
 };
 

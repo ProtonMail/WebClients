@@ -4,7 +4,7 @@ import { Icon, ToolbarButton } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink } from '../../../store';
-import useOpenModal from '../../useOpenModal';
+import useOpenPreview from '../../useOpenPreview';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 }
 
 const PreviewButton = ({ selectedLinks }: Props) => {
-    const { openPreview } = useOpenModal();
+    const openPreview = useOpenPreview();
 
     const disabled =
         isMultiSelect(selectedLinks) ||

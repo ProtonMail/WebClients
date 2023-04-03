@@ -12,34 +12,37 @@ interface Props {
 }
 const EmptyTrashNotification = ({ disabled, className }: Props) => {
     const { activeShareId } = useActiveShare();
-    const { emptyTrash } = useActions();
+    const { emptyTrash, confirmModal } = useActions();
 
     const handleEmptyTrashClick = () => {
         void emptyTrash(new AbortController().signal, activeShareId);
     };
 
     return (
-        <div
-            className={clsx(
-                className,
-                'empty-trash-notification section--header flex flex-align-items-center on-mobile-flex-column p1 pt0-5 pb0-5 on-mobile-pb0-5'
-            )}
-        >
-            <p className="m0 flex-item-fluid text-sm pt0-5 pb0-5">
-                {c('Info').t`Items in the trash will stay here until you delete them permanently`}
-            </p>
-            <Button
-                className="text-sm flex flex-justify-end"
-                color="norm"
-                size="medium"
-                shape="ghost"
-                disabled={disabled}
-                onClick={handleEmptyTrashClick}
-                data-testid="empty-trash"
+        <>
+            <div
+                className={clsx(
+                    className,
+                    'empty-trash-notification section--header flex flex-align-items-center on-mobile-flex-column p1 pt0-5 pb0-5 on-mobile-pb0-5'
+                )}
             >
-                {c('Action').t`Empty trash`}
-            </Button>
-        </div>
+                <p className="m0 flex-item-fluid text-sm pt0-5 pb0-5">
+                    {c('Info').t`Items in the trash will stay here until you delete them permanently`}
+                </p>
+                <Button
+                    className="text-sm flex flex-justify-end"
+                    color="norm"
+                    size="medium"
+                    shape="ghost"
+                    disabled={disabled}
+                    onClick={handleEmptyTrashClick}
+                    data-testid="empty-trash"
+                >
+                    {c('Action').t`Empty trash`}
+                </Button>
+            </div>
+            {confirmModal}
+        </>
     );
 };
 

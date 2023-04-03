@@ -1,8 +1,7 @@
-import { createContext, useContext } from 'react';
-import * as React from 'react';
+import { ReactNode, createContext, useContext } from 'react';
 
 import { TransferProgresses } from '../../../components/TransferManager/transfer';
-import { UploadConflictModal, UploadFileList } from '../interface';
+import { UploadFileList } from '../interface';
 import { FileUpload, FolderUpload, UpdateFilter } from './interface';
 import useUpload from './useUpload';
 
@@ -24,13 +23,7 @@ const UploadContext = createContext<UploadProviderState | null>(null);
 /**
  * @private please use TextAreaTwo instead
  */
-export const UploadProvider = ({
-    UploadConflictModal,
-    children,
-}: {
-    UploadConflictModal: UploadConflictModal;
-    children: React.ReactNode;
-}) => {
+export const UploadProvider = ({ children }: { children: ReactNode }) => {
     const {
         uploads,
         hasUploads,
@@ -42,7 +35,9 @@ export const UploadProvider = ({
         restartUploads,
         removeUploads,
         clearUploads,
-    } = useUpload(UploadConflictModal);
+        conflictModal,
+        fileThresholdModal,
+    } = useUpload();
 
     return (
         <UploadContext.Provider
@@ -60,6 +55,8 @@ export const UploadProvider = ({
             }}
         >
             {children}
+            {conflictModal}
+            {fileThresholdModal}
         </UploadContext.Provider>
     );
 };

@@ -36,7 +36,7 @@ export default function archiveSignatures(
             const extraFieldLength = sourceBuffer.readUInt16LE(offset + 28);
             offset += 30;
 
-            const filename = sourceBuffer.slice(offset, offset + filenameLength).toString('utf-8');
+            const filename = sourceBuffer.subarray(offset, offset + filenameLength).toString('utf-8');
             offset += extraFieldLength + filenameLength;
 
             if (filename.endsWith('.rels') || filename.endsWith('.xml')) {
@@ -59,7 +59,7 @@ export default function archiveSignatures(
 
             if (filename === 'mimetype' && compressedSize === uncompressedSize) {
                 const mimeType = sourceBuffer
-                    .slice(offset, offset + compressedSize)
+                    .subarray(offset, offset + compressedSize)
                     .toString('utf-8') as SupportedMimeTypes;
 
                 offset += compressedSize;
@@ -74,7 +74,7 @@ export default function archiveSignatures(
                 let nextHeaderIndex = -1;
 
                 while (nextHeaderIndex < 0 && offset < sourceBuffer.length) {
-                    nextHeaderIndex = sourceBuffer.slice(offset).indexOf('504B0304', 0, 'hex');
+                    nextHeaderIndex = sourceBuffer.subarray(offset).indexOf('504B0304', 0, 'hex');
 
                     // Move position to the next header if found, go to buffer end otherwise
                     offset += nextHeaderIndex >= 0 ? nextHeaderIndex : sourceBuffer.length - offset;
@@ -95,7 +95,7 @@ export default function archiveSignatures(
         return SupportedMimeTypes.zip;
     }
 
-    if (isTarHeaderChecksumValid(sourceBuffer.slice(0, 512))) {
+    if (isTarHeaderChecksumValid(sourceBuffer.subarray(0, 512))) {
         return SupportedMimeTypes.tar;
     }
 

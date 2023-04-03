@@ -14,7 +14,11 @@ import {
 } from '@proton/components';
 
 import { DecryptedLink, useActions } from '../../../../store';
-import useToolbarActions from '../../../useOpenModal';
+import { useDetailsModal } from '../../../modals/DetailsModal';
+import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
+import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
+import { useRenameModal } from '../../../modals/RenameModal';
+import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';
 
 interface Props {
     shareId: string;
@@ -24,7 +28,12 @@ interface Props {
 const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { openDetails, openFilesDetails, openMoveToFolder, openRename, openLinkSharing } = useToolbarActions();
+    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
+    const [renameModal, showRenameModal] = useRenameModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+
     const { trashLinks } = useActions();
 
     const hasFoldersSelected = selectedLinks.some((item) => !item.isFile);
@@ -44,35 +53,35 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
             name: hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`,
             icon: 'link',
             testId: 'actions-dropdown-share-link',
-            action: () => openLinkSharing(shareId, selectedLinkIds[0]),
+            action: () => showLinkSharingModal({ shareId: shareId, linkId: selectedLinkIds[0] }),
         },
         {
             hidden: false,
             name: c('Action').t`Move to folder`,
             icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
-            action: () => openMoveToFolder(shareId, selectedLinks),
+            action: () => showMoveToFolderModal({ shareId, selectedItems: selectedLinks }),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Rename`,
             icon: 'pen-square',
             testId: 'actions-dropdown-rename',
-            action: () => openRename(shareId, selectedLinks[0]),
+            action: () => showRenameModal({ item: selectedLinks[0] }),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => openDetails(shareId, selectedLinkIds[0]),
+            action: () => showDetailsModal({ shareId, linkId: selectedLinkIds[0] }),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => openFilesDetails(selectedLinks),
+            action: () => showFilesDetailsModal({ selectedItems: selectedLinks }),
         },
         {
             hidden: false,
@@ -86,7 +95,7 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
             name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`,
             icon: 'link',
             testId: 'actions-dropdown-share-link',
-            action: () => openLinkSharing(shareId, selectedLinkIds[0]),
+            action: () => showLinkSharingModal({ shareId: shareId, linkId: selectedLinkIds[0] }),
         },
     ];
 
@@ -125,6 +134,11 @@ const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
             <Dropdown id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom">
                 <DropdownMenu>{dropdownMenuButtons}</DropdownMenu>
             </Dropdown>
+            {filesDetailsModal}
+            {detailsModal}
+            {moveToFolderModal}
+            {renameModal}
+            {linkSharingModal}
         </>
     );
 };

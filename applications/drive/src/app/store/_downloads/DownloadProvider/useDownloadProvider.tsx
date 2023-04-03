@@ -2,11 +2,11 @@ import { useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useModals, useNotifications, useOnline, usePreventLeave } from '@proton/components';
+import { useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import DownloadIsTooBigModal from '../../../components/DownloadIsTooBigModal';
 import { TransferState } from '../../../components/TransferManager/transfer';
+import { useDownloadIsTooBigModal } from '../../../components/modals/DownloadIsTooBigModal';
 import { logError, sendErrorReport } from '../../../utils/errorHandling';
 import { bufferToStream } from '../../../utils/stream';
 import {
@@ -18,25 +18,21 @@ import {
 import { SignatureIssues } from '../../_links';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
-import { DownloadSignatureIssueModal, InitDownloadCallback, LinkDownload } from '../interface';
+import { InitDownloadCallback, LinkDownload } from '../interface';
 import { UpdateFilter } from './interface';
 import useDownloadControl from './useDownloadControl';
 import useDownloadQueue from './useDownloadQueue';
 import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 
-export default function useDownloadProvider(
-    initDownload: InitDownloadCallback,
-    DownloadSignatureIssueModal: DownloadSignatureIssueModal
-) {
+export default function useDownloadProvider(initDownload: InitDownloadCallback) {
     const onlineStatus = useOnline();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
-    const { createModal } = useModals();
+    const [downloadIsTooBigModal, showDownloadIsTooBigModal] = useDownloadIsTooBigModal();
 
     const queue = useDownloadQueue();
     const control = useDownloadControl(queue.downloads, queue.updateWithCallback, queue.remove, queue.clear);
-    const { handleSignatureIssue } = useDownloadSignatureIssue(
-        DownloadSignatureIssueModal,
+    const { handleSignatureIssue, signatureIssueModal } = useDownloadSignatureIssue(
         queue.downloads,
         queue.updateState,
         queue.updateWithData,
@@ -111,7 +107,7 @@ export default function useDownloadProvider(
                 control.updateLinkSizes(nextDownload.id, linkSizes);
 
                 if (FileSaver.isFileTooBig(size)) {
-                    createModal(<DownloadIsTooBigModal onCancel={() => control.cancelDownloads(nextDownload.id)} />);
+                    void showDownloadIsTooBigModal({ onCancel: () => control.cancelDownloads(nextDownload.id) });
                 }
             },
             onProgress: (linkIds: string[], increment: number) => {
@@ -175,5 +171,7 @@ export default function useDownloadProvider(
         restartDownloads,
         removeDownloads: control.removeDownloads,
         clearDownloads: control.clearDownloads,
+        downloadIsTooBigModal,
+        signatureIssueModal,
     };
 }

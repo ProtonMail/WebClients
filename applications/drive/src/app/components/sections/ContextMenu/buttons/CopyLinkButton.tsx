@@ -10,7 +10,7 @@ interface Props {
 }
 
 const CopyLinkButton = ({ shareId, linkId, close }: Props) => {
-    const { copyShareLinkToClipboard } = useActions();
+    const { copyShareLinkToClipboard } = useActions(); // We can use it here since we don't need confirmModal
 
     if (!copyShareLinkToClipboard) {
         return null;

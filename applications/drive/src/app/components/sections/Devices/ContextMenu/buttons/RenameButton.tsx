@@ -1,23 +1,22 @@
 import { c } from 'ttag';
 
 import { Device } from '../../../../../store';
-import useOpenModal from '../../../../useOpenModal';
+import { useRenameDeviceModal } from '../../../../modals/RenameDeviceModal';
 import { ContextMenuButton } from '../../../ContextMenu';
 
 interface Props {
+    device: Device;
+    showRenameDeviceModal: ReturnType<typeof useRenameDeviceModal>[1];
     close: () => void;
-    selectedDevices: Device[];
 }
 
-const RenameButton = ({ close, selectedDevices }: Props) => {
-    const { openRenameDevice } = useOpenModal();
-
+const RenameButton = ({ device, showRenameDeviceModal, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Rename`}
             icon="pen-square"
             testId="context-menu-rename"
-            action={() => openRenameDevice(selectedDevices[0])}
+            action={() => showRenameDeviceModal({ device })}
             close={close}
         />
     );
