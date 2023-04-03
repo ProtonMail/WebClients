@@ -44,7 +44,7 @@ export const testMetadata = (
     sender: string[]
 ) => {
     const { search, labelID, filter } = normalisedSearchParams;
-    const { address, from, to, begin, end, attachments } = search || {};
+    const { address, from, to, begin, end } = search || {};
     const { AddressID, Time, LabelIDs, NumAttachments, Unread } = messageToSearch;
 
     if (
@@ -54,8 +54,7 @@ export const testMetadata = (
         (end && Time > end) ||
         (from && !sender.some((string) => string.includes(from))) ||
         (to && !recipients.some((string) => string.includes(to))) ||
-        (typeof attachments !== 'undefined' &&
-            ((attachments === 0 && NumAttachments > 0) || (attachments === 1 && NumAttachments === 0))) ||
+        (typeof filter?.Attachments !== 'undefined' && NumAttachments === 0) ||
         (typeof filter?.Unread !== 'undefined' && filter?.Unread !== Unread)
     ) {
         return false;
@@ -75,20 +74,13 @@ export const shouldOnlySortResults = (
     const {
         labelID,
         filter,
-        search: { address, from, to, begin, end, attachments },
+        search: { address, from, to, begin, end },
         normalizedKeywords,
     } = normalisedSearchParams;
     const {
         labelID: prevLabelID,
         filter: prevFilter,
-        search: {
-            address: prevAddress,
-            from: prevFrom,
-            to: prevTo,
-            begin: prevBegin,
-            end: prevEnd,
-            attachments: prevAttachments,
-        },
+        search: { address: prevAddress, from: prevFrom, to: prevTo, begin: prevBegin, end: prevEnd },
         normalizedKeywords: prevNormalisedKeywords,
     } = previousNormSearchParams;
 
@@ -100,8 +92,8 @@ export const shouldOnlySortResults = (
         to !== prevTo ||
         begin !== prevBegin ||
         end !== prevEnd ||
-        attachments !== prevAttachments ||
         !!normalizedKeywords !== !!prevNormalisedKeywords ||
+        filter?.Attachments !== prevFilter?.Attachments ||
         filter?.Unread !== prevFilter?.Unread
     ) {
         return false;

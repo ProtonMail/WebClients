@@ -84,7 +84,8 @@ const stringToFilter = (string: string | undefined): Filter => {
     }
 };
 
-export const filterToString = (filter: Filter): string | undefined => {
+type FilterStatus = 'has-file' | 'unread' | 'read';
+export const filterToString = (filter: Filter): FilterStatus | undefined => {
     if (filter.Attachments === 1) {
         return 'has-file';
     }
