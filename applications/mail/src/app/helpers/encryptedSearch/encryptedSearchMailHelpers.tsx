@@ -302,11 +302,7 @@ export const getESHelpers = ({
         }
 
         const { ConversationID, Time: deletedTime, Order: deletedOrder } = metadata;
-        const messages = await queryConversation(api, ConversationID);
-        if (!messages) {
-            throw new Error('Messages in the conversation of a deleted message could not be fetched');
-        }
-
+        const messages = (await queryConversation(api, ConversationID)) || []; // We fallback to [] because the conversation may not exist anymore
         const messagesToAdd: EncryptedItemWithInfo[] = (
             await Promise.all(
                 messages.map(async (message) => {
