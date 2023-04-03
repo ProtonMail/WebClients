@@ -15,7 +15,7 @@ import FileBrowser, {
     useSelection,
 } from '../../FileBrowser';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import useOpenModal from '../../useOpenModal';
+import useOpenPreview from '../../useOpenPreview';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { ModifiedCell, NameCell, ShareOptionsCell, SizeCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
@@ -90,7 +90,7 @@ function Drive({ activeFolder, folderView }: Props) {
         [items, selectionControls!.selectedItemIds]
     );
 
-    const { openPreview } = useOpenModal();
+    const openPreview = useOpenPreview();
     const browserItems: DriveItem[] = items.map((item) => ({ ...item, id: item.linkId }));
     const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
 

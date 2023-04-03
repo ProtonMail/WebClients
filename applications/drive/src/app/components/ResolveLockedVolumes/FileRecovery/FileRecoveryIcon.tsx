@@ -1,32 +1,35 @@
 import { c } from 'ttag';
 
-import { Icon, Tooltip, useModals } from '@proton/components';
+import { Icon, Tooltip, useModalTwo } from '@proton/components';
 
 import { useLockedVolume } from '../../../store';
-import FilesRecoveryModal from './FilesRecoveryModal';
+import FilesRecoveryModal from '../../modals/FilesRecoveryModal/FilesRecoveryModal';
 
 interface Props {
     className?: string;
 }
 
 const FileRecoveryIcon = ({ className }: Props) => {
-    const { createModal } = useModals();
+    const [fileRecoveryModal, showFileRecoveryModal] = useModalTwo(FilesRecoveryModal);
     const { hasVolumesForRestore } = useLockedVolume();
 
     return hasVolumesForRestore ? (
-        <Tooltip title={c('Title').t`You have inaccessible files`}>
-            <Icon
-                color="red"
-                name="fire"
-                className={className}
-                onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
+        <>
+            <Tooltip title={c('Title').t`You have inaccessible files`}>
+                <Icon
+                    color="red"
+                    name="fire"
+                    className={className}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
 
-                    createModal(<FilesRecoveryModal />);
-                }}
-            />
-        </Tooltip>
+                        void showFileRecoveryModal({});
+                    }}
+                />
+            </Tooltip>
+            {fileRecoveryModal}
+        </>
     ) : null;
 };
 

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { Device } from '../../../../../store';
-import useOpenModal from '../../../../useOpenModal';
+import { useRenameDeviceModal } from '../../../../modals/RenameDeviceModal';
 import { isMultiSelect } from '../../../ToolbarButtons/utils';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const RenameButton = ({ selectedDevices }: Props) => {
-    const { openRenameDevice } = useOpenModal();
+    const [renameDeviceModal, showRenameDeviceModal] = useRenameDeviceModal();
 
     const isDisabled = isMultiSelect(selectedDevices);
 
@@ -20,12 +20,15 @@ const RenameButton = ({ selectedDevices }: Props) => {
     }
 
     return (
-        <ToolbarButton
-            title={c('Action').t`Rename`}
-            icon={<Icon name="pen-square" />}
-            onClick={() => openRenameDevice(selectedDevices[0])}
-            data-testid="toolbar-rename"
-        />
+        <>
+            <ToolbarButton
+                title={c('Action').t`Rename`}
+                icon={<Icon name="pen-square" />}
+                onClick={() => showRenameDeviceModal({ device: selectedDevices[0] })}
+                data-testid="toolbar-rename"
+            />
+            {renameDeviceModal}
+        </>
     );
 };
 

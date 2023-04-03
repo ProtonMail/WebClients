@@ -33,7 +33,7 @@ export default function useChecklist() {
         if (dismiss) {
             setChecklist(undefined);
         }
-        api<ChecklistApiResponse>(seenCompletedDriveChecklist('get-started'));
+        void api<ChecklistApiResponse>(seenCompletedDriveChecklist('get-started'));
     };
 
     return {

@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton, TopBanner, useLoading, useModals } from '@proton/components';
+import { InlineLinkButton, TopBanner, useLoading } from '@proton/components';
 
 import { useLockedVolume } from '../../store';
-import FilesRecoveryModal from './FileRecovery/FilesRecoveryModal';
+import { useFilesRecoveryModal } from '../modals/FilesRecoveryModal/FilesRecoveryModal';
 import useResolveLockedSharesFlow from './KeyReactivation/useResolveLockedSharesFlow';
 
 interface Props {
@@ -13,12 +13,17 @@ interface Props {
 }
 
 const LockedVolumesBanner = ({ onClose }: Props) => {
-    const { createModal } = useModals();
+    const [filesRecoveryModal, showFilesRecoveryModal] = useFilesRecoveryModal();
     const [loading, withLoading] = useLoading(true);
     const { isReadyForPreparation, prepareVolumesForRestore, hasLockedVolumes, hasVolumesForRestore } =
         useLockedVolume();
 
-    const { openKeyReactivationModal } = useResolveLockedSharesFlow({
+    const {
+        openKeyReactivationModal,
+        keyReactivationModal,
+        deleteLockedVolumesConfirmModal,
+        unlockDriveConfirmationDialog,
+    } = useResolveLockedSharesFlow({
         onSuccess: () => {
             prepareVolumesForRestore(new AbortController().signal).catch(console.error);
         },
@@ -36,12 +41,7 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     }, [isReadyForPreparation, prepareVolumesForRestore]);
 
     const StartRecoveryButton = (
-        <InlineLinkButton
-            key="file-recovery-more"
-            onClick={() => {
-                createModal(<FilesRecoveryModal />);
-            }}
-        >
+        <InlineLinkButton key="file-recovery-more" onClick={() => showFilesRecoveryModal()}>
             {c('Info').t`More`}
         </InlineLinkButton>
     );
@@ -62,9 +62,15 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
         .jt`Some of your files are no longer accessible. Restore the access to your files. ${StartRecoveryButton}`;
 
     return !loading && hasLockedVolumes ? (
-        <TopBanner className="bg-danger" onClose={onClose}>
-            {hasVolumesForRestore ? recoveryMessage : reactivateMessage}
-        </TopBanner>
+        <>
+            <TopBanner className="bg-danger" onClose={onClose}>
+                {hasVolumesForRestore ? recoveryMessage : reactivateMessage}
+            </TopBanner>
+            {filesRecoveryModal}
+            {keyReactivationModal}
+            {deleteLockedVolumesConfirmModal}
+            {unlockDriveConfirmationDialog}
+        </>
     ) : null;
 };
 

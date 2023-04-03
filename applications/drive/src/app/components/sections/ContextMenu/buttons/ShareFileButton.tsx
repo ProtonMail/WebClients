@@ -1,22 +1,23 @@
 import { c } from 'ttag';
 
-import useOpenModal from '../../../useOpenModal';
+import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
+    showFileSharingModal: ReturnType<typeof useFileSharingModal>[1];
+    showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
     close: () => void;
 }
 
-const ShareButton = ({ shareId, close }: Props) => {
-    const { openFileSharing } = useOpenModal();
-
+const ShareButton = ({ shareId, showFileSharingModal, showLinkSharingModal, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Get link`}
             icon="link"
             testId="context-menu-shareViaLink"
-            action={() => openFileSharing(shareId)}
+            action={() => showFileSharingModal({ shareId, showLinkSharingModal })}
             close={close}
         />
     );

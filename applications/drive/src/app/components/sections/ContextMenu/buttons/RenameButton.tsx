@@ -1,24 +1,22 @@
 import { c } from 'ttag';
 
 import { DecryptedLink } from '../../../../store';
-import useOpenModal from '../../../useOpenModal';
+import { useRenameModal } from '../../../modals/RenameModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
-    shareId: string;
     link: DecryptedLink;
+    showRenameModal: ReturnType<typeof useRenameModal>[1];
     close: () => void;
 }
 
-const RenameButton = ({ shareId, link, close }: Props) => {
-    const { openRename } = useOpenModal();
-
+const RenameButton = ({ link, showRenameModal, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Rename`}
             icon="pen-square"
             testId="context-menu-rename"
-            action={() => openRename(shareId, link)}
+            action={() => showRenameModal({ item: link })}
             close={close}
         />
     );

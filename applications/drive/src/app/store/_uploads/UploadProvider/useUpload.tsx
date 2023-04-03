@@ -2,20 +2,13 @@ import { useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    useEventManager,
-    useGetUser,
-    useModals,
-    useNotifications,
-    useOnline,
-    usePreventLeave,
-} from '@proton/components';
+import { useEventManager, useGetUser, useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
-import { FileThresholdModal, FileThresholdModalType } from '../../../components/uploads/FileThresholdModal';
+import { FileThresholdModalType, useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import {
     isTransferCancelError,
@@ -24,7 +17,7 @@ import {
     isTransferProgress,
 } from '../../../utils/transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
-import { UploadConflictModal, UploadFileItem, UploadFileList } from '../interface';
+import { UploadFileItem, UploadFileList } from '../interface';
 import { UpdateFilter } from './interface';
 import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
@@ -32,18 +25,16 @@ import useUploadFile from './useUploadFile';
 import useUploadFolder from './useUploadFolder';
 import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 
-export default function useUpload(UploadConflictModal: UploadConflictModal) {
+export default function useUpload() {
     const onlineStatus = useOnline();
     const getUser = useGetUser();
     const { call } = useEventManager();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
 
     const queue = useUploadQueue();
     const control = useUploadControl(queue.fileUploads, queue.updateWithCallback, queue.remove, queue.clear);
-    const { getFolderConflictHandler, getFileConflictHandler } = useUploadConflict(
-        UploadConflictModal,
+    const { getFolderConflictHandler, getFileConflictHandler, conflictModal } = useUploadConflict(
         queue.fileUploads,
         queue.folderUploads,
         queue.updateState,
@@ -52,6 +43,8 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
     );
     const { initFileUpload } = useUploadFile();
     const { initFolderUpload } = useUploadFolder();
+
+    const [fileThresholdModal, showFileThresholdModal] = useFileThresholdModal();
 
     const checkHasEnoughSpace = async (files: UploadFileList) => {
         const totalFileListSize = files.reduce((sum, item) => sum + ((item as UploadFileItem).file?.size || 0), 0);
@@ -94,17 +87,14 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
         }
         if (fileThresholdModalType) {
             await new Promise<void>((resolve, reject) => {
-                createModal(
-                    <FileThresholdModal
-                        type={fileThresholdModalType}
-                        onSubmit={() => {
-                            resolve();
-                        }}
-                        onCancel={() =>
-                            reject(new TransferCancel({ message: `Upload of ${fileCount} files was canceled` }))
-                        }
-                    />
-                );
+                void showFileThresholdModal({
+                    type: fileThresholdModalType,
+                    onSubmit: () => {
+                        resolve();
+                    },
+                    onCancel: () =>
+                        reject(new TransferCancel({ message: `Upload of ${fileCount} files was canceled` })),
+                });
             });
         }
 
@@ -274,5 +264,7 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
         restartUploads,
         removeUploads: control.removeUploads,
         clearUploads: control.clearUploads,
+        fileThresholdModal,
+        conflictModal,
     };
 }
