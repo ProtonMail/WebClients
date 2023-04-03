@@ -16,7 +16,8 @@ import {
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
 
-import DriveOnboardingModal from '../onboarding/DriveOnboardingModal';
+import { useConfirmModal } from '../modals/ConfirmationModal';
+import DriveOnboardingModal from '../modals/DriveOnboardingModal';
 import ClearSearchDataButton from './search/ClearSearchDataButton';
 import { SearchField } from './search/SearchField';
 
@@ -37,6 +38,7 @@ export const DriveHeader = ({
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
+    const [confirmModal, showConfirmModal] = useConfirmModal();
     const displayContactsInHeader = useDisplayContactsWidget();
 
     return (
@@ -53,7 +55,7 @@ export const DriveHeader = ({
                 contactsButton={displayContactsInHeader && <TopNavbarListItemContactsDropdown />}
                 settingsButton={
                     <TopNavbarListItemSettingsDropdown to="/drive" toApp={APPS.PROTONACCOUNT}>
-                        <ClearSearchDataButton />
+                        <ClearSearchDataButton showConfirmModal={showConfirmModal} />
                     </TopNavbarListItemSettingsDropdown>
                 }
                 expanded={isHeaderExpanded}
@@ -63,6 +65,7 @@ export const DriveHeader = ({
             />
 
             <RebrandingFeedbackModal {...rebrandingFeedbackModal} />
+            {confirmModal}
         </>
     );
 };

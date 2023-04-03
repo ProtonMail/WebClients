@@ -6,14 +6,13 @@ import { LocationErrorBoundary, useLoading } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
-import SignatureIssueModal from '../components/SignatureIssueModal';
 import usePublicToken from '../hooks/drive/usePublicToken';
 import { DecryptedLink, PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
 
 export default function PublicSharedLinkContainer() {
     return (
         <LocationErrorBoundary>
-            <PublicDriveProvider DownloadSignatureIssueModal={SignatureIssueModal}>
+            <PublicDriveProvider>
                 <PublicShareLinkInitContainer />
             </PublicDriveProvider>
         </LocationErrorBoundary>

@@ -4,15 +4,13 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { LoaderPage, LocationErrorBoundary, ModalsChildren, useLoading, useWelcomeFlags } from '@proton/components';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 
-import SignatureIssueModal from '../components/SignatureIssueModal';
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
+import DriveStartupModals from '../components/modals/DriveStartupModals';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
-import ConflictModal from '../components/uploads/ConflictModal';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { DriveProvider, useDefaultShare, useDriveEventManager, useSearchControl } from '../store';
 import DevicesContainer from './DevicesContainer';
-import DriveStartupModals from './DriveStartupModals';
 import FolderContainer from './FolderContainer';
 import OnboardingContainer from './OnboardingContainer';
 import { SearchContainer } from './SearchContainer';
@@ -50,7 +48,7 @@ const InitContainer = () => {
             .catch((err) => {
                 setError(err);
             });
-        withLoading(initPromise);
+        void withLoading(initPromise);
     }, []);
 
     useEffect(() => {
@@ -111,7 +109,7 @@ const InitContainer = () => {
 const MainContainer = () => {
     return (
         <LocationErrorBoundary>
-            <DriveProvider DownloadSignatureIssueModal={SignatureIssueModal} UploadConflictModal={ConflictModal}>
+            <DriveProvider>
                 <InitContainer />
             </DriveProvider>
         </LocationErrorBoundary>

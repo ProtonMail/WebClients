@@ -5,12 +5,11 @@ import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
     selectedLinks: DecryptedLink[];
+    restoreLinks: ReturnType<typeof useActions>['restoreLinks'];
     close: () => void;
 }
 
-const RestoreFromTrashButton = ({ selectedLinks, close }: Props) => {
-    const { restoreLinks } = useActions();
-
+const RestoreFromTrashButton = ({ selectedLinks, restoreLinks, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Restore from trash`}
