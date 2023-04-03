@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use 'functions/im-to-em' as *;
+@use 'im-to-em' as *;
 
 $base-font-size: 14 !default; // if "14" then 1em = 14px
 $base-line-height: math.div(20, $base-font-size) !default; // Design specs says 20px
@@ -89,8 +89,8 @@ $use-height-auto-img: true !default;
 $use-height-auto-td: true !default;
 $use-height-auto-table: true !default;
 
-// default config for webpack, can be overriden by "global config" in styles-pm.scss
-$path-images: '../../assets/img/illustrations/' !default;
+// default config for webpack
+$path-images: '~@proton/styles/assets/img/illustrations/' !default;
 
 // variables for global layouts, allowing you to use calc for components and adapt quickly if needed
 $header-height: 68 !default;
