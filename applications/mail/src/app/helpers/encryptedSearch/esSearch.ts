@@ -54,7 +54,7 @@ export const testMetadata = (
         (end && Time > end) ||
         (from && !sender.some((string) => string.includes(from))) ||
         (to && !recipients.some((string) => string.includes(to))) ||
-        (typeof filter?.Attachments !== 'undefined' && NumAttachments === 0) ||
+        (filter?.Attachments && NumAttachments === 0) ||
         (typeof filter?.Unread !== 'undefined' && filter?.Unread !== Unread)
     ) {
         return false;
