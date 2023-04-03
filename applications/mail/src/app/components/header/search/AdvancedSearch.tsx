@@ -313,7 +313,7 @@ const AdvancedSearch = ({
                         {c('Action').t`More search options`}
                     </Button>
                 )}
-                <div className="mlauto">
+                <div className="mlauto on-mobile-w100">
                     {canReset ? (
                         <Button
                             data-testid="advanced-search:reset"
