@@ -1,5 +1,5 @@
 import { Payment, TokenPayment } from '@proton/components/containers/payments/interface';
-import { CLIENT_TYPES, CYCLE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES, CYCLE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { SignupCacheResult, SignupType, SubscriptionData } from '../interfaces';
@@ -54,6 +54,8 @@ describe('signupActions', () => {
                 productParam: undefined,
                 inviteData: undefined,
                 referralData: undefined,
+                ktFeature: undefined,
+                appName: APPS.PROTONACCOUNT,
             };
 
             const result = handlePayment({
@@ -109,6 +111,8 @@ describe('signupActions', () => {
                 productParam: undefined,
                 inviteData: undefined,
                 referralData: undefined,
+                ktFeature: undefined,
+                appName: APPS.PROTONACCOUNT,
             };
 
             const api = () => Promise.resolve(null as any);
@@ -172,6 +176,8 @@ describe('signupActions', () => {
                 productParam: undefined,
                 inviteData: undefined,
                 referralData: undefined,
+                ktFeature: undefined,
+                appName: APPS.PROTONACCOUNT,
             };
 
             const api = () => Promise.resolve(null as any);
@@ -235,6 +241,8 @@ describe('signupActions', () => {
                 productParam: undefined,
                 inviteData: undefined,
                 referralData: undefined,
+                ktFeature: undefined,
+                appName: APPS.PROTONACCOUNT,
                 humanVerificationResult,
             };
 

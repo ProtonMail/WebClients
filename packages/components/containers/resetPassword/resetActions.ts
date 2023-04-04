@@ -1,3 +1,5 @@
+import type { FeatureContextValue } from '@proton/components/containers/features/FeaturesContext';
+import type { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { CryptoProxy } from '@proton/crypto';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
@@ -50,13 +52,13 @@ export const handleNewPassword = async ({
     cache: ResetCacheResult;
     api: Api;
 }): Promise<ResetActionResponse> => {
-    const { username, token, resetResponse, persistent, appName, hasTrustedDeviceRecovery } = cache;
+    const { username, token, resetResponse, persistent, appName, ktFeature, hasTrustedDeviceRecovery } = cache;
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
     const { Addresses: addresses } = resetResponse;
 
-    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(api);
+    const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(appName, (await ktFeature.get())?.Value, api);
 
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
     const { addressKeysPayload, userKeyPayload } = await getResetAddressesKeysV2({
@@ -355,6 +357,7 @@ export const handleRequestRecoveryMethods = async ({
     persistent,
     api,
     hasTrustedDeviceRecovery,
+    ktFeature,
 }: {
     setupVPN: boolean;
     appName: APP_NAMES;
@@ -362,6 +365,7 @@ export const handleRequestRecoveryMethods = async ({
     persistent: boolean;
     api: Api;
     hasTrustedDeviceRecovery: boolean;
+    ktFeature: FeatureContextValue<KT_FF>;
 }): Promise<ResetActionResponse> => {
     try {
         const { Type, Methods }: { Type: AccountType; Methods: RecoveryMethod[] } = await api(
@@ -379,6 +383,7 @@ export const handleRequestRecoveryMethods = async ({
                     method: 'email',
                     Methods,
                     hasTrustedDeviceRecovery,
+                    ktFeature,
                 },
                 to: STEPS.VALIDATE_RESET_TOKEN,
             };
@@ -399,6 +404,7 @@ export const handleRequestRecoveryMethods = async ({
                 persistent,
                 Methods,
                 hasTrustedDeviceRecovery,
+                ktFeature,
             },
             to: STEPS.REQUEST_RESET_TOKEN,
         };
