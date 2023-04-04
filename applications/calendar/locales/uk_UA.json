@@ -471,6 +471,9 @@
       "Show more": [
         "Розгорнути"
       ],
+      "Show side panel": [
+        "Показати бічну панель"
+      ],
       "Show time zones": [
         "Показати часові пояси"
       ],
@@ -873,6 +876,11 @@
       ],
       "View (see all event details)": [
         "Перегляд (усі подробиці події)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Не вдалося отримати інформацію про контакт для ${ address }"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -1993,7 +2001,7 @@
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Ви можете позначити ті контакти, які ви не хочете ані об’єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
+        "Ви можете позначити ті контакти, які ви не хочете ані об'єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2519,6 +2527,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не вдалося зашифрувати"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard версії < 3.0 не підтримуються"
       ]
     },
     "Error importing contacts": {
@@ -2931,6 +2942,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
+      ],
+      "vCard versions < 3.0": [
+        "vCard версії < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3900,6 +3914,11 @@
         "Тільки перегляд"
       ]
     },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Запросіть інших, хто має обліковий запис ${ BRAND_NAME }, щоб переглядати й редагувати події у вашому календарі."
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Деякі з ваших календарів не показуватимуть подробиці раніше створених подій."
@@ -4594,7 +4613,7 @@
         "четвертої середи"
       ],
       "on the last Friday": [
-        "останньої п’ятниці"
+        "останньої п'ятниці"
       ],
       "on the last Monday": [
         "останнього понеділка"
@@ -4872,6 +4891,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Для імпортування ви повинні вибрати всі запитувані елементи, як показано в GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Оберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати ваші поштові повідомлення та налаштування, переглядати й завантажувати ваші контакти, переглядати й завантажувати усі заплановані події з календаря Google."
       ]
     },
     "Onboarding": {
@@ -5174,6 +5198,11 @@
         "Не вдалося оновити налаштування"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Щоб запросити людей, які не є користувачами ${ BRAND_NAME }, надішліть їм посилання на свій календар."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Ви перевищили максимальну кількість – ${ MAX_CALENDAR_MEMBERS } учасник на календар",
@@ -5215,6 +5244,14 @@
         "Керувати календарем"
       ]
     },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Помилка перевірки підпису"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Ви увімкнули перевірку адреси для ${ boldSenderEmail }. Не вдається перевірити справжність цього запрошення до календаря. Це може бути пов'язано зі зміною ключів шифрування цього контакту. Перевірте розширені налаштування PGP, або попросіть ${ boldSenderEmail } надіслати нове запрошення."
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Не підписувати"
@@ -5224,22 +5261,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Легко погоджуйтеся на запрошення"
-      ],
       "Get up to ${ credits } in credits.": [
         "Отримайте до ${ credits } кредиту."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запросіть друзів до ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Відтепер запрошення показуються у вашому календарі подіями, що очікують на розгляд. Просто відкрийте подію, щоб відповісти. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Перейти до налаштувань"
       ]
     },
     "Storage": {
@@ -5928,6 +5954,11 @@
         "Виберіть номер"
       ]
     },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Планувати тепер простіше!"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "Створити календар"
@@ -5997,6 +6028,14 @@
       ],
       "You do not have any contacts to export": [
         "У вас немає контактів для експорту"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Наскрізно зашифрований спільний доступ"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Наскрізно зашифрований, спільний доступ з перевіреним контактом"
       ]
     },
     "Validation": {

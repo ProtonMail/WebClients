@@ -439,7 +439,7 @@
         "Recuperar datos"
       ],
       "Refer a friend": [
-        "Referir un amigo"
+        "Referir una amistad"
       ],
       "Refresh the page": [
         "Refrescar la página"
@@ -2188,6 +2188,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falló el cifrado"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versiones vCard menores a 3.0 no compatibles"
       ]
     },
     "Error importing contacts": {
@@ -2556,6 +2559,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualmente no admite ciertos tipos de eventos, detalles y formatos."
+      ],
+      "vCard versions < 3.0": [
+        "Versiones vCard menores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4697,6 +4703,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Seleccione a lo que ${ BRAND_NAME } puede acceder: ver sus correos y ajustes, ver y descargar sus contactos, ver y descargar todas sus agendas a las que usted accede en Google Agenda."
       ]
     },
     "Onboarding Action": {

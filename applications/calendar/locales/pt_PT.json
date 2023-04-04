@@ -383,7 +383,7 @@
         "Reenviar código"
       ],
       "Reset to default": [
-        "Repor predefinição"
+        "Reinicialização por defeito"
       ],
       "Save": [
         "Gravar"
@@ -784,6 +784,23 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "cenoura"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "purple": [
+        "roxo"
+      ],
+      "sahara": [
+        "saará"
+      ],
+      "strawberry": [
+        "morango"
       ]
     },
     "Confirm modal title": {
@@ -1909,7 +1926,7 @@
         "Credenciais de início de sessão incorrectas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Senha da caixa de correio incorrecta. Por favor, tente novamente."
+        "Palavra-passe da caixa de correio incorrecta. Tente novamente."
       ],
       "Interval cannot be empty": [
         "O intervalo não pode estar vazio"
@@ -1962,7 +1979,7 @@
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
       ],
       "Passwords do not match": [
-        "As senhas não coincidem"
+        "As palavras-passe não coincidem."
       ],
       "Please create an address first.": [
         "Por favor, primeiro crie um endereço."
@@ -1999,7 +2016,7 @@
         "O endereço pode estar errado"
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Por favor, escolha um nome diferente."
+        "O nome da pasta é inválido. Escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
         "O nome da etiqueta é inválido. Por favor, escolha um nome diferente."
@@ -2417,16 +2434,16 @@
         "Demasiados pedidos recentes. Por favor, tente mais tarde."
       ],
       "Use your app password if:": [
-        "Use a senha da aplicação se:"
+        "Use a palavra-passe da aplicação se:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Use a senha da aplicação em vez da sua senha normal se:"
+        "Use a palavra-passe da aplicação em vez da sua palavra-passe normal se:"
       ],
       "Your email account requires one to export your data.": [
         "A sua conta de e-mail requer uma para exportar os seus dados."
       ],
       "Your password is correct.": [
-        "A sua senha está correta."
+        "A sua palavra-passe está correta."
       ]
     },
     "Import error emphasis": {
@@ -2447,7 +2464,7 @@
     },
     "Import instructions link": {
       "app password": [
-        "senha da aplicação"
+        "palavra-passe da aplicação"
       ],
       "ICS file": [
         "Ficheiro ICS"
@@ -2598,7 +2615,7 @@
         "Ao partilhar todos os detalhes de evento desta agenda, aceita conceder acesso ao ${ BRAND_NAME } à informação encriptada nesta agenda."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Não se lembra da senha? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
+        "Não se lembra da palavra-passe? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "A verificar contacto ${ progress } de ${ max }..."
@@ -2658,7 +2675,7 @@
         "Introduzir o código de verificação. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Insira a sua senha (como administrador da organização)."
+        "Insira a sua palavra-passe (como administrador da organização)."
       ],
       "Existent and added participants will be notified.": [
         "Os participantes existentes e adicionados serão notificados."
@@ -2685,7 +2702,7 @@
         "aqui"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
+        "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
@@ -2706,7 +2723,7 @@
         "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Inherited from parent folder": [
-        "Herança da pasta-mãe"
+        "Herança da pasta principal"
       ],
       "Internet connection lost": [
         "Ligação à Internet perdida"
@@ -2760,7 +2777,7 @@
         "Mensalmente ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Nomeie a sua nova pasta e seleccione a pasta-mãe onde deseja colocá-la. Se não seleccionar uma pasta-mãe, esta nova pasta será criada como uma pasta de nível superior."
+        "Nomeie a sua nova pasta e seleccione a pasta principalonde deseja colocá-la. Se não seleccionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
       ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
@@ -2890,7 +2907,7 @@
         "Para assinar novamente os contactos, temos de os verificar todos contra a lista de chaves de encriptação disponíveis na conta. Se não houver correspondências, o contacto será assinado de novo com a chave principal."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Para recuperar os seus dados, é necessário reactivar a chave de encriptação do contacto, usada quando os dados foram criados. Isto requer que se lembre da senha usada quando a chave foi gerada."
+        "Para recuperar os seus dados, é necessário reactivar a chave de encriptação do contacto, usada quando os dados foram criados. Isto requer que se lembre da palavra-passe usada quando a chave foi gerada."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
@@ -3065,7 +3082,7 @@
         "Notificação de eventos de dia inteiro"
       ],
       "App password": [
-        "Senha da aplicação"
+        "Palavra-passe da aplicação"
       ],
       "Attach screenshot(s)": [
         "Anexar capturas de ecrã"
@@ -3170,7 +3187,7 @@
         "Bom"
       ],
       "Hide password": [
-        "Ocultar senha"
+        "Ocultar a palavra-passe"
       ],
       "I understand the risk": [
         "Eu compreendo o risco."
@@ -3197,7 +3214,7 @@
         "Servidor de email (IMAP)"
       ],
       "Mailbox password": [
-        "Senha da caixa de correio"
+        "Palavra-passe da caixa de correio"
       ],
       "Main": [
         "Principal"
@@ -3243,7 +3260,7 @@
         "Participantes"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Phone number": [
         "Número de telefone"
@@ -3270,7 +3287,7 @@
         "Repetir a"
       ],
       "Reveal password": [
-        "Mostrar senha"
+        "Mostrar a palavra-passe"
       ],
       "Sign emails": [
         "Assinar emails"
@@ -3303,7 +3320,7 @@
         "URL da sua agenda"
       ],
       "Your password (admin)": [
-        "A sua senha (admin)"
+        "A sua palavra-passe (admin)"
       ]
     },
     "Label for contact group color": {
@@ -3786,7 +3803,7 @@
         "Meses"
       ],
       "No parent folder": [
-        "Nenhuma pasta-mãe"
+        "Nenhuma pasta principal"
       ],
       "This and future events": [
         "Este e eventos futuros"
@@ -3874,7 +3891,7 @@
         "Nome ou endereço de email"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
@@ -3982,19 +3999,6 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Gerir a agenda"
-      ]
-    },
-    "Spotlight": {
-      "Easily accept invites": [
-        "Aceite convites facilmente"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Os convites para eventos aparecem agora na sua agenda como eventos pendentes. Desta forma, para responder basta abrir o evento. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Ir para as definições"
       ]
     },
     "Storage": {
@@ -4346,7 +4350,7 @@
         "Definições de email"
       ],
       "Enter your password": [
-        "Insira a sua senha"
+        "Insira a sua palavra-passe"
       ],
       "Error": [
         "Erro"
@@ -4620,8 +4624,8 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos ${ length } caracteres"
+        "A palavra-passe deve conter pelo menos ${ length } carácter.",
+        "A palavra-passe deve conter pelo menos ${ length } caracteres."
       ]
     },
     "View event button tooltip": {
@@ -4651,7 +4655,7 @@
         "Não foi possível unir os contactos"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Se não se lembra da senha, é impossível reactivar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."
+        "Se não se lembra da palavra-passe, é impossível reactivar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."

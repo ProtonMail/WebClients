@@ -2209,6 +2209,9 @@
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
       ],
+      "Preview for this file type is not supported": [
+        "Bu dosya türünün ön izlemesi görüntülenemiyor"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
@@ -3336,6 +3339,9 @@
       "Secure Core servers": [
         "Secure Core sunucuları"
       ],
+      "Send & receive invitations": [
+        "Davetleri alma ve gönderme"
+      ],
       "Share calendar via link": [
         "Bağlantı ile takvim paylaşma"
       ],
@@ -4045,6 +4051,35 @@
         "${ maxVpn } aygıt için yüksek hızlı VPN"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Anladım"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Aboneliğinizi ${ subscriptionManager } üzerinden yönetin"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Abonelik ${ subscriptionManager } tarafından yönetiliyor"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "ID-${ userId } kullanıcısının aboneliği uygulama içi satın alma ile yapılmış. Aboneliği yönetmek için kullanıcının ${ subscriptionManager } hesabında Abonelik bölümüne gitmesi gereklidir."
+      ],
+      "Subscriptions": [
+        "Abonelikler"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Tarifeniz bir Android uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Google Play Store uygulamasını kullanmalısınız."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Tarifeniz bir iOS uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Apple App Store uygulamasını kullanmalısınız."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Toplam"
@@ -4347,6 +4382,9 @@
       "Downloads": [
         "İndirmeler"
       ],
+      "Duration": [
+        "Süre"
+      ],
       "Edit credit/debit card": [
         "Kredi ya da banka kartını düzenle"
       ],
@@ -4394,9 +4432,6 @@
       ],
       "Language": [
         "Dil"
-      ],
-      "Length": [
-        "Uzunluk"
       ],
       "Login password": [
         "Oturum açma parolası"

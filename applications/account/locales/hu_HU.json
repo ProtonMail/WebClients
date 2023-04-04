@@ -1375,8 +1375,14 @@
       "forest": [
         "erdő"
       ],
+      "gainsboro": [
+        "gainsboro"
+      ],
       "japanese laurel": [
         "japán babér"
+      ],
+      "kiwi": [
+        "kiwi"
       ],
       "lemon yellow": [
         "citrom sárga"
@@ -2720,6 +2726,9 @@
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
+      "Account does not exist": [
+        "Fiók nem létezik"
+      ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
@@ -2773,6 +2782,9 @@
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
       ],
+      "Email address is required": [
+        "E-mail cím megadása szükséges"
+      ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
@@ -2799,6 +2811,9 @@
       ],
       "Folder name cannot be empty.": [
         "A mappa nevének megadása szükséges."
+      ],
+      "IMAP server is required": [
+        "IMAP szerver megadása szükséges"
       ],
       "Incorrect login credentials. Please try again.": [
         "Helytelen bejelentkezési adatok. Próbálja meg újra."
@@ -2897,6 +2912,9 @@
       "Organization not recognized. Try again.": [
         "Nem felismerhető szervezet. Próbálja meg újra."
       ],
+      "Password is required": [
+        "Jelszó megadása szükséges"
+      ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
       ],
@@ -2942,6 +2960,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
+      ],
+      "Port is required": [
+        "A port megadása szükséges"
       ],
       "Primary address key is not decrypted": [
         "Az elsődleges cím kulcsa nincs visszafejtve"
@@ -3043,6 +3064,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
       "This field is required": [
         "A mező kitöltése kötelező"
       ],
@@ -3054,6 +3078,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Ez a címkenév nem érhető el. Adjon meg egy másik nevet."
+      ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
       ],
       "Trusted keys are not valid for sending": [
         "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
@@ -3090,6 +3117,9 @@
       ],
       "You have no invoices.": [
         "Nincs számlája."
+      ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Elérte a csomagjában maximálisan létrehozható naptárak számát. Néhány naptár importálása nem sikerült."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló címet elhasználta. Több cím létrehozásához váltson nagyobb csomagra."
@@ -3870,6 +3900,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "A ${ CALENDAR_APP_NAME } jelenleg nem támogat bizonyos esemény típusokat, részleteket és formátumokat."
+      ],
+      "vCard versions < 3.0": [
+        "vCard verzió < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4900,9 +4933,6 @@
       "it’s imperative": [
         "feltétlenül szükséges"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Én a ${ MAIL_APP_NAME } levelezőprogramot használom és szerintem neked is tetszeni fog. Ez egy biztonságos e-mail szolgáltatás, melynek elsődleges célja a privát adataid védelme. Regisztrálj ezen a hivatkozáson és egy hónapig ingyen kipróbálhatod a prémium szolgáltatásokat is : ${ referrerLink }"
-      ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
       ],
@@ -5232,6 +5262,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a csomagjában foglalt korlátig."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> biztonságos e-maillel küldve."
       ],
       "Server is currently down": [
         "A szerver jelenleg nem működik"
@@ -6907,6 +6940,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Töltsön fel egy vagy több helyreállító fájlt vagy titkosítási kulcsot"
       ],
+      "URL": [
+        "URL"
+      ],
       "Use folder colors": [
         "Mappa színek használata"
       ],
@@ -8179,6 +8215,14 @@
     "Notification time input": {
       "at": [
         "ekkor:"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "e-mail"
+      ],
+      "notification": [
+        "értesítés"
       ]
     },
     "Notification when": {
@@ -9818,9 +9862,6 @@
       "Layout": [
         "Elrendezés"
       ],
-      "Length": [
-        "Hosszúság"
-      ],
       "Link confirmation": [
         "Link jóváhagyása"
       ],
@@ -10013,6 +10054,9 @@
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
       ],
+      "Sign in with 2FA": [
+        "Bejelentkezés kétlépcsős hitelesítéssel"
+      ],
       "Sign out": [
         "Kijelentkezés"
       ],
@@ -10125,6 +10169,9 @@
       ],
       "Your current plan": [
         "Jelenlegi csomag"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "A Mail Plus csomagjának próbaidőszaka lejár: ${ textDate }"
       ],
       "Your plan": [
         "Az ön csomagja"

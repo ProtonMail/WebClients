@@ -181,6 +181,9 @@
       "Close": [
         "關閉"
       ],
+      "Close & discard": [
+        "關閉並放棄"
+      ],
       "Close composer": [
         "關閉撰寫工具"
       ],
@@ -952,6 +955,9 @@
       "Show preview": [
         "顯示預覽"
       ],
+      "Show side panel": [
+        "顯示側邊面板"
+      ],
       "Sign in": [
         "登入"
       ],
@@ -1257,17 +1263,6 @@
       ],
       "Unsupported event": [
         "不支援的事件"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "全部"
-      ],
-      "With": [
-        "與"
-      ],
-      "Without": [
-        "不使用"
       ]
     },
     "Attachment signature verification": {
@@ -3014,6 +3009,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "關於 <${ email }> 的 ${ error.message }。您可以針對此聯絡人加入另一組金鑰或是停用加密以解決問題。"
+      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -3450,6 +3448,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失敗"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "不支援 vCard 版本 < 3.0"
       ]
     },
     "Error importing contacts": {
@@ -4018,6 +4019,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 目前尚未支援某些事件類型、詳細資料和格式。"
+      ],
+      "vCard versions < 3.0": [
+        "vCard 版本 < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4927,6 +4931,9 @@
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "上載的金鑰皆無法用於加密。為能夠傳送郵件至此電郵位址，請上載有效的金鑰或是停用「加密電郵」。"
       ],
+      "Normal": [
+        "一般"
+      ],
       "Not a valid URL": [
         "非有效的圖像網址"
       ],
@@ -4989,6 +4996,9 @@
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
+      ],
+      "Preview for this file type is not supported": [
+        "不支援預覽此檔案類型"
       ],
       "Primary": [
         "主要"
@@ -5076,6 +5086,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "從 @pm.me 電郵位址寄送郵件是付費功能。您的郵件將從您的預設電郵位址 ${ email } 傳送"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "使用 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電子郵件傳送。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
@@ -5849,9 +5862,6 @@
       ],
       "Attach screenshot(s)": [
         "附加螢幕截圖"
-      ],
-      "Attachments": [
-        "附件"
       ],
       "Authenticator app": [
         "驗證 APP"
@@ -7183,6 +7193,9 @@
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays }天"
+      ],
+      "<1 d": [
+        "<1天"
       ]
     },
     "Reply to calendar invitation": {

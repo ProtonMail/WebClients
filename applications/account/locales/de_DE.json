@@ -1300,6 +1300,11 @@
         "Lesezugriff (alle Termindetails anzeigen)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Kontaktinformationen für ${ address } konnten nicht abgerufen werden."
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "Berechtigungen für ${ email } geändert"
@@ -2821,6 +2826,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } ist dein Benutzername. Um ${ Local }@${ Domain } anzulegen, gehe zu Einstellungen > Nachrichten und verfassen > Kurzdomain (pm.me)"
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -3304,6 +3312,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Verschlüsselung fehlgeschlagen"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard-Versionen < 3.0 werden nicht unterstützt"
       ]
     },
     "Error importing contacts": {
@@ -4056,6 +4067,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } unterstützt derzeit bestimmte Termintypen, Details und Formate nicht."
+      ],
+      "vCard versions < 3.0": [
+        "vCard-Versionen < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5150,9 +5164,6 @@
       "it’s imperative": [
         "zwingend erforderlich"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Ich benutze ${ MAIL_APP_NAME } und dachte, es könnte dir gefallen. Es ist ein sicherer E-Mail-Dienst, der deine Privatsphäre schützt. Registriere dich über diesen Link und erhalte kostenlos für 1 Monat lang die Premium-Funktionen: ${ referrerLink }"
-      ],
       "Just confirm your selection and we'll do the rest.": [
         "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
       ],
@@ -5509,6 +5520,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Sicher versendet mit <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Der Server ist derzeit nicht erreichbar"
@@ -8164,6 +8178,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Send & receive invitations": [
+        "Einladungen senden & empfangen"
+      ],
       "Share calendar via link": [
         "Kalender als Link teilen"
       ],
@@ -8690,6 +8707,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Damit der Import funktioniert, musst du alle gewünschten Elemente auswählen, wie im GIF gezeigt."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Wähle aus, worauf ${ BRAND_NAME } zugreifen darf: Deine E-Mail-Nachrichten und -Einstellungen anzeigen, deine Kontakte anzeigen und herunterladen, alle Terminkalender, auf die du über Google Agenda zugreifst, anzeigen und herunterladen."
       ]
     },
     "Onboarding": {
@@ -9802,6 +9824,35 @@
         "Hochgeschwindigkeits-VPN auf ${ maxVpn } Geräten"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Verstanden"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Melde dich einfach in deinem Apple App Store Konto an und klicke auf ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Melde dich einfach in deinem Play Store Konto an und klicke auf ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "${ subscriptionManager } benutzen, um dein Abonnement zu verwalten"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Abonnement wird verwaltet von ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Das Abonnement von Benutzer-ID ${ userId } wurde durch einen In-App-Kauf erworben. Um das Abonnement anzupassen, muss der Benutzer zum Abonnementbereich seines ${ subscriptionManager }-Kontos gehen."
+      ],
+      "Subscriptions": [
+        "Abonnements"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Dein Abonnement wurde über eine Android App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Google Play Store gehen."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Für"
@@ -10504,6 +10555,9 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } herunterladen"
       ],
+      "Duration": [
+        "Dauer"
+      ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
       ],
@@ -10667,9 +10721,6 @@
       ],
       "Layout": [
         "Anordnung"
-      ],
-      "Length": [
-        "Länge"
       ],
       "Link confirmation": [
         "Linkbestätigung"
