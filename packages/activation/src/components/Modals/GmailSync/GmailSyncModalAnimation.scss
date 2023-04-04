@@ -1,0 +1,519 @@
+@use 'sass:map';
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.gsma {
+	$keyframes: (
+		initial_pause: 0.5,
+		envelope: 0.5,
+		inbox: 0.75,
+		inbox_pause: 0.25,
+		new-mail: 0.5,
+		new-mail_pause: 1,
+		forwarded: 0.75,
+		forwarded_pause: 0.5,
+		received: 0.6,
+		received_pause: 0.5,
+		trackers: 0.6,
+		trackers_pause: 0.5,
+		encrypted: 0.6,
+		encrypted_pause: 0.5,
+		arrows: 0.5,
+	);
+
+	@function duration($key) {
+		@return map.get($keyframes, $key) * 1s;
+	}
+
+	@function delay($key) {
+		$value: 0;
+		@each $k, $v in $keyframes {
+			$value: $value + $v;
+			@if $k == $key {
+				@return $value * 1s;
+			}
+		}
+	}
+
+	position: relative;
+	padding: 1.5rem;
+	overflow: hidden;
+	border-radius: var(--border-radius-lg);
+	font-size: em(18);
+	line-height: 1.2;
+	pointer-events: none;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background-image: linear-gradient(to bottom, var(--interaction-norm-minor-2), var(--interaction-norm));
+		opacity: 0.22;
+	}
+
+	&-gmail-username-inbox {
+		position: relative;
+		z-index: 1;
+		display: inline-flex;
+		max-inline-size: 100%;
+		margin-block-end: 1.5rem;
+		flex-flow: row nowrap;
+		align-items: stretch;
+	}
+
+	&-gmail-logo {
+		position: relative;
+		z-index: 1;
+		display: inline-flex;
+		inline-size: rem(56);
+		block-size: rem(56);
+		padding: 0.5rem;
+		flex: 0 0 auto;
+		border-radius: var(--border-radius-lg);
+		box-shadow: var(--shadow-lifted);
+		background-color: var(--background-norm);
+		animation: duration(envelope) easing(ease-out-quart) delay(initial_pause) both anime-gsma-gmail-logo;
+
+		@keyframes anime-gsma-gmail-logo {
+			from {
+				scale: 0;
+				opacity: 0;
+			}
+
+			to {
+				scale: 1;
+				opacity: 1;
+			}
+		}
+
+		img {
+			inline-size: rem(40);
+			block-size: rem(30);
+			margin: auto;
+		}
+	}
+
+	&-username {
+		position: relative;
+		display: flex;
+		max-inline-size: calc(100% - #{rem(56)});
+		padding-inline: 1rem;
+		justify-content: center;
+		align-items: center;
+		animation: duration(inbox) easing(ease-out-back) delay(envelope) both anime-gsma-username;
+
+		@keyframes anime-gsma-username {
+			from {
+				translate: -1rem 0;
+				opacity: 0;
+			}
+
+			to {
+				translate: 0 0;
+				opacity: 1;
+			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset-inline: #{rem(56) * -1} 0;
+			inset-block: 0;
+			transform-origin: center right;
+			z-index: -1;
+			border-radius: var(--border-radius-lg) var(--border-radius-md) var(--border-radius-md) var(--border-radius-lg);
+			box-shadow: var(--shadow-norm);
+			background-color: var(--background-norm);
+			animation: duration(inbox) easing(ease-out-back) delay(envelope) both anime-gsma-username-background;
+
+			@keyframes anime-gsma-username-background {
+				from {
+					scale: 0.8 1;
+					opacity: 0;
+				}
+
+				to {
+					scale: 1;
+					opacity: 1;
+				}
+			}
+		}
+
+		&-content {
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+
+	&-auto-forward {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		min-block-size: rem(35);
+		margin-block-end: 1.5rem;
+		flex-flow: row nowrap;
+		align-items: stretch;
+		gap: 1rem;
+		animation: duration(new-mail) easing(ease-out-back) delay(inbox_pause) both anime-gsma-auto-forward;
+
+		@keyframes anime-gsma-auto-forward {
+			from {
+				translate: 0 -1rem;
+				opacity: 0;
+			}
+
+			to {
+				translate: 0 0;
+				opacity: 1;
+			}
+		}
+	}
+
+	&-envelope {
+		position: relative;
+		z-index: 1;
+		flex: 0 0 auto;
+		animation: duration(forwarded) easing(ease-out-quad) delay(new-mail_pause) both anime-gsma-envelope;
+
+		@keyframes anime-gsma-envelope {
+			from {
+				inset-inline-start: 0;
+			}
+
+			to {
+				inset-inline-start: calc(100% - #{rem(55)});
+			}
+		}
+
+		img {
+			inline-size: rem(55);
+			block-size: rem(35);
+			box-shadow: var(--shadow-norm);
+			animation: duration(forwarded) easing(ease-in-quart) delay(new-mail_pause) both anime-gsma-envelope-img;
+
+			@keyframes anime-gsma-envelope-img {
+				from {
+					translate: 0 0;
+					scale: 1;
+					rotate: 0deg;
+					opacity: 1;
+				}
+
+				to {
+					translate: 0 4rem;
+					scale: 0.5;
+					rotate: 70deg;
+					opacity: 0;
+				}
+			}
+		}
+
+		&::before {
+			content: '1';
+			position: absolute;
+			inset-block-start: -0.75rem;
+			inset-inline-end: -0.75rem;
+			z-index: 2;
+			display: flex;
+			block-size: 1.5rem;
+			inline-size: 1.5rem;
+			justify-content: center;
+			align-items: center;
+			border-radius: 50%;
+			background-color: var(--signal-danger);
+			color: var(--signal-danger-contrast);
+			font-weight: bold;
+			animation: duration(forwarded) easing(ease-in-cubic) delay(new-mail_pause) both anime-gsma-envelope-count;
+
+			@keyframes anime-gsma-envelope-count {
+				from {
+					inset-block-start: -0.75rem;
+				}
+
+				to {
+					inset-block-start: calc(100% + 0.75rem);
+				}
+			}
+		}
+	}
+
+	&-new-email {
+		position: relative;
+		display: flex;
+		padding-block: 0.5rem;
+		padding-inline: 1rem;
+		justify-content: center;
+		align-items: center;
+		border-radius: var(--border-radius-md);
+		box-shadow: var(--shadow-norm);
+		background-color: var(--background-norm);
+		animation: duration(forwarded) easing(ease-out-quad) delay(new-mail_pause) both anime-gsma-new-email;
+
+		@keyframes anime-gsma-new-email {
+			from {
+				inset-inline-start: 0;
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 0;
+			}
+
+			to {
+				inset-inline-start: calc(100% - 4.5rem);
+				opacity: 0;
+			}
+		}
+	}
+
+	&-forwarded {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		z-index: 1;
+		display: flex;
+		padding-block: 0.5rem;
+		padding-inline: 1rem;
+		justify-content: center;
+		align-items: center;
+		border-radius: var(--border-radius-md);
+		box-shadow: var(--shadow-norm);
+		background-color: var(--background-norm);
+		animation: duration(forwarded) easing(ease-out-cubic) delay(new-mail_pause) both anime-gsma-forwarded;
+
+		@keyframes anime-gsma-forwarded {
+			from {
+				translate: calc(-100% - 2rem) 0;
+				opacity: 0;
+			}
+
+			to {
+				translate: 0 0;
+				opacity: 1;
+			}
+		}
+	}
+
+	&-proton {
+		display: flex;
+		inline-size: rem(56);
+		block-size: rem(56);
+		padding: 0.25rem;
+		margin-block-end: 1.5rem;
+		margin-inline-start: auto;
+		aspect-ratio: 1;
+		border-radius: var(--border-radius-lg);
+		box-shadow: var(--shadow-lifted);
+		background-color: var(--background-norm);
+		animation: duration(forwarded) easing(ease-out-quint) delay(new-mail_pause) both anime-gsma-proton;
+
+		@keyframes anime-gsma-proton {
+			from {
+				scale: 0;
+				opacity: 0;
+			}
+
+			to {
+				scale: 1;
+				opacity: 1;
+			}
+		}
+
+		&-logo {
+			margin: auto;
+		}
+	}
+
+	&-received,
+	&-trackers,
+	&-encrypted {
+		display: flex;
+		margin-block-end: 1.5rem;
+		flex-flow: row nowrap;
+		justify-content: flex-end;
+		align-items: center;
+
+		&-inner {
+			display: flex;
+			min-block-size: rem(50);
+			padding-block: 0.5rem;
+			padding-inline: 1rem;
+			flex-flow: row nowrap;
+			justify-content: stretch;
+			border-radius: var(--border-radius-md);
+			box-shadow: var(--shadow-norm);
+			animation: anime-gsma-rte-inner easing(ease-out-cubic) both;
+
+			@keyframes anime-gsma-rte-inner {
+				from {
+					translate: 0 -1.5rem;
+					opacity: 0;
+				}
+
+				to {
+					translate: 0 0;
+					opacity: 1;
+				}
+			}
+
+			&-content {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				align-items: center;
+				animation: anime-gsma-rte-inner-content easing(ease-out-cubic) both;
+				animation-duration: inherit;
+				animation-delay: inherit;
+
+				@keyframes anime-gsma-rte-inner-content {
+					from {
+						translate: 0 -2.5rem;
+						opacity: 0;
+					}
+
+					to {
+						translate: 0 0;
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		img {
+			margin-inline-end: 0.5rem;
+			flex: 0 0 auto;
+			animation: anime-gsma-icon-rotate easing(ease-out-cubic) both;
+			animation-duration: inherit;
+			animation-delay: inherit;
+
+			@keyframes anime-gsma-icon-rotate {
+				from {
+					rotate: 0deg;
+					scale: 0;
+					opacity: 0;
+				}
+
+				to {
+					rotate: 360deg;
+					scale: 1;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&-received {
+		&-inner {
+			animation-duration: duration(received);
+			animation-delay: delay(forwarded_pause);
+		}
+	}
+
+	&-trackers {
+		&-inner {
+			animation-duration: duration(trackers);
+			animation-delay: delay(received_pause);
+		}
+
+		img {
+			animation-duration: duration(trackers);
+			animation-delay: #{delay(received_pause) + math.div(duration(trackers), 2)};
+		}
+	}
+
+	&-encrypted {
+		margin-block-end: 0;
+
+		&-inner {
+			animation-duration: duration(encrypted);
+			animation-delay: delay(trackers_pause);
+		}
+
+		img {
+			animation-duration: duration(encrypted);
+			animation-delay: #{delay(trackers_pause) + math.div(duration(encrypted), 2)};
+		}
+	}
+
+	&-arrows {
+		@include media('>medium') {
+			display: none;
+		}
+
+		@include media('<=medium') {
+			position: relative;
+			display: flex;
+			margin-block-start: 4.5rem;
+			flex-flow: column nowrap;
+			align-items: center;
+			animation: duration(arrows) easing(ease-out-quint) delay(encrypted_pause) both anime-gsma-arrows;
+
+			@keyframes anime-gsma-arrows {
+				from {
+					opacity: 0;
+				}
+
+				to {
+					opacity: 1;
+				}
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				inset-block-start: -1.5rem;
+				inset-inline-start: 50%;
+				display: block;
+				inline-size: 40%;
+				aspect-ratio: 1;
+				translate: -50% 0;
+				border-radius: 50%;
+				background-image: linear-gradient(to bottom, var(--background-norm), transparent 50%);
+				opacity: 0.3;
+			}
+
+			&-inner {
+				margin-block-end: -1.15rem;
+				flex: 0 0 auto;
+				animation: 1.5s easing(ease-in-out-quint) 0s both infinite anime-gsma-arrows-icon;
+
+				&:nth-child(2) {
+					animation-delay: 0.1s;
+				}
+
+				&:nth-child(3) {
+					animation-delay: 0.2s;
+				}
+
+				@keyframes anime-gsma-arrows-icon {
+					from {
+						translate: 0 -0.25rem;
+						opacity: 0;
+					}
+
+					40% {
+						translate: 0 0;
+						opacity: 1;
+					}
+
+					60% {
+						opacity: 1;
+					}
+
+					to {
+						opacity: 0;
+					}
+				}
+
+				&:nth-child(1) &-icon {
+					opacity: 0.1;
+				}
+
+				&:nth-child(2) &-icon {
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+}
