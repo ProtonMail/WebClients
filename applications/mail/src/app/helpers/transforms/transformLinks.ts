@@ -1,3 +1,5 @@
+import { TidyURL } from 'tidy-url';
+
 import { matches } from '../dom';
 
 const PROTOCOLS = ['ftp://', 'http://', 'https://', 'xmpp:', 'tel:', 'callto:'];
@@ -48,7 +50,20 @@ const sanitizeRelativeHttpLinks = (link: HTMLLinkElement) => {
         // link.href is the absolute value of the link: mail.proton.me is prepended, use getAttribute
         const url = link.getAttribute('href');
 
-        link.setAttribute('href', `http://${url}`);
+        if (url) {
+            link.setAttribute('href', `http://${url}`);
+        }
+    }
+};
+
+const removeTrackingTokens = (link: HTMLLinkElement) => {
+    if (matches(link, EXCLUDE_ANCHORS) && link.nodeName === 'A') {
+        const href = link.getAttribute('href');
+
+        if (href) {
+            const { url } = TidyURL.clean(href);
+            link.setAttribute('href', url);
+        }
     }
 };
 
@@ -68,6 +83,7 @@ export const transformLinks = (document: Element) => {
     links.forEach((link) => {
         httpInNewTab(link);
         noReferrerInfo(link);
+        removeTrackingTokens(link);
         sanitizeRelativeHttpLinks(link);
         disableAnchors(link);
     });
