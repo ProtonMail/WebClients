@@ -5,6 +5,7 @@ import {
     useAddresses,
     useCalendars,
     useFeature,
+    useLoad,
     useOrganization,
     usePlans,
     useSubscription,
@@ -35,6 +36,8 @@ const YourPlanSection = ({ app }: Props) => {
     const [organization, loadingOrganization] = useOrganization();
     const [vpnServers] = useVPNServersCount();
     const [openSubscriptionModal] = useSubscriptionModal();
+
+    useLoad();
 
     const passPlusPlanFeature = useFeature<boolean>(FeatureCode.PassPlusPlan);
     const isPassPlusEnabled = passPlusPlanFeature.feature?.Value === true;
