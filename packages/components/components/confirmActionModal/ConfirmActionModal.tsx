@@ -16,12 +16,11 @@ import {
 } from '@proton/components';
 
 export interface ConfirmActionModalProps {
-    message: string;
+    message: string | ReactNode;
     canUndo?: boolean;
     onCancel?: () => void;
     onSubmit?: () => Promise<void | unknown>;
     title?: string;
-    children?: ReactNode;
     cancelText?: ReactNode;
     submitText?: ReactNode;
     loading?: boolean;
