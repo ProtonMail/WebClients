@@ -31,4 +31,12 @@ export default class MetricsBase {
     public processAllRequests() {
         return this.requestService.processAllRequests();
     }
+
+    public stopBatchingProcess() {
+        return this.requestService.stopBatchingProcess();
+    }
+
+    public startBatchingProcess() {
+        return this.requestService.startBatchingProcess();
+    }
 }
