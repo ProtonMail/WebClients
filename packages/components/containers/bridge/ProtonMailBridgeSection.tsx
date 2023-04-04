@@ -10,7 +10,9 @@ import {
     MAIL_UPSELL_PATHS,
     PLANS,
     PLAN_NAMES,
+    UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { Icon, IconName, Select } from '../../components';
@@ -153,6 +155,13 @@ const ProtonMailBridgeSection = () => {
     const plus = PLAN_NAMES[PLANS.MAIL];
     const bundle = PLAN_NAMES[PLANS.BUNDLE];
 
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BANNER,
+        feature: MAIL_UPSELL_PATHS.BRIDGE,
+        isSettings: true,
+    });
+
     return (
         <SettingsSectionWide>
             <SettingsParagraph className="mt-0 mb1" learnMoreUrl={hasPaidMail ? getBridgeURL() : undefined}>
@@ -162,7 +171,7 @@ const ProtonMailBridgeSection = () => {
             {hasPaidMail ? (
                 <div className="mt2 bridge-grid">{bridgeClients.map(renderBox)}</div>
             ) : (
-                <UpgradeBanner upsellPath={`${APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH}${MAIL_UPSELL_PATHS.BRIDGE}`}>
+                <UpgradeBanner upsellPath={upsellRef}>
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}

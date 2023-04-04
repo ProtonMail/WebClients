@@ -2,21 +2,36 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
 import { SettingsLink } from '../../components';
-import { useUser } from '../../hooks';
+import { useConfig, useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';
 
-const StorageLimitTopBanner = () => {
+interface Props {
+    app?: APP_NAMES;
+}
+
+const StorageLimitTopBanner = ({ app }: Props) => {
     const [user] = useUser();
+    const { APP_NAME } = useConfig();
     const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
     const spaceDisplayed = Number.isNaN(spacePercentage) ? 0 : Math.floor(spacePercentage);
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(
         getItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`) === 'true'
     );
+
+    const upsellRef = getUpsellRefFromApp({
+        app: APP_NAME,
+        feature: SHARED_UPSELL_PATHS.STORAGE_PERCENTAGE,
+        component: UPSELL_COMPONENT.MODAL,
+        fromApp: app,
+    });
+
     useEffect(() => {
         if (ignoreStorageLimit) {
             setItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`, 'true');
@@ -24,7 +39,7 @@ const StorageLimitTopBanner = () => {
     }, [ignoreStorageLimit]);
 
     const upgradeLink = user.canPay ? (
-        <SettingsLink key="storage-link" className="color-inherit" path="/upgrade">
+        <SettingsLink key="storage-link" className="color-inherit" path={addUpsellPath('/upgrade', upsellRef)}>
             {c('Link').t`Upgrade account`}
         </SettingsLink>
     ) : (

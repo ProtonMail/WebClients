@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { APP_NAMES } from '@proton/shared/lib/constants';
+
 import BadAppVersionBanner from './BadAppVersionBanner';
 import DelinquentTopBanner from './DelinquentTopBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
@@ -10,16 +12,17 @@ import SubUserTopBanner from './SubUserTopBanner';
 import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
 
 interface Props {
+    app?: APP_NAMES;
     children?: ReactNode;
 }
 
-const TopBanners = ({ children }: Props) => {
+const TopBanners = ({ children, app }: Props) => {
     return (
         <>
             <DelinquentTopBanner />
             <OnlineTopBanner />
             <TimeOutOfSyncTopBanner />
-            <StorageLimitTopBanner />
+            <StorageLimitTopBanner app={app} />
             <BadAppVersionBanner />
             <SubUserTopBanner />
             <DesktopNotificationTopBanner />

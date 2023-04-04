@@ -3,13 +3,17 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Icon, SettingsLink, useConfig, useSubscription, useUser } from '@proton/components';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
 import TopNavbarListItem from './TopNavbarListItem';
 import TopNavbarListItemButton from './TopNavbarListItemButton';
 
-const TopNavbarUpgradeButton = () => {
+interface Props {
+    app?: APP_NAMES;
+}
+const TopNavbarUpgradeButton = ({ app }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const location = useLocation();
@@ -17,9 +21,15 @@ const TopNavbarUpgradeButton = () => {
 
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const upgradePathname = isVPN ? '/dashboard' : '/upgrade';
-    const appDomain = isVPN ? 'vpn-settings' : APPS_CONFIGURATION[APP_NAME].subdomain;
+
+    const upsellRef = getUpsellRefFromApp({
+        app: APP_NAME,
+        feature: '1',
+        component: UPSELL_COMPONENT.BUTTON,
+        fromApp: app,
+    });
     // We want to have metrics from where the user has clicked on the upgrade button
-    const upgradeUrl = `${upgradePathname}?ref=upsell_${appDomain}-button-1`;
+    const upgradeUrl = `${upgradePathname}?ref=${upsellRef}`;
     const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
 
     if (displayUpgradeButton) {

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
@@ -11,7 +12,7 @@ import UploadCSVFileButton from './UploadCSVFileButton';
 import { downloadSampleCSV } from './csv';
 import { UserTemplate } from './types';
 
-const MultiUserCreationSection = () => {
+const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
     const [usersToImport, setUsersToImport] = useState<UserTemplate[]>();
     const [createUserAccountsModal, setCreateUserAccountsModal, renderCreateUserAccountsModal] = useModalState();
 
@@ -23,7 +24,7 @@ const MultiUserCreationSection = () => {
     return (
         <>
             {renderCreateUserAccountsModal && usersToImport && (
-                <CreateUserAccountsModal usersToImport={usersToImport} {...createUserAccountsModal} />
+                <CreateUserAccountsModal usersToImport={usersToImport} app={app} {...createUserAccountsModal} />
             )}
             <SettingsSectionWide>
                 <SettingsParagraph>{c('Info').t`Add multiple users to your organization at once.`}</SettingsParagraph>

@@ -15,6 +15,8 @@ import {
 } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { forceSend } from '@proton/shared/lib/api/messages';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
@@ -85,11 +87,18 @@ export const useCompose = (
     const [storageCapacityModalProps, setStorageCapacityModalOpen] = useModalState();
     const [sendingOriginalMessageModal, handleSendingOriginalMessage] = useModalTwo(SendingOriginalMessageModal);
 
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.MODAL,
+        feature: MAIL_UPSELL_PATHS.STORAGE_FULL,
+    });
+
     const storageCapacityModal = (
         <Prompt
             title={c('Title').t`Storage capacity warning`}
             buttons={[
-                <ErrorButton onClick={() => goToSettings('/upgrade')}>{c('Action').t`Upgrade`}</ErrorButton>,
+                <ErrorButton onClick={() => goToSettings(`/upgrade?ref=${upsellRef}`)}>{c('Action')
+                    .t`Upgrade`}</ErrorButton>,
                 <Button onClick={storageCapacityModalProps.onClose}>{c('Action').t`Close`}</Button>,
             ]}
             {...storageCapacityModalProps}

@@ -6,8 +6,8 @@ import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import { FeatureCode, SharedCalendarsSection } from '@proton/components/containers';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
-import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { addUpsellPath } from '@proton/shared/lib/helpers/upsell';
+import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -94,6 +94,13 @@ const OtherCalendarsSection = ({
         : c('Subscribed calendar section description').t`Add public, external, or shared calendars using a URL.`;
     const addCalendarText = c('Action').t`Add calendar`;
 
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BANNER,
+        feature: CALENDAR_UPSELL_PATHS.MULTI_CAL,
+        isSettings: true,
+    });
+
     const addCalendarButton = (
         <div className="mb1">
             <PrimaryButton data-testid="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={handleCreate}>
@@ -107,10 +114,7 @@ const OtherCalendarsSection = ({
                 <p className="flex-item-fluid my-0 pr2">{calendarsLimitReachedText}</p>
                 <ButtonLike
                     as={SettingsLink}
-                    path={addUpsellPath(
-                        '/upgrade',
-                        `${APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH}${CALENDAR_UPSELL_PATHS.MULTI_CAL}`
-                    )}
+                    path={addUpsellPath('/upgrade', upsellRef)}
                     color="norm"
                     shape="solid"
                     size="small"
