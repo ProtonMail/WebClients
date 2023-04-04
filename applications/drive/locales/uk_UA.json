@@ -553,6 +553,9 @@
       "Show preview": [
         "Показати попередній перегляд"
       ],
+      "Show side panel": [
+        "Показати бічну панель"
+      ],
       "Sign in": [
         "Увійти"
       ],
@@ -1790,7 +1793,7 @@
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Ви можете позначити ті контакти, які ви не хочете ані об’єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
+        "Ви можете позначити ті контакти, які ви не хочете ані об'єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2029,7 +2032,7 @@
         "Паролі відрізняються"
       ],
       "Please activate your search again": [
-        "Активуйте пошук знову"
+        "Повторно активуйте пошук"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
@@ -2205,6 +2208,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не вдалося зашифрувати"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard версії < 3.0 не підтримуються"
       ]
     },
     "Error importing contacts": {
@@ -2586,6 +2592,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
+      ],
+      "vCard versions < 3.0": [
+        "vCard версії < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3296,7 +3305,7 @@
         "Теку \"${ link.name }\" було видалено під час завантаження"
       ],
       "Folder contents will merge into a single folder": [
-        "Вміст тек об’єднається в одну теку"
+        "Вміст тек об'єднається в одну теку"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "У теці відсутній підпис. Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
@@ -3594,6 +3603,9 @@
       ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
+      ],
+      "Preview for this file type is not supported": [
+        "Перегляд цього типу файлу не підтримується"
       ],
       "Primary": [
         "Основний"
@@ -4854,6 +4866,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Для імпортування ви повинні вибрати всі запитувані елементи, як показано в GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Оберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати ваші поштові повідомлення та налаштування, переглядати й завантажувати ваші контакти, переглядати й завантажувати усі заплановані події з календаря Google."
       ]
     },
     "Onboarding Action": {

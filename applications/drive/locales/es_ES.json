@@ -549,6 +549,9 @@
       "Show preview": [
         "Mostrar vista previa"
       ],
+      "Show side panel": [
+        "Mostrar el panel lateral"
+      ],
       "Sign in": [
         "Iniciar sesión"
       ],
@@ -2185,6 +2188,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error con el cifrado"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versiones vCard menores a 3.0 no soportadas"
       ]
     },
     "Error importing contacts": {
@@ -2553,6 +2559,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } no admite actualmente algunos tipos de eventos, detalles y formatos."
+      ],
+      "vCard versions < 3.0": [
+        "Versiones vCard menores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3481,6 +3490,9 @@
       ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
+      ],
+      "Preview for this file type is not supported": [
+        "No se admite la vista previa para este tipo de archivo."
       ],
       "Primary": [
         "Principal"
@@ -4691,6 +4703,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Para que la importación funcione, debes seleccionar todos los elementos solicitados como se muestra en el GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecciona a lo que ${ BRAND_NAME } puede acceder: ver tus correos y ajustes, ver y descargar tus contactos, ver y descargar todas tus agendas a las que accedes en Google Agenda."
       ]
     },
     "Onboarding Action": {

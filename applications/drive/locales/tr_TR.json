@@ -549,6 +549,9 @@
       "Show preview": [
         "Ön izlemeyi göster"
       ],
+      "Show side panel": [
+        "Yan panoyu görüntüle"
+      ],
       "Sign in": [
         "Oturum aç"
       ],
@@ -2185,6 +2188,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Şifrelenemedi"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard 3.0 öncesi sürümler desteklenmiyor"
       ]
     },
     "Error importing contacts": {
@@ -2550,6 +2556,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
+      ],
+      "vCard versions < 3.0": [
+        "vCard 3.0 sürümü öncesi"
       ]
     },
     "Import calendar; import invitation": {
@@ -3478,6 +3487,9 @@
       ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
+      ],
+      "Preview for this file type is not supported": [
+        "Bu dosya türünün ön izlemesi görüntülenemiyor"
       ],
       "Primary": [
         "Birincil"
@@ -4688,6 +4700,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
       ]
     },
     "Onboarding Action": {

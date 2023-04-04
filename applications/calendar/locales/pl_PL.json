@@ -878,6 +878,11 @@
         "Odczyt (zobacz wszystkie szczegóły wydarzeń)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Nie udało się pobrać informacji o adresie ${ address }"
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
         "Dodaj kalendarz z adresu URL"
@@ -2522,6 +2527,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Szyfrowanie nie powiodło się"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Wersja vCard starsza niż 3.0 nie jest obsługiwana"
       ]
     },
     "Error importing contacts": {
@@ -3903,6 +3911,11 @@
         "Tylko do odczytu"
       ]
     },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Zaproś innych z kontem ${ BRAND_NAME } do wyświetlania i edytowania wydarzeń kalendarza."
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Niektóre kalendarze nie będą pokazywać szczegółów wcześniej utworzonych wydarzeń."
@@ -4877,6 +4890,11 @@
         "Aby zaimportować dane, zaznacz wszystkie żądane elementy, jak pokazano na grafice GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Witaj w ${ appName }"
@@ -5490,22 +5508,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Akceptuj zaproszenia"
-      ],
       "Get up to ${ credits } in credits.": [
         "Uzyskaj do ${ credits }."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Zaproszenia pojawią się w Twoim kalendarzu jako wydarzenia oczekujące. Otwórz wydarzenie, aby odpowiedzieć. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Przejdź do ustawień"
       ]
     },
     "Storage": {
@@ -6192,6 +6199,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Wybierz numer"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Planowanie stało się łatwiejsze!"
       ]
     },
     "Title; create calendar modal": {

@@ -465,6 +465,9 @@
       "Show more": [
         "Tampilkan lebih banyak"
       ],
+      "Show side panel": [
+        "Tampilkan panel samping"
+      ],
       "Show time zones": [
         "Tampilkan zona waktu"
       ],
@@ -861,6 +864,11 @@
       ],
       "View (see all event details)": [
         "Tampilan penuh (lihat seluruh rincian acara)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Informasi kontak untuk ${ address } gagal diterima"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -2450,6 +2458,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Enkripsi gagal"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard versi < 3.0 tidak didukung"
       ]
     },
     "Error importing contacts": {
@@ -2835,6 +2846,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } saat ini tidak mendukung tipe, rincian, dan format acara tertentu."
+      ],
+      "vCard versions < 3.0": [
+        "vCard versi < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3720,6 +3734,11 @@
         "Hanya melihat"
       ]
     },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Undang teman-teman Anda yang memiliki akun ${ BRAND_NAME } untuk melihat atau menyunting acara pada kalender Anda."
+      ]
+    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Sebagian kalender Anda tidak akan menampilkan rincian acara yang telah dibuat sebelumnya."
@@ -4601,6 +4620,11 @@
         "Agar proses impor dapat berlangsung, Anda harus memilih seluruh item yang diminta sebagaimana yang ditampilkan dalam GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Tentukan apa-apa saja yang akan dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, serta melihat dan mengunduh seluruh agenda yang Anda akses dari Google Agenda."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Selamat datang di ${ appName }"
@@ -4940,22 +4964,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Terima undangan dengan mudah"
-      ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Sekarang, undangan akan muncul pada kalender Anda sebagai acara yang menunggu balasan. Anda hanya perlu membuka acara untuk membalas. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Ke pengaturan"
       ]
     },
     "Storage": {
@@ -5597,6 +5610,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Pilih angka"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Merencanakan kegiatan kini lebih mudah!"
       ]
     },
     "Title; create calendar modal": {

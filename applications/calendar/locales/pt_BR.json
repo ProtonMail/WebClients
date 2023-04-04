@@ -870,6 +870,11 @@
         "Visualizar (ver todos os detalhes do evento)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Falha ao recuperar a informação de contato para ${ address }"
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
         "Adicionar calendário de uma URL"
@@ -2476,6 +2481,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falha na criptografia"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "versões vCard <3.0 não são suportadas"
       ]
     },
     "Error importing contacts": {
@@ -2873,6 +2881,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+      ],
+      "vCard versions < 3.0": [
+        "versões vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3784,6 +3795,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Somente leitura"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "Convide outras pessoas com uma conta ${ BRAND_NAME } para visualizar ou editar eventos em seu calendário."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -4698,6 +4714,11 @@
         "Para que a importação funcione, você deve selecionar todos os itens solicitados conforme mostrado no GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecione o que ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bem-vindo ao ${ appName }"
@@ -5028,6 +5049,14 @@
         "Gerenciar calendário"
       ]
     },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Erro na verificação da assinatura"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Você ativou a verificação de endereço para ${ boldSenderEmail }. Não foi possível verificar a autenticidade deste convite de calendário. Isso pode ser devido a alterações nas chaves de criptografia deste contato. Revise as configurações avançadas de PGP ou peça a ${ boldSenderEmail } um novo convite."
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Não assinar"
@@ -5275,22 +5304,11 @@
       ]
     },
     "Spotlight": {
-      "Easily accept invites": [
-        "Aceite convites facilmente"
-      ],
       "Get up to ${ credits } in credits.": [
         "Receba até ${ credits } em créditos."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
-      ],
-      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
-        "Agora os convites aparecem no seu calendário como eventos pendentes. Basta abrir um evento para responder. ${ goToSettingsLink }"
-      ]
-    },
-    "Spotlight settings link": {
-      "Go to settings": [
-        "Ir para configurações"
       ]
     },
     "Storage": {
@@ -5894,6 +5912,9 @@
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
       ],
+      "Sign in with 2FA": [
+        "Iniciar sessão com A2F"
+      ],
       "Sign out": [
         "Encerrar sessão"
       ],
@@ -5946,6 +5967,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Escolha um número"
+      ]
+    },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "Planejar ficou mais fácil!"
       ]
     },
     "Title; create calendar modal": {

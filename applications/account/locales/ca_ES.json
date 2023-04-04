@@ -260,6 +260,9 @@
       "Delete record": [
         "Suprimeix el registre"
       ],
+      "Delete without exporting": [
+        "Elimina sense exportar"
+      ],
       "Delete your account": [
         "Eliminar el vostre compte"
       ],
@@ -298,6 +301,9 @@
       ],
       "Download all configurations": [
         "Baixa tota la configuració"
+      ],
+      "Download CSV sample": [
+        "Descarrega mostra CSV"
       ],
       "Download ICS": [
         "Baixa l'ICS"
@@ -355,6 +361,9 @@
       ],
       "Export key": [
         "Exportar clau"
+      ],
+      "Export key before deleting": [
+        "Exporta la clau abans de suprimir-la"
       ],
       "Extend": [
         "Amplia"
@@ -454,6 +463,9 @@
       ],
       "Loading verification": [
         "Carregant verificació"
+      ],
+      "Manage communication preferences": [
+        "Gestiona les preferències de comunicació"
       ],
       "Manage folders": [
         "Gestionar carpetes"
@@ -1236,6 +1248,11 @@
         "Mostra (veu tots els detalls de l'esdeveniment)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "No s'ha pogut recuperar la informació de contacte per ${ address }."
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Actiu"
@@ -1318,6 +1335,10 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Total for ${ n } month": [
+        "Total per ${ n } mes",
+        "Total per ${ n } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -2639,6 +2660,12 @@
     "Email spam notification": {
       "${ name } added": [
         "${ name } afegit"
+      ],
+      "${ name } deletion failed": [
+        "No s'ha pogut eliminar ${ name }."
+      ],
+      "${ name } successfully deleted": [
+        "${ name } eliminat"
       ]
     },
     "Email subject": {
@@ -3142,6 +3169,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error en el xifratge"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versions de vCard < 3.0 no suportades"
       ]
     },
     "Error importing contacts": {
@@ -3818,6 +3848,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
+      ],
+      "vCard versions < 3.0": [
+        "Versions de vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4372,6 +4405,9 @@
       "Are you sure you want to delete this filter?": [
         "Estàs segur que vols esborrar aquest filtre?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Segur que voleu eliminar aquesta carpeta? També s'eliminaran totes les subcarpetes."
+      ],
       "Are you sure you want to delete this label?": [
         "Esteu segur de voler eliminar aquesta etiqueta?"
       ],
@@ -4805,9 +4841,6 @@
       "it’s imperative": [
         "és obligatori"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "He estat usant ${ MAIL_APP_NAME }i he pensat que us podria agradar. És un servei de correu electrònic segur que protegeix la vostra privacitat. Registreu-vos amb aquest enllaç per obtenir 1 mes de característiques prèmium gratuïtament: ${ referrerLink }"
-      ],
       "Just confirm your selection and we'll do the rest.": [
         "Només confirmeu la vostra selecció i nosaltres farem la resta."
       ],
@@ -4825,6 +4858,9 @@
       ],
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
+      ],
+      "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "Apreneu a iniciar la sessió a ${ VPN_APP_NAME } amb aplicacions VPN de tercers."
       ],
       "Learn more": [
         "Més informació"
@@ -5024,6 +5060,9 @@
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
       ],
+      "Preview for this file type is not supported": [
+        "La previsualització d'aquest tipus de fitxers no és compatible."
+      ],
       "Priority support": [
         "Suport prioritari"
       ],
@@ -5095,6 +5134,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviat amb el correu segur de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "El servidor està actualment caigut"
@@ -7729,6 +7771,11 @@
         "Perquè la importació funcioni, seleccioneu tots els elements sol·licitats tal com es mostra al fitxer GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
         "Us donem la benvinguda a ${ VPN_APP_NAME }"
@@ -8305,6 +8352,11 @@
         "Etiquetes"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Per convidar usuaris fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Heu sobrepassat el nombre màxim de ${ MAX_CALENDAR_MEMBERS } membre per calendari.",
@@ -8334,6 +8386,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Creat per ${ ownerName }"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Error de verificació de signatura"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Heu activat la verificació d'adreces per a ${ boldSenderEmail }. No hem pogut verificar l'autenticitat d'aquesta invitació. Això pot ser degut a canvis en les claus de xifratge d'aquest contacte. Us convidem a comprovar la vostra configuració avançada de PGP o sol·licitar una nova invitació a ${ boldSenderEmail }."
       ]
     },
     "Signup label": {
@@ -8491,6 +8551,14 @@
       "High-speed VPN on ${ maxVpn } device": [
         "VPN d'alta velocitat a ${ maxVpn } dispositiu",
         "VPN d'alta velocitat a ${ maxVpn } dispositius"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "D'acord"
+      ],
+      "Subscriptions": [
+        "Subscripcions"
       ]
     },
     "Subscription price": {
@@ -9291,9 +9359,6 @@
       "Layout": [
         "Disposició"
       ],
-      "Length": [
-        "Durada"
-      ],
       "Link confirmation": [
         "Confirmació d'enllaç"
       ],
@@ -9491,6 +9556,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
+      ],
+      "Sign in with 2FA": [
+        "Inicia la sessió amb dos factors"
       ],
       "Sign out": [
         "Tanca la sessió"
@@ -9838,6 +9906,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Signeu automàticament tots els vostres missatges de sortida perquè els usuaris puguin verificar l'autenticitat dels vostres missatges. Això es fa en combinació amb la configuració PGP per defecte que es pot configurar a continuació."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Compartit amb xifratge d'extrem a extrem"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Compartit amb xifratge d'extrem a extrem amb contacte verificat"
       ]
     },
     "Tor out of date": {

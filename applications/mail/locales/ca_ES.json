@@ -31,6 +31,12 @@
       "Add address": [
         "Afegeix una adreça"
       ],
+      "Add Bcc recipients": [
+        "Afegeix destinatari CCA"
+      ],
+      "Add Cc recipients": [
+        "Afegeix destinatari CC"
+      ],
       "Add condition": [
         "Afegeix una condició"
       ],
@@ -112,6 +118,9 @@
       "Beta Access": [
         "Accés beta"
       ],
+      "Blind Carbon Copy": [
+        "Copia carbó amagada"
+      ],
       "Block": [
         "Bloqueja"
       ],
@@ -129,6 +138,9 @@
       ],
       "Cancel": [
         "Cancel·la"
+      ],
+      "Carbon Copy": [
+        "Copia carbó"
       ],
       "Change page": [
         "Canviar de pàgina"
@@ -168,6 +180,9 @@
       ],
       "Close": [
         "Tanca"
+      ],
+      "Close & discard": [
+        "Tancai descarta"
       ],
       "Close composer": [
         "Tancar l'editor"
@@ -485,6 +500,9 @@
       ],
       "Import from .csv or vCard": [
         "Importar des de .csv o vCard"
+      ],
+      "In the morning": [
+        "Al matí"
       ],
       "Inline": [
         "En línia"
@@ -847,6 +865,9 @@
       "Search message content": [
         "Cerca al contingut del missatge"
       ],
+      "See business plans": [
+        "Veure les subscripcions per a empreses"
+      ],
       "See plan features": [
         "Veure les funcionalitats del pla"
       ],
@@ -936,6 +957,9 @@
       ],
       "Show preview": [
         "Mostra visualització prèvia"
+      ],
+      "Show side panel": [
+        "Mosta la subfinestra lateral"
       ],
       "Sign in": [
         "Inicia la sessió"
@@ -1239,17 +1263,6 @@
       ],
       "Unsupported event": [
         "Esdeveniment no suportat"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Tot"
-      ],
-      "With": [
-        "Amb"
-      ],
-      "Without": [
-        "Sense"
       ]
     },
     "Attachment signature verification": {
@@ -1602,6 +1615,14 @@
       ],
       "Event in progress": [
         "Esdeveniment en curs"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "Cancel·la"
+      ],
+      "Cancel expiration": [
+        "Cancel·la la caducitat"
       ]
     },
     "Collapsible tooltip": {
@@ -2992,8 +3013,14 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } per <${ email }>. Podeu afegir una altra clau o desactivar el xifratge per aquest contacte per resoldre aquest problema."
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
+      ],
+      "A problem occurred, please try again.": [
+        "S'ha produït un problema. Intenteu-ho de nou."
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -3185,6 +3212,9 @@
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
       ],
+      "Please activate your search again": [
+        "Activeu de nou la vostra cerca."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
@@ -3295,6 +3325,9 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Hi ha hagut un problema amb la cerca de continguts. S'ha utilitzat la cerca per defecte."
+      ],
+      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
+        "S'ha produït un problema en actualitzar els vostres missatges locals. Es tornaran a baixar per tornar a habilitar la cerca al contingut del missatge."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vcards dels contactes"
@@ -3432,6 +3465,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error en el xifratge"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versions de vCard < 3.0 no suportades"
       ]
     },
     "Error importing contacts": {
@@ -4004,6 +4040,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualment no permet determinats tipus d'esdeveniments, detalls i formats."
+      ],
+      "vCard versions < 3.0": [
+        "Versions de vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -4465,6 +4504,9 @@
       "Are you sure you want to delete all messages with this label?": [
         "Segur que voleu eliminar tots els missatges amb aquesta etiqueta?"
       ],
+      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
+        "Segur que voleu eliminar aquesta carpeta? També s'eliminaran totes les subcarpetes."
+      ],
       "Are you sure you want to delete this label?": [
         "Esteu segur de voler eliminar aquesta etiqueta?"
       ],
@@ -4608,6 +4650,9 @@
       "Don't forget to share the password with the recipient": [
         "No oblidi compartir la contrassenya amb el destinatari"
       ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Baixant missatge ${ currentProgress } de ${ totalProgress }"
+      ],
       "Draft": [
         "Esborrany"
       ],
@@ -4700,6 +4745,17 @@
       ],
       "Expiration time": [
         "Data de caducitat"
+      ],
+      "Expires in ${ formattedDate }": [
+        "Caduca en ${ formattedDate }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Caduca en ${ minutesDiff } minut.",
+        "Caduca en ${ minutesDiff } minuts."
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Caduca en menys de ${ hoursDiff } hora.",
+        "Caduca en menys de ${ hoursDiff } hores."
       ],
       "file attached": [
         "attachment",
@@ -4794,6 +4850,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
+      "Increase storage space starting at ${ planPrice } per month.": [
+        "Augmenteu l'espai d'emmagatzematge a partir de ${ planPrice }/mes."
+      ],
       "Indexing paused": [
         "Indexació pausada"
       ],
@@ -4881,6 +4940,9 @@
       "Message sent.": [
         "Missatge enviat."
       ],
+      "Message will be sent in the morning at ${ formattedTime }": [
+        "El missatge s'enviarà al matí a les ${ formattedTime }."
+      ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
         "El missatge s'enviarà ${ dateString } a les ${ formattedTime }"
       ],
@@ -4943,6 +5005,9 @@
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Cap de les claus carregades és vàlida per al xifrat. Per a poder enviar missatges a aquesta adreça carregueu una clau vàlida o desactiveu \"Xifra correus electrònics\"."
+      ],
+      "Normal": [
+        "Normal"
       ],
       "Not a valid URL": [
         "No és una URL vàlida"
@@ -5008,6 +5073,9 @@
       "Preview failed to be loaded": [
         "La previsualització no s'ha pogut carregar."
       ],
+      "Preview for this file type is not supported": [
+        "La previsualització d'aquest tipus de fitxers no és compatible."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -5065,6 +5133,9 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "La cerca està trigant massa? ${ dropdownButton } o ${ toggleOffButton } d'aquesta sessió de cerca."
       ],
+      "Secure your files with encrypted cloud storage for free, today.": [
+        "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat, de manera gratuïta, avui."
+      ],
       "Seems like you are all caught up for now": [
         "Sembla que ara mateix esteu al dia"
       ],
@@ -5091,6 +5162,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'enviament de missatges des de l'adreça @pm.me és una funció de pagament. El vostre missatge s'enviarà des de la vostra adreça per defecte ${ email }"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviat amb el correu segur de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -5152,6 +5226,12 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "És possible que les dades que heu introduït a l'esborrany no es desin si sortiu de la pàgina."
       ],
+      "The local database is being prepared": [
+        "S'està preparant la base de dades local."
+      ],
+      "The message has expired": [
+        "Aquest missatge ha caducat."
+      ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "El missatge original que esteu intentant reenviar o respondre està en procés d'enviament. Si continueu, ja no podreu desfer l'enviament del missatge original."
       ],
@@ -5182,6 +5262,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Es descarregaran tots els missatges perquè es puguin cercar localment. Netejar les dades del vostre navegador deshabitarà aquesta opció."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Es descarregaran els missatges més recents perquè es puguin cercar localment. Netejar les dades del vostre navegador deshabitarà aquesta opció."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'habilitar en primer lloc."
@@ -5232,12 +5315,21 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Aquest missatge està signat per una clau que encara no s'ha confiat."
       ],
+      "This message will be automatically deleted on ${ longDateMEssage }": [
+        "Aquest missatge s'eliminarà automàticament el ${ longDateMEssage }.."
+      ],
+      "This message will be automatically deleted on ${ shortDateMessage }": [
+        "Aquest missatge s'eliminarà automàticament el ${ shortDateMessage }."
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Aquest missatge serà marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?",
         "Aquests missatges seran marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Aquest missatge es mourà als Esborranys perquè pugueu editar-lo. Necessitareu tornar a programar quan s'enviarà."
+      ],
+      "This message will be sent in the morning at ${ formattedTime }": [
+        "Aquest missatge s'enviarà al matí a les ${ formattedTime }."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Aquest missatge s'enviarà ${ dateString } a les ${ formattedTime }"
@@ -5253,6 +5345,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Aquest missatge expirarà el ${ formattedDate }"
+      ],
+      "This message will expire on ${ longDateMEssage }": [
+        "Aquest missatge caducarà el ${ longDateMEssage }."
+      ],
+      "This message will expire today at ${ shortDateMessage }": [
+        "Aquest missatge caducarà avui a les ${ shortDateMessage }."
+      ],
+      "This message will expire tomorrow at ${ shortDateMessage }": [
+        "Aquest missatge caducarà demà a les ${ shortDateMessage }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Aquesta clau pública serà utilitzada automàticament per xifrar el correu electrónic enviat a aquenta adreça."
@@ -5302,6 +5403,9 @@
       "Updating message content search...": [
         "Actualitzant la cerca del contingut del missatge..."
       ],
+      "Updating your local messages, message content won't be searched during this update": [
+        "Actualitzant els vostres missatges locals. No es buscarà en el contingut dels missatges durant aquesta actualització"
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
@@ -5311,8 +5415,14 @@
       "Upgrade to create more folders, filters, and addresses.": [
         "Actualitzeu per crear més carpetes, filtres, i adreces."
       ],
+      "Upgrade to level up your privacy.": [
+        "Actualitzeu el vostre pla per millorar la vostra protecció de privadesa."
+      ],
       "Upgrade to send email from @pm.me addresses.": [
         "Actualitzeu per enviar correu electrònic des d'adreces @pm.me."
+      ],
+      "Upgrade to send emails from your custom email domain.": [
+        "Actualitzeu el vostre pla per enviar missatges des del vostre domini de correu electrònic personalitzat."
       ],
       "Upgrade to send emails to contact groups easily.": [
         "Actualitzeu per enviar correus electrònics fàcilment a grups de contactes."
@@ -5325,6 +5435,15 @@
       ],
       "Upgrade to support privacy and get more features.": [
         "Actualitzeu per donar suport a la privacitat i obtenir més funcionalitats."
+      ],
+      "Upgrade to unlock premium features.": [
+        "Actualitzeu per desbloquejar funcions prèmium."
+      ],
+      "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
+        "Actualitzeu el vostre pla per utilitzar ${ MAIL_APP_NAME } amb Apple Mail, Outlook o Thunderbird."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Actualitzeu el vostre pla per utilitzar la resposta automàtica quan esteu fora."
       ],
       "Upload picture": [
         "Carrega imatge"
@@ -5361,6 +5480,9 @@
       ],
       "Week": [
         "Setmana"
+      ],
+      "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
+        "Quan voleu que el vostre missatge s'elimini automàticament de la safata d'entrada del destinatari i de la carpeta de missatges enviats?"
       ],
       "When do you want your message to be sent?": [
         "Quan voleu que s'enviï el vostre missatge?"
@@ -5412,6 +5534,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
+      ],
+      "You can use ${ VPN_APP_NAME } for free, today.": [
+        "Podeu utilitzar ${ VPN_APP_NAME } gratuïtament avui."
       ],
       "You cannot reply from the invited address.": [
         "No podeu contestar des de l'adreça convidada."
@@ -5827,9 +5952,6 @@
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
-      ],
-      "Attachments": [
-        "Adjunts"
       ],
       "Authenticator app": [
         "Aplicació d'autenticació"
@@ -6858,9 +6980,14 @@
         "Perquè la importació funcioni, seleccioneu tots els elements sol·licitats tal com es mostra al fitxer GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        "Li donem la benvinguda a ${ appName }"
+        "Us donem la benvinguda a ${ appName }"
       ],
       "Where privacy and security meet productivity and ease of use.": [
         "On la privadesa i la seguretat es troben amb la productivitat i la facilitat d'ús."
@@ -7167,6 +7294,15 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d"
+      ],
+      "<1 d": [
+        "<1 d"
       ]
     },
     "Reply to calendar invitation": {
@@ -7573,6 +7709,9 @@
       "Message deleted": [
         "Missatge esborrat"
       ],
+      "Message expiration cancelled": [
+        "La caducitat del missatge s'ha cancel·lat."
+      ],
       "Message marked as legitimate": [
         "Missatge marcat com a legítim"
       ],
@@ -7845,8 +7984,14 @@
       "Create folder": [
         "Crear carpeta"
       ],
+      "Create folder \"${ search }\"": [
+        "Crea una carpeta \"${ search }\""
+      ],
       "Create label": [
         "Crear etiqueta"
+      ],
+      "Create label \"${ search }\"": [
+        "Crea una etiqueta \"${ search }\""
       ],
       "Create new group": [
         "Crea un grup nou"
@@ -8199,6 +8344,9 @@
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
       ],
+      "Sign in with 2FA": [
+        "Inicia la sessió amb dos factors"
+      ],
       "Sign out": [
         "Tanca la sessió"
       ],
@@ -8258,10 +8406,10 @@
         "Avís: presumpte lloc web fals"
       ],
       "Welcome": [
-        "Li donem la benvinguda"
+        "Us donem la benvinguda"
       ],
       "Welcome ${ userName }": [
-        "Li donem la benvinguda ${ userName }"
+        "Us donem la benvinguda ${ userName }"
       ],
       "What would you like to import?": [
         "Què li agradaria importar?"
