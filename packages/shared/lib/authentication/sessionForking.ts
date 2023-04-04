@@ -170,19 +170,22 @@ export interface ProduceForkParameters {
     app: APP_NAMES;
     type?: FORK_TYPE;
     plan?: string;
+    independent: boolean;
 }
 
 export interface ProduceForkParametersFull extends ProduceForkParameters {
     localID: number;
 }
 
-export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> => {
+export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> &
+    Required<Pick<ProduceForkParametersFull, 'independent'>> => {
     const searchParams = new URLSearchParams(window.location.search);
     const app = searchParams.get('app') || '';
     const state = searchParams.get('state') || '';
     const localID = searchParams.get('u') || '';
     const type = searchParams.get('t') || '';
     const plan = searchParams.get('plan') || '';
+    const independent = searchParams.get('independent') || '0';
 
     return {
         state: state.slice(0, 100),
@@ -190,6 +193,7 @@ export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> =
         app: getValidatedApp(app),
         type: getValidatedForkType(type),
         plan,
+        independent: independent === '1' || independent === 'true',
     };
 };
 
@@ -202,6 +206,7 @@ interface ProduceForkArguments {
     persistent: boolean;
     trusted: boolean;
     type?: FORK_TYPE;
+    independent: boolean;
 }
 
 export const produceFork = async ({
@@ -213,6 +218,7 @@ export const produceFork = async ({
     type,
     persistent,
     trusted,
+    independent,
 }: ProduceForkArguments) => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
@@ -224,7 +230,7 @@ export const produceFork = async ({
             pushForkSession({
                 Payload: payload,
                 ChildClientID: childClientID,
-                Independent: 0,
+                Independent: independent ? 1 : 0,
             })
         )
     );
