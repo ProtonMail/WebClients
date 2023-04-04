@@ -12,7 +12,6 @@ export { default as useBeforeUnload } from './useBeforeUnload';
 export { default as useCache } from './useCache';
 export { default as useCachedModelResult } from './useCachedModelResult';
 export { default as useCalendars, useGetCalendars } from './useCalendars';
-export { default as useCalendarSubscribeFeature } from './useCalendarSubscribeFeature';
 export { default as useSubscribedCalendars } from './useSubscribedCalendars';
 export { default as useCalendarShareInvitations } from './useCalendarShareInvitations';
 export { default as useCalendarShareInvitationActions } from './useCalendarShareInvitationActions';

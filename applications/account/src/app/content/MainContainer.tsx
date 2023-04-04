@@ -16,7 +16,6 @@ import {
     UserDropdown,
     useActiveBreakpoint,
     useAddresses,
-    useCalendarSubscribeFeature,
     useDeviceRecovery,
     useFeatures,
     useIsDataRecoveryAvailable,
@@ -88,7 +87,6 @@ const MainContainer = () => {
         FeatureCode.ReferralProgram,
         FeatureCode.SmtpToken,
         FeatureCode.CalendarSharingEnabled,
-        FeatureCode.CalendarSubscription,
         FeatureCode.EasySwitch,
         FeatureCode.CalendarPersonalEventsDeprecated,
     ]);
@@ -99,7 +97,6 @@ const MainContainer = () => {
     const isSmtpTokenEnabled = getFeature(FeatureCode.SmtpToken).feature?.Value === true;
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
 
-    const { enabled, unavailable } = useCalendarSubscribeFeature();
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
     const recoveryNotification = useRecoveryNotification(false);
@@ -108,7 +105,6 @@ const MainContainer = () => {
         user,
         addresses,
         organization,
-        isSubscribeCalendarEnabled: enabled,
         isSpyTrackerEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isSmtpTokenEnabled,
@@ -224,7 +220,6 @@ const MainContainer = () => {
                                 user={user}
                                 loadingFeatures={loadingFeatures}
                                 calendarAppRoutes={routes.calendar}
-                                calendarSubscribeUnavailable={unavailable}
                                 redirect={redirect}
                             />
                         </ContactEmailsProvider>
