@@ -3,10 +3,10 @@ import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
-import { addUpsellPath, getUpsellAppRef } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import percentage from '@proton/utils/percentage';
 
 import { classnames } from '../../helpers';
@@ -55,7 +55,12 @@ const Sidebar = ({
     const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
     const spacePercentage = percentage(MaxSpace, UsedSpace);
 
-    const upsellRef = getUpsellAppRef(APP_NAME, SHARED_UPSELL_PATHS.STORAGE, app);
+    const upsellRef = getUpsellRefFromApp({
+        app: APP_NAME,
+        feature: SHARED_UPSELL_PATHS.STORAGE,
+        component: UPSELL_COMPONENT.BUTTON,
+        fromApp: app,
+    });
 
     const canAddStorage = useMemo(() => {
         if (!subscription) {

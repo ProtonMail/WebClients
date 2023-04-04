@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { AppLink, Hamburger, Icon } from '../../components';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
@@ -24,6 +25,7 @@ interface Props extends HeaderProps {
     expanded: boolean;
     onToggleExpand?: () => void;
     isNarrow?: boolean;
+    app?: APP_NAMES;
 }
 
 const PrivateHeader = ({
@@ -40,6 +42,7 @@ const PrivateHeader = ({
     expanded,
     onToggleExpand,
     title,
+    app,
 }: Props) => {
     useNoBFCookie();
     useIsProtonUser();
@@ -71,7 +74,7 @@ const PrivateHeader = ({
             <TopNavbar>
                 <TopNavbarList>
                     {isNarrow && searchDropdown ? <TopNavbarListItem>{searchDropdown}</TopNavbarListItem> : null}
-                    {upsellButton !== undefined ? upsellButton : <TopNavbarUpsell />}
+                    {upsellButton !== undefined ? upsellButton : <TopNavbarUpsell app={app} />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {contactsButton ? <TopNavbarListItem noShrink>{contactsButton}</TopNavbarListItem> : null}
                     {settingsButton ? <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem> : null}
