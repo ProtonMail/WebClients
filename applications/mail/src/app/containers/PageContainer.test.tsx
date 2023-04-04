@@ -1,5 +1,6 @@
 import { fireEvent } from '@testing-library/dom';
 
+import useGmailSync from '@proton/activation/src/components/Modals/GmailSync/useGmailSync';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -18,11 +19,18 @@ import PageContainer from './PageContainer';
 
 jest.setTimeout(20000);
 
+jest.mock('@proton/activation/src/components/Modals/GmailSync/useGmailSync');
+const mockUseEasySwitchGmailSync = useGmailSync as jest.MockedFunction<typeof useGmailSync>;
+
 describe('PageContainer', () => {
     const props = {
         breakpoints: {} as Breakpoints,
         isComposerOpened: false,
     };
+
+    beforeAll(() => {
+        global.fetch = jest.fn();
+    });
 
     beforeEach(clearAll);
 
@@ -39,6 +47,13 @@ describe('PageContainer', () => {
             Total: 0,
             GlobalTotal: 0,
         }));
+
+        //TODO remove once Gmail Forwarding onboarding experiment is done
+        mockUseEasySwitchGmailSync.mockReturnValue({
+            derivedValues: { displayOnboarding: false, displaySync: false },
+            handleSyncCallback: jest.fn(),
+            handleSyncSkip: jest.fn(),
+        });
 
         minimalCache();
         addToCache('MailSettings', { Shortcuts: 1 });

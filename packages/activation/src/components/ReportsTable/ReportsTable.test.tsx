@@ -20,6 +20,7 @@ describe('Reports table testing', () => {
     it('Should display placeholder text when no imports available', async () => {
         const reportsSpy = jest.fn();
         const importerSpy = jest.fn();
+        const forwardSpy = jest.fn();
 
         easySwitchRender(<ReportsTable />);
 
@@ -36,8 +37,16 @@ describe('Reports table testing', () => {
             })
         );
 
+        server.use(
+            rest.get('importer/v1/sync', (req, res, ctx) => {
+                forwardSpy();
+                return res(ctx.set('date', '01/01/2022'), ctx.json([]));
+            })
+        );
+
         await waitFor(() => expect(reportsSpy).toHaveBeenCalledTimes(1));
         await waitFor(() => expect(importerSpy).toHaveBeenCalledTimes(1));
+        await waitFor(() => expect(forwardSpy).toHaveBeenCalledTimes(1));
         screen.getByTestId('reportsTable:noImports');
     });
 
@@ -202,5 +211,60 @@ describe('Reports table testing', () => {
 
         fireEvent.change(passwordInput, { target: { value: 'app password' } });
         await waitFor(() => expect(submitButton).toBeEnabled());
+    });
+
+    it('Should display the list of ongoing forwarding', async () => {
+        const ongoingForward = {
+            Code: 1000,
+            Syncs: [
+                {
+                    ID: 'forward-1',
+                    ImporterID: 'forwardImporter-1',
+                    Account: 'easyflavien@gmail.com',
+                    Product: 'Mail',
+                    State: 1,
+                    CreateTime: 1677771164,
+                    LastRenewTime: 1677771164,
+                    LastImportTime: 0,
+                },
+            ],
+        };
+
+        const apiCallSpy = jest.fn();
+        const importersSpy = jest.fn();
+
+        easySwitchRender(<ReportsTable />);
+
+        server.use(
+            rest.get('/core/v4/features', (req, res, ctx) => {
+                apiCallSpy();
+                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            }),
+            rest.get('/importer/v1/mail/importers/authinfo', (req, res, ctx) => {
+                apiCallSpy();
+                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            }),
+            rest.get('/core/v4/system/config', (req, res, ctx) => {
+                apiCallSpy();
+                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            })
+        );
+
+        server.use(
+            rest.get('importer/v1/sync', (req, res, ctx) => {
+                importersSpy();
+                return res(ctx.set('date', '01/01/2022'), ctx.json(ongoingForward));
+            })
+        );
+
+        await waitFor(() => expect(apiCallSpy).toHaveBeenCalled());
+        await waitFor(() => expect(importersSpy).toHaveBeenCalledTimes(1));
+        const reportRows = screen.getAllByTestId('reportsTable:syncRow');
+        expect(reportRows).toHaveLength(1);
+
+        const deleteReport = screen.getAllByTestId('ReportsTable:deleteForward');
+        fireEvent.click(deleteReport[0]);
+
+        await waitFor(() => screen.getByTestId('ReportsTable:deleteModal'));
     });
 });
