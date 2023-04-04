@@ -1304,6 +1304,11 @@
         "Перегляд (усі подробиці події)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Не вдалося отримати інформацію про контакт для ${ address }"
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "Змінено дозволи для ${ email }"
@@ -2836,6 +2841,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } – ваше ім'я користувача. Щоб створити ${ Local }@${ Domain }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
+      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -3331,6 +3339,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не вдалося зашифрувати"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard версії < 3.0 не підтримуються"
       ]
     },
     "Error importing contacts": {
@@ -4102,6 +4113,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
+      ],
+      "vCard versions < 3.0": [
+        "vCard версії < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5256,8 +5270,8 @@
       "it’s imperative": [
         "це обов'язково"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Я користуюся службою ${ MAIL_APP_NAME } і думаю, що вам вона теж може сподобатися. Це безпечна служба електронної пошти, яка захищає вашу приватність. Зареєструйтеся за цим посиланням, щоб отримати 1 місяць користування преміумфункціями безплатно: ${ referrerLink }"
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Я користуюся службою @ProtonMail і думаю, що вам вона теж може сподобатися. Це безпечна служба електронної пошти, яка захищає вашу приватність. Зареєструйтеся за моїм запрошувальним посиланням, щоб отримати 1 місяць користування преміумфункціями безплатно: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
@@ -5535,6 +5549,9 @@
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
       ],
+      "Preview for this file type is not supported": [
+        "Перегляд цього типу файлу не підтримується"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
@@ -5618,6 +5635,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Наразі сервер не працює"
@@ -7548,7 +7568,7 @@
         "Приватний"
       ],
       "VPN connections": [
-        "VPN-з’єднання"
+        "VPN-з'єднання"
       ]
     },
     "Label for news": {
@@ -7973,7 +7993,7 @@
         "четвертої середи"
       ],
       "on the last Friday": [
-        "останньої п’ятниці"
+        "останньої п'ятниці"
       ],
       "on the last Monday": [
         "останнього понеділка"
@@ -8345,6 +8365,9 @@
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
+      ],
+      "Send & receive invitations": [
+        "Надсилайте й отримуйте запрошення"
       ],
       "Share calendar via link": [
         "Діліться календарем за посиланням"
@@ -8890,6 +8913,11 @@
         "Для імпортування ви повинні вибрати всі запитувані елементи, як показано в GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Оберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати ваші поштові повідомлення та налаштування, переглядати й завантажувати ваші контакти, переглядати й завантажувати усі заплановані події з календаря Google."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
         "Вітаємо у ${ VPN_APP_NAME }"
@@ -9231,7 +9259,7 @@
         "example@domain.com"
       ],
       "Feedback": [
-        "Зворотній зв’язок"
+        "Відгук"
       ],
       "Gift code": [
         "Подарунковий код"
@@ -9567,6 +9595,11 @@
         "Мітки"
       ]
     },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Щоб запросити людей, які не є користувачами ${ BRAND_NAME }, надішліть їм посилання на свій календар."
+      ]
+    },
     "Share calendar max shares reached error": {
       "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "Ви перевищили максимальну кількість – ${ MAX_CALENDAR_MEMBERS } учасник на календар",
@@ -9598,6 +9631,14 @@
     "Shared calendar; Info about calendar owner": {
       "Created by ${ ownerName }": [
         "Створено ${ ownerName }"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "Помилка перевірки підпису"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "Ви увімкнули перевірку адреси для ${ boldSenderEmail }. Не вдається перевірити справжність цього запрошення до календаря. Це може бути пов'язано зі зміною ключів шифрування цього контакту. Перевірте розширені налаштування PGP, або попросіть ${ boldSenderEmail } надіслати нове запрошення."
       ]
     },
     "Signup label": {
@@ -9784,6 +9825,35 @@
         "Високошвидкісна VPN на ${ maxVpn } пристроях",
         "Високошвидкісна VPN на ${ maxVpn } пристроях",
         "Високошвидкісна VPN на ${ maxVpn } пристроях"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "Зрозуміло"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Увійдіть до свого облікового запису Apple App Store і натисніть ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Увійдіть до свого облікового запису Google Play і натисніть ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Керуйте своєю передплатою на ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Передплатою керує ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Користувач ID-${ userId } придбав передплату в застосунку. Щоб керувати передплатою, користувач має перейти до розділу передплати облікового запису ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Передплати"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Ви передплатили тарифний план у застосунку Android. Щоб змінити тарифний план чи оновити спосіб оплати, вам потрібно перейти до магазину Google Play."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Ви передплатили тарифний план у застосунку iOS. Щоб змінити тарифний план чи оновити спосіб оплати, вам потрібно перейти до Apple App Store."
       ]
     },
     "Subscription price": {
@@ -10502,6 +10572,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Завантажити ${ VPN_APP_NAME }"
       ],
+      "Duration": [
+        "Тривалість"
+      ],
       "Edit credit/debit card": [
         "Редагувати кредитну/платіжну картку"
       ],
@@ -10669,9 +10742,6 @@
       ],
       "Layout": [
         "Макет"
-      ],
-      "Length": [
-        "Тривалість"
       ],
       "Link confirmation": [
         "Підтвердження посилання"
@@ -11257,6 +11327,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Автоматично підписуйте всі вихідні повідомлення, щоб користувачі могли перевірити їх надійність. Це виконується в комбінації з типовою конфігурацією PGP, яку можна налаштувати нижче."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "Наскрізно зашифрований спільний доступ"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Наскрізно зашифрований, спільний доступ з перевіреним контактом"
       ]
     },
     "Tor out of date": {

@@ -1857,6 +1857,9 @@
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
+      "A problem occurred, please try again.": [
+        "Hiba történt, próbálja meg újra."
+      ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
@@ -1895,6 +1898,9 @@
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
       ],
+      "Email address is required": [
+        "E-mail cím megadása szükséges"
+      ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
@@ -1921,6 +1927,9 @@
       ],
       "Image upload failed": [
         "Képfeltöltés sikertelen"
+      ],
+      "IMAP server is required": [
+        "IMAP szerver megadása szükséges"
       ],
       "Incorrect login credentials. Please try again.": [
         "Helytelen bejelentkezési adatok. Próbálja meg újra."
@@ -1979,12 +1988,21 @@
         "Az egyik csoportban nincsenek névjegyek: ${ noContactGroupList }",
         "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
       ],
+      "Password is required": [
+        "Jelszó megadása szükséges"
+      ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
+      ],
+      "Please activate your search again": [
+        "Aktiválja újra a keresést"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
+      ],
+      "Port is required": [
+        "A port megadása szükséges"
       ],
       "Primary address key is not decrypted": [
         "Az elsődleges cím kulcsa nincs visszafejtve"
@@ -2070,6 +2088,9 @@
       "There was an error when exporting the contacts vCards": [
         "Hiba történt a névjegyek vCard formátumra exportálásakor"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
       "This field is required": [
         "A mező kitöltése kötelező"
       ],
@@ -2082,6 +2103,9 @@
       "This label name is not available. Please choose a different name.": [
         "Ez a címkenév nem érhető el. Adjon meg egy másik nevet."
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Próbáljon csak betűket, számokat és _.-t használni"
       ],
@@ -2090,6 +2114,12 @@
       ],
       "You can't send a mail to more than 100 recipients": [
         "Nem küldhet üzenetet több mint 100 címzettnek"
+      ],
+      "You can't send vCard files of more than 10 contacts": [
+        "Egyszerre nem küldhet el több mint 10 vCard névjegyfájlt"
+      ],
+      "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
+        "Elérte a csomagjában maximálisan létrehozható naptárak számát. Néhány naptár importálása nem sikerült."
       ],
       "You must set a name": [
         "Meg kell adnia egy nevet"
@@ -2502,6 +2532,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "A ${ CALENDAR_APP_NAME } jelenleg nem támogat bizonyos esemény típusokat, részleteket és formátumokat."
+      ],
+      "vCard versions < 3.0": [
+        "vCard verzió < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5264,6 +5297,9 @@
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
       ],
+      "Sign in with 2FA": [
+        "Bejelentkezés kétlépcsős hitelesítéssel"
+      ],
       "Sign out": [
         "Kijelentkezés"
       ],
@@ -5347,6 +5383,9 @@
       ],
       "Your changes are not synced yet": [
         "Módosításai még nincsenek szinkronizálva"
+      ],
+      "Your Mail Plus free trial ends on ${ textDate }": [
+        "A Mail Plus csomagjának próbaidőszaka lejár: ${ textDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {

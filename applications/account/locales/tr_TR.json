@@ -1300,6 +1300,11 @@
         "Görüntüleme (tüm etkinlik bilgilerini görüntüleme)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "${ address } için iletişim bilgileri alınamadı"
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "${ email } izinleri değiştirildi"
@@ -2818,6 +2823,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } kullanıcı adınızdır. ${ Local }@${ Domain } oluşturmak için lütfen Ayarlar > İletiler ve ileti oluşturma > Kısa etki alanı (pm.me) bölümüne gidin"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -3301,6 +3309,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Şifrelenemedi"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard 3.0 öncesi sürümler desteklenmiyor"
       ]
     },
     "Error importing contacts": {
@@ -4045,6 +4056,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
+      ],
+      "vCard versions < 3.0": [
+        "vCard 3.0 sürümü öncesi"
       ]
     },
     "Import calendar; import invitation": {
@@ -5139,8 +5153,8 @@
       "it’s imperative": [
         "zorunlu olarak"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Bir süredir gizliliğimi koruyan ${ MAIL_APP_NAME } e-posta hizmetini kullanıyorum ve senin de beğeneceğini düşündüm. Ücretli özellikleri bir ay süreyle ücretsiz olarak kullanmak için bu bağlantıya giderek bir hesap açabilirsin: ${ referrerLink }"
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Bir süredir @ProtonMail kullanıyorum ve senin de beğenebileceğini düşündüm. Gizliliği koruyan güvenli bir e-posta hizmeti. Ücretli özellikleri bir ay süreyle ücretsiz olarak kullanmak için öneri bağlantıma kullanarak bir hesap açabilirsin: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
@@ -5412,6 +5426,9 @@
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
       ],
+      "Preview for this file type is not supported": [
+        "Bu dosya türünün ön izlemesi görüntülenemiyor"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Fiyata, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
@@ -5495,6 +5512,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
       ],
       "Server is currently down": [
         "Sunucu şu anda çalışmıyor"
@@ -8150,6 +8170,9 @@
       "Secure Core servers": [
         "Secure Core sunucuları"
       ],
+      "Send & receive invitations": [
+        "Davetleri alma ve gönderme"
+      ],
       "Share calendar via link": [
         "Bağlantı ile takvim paylaşma"
       ],
@@ -8676,6 +8699,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
       ]
     },
     "Onboarding": {
@@ -9548,6 +9576,35 @@
         "${ maxVpn } aygıt için yüksek hızlı VPN"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Anladım"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Aboneliğinizi ${ subscriptionManager } üzerinden yönetin"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Abonelik ${ subscriptionManager } tarafından yönetiliyor"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "ID-${ userId } kullanıcısının aboneliği uygulama içi satın alma ile yapılmış. Aboneliği yönetmek için kullanıcının ${ subscriptionManager } hesabında Abonelik bölümüne gitmesi gereklidir."
+      ],
+      "Subscriptions": [
+        "Abonelikler"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Tarifeniz bir Android uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Google Play Store uygulamasını kullanmalısınız."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Tarifeniz bir iOS uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Apple App Store uygulamasını kullanmalısınız."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Toplam"
@@ -10250,6 +10307,9 @@
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } indir"
       ],
+      "Duration": [
+        "Süre"
+      ],
       "Edit credit/debit card": [
         "Kredi ya da banka kartını düzenle"
       ],
@@ -10413,9 +10473,6 @@
       ],
       "Layout": [
         "Görünüm"
-      ],
-      "Length": [
-        "Uzunluk"
       ],
       "Link confirmation": [
         "Bağlantı onayı"

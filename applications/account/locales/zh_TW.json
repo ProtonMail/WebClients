@@ -53,6 +53,9 @@
       "activate": [
         "啟用"
       ],
+      "Activate ${ user.Name }@pm.me": [
+        "啟用 ${ user.Name }@pm.me"
+      ],
       "Activate organization key": [
         "啟用組織金鑰"
       ],
@@ -1285,6 +1288,11 @@
       ],
       "View (see all event details)": [
         "檢視（檢視所有事件的詳細資訊）"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "擷取 ${ address } 的聯絡人資訊失敗"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -3267,6 +3275,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失敗"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "不支援 vCard 版本 < 3.0"
       ]
     },
     "Error importing contacts": {
@@ -3992,6 +4003,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 目前尚未支援某些事件類型、詳細資料和格式。"
+      ],
+      "vCard versions < 3.0": [
+        "vCard 版本 < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5047,9 +5061,6 @@
       "it’s imperative": [
         "有件至關重要的事"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "我正在用 ${ MAIL_APP_NAME } ，我覺得您也會喜歡它。他是一個主打安全性的電郵服務，可以保護您的隱私權。用我的連結註冊的話還可以免費獲得一個月的加值帳號(普通帳號是永遠免費的) 哦： ${ referrerLink }"
-      ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
       ],
@@ -5317,6 +5328,9 @@
       "Preview failed to be loaded": [
         "連結載入失敗"
       ],
+      "Preview for this file type is not supported": [
+        "不支援預覽此檔案類型"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
       ],
@@ -5400,6 +5414,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆建立一個新的行事曆。"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "使用 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電子郵件傳送。"
       ],
       "Server is currently down": [
         "伺服器目前離線中"
@@ -7357,6 +7374,11 @@
         "列"
       ]
     },
+    "Label, credit card": {
+      "ZIP code": [
+        "郵遞區號"
+      ]
+    },
     "Label/folder modal": {
       "Create folder": [
         "建立資料夾"
@@ -8334,6 +8356,9 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "安全地儲存您的聯絡人詳細資訊，例如電話號碼、地址、生日以及個人備忘。零存取加密，確保即使 ${ BRAND_NAME } 也無法存取。"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "建立通訊群組 (每個群組最多100名聯絡人) 可以簡單迅速的將信件寄送給一大群人。"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
         "設立篩選器，以便為您的電子郵件自動回覆、排序及/或加上標籤"
@@ -10201,9 +10226,6 @@
       ],
       "Layout": [
         "版面配置"
-      ],
-      "Length": [
-        "長度"
       ],
       "Link confirmation": [
         "外部連結確認"

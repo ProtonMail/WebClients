@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
-    "language": "be_BE"
+    "language": "be_BY"
   },
   "contexts": {
     "Action": {
@@ -129,7 +129,7 @@
         "Рэдагаваць"
       ],
       "Edit billing details": [
-        "Рэдагаваць падрабязнасці плацяжу"
+        "Рэдагаваць рэквізіты плацяжу"
       ],
       "Edit display name": [
         "Рэдагаваць бачнае імя"
@@ -2590,7 +2590,7 @@
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Вашы падрабязнасці плацяжу абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
+        "Вашы рэквізіты плацяжу абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
@@ -2909,7 +2909,7 @@
         "Плацельшчык"
       ],
       "Payment details": [
-        "Падрабязнасці плацяжу"
+        "Рэквізіты плацяжу"
       ],
       "Payment method": [
         "Спосаб аплаты"
@@ -3403,6 +3403,9 @@
       "Secure Core servers": [
         "Серверы Secure Core"
       ],
+      "Send & receive invitations": [
+        "Адпраўляйце і атрымлівайце запрашэнні"
+      ],
       "Share calendar via link": [
         "Абагуліць каляндар праз спасылку"
       ],
@@ -3574,7 +3577,7 @@
         "Ствараючы ўліковы запіс ${ BRAND_NAME }, вы пагаджаецеся з нашымі ${ terms }"
       ],
       "Payment details": [
-        "Падрабязнасці плацяжу"
+        "Рэквізіты плацяжу"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Захавайце свой адрас электроннай пошты або нумар тэлефона, каб выкарыстоўваць іх для праверкі пры неабходнасці скінуць уліковы запіс."
@@ -4146,6 +4149,35 @@
         "Высакахуткасны VPN на ${ maxVpn } прыладах"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Зразумела"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Проста ўвайдзіце ў свой уліковы запіс App Store, а потым націсніце ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Проста ўвайдзіце ў свой уліковы запіс Play Store, а потым націсніце ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Кіруйце вашай падпіскай у ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Падпіска кіруецца ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Падпіска карыстальніка з ідэнтыфікатарам ${ userId } была здзейснена праз куплю ў праграме. Для таго, каб кіраваць ёй неабходна перайсці ў раздзел з падпіскамі яго ўліковага запісу ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Падпіскі"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Ваш тарыфны план куплены з дапамогай праграмы для Android. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Ваш тарыфны план куплены з дапамогай праграмы для iOS. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Apple App Store."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Для"
@@ -4448,6 +4480,9 @@
       "Downloads": [
         "Спампоўванні"
       ],
+      "Duration": [
+        "Працягласць"
+      ],
       "Edit credit/debit card": [
         "Рэдагаваць даныя банкаўскай карткі"
       ],
@@ -4495,9 +4530,6 @@
       ],
       "Language": [
         "Мова"
-      ],
-      "Length": [
-        "Даўжыня"
       ],
       "Login password": [
         "Пароль уваходу"
@@ -4713,7 +4745,7 @@
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
-        "Новы перыяд аплаты пачнецца ${ formattedTime }"
+        "Новы перыяд аплаты пачнецца ў ${ formattedTime }"
       ]
     },
     "Tor out of date": {

@@ -546,6 +546,9 @@
       "Show preview": [
         "Mostra anteprima"
       ],
+      "Show side panel": [
+        "Mostra pannello laterale"
+      ],
       "Sign in": [
         "Accedi"
       ],
@@ -2182,6 +2185,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Criptaggio fallito"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "versioni di vCard < 3.0 non supportate"
       ]
     },
     "Error importing contacts": {
@@ -2550,6 +2556,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } attualmente non supporta determinati tipi di eventi, dettagli e formati."
+      ],
+      "vCard versions < 3.0": [
+        "versioni di vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {

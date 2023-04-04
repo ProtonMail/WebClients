@@ -181,6 +181,9 @@
       "Close": [
         "Închidere"
       ],
+      "Close & discard": [
+        "Închidere și înlăturare"
+      ],
       "Close composer": [
         "Închidere panou editare"
       ],
@@ -1265,17 +1268,6 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Toate"
-      ],
-      "With": [
-        "Cu"
-      ],
-      "Without": [
-        "Fără"
       ]
     },
     "Attachment signature verification": {
@@ -3033,6 +3025,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } pentru <${ email }>. Puteți adăuga o altă cheie sau dezactiva criptarea pentru acest contact pentru a rezolva problema."
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -3495,6 +3490,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Criptare eșuată"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versiunile vCard < 3.0 nu sunt suportate."
       ]
     },
     "Error importing contacts": {
@@ -4077,6 +4075,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } nu acceptă în prezent anumite tipuri de evenimente, detalii și formate."
+      ],
+      "vCard versions < 3.0": [
+        "Versiuni vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5252,6 +5253,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Trimiterea mesajelor de la o adresă @pm.me este o funcție cu plată. Mesajul va fi trimis de la adresa implicită ${ email }."
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Trimis cu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> e-mail securizat."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
@@ -6052,9 +6056,6 @@
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
-      ],
-      "Attachments": [
-        "Atașamente"
       ],
       "Authenticator app": [
         "Aplicație Authenticator"
@@ -7091,6 +7092,11 @@
         "Pentru ca importarea să funcționeze, trebuie să selectați toate elementele solicitate așa cum e arătat în imagine."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selectați ce poate accesa ${ BRAND_NAME }: accesare mesaje e-mail și setări, afișare și descărcare contacte, afișare și descărcare toate agendele pe care le accesați din Google Agenda."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bun venit la ${ appName }"
@@ -7410,6 +7416,9 @@
         "${ remainingDays } zi",
         "${ remainingDays } zile",
         "${ remainingDays } de zile"
+      ],
+      "<1 d": [
+        "<o zi"
       ]
     },
     "Reply to calendar invitation": {

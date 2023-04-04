@@ -36,6 +36,9 @@
       "activate": [
         "有効にする"
       ],
+      "Activate ${ user.Name }@pm.me": [
+        "${ user.Name }@pm.me を有効にする"
+      ],
       "Activate organization key": [
         "組織の鍵を有効化する"
       ],
@@ -308,6 +311,9 @@
       ],
       "Edit billing details": [
         "支払いの詳細を編集"
+      ],
+      "Edit display name": [
+        "表示名を編集"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -818,6 +824,9 @@
       ],
       "Upgrade now": [
         "今すぐアップグレード"
+      ],
+      "Upgrade your plan": [
+        "プランをアップグレード"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -3867,6 +3876,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME }は現在、特定の予定の種類や詳細、フォーマットに対応していません。"
+      ],
+      "vCard versions < 3.0": [
+        "vCard バージョン3.0 以前"
       ]
     },
     "Import calendar; import invitation": {
@@ -4255,6 +4267,9 @@
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. 友達を ${ BRAND_NAME } に招待"
+      ],
+      "10 email addresses": [
+        "10 件のメールアドレス"
       ],
       "2. They try ${ planName }": [
         "2. 友達は ${ planName } を試すことができます"
@@ -4745,6 +4760,9 @@
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "SPF と DKIM の両方を設定した場合、SPF と DKIM の両方のチェックに失敗した場合に他のメールサービスがあなたのドメインのメールを配信する方法を DMARC で指定できます。これにより、あなたになりすますスパマーに対処できますが、適切に設定しないと配信に問題を引き起こす可能性があります。"
       ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
+        "2 要素認証デバイスを紛失した場合、6 桁の 2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
@@ -4831,9 +4849,6 @@
       ],
       "it’s imperative": [
         "必須です"
-      ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "私は ${ MAIL_APP_NAME } を使用しており、あなたに気に入ってもらえると思いました。これはプライバシーを保護できる安全なメールサービスです。このリンクを使ってサインアップすると 1 か月間、プレミアム機能を無料で使うことができます。${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
@@ -5174,6 +5189,9 @@
       "Show original message": [
         "元のメッセージを表示"
       ],
+      "Sign in to ${ MAIL_APP_NAME } to activate your address": [
+        "${ MAIL_APP_NAME } にログインしてアドレスを有効にします"
+      ],
       "Signed up": [
         "サインアップ済み"
       ],
@@ -5384,6 +5402,9 @@
       "Two-factor authentication enabled": [
         "2 要素認証が有効になりました"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
+        "2 パスワードモードでは、アカウントへのログイン用とメールボックスの復号用の 2 つのパスワードを使用します。(高度な機能)"
+      ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "2 パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。2 パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
       ],
@@ -5395,6 +5416,9 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "アカウントからサインアウトするか、パスワードを変更しない限り、セッションはアクティブなままです。セッションは非アクティブになってから 60 日後に期限切れになります。"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "制限なしのフォルダー、ラベル、フィルター"
       ],
       "Unsaved changes": [
         "未保存の変更"
@@ -5629,6 +5653,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
+      ],
+      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
+        "${ VPN_APP_NAME } と ${ MAIL_APP_NAME } のアカウントはリンクしています。両アカウントを削除するには ${ loginLink } へログインしてアカウントを削除してください。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
@@ -9659,9 +9686,6 @@
       "Layout": [
         "レイアウト"
       ],
-      "Length": [
-        "長さ"
-      ],
       "Link confirmation": [
         "リンクの確認"
       ],
@@ -9949,6 +9973,12 @@
       ],
       "Verify email address": [
         "メールアドレスを認証"
+      ],
+      "Verifying your card...": [
+        "カードを検証中..."
+      ],
+      "Verifying your payment...": [
+        "支払いを検証中..."
       ],
       "VPN apps": [
         "VPN アプリ"

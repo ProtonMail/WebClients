@@ -1878,6 +1878,9 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
+      "A problem occurred, please try again.": [
+        "Ocorreu um erro. Tente novamente."
+      ],
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
@@ -2011,6 +2014,9 @@
       ],
       "Passwords do not match": [
         "As senhas não correspondem"
+      ],
+      "Please activate your search again": [
+        "Ative a pesquisa novamente"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrija o conflito em destaque para prosseguir.",
@@ -2182,6 +2188,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falha na criptografia"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "versões vCard <3.0 não são suportadas"
       ]
     },
     "Error importing contacts": {
@@ -2550,6 +2559,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+      ],
+      "vCard versions < 3.0": [
+        "versões vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3480,7 +3492,7 @@
         "A pré-visualização falhou ao carregar"
       ],
       "Preview for this file type is not supported": [
-        "A visualização prévia deste arquivo não é suportada"
+        "A pré-visualização deste arquivo não é suportada"
       ],
       "Primary": [
         "Principal"
@@ -4693,6 +4705,11 @@
         "Para que a importação funcione, você deve selecionar todos os itens solicitados conforme mostrado no GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecione o que ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Próximo"
@@ -5730,6 +5747,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
+      ],
+      "Sign in with 2FA": [
+        "Iniciar sessão com A2F"
       ],
       "Sign out": [
         "Encerrar sessão"

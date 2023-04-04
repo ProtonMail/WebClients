@@ -207,7 +207,7 @@
         "Copiar mensagem para a área de transferência"
       ],
       "Copy password to clipboard": [
-        "Copiar senha para a área de transferência"
+        "Copiar palavra-passe para a área de transferência"
       ],
       "Create a new contact group": [
         "Criar novo grupo de contactos"
@@ -758,8 +758,11 @@
       "Reset": [
         "Redefinir"
       ],
+      "Reset search form": [
+        "Redefinir o formulário de pesquisa"
+      ],
       "Reset to default": [
-        "Repor predefinição"
+        "Reinicialização por defeito"
       ],
       "Resume": [
         "Retomar"
@@ -1113,11 +1116,6 @@
         "Evento não suportado"
       ]
     },
-    "Attachment radio advanced search": {
-      "All": [
-        "Todos"
-      ]
-    },
     "Attachment signature verification": {
       "Sender verification failed": [
         "Falha ao verificar o remetente"
@@ -1335,6 +1333,23 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "cenoura"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "purple": [
+        "roxo"
+      ],
+      "sahara": [
+        "saará"
+      ],
+      "strawberry": [
+        "morango"
       ]
     },
     "Composer email icon": {
@@ -2345,6 +2360,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
       ],
+      "When do you want your message to be sent?": [
+        "Quando você quer que a sua mensagem seja enviada?"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, por favor divida-o."
       ],
@@ -2493,7 +2511,7 @@
         "Insira 6 algarismos"
       ],
       "Enter a password": [
-        "Insira uma senha"
+        "Insira uma palavra-passe"
       ],
       "Error in one of the conditions": [
         "Erro numa das condições"
@@ -2511,7 +2529,7 @@
         "Credenciais de início de sessão incorrectas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Senha da caixa de correio incorrecta. Por favor, tente novamente."
+        "Palavra-passe da caixa de correio incorrecta. Tente novamente."
       ],
       "Invalid email address": [
         "Endereço electrónico inválido"
@@ -2555,7 +2573,7 @@
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
       ],
       "Passwords do not match": [
-        "As senhas não coincidem"
+        "As palavras-passe não coincidem."
       ],
       "Public key could not be trusted": [
         "A chave pública não pôde ser confiada"
@@ -2596,7 +2614,7 @@
         "Alguns dos anexos não puderam ser desencriptados.\nSe tiver a chave privada correspondente, ainda será capaz de os desencriptar com um programa como o GnuPG."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Por favor, escolha um nome diferente."
+        "O nome da pasta é inválido. Escolha um nome diferente."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "As propriedades-chave para ${ emailAddress } não puderam ser extraídas"
@@ -3132,16 +3150,16 @@
         "Demasiados pedidos recentes. Por favor, tente mais tarde."
       ],
       "Use your app password if:": [
-        "Use a senha da aplicação se:"
+        "Use a palavra-passe da aplicação se:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Use a senha da aplicação em vez da sua senha normal se:"
+        "Use a palavra-passe da aplicação em vez da sua palavra-passe normal se:"
       ],
       "Your email account requires one to export your data.": [
         "A sua conta de e-mail requer uma para exportar os seus dados."
       ],
       "Your password is correct.": [
-        "A sua senha está correta."
+        "A sua palavra-passe está correta."
       ]
     },
     "Import error emphasis": {
@@ -3170,7 +3188,7 @@
     },
     "Import instructions link": {
       "app password": [
-        "senha da aplicação"
+        "palavra-passe da aplicação"
       ],
       "ICS file": [
         "Ficheiro ICS"
@@ -3414,7 +3432,7 @@
         "Corpo: "
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Não se lembra da senha? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
+        "Não se lembra da palavra-passe? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e no processo descartar o alerta."
       ],
       "Center": [
         "Centrar"
@@ -3480,6 +3498,9 @@
       "Do you want to re-sign the contact details?": [
         "Deseja assinar novamente os detalhes do contacto?"
       ],
+      "Don't forget to share the password with the recipient": [
+        "Não se esqueçe de partilhar a palavra-passe com o destinatário."
+      ],
       "Draft": [
         "Rascunho"
       ],
@@ -3536,7 +3557,7 @@
         "Introduzir o código de verificação. Digite ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Insira a sua senha (como administrador da organização)."
+        "Insira a sua palavra-passe (como administrador da organização)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo restante estimado: ${ estimatedMinutes } minuto",
@@ -3583,7 +3604,7 @@
         "Ocultar mensagem original"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
+        "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se acredita que houve um erro, por favor, contacte-nos em ${ contactLink }."
@@ -3613,7 +3634,7 @@
         "Indexação em pausa"
       ],
       "Inherited from parent folder": [
-        "Herança da pasta-mãe"
+        "Herança da pasta principal"
       ],
       "Insert image": [
         "Inserir imagem"
@@ -3691,7 +3712,7 @@
         "Mensalmente ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Nomeie a sua nova pasta e seleccione a pasta-mãe onde deseja colocá-la. Se não seleccionar uma pasta-mãe, esta nova pasta será criada como uma pasta de nível superior."
+        "Nomeie a sua nova pasta e seleccione a pasta principalonde deseja colocá-la. Se não seleccionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
       ],
       "No action selected": [
         "Nenhuma acção seleccionada"
@@ -3746,6 +3767,9 @@
       ],
       "Please fill out this field.": [
         "Por favor, preencha este campo."
+      ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Mantenha-o seguro. Vai precisar dele para aceder à sua conta e descodificar os seus dados em caso de reinicialização de uma palavra-passe."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Por favor, note que os endereços atribuídos a este grupo NÃO serão eliminados."
@@ -3820,6 +3844,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione o formato de email predefinido a utilizar para este endereço de email."
       ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Envie uma mensagem encriptada, protegida por palavra-passe, para um endereço de correio electrónico ${ boldText }."
+      ],
       "Sending": [
         "A enviar"
       ],
@@ -3828,6 +3855,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "O envio de mensagens de um endereço @pm.me é uma funcionalidade paga. A sua mensagem será enviada do seu endereço predefinido ${ email }"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado com o e-mail seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Session timed out": [
         "A sessão expirou."
@@ -3884,14 +3914,14 @@
         "O remetente requisitou um aviso de leitura."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "A verificação de ${ contactName } falhou: o contacto não está correctamente assinado.\nPode ser o resultado de uma reposição de senha.\nTem de assinar novamente o contacto para poder enviar uma mensagem para ${ contactAddress } ou editar o contacto."
+        "Falha na verificação de ${ contactName }: o contacto não está correctamente assinado.\nPode ser o resultado de uma reinicialização de palavra-passe.\nTem de assinar novamente o contacto para poder enviar uma mensagem para ${ contactAddress } ou editar o contacto."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "A verificação de ${ contactNames } falhou: o contacto não está correctamente assinado.\nPode ser o resultado de uma reposição de senha.\nTem de assinar novamente o contacto para poder enviar uma mensagem para ${ contactAddresses } ou editar o contacto.",
-        "A verificação de ${ contactNames } falhou: os contactos não estão correctamente assinados.\nPode ser o resultado de uma reposição de senha.\nTem de assinar novamente os contactos para poder enviar uma mensagem para ${ contactAddresses } ou editar os contactos."
+        "Falha na verificação de ${ contactNames }: o contacto não está correctamente assinado.\nPode ser o resultado de uma reinicialização de palavra-passe.\nTem de assinar novamente o contacto para poder enviar uma mensagem para ${ contactAddresses } ou editar o contacto.",
+        "Falha na verificação de ${ contactNames }: os contactos não estão correctamente assinados.\nPode ser o resultado de uma redefinição de palavra-passe.\nTem de assinar novamente os contactos para poder enviar uma mensagem para ${ contactAddresses } ou editar os contactos."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
-        "Houve um erro com a assinatura usada para verificar os detalhes do contacto, que pode ser o resultado de uma reposição da senha."
+        "Houve um erro com a assinatura usada para verificar os detalhes do contacto, que pode ser o resultado de uma reinicialização da palavra-passe."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
@@ -3951,7 +3981,7 @@
         "Para assinar novamente os contactos, temos de os verificar todos contra a lista de chaves de encriptação disponíveis na conta. Se não houver correspondências, o contacto será assinado de novo com a chave principal."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Para recuperar os seus dados, é necessário reactivar a chave de encriptação do contacto, usada quando os dados foram criados. Isto requer que se lembre da senha usada quando a chave foi gerada."
+        "Para recuperar os seus dados, é necessário reactivar a chave de encriptação do contacto, usada quando os dados foram criados. Isto requer que se lembre da palavra-passe usada quando a chave foi gerada."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Para cancelar a subscrição desta lista, será enviado um email de ${ boldFrom } com os seguintes detalhes, como definido pelo autor do boletim:"
@@ -4004,6 +4034,9 @@
       "Week": [
         "Semana"
       ],
+      "When do you want your message to be sent?": [
+        "Quando você quer que a sua mensagem seja enviada?"
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando activou as chaves confiadas para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contacto."
       ],
@@ -4032,7 +4065,7 @@
         "Não pode responder do endereço convidado."
       ],
       "You do not have any messages here": [
-        "Não tem mensagens aqui"
+        "Não tem mensagens aqui."
       ],
       "You have ${ totalLabel } in your inbox.": [
         "Tem ${ totalLabel } na sua caixa de entrada."
@@ -4041,16 +4074,16 @@
         "Tem ${ unreadsLabel } na sua caixa de entrada."
       ],
       "You have **${ count } conversation** stored in this folder": [
-        "Tem **${ count } conversa** armazenada desta pasta",
-        "Tem **${ count } conversas** armazenadas desta pasta"
+        "Tem **${ count } conversa** armazenada desta pasta.",
+        "Tem **${ count } conversas** armazenadas desta pasta."
       ],
       "You have **${ count } conversation** tagged with this label": [
         "Tem **${ count } conversa com esta etiqueta",
         "Tem **${ count } conversas com esta etiqueta"
       ],
       "You have **${ count } message** stored in this folder": [
-        "Tem **${ count } mensagem** armazenada desta pasta",
-        "Tem **${ count } mensagens** armazenadas desta pasta"
+        "Tem **${ count } mensagem** armazenada desta pasta.",
+        "Tem **${ count } mensagens** armazenadas desta pasta."
       ],
       "You have **${ count } message** tagged with this label": [
         "Tem **${ count } mensagem** com esta etiqueta",
@@ -4370,6 +4403,9 @@
       "ALL": [
         "TUDO"
       ],
+      "All contacts": [
+        "Todos os contactos"
+      ],
       "Also archive": [
         "Arquivar também"
       ],
@@ -4386,13 +4422,10 @@
         "QUALQUER"
       ],
       "App password": [
-        "Senha da aplicação"
+        "Palavra-passe da aplicação"
       ],
       "Attach screenshot(s)": [
         "Anexar capturas de ecrã"
-      ],
-      "Attachments": [
-        "Anexos"
       ],
       "Authenticator app": [
         "Aplicação de autenticação"
@@ -4503,7 +4536,7 @@
         "Bom"
       ],
       "Hide password": [
-        "Ocultar senha"
+        "Ocultar a palavra-passe"
       ],
       "I understand the risk": [
         "Eu compreendo o risco."
@@ -4545,7 +4578,7 @@
         "Servidor de email (IMAP)"
       ],
       "Mailbox password": [
-        "Senha da caixa de correio"
+        "Palavra-passe da caixa de correio"
       ],
       "Main": [
         "Principal"
@@ -4602,7 +4635,10 @@
         "Participantes"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
+      ],
+      "Password hint": [
+        "Dica da palavra-passe"
       ],
       "Phone number": [
         "Número de telefone"
@@ -4632,7 +4668,7 @@
         "Região"
       ],
       "Reveal password": [
-        "Mostrar senha"
+        "Mostrar a palavra-passe"
       ],
       "Select how your composer opens by default.": [
         "Escolha a aparência predefinida do compositor."
@@ -4728,7 +4764,7 @@
         "Maravilhoso"
       ],
       "Your password (admin)": [
-        "A sua senha (admin)"
+        "A sua palavra-passe (admin)"
       ]
     },
     "Label for contact group color": {
@@ -5170,6 +5206,14 @@
         "Atualizar agora"
       ]
     },
+    "new_plans: feature": {
+      "Custom email domains": [
+        "Domínios de correio electrónico personalizados"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
@@ -5222,7 +5266,7 @@
         "Ignorar grupo"
       ],
       "No parent folder": [
-        "Nenhuma pasta-mãe"
+        "Nenhuma pasta principal"
       ]
     },
     "Option group": {
@@ -5302,7 +5346,7 @@
         "Nome ou endereço de email"
       ],
       "Password": [
-        "Senha"
+        "Palavra-passe"
       ],
       "Phone number": [
         "Número de telefone"
@@ -5782,7 +5826,7 @@
         "Mover ${ selectionCount } mensagens"
       ],
       "Password copied to clipboard": [
-        "Senha copiada para a área de transferência"
+        "A palavra-passe é copiada para a área de transferência."
       ],
       "Phishing reported": [
         "Reportado como phishing"
@@ -6039,7 +6083,7 @@
         "Definições de email"
       ],
       "Enter your password": [
-        "Insira a sua senha"
+        "Insira a sua palavra-passe"
       ],
       "Error": [
         "Erro"
@@ -6213,6 +6257,9 @@
       "Request new code": [
         "Pedir novo código"
       ],
+      "Schedule send": [
+        "Agendar o envio"
+      ],
       "Select a theme": [
         "Seleccionar um tema"
       ],
@@ -6365,8 +6412,8 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos ${ length } caracteres"
+        "A palavra-passe deve conter pelo menos ${ length } carácter.",
+        "A palavra-passe deve conter pelo menos ${ length } caracteres."
       ]
     },
     "Warning": {
@@ -6391,7 +6438,7 @@
         "Não foi possível unir os contactos"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Se não se lembra da senha, é impossível reactivar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."
+        "Se não se lembra da palavra-passe, é impossível reactivar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."

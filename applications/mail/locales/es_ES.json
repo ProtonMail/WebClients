@@ -181,6 +181,9 @@
       "Close": [
         "Cerrar"
       ],
+      "Close & discard": [
+        "Cerrar y descartar"
+      ],
       "Close composer": [
         "Cerrar el editor"
       ],
@@ -955,6 +958,9 @@
       "Show preview": [
         "Mostrar vista previa"
       ],
+      "Show side panel": [
+        "Mostrar el panel lateral"
+      ],
       "Sign in": [
         "Iniciar sesión"
       ],
@@ -1257,17 +1263,6 @@
       ],
       "Unsupported event": [
         "Evento no admitido"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Todos"
-      ],
-      "With": [
-        "Con"
-      ],
-      "Without": [
-        "Sin"
       ]
     },
     "Attachment signature verification": {
@@ -3018,6 +3013,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } para <${ email }>. Puedes añadir otra clave o deshabilitar el cifrado para este contacto para resolver el problema."
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
       ],
@@ -3467,6 +3465,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Error con el cifrado"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versiones vCard menores a 3.0 no soportadas"
       ]
     },
     "Error importing contacts": {
@@ -4042,6 +4043,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } no admite actualmente algunos tipos de eventos, detalles y formatos."
+      ],
+      "vCard versions < 3.0": [
+        "Versiones vCard menores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5005,6 +5009,9 @@
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ninguna de las claves cargadas es válida para cifrar los datos. Para enviar mensajes a esta dirección, carga una clave válida o desactiva \"Cifrar correos electrónicos\"."
       ],
+      "Normal": [
+        "Normal"
+      ],
       "Not a valid URL": [
         "No es una URL válida."
       ],
@@ -5068,6 +5075,9 @@
       ],
       "Preview failed to be loaded": [
         "Error al cargar la vista previa"
+      ],
+      "Preview for this file type is not supported": [
+        "No se admite la vista previa para este tipo de archivo."
       ],
       "Primary": [
         "Principal"
@@ -5155,6 +5165,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "El envío de mensajes desde la dirección @pm.me es una función de pago. Tu mensaje será enviado desde tu dirección por defecto ${ email }."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado con el correo electrónico seguro de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -5942,9 +5955,6 @@
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
-      ],
-      "Attachments": [
-        "Archivos adjuntos"
       ],
       "Authenticator app": [
         "Aplicación de autenticación"
@@ -6973,6 +6983,11 @@
         "Para que la importación funcione, debes seleccionar todos los elementos solicitados como se muestra en el GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecciona a lo que ${ BRAND_NAME } puede acceder: ver tus correos y ajustes, ver y descargar tus contactos, ver y descargar todas tus agendas a las que accedes en Google Agenda."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Te damos la bienvenida a ${ appName }"
@@ -7288,6 +7303,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } día",
         "${ remainingDays } días"
+      ],
+      "<1 d": [
+        "<1 d"
       ]
     },
     "Reply to calendar invitation": {

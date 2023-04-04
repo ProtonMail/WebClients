@@ -181,6 +181,9 @@
       "Close": [
         "Закрити"
       ],
+      "Close & discard": [
+        "Закрити й відхилити"
+      ],
       "Close composer": [
         "Закрити редактор"
       ],
@@ -961,6 +964,9 @@
       "Show preview": [
         "Показати попередній перегляд"
       ],
+      "Show side panel": [
+        "Показати бічну панель"
+      ],
       "Sign in": [
         "Увійти"
       ],
@@ -1267,17 +1273,6 @@
       ],
       "Unsupported event": [
         "Непідтримувана подія"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Усі"
-      ],
-      "With": [
-        "З"
-      ],
-      "Without": [
-        "Без"
       ]
     },
     "Attachment signature verification": {
@@ -2891,7 +2886,7 @@
         "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Ви можете позначити ті контакти, які ви не хочете ані об’єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
+        "Ви можете позначити ті контакти, які ви не хочете ані об'єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3042,6 +3037,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } для <${ email }>. Щоб розв'язати проблему, можете додати інший ключ або вимкнути шифрування для цього контакту."
+      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
@@ -3253,7 +3251,7 @@
         "Паролі відрізняються"
       ],
       "Please activate your search again": [
-        "Активуйте пошук знову"
+        "Повторно активуйте пошук"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
@@ -3517,6 +3515,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не вдалося зашифрувати"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "vCard версії < 3.0 не підтримуються"
       ]
     },
     "Error importing contacts": {
@@ -4114,6 +4115,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
+      ],
+      "vCard versions < 3.0": [
+        "vCard версії < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5185,6 +5189,9 @@
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Жоден із завантажених ключів не є дійсним для шифрування. Щоб мати можливість надсилати повідомлення на цю адресу, завантажте дійсний ключ або вимкніть функцію «Шифрувати листи»."
       ],
+      "Normal": [
+        "Звичайний"
+      ],
       "Not a valid URL": [
         "Недійсна URL-адреса"
       ],
@@ -5250,6 +5257,9 @@
       ],
       "Preview failed to be loaded": [
         "Не вдалося завантажити попередній перегляд"
+      ],
+      "Preview for this file type is not supported": [
+        "Перегляд цього типу файлу не підтримується"
       ],
       "Primary": [
         "Основний"
@@ -5337,6 +5347,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Надсилання повідомлень з адреси @pm.me є платною функцією. Ваше повідомлення буде надіслано зі стандартної адреси ${ email }"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Надіслано за допомогою безпечної пошти <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -6152,9 +6165,6 @@
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
-      ],
-      "Attachments": [
-        "Вкладення"
       ],
       "Authenticator app": [
         "Програма автентифікації"
@@ -7041,7 +7051,7 @@
         "четвертої середи"
       ],
       "on the last Friday": [
-        "останньої п’ятниці"
+        "останньої п'ятниці"
       ],
       "on the last Monday": [
         "останнього понеділка"
@@ -7197,6 +7207,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Для імпортування ви повинні вибрати всі запитувані елементи, як показано в GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Оберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати ваші поштові повідомлення та налаштування, переглядати й завантажувати ваші контакти, переглядати й завантажувати усі заплановані події з календаря Google."
       ]
     },
     "Onboarding": {
@@ -7522,6 +7537,9 @@
         "${ remainingDays } д",
         "${ remainingDays } д",
         "${ remainingDays } д"
+      ],
+      "<1 d": [
+        "<1 д"
       ]
     },
     "Reply to calendar invitation": {
