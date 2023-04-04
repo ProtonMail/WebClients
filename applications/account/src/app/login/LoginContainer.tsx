@@ -11,6 +11,7 @@ import {
     useErrorHandler,
     useFeature,
 } from '@proton/components';
+import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 import {
     handleFido2,
@@ -70,6 +71,7 @@ const LoginContainer = ({
               }
             : originalTrustedDeviceRecoveryFeature;
     const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
+    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -158,6 +160,7 @@ const LoginContainer = ({
                                     ignoreUnlock: false,
                                     payload,
                                     setupVPN,
+                                    ktFeature: (await ktFeature.get())?.Value,
                                 })
                                     .then(handleResult)
                                     .catch((e) => {

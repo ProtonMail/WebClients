@@ -54,7 +54,6 @@ export * from './payments';
 export * from './privacy';
 export * from './recovery';
 export * from './referral';
-export * from './resetPassword';
 export * from './rightToLeft';
 export * from './search';
 export * from './security';

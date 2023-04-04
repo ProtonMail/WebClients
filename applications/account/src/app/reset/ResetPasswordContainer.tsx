@@ -17,6 +17,7 @@ import {
     useNotifications,
     useSearchParamsEffect,
 } from '@proton/components';
+import { KT_FF } from '@proton/components/containers/keyTransparency/ktStatus';
 import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
 import {
     handleNewPassword,
@@ -67,6 +68,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
               }
             : originalTrustedDeviceRecoveryFeature;
     const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
+    const ktFeature = useFeature<KT_FF>(FeatureCode.KeyTransparencyWEB);
 
     const [myLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();
@@ -87,6 +89,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
             username: username ?? '',
             Methods: [],
             hasTrustedDeviceRecovery,
+            ktFeature,
         };
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
     };
@@ -159,6 +162,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
             username: username ?? '',
             Methods: [],
             hasTrustedDeviceRecovery,
+            ktFeature,
         };
 
         handleRequestToken({
@@ -195,6 +199,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                         Methods: [],
                         persistent,
                         hasTrustedDeviceRecovery,
+                        ktFeature,
                     },
                     api: silentApi,
                     token,
@@ -261,6 +266,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                     setupVPN,
                                     appName: APP_NAME,
                                     hasTrustedDeviceRecovery,
+                                    ktFeature,
                                     username,
                                     persistent,
                                     api: silentApi,

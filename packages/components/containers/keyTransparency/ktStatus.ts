@@ -1,21 +1,21 @@
 import { KT_DOMAINS, getBaseDomain, getKTLocalStorage, removeKTFromLS } from '@proton/key-transparency';
-import { APPS } from '@proton/shared/lib/constants';
-import { getHostname } from '@proton/shared/lib/helpers/url';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 
-export enum KT_FF {
+export enum KtFeatureEnum {
     DISABLE,
     ENABLE_CORE,
     ENABLE_UI,
 }
+export type KT_FF = KtFeatureEnum | undefined;
 
-export const isKTActive = async (feature?: KT_FF) => {
+export const isKTActive = async (APP_NAME: APP_NAMES, feature: KT_FF) => {
     // Do not activate KT if
     //  - feature flag is off;
     //  - the api is not prod's or proton.black's
     //  - there is no access to cross-storage.
     //  - BigInt is not supported (it is needed for VRF verification);
-    if (typeof feature === 'undefined' || feature === KT_FF.DISABLE) {
+    if (feature === undefined || feature === KtFeatureEnum.DISABLE || APP_NAME === APPS.PROTONVPN_SETTINGS) {
         return false;
     }
 
@@ -26,9 +26,7 @@ export const isKTActive = async (feature?: KT_FF) => {
 
     try {
         // We only care about the difference between account and everything else
-        const ls = getKTLocalStorage(
-            getHostname(window.location.href).indexOf('account') !== -1 ? APPS.PROTONACCOUNT : APPS.PROTONMAIL
-        );
+        const ls = getKTLocalStorage(APP_NAME);
         const test = 'KTTEST';
         await ls.setItem(test, test);
         const receivedTest = await ls.getItem(test);
