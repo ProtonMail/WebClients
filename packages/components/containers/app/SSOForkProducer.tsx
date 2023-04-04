@@ -57,7 +57,12 @@ export type ActiveSessionData =
 export type ProduceForkData =
     | {
           type: SSOType.Proton;
-          payload: ProduceForkParameters & { UID: string; keyPassword?: string; persistent: boolean; trusted: boolean };
+          payload: ProduceForkParameters & {
+              UID: string;
+              keyPassword?: string;
+              persistent: boolean;
+              trusted: boolean;
+          };
       }
     | {
           type: SSOType.OAuth;
@@ -122,7 +127,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
         };
 
         const runInternal = async () => {
-            const { app, state, localID, type, plan } = getProduceForkParameters();
+            const { app, state, localID, type, plan, independent } = getProduceForkParameters();
             if (!app || !state) {
                 onInvalidFork();
                 return;
@@ -143,12 +148,16 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                             plan,
                             persistent,
                             trusted,
+                            independent,
                         },
                     });
                     return;
                 }
 
-                onActiveSessions({ type: SSOType.Proton, payload: { state, app, type, plan } }, activeSessionsResult);
+                onActiveSessions(
+                    { type: SSOType.Proton, payload: { state, app, type, plan, independent } },
+                    activeSessionsResult
+                );
             };
 
             if (localID === undefined) {
@@ -168,6 +177,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                         state,
                         app,
                         plan,
+                        independent,
                         persistent: validatedSession.persistent,
                         trusted: validatedSession.trusted,
                     },
