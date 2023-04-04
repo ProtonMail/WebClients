@@ -7,7 +7,7 @@ import { getDefaultKTLS } from '@proton/shared/lib/keyTransparency';
  * Return the set of functions to use account's local storage
  */
 export const getKTLocalStorage = (APP_NAME: APP_NAMES): KTLocalStorageAPI => {
-    if (APP_NAME === APPS.PROTONACCOUNT) {
+    if (APP_NAME === APPS.PROTONACCOUNT || APP_NAME === APPS.PROTONVPN_SETTINGS) {
         // If we are in account, we use its local storage directly
         return getDefaultKTLS();
     }
