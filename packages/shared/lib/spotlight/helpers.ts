@@ -1,4 +1,4 @@
-import { Environment } from '@proton/shared/lib/environment/helper';
+import { Environment } from '@proton/shared/lib/interfaces';
 import { SpotlightDate } from '@proton/shared/lib/spotlight/interface';
 
 export const getEnvironmentDate = (

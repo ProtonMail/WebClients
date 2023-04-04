@@ -21,7 +21,6 @@ export interface CalendarsSettingsSectionProps {
     sharedCalendars: VisualCalendar[];
     unknownCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
-    calendarSubscribeUnavailable: boolean;
 }
 
 const CalendarsSettingsSection = ({
@@ -34,7 +33,6 @@ const CalendarsSettingsSection = ({
     sharedCalendars,
     unknownCalendars,
     defaultCalendar,
-    calendarSubscribeUnavailable,
 }: CalendarsSettingsSectionProps) => {
     const { invitations: calendarInvitations, loading } = useCalendarShareInvitations();
     const { isCalendarsLimitReached, isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(
@@ -66,7 +64,6 @@ const CalendarsSettingsSection = ({
                 user={user}
                 canAdd={canAddCalendar}
                 isCalendarsLimitReached={isOtherCalendarsLimitReached}
-                unavailable={calendarSubscribeUnavailable}
             />
         </PrivateMainSettingsArea>
     );
