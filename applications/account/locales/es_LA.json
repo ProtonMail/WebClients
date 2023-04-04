@@ -573,7 +573,7 @@
         "Recuperar datos"
       ],
       "Refer a friend": [
-        "Referir un amigo"
+        "Referir una amistad"
       ],
       "Refresh status": [
         "Actualizar estado"
@@ -1298,6 +1298,11 @@
       ],
       "View (see all event details)": [
         "Ver (todos los detalles del evento)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Error al recuperar la información de contacto para ${ address }"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -2818,6 +2823,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } es su usuario. Para crear ${ Local }@${ Domain }, vaya a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -3301,6 +3309,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falló el cifrado"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versiones vCard menores a 3.0 no compatibles"
       ]
     },
     "Error importing contacts": {
@@ -4048,6 +4059,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualmente no admite ciertos tipos de eventos, detalles y formatos."
+      ],
+      "vCard versions < 3.0": [
+        "Versiones vCard menores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5142,8 +5156,8 @@
       "it’s imperative": [
         "es obligatorio"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "He estado usando ${ MAIL_APP_NAME } y creo que puede gustarle. Es un servicio de correo electrónico seguro que protege su privacidad. Regístrese a través de este enlace para obtener gratis 1 mes de funciones premium: ${ referrerLink }"
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "He estado usando @ProtonMail y creo que puede gustarle. Es un servicio de correo electrónico seguro que protege su privacidad. Regístrese con mi enlace de referencia para obtener gratis 1 mes de funciones premium: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tiene que confirmar su selección y nosotros haremos el resto."
@@ -5501,6 +5515,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccione los calendarios que desea importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en su plan."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> - correo electrónico seguro."
       ],
       "Server is currently down": [
         "El servidor está actualmente caído"
@@ -8156,6 +8173,9 @@
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
+      "Send & receive invitations": [
+        "Enviar y recibir invitaciones"
+      ],
       "Share calendar via link": [
         "Compartir calendarios mediante un enlace"
       ],
@@ -8682,6 +8702,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Seleccione a lo que ${ BRAND_NAME } puede acceder: ver sus correos y ajustes, ver y descargar sus contactos, ver y descargar todas sus agendas a las que usted accede en Google Agenda."
       ]
     },
     "Onboarding": {
@@ -9800,6 +9825,35 @@
         "VPN de gran velocidad en ${ maxVpn } dispositivos"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Entendido"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Solo inicie sesión en su cuenta de App Store y luego pulse en ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Solo inicie sesión en su cuenta de Play Store y luego pulse en ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Gestione su suscripción en ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "La suscripción es gestionada por ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "La suscripción del usuario ID-${ userId } fue realizada mediante compra dentro de la app. Para gestionar la suscripción del usuario, navegue a la sección de Suscripción en su cuenta de ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Suscripciones"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Su plan fue comprado usando una app de Android. Para realizar cambios a su plan o actualizar sus datos de pago necesitará ir a Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Su plan fue comprado usando una app de iOS. Para realizar cambios a su plan o actualizar sus datos de pago necesitará ir a la App Store."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Al"
@@ -10502,6 +10556,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
       ],
+      "Duration": [
+        "Duración"
+      ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"
       ],
@@ -10606,7 +10663,7 @@
         "¿Cómo funciona?"
       ],
       "How to refer a friend and get credits": [
-        "Cómo referir a un amigo y obtener créditos"
+        "Cómo referir a una amistad y obtener créditos"
       ],
       "Human verification": [
         "Verificación humana"
@@ -10665,9 +10722,6 @@
       ],
       "Layout": [
         "Diseño"
-      ],
-      "Length": [
-        "Duración"
       ],
       "Link confirmation": [
         "Confirmación de enlace"
@@ -10778,7 +10832,7 @@
         "Archivo de recuperación"
       ],
       "Refer a friend": [
-        "Referir un amigo"
+        "Referir una amistad"
       ],
       "Remove calendar": [
         "Quitar calendario"

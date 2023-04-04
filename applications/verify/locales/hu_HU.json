@@ -860,6 +860,9 @@
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
       ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
+      ],
       "This field is required": [
         "A mező kitöltése kötelező"
       ],
@@ -1064,6 +1067,9 @@
       ],
       "Request new code": [
         "Új kód kérése"
+      ],
+      "Sign in with 2FA": [
+        "Bejelentkezés kétlépcsős hitelesítéssel"
       ]
     },
     "Validation": {

@@ -65,7 +65,7 @@
         "Назад"
       ],
       "Back to Homepage": [
-        "Вернуться на главную страницу"
+        "Вернуться на домашнюю страницу"
       ],
       "Beta Access": [
         "Бета-доступ"
@@ -2211,6 +2211,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Ошибка шифрования"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Версии vCard < 3.0 не поддерживаются"
       ]
     },
     "Error importing contacts": {
@@ -2595,6 +2598,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } в настоящее время не поддерживает определенные типы, детали и форматы событий."
+      ],
+      "vCard versions < 3.0": [
+        "Версии vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -2873,10 +2879,10 @@
         "${ calendarsToBeCreatedCount } новых календарей"
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } объединенный календарь",
-        "${ calendarsToBeMergedCount } объединенных календаря",
-        "${ calendarsToBeMergedCount } объединенных календарей",
-        "${ calendarsToBeMergedCount } объединенных календарей"
+        "${ calendarsToBeMergedCount } объединённый календарь",
+        "${ calendarsToBeMergedCount } объединённых календаря",
+        "${ calendarsToBeMergedCount } объединённых календарей",
+        "${ calendarsToBeMergedCount } объединённых календарей"
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } отменен",
@@ -3107,7 +3113,7 @@
         "Не удалось загрузить ссылки"
       ],
       "Cannot load shared link": [
-        "Не удалось загрузить общую ссылку"
+        "Не удалось загрузить ссылку общего доступа"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
@@ -3182,7 +3188,7 @@
         "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
       ],
       "Decrypting files": [
-        "Расшифровка файла"
+        "Расшифровка файлов"
       ],
       "Delete locked drive": [
         "Удалить заблокированное хранилище",
@@ -3668,7 +3674,7 @@
         "Доступная для обмена ссылка для ${ boldNameText }"
       ],
       "Shared link not found": [
-        "Общая ссылка не найдена"
+        "Ссылка общего доступа не найдена"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
@@ -3695,7 +3701,7 @@
         "служба поддержки"
       ],
       "Swiss encrypted file storage": [
-        "Швейцарское зашифрованное хранение файлов"
+        "Швейцарское зашифрованное хранилище файлов"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -3728,7 +3734,7 @@
         "Браузер не поддерживает предварительный просмотр документов PDF. Пожалуйста, скачайте файл."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
-        "Файл возможно был удален, перемещен или стал недоступен. Рекомендуется обратиться к владельцу файла."
+        "Файл возможно был удалён, перемещён или стал недоступен. Обратитесь к владельцу файла."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
@@ -3764,7 +3770,7 @@
         "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Для включения полной конфиденциальности поиска ${ DRIVE_APP_NAME } должен локально проиндексировать ваши файлы."
+        "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен проиндексировать ваши файлы локально."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Чтобы включить действительно конфиденциальный поиск, нам надо проиндексировать ваши файлы локально. Вы по-прежнему можете использовать ${ DRIVE_APP_NAME } в обычном режиме – мы сообщим вам, когда индексирование будет завершено."
@@ -4868,6 +4874,11 @@
         "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Далее"
@@ -5044,10 +5055,10 @@
         "${ contactsExported.length } из ${ countContacts } контактов успешно экспортированы."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удален.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удалён.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
         "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
-        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удалены."
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } из ${ totalBeMerged } контакта успешно объединены.",

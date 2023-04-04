@@ -1295,6 +1295,11 @@
         "Volledig beeld (bekijk alle afspraakdetails)"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Conctactinformatie ophalen mislukt voor ${ address }"
+      ]
+    },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
         "Toegangsrechten gewijzigd voor ${ email }"
@@ -5123,9 +5128,6 @@
       "it’s imperative": [
         "is het noodzakelijk"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Ik ben ${ MAIL_APP_NAME } aan het gebruiken en dacht dat het misschien iets voor u zou kunnen zijn. Het is een beveiligde e-maildienst die uw privacy beschermt. Registreer u met deze link om 1 maand gratis premium functies te krijgen: ${ referrerLink }"
-      ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
       ],
@@ -8662,6 +8664,11 @@
         "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
         "Welkom bij ${ VPN_APP_NAME }"
@@ -9326,6 +9333,11 @@
       ],
       "Labels": [
         "Labels"
+      ]
+    },
+    "Share calendar assistive text": {
+      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
+        "Deel uw agenda met een link om niet-${ BRAND_NAME }-gebruikers uit te nodigen."
       ]
     },
     "Share calendar max shares reached error": {
@@ -10613,9 +10625,6 @@
       "Layout": [
         "Lay-out"
       ],
-      "Length": [
-        "Lengte"
-      ],
       "Link confirmation": [
         "Link bevestigen"
       ],
@@ -11193,6 +11202,14 @@
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Automatisch al uw uitgaande berichten ondertekenen zodat gebruikers de authenticiteit van uw berichten kunnen verifiëren. Dit wordt gedaan in combinatie met de standaard PGP-instellingen, welke hieronder kunnen worden geconfigureerd."
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "End-to-end versleuteld gedeeld"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "End-to-end versleuteld gedeeld met geverifieerd contact"
       ]
     },
     "Tor out of date": {

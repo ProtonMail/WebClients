@@ -547,6 +547,9 @@
       "Show preview": [
         "顯示預覽"
       ],
+      "Show side panel": [
+        "顯示側邊面板"
+      ],
       "Sign in": [
         "登入"
       ],
@@ -2178,6 +2181,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失敗"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "不支援 vCard 版本 < 3.0"
       ]
     },
     "Error importing contacts": {
@@ -2541,6 +2547,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } 目前尚未支援某些事件類型、詳細資料和格式。"
+      ],
+      "vCard versions < 3.0": [
+        "vCard 版本 < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -3429,6 +3438,9 @@
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
+      ],
+      "Preview for this file type is not supported": [
+        "不支援預覽此檔案類型"
       ],
       "Primary": [
         "主要"

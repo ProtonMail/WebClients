@@ -2201,6 +2201,9 @@
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
       ],
+      "Preview for this file type is not supported": [
+        "Pratinjau untuk tipe berkas ini tidak didukung"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
       ],
@@ -3309,6 +3312,9 @@
       "Secure Core servers": [
         "Server Secure Core"
       ],
+      "Send & receive invitations": [
+        "Kirim & terima undangan"
+      ],
       "Share calendar via link": [
         "Bagikan kalender via tautan"
       ],
@@ -4001,6 +4007,35 @@
         "VPN berkecepatan tinggi pada ${ maxVpn } perangkat"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Mengerti"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Anda hanya perlu untuk masuk ke akun Apple App Store Anda dan mengetuk ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Anda hanya perlu untuk masuk ke akun Play Store Anda dan mengetuk ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Kelola langganan Anda pada ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Langganan dikelola oleh ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Paket langganan milik pengguna dengan user ID-${ userId } dibeli melalui pembelian dalam aplikasi. Untuk mengelola paket langganan ini, pengguna yang bersangkutan harus membuka kolom Langganan pada akun ${ subscriptionManager } mereka."
+      ],
+      "Subscriptions": [
+        "Langganan"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Paket langganan Anda dibeli melalui aplikasi Android. Oleh karenanya, Anda harus membuka Google Play Store untuk mengubah paket langganan atau memperbarui rincian pembayaran Anda."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Paket langganan Anda dibeli melalui aplikasi iOS. Oleh karenanya, Anda harus membuka Apple App Store untuk mengubah paket langganan atau memperbarui rincian pembayaran Anda."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Untuk"
@@ -4347,9 +4382,6 @@
       ],
       "Language": [
         "Bahasa"
-      ],
-      "Length": [
-        "Durasi"
       ],
       "Login password": [
         "Kata sandi masuk"

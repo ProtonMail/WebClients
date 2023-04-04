@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
-    "language": "be_BE"
+    "language": "be_BY"
   },
   "contexts": {
     "A label for unlabeled shared calendar links": {
@@ -327,7 +327,7 @@
         "Рэдагаваць"
       ],
       "Edit billing details": [
-        "Рэдагаваць падрабязнасці плацяжу"
+        "Рэдагаваць рэквізіты плацяжу"
       ],
       "Edit display name": [
         "Рэдагаваць бачнае імя"
@@ -1302,6 +1302,11 @@
       ],
       "View (see all event details)": [
         "Прагледзець (усе падрабязнасці падзеі)"
+      ]
+    },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "Не ўдалося атрымаць кантактную інфармацыю для ${ address }"
       ]
     },
     "Calendar sharing permission change notification": {
@@ -2836,6 +2841,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } ваша імя карыстальніка. Каб стварыць ${ Local }@${ Domain }, перайдзіце ў Налады > Паведамленні і напісанне лістоў > Кароткі дамен (pm.me)"
+      ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
@@ -3331,6 +3339,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Не ўдалося зашыфраваць"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Верcіі vCard ніжэйшыя за 3.0 не падтрымліваюцца"
       ]
     },
     "Error importing contacts": {
@@ -4097,6 +4108,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "Праграма ${ CALENDAR_APP_NAME } у цяперашні час не падтрымлівае некаторыя тыпы падзей, падрабязнасці і фарматы."
+      ],
+      "vCard versions < 3.0": [
+        "Версіі vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5251,8 +5265,8 @@
       "it’s imperative": [
         "гэта абавязкова"
       ],
-      "I’ve been using ${ MAIL_APP_NAME } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Я выкарыстоўваю ${ MAIL_APP_NAME } і думаю, што ён спадабаецца вам таксама. Гэта бяспечны сэрвіс электроннай пошты, які абараняе вашу прыватнасць. Зарэгіструйцеся па спасылцы і атрымайце 1 месяц бясплатных прэміяльных магчымасцяў: ${ referrerLink }"
+      "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Я выкарыстоўваю @ProtonMail і думаю, што ён спадабаецца вам таксама. Гэта бяспечны сэрвіс электроннай пошты, які абараняе вашу прыватнасць. Зарэгіструйцеся па маёй рэферальнай спасылцы і атрымайце 1 месяц бясплатных прэміяльных магчымасцяў: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
@@ -5616,6 +5630,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Адпраўлена з дапамогай бяспечнай электроннай пошты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Сервер часова не працуе"
@@ -6257,7 +6274,7 @@
         "Лісты вашай арганізацыі абаронены скразным шыфраваннем з выкарыстаннем ключа арганізацыі. Гэты адбітак можна выкарыстоўваць для праверкі таго, што ўсе адміністратары вашага ўліковага запісу маюць аднолькавы ключ."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Вашы падрабязнасці плацяжу абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
+        "Вашы рэквізіты плацяжу абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
@@ -7255,7 +7272,7 @@
         "Плацельшчык"
       ],
       "Payment details": [
-        "Падрабязнасці плацяжу"
+        "Рэквізіты плацяжу"
       ],
       "Payment method": [
         "Спосаб аплаты"
@@ -8344,6 +8361,9 @@
       "Secure Core servers": [
         "Серверы Secure Core"
       ],
+      "Send & receive invitations": [
+        "Адпраўляйце і атрымлівайце запрашэнні"
+      ],
       "Share calendar via link": [
         "Абагуліць каляндар праз спасылку"
       ],
@@ -8521,7 +8541,7 @@
         "Ствараючы ўліковы запіс ${ BRAND_NAME }, вы пагаджаецеся з нашымі ${ terms }"
       ],
       "Payment details": [
-        "Падрабязнасці плацяжу"
+        "Рэквізіты плацяжу"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Захавайце свой адрас электроннай пошты або нумар тэлефона, каб выкарыстоўваць іх для праверкі пры неабходнасці скінуць уліковы запіс."
@@ -8886,6 +8906,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Для імпартавання даных, вы павінны выбраць усе запытаныя элементы, як паказана на відарысе GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд электронных лістоў і наладаў, прагляд і спампоўванне кантактаў, прагляд і спампоўванне ўсіх планаванняў з праграмы Каляндар Google."
       ]
     },
     "Onboarding": {
@@ -9797,6 +9822,35 @@
         "Высакахуткасны VPN на ${ maxVpn } прыладах"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Зразумела"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Проста ўвайдзіце ў свой уліковы запіс App Store, а потым націсніце ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Проста ўвайдзіце ў свой уліковы запіс Play Store, а потым націсніце ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Кіруйце вашай падпіскай у ${ subscriptionManager }"
+      ],
+      "Subscription is managed by ${ subscriptionManager }": [
+        "Падпіска кіруецца ${ subscriptionManager }"
+      ],
+      "Subscription of user ID-${ userId } has been done via an in-app purchase. To manage the subscription user needs to navigate to the Subscription section of their ${ subscriptionManager } account.": [
+        "Падпіска карыстальніка з ідэнтыфікатарам ${ userId } была здзейснена праз куплю ў праграме. Для таго, каб кіраваць ёй неабходна перайсці ў раздзел з падпіскамі яго ўліковага запісу ${ subscriptionManager }."
+      ],
+      "Subscriptions": [
+        "Падпіскі"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Ваш тарыфны план куплены з дапамогай праграмы для Android. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Ваш тарыфны план куплены з дапамогай праграмы для iOS. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Apple App Store."
+      ]
+    },
     "Subscription price": {
       "For": [
         "Для"
@@ -10513,6 +10567,9 @@
       "Download ${ VPN_APP_NAME }": [
         "Спампаваць ${ VPN_APP_NAME }"
       ],
+      "Duration": [
+        "Працягласць"
+      ],
       "Edit credit/debit card": [
         "Рэдагаваць даныя банкаўскай карткі"
       ],
@@ -10680,9 +10737,6 @@
       ],
       "Layout": [
         "Макет"
-      ],
-      "Length": [
-        "Даўжыня"
       ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
@@ -11199,7 +11253,7 @@
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
-        "Новы перыяд аплаты пачнецца ${ formattedTime }"
+        "Новы перыяд аплаты пачнецца ў ${ formattedTime }"
       ],
       "This address has been disabled": [
         "Гэты адрас быў адключаны"

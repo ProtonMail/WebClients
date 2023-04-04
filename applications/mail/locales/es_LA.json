@@ -181,6 +181,9 @@
       "Close": [
         "Cerrar"
       ],
+      "Close & discard": [
+        "Cerrar y descartar"
+      ],
       "Close composer": [
         "Cerrar compositor"
       ],
@@ -773,7 +776,7 @@
         "Recuperar datos"
       ],
       "Refer a friend": [
-        "Referir un amigo"
+        "Referir una amistad"
       ],
       "Refine it": [
         "Refínela"
@@ -1260,17 +1263,6 @@
       ],
       "Unsupported event": [
         "Evento no compatible"
-      ]
-    },
-    "Attachment radio advanced search": {
-      "All": [
-        "Todos"
-      ],
-      "With": [
-        "Con"
-      ],
-      "Without": [
-        "Sin"
       ]
     },
     "Attachment signature verification": {
@@ -3021,6 +3013,9 @@
       ]
     },
     "Error": {
+      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
+        "${ error.message } para <${ email }>. Puede añadir otra clave o deshabilitar el cifrado para este contacto para resolver el problema."
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -3470,6 +3465,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Falló el cifrado"
+      ],
+      "vCard versions < 3.0 not supported": [
+        "Versiones vCard menores a 3.0 no compatibles"
       ]
     },
     "Error importing contacts": {
@@ -4045,6 +4043,9 @@
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
         "${ CALENDAR_APP_NAME } actualmente no admite ciertos tipos de eventos, detalles y formatos."
+      ],
+      "vCard versions < 3.0": [
+        "Versiones vCard menores a 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5165,6 +5166,9 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "El envío de mensajes desde la dirección @pm.me es una función de pago. Su mensaje será enviado desde su dirección predeterminada ${ email }"
       ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> - correo electrónico seguro."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."
       ],
@@ -5951,9 +5955,6 @@
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
-      ],
-      "Attachments": [
-        "Archivos adjuntos"
       ],
       "Authenticator app": [
         "App autenticadora"
@@ -6982,6 +6983,11 @@
         "Para que la importación funcione, debe seleccionar todos los elementos solicitados como se muestra en el GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Seleccione a lo que ${ BRAND_NAME } puede acceder: ver sus correos y ajustes, ver y descargar sus contactos, ver y descargar todas sus agendas a las que usted accede en Google Agenda."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bienvenido/a a ${ appName }"
@@ -7297,6 +7303,9 @@
       "${ remainingDays } d": [
         "${ remainingDays } día",
         "${ remainingDays } días"
+      ],
+      "<1 d": [
+        "<1 d"
       ]
     },
     "Reply to calendar invitation": {
